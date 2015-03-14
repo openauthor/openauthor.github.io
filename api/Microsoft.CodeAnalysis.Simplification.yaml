@@ -1,0 +1,59 @@
+id: Microsoft.CodeAnalysis.Simplification
+yaml: api\Microsoft.CodeAnalysis.Simplification.yaml
+href: api\Microsoft.CodeAnalysis.Simplification
+name:
+  CSharp: Simplification
+qualifiedName:
+  CSharp: Simplification
+type: Namespace
+source:
+  remote:
+    branch: master
+    repo: https://github.com/chenkennt/roslyn.git
+    local: C:\roslyn\
+    sha1: 1f481aa6a0c6e8392329364a28316e0b6cd563f3
+  path: src\Workspaces\Core\Portable\Simplification\SimplificationOptionProvider.cs
+  startLine: 8
+items:
+- id: Microsoft.CodeAnalysis.Simplification.SimplificationOptions
+  yaml: api\Microsoft.CodeAnalysis.Simplification.SimplificationOptions.yaml
+  href: api\Microsoft.CodeAnalysis.Simplification.SimplificationOptions
+  type: Class
+  summary: >+
+    This Object contains the options that needs to be drilled down to the Simplification Engine
+
+- id: Microsoft.CodeAnalysis.Simplification.Simplifier
+  yaml: api\Microsoft.CodeAnalysis.Simplification.Simplifier.yaml
+  href: api\Microsoft.CodeAnalysis.Simplification.Simplifier
+  type: Class
+  summary: >+
+    Expands and Reduces subtrees.
+
+
+
+    Expansion:
+
+    1) Replaces names with fully qualified dotted names.
+
+    2) Adds parentheses around expressions
+
+    3) Adds explicit casts/conversions where implicit conversions exist
+
+    4) Adds escaping to identifiers
+
+    5) Rewrites extension method invocations with explicit calls on the class containing the extension method.
+
+
+
+    Reduction:
+
+    1) Shortens dotted names to their minimally qualified form
+
+    2) Removes unnecessary parentheses
+
+    3) Removes unnecessary casts/conversions
+
+    4) Removes unnecessary escaping
+
+    5) Rewrites explicit calls to extension methods to use dot notation
+

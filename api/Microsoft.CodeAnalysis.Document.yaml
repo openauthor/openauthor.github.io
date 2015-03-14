@@ -1,0 +1,575 @@
+id: Microsoft.CodeAnalysis.Document
+yaml: api\Microsoft.CodeAnalysis.Document.yaml
+href: api\Microsoft.CodeAnalysis.Document
+name:
+  CSharp: Document
+qualifiedName:
+  CSharp: Document
+type: Class
+source:
+  remote:
+    branch: master
+    repo: https://github.com/chenkennt/roslyn.git
+    local: C:\roslyn\
+    sha1: 1f481aa6a0c6e8392329364a28316e0b6cd563f3
+  path: src\Workspaces\Core\Portable\Workspace\Solution\Document.cs
+  startLine: 20
+summary: >+
+  Represents a source code document that is part of a project.
+
+  It provides access to the source text, parsed syntax tree and the corresponding semantic model.
+
+syntax:
+  content:
+    CSharp: public partial class Document
+inheritance:
+- id: System.Object
+  name: System.Object
+  isExternal: true
+- id: Microsoft.CodeAnalysis.TextDocument
+  name: TextDocument
+  href: api\Microsoft.CodeAnalysis.TextDocument
+items:
+- id: Microsoft.CodeAnalysis.Document.SourceCodeKind
+  yaml: api\Microsoft.CodeAnalysis.Document.yaml
+  href: api\Microsoft.CodeAnalysis.Document
+  name:
+    CSharp: SourceCodeKind
+  qualifiedName:
+    CSharp: SourceCodeKind
+  type: Property
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      local: C:\roslyn\
+      sha1: 1f481aa6a0c6e8392329364a28316e0b6cd563f3
+    path: src\Workspaces\Core\Portable\Workspace\Solution\Document.cs
+    startLine: 53
+  summary: >+
+    The kind of source code this document contains.
+
+  syntax:
+    content:
+      CSharp: public SourceCodeKind SourceCodeKind
+    parameters:
+    - id: SourceCodeKind
+      type:
+        id: Microsoft.CodeAnalysis.SourceCodeKind
+        name: SourceCodeKind
+        href: Microsoft.CodeAnalysis.SourceCodeKind
+- id: Microsoft.CodeAnalysis.Document.get_SourceCodeKind
+  yaml: api\Microsoft.CodeAnalysis.Document.yaml
+  href: api\Microsoft.CodeAnalysis.Document
+  name:
+    CSharp: get_SourceCodeKind
+  qualifiedName:
+    CSharp: get_SourceCodeKind
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      local: C:\roslyn\
+      sha1: 1f481aa6a0c6e8392329364a28316e0b6cd563f3
+    path: src\Workspaces\Core\Portable\Workspace\Solution\Document.cs
+    startLine: 55
+- id: Microsoft.CodeAnalysis.Document.TryGetSyntaxTree(Microsoft.CodeAnalysis.SyntaxTree@)
+  yaml: api\Microsoft.CodeAnalysis.Document.yaml
+  href: api\Microsoft.CodeAnalysis.Document
+  name:
+    CSharp: TryGetSyntaxTree
+  qualifiedName:
+    CSharp: TryGetSyntaxTree
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      local: C:\roslyn\
+      sha1: 1f481aa6a0c6e8392329364a28316e0b6cd563f3
+    path: src\Workspaces\Core\Portable\Workspace\Solution\Document.cs
+    startLine: 65
+  summary: >+
+    Get the current syntax tree for the document if the text is already loaded and the tree is already parsed.
+
+    Returns true if the syntax tree is already available, or false if getting the syntax tree would have incurred additional work.
+
+  syntax:
+    content:
+      CSharp: public bool TryGetSyntaxTree(out SyntaxTree syntaxTree)
+    parameters:
+    - id: syntaxTree
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxTree
+        name: SyntaxTree
+        href: Microsoft.CodeAnalysis.SyntaxTree
+    return:
+      id: Boolean
+- id: Microsoft.CodeAnalysis.Document.TryGetSyntaxVersion(Microsoft.CodeAnalysis.VersionStamp@)
+  yaml: api\Microsoft.CodeAnalysis.Document.yaml
+  href: api\Microsoft.CodeAnalysis.Document
+  name:
+    CSharp: TryGetSyntaxVersion
+  qualifiedName:
+    CSharp: TryGetSyntaxVersion
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      local: C:\roslyn\
+      sha1: 1f481aa6a0c6e8392329364a28316e0b6cd563f3
+    path: src\Workspaces\Core\Portable\Workspace\Solution\Document.cs
+    startLine: 92
+  summary: >+
+    Get the current syntax tree version for the document if the text is already loaded and the tree is already parsed.
+
+    Returns true if the syntax tree is already available, or false if getting the syntax tree would have incurred additional work.
+
+  syntax:
+    content:
+      CSharp: public bool TryGetSyntaxVersion(out VersionStamp version)
+    parameters:
+    - id: version
+      type:
+        id: Microsoft.CodeAnalysis.VersionStamp
+        name: VersionStamp
+        href: api\Microsoft.CodeAnalysis.VersionStamp
+    return:
+      id: Boolean
+- id: Microsoft.CodeAnalysis.Document.GetSyntaxVersionAsync(System.Threading.CancellationToken)
+  yaml: api\Microsoft.CodeAnalysis.Document.yaml
+  href: api\Microsoft.CodeAnalysis.Document
+  name:
+    CSharp: GetSyntaxVersionAsync
+  qualifiedName:
+    CSharp: GetSyntaxVersionAsync
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      local: C:\roslyn\
+      sha1: 1f481aa6a0c6e8392329364a28316e0b6cd563f3
+    path: src\Workspaces\Core\Portable\Workspace\Solution\Document.cs
+    startLine: 118
+  summary: >+
+    Gets the version of the syntax tree. This is generally the newer of the text version and the project's version.
+
+  syntax:
+    content:
+      CSharp: public async Task<VersionStamp> GetSyntaxVersionAsync(CancellationToken cancellationToken = default (CancellationToken))
+    parameters:
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+    return:
+      id: Task
+- id: Microsoft.CodeAnalysis.Document.SupportsSyntaxTree
+  yaml: api\Microsoft.CodeAnalysis.Document.yaml
+  href: api\Microsoft.CodeAnalysis.Document
+  name:
+    CSharp: SupportsSyntaxTree
+  qualifiedName:
+    CSharp: SupportsSyntaxTree
+  type: Property
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      local: C:\roslyn\
+      sha1: 1f481aa6a0c6e8392329364a28316e0b6cd563f3
+    path: src\Workspaces\Core\Portable\Workspace\Solution\Document.cs
+    startLine: 132
+  summary: >+
+    true if this Document supports providing data through the
+
+    [Microsoft.CodeAnalysis.Document.GetSyntaxTreeAsync(System.Threading.CancellationToken)](#/api\Microsoft.CodeAnalysis.Document) and [Microsoft.CodeAnalysis.Document.GetSyntaxRootAsync(System.Threading.CancellationToken)](#/api\Microsoft.CodeAnalysis.Document) methods.
+
+
+
+    If false then these methods will return null instead.
+
+  syntax:
+    content:
+      CSharp: public bool SupportsSyntaxTree
+    parameters:
+    - id: SupportsSyntaxTree
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+- id: Microsoft.CodeAnalysis.Document.get_SupportsSyntaxTree
+  yaml: api\Microsoft.CodeAnalysis.Document.yaml
+  href: api\Microsoft.CodeAnalysis.Document
+  name:
+    CSharp: get_SupportsSyntaxTree
+  qualifiedName:
+    CSharp: get_SupportsSyntaxTree
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      local: C:\roslyn\
+      sha1: 1f481aa6a0c6e8392329364a28316e0b6cd563f3
+    path: src\Workspaces\Core\Portable\Workspace\Solution\Document.cs
+    startLine: 134
+- id: Microsoft.CodeAnalysis.Document.SupportsSemanticModel
+  yaml: api\Microsoft.CodeAnalysis.Document.yaml
+  href: api\Microsoft.CodeAnalysis.Document
+  name:
+    CSharp: SupportsSemanticModel
+  qualifiedName:
+    CSharp: SupportsSemanticModel
+  type: Property
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      local: C:\roslyn\
+      sha1: 1f481aa6a0c6e8392329364a28316e0b6cd563f3
+    path: src\Workspaces\Core\Portable\Workspace\Solution\Document.cs
+    startLine: 146
+  summary: >+
+    true if this Document supports providing data through the
+
+    [Microsoft.CodeAnalysis.Document.GetSemanticModelAsync(System.Threading.CancellationToken)](#/api\Microsoft.CodeAnalysis.Document) method.
+
+
+
+    If false then this method will return null instead.
+
+  syntax:
+    content:
+      CSharp: public bool SupportsSemanticModel
+    parameters:
+    - id: SupportsSemanticModel
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+- id: Microsoft.CodeAnalysis.Document.get_SupportsSemanticModel
+  yaml: api\Microsoft.CodeAnalysis.Document.yaml
+  href: api\Microsoft.CodeAnalysis.Document
+  name:
+    CSharp: get_SupportsSemanticModel
+  qualifiedName:
+    CSharp: get_SupportsSemanticModel
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      local: C:\roslyn\
+      sha1: 1f481aa6a0c6e8392329364a28316e0b6cd563f3
+    path: src\Workspaces\Core\Portable\Workspace\Solution\Document.cs
+    startLine: 148
+- id: Microsoft.CodeAnalysis.Document.GetSyntaxTreeAsync(System.Threading.CancellationToken)
+  yaml: api\Microsoft.CodeAnalysis.Document.yaml
+  href: api\Microsoft.CodeAnalysis.Document
+  name:
+    CSharp: GetSyntaxTreeAsync
+  qualifiedName:
+    CSharp: GetSyntaxTreeAsync
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      local: C:\roslyn\
+      sha1: 1f481aa6a0c6e8392329364a28316e0b6cd563f3
+    path: src\Workspaces\Core\Portable\Workspace\Solution\Document.cs
+    startLine: 157
+  summary: >+
+    Gets the [Microsoft.CodeAnalysis.SyntaxTree](#) for this document asynchronously.
+
+  syntax:
+    content:
+      CSharp: public Task<SyntaxTree> GetSyntaxTreeAsync(CancellationToken cancellationToken = default (CancellationToken))
+    parameters:
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+    return:
+      id: Task
+- id: Microsoft.CodeAnalysis.Document.TryGetSyntaxRoot(Microsoft.CodeAnalysis.SyntaxNode@)
+  yaml: api\Microsoft.CodeAnalysis.Document.yaml
+  href: api\Microsoft.CodeAnalysis.Document
+  name:
+    CSharp: TryGetSyntaxRoot
+  qualifiedName:
+    CSharp: TryGetSyntaxRoot
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      local: C:\roslyn\
+      sha1: 1f481aa6a0c6e8392329364a28316e0b6cd563f3
+    path: src\Workspaces\Core\Portable\Workspace\Solution\Document.cs
+    startLine: 203
+  summary: >+
+    Gets the root node of the current syntax tree if it is available.
+
+  syntax:
+    content:
+      CSharp: public bool TryGetSyntaxRoot(out SyntaxNode root)
+    parameters:
+    - id: root
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: Microsoft.CodeAnalysis.SyntaxNode
+    return:
+      id: Boolean
+- id: Microsoft.CodeAnalysis.Document.GetSyntaxRootAsync(System.Threading.CancellationToken)
+  yaml: api\Microsoft.CodeAnalysis.Document.yaml
+  href: api\Microsoft.CodeAnalysis.Document
+  name:
+    CSharp: GetSyntaxRootAsync
+  qualifiedName:
+    CSharp: GetSyntaxRootAsync
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      local: C:\roslyn\
+      sha1: 1f481aa6a0c6e8392329364a28316e0b6cd563f3
+    path: src\Workspaces\Core\Portable\Workspace\Solution\Document.cs
+    startLine: 213
+  summary: >+
+    Gets the root node of the syntax tree asynchronously.
+
+  syntax:
+    content:
+      CSharp: public async Task<SyntaxNode> GetSyntaxRootAsync(CancellationToken cancellationToken = default (CancellationToken))
+    parameters:
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+    return:
+      id: Task
+- id: Microsoft.CodeAnalysis.Document.TryGetSemanticModel(Microsoft.CodeAnalysis.SemanticModel@)
+  yaml: api\Microsoft.CodeAnalysis.Document.yaml
+  href: api\Microsoft.CodeAnalysis.Document
+  name:
+    CSharp: TryGetSemanticModel
+  qualifiedName:
+    CSharp: TryGetSemanticModel
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      local: C:\roslyn\
+      sha1: 1f481aa6a0c6e8392329364a28316e0b6cd563f3
+    path: src\Workspaces\Core\Portable\Workspace\Solution\Document.cs
+    startLine: 227
+  summary: >+
+    Gets the current semantic model for this document if the model is already computed.
+
+  syntax:
+    content:
+      CSharp: public bool TryGetSemanticModel(out SemanticModel semanticModel)
+    parameters:
+    - id: semanticModel
+      type:
+        id: Microsoft.CodeAnalysis.SemanticModel
+        name: SemanticModel
+        href: Microsoft.CodeAnalysis.SemanticModel
+    return:
+      id: Boolean
+- id: Microsoft.CodeAnalysis.Document.GetSemanticModelAsync(System.Threading.CancellationToken)
+  yaml: api\Microsoft.CodeAnalysis.Document.yaml
+  href: api\Microsoft.CodeAnalysis.Document
+  name:
+    CSharp: GetSemanticModelAsync
+  qualifiedName:
+    CSharp: GetSemanticModelAsync
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      local: C:\roslyn\
+      sha1: 1f481aa6a0c6e8392329364a28316e0b6cd563f3
+    path: src\Workspaces\Core\Portable\Workspace\Solution\Document.cs
+    startLine: 236
+  summary: >+
+    Gets the semantic model for this document asynchronously.
+
+  syntax:
+    content:
+      CSharp: public async Task<SemanticModel> GetSemanticModelAsync(CancellationToken cancellationToken = default (CancellationToken))
+    parameters:
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+    return:
+      id: Task
+- id: Microsoft.CodeAnalysis.Document.WithSourceCodeKind(Microsoft.CodeAnalysis.SourceCodeKind)
+  yaml: api\Microsoft.CodeAnalysis.Document.yaml
+  href: api\Microsoft.CodeAnalysis.Document
+  name:
+    CSharp: WithSourceCodeKind
+  qualifiedName:
+    CSharp: WithSourceCodeKind
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      local: C:\roslyn\
+      sha1: 1f481aa6a0c6e8392329364a28316e0b6cd563f3
+    path: src\Workspaces\Core\Portable\Workspace\Solution\Document.cs
+    startLine: 285
+  summary: >+
+    Creates a new instance of this document updated to have the source code kind specified.
+
+  syntax:
+    content:
+      CSharp: public Document WithSourceCodeKind(SourceCodeKind kind)
+    parameters:
+    - id: kind
+      type:
+        id: Microsoft.CodeAnalysis.SourceCodeKind
+        name: SourceCodeKind
+        href: Microsoft.CodeAnalysis.SourceCodeKind
+    return:
+      id: Document
+- id: Microsoft.CodeAnalysis.Document.WithText(Microsoft.CodeAnalysis.Text.SourceText)
+  yaml: api\Microsoft.CodeAnalysis.Document.yaml
+  href: api\Microsoft.CodeAnalysis.Document
+  name:
+    CSharp: WithText
+  qualifiedName:
+    CSharp: WithText
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      local: C:\roslyn\
+      sha1: 1f481aa6a0c6e8392329364a28316e0b6cd563f3
+    path: src\Workspaces\Core\Portable\Workspace\Solution\Document.cs
+    startLine: 293
+  summary: >+
+    Creates a new instance of this document updated to have the text specified.
+
+  syntax:
+    content:
+      CSharp: public Document WithText(SourceText text)
+    parameters:
+    - id: text
+      type:
+        id: Microsoft.CodeAnalysis.Text.SourceText
+        name: SourceText
+        href: Microsoft.CodeAnalysis.Text.SourceText
+    return:
+      id: Document
+- id: Microsoft.CodeAnalysis.Document.WithSyntaxRoot(Microsoft.CodeAnalysis.SyntaxNode)
+  yaml: api\Microsoft.CodeAnalysis.Document.yaml
+  href: api\Microsoft.CodeAnalysis.Document
+  name:
+    CSharp: WithSyntaxRoot
+  qualifiedName:
+    CSharp: WithSyntaxRoot
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      local: C:\roslyn\
+      sha1: 1f481aa6a0c6e8392329364a28316e0b6cd563f3
+    path: src\Workspaces\Core\Portable\Workspace\Solution\Document.cs
+    startLine: 301
+  summary: >+
+    Creates a new instance of this document updated to have a syntax tree rooted by the specified syntax node.
+
+  syntax:
+    content:
+      CSharp: public Document WithSyntaxRoot(SyntaxNode root)
+    parameters:
+    - id: root
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: Microsoft.CodeAnalysis.SyntaxNode
+    return:
+      id: Document
+- id: Microsoft.CodeAnalysis.Document.GetTextChangesAsync(Microsoft.CodeAnalysis.Document,System.Threading.CancellationToken)
+  yaml: api\Microsoft.CodeAnalysis.Document.yaml
+  href: api\Microsoft.CodeAnalysis.Document
+  name:
+    CSharp: GetTextChangesAsync
+  qualifiedName:
+    CSharp: GetTextChangesAsync
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      local: C:\roslyn\
+      sha1: 1f481aa6a0c6e8392329364a28316e0b6cd563f3
+    path: src\Workspaces\Core\Portable\Workspace\Solution\Document.cs
+    startLine: 310
+  summary: >+
+    Get the text changes between this document and a prior version of the same document.
+
+    The changes, when applied to the text of the old document, will produce the text of the current document.
+
+  syntax:
+    content:
+      CSharp: public async Task<IEnumerable<TextChange>> GetTextChangesAsync(Document oldDocument, CancellationToken cancellationToken = default (CancellationToken))
+    parameters:
+    - id: oldDocument
+      type:
+        id: Microsoft.CodeAnalysis.Document
+        name: Document
+        href: api\Microsoft.CodeAnalysis.Document
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+    return:
+      id: Task
+- id: Microsoft.CodeAnalysis.Document.GetLinkedDocumentIds
+  yaml: api\Microsoft.CodeAnalysis.Document.yaml
+  href: api\Microsoft.CodeAnalysis.Document
+  name:
+    CSharp: GetLinkedDocumentIds
+  qualifiedName:
+    CSharp: GetLinkedDocumentIds
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      local: C:\roslyn\
+      sha1: 1f481aa6a0c6e8392329364a28316e0b6cd563f3
+    path: src\Workspaces\Core\Portable\Workspace\Solution\Document.cs
+    startLine: 379
+  summary: >+
+    Gets the list of [Microsoft.CodeAnalysis.DocumentId](#/api\Microsoft.CodeAnalysis.DocumentId)s that are linked to this
+
+    [Microsoft.CodeAnalysis.Document](#/api\Microsoft.CodeAnalysis.Document). [Microsoft.CodeAnalysis.Document](#/api\Microsoft.CodeAnalysis.Document)s are considered to be linked if they
+
+    share the same [Microsoft.CodeAnalysis.TextDocument.FilePath](#/api\Microsoft.CodeAnalysis.TextDocument). This [Microsoft.CodeAnalysis.DocumentId](#/api\Microsoft.CodeAnalysis.DocumentId) is excluded from the
+
+    result.
+
+  syntax:
+    content:
+      CSharp: public ImmutableArray<DocumentId> GetLinkedDocumentIds()
+    parameters: []
+    return:
+      id: ImmutableArray

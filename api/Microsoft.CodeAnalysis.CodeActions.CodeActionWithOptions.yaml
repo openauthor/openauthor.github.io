@@ -1,0 +1,101 @@
+id: Microsoft.CodeAnalysis.CodeActions.CodeActionWithOptions
+yaml: api\Microsoft.CodeAnalysis.CodeActions.CodeActionWithOptions.yaml
+href: api\Microsoft.CodeAnalysis.CodeActions.CodeActionWithOptions
+name:
+  CSharp: CodeActionWithOptions
+qualifiedName:
+  CSharp: CodeActionWithOptions
+type: Class
+source:
+  remote:
+    branch: master
+    repo: https://github.com/chenkennt/roslyn.git
+    local: C:\roslyn\
+    sha1: 1f481aa6a0c6e8392329364a28316e0b6cd563f3
+  path: src\Workspaces\Core\Portable\CodeActions\CodeActionWithOptions.cs
+  startLine: 13
+summary: >+
+  A [Microsoft.CodeAnalysis.CodeActions.CodeAction](#/api\Microsoft.CodeAnalysis.CodeActions.CodeAction) that can vary with user specified options.
+
+syntax:
+  content:
+    CSharp: public abstract class CodeActionWithOptions
+inheritance:
+- id: System.Object
+  name: System.Object
+  isExternal: true
+- id: Microsoft.CodeAnalysis.CodeActions.CodeAction
+  name: CodeAction
+  href: api\Microsoft.CodeAnalysis.CodeActions.CodeAction
+items:
+- id: Microsoft.CodeAnalysis.CodeActions.CodeActionWithOptions.GetOptions(System.Threading.CancellationToken)
+  yaml: api\Microsoft.CodeAnalysis.CodeActions.CodeActionWithOptions.yaml
+  href: api\Microsoft.CodeAnalysis.CodeActions.CodeActionWithOptions
+  name:
+    CSharp: GetOptions
+  qualifiedName:
+    CSharp: GetOptions
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      local: C:\roslyn\
+      sha1: 1f481aa6a0c6e8392329364a28316e0b6cd563f3
+    path: src\Workspaces\Core\Portable\CodeActions\CodeActionWithOptions.cs
+    startLine: 21
+  summary: >+
+    Gets the options to use with this code action.
+
+    This method is gauranteed to be called on the UI thread.
+
+  syntax:
+    content:
+      CSharp: public abstract object GetOptions(CancellationToken cancellationToken);
+    parameters:
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+      description: A cancellation token.
+    return:
+      id: Object
+      description: An implementation specific object instance that holds options for applying the code action.
+- id: Microsoft.CodeAnalysis.CodeActions.CodeActionWithOptions.GetOperationsAsync(System.Object,System.Threading.CancellationToken)
+  yaml: api\Microsoft.CodeAnalysis.CodeActions.CodeActionWithOptions.yaml
+  href: api\Microsoft.CodeAnalysis.CodeActions.CodeActionWithOptions
+  name:
+    CSharp: GetOperationsAsync
+  qualifiedName:
+    CSharp: GetOperationsAsync
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      local: C:\roslyn\
+      sha1: 1f481aa6a0c6e8392329364a28316e0b6cd563f3
+    path: src\Workspaces\Core\Portable\CodeActions\CodeActionWithOptions.cs
+    startLine: 28
+  summary: >+
+    Gets the [Microsoft.CodeAnalysis.CodeActions.CodeActionOperation](#/api\Microsoft.CodeAnalysis.CodeActions.CodeActionOperation)'s for this [Microsoft.CodeAnalysis.CodeActions.CodeAction](#/api\Microsoft.CodeAnalysis.CodeActions.CodeAction) given the specified options.
+
+  syntax:
+    content:
+      CSharp: public async Task<IEnumerable<CodeActionOperation>> GetOperationsAsync(object options, CancellationToken cancellationToken)
+    parameters:
+    - id: options
+      type:
+        id: System.Object
+        name: System.Object
+        isExternal: true
+      description: An object instance returned from a prior call to [Microsoft.CodeAnalysis.CodeActions.CodeActionWithOptions.GetOptions(System.Threading.CancellationToken)](#/api\Microsoft.CodeAnalysis.CodeActions.CodeActionWithOptions).
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+      description: A cancellation token.
+    return:
+      id: Task

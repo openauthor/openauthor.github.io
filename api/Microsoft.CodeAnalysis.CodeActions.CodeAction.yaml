@@ -1,0 +1,265 @@
+id: Microsoft.CodeAnalysis.CodeActions.CodeAction
+yaml: api\Microsoft.CodeAnalysis.CodeActions.CodeAction.yaml
+href: api\Microsoft.CodeAnalysis.CodeActions.CodeAction
+name:
+  CSharp: CodeAction
+qualifiedName:
+  CSharp: CodeAction
+type: Class
+source:
+  remote:
+    branch: master
+    repo: https://github.com/chenkennt/roslyn.git
+    local: C:\roslyn\
+    sha1: 1f481aa6a0c6e8392329364a28316e0b6cd563f3
+  path: src\Workspaces\Core\Portable\CodeActions\CodeAction.cs
+  startLine: 19
+summary: >+
+  An action produced by a [Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider](#/api\Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider) or a [Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider](#/api\Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider).
+
+syntax:
+  content:
+    CSharp: public abstract class CodeAction
+inheritance:
+- id: System.Object
+  name: System.Object
+  isExternal: true
+items:
+- id: Microsoft.CodeAnalysis.CodeActions.CodeAction.Title
+  yaml: api\Microsoft.CodeAnalysis.CodeActions.CodeAction.yaml
+  href: api\Microsoft.CodeAnalysis.CodeActions.CodeAction
+  name:
+    CSharp: Title
+  qualifiedName:
+    CSharp: Title
+  type: Property
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      local: C:\roslyn\
+      sha1: 1f481aa6a0c6e8392329364a28316e0b6cd563f3
+    path: src\Workspaces\Core\Portable\CodeActions\CodeAction.cs
+    startLine: 24
+  summary: >+
+    A short title describing the action that may appear in a menu.
+
+  syntax:
+    content:
+      CSharp: public abstract string Title
+    parameters:
+    - id: Title
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+- id: Microsoft.CodeAnalysis.CodeActions.CodeAction.get_Title
+  yaml: api\Microsoft.CodeAnalysis.CodeActions.CodeAction.yaml
+  href: api\Microsoft.CodeAnalysis.CodeActions.CodeAction
+  name:
+    CSharp: get_Title
+  qualifiedName:
+    CSharp: get_Title
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      local: C:\roslyn\
+      sha1: 1f481aa6a0c6e8392329364a28316e0b6cd563f3
+    path: src\Workspaces\Core\Portable\CodeActions\CodeAction.cs
+    startLine: 24
+- id: Microsoft.CodeAnalysis.CodeActions.CodeAction.EquivalenceKey
+  yaml: api\Microsoft.CodeAnalysis.CodeActions.CodeAction.yaml
+  href: api\Microsoft.CodeAnalysis.CodeActions.CodeAction
+  name:
+    CSharp: EquivalenceKey
+  qualifiedName:
+    CSharp: EquivalenceKey
+  type: Property
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      local: C:\roslyn\
+      sha1: 1f481aa6a0c6e8392329364a28316e0b6cd563f3
+    path: src\Workspaces\Core\Portable\CodeActions\CodeAction.cs
+    startLine: 40
+  summary: >+
+    Two code actions are treated as equivalent if they have equal non-null [Microsoft.CodeAnalysis.CodeActions.CodeAction.EquivalenceKey](#/api\Microsoft.CodeAnalysis.CodeActions.CodeAction) values and were generated
+
+    by the same [Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider](#/api\Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider) or [Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider](#/api\Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider).
+
+  syntax:
+    content:
+      CSharp: public virtual string EquivalenceKey
+    parameters:
+    - id: EquivalenceKey
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+- id: Microsoft.CodeAnalysis.CodeActions.CodeAction.get_EquivalenceKey
+  yaml: api\Microsoft.CodeAnalysis.CodeActions.CodeAction.yaml
+  href: api\Microsoft.CodeAnalysis.CodeActions.CodeAction
+  name:
+    CSharp: get_EquivalenceKey
+  qualifiedName:
+    CSharp: get_EquivalenceKey
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      local: C:\roslyn\
+      sha1: 1f481aa6a0c6e8392329364a28316e0b6cd563f3
+    path: src\Workspaces\Core\Portable\CodeActions\CodeAction.cs
+    startLine: 40
+- id: Microsoft.CodeAnalysis.CodeActions.CodeAction.GetOperationsAsync(System.Threading.CancellationToken)
+  yaml: api\Microsoft.CodeAnalysis.CodeActions.CodeAction.yaml
+  href: api\Microsoft.CodeAnalysis.CodeActions.CodeAction
+  name:
+    CSharp: GetOperationsAsync
+  qualifiedName:
+    CSharp: GetOperationsAsync
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      local: C:\roslyn\
+      sha1: 1f481aa6a0c6e8392329364a28316e0b6cd563f3
+    path: src\Workspaces\Core\Portable\CodeActions\CodeAction.cs
+    startLine: 45
+  summary: >+
+    The sequence of operations that define the code action.
+
+  syntax:
+    content:
+      CSharp: public async Task<ImmutableArray<CodeActionOperation>> GetOperationsAsync(CancellationToken cancellationToken)
+    parameters:
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+    return:
+      id: Task
+- id: Microsoft.CodeAnalysis.CodeActions.CodeAction.GetPreviewOperationsAsync(System.Threading.CancellationToken)
+  yaml: api\Microsoft.CodeAnalysis.CodeActions.CodeAction.yaml
+  href: api\Microsoft.CodeAnalysis.CodeActions.CodeAction
+  name:
+    CSharp: GetPreviewOperationsAsync
+  qualifiedName:
+    CSharp: GetPreviewOperationsAsync
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      local: C:\roslyn\
+      sha1: 1f481aa6a0c6e8392329364a28316e0b6cd563f3
+    path: src\Workspaces\Core\Portable\CodeActions\CodeAction.cs
+    startLine: 68
+  summary: >+
+    The sequence of operations used to construct a preview.
+
+  syntax:
+    content:
+      CSharp: public async Task<ImmutableArray<CodeActionOperation>> GetPreviewOperationsAsync(CancellationToken cancellationToken)
+    parameters:
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+    return:
+      id: Task
+- id: Microsoft.CodeAnalysis.CodeActions.CodeAction.Create(System.String,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{Microsoft.CodeAnalysis.Document}},System.String)
+  yaml: api\Microsoft.CodeAnalysis.CodeActions.CodeAction.yaml
+  href: api\Microsoft.CodeAnalysis.CodeActions.CodeAction
+  name:
+    CSharp: Create
+  qualifiedName:
+    CSharp: Create
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      local: C:\roslyn\
+      sha1: 1f481aa6a0c6e8392329364a28316e0b6cd563f3
+    path: src\Workspaces\Core\Portable\CodeActions\CodeAction.cs
+    startLine: 229
+  summary: >+
+    Creates a [Microsoft.CodeAnalysis.CodeActions.CodeAction](#/api\Microsoft.CodeAnalysis.CodeActions.CodeAction) for a change to a single [Microsoft.CodeAnalysis.Document](#/api\Microsoft.CodeAnalysis.Document).
+
+    Use this factory when the change is expensive to compute and should be deferred until requested.
+
+  syntax:
+    content:
+      CSharp: public static CodeAction Create(string title, Func<CancellationToken, Task<Document>> createChangedDocument, string equivalenceKey = null)
+    parameters:
+    - id: title
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+      description: Title of the [Microsoft.CodeAnalysis.CodeActions.CodeAction](#/api\Microsoft.CodeAnalysis.CodeActions.CodeAction).
+    - id: createChangedDocument
+      type:
+        id: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{Microsoft.CodeAnalysis.Document}}
+        name: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{Microsoft.CodeAnalysis.Document}}
+        isExternal: true
+      description: Function to create the [Microsoft.CodeAnalysis.Document](#/api\Microsoft.CodeAnalysis.Document).
+    - id: equivalenceKey
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+      description: Optional value used to determine the equivalence of the [Microsoft.CodeAnalysis.CodeActions.CodeAction](#/api\Microsoft.CodeAnalysis.CodeActions.CodeAction) with other [Microsoft.CodeAnalysis.CodeActions.CodeAction](#/api\Microsoft.CodeAnalysis.CodeActions.CodeAction)s. See [Microsoft.CodeAnalysis.CodeActions.CodeAction.EquivalenceKey](#/api\Microsoft.CodeAnalysis.CodeActions.CodeAction).
+    return:
+      id: CodeAction
+- id: Microsoft.CodeAnalysis.CodeActions.CodeAction.Create(System.String,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{Microsoft.CodeAnalysis.Solution}},System.String)
+  yaml: api\Microsoft.CodeAnalysis.CodeActions.CodeAction.yaml
+  href: api\Microsoft.CodeAnalysis.CodeActions.CodeAction
+  name:
+    CSharp: Create
+  qualifiedName:
+    CSharp: Create
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      local: C:\roslyn\
+      sha1: 1f481aa6a0c6e8392329364a28316e0b6cd563f3
+    path: src\Workspaces\Core\Portable\CodeActions\CodeAction.cs
+    startLine: 251
+  summary: >+
+    Creates a [Microsoft.CodeAnalysis.CodeActions.CodeAction](#/api\Microsoft.CodeAnalysis.CodeActions.CodeAction) for a change to more than one [Microsoft.CodeAnalysis.Document](#/api\Microsoft.CodeAnalysis.Document) within a [Microsoft.CodeAnalysis.Solution](#/api\Microsoft.CodeAnalysis.Solution).
+
+    Use this factory when the change is expensive to compute and should be deferred until requested.
+
+  syntax:
+    content:
+      CSharp: public static CodeAction Create(string title, Func<CancellationToken, Task<Solution>> createChangedSolution, string equivalenceKey = null)
+    parameters:
+    - id: title
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+      description: Title of the [Microsoft.CodeAnalysis.CodeActions.CodeAction](#/api\Microsoft.CodeAnalysis.CodeActions.CodeAction).
+    - id: createChangedSolution
+      type:
+        id: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{Microsoft.CodeAnalysis.Solution}}
+        name: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{Microsoft.CodeAnalysis.Solution}}
+        isExternal: true
+      description: Function to create the [Microsoft.CodeAnalysis.Solution](#/api\Microsoft.CodeAnalysis.Solution).
+    - id: equivalenceKey
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+      description: Optional value used to determine the equivalence of the [Microsoft.CodeAnalysis.CodeActions.CodeAction](#/api\Microsoft.CodeAnalysis.CodeActions.CodeAction) with other [Microsoft.CodeAnalysis.CodeActions.CodeAction](#/api\Microsoft.CodeAnalysis.CodeActions.CodeAction)s. See [Microsoft.CodeAnalysis.CodeActions.CodeAction.EquivalenceKey](#/api\Microsoft.CodeAnalysis.CodeActions.CodeAction).
+    return:
+      id: CodeAction
