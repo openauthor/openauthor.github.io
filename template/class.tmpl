@@ -43,7 +43,7 @@
                         <li class="section-member" ng-mouseleave="showBtn = false" ng-mouseenter ="showBtn = true" ng-init="showBtn=false">
                             <div class="section-member-header" >
                                 <h3 class="section-member-name">
-                                    {{item.name.CSharp}}
+                                    {{item.name.CSharp.replace(',', ', ')}}
                                 </h3>
                                 <div class="view-source btn" ng-show="showBtn">
                                     <a ng-href="{{ViewSource(item.source.startLine)}}">View Source</a>
@@ -79,7 +79,26 @@
                                                 <declaration ng-model="item.syntax.content.CSharp">
                                                 </declaration>
                                             </div>
-                                            <div class="parameters" ng-if="item.syntax.parameters" >
+                                            <div class="parameters" ng-if="item.syntax.parameters && item.type == 'Property'" >
+                                                <h4>Property Value</h4>
+                                                <table class="graybox" border="0" cellspacing="0" cellpadding="5">
+                                                    <tbody>
+                                                        <tr ng-repeat="par in item.syntax.parameters">
+                                                            <td scope="row">
+                                                                <a ng-href="#{{par.type.href}}">{{par.type.id}}</a>
+                                                            </td>
+                                                            <td>
+                                                                <div class="definition">
+                                                                    <p class="para">
+                                                                        {{par.description}}
+                                                                    </p>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="parameters" ng-if="item.syntax.parameters && item.type != 'Property'" >
                                                 <h4>Parameters</h4>
                                                 <table class="graybox" border="0" cellspacing="0" cellpadding="5">
                                                     <tbody>
