@@ -1,0 +1,604 @@
+id: Microsoft.CodeAnalysis.ModelExtensions
+yaml: api/Microsoft.CodeAnalysis.ModelExtensions.yaml
+href: api/Microsoft.CodeAnalysis.ModelExtensions
+name:
+  CSharp: ModelExtensions
+qualifiedName:
+  CSharp: Microsoft.CodeAnalysis.ModelExtensions
+type: Class
+source:
+  remote:
+    branch: master
+    repo: https://github.com/dotnet/roslyn.git
+    local: D:/Repo/RoslynGit/
+    sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+  path: src/Compilers/Core/Portable/Compilation/Extensions.cs
+  startLine: 12
+syntax:
+  content:
+    CSharp: public static class ModelExtensions
+inheritance:
+- id: System.Object
+  name: System.Object
+  isExternal: true
+items:
+- id: Microsoft.CodeAnalysis.ModelExtensions.GetSymbolInfo(Microsoft.CodeAnalysis.SemanticModel,Microsoft.CodeAnalysis.SyntaxNode,System.Threading.CancellationToken)
+  yaml: api/Microsoft.CodeAnalysis.ModelExtensions.yaml
+  href: api/Microsoft.CodeAnalysis.ModelExtensions
+  name:
+    CSharp: GetSymbolInfo
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.ModelExtensions.GetSymbolInfo(Microsoft.CodeAnalysis.SemanticModel,Microsoft.CodeAnalysis.SyntaxNode,System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Extensions.cs
+    startLine: 21
+  summary: >+
+    Gets symbol information about a syntax node.
+
+  syntax:
+    content:
+      CSharp: public static SymbolInfo GetSymbolInfo(this SemanticModel semanticModel, SyntaxNode node, CancellationToken cancellationToken = default (CancellationToken))
+    parameters:
+    - id: semanticModel
+      type:
+        id: Microsoft.CodeAnalysis.SemanticModel
+        name: SemanticModel
+        href: api/Microsoft.CodeAnalysis.SemanticModel
+    - id: node
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: api/Microsoft.CodeAnalysis.SyntaxNode
+      description: The syntax node to get semantic information for.
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+      description: >-
+        A cancellation token that can be used to cancel the
+
+            process of obtaining the semantic info.
+    return:
+      id: SymbolInfo
+- id: Microsoft.CodeAnalysis.ModelExtensions.GetSpeculativeSymbolInfo(Microsoft.CodeAnalysis.SemanticModel,System.Int32,Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.SpeculativeBindingOption)
+  yaml: api/Microsoft.CodeAnalysis.ModelExtensions.yaml
+  href: api/Microsoft.CodeAnalysis.ModelExtensions
+  name:
+    CSharp: GetSpeculativeSymbolInfo
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.ModelExtensions.GetSpeculativeSymbolInfo(Microsoft.CodeAnalysis.SemanticModel,System.Int32,Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.SpeculativeBindingOption)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Extensions.cs
+    startLine: 45
+  summary: >+
+    Binds the node in the context of the specified location and get semantic information
+
+    such as type, symbols and diagnostics. This method is used to get semantic information
+
+    about an expression that did not actually appear in the source code.
+
+  syntax:
+    content:
+      CSharp: public static SymbolInfo GetSpeculativeSymbolInfo(this SemanticModel semanticModel, int position, SyntaxNode expression, SpeculativeBindingOption bindingOption)
+    parameters:
+    - id: semanticModel
+      type:
+        id: Microsoft.CodeAnalysis.SemanticModel
+        name: SemanticModel
+        href: api/Microsoft.CodeAnalysis.SemanticModel
+    - id: position
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+      description: >-
+        A character position used to identify a declaration scope and
+
+            accessibility. This character position must be within the FullSpan of the Root syntax
+
+            node in this SemanticModel.
+    - id: expression
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: api/Microsoft.CodeAnalysis.SyntaxNode
+      description: >-
+        A syntax node that represents a parsed expression. This syntax
+
+            node need not and typically does not appear in the source code referred to  SemanticModel
+
+            instance.
+    - id: bindingOption
+      type:
+        id: Microsoft.CodeAnalysis.SpeculativeBindingOption
+        name: SpeculativeBindingOption
+        href: api/Microsoft.CodeAnalysis.SpeculativeBindingOption
+      description: >-
+        Indicates whether to binding the expression as a full expressions,
+
+            or as a type or namespace. If SpeculativeBindingOption.BindAsTypeOrNamespace is supplied, then
+
+            expression should derive from TypeSyntax.
+    return:
+      id: SymbolInfo
+      description: The semantic information for the topmost node of the expression.
+- id: Microsoft.CodeAnalysis.ModelExtensions.GetTypeInfo(Microsoft.CodeAnalysis.SemanticModel,Microsoft.CodeAnalysis.SyntaxNode,System.Threading.CancellationToken)
+  yaml: api/Microsoft.CodeAnalysis.ModelExtensions.yaml
+  href: api/Microsoft.CodeAnalysis.ModelExtensions
+  name:
+    CSharp: GetTypeInfo
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.ModelExtensions.GetTypeInfo(Microsoft.CodeAnalysis.SemanticModel,Microsoft.CodeAnalysis.SyntaxNode,System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Extensions.cs
+    startLine: 57
+  summary: >+
+    Gets type information about a syntax node.
+
+  syntax:
+    content:
+      CSharp: public static TypeInfo GetTypeInfo(this SemanticModel semanticModel, SyntaxNode node, CancellationToken cancellationToken = default (CancellationToken))
+    parameters:
+    - id: semanticModel
+      type:
+        id: Microsoft.CodeAnalysis.SemanticModel
+        name: SemanticModel
+        href: api/Microsoft.CodeAnalysis.SemanticModel
+    - id: node
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: api/Microsoft.CodeAnalysis.SyntaxNode
+      description: The syntax node to get semantic information for.
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+      description: >-
+        A cancellation token that can be used to cancel the
+
+            process of obtaining the semantic info.
+    return:
+      id: TypeInfo
+- id: Microsoft.CodeAnalysis.ModelExtensions.GetAliasInfo(Microsoft.CodeAnalysis.SemanticModel,Microsoft.CodeAnalysis.SyntaxNode,System.Threading.CancellationToken)
+  yaml: api/Microsoft.CodeAnalysis.ModelExtensions.yaml
+  href: api/Microsoft.CodeAnalysis.ModelExtensions
+  name:
+    CSharp: GetAliasInfo
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.ModelExtensions.GetAliasInfo(Microsoft.CodeAnalysis.SemanticModel,Microsoft.CodeAnalysis.SyntaxNode,System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Extensions.cs
+    startLine: 70
+  summary: >+
+    If "nameSyntax" resolves to an alias name, return the IAliasSymbol corresponding
+
+    to A. Otherwise return null.
+
+  syntax:
+    content:
+      CSharp: public static IAliasSymbol GetAliasInfo(this SemanticModel semanticModel, SyntaxNode nameSyntax, CancellationToken cancellationToken = default (CancellationToken))
+    parameters:
+    - id: semanticModel
+      type:
+        id: Microsoft.CodeAnalysis.SemanticModel
+        name: SemanticModel
+        href: api/Microsoft.CodeAnalysis.SemanticModel
+    - id: nameSyntax
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: api/Microsoft.CodeAnalysis.SyntaxNode
+      description: Name to get alias info for.
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+      description: >-
+        A cancellation token that can be used to cancel the
+
+            process of obtaining the alias information.
+    return:
+      id: IAliasSymbol
+- id: Microsoft.CodeAnalysis.ModelExtensions.GetSpeculativeAliasInfo(Microsoft.CodeAnalysis.SemanticModel,System.Int32,Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.SpeculativeBindingOption)
+  yaml: api/Microsoft.CodeAnalysis.ModelExtensions.yaml
+  href: api/Microsoft.CodeAnalysis.ModelExtensions
+  name:
+    CSharp: GetSpeculativeAliasInfo
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.ModelExtensions.GetSpeculativeAliasInfo(Microsoft.CodeAnalysis.SemanticModel,System.Int32,Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.SpeculativeBindingOption)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Extensions.cs
+    startLine: 92
+  summary: >+
+    Binds the name in the context of the specified location and sees if it resolves to an
+
+    alias name. If it does, return the AliasSymbol corresponding to it. Otherwise, return null.
+
+  syntax:
+    content:
+      CSharp: public static IAliasSymbol GetSpeculativeAliasInfo(this SemanticModel semanticModel, int position, SyntaxNode nameSyntax, SpeculativeBindingOption bindingOption)
+    parameters:
+    - id: semanticModel
+      type:
+        id: Microsoft.CodeAnalysis.SemanticModel
+        name: SemanticModel
+        href: api/Microsoft.CodeAnalysis.SemanticModel
+    - id: position
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+      description: >-
+        A character position used to identify a declaration scope and
+
+            accessibility. This character position must be within the FullSpan of the Root syntax
+
+            node in this SemanticModel.
+    - id: nameSyntax
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: api/Microsoft.CodeAnalysis.SyntaxNode
+      description: >-
+        A syntax node that represents a name. This syntax
+
+            node need not and typically does not appear in the source code referred to by the
+
+            SemanticModel instance.
+    - id: bindingOption
+      type:
+        id: Microsoft.CodeAnalysis.SpeculativeBindingOption
+        name: SpeculativeBindingOption
+        href: api/Microsoft.CodeAnalysis.SpeculativeBindingOption
+      description: >-
+        Indicates whether to binding the name as a full expression,
+
+            or as a type or namespace. If SpeculativeBindingOption.BindAsTypeOrNamespace is supplied, then
+
+            expression should derive from TypeSyntax.
+    return:
+      id: IAliasSymbol
+- id: Microsoft.CodeAnalysis.ModelExtensions.GetSpeculativeTypeInfo(Microsoft.CodeAnalysis.SemanticModel,System.Int32,Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.SpeculativeBindingOption)
+  yaml: api/Microsoft.CodeAnalysis.ModelExtensions.yaml
+  href: api/Microsoft.CodeAnalysis.ModelExtensions
+  name:
+    CSharp: GetSpeculativeTypeInfo
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.ModelExtensions.GetSpeculativeTypeInfo(Microsoft.CodeAnalysis.SemanticModel,System.Int32,Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.SpeculativeBindingOption)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Extensions.cs
+    startLine: 116
+  summary: >+
+    Binds the node in the context of the specified location and get semantic information
+
+    such as type, symbols and diagnostics. This method is used to get semantic information
+
+    about an expression that did not actually appear in the source code.
+
+  syntax:
+    content:
+      CSharp: public static TypeInfo GetSpeculativeTypeInfo(this SemanticModel semanticModel, int position, SyntaxNode expression, SpeculativeBindingOption bindingOption)
+    parameters:
+    - id: semanticModel
+      type:
+        id: Microsoft.CodeAnalysis.SemanticModel
+        name: SemanticModel
+        href: api/Microsoft.CodeAnalysis.SemanticModel
+    - id: position
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+      description: >-
+        A character position used to identify a declaration scope and
+
+            accessibility. This character position must be within the FullSpan of the Root syntax
+
+            node in this SemanticModel.
+    - id: expression
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: api/Microsoft.CodeAnalysis.SyntaxNode
+      description: >-
+        A syntax node that represents a parsed expression. This syntax
+
+            node need not and typically does not appear in the source code referred to  SemanticModel
+
+            instance.
+    - id: bindingOption
+      type:
+        id: Microsoft.CodeAnalysis.SpeculativeBindingOption
+        name: SpeculativeBindingOption
+        href: api/Microsoft.CodeAnalysis.SpeculativeBindingOption
+      description: >-
+        Indicates whether to binding the expression as a full expressions,
+
+            or as a type or namespace. If SpeculativeBindingOption.BindAsTypeOrNamespace is supplied, then
+
+            expression should derive from TypeSyntax.
+    return:
+      id: TypeInfo
+      description: The semantic information for the topmost node of the expression.
+- id: Microsoft.CodeAnalysis.ModelExtensions.GetDeclaredSymbol(Microsoft.CodeAnalysis.SemanticModel,Microsoft.CodeAnalysis.SyntaxNode,System.Threading.CancellationToken)
+  yaml: api/Microsoft.CodeAnalysis.ModelExtensions.yaml
+  href: api/Microsoft.CodeAnalysis.ModelExtensions
+  name:
+    CSharp: GetDeclaredSymbol
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.ModelExtensions.GetDeclaredSymbol(Microsoft.CodeAnalysis.SemanticModel,Microsoft.CodeAnalysis.SyntaxNode,System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Extensions.cs
+    startLine: 132
+  summary: >+
+    Gets the symbol associated with a declaration syntax node.
+
+  syntax:
+    content:
+      CSharp: public static ISymbol GetDeclaredSymbol(this SemanticModel semanticModel, SyntaxNode declaration, CancellationToken cancellationToken = default (CancellationToken))
+    parameters:
+    - id: semanticModel
+      type:
+        id: Microsoft.CodeAnalysis.SemanticModel
+        name: SemanticModel
+        href: api/Microsoft.CodeAnalysis.SemanticModel
+    - id: declaration
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: api/Microsoft.CodeAnalysis.SyntaxNode
+      description: >-
+        A syntax node that is a declaration. This can be any type
+
+            derived from MemberDeclarationSyntax, TypeDeclarationSyntax, EnumDeclarationSyntax,
+
+            NamespaceDeclarationSyntax, ParameterSyntax, TypeParameterSyntax, or the alias part of a
+
+            UsingDirectiveSyntax
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+      description: The cancellation token.
+    return:
+      id: ISymbol
+      description: The symbol declared by the node or null if the node is not a declaration.
+- id: Microsoft.CodeAnalysis.ModelExtensions.GetMemberGroup(Microsoft.CodeAnalysis.SemanticModel,Microsoft.CodeAnalysis.SyntaxNode,System.Threading.CancellationToken)
+  yaml: api/Microsoft.CodeAnalysis.ModelExtensions.yaml
+  href: api/Microsoft.CodeAnalysis.ModelExtensions
+  name:
+    CSharp: GetMemberGroup
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.ModelExtensions.GetMemberGroup(Microsoft.CodeAnalysis.SemanticModel,Microsoft.CodeAnalysis.SyntaxNode,System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Extensions.cs
+    startLine: 143
+  summary: >+
+    Gets a list of method or indexed property symbols for a syntax node.
+
+  syntax:
+    content:
+      CSharp: public static ImmutableArray<ISymbol> GetMemberGroup(this SemanticModel semanticModel, SyntaxNode node, CancellationToken cancellationToken = default (CancellationToken))
+    parameters:
+    - id: semanticModel
+      type:
+        id: Microsoft.CodeAnalysis.SemanticModel
+        name: SemanticModel
+        href: api/Microsoft.CodeAnalysis.SemanticModel
+    - id: node
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: api/Microsoft.CodeAnalysis.SyntaxNode
+      description: The syntax node to get semantic information for.
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+      description: The cancellation token.
+    return:
+      id: ImmutableArray
+- id: Microsoft.CodeAnalysis.ModelExtensions.AnalyzeControlFlow(Microsoft.CodeAnalysis.SemanticModel,Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.SyntaxNode)
+  yaml: api/Microsoft.CodeAnalysis.ModelExtensions.yaml
+  href: api/Microsoft.CodeAnalysis.ModelExtensions
+  name:
+    CSharp: AnalyzeControlFlow
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.ModelExtensions.AnalyzeControlFlow(Microsoft.CodeAnalysis.SemanticModel,Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.SyntaxNode)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Extensions.cs
+    startLine: 151
+  summary: >+
+    Analyze control-flow within a part of a method body.
+
+  syntax:
+    content:
+      CSharp: public static ControlFlowAnalysis AnalyzeControlFlow(this SemanticModel semanticModel, SyntaxNode firstStatement, SyntaxNode lastStatement)
+    parameters:
+    - id: semanticModel
+      type:
+        id: Microsoft.CodeAnalysis.SemanticModel
+        name: SemanticModel
+        href: api/Microsoft.CodeAnalysis.SemanticModel
+    - id: firstStatement
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: api/Microsoft.CodeAnalysis.SyntaxNode
+    - id: lastStatement
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: api/Microsoft.CodeAnalysis.SyntaxNode
+    return:
+      id: ControlFlowAnalysis
+- id: Microsoft.CodeAnalysis.ModelExtensions.AnalyzeControlFlow(Microsoft.CodeAnalysis.SemanticModel,Microsoft.CodeAnalysis.SyntaxNode)
+  yaml: api/Microsoft.CodeAnalysis.ModelExtensions.yaml
+  href: api/Microsoft.CodeAnalysis.ModelExtensions
+  name:
+    CSharp: AnalyzeControlFlow
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.ModelExtensions.AnalyzeControlFlow(Microsoft.CodeAnalysis.SemanticModel,Microsoft.CodeAnalysis.SyntaxNode)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Extensions.cs
+    startLine: 159
+  summary: >+
+    Analyze control-flow within a part of a method body.
+
+  syntax:
+    content:
+      CSharp: public static ControlFlowAnalysis AnalyzeControlFlow(this SemanticModel semanticModel, SyntaxNode statement)
+    parameters:
+    - id: semanticModel
+      type:
+        id: Microsoft.CodeAnalysis.SemanticModel
+        name: SemanticModel
+        href: api/Microsoft.CodeAnalysis.SemanticModel
+    - id: statement
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: api/Microsoft.CodeAnalysis.SyntaxNode
+    return:
+      id: ControlFlowAnalysis
+- id: Microsoft.CodeAnalysis.ModelExtensions.AnalyzeDataFlow(Microsoft.CodeAnalysis.SemanticModel,Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.SyntaxNode)
+  yaml: api/Microsoft.CodeAnalysis.ModelExtensions.yaml
+  href: api/Microsoft.CodeAnalysis.ModelExtensions
+  name:
+    CSharp: AnalyzeDataFlow
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.ModelExtensions.AnalyzeDataFlow(Microsoft.CodeAnalysis.SemanticModel,Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.SyntaxNode)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Extensions.cs
+    startLine: 167
+  summary: >+
+    Analyze data-flow within a part of a method body.
+
+  syntax:
+    content:
+      CSharp: public static DataFlowAnalysis AnalyzeDataFlow(this SemanticModel semanticModel, SyntaxNode firstStatement, SyntaxNode lastStatement)
+    parameters:
+    - id: semanticModel
+      type:
+        id: Microsoft.CodeAnalysis.SemanticModel
+        name: SemanticModel
+        href: api/Microsoft.CodeAnalysis.SemanticModel
+    - id: firstStatement
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: api/Microsoft.CodeAnalysis.SyntaxNode
+    - id: lastStatement
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: api/Microsoft.CodeAnalysis.SyntaxNode
+    return:
+      id: DataFlowAnalysis
+- id: Microsoft.CodeAnalysis.ModelExtensions.AnalyzeDataFlow(Microsoft.CodeAnalysis.SemanticModel,Microsoft.CodeAnalysis.SyntaxNode)
+  yaml: api/Microsoft.CodeAnalysis.ModelExtensions.yaml
+  href: api/Microsoft.CodeAnalysis.ModelExtensions
+  name:
+    CSharp: AnalyzeDataFlow
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.ModelExtensions.AnalyzeDataFlow(Microsoft.CodeAnalysis.SemanticModel,Microsoft.CodeAnalysis.SyntaxNode)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Extensions.cs
+    startLine: 175
+  summary: >+
+    Analyze data-flow within a part of a method body.
+
+  syntax:
+    content:
+      CSharp: public static DataFlowAnalysis AnalyzeDataFlow(this SemanticModel semanticModel, SyntaxNode statementOrExpression)
+    parameters:
+    - id: semanticModel
+      type:
+        id: Microsoft.CodeAnalysis.SemanticModel
+        name: SemanticModel
+        href: api/Microsoft.CodeAnalysis.SemanticModel
+    - id: statementOrExpression
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: api/Microsoft.CodeAnalysis.SyntaxNode
+    return:
+      id: DataFlowAnalysis

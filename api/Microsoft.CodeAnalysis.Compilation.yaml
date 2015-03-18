@@ -1,0 +1,2218 @@
+id: Microsoft.CodeAnalysis.Compilation
+yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+href: api/Microsoft.CodeAnalysis.Compilation
+name:
+  CSharp: Compilation
+qualifiedName:
+  CSharp: Microsoft.CodeAnalysis.Compilation
+type: Class
+source:
+  remote:
+    branch: master
+    repo: https://github.com/dotnet/roslyn.git
+    local: D:/Repo/RoslynGit/
+    sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+  path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+  startLine: 32
+summary: >+
+  The compilation object is an immutable representation of a single invocation of the
+
+  compiler. Although immutable, a compilation is also on-demand, and will realize and cache
+
+  data as necessary. A compilation can produce a new compilation from existing compilation
+
+  with the application of small deltas. In many cases, it is more efficient than creating a
+
+  new compilation from scratch, as the new compilation can reuse information from the old
+
+  compilation.
+
+syntax:
+  content:
+    CSharp: public abstract partial class Compilation
+inheritance:
+- id: System.Object
+  name: System.Object
+  isExternal: true
+items:
+- id: Microsoft.CodeAnalysis.Compilation.IsCaseSensitive
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: IsCaseSensitive
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.IsCaseSensitive
+  type: Property
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 43
+  summary: >+
+    Returns true if this is a case sensitive compilation, false otherwise.  Case sensitivity
+
+    affects compilation features such as name lookup as well as choosing what names to emit
+
+    when there are multiple different choices (for example between a virtual method and an
+
+    override).
+
+  syntax:
+    content:
+      CSharp: public abstract bool IsCaseSensitive
+    parameters:
+    - id: IsCaseSensitive
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+- id: Microsoft.CodeAnalysis.Compilation.get_IsCaseSensitive
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: get_IsCaseSensitive
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.get_IsCaseSensitive
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 43
+- id: Microsoft.CodeAnalysis.Compilation.Language
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: Language
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.Language
+  type: Property
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 88
+  summary: >+
+    Gets the source language ("C#" or "Visual Basic").
+
+  syntax:
+    content:
+      CSharp: public abstract string Language
+    parameters:
+    - id: Language
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+- id: Microsoft.CodeAnalysis.Compilation.get_Language
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: get_Language
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.get_Language
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 88
+- id: Microsoft.CodeAnalysis.Compilation.Clone
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: Clone
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.Clone
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 146
+  summary: >+
+    Creates a new compilation equivalent to this one with different symbol instances.
+
+  syntax:
+    content:
+      CSharp: public Compilation Clone()
+    parameters: []
+    return:
+      id: Compilation
+- id: Microsoft.CodeAnalysis.Compilation.GetSemanticModel(Microsoft.CodeAnalysis.SyntaxTree)
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: GetSemanticModel
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.GetSemanticModel(Microsoft.CodeAnalysis.SyntaxTree)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 161
+  summary: >+
+    Gets a new [Microsoft.CodeAnalysis.SemanticModel](#/api/Microsoft.CodeAnalysis.SemanticModel) for the specified syntax tree.
+
+  syntax:
+    content:
+      CSharp: public SemanticModel GetSemanticModel(SyntaxTree syntaxTree)
+    parameters:
+    - id: syntaxTree
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxTree
+        name: SyntaxTree
+        href: api/Microsoft.CodeAnalysis.SyntaxTree
+    return:
+      id: SemanticModel
+- id: Microsoft.CodeAnalysis.Compilation.CreateErrorTypeSymbol(Microsoft.CodeAnalysis.INamespaceOrTypeSymbol,System.String,System.Int32)
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: CreateErrorTypeSymbol
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.CreateErrorTypeSymbol(Microsoft.CodeAnalysis.INamespaceOrTypeSymbol,System.String,System.Int32)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 172
+  summary: >+
+    Returns a new INamedTypeSymbol representing an error type with the given name and arity
+
+    in the given optional container.
+
+  syntax:
+    content:
+      CSharp: public abstract INamedTypeSymbol CreateErrorTypeSymbol(INamespaceOrTypeSymbol container, string name, int arity);
+    parameters:
+    - id: container
+      type:
+        id: Microsoft.CodeAnalysis.INamespaceOrTypeSymbol
+        name: INamespaceOrTypeSymbol
+        href: api/Microsoft.CodeAnalysis.INamespaceOrTypeSymbol
+    - id: name
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+    - id: arity
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+    return:
+      id: INamedTypeSymbol
+- id: Microsoft.CodeAnalysis.Compilation.AssemblyName
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: AssemblyName
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.AssemblyName
+  type: Property
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 189
+  summary: >+
+    Simple assembly name, or null if not specified.
+
+  syntax:
+    content:
+      CSharp: public string AssemblyName
+    parameters:
+    - id: AssemblyName
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+- id: Microsoft.CodeAnalysis.Compilation.get_AssemblyName
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: get_AssemblyName
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.get_AssemblyName
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 189
+- id: Microsoft.CodeAnalysis.Compilation.WithAssemblyName(System.String)
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: WithAssemblyName
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.WithAssemblyName(System.String)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 219
+  summary: >+
+    Creates a compilation with the specified assembly name.
+
+  syntax:
+    content:
+      CSharp: public Compilation WithAssemblyName(string assemblyName)
+    parameters:
+    - id: assemblyName
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+      description: The new assembly name.
+    return:
+      id: Compilation
+      description: A new compilation.
+- id: Microsoft.CodeAnalysis.Compilation.Options
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: Options
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.Options
+  type: Property
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 233
+  summary: >+
+    Gets the options the compilation was created with.
+
+  syntax:
+    content:
+      CSharp: public CompilationOptions Options
+    parameters:
+    - id: Options
+      type:
+        id: Microsoft.CodeAnalysis.CompilationOptions
+        name: CompilationOptions
+        href: api/Microsoft.CodeAnalysis.CompilationOptions
+- id: Microsoft.CodeAnalysis.Compilation.get_Options
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: get_Options
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.get_Options
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 233
+- id: Microsoft.CodeAnalysis.Compilation.WithOptions(Microsoft.CodeAnalysis.CompilationOptions)
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: WithOptions
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.WithOptions(Microsoft.CodeAnalysis.CompilationOptions)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 242
+  summary: >+
+    Creates a new compilation with the specified compilation options.
+
+  syntax:
+    content:
+      CSharp: public Compilation WithOptions(CompilationOptions options)
+    parameters:
+    - id: options
+      type:
+        id: Microsoft.CodeAnalysis.CompilationOptions
+        name: CompilationOptions
+        href: api/Microsoft.CodeAnalysis.CompilationOptions
+      description: The new options.
+    return:
+      id: Compilation
+      description: A new compilation.
+- id: Microsoft.CodeAnalysis.Compilation.GetSubmissionResultType(System.Boolean@)
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: GetSubmissionResultType
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.GetSubmissionResultType(System.Boolean@)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 344
+  summary: >+
+    Returns the type of the submission return value.
+
+  syntax:
+    content:
+      CSharp: public ITypeSymbol GetSubmissionResultType(out bool hasValue)
+    parameters:
+    - id: hasValue
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+      description: >-
+        True if the submission has a return value, i.e. if the submission
+
+            ends with an expression statement.
+    return:
+      id: ITypeSymbol
+      description: "Null if the type of the last expression is unknown, \r\n    [System.Void](#) if the type of the last expression statement is\r\n    void or if the submission is not an expression statement, or\r\n    otherwise the type of the last expression."
+- id: Microsoft.CodeAnalysis.Compilation.PreviousSubmission
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: PreviousSubmission
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.PreviousSubmission
+  type: Property
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 356
+  summary: >+
+    The previous submission compilation, or null if either this
+
+    compilation doesn't represent a submission or the submission is the
+
+    first submission in a submission chain.
+
+  syntax:
+    content:
+      CSharp: public Compilation PreviousSubmission
+    parameters:
+    - id: PreviousSubmission
+      type:
+        id: Microsoft.CodeAnalysis.Compilation
+        name: Compilation
+        href: api/Microsoft.CodeAnalysis.Compilation
+- id: Microsoft.CodeAnalysis.Compilation.get_PreviousSubmission
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: get_PreviousSubmission
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.get_PreviousSubmission
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 356
+- id: Microsoft.CodeAnalysis.Compilation.WithPreviousSubmission(Microsoft.CodeAnalysis.Compilation)
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: WithPreviousSubmission
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.WithPreviousSubmission(Microsoft.CodeAnalysis.Compilation)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 364
+  summary: >+
+    Returns a new compilation with the given compilation set as the
+
+    previous submission.
+
+  syntax:
+    content:
+      CSharp: public Compilation WithPreviousSubmission(Compilation newPreviousSubmission)
+    parameters:
+    - id: newPreviousSubmission
+      type:
+        id: Microsoft.CodeAnalysis.Compilation
+        name: Compilation
+        href: api/Microsoft.CodeAnalysis.Compilation
+    return:
+      id: Compilation
+- id: Microsoft.CodeAnalysis.Compilation.SyntaxTrees
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: SyntaxTrees
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.SyntaxTrees
+  type: Property
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 378
+  summary: >+
+    Gets the syntax trees (parsed from source code) that this compilation was created with.
+
+  syntax:
+    content:
+      CSharp: public IEnumerable<SyntaxTree> SyntaxTrees
+    parameters:
+    - id: SyntaxTrees
+      type:
+        id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxTree}
+        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxTree}
+        isExternal: true
+- id: Microsoft.CodeAnalysis.Compilation.get_SyntaxTrees
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: get_SyntaxTrees
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.get_SyntaxTrees
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 378
+- id: Microsoft.CodeAnalysis.Compilation.AddSyntaxTrees(Microsoft.CodeAnalysis.SyntaxTree[])
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: AddSyntaxTrees
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.AddSyntaxTrees(Microsoft.CodeAnalysis.SyntaxTree[])
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 386
+  summary: >+
+    Creates a new compilation with additional syntax trees.
+
+  syntax:
+    content:
+      CSharp: public Compilation AddSyntaxTrees(params SyntaxTree[] trees)
+    parameters:
+    - id: trees
+      type:
+        id: System.Array
+        name: System.Array
+        isExternal: true
+      description: The new syntax trees.
+    return:
+      id: Compilation
+      description: A new compilation.
+- id: Microsoft.CodeAnalysis.Compilation.AddSyntaxTrees(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxTree})
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: AddSyntaxTrees
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.AddSyntaxTrees(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxTree})
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 396
+  summary: >+
+    Creates a new compilation with additional syntax trees.
+
+  syntax:
+    content:
+      CSharp: public Compilation AddSyntaxTrees(IEnumerable<SyntaxTree> trees)
+    parameters:
+    - id: trees
+      type:
+        id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxTree}
+        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxTree}
+        isExternal: true
+      description: The new syntax trees.
+    return:
+      id: Compilation
+      description: A new compilation.
+- id: Microsoft.CodeAnalysis.Compilation.RemoveSyntaxTrees(Microsoft.CodeAnalysis.SyntaxTree[])
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: RemoveSyntaxTrees
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.RemoveSyntaxTrees(Microsoft.CodeAnalysis.SyntaxTree[])
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 409
+  summary: >+
+    Creates a new compilation without the specified syntax trees. Preserves metadata info for use with trees
+
+    added later.
+
+  syntax:
+    content:
+      CSharp: public Compilation RemoveSyntaxTrees(params SyntaxTree[] trees)
+    parameters:
+    - id: trees
+      type:
+        id: System.Array
+        name: System.Array
+        isExternal: true
+      description: The new syntax trees.
+    return:
+      id: Compilation
+      description: A new compilation.
+- id: Microsoft.CodeAnalysis.Compilation.RemoveSyntaxTrees(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxTree})
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: RemoveSyntaxTrees
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.RemoveSyntaxTrees(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxTree})
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 420
+  summary: >+
+    Creates a new compilation without the specified syntax trees. Preserves metadata info for use with trees
+
+    added later.
+
+  syntax:
+    content:
+      CSharp: public Compilation RemoveSyntaxTrees(IEnumerable<SyntaxTree> trees)
+    parameters:
+    - id: trees
+      type:
+        id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxTree}
+        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxTree}
+        isExternal: true
+      description: The new syntax trees.
+    return:
+      id: Compilation
+      description: A new compilation.
+- id: Microsoft.CodeAnalysis.Compilation.RemoveAllSyntaxTrees
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: RemoveAllSyntaxTrees
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.RemoveAllSyntaxTrees
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 431
+  summary: >+
+    Creates a new compilation without any syntax trees. Preserves metadata info for use with
+
+    trees added later.
+
+  syntax:
+    content:
+      CSharp: public Compilation RemoveAllSyntaxTrees()
+    parameters: []
+    return:
+      id: Compilation
+- id: Microsoft.CodeAnalysis.Compilation.ReplaceSyntaxTree(Microsoft.CodeAnalysis.SyntaxTree,Microsoft.CodeAnalysis.SyntaxTree)
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: ReplaceSyntaxTree
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.ReplaceSyntaxTree(Microsoft.CodeAnalysis.SyntaxTree,Microsoft.CodeAnalysis.SyntaxTree)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 445
+  summary: >+
+    Creates a new compilation with an old syntax tree replaced with a new syntax tree.
+
+    Reuses metadata from old compilation object.
+
+  syntax:
+    content:
+      CSharp: public Compilation ReplaceSyntaxTree(SyntaxTree oldTree, SyntaxTree newTree)
+    parameters:
+    - id: oldTree
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxTree
+        name: SyntaxTree
+        href: api/Microsoft.CodeAnalysis.SyntaxTree
+      description: The old tree.
+    - id: newTree
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxTree
+        name: SyntaxTree
+        href: api/Microsoft.CodeAnalysis.SyntaxTree
+      description: The new tree.
+    return:
+      id: Compilation
+      description: A new compilation.
+- id: Microsoft.CodeAnalysis.Compilation.ContainsSyntaxTree(Microsoft.CodeAnalysis.SyntaxTree)
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: ContainsSyntaxTree
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.ContainsSyntaxTree(Microsoft.CodeAnalysis.SyntaxTree)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 456
+  summary: >+
+    Returns true if this compilation contains the specified tree. False otherwise.
+
+  syntax:
+    content:
+      CSharp: public bool ContainsSyntaxTree(SyntaxTree syntaxTree)
+    parameters:
+    - id: syntaxTree
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxTree
+        name: SyntaxTree
+        href: api/Microsoft.CodeAnalysis.SyntaxTree
+      description: A syntax tree.
+    return:
+      id: Boolean
+- id: Microsoft.CodeAnalysis.Compilation.ExternalReferences
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: ExternalReferences
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.ExternalReferences
+  type: Property
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 505
+  summary: >+
+    Metadata references passed to the compilation constructor.
+
+  syntax:
+    content:
+      CSharp: public ImmutableArray<MetadataReference> ExternalReferences
+    parameters:
+    - id: ExternalReferences
+      type:
+        id: System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.MetadataReference}
+        name: System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.MetadataReference}
+        isExternal: true
+- id: Microsoft.CodeAnalysis.Compilation.get_ExternalReferences
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: get_ExternalReferences
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.get_ExternalReferences
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 505
+- id: Microsoft.CodeAnalysis.Compilation.DirectiveReferences
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: DirectiveReferences
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.DirectiveReferences
+  type: Property
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 510
+  summary: >+
+    Unique metadata references specified via #r directive in the source code of this compilation.
+
+  syntax:
+    content:
+      CSharp: public abstract ImmutableArray<MetadataReference> DirectiveReferences
+    parameters:
+    - id: DirectiveReferences
+      type:
+        id: System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.MetadataReference}
+        name: System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.MetadataReference}
+        isExternal: true
+- id: Microsoft.CodeAnalysis.Compilation.get_DirectiveReferences
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: get_DirectiveReferences
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.get_DirectiveReferences
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 510
+- id: Microsoft.CodeAnalysis.Compilation.References
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: References
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.References
+  type: Property
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 526
+  summary: >+
+    All metadata references -- references passed to the compilation
+
+    constructor as well as references specified via #r directives.
+
+  syntax:
+    content:
+      CSharp: public IEnumerable<MetadataReference> References
+    parameters:
+    - id: References
+      type:
+        id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference}
+        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference}
+        isExternal: true
+- id: Microsoft.CodeAnalysis.Compilation.get_References
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: get_References
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.get_References
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 528
+- id: Microsoft.CodeAnalysis.Compilation.ToMetadataReference(System.Collections.Immutable.ImmutableArray{System.String},System.Boolean)
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: ToMetadataReference
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.ToMetadataReference(System.Collections.Immutable.ImmutableArray{System.String},System.Boolean)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 552
+  summary: >+
+    Creates a metadata reference for this compilation.
+
+  syntax:
+    content:
+      CSharp: public abstract CompilationReference ToMetadataReference(ImmutableArray<string> aliases = default (ImmutableArray<string>), bool embedInteropTypes = false);
+    parameters:
+    - id: aliases
+      type:
+        id: System.Collections.Immutable.ImmutableArray{System.String}
+        name: System.Collections.Immutable.ImmutableArray{System.String}
+        isExternal: true
+      description: Optional aliases that can be used to refer to the compilation root namespace via extern alias directive.
+    - id: embedInteropTypes
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+      description: >-
+        Embed the COM types from the reference so that the compiled
+
+            application no longer requires a primary interop assembly (PIA).
+    return:
+      id: CompilationReference
+- id: Microsoft.CodeAnalysis.Compilation.WithReferences(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference})
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: WithReferences
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.WithReferences(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference})
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 561
+  summary: >+
+    Creates a new compilation with the specified references.
+
+  syntax:
+    content:
+      CSharp: public Compilation WithReferences(IEnumerable<MetadataReference> newReferences)
+    parameters:
+    - id: newReferences
+      type:
+        id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference}
+        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference}
+        isExternal: true
+      description: The new references.
+    return:
+      id: Compilation
+      description: A new compilation.
+- id: Microsoft.CodeAnalysis.Compilation.WithReferences(Microsoft.CodeAnalysis.MetadataReference[])
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: WithReferences
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.WithReferences(Microsoft.CodeAnalysis.MetadataReference[])
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 571
+  summary: >+
+    Creates a new compilation with the specified references.
+
+  syntax:
+    content:
+      CSharp: public Compilation WithReferences(params MetadataReference[] newReferences)
+    parameters:
+    - id: newReferences
+      type:
+        id: System.Array
+        name: System.Array
+        isExternal: true
+      description: The new references.
+    return:
+      id: Compilation
+      description: A new compilation.
+- id: Microsoft.CodeAnalysis.Compilation.AddReferences(Microsoft.CodeAnalysis.MetadataReference[])
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: AddReferences
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.AddReferences(Microsoft.CodeAnalysis.MetadataReference[])
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 586
+  summary: >+
+    Creates a new compilation with additional metadata references.
+
+  syntax:
+    content:
+      CSharp: public Compilation AddReferences(params MetadataReference[] references)
+    parameters:
+    - id: references
+      type:
+        id: System.Array
+        name: System.Array
+        isExternal: true
+      description: The new references.
+    return:
+      id: Compilation
+      description: A new compilation.
+- id: Microsoft.CodeAnalysis.Compilation.AddReferences(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference})
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: AddReferences
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.AddReferences(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference})
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 596
+  summary: >+
+    Creates a new compilation with additional metadata references.
+
+  syntax:
+    content:
+      CSharp: public Compilation AddReferences(IEnumerable<MetadataReference> references)
+    parameters:
+    - id: references
+      type:
+        id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference}
+        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference}
+        isExternal: true
+      description: The new references.
+    return:
+      id: Compilation
+      description: A new compilation.
+- id: Microsoft.CodeAnalysis.Compilation.RemoveReferences(Microsoft.CodeAnalysis.MetadataReference[])
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: RemoveReferences
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.RemoveReferences(Microsoft.CodeAnalysis.MetadataReference[])
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 616
+  summary: >+
+    Creates a new compilation without the specified metadata references.
+
+  syntax:
+    content:
+      CSharp: public Compilation RemoveReferences(params MetadataReference[] references)
+    parameters:
+    - id: references
+      type:
+        id: System.Array
+        name: System.Array
+        isExternal: true
+      description: The new references.
+    return:
+      id: Compilation
+      description: A new compilation.
+- id: Microsoft.CodeAnalysis.Compilation.RemoveReferences(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference})
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: RemoveReferences
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.RemoveReferences(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference})
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 626
+  summary: >+
+    Creates a new compilation without the specified metadata references.
+
+  syntax:
+    content:
+      CSharp: public Compilation RemoveReferences(IEnumerable<MetadataReference> references)
+    parameters:
+    - id: references
+      type:
+        id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference}
+        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference}
+        isExternal: true
+      description: The new references.
+    return:
+      id: Compilation
+      description: A new compilation.
+- id: Microsoft.CodeAnalysis.Compilation.RemoveAllReferences
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: RemoveAllReferences
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.RemoveAllReferences
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 657
+  summary: >+
+    Creates a new compilation without any metadata references.
+
+  syntax:
+    content:
+      CSharp: public Compilation RemoveAllReferences()
+    parameters: []
+    return:
+      id: Compilation
+- id: Microsoft.CodeAnalysis.Compilation.ReplaceReference(Microsoft.CodeAnalysis.MetadataReference,Microsoft.CodeAnalysis.MetadataReference)
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: ReplaceReference
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.ReplaceReference(Microsoft.CodeAnalysis.MetadataReference,Microsoft.CodeAnalysis.MetadataReference)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 669
+  summary: >+
+    Creates a new compilation with an old metadata reference replaced with a new metadata
+
+    reference.
+
+  syntax:
+    content:
+      CSharp: public Compilation ReplaceReference(MetadataReference oldReference, MetadataReference newReference)
+    parameters:
+    - id: oldReference
+      type:
+        id: Microsoft.CodeAnalysis.MetadataReference
+        name: MetadataReference
+        href: api/Microsoft.CodeAnalysis.MetadataReference
+      description: The old reference.
+    - id: newReference
+      type:
+        id: Microsoft.CodeAnalysis.MetadataReference
+        name: MetadataReference
+        href: api/Microsoft.CodeAnalysis.MetadataReference
+      description: The new reference.
+    return:
+      id: Compilation
+      description: A new compilation.
+- id: Microsoft.CodeAnalysis.Compilation.GetAssemblyOrModuleSymbol(Microsoft.CodeAnalysis.MetadataReference)
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: GetAssemblyOrModuleSymbol
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.GetAssemblyOrModuleSymbol(Microsoft.CodeAnalysis.MetadataReference)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 692
+  summary: >+
+    Gets the [Microsoft.CodeAnalysis.IAssemblySymbol](#/api/Microsoft.CodeAnalysis.IAssemblySymbol) or [Microsoft.CodeAnalysis.IModuleSymbol](#/api/Microsoft.CodeAnalysis.IModuleSymbol) for a metadata reference used to create this
+
+    compilation.
+
+  syntax:
+    content:
+      CSharp: public ISymbol GetAssemblyOrModuleSymbol(MetadataReference reference)
+    parameters:
+    - id: reference
+      type:
+        id: Microsoft.CodeAnalysis.MetadataReference
+        name: MetadataReference
+        href: api/Microsoft.CodeAnalysis.MetadataReference
+      description: The target reference.
+    return:
+      id: ISymbol
+      description: Assembly or module symbol corresponding to the given reference or null if there is none.
+- id: Microsoft.CodeAnalysis.Compilation.GetMetadataReference(Microsoft.CodeAnalysis.IAssemblySymbol)
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: GetMetadataReference
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.GetMetadataReference(Microsoft.CodeAnalysis.IAssemblySymbol)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 703
+  summary: >+
+    Gets the [Microsoft.CodeAnalysis.MetadataReference](#/api/Microsoft.CodeAnalysis.MetadataReference) that corresponds to the assembly symbol.
+
+  syntax:
+    content:
+      CSharp: public MetadataReference GetMetadataReference(IAssemblySymbol assemblySymbol)
+    parameters:
+    - id: assemblySymbol
+      type:
+        id: Microsoft.CodeAnalysis.IAssemblySymbol
+        name: IAssemblySymbol
+        href: api/Microsoft.CodeAnalysis.IAssemblySymbol
+      description: The target symbol.
+    return:
+      id: MetadataReference
+- id: Microsoft.CodeAnalysis.Compilation.ReferencedAssemblyNames
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: ReferencedAssemblyNames
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.ReferencedAssemblyNames
+  type: Property
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 717
+  summary: >+
+    Assembly identities of all assemblies directly referenced by this compilation.
+
+  syntax:
+    content:
+      CSharp: public abstract IEnumerable<AssemblyIdentity> ReferencedAssemblyNames
+    parameters:
+    - id: ReferencedAssemblyNames
+      type:
+        id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.AssemblyIdentity}
+        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.AssemblyIdentity}
+        isExternal: true
+- id: Microsoft.CodeAnalysis.Compilation.get_ReferencedAssemblyNames
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: get_ReferencedAssemblyNames
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.get_ReferencedAssemblyNames
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 717
+- id: Microsoft.CodeAnalysis.Compilation.Assembly
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: Assembly
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.Assembly
+  type: Property
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 726
+  summary: >+
+    The [Microsoft.CodeAnalysis.IAssemblySymbol](#/api/Microsoft.CodeAnalysis.IAssemblySymbol) that represents the assembly being created.
+
+  syntax:
+    content:
+      CSharp: public IAssemblySymbol Assembly
+    parameters:
+    - id: Assembly
+      type:
+        id: Microsoft.CodeAnalysis.IAssemblySymbol
+        name: IAssemblySymbol
+        href: api/Microsoft.CodeAnalysis.IAssemblySymbol
+- id: Microsoft.CodeAnalysis.Compilation.get_Assembly
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: get_Assembly
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.get_Assembly
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 726
+- id: Microsoft.CodeAnalysis.Compilation.SourceModule
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: SourceModule
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.SourceModule
+  type: Property
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 733
+  summary: >+
+    Gets the [Microsoft.CodeAnalysis.IModuleSymbol](#/api/Microsoft.CodeAnalysis.IModuleSymbol) for the module being created by compiling all of
+
+    the source code.
+
+  syntax:
+    content:
+      CSharp: public IModuleSymbol SourceModule
+    parameters:
+    - id: SourceModule
+      type:
+        id: Microsoft.CodeAnalysis.IModuleSymbol
+        name: IModuleSymbol
+        href: api/Microsoft.CodeAnalysis.IModuleSymbol
+- id: Microsoft.CodeAnalysis.Compilation.get_SourceModule
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: get_SourceModule
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.get_SourceModule
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 733
+- id: Microsoft.CodeAnalysis.Compilation.GlobalNamespace
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: GlobalNamespace
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.GlobalNamespace
+  type: Property
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 740
+  summary: >+
+    The root namespace that contains all namespaces and types defined in source code or in
+
+    referenced metadata, merged into a single namespace hierarchy.
+
+  syntax:
+    content:
+      CSharp: public INamespaceSymbol GlobalNamespace
+    parameters:
+    - id: GlobalNamespace
+      type:
+        id: Microsoft.CodeAnalysis.INamespaceSymbol
+        name: INamespaceSymbol
+        href: api/Microsoft.CodeAnalysis.INamespaceSymbol
+- id: Microsoft.CodeAnalysis.Compilation.get_GlobalNamespace
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: get_GlobalNamespace
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.get_GlobalNamespace
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 740
+- id: Microsoft.CodeAnalysis.Compilation.GetCompilationNamespace(Microsoft.CodeAnalysis.INamespaceSymbol)
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: GetCompilationNamespace
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.GetCompilationNamespace(Microsoft.CodeAnalysis.INamespaceSymbol)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 746
+  summary: >+
+    Gets the corresponding compilation namespace for the specified module or assembly namespace.
+
+  syntax:
+    content:
+      CSharp: public INamespaceSymbol GetCompilationNamespace(INamespaceSymbol namespaceSymbol)
+    parameters:
+    - id: namespaceSymbol
+      type:
+        id: Microsoft.CodeAnalysis.INamespaceSymbol
+        name: INamespaceSymbol
+        href: api/Microsoft.CodeAnalysis.INamespaceSymbol
+    return:
+      id: INamespaceSymbol
+- id: Microsoft.CodeAnalysis.Compilation.GetEntryPoint(System.Threading.CancellationToken)
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: GetEntryPoint
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.GetEntryPoint(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 759
+  summary: >+
+    Returns the Main method that will serves as the entry point of the assembly, if it is
+
+    executable (and not a script).
+
+  syntax:
+    content:
+      CSharp: public IMethodSymbol GetEntryPoint(CancellationToken cancellationToken)
+    parameters:
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+    return:
+      id: IMethodSymbol
+- id: Microsoft.CodeAnalysis.Compilation.GetSpecialType(Microsoft.CodeAnalysis.SpecialType)
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: GetSpecialType
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.GetSpecialType(Microsoft.CodeAnalysis.SpecialType)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 770
+  summary: >+
+    Get the symbol for the predefined type from the Cor Library referenced by this
+
+    compilation.
+
+  syntax:
+    content:
+      CSharp: public INamedTypeSymbol GetSpecialType(SpecialType specialType)
+    parameters:
+    - id: specialType
+      type:
+        id: Microsoft.CodeAnalysis.SpecialType
+        name: SpecialType
+        href: api/Microsoft.CodeAnalysis.SpecialType
+    return:
+      id: INamedTypeSymbol
+- id: Microsoft.CodeAnalysis.Compilation.ObjectType
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: ObjectType
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.ObjectType
+  type: Property
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 793
+  summary: >+
+    The INamedTypeSymbol for the .NET System.Object type, which could have a TypeKind of
+
+    Error if there was no COR Library in this Compilation.
+
+  syntax:
+    content:
+      CSharp: public INamedTypeSymbol ObjectType
+    parameters:
+    - id: ObjectType
+      type:
+        id: Microsoft.CodeAnalysis.INamedTypeSymbol
+        name: INamedTypeSymbol
+        href: api/Microsoft.CodeAnalysis.INamedTypeSymbol
+- id: Microsoft.CodeAnalysis.Compilation.get_ObjectType
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: get_ObjectType
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.get_ObjectType
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 793
+- id: Microsoft.CodeAnalysis.Compilation.DynamicType
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: DynamicType
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.DynamicType
+  type: Property
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 799
+  summary: >+
+    The TypeSymbol for the type 'dynamic' in this Compilation.
+
+  syntax:
+    content:
+      CSharp: public ITypeSymbol DynamicType
+    parameters:
+    - id: DynamicType
+      type:
+        id: Microsoft.CodeAnalysis.ITypeSymbol
+        name: ITypeSymbol
+        href: api/Microsoft.CodeAnalysis.ITypeSymbol
+- id: Microsoft.CodeAnalysis.Compilation.get_DynamicType
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: get_DynamicType
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.get_DynamicType
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 799
+- id: Microsoft.CodeAnalysis.Compilation.ScriptClass
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: ScriptClass
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.ScriptClass
+  type: Property
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 806
+  summary: >+
+    A symbol representing the implicit Script class. This is null if the class is not
+
+    defined in the compilation.
+
+  syntax:
+    content:
+      CSharp: public INamedTypeSymbol ScriptClass
+    parameters:
+    - id: ScriptClass
+      type:
+        id: Microsoft.CodeAnalysis.INamedTypeSymbol
+        name: INamedTypeSymbol
+        href: api/Microsoft.CodeAnalysis.INamedTypeSymbol
+- id: Microsoft.CodeAnalysis.Compilation.get_ScriptClass
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: get_ScriptClass
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.get_ScriptClass
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 806
+- id: Microsoft.CodeAnalysis.Compilation.CreateArrayTypeSymbol(Microsoft.CodeAnalysis.ITypeSymbol,System.Int32)
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: CreateArrayTypeSymbol
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.CreateArrayTypeSymbol(Microsoft.CodeAnalysis.ITypeSymbol,System.Int32)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 813
+  summary: >+
+    Returns a new ArrayTypeSymbol representing an array type tied to the base types of the
+
+    COR Library in this Compilation.
+
+  syntax:
+    content:
+      CSharp: public IArrayTypeSymbol CreateArrayTypeSymbol(ITypeSymbol elementType, int rank = 1)
+    parameters:
+    - id: elementType
+      type:
+        id: Microsoft.CodeAnalysis.ITypeSymbol
+        name: ITypeSymbol
+        href: api/Microsoft.CodeAnalysis.ITypeSymbol
+    - id: rank
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+    return:
+      id: IArrayTypeSymbol
+- id: Microsoft.CodeAnalysis.Compilation.CreatePointerTypeSymbol(Microsoft.CodeAnalysis.ITypeSymbol)
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: CreatePointerTypeSymbol
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.CreatePointerTypeSymbol(Microsoft.CodeAnalysis.ITypeSymbol)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 824
+  summary: >+
+    Returns a new PointerTypeSymbol representing a pointer type tied to a type in this
+
+    Compilation.
+
+  syntax:
+    content:
+      CSharp: public IPointerTypeSymbol CreatePointerTypeSymbol(ITypeSymbol pointedAtType)
+    parameters:
+    - id: pointedAtType
+      type:
+        id: Microsoft.CodeAnalysis.ITypeSymbol
+        name: ITypeSymbol
+        href: api/Microsoft.CodeAnalysis.ITypeSymbol
+    return:
+      id: IPointerTypeSymbol
+- id: Microsoft.CodeAnalysis.Compilation.GetTypeByMetadataName(System.String)
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: GetTypeByMetadataName
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.GetTypeByMetadataName(System.String)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 839
+  summary: >+
+    Gets the type within the compilation's assembly and all referenced assemblies (other than
+
+    those that can only be referenced via an extern alias) using its canonical CLR metadata name.
+
+  syntax:
+    content:
+      CSharp: public INamedTypeSymbol GetTypeByMetadataName(string fullyQualifiedMetadataName)
+    parameters:
+    - id: fullyQualifiedMetadataName
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+    return:
+      id: INamedTypeSymbol
+      description: Null if the type can't be found.
+- id: Microsoft.CodeAnalysis.Compilation.GetParseDiagnostics(System.Threading.CancellationToken)
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: GetParseDiagnostics
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.GetParseDiagnostics(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 855
+  summary: >+
+    Gets the diagnostics produced during the parsing stage.
+
+  syntax:
+    content:
+      CSharp: public abstract ImmutableArray<Diagnostic> GetParseDiagnostics(CancellationToken cancellationToken = default (CancellationToken));
+    parameters:
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+    return:
+      id: ImmutableArray
+- id: Microsoft.CodeAnalysis.Compilation.GetDeclarationDiagnostics(System.Threading.CancellationToken)
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: GetDeclarationDiagnostics
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.GetDeclarationDiagnostics(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 860
+  summary: >+
+    Gets the diagnostics produced during symbol declaration.
+
+  syntax:
+    content:
+      CSharp: public abstract ImmutableArray<Diagnostic> GetDeclarationDiagnostics(CancellationToken cancellationToken = default (CancellationToken));
+    parameters:
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+    return:
+      id: ImmutableArray
+- id: Microsoft.CodeAnalysis.Compilation.GetMethodBodyDiagnostics(System.Threading.CancellationToken)
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: GetMethodBodyDiagnostics
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.GetMethodBodyDiagnostics(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 865
+  summary: >+
+    Gets the diagnostics produced during the analysis of method bodies and field initializers.
+
+  syntax:
+    content:
+      CSharp: public abstract ImmutableArray<Diagnostic> GetMethodBodyDiagnostics(CancellationToken cancellationToken = default (CancellationToken));
+    parameters:
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+    return:
+      id: ImmutableArray
+- id: Microsoft.CodeAnalysis.Compilation.GetDiagnostics(System.Threading.CancellationToken)
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: GetDiagnostics
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.GetDiagnostics(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 872
+  summary: >+
+    Gets all the diagnostics for the compilation, including syntax, declaration, and
+
+    binding. Does not include any diagnostics that might be produced during emit, see
+
+    [Microsoft.CodeAnalysis.Emit.EmitResult](#/api/Microsoft.CodeAnalysis.Emit.EmitResult).
+
+  syntax:
+    content:
+      CSharp: public abstract ImmutableArray<Diagnostic> GetDiagnostics(CancellationToken cancellationToken = default (CancellationToken));
+    parameters:
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+    return:
+      id: ImmutableArray
+- id: Microsoft.CodeAnalysis.Compilation.CreateDefaultWin32Resources(System.Boolean,System.Boolean,System.IO.Stream,System.IO.Stream)
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: CreateDefaultWin32Resources
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.CreateDefaultWin32Resources(System.Boolean,System.Boolean,System.IO.Stream,System.IO.Stream)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 895
+  summary: >+
+    Create a stream filled with default win32 resources.
+
+  syntax:
+    content:
+      CSharp: public Stream CreateDefaultWin32Resources(bool versionResource, bool noManifest, Stream manifestContents, Stream iconInIcoFormat)
+    parameters:
+    - id: versionResource
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+    - id: noManifest
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+    - id: manifestContents
+      type:
+        id: System.IO.Stream
+        name: System.IO.Stream
+        isExternal: true
+    - id: iconInIcoFormat
+      type:
+        id: System.IO.Stream
+        name: System.IO.Stream
+        isExternal: true
+    return:
+      id: Stream
+- id: Microsoft.CodeAnalysis.Compilation.Emit(System.IO.Stream,System.IO.Stream,System.IO.Stream,System.IO.Stream,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ResourceDescription},Microsoft.CodeAnalysis.Emit.EmitOptions,System.Threading.CancellationToken)
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: Emit
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.Emit(System.IO.Stream,System.IO.Stream,System.IO.Stream,System.IO.Stream,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ResourceDescription},Microsoft.CodeAnalysis.Emit.EmitOptions,System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 1320
+  summary: >+
+    Emit the IL for the compiled source code into the specified stream.
+
+  syntax:
+    content:
+      CSharp: public EmitResult Emit(Stream peStream, Stream pdbStream = null, Stream xmlDocumentationStream = null, Stream win32Resources = null, IEnumerable<ResourceDescription> manifestResources = null, EmitOptions options = null, CancellationToken cancellationToken = default (CancellationToken))
+    parameters:
+    - id: peStream
+      type:
+        id: System.IO.Stream
+        name: System.IO.Stream
+        isExternal: true
+      description: Stream to which the compilation will be written.
+    - id: pdbStream
+      type:
+        id: System.IO.Stream
+        name: System.IO.Stream
+        isExternal: true
+      description: Stream to which the compilation's debug info will be written.  Null to forego PDB generation.
+    - id: xmlDocumentationStream
+      type:
+        id: System.IO.Stream
+        name: System.IO.Stream
+        isExternal: true
+      description: Stream to which the compilation's XML documentation will be written.  Null to forego XML generation.
+    - id: win32Resources
+      type:
+        id: System.IO.Stream
+        name: System.IO.Stream
+        isExternal: true
+      description: "Stream from which the compilation's Win32 resources will be read (in RES format).  \r\n    Null to indicate that there are none. The RES format begins with a null resource entry."
+    - id: manifestResources
+      type:
+        id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ResourceDescription}
+        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ResourceDescription}
+        isExternal: true
+      description: List of the compilation's managed resources.  Null to indicate that there are none.
+    - id: options
+      type:
+        id: Microsoft.CodeAnalysis.Emit.EmitOptions
+        name: EmitOptions
+        href: api/Microsoft.CodeAnalysis.Emit.EmitOptions
+      description: Emit options.
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+      description: To cancel the emit process.
+    return:
+      id: EmitResult
+- id: Microsoft.CodeAnalysis.Compilation.EmitDifference(Microsoft.CodeAnalysis.Emit.EmitBaseline,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Emit.SemanticEdit},System.IO.Stream,System.IO.Stream,System.IO.Stream,System.Collections.Generic.ICollection{System.Reflection.Metadata.MethodDefinitionHandle},System.Threading.CancellationToken)
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: EmitDifference
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.EmitDifference(Microsoft.CodeAnalysis.Emit.EmitBaseline,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Emit.SemanticEdit},System.IO.Stream,System.IO.Stream,System.IO.Stream,System.Collections.Generic.ICollection{System.Reflection.Metadata.MethodDefinitionHandle},System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 1362
+  summary: >+
+    Emit the differences between the compilation and the previous generation
+
+    for Edit and Continue. The differences are expressed as added and changed
+
+    symbols, and are emitted as metadata, IL, and PDB deltas. A representation
+
+    of the current compilation is returned as an EmitBaseline for use in a
+
+    subsequent Edit and Continue.
+
+  syntax:
+    content:
+      CSharp: public EmitDifferenceResult EmitDifference(EmitBaseline baseline, IEnumerable<SemanticEdit> edits, Stream metadataStream, Stream ilStream, Stream pdbStream, ICollection<MethodDefinitionHandle> updatedMethods, CancellationToken cancellationToken = default (CancellationToken))
+    parameters:
+    - id: baseline
+      type:
+        id: Microsoft.CodeAnalysis.Emit.EmitBaseline
+        name: EmitBaseline
+        href: api/Microsoft.CodeAnalysis.Emit.EmitBaseline
+    - id: edits
+      type:
+        id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Emit.SemanticEdit}
+        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Emit.SemanticEdit}
+        isExternal: true
+    - id: metadataStream
+      type:
+        id: System.IO.Stream
+        name: System.IO.Stream
+        isExternal: true
+    - id: ilStream
+      type:
+        id: System.IO.Stream
+        name: System.IO.Stream
+        isExternal: true
+    - id: pdbStream
+      type:
+        id: System.IO.Stream
+        name: System.IO.Stream
+        isExternal: true
+    - id: updatedMethods
+      type:
+        id: System.Collections.Generic.ICollection{System.Reflection.Metadata.MethodDefinitionHandle}
+        name: System.Collections.Generic.ICollection{System.Reflection.Metadata.MethodDefinitionHandle}
+        isExternal: true
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+    return:
+      id: EmitDifferenceResult
+- id: Microsoft.CodeAnalysis.Compilation.EmitDifference(Microsoft.CodeAnalysis.Emit.EmitBaseline,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Emit.SemanticEdit},System.Func{Microsoft.CodeAnalysis.ISymbol,System.Boolean},System.IO.Stream,System.IO.Stream,System.IO.Stream,System.Collections.Generic.ICollection{System.Reflection.Metadata.MethodDefinitionHandle},System.Threading.CancellationToken)
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: EmitDifference
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.EmitDifference(Microsoft.CodeAnalysis.Emit.EmitBaseline,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Emit.SemanticEdit},System.Func{Microsoft.CodeAnalysis.ISymbol,System.Boolean},System.IO.Stream,System.IO.Stream,System.IO.Stream,System.Collections.Generic.ICollection{System.Reflection.Metadata.MethodDefinitionHandle},System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 1381
+  summary: >+
+    Emit the differences between the compilation and the previous generation
+
+    for Edit and Continue. The differences are expressed as added and changed
+
+    symbols, and are emitted as metadata, IL, and PDB deltas. A representation
+
+    of the current compilation is returned as an EmitBaseline for use in a
+
+    subsequent Edit and Continue.
+
+  syntax:
+    content:
+      CSharp: public EmitDifferenceResult EmitDifference(EmitBaseline baseline, IEnumerable<SemanticEdit> edits, Func<ISymbol, bool> isAddedSymbol, Stream metadataStream, Stream ilStream, Stream pdbStream, ICollection<MethodDefinitionHandle> updatedMethods, CancellationToken cancellationToken = default (CancellationToken))
+    parameters:
+    - id: baseline
+      type:
+        id: Microsoft.CodeAnalysis.Emit.EmitBaseline
+        name: EmitBaseline
+        href: api/Microsoft.CodeAnalysis.Emit.EmitBaseline
+    - id: edits
+      type:
+        id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Emit.SemanticEdit}
+        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Emit.SemanticEdit}
+        isExternal: true
+    - id: isAddedSymbol
+      type:
+        id: System.Func{Microsoft.CodeAnalysis.ISymbol,System.Boolean}
+        name: System.Func{Microsoft.CodeAnalysis.ISymbol,System.Boolean}
+        isExternal: true
+    - id: metadataStream
+      type:
+        id: System.IO.Stream
+        name: System.IO.Stream
+        isExternal: true
+    - id: ilStream
+      type:
+        id: System.IO.Stream
+        name: System.IO.Stream
+        isExternal: true
+    - id: pdbStream
+      type:
+        id: System.IO.Stream
+        name: System.IO.Stream
+        isExternal: true
+    - id: updatedMethods
+      type:
+        id: System.Collections.Generic.ICollection{System.Reflection.Metadata.MethodDefinitionHandle}
+        name: System.Collections.Generic.ICollection{System.Reflection.Metadata.MethodDefinitionHandle}
+        isExternal: true
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+    return:
+      id: EmitDifferenceResult
+- id: Microsoft.CodeAnalysis.Compilation.ContainsSymbolsWithName(System.Func{System.String,System.Boolean},Microsoft.CodeAnalysis.SymbolFilter,System.Threading.CancellationToken)
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: ContainsSymbolsWithName
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.ContainsSymbolsWithName(System.Func{System.String,System.Boolean},Microsoft.CodeAnalysis.SymbolFilter,System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 1839
+  summary: >+
+    Return true if there is a source declaration symbol name that meets given predicate.
+
+  syntax:
+    content:
+      CSharp: public abstract bool ContainsSymbolsWithName(Func<string, bool> predicate, SymbolFilter filter = SymbolFilter.TypeAndMember, CancellationToken cancellationToken = default (CancellationToken));
+    parameters:
+    - id: predicate
+      type:
+        id: System.Func{System.String,System.Boolean}
+        name: System.Func{System.String,System.Boolean}
+        isExternal: true
+    - id: filter
+      type:
+        id: Microsoft.CodeAnalysis.SymbolFilter
+        name: SymbolFilter
+        href: api/Microsoft.CodeAnalysis.SymbolFilter
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+    return:
+      id: Boolean
+- id: Microsoft.CodeAnalysis.Compilation.GetSymbolsWithName(System.Func{System.String,System.Boolean},Microsoft.CodeAnalysis.SymbolFilter,System.Threading.CancellationToken)
+  yaml: api/Microsoft.CodeAnalysis.Compilation.yaml
+  href: api/Microsoft.CodeAnalysis.Compilation
+  name:
+    CSharp: GetSymbolsWithName
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Compilation.GetSymbolsWithName(System.Func{System.String,System.Boolean},Microsoft.CodeAnalysis.SymbolFilter,System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/Compilation.cs
+    startLine: 1844
+  summary: >+
+    Return source declaration symbols whose name meets given predicate.
+
+  syntax:
+    content:
+      CSharp: public abstract IEnumerable<ISymbol> GetSymbolsWithName(Func<string, bool> predicate, SymbolFilter filter = SymbolFilter.TypeAndMember, CancellationToken cancellationToken = default (CancellationToken));
+    parameters:
+    - id: predicate
+      type:
+        id: System.Func{System.String,System.Boolean}
+        name: System.Func{System.String,System.Boolean}
+        isExternal: true
+    - id: filter
+      type:
+        id: Microsoft.CodeAnalysis.SymbolFilter
+        name: SymbolFilter
+        href: api/Microsoft.CodeAnalysis.SymbolFilter
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+    return:
+      id: IEnumerable

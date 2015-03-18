@@ -1,0 +1,486 @@
+id: Microsoft.CodeAnalysis.ModuleMetadata
+yaml: api/Microsoft.CodeAnalysis.ModuleMetadata.yaml
+href: api/Microsoft.CodeAnalysis.ModuleMetadata
+name:
+  CSharp: ModuleMetadata
+qualifiedName:
+  CSharp: Microsoft.CodeAnalysis.ModuleMetadata
+type: Class
+source:
+  remote:
+    branch: master
+    repo: https://github.com/dotnet/roslyn.git
+    local: D:/Repo/RoslynGit/
+    sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+  path: src/Compilers/Core/Portable/MetadataReference/ModuleMetadata.cs
+  startLine: 17
+summary: >+
+  Represents an immutable snapshot of module CLI metadata.
+
+syntax:
+  content:
+    CSharp: public sealed partial class ModuleMetadata
+inheritance:
+- id: System.Object
+  name: System.Object
+  isExternal: true
+- id: Microsoft.CodeAnalysis.Metadata
+  name: Metadata
+  href: api/Microsoft.CodeAnalysis.Metadata
+items:
+- id: Microsoft.CodeAnalysis.ModuleMetadata.CreateFromMetadata(System.IntPtr,System.Int32)
+  yaml: api/Microsoft.CodeAnalysis.ModuleMetadata.yaml
+  href: api/Microsoft.CodeAnalysis.ModuleMetadata
+  name:
+    CSharp: CreateFromMetadata
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.ModuleMetadata.CreateFromMetadata(System.IntPtr,System.Int32)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/MetadataReference/ModuleMetadata.cs
+    startLine: 50
+  summary: >+
+    Create metadata module from a raw memory pointer to metadata directory of a PE image or .cormeta section of an object file.
+
+    Only manifest modules are currently supported.
+
+  syntax:
+    content:
+      CSharp: public static ModuleMetadata CreateFromMetadata(IntPtr metadata, int size)
+    parameters:
+    - id: metadata
+      type:
+        id: System.IntPtr
+        name: System.IntPtr
+        isExternal: true
+      description: Pointer to the start of metadata block.
+    - id: size
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+      description: The size of the metadata block.
+    return:
+      id: ModuleMetadata
+- id: Microsoft.CodeAnalysis.ModuleMetadata.CreateFromImage(System.IntPtr,System.Int32)
+  yaml: api/Microsoft.CodeAnalysis.ModuleMetadata.yaml
+  href: api/Microsoft.CodeAnalysis.ModuleMetadata
+  name:
+    CSharp: CreateFromImage
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.ModuleMetadata.CreateFromImage(System.IntPtr,System.Int32)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/MetadataReference/ModuleMetadata.cs
+    startLine: 79
+  summary: >+
+    Create metadata module from a raw memory pointer to a PE image or an object file.
+
+  syntax:
+    content:
+      CSharp: public static unsafe ModuleMetadata CreateFromImage(IntPtr peImage, int size)
+    parameters:
+    - id: peImage
+      type:
+        id: System.IntPtr
+        name: System.IntPtr
+        isExternal: true
+      description: Pointer to the DOS header ("MZ") of a portable executable image.
+    - id: size
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+      description: The size of the image pointed to by .
+    return:
+      id: ModuleMetadata
+- id: Microsoft.CodeAnalysis.ModuleMetadata.CreateFromImage(System.Collections.Generic.IEnumerable{System.Byte})
+  yaml: api/Microsoft.CodeAnalysis.ModuleMetadata.yaml
+  href: api/Microsoft.CodeAnalysis.ModuleMetadata
+  name:
+    CSharp: CreateFromImage
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.ModuleMetadata.CreateFromImage(System.Collections.Generic.IEnumerable{System.Byte})
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/MetadataReference/ModuleMetadata.cs
+    startLine: 99
+  summary: >+
+    Create metadata module from a sequence of bytes.
+
+  syntax:
+    content:
+      CSharp: public static ModuleMetadata CreateFromImage(IEnumerable<byte> peImage)
+    parameters:
+    - id: peImage
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Byte}
+        name: System.Collections.Generic.IEnumerable{System.Byte}
+        isExternal: true
+      description: The portable executable image beginning with the DOS header ("MZ").
+    return:
+      id: ModuleMetadata
+- id: Microsoft.CodeAnalysis.ModuleMetadata.CreateFromImage(System.Collections.Immutable.ImmutableArray{System.Byte})
+  yaml: api/Microsoft.CodeAnalysis.ModuleMetadata.yaml
+  href: api/Microsoft.CodeAnalysis.ModuleMetadata
+  name:
+    CSharp: CreateFromImage
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.ModuleMetadata.CreateFromImage(System.Collections.Immutable.ImmutableArray{System.Byte})
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/MetadataReference/ModuleMetadata.cs
+    startLine: 114
+  summary: >+
+    Create metadata module from a byte array.
+
+  syntax:
+    content:
+      CSharp: public static ModuleMetadata CreateFromImage(ImmutableArray<byte> peImage)
+    parameters:
+    - id: peImage
+      type:
+        id: System.Collections.Immutable.ImmutableArray{System.Byte}
+        name: System.Collections.Immutable.ImmutableArray{System.Byte}
+        isExternal: true
+      description: Portable executable image beginning with the DOS header ("MZ").
+    return:
+      id: ModuleMetadata
+- id: Microsoft.CodeAnalysis.ModuleMetadata.CreateFromStream(System.IO.Stream,System.Boolean)
+  yaml: api/Microsoft.CodeAnalysis.ModuleMetadata.yaml
+  href: api/Microsoft.CodeAnalysis.ModuleMetadata
+  name:
+    CSharp: CreateFromStream
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.ModuleMetadata.CreateFromStream(System.IO.Stream,System.Boolean)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/MetadataReference/ModuleMetadata.cs
+    startLine: 134
+  summary: >+
+    Create metadata module from a stream.
+
+  syntax:
+    content:
+      CSharp: public static ModuleMetadata CreateFromStream(Stream peStream, bool leaveOpen = false)
+    parameters:
+    - id: peStream
+      type:
+        id: System.IO.Stream
+        name: System.IO.Stream
+        isExternal: true
+      description: Stream containing portable executable image. Position zero should contain the first byte of the DOS header ("MZ").
+    - id: leaveOpen
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+      description: >-
+        False to close the stream upon disposal of the metadata (the responsibility for disposal of the stream is transferred upon entry of the constructor
+
+            unless the arguments given are invalid).
+    return:
+      id: ModuleMetadata
+- id: Microsoft.CodeAnalysis.ModuleMetadata.CreateFromStream(System.IO.Stream,System.Reflection.PortableExecutable.PEStreamOptions)
+  yaml: api/Microsoft.CodeAnalysis.ModuleMetadata.yaml
+  href: api/Microsoft.CodeAnalysis.ModuleMetadata
+  name:
+    CSharp: CreateFromStream
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.ModuleMetadata.CreateFromStream(System.IO.Stream,System.Reflection.PortableExecutable.PEStreamOptions)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/MetadataReference/ModuleMetadata.cs
+    startLine: 157
+  summary: >+
+    Create metadata module from a stream.
+
+  syntax:
+    content:
+      CSharp: public static ModuleMetadata CreateFromStream(Stream peStream, PEStreamOptions options)
+    parameters:
+    - id: peStream
+      type:
+        id: System.IO.Stream
+        name: System.IO.Stream
+        isExternal: true
+      description: Stream containing portable executable image. Position zero should contain the first byte of the DOS header ("MZ").
+    - id: options
+      type:
+        id: System.Reflection.PortableExecutable.PEStreamOptions
+        name: System.Reflection.PortableExecutable.PEStreamOptions
+        isExternal: true
+      description: >-
+        Options specifying how sections of the PE image are read from the stream.
+
+            Unless [System.Reflection.PortableExecutable.PEStreamOptions.LeaveOpen](#) is specified, the responsibility for disposal of the stream is transferred upon entry of the constructor
+
+            unless the arguments given are invalid.
+    return:
+      id: ModuleMetadata
+- id: Microsoft.CodeAnalysis.ModuleMetadata.CreateFromFile(System.String)
+  yaml: api/Microsoft.CodeAnalysis.ModuleMetadata.yaml
+  href: api/Microsoft.CodeAnalysis.ModuleMetadata
+  name:
+    CSharp: CreateFromFile
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.ModuleMetadata.CreateFromFile(System.String)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/MetadataReference/ModuleMetadata.cs
+    startLine: 186
+  summary: >+
+    Creates metadata module from a file containing a portable executable image.
+
+  syntax:
+    content:
+      CSharp: public static ModuleMetadata CreateFromFile(string path)
+    parameters:
+    - id: path
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+      description: File path.
+    return:
+      id: ModuleMetadata
+- id: Microsoft.CodeAnalysis.ModuleMetadata.Dispose
+  yaml: api/Microsoft.CodeAnalysis.ModuleMetadata.yaml
+  href: api/Microsoft.CodeAnalysis.ModuleMetadata
+  name:
+    CSharp: Dispose
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.ModuleMetadata.Dispose
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/MetadataReference/ModuleMetadata.cs
+    startLine: 214
+  summary: >+
+    Frees memory and handles allocated for the module.
+
+  syntax:
+    content:
+      CSharp: public override void Dispose()
+    parameters: []
+    return:
+      id: Void
+- id: Microsoft.CodeAnalysis.ModuleMetadata.Name
+  yaml: api/Microsoft.CodeAnalysis.ModuleMetadata.yaml
+  href: api/Microsoft.CodeAnalysis.ModuleMetadata
+  name:
+    CSharp: Name
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.ModuleMetadata.Name
+  type: Property
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/MetadataReference/ModuleMetadata.cs
+    startLine: 247
+  summary: >+
+    Name of the module.
+
+  syntax:
+    content:
+      CSharp: public string Name
+    parameters:
+    - id: Name
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+- id: Microsoft.CodeAnalysis.ModuleMetadata.get_Name
+  yaml: api/Microsoft.CodeAnalysis.ModuleMetadata.yaml
+  href: api/Microsoft.CodeAnalysis.ModuleMetadata
+  name:
+    CSharp: get_Name
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.ModuleMetadata.get_Name
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/MetadataReference/ModuleMetadata.cs
+    startLine: 249
+- id: Microsoft.CodeAnalysis.ModuleMetadata.GetModuleVersionId
+  yaml: api/Microsoft.CodeAnalysis.ModuleMetadata.yaml
+  href: api/Microsoft.CodeAnalysis.ModuleMetadata
+  name:
+    CSharp: GetModuleVersionId
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.ModuleMetadata.GetModuleVersionId
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/MetadataReference/ModuleMetadata.cs
+    startLine: 257
+  summary: >+
+    Version of the module content.
+
+  syntax:
+    content:
+      CSharp: public Guid GetModuleVersionId()
+    parameters: []
+    return:
+      id: Guid
+- id: Microsoft.CodeAnalysis.ModuleMetadata.Kind
+  yaml: api/Microsoft.CodeAnalysis.ModuleMetadata.yaml
+  href: api/Microsoft.CodeAnalysis.ModuleMetadata
+  name:
+    CSharp: Kind
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.ModuleMetadata.Kind
+  type: Property
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/MetadataReference/ModuleMetadata.cs
+    startLine: 265
+  summary: >+
+    Returns the [Microsoft.CodeAnalysis.MetadataImageKind](#/api/Microsoft.CodeAnalysis.MetadataImageKind) for this instance.
+
+  syntax:
+    content:
+      CSharp: public override MetadataImageKind Kind
+    parameters:
+    - id: Kind
+      type:
+        id: Microsoft.CodeAnalysis.MetadataImageKind
+        name: MetadataImageKind
+        href: api/Microsoft.CodeAnalysis.MetadataImageKind
+- id: Microsoft.CodeAnalysis.ModuleMetadata.get_Kind
+  yaml: api/Microsoft.CodeAnalysis.ModuleMetadata.yaml
+  href: api/Microsoft.CodeAnalysis.ModuleMetadata
+  name:
+    CSharp: get_Kind
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.ModuleMetadata.get_Kind
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/MetadataReference/ModuleMetadata.cs
+    startLine: 267
+- id: Microsoft.CodeAnalysis.ModuleMetadata.GetModuleNames
+  yaml: api/Microsoft.CodeAnalysis.ModuleMetadata.yaml
+  href: api/Microsoft.CodeAnalysis.ModuleMetadata
+  name:
+    CSharp: GetModuleNames
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.ModuleMetadata.GetModuleNames
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/MetadataReference/ModuleMetadata.cs
+    startLine: 275
+  summary: >+
+    Returns the file names of linked managed modules.
+
+  syntax:
+    content:
+      CSharp: public ImmutableArray<string> GetModuleNames()
+    parameters: []
+    return:
+      id: ImmutableArray
+- id: Microsoft.CodeAnalysis.ModuleMetadata.GetReference(Microsoft.CodeAnalysis.DocumentationProvider,System.String,System.String)
+  yaml: api/Microsoft.CodeAnalysis.ModuleMetadata.yaml
+  href: api/Microsoft.CodeAnalysis.ModuleMetadata
+  name:
+    CSharp: GetReference
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.ModuleMetadata.GetReference(Microsoft.CodeAnalysis.DocumentationProvider,System.String,System.String)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/MetadataReference/ModuleMetadata.cs
+    startLine: 297
+  summary: >+
+    Creates a reference to the module metadata.
+
+  syntax:
+    content:
+      CSharp: public PortableExecutableReference GetReference(DocumentationProvider documentation = null, string filePath = null, string display = null)
+    parameters:
+    - id: documentation
+      type:
+        id: Microsoft.CodeAnalysis.DocumentationProvider
+        name: DocumentationProvider
+        href: api/Microsoft.CodeAnalysis.DocumentationProvider
+      description: Provider of XML documentation comments for the metadata symbols contained in the module.
+    - id: filePath
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+      description: Path describing the location of the metadata, or null if the metadata have no location.
+    - id: display
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+      description: Display string used in error messages to identity the reference.
+    return:
+      id: PortableExecutableReference
+      description: A reference to the module metadata.

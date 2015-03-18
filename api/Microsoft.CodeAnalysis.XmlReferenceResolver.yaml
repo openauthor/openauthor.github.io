@@ -1,0 +1,145 @@
+id: Microsoft.CodeAnalysis.XmlReferenceResolver
+yaml: api/Microsoft.CodeAnalysis.XmlReferenceResolver.yaml
+href: api/Microsoft.CodeAnalysis.XmlReferenceResolver
+name:
+  CSharp: XmlReferenceResolver
+qualifiedName:
+  CSharp: Microsoft.CodeAnalysis.XmlReferenceResolver
+type: Class
+source:
+  remote:
+    branch: master
+    repo: https://github.com/dotnet/roslyn.git
+    local: D:/Repo/RoslynGit/
+    sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+  path: src/Compilers/Core/Portable/Compilation/XmlReferenceResolver.cs
+  startLine: 10
+summary: >+
+  Resolves references to XML documents specified in source code.
+
+syntax:
+  content:
+    CSharp: public abstract class XmlReferenceResolver
+inheritance:
+- id: System.Object
+  name: System.Object
+  isExternal: true
+items:
+- id: Microsoft.CodeAnalysis.XmlReferenceResolver.Equals(System.Object)
+  yaml: api/Microsoft.CodeAnalysis.XmlReferenceResolver.yaml
+  href: api/Microsoft.CodeAnalysis.XmlReferenceResolver
+  name:
+    CSharp: Equals
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.XmlReferenceResolver.Equals(System.Object)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/XmlReferenceResolver.cs
+    startLine: 16
+  syntax:
+    content:
+      CSharp: public abstract override bool Equals(object other);
+    parameters:
+    - id: other
+      type:
+        id: System.Object
+        name: System.Object
+        isExternal: true
+    return:
+      id: Boolean
+- id: Microsoft.CodeAnalysis.XmlReferenceResolver.GetHashCode
+  yaml: api/Microsoft.CodeAnalysis.XmlReferenceResolver.yaml
+  href: api/Microsoft.CodeAnalysis.XmlReferenceResolver
+  name:
+    CSharp: GetHashCode
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.XmlReferenceResolver.GetHashCode
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/XmlReferenceResolver.cs
+    startLine: 17
+  syntax:
+    content:
+      CSharp: public abstract override int GetHashCode();
+    parameters: []
+    return:
+      id: Int32
+- id: Microsoft.CodeAnalysis.XmlReferenceResolver.ResolveReference(System.String,System.String)
+  yaml: api/Microsoft.CodeAnalysis.XmlReferenceResolver.yaml
+  href: api/Microsoft.CodeAnalysis.XmlReferenceResolver
+  name:
+    CSharp: ResolveReference
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.XmlReferenceResolver.ResolveReference(System.String,System.String)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/XmlReferenceResolver.cs
+    startLine: 25
+  summary: >+
+    Resolves specified XML reference with respect to base file path.
+
+  syntax:
+    content:
+      CSharp: public abstract string ResolveReference(string path, string baseFilePath);
+    parameters:
+    - id: path
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+      description: The reference path to resolve. May be absolute or relative path.
+    - id: baseFilePath
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+      description: Path of the source file that contains the  (may also be relative), or null if not available.
+    return:
+      id: String
+      description: Path to the XML artifact, or null if the file can't be resolved.
+- id: Microsoft.CodeAnalysis.XmlReferenceResolver.OpenRead(System.String)
+  yaml: api/Microsoft.CodeAnalysis.XmlReferenceResolver.yaml
+  href: api/Microsoft.CodeAnalysis.XmlReferenceResolver
+  name:
+    CSharp: OpenRead
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.XmlReferenceResolver.OpenRead(System.String)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/XmlReferenceResolver.cs
+    startLine: 34
+  summary: >+
+    Opens a [System.IO.Stream](#) that allows reading the content of the specified file.
+
+  syntax:
+    content:
+      CSharp: public abstract Stream OpenRead(string resolvedPath);
+    parameters:
+    - id: resolvedPath
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+      description: Path returned by [Microsoft.CodeAnalysis.XmlReferenceResolver.ResolveReference(System.String,System.String)](#/api/Microsoft.CodeAnalysis.XmlReferenceResolver).
+    return:
+      id: Stream

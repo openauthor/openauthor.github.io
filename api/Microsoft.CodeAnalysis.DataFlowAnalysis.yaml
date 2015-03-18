@@ -1,0 +1,526 @@
+id: Microsoft.CodeAnalysis.DataFlowAnalysis
+yaml: api/Microsoft.CodeAnalysis.DataFlowAnalysis.yaml
+href: api/Microsoft.CodeAnalysis.DataFlowAnalysis
+name:
+  CSharp: DataFlowAnalysis
+qualifiedName:
+  CSharp: Microsoft.CodeAnalysis.DataFlowAnalysis
+type: Class
+source:
+  remote:
+    branch: master
+    repo: https://github.com/dotnet/roslyn.git
+    local: D:/Repo/RoslynGit/
+    sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+  path: src/Compilers/Core/Portable/Compilation/DataFlowAnalysis.cs
+  startLine: 13
+summary: >+
+  Provides information about how data flows into and out of a region. This information is
+
+  returned from a call to
+
+  [Microsoft.CodeAnalysis.SemanticModel.AnalyzeDataFlow(Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.SyntaxNode)](#), or one of its language-specific overloads,
+
+  where you pass the first and last statements of the region as parameters.
+
+  "Inside" means those statements or ones between them. "Outside" are any other statements of the same method.
+
+syntax:
+  content:
+    CSharp: public abstract class DataFlowAnalysis
+inheritance:
+- id: System.Object
+  name: System.Object
+  isExternal: true
+items:
+- id: Microsoft.CodeAnalysis.DataFlowAnalysis.VariablesDeclared
+  yaml: api/Microsoft.CodeAnalysis.DataFlowAnalysis.yaml
+  href: api/Microsoft.CodeAnalysis.DataFlowAnalysis
+  name:
+    CSharp: VariablesDeclared
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.DataFlowAnalysis.VariablesDeclared
+  type: Property
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/DataFlowAnalysis.cs
+    startLine: 20
+  summary: >+
+    The set of local variables that are declared within a region. Note
+
+    that the region must be bounded by a method's body or a field's initializer, so
+
+    parameter symbols are never included in the result.
+
+  syntax:
+    content:
+      CSharp: public abstract ImmutableArray<ISymbol> VariablesDeclared
+    parameters:
+    - id: VariablesDeclared
+      type:
+        id: System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.ISymbol}
+        name: System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.ISymbol}
+        isExternal: true
+- id: Microsoft.CodeAnalysis.DataFlowAnalysis.get_VariablesDeclared
+  yaml: api/Microsoft.CodeAnalysis.DataFlowAnalysis.yaml
+  href: api/Microsoft.CodeAnalysis.DataFlowAnalysis
+  name:
+    CSharp: get_VariablesDeclared
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.DataFlowAnalysis.get_VariablesDeclared
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/DataFlowAnalysis.cs
+    startLine: 20
+- id: Microsoft.CodeAnalysis.DataFlowAnalysis.DataFlowsIn
+  yaml: api/Microsoft.CodeAnalysis.DataFlowAnalysis.yaml
+  href: api/Microsoft.CodeAnalysis.DataFlowAnalysis
+  name:
+    CSharp: DataFlowsIn
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.DataFlowAnalysis.DataFlowsIn
+  type: Property
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/DataFlowAnalysis.cs
+    startLine: 26
+  summary: >+
+    The set of local variables which are assigned a value outside a region
+
+    that may be used inside the region.
+
+  syntax:
+    content:
+      CSharp: public abstract ImmutableArray<ISymbol> DataFlowsIn
+    parameters:
+    - id: DataFlowsIn
+      type:
+        id: System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.ISymbol}
+        name: System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.ISymbol}
+        isExternal: true
+- id: Microsoft.CodeAnalysis.DataFlowAnalysis.get_DataFlowsIn
+  yaml: api/Microsoft.CodeAnalysis.DataFlowAnalysis.yaml
+  href: api/Microsoft.CodeAnalysis.DataFlowAnalysis
+  name:
+    CSharp: get_DataFlowsIn
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.DataFlowAnalysis.get_DataFlowsIn
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/DataFlowAnalysis.cs
+    startLine: 26
+- id: Microsoft.CodeAnalysis.DataFlowAnalysis.DataFlowsOut
+  yaml: api/Microsoft.CodeAnalysis.DataFlowAnalysis.yaml
+  href: api/Microsoft.CodeAnalysis.DataFlowAnalysis
+  name:
+    CSharp: DataFlowsOut
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.DataFlowAnalysis.DataFlowsOut
+  type: Property
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/DataFlowAnalysis.cs
+    startLine: 32
+  summary: >+
+    The set of local variables which are assigned a value inside a region
+
+    that may be used outside the region.
+
+  syntax:
+    content:
+      CSharp: public abstract ImmutableArray<ISymbol> DataFlowsOut
+    parameters:
+    - id: DataFlowsOut
+      type:
+        id: System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.ISymbol}
+        name: System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.ISymbol}
+        isExternal: true
+- id: Microsoft.CodeAnalysis.DataFlowAnalysis.get_DataFlowsOut
+  yaml: api/Microsoft.CodeAnalysis.DataFlowAnalysis.yaml
+  href: api/Microsoft.CodeAnalysis.DataFlowAnalysis
+  name:
+    CSharp: get_DataFlowsOut
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.DataFlowAnalysis.get_DataFlowsOut
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/DataFlowAnalysis.cs
+    startLine: 32
+- id: Microsoft.CodeAnalysis.DataFlowAnalysis.AlwaysAssigned
+  yaml: api/Microsoft.CodeAnalysis.DataFlowAnalysis.yaml
+  href: api/Microsoft.CodeAnalysis.DataFlowAnalysis
+  name:
+    CSharp: AlwaysAssigned
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.DataFlowAnalysis.AlwaysAssigned
+  type: Property
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/DataFlowAnalysis.cs
+    startLine: 38
+  summary: >+
+    The set of local variables for which a value is always assigned inside
+
+    a region.
+
+  syntax:
+    content:
+      CSharp: public abstract ImmutableArray<ISymbol> AlwaysAssigned
+    parameters:
+    - id: AlwaysAssigned
+      type:
+        id: System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.ISymbol}
+        name: System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.ISymbol}
+        isExternal: true
+- id: Microsoft.CodeAnalysis.DataFlowAnalysis.get_AlwaysAssigned
+  yaml: api/Microsoft.CodeAnalysis.DataFlowAnalysis.yaml
+  href: api/Microsoft.CodeAnalysis.DataFlowAnalysis
+  name:
+    CSharp: get_AlwaysAssigned
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.DataFlowAnalysis.get_AlwaysAssigned
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/DataFlowAnalysis.cs
+    startLine: 38
+- id: Microsoft.CodeAnalysis.DataFlowAnalysis.ReadInside
+  yaml: api/Microsoft.CodeAnalysis.DataFlowAnalysis.yaml
+  href: api/Microsoft.CodeAnalysis.DataFlowAnalysis
+  name:
+    CSharp: ReadInside
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.DataFlowAnalysis.ReadInside
+  type: Property
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/DataFlowAnalysis.cs
+    startLine: 43
+  summary: >+
+    The set of local variables that are read inside a region.
+
+  syntax:
+    content:
+      CSharp: public abstract ImmutableArray<ISymbol> ReadInside
+    parameters:
+    - id: ReadInside
+      type:
+        id: System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.ISymbol}
+        name: System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.ISymbol}
+        isExternal: true
+- id: Microsoft.CodeAnalysis.DataFlowAnalysis.get_ReadInside
+  yaml: api/Microsoft.CodeAnalysis.DataFlowAnalysis.yaml
+  href: api/Microsoft.CodeAnalysis.DataFlowAnalysis
+  name:
+    CSharp: get_ReadInside
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.DataFlowAnalysis.get_ReadInside
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/DataFlowAnalysis.cs
+    startLine: 43
+- id: Microsoft.CodeAnalysis.DataFlowAnalysis.WrittenInside
+  yaml: api/Microsoft.CodeAnalysis.DataFlowAnalysis.yaml
+  href: api/Microsoft.CodeAnalysis.DataFlowAnalysis
+  name:
+    CSharp: WrittenInside
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.DataFlowAnalysis.WrittenInside
+  type: Property
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/DataFlowAnalysis.cs
+    startLine: 48
+  summary: >+
+    The set of local variables that are written inside a region.
+
+  syntax:
+    content:
+      CSharp: public abstract ImmutableArray<ISymbol> WrittenInside
+    parameters:
+    - id: WrittenInside
+      type:
+        id: System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.ISymbol}
+        name: System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.ISymbol}
+        isExternal: true
+- id: Microsoft.CodeAnalysis.DataFlowAnalysis.get_WrittenInside
+  yaml: api/Microsoft.CodeAnalysis.DataFlowAnalysis.yaml
+  href: api/Microsoft.CodeAnalysis.DataFlowAnalysis
+  name:
+    CSharp: get_WrittenInside
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.DataFlowAnalysis.get_WrittenInside
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/DataFlowAnalysis.cs
+    startLine: 48
+- id: Microsoft.CodeAnalysis.DataFlowAnalysis.ReadOutside
+  yaml: api/Microsoft.CodeAnalysis.DataFlowAnalysis.yaml
+  href: api/Microsoft.CodeAnalysis.DataFlowAnalysis
+  name:
+    CSharp: ReadOutside
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.DataFlowAnalysis.ReadOutside
+  type: Property
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/DataFlowAnalysis.cs
+    startLine: 53
+  summary: >+
+    The set of the local variables that are read outside a region.
+
+  syntax:
+    content:
+      CSharp: public abstract ImmutableArray<ISymbol> ReadOutside
+    parameters:
+    - id: ReadOutside
+      type:
+        id: System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.ISymbol}
+        name: System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.ISymbol}
+        isExternal: true
+- id: Microsoft.CodeAnalysis.DataFlowAnalysis.get_ReadOutside
+  yaml: api/Microsoft.CodeAnalysis.DataFlowAnalysis.yaml
+  href: api/Microsoft.CodeAnalysis.DataFlowAnalysis
+  name:
+    CSharp: get_ReadOutside
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.DataFlowAnalysis.get_ReadOutside
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/DataFlowAnalysis.cs
+    startLine: 53
+- id: Microsoft.CodeAnalysis.DataFlowAnalysis.WrittenOutside
+  yaml: api/Microsoft.CodeAnalysis.DataFlowAnalysis.yaml
+  href: api/Microsoft.CodeAnalysis.DataFlowAnalysis
+  name:
+    CSharp: WrittenOutside
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.DataFlowAnalysis.WrittenOutside
+  type: Property
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/DataFlowAnalysis.cs
+    startLine: 58
+  summary: >+
+    The set of local variables that are written outside a region.
+
+  syntax:
+    content:
+      CSharp: public abstract ImmutableArray<ISymbol> WrittenOutside
+    parameters:
+    - id: WrittenOutside
+      type:
+        id: System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.ISymbol}
+        name: System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.ISymbol}
+        isExternal: true
+- id: Microsoft.CodeAnalysis.DataFlowAnalysis.get_WrittenOutside
+  yaml: api/Microsoft.CodeAnalysis.DataFlowAnalysis.yaml
+  href: api/Microsoft.CodeAnalysis.DataFlowAnalysis
+  name:
+    CSharp: get_WrittenOutside
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.DataFlowAnalysis.get_WrittenOutside
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/DataFlowAnalysis.cs
+    startLine: 58
+- id: Microsoft.CodeAnalysis.DataFlowAnalysis.Captured
+  yaml: api/Microsoft.CodeAnalysis.DataFlowAnalysis.yaml
+  href: api/Microsoft.CodeAnalysis.DataFlowAnalysis
+  name:
+    CSharp: Captured
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.DataFlowAnalysis.Captured
+  type: Property
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/DataFlowAnalysis.cs
+    startLine: 64
+  summary: >+
+    The set of the local variables that have been referenced in anonymous
+
+    functions within a region and therefore must be moved to a field of a frame class.
+
+  syntax:
+    content:
+      CSharp: public abstract ImmutableArray<ISymbol> Captured
+    parameters:
+    - id: Captured
+      type:
+        id: System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.ISymbol}
+        name: System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.ISymbol}
+        isExternal: true
+- id: Microsoft.CodeAnalysis.DataFlowAnalysis.get_Captured
+  yaml: api/Microsoft.CodeAnalysis.DataFlowAnalysis.yaml
+  href: api/Microsoft.CodeAnalysis.DataFlowAnalysis
+  name:
+    CSharp: get_Captured
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.DataFlowAnalysis.get_Captured
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/DataFlowAnalysis.cs
+    startLine: 64
+- id: Microsoft.CodeAnalysis.DataFlowAnalysis.UnsafeAddressTaken
+  yaml: api/Microsoft.CodeAnalysis.DataFlowAnalysis.yaml
+  href: api/Microsoft.CodeAnalysis.DataFlowAnalysis
+  name:
+    CSharp: UnsafeAddressTaken
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.DataFlowAnalysis.UnsafeAddressTaken
+  type: Property
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/DataFlowAnalysis.cs
+    startLine: 70
+  summary: >+
+    The set of non-constant local variables and parameters that have had their
+
+    address (or the address of one of their fields) taken.
+
+  syntax:
+    content:
+      CSharp: public abstract ImmutableArray<ISymbol> UnsafeAddressTaken
+    parameters:
+    - id: UnsafeAddressTaken
+      type:
+        id: System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.ISymbol}
+        name: System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.ISymbol}
+        isExternal: true
+- id: Microsoft.CodeAnalysis.DataFlowAnalysis.get_UnsafeAddressTaken
+  yaml: api/Microsoft.CodeAnalysis.DataFlowAnalysis.yaml
+  href: api/Microsoft.CodeAnalysis.DataFlowAnalysis
+  name:
+    CSharp: get_UnsafeAddressTaken
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.DataFlowAnalysis.get_UnsafeAddressTaken
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/DataFlowAnalysis.cs
+    startLine: 70
+- id: Microsoft.CodeAnalysis.DataFlowAnalysis.Succeeded
+  yaml: api/Microsoft.CodeAnalysis.DataFlowAnalysis.yaml
+  href: api/Microsoft.CodeAnalysis.DataFlowAnalysis
+  name:
+    CSharp: Succeeded
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.DataFlowAnalysis.Succeeded
+  type: Property
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/DataFlowAnalysis.cs
+    startLine: 77
+  summary: >+
+    Returns true iff analysis was successful.  Analysis can fail if the region does not
+
+    properly span a single expression, a single statement, or a contiguous series of
+
+    statements within the enclosing block.
+
+  syntax:
+    content:
+      CSharp: public abstract bool Succeeded
+    parameters:
+    - id: Succeeded
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+- id: Microsoft.CodeAnalysis.DataFlowAnalysis.get_Succeeded
+  yaml: api/Microsoft.CodeAnalysis.DataFlowAnalysis.yaml
+  href: api/Microsoft.CodeAnalysis.DataFlowAnalysis
+  name:
+    CSharp: get_Succeeded
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.DataFlowAnalysis.get_Succeeded
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/Compilation/DataFlowAnalysis.cs
+    startLine: 77

@@ -1,0 +1,114 @@
+id: Microsoft.CodeAnalysis.DocumentationProvider
+yaml: api/Microsoft.CodeAnalysis.DocumentationProvider.yaml
+href: api/Microsoft.CodeAnalysis.DocumentationProvider
+name:
+  CSharp: DocumentationProvider
+qualifiedName:
+  CSharp: Microsoft.CodeAnalysis.DocumentationProvider
+type: Class
+source:
+  remote:
+    branch: master
+    repo: https://github.com/dotnet/roslyn.git
+    local: D:/Repo/RoslynGit/
+    sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+  path: src/Compilers/Core/Portable/DocumentationComments/DocumentationProvider.cs
+  startLine: 14
+summary: >+
+  A class used to provide XML documentation to the compiler for members from metadata. A
+
+  custom implementation of this class should be returned from a DocumentationResolver to provide XML
+
+  documentation comments from custom caches or locations.
+
+syntax:
+  content:
+    CSharp: public abstract partial class DocumentationProvider
+inheritance:
+- id: System.Object
+  name: System.Object
+  isExternal: true
+items:
+- id: Microsoft.CodeAnalysis.DocumentationProvider.Default
+  yaml: api/Microsoft.CodeAnalysis.DocumentationProvider.yaml
+  href: api/Microsoft.CodeAnalysis.DocumentationProvider
+  name:
+    CSharp: Default
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.DocumentationProvider.Default
+  type: Field
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/DocumentationComments/DocumentationProvider.cs
+    startLine: 16
+- id: Microsoft.CodeAnalysis.DocumentationProvider.Equals(System.Object)
+  yaml: api/Microsoft.CodeAnalysis.DocumentationProvider.yaml
+  href: api/Microsoft.CodeAnalysis.DocumentationProvider
+  name:
+    CSharp: Equals
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.DocumentationProvider.Equals(System.Object)
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/DocumentationComments/DocumentationProvider.cs
+    startLine: 42
+  summary: >+
+    DocumentationProviders are compared when determining whether an AssemblySymbol can be reused.
+
+    Hence, if multiple instances can represent the same documentation, it is imperative that
+
+    Equals (and GetHashCode) be overridden to capture this fact.  Otherwise, it is possible to end
+
+    up with multiple AssemblySymbols for the same assembly, which plays havoc with the type hierarchy.
+
+  syntax:
+    content:
+      CSharp: public abstract override bool Equals(object obj);
+    parameters:
+    - id: obj
+      type:
+        id: System.Object
+        name: System.Object
+        isExternal: true
+    return:
+      id: Boolean
+- id: Microsoft.CodeAnalysis.DocumentationProvider.GetHashCode
+  yaml: api/Microsoft.CodeAnalysis.DocumentationProvider.yaml
+  href: api/Microsoft.CodeAnalysis.DocumentationProvider
+  name:
+    CSharp: GetHashCode
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.DocumentationProvider.GetHashCode
+  type: Method
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/dotnet/roslyn.git
+      local: D:/Repo/RoslynGit/
+      sha1: 6bda666d110ac87a7ad853dbe45e8366d8bb8744
+    path: src/Compilers/Core/Portable/DocumentationComments/DocumentationProvider.cs
+    startLine: 50
+  summary: >+
+    DocumentationProviders are compared when determining whether an AssemblySymbol can be reused.
+
+    Hence, if multiple instances can represent the same documentation, it is imperative that
+
+    GetHashCode (and Equals) be overridden to capture this fact.  Otherwise, it is possible to end
+
+    up with multiple AssemblySymbols for the same assembly, which plays havoc with the type hierarchy.
+
+  syntax:
+    content:
+      CSharp: public abstract override int GetHashCode();
+    parameters: []
+    return:
+      id: Int32

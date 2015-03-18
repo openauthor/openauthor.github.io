@@ -42,9 +42,9 @@
                     <ul class="section-members"  ng-repeat="item in model.items" ng-show="item.type==itemtype.name">
                         <li class="section-member" ng-mouseleave="showBtn = false" ng-mouseenter ="showBtn = true" ng-init="showBtn=false">
                             <div class="section-member-header" >
-                                <h3 class="section-member-name">
+                                <h4 class="section-member-name">
                                     {{item.name.CSharp.replace(',', ', ')}}
-                                </h3>
+                                </h4>
                                 <div class="view-source btn" ng-show="showBtn">
                                     <a ng-href="{{ViewSource(item.source.startLine)}}">View Source</a>
                                 </div>
@@ -90,7 +90,8 @@
                                                             <td>
                                                                 <div class="definition">
                                                                     <p class="para">
-                                                                        {{par.description}}
+                                                                      <markdown ng-model="par.description">
+                                                                      </markdown>
                                                                     </p>
                                                                 </div>
                                                             </td>
@@ -112,7 +113,8 @@
                                                             <td>
                                                                 <div class="definition">
                                                                     <p class="para">
-                                                                        {{par.description}}
+                                                                      <markdown ng-model="par.description">
+                                                                      </markdown>
                                                                     </p>
                                                                 </div>
                                                             </td>
