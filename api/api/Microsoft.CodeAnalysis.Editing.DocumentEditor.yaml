@@ -1,0 +1,125 @@
+id: Microsoft.CodeAnalysis.Editing.DocumentEditor
+href: api/Microsoft.CodeAnalysis.Editing.DocumentEditor.yaml
+name:
+  CSharp: DocumentEditor
+qualifiedName:
+  CSharp: Microsoft.CodeAnalysis.Editing.DocumentEditor
+type: Class
+source:
+  remote: &o0
+    branch: master
+    repo: https://github.com/chenkennt/roslyn.git
+    description: v1.0-3-g8c49d3e
+  path: src/Workspaces/Core/Portable/Editing/DocumentEditor.cs
+  startLine: 14
+summary: An editor for making changes to a document's syntax tree.
+syntax:
+  content:
+    CSharp: public class DocumentEditor
+inheritance:
+- id: System.Object
+  name: System.Object
+  isExternal: true
+- id: Microsoft.CodeAnalysis.Editing.SyntaxEditor
+  name: SyntaxEditor
+items:
+- id: Microsoft.CodeAnalysis.Editing.DocumentEditor.CreateAsync(Microsoft.CodeAnalysis.Document,System.Threading.CancellationToken)
+  href: api/Microsoft.CodeAnalysis.Editing.DocumentEditor.yaml
+  name:
+    CSharp: CreateAsync
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Editing.DocumentEditor.CreateAsync(Microsoft.CodeAnalysis.Document,System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Editing/DocumentEditor.cs
+    startLine: 29
+  summary: Creates a new [Microsoft.CodeAnalysis.Editing.DocumentEditor](#/) instance.
+  syntax:
+    content:
+      CSharp: public static async Task<DocumentEditor> CreateAsync(Document document, CancellationToken cancellationToken = default (CancellationToken))
+    parameters:
+    - id: document
+      type:
+        id: Microsoft.CodeAnalysis.Document
+        name: Document
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+    return:
+      id: Task
+- id: Microsoft.CodeAnalysis.Editing.DocumentEditor.OriginalDocument
+  href: api/Microsoft.CodeAnalysis.Editing.DocumentEditor.yaml
+  name:
+    CSharp: OriginalDocument
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Editing.DocumentEditor.OriginalDocument
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Editing/DocumentEditor.cs
+    startLine: 44
+  summary: The [Microsoft.CodeAnalysis.Document](#/) specified when the editor was first created.
+  syntax:
+    content:
+      CSharp: >-
+        public Document OriginalDocument
+
+                {
+
+                    get { return _document; }
+
+                }
+    parameters:
+    - id: OriginalDocument
+      type:
+        id: Microsoft.CodeAnalysis.Document
+        name: Document
+- id: Microsoft.CodeAnalysis.Editing.DocumentEditor.SemanticModel
+  href: api/Microsoft.CodeAnalysis.Editing.DocumentEditor.yaml
+  name:
+    CSharp: SemanticModel
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Editing.DocumentEditor.SemanticModel
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Editing/DocumentEditor.cs
+    startLine: 52
+  summary: The [Microsoft.CodeAnalysis.SemanticModel](#) of the original document.
+  syntax:
+    content:
+      CSharp: >-
+        public SemanticModel SemanticModel
+
+                {
+
+                    get { return _model; }
+
+                }
+    parameters:
+    - id: SemanticModel
+      type:
+        id: Microsoft.CodeAnalysis.SemanticModel
+        name: SemanticModel
+        href: Microsoft.CodeAnalysis.SemanticModel
+- id: Microsoft.CodeAnalysis.Editing.DocumentEditor.GetChangedDocument
+  href: api/Microsoft.CodeAnalysis.Editing.DocumentEditor.yaml
+  name:
+    CSharp: GetChangedDocument
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Editing.DocumentEditor.GetChangedDocument
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Editing/DocumentEditor.cs
+    startLine: 60
+  summary: Returns the changed [Microsoft.CodeAnalysis.Document](#/).
+  syntax:
+    content:
+      CSharp: public Document GetChangedDocument()
+    parameters: []
+    return:
+      id: Document

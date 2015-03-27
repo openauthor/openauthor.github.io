@@ -12,24 +12,11 @@
   <meta name="fragment" content="!">
   <title ng-bind-template="Docascode: {{ currentArea.name }}: {{ title || currentPage || 'Generating Documentations For You'}}">Docascode</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
-  <script type="text/javascript">
-    // dynamically add base tag as well as css and javascript files.
-    // we can't add css/js the usual way, because some browsers (FF) eagerly prefetch resources
-    // before the base attribute is added, causing 404 and terribly slow loading of the docs app.
-    (function() {
-      var indexFile = (location.pathname.match(/\/(index[^\.]*\.html)/) || ['', ''])[1],
-          rUrl = /(#!\/|api|guide|misc|tutorial|error|index[^\.]*).*$/,
-          baseUrl = location.href.replace(rUrl, indexFile),
-          production = location.hostname === 'docs.angularjs.org',
-          headEl = document.getElementsByTagName('head')[0],
-          sync = true;
-    })();
-    </script>
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css"></link>
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.2/custom/bootstrap.min.css" type="text/css"></link>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/languages/cs.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.8/ace.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/languages/cs.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/ace/1.1.8/ace.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/js-yaml/3.2.7/js-yaml.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/lunr.js/0.5.7/lunr.min.js"></script>
@@ -59,13 +46,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-9 header-branding">
-              <ul class="nav navbar-nav">
-                <li class="divider-vertical"></li>
-                <li><a href="#"><i class="icon-home icon-white"></i> Home</a></li>
-                <li class="divider-vertical"></li>
-                <li><a href="#api"><i class="icon-book icon-white active"></i> API Reference</a></li>
-                <li class="divider-vertical"></li>
-              </ul>
+              <div ng-repeat="model in [navbar]"  ng-include="'template/navbar.tmpl'"></div>
             </div>
             <!-- comment out search box as it is not currently supported
             <form ng-class="{focus:focus}" class="navbar-search col-md-3 docs-search" ng-submit="submit()">
@@ -101,6 +82,7 @@
           </div>
         </div>
       </section>
+      <!-- Temp disable it: what to show for conceptual?
       <section class="sup-header">
         <div class="container main-grid main-header-grid">
           <div class="grid-left">
@@ -119,38 +101,23 @@
                 <a ng-href="#{{crumb.url}}">{{crumb.name}}</a>
               </li>
             </ul>
-          </div>
+          </div> 
         </div>
-      </section>
+      </section>-->
     </header>
 
     <section role="main" class="container main-body">
       <div class="main-grid main-body-grid">
-        <div class="grid-left">
-          <a class="btn toc-toggle visible-xs" ng-click="toc=!toc">Show / Hide Table of Contents</a>
-          <div class="side-navigation" ng-show="toc==true">
-            <ul class="nav-list naked-list">
-              <li ng-repeat="navGroup in currentArea.items track by navGroup.id" ng-if="navGroup.items" class="nav-index-group">
-                <a href="#{{ navGroup.href }}" ng-class="navClass(navGroup)" class="nav-index-group-heading">{{ navGroup.id }}</a>
-                <ul class="aside-nav">
-                  <li ng-repeat="navItem in navGroup.items" ng-class="navClass(navItem)" class="nav-index-listing">
-                    <a ng-if="navItem.extra.href" ng-class="navClass(navItem.extra)" href="#{{navItem.extra.href}}">
-                      {{navItem.extra.text}}<i ng-if="navItem.extra.icon" class="icon-{{navItem.extra.icon}}"></i>
-                    </a>
-                    <a tabindex="2" ng-if="navItem.name && navItem.name.CSharp" ng-class="linkClass(navItem)" href="#{{navItem.href}}">{{navItem.name.CSharp}}</a>
-                    <a tabindex="2" ng-if="!navItem.name && !navItem.name.CSharp" ng-class="linkClass(navItem)" href="#{{navItem.href}}">{{navItem.id.replace(navGroup.id + '.', '')}}</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-            <a href="" ng-click="toc=false" class="toc-close visible-xs">
-              <span class="glyphicon glyphicon-remove toc-close-icon"></span> Close
-            </a>
+        <div class="grid-left" ng-if="toc">
+          <div class="side-navigation">
+            <div id="tocLoading" ng-show="tocLoading">Loading...</div>
+            <div ng-hide="tocLoading" ng-repeat="model in [toc.content]" ng-include="'template/toc.tmpl'"></div>
           </div>
         </div>
-        <div class="grid-right">
+        <div ng-class="gridClass(toc)">
           <div id="loading" ng-show="loading">Loading...</div>
-          <div ng-hide="loading" ng-repeat="model in [partialModel]" ng-include="partialPath" autoscroll></div>
+          <div ng-if="contentType === 'md'" marked ng-hide="loading" ng-repeat="model in [partialModel]" ng-include="partialPath" autoscroll></div>
+          <div ng-if="contentType !== 'md'" ng-hide="loading" ng-repeat="model in [partialModel]" ng-include="partialPath" autoscroll></div>
         </div>
       </div>
     </section>

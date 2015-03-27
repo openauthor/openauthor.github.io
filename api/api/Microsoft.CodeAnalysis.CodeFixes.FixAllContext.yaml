@@ -1,0 +1,283 @@
+id: Microsoft.CodeAnalysis.CodeFixes.FixAllContext
+href: api/Microsoft.CodeAnalysis.CodeFixes.FixAllContext.yaml
+name:
+  CSharp: FixAllContext
+qualifiedName:
+  CSharp: Microsoft.CodeAnalysis.CodeFixes.FixAllContext
+type: Class
+source:
+  remote: &o0
+    branch: master
+    repo: https://github.com/chenkennt/roslyn.git
+    description: v1.0-3-g8c49d3e
+  path: src/Workspaces/Core/Portable/CodeFixes/FixAllOccurrences/FixAllContext.cs
+  startLine: 16
+summary: Context for "Fix all occurrences" code fixes provided by an [Microsoft.CodeAnalysis.CodeFixes.FixAllProvider](#/).
+syntax:
+  content:
+    CSharp: public class FixAllContext
+inheritance:
+- id: System.Object
+  name: System.Object
+  isExternal: true
+items:
+- id: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.Solution
+  href: api/Microsoft.CodeAnalysis.CodeFixes.FixAllContext.yaml
+  name:
+    CSharp: Solution
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.Solution
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/CodeFixes/FixAllOccurrences/FixAllContext.cs
+    startLine: 24
+  summary: Solution to fix all occurrences.
+  syntax:
+    content:
+      CSharp: public Solution Solution { get { return this.Project.Solution; } }
+    parameters:
+    - id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+- id: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.Project
+  href: api/Microsoft.CodeAnalysis.CodeFixes.FixAllContext.yaml
+  name:
+    CSharp: Project
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.Project
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/CodeFixes/FixAllOccurrences/FixAllContext.cs
+    startLine: 29
+  summary: Project within which fix all occurrences was triggered.
+  syntax:
+    content:
+      CSharp: public Project Project { get; private set; }
+    parameters:
+    - id: Project
+      type:
+        id: Microsoft.CodeAnalysis.Project
+        name: Project
+- id: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.Document
+  href: api/Microsoft.CodeAnalysis.CodeFixes.FixAllContext.yaml
+  name:
+    CSharp: Document
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.Document
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/CodeFixes/FixAllOccurrences/FixAllContext.cs
+    startLine: 34
+  summary: Document within which fix all occurrences was triggered.
+  syntax:
+    content:
+      CSharp: public Document Document { get; private set; }
+    parameters:
+    - id: Document
+      type:
+        id: Microsoft.CodeAnalysis.Document
+        name: Document
+- id: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.CodeFixProvider
+  href: api/Microsoft.CodeAnalysis.CodeFixes.FixAllContext.yaml
+  name:
+    CSharp: CodeFixProvider
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.CodeFixProvider
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/CodeFixes/FixAllOccurrences/FixAllContext.cs
+    startLine: 39
+  summary: Underlying [Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider](#/) which triggered this fix all.
+  syntax:
+    content:
+      CSharp: public CodeFixProvider CodeFixProvider { get; private set; }
+    parameters:
+    - id: CodeFixProvider
+      type:
+        id: Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider
+        name: CodeFixProvider
+- id: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.Scope
+  href: api/Microsoft.CodeAnalysis.CodeFixes.FixAllContext.yaml
+  name:
+    CSharp: Scope
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.Scope
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/CodeFixes/FixAllOccurrences/FixAllContext.cs
+    startLine: 44
+  summary: FixAllScope to fix all occurrences.
+  syntax:
+    content:
+      CSharp: public FixAllScope Scope { get; private set; }
+    parameters:
+    - id: Scope
+      type:
+        id: Microsoft.CodeAnalysis.CodeFixes.FixAllScope
+        name: FixAllScope
+- id: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.DiagnosticIds
+  href: api/Microsoft.CodeAnalysis.CodeFixes.FixAllContext.yaml
+  name:
+    CSharp: DiagnosticIds
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.DiagnosticIds
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/CodeFixes/FixAllOccurrences/FixAllContext.cs
+    startLine: 51
+  summary: >-
+    Diagnostic Ids to fix.
+
+    Note that [Microsoft.CodeAnalysis.CodeFixes.FixAllContext.GetDocumentDiagnosticsAsync(Microsoft.CodeAnalysis.Document)](#/), [Microsoft.CodeAnalysis.CodeFixes.FixAllContext.GetProjectDiagnosticsAsync(Microsoft.CodeAnalysis.Project)](#/) and [Microsoft.CodeAnalysis.CodeFixes.FixAllContext.GetAllDiagnosticsAsync(Microsoft.CodeAnalysis.Project)](#/) methods
+
+    return only diagnostics whose IDs are contained in this set of Ids.
+  syntax:
+    content:
+      CSharp: public ImmutableHashSet<string> DiagnosticIds { get; private set; }
+    parameters:
+    - id: DiagnosticIds
+      type:
+        id: System.Collections.Immutable.ImmutableHashSet{System.String}
+        name: System.Collections.Immutable.ImmutableHashSet{System.String}
+        isExternal: true
+- id: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.CodeActionEquivalenceKey
+  href: api/Microsoft.CodeAnalysis.CodeFixes.FixAllContext.yaml
+  name:
+    CSharp: CodeActionEquivalenceKey
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.CodeActionEquivalenceKey
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/CodeFixes/FixAllOccurrences/FixAllContext.cs
+    startLine: 56
+  summary: The [Microsoft.CodeAnalysis.CodeActions.CodeAction.EquivalenceKey](#/) value expected of a [Microsoft.CodeAnalysis.CodeActions.CodeAction](#/) participating in this fix all.
+  syntax:
+    content:
+      CSharp: public string CodeActionEquivalenceKey { get; private set; }
+    parameters:
+    - id: CodeActionEquivalenceKey
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+- id: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.CancellationToken
+  href: api/Microsoft.CodeAnalysis.CodeFixes.FixAllContext.yaml
+  name:
+    CSharp: CancellationToken
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.CancellationToken
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/CodeFixes/FixAllOccurrences/FixAllContext.cs
+    startLine: 61
+  summary: CancellationToken for fix all session.
+  syntax:
+    content:
+      CSharp: public CancellationToken CancellationToken { get; private set; }
+    parameters:
+    - id: CancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+- id: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.GetDocumentDiagnosticsAsync(Microsoft.CodeAnalysis.Document)
+  href: api/Microsoft.CodeAnalysis.CodeFixes.FixAllContext.yaml
+  name:
+    CSharp: GetDocumentDiagnosticsAsync
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.GetDocumentDiagnosticsAsync(Microsoft.CodeAnalysis.Document)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/CodeFixes/FixAllOccurrences/FixAllContext.cs
+    startLine: 114
+  summary: Gets all the diagnostics in the given document filtered by [Microsoft.CodeAnalysis.CodeFixes.FixAllContext.DiagnosticIds](#/).
+  syntax:
+    content:
+      CSharp: public async Task<ImmutableArray<Diagnostic>> GetDocumentDiagnosticsAsync(Document document)
+    parameters:
+    - id: document
+      type:
+        id: Microsoft.CodeAnalysis.Document
+        name: Document
+    return:
+      id: Task
+- id: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.GetProjectDiagnosticsAsync(Microsoft.CodeAnalysis.Project)
+  href: api/Microsoft.CodeAnalysis.CodeFixes.FixAllContext.yaml
+  name:
+    CSharp: GetProjectDiagnosticsAsync
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.GetProjectDiagnosticsAsync(Microsoft.CodeAnalysis.Project)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/CodeFixes/FixAllOccurrences/FixAllContext.cs
+    startLine: 131
+  summary: Gets all the project-level diagnostics, i.e. diagnostics with no source location, in the given project filtered by [Microsoft.CodeAnalysis.CodeFixes.FixAllContext.DiagnosticIds](#/).
+  syntax:
+    content:
+      CSharp: public async Task<ImmutableArray<Diagnostic>> GetProjectDiagnosticsAsync(Project project)
+    parameters:
+    - id: project
+      type:
+        id: Microsoft.CodeAnalysis.Project
+        name: Project
+    return:
+      id: Task
+- id: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.GetAllDiagnosticsAsync(Microsoft.CodeAnalysis.Project)
+  href: api/Microsoft.CodeAnalysis.CodeFixes.FixAllContext.yaml
+  name:
+    CSharp: GetAllDiagnosticsAsync
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.GetAllDiagnosticsAsync(Microsoft.CodeAnalysis.Project)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/CodeFixes/FixAllOccurrences/FixAllContext.cs
+    startLine: 140
+  summary: >-
+    Gets all the diagnostics in the given project filtered by [Microsoft.CodeAnalysis.CodeFixes.FixAllContext.DiagnosticIds](#/).
+
+    This includes both document-level diagnostics for all documents in the given project and project-level diagnostics, i.e. diagnostics with no source location, in the given project.
+  syntax:
+    content:
+      CSharp: public async Task<ImmutableArray<Diagnostic>> GetAllDiagnosticsAsync(Project project)
+    parameters:
+    - id: project
+      type:
+        id: Microsoft.CodeAnalysis.Project
+        name: Project
+    return:
+      id: Task
+- id: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.WithCancellationToken(System.Threading.CancellationToken)
+  href: api/Microsoft.CodeAnalysis.CodeFixes.FixAllContext.yaml
+  name:
+    CSharp: WithCancellationToken
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.WithCancellationToken(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/CodeFixes/FixAllOccurrences/FixAllContext.cs
+    startLine: 167
+  summary: Gets a new [Microsoft.CodeAnalysis.CodeFixes.FixAllContext](#/) with the given cancellationToken.
+  syntax:
+    content:
+      CSharp: public FixAllContext WithCancellationToken(CancellationToken cancellationToken)
+    parameters:
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+    return:
+      id: FixAllContext

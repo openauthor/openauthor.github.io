@@ -1,0 +1,49 @@
+id: Microsoft.CodeAnalysis.CodeFixes
+href: api/Microsoft.CodeAnalysis.CodeFixes.yaml
+name:
+  CSharp: CodeFixes
+qualifiedName:
+  CSharp: Microsoft.CodeAnalysis.CodeFixes
+type: Namespace
+source:
+  remote:
+    branch: master
+    repo: https://github.com/chenkennt/roslyn.git
+    description: v1.0-3-g8c49d3e
+  path: src/Workspaces/Core/Portable/CodeFixes/CodeFixContext.cs
+  startLine: 11
+items:
+- id: Microsoft.CodeAnalysis.CodeFixes.CodeFixContext
+  href: api/Microsoft.CodeAnalysis.CodeFixes.CodeFixContext.yaml
+  type: Struct
+  summary: Context for code fixes provided by an [Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider](#/).
+- id: Microsoft.CodeAnalysis.CodeFixes.WellKnownFixAllProviders
+  href: api/Microsoft.CodeAnalysis.CodeFixes.WellKnownFixAllProviders.yaml
+  type: Class
+  summary: Contains well known implementations of [Microsoft.CodeAnalysis.CodeFixes.FixAllProvider](#/).
+- id: Microsoft.CodeAnalysis.CodeFixes.FixAllContext
+  href: api/Microsoft.CodeAnalysis.CodeFixes.FixAllContext.yaml
+  type: Class
+  summary: Context for "Fix all occurrences" code fixes provided by an [Microsoft.CodeAnalysis.CodeFixes.FixAllProvider](#/).
+- id: Microsoft.CodeAnalysis.CodeFixes.FixAllScope
+  href: api/Microsoft.CodeAnalysis.CodeFixes.FixAllScope.yaml
+  type: Enum
+  summary: Indicates scope for "Fix all occurrences" code fixes provided by each [Microsoft.CodeAnalysis.CodeFixes.FixAllProvider](#/).
+- id: Microsoft.CodeAnalysis.CodeFixes.FixAllProvider
+  href: api/Microsoft.CodeAnalysis.CodeFixes.FixAllProvider.yaml
+  type: Class
+  summary: >-
+    Implement this abstract type to provide fix all/multiple occurrences code fixes for source code problems.
+
+    Alternatively, you can use any of the well known fix all providers from [Microsoft.CodeAnalysis.CodeFixes.WellKnownFixAllProviders](#/).
+- id: Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider
+  href: api/Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider.yaml
+  type: Class
+  summary: >-
+    Implement this type to provide fixes for source code problems.
+
+    Remember to use [Microsoft.CodeAnalysis.CodeFixes.ExportCodeFixProviderAttribute](#/) so the host environment can offer your fixes in a UI.
+- id: Microsoft.CodeAnalysis.CodeFixes.ExportCodeFixProviderAttribute
+  href: api/Microsoft.CodeAnalysis.CodeFixes.ExportCodeFixProviderAttribute.yaml
+  type: Class
+  summary: Use this attribute to declare a [Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider](#/) implementation so that it can be discovered by the host.

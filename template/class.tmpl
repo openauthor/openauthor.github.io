@@ -2,8 +2,11 @@
         <!--article-content-->
         <article class="article-content">
             <div id="article-header">
-                <h1 class="article-name">
+                <h1 class="article-name" ng-if="model.name.CSharp">
                     {{model.type}} {{model.name.CSharp}}
+                </h1>
+                <h1 class="article-name" ng-if="!model.name.CSharp && model.name.VB">
+                    {{model.type}} {{model.name.VB}}
                 </h1>
                 <div ng-if="model.mdHref" class="improve-this-doc btn btn-primary">
                    <a ng-href="{{model.mdHref}}">Improve this Doc</a>
@@ -26,7 +29,7 @@
                             <div class="inheritance-table-line">
                                 <div ng-repeat="inhe in model.inheritance">
     <span wi ng-repeat="i in getNumber($index + 1) track by $index"></span>|--
-                                    <a ng-href=#{{inhe.href}}>{{inhe.id}}</a>
+                                    <a ng-href="{{GetTocHref(inhe.href)}}">{{inhe.id}}</a>
                                 </div>
                                 <div class="inheritance-table-last-line">
     <span ng-repeat="i in getNumber(model.inheritance.length + 1) track by $index"></span>|--
@@ -42,8 +45,11 @@
                     <ul class="section-members"  ng-repeat="item in model.items" ng-show="item.type==itemtype.name">
                         <li class="section-member" ng-mouseleave="showBtn = false" ng-mouseenter ="showBtn = true" ng-init="showBtn=false">
                             <div class="section-member-header" >
-                                <h4 class="section-member-name">
-                                    {{item.name.CSharp.replace(',', ', ')}}
+                                <h4 class="section-member-name" ng-if="item.name.CSharp">
+                                    {{item.name.CSharp.replace(',', ', ').replace(',', ', ').replace(',', ', ')}}
+                                </h4>
+                                <h4 class="section-member-name" ng-if="!item.name.CSharp && item.name.VB">
+                                    {{item.name.VB.replace(',', ', ').replace(',', ', ').replace(',', ', ')}}
                                 </h4>
                                 <div class="view-source btn" ng-show="showBtn">
                                     <a ng-href="{{ViewSource(item.source.startLine)}}">View Source</a>
@@ -76,7 +82,9 @@
                                         <div class="methodsyntax-section" ng-if="item.syntax">
                                             <div class="declaration">
                                                 <h4>Declaration </h4>
-                                                <declaration ng-model="item.syntax.content.CSharp">
+                                                <declaration ng-if="item.syntax.content.CSharp" ng-model="item.syntax.content.CSharp" ng-language="csharp">
+                                                </declaration>
+                                                <declaration ng-if="!item.syntax.content.CSharp && item.syntax.content.VB"  ng-language="vb" ng-model="item.syntax.content.VB">
                                                 </declaration>
                                             </div>
                                             <div class="parameters" ng-if="item.syntax.parameters && item.type == 'Property'" >
@@ -85,7 +93,7 @@
                                                     <tbody>
                                                         <tr ng-repeat="par in item.syntax.parameters">
                                                             <td scope="row">
-                                                                <a ng-href="#{{par.type.href}}">{{par.type.id}}</a>
+                                                                <a ng-href="{{GetTocHref(par.type.href)}}">{{par.type.id}}</a>
                                                             </td>
                                                             <td>
                                                                 <div class="definition">
@@ -105,7 +113,7 @@
                                                     <tbody>
                                                         <tr ng-repeat="par in item.syntax.parameters">
                                                             <td scope="row">
-                                                                <a ng-href="#{{par.type.href}}">{{par.type.id}}</a>
+                                                                <a ng-href="{{GetTocHref(par.type.href)}}">{{par.type.id}}</a>
                                                             </td>
                                                             <td scope="row">
                                                                 <em class="term">{{par.id}}</em>
@@ -128,12 +136,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <td scope="row">
-                                                                <a ng-href="#{{item.syntax.return.type.href}}">{{item.syntax.return.id}}</a>
+                                                                <a ng-href="{{GetTocHref(item.syntax.return.type.href)}}">{{item.syntax.return.id}}</a>
                                                             </td>
                                                             <td>
                                                                 <div class="definition">
                                                                     <p class="para">
-                                                                        {{item.syntax.return.description}}
+                                                                      <markdown ng-model="item.syntax.return.description">
+                                                                      </markdown>
                                                                     </p>
                                                                 </div>
                                                             </td>
