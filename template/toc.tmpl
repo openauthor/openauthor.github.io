@@ -1,0 +1,15 @@
+<ul class="nav-list naked-list">
+  <li ng-repeat="navGroup in model track by navGroup.id" class="nav-index-group">
+    <a ng-href="{{GetTocHref(navGroup.href)}}" ng-class="tocClass(navGroup)" class="nav-index-group-heading">{{ navGroup.id }}</a>
+    <ul class="aside-nav">
+      <li ng-repeat="navItem in navGroup.items" ng-class="tocClass(navItem)" class="nav-index-listing">
+        <a ng-if="navItem.extra.href" ng-class="tocClass(navItem.extra)" ng-href="{{GetTocHref(navItem.extra.href)}}">
+          {{navItem.extra.text}}<i ng-if="navItem.extra.icon" class="icon-{{navItem.extra.icon}}"></i>
+        </a>
+        <a tabindex="2" ng-if="navItem.name.CSharp" ng-class="linkClass(navItem)" ng-href="{{GetTocHref(navItem.href)}}">{{navItem.name.CSharp}}</a>
+        <a tabindex="2" ng-if="!navItem.name.CSharp && navItem.name.VB" ng-class="linkClass(navItem)" ng-href="{{GetTocHref(navItem.href)}}">{{navItem.name.VB}}</a>
+        <a tabindex="2" ng-if="!navItem.name" ng-class="linkClass(navItem)" ng-href="{{GetTocHref(navItem.href)}}">{{navItem.id.replace(navGroup.id + '.', '')}}</a>
+      </li>
+    </ul>
+  </li>
+</ul>
