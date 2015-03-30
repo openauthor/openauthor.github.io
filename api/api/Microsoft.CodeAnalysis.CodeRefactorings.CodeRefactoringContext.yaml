@@ -1,5 +1,5 @@
 id: Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext
-href: api/Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext.yaml
+href: Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext.yaml
 name:
   CSharp: CodeRefactoringContext
 qualifiedName:
@@ -9,10 +9,10 @@ source:
   remote: &o0
     branch: master
     repo: https://github.com/chenkennt/roslyn.git
-    description: v1.0-3-g8c49d3e
+    description: v1.0-4-gd725e0e
   path: src/Workspaces/Core/Portable/CodeRefactorings/CodeRefactoringContext.cs
   startLine: 12
-summary: Context for code refactorings provided by an [Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider](#/).
+summary: Context for code refactorings provided by an [Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider](Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider.yaml).
 syntax:
   content:
     CSharp: public struct CodeRefactoringContext
@@ -25,7 +25,7 @@ inheritance:
   isExternal: true
 items:
 - id: Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext.Document
-  href: api/Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext.yaml
+  href: Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext.yaml
   name:
     CSharp: Document
   qualifiedName:
@@ -35,17 +35,18 @@ items:
     remote: *o0
     path: src/Workspaces/Core/Portable/CodeRefactorings/CodeRefactoringContext.cs
     startLine: 21
-  summary: Document corresponding to the [Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext.Span](#/) to refactor.
+  summary: Document corresponding to the [Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext.Span](Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext.yaml) to refactor.
   syntax:
     content:
-      CSharp: public Document Document { get { return _document; } }
+      CSharp: public Document Document { get; }
     parameters:
     - id: Document
       type:
         id: Microsoft.CodeAnalysis.Document
         name: Document
+        href: Microsoft.CodeAnalysis.Document.yaml
 - id: Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext.Span
-  href: api/Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext.yaml
+  href: Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext.yaml
   name:
     CSharp: Span
   qualifiedName:
@@ -55,10 +56,10 @@ items:
     remote: *o0
     path: src/Workspaces/Core/Portable/CodeRefactorings/CodeRefactoringContext.cs
     startLine: 26
-  summary: Text span within the [Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext.Document](#/) to refactor.
+  summary: Text span within the [Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext.Document](Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext.yaml) to refactor.
   syntax:
     content:
-      CSharp: public TextSpan Span { get { return _span; } }
+      CSharp: public TextSpan Span { get; }
     parameters:
     - id: Span
       type:
@@ -66,7 +67,7 @@ items:
         name: TextSpan
         href: Microsoft.CodeAnalysis.Text.TextSpan
 - id: Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext.CancellationToken
-  href: api/Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext.yaml
+  href: Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext.yaml
   name:
     CSharp: CancellationToken
   qualifiedName:
@@ -79,7 +80,7 @@ items:
   summary: CancellationToken.
   syntax:
     content:
-      CSharp: public CancellationToken CancellationToken { get { return _cancellationToken; } }
+      CSharp: public CancellationToken CancellationToken { get; }
     parameters:
     - id: CancellationToken
       type:
@@ -87,7 +88,7 @@ items:
         name: System.Threading.CancellationToken
         isExternal: true
 - id: Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext.#ctor(Microsoft.CodeAnalysis.Document,Microsoft.CodeAnalysis.Text.TextSpan,System.Action{Microsoft.CodeAnalysis.CodeActions.CodeAction},System.Threading.CancellationToken)
-  href: api/Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext.yaml
+  href: Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext.yaml
   name:
     CSharp: CodeRefactoringContext(Microsoft.CodeAnalysis.Document,Microsoft.CodeAnalysis.Text.TextSpan,System.Action{Microsoft.CodeAnalysis.CodeActions.CodeAction},System.Threading.CancellationToken)
   qualifiedName:
@@ -97,7 +98,7 @@ items:
     remote: *o0
     path: src/Workspaces/Core/Portable/CodeRefactorings/CodeRefactoringContext.cs
     startLine: 38
-  summary: Creates a code refactoring context to be passed into [Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider.ComputeRefactoringsAsync(Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext)](#/) method.
+  summary: Creates a code refactoring context to be passed into [Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider.ComputeRefactoringsAsync(Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext)](Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider.yaml) method.
   syntax:
     content:
       CSharp: public CodeRefactoringContext(Document document, TextSpan span, Action<CodeAction> registerRefactoring, CancellationToken cancellationToken)
@@ -106,6 +107,7 @@ items:
       type:
         id: Microsoft.CodeAnalysis.Document
         name: Document
+        href: Microsoft.CodeAnalysis.Document.yaml
     - id: span
       type:
         id: Microsoft.CodeAnalysis.Text.TextSpan
@@ -124,7 +126,7 @@ items:
     return:
       id: Void
 - id: Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext.RegisterRefactoring(Microsoft.CodeAnalysis.CodeActions.CodeAction)
-  href: api/Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext.yaml
+  href: Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext.yaml
   name:
     CSharp: RegisterRefactoring
   qualifiedName:
@@ -143,6 +145,7 @@ items:
       type:
         id: Microsoft.CodeAnalysis.CodeActions.CodeAction
         name: CodeAction
-      description: The [Microsoft.CodeAnalysis.CodeActions.CodeAction](#/) that will be invoked to apply the refactoring.
+        href: Microsoft.CodeAnalysis.CodeActions.CodeAction.yaml
+      description: The [Microsoft.CodeAnalysis.CodeActions.CodeAction](Microsoft.CodeAnalysis.CodeActions.CodeAction.yaml) that will be invoked to apply the refactoring.
     return:
       id: Void

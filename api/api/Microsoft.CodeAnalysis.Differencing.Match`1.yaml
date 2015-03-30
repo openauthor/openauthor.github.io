@@ -1,5 +1,5 @@
 id: Microsoft.CodeAnalysis.Differencing.Match`1
-href: api/Microsoft.CodeAnalysis.Differencing.Match`1.yaml
+href: Microsoft.CodeAnalysis.Differencing.Match`1.yaml
 name:
   CSharp: Match`1
 qualifiedName:
@@ -9,9 +9,9 @@ source:
   remote: &o0
     branch: master
     repo: https://github.com/chenkennt/roslyn.git
-    description: v1.0-3-g8c49d3e
-  path: src/Workspaces/Core/Portable/Differencing/Match.cs
-  startLine: 12
+    description: v1.0-4-gd725e0e
+  path: src/Workspaces/Core/Portable/Differencing/Match.LongestCommonSubsequence.cs
+  startLine: 8
 syntax:
   content:
     CSharp: public sealed partial class Match<TNode>
@@ -21,7 +21,7 @@ inheritance:
   isExternal: true
 items:
 - id: Microsoft.CodeAnalysis.Differencing.Match`1.Comparer
-  href: api/Microsoft.CodeAnalysis.Differencing.Match`1.yaml
+  href: Microsoft.CodeAnalysis.Differencing.Match`1.yaml
   name:
     CSharp: Comparer
   qualifiedName:
@@ -33,20 +33,7 @@ items:
     startLine: 316
   syntax:
     content:
-      CSharp: >-
-        public TreeComparer<TNode> Comparer
-
-                {
-
-                    get
-
-                    {
-
-                        return _comparer;
-
-                    }
-
-                }
+      CSharp: public TreeComparer<TNode> Comparer { get; }
     parameters:
     - id: Comparer
       type:
@@ -54,7 +41,7 @@ items:
         name: TreeComparer
         href: Microsoft.CodeAnalysis.Differencing.TreeComparer{`0}
 - id: Microsoft.CodeAnalysis.Differencing.Match`1.OldRoot
-  href: api/Microsoft.CodeAnalysis.Differencing.Match`1.yaml
+  href: Microsoft.CodeAnalysis.Differencing.Match`1.yaml
   name:
     CSharp: OldRoot
   qualifiedName:
@@ -66,20 +53,7 @@ items:
     startLine: 324
   syntax:
     content:
-      CSharp: >-
-        public TNode OldRoot
-
-                {
-
-                    get
-
-                    {
-
-                        return _root1;
-
-                    }
-
-                }
+      CSharp: public TNode OldRoot { get; }
     parameters:
     - id: OldRoot
       type:
@@ -87,7 +61,7 @@ items:
         name: TNode
         href: TNode
 - id: Microsoft.CodeAnalysis.Differencing.Match`1.NewRoot
-  href: api/Microsoft.CodeAnalysis.Differencing.Match`1.yaml
+  href: Microsoft.CodeAnalysis.Differencing.Match`1.yaml
   name:
     CSharp: NewRoot
   qualifiedName:
@@ -99,20 +73,7 @@ items:
     startLine: 332
   syntax:
     content:
-      CSharp: >-
-        public TNode NewRoot
-
-                {
-
-                    get
-
-                    {
-
-                        return _root2;
-
-                    }
-
-                }
+      CSharp: public TNode NewRoot { get; }
     parameters:
     - id: NewRoot
       type:
@@ -120,7 +81,7 @@ items:
         name: TNode
         href: TNode
 - id: Microsoft.CodeAnalysis.Differencing.Match`1.Matches
-  href: api/Microsoft.CodeAnalysis.Differencing.Match`1.yaml
+  href: Microsoft.CodeAnalysis.Differencing.Match`1.yaml
   name:
     CSharp: Matches
   qualifiedName:
@@ -132,20 +93,7 @@ items:
     startLine: 340
   syntax:
     content:
-      CSharp: >-
-        public IEnumerable<KeyValuePair<TNode, TNode>> Matches
-
-                {
-
-                    get
-
-                    {
-
-                        return new ReadOnlyDictionary<TNode, TNode>(_oneToTwo);
-
-                    }
-
-                }
+      CSharp: public IEnumerable<KeyValuePair<TNode, TNode>> Matches { get; }
     parameters:
     - id: Matches
       type:
@@ -153,7 +101,7 @@ items:
         name: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{`0,`0}}
         isExternal: true
 - id: Microsoft.CodeAnalysis.Differencing.Match`1.TryGetNewNode(`0,`0@)
-  href: api/Microsoft.CodeAnalysis.Differencing.Match`1.yaml
+  href: Microsoft.CodeAnalysis.Differencing.Match`1.yaml
   name:
     CSharp: TryGetNewNode
   qualifiedName:
@@ -180,7 +128,7 @@ items:
     return:
       id: Boolean
 - id: Microsoft.CodeAnalysis.Differencing.Match`1.TryGetOldNode(`0,`0@)
-  href: api/Microsoft.CodeAnalysis.Differencing.Match`1.yaml
+  href: Microsoft.CodeAnalysis.Differencing.Match`1.yaml
   name:
     CSharp: TryGetOldNode
   qualifiedName:
@@ -207,7 +155,7 @@ items:
     return:
       id: Boolean
 - id: Microsoft.CodeAnalysis.Differencing.Match`1.GetTreeEdits
-  href: api/Microsoft.CodeAnalysis.Differencing.Match`1.yaml
+  href: Microsoft.CodeAnalysis.Differencing.Match`1.yaml
   name:
     CSharp: GetTreeEdits
   qualifiedName:
@@ -218,9 +166,9 @@ items:
     path: src/Workspaces/Core/Portable/Differencing/Match.cs
     startLine: 362
   summary: >-
-    Returns an edit script (a sequence of edits) that transform [Microsoft.CodeAnalysis.Differencing.Match`1.OldRoot](#/) subtree
+    Returns an edit script (a sequence of edits) that transform [Microsoft.CodeAnalysis.Differencing.Match`1.OldRoot](Microsoft.CodeAnalysis.Differencing.Match`1.yaml) subtree
 
-    to [Microsoft.CodeAnalysis.Differencing.Match`1.NewRoot](#/) subtree.
+    to [Microsoft.CodeAnalysis.Differencing.Match`1.NewRoot](Microsoft.CodeAnalysis.Differencing.Match`1.yaml) subtree.
   syntax:
     content:
       CSharp: public EditScript<TNode> GetTreeEdits()
@@ -228,7 +176,7 @@ items:
     return:
       id: EditScript
 - id: Microsoft.CodeAnalysis.Differencing.Match`1.GetSequenceEdits(System.Collections.Generic.IEnumerable{`0},System.Collections.Generic.IEnumerable{`0})
-  href: api/Microsoft.CodeAnalysis.Differencing.Match`1.yaml
+  href: Microsoft.CodeAnalysis.Differencing.Match`1.yaml
   name:
     CSharp: GetSequenceEdits
   qualifiedName:

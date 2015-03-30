@@ -34,12 +34,12 @@
 
 </head>
 <body>
-      <div id="console">
-        <div id="player"></div>
-          <button id="run" class="btn btn-primary">Run</button>
-          <button id="close" class="btn btn-danger">Close</button>
-        </div>
-      </div>
+  <div id="console">
+    <div id="player"></div>
+      <button id="run" class="btn btn-primary">Run</button>
+      <button id="close" class="btn btn-danger">Close</button>
+    </div>
+  </div>
   <div id="wrapper">
     <header scroll-y-offset-element class="header header-fixed">
       <section class="navbar navbar-inverse docs-navbar-primary">
@@ -101,7 +101,7 @@
                 <a ng-href="#{{crumb.url}}">{{crumb.name}}</a>
               </li>
             </ul>
-          </div> 
+          </div>
         </div>
       </section>-->
     </header>
@@ -111,7 +111,7 @@
         <div class="grid-left" ng-if="toc">
           <div class="side-navigation">
             <div id="tocLoading" ng-show="tocLoading">Loading...</div>
-            <div ng-hide="tocLoading" ng-repeat="model in [toc.content]" ng-include="'template/toc.tmpl'"></div>
+            <div ng-hide="tocLoading" ng-if="toc" ng-repeat="model in [toc.content]" ng-include="'template/toc.tmpl'"></div>
           </div>
         </div>
         <div ng-class="gridClass(toc)">

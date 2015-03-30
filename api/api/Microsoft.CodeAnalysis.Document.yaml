@@ -1,5 +1,5 @@
 id: Microsoft.CodeAnalysis.Document
-href: api/Microsoft.CodeAnalysis.Document.yaml
+href: Microsoft.CodeAnalysis.Document.yaml
 name:
   CSharp: Document
 qualifiedName:
@@ -9,7 +9,7 @@ source:
   remote: &o0
     branch: master
     repo: https://github.com/chenkennt/roslyn.git
-    description: v1.0-3-g8c49d3e
+    description: v1.0-4-gd725e0e
   path: src/Workspaces/Core/Portable/Workspace/Solution/Document.cs
   startLine: 20
 summary: >-
@@ -25,9 +25,10 @@ inheritance:
   isExternal: true
 - id: Microsoft.CodeAnalysis.TextDocument
   name: TextDocument
+  href: Microsoft.CodeAnalysis.TextDocument.yaml
 items:
 - id: Microsoft.CodeAnalysis.Document.SourceCodeKind
-  href: api/Microsoft.CodeAnalysis.Document.yaml
+  href: Microsoft.CodeAnalysis.Document.yaml
   name:
     CSharp: SourceCodeKind
   qualifiedName:
@@ -40,20 +41,7 @@ items:
   summary: The kind of source code this document contains.
   syntax:
     content:
-      CSharp: >-
-        public SourceCodeKind SourceCodeKind
-
-                {
-
-                    get
-
-                    {
-
-                        return _state.SourceCodeKind;
-
-                    }
-
-                }
+      CSharp: public SourceCodeKind SourceCodeKind { get; }
     parameters:
     - id: SourceCodeKind
       type:
@@ -61,7 +49,7 @@ items:
         name: SourceCodeKind
         href: Microsoft.CodeAnalysis.SourceCodeKind
 - id: Microsoft.CodeAnalysis.Document.TryGetSyntaxTree(Microsoft.CodeAnalysis.SyntaxTree@)
-  href: api/Microsoft.CodeAnalysis.Document.yaml
+  href: Microsoft.CodeAnalysis.Document.yaml
   name:
     CSharp: TryGetSyntaxTree
   qualifiedName:
@@ -87,7 +75,7 @@ items:
     return:
       id: Boolean
 - id: Microsoft.CodeAnalysis.Document.TryGetSyntaxVersion(Microsoft.CodeAnalysis.VersionStamp@)
-  href: api/Microsoft.CodeAnalysis.Document.yaml
+  href: Microsoft.CodeAnalysis.Document.yaml
   name:
     CSharp: TryGetSyntaxVersion
   qualifiedName:
@@ -109,10 +97,11 @@ items:
       type:
         id: Microsoft.CodeAnalysis.VersionStamp
         name: VersionStamp
+        href: Microsoft.CodeAnalysis.VersionStamp.yaml
     return:
       id: Boolean
 - id: Microsoft.CodeAnalysis.Document.GetSyntaxVersionAsync(System.Threading.CancellationToken)
-  href: api/Microsoft.CodeAnalysis.Document.yaml
+  href: Microsoft.CodeAnalysis.Document.yaml
   name:
     CSharp: GetSyntaxVersionAsync
   qualifiedName:
@@ -135,7 +124,7 @@ items:
     return:
       id: Task
 - id: Microsoft.CodeAnalysis.Document.SupportsSyntaxTree
-  href: api/Microsoft.CodeAnalysis.Document.yaml
+  href: Microsoft.CodeAnalysis.Document.yaml
   name:
     CSharp: SupportsSyntaxTree
   qualifiedName:
@@ -148,27 +137,14 @@ items:
   summary: >-
     true if this Document supports providing data through the
 
-    [Microsoft.CodeAnalysis.Document.GetSyntaxTreeAsync(System.Threading.CancellationToken)](#/) and [Microsoft.CodeAnalysis.Document.GetSyntaxRootAsync(System.Threading.CancellationToken)](#/) methods.
+    [Microsoft.CodeAnalysis.Document.GetSyntaxTreeAsync(System.Threading.CancellationToken)](Microsoft.CodeAnalysis.Document.yaml) and [Microsoft.CodeAnalysis.Document.GetSyntaxRootAsync(System.Threading.CancellationToken)](Microsoft.CodeAnalysis.Document.yaml) methods.
 
 
 
     If false then these methods will return null instead.
   syntax:
     content:
-      CSharp: >-
-        public bool SupportsSyntaxTree
-
-                {
-
-                    get
-
-                    {
-
-                        return this.Project.LanguageServices.SyntaxTreeFactory != null;
-
-                    }
-
-                }
+      CSharp: public bool SupportsSyntaxTree { get; }
     parameters:
     - id: SupportsSyntaxTree
       type:
@@ -176,7 +152,7 @@ items:
         name: System.Boolean
         isExternal: true
 - id: Microsoft.CodeAnalysis.Document.SupportsSemanticModel
-  href: api/Microsoft.CodeAnalysis.Document.yaml
+  href: Microsoft.CodeAnalysis.Document.yaml
   name:
     CSharp: SupportsSemanticModel
   qualifiedName:
@@ -189,27 +165,14 @@ items:
   summary: >-
     true if this Document supports providing data through the
 
-    [Microsoft.CodeAnalysis.Document.GetSemanticModelAsync(System.Threading.CancellationToken)](#/) method.
+    [Microsoft.CodeAnalysis.Document.GetSemanticModelAsync(System.Threading.CancellationToken)](Microsoft.CodeAnalysis.Document.yaml) method.
 
 
 
     If false then this method will return null instead.
   syntax:
     content:
-      CSharp: >-
-        public bool SupportsSemanticModel
-
-                {
-
-                    get
-
-                    {
-
-                        return this.SupportsSyntaxTree && this.Project.SupportsCompilation;
-
-                    }
-
-                }
+      CSharp: public bool SupportsSemanticModel { get; }
     parameters:
     - id: SupportsSemanticModel
       type:
@@ -217,7 +180,7 @@ items:
         name: System.Boolean
         isExternal: true
 - id: Microsoft.CodeAnalysis.Document.GetSyntaxTreeAsync(System.Threading.CancellationToken)
-  href: api/Microsoft.CodeAnalysis.Document.yaml
+  href: Microsoft.CodeAnalysis.Document.yaml
   name:
     CSharp: GetSyntaxTreeAsync
   qualifiedName:
@@ -240,7 +203,7 @@ items:
     return:
       id: Task
 - id: Microsoft.CodeAnalysis.Document.TryGetSyntaxRoot(Microsoft.CodeAnalysis.SyntaxNode@)
-  href: api/Microsoft.CodeAnalysis.Document.yaml
+  href: Microsoft.CodeAnalysis.Document.yaml
   name:
     CSharp: TryGetSyntaxRoot
   qualifiedName:
@@ -263,7 +226,7 @@ items:
     return:
       id: Boolean
 - id: Microsoft.CodeAnalysis.Document.GetSyntaxRootAsync(System.Threading.CancellationToken)
-  href: api/Microsoft.CodeAnalysis.Document.yaml
+  href: Microsoft.CodeAnalysis.Document.yaml
   name:
     CSharp: GetSyntaxRootAsync
   qualifiedName:
@@ -286,7 +249,7 @@ items:
     return:
       id: Task
 - id: Microsoft.CodeAnalysis.Document.TryGetSemanticModel(Microsoft.CodeAnalysis.SemanticModel@)
-  href: api/Microsoft.CodeAnalysis.Document.yaml
+  href: Microsoft.CodeAnalysis.Document.yaml
   name:
     CSharp: TryGetSemanticModel
   qualifiedName:
@@ -309,7 +272,7 @@ items:
     return:
       id: Boolean
 - id: Microsoft.CodeAnalysis.Document.GetSemanticModelAsync(System.Threading.CancellationToken)
-  href: api/Microsoft.CodeAnalysis.Document.yaml
+  href: Microsoft.CodeAnalysis.Document.yaml
   name:
     CSharp: GetSemanticModelAsync
   qualifiedName:
@@ -332,7 +295,7 @@ items:
     return:
       id: Task
 - id: Microsoft.CodeAnalysis.Document.WithSourceCodeKind(Microsoft.CodeAnalysis.SourceCodeKind)
-  href: api/Microsoft.CodeAnalysis.Document.yaml
+  href: Microsoft.CodeAnalysis.Document.yaml
   name:
     CSharp: WithSourceCodeKind
   qualifiedName:
@@ -355,7 +318,7 @@ items:
     return:
       id: Document
 - id: Microsoft.CodeAnalysis.Document.WithText(Microsoft.CodeAnalysis.Text.SourceText)
-  href: api/Microsoft.CodeAnalysis.Document.yaml
+  href: Microsoft.CodeAnalysis.Document.yaml
   name:
     CSharp: WithText
   qualifiedName:
@@ -378,7 +341,7 @@ items:
     return:
       id: Document
 - id: Microsoft.CodeAnalysis.Document.WithSyntaxRoot(Microsoft.CodeAnalysis.SyntaxNode)
-  href: api/Microsoft.CodeAnalysis.Document.yaml
+  href: Microsoft.CodeAnalysis.Document.yaml
   name:
     CSharp: WithSyntaxRoot
   qualifiedName:
@@ -401,7 +364,7 @@ items:
     return:
       id: Document
 - id: Microsoft.CodeAnalysis.Document.GetTextChangesAsync(Microsoft.CodeAnalysis.Document,System.Threading.CancellationToken)
-  href: api/Microsoft.CodeAnalysis.Document.yaml
+  href: Microsoft.CodeAnalysis.Document.yaml
   name:
     CSharp: GetTextChangesAsync
   qualifiedName:
@@ -423,6 +386,7 @@ items:
       type:
         id: Microsoft.CodeAnalysis.Document
         name: Document
+        href: Microsoft.CodeAnalysis.Document.yaml
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
@@ -431,7 +395,7 @@ items:
     return:
       id: Task
 - id: Microsoft.CodeAnalysis.Document.GetLinkedDocumentIds
-  href: api/Microsoft.CodeAnalysis.Document.yaml
+  href: Microsoft.CodeAnalysis.Document.yaml
   name:
     CSharp: GetLinkedDocumentIds
   qualifiedName:
@@ -442,11 +406,11 @@ items:
     path: src/Workspaces/Core/Portable/Workspace/Solution/Document.cs
     startLine: 379
   summary: >-
-    Gets the list of [Microsoft.CodeAnalysis.DocumentId](#/)s that are linked to this
+    Gets the list of [Microsoft.CodeAnalysis.DocumentId](Microsoft.CodeAnalysis.DocumentId.yaml)s that are linked to this
 
-    [Microsoft.CodeAnalysis.Document](#/). [Microsoft.CodeAnalysis.Document](#/)s are considered to be linked if they
+    [Microsoft.CodeAnalysis.Document](Microsoft.CodeAnalysis.Document.yaml). [Microsoft.CodeAnalysis.Document](Microsoft.CodeAnalysis.Document.yaml)s are considered to be linked if they
 
-    share the same [Microsoft.CodeAnalysis.TextDocument.FilePath](#/). This [Microsoft.CodeAnalysis.DocumentId](#/) is excluded from the
+    share the same [Microsoft.CodeAnalysis.TextDocument.FilePath](Microsoft.CodeAnalysis.TextDocument.yaml). This [Microsoft.CodeAnalysis.DocumentId](Microsoft.CodeAnalysis.DocumentId.yaml) is excluded from the
 
     result.
   syntax:

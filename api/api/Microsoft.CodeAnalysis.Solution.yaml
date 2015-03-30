@@ -1,5 +1,5 @@
 id: Microsoft.CodeAnalysis.Solution
-href: api/Microsoft.CodeAnalysis.Solution.yaml
+href: Microsoft.CodeAnalysis.Solution.yaml
 name:
   CSharp: Solution
 qualifiedName:
@@ -9,9 +9,9 @@ source:
   remote: &o0
     branch: master
     repo: https://github.com/chenkennt/roslyn.git
-    description: v1.0-3-g8c49d3e
-  path: src/Workspaces/Core/Portable/Workspace/Solution/Solution.CompilationTracker.cs
-  startLine: 17
+    description: v1.0-4-gd725e0e
+  path: src/Workspaces/Core/Portable/Workspace/Solution/Solution.cs
+  startLine: 22
 summary: Represents a set of projects and their source code documents.
 syntax:
   content:
@@ -22,7 +22,7 @@ inheritance:
   isExternal: true
 items:
 - id: Microsoft.CodeAnalysis.Solution.Workspace
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: Workspace
   qualifiedName:
@@ -35,21 +35,15 @@ items:
   summary: The Workspace this solution is associated with.
   syntax:
     content:
-      CSharp: >-
-        public Workspace Workspace
-
-                {
-
-                    get { return _solutionServices.Workspace; }
-
-                }
+      CSharp: public Workspace Workspace { get; }
     parameters:
     - id: Workspace
       type:
         id: Microsoft.CodeAnalysis.Workspace
         name: Workspace
+        href: Microsoft.CodeAnalysis.Workspace.yaml
 - id: Microsoft.CodeAnalysis.Solution.Id
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: Id
   qualifiedName:
@@ -62,21 +56,15 @@ items:
   summary: The Id of the solution. Multiple solution instances may share the same Id.
   syntax:
     content:
-      CSharp: >-
-        public SolutionId Id
-
-                {
-
-                    get { return _id; }
-
-                }
+      CSharp: public SolutionId Id { get; }
     parameters:
     - id: Id
       type:
         id: Microsoft.CodeAnalysis.SolutionId
         name: SolutionId
+        href: Microsoft.CodeAnalysis.SolutionId.yaml
 - id: Microsoft.CodeAnalysis.Solution.FilePath
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: FilePath
   qualifiedName:
@@ -89,14 +77,7 @@ items:
   summary: The path to the solution file or null if there is no solution file.
   syntax:
     content:
-      CSharp: >-
-        public string FilePath
-
-                {
-
-                    get { return _filePath; }
-
-                }
+      CSharp: public string FilePath { get; }
     parameters:
     - id: FilePath
       type:
@@ -104,7 +85,7 @@ items:
         name: System.String
         isExternal: true
 - id: Microsoft.CodeAnalysis.Solution.Version
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: Version
   qualifiedName:
@@ -117,21 +98,15 @@ items:
   summary: The solution version. This equates to the solution file's version.
   syntax:
     content:
-      CSharp: >-
-        public VersionStamp Version
-
-                {
-
-                    get { return _version; }
-
-                }
+      CSharp: public VersionStamp Version { get; }
     parameters:
     - id: Version
       type:
         id: Microsoft.CodeAnalysis.VersionStamp
         name: VersionStamp
+        href: Microsoft.CodeAnalysis.VersionStamp.yaml
 - id: Microsoft.CodeAnalysis.Solution.ProjectIds
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: ProjectIds
   qualifiedName:
@@ -144,14 +119,7 @@ items:
   summary: A list of all the ids for all the projects contained by the solution.
   syntax:
     content:
-      CSharp: >-
-        public IReadOnlyList<ProjectId> ProjectIds
-
-                {
-
-                    get { return _projectIds; }
-
-                }
+      CSharp: public IReadOnlyList<ProjectId> ProjectIds { get; }
     parameters:
     - id: ProjectIds
       type:
@@ -159,7 +127,7 @@ items:
         name: System.Collections.Generic.IReadOnlyList{Microsoft.CodeAnalysis.ProjectId}
         isExternal: true
 - id: Microsoft.CodeAnalysis.Solution.Projects
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: Projects
   qualifiedName:
@@ -172,14 +140,7 @@ items:
   summary: A list of all the projects contained by the solution.
   syntax:
     content:
-      CSharp: >-
-        public IEnumerable<Project> Projects
-
-                {
-
-                    get { return _projectIds.Select(id => GetProject(id)); }
-
-                }
+      CSharp: public IEnumerable<Project> Projects { get; }
     parameters:
     - id: Projects
       type:
@@ -187,7 +148,7 @@ items:
         name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Project}
         isExternal: true
 - id: Microsoft.CodeAnalysis.Solution.GetLatestProjectVersion
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: GetLatestProjectVersion
   qualifiedName:
@@ -205,7 +166,7 @@ items:
     return:
       id: VersionStamp
 - id: Microsoft.CodeAnalysis.Solution.ContainsProject(Microsoft.CodeAnalysis.ProjectId)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: ContainsProject
   qualifiedName:
@@ -224,10 +185,11 @@ items:
       type:
         id: Microsoft.CodeAnalysis.ProjectId
         name: ProjectId
+        href: Microsoft.CodeAnalysis.ProjectId.yaml
     return:
       id: Boolean
 - id: Microsoft.CodeAnalysis.Solution.GetProject(Microsoft.CodeAnalysis.ProjectId)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: GetProject
   qualifiedName:
@@ -251,10 +213,11 @@ items:
       type:
         id: Microsoft.CodeAnalysis.ProjectId
         name: ProjectId
+        href: Microsoft.CodeAnalysis.ProjectId.yaml
     return:
       id: Project
 - id: Microsoft.CodeAnalysis.Solution.GetProject(Microsoft.CodeAnalysis.IAssemblySymbol,System.Threading.CancellationToken)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: GetProject
   qualifiedName:
@@ -264,7 +227,7 @@ items:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/Solution.cs
     startLine: 329
-  summary: Gets the [Microsoft.CodeAnalysis.Project](#/) associated with an assembly symbol.
+  summary: Gets the [Microsoft.CodeAnalysis.Project](Microsoft.CodeAnalysis.Project.yaml) associated with an assembly symbol.
   syntax:
     content:
       CSharp: public Project GetProject(IAssemblySymbol assemblySymbol, CancellationToken cancellationToken = default (CancellationToken))
@@ -282,7 +245,7 @@ items:
     return:
       id: Project
 - id: Microsoft.CodeAnalysis.Solution.ContainsDocument(Microsoft.CodeAnalysis.DocumentId)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: ContainsDocument
   qualifiedName:
@@ -301,10 +264,11 @@ items:
       type:
         id: Microsoft.CodeAnalysis.DocumentId
         name: DocumentId
+        href: Microsoft.CodeAnalysis.DocumentId.yaml
     return:
       id: Boolean
 - id: Microsoft.CodeAnalysis.Solution.ContainsAdditionalDocument(Microsoft.CodeAnalysis.DocumentId)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: ContainsAdditionalDocument
   qualifiedName:
@@ -323,10 +287,11 @@ items:
       type:
         id: Microsoft.CodeAnalysis.DocumentId
         name: DocumentId
+        href: Microsoft.CodeAnalysis.DocumentId.yaml
     return:
       id: Boolean
 - id: Microsoft.CodeAnalysis.Solution.GetDocumentId(Microsoft.CodeAnalysis.SyntaxTree)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: GetDocumentId
   qualifiedName:
@@ -349,7 +314,7 @@ items:
     return:
       id: DocumentId
 - id: Microsoft.CodeAnalysis.Solution.GetDocumentId(Microsoft.CodeAnalysis.SyntaxTree,Microsoft.CodeAnalysis.ProjectId)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: GetDocumentId
   qualifiedName:
@@ -373,10 +338,11 @@ items:
       type:
         id: Microsoft.CodeAnalysis.ProjectId
         name: ProjectId
+        href: Microsoft.CodeAnalysis.ProjectId.yaml
     return:
       id: DocumentId
 - id: Microsoft.CodeAnalysis.Solution.GetDocument(Microsoft.CodeAnalysis.DocumentId)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: GetDocument
   qualifiedName:
@@ -395,10 +361,11 @@ items:
       type:
         id: Microsoft.CodeAnalysis.DocumentId
         name: DocumentId
+        href: Microsoft.CodeAnalysis.DocumentId.yaml
     return:
       id: Document
 - id: Microsoft.CodeAnalysis.Solution.GetAdditionalDocument(Microsoft.CodeAnalysis.DocumentId)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: GetAdditionalDocument
   qualifiedName:
@@ -417,10 +384,11 @@ items:
       type:
         id: Microsoft.CodeAnalysis.DocumentId
         name: DocumentId
+        href: Microsoft.CodeAnalysis.DocumentId.yaml
     return:
       id: TextDocument
 - id: Microsoft.CodeAnalysis.Solution.GetDocument(Microsoft.CodeAnalysis.SyntaxTree)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: GetDocument
   qualifiedName:
@@ -443,7 +411,7 @@ items:
     return:
       id: Document
 - id: Microsoft.CodeAnalysis.Solution.AddProject(System.String,System.String,System.String)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: AddProject
   qualifiedName:
@@ -479,7 +447,7 @@ items:
     return:
       id: Project
 - id: Microsoft.CodeAnalysis.Solution.AddProject(Microsoft.CodeAnalysis.ProjectId,System.String,System.String,System.String)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: AddProject
   qualifiedName:
@@ -498,6 +466,7 @@ items:
       type:
         id: Microsoft.CodeAnalysis.ProjectId
         name: ProjectId
+        href: Microsoft.CodeAnalysis.ProjectId.yaml
     - id: name
       type:
         id: System.String
@@ -516,7 +485,7 @@ items:
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.AddProject(Microsoft.CodeAnalysis.ProjectInfo)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: AddProject
   qualifiedName:
@@ -535,10 +504,11 @@ items:
       type:
         id: Microsoft.CodeAnalysis.ProjectInfo
         name: ProjectInfo
+        href: Microsoft.CodeAnalysis.ProjectInfo.yaml
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.RemoveProject(Microsoft.CodeAnalysis.ProjectId)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: RemoveProject
   qualifiedName:
@@ -557,10 +527,11 @@ items:
       type:
         id: Microsoft.CodeAnalysis.ProjectId
         name: ProjectId
+        href: Microsoft.CodeAnalysis.ProjectId.yaml
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.WithProjectAssemblyName(Microsoft.CodeAnalysis.ProjectId,System.String)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: WithProjectAssemblyName
   qualifiedName:
@@ -582,6 +553,7 @@ items:
       type:
         id: Microsoft.CodeAnalysis.ProjectId
         name: ProjectId
+        href: Microsoft.CodeAnalysis.ProjectId.yaml
     - id: assemblyName
       type:
         id: System.String
@@ -590,7 +562,7 @@ items:
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.WithProjectOutputFilePath(Microsoft.CodeAnalysis.ProjectId,System.String)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: WithProjectOutputFilePath
   qualifiedName:
@@ -609,6 +581,7 @@ items:
       type:
         id: Microsoft.CodeAnalysis.ProjectId
         name: ProjectId
+        href: Microsoft.CodeAnalysis.ProjectId.yaml
     - id: outputFilePath
       type:
         id: System.String
@@ -617,7 +590,7 @@ items:
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.WithProjectName(Microsoft.CodeAnalysis.ProjectId,System.String)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: WithProjectName
   qualifiedName:
@@ -636,6 +609,7 @@ items:
       type:
         id: Microsoft.CodeAnalysis.ProjectId
         name: ProjectId
+        href: Microsoft.CodeAnalysis.ProjectId.yaml
     - id: name
       type:
         id: System.String
@@ -644,7 +618,7 @@ items:
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.WithProjectFilePath(Microsoft.CodeAnalysis.ProjectId,System.String)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: WithProjectFilePath
   qualifiedName:
@@ -663,6 +637,7 @@ items:
       type:
         id: Microsoft.CodeAnalysis.ProjectId
         name: ProjectId
+        href: Microsoft.CodeAnalysis.ProjectId.yaml
     - id: filePath
       type:
         id: System.String
@@ -671,7 +646,7 @@ items:
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.WithProjectCompilationOptions(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.CompilationOptions)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: WithProjectCompilationOptions
   qualifiedName:
@@ -693,6 +668,7 @@ items:
       type:
         id: Microsoft.CodeAnalysis.ProjectId
         name: ProjectId
+        href: Microsoft.CodeAnalysis.ProjectId.yaml
     - id: options
       type:
         id: Microsoft.CodeAnalysis.CompilationOptions
@@ -701,7 +677,7 @@ items:
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.WithProjectParseOptions(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.ParseOptions)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: WithProjectParseOptions
   qualifiedName:
@@ -723,6 +699,7 @@ items:
       type:
         id: Microsoft.CodeAnalysis.ProjectId
         name: ProjectId
+        href: Microsoft.CodeAnalysis.ProjectId.yaml
     - id: options
       type:
         id: Microsoft.CodeAnalysis.ParseOptions
@@ -731,7 +708,7 @@ items:
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.AddProjectReference(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.ProjectReference)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: AddProjectReference
   qualifiedName:
@@ -753,14 +730,16 @@ items:
       type:
         id: Microsoft.CodeAnalysis.ProjectId
         name: ProjectId
+        href: Microsoft.CodeAnalysis.ProjectId.yaml
     - id: projectReference
       type:
         id: Microsoft.CodeAnalysis.ProjectReference
         name: ProjectReference
+        href: Microsoft.CodeAnalysis.ProjectReference.yaml
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.AddProjectReferences(Microsoft.CodeAnalysis.ProjectId,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectReference})
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: AddProjectReferences
   qualifiedName:
@@ -782,6 +761,7 @@ items:
       type:
         id: Microsoft.CodeAnalysis.ProjectId
         name: ProjectId
+        href: Microsoft.CodeAnalysis.ProjectId.yaml
     - id: projectReferences
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectReference}
@@ -790,7 +770,7 @@ items:
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.RemoveProjectReference(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.ProjectReference)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: RemoveProjectReference
   qualifiedName:
@@ -812,14 +792,16 @@ items:
       type:
         id: Microsoft.CodeAnalysis.ProjectId
         name: ProjectId
+        href: Microsoft.CodeAnalysis.ProjectId.yaml
     - id: projectReference
       type:
         id: Microsoft.CodeAnalysis.ProjectReference
         name: ProjectReference
+        href: Microsoft.CodeAnalysis.ProjectReference.yaml
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.WithProjectReferences(Microsoft.CodeAnalysis.ProjectId,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectReference})
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: WithProjectReferences
   qualifiedName:
@@ -841,6 +823,7 @@ items:
       type:
         id: Microsoft.CodeAnalysis.ProjectId
         name: ProjectId
+        href: Microsoft.CodeAnalysis.ProjectId.yaml
     - id: projectReferences
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectReference}
@@ -849,7 +832,7 @@ items:
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.AddMetadataReference(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.MetadataReference)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: AddMetadataReference
   qualifiedName:
@@ -871,6 +854,7 @@ items:
       type:
         id: Microsoft.CodeAnalysis.ProjectId
         name: ProjectId
+        href: Microsoft.CodeAnalysis.ProjectId.yaml
     - id: metadataReference
       type:
         id: Microsoft.CodeAnalysis.MetadataReference
@@ -879,7 +863,7 @@ items:
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.AddMetadataReferences(Microsoft.CodeAnalysis.ProjectId,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference})
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: AddMetadataReferences
   qualifiedName:
@@ -901,6 +885,7 @@ items:
       type:
         id: Microsoft.CodeAnalysis.ProjectId
         name: ProjectId
+        href: Microsoft.CodeAnalysis.ProjectId.yaml
     - id: metadataReferences
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference}
@@ -909,7 +894,7 @@ items:
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.RemoveMetadataReference(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.MetadataReference)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: RemoveMetadataReference
   qualifiedName:
@@ -931,6 +916,7 @@ items:
       type:
         id: Microsoft.CodeAnalysis.ProjectId
         name: ProjectId
+        href: Microsoft.CodeAnalysis.ProjectId.yaml
     - id: metadataReference
       type:
         id: Microsoft.CodeAnalysis.MetadataReference
@@ -939,7 +925,7 @@ items:
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.WithProjectMetadataReferences(Microsoft.CodeAnalysis.ProjectId,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference})
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: WithProjectMetadataReferences
   qualifiedName:
@@ -961,6 +947,7 @@ items:
       type:
         id: Microsoft.CodeAnalysis.ProjectId
         name: ProjectId
+        href: Microsoft.CodeAnalysis.ProjectId.yaml
     - id: metadataReferences
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference}
@@ -969,7 +956,7 @@ items:
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.AddAnalyzerReference(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: AddAnalyzerReference
   qualifiedName:
@@ -991,6 +978,7 @@ items:
       type:
         id: Microsoft.CodeAnalysis.ProjectId
         name: ProjectId
+        href: Microsoft.CodeAnalysis.ProjectId.yaml
     - id: analyzerReference
       type:
         id: Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference
@@ -999,7 +987,7 @@ items:
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.AddAnalyzerReferences(Microsoft.CodeAnalysis.ProjectId,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference})
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: AddAnalyzerReferences
   qualifiedName:
@@ -1021,6 +1009,7 @@ items:
       type:
         id: Microsoft.CodeAnalysis.ProjectId
         name: ProjectId
+        href: Microsoft.CodeAnalysis.ProjectId.yaml
     - id: analyzerReferences
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference}
@@ -1029,7 +1018,7 @@ items:
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.RemoveAnalyzerReference(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: RemoveAnalyzerReference
   qualifiedName:
@@ -1051,6 +1040,7 @@ items:
       type:
         id: Microsoft.CodeAnalysis.ProjectId
         name: ProjectId
+        href: Microsoft.CodeAnalysis.ProjectId.yaml
     - id: analyzerReference
       type:
         id: Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference
@@ -1059,7 +1049,7 @@ items:
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.WithProjectAnalyzerReferences(Microsoft.CodeAnalysis.ProjectId,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference})
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: WithProjectAnalyzerReferences
   qualifiedName:
@@ -1081,6 +1071,7 @@ items:
       type:
         id: Microsoft.CodeAnalysis.ProjectId
         name: ProjectId
+        href: Microsoft.CodeAnalysis.ProjectId.yaml
     - id: analyzerReferences
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference}
@@ -1089,7 +1080,7 @@ items:
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.AddDocument(Microsoft.CodeAnalysis.DocumentId,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.String)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: AddDocument
   qualifiedName:
@@ -1111,6 +1102,7 @@ items:
       type:
         id: Microsoft.CodeAnalysis.DocumentId
         name: DocumentId
+        href: Microsoft.CodeAnalysis.DocumentId.yaml
     - id: name
       type:
         id: System.String
@@ -1134,7 +1126,7 @@ items:
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.AddDocument(Microsoft.CodeAnalysis.DocumentId,System.String,Microsoft.CodeAnalysis.Text.SourceText,System.Collections.Generic.IEnumerable{System.String},System.String,System.Boolean)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: AddDocument
   qualifiedName:
@@ -1156,6 +1148,7 @@ items:
       type:
         id: Microsoft.CodeAnalysis.DocumentId
         name: DocumentId
+        href: Microsoft.CodeAnalysis.DocumentId.yaml
     - id: name
       type:
         id: System.String
@@ -1184,7 +1177,7 @@ items:
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.AddDocument(Microsoft.CodeAnalysis.DocumentId,System.String,Microsoft.CodeAnalysis.SyntaxNode,System.Collections.Generic.IEnumerable{System.String},System.String,System.Boolean,Microsoft.CodeAnalysis.PreservationMode)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: AddDocument
   qualifiedName:
@@ -1206,6 +1199,7 @@ items:
       type:
         id: Microsoft.CodeAnalysis.DocumentId
         name: DocumentId
+        href: Microsoft.CodeAnalysis.DocumentId.yaml
     - id: name
       type:
         id: System.String
@@ -1235,10 +1229,11 @@ items:
       type:
         id: Microsoft.CodeAnalysis.PreservationMode
         name: PreservationMode
+        href: Microsoft.CodeAnalysis.PreservationMode.yaml
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.AddDocument(Microsoft.CodeAnalysis.DocumentId,System.String,Microsoft.CodeAnalysis.TextLoader,System.Collections.Generic.IEnumerable{System.String})
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: AddDocument
   qualifiedName:
@@ -1260,6 +1255,7 @@ items:
       type:
         id: Microsoft.CodeAnalysis.DocumentId
         name: DocumentId
+        href: Microsoft.CodeAnalysis.DocumentId.yaml
     - id: name
       type:
         id: System.String
@@ -1269,6 +1265,7 @@ items:
       type:
         id: Microsoft.CodeAnalysis.TextLoader
         name: TextLoader
+        href: Microsoft.CodeAnalysis.TextLoader.yaml
     - id: folders
       type:
         id: System.Collections.Generic.IEnumerable{System.String}
@@ -1277,7 +1274,7 @@ items:
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.AddDocument(Microsoft.CodeAnalysis.DocumentInfo)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: AddDocument
   qualifiedName:
@@ -1299,10 +1296,11 @@ items:
       type:
         id: Microsoft.CodeAnalysis.DocumentInfo
         name: DocumentInfo
+        href: Microsoft.CodeAnalysis.DocumentInfo.yaml
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.AddAdditionalDocument(Microsoft.CodeAnalysis.DocumentId,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.String)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: AddAdditionalDocument
   qualifiedName:
@@ -1324,6 +1322,7 @@ items:
       type:
         id: Microsoft.CodeAnalysis.DocumentId
         name: DocumentId
+        href: Microsoft.CodeAnalysis.DocumentId.yaml
     - id: name
       type:
         id: System.String
@@ -1347,7 +1346,7 @@ items:
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.AddAdditionalDocument(Microsoft.CodeAnalysis.DocumentId,System.String,Microsoft.CodeAnalysis.Text.SourceText,System.Collections.Generic.IEnumerable{System.String},System.String)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: AddAdditionalDocument
   qualifiedName:
@@ -1369,6 +1368,7 @@ items:
       type:
         id: Microsoft.CodeAnalysis.DocumentId
         name: DocumentId
+        href: Microsoft.CodeAnalysis.DocumentId.yaml
     - id: name
       type:
         id: System.String
@@ -1392,7 +1392,7 @@ items:
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.AddAdditionalDocument(Microsoft.CodeAnalysis.DocumentInfo)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: AddAdditionalDocument
   qualifiedName:
@@ -1410,10 +1410,11 @@ items:
       type:
         id: Microsoft.CodeAnalysis.DocumentInfo
         name: DocumentInfo
+        href: Microsoft.CodeAnalysis.DocumentInfo.yaml
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.RemoveDocument(Microsoft.CodeAnalysis.DocumentId)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: RemoveDocument
   qualifiedName:
@@ -1426,19 +1427,17 @@ items:
   summary: Creates a new solution instance that no longer includes the specified document.
   syntax:
     content:
-      CSharp: >-
-        [SuppressMessage("Microsoft.StyleCop.CSharp.SpacingRules", "SA1008:OpeningParenthesisMustBeSpacedCorrectly", Justification = "Working around StyleCop bug 7080")]
-
-        public Solution RemoveDocument(DocumentId documentId)
+      CSharp: '[SuppressMessage("Microsoft.StyleCop.CSharp.SpacingRules", "SA1008:OpeningParenthesisMustBeSpacedCorrectly", Justification = "Working around StyleCop bug 7080")] public Solution RemoveDocument(DocumentId documentId)'
     parameters:
     - id: documentId
       type:
         id: Microsoft.CodeAnalysis.DocumentId
         name: DocumentId
+        href: Microsoft.CodeAnalysis.DocumentId.yaml
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.RemoveAdditionalDocument(Microsoft.CodeAnalysis.DocumentId)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: RemoveAdditionalDocument
   qualifiedName:
@@ -1457,10 +1456,11 @@ items:
       type:
         id: Microsoft.CodeAnalysis.DocumentId
         name: DocumentId
+        href: Microsoft.CodeAnalysis.DocumentId.yaml
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.WithDocumentFolders(Microsoft.CodeAnalysis.DocumentId,System.Collections.Generic.IEnumerable{System.String})
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: WithDocumentFolders
   qualifiedName:
@@ -1482,6 +1482,7 @@ items:
       type:
         id: Microsoft.CodeAnalysis.DocumentId
         name: DocumentId
+        href: Microsoft.CodeAnalysis.DocumentId.yaml
     - id: folders
       type:
         id: System.Collections.Generic.IEnumerable{System.String}
@@ -1490,7 +1491,7 @@ items:
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.WithDocumentText(Microsoft.CodeAnalysis.DocumentId,Microsoft.CodeAnalysis.Text.SourceText,Microsoft.CodeAnalysis.PreservationMode)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: WithDocumentText
   qualifiedName:
@@ -1512,6 +1513,7 @@ items:
       type:
         id: Microsoft.CodeAnalysis.DocumentId
         name: DocumentId
+        href: Microsoft.CodeAnalysis.DocumentId.yaml
     - id: text
       type:
         id: Microsoft.CodeAnalysis.Text.SourceText
@@ -1521,10 +1523,11 @@ items:
       type:
         id: Microsoft.CodeAnalysis.PreservationMode
         name: PreservationMode
+        href: Microsoft.CodeAnalysis.PreservationMode.yaml
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.WithAdditionalDocumentText(Microsoft.CodeAnalysis.DocumentId,Microsoft.CodeAnalysis.Text.SourceText,Microsoft.CodeAnalysis.PreservationMode)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: WithAdditionalDocumentText
   qualifiedName:
@@ -1546,6 +1549,7 @@ items:
       type:
         id: Microsoft.CodeAnalysis.DocumentId
         name: DocumentId
+        href: Microsoft.CodeAnalysis.DocumentId.yaml
     - id: text
       type:
         id: Microsoft.CodeAnalysis.Text.SourceText
@@ -1555,10 +1559,11 @@ items:
       type:
         id: Microsoft.CodeAnalysis.PreservationMode
         name: PreservationMode
+        href: Microsoft.CodeAnalysis.PreservationMode.yaml
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.WithDocumentText(Microsoft.CodeAnalysis.DocumentId,Microsoft.CodeAnalysis.TextAndVersion,Microsoft.CodeAnalysis.PreservationMode)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: WithDocumentText
   qualifiedName:
@@ -1580,18 +1585,21 @@ items:
       type:
         id: Microsoft.CodeAnalysis.DocumentId
         name: DocumentId
+        href: Microsoft.CodeAnalysis.DocumentId.yaml
     - id: textAndVersion
       type:
         id: Microsoft.CodeAnalysis.TextAndVersion
         name: TextAndVersion
+        href: Microsoft.CodeAnalysis.TextAndVersion.yaml
     - id: mode
       type:
         id: Microsoft.CodeAnalysis.PreservationMode
         name: PreservationMode
+        href: Microsoft.CodeAnalysis.PreservationMode.yaml
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.WithAdditionalDocumentText(Microsoft.CodeAnalysis.DocumentId,Microsoft.CodeAnalysis.TextAndVersion,Microsoft.CodeAnalysis.PreservationMode)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: WithAdditionalDocumentText
   qualifiedName:
@@ -1613,18 +1621,21 @@ items:
       type:
         id: Microsoft.CodeAnalysis.DocumentId
         name: DocumentId
+        href: Microsoft.CodeAnalysis.DocumentId.yaml
     - id: textAndVersion
       type:
         id: Microsoft.CodeAnalysis.TextAndVersion
         name: TextAndVersion
+        href: Microsoft.CodeAnalysis.TextAndVersion.yaml
     - id: mode
       type:
         id: Microsoft.CodeAnalysis.PreservationMode
         name: PreservationMode
+        href: Microsoft.CodeAnalysis.PreservationMode.yaml
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.WithDocumentSyntaxRoot(Microsoft.CodeAnalysis.DocumentId,Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.PreservationMode)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: WithDocumentSyntaxRoot
   qualifiedName:
@@ -1646,6 +1657,7 @@ items:
       type:
         id: Microsoft.CodeAnalysis.DocumentId
         name: DocumentId
+        href: Microsoft.CodeAnalysis.DocumentId.yaml
     - id: root
       type:
         id: Microsoft.CodeAnalysis.SyntaxNode
@@ -1655,10 +1667,11 @@ items:
       type:
         id: Microsoft.CodeAnalysis.PreservationMode
         name: PreservationMode
+        href: Microsoft.CodeAnalysis.PreservationMode.yaml
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.WithDocumentSourceCodeKind(Microsoft.CodeAnalysis.DocumentId,Microsoft.CodeAnalysis.SourceCodeKind)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: WithDocumentSourceCodeKind
   qualifiedName:
@@ -1680,6 +1693,7 @@ items:
       type:
         id: Microsoft.CodeAnalysis.DocumentId
         name: DocumentId
+        href: Microsoft.CodeAnalysis.DocumentId.yaml
     - id: sourceCodeKind
       type:
         id: Microsoft.CodeAnalysis.SourceCodeKind
@@ -1688,7 +1702,7 @@ items:
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.WithDocumentTextLoader(Microsoft.CodeAnalysis.DocumentId,Microsoft.CodeAnalysis.TextLoader,Microsoft.CodeAnalysis.PreservationMode)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: WithDocumentTextLoader
   qualifiedName:
@@ -1710,18 +1724,21 @@ items:
       type:
         id: Microsoft.CodeAnalysis.DocumentId
         name: DocumentId
+        href: Microsoft.CodeAnalysis.DocumentId.yaml
     - id: loader
       type:
         id: Microsoft.CodeAnalysis.TextLoader
         name: TextLoader
+        href: Microsoft.CodeAnalysis.TextLoader.yaml
     - id: mode
       type:
         id: Microsoft.CodeAnalysis.PreservationMode
         name: PreservationMode
+        href: Microsoft.CodeAnalysis.PreservationMode.yaml
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.WithAdditionalDocumentTextLoader(Microsoft.CodeAnalysis.DocumentId,Microsoft.CodeAnalysis.TextLoader,Microsoft.CodeAnalysis.PreservationMode)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: WithAdditionalDocumentTextLoader
   qualifiedName:
@@ -1743,18 +1760,21 @@ items:
       type:
         id: Microsoft.CodeAnalysis.DocumentId
         name: DocumentId
+        href: Microsoft.CodeAnalysis.DocumentId.yaml
     - id: loader
       type:
         id: Microsoft.CodeAnalysis.TextLoader
         name: TextLoader
+        href: Microsoft.CodeAnalysis.TextLoader.yaml
     - id: mode
       type:
         id: Microsoft.CodeAnalysis.PreservationMode
         name: PreservationMode
+        href: Microsoft.CodeAnalysis.PreservationMode.yaml
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.GetDocumentIdsWithFilePath(System.String)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: GetDocumentIdsWithFilePath
   qualifiedName:
@@ -1765,9 +1785,9 @@ items:
     path: src/Workspaces/Core/Portable/Workspace/Solution/Solution.cs
     startLine: 1786
   summary: >-
-    Gets the set of [Microsoft.CodeAnalysis.DocumentId](#/)s in this [Microsoft.CodeAnalysis.Solution](#/) with a
+    Gets the set of [Microsoft.CodeAnalysis.DocumentId](Microsoft.CodeAnalysis.DocumentId.yaml)s in this [Microsoft.CodeAnalysis.Solution](Microsoft.CodeAnalysis.Solution.yaml) with a
 
-    [Microsoft.CodeAnalysis.TextDocument.FilePath](#/) that matches the given file path.
+    [Microsoft.CodeAnalysis.TextDocument.FilePath](Microsoft.CodeAnalysis.TextDocument.yaml) that matches the given file path.
   syntax:
     content:
       CSharp: public ImmutableArray<DocumentId> GetDocumentIdsWithFilePath(string filePath)
@@ -1780,7 +1800,7 @@ items:
     return:
       id: ImmutableArray
 - id: Microsoft.CodeAnalysis.Solution.GetIsolatedSolution
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: GetIsolatedSolution
   qualifiedName:
@@ -1807,7 +1827,7 @@ items:
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.WithDocumentText(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.DocumentId},Microsoft.CodeAnalysis.Text.SourceText,Microsoft.CodeAnalysis.PreservationMode)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: WithDocumentText
   qualifiedName:
@@ -1836,10 +1856,11 @@ items:
       type:
         id: Microsoft.CodeAnalysis.PreservationMode
         name: PreservationMode
+        href: Microsoft.CodeAnalysis.PreservationMode.yaml
     return:
       id: Solution
 - id: Microsoft.CodeAnalysis.Solution.GetChanges(Microsoft.CodeAnalysis.Solution)
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: GetChanges
   qualifiedName:
@@ -1861,10 +1882,11 @@ items:
       type:
         id: Microsoft.CodeAnalysis.Solution
         name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yaml
     return:
       id: SolutionChanges
 - id: Microsoft.CodeAnalysis.Solution.GetProjectDependencyGraph
-  href: api/Microsoft.CodeAnalysis.Solution.yaml
+  href: Microsoft.CodeAnalysis.Solution.yaml
   name:
     CSharp: GetProjectDependencyGraph
   qualifiedName:

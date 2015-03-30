@@ -1,5 +1,5 @@
 id: Microsoft.CodeAnalysis.Editing.DocumentEditor
-href: api/Microsoft.CodeAnalysis.Editing.DocumentEditor.yaml
+href: Microsoft.CodeAnalysis.Editing.DocumentEditor.yaml
 name:
   CSharp: DocumentEditor
 qualifiedName:
@@ -9,7 +9,7 @@ source:
   remote: &o0
     branch: master
     repo: https://github.com/chenkennt/roslyn.git
-    description: v1.0-3-g8c49d3e
+    description: v1.0-4-gd725e0e
   path: src/Workspaces/Core/Portable/Editing/DocumentEditor.cs
   startLine: 14
 summary: An editor for making changes to a document's syntax tree.
@@ -22,9 +22,10 @@ inheritance:
   isExternal: true
 - id: Microsoft.CodeAnalysis.Editing.SyntaxEditor
   name: SyntaxEditor
+  href: Microsoft.CodeAnalysis.Editing.SyntaxEditor.yaml
 items:
 - id: Microsoft.CodeAnalysis.Editing.DocumentEditor.CreateAsync(Microsoft.CodeAnalysis.Document,System.Threading.CancellationToken)
-  href: api/Microsoft.CodeAnalysis.Editing.DocumentEditor.yaml
+  href: Microsoft.CodeAnalysis.Editing.DocumentEditor.yaml
   name:
     CSharp: CreateAsync
   qualifiedName:
@@ -34,7 +35,7 @@ items:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DocumentEditor.cs
     startLine: 29
-  summary: Creates a new [Microsoft.CodeAnalysis.Editing.DocumentEditor](#/) instance.
+  summary: Creates a new [Microsoft.CodeAnalysis.Editing.DocumentEditor](Microsoft.CodeAnalysis.Editing.DocumentEditor.yaml) instance.
   syntax:
     content:
       CSharp: public static async Task<DocumentEditor> CreateAsync(Document document, CancellationToken cancellationToken = default (CancellationToken))
@@ -43,6 +44,7 @@ items:
       type:
         id: Microsoft.CodeAnalysis.Document
         name: Document
+        href: Microsoft.CodeAnalysis.Document.yaml
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
@@ -51,7 +53,7 @@ items:
     return:
       id: Task
 - id: Microsoft.CodeAnalysis.Editing.DocumentEditor.OriginalDocument
-  href: api/Microsoft.CodeAnalysis.Editing.DocumentEditor.yaml
+  href: Microsoft.CodeAnalysis.Editing.DocumentEditor.yaml
   name:
     CSharp: OriginalDocument
   qualifiedName:
@@ -61,24 +63,18 @@ items:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DocumentEditor.cs
     startLine: 44
-  summary: The [Microsoft.CodeAnalysis.Document](#/) specified when the editor was first created.
+  summary: The [Microsoft.CodeAnalysis.Document](Microsoft.CodeAnalysis.Document.yaml) specified when the editor was first created.
   syntax:
     content:
-      CSharp: >-
-        public Document OriginalDocument
-
-                {
-
-                    get { return _document; }
-
-                }
+      CSharp: public Document OriginalDocument { get; }
     parameters:
     - id: OriginalDocument
       type:
         id: Microsoft.CodeAnalysis.Document
         name: Document
+        href: Microsoft.CodeAnalysis.Document.yaml
 - id: Microsoft.CodeAnalysis.Editing.DocumentEditor.SemanticModel
-  href: api/Microsoft.CodeAnalysis.Editing.DocumentEditor.yaml
+  href: Microsoft.CodeAnalysis.Editing.DocumentEditor.yaml
   name:
     CSharp: SemanticModel
   qualifiedName:
@@ -91,14 +87,7 @@ items:
   summary: The [Microsoft.CodeAnalysis.SemanticModel](#) of the original document.
   syntax:
     content:
-      CSharp: >-
-        public SemanticModel SemanticModel
-
-                {
-
-                    get { return _model; }
-
-                }
+      CSharp: public SemanticModel SemanticModel { get; }
     parameters:
     - id: SemanticModel
       type:
@@ -106,7 +95,7 @@ items:
         name: SemanticModel
         href: Microsoft.CodeAnalysis.SemanticModel
 - id: Microsoft.CodeAnalysis.Editing.DocumentEditor.GetChangedDocument
-  href: api/Microsoft.CodeAnalysis.Editing.DocumentEditor.yaml
+  href: Microsoft.CodeAnalysis.Editing.DocumentEditor.yaml
   name:
     CSharp: GetChangedDocument
   qualifiedName:
@@ -116,7 +105,7 @@ items:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DocumentEditor.cs
     startLine: 60
-  summary: Returns the changed [Microsoft.CodeAnalysis.Document](#/).
+  summary: Returns the changed [Microsoft.CodeAnalysis.Document](Microsoft.CodeAnalysis.Document.yaml).
   syntax:
     content:
       CSharp: public Document GetChangedDocument()

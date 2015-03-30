@@ -1,5 +1,5 @@
 id: Microsoft.CodeAnalysis.CodeActions.CodeAction
-href: api/Microsoft.CodeAnalysis.CodeActions.CodeAction.yaml
+href: Microsoft.CodeAnalysis.CodeActions.CodeAction.yaml
 name:
   CSharp: CodeAction
 qualifiedName:
@@ -9,10 +9,10 @@ source:
   remote: &o0
     branch: master
     repo: https://github.com/chenkennt/roslyn.git
-    description: v1.0-3-g8c49d3e
+    description: v1.0-4-gd725e0e
   path: src/Workspaces/Core/Portable/CodeActions/CodeAction.cs
   startLine: 19
-summary: An action produced by a [Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider](#/) or a [Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider](#/).
+summary: An action produced by a [Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider](Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider.yaml) or a [Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider](Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider.yaml).
 syntax:
   content:
     CSharp: public abstract class CodeAction
@@ -22,7 +22,7 @@ inheritance:
   isExternal: true
 items:
 - id: Microsoft.CodeAnalysis.CodeActions.CodeAction.Title
-  href: api/Microsoft.CodeAnalysis.CodeActions.CodeAction.yaml
+  href: Microsoft.CodeAnalysis.CodeActions.CodeAction.yaml
   name:
     CSharp: Title
   qualifiedName:
@@ -43,7 +43,7 @@ items:
         name: System.String
         isExternal: true
 - id: Microsoft.CodeAnalysis.CodeActions.CodeAction.EquivalenceKey
-  href: api/Microsoft.CodeAnalysis.CodeActions.CodeAction.yaml
+  href: Microsoft.CodeAnalysis.CodeActions.CodeAction.yaml
   name:
     CSharp: EquivalenceKey
   qualifiedName:
@@ -54,12 +54,12 @@ items:
     path: src/Workspaces/Core/Portable/CodeActions/CodeAction.cs
     startLine: 40
   summary: >-
-    Two code actions are treated as equivalent if they have equal non-null [Microsoft.CodeAnalysis.CodeActions.CodeAction.EquivalenceKey](#/) values and were generated
+    Two code actions are treated as equivalent if they have equal non-null [Microsoft.CodeAnalysis.CodeActions.CodeAction.EquivalenceKey](Microsoft.CodeAnalysis.CodeActions.CodeAction.yaml) values and were generated
 
-    by the same [Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider](#/) or [Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider](#/).
+    by the same [Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider](Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider.yaml) or [Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider](Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider.yaml).
   syntax:
     content:
-      CSharp: public virtual string EquivalenceKey { get { return null; } }
+      CSharp: public virtual string EquivalenceKey { get; }
     parameters:
     - id: EquivalenceKey
       type:
@@ -67,7 +67,7 @@ items:
         name: System.String
         isExternal: true
 - id: Microsoft.CodeAnalysis.CodeActions.CodeAction.GetOperationsAsync(System.Threading.CancellationToken)
-  href: api/Microsoft.CodeAnalysis.CodeActions.CodeAction.yaml
+  href: Microsoft.CodeAnalysis.CodeActions.CodeAction.yaml
   name:
     CSharp: GetOperationsAsync
   qualifiedName:
@@ -90,7 +90,7 @@ items:
     return:
       id: Task
 - id: Microsoft.CodeAnalysis.CodeActions.CodeAction.GetPreviewOperationsAsync(System.Threading.CancellationToken)
-  href: api/Microsoft.CodeAnalysis.CodeActions.CodeAction.yaml
+  href: Microsoft.CodeAnalysis.CodeActions.CodeAction.yaml
   name:
     CSharp: GetPreviewOperationsAsync
   qualifiedName:
@@ -113,7 +113,7 @@ items:
     return:
       id: Task
 - id: Microsoft.CodeAnalysis.CodeActions.CodeAction.Create(System.String,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{Microsoft.CodeAnalysis.Document}},System.String)
-  href: api/Microsoft.CodeAnalysis.CodeActions.CodeAction.yaml
+  href: Microsoft.CodeAnalysis.CodeActions.CodeAction.yaml
   name:
     CSharp: Create
   qualifiedName:
@@ -124,7 +124,7 @@ items:
     path: src/Workspaces/Core/Portable/CodeActions/CodeAction.cs
     startLine: 229
   summary: >-
-    Creates a [Microsoft.CodeAnalysis.CodeActions.CodeAction](#/) for a change to a single [Microsoft.CodeAnalysis.Document](#/).
+    Creates a [Microsoft.CodeAnalysis.CodeActions.CodeAction](Microsoft.CodeAnalysis.CodeActions.CodeAction.yaml) for a change to a single [Microsoft.CodeAnalysis.Document](Microsoft.CodeAnalysis.Document.yaml).
 
     Use this factory when the change is expensive to compute and should be deferred until requested.
   syntax:
@@ -136,23 +136,23 @@ items:
         id: System.String
         name: System.String
         isExternal: true
-      description: Title of the [Microsoft.CodeAnalysis.CodeActions.CodeAction](#/).
+      description: Title of the [Microsoft.CodeAnalysis.CodeActions.CodeAction](Microsoft.CodeAnalysis.CodeActions.CodeAction.yaml).
     - id: createChangedDocument
       type:
         id: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{Microsoft.CodeAnalysis.Document}}
         name: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{Microsoft.CodeAnalysis.Document}}
         isExternal: true
-      description: Function to create the [Microsoft.CodeAnalysis.Document](#/).
+      description: Function to create the [Microsoft.CodeAnalysis.Document](Microsoft.CodeAnalysis.Document.yaml).
     - id: equivalenceKey
       type:
         id: System.String
         name: System.String
         isExternal: true
-      description: Optional value used to determine the equivalence of the [Microsoft.CodeAnalysis.CodeActions.CodeAction](#/) with other [Microsoft.CodeAnalysis.CodeActions.CodeAction](#/)s. See [Microsoft.CodeAnalysis.CodeActions.CodeAction.EquivalenceKey](#/).
+      description: Optional value used to determine the equivalence of the [Microsoft.CodeAnalysis.CodeActions.CodeAction](Microsoft.CodeAnalysis.CodeActions.CodeAction.yaml) with other [Microsoft.CodeAnalysis.CodeActions.CodeAction](Microsoft.CodeAnalysis.CodeActions.CodeAction.yaml)s. See [Microsoft.CodeAnalysis.CodeActions.CodeAction.EquivalenceKey](Microsoft.CodeAnalysis.CodeActions.CodeAction.yaml).
     return:
       id: CodeAction
 - id: Microsoft.CodeAnalysis.CodeActions.CodeAction.Create(System.String,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{Microsoft.CodeAnalysis.Solution}},System.String)
-  href: api/Microsoft.CodeAnalysis.CodeActions.CodeAction.yaml
+  href: Microsoft.CodeAnalysis.CodeActions.CodeAction.yaml
   name:
     CSharp: Create
   qualifiedName:
@@ -163,7 +163,7 @@ items:
     path: src/Workspaces/Core/Portable/CodeActions/CodeAction.cs
     startLine: 251
   summary: >-
-    Creates a [Microsoft.CodeAnalysis.CodeActions.CodeAction](#/) for a change to more than one [Microsoft.CodeAnalysis.Document](#/) within a [Microsoft.CodeAnalysis.Solution](#/).
+    Creates a [Microsoft.CodeAnalysis.CodeActions.CodeAction](Microsoft.CodeAnalysis.CodeActions.CodeAction.yaml) for a change to more than one [Microsoft.CodeAnalysis.Document](Microsoft.CodeAnalysis.Document.yaml) within a [Microsoft.CodeAnalysis.Solution](Microsoft.CodeAnalysis.Solution.yaml).
 
     Use this factory when the change is expensive to compute and should be deferred until requested.
   syntax:
@@ -175,18 +175,18 @@ items:
         id: System.String
         name: System.String
         isExternal: true
-      description: Title of the [Microsoft.CodeAnalysis.CodeActions.CodeAction](#/).
+      description: Title of the [Microsoft.CodeAnalysis.CodeActions.CodeAction](Microsoft.CodeAnalysis.CodeActions.CodeAction.yaml).
     - id: createChangedSolution
       type:
         id: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{Microsoft.CodeAnalysis.Solution}}
         name: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{Microsoft.CodeAnalysis.Solution}}
         isExternal: true
-      description: Function to create the [Microsoft.CodeAnalysis.Solution](#/).
+      description: Function to create the [Microsoft.CodeAnalysis.Solution](Microsoft.CodeAnalysis.Solution.yaml).
     - id: equivalenceKey
       type:
         id: System.String
         name: System.String
         isExternal: true
-      description: Optional value used to determine the equivalence of the [Microsoft.CodeAnalysis.CodeActions.CodeAction](#/) with other [Microsoft.CodeAnalysis.CodeActions.CodeAction](#/)s. See [Microsoft.CodeAnalysis.CodeActions.CodeAction.EquivalenceKey](#/).
+      description: Optional value used to determine the equivalence of the [Microsoft.CodeAnalysis.CodeActions.CodeAction](Microsoft.CodeAnalysis.CodeActions.CodeAction.yaml) with other [Microsoft.CodeAnalysis.CodeActions.CodeAction](Microsoft.CodeAnalysis.CodeActions.CodeAction.yaml)s. See [Microsoft.CodeAnalysis.CodeActions.CodeAction.EquivalenceKey](Microsoft.CodeAnalysis.CodeActions.CodeAction.yaml).
     return:
       id: CodeAction

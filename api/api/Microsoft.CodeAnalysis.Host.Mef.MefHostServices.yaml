@@ -1,5 +1,5 @@
 id: Microsoft.CodeAnalysis.Host.Mef.MefHostServices
-href: api/Microsoft.CodeAnalysis.Host.Mef.MefHostServices.yaml
+href: Microsoft.CodeAnalysis.Host.Mef.MefHostServices.yaml
 name:
   CSharp: MefHostServices
 qualifiedName:
@@ -9,7 +9,7 @@ source:
   remote: &o0
     branch: master
     repo: https://github.com/chenkennt/roslyn.git
-    description: v1.0-3-g8c49d3e
+    description: v1.0-4-gd725e0e
   path: src/Workspaces/Core/Portable/Workspace/Host/Mef/MefHostServices.cs
   startLine: 14
 syntax:
@@ -21,9 +21,10 @@ inheritance:
   isExternal: true
 - id: Microsoft.CodeAnalysis.Host.HostServices
   name: HostServices
+  href: Microsoft.CodeAnalysis.Host.HostServices.yaml
 items:
 - id: Microsoft.CodeAnalysis.Host.Mef.MefHostServices.#ctor(System.Composition.CompositionContext)
-  href: api/Microsoft.CodeAnalysis.Host.Mef.MefHostServices.yaml
+  href: Microsoft.CodeAnalysis.Host.Mef.MefHostServices.yaml
   name:
     CSharp: MefHostServices(System.Composition.CompositionContext)
   qualifiedName:
@@ -45,7 +46,7 @@ items:
     return:
       id: Void
 - id: Microsoft.CodeAnalysis.Host.Mef.MefHostServices.Create(System.Composition.CompositionContext)
-  href: api/Microsoft.CodeAnalysis.Host.Mef.MefHostServices.yaml
+  href: Microsoft.CodeAnalysis.Host.Mef.MefHostServices.yaml
   name:
     CSharp: Create
   qualifiedName:
@@ -67,7 +68,7 @@ items:
     return:
       id: MefHostServices
 - id: Microsoft.CodeAnalysis.Host.Mef.MefHostServices.Create(System.Collections.Generic.IEnumerable{System.Reflection.Assembly})
-  href: api/Microsoft.CodeAnalysis.Host.Mef.MefHostServices.yaml
+  href: Microsoft.CodeAnalysis.Host.Mef.MefHostServices.yaml
   name:
     CSharp: Create
   qualifiedName:
@@ -89,7 +90,7 @@ items:
     return:
       id: MefHostServices
 - id: Microsoft.CodeAnalysis.Host.Mef.MefHostServices.DefaultHost
-  href: api/Microsoft.CodeAnalysis.Host.Mef.MefHostServices.yaml
+  href: Microsoft.CodeAnalysis.Host.Mef.MefHostServices.yaml
   name:
     CSharp: DefaultHost
   qualifiedName:
@@ -101,39 +102,15 @@ items:
     startLine: 71
   syntax:
     content:
-      CSharp: >-
-        public static MefHostServices DefaultHost
-
-                {
-
-                    get
-
-                    {
-
-                        if (s_defaultHost == null)
-
-                        {
-
-                            var host = MefHostServices.Create(MefHostServices.DefaultAssemblies);
-
-                            Interlocked.CompareExchange(ref s_defaultHost, host, null);
-
-                        }
-
-
-
-                        return s_defaultHost;
-
-                    }
-
-                }
+      CSharp: public static MefHostServices DefaultHost { get; }
     parameters:
     - id: DefaultHost
       type:
         id: Microsoft.CodeAnalysis.Host.Mef.MefHostServices
         name: MefHostServices
+        href: Microsoft.CodeAnalysis.Host.Mef.MefHostServices.yaml
 - id: Microsoft.CodeAnalysis.Host.Mef.MefHostServices.DefaultAssemblies
-  href: api/Microsoft.CodeAnalysis.Host.Mef.MefHostServices.yaml
+  href: Microsoft.CodeAnalysis.Host.Mef.MefHostServices.yaml
   name:
     CSharp: DefaultAssemblies
   qualifiedName:
@@ -145,30 +122,7 @@ items:
     startLine: 86
   syntax:
     content:
-      CSharp: >-
-        public static ImmutableArray<Assembly> DefaultAssemblies
-
-                {
-
-                    get
-
-                    {
-
-                        if (s_defaultAssemblies.IsDefault)
-
-                        {
-
-                            ImmutableInterlocked.InterlockedInitialize(ref s_defaultAssemblies, LoadDefaultAssemblies());
-
-                        }
-
-
-
-                        return s_defaultAssemblies;
-
-                    }
-
-                }
+      CSharp: public static ImmutableArray<Assembly> DefaultAssemblies { get; }
     parameters:
     - id: DefaultAssemblies
       type:

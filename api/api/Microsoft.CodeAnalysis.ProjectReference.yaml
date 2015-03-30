@@ -1,5 +1,5 @@
 id: Microsoft.CodeAnalysis.ProjectReference
-href: api/Microsoft.CodeAnalysis.ProjectReference.yaml
+href: Microsoft.CodeAnalysis.ProjectReference.yaml
 name:
   CSharp: ProjectReference
 qualifiedName:
@@ -9,7 +9,7 @@ source:
   remote: &o0
     branch: master
     repo: https://github.com/chenkennt/roslyn.git
-    description: v1.0-3-g8c49d3e
+    description: v1.0-4-gd725e0e
   path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectReference.cs
   startLine: 11
 syntax:
@@ -21,7 +21,7 @@ inheritance:
   isExternal: true
 items:
 - id: Microsoft.CodeAnalysis.ProjectReference.#ctor(Microsoft.CodeAnalysis.ProjectId,System.Collections.Immutable.ImmutableArray{System.String},System.Boolean)
-  href: api/Microsoft.CodeAnalysis.ProjectReference.yaml
+  href: Microsoft.CodeAnalysis.ProjectReference.yaml
   name:
     CSharp: ProjectReference(Microsoft.CodeAnalysis.ProjectId,System.Collections.Immutable.ImmutableArray{System.String},System.Boolean)
   qualifiedName:
@@ -39,6 +39,7 @@ items:
       type:
         id: Microsoft.CodeAnalysis.ProjectId
         name: ProjectId
+        href: Microsoft.CodeAnalysis.ProjectId.yaml
     - id: aliases
       type:
         id: System.Collections.Immutable.ImmutableArray{System.String}
@@ -52,7 +53,7 @@ items:
     return:
       id: Void
 - id: Microsoft.CodeAnalysis.ProjectReference.ProjectId
-  href: api/Microsoft.CodeAnalysis.ProjectReference.yaml
+  href: Microsoft.CodeAnalysis.ProjectReference.yaml
   name:
     CSharp: ProjectId
   qualifiedName:
@@ -64,14 +65,15 @@ items:
     startLine: 27
   syntax:
     content:
-      CSharp: public ProjectId ProjectId { get { return _projectId; } }
+      CSharp: public ProjectId ProjectId { get; }
     parameters:
     - id: ProjectId
       type:
         id: Microsoft.CodeAnalysis.ProjectId
         name: ProjectId
+        href: Microsoft.CodeAnalysis.ProjectId.yaml
 - id: Microsoft.CodeAnalysis.ProjectReference.Aliases
-  href: api/Microsoft.CodeAnalysis.ProjectReference.yaml
+  href: Microsoft.CodeAnalysis.ProjectReference.yaml
   name:
     CSharp: Aliases
   qualifiedName:
@@ -84,7 +86,7 @@ items:
   summary: Aliases for the reference. Empty if the reference has no aliases.
   syntax:
     content:
-      CSharp: public ImmutableArray<string> Aliases { get { return _aliases; } }
+      CSharp: public ImmutableArray<string> Aliases { get; }
     parameters:
     - id: Aliases
       type:
@@ -92,7 +94,7 @@ items:
         name: System.Collections.Immutable.ImmutableArray{System.String}
         isExternal: true
 - id: Microsoft.CodeAnalysis.ProjectReference.EmbedInteropTypes
-  href: api/Microsoft.CodeAnalysis.ProjectReference.yaml
+  href: Microsoft.CodeAnalysis.ProjectReference.yaml
   name:
     CSharp: EmbedInteropTypes
   qualifiedName:
@@ -105,7 +107,7 @@ items:
   summary: True if interop types defined in the referenced project should be embedded into the referencing project.
   syntax:
     content:
-      CSharp: public bool EmbedInteropTypes { get { return _embedInteropTypes; } }
+      CSharp: public bool EmbedInteropTypes { get; }
     parameters:
     - id: EmbedInteropTypes
       type:
@@ -113,7 +115,7 @@ items:
         name: System.Boolean
         isExternal: true
 - id: Microsoft.CodeAnalysis.ProjectReference.Equals(System.Object)
-  href: api/Microsoft.CodeAnalysis.ProjectReference.yaml
+  href: Microsoft.CodeAnalysis.ProjectReference.yaml
   name:
     CSharp: Equals
   qualifiedName:
@@ -135,7 +137,7 @@ items:
     return:
       id: Boolean
 - id: Microsoft.CodeAnalysis.ProjectReference.Equals(Microsoft.CodeAnalysis.ProjectReference)
-  href: api/Microsoft.CodeAnalysis.ProjectReference.yaml
+  href: Microsoft.CodeAnalysis.ProjectReference.yaml
   name:
     CSharp: Equals
   qualifiedName:
@@ -153,10 +155,11 @@ items:
       type:
         id: Microsoft.CodeAnalysis.ProjectReference
         name: ProjectReference
+        href: Microsoft.CodeAnalysis.ProjectReference.yaml
     return:
       id: Boolean
 - id: Microsoft.CodeAnalysis.ProjectReference.op_Equality(Microsoft.CodeAnalysis.ProjectReference,Microsoft.CodeAnalysis.ProjectReference)
-  href: api/Microsoft.CodeAnalysis.ProjectReference.yaml
+  href: Microsoft.CodeAnalysis.ProjectReference.yaml
   name:
     CSharp: op_Equality
   qualifiedName:
@@ -168,27 +171,22 @@ items:
     startLine: 57
   syntax:
     content:
-      CSharp: >-
-        public static bool operator ==(ProjectReference left, ProjectReference right)
-
-                {
-
-                    return EqualityComparer<ProjectReference>.Default.Equals(left, right);
-
-                }
+      CSharp: public static bool operator ==(ProjectReference left, ProjectReference right) { return EqualityComparer<ProjectReference>.Default.Equals(left, right); }
     parameters:
     - id: left
       type:
         id: Microsoft.CodeAnalysis.ProjectReference
         name: ProjectReference
+        href: Microsoft.CodeAnalysis.ProjectReference.yaml
     - id: right
       type:
         id: Microsoft.CodeAnalysis.ProjectReference
         name: ProjectReference
+        href: Microsoft.CodeAnalysis.ProjectReference.yaml
     return:
       id: Boolean
 - id: Microsoft.CodeAnalysis.ProjectReference.op_Inequality(Microsoft.CodeAnalysis.ProjectReference,Microsoft.CodeAnalysis.ProjectReference)
-  href: api/Microsoft.CodeAnalysis.ProjectReference.yaml
+  href: Microsoft.CodeAnalysis.ProjectReference.yaml
   name:
     CSharp: op_Inequality
   qualifiedName:
@@ -200,27 +198,22 @@ items:
     startLine: 62
   syntax:
     content:
-      CSharp: >-
-        public static bool operator !=(ProjectReference left, ProjectReference right)
-
-                {
-
-                    return !(left == right);
-
-                }
+      CSharp: public static bool operator !=(ProjectReference left, ProjectReference right) { return !(left == right); }
     parameters:
     - id: left
       type:
         id: Microsoft.CodeAnalysis.ProjectReference
         name: ProjectReference
+        href: Microsoft.CodeAnalysis.ProjectReference.yaml
     - id: right
       type:
         id: Microsoft.CodeAnalysis.ProjectReference
         name: ProjectReference
+        href: Microsoft.CodeAnalysis.ProjectReference.yaml
     return:
       id: Boolean
 - id: Microsoft.CodeAnalysis.ProjectReference.GetHashCode
-  href: api/Microsoft.CodeAnalysis.ProjectReference.yaml
+  href: Microsoft.CodeAnalysis.ProjectReference.yaml
   name:
     CSharp: GetHashCode
   qualifiedName:
