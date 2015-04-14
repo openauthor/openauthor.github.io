@@ -1,0 +1,191 @@
+id: System.ComponentModel.DataAnnotations.DataTypeAttribute
+href: System.ComponentModel.DataAnnotations.DataTypeAttribute.yaml
+name:
+  CSharp: DataTypeAttribute
+qualifiedName:
+  CSharp: System.ComponentModel.DataAnnotations.DataTypeAttribute
+type: Class
+source:
+  remote: &o0
+    branch: master
+    repo: https://github.com/dotnet/corefx.git
+  path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/DataTypeAttribute.cs
+  startLine: 12
+summary: >-
+  Allows for clarification of the [System.ComponentModel.DataAnnotations.DataTypeAttribute.DataType](System.ComponentModel.DataAnnotations.DataTypeAttribute.yaml) represented by a given
+
+  property (such as [System.ComponentModel.DataAnnotations.DataType.PhoneNumber](System.ComponentModel.DataAnnotations.DataType.yaml)
+
+  or [System.ComponentModel.DataAnnotations.DataType.Url](System.ComponentModel.DataAnnotations.DataType.yaml))
+syntax:
+  content:
+    CSharp: public class DataTypeAttribute
+inheritance:
+- id: Attribute
+  name: Attribute
+  isExternal: true
+- id: System.ComponentModel.DataAnnotations.ValidationAttribute
+  name: ValidationAttribute
+  href: System.ComponentModel.DataAnnotations.ValidationAttribute.yaml
+items:
+- id: System.ComponentModel.DataAnnotations.DataTypeAttribute.#ctor(System.ComponentModel.DataAnnotations.DataType)
+  href: System.ComponentModel.DataAnnotations.DataTypeAttribute.yaml
+  name:
+    CSharp: DataTypeAttribute(System.ComponentModel.DataAnnotations.DataType)
+  qualifiedName:
+    CSharp: System.ComponentModel.DataAnnotations.DataTypeAttribute.DataTypeAttribute(System.ComponentModel.DataAnnotations.DataType)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/DataTypeAttribute.cs
+    startLine: 23
+  summary: Constructor that accepts a data type enumeration
+  syntax:
+    content:
+      CSharp: public DataTypeAttribute(DataType dataType)
+    parameters:
+    - id: dataType
+      type:
+        id: System.ComponentModel.DataAnnotations.DataType
+        name: DataType
+        href: System.ComponentModel.DataAnnotations.DataType.yaml
+      description: The [System.ComponentModel.DataAnnotations.DataTypeAttribute.DataType](System.ComponentModel.DataAnnotations.DataTypeAttribute.yaml) enum value indicating the type to apply.
+    return:
+      id: Void
+- id: System.ComponentModel.DataAnnotations.DataTypeAttribute.#ctor(System.String)
+  href: System.ComponentModel.DataAnnotations.DataTypeAttribute.yaml
+  name:
+    CSharp: DataTypeAttribute(System.String)
+  qualifiedName:
+    CSharp: System.ComponentModel.DataAnnotations.DataTypeAttribute.DataTypeAttribute(System.String)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/DataTypeAttribute.cs
+    startLine: 54
+  summary: Constructor that accepts the string name of a custom data type
+  syntax:
+    content:
+      CSharp: 'public DataTypeAttribute(string customDataType): this (DataType.Custom)'
+    parameters:
+    - id: customDataType
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+      description: The string name of the custom data type.
+    return:
+      id: Void
+- id: System.ComponentModel.DataAnnotations.DataTypeAttribute.DataType
+  href: System.ComponentModel.DataAnnotations.DataTypeAttribute.yaml
+  name:
+    CSharp: DataType
+  qualifiedName:
+    CSharp: System.ComponentModel.DataAnnotations.DataTypeAttribute.DataType
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/DataTypeAttribute.cs
+    startLine: 63
+  summary: Gets the DataType. If it equals DataType.Custom, [System.ComponentModel.DataAnnotations.DataTypeAttribute.CustomDataType](System.ComponentModel.DataAnnotations.DataTypeAttribute.yaml) should also be retrieved.
+  syntax:
+    content:
+      CSharp: public DataType DataType { get; private set; }
+    parameters:
+    - id: DataType
+      type:
+        id: System.ComponentModel.DataAnnotations.DataType
+        name: DataType
+        href: System.ComponentModel.DataAnnotations.DataType.yaml
+- id: System.ComponentModel.DataAnnotations.DataTypeAttribute.CustomDataType
+  href: System.ComponentModel.DataAnnotations.DataTypeAttribute.yaml
+  name:
+    CSharp: CustomDataType
+  qualifiedName:
+    CSharp: System.ComponentModel.DataAnnotations.DataTypeAttribute.CustomDataType
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/DataTypeAttribute.cs
+    startLine: 69
+  summary: >-
+    Gets the string representing a custom data type. Returns a non-null value only if [System.ComponentModel.DataAnnotations.DataTypeAttribute.DataType](System.ComponentModel.DataAnnotations.DataTypeAttribute.yaml) is
+
+    DataType.Custom.
+  syntax:
+    content:
+      CSharp: public string CustomDataType { get; private set; }
+    parameters:
+    - id: CustomDataType
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+- id: System.ComponentModel.DataAnnotations.DataTypeAttribute.DisplayFormat
+  href: System.ComponentModel.DataAnnotations.DataTypeAttribute.yaml
+  name:
+    CSharp: DisplayFormat
+  qualifiedName:
+    CSharp: System.ComponentModel.DataAnnotations.DataTypeAttribute.DisplayFormat
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/DataTypeAttribute.cs
+    startLine: 74
+  summary: Gets the default display format that gets used along with this DataType.
+  syntax:
+    content:
+      CSharp: public DisplayFormatAttribute DisplayFormat { get; protected set; }
+    parameters:
+    - id: DisplayFormat
+      type:
+        id: System.ComponentModel.DataAnnotations.DisplayFormatAttribute
+        name: DisplayFormatAttribute
+        href: System.ComponentModel.DataAnnotations.DisplayFormatAttribute.yaml
+- id: System.ComponentModel.DataAnnotations.DataTypeAttribute.GetDataTypeName
+  href: System.ComponentModel.DataAnnotations.DataTypeAttribute.yaml
+  name:
+    CSharp: GetDataTypeName
+  qualifiedName:
+    CSharp: System.ComponentModel.DataAnnotations.DataTypeAttribute.GetDataTypeName
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/DataTypeAttribute.cs
+    startLine: 82
+  summary: >-
+    Return the name of the data type, either using the [System.ComponentModel.DataAnnotations.DataTypeAttribute.DataType](System.ComponentModel.DataAnnotations.DataTypeAttribute.yaml) enum or [System.ComponentModel.DataAnnotations.DataTypeAttribute.CustomDataType](System.ComponentModel.DataAnnotations.DataTypeAttribute.yaml)
+
+    string
+  syntax:
+    content:
+      CSharp: public virtual string GetDataTypeName()
+    parameters: []
+    return:
+      id: String
+      description: The name of the data type enum
+- id: System.ComponentModel.DataAnnotations.DataTypeAttribute.IsValid(System.Object)
+  href: System.ComponentModel.DataAnnotations.DataTypeAttribute.yaml
+  name:
+    CSharp: IsValid
+  qualifiedName:
+    CSharp: System.ComponentModel.DataAnnotations.DataTypeAttribute.IsValid(System.Object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/DataTypeAttribute.cs
+    startLine: 103
+  summary: Override of [System.ComponentModel.DataAnnotations.ValidationAttribute.IsValid(System.Object)](System.ComponentModel.DataAnnotations.ValidationAttribute.yaml)
+  syntax:
+    content:
+      CSharp: public override bool IsValid(object value)
+    parameters:
+    - id: value
+      type:
+        id: System.Object
+        name: System.Object
+        isExternal: true
+      description: The value to validate
+    return:
+      id: Boolean
+      description: Unconditionally returns true

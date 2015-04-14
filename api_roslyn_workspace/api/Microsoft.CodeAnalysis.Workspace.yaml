@@ -1,0 +1,719 @@
+id: Microsoft.CodeAnalysis.Workspace
+href: Microsoft.CodeAnalysis.Workspace.yaml
+name:
+  CSharp: Workspace
+qualifiedName:
+  CSharp: Microsoft.CodeAnalysis.Workspace
+type: Class
+source:
+  remote: &o0
+    branch: master
+    repo: https://github.com/vicancy/roslyn
+  path: src/Workspaces/Core/Portable/Workspace/Workspace_Registration.cs
+  startLine: 9
+summary: >-
+  A workspace provides access to a active set of source code projects and documents and their
+
+  associated syntax trees, compilations and semantic models. A workspace has a current solution
+
+  that is an immutable snapshot of the projects and documents. This property may change over time
+
+  as the workspace is updated either from live interactions in the environment or via call to the
+
+  workspace's [Microsoft.CodeAnalysis.Workspace.TryApplyChanges(Microsoft.CodeAnalysis.Solution)](Microsoft.CodeAnalysis.Workspace.yaml) method.
+syntax:
+  content:
+    CSharp: public abstract partial class Workspace
+inheritance:
+- id: System.Object
+  name: System.Object
+  isExternal: true
+items:
+- id: Microsoft.CodeAnalysis.Workspace.Services
+  href: Microsoft.CodeAnalysis.Workspace.yaml
+  name:
+    CSharp: Services
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Workspace.Services
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Workspace.cs
+    startLine: 71
+  summary: Services provider by the host for implementing workspace features.
+  syntax:
+    content:
+      CSharp: public HostWorkspaceServices Services { get; }
+    parameters:
+    - id: Services
+      type:
+        id: Microsoft.CodeAnalysis.Host.HostWorkspaceServices
+        name: HostWorkspaceServices
+        href: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.yaml
+- id: Microsoft.CodeAnalysis.Workspace.Kind
+  href: Microsoft.CodeAnalysis.Workspace.yaml
+  name:
+    CSharp: Kind
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Workspace.Kind
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Workspace.cs
+    startLine: 97
+  summary: >-
+    The kind of the workspace.
+
+    This is generally [Microsoft.CodeAnalysis.WorkspaceKind.Host](Microsoft.CodeAnalysis.WorkspaceKind.yaml) if originating from the host environment, but may be
+
+    any other name used for a specific kind of workspace.
+  syntax:
+    content:
+      CSharp: public string Kind { get; }
+    parameters:
+    - id: Kind
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+- id: Microsoft.CodeAnalysis.Workspace.CurrentSolution
+  href: Microsoft.CodeAnalysis.Workspace.yaml
+  name:
+    CSharp: CurrentSolution
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Workspace.CurrentSolution
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Workspace.cs
+    startLine: 127
+  summary: >-
+    The current solution.
+
+
+
+    The solution is an immutable model of the current set of projects and source documents.
+
+    It provides access to source text, syntax trees and semantics.
+
+
+
+    This property may change as the workspace reacts to changes in the environment or
+
+    after [Microsoft.CodeAnalysis.Workspace.TryApplyChanges(Microsoft.CodeAnalysis.Solution)](Microsoft.CodeAnalysis.Workspace.yaml) is called.
+  syntax:
+    content:
+      CSharp: public Solution CurrentSolution { get; }
+    parameters:
+    - id: CurrentSolution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yaml
+- id: Microsoft.CodeAnalysis.Workspace.Options
+  href: Microsoft.CodeAnalysis.Workspace.yaml
+  name:
+    CSharp: Options
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Workspace.Options
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Workspace.cs
+    startLine: 163
+  summary: Gets or sets the set of all global options.
+  syntax:
+    content:
+      CSharp: public OptionSet Options { get; set; }
+    parameters:
+    - id: Options
+      type:
+        id: Microsoft.CodeAnalysis.Options.OptionSet
+        name: OptionSet
+        href: Microsoft.CodeAnalysis.Options.OptionSet.yaml
+- id: Microsoft.CodeAnalysis.Workspace.Dispose
+  href: Microsoft.CodeAnalysis.Workspace.yaml
+  name:
+    CSharp: Dispose
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Workspace.Dispose
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Workspace.cs
+    startLine: 258
+  summary: Disposes this workspace. The workspace can longer be used after it is disposed.
+  syntax:
+    content:
+      CSharp: public void Dispose()
+    parameters: []
+    return:
+      id: Void
+- id: Microsoft.CodeAnalysis.Workspace.CanApplyChange(Microsoft.CodeAnalysis.ApplyChangesKind)
+  href: Microsoft.CodeAnalysis.Workspace.yaml
+  name:
+    CSharp: CanApplyChange
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Workspace.CanApplyChange(Microsoft.CodeAnalysis.ApplyChangesKind)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Workspace.cs
+    startLine: 808
+  summary: Determines if the specific kind of change is supported by the [Microsoft.CodeAnalysis.Workspace.TryApplyChanges(Microsoft.CodeAnalysis.Solution)](Microsoft.CodeAnalysis.Workspace.yaml) method.
+  syntax:
+    content:
+      CSharp: public virtual bool CanApplyChange(ApplyChangesKind feature)
+    parameters:
+    - id: feature
+      type:
+        id: Microsoft.CodeAnalysis.ApplyChangesKind
+        name: ApplyChangesKind
+        href: Microsoft.CodeAnalysis.ApplyChangesKind.yaml
+    return:
+      id: Boolean
+- id: Microsoft.CodeAnalysis.Workspace.TryApplyChanges(Microsoft.CodeAnalysis.Solution)
+  href: Microsoft.CodeAnalysis.Workspace.yaml
+  name:
+    CSharp: TryApplyChanges
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Workspace.TryApplyChanges(Microsoft.CodeAnalysis.Solution)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Workspace.cs
+    startLine: 823
+  summary: >-
+    Apply changes made to a solution back to the workspace.
+
+
+
+    The specified solution must be one that originated from this workspace. If it is not, or the workspace
+
+    has been updated since the solution was obtained from the workspace, then this method returns false. This method
+
+    will still throw if the solution contains changes that are not supported according to the [Microsoft.CodeAnalysis.Workspace.CanApplyChange(Microsoft.CodeAnalysis.ApplyChangesKind)](Microsoft.CodeAnalysis.Workspace.yaml)
+
+    method.
+  syntax:
+    content:
+      CSharp: public virtual bool TryApplyChanges(Solution newSolution)
+    parameters:
+    - id: newSolution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yaml
+    return:
+      id: Boolean
+- id: Microsoft.CodeAnalysis.Workspace.CanOpenDocuments
+  href: Microsoft.CodeAnalysis.Workspace.yaml
+  name:
+    CSharp: CanOpenDocuments
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Workspace.CanOpenDocuments
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Workspace_Editor.cs
+    startLine: 28
+  summary: True if this workspace supports manually opening and closing documents.
+  syntax:
+    content:
+      CSharp: public virtual bool CanOpenDocuments { get; }
+    parameters:
+    - id: CanOpenDocuments
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+- id: Microsoft.CodeAnalysis.Workspace.OpenDocument(Microsoft.CodeAnalysis.DocumentId,System.Boolean)
+  href: Microsoft.CodeAnalysis.Workspace.yaml
+  name:
+    CSharp: OpenDocument
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Workspace.OpenDocument(Microsoft.CodeAnalysis.DocumentId,System.Boolean)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Workspace_Editor.cs
+    startLine: 140
+  summary: Open the specified document in the host environment.
+  syntax:
+    content:
+      CSharp: public virtual void OpenDocument(DocumentId documentId, bool activate = true)
+    parameters:
+    - id: documentId
+      type:
+        id: Microsoft.CodeAnalysis.DocumentId
+        name: DocumentId
+        href: Microsoft.CodeAnalysis.DocumentId.yaml
+    - id: activate
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+    return:
+      id: Void
+- id: Microsoft.CodeAnalysis.Workspace.CloseDocument(Microsoft.CodeAnalysis.DocumentId)
+  href: Microsoft.CodeAnalysis.Workspace.yaml
+  name:
+    CSharp: CloseDocument
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Workspace.CloseDocument(Microsoft.CodeAnalysis.DocumentId)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Workspace_Editor.cs
+    startLine: 148
+  summary: Close the specified document in the host environment.
+  syntax:
+    content:
+      CSharp: public virtual void CloseDocument(DocumentId documentId)
+    parameters:
+    - id: documentId
+      type:
+        id: Microsoft.CodeAnalysis.DocumentId
+        name: DocumentId
+        href: Microsoft.CodeAnalysis.DocumentId.yaml
+    return:
+      id: Void
+- id: Microsoft.CodeAnalysis.Workspace.OpenAdditionalDocument(Microsoft.CodeAnalysis.DocumentId,System.Boolean)
+  href: Microsoft.CodeAnalysis.Workspace.yaml
+  name:
+    CSharp: OpenAdditionalDocument
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Workspace.OpenAdditionalDocument(Microsoft.CodeAnalysis.DocumentId,System.Boolean)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Workspace_Editor.cs
+    startLine: 156
+  summary: Open the specified additional document in the host environment.
+  syntax:
+    content:
+      CSharp: public virtual void OpenAdditionalDocument(DocumentId documentId, bool activate = true)
+    parameters:
+    - id: documentId
+      type:
+        id: Microsoft.CodeAnalysis.DocumentId
+        name: DocumentId
+        href: Microsoft.CodeAnalysis.DocumentId.yaml
+    - id: activate
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+    return:
+      id: Void
+- id: Microsoft.CodeAnalysis.Workspace.CloseAdditionalDocument(Microsoft.CodeAnalysis.DocumentId)
+  href: Microsoft.CodeAnalysis.Workspace.yaml
+  name:
+    CSharp: CloseAdditionalDocument
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Workspace.CloseAdditionalDocument(Microsoft.CodeAnalysis.DocumentId)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Workspace_Editor.cs
+    startLine: 164
+  summary: Close the specified additional document in the host environment.
+  syntax:
+    content:
+      CSharp: public virtual void CloseAdditionalDocument(DocumentId documentId)
+    parameters:
+    - id: documentId
+      type:
+        id: Microsoft.CodeAnalysis.DocumentId
+        name: DocumentId
+        href: Microsoft.CodeAnalysis.DocumentId.yaml
+    return:
+      id: Void
+- id: Microsoft.CodeAnalysis.Workspace.IsDocumentOpen(Microsoft.CodeAnalysis.DocumentId)
+  href: Microsoft.CodeAnalysis.Workspace.yaml
+  name:
+    CSharp: IsDocumentOpen
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Workspace.IsDocumentOpen(Microsoft.CodeAnalysis.DocumentId)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Workspace_Editor.cs
+    startLine: 196
+  summary: Determines if the document is currently open in the host environment.
+  syntax:
+    content:
+      CSharp: public virtual bool IsDocumentOpen(DocumentId documentId)
+    parameters:
+    - id: documentId
+      type:
+        id: Microsoft.CodeAnalysis.DocumentId
+        name: DocumentId
+        href: Microsoft.CodeAnalysis.DocumentId.yaml
+    return:
+      id: Boolean
+- id: Microsoft.CodeAnalysis.Workspace.GetOpenDocumentIds(Microsoft.CodeAnalysis.ProjectId)
+  href: Microsoft.CodeAnalysis.Workspace.yaml
+  name:
+    CSharp: GetOpenDocumentIds
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Workspace.GetOpenDocumentIds(Microsoft.CodeAnalysis.ProjectId)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Workspace_Editor.cs
+    startLine: 208
+  summary: Gets a list of the currently opened documents.
+  syntax:
+    content:
+      CSharp: public virtual IEnumerable<DocumentId> GetOpenDocumentIds(ProjectId projectId = null)
+    parameters:
+    - id: projectId
+      type:
+        id: Microsoft.CodeAnalysis.ProjectId
+        name: ProjectId
+        href: Microsoft.CodeAnalysis.ProjectId.yaml
+    return:
+      id: IEnumerable
+- id: Microsoft.CodeAnalysis.Workspace.GetRelatedDocumentIds(Microsoft.CodeAnalysis.Text.SourceTextContainer)
+  href: Microsoft.CodeAnalysis.Workspace.yaml
+  name:
+    CSharp: GetRelatedDocumentIds
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Workspace.GetRelatedDocumentIds(Microsoft.CodeAnalysis.Text.SourceTextContainer)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Workspace_Editor.cs
+    startLine: 236
+  summary: >-
+    Gets the ids for documents associated with a text container.
+
+    Documents are normally associated with a text container when the documents are opened.
+  syntax:
+    content:
+      CSharp: public virtual IEnumerable<DocumentId> GetRelatedDocumentIds(SourceTextContainer container)
+    parameters:
+    - id: container
+      type:
+        id: Microsoft.CodeAnalysis.Text.SourceTextContainer
+        name: SourceTextContainer
+        href: Microsoft.CodeAnalysis.Text.SourceTextContainer
+    return:
+      id: IEnumerable
+- id: Microsoft.CodeAnalysis.Workspace.GetDocumentIdInCurrentContext(Microsoft.CodeAnalysis.Text.SourceTextContainer)
+  href: Microsoft.CodeAnalysis.Workspace.yaml
+  name:
+    CSharp: GetDocumentIdInCurrentContext
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Workspace.GetDocumentIdInCurrentContext(Microsoft.CodeAnalysis.Text.SourceTextContainer)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Workspace_Editor.cs
+    startLine: 266
+  summary: >-
+    Gets the id for the document associated with the given text container in its current context.
+
+    Documents are normally associated with a text container when the documents are opened.
+  syntax:
+    content:
+      CSharp: public virtual DocumentId GetDocumentIdInCurrentContext(SourceTextContainer container)
+    parameters:
+    - id: container
+      type:
+        id: Microsoft.CodeAnalysis.Text.SourceTextContainer
+        name: SourceTextContainer
+        href: Microsoft.CodeAnalysis.Text.SourceTextContainer
+    return:
+      id: DocumentId
+- id: Microsoft.CodeAnalysis.Workspace.WorkspaceChanged
+  href: Microsoft.CodeAnalysis.Workspace.yaml
+  name:
+    CSharp: WorkspaceChanged
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Workspace.WorkspaceChanged
+  type: Event
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Workspace_Events.cs
+    startLine: 20
+  summary: An event raised whenever the current solution is changed.
+  syntax:
+    content:
+      CSharp: public event EventHandler<WorkspaceChangeEventArgs> WorkspaceChanged { add { _eventMap.AddEventHandler(WorkspaceChangeEventName, value); } remove { _eventMap.RemoveEventHandler(WorkspaceChangeEventName, value); } }
+- id: Microsoft.CodeAnalysis.Workspace.add_WorkspaceChanged(System.EventHandler{Microsoft.CodeAnalysis.WorkspaceChangeEventArgs})
+  href: Microsoft.CodeAnalysis.Workspace.yaml
+  name:
+    CSharp: add_WorkspaceChanged
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Workspace.add_WorkspaceChanged(System.EventHandler{Microsoft.CodeAnalysis.WorkspaceChangeEventArgs})
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Workspace_Events.cs
+    startLine: 22
+  syntax:
+    content:
+      CSharp: add { _eventMap.AddEventHandler(WorkspaceChangeEventName, value); }
+    parameters:
+    - id: value
+      type:
+        id: System.EventHandler{Microsoft.CodeAnalysis.WorkspaceChangeEventArgs}
+        name: System.EventHandler{Microsoft.CodeAnalysis.WorkspaceChangeEventArgs}
+        isExternal: true
+    return:
+      id: Void
+- id: Microsoft.CodeAnalysis.Workspace.remove_WorkspaceChanged(System.EventHandler{Microsoft.CodeAnalysis.WorkspaceChangeEventArgs})
+  href: Microsoft.CodeAnalysis.Workspace.yaml
+  name:
+    CSharp: remove_WorkspaceChanged
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Workspace.remove_WorkspaceChanged(System.EventHandler{Microsoft.CodeAnalysis.WorkspaceChangeEventArgs})
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Workspace_Events.cs
+    startLine: 27
+  syntax:
+    content:
+      CSharp: remove { _eventMap.RemoveEventHandler(WorkspaceChangeEventName, value); }
+    parameters:
+    - id: value
+      type:
+        id: System.EventHandler{Microsoft.CodeAnalysis.WorkspaceChangeEventArgs}
+        name: System.EventHandler{Microsoft.CodeAnalysis.WorkspaceChangeEventArgs}
+        isExternal: true
+    return:
+      id: Void
+- id: Microsoft.CodeAnalysis.Workspace.WorkspaceFailed
+  href: Microsoft.CodeAnalysis.Workspace.yaml
+  name:
+    CSharp: WorkspaceFailed
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Workspace.WorkspaceFailed
+  type: Event
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Workspace_Events.cs
+    startLine: 72
+  summary: >-
+    An event raised whenever the workspace or part of its solution model
+
+    fails to access a file or other external resource.
+  syntax:
+    content:
+      CSharp: public event EventHandler<WorkspaceDiagnosticEventArgs> WorkspaceFailed { add { _eventMap.AddEventHandler(WorkspaceFailedEventName, value); } remove { _eventMap.RemoveEventHandler(WorkspaceFailedEventName, value); } }
+- id: Microsoft.CodeAnalysis.Workspace.add_WorkspaceFailed(System.EventHandler{Microsoft.CodeAnalysis.WorkspaceDiagnosticEventArgs})
+  href: Microsoft.CodeAnalysis.Workspace.yaml
+  name:
+    CSharp: add_WorkspaceFailed
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Workspace.add_WorkspaceFailed(System.EventHandler{Microsoft.CodeAnalysis.WorkspaceDiagnosticEventArgs})
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Workspace_Events.cs
+    startLine: 74
+  syntax:
+    content:
+      CSharp: add { _eventMap.AddEventHandler(WorkspaceFailedEventName, value); }
+    parameters:
+    - id: value
+      type:
+        id: System.EventHandler{Microsoft.CodeAnalysis.WorkspaceDiagnosticEventArgs}
+        name: System.EventHandler{Microsoft.CodeAnalysis.WorkspaceDiagnosticEventArgs}
+        isExternal: true
+    return:
+      id: Void
+- id: Microsoft.CodeAnalysis.Workspace.remove_WorkspaceFailed(System.EventHandler{Microsoft.CodeAnalysis.WorkspaceDiagnosticEventArgs})
+  href: Microsoft.CodeAnalysis.Workspace.yaml
+  name:
+    CSharp: remove_WorkspaceFailed
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Workspace.remove_WorkspaceFailed(System.EventHandler{Microsoft.CodeAnalysis.WorkspaceDiagnosticEventArgs})
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Workspace_Events.cs
+    startLine: 79
+  syntax:
+    content:
+      CSharp: remove { _eventMap.RemoveEventHandler(WorkspaceFailedEventName, value); }
+    parameters:
+    - id: value
+      type:
+        id: System.EventHandler{Microsoft.CodeAnalysis.WorkspaceDiagnosticEventArgs}
+        name: System.EventHandler{Microsoft.CodeAnalysis.WorkspaceDiagnosticEventArgs}
+        isExternal: true
+    return:
+      id: Void
+- id: Microsoft.CodeAnalysis.Workspace.DocumentOpened
+  href: Microsoft.CodeAnalysis.Workspace.yaml
+  name:
+    CSharp: DocumentOpened
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Workspace.DocumentOpened
+  type: Event
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Workspace_Events.cs
+    startLine: 101
+  summary: An event that is fired when a documents is opened in the editor.
+  syntax:
+    content:
+      CSharp: public event EventHandler<DocumentEventArgs> DocumentOpened { add { _eventMap.AddEventHandler(DocumentOpenedEventName, value); } remove { _eventMap.RemoveEventHandler(DocumentOpenedEventName, value); } }
+- id: Microsoft.CodeAnalysis.Workspace.add_DocumentOpened(System.EventHandler{Microsoft.CodeAnalysis.DocumentEventArgs})
+  href: Microsoft.CodeAnalysis.Workspace.yaml
+  name:
+    CSharp: add_DocumentOpened
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Workspace.add_DocumentOpened(System.EventHandler{Microsoft.CodeAnalysis.DocumentEventArgs})
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Workspace_Events.cs
+    startLine: 103
+  syntax:
+    content:
+      CSharp: add { _eventMap.AddEventHandler(DocumentOpenedEventName, value); }
+    parameters:
+    - id: value
+      type:
+        id: System.EventHandler{Microsoft.CodeAnalysis.DocumentEventArgs}
+        name: System.EventHandler{Microsoft.CodeAnalysis.DocumentEventArgs}
+        isExternal: true
+    return:
+      id: Void
+- id: Microsoft.CodeAnalysis.Workspace.remove_DocumentOpened(System.EventHandler{Microsoft.CodeAnalysis.DocumentEventArgs})
+  href: Microsoft.CodeAnalysis.Workspace.yaml
+  name:
+    CSharp: remove_DocumentOpened
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Workspace.remove_DocumentOpened(System.EventHandler{Microsoft.CodeAnalysis.DocumentEventArgs})
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Workspace_Events.cs
+    startLine: 108
+  syntax:
+    content:
+      CSharp: remove { _eventMap.RemoveEventHandler(DocumentOpenedEventName, value); }
+    parameters:
+    - id: value
+      type:
+        id: System.EventHandler{Microsoft.CodeAnalysis.DocumentEventArgs}
+        name: System.EventHandler{Microsoft.CodeAnalysis.DocumentEventArgs}
+        isExternal: true
+    return:
+      id: Void
+- id: Microsoft.CodeAnalysis.Workspace.DocumentClosed
+  href: Microsoft.CodeAnalysis.Workspace.yaml
+  name:
+    CSharp: DocumentClosed
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Workspace.DocumentClosed
+  type: Event
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Workspace_Events.cs
+    startLine: 137
+  summary: An event that is fired when a document is closed in the editor.
+  syntax:
+    content:
+      CSharp: public event EventHandler<DocumentEventArgs> DocumentClosed { add { _eventMap.AddEventHandler(DocumentClosedEventName, value); } remove { _eventMap.RemoveEventHandler(DocumentClosedEventName, value); } }
+- id: Microsoft.CodeAnalysis.Workspace.add_DocumentClosed(System.EventHandler{Microsoft.CodeAnalysis.DocumentEventArgs})
+  href: Microsoft.CodeAnalysis.Workspace.yaml
+  name:
+    CSharp: add_DocumentClosed
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Workspace.add_DocumentClosed(System.EventHandler{Microsoft.CodeAnalysis.DocumentEventArgs})
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Workspace_Events.cs
+    startLine: 139
+  syntax:
+    content:
+      CSharp: add { _eventMap.AddEventHandler(DocumentClosedEventName, value); }
+    parameters:
+    - id: value
+      type:
+        id: System.EventHandler{Microsoft.CodeAnalysis.DocumentEventArgs}
+        name: System.EventHandler{Microsoft.CodeAnalysis.DocumentEventArgs}
+        isExternal: true
+    return:
+      id: Void
+- id: Microsoft.CodeAnalysis.Workspace.remove_DocumentClosed(System.EventHandler{Microsoft.CodeAnalysis.DocumentEventArgs})
+  href: Microsoft.CodeAnalysis.Workspace.yaml
+  name:
+    CSharp: remove_DocumentClosed
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Workspace.remove_DocumentClosed(System.EventHandler{Microsoft.CodeAnalysis.DocumentEventArgs})
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Workspace_Events.cs
+    startLine: 144
+  syntax:
+    content:
+      CSharp: remove { _eventMap.RemoveEventHandler(DocumentClosedEventName, value); }
+    parameters:
+    - id: value
+      type:
+        id: System.EventHandler{Microsoft.CodeAnalysis.DocumentEventArgs}
+        name: System.EventHandler{Microsoft.CodeAnalysis.DocumentEventArgs}
+        isExternal: true
+    return:
+      id: Void
+- id: Microsoft.CodeAnalysis.Workspace.TryGetWorkspace(Microsoft.CodeAnalysis.Text.SourceTextContainer,Microsoft.CodeAnalysis.Workspace@)
+  href: Microsoft.CodeAnalysis.Workspace.yaml
+  name:
+    CSharp: TryGetWorkspace
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Workspace.TryGetWorkspace(Microsoft.CodeAnalysis.Text.SourceTextContainer,Microsoft.CodeAnalysis.Workspace@)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Workspace_Registration.cs
+    startLine: 17
+  summary: Gets the workspace associated with the specific text container.
+  syntax:
+    content:
+      CSharp: public static bool TryGetWorkspace(SourceTextContainer textContainer, out Workspace workspace)
+    parameters:
+    - id: textContainer
+      type:
+        id: Microsoft.CodeAnalysis.Text.SourceTextContainer
+        name: SourceTextContainer
+        href: Microsoft.CodeAnalysis.Text.SourceTextContainer
+    - id: workspace
+      type:
+        id: Microsoft.CodeAnalysis.Workspace
+        name: Workspace
+        href: Microsoft.CodeAnalysis.Workspace.yaml
+    return:
+      id: Boolean
+- id: Microsoft.CodeAnalysis.Workspace.GetWorkspaceRegistration(Microsoft.CodeAnalysis.Text.SourceTextContainer)
+  href: Microsoft.CodeAnalysis.Workspace.yaml
+  name:
+    CSharp: GetWorkspaceRegistration
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Workspace.GetWorkspaceRegistration(Microsoft.CodeAnalysis.Text.SourceTextContainer)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Workspace_Registration.cs
+    startLine: 66
+  summary: Returns a [Microsoft.CodeAnalysis.WorkspaceRegistration](Microsoft.CodeAnalysis.WorkspaceRegistration.yaml) for a given text container.
+  syntax:
+    content:
+      CSharp: public static WorkspaceRegistration GetWorkspaceRegistration(SourceTextContainer textContainer)
+    parameters:
+    - id: textContainer
+      type:
+        id: Microsoft.CodeAnalysis.Text.SourceTextContainer
+        name: SourceTextContainer
+        href: Microsoft.CodeAnalysis.Text.SourceTextContainer
+    return:
+      id: WorkspaceRegistration

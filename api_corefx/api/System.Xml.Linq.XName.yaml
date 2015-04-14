@@ -1,0 +1,292 @@
+id: System.Xml.Linq.XName
+href: System.Xml.Linq.XName.yaml
+name:
+  CSharp: XName
+qualifiedName:
+  CSharp: System.Xml.Linq.XName
+type: Class
+source:
+  remote: &o0
+    branch: master
+    repo: https://github.com/dotnet/corefx.git
+  path: src/System.Xml.XDocument/src/System/Xml/Linq/XName.cs
+  startLine: 10
+summary: Represents a name of an XML element or attribute. This class cannot be inherited.
+syntax:
+  content:
+    CSharp: public sealed class XName
+inheritance:
+- id: IEquatable{System.Xml.Linq.XName}
+  name: IEquatable{System.Xml.Linq.XName}
+  isExternal: true
+items:
+- id: System.Xml.Linq.XName.LocalName
+  href: System.Xml.Linq.XName.yaml
+  name:
+    CSharp: LocalName
+  qualifiedName:
+    CSharp: System.Xml.Linq.XName.LocalName
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Xml.XDocument/src/System/Xml/Linq/XName.cs
+    startLine: 31
+  summary: Gets the local (unqualified) part of the name.
+  syntax:
+    content:
+      CSharp: public string LocalName { get; }
+    parameters:
+    - id: LocalName
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+- id: System.Xml.Linq.XName.Namespace
+  href: System.Xml.Linq.XName.yaml
+  name:
+    CSharp: Namespace
+  qualifiedName:
+    CSharp: System.Xml.Linq.XName.Namespace
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Xml.XDocument/src/System/Xml/Linq/XName.cs
+    startLine: 39
+  summary: Gets the namespace of the name.
+  syntax:
+    content:
+      CSharp: public XNamespace Namespace { get; }
+    parameters:
+    - id: Namespace
+      type:
+        id: System.Xml.Linq.XNamespace
+        name: XNamespace
+        href: System.Xml.Linq.XNamespace.yaml
+- id: System.Xml.Linq.XName.NamespaceName
+  href: System.Xml.Linq.XName.yaml
+  name:
+    CSharp: NamespaceName
+  qualifiedName:
+    CSharp: System.Xml.Linq.XName.NamespaceName
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Xml.XDocument/src/System/Xml/Linq/XName.cs
+    startLine: 47
+  summary: Gets the namespace name part of the name.
+  syntax:
+    content:
+      CSharp: public string NamespaceName { get; }
+    parameters:
+    - id: NamespaceName
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+- id: System.Xml.Linq.XName.ToString
+  href: System.Xml.Linq.XName.yaml
+  name:
+    CSharp: ToString
+  qualifiedName:
+    CSharp: System.Xml.Linq.XName.ToString
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XDocument/src/System/Xml/Linq/XName.cs
+    startLine: 55
+  summary: 'Returns the expanded XML name in the format: {namespaceName}localName.'
+  syntax:
+    content:
+      CSharp: public override string ToString()
+    parameters: []
+    return:
+      id: String
+- id: System.Xml.Linq.XName.Get(System.String)
+  href: System.Xml.Linq.XName.yaml
+  name:
+    CSharp: Get
+  qualifiedName:
+    CSharp: System.Xml.Linq.XName.Get(System.String)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XDocument/src/System/Xml/Linq/XName.cs
+    startLine: 70
+  summary: Returns an [System.Xml.Linq.XName](System.Xml.Linq.XName.yaml) object created from the specified expanded name.
+  syntax:
+    content:
+      CSharp: public static XName Get(string expandedName)
+    parameters:
+    - id: expandedName
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+      description: 'A string containing an expanded XML name in the format: {namespace}localname.'
+    return:
+      id: XName
+      description: An [System.Xml.Linq.XName](System.Xml.Linq.XName.yaml) object constructed from the specified expanded name.
+- id: System.Xml.Linq.XName.Get(System.String,System.String)
+  href: System.Xml.Linq.XName.yaml
+  name:
+    CSharp: Get
+  qualifiedName:
+    CSharp: System.Xml.Linq.XName.Get(System.String,System.String)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XDocument/src/System/Xml/Linq/XName.cs
+    startLine: 92
+  summary: Returns an [System.Xml.Linq.XName](System.Xml.Linq.XName.yaml) object from a local name and a namespace.
+  syntax:
+    content:
+      CSharp: public static XName Get(string localName, string namespaceName)
+    parameters:
+    - id: localName
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+      description: A local (unqualified) name.
+    - id: namespaceName
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+      description: An XML namespace.
+    return:
+      id: XName
+      description: An XName object created from the specified local name and namespace.
+- id: System.Xml.Linq.XName.op_Implicit(System.String)~System.Xml.Linq.XName
+  href: System.Xml.Linq.XName.yaml
+  name:
+    CSharp: op_Implicit
+  qualifiedName:
+    CSharp: System.Xml.Linq.XName.op_Implicit(System.String)~System.Xml.Linq.XName
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XDocument/src/System/Xml/Linq/XName.cs
+    startLine: 102
+  summary: Converts a string formatted as an expanded XML name ({namespace}localname) to an XName object.
+  syntax:
+    content:
+      CSharp: '[CLSCompliant(false)] public static implicit operator XName(string expandedName) { return expandedName != null ? Get(expandedName) : null; }'
+    parameters:
+    - id: expandedName
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+      description: 'A string containing an expanded XML name in the format: {namespace}localname.'
+    return:
+      id: XName
+      description: An XName object constructed from the expanded name.
+- id: System.Xml.Linq.XName.Equals(System.Object)
+  href: System.Xml.Linq.XName.yaml
+  name:
+    CSharp: Equals
+  qualifiedName:
+    CSharp: System.Xml.Linq.XName.Equals(System.Object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XDocument/src/System/Xml/Linq/XName.cs
+    startLine: 118
+  summary: Determines whether the specified [System.Xml.Linq.XName](System.Xml.Linq.XName.yaml) is equal to the current [System.Xml.Linq.XName](System.Xml.Linq.XName.yaml).
+  syntax:
+    content:
+      CSharp: public override bool Equals(object obj)
+    parameters:
+    - id: obj
+      type:
+        id: System.Object
+        name: System.Object
+        isExternal: true
+      description: The XName to compare to the current XName.
+    return:
+      id: Boolean
+      description: true if the specified [System.Xml.Linq.XName](System.Xml.Linq.XName.yaml) is equal to the current XName; otherwise false.
+- id: System.Xml.Linq.XName.GetHashCode
+  href: System.Xml.Linq.XName.yaml
+  name:
+    CSharp: GetHashCode
+  qualifiedName:
+    CSharp: System.Xml.Linq.XName.GetHashCode
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XDocument/src/System/Xml/Linq/XName.cs
+    startLine: 127
+  summary: >-
+    Serves as a hash function for [System.Xml.Linq.XName](System.Xml.Linq.XName.yaml). GetHashCode is suitable
+
+    for use in hashing algorithms and data structures like a hash table.
+  syntax:
+    content:
+      CSharp: public override int GetHashCode()
+    parameters: []
+    return:
+      id: Int32
+- id: System.Xml.Linq.XName.op_Equality(System.Xml.Linq.XName,System.Xml.Linq.XName)
+  href: System.Xml.Linq.XName.yaml
+  name:
+    CSharp: op_Equality
+  qualifiedName:
+    CSharp: System.Xml.Linq.XName.op_Equality(System.Xml.Linq.XName,System.Xml.Linq.XName)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XDocument/src/System/Xml/Linq/XName.cs
+    startLine: 148
+  summary: Returns a value indicating whether two instances of [System.Xml.Linq.XName](System.Xml.Linq.XName.yaml) are equal.
+  syntax:
+    content:
+      CSharp: public static bool operator ==(XName left, XName right) { return (object)left == (object)right; }
+    parameters:
+    - id: left
+      type:
+        id: System.Xml.Linq.XName
+        name: XName
+        href: System.Xml.Linq.XName.yaml
+      description: The first XName to compare.
+    - id: right
+      type:
+        id: System.Xml.Linq.XName
+        name: XName
+        href: System.Xml.Linq.XName.yaml
+      description: The second XName to compare.
+    return:
+      id: Boolean
+      description: true if left and right are equal; otherwise false.
+- id: System.Xml.Linq.XName.op_Inequality(System.Xml.Linq.XName,System.Xml.Linq.XName)
+  href: System.Xml.Linq.XName.yaml
+  name:
+    CSharp: op_Inequality
+  qualifiedName:
+    CSharp: System.Xml.Linq.XName.op_Inequality(System.Xml.Linq.XName,System.Xml.Linq.XName)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XDocument/src/System/Xml/Linq/XName.cs
+    startLine: 163
+  summary: Returns a value indicating whether two instances of [System.Xml.Linq.XName](System.Xml.Linq.XName.yaml) are not equal.
+  syntax:
+    content:
+      CSharp: public static bool operator !=(XName left, XName right) { return (object)left != (object)right; }
+    parameters:
+    - id: left
+      type:
+        id: System.Xml.Linq.XName
+        name: XName
+        href: System.Xml.Linq.XName.yaml
+      description: The first XName to compare.
+    - id: right
+      type:
+        id: System.Xml.Linq.XName
+        name: XName
+        href: System.Xml.Linq.XName.yaml
+      description: The second XName to compare.
+    return:
+      id: Boolean
+      description: true if left and right are not equal; otherwise false.

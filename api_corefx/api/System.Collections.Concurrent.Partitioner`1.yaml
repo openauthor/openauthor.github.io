@@ -1,0 +1,90 @@
+id: System.Collections.Concurrent.Partitioner`1
+href: System.Collections.Concurrent.Partitioner`1.yaml
+name:
+  CSharp: Partitioner`1
+qualifiedName:
+  CSharp: System.Collections.Concurrent.Partitioner`1
+type: Class
+source:
+  remote: &o0
+    branch: master
+    repo: https://github.com/dotnet/corefx.git
+  path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/Partitioner.cs
+  startLine: 44
+summary: Represents a particular manner of splitting a data source into multiple partitions.
+syntax:
+  content:
+    CSharp: public abstract class Partitioner<TSource>
+inheritance:
+- id: System.Object
+  name: System.Object
+  isExternal: true
+items:
+- id: System.Collections.Concurrent.Partitioner`1.GetPartitions(System.Int32)
+  href: System.Collections.Concurrent.Partitioner`1.yaml
+  name:
+    CSharp: GetPartitions
+  qualifiedName:
+    CSharp: System.Collections.Concurrent.Partitioner`1.GetPartitions(System.Int32)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/Partitioner.cs
+    startLine: 51
+  summary: Partitions the underlying collection into the given number of partitions.
+  syntax:
+    content:
+      CSharp: public abstract IList<IEnumerator<TSource>> GetPartitions(int partitionCount);
+    parameters:
+    - id: partitionCount
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+      description: The number of partitions to create.
+    return:
+      id: IList
+      description: A list containing  enumerators.
+- id: System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions
+  href: System.Collections.Concurrent.Partitioner`1.yaml
+  name:
+    CSharp: SupportsDynamicPartitions
+  qualifiedName:
+    CSharp: System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/Partitioner.cs
+    startLine: 68
+  summary: Gets whether additional partitions can be created dynamically.
+  syntax:
+    content:
+      CSharp: public virtual bool SupportsDynamicPartitions { get; }
+    parameters:
+    - id: SupportsDynamicPartitions
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+- id: System.Collections.Concurrent.Partitioner`1.GetDynamicPartitions
+  href: System.Collections.Concurrent.Partitioner`1.yaml
+  name:
+    CSharp: GetDynamicPartitions
+  qualifiedName:
+    CSharp: System.Collections.Concurrent.Partitioner`1.GetDynamicPartitions
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/Partitioner.cs
+    startLine: 93
+  summary: >-
+    Creates an object that can partition the underlying collection into a variable number of
+
+    partitions.
+  syntax:
+    content:
+      CSharp: public virtual IEnumerable<TSource> GetDynamicPartitions()
+    parameters: []
+    return:
+      id: IEnumerable
+      description: An object that can create partitions over the underlying data source.

@@ -1,0 +1,157 @@
+id: System.Threading.Tasks.ParallelLoopState
+href: System.Threading.Tasks.ParallelLoopState.yaml
+name:
+  CSharp: ParallelLoopState
+qualifiedName:
+  CSharp: System.Threading.Tasks.ParallelLoopState
+type: Class
+source:
+  remote: &o0
+    branch: master
+    repo: https://github.com/dotnet/corefx.git
+  path: src/System.Threading.Tasks.Parallel/src/System/Threading/Tasks/ParallelLoopState.cs
+  startLine: 21
+summary: >-
+  Enables iterations of [System.Threading.Tasks.Parallel](System.Threading.Tasks.Parallel.yaml) loops to interact with
+
+  other iterations.
+syntax:
+  content:
+    CSharp: public class ParallelLoopState
+inheritance:
+- id: System.Object
+  name: System.Object
+  isExternal: true
+items:
+- id: System.Threading.Tasks.ParallelLoopState.ShouldExitCurrentIteration
+  href: System.Threading.Tasks.ParallelLoopState.yaml
+  name:
+    CSharp: ShouldExitCurrentIteration
+  qualifiedName:
+    CSharp: System.Threading.Tasks.ParallelLoopState.ShouldExitCurrentIteration
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Parallel/src/System/Threading/Tasks/ParallelLoopState.cs
+    startLine: 60
+  summary: >-
+    Gets whether the current iteration of the loop should exit based
+
+    on requests made by this or other iterations.
+  syntax:
+    content:
+      CSharp: public bool ShouldExitCurrentIteration { get; }
+    parameters:
+    - id: ShouldExitCurrentIteration
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+- id: System.Threading.Tasks.ParallelLoopState.IsStopped
+  href: System.Threading.Tasks.ParallelLoopState.yaml
+  name:
+    CSharp: IsStopped
+  qualifiedName:
+    CSharp: System.Threading.Tasks.ParallelLoopState.IsStopped
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Parallel/src/System/Threading/Tasks/ParallelLoopState.cs
+    startLine: 71
+  summary: Gets whether any iteration of the loop has called [System.Threading.Tasks.ParallelLoopState.Stop](System.Threading.Tasks.ParallelLoopState.yaml).
+  syntax:
+    content:
+      CSharp: public bool IsStopped { get; }
+    parameters:
+    - id: IsStopped
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+- id: System.Threading.Tasks.ParallelLoopState.IsExceptional
+  href: System.Threading.Tasks.ParallelLoopState.yaml
+  name:
+    CSharp: IsExceptional
+  qualifiedName:
+    CSharp: System.Threading.Tasks.ParallelLoopState.IsExceptional
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Parallel/src/System/Threading/Tasks/ParallelLoopState.cs
+    startLine: 83
+  summary: >-
+    Gets whether any iteration of the loop has thrown an exception that went unhandled by that
+
+    iteration.
+  syntax:
+    content:
+      CSharp: public bool IsExceptional { get; }
+    parameters:
+    - id: IsExceptional
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+- id: System.Threading.Tasks.ParallelLoopState.LowestBreakIteration
+  href: System.Threading.Tasks.ParallelLoopState.yaml
+  name:
+    CSharp: LowestBreakIteration
+  qualifiedName:
+    CSharp: System.Threading.Tasks.ParallelLoopState.LowestBreakIteration
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Parallel/src/System/Threading/Tasks/ParallelLoopState.cs
+    startLine: 110
+  summary: Gets the lowest iteration of the loop from which [System.Threading.Tasks.ParallelLoopState.Break](System.Threading.Tasks.ParallelLoopState.yaml) was called.
+  syntax:
+    content:
+      CSharp: public long ? LowestBreakIteration { get; }
+    parameters:
+    - id: LowestBreakIteration
+      type:
+        id: System.Nullable{System.Int64}
+        name: System.Nullable{System.Int64}
+        isExternal: true
+- id: System.Threading.Tasks.ParallelLoopState.Stop
+  href: System.Threading.Tasks.ParallelLoopState.yaml
+  name:
+    CSharp: Stop
+  qualifiedName:
+    CSharp: System.Threading.Tasks.ParallelLoopState.Stop
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Parallel/src/System/Threading/Tasks/ParallelLoopState.cs
+    startLine: 138
+  summary: >-
+    Communicates that the [System.Threading.Tasks.Parallel](System.Threading.Tasks.Parallel.yaml) loop should cease execution at the system's earliest
+
+    convenience.
+  syntax:
+    content:
+      CSharp: public void Stop()
+    parameters: []
+    return:
+      id: Void
+- id: System.Threading.Tasks.ParallelLoopState.Break
+  href: System.Threading.Tasks.ParallelLoopState.yaml
+  name:
+    CSharp: Break
+  qualifiedName:
+    CSharp: System.Threading.Tasks.ParallelLoopState.Break
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Parallel/src/System/Threading/Tasks/ParallelLoopState.cs
+    startLine: 177
+  summary: >-
+    Communicates that the [System.Threading.Tasks.Parallel](System.Threading.Tasks.Parallel.yaml) loop should cease execution at the system's earliest
+
+    convenience of iterations beyond the current iteration.
+  syntax:
+    content:
+      CSharp: public void Break()
+    parameters: []
+    return:
+      id: Void

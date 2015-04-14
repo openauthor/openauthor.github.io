@@ -1,0 +1,208 @@
+id: System.IO.Compression.ZipArchiveEntry
+href: System.IO.Compression.ZipArchiveEntry.yaml
+name:
+  CSharp: ZipArchiveEntry
+qualifiedName:
+  CSharp: System.IO.Compression.ZipArchiveEntry
+type: Class
+source:
+  remote: &o0
+    branch: master
+    repo: https://github.com/dotnet/corefx.git
+  path: src/System.IO.Compression/src/System/IO/Compression/ZipArchiveEntry.cs
+  startLine: 11
+syntax:
+  content:
+    CSharp: public class ZipArchiveEntry
+inheritance:
+- id: System.Object
+  name: System.Object
+  isExternal: true
+items:
+- id: System.IO.Compression.ZipArchiveEntry.Archive
+  href: System.IO.Compression.ZipArchiveEntry.yaml
+  name:
+    CSharp: Archive
+  qualifiedName:
+    CSharp: System.IO.Compression.ZipArchiveEntry.Archive
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.IO.Compression/src/System/IO/Compression/ZipArchiveEntry.cs
+    startLine: 152
+  summary: The ZipArchive that this entry belongs to. If this entry has been deleted, this will return null.
+  syntax:
+    content:
+      CSharp: public ZipArchive Archive { get; }
+    parameters:
+    - id: Archive
+      type:
+        id: System.IO.Compression.ZipArchive
+        name: ZipArchive
+        href: System.IO.Compression.ZipArchive.yaml
+- id: System.IO.Compression.ZipArchiveEntry.CompressedLength
+  href: System.IO.Compression.ZipArchiveEntry.yaml
+  name:
+    CSharp: CompressedLength
+  qualifiedName:
+    CSharp: System.IO.Compression.ZipArchiveEntry.CompressedLength
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.IO.Compression/src/System/IO/Compression/ZipArchiveEntry.cs
+    startLine: 158
+  summary: The compressed size of the entry. If the archive that the entry belongs to is in Create mode, attempts to get this property will always throw an exception. If the archive that the entry belongs to is in update mode, this property will only be valid if the entry has not been opened.
+  syntax:
+    content:
+      CSharp: public Int64 CompressedLength { get; }
+    parameters:
+    - id: CompressedLength
+      type:
+        id: Int64
+        name: Int64
+        isExternal: true
+- id: System.IO.Compression.ZipArchiveEntry.FullName
+  href: System.IO.Compression.ZipArchiveEntry.yaml
+  name:
+    CSharp: FullName
+  qualifiedName:
+    CSharp: System.IO.Compression.ZipArchiveEntry.FullName
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.IO.Compression/src/System/IO/Compression/ZipArchiveEntry.cs
+    startLine: 173
+  summary: The relative path of the entry as stored in the Zip archive. Note that Zip archives allow any string to be the path of the entry, including invalid and absolute paths.
+  syntax:
+    content:
+      CSharp: public String FullName { get; private set; }
+    parameters:
+    - id: FullName
+      type:
+        id: String
+        name: String
+        isExternal: true
+- id: System.IO.Compression.ZipArchiveEntry.LastWriteTime
+  href: System.IO.Compression.ZipArchiveEntry.yaml
+  name:
+    CSharp: LastWriteTime
+  qualifiedName:
+    CSharp: System.IO.Compression.ZipArchiveEntry.LastWriteTime
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.IO.Compression/src/System/IO/Compression/ZipArchiveEntry.cs
+    startLine: 210
+  summary: >-
+    The last write time of the entry as stored in the Zip archive. When setting this property, the DateTime will be converted to the
+
+    Zip timestamp format, which supports a resolution of two seconds. If the data in the last write time field is not a valid Zip timestamp,
+
+    an indicator value of 1980 January 1 at midnight will be returned.
+  syntax:
+    content:
+      CSharp: public DateTimeOffset LastWriteTime { get; set; }
+    parameters:
+    - id: LastWriteTime
+      type:
+        id: DateTimeOffset
+        name: DateTimeOffset
+        isExternal: true
+- id: System.IO.Compression.ZipArchiveEntry.Length
+  href: System.IO.Compression.ZipArchiveEntry.yaml
+  name:
+    CSharp: Length
+  qualifiedName:
+    CSharp: System.IO.Compression.ZipArchiveEntry.Length
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.IO.Compression/src/System/IO/Compression/ZipArchiveEntry.cs
+    startLine: 234
+  summary: The uncompressed size of the entry. This property is not valid in Create mode, and it is only valid in Update mode if the entry has not been opened.
+  syntax:
+    content:
+      CSharp: public Int64 Length { get; }
+    parameters:
+    - id: Length
+      type:
+        id: Int64
+        name: Int64
+        isExternal: true
+- id: System.IO.Compression.ZipArchiveEntry.Name
+  href: System.IO.Compression.ZipArchiveEntry.yaml
+  name:
+    CSharp: Name
+  qualifiedName:
+    CSharp: System.IO.Compression.ZipArchiveEntry.Name
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.IO.Compression/src/System/IO/Compression/ZipArchiveEntry.cs
+    startLine: 249
+  summary: The filename of the entry. This is equivalent to the substring of Fullname that follows the final directory separator character.
+  syntax:
+    content:
+      CSharp: public String Name { get; }
+    parameters:
+    - id: Name
+      type:
+        id: String
+        name: String
+        isExternal: true
+- id: System.IO.Compression.ZipArchiveEntry.Delete
+  href: System.IO.Compression.ZipArchiveEntry.yaml
+  name:
+    CSharp: Delete
+  qualifiedName:
+    CSharp: System.IO.Compression.ZipArchiveEntry.Delete
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.Compression/src/System/IO/Compression/ZipArchiveEntry.cs
+    startLine: 264
+  summary: Deletes the entry from the archive.
+  syntax:
+    content:
+      CSharp: public void Delete()
+    parameters: []
+    return:
+      id: Void
+- id: System.IO.Compression.ZipArchiveEntry.Open
+  href: System.IO.Compression.ZipArchiveEntry.yaml
+  name:
+    CSharp: Open
+  qualifiedName:
+    CSharp: System.IO.Compression.ZipArchiveEntry.Open
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.Compression/src/System/IO/Compression/ZipArchiveEntry.cs
+    startLine: 289
+  summary: Opens the entry. If the archive that the entry belongs to was opened in Read mode, the returned stream will be readable, and it may or may not be seekable. If Create mode, the returned stream will be writeable and not seekable. If Update mode, the returned stream will be readable, writeable, seekable, and support SetLength.
+  syntax:
+    content:
+      CSharp: public Stream Open()
+    parameters: []
+    return:
+      id: Stream
+      description: A Stream that represents the contents of the entry.
+- id: System.IO.Compression.ZipArchiveEntry.ToString
+  href: System.IO.Compression.ZipArchiveEntry.yaml
+  name:
+    CSharp: ToString
+  qualifiedName:
+    CSharp: System.IO.Compression.ZipArchiveEntry.ToString
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.Compression/src/System/IO/Compression/ZipArchiveEntry.cs
+    startLine: 312
+  summary: Returns the FullName of the entry.
+  syntax:
+    content:
+      CSharp: public override String ToString()
+    parameters: []
+    return:
+      id: String
+      description: FullName of the entry

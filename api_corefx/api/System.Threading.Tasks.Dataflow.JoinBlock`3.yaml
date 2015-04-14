@@ -1,0 +1,277 @@
+id: System.Threading.Tasks.Dataflow.JoinBlock`3
+href: System.Threading.Tasks.Dataflow.JoinBlock`3.yaml
+name:
+  CSharp: JoinBlock`3
+qualifiedName:
+  CSharp: System.Threading.Tasks.Dataflow.JoinBlock`3
+type: Class
+source:
+  remote: &o0
+    branch: master
+    repo: https://github.com/dotnet/corefx.git
+  path: src/System.Threading.Tasks.Dataflow/src/Blocks/JoinBlock.cs
+  startLine: 261
+summary: "Provides a dataflow block that joins across multiple dataflow sources, not necessarily of the same type,\r\nwaiting for one item to arrive for each type before they’re all released together as a tuple of one item per type."
+syntax:
+  content:
+    CSharp: public sealed class JoinBlock<T1, T2, T3>
+inheritance:
+- id: System.Object
+  name: System.Object
+  isExternal: true
+items:
+- id: System.Threading.Tasks.Dataflow.JoinBlock`3.#ctor
+  href: System.Threading.Tasks.Dataflow.JoinBlock`3.yaml
+  name:
+    CSharp: JoinBlock`3
+  qualifiedName:
+    CSharp: System.Threading.Tasks.Dataflow.JoinBlock`3.JoinBlock`3
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/JoinBlock.cs
+    startLine: 278
+  summary: Initializes the [System.Threading.Tasks.Dataflow.JoinBlock`3](System.Threading.Tasks.Dataflow.JoinBlock`3.yaml).
+  syntax:
+    content:
+      CSharp: 'public JoinBlock(): this (GroupingDataflowBlockOptions.Default)'
+    parameters: []
+    return:
+      id: Void
+- id: System.Threading.Tasks.Dataflow.JoinBlock`3.#ctor(System.Threading.Tasks.Dataflow.GroupingDataflowBlockOptions)
+  href: System.Threading.Tasks.Dataflow.JoinBlock`3.yaml
+  name:
+    CSharp: JoinBlock`3(System.Threading.Tasks.Dataflow.GroupingDataflowBlockOptions)
+  qualifiedName:
+    CSharp: System.Threading.Tasks.Dataflow.JoinBlock`3.JoinBlock`3(System.Threading.Tasks.Dataflow.GroupingDataflowBlockOptions)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/JoinBlock.cs
+    startLine: 285
+  summary: Initializes the [System.Threading.Tasks.Dataflow.JoinBlock`3](System.Threading.Tasks.Dataflow.JoinBlock`3.yaml).
+  syntax:
+    content:
+      CSharp: public JoinBlock(GroupingDataflowBlockOptions dataflowBlockOptions)
+    parameters:
+    - id: dataflowBlockOptions
+      type:
+        id: System.Threading.Tasks.Dataflow.GroupingDataflowBlockOptions
+        name: GroupingDataflowBlockOptions
+        href: System.Threading.Tasks.Dataflow.GroupingDataflowBlockOptions.yaml
+      description: The options with which to configure this [System.Threading.Tasks.Dataflow.JoinBlock`2](System.Threading.Tasks.Dataflow.JoinBlock`2.yaml).
+    return:
+      id: Void
+- id: System.Threading.Tasks.Dataflow.JoinBlock`3.LinkTo(System.Threading.Tasks.Dataflow.ITargetBlock{System.Tuple{`0,`1,`2}},System.Threading.Tasks.Dataflow.DataflowLinkOptions)
+  href: System.Threading.Tasks.Dataflow.JoinBlock`3.yaml
+  name:
+    CSharp: LinkTo
+  qualifiedName:
+    CSharp: System.Threading.Tasks.Dataflow.JoinBlock`3.LinkTo(System.Threading.Tasks.Dataflow.ITargetBlock{System.Tuple{`0,`1,`2}},System.Threading.Tasks.Dataflow.DataflowLinkOptions)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/JoinBlock.cs
+    startLine: 347
+  syntax:
+    content:
+      CSharp: public IDisposable LinkTo(ITargetBlock<Tuple<T1, T2, T3>> target, DataflowLinkOptions linkOptions)
+    parameters:
+    - id: target
+      type:
+        id: System.Threading.Tasks.Dataflow.ITargetBlock{System.Tuple{`0,`1,`2}}
+        name: ITargetBlock
+        href: System.Threading.Tasks.Dataflow.ITargetBlock{System.Tuple{`0,`1,`2}}
+    - id: linkOptions
+      type:
+        id: System.Threading.Tasks.Dataflow.DataflowLinkOptions
+        name: DataflowLinkOptions
+        href: System.Threading.Tasks.Dataflow.DataflowLinkOptions.yaml
+    return:
+      id: IDisposable
+- id: System.Threading.Tasks.Dataflow.JoinBlock`3.TryReceive(System.Predicate{System.Tuple{`0,`1,`2}},System.Tuple{`0,`1,`2}@)
+  href: System.Threading.Tasks.Dataflow.JoinBlock`3.yaml
+  name:
+    CSharp: TryReceive
+  qualifiedName:
+    CSharp: System.Threading.Tasks.Dataflow.JoinBlock`3.TryReceive(System.Predicate{System.Tuple{`0,`1,`2}},System.Tuple{`0,`1,`2}@)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/JoinBlock.cs
+    startLine: 353
+  syntax:
+    content:
+      CSharp: public Boolean TryReceive(Predicate<Tuple<T1, T2, T3>> filter, out Tuple<T1, T2, T3> item)
+    parameters:
+    - id: filter
+      type:
+        id: System.Predicate{System.Tuple{`0,`1,`2}}
+        name: System.Predicate{System.Tuple{`0,`1,`2}}
+        isExternal: true
+    - id: item
+      type:
+        id: System.Tuple{`0,`1,`2}
+        name: System.Tuple{`0,`1,`2}
+        isExternal: true
+    return:
+      id: Boolean
+- id: System.Threading.Tasks.Dataflow.JoinBlock`3.TryReceiveAll(System.Collections.Generic.IList{System.Tuple{`0,`1,`2}}@)
+  href: System.Threading.Tasks.Dataflow.JoinBlock`3.yaml
+  name:
+    CSharp: TryReceiveAll
+  qualifiedName:
+    CSharp: System.Threading.Tasks.Dataflow.JoinBlock`3.TryReceiveAll(System.Collections.Generic.IList{System.Tuple{`0,`1,`2}}@)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/JoinBlock.cs
+    startLine: 359
+  syntax:
+    content:
+      CSharp: '[SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures")] public bool TryReceiveAll(out IList<Tuple<T1, T2, T3>> items)'
+    parameters:
+    - id: items
+      type:
+        id: System.Collections.Generic.IList{System.Tuple{`0,`1,`2}}
+        name: System.Collections.Generic.IList{System.Tuple{`0,`1,`2}}
+        isExternal: true
+    return:
+      id: Boolean
+- id: System.Threading.Tasks.Dataflow.JoinBlock`3.OutputCount
+  href: System.Threading.Tasks.Dataflow.JoinBlock`3.yaml
+  name:
+    CSharp: OutputCount
+  qualifiedName:
+    CSharp: System.Threading.Tasks.Dataflow.JoinBlock`3.OutputCount
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/JoinBlock.cs
+    startLine: 363
+  syntax:
+    content:
+      CSharp: public int OutputCount { get; }
+    parameters:
+    - id: OutputCount
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+- id: System.Threading.Tasks.Dataflow.JoinBlock`3.Completion
+  href: System.Threading.Tasks.Dataflow.JoinBlock`3.yaml
+  name:
+    CSharp: Completion
+  qualifiedName:
+    CSharp: System.Threading.Tasks.Dataflow.JoinBlock`3.Completion
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/JoinBlock.cs
+    startLine: 366
+  syntax:
+    content:
+      CSharp: public Task Completion { get; }
+    parameters:
+    - id: Completion
+      type:
+        id: System.Threading.Tasks.Task
+        name: System.Threading.Tasks.Task
+        isExternal: true
+- id: System.Threading.Tasks.Dataflow.JoinBlock`3.Complete
+  href: System.Threading.Tasks.Dataflow.JoinBlock`3.yaml
+  name:
+    CSharp: Complete
+  qualifiedName:
+    CSharp: System.Threading.Tasks.Dataflow.JoinBlock`3.Complete
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/JoinBlock.cs
+    startLine: 369
+  syntax:
+    content:
+      CSharp: public void Complete()
+    parameters: []
+    return:
+      id: Void
+- id: System.Threading.Tasks.Dataflow.JoinBlock`3.Target1
+  href: System.Threading.Tasks.Dataflow.JoinBlock`3.yaml
+  name:
+    CSharp: Target1
+  qualifiedName:
+    CSharp: System.Threading.Tasks.Dataflow.JoinBlock`3.Target1
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/JoinBlock.cs
+    startLine: 398
+  summary: Gets a target that may be used to offer messages of the first type.
+  syntax:
+    content:
+      CSharp: public ITargetBlock<T1> Target1 { get; }
+    parameters:
+    - id: Target1
+      type:
+        id: System.Threading.Tasks.Dataflow.ITargetBlock{`0}
+        name: ITargetBlock
+        href: System.Threading.Tasks.Dataflow.ITargetBlock{`0}
+- id: System.Threading.Tasks.Dataflow.JoinBlock`3.Target2
+  href: System.Threading.Tasks.Dataflow.JoinBlock`3.yaml
+  name:
+    CSharp: Target2
+  qualifiedName:
+    CSharp: System.Threading.Tasks.Dataflow.JoinBlock`3.Target2
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/JoinBlock.cs
+    startLine: 401
+  summary: Gets a target that may be used to offer messages of the second type.
+  syntax:
+    content:
+      CSharp: public ITargetBlock<T2> Target2 { get; }
+    parameters:
+    - id: Target2
+      type:
+        id: System.Threading.Tasks.Dataflow.ITargetBlock{`1}
+        name: ITargetBlock
+        href: System.Threading.Tasks.Dataflow.ITargetBlock{`1}
+- id: System.Threading.Tasks.Dataflow.JoinBlock`3.Target3
+  href: System.Threading.Tasks.Dataflow.JoinBlock`3.yaml
+  name:
+    CSharp: Target3
+  qualifiedName:
+    CSharp: System.Threading.Tasks.Dataflow.JoinBlock`3.Target3
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/JoinBlock.cs
+    startLine: 404
+  summary: Gets a target that may be used to offer messages of the third type.
+  syntax:
+    content:
+      CSharp: public ITargetBlock<T3> Target3 { get; }
+    parameters:
+    - id: Target3
+      type:
+        id: System.Threading.Tasks.Dataflow.ITargetBlock{`2}
+        name: ITargetBlock
+        href: System.Threading.Tasks.Dataflow.ITargetBlock{`2}
+- id: System.Threading.Tasks.Dataflow.JoinBlock`3.ToString
+  href: System.Threading.Tasks.Dataflow.JoinBlock`3.yaml
+  name:
+    CSharp: ToString
+  qualifiedName:
+    CSharp: System.Threading.Tasks.Dataflow.JoinBlock`3.ToString
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/JoinBlock.cs
+    startLine: 428
+  syntax:
+    content:
+      CSharp: public override string ToString()
+    parameters: []
+    return:
+      id: String

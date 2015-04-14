@@ -1,0 +1,120 @@
+id: System.ComponentModel.DataAnnotations.RegularExpressionAttribute
+href: System.ComponentModel.DataAnnotations.RegularExpressionAttribute.yaml
+name:
+  CSharp: RegularExpressionAttribute
+qualifiedName:
+  CSharp: System.ComponentModel.DataAnnotations.RegularExpressionAttribute
+type: Class
+source:
+  remote: &o0
+    branch: master
+    repo: https://github.com/dotnet/corefx.git
+  path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/RegularExpressionAttribute.cs
+  startLine: 11
+summary: Regular expression validation attribute
+syntax:
+  content:
+    CSharp: public class RegularExpressionAttribute
+inheritance:
+- id: Attribute
+  name: Attribute
+  isExternal: true
+- id: System.ComponentModel.DataAnnotations.ValidationAttribute
+  name: ValidationAttribute
+  href: System.ComponentModel.DataAnnotations.ValidationAttribute.yaml
+items:
+- id: System.ComponentModel.DataAnnotations.RegularExpressionAttribute.#ctor(System.String)
+  href: System.ComponentModel.DataAnnotations.RegularExpressionAttribute.yaml
+  name:
+    CSharp: RegularExpressionAttribute(System.String)
+  qualifiedName:
+    CSharp: System.ComponentModel.DataAnnotations.RegularExpressionAttribute.RegularExpressionAttribute(System.String)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/RegularExpressionAttribute.cs
+    startLine: 19
+  summary: Constructor that accepts the regular expression pattern
+  syntax:
+    content:
+      CSharp: 'public RegularExpressionAttribute(string pattern): base (() => SR.RegexAttribute_ValidationError)'
+    parameters:
+    - id: pattern
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+      description: The regular expression to use.  It cannot be null.
+    return:
+      id: Void
+- id: System.ComponentModel.DataAnnotations.RegularExpressionAttribute.Pattern
+  href: System.ComponentModel.DataAnnotations.RegularExpressionAttribute.yaml
+  name:
+    CSharp: Pattern
+  qualifiedName:
+    CSharp: System.ComponentModel.DataAnnotations.RegularExpressionAttribute.Pattern
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/RegularExpressionAttribute.cs
+    startLine: 28
+  summary: Gets the regular expression pattern to use
+  syntax:
+    content:
+      CSharp: public string Pattern { get; private set; }
+    parameters:
+    - id: Pattern
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+- id: System.ComponentModel.DataAnnotations.RegularExpressionAttribute.IsValid(System.Object)
+  href: System.ComponentModel.DataAnnotations.RegularExpressionAttribute.yaml
+  name:
+    CSharp: IsValid
+  qualifiedName:
+    CSharp: System.ComponentModel.DataAnnotations.RegularExpressionAttribute.IsValid(System.Object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/RegularExpressionAttribute.cs
+    startLine: 42
+  summary: Override of [System.ComponentModel.DataAnnotations.ValidationAttribute.IsValid(System.Object)](System.ComponentModel.DataAnnotations.ValidationAttribute.yaml)
+  syntax:
+    content:
+      CSharp: public override bool IsValid(object value)
+    parameters:
+    - id: value
+      type:
+        id: System.Object
+        name: System.Object
+        isExternal: true
+      description: The value to test for validity.
+    return:
+      id: Boolean
+      description: true if the given value matches the current regular expression pattern
+- id: System.ComponentModel.DataAnnotations.RegularExpressionAttribute.FormatErrorMessage(System.String)
+  href: System.ComponentModel.DataAnnotations.RegularExpressionAttribute.yaml
+  name:
+    CSharp: FormatErrorMessage
+  qualifiedName:
+    CSharp: System.ComponentModel.DataAnnotations.RegularExpressionAttribute.FormatErrorMessage(System.String)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/RegularExpressionAttribute.cs
+    startLine: 70
+  summary: Override of [System.ComponentModel.DataAnnotations.ValidationAttribute.FormatErrorMessage(System.String)](System.ComponentModel.DataAnnotations.ValidationAttribute.yaml)
+  syntax:
+    content:
+      CSharp: public override string FormatErrorMessage(string name)
+    parameters:
+    - id: name
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+      description: The user-visible name to include in the formatted message.
+    return:
+      id: String
+      description: The localized message to present to the user

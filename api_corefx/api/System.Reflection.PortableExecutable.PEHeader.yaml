@@ -1,0 +1,941 @@
+id: System.Reflection.PortableExecutable.PEHeader
+href: System.Reflection.PortableExecutable.PEHeader.yaml
+name:
+  CSharp: PEHeader
+qualifiedName:
+  CSharp: System.Reflection.PortableExecutable.PEHeader
+type: Class
+source:
+  remote: &o0
+    branch: master
+    repo: https://github.com/dotnet/corefx.git
+  path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+  startLine: 8
+syntax:
+  content:
+    CSharp: public sealed class PEHeader
+inheritance:
+- id: System.Object
+  name: System.Object
+  isExternal: true
+items:
+- id: System.Reflection.PortableExecutable.PEHeader.Magic
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: Magic
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.Magic
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 15
+  summary: Identifies the format of the image file.
+  syntax:
+    content:
+      CSharp: public PEMagic Magic { get; private set; }
+    parameters:
+    - id: Magic
+      type:
+        id: System.Reflection.PortableExecutable.PEMagic
+        name: PEMagic
+        href: System.Reflection.PortableExecutable.PEMagic.yaml
+- id: System.Reflection.PortableExecutable.PEHeader.MajorLinkerVersion
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: MajorLinkerVersion
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.MajorLinkerVersion
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 20
+  summary: The linker major version number.
+  syntax:
+    content:
+      CSharp: public byte MajorLinkerVersion { get; private set; }
+    parameters:
+    - id: MajorLinkerVersion
+      type:
+        id: System.Byte
+        name: System.Byte
+        isExternal: true
+- id: System.Reflection.PortableExecutable.PEHeader.MinorLinkerVersion
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: MinorLinkerVersion
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.MinorLinkerVersion
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 25
+  summary: The linker minor version number.
+  syntax:
+    content:
+      CSharp: public byte MinorLinkerVersion { get; private set; }
+    parameters:
+    - id: MinorLinkerVersion
+      type:
+        id: System.Byte
+        name: System.Byte
+        isExternal: true
+- id: System.Reflection.PortableExecutable.PEHeader.SizeOfCode
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: SizeOfCode
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.SizeOfCode
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 30
+  summary: The size of the code (text) section, or the sum of all code sections if there are multiple sections.
+  syntax:
+    content:
+      CSharp: public int SizeOfCode { get; private set; }
+    parameters:
+    - id: SizeOfCode
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+- id: System.Reflection.PortableExecutable.PEHeader.SizeOfInitializedData
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: SizeOfInitializedData
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.SizeOfInitializedData
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 35
+  summary: The size of the initialized data section, or the sum of all such sections if there are multiple data sections.
+  syntax:
+    content:
+      CSharp: public int SizeOfInitializedData { get; private set; }
+    parameters:
+    - id: SizeOfInitializedData
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+- id: System.Reflection.PortableExecutable.PEHeader.SizeOfUninitializedData
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: SizeOfUninitializedData
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.SizeOfUninitializedData
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 40
+  summary: The size of the uninitialized data section (BSS), or the sum of all such sections if there are multiple BSS sections.
+  syntax:
+    content:
+      CSharp: public int SizeOfUninitializedData { get; private set; }
+    parameters:
+    - id: SizeOfUninitializedData
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+- id: System.Reflection.PortableExecutable.PEHeader.AddressOfEntryPoint
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: AddressOfEntryPoint
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.AddressOfEntryPoint
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 47
+  summary: >-
+    The address of the entry point relative to the image base when the PE file is loaded into memory.
+
+    For program images, this is the starting address. For device drivers, this is the address of the initialization function.
+
+    An entry point is optional for DLLs. When no entry point is present, this field must be zero.
+  syntax:
+    content:
+      CSharp: public int AddressOfEntryPoint { get; private set; }
+    parameters:
+    - id: AddressOfEntryPoint
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+- id: System.Reflection.PortableExecutable.PEHeader.BaseOfCode
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: BaseOfCode
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.BaseOfCode
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 52
+  summary: The address that is relative to the image base of the beginning-of-code section when it is loaded into memory.
+  syntax:
+    content:
+      CSharp: public int BaseOfCode { get; private set; }
+    parameters:
+    - id: BaseOfCode
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+- id: System.Reflection.PortableExecutable.PEHeader.BaseOfData
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: BaseOfData
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.BaseOfData
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 57
+  summary: The address that is relative to the image base of the beginning-of-data section when it is loaded into memory.
+  syntax:
+    content:
+      CSharp: public int BaseOfData { get; private set; }
+    parameters:
+    - id: BaseOfData
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+- id: System.Reflection.PortableExecutable.PEHeader.ImageBase
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: ImageBase
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.ImageBase
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 67
+  summary: >-
+    The preferred address of the first byte of image when loaded into memory;
+
+    must be a multiple of 64K.
+  syntax:
+    content:
+      CSharp: public ulong ImageBase { get; private set; }
+    parameters:
+    - id: ImageBase
+      type:
+        id: System.UInt64
+        name: System.UInt64
+        isExternal: true
+- id: System.Reflection.PortableExecutable.PEHeader.SectionAlignment
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: SectionAlignment
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.SectionAlignment
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 73
+  summary: >-
+    The alignment (in bytes) of sections when they are loaded into memory. It must be greater than or equal to [System.Reflection.PortableExecutable.PEHeader.FileAlignment](System.Reflection.PortableExecutable.PEHeader.yaml).
+
+    The default is the page size for the architecture.
+  syntax:
+    content:
+      CSharp: public int SectionAlignment { get; private set; }
+    parameters:
+    - id: SectionAlignment
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+- id: System.Reflection.PortableExecutable.PEHeader.FileAlignment
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: FileAlignment
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.FileAlignment
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 81
+  summary: >-
+    The alignment factor (in bytes) that is used to align the raw data of sections in the image file.
+
+    The value should be a power of 2 between 512 and 64K, inclusive. The default is 512.
+
+    If the [System.Reflection.PortableExecutable.PEHeader.SectionAlignment](System.Reflection.PortableExecutable.PEHeader.yaml) is less than the architecture's page size,
+
+    then [System.Reflection.PortableExecutable.PEHeader.FileAlignment](System.Reflection.PortableExecutable.PEHeader.yaml) must match [System.Reflection.PortableExecutable.PEHeader.SectionAlignment](System.Reflection.PortableExecutable.PEHeader.yaml).
+  syntax:
+    content:
+      CSharp: public int FileAlignment { get; private set; }
+    parameters:
+    - id: FileAlignment
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+- id: System.Reflection.PortableExecutable.PEHeader.MajorOperatingSystemVersion
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: MajorOperatingSystemVersion
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.MajorOperatingSystemVersion
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 86
+  summary: The major version number of the required operating system.
+  syntax:
+    content:
+      CSharp: public ushort MajorOperatingSystemVersion { get; private set; }
+    parameters:
+    - id: MajorOperatingSystemVersion
+      type:
+        id: System.UInt16
+        name: System.UInt16
+        isExternal: true
+- id: System.Reflection.PortableExecutable.PEHeader.MinorOperatingSystemVersion
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: MinorOperatingSystemVersion
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.MinorOperatingSystemVersion
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 91
+  summary: The minor version number of the required operating system.
+  syntax:
+    content:
+      CSharp: public ushort MinorOperatingSystemVersion { get; private set; }
+    parameters:
+    - id: MinorOperatingSystemVersion
+      type:
+        id: System.UInt16
+        name: System.UInt16
+        isExternal: true
+- id: System.Reflection.PortableExecutable.PEHeader.MajorImageVersion
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: MajorImageVersion
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.MajorImageVersion
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 96
+  summary: The major version number of the image.
+  syntax:
+    content:
+      CSharp: public ushort MajorImageVersion { get; private set; }
+    parameters:
+    - id: MajorImageVersion
+      type:
+        id: System.UInt16
+        name: System.UInt16
+        isExternal: true
+- id: System.Reflection.PortableExecutable.PEHeader.MinorImageVersion
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: MinorImageVersion
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.MinorImageVersion
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 101
+  summary: The minor version number of the image.
+  syntax:
+    content:
+      CSharp: public ushort MinorImageVersion { get; private set; }
+    parameters:
+    - id: MinorImageVersion
+      type:
+        id: System.UInt16
+        name: System.UInt16
+        isExternal: true
+- id: System.Reflection.PortableExecutable.PEHeader.MajorSubsystemVersion
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: MajorSubsystemVersion
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.MajorSubsystemVersion
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 106
+  summary: The major version number of the subsystem.
+  syntax:
+    content:
+      CSharp: public ushort MajorSubsystemVersion { get; private set; }
+    parameters:
+    - id: MajorSubsystemVersion
+      type:
+        id: System.UInt16
+        name: System.UInt16
+        isExternal: true
+- id: System.Reflection.PortableExecutable.PEHeader.MinorSubsystemVersion
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: MinorSubsystemVersion
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.MinorSubsystemVersion
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 111
+  summary: The minor version number of the subsystem.
+  syntax:
+    content:
+      CSharp: public ushort MinorSubsystemVersion { get; private set; }
+    parameters:
+    - id: MinorSubsystemVersion
+      type:
+        id: System.UInt16
+        name: System.UInt16
+        isExternal: true
+- id: System.Reflection.PortableExecutable.PEHeader.SizeOfImage
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: SizeOfImage
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.SizeOfImage
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 117
+  summary: >-
+    The size (in bytes) of the image, including all headers, as the image is loaded in memory.
+
+    It must be a multiple of [System.Reflection.PortableExecutable.PEHeader.SectionAlignment](System.Reflection.PortableExecutable.PEHeader.yaml).
+  syntax:
+    content:
+      CSharp: public int SizeOfImage { get; private set; }
+    parameters:
+    - id: SizeOfImage
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+- id: System.Reflection.PortableExecutable.PEHeader.SizeOfHeaders
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: SizeOfHeaders
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.SizeOfHeaders
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 122
+  summary: The combined size of an MS DOS stub, PE header, and section headers rounded up to a multiple of FileAlignment.
+  syntax:
+    content:
+      CSharp: public int SizeOfHeaders { get; private set; }
+    parameters:
+    - id: SizeOfHeaders
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+- id: System.Reflection.PortableExecutable.PEHeader.CheckSum
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: CheckSum
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.CheckSum
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 127
+  summary: The image file checksum.
+  syntax:
+    content:
+      CSharp: public uint CheckSum { get; private set; }
+    parameters:
+    - id: CheckSum
+      type:
+        id: System.UInt32
+        name: System.UInt32
+        isExternal: true
+- id: System.Reflection.PortableExecutable.PEHeader.Subsystem
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: Subsystem
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.Subsystem
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 132
+  summary: The subsystem that is required to run this image.
+  syntax:
+    content:
+      CSharp: public Subsystem Subsystem { get; private set; }
+    parameters:
+    - id: Subsystem
+      type:
+        id: System.Reflection.PortableExecutable.Subsystem
+        name: Subsystem
+        href: System.Reflection.PortableExecutable.Subsystem.yaml
+- id: System.Reflection.PortableExecutable.PEHeader.DllCharacteristics
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: DllCharacteristics
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.DllCharacteristics
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 134
+  syntax:
+    content:
+      CSharp: public DllCharacteristics DllCharacteristics { get; private set; }
+    parameters:
+    - id: DllCharacteristics
+      type:
+        id: System.Reflection.PortableExecutable.DllCharacteristics
+        name: DllCharacteristics
+        href: System.Reflection.PortableExecutable.DllCharacteristics.yaml
+- id: System.Reflection.PortableExecutable.PEHeader.SizeOfStackReserve
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: SizeOfStackReserve
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.SizeOfStackReserve
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 140
+  summary: >-
+    The size of the stack to reserve. Only [System.Reflection.PortableExecutable.PEHeader.SizeOfStackCommit](System.Reflection.PortableExecutable.PEHeader.yaml) is committed;
+
+    the rest is made available one page at a time until the reserve size is reached.
+  syntax:
+    content:
+      CSharp: public ulong SizeOfStackReserve { get; private set; }
+    parameters:
+    - id: SizeOfStackReserve
+      type:
+        id: System.UInt64
+        name: System.UInt64
+        isExternal: true
+- id: System.Reflection.PortableExecutable.PEHeader.SizeOfStackCommit
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: SizeOfStackCommit
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.SizeOfStackCommit
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 145
+  summary: The size of the stack to commit.
+  syntax:
+    content:
+      CSharp: public ulong SizeOfStackCommit { get; private set; }
+    parameters:
+    - id: SizeOfStackCommit
+      type:
+        id: System.UInt64
+        name: System.UInt64
+        isExternal: true
+- id: System.Reflection.PortableExecutable.PEHeader.SizeOfHeapReserve
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: SizeOfHeapReserve
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.SizeOfHeapReserve
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 151
+  summary: >-
+    The size of the local heap space to reserve. Only [System.Reflection.PortableExecutable.PEHeader.SizeOfHeapCommit](System.Reflection.PortableExecutable.PEHeader.yaml) is committed;
+
+    the rest is made available one page at a time until the reserve size is reached.
+  syntax:
+    content:
+      CSharp: public ulong SizeOfHeapReserve { get; private set; }
+    parameters:
+    - id: SizeOfHeapReserve
+      type:
+        id: System.UInt64
+        name: System.UInt64
+        isExternal: true
+- id: System.Reflection.PortableExecutable.PEHeader.SizeOfHeapCommit
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: SizeOfHeapCommit
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.SizeOfHeapCommit
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 156
+  summary: The size of the local heap space to commit.
+  syntax:
+    content:
+      CSharp: public ulong SizeOfHeapCommit { get; private set; }
+    parameters:
+    - id: SizeOfHeapCommit
+      type:
+        id: System.UInt64
+        name: System.UInt64
+        isExternal: true
+- id: System.Reflection.PortableExecutable.PEHeader.NumberOfRvaAndSizes
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: NumberOfRvaAndSizes
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.NumberOfRvaAndSizes
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 161
+  summary: The number of data-directory entries in the remainder of the [System.Reflection.PortableExecutable.PEHeader](System.Reflection.PortableExecutable.PEHeader.yaml). Each describes a location and size.
+  syntax:
+    content:
+      CSharp: public int NumberOfRvaAndSizes { get; private set; }
+    parameters:
+    - id: NumberOfRvaAndSizes
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+- id: System.Reflection.PortableExecutable.PEHeader.ExportTableDirectory
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: ExportTableDirectory
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.ExportTableDirectory
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 167
+  syntax:
+    content:
+      CSharp: public DirectoryEntry ExportTableDirectory { get; private set; }
+    parameters:
+    - id: ExportTableDirectory
+      type:
+        id: System.Reflection.PortableExecutable.DirectoryEntry
+        name: DirectoryEntry
+        href: System.Reflection.PortableExecutable.DirectoryEntry.yaml
+- id: System.Reflection.PortableExecutable.PEHeader.ImportTableDirectory
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: ImportTableDirectory
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.ImportTableDirectory
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 168
+  syntax:
+    content:
+      CSharp: public DirectoryEntry ImportTableDirectory { get; private set; }
+    parameters:
+    - id: ImportTableDirectory
+      type:
+        id: System.Reflection.PortableExecutable.DirectoryEntry
+        name: DirectoryEntry
+        href: System.Reflection.PortableExecutable.DirectoryEntry.yaml
+- id: System.Reflection.PortableExecutable.PEHeader.ResourceTableDirectory
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: ResourceTableDirectory
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.ResourceTableDirectory
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 169
+  syntax:
+    content:
+      CSharp: public DirectoryEntry ResourceTableDirectory { get; private set; }
+    parameters:
+    - id: ResourceTableDirectory
+      type:
+        id: System.Reflection.PortableExecutable.DirectoryEntry
+        name: DirectoryEntry
+        href: System.Reflection.PortableExecutable.DirectoryEntry.yaml
+- id: System.Reflection.PortableExecutable.PEHeader.ExceptionTableDirectory
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: ExceptionTableDirectory
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.ExceptionTableDirectory
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 170
+  syntax:
+    content:
+      CSharp: public DirectoryEntry ExceptionTableDirectory { get; private set; }
+    parameters:
+    - id: ExceptionTableDirectory
+      type:
+        id: System.Reflection.PortableExecutable.DirectoryEntry
+        name: DirectoryEntry
+        href: System.Reflection.PortableExecutable.DirectoryEntry.yaml
+- id: System.Reflection.PortableExecutable.PEHeader.CertificateTableDirectory
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: CertificateTableDirectory
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.CertificateTableDirectory
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 177
+  summary: >-
+    The Certificate Table entry points to a table of attribute certificates.
+
+    These certificates are not loaded into memory as part of the image.
+
+    As such, the first field of this entry, which is normally an RVA, is a file pointer instead.
+  syntax:
+    content:
+      CSharp: public DirectoryEntry CertificateTableDirectory { get; private set; }
+    parameters:
+    - id: CertificateTableDirectory
+      type:
+        id: System.Reflection.PortableExecutable.DirectoryEntry
+        name: DirectoryEntry
+        href: System.Reflection.PortableExecutable.DirectoryEntry.yaml
+- id: System.Reflection.PortableExecutable.PEHeader.BaseRelocationTableDirectory
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: BaseRelocationTableDirectory
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.BaseRelocationTableDirectory
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 179
+  syntax:
+    content:
+      CSharp: public DirectoryEntry BaseRelocationTableDirectory { get; private set; }
+    parameters:
+    - id: BaseRelocationTableDirectory
+      type:
+        id: System.Reflection.PortableExecutable.DirectoryEntry
+        name: DirectoryEntry
+        href: System.Reflection.PortableExecutable.DirectoryEntry.yaml
+- id: System.Reflection.PortableExecutable.PEHeader.DebugTableDirectory
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: DebugTableDirectory
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.DebugTableDirectory
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 180
+  syntax:
+    content:
+      CSharp: public DirectoryEntry DebugTableDirectory { get; private set; }
+    parameters:
+    - id: DebugTableDirectory
+      type:
+        id: System.Reflection.PortableExecutable.DirectoryEntry
+        name: DirectoryEntry
+        href: System.Reflection.PortableExecutable.DirectoryEntry.yaml
+- id: System.Reflection.PortableExecutable.PEHeader.CopyrightTableDirectory
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: CopyrightTableDirectory
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.CopyrightTableDirectory
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 181
+  syntax:
+    content:
+      CSharp: public DirectoryEntry CopyrightTableDirectory { get; private set; }
+    parameters:
+    - id: CopyrightTableDirectory
+      type:
+        id: System.Reflection.PortableExecutable.DirectoryEntry
+        name: DirectoryEntry
+        href: System.Reflection.PortableExecutable.DirectoryEntry.yaml
+- id: System.Reflection.PortableExecutable.PEHeader.GlobalPointerTableDirectory
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: GlobalPointerTableDirectory
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.GlobalPointerTableDirectory
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 182
+  syntax:
+    content:
+      CSharp: public DirectoryEntry GlobalPointerTableDirectory { get; private set; }
+    parameters:
+    - id: GlobalPointerTableDirectory
+      type:
+        id: System.Reflection.PortableExecutable.DirectoryEntry
+        name: DirectoryEntry
+        href: System.Reflection.PortableExecutable.DirectoryEntry.yaml
+- id: System.Reflection.PortableExecutable.PEHeader.ThreadLocalStorageTableDirectory
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: ThreadLocalStorageTableDirectory
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.ThreadLocalStorageTableDirectory
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 183
+  syntax:
+    content:
+      CSharp: public DirectoryEntry ThreadLocalStorageTableDirectory { get; private set; }
+    parameters:
+    - id: ThreadLocalStorageTableDirectory
+      type:
+        id: System.Reflection.PortableExecutable.DirectoryEntry
+        name: DirectoryEntry
+        href: System.Reflection.PortableExecutable.DirectoryEntry.yaml
+- id: System.Reflection.PortableExecutable.PEHeader.LoadConfigTableDirectory
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: LoadConfigTableDirectory
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.LoadConfigTableDirectory
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 184
+  syntax:
+    content:
+      CSharp: public DirectoryEntry LoadConfigTableDirectory { get; private set; }
+    parameters:
+    - id: LoadConfigTableDirectory
+      type:
+        id: System.Reflection.PortableExecutable.DirectoryEntry
+        name: DirectoryEntry
+        href: System.Reflection.PortableExecutable.DirectoryEntry.yaml
+- id: System.Reflection.PortableExecutable.PEHeader.BoundImportTableDirectory
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: BoundImportTableDirectory
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.BoundImportTableDirectory
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 185
+  syntax:
+    content:
+      CSharp: public DirectoryEntry BoundImportTableDirectory { get; private set; }
+    parameters:
+    - id: BoundImportTableDirectory
+      type:
+        id: System.Reflection.PortableExecutable.DirectoryEntry
+        name: DirectoryEntry
+        href: System.Reflection.PortableExecutable.DirectoryEntry.yaml
+- id: System.Reflection.PortableExecutable.PEHeader.ImportAddressTableDirectory
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: ImportAddressTableDirectory
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.ImportAddressTableDirectory
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 186
+  syntax:
+    content:
+      CSharp: public DirectoryEntry ImportAddressTableDirectory { get; private set; }
+    parameters:
+    - id: ImportAddressTableDirectory
+      type:
+        id: System.Reflection.PortableExecutable.DirectoryEntry
+        name: DirectoryEntry
+        href: System.Reflection.PortableExecutable.DirectoryEntry.yaml
+- id: System.Reflection.PortableExecutable.PEHeader.DelayImportTableDirectory
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: DelayImportTableDirectory
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.DelayImportTableDirectory
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 187
+  syntax:
+    content:
+      CSharp: public DirectoryEntry DelayImportTableDirectory { get; private set; }
+    parameters:
+    - id: DelayImportTableDirectory
+      type:
+        id: System.Reflection.PortableExecutable.DirectoryEntry
+        name: DirectoryEntry
+        href: System.Reflection.PortableExecutable.DirectoryEntry.yaml
+- id: System.Reflection.PortableExecutable.PEHeader.CorHeaderTableDirectory
+  href: System.Reflection.PortableExecutable.PEHeader.yaml
+  name:
+    CSharp: CorHeaderTableDirectory
+  qualifiedName:
+    CSharp: System.Reflection.PortableExecutable.PEHeader.CorHeaderTableDirectory
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
+    startLine: 188
+  syntax:
+    content:
+      CSharp: public DirectoryEntry CorHeaderTableDirectory { get; private set; }
+    parameters:
+    - id: CorHeaderTableDirectory
+      type:
+        id: System.Reflection.PortableExecutable.DirectoryEntry
+        name: DirectoryEntry
+        href: System.Reflection.PortableExecutable.DirectoryEntry.yaml

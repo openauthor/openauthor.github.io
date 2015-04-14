@@ -1,0 +1,200 @@
+id: System.Reflection.Metadata.ConstantHandle
+href: System.Reflection.Metadata.ConstantHandle.yaml
+name:
+  CSharp: ConstantHandle
+qualifiedName:
+  CSharp: System.Reflection.Metadata.ConstantHandle
+type: Struct
+source:
+  remote: &o0
+    branch: master
+    repo: https://github.com/dotnet/corefx.git
+  path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+  startLine: 1602
+syntax:
+  content:
+    CSharp: public struct ConstantHandle
+inheritance:
+- id: System.ValueType
+  name: System.ValueType
+  isExternal: true
+items:
+- id: System.Reflection.Metadata.ConstantHandle.op_Implicit(System.Reflection.Metadata.ConstantHandle)~System.Reflection.Metadata.Handle
+  href: System.Reflection.Metadata.ConstantHandle.yaml
+  name:
+    CSharp: op_Implicit
+  qualifiedName:
+    CSharp: System.Reflection.Metadata.ConstantHandle.op_Implicit(System.Reflection.Metadata.ConstantHandle)~System.Reflection.Metadata.Handle
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 1618
+  syntax:
+    content:
+      CSharp: public static implicit operator Handle(ConstantHandle handle) { return new Handle(handle._rowId | tokenType); }
+    parameters:
+    - id: handle
+      type:
+        id: System.Reflection.Metadata.ConstantHandle
+        name: ConstantHandle
+        href: System.Reflection.Metadata.ConstantHandle.yaml
+    return:
+      id: Handle
+- id: System.Reflection.Metadata.ConstantHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.ConstantHandle
+  href: System.Reflection.Metadata.ConstantHandle.yaml
+  name:
+    CSharp: op_Explicit
+  qualifiedName:
+    CSharp: System.Reflection.Metadata.ConstantHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.ConstantHandle
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 1623
+  syntax:
+    content:
+      CSharp: public static explicit operator ConstantHandle(Handle handle) { if (handle.TokenType != tokenType) { Handle.ThrowInvalidCast(); } return new ConstantHandle(handle.RowId); }
+    parameters:
+    - id: handle
+      type:
+        id: System.Reflection.Metadata.Handle
+        name: Handle
+        href: System.Reflection.Metadata.Handle.yaml
+    return:
+      id: ConstantHandle
+- id: System.Reflection.Metadata.ConstantHandle.IsNil
+  href: System.Reflection.Metadata.ConstantHandle.yaml
+  name:
+    CSharp: IsNil
+  qualifiedName:
+    CSharp: System.Reflection.Metadata.ConstantHandle.IsNil
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 1633
+  syntax:
+    content:
+      CSharp: public bool IsNil { get; }
+    parameters:
+    - id: IsNil
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+- id: System.Reflection.Metadata.ConstantHandle.op_Equality(System.Reflection.Metadata.ConstantHandle,System.Reflection.Metadata.ConstantHandle)
+  href: System.Reflection.Metadata.ConstantHandle.yaml
+  name:
+    CSharp: op_Equality
+  qualifiedName:
+    CSharp: System.Reflection.Metadata.ConstantHandle.op_Equality(System.Reflection.Metadata.ConstantHandle,System.Reflection.Metadata.ConstantHandle)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 1643
+  syntax:
+    content:
+      CSharp: public static bool operator ==(ConstantHandle left, ConstantHandle right) { return left._rowId == right._rowId; }
+    parameters:
+    - id: left
+      type:
+        id: System.Reflection.Metadata.ConstantHandle
+        name: ConstantHandle
+        href: System.Reflection.Metadata.ConstantHandle.yaml
+    - id: right
+      type:
+        id: System.Reflection.Metadata.ConstantHandle
+        name: ConstantHandle
+        href: System.Reflection.Metadata.ConstantHandle.yaml
+    return:
+      id: Boolean
+- id: System.Reflection.Metadata.ConstantHandle.Equals(System.Object)
+  href: System.Reflection.Metadata.ConstantHandle.yaml
+  name:
+    CSharp: Equals
+  qualifiedName:
+    CSharp: System.Reflection.Metadata.ConstantHandle.Equals(System.Object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 1648
+  syntax:
+    content:
+      CSharp: public override bool Equals(object obj)
+    parameters:
+    - id: obj
+      type:
+        id: System.Object
+        name: System.Object
+        isExternal: true
+    return:
+      id: Boolean
+- id: System.Reflection.Metadata.ConstantHandle.Equals(System.Reflection.Metadata.ConstantHandle)
+  href: System.Reflection.Metadata.ConstantHandle.yaml
+  name:
+    CSharp: Equals
+  qualifiedName:
+    CSharp: System.Reflection.Metadata.ConstantHandle.Equals(System.Reflection.Metadata.ConstantHandle)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 1653
+  syntax:
+    content:
+      CSharp: public bool Equals(ConstantHandle other)
+    parameters:
+    - id: other
+      type:
+        id: System.Reflection.Metadata.ConstantHandle
+        name: ConstantHandle
+        href: System.Reflection.Metadata.ConstantHandle.yaml
+    return:
+      id: Boolean
+- id: System.Reflection.Metadata.ConstantHandle.GetHashCode
+  href: System.Reflection.Metadata.ConstantHandle.yaml
+  name:
+    CSharp: GetHashCode
+  qualifiedName:
+    CSharp: System.Reflection.Metadata.ConstantHandle.GetHashCode
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 1658
+  syntax:
+    content:
+      CSharp: public override int GetHashCode()
+    parameters: []
+    return:
+      id: Int32
+- id: System.Reflection.Metadata.ConstantHandle.op_Inequality(System.Reflection.Metadata.ConstantHandle,System.Reflection.Metadata.ConstantHandle)
+  href: System.Reflection.Metadata.ConstantHandle.yaml
+  name:
+    CSharp: op_Inequality
+  qualifiedName:
+    CSharp: System.Reflection.Metadata.ConstantHandle.op_Inequality(System.Reflection.Metadata.ConstantHandle,System.Reflection.Metadata.ConstantHandle)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 1663
+  syntax:
+    content:
+      CSharp: public static bool operator !=(ConstantHandle left, ConstantHandle right) { return left._rowId != right._rowId; }
+    parameters:
+    - id: left
+      type:
+        id: System.Reflection.Metadata.ConstantHandle
+        name: ConstantHandle
+        href: System.Reflection.Metadata.ConstantHandle.yaml
+    - id: right
+      type:
+        id: System.Reflection.Metadata.ConstantHandle
+        name: ConstantHandle
+        href: System.Reflection.Metadata.ConstantHandle.yaml
+    return:
+      id: Boolean

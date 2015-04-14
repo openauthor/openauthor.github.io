@@ -1,0 +1,190 @@
+id: System.Threading.Tasks.Dataflow.WriteOnceBlock`1
+href: System.Threading.Tasks.Dataflow.WriteOnceBlock`1.yaml
+name:
+  CSharp: WriteOnceBlock`1
+qualifiedName:
+  CSharp: System.Threading.Tasks.Dataflow.WriteOnceBlock`1
+type: Class
+source:
+  remote: &o0
+    branch: master
+    repo: https://github.com/dotnet/corefx.git
+  path: src/System.Threading.Tasks.Dataflow/src/Blocks/WriteOnceBlock.cs
+  startLine: 23
+summary: Provides a buffer for receiving and storing at most one element in a network of dataflow blocks.
+syntax:
+  content:
+    CSharp: public sealed class WriteOnceBlock<T>
+inheritance:
+- id: System.Object
+  name: System.Object
+  isExternal: true
+items:
+- id: System.Threading.Tasks.Dataflow.WriteOnceBlock`1.#ctor(System.Func{`0,`0})
+  href: System.Threading.Tasks.Dataflow.WriteOnceBlock`1.yaml
+  name:
+    CSharp: WriteOnceBlock`1(System.Func{`0,`0})
+  qualifiedName:
+    CSharp: System.Threading.Tasks.Dataflow.WriteOnceBlock`1.WriteOnceBlock`1(System.Func{`0,`0})
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/WriteOnceBlock.cs
+    startLine: 52
+  summary: Initializes the [System.Threading.Tasks.Dataflow.WriteOnceBlock`1](System.Threading.Tasks.Dataflow.WriteOnceBlock`1.yaml).
+  syntax:
+    content:
+      CSharp: 'public WriteOnceBlock(Func<T, T> cloningFunction): this (cloningFunction, DataflowBlockOptions.Default)'
+    parameters:
+    - id: cloningFunction
+      type:
+        id: System.Func{`0,`0}
+        name: System.Func{`0,`0}
+        isExternal: true
+      description: >-
+        The function to use to clone the data when offered to other blocks.
+
+        This may be null to indicate that no cloning need be performed.
+    return:
+      id: Void
+- id: System.Threading.Tasks.Dataflow.WriteOnceBlock`1.#ctor(System.Func{`0,`0},System.Threading.Tasks.Dataflow.DataflowBlockOptions)
+  href: System.Threading.Tasks.Dataflow.WriteOnceBlock`1.yaml
+  name:
+    CSharp: WriteOnceBlock`1(System.Func{`0,`0},System.Threading.Tasks.Dataflow.DataflowBlockOptions)
+  qualifiedName:
+    CSharp: System.Threading.Tasks.Dataflow.WriteOnceBlock`1.WriteOnceBlock`1(System.Func{`0,`0},System.Threading.Tasks.Dataflow.DataflowBlockOptions)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/WriteOnceBlock.cs
+    startLine: 63
+  summary: Initializes the [System.Threading.Tasks.Dataflow.WriteOnceBlock`1](System.Threading.Tasks.Dataflow.WriteOnceBlock`1.yaml) with the specified [System.Threading.Tasks.Dataflow.DataflowBlockOptions](System.Threading.Tasks.Dataflow.DataflowBlockOptions.yaml).
+  syntax:
+    content:
+      CSharp: public WriteOnceBlock(Func<T, T> cloningFunction, DataflowBlockOptions dataflowBlockOptions)
+    parameters:
+    - id: cloningFunction
+      type:
+        id: System.Func{`0,`0}
+        name: System.Func{`0,`0}
+        isExternal: true
+      description: >-
+        The function to use to clone the data when offered to other blocks.
+
+        This may be null to indicate that no cloning need be performed.
+    - id: dataflowBlockOptions
+      type:
+        id: System.Threading.Tasks.Dataflow.DataflowBlockOptions
+        name: DataflowBlockOptions
+        href: System.Threading.Tasks.Dataflow.DataflowBlockOptions.yaml
+      description: The options with which to configure this [System.Threading.Tasks.Dataflow.WriteOnceBlock`1](System.Threading.Tasks.Dataflow.WriteOnceBlock`1.yaml).
+    return:
+      id: Void
+- id: System.Threading.Tasks.Dataflow.WriteOnceBlock`1.Complete
+  href: System.Threading.Tasks.Dataflow.WriteOnceBlock`1.yaml
+  name:
+    CSharp: Complete
+  qualifiedName:
+    CSharp: System.Threading.Tasks.Dataflow.WriteOnceBlock`1.Complete
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/WriteOnceBlock.cs
+    startLine: 224
+  syntax:
+    content:
+      CSharp: public void Complete()
+    parameters: []
+    return:
+      id: Void
+- id: System.Threading.Tasks.Dataflow.WriteOnceBlock`1.TryReceive(System.Predicate{`0},`0@)
+  href: System.Threading.Tasks.Dataflow.WriteOnceBlock`1.yaml
+  name:
+    CSharp: TryReceive
+  qualifiedName:
+    CSharp: System.Threading.Tasks.Dataflow.WriteOnceBlock`1.TryReceive(System.Predicate{`0},`0@)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/WriteOnceBlock.cs
+    startLine: 267
+  syntax:
+    content:
+      CSharp: public Boolean TryReceive(Predicate<T> filter, out T item)
+    parameters:
+    - id: filter
+      type:
+        id: System.Predicate{`0}
+        name: System.Predicate{`0}
+        isExternal: true
+    - id: item
+      type:
+        id: T
+        name: T
+        href: T
+    return:
+      id: Boolean
+- id: System.Threading.Tasks.Dataflow.WriteOnceBlock`1.LinkTo(System.Threading.Tasks.Dataflow.ITargetBlock{`0},System.Threading.Tasks.Dataflow.DataflowLinkOptions)
+  href: System.Threading.Tasks.Dataflow.WriteOnceBlock`1.yaml
+  name:
+    CSharp: LinkTo
+  qualifiedName:
+    CSharp: System.Threading.Tasks.Dataflow.WriteOnceBlock`1.LinkTo(System.Threading.Tasks.Dataflow.ITargetBlock{`0},System.Threading.Tasks.Dataflow.DataflowLinkOptions)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/WriteOnceBlock.cs
+    startLine: 308
+  syntax:
+    content:
+      CSharp: '[SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope")] public IDisposable LinkTo(ITargetBlock<T> target, DataflowLinkOptions linkOptions)'
+    parameters:
+    - id: target
+      type:
+        id: System.Threading.Tasks.Dataflow.ITargetBlock{`0}
+        name: ITargetBlock
+        href: System.Threading.Tasks.Dataflow.ITargetBlock{`0}
+    - id: linkOptions
+      type:
+        id: System.Threading.Tasks.Dataflow.DataflowLinkOptions
+        name: DataflowLinkOptions
+        href: System.Threading.Tasks.Dataflow.DataflowLinkOptions.yaml
+    return:
+      id: IDisposable
+- id: System.Threading.Tasks.Dataflow.WriteOnceBlock`1.Completion
+  href: System.Threading.Tasks.Dataflow.WriteOnceBlock`1.yaml
+  name:
+    CSharp: Completion
+  qualifiedName:
+    CSharp: System.Threading.Tasks.Dataflow.WriteOnceBlock`1.Completion
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/WriteOnceBlock.cs
+    startLine: 346
+  syntax:
+    content:
+      CSharp: public Task Completion { get; }
+    parameters:
+    - id: Completion
+      type:
+        id: System.Threading.Tasks.Task
+        name: System.Threading.Tasks.Task
+        isExternal: true
+- id: System.Threading.Tasks.Dataflow.WriteOnceBlock`1.ToString
+  href: System.Threading.Tasks.Dataflow.WriteOnceBlock`1.yaml
+  name:
+    CSharp: ToString
+  qualifiedName:
+    CSharp: System.Threading.Tasks.Dataflow.WriteOnceBlock`1.ToString
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/WriteOnceBlock.cs
+    startLine: 522
+  syntax:
+    content:
+      CSharp: public override string ToString()
+    parameters: []
+    return:
+      id: String

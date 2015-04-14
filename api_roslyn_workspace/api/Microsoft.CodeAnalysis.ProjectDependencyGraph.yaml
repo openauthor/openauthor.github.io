@@ -1,0 +1,168 @@
+id: Microsoft.CodeAnalysis.ProjectDependencyGraph
+href: Microsoft.CodeAnalysis.ProjectDependencyGraph.yaml
+name:
+  CSharp: ProjectDependencyGraph
+qualifiedName:
+  CSharp: Microsoft.CodeAnalysis.ProjectDependencyGraph
+type: Class
+source:
+  remote: &o0
+    branch: master
+    repo: https://github.com/vicancy/roslyn
+  path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectDependencyGraph.cs
+  startLine: 16
+summary: A [Microsoft.CodeAnalysis.ProjectDependencyGraph](Microsoft.CodeAnalysis.ProjectDependencyGraph.yaml) models the dependencies between projects in a solution.
+syntax:
+  content:
+    CSharp: public class ProjectDependencyGraph
+inheritance:
+- id: System.Object
+  name: System.Object
+  isExternal: true
+items:
+- id: Microsoft.CodeAnalysis.ProjectDependencyGraph.GetProjectsThatThisProjectDirectlyDependsOn(Microsoft.CodeAnalysis.ProjectId)
+  href: Microsoft.CodeAnalysis.ProjectDependencyGraph.yaml
+  name:
+    CSharp: GetProjectsThatThisProjectDirectlyDependsOn
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.ProjectDependencyGraph.GetProjectsThatThisProjectDirectlyDependsOn(Microsoft.CodeAnalysis.ProjectId)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectDependencyGraph.cs
+    startLine: 48
+  summary: Gets the list of projects (topologically sorted) that this project directly depends on.
+  syntax:
+    content:
+      CSharp: public IImmutableSet<ProjectId> GetProjectsThatThisProjectDirectlyDependsOn(ProjectId projectId)
+    parameters:
+    - id: projectId
+      type:
+        id: Microsoft.CodeAnalysis.ProjectId
+        name: ProjectId
+        href: Microsoft.CodeAnalysis.ProjectId.yaml
+    return:
+      id: IImmutableSet
+- id: Microsoft.CodeAnalysis.ProjectDependencyGraph.GetProjectsThatDirectlyDependOnThisProject(Microsoft.CodeAnalysis.ProjectId)
+  href: Microsoft.CodeAnalysis.ProjectDependencyGraph.yaml
+  name:
+    CSharp: GetProjectsThatDirectlyDependOnThisProject
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.ProjectDependencyGraph.GetProjectsThatDirectlyDependOnThisProject(Microsoft.CodeAnalysis.ProjectId)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectDependencyGraph.cs
+    startLine: 69
+  summary: Gets the list of projects (topologically sorted) that directly depend on this project.
+  syntax:
+    content:
+      CSharp: public IImmutableSet<ProjectId> GetProjectsThatDirectlyDependOnThisProject(ProjectId projectId)
+    parameters:
+    - id: projectId
+      type:
+        id: Microsoft.CodeAnalysis.ProjectId
+        name: ProjectId
+        href: Microsoft.CodeAnalysis.ProjectId.yaml
+    return:
+      id: IImmutableSet
+- id: Microsoft.CodeAnalysis.ProjectDependencyGraph.GetProjectsThatThisProjectTransitivelyDependsOn(Microsoft.CodeAnalysis.ProjectId)
+  href: Microsoft.CodeAnalysis.ProjectDependencyGraph.yaml
+  name:
+    CSharp: GetProjectsThatThisProjectTransitivelyDependsOn
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.ProjectDependencyGraph.GetProjectsThatThisProjectTransitivelyDependsOn(Microsoft.CodeAnalysis.ProjectId)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectDependencyGraph.cs
+    startLine: 136
+  summary: Gets the list of projects that directly or transitively this project depends on
+  syntax:
+    content:
+      CSharp: public IImmutableSet<ProjectId> GetProjectsThatThisProjectTransitivelyDependsOn(ProjectId projectId)
+    parameters:
+    - id: projectId
+      type:
+        id: Microsoft.CodeAnalysis.ProjectId
+        name: ProjectId
+        href: Microsoft.CodeAnalysis.ProjectId.yaml
+    return:
+      id: IImmutableSet
+- id: Microsoft.CodeAnalysis.ProjectDependencyGraph.GetProjectsThatTransitivelyDependOnThisProject(Microsoft.CodeAnalysis.ProjectId)
+  href: Microsoft.CodeAnalysis.ProjectDependencyGraph.yaml
+  name:
+    CSharp: GetProjectsThatTransitivelyDependOnThisProject
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.ProjectDependencyGraph.GetProjectsThatTransitivelyDependOnThisProject(Microsoft.CodeAnalysis.ProjectId)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectDependencyGraph.cs
+    startLine: 192
+  summary: Gets the list of projects that directly or transitively depend on this project.
+  syntax:
+    content:
+      CSharp: public IEnumerable<ProjectId> GetProjectsThatTransitivelyDependOnThisProject(ProjectId projectId)
+    parameters:
+    - id: projectId
+      type:
+        id: Microsoft.CodeAnalysis.ProjectId
+        name: ProjectId
+        href: Microsoft.CodeAnalysis.ProjectId.yaml
+    return:
+      id: IEnumerable
+- id: Microsoft.CodeAnalysis.ProjectDependencyGraph.GetTopologicallySortedProjects(System.Threading.CancellationToken)
+  href: Microsoft.CodeAnalysis.ProjectDependencyGraph.yaml
+  name:
+    CSharp: GetTopologicallySortedProjects
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.ProjectDependencyGraph.GetTopologicallySortedProjects(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectDependencyGraph.cs
+    startLine: 251
+  summary: >-
+    Returns all the projects for the solution in a topologically sorted order with respect
+
+    to their dependencies. Projects that depend on other projects will always show up later in this sequence
+
+    than the projects they depend on.
+  syntax:
+    content:
+      CSharp: public IEnumerable<ProjectId> GetTopologicallySortedProjects(CancellationToken cancellationToken = default (CancellationToken))
+    parameters:
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+    return:
+      id: IEnumerable
+- id: Microsoft.CodeAnalysis.ProjectDependencyGraph.GetDependencySets(System.Threading.CancellationToken)
+  href: Microsoft.CodeAnalysis.ProjectDependencyGraph.yaml
+  name:
+    CSharp: GetDependencySets
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.ProjectDependencyGraph.GetDependencySets(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectDependencyGraph.cs
+    startLine: 308
+  summary: >-
+    Returns a sequence of sets, where each set contains items with shared interdependency,
+
+    and there is no dependency between sets.
+  syntax:
+    content:
+      CSharp: public IEnumerable<IEnumerable<ProjectId>> GetDependencySets(CancellationToken cancellationToken = default (CancellationToken))
+    parameters:
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+    return:
+      id: IEnumerable

@@ -1,0 +1,343 @@
+id: System.ComponentModel.DataAnnotations.Validator
+href: System.ComponentModel.DataAnnotations.Validator.yaml
+name:
+  CSharp: Validator
+qualifiedName:
+  CSharp: System.ComponentModel.DataAnnotations.Validator
+type: Class
+source:
+  remote: &o0
+    branch: master
+    repo: https://github.com/dotnet/corefx.git
+  path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/Validator.cs
+  startLine: 15
+summary: >-
+  Helper class to validate objects, properties and other values using their associated
+
+  [System.ComponentModel.DataAnnotations.ValidationAttribute](System.ComponentModel.DataAnnotations.ValidationAttribute.yaml)
+
+  custom attributes.
+syntax:
+  content:
+    CSharp: public static class Validator
+inheritance:
+- id: System.Object
+  name: System.Object
+  isExternal: true
+items:
+- id: System.ComponentModel.DataAnnotations.Validator.TryValidateProperty(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,ICollection{System.ComponentModel.DataAnnotations.ValidationResult})
+  href: System.ComponentModel.DataAnnotations.Validator.yaml
+  name:
+    CSharp: TryValidateProperty
+  qualifiedName:
+    CSharp: System.ComponentModel.DataAnnotations.Validator.TryValidateProperty(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,ICollection{System.ComponentModel.DataAnnotations.ValidationResult})
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/Validator.cs
+    startLine: 47
+  summary: Tests whether the given property value is valid.
+  syntax:
+    content:
+      CSharp: public static bool TryValidateProperty(object value, ValidationContext validationContext, ICollection<ValidationResult> validationResults)
+    parameters:
+    - id: value
+      type:
+        id: System.Object
+        name: System.Object
+        isExternal: true
+      description: The value to test.
+    - id: validationContext
+      type:
+        id: System.ComponentModel.DataAnnotations.ValidationContext
+        name: ValidationContext
+        href: System.ComponentModel.DataAnnotations.ValidationContext.yaml
+      description: >-
+        Describes the property member to validate and provides services and context for the
+
+        validators.
+    - id: validationResults
+      type:
+        id: ICollection{System.ComponentModel.DataAnnotations.ValidationResult}
+        name: ICollection{System.ComponentModel.DataAnnotations.ValidationResult}
+        isExternal: true
+      description: Optional collection to receive [System.ComponentModel.DataAnnotations.ValidationResult](System.ComponentModel.DataAnnotations.ValidationResult.yaml)s for the failures.
+    return:
+      id: Boolean
+      description: true if the value is valid, false if any validation errors are encountered.
+- id: System.ComponentModel.DataAnnotations.Validator.TryValidateObject(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,ICollection{System.ComponentModel.DataAnnotations.ValidationResult})
+  href: System.ComponentModel.DataAnnotations.Validator.yaml
+  name:
+    CSharp: TryValidateObject
+  qualifiedName:
+    CSharp: System.ComponentModel.DataAnnotations.Validator.TryValidateObject(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,ICollection{System.ComponentModel.DataAnnotations.ValidationResult})
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/Validator.cs
+    startLine: 95
+  summary: Tests whether the given object instance is valid.
+  syntax:
+    content:
+      CSharp: public static bool TryValidateObject(object instance, ValidationContext validationContext, ICollection<ValidationResult> validationResults)
+    parameters:
+    - id: instance
+      type:
+        id: System.Object
+        name: System.Object
+        isExternal: true
+      description: The object instance to test.  It cannot be null.
+    - id: validationContext
+      type:
+        id: System.ComponentModel.DataAnnotations.ValidationContext
+        name: ValidationContext
+        href: System.ComponentModel.DataAnnotations.ValidationContext.yaml
+      description: Describes the object to validate and provides services and context for the validators.
+    - id: validationResults
+      type:
+        id: ICollection{System.ComponentModel.DataAnnotations.ValidationResult}
+        name: ICollection{System.ComponentModel.DataAnnotations.ValidationResult}
+        isExternal: true
+      description: Optional collection to receive [System.ComponentModel.DataAnnotations.ValidationResult](System.ComponentModel.DataAnnotations.ValidationResult.yaml)s for the failures.
+    return:
+      id: Boolean
+      description: true if the object is valid, false if any validation errors are encountered.
+- id: System.ComponentModel.DataAnnotations.Validator.TryValidateObject(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,ICollection{System.ComponentModel.DataAnnotations.ValidationResult},System.Boolean)
+  href: System.ComponentModel.DataAnnotations.Validator.yaml
+  name:
+    CSharp: TryValidateObject
+  qualifiedName:
+    CSharp: System.ComponentModel.DataAnnotations.Validator.TryValidateObject(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,ICollection{System.ComponentModel.DataAnnotations.ValidationResult},System.Boolean)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/Validator.cs
+    startLine: 134
+  summary: Tests whether the given object instance is valid.
+  syntax:
+    content:
+      CSharp: public static bool TryValidateObject(object instance, ValidationContext validationContext, ICollection<ValidationResult> validationResults, bool validateAllProperties)
+    parameters:
+    - id: instance
+      type:
+        id: System.Object
+        name: System.Object
+        isExternal: true
+      description: The object instance to test.  It cannot be null.
+    - id: validationContext
+      type:
+        id: System.ComponentModel.DataAnnotations.ValidationContext
+        name: ValidationContext
+        href: System.ComponentModel.DataAnnotations.ValidationContext.yaml
+      description: Describes the object to validate and provides services and context for the validators.
+    - id: validationResults
+      type:
+        id: ICollection{System.ComponentModel.DataAnnotations.ValidationResult}
+        name: ICollection{System.ComponentModel.DataAnnotations.ValidationResult}
+        isExternal: true
+      description: Optional collection to receive [System.ComponentModel.DataAnnotations.ValidationResult](System.ComponentModel.DataAnnotations.ValidationResult.yaml)s for the failures.
+    - id: validateAllProperties
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+      description: >-
+        If true, also evaluates all properties of the object (this process is not
+
+        recursive over properties of the properties).
+    return:
+      id: Boolean
+      description: true if the object is valid, false if any validation errors are encountered.
+- id: System.ComponentModel.DataAnnotations.Validator.TryValidateValue(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,ICollection{System.ComponentModel.DataAnnotations.ValidationResult},IEnumerable{System.ComponentModel.DataAnnotations.ValidationAttribute})
+  href: System.ComponentModel.DataAnnotations.Validator.yaml
+  name:
+    CSharp: TryValidateValue
+  qualifiedName:
+    CSharp: System.ComponentModel.DataAnnotations.Validator.TryValidateValue(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,ICollection{System.ComponentModel.DataAnnotations.ValidationResult},IEnumerable{System.ComponentModel.DataAnnotations.ValidationAttribute})
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/Validator.cs
+    startLine: 195
+  summary: Tests whether the given value is valid against a specified list of [System.ComponentModel.DataAnnotations.ValidationAttribute](System.ComponentModel.DataAnnotations.ValidationAttribute.yaml)s.
+  syntax:
+    content:
+      CSharp: public static bool TryValidateValue(object value, ValidationContext validationContext, ICollection<ValidationResult> validationResults, IEnumerable<ValidationAttribute> validationAttributes)
+    parameters:
+    - id: value
+      type:
+        id: System.Object
+        name: System.Object
+        isExternal: true
+      description: The value to test.  It cannot be null.
+    - id: validationContext
+      type:
+        id: System.ComponentModel.DataAnnotations.ValidationContext
+        name: ValidationContext
+        href: System.ComponentModel.DataAnnotations.ValidationContext.yaml
+      description: >-
+        Describes the object being validated and provides services and context for the
+
+        validators.
+    - id: validationResults
+      type:
+        id: ICollection{System.ComponentModel.DataAnnotations.ValidationResult}
+        name: ICollection{System.ComponentModel.DataAnnotations.ValidationResult}
+        isExternal: true
+      description: Optional collection to receive [System.ComponentModel.DataAnnotations.ValidationResult](System.ComponentModel.DataAnnotations.ValidationResult.yaml)s for the failures.
+    - id: validationAttributes
+      type:
+        id: IEnumerable{System.ComponentModel.DataAnnotations.ValidationAttribute}
+        name: IEnumerable{System.ComponentModel.DataAnnotations.ValidationAttribute}
+        isExternal: true
+      description: >-
+        The list of [System.ComponentModel.DataAnnotations.ValidationAttribute](System.ComponentModel.DataAnnotations.ValidationAttribute.yaml)s to validate this
+
+        against.
+    return:
+      id: Boolean
+      description: true if the object is valid, false if any validation errors are encountered.
+- id: System.ComponentModel.DataAnnotations.Validator.ValidateProperty(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)
+  href: System.ComponentModel.DataAnnotations.Validator.yaml
+  name:
+    CSharp: ValidateProperty
+  qualifiedName:
+    CSharp: System.ComponentModel.DataAnnotations.Validator.ValidateProperty(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/Validator.cs
+    startLine: 226
+  summary: Throws a [System.ComponentModel.DataAnnotations.ValidationException](System.ComponentModel.DataAnnotations.ValidationException.yaml) if the given property  is not valid.
+  syntax:
+    content:
+      CSharp: public static void ValidateProperty(object value, ValidationContext validationContext)
+    parameters:
+    - id: value
+      type:
+        id: System.Object
+        name: System.Object
+        isExternal: true
+      description: The value to test.
+    - id: validationContext
+      type:
+        id: System.ComponentModel.DataAnnotations.ValidationContext
+        name: ValidationContext
+        href: System.ComponentModel.DataAnnotations.ValidationContext.yaml
+      description: >-
+        Describes the object being validated and provides services and context for the
+
+        validators.  It cannot be null.
+    return:
+      id: Void
+- id: System.ComponentModel.DataAnnotations.Validator.ValidateObject(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)
+  href: System.ComponentModel.DataAnnotations.Validator.yaml
+  name:
+    CSharp: ValidateObject
+  qualifiedName:
+    CSharp: System.ComponentModel.DataAnnotations.Validator.ValidateObject(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/Validator.cs
+    startLine: 259
+  summary: Throws a [System.ComponentModel.DataAnnotations.ValidationException](System.ComponentModel.DataAnnotations.ValidationException.yaml) if the given  is not valid.
+  syntax:
+    content:
+      CSharp: public static void ValidateObject(object instance, ValidationContext validationContext)
+    parameters:
+    - id: instance
+      type:
+        id: System.Object
+        name: System.Object
+        isExternal: true
+      description: The object instance to test.  It cannot be null.
+    - id: validationContext
+      type:
+        id: System.ComponentModel.DataAnnotations.ValidationContext
+        name: ValidationContext
+        href: System.ComponentModel.DataAnnotations.ValidationContext.yaml
+      description: >-
+        Describes the object being validated and provides services and context for the
+
+        validators.  It cannot be null.
+    return:
+      id: Void
+- id: System.ComponentModel.DataAnnotations.Validator.ValidateObject(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,System.Boolean)
+  href: System.ComponentModel.DataAnnotations.Validator.yaml
+  name:
+    CSharp: ValidateObject
+  qualifiedName:
+    CSharp: System.ComponentModel.DataAnnotations.Validator.ValidateObject(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,System.Boolean)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/Validator.cs
+    startLine: 284
+  summary: Throws a [System.ComponentModel.DataAnnotations.ValidationException](System.ComponentModel.DataAnnotations.ValidationException.yaml) if the given object instance is not valid.
+  syntax:
+    content:
+      CSharp: public static void ValidateObject(object instance, ValidationContext validationContext, bool validateAllProperties)
+    parameters:
+    - id: instance
+      type:
+        id: System.Object
+        name: System.Object
+        isExternal: true
+      description: The object instance to test.  It cannot be null.
+    - id: validationContext
+      type:
+        id: System.ComponentModel.DataAnnotations.ValidationContext
+        name: ValidationContext
+        href: System.ComponentModel.DataAnnotations.ValidationContext.yaml
+      description: >-
+        Describes the object being validated and provides services and context for the
+
+        validators.  It cannot be null.
+    - id: validateAllProperties
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+      description: If true, also validates all the 's properties.
+    return:
+      id: Void
+- id: System.ComponentModel.DataAnnotations.Validator.ValidateValue(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,IEnumerable{System.ComponentModel.DataAnnotations.ValidationAttribute})
+  href: System.ComponentModel.DataAnnotations.Validator.yaml
+  name:
+    CSharp: ValidateValue
+  qualifiedName:
+    CSharp: System.ComponentModel.DataAnnotations.Validator.ValidateValue(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,IEnumerable{System.ComponentModel.DataAnnotations.ValidationAttribute})
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/Validator.cs
+    startLine: 326
+  summary: >-
+    Throw a [System.ComponentModel.DataAnnotations.ValidationException](System.ComponentModel.DataAnnotations.ValidationException.yaml) if the given value is not valid for the
+
+    [System.ComponentModel.DataAnnotations.ValidationAttribute](System.ComponentModel.DataAnnotations.ValidationAttribute.yaml)s.
+  syntax:
+    content:
+      CSharp: public static void ValidateValue(object value, ValidationContext validationContext, IEnumerable<ValidationAttribute> validationAttributes)
+    parameters:
+    - id: value
+      type:
+        id: System.Object
+        name: System.Object
+        isExternal: true
+      description: The value to test.  It cannot be null.
+    - id: validationContext
+      type:
+        id: System.ComponentModel.DataAnnotations.ValidationContext
+        name: ValidationContext
+        href: System.ComponentModel.DataAnnotations.ValidationContext.yaml
+      description: Describes the object being tested.
+    - id: validationAttributes
+      type:
+        id: IEnumerable{System.ComponentModel.DataAnnotations.ValidationAttribute}
+        name: IEnumerable{System.ComponentModel.DataAnnotations.ValidationAttribute}
+        isExternal: true
+      description: The list of [System.ComponentModel.DataAnnotations.ValidationAttribute](System.ComponentModel.DataAnnotations.ValidationAttribute.yaml)s to validate against this instance.
+    return:
+      id: Void

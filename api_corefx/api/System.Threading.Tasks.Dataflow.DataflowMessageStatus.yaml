@@ -1,0 +1,115 @@
+id: System.Threading.Tasks.Dataflow.DataflowMessageStatus
+href: System.Threading.Tasks.Dataflow.DataflowMessageStatus.yaml
+name:
+  CSharp: DataflowMessageStatus
+qualifiedName:
+  CSharp: System.Threading.Tasks.Dataflow.DataflowMessageStatus
+type: Enum
+source:
+  remote: &o0
+    branch: master
+    repo: https://github.com/dotnet/corefx.git
+  path: src/System.Threading.Tasks.Dataflow/src/Base/DataflowMessageStatus.cs
+  startLine: 15
+summary: Represents the status of a [System.Threading.Tasks.Dataflow.DataflowMessageHeader](System.Threading.Tasks.Dataflow.DataflowMessageHeader.yaml) when passed between dataflow blocks.
+syntax:
+  content:
+    CSharp: public enum DataflowMessageStatus
+inheritance:
+- id: System.Object
+  name: System.Object
+  isExternal: true
+- id: System.ValueType
+  name: System.ValueType
+  isExternal: true
+- id: System.Enum
+  name: System.Enum
+  isExternal: true
+items:
+- id: System.Threading.Tasks.Dataflow.DataflowMessageStatus.Accepted
+  href: System.Threading.Tasks.Dataflow.DataflowMessageStatus.yaml
+  name:
+    CSharp: Accepted
+  qualifiedName:
+    CSharp: System.Threading.Tasks.Dataflow.DataflowMessageStatus.Accepted
+  type: Field
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Base/DataflowMessageStatus.cs
+    startLine: 21
+  summary: >-
+    Indicates that the [System.Threading.Tasks.Dataflow.ITargetBlock`1](System.Threading.Tasks.Dataflow.ITargetBlock`1.yaml) accepted the message.  Once a target has accepted a message,
+
+    it is wholly owned by the target.
+  syntax:
+    content:
+      CSharp: Accepted = 0x0
+- id: System.Threading.Tasks.Dataflow.DataflowMessageStatus.Declined
+  href: System.Threading.Tasks.Dataflow.DataflowMessageStatus.yaml
+  name:
+    CSharp: Declined
+  qualifiedName:
+    CSharp: System.Threading.Tasks.Dataflow.DataflowMessageStatus.Declined
+  type: Field
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Base/DataflowMessageStatus.cs
+    startLine: 26
+  summary: Indicates that the [System.Threading.Tasks.Dataflow.ITargetBlock`1](System.Threading.Tasks.Dataflow.ITargetBlock`1.yaml) declined the message.  The [System.Threading.Tasks.Dataflow.ISourceBlock`1](System.Threading.Tasks.Dataflow.ISourceBlock`1.yaml) still owns the message.
+  syntax:
+    content:
+      CSharp: Declined = 0x1
+- id: System.Threading.Tasks.Dataflow.DataflowMessageStatus.Postponed
+  href: System.Threading.Tasks.Dataflow.DataflowMessageStatus.yaml
+  name:
+    CSharp: Postponed
+  qualifiedName:
+    CSharp: System.Threading.Tasks.Dataflow.DataflowMessageStatus.Postponed
+  type: Field
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Base/DataflowMessageStatus.cs
+    startLine: 32
+  summary: >-
+    Indicates that the [System.Threading.Tasks.Dataflow.ITargetBlock`1](System.Threading.Tasks.Dataflow.ITargetBlock`1.yaml) postponed the message for potential consumption at a later time.
+
+    The [System.Threading.Tasks.Dataflow.ISourceBlock`1](System.Threading.Tasks.Dataflow.ISourceBlock`1.yaml) still owns the message.
+  syntax:
+    content:
+      CSharp: Postponed = 0x2
+- id: System.Threading.Tasks.Dataflow.DataflowMessageStatus.NotAvailable
+  href: System.Threading.Tasks.Dataflow.DataflowMessageStatus.yaml
+  name:
+    CSharp: NotAvailable
+  qualifiedName:
+    CSharp: System.Threading.Tasks.Dataflow.DataflowMessageStatus.NotAvailable
+  type: Field
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Base/DataflowMessageStatus.cs
+    startLine: 38
+  summary: >-
+    Indicates that the [System.Threading.Tasks.Dataflow.ITargetBlock`1](System.Threading.Tasks.Dataflow.ITargetBlock`1.yaml) tried to accept the message from the [System.Threading.Tasks.Dataflow.ISourceBlock`1](System.Threading.Tasks.Dataflow.ISourceBlock`1.yaml), but the
+
+    message was no longer available.
+  syntax:
+    content:
+      CSharp: NotAvailable = 0x3
+- id: System.Threading.Tasks.Dataflow.DataflowMessageStatus.DecliningPermanently
+  href: System.Threading.Tasks.Dataflow.DataflowMessageStatus.yaml
+  name:
+    CSharp: DecliningPermanently
+  qualifiedName:
+    CSharp: System.Threading.Tasks.Dataflow.DataflowMessageStatus.DecliningPermanently
+  type: Field
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Base/DataflowMessageStatus.cs
+    startLine: 44
+  summary: >-
+    Indicates that the [System.Threading.Tasks.Dataflow.ITargetBlock`1](System.Threading.Tasks.Dataflow.ITargetBlock`1.yaml) declined the message.  The [System.Threading.Tasks.Dataflow.ISourceBlock`1](System.Threading.Tasks.Dataflow.ISourceBlock`1.yaml) still owns the message.
+
+    Additionally, the [System.Threading.Tasks.Dataflow.ITargetBlock`1](System.Threading.Tasks.Dataflow.ITargetBlock`1.yaml) will decline all future messages sent by the source.
+  syntax:
+    content:
+      CSharp: DecliningPermanently = 0x4

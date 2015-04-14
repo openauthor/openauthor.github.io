@@ -1,0 +1,286 @@
+id: System.Web.Mvc.DataAnnotationsModelValidatorProvider
+href: System.Web.Mvc.DataAnnotationsModelValidatorProvider.yaml
+name:
+  CSharp: DataAnnotationsModelValidatorProvider
+qualifiedName:
+  CSharp: System.Web.Mvc.DataAnnotationsModelValidatorProvider
+type: Class
+source:
+  remote: &o0
+    branch: master
+    repo: https://git01.codeplex.com/aspnetwebstack
+    description: fbv1.1-beta-39-g5fa60ca
+  path: src/System.Web.Mvc/DataAnnotationsModelValidatorProvider.cs
+  startLine: 30
+summary: >-
+  An implementation of [System.Web.Mvc.ModelValidatorProvider](System.Web.Mvc.ModelValidatorProvider.yaml) which providers validators
+
+  for attributes which derive from [System.ComponentModel.DataAnnotations.ValidationAttribute](#). It also provides
+
+  a validator for types which implement [System.ComponentModel.DataAnnotations.IValidatableObject](#). To support
+
+  client side validation, you can either register adapters through the static methods
+
+  on this class, or by having your validation attributes implement
+
+  [System.Web.Mvc.IClientValidatable](System.Web.Mvc.IClientValidatable.yaml). The logic to support IClientValidatable
+
+  is implemented in [System.Web.Mvc.DataAnnotationsModelValidator](System.Web.Mvc.DataAnnotationsModelValidator.yaml).
+syntax:
+  content:
+    CSharp: public class DataAnnotationsModelValidatorProvider
+inheritance:
+- id: System.Object
+  name: System.Object
+  isExternal: true
+- id: System.Web.Mvc.ModelValidatorProvider
+  name: ModelValidatorProvider
+  href: System.Web.Mvc.ModelValidatorProvider.yaml
+- id: System.Web.Mvc.AssociatedValidatorProvider
+  name: AssociatedValidatorProvider
+  href: System.Web.Mvc.AssociatedValidatorProvider.yaml
+items:
+- id: System.Web.Mvc.DataAnnotationsModelValidatorProvider.AddImplicitRequiredAttributeForValueTypes
+  href: System.Web.Mvc.DataAnnotationsModelValidatorProvider.yaml
+  name:
+    CSharp: AddImplicitRequiredAttributeForValueTypes
+  qualifiedName:
+    CSharp: System.Web.Mvc.DataAnnotationsModelValidatorProvider.AddImplicitRequiredAttributeForValueTypes
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/DataAnnotationsModelValidatorProvider.cs
+    startLine: 49
+  syntax:
+    content:
+      CSharp: public static bool AddImplicitRequiredAttributeForValueTypes { get; set; }
+    parameters:
+    - id: AddImplicitRequiredAttributeForValueTypes
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+- id: System.Web.Mvc.DataAnnotationsModelValidatorProvider.RegisterAdapter(System.Type,System.Type)
+  href: System.Web.Mvc.DataAnnotationsModelValidatorProvider.yaml
+  name:
+    CSharp: RegisterAdapter
+  qualifiedName:
+    CSharp: System.Web.Mvc.DataAnnotationsModelValidatorProvider.RegisterAdapter(System.Type,System.Type)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/DataAnnotationsModelValidatorProvider.cs
+    startLine: 104
+  syntax:
+    content:
+      CSharp: public static void RegisterAdapter(Type attributeType, Type adapterType)
+    parameters:
+    - id: attributeType
+      type:
+        id: System.Type
+        name: System.Type
+        isExternal: true
+    - id: adapterType
+      type:
+        id: System.Type
+        name: System.Type
+        isExternal: true
+    return:
+      id: Void
+- id: System.Web.Mvc.DataAnnotationsModelValidatorProvider.RegisterAdapterFactory(System.Type,System.Web.Mvc.DataAnnotationsModelValidationFactory)
+  href: System.Web.Mvc.DataAnnotationsModelValidatorProvider.yaml
+  name:
+    CSharp: RegisterAdapterFactory
+  qualifiedName:
+    CSharp: System.Web.Mvc.DataAnnotationsModelValidatorProvider.RegisterAdapterFactory(System.Type,System.Web.Mvc.DataAnnotationsModelValidationFactory)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/DataAnnotationsModelValidatorProvider.cs
+    startLine: 122
+  syntax:
+    content:
+      CSharp: public static void RegisterAdapterFactory(Type attributeType, DataAnnotationsModelValidationFactory factory)
+    parameters:
+    - id: attributeType
+      type:
+        id: System.Type
+        name: System.Type
+        isExternal: true
+    - id: factory
+      type:
+        id: System.Web.Mvc.DataAnnotationsModelValidationFactory
+        name: DataAnnotationsModelValidationFactory
+        href: System.Web.Mvc.DataAnnotationsModelValidationFactory.yaml
+    return:
+      id: Void
+- id: System.Web.Mvc.DataAnnotationsModelValidatorProvider.RegisterDefaultAdapter(System.Type)
+  href: System.Web.Mvc.DataAnnotationsModelValidatorProvider.yaml
+  name:
+    CSharp: RegisterDefaultAdapter
+  qualifiedName:
+    CSharp: System.Web.Mvc.DataAnnotationsModelValidatorProvider.RegisterDefaultAdapter(System.Type)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/DataAnnotationsModelValidatorProvider.cs
+    startLine: 139
+  syntax:
+    content:
+      CSharp: public static void RegisterDefaultAdapter(Type adapterType)
+    parameters:
+    - id: adapterType
+      type:
+        id: System.Type
+        name: System.Type
+        isExternal: true
+    return:
+      id: Void
+- id: System.Web.Mvc.DataAnnotationsModelValidatorProvider.RegisterDefaultAdapterFactory(System.Web.Mvc.DataAnnotationsModelValidationFactory)
+  href: System.Web.Mvc.DataAnnotationsModelValidatorProvider.yaml
+  name:
+    CSharp: RegisterDefaultAdapterFactory
+  qualifiedName:
+    CSharp: System.Web.Mvc.DataAnnotationsModelValidatorProvider.RegisterDefaultAdapterFactory(System.Web.Mvc.DataAnnotationsModelValidationFactory)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/DataAnnotationsModelValidatorProvider.cs
+    startLine: 147
+  syntax:
+    content:
+      CSharp: public static void RegisterDefaultAdapterFactory(DataAnnotationsModelValidationFactory factory)
+    parameters:
+    - id: factory
+      type:
+        id: System.Web.Mvc.DataAnnotationsModelValidationFactory
+        name: DataAnnotationsModelValidationFactory
+        href: System.Web.Mvc.DataAnnotationsModelValidationFactory.yaml
+    return:
+      id: Void
+- id: System.Web.Mvc.DataAnnotationsModelValidatorProvider.RegisterValidatableObjectAdapter(System.Type,System.Type)
+  href: System.Web.Mvc.DataAnnotationsModelValidatorProvider.yaml
+  name:
+    CSharp: RegisterValidatableObjectAdapter
+  qualifiedName:
+    CSharp: System.Web.Mvc.DataAnnotationsModelValidatorProvider.RegisterValidatableObjectAdapter(System.Type,System.Type)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/DataAnnotationsModelValidatorProvider.cs
+    startLine: 230
+  summary: >-
+    Registers an adapter type for the given , which must
+
+    implement [System.ComponentModel.DataAnnotations.IValidatableObject](#). The adapter type must derive from
+
+    [System.Web.Mvc.ModelValidator](System.Web.Mvc.ModelValidator.yaml) and it must contain a public constructor
+
+    which takes two parameters of types [System.Web.Mvc.ModelMetadata](System.Web.Mvc.ModelMetadata.yaml) and
+
+    [System.Web.Mvc.ControllerContext](System.Web.Mvc.ControllerContext.yaml).
+  syntax:
+    content:
+      CSharp: public static void RegisterValidatableObjectAdapter(Type modelType, Type adapterType)
+    parameters:
+    - id: modelType
+      type:
+        id: System.Type
+        name: System.Type
+        isExternal: true
+    - id: adapterType
+      type:
+        id: System.Type
+        name: System.Type
+        isExternal: true
+    return:
+      id: Void
+- id: System.Web.Mvc.DataAnnotationsModelValidatorProvider.RegisterValidatableObjectAdapterFactory(System.Type,System.Web.Mvc.DataAnnotationsValidatableObjectAdapterFactory)
+  href: System.Web.Mvc.DataAnnotationsModelValidatorProvider.yaml
+  name:
+    CSharp: RegisterValidatableObjectAdapterFactory
+  qualifiedName:
+    CSharp: System.Web.Mvc.DataAnnotationsModelValidatorProvider.RegisterValidatableObjectAdapterFactory(System.Type,System.Web.Mvc.DataAnnotationsValidatableObjectAdapterFactory)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/DataAnnotationsModelValidatorProvider.cs
+    startLine: 252
+  summary: >-
+    Registers an adapter factory for the given , which must
+
+    implement [System.ComponentModel.DataAnnotations.IValidatableObject](#).
+  syntax:
+    content:
+      CSharp: public static void RegisterValidatableObjectAdapterFactory(Type modelType, DataAnnotationsValidatableObjectAdapterFactory factory)
+    parameters:
+    - id: modelType
+      type:
+        id: System.Type
+        name: System.Type
+        isExternal: true
+    - id: factory
+      type:
+        id: System.Web.Mvc.DataAnnotationsValidatableObjectAdapterFactory
+        name: DataAnnotationsValidatableObjectAdapterFactory
+        href: System.Web.Mvc.DataAnnotationsValidatableObjectAdapterFactory.yaml
+    return:
+      id: Void
+- id: System.Web.Mvc.DataAnnotationsModelValidatorProvider.RegisterDefaultValidatableObjectAdapter(System.Type)
+  href: System.Web.Mvc.DataAnnotationsModelValidatorProvider.yaml
+  name:
+    CSharp: RegisterDefaultValidatableObjectAdapter
+  qualifiedName:
+    CSharp: System.Web.Mvc.DataAnnotationsModelValidatorProvider.RegisterDefaultValidatableObjectAdapter(System.Type)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/DataAnnotationsModelValidatorProvider.cs
+    startLine: 276
+  summary: >-
+    Registers the default adapter type for objects which implement
+
+    [System.ComponentModel.DataAnnotations.IValidatableObject](#). The adapter type must derive from
+
+    [System.Web.Mvc.ModelValidator](System.Web.Mvc.ModelValidator.yaml) and it must contain a public constructor
+
+    which takes two parameters of types [System.Web.Mvc.ModelMetadata](System.Web.Mvc.ModelMetadata.yaml) and
+
+    [System.Web.Mvc.ControllerContext](System.Web.Mvc.ControllerContext.yaml).
+  syntax:
+    content:
+      CSharp: public static void RegisterDefaultValidatableObjectAdapter(Type adapterType)
+    parameters:
+    - id: adapterType
+      type:
+        id: System.Type
+        name: System.Type
+        isExternal: true
+    return:
+      id: Void
+- id: System.Web.Mvc.DataAnnotationsModelValidatorProvider.RegisterDefaultValidatableObjectAdapterFactory(System.Web.Mvc.DataAnnotationsValidatableObjectAdapterFactory)
+  href: System.Web.Mvc.DataAnnotationsModelValidatorProvider.yaml
+  name:
+    CSharp: RegisterDefaultValidatableObjectAdapterFactory
+  qualifiedName:
+    CSharp: System.Web.Mvc.DataAnnotationsModelValidatorProvider.RegisterDefaultValidatableObjectAdapterFactory(System.Web.Mvc.DataAnnotationsValidatableObjectAdapterFactory)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/DataAnnotationsModelValidatorProvider.cs
+    startLine: 288
+  summary: >-
+    Registers the default adapter factory for objects which implement
+
+    [System.ComponentModel.DataAnnotations.IValidatableObject](#).
+  syntax:
+    content:
+      CSharp: public static void RegisterDefaultValidatableObjectAdapterFactory(DataAnnotationsValidatableObjectAdapterFactory factory)
+    parameters:
+    - id: factory
+      type:
+        id: System.Web.Mvc.DataAnnotationsValidatableObjectAdapterFactory
+        name: DataAnnotationsValidatableObjectAdapterFactory
+        href: System.Web.Mvc.DataAnnotationsValidatableObjectAdapterFactory.yaml
+    return:
+      id: Void

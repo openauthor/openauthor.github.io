@@ -36,54 +36,65 @@
 <body>
   <div id="console">
     <div id="player"></div>
-      <button id="run" class="btn btn-primary">Run</button>
-      <button id="close" class="btn btn-danger">Close</button>
+      <button id="run" class="btn">Run</button>
+      <button id="close" class="btn">Close</button>
     </div>
   </div>
   <div id="wrapper">
-    <header scroll-y-offset-element class="header header-fixed">
-      <section class="navbar navbar-inverse docs-navbar-primary">
+    <header scroll-y-offset-element>
+      <div class="topnav navbar navbar-inverse navbar-default">
         <div class="container">
-          <div class="row">
-            <div class="col-md-9 header-branding">
-              <div ng-repeat="model in [navbar]"  ng-include="'template/navbar.tmpl'"></div>
-            </div>
-            <!-- comment out search box as it is not currently supported
-            <form ng-class="{focus:focus}" class="navbar-search col-md-3 docs-search" ng-submit="submit()">
-              <span class="glyphicon glyphicon-search search-icon"></span>
-              <input type="text"
-                     name="as_q"
-                     class="search-query"
-                     placeholder="Click or press / to search"
-                     ng-focus="focus=true"
-                     ng-blur="focus=false"
-                     ng-change="search(q)"
-                     ng-model="q"
-                     docs-search-input
-                     autocomplete="off" />
-            </form> -->
-          </div>
+          <div ng-repeat="model in [navbar]"  ng-include="'template/navbar.tmpl'"></div>
+          <!-- comment out search box as it is not currently supported
+          <form ng-class="{focus:focus}" class="navbar-search col-md-3 docs-search" ng-submit="submit()">
+            <span class="glyphicon glyphicon-search search-icon"></span>
+            <input type="text"
+                   name="as_q"
+                   class="search-query"
+                   placeholder="Click or press / to search"
+                   ng-focus="focus=true"
+                   ng-blur="focus=false"
+                   ng-change="search(q)"
+                   ng-model="q"
+                   docs-search-input
+                   autocomplete="off" />
+          </form> -->
         </div>
-        <div class="search-results-container" ng-show="hasResults">
-          <div class="container">
-            <div class="search-results-frame">
-              <div ng-repeat="(key, value) in results" class="search-results-group" ng-class="colClassName + ' col-group-' + key">
-                <h4 class="search-results-group-heading">{{ key }}</h4>
-                <div class="search-results">
-                  <div ng-repeat="item in value" class="search-result">
-                    - <a ng-click="hideResults()" ng-href="#{{ item.path }}">{{ item.name }}</a>
-                  </div>
+      </div>
+      <div class="subnav navbar navbar-default">
+        <div class="container">
+            <div class="expand-all pull-right">
+              <a ng-click = "expandAll(true);">Expand All</a>
+              <span class="divider">|</span>
+              <a ng-click = "expandAll(false);">Collapse All</a>
+            </div>
+            <ul class="breadcrumb">
+              <li ng-repeat="crumb in breadcrumb">
+                <a ng-href="{{GetBreadCrumbHref(crumb.url)}}">{{crumb.name}}</a>
+              </li>
+            </ul>
+        </div>
+      </div>
+      <div class="grad-top"></div>
+      <!--<div class="search-results-container" ng-show="hasResults">
+        <div class="container">
+          <div class="search-results-frame">
+            <div ng-repeat="(key, value) in results" class="search-results-group" ng-class="colClassName + ' col-group-' + key">
+              <h4 class="search-results-group-heading">{{ key }}</h4>
+              <div class="search-results">
+                <div ng-repeat="item in value" class="search-result">
+                  - <a ng-click="hideResults()" ng-href="#{{ item.path }}">{{ item.name }}</a>
                 </div>
               </div>
             </div>
-            <a href="" ng-click="hideResults()" class="search-close">
-              <span class="glyphicon glyphicon-remove search-close-icon"></span> Close
-            </a>
           </div>
+          <a href="" ng-click="hideResults()" class="search-close">
+            <span class="glyphicon glyphicon-remove search-close-icon"></span> Close
+          </a>
         </div>
-      </section>
+      </div>-->
       <!-- Temp disable it: what to show for conceptual?
-      <section class="sup-header">
+      <div class="sup-header">
         <div class="container main-grid main-header-grid">
           <div class="grid-left">
             <div ng-controller="DocsVersionsCtrl" class="picker version-picker">
@@ -103,37 +114,34 @@
             </ul>
           </div>
         </div>
-      </section>-->
+      </div>-->
     </header>
 
-    <section role="main" class="container main-body">
-      <div class="main-grid main-body-grid">
-        <div class="grid-left" ng-if="toc">
-          <div class="side-navigation">
-            <div id="tocLoading" ng-show="tocLoading">Loading...</div>
-            <div ng-hide="tocLoading" ng-if="toc" ng-repeat="model in [toc.content]" ng-include="'template/toc.tmpl'"></div>
-          </div>
-        </div>
-        <div ng-class="gridClass(toc)">
-          <div id="loading" ng-show="loading">Loading...</div>
-          <div markdown ng-if="contentType === 'md'" ng-hide="loading" ng-repeat="model in [partialModel]" ng-include="partialPath" autoscroll></div>
-          <div ng-if="contentType !== 'md'" ng-hide="loading" ng-repeat="model in [partialModel]" ng-include="partialPath" autoscroll></div>
-        </div>
+    <div role="main" class="container">
+      <div class="sidenav" ng-if="toc">
+        <div id="tocLoading" ng-show="tocLoading">Loading...</div>
+        <div ng-hide="tocLoading" ng-if="toc" ng-repeat="model in [toc.content]" ng-include="'template/toc.tmpl'"></div>
       </div>
-    </section>
-
+      <div ng-class="gridClass(toc)" class="article">
+        <div id="loading" ng-show="loading">Loading...</div>
+        <div markdown ng-if="contentType === 'md'" ng-hide="loading" ng-repeat="model in [partialModel]" ng-include="partialPath" autoscroll></div>
+          <div ng-if="contentType !== 'md'" ng-hide="loading" ng-repeat="model in [partialModel]" ng-include="partialPath" onload="finishLoading()" autoscroll></div>
+      </div>
+    </div>
     <!--
-    comment out footer as it is currently having display issue
-    <footer class="footer">
-      <div class="container">
-        <p class="pull-right"><a back-to-top>Back to top</a></p>
-
-        <p>
-          Super-powered by Microsoft Visual Studio China  ©2014-2015
-          Code licensed under the MIT License
-        </p>
+    comment out footer as it is currently having display issue-->
+    <footer>
+      <div class="grad-bottom"></div>
+      <div class="footer">
+        <div class="container">
+          <span class="pull-right"><a back-to-top>Back to top</a></span>
+          <span>
+            Super-powered by Microsoft Visual Studio China  ©2014-2015
+            Code licensed under the MIT License
+          </span>
+        </div>
       </div>
-    </footer> -->
+    </footer>
   </div>
 </body>
 </html>

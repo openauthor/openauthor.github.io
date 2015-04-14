@@ -1,0 +1,144 @@
+id: Microsoft.CodeAnalysis.SolutionInfo
+href: Microsoft.CodeAnalysis.SolutionInfo.yaml
+name:
+  CSharp: SolutionInfo
+qualifiedName:
+  CSharp: Microsoft.CodeAnalysis.SolutionInfo
+type: Class
+source:
+  remote: &o0
+    branch: master
+    repo: https://github.com/vicancy/roslyn
+  path: src/Workspaces/Core/Portable/Workspace/Solution/SolutionInfo.cs
+  startLine: 16
+summary: A class that represents all the arguments necessary to create a new solution instance.
+syntax:
+  content:
+    CSharp: public sealed class SolutionInfo
+inheritance:
+- id: System.Object
+  name: System.Object
+  isExternal: true
+items:
+- id: Microsoft.CodeAnalysis.SolutionInfo.Id
+  href: Microsoft.CodeAnalysis.SolutionInfo.yaml
+  name:
+    CSharp: Id
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.SolutionInfo.Id
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Solution/SolutionInfo.cs
+    startLine: 21
+  summary: The unique Id of the solution.
+  syntax:
+    content:
+      CSharp: public SolutionId Id { get; private set; }
+    parameters:
+    - id: Id
+      type:
+        id: Microsoft.CodeAnalysis.SolutionId
+        name: SolutionId
+        href: Microsoft.CodeAnalysis.SolutionId.yaml
+- id: Microsoft.CodeAnalysis.SolutionInfo.Version
+  href: Microsoft.CodeAnalysis.SolutionInfo.yaml
+  name:
+    CSharp: Version
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.SolutionInfo.Version
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Solution/SolutionInfo.cs
+    startLine: 26
+  summary: The version of the solution.
+  syntax:
+    content:
+      CSharp: public VersionStamp Version { get; private set; }
+    parameters:
+    - id: Version
+      type:
+        id: Microsoft.CodeAnalysis.VersionStamp
+        name: VersionStamp
+        href: Microsoft.CodeAnalysis.VersionStamp.yaml
+- id: Microsoft.CodeAnalysis.SolutionInfo.FilePath
+  href: Microsoft.CodeAnalysis.SolutionInfo.yaml
+  name:
+    CSharp: FilePath
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.SolutionInfo.FilePath
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Solution/SolutionInfo.cs
+    startLine: 31
+  summary: The path to the solution file, or null if there is no solution file.
+  syntax:
+    content:
+      CSharp: public string FilePath { get; private set; }
+    parameters:
+    - id: FilePath
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+- id: Microsoft.CodeAnalysis.SolutionInfo.Projects
+  href: Microsoft.CodeAnalysis.SolutionInfo.yaml
+  name:
+    CSharp: Projects
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.SolutionInfo.Projects
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Solution/SolutionInfo.cs
+    startLine: 36
+  summary: A list of projects initially associated with the solution.
+  syntax:
+    content:
+      CSharp: public IReadOnlyList<ProjectInfo> Projects { get; private set; }
+    parameters:
+    - id: Projects
+      type:
+        id: System.Collections.Generic.IReadOnlyList{Microsoft.CodeAnalysis.ProjectInfo}
+        name: System.Collections.Generic.IReadOnlyList{Microsoft.CodeAnalysis.ProjectInfo}
+        isExternal: true
+- id: Microsoft.CodeAnalysis.SolutionInfo.Create(Microsoft.CodeAnalysis.SolutionId,Microsoft.CodeAnalysis.VersionStamp,System.String,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectInfo})
+  href: Microsoft.CodeAnalysis.SolutionInfo.yaml
+  name:
+    CSharp: Create
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.SolutionInfo.Create(Microsoft.CodeAnalysis.SolutionId,Microsoft.CodeAnalysis.VersionStamp,System.String,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectInfo})
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Solution/SolutionInfo.cs
+    startLine: 53
+  summary: Create a new instance of a SolutionInfo.
+  syntax:
+    content:
+      CSharp: public static SolutionInfo Create(SolutionId id, VersionStamp version, string filePath = null, IEnumerable<ProjectInfo> projects = null)
+    parameters:
+    - id: id
+      type:
+        id: Microsoft.CodeAnalysis.SolutionId
+        name: SolutionId
+        href: Microsoft.CodeAnalysis.SolutionId.yaml
+    - id: version
+      type:
+        id: Microsoft.CodeAnalysis.VersionStamp
+        name: VersionStamp
+        href: Microsoft.CodeAnalysis.VersionStamp.yaml
+    - id: filePath
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+    - id: projects
+      type:
+        id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectInfo}
+        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectInfo}
+        isExternal: true
+    return:
+      id: SolutionInfo

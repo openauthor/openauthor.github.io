@@ -1,0 +1,260 @@
+id: Microsoft.CodeAnalysis.VersionStamp
+href: Microsoft.CodeAnalysis.VersionStamp.yaml
+name:
+  CSharp: VersionStamp
+qualifiedName:
+  CSharp: Microsoft.CodeAnalysis.VersionStamp
+type: Struct
+source:
+  remote: &o0
+    branch: master
+    repo: https://github.com/vicancy/roslyn
+  path: src/Workspaces/Core/Portable/Workspace/Solution/VersionStamp.cs
+  startLine: 11
+summary: VersionStamp should be only used to compare versions returned by same API.
+syntax:
+  content:
+    CSharp: public struct VersionStamp
+inheritance:
+- id: System.Object
+  name: System.Object
+  isExternal: true
+- id: System.ValueType
+  name: System.ValueType
+  isExternal: true
+items:
+- id: Microsoft.CodeAnalysis.VersionStamp.Create
+  href: Microsoft.CodeAnalysis.VersionStamp.yaml
+  name:
+    CSharp: Create
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.VersionStamp.Create
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Solution/VersionStamp.cs
+    startLine: 61
+  summary: Creates a new instance of a VersionStamp.
+  syntax:
+    content:
+      CSharp: public static VersionStamp Create()
+    parameters: []
+    return:
+      id: VersionStamp
+- id: Microsoft.CodeAnalysis.VersionStamp.Create(System.DateTime)
+  href: Microsoft.CodeAnalysis.VersionStamp.yaml
+  name:
+    CSharp: Create
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.VersionStamp.Create(System.DateTime)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Solution/VersionStamp.cs
+    startLine: 69
+  summary: Creates a new instance of a version stamp based on the specified DateTime.
+  syntax:
+    content:
+      CSharp: public static VersionStamp Create(DateTime utcIimeLastModified)
+    parameters:
+    - id: utcIimeLastModified
+      type:
+        id: System.DateTime
+        name: System.DateTime
+        isExternal: true
+    return:
+      id: VersionStamp
+- id: Microsoft.CodeAnalysis.VersionStamp.GetNewerVersion(Microsoft.CodeAnalysis.VersionStamp)
+  href: Microsoft.CodeAnalysis.VersionStamp.yaml
+  name:
+    CSharp: GetNewerVersion
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.VersionStamp.GetNewerVersion(Microsoft.CodeAnalysis.VersionStamp)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Solution/VersionStamp.cs
+    startLine: 78
+  summary: >-
+    compare two different versions and return either one of the versions if there is no collision, otherwise, create a new version
+
+    that can be used later to compare versions between different items
+  syntax:
+    content:
+      CSharp: public VersionStamp GetNewerVersion(VersionStamp version)
+    parameters:
+    - id: version
+      type:
+        id: Microsoft.CodeAnalysis.VersionStamp
+        name: VersionStamp
+        href: Microsoft.CodeAnalysis.VersionStamp.yaml
+    return:
+      id: VersionStamp
+- id: Microsoft.CodeAnalysis.VersionStamp.GetNewerVersion
+  href: Microsoft.CodeAnalysis.VersionStamp.yaml
+  name:
+    CSharp: GetNewerVersion
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.VersionStamp.GetNewerVersion
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Solution/VersionStamp.cs
+    startLine: 119
+  summary: >-
+    Gets a new VersionStamp that is guaranteed to be newer than its base one
+
+    this should only be used for same item to move it to newer version
+  syntax:
+    content:
+      CSharp: public VersionStamp GetNewerVersion()
+    parameters: []
+    return:
+      id: VersionStamp
+- id: Microsoft.CodeAnalysis.VersionStamp.ToString
+  href: Microsoft.CodeAnalysis.VersionStamp.yaml
+  name:
+    CSharp: ToString
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.VersionStamp.ToString
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Solution/VersionStamp.cs
+    startLine: 133
+  summary: Returns the serialized text form of the VersionStamp.
+  syntax:
+    content:
+      CSharp: public override string ToString()
+    parameters: []
+    return:
+      id: String
+- id: Microsoft.CodeAnalysis.VersionStamp.GetHashCode
+  href: Microsoft.CodeAnalysis.VersionStamp.yaml
+  name:
+    CSharp: GetHashCode
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.VersionStamp.GetHashCode
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Solution/VersionStamp.cs
+    startLine: 139
+  syntax:
+    content:
+      CSharp: public override int GetHashCode()
+    parameters: []
+    return:
+      id: Int32
+- id: Microsoft.CodeAnalysis.VersionStamp.Equals(System.Object)
+  href: Microsoft.CodeAnalysis.VersionStamp.yaml
+  name:
+    CSharp: Equals
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.VersionStamp.Equals(System.Object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Solution/VersionStamp.cs
+    startLine: 144
+  syntax:
+    content:
+      CSharp: public override bool Equals(object obj)
+    parameters:
+    - id: obj
+      type:
+        id: System.Object
+        name: System.Object
+        isExternal: true
+    return:
+      id: Boolean
+- id: Microsoft.CodeAnalysis.VersionStamp.Equals(Microsoft.CodeAnalysis.VersionStamp)
+  href: Microsoft.CodeAnalysis.VersionStamp.yaml
+  name:
+    CSharp: Equals
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.VersionStamp.Equals(Microsoft.CodeAnalysis.VersionStamp)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Solution/VersionStamp.cs
+    startLine: 154
+  syntax:
+    content:
+      CSharp: public bool Equals(VersionStamp version)
+    parameters:
+    - id: version
+      type:
+        id: Microsoft.CodeAnalysis.VersionStamp
+        name: VersionStamp
+        href: Microsoft.CodeAnalysis.VersionStamp.yaml
+    return:
+      id: Boolean
+- id: Microsoft.CodeAnalysis.VersionStamp.op_Equality(Microsoft.CodeAnalysis.VersionStamp,Microsoft.CodeAnalysis.VersionStamp)
+  href: Microsoft.CodeAnalysis.VersionStamp.yaml
+  name:
+    CSharp: op_Equality
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.VersionStamp.op_Equality(Microsoft.CodeAnalysis.VersionStamp,Microsoft.CodeAnalysis.VersionStamp)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Solution/VersionStamp.cs
+    startLine: 164
+  syntax:
+    content:
+      CSharp: public static bool operator ==(VersionStamp left, VersionStamp right) { return left.Equals(right); }
+    parameters:
+    - id: left
+      type:
+        id: Microsoft.CodeAnalysis.VersionStamp
+        name: VersionStamp
+        href: Microsoft.CodeAnalysis.VersionStamp.yaml
+    - id: right
+      type:
+        id: Microsoft.CodeAnalysis.VersionStamp
+        name: VersionStamp
+        href: Microsoft.CodeAnalysis.VersionStamp.yaml
+    return:
+      id: Boolean
+- id: Microsoft.CodeAnalysis.VersionStamp.op_Inequality(Microsoft.CodeAnalysis.VersionStamp,Microsoft.CodeAnalysis.VersionStamp)
+  href: Microsoft.CodeAnalysis.VersionStamp.yaml
+  name:
+    CSharp: op_Inequality
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.VersionStamp.op_Inequality(Microsoft.CodeAnalysis.VersionStamp,Microsoft.CodeAnalysis.VersionStamp)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Solution/VersionStamp.cs
+    startLine: 169
+  syntax:
+    content:
+      CSharp: public static bool operator !=(VersionStamp left, VersionStamp right) { return !left.Equals(right); }
+    parameters:
+    - id: left
+      type:
+        id: Microsoft.CodeAnalysis.VersionStamp
+        name: VersionStamp
+        href: Microsoft.CodeAnalysis.VersionStamp.yaml
+    - id: right
+      type:
+        id: Microsoft.CodeAnalysis.VersionStamp
+        name: VersionStamp
+        href: Microsoft.CodeAnalysis.VersionStamp.yaml
+    return:
+      id: Boolean
+- id: Microsoft.CodeAnalysis.VersionStamp.Default
+  href: Microsoft.CodeAnalysis.VersionStamp.yaml
+  name:
+    CSharp: Default
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.VersionStamp.Default
+  type: Field
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Solution/VersionStamp.cs
+    startLine: 235
+  syntax:
+    content:
+      CSharp: Default

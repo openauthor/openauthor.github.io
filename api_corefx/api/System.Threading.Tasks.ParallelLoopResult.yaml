@@ -1,0 +1,70 @@
+id: System.Threading.Tasks.ParallelLoopResult
+href: System.Threading.Tasks.ParallelLoopResult.yaml
+name:
+  CSharp: ParallelLoopResult
+qualifiedName:
+  CSharp: System.Threading.Tasks.ParallelLoopResult
+type: Struct
+source:
+  remote: &o0
+    branch: master
+    repo: https://github.com/dotnet/corefx.git
+  path: src/System.Threading.Tasks.Parallel/src/System/Threading/Tasks/ParallelLoopState.cs
+  startLine: 602
+summary: Provides completion status on the execution of a [System.Threading.Tasks.Parallel](System.Threading.Tasks.Parallel.yaml) loop.
+syntax:
+  content:
+    CSharp: public struct ParallelLoopResult
+inheritance:
+- id: System.ValueType
+  name: System.ValueType
+  isExternal: true
+items:
+- id: System.Threading.Tasks.ParallelLoopResult.IsCompleted
+  href: System.Threading.Tasks.ParallelLoopResult.yaml
+  name:
+    CSharp: IsCompleted
+  qualifiedName:
+    CSharp: System.Threading.Tasks.ParallelLoopResult.IsCompleted
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Parallel/src/System/Threading/Tasks/ParallelLoopState.cs
+    startLine: 611
+  summary: >-
+    Gets whether the loop ran to completion, such that all iterations of the loop were executed
+
+    and the loop didn't receive a request to end prematurely.
+  syntax:
+    content:
+      CSharp: public bool IsCompleted { get; }
+    parameters:
+    - id: IsCompleted
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+- id: System.Threading.Tasks.ParallelLoopResult.LowestBreakIteration
+  href: System.Threading.Tasks.ParallelLoopResult.yaml
+  name:
+    CSharp: LowestBreakIteration
+  qualifiedName:
+    CSharp: System.Threading.Tasks.ParallelLoopResult.LowestBreakIteration
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Parallel/src/System/Threading/Tasks/ParallelLoopState.cs
+    startLine: 622
+  summary: >-
+    Gets the index of the lowest iteration from which [System.Threading.Tasks.ParallelLoopState.Break](System.Threading.Tasks.ParallelLoopState.yaml)
+
+    was called.
+  syntax:
+    content:
+      CSharp: public long ? LowestBreakIteration { get; }
+    parameters:
+    - id: LowestBreakIteration
+      type:
+        id: System.Nullable{System.Int64}
+        name: System.Nullable{System.Int64}
+        isExternal: true

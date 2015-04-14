@@ -1,0 +1,100 @@
+id: Microsoft.CodeAnalysis.Host.Mef.ExportWorkspaceServiceFactoryAttribute
+href: Microsoft.CodeAnalysis.Host.Mef.ExportWorkspaceServiceFactoryAttribute.yaml
+name:
+  CSharp: ExportWorkspaceServiceFactoryAttribute
+qualifiedName:
+  CSharp: Microsoft.CodeAnalysis.Host.Mef.ExportWorkspaceServiceFactoryAttribute
+type: Class
+source:
+  remote: &o0
+    branch: master
+    repo: https://github.com/vicancy/roslyn
+  path: src/Workspaces/Core/Portable/Workspace/Host/Mef/ExportWorkspaceServiceFactoryAttribute.cs
+  startLine: 10
+summary: Use this attribute to declare a [Microsoft.CodeAnalysis.Host.Mef.IWorkspaceServiceFactory](Microsoft.CodeAnalysis.Host.Mef.IWorkspaceServiceFactory.yaml) implementation for inclusion in a MEF-based workspace.
+syntax:
+  content:
+    CSharp: public class ExportWorkspaceServiceFactoryAttribute
+inheritance:
+- id: System.Object
+  name: System.Object
+  isExternal: true
+- id: System.Attribute
+  name: System.Attribute
+  isExternal: true
+- id: System.Composition.ExportAttribute
+  name: System.Composition.ExportAttribute
+  isExternal: true
+items:
+- id: Microsoft.CodeAnalysis.Host.Mef.ExportWorkspaceServiceFactoryAttribute.ServiceType
+  href: Microsoft.CodeAnalysis.Host.Mef.ExportWorkspaceServiceFactoryAttribute.yaml
+  name:
+    CSharp: ServiceType
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Host.Mef.ExportWorkspaceServiceFactoryAttribute.ServiceType
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Host/Mef/ExportWorkspaceServiceFactoryAttribute.cs
+    startLine: 17
+  summary: The assembly qualified name of the service's type.
+  syntax:
+    content:
+      CSharp: public string ServiceType { get; private set; }
+    parameters:
+    - id: ServiceType
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+- id: Microsoft.CodeAnalysis.Host.Mef.ExportWorkspaceServiceFactoryAttribute.Layer
+  href: Microsoft.CodeAnalysis.Host.Mef.ExportWorkspaceServiceFactoryAttribute.yaml
+  name:
+    CSharp: Layer
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Host.Mef.ExportWorkspaceServiceFactoryAttribute.Layer
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Host/Mef/ExportWorkspaceServiceFactoryAttribute.cs
+    startLine: 22
+  summary: The layer that the service is specified for; ServiceLayer.Default, etc.
+  syntax:
+    content:
+      CSharp: public string Layer { get; private set; }
+    parameters:
+    - id: Layer
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+- id: Microsoft.CodeAnalysis.Host.Mef.ExportWorkspaceServiceFactoryAttribute.#ctor(System.Type,System.String)
+  href: Microsoft.CodeAnalysis.Host.Mef.ExportWorkspaceServiceFactoryAttribute.yaml
+  name:
+    CSharp: ExportWorkspaceServiceFactoryAttribute(System.Type,System.String)
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Host.Mef.ExportWorkspaceServiceFactoryAttribute.ExportWorkspaceServiceFactoryAttribute(System.Type,System.String)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Host/Mef/ExportWorkspaceServiceFactoryAttribute.cs
+    startLine: 29
+  summary: Declares a [Microsoft.CodeAnalysis.Host.Mef.IWorkspaceServiceFactory](Microsoft.CodeAnalysis.Host.Mef.IWorkspaceServiceFactory.yaml) implementation for inclusion in a MEF-based workspace.
+  syntax:
+    content:
+      CSharp: 'public ExportWorkspaceServiceFactoryAttribute(Type serviceType, string layer = ServiceLayer.Default): base (typeof (IWorkspaceServiceFactory))'
+    parameters:
+    - id: serviceType
+      type:
+        id: System.Type
+        name: System.Type
+        isExternal: true
+      description: The type that will be used to retrieve the service from a [Microsoft.CodeAnalysis.Host.HostWorkspaceServices](Microsoft.CodeAnalysis.Host.HostWorkspaceServices.yaml).
+    - id: layer
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+      description: The layer that the service is specified for; [Microsoft.CodeAnalysis.Host.Mef.ServiceLayer.Default](Microsoft.CodeAnalysis.Host.Mef.ServiceLayer.yaml), etc.
+    return:
+      id: Void

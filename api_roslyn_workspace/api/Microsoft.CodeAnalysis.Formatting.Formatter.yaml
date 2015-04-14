@@ -1,0 +1,393 @@
+id: Microsoft.CodeAnalysis.Formatting.Formatter
+href: Microsoft.CodeAnalysis.Formatting.Formatter.yaml
+name:
+  CSharp: Formatter
+qualifiedName:
+  CSharp: Microsoft.CodeAnalysis.Formatting.Formatter
+type: Class
+source:
+  remote: &o0
+    branch: master
+    repo: https://github.com/vicancy/roslyn
+  path: src/Workspaces/Core/Portable/Formatting/Formatter.cs
+  startLine: 20
+summary: Formats whitespace in documents or syntax trees.
+syntax:
+  content:
+    CSharp: public static class Formatter
+inheritance:
+- id: System.Object
+  name: System.Object
+  isExternal: true
+items:
+- id: Microsoft.CodeAnalysis.Formatting.Formatter.Annotation
+  href: Microsoft.CodeAnalysis.Formatting.Formatter.yaml
+  name:
+    CSharp: Annotation
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Formatting.Formatter.Annotation
+  type: Field
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Formatting/Formatter.cs
+    startLine: 25
+  summary: The annotation used to mark portions of a syntax tree to be formatted.
+  syntax:
+    content:
+      CSharp: Annotation
+- id: Microsoft.CodeAnalysis.Formatting.Formatter.FormatAsync(Microsoft.CodeAnalysis.Document,Microsoft.CodeAnalysis.Options.OptionSet,System.Threading.CancellationToken)
+  href: Microsoft.CodeAnalysis.Formatting.Formatter.yaml
+  name:
+    CSharp: FormatAsync
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Formatting.Formatter.FormatAsync(Microsoft.CodeAnalysis.Document,Microsoft.CodeAnalysis.Options.OptionSet,System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Formatting/Formatter.cs
+    startLine: 81
+  summary: Formats the whitespace in a document.
+  syntax:
+    content:
+      CSharp: public static async Task<Document> FormatAsync(Document document, OptionSet options = null, CancellationToken cancellationToken = default (CancellationToken))
+    parameters:
+    - id: document
+      type:
+        id: Microsoft.CodeAnalysis.Document
+        name: Document
+        href: Microsoft.CodeAnalysis.Document.yaml
+      description: The document to format.
+    - id: options
+      type:
+        id: Microsoft.CodeAnalysis.Options.OptionSet
+        name: OptionSet
+        href: Microsoft.CodeAnalysis.Options.OptionSet.yaml
+      description: An optional set of formatting options. If these options are not supplied the current set of options from the document's workspace will be used.
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+      description: An optional cancellation token.
+    return:
+      id: Task
+      description: The formatted document.
+- id: Microsoft.CodeAnalysis.Formatting.Formatter.FormatAsync(Microsoft.CodeAnalysis.Document,Microsoft.CodeAnalysis.Text.TextSpan,Microsoft.CodeAnalysis.Options.OptionSet,System.Threading.CancellationToken)
+  href: Microsoft.CodeAnalysis.Formatting.Formatter.yaml
+  name:
+    CSharp: FormatAsync
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Formatting.Formatter.FormatAsync(Microsoft.CodeAnalysis.Document,Microsoft.CodeAnalysis.Text.TextSpan,Microsoft.CodeAnalysis.Options.OptionSet,System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Formatting/Formatter.cs
+    startLine: 100
+  summary: Formats the whitespace in an area of a document corresponding to a text span.
+  syntax:
+    content:
+      CSharp: public static async Task<Document> FormatAsync(Document document, TextSpan span, OptionSet options = null, CancellationToken cancellationToken = default (CancellationToken))
+    parameters:
+    - id: document
+      type:
+        id: Microsoft.CodeAnalysis.Document
+        name: Document
+        href: Microsoft.CodeAnalysis.Document.yaml
+      description: The document to format.
+    - id: span
+      type:
+        id: Microsoft.CodeAnalysis.Text.TextSpan
+        name: TextSpan
+        href: Microsoft.CodeAnalysis.Text.TextSpan
+      description: The span of the document's text to format.
+    - id: options
+      type:
+        id: Microsoft.CodeAnalysis.Options.OptionSet
+        name: OptionSet
+        href: Microsoft.CodeAnalysis.Options.OptionSet.yaml
+      description: An optional set of formatting options. If these options are not supplied the current set of options from the document's workspace will be used.
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+      description: An optional cancellation token.
+    return:
+      id: Task
+      description: The formatted document.
+- id: Microsoft.CodeAnalysis.Formatting.Formatter.FormatAsync(Microsoft.CodeAnalysis.Document,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Text.TextSpan},Microsoft.CodeAnalysis.Options.OptionSet,System.Threading.CancellationToken)
+  href: Microsoft.CodeAnalysis.Formatting.Formatter.yaml
+  name:
+    CSharp: FormatAsync
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Formatting.Formatter.FormatAsync(Microsoft.CodeAnalysis.Document,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Text.TextSpan},Microsoft.CodeAnalysis.Options.OptionSet,System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Formatting/Formatter.cs
+    startLine: 119
+  summary: Formats the whitespace in areas of a document corresponding to multiple non-overlapping spans.
+  syntax:
+    content:
+      CSharp: public static Task<Document> FormatAsync(Document document, IEnumerable<TextSpan> spans, OptionSet options = null, CancellationToken cancellationToken = default (CancellationToken))
+    parameters:
+    - id: document
+      type:
+        id: Microsoft.CodeAnalysis.Document
+        name: Document
+        href: Microsoft.CodeAnalysis.Document.yaml
+      description: The document to format.
+    - id: spans
+      type:
+        id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Text.TextSpan}
+        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Text.TextSpan}
+        isExternal: true
+      description: The spans of the document's text to format.
+    - id: options
+      type:
+        id: Microsoft.CodeAnalysis.Options.OptionSet
+        name: OptionSet
+        href: Microsoft.CodeAnalysis.Options.OptionSet.yaml
+      description: An optional set of formatting options. If these options are not supplied the current set of options from the document's workspace will be used.
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+      description: An optional cancellation token.
+    return:
+      id: Task
+      description: The formatted document.
+- id: Microsoft.CodeAnalysis.Formatting.Formatter.FormatAsync(Microsoft.CodeAnalysis.Document,Microsoft.CodeAnalysis.SyntaxAnnotation,Microsoft.CodeAnalysis.Options.OptionSet,System.Threading.CancellationToken)
+  href: Microsoft.CodeAnalysis.Formatting.Formatter.yaml
+  name:
+    CSharp: FormatAsync
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Formatting.Formatter.FormatAsync(Microsoft.CodeAnalysis.Document,Microsoft.CodeAnalysis.SyntaxAnnotation,Microsoft.CodeAnalysis.Options.OptionSet,System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Formatting/Formatter.cs
+    startLine: 148
+  summary: Formats the whitespace in areas of a document corresponding to annotated nodes.
+  syntax:
+    content:
+      CSharp: public static Task<Document> FormatAsync(Document document, SyntaxAnnotation annotation, OptionSet options = null, CancellationToken cancellationToken = default (CancellationToken))
+    parameters:
+    - id: document
+      type:
+        id: Microsoft.CodeAnalysis.Document
+        name: Document
+        href: Microsoft.CodeAnalysis.Document.yaml
+      description: The document to format.
+    - id: annotation
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxAnnotation
+        name: SyntaxAnnotation
+        href: Microsoft.CodeAnalysis.SyntaxAnnotation
+      description: The annotation used to find on nodes to identify spans to format.
+    - id: options
+      type:
+        id: Microsoft.CodeAnalysis.Options.OptionSet
+        name: OptionSet
+        href: Microsoft.CodeAnalysis.Options.OptionSet.yaml
+      description: An optional set of formatting options. If these options are not supplied the current set of options from the document's workspace will be used.
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+      description: An optional cancellation token.
+    return:
+      id: Task
+      description: The formatted document.
+- id: Microsoft.CodeAnalysis.Formatting.Formatter.Format(Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.SyntaxAnnotation,Microsoft.CodeAnalysis.Workspace,Microsoft.CodeAnalysis.Options.OptionSet,System.Threading.CancellationToken)
+  href: Microsoft.CodeAnalysis.Formatting.Formatter.yaml
+  name:
+    CSharp: Format
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Formatting.Formatter.Format(Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.SyntaxAnnotation,Microsoft.CodeAnalysis.Workspace,Microsoft.CodeAnalysis.Options.OptionSet,System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Formatting/Formatter.cs
+    startLine: 178
+  summary: Formats the whitespace in areas of a syntax tree corresponding to annotated nodes.
+  syntax:
+    content:
+      CSharp: public static SyntaxNode Format(SyntaxNode node, SyntaxAnnotation annotation, Workspace workspace, OptionSet options = null, CancellationToken cancellationToken = default (CancellationToken))
+    parameters:
+    - id: node
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: Microsoft.CodeAnalysis.SyntaxNode
+      description: The root node of a syntax tree to format.
+    - id: annotation
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxAnnotation
+        name: SyntaxAnnotation
+        href: Microsoft.CodeAnalysis.SyntaxAnnotation
+      description: The annotation used to find nodes to identify spans to format.
+    - id: workspace
+      type:
+        id: Microsoft.CodeAnalysis.Workspace
+        name: Workspace
+        href: Microsoft.CodeAnalysis.Workspace.yaml
+      description: A workspace used to give the formatting context.
+    - id: options
+      type:
+        id: Microsoft.CodeAnalysis.Options.OptionSet
+        name: OptionSet
+        href: Microsoft.CodeAnalysis.Options.OptionSet.yaml
+      description: An optional set of formatting options. If these options are not supplied the current set of options from the workspace will be used.
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+      description: An optional cancellation token.
+    return:
+      id: SyntaxNode
+      description: The formatted tree's root node.
+- id: Microsoft.CodeAnalysis.Formatting.Formatter.Format(Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.Workspace,Microsoft.CodeAnalysis.Options.OptionSet,System.Threading.CancellationToken)
+  href: Microsoft.CodeAnalysis.Formatting.Formatter.yaml
+  name:
+    CSharp: Format
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Formatting.Formatter.Format(Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.Workspace,Microsoft.CodeAnalysis.Options.OptionSet,System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Formatting/Formatter.cs
+    startLine: 215
+  summary: Formats the whitespace of a syntax tree.
+  syntax:
+    content:
+      CSharp: public static SyntaxNode Format(SyntaxNode node, Workspace workspace, OptionSet options = null, CancellationToken cancellationToken = default (CancellationToken))
+    parameters:
+    - id: node
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: Microsoft.CodeAnalysis.SyntaxNode
+      description: The root node of a syntax tree to format.
+    - id: workspace
+      type:
+        id: Microsoft.CodeAnalysis.Workspace
+        name: Workspace
+        href: Microsoft.CodeAnalysis.Workspace.yaml
+      description: A workspace used to give the formatting context.
+    - id: options
+      type:
+        id: Microsoft.CodeAnalysis.Options.OptionSet
+        name: OptionSet
+        href: Microsoft.CodeAnalysis.Options.OptionSet.yaml
+      description: An optional set of formatting options. If these options are not supplied the current set of options from the workspace will be used.
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+      description: An optional cancellation token.
+    return:
+      id: SyntaxNode
+      description: The formatted tree's root node.
+- id: Microsoft.CodeAnalysis.Formatting.Formatter.Format(Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.Text.TextSpan,Microsoft.CodeAnalysis.Workspace,Microsoft.CodeAnalysis.Options.OptionSet,System.Threading.CancellationToken)
+  href: Microsoft.CodeAnalysis.Formatting.Formatter.yaml
+  name:
+    CSharp: Format
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Formatting.Formatter.Format(Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.Text.TextSpan,Microsoft.CodeAnalysis.Workspace,Microsoft.CodeAnalysis.Options.OptionSet,System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Formatting/Formatter.cs
+    startLine: 244
+  summary: Formats the whitespace in areas of a syntax tree identified by a span.
+  syntax:
+    content:
+      CSharp: public static SyntaxNode Format(SyntaxNode node, TextSpan span, Workspace workspace, OptionSet options = null, CancellationToken cancellationToken = default (CancellationToken))
+    parameters:
+    - id: node
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: Microsoft.CodeAnalysis.SyntaxNode
+      description: The root node of a syntax tree to format.
+    - id: span
+      type:
+        id: Microsoft.CodeAnalysis.Text.TextSpan
+        name: TextSpan
+        href: Microsoft.CodeAnalysis.Text.TextSpan
+      description: The span within the node's full span to format.
+    - id: workspace
+      type:
+        id: Microsoft.CodeAnalysis.Workspace
+        name: Workspace
+        href: Microsoft.CodeAnalysis.Workspace.yaml
+      description: A workspace used to give the formatting context.
+    - id: options
+      type:
+        id: Microsoft.CodeAnalysis.Options.OptionSet
+        name: OptionSet
+        href: Microsoft.CodeAnalysis.Options.OptionSet.yaml
+      description: An optional set of formatting options. If these options are not supplied the current set of options from the workspace will be used.
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+      description: An optional cancellation token.
+    return:
+      id: SyntaxNode
+      description: The formatted tree's root node.
+- id: Microsoft.CodeAnalysis.Formatting.Formatter.Format(Microsoft.CodeAnalysis.SyntaxNode,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Text.TextSpan},Microsoft.CodeAnalysis.Workspace,Microsoft.CodeAnalysis.Options.OptionSet,System.Threading.CancellationToken)
+  href: Microsoft.CodeAnalysis.Formatting.Formatter.yaml
+  name:
+    CSharp: Format
+  qualifiedName:
+    CSharp: Microsoft.CodeAnalysis.Formatting.Formatter.Format(Microsoft.CodeAnalysis.SyntaxNode,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Text.TextSpan},Microsoft.CodeAnalysis.Workspace,Microsoft.CodeAnalysis.Options.OptionSet,System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Formatting/Formatter.cs
+    startLine: 268
+  summary: Formats the whitespace in areas of a syntax tree identified by multiple non-overlapping spans.
+  syntax:
+    content:
+      CSharp: public static SyntaxNode Format(SyntaxNode node, IEnumerable<TextSpan> spans, Workspace workspace, OptionSet options = null, CancellationToken cancellationToken = default (CancellationToken))
+    parameters:
+    - id: node
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: Microsoft.CodeAnalysis.SyntaxNode
+      description: The root node of a syntax tree to format.
+    - id: spans
+      type:
+        id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Text.TextSpan}
+        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Text.TextSpan}
+        isExternal: true
+      description: The spans within the node's full span to format.
+    - id: workspace
+      type:
+        id: Microsoft.CodeAnalysis.Workspace
+        name: Workspace
+        href: Microsoft.CodeAnalysis.Workspace.yaml
+      description: A workspace used to give the formatting context.
+    - id: options
+      type:
+        id: Microsoft.CodeAnalysis.Options.OptionSet
+        name: OptionSet
+        href: Microsoft.CodeAnalysis.Options.OptionSet.yaml
+      description: An optional set of formatting options. If these options are not supplied the current set of options from the workspace will be used.
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+      description: An optional cancellation token.
+    return:
+      id: SyntaxNode
+      description: The formatted tree's root node.

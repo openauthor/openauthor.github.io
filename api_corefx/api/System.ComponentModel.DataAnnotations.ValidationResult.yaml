@@ -1,0 +1,180 @@
+id: System.ComponentModel.DataAnnotations.ValidationResult
+href: System.ComponentModel.DataAnnotations.ValidationResult.yaml
+name:
+  CSharp: ValidationResult
+qualifiedName:
+  CSharp: System.ComponentModel.DataAnnotations.ValidationResult
+type: Class
+source:
+  remote: &o0
+    branch: master
+    repo: https://github.com/dotnet/corefx.git
+  path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/ValidationResult.cs
+  startLine: 14
+summary: >-
+  Container class for the results of a validation request.
+
+
+
+  Use the static  to represent successful validation.
+syntax:
+  content:
+    CSharp: public class ValidationResult
+inheritance:
+- id: System.Object
+  name: System.Object
+  isExternal: true
+items:
+- id: System.ComponentModel.DataAnnotations.ValidationResult.Success
+  href: System.ComponentModel.DataAnnotations.ValidationResult.yaml
+  name:
+    CSharp: Success
+  qualifiedName:
+    CSharp: System.ComponentModel.DataAnnotations.ValidationResult.Success
+  type: Field
+  source:
+    remote: *o0
+    path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/ValidationResult.cs
+    startLine: 25
+  summary: Gets a [System.ComponentModel.DataAnnotations.ValidationResult](System.ComponentModel.DataAnnotations.ValidationResult.yaml) that indicates Success.
+  syntax:
+    content:
+      CSharp: Success
+- id: System.ComponentModel.DataAnnotations.ValidationResult.#ctor(System.String)
+  href: System.ComponentModel.DataAnnotations.ValidationResult.yaml
+  name:
+    CSharp: ValidationResult(System.String)
+  qualifiedName:
+    CSharp: System.ComponentModel.DataAnnotations.ValidationResult.ValidationResult(System.String)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/ValidationResult.cs
+    startLine: 42
+  summary: >-
+    Constructor that accepts an error message.  This error message would override any error message
+
+    provided on the [System.ComponentModel.DataAnnotations.ValidationAttribute](System.ComponentModel.DataAnnotations.ValidationAttribute.yaml).
+  syntax:
+    content:
+      CSharp: 'public ValidationResult(string errorMessage): this (errorMessage, null)'
+    parameters:
+    - id: errorMessage
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+      description: >-
+        The user-visible error message.  If null, [System.ComponentModel.DataAnnotations.ValidationAttribute.GetValidationResult(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)](System.ComponentModel.DataAnnotations.ValidationAttribute.yaml)
+
+        will use [System.ComponentModel.DataAnnotations.ValidationAttribute.FormatErrorMessage(System.String)](System.ComponentModel.DataAnnotations.ValidationAttribute.yaml) for its error message.
+    return:
+      id: Void
+- id: System.ComponentModel.DataAnnotations.ValidationResult.#ctor(System.String,IEnumerable{System.String})
+  href: System.ComponentModel.DataAnnotations.ValidationResult.yaml
+  name:
+    CSharp: ValidationResult(System.String,IEnumerable{System.String})
+  qualifiedName:
+    CSharp: System.ComponentModel.DataAnnotations.ValidationResult.ValidationResult(System.String,IEnumerable{System.String})
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/ValidationResult.cs
+    startLine: 59
+  summary: >-
+    Constructor that accepts an error message as well as a list of member names involved in the validation.
+
+    This error message would override any error message provided on the [System.ComponentModel.DataAnnotations.ValidationAttribute](System.ComponentModel.DataAnnotations.ValidationAttribute.yaml).
+  syntax:
+    content:
+      CSharp: public ValidationResult(string errorMessage, IEnumerable<string> memberNames)
+    parameters:
+    - id: errorMessage
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+      description: >-
+        The user-visible error message.  If null, [System.ComponentModel.DataAnnotations.ValidationAttribute.GetValidationResult(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)](System.ComponentModel.DataAnnotations.ValidationAttribute.yaml)
+
+        will use [System.ComponentModel.DataAnnotations.ValidationAttribute.FormatErrorMessage(System.String)](System.ComponentModel.DataAnnotations.ValidationAttribute.yaml) for its error message.
+    - id: memberNames
+      type:
+        id: IEnumerable{System.String}
+        name: IEnumerable{System.String}
+        isExternal: true
+      description: >-
+        The list of member names affected by this result.
+
+        This list of member names is meant to be used by presentation layers to indicate which fields are in error.
+    return:
+      id: Void
+- id: System.ComponentModel.DataAnnotations.ValidationResult.MemberNames
+  href: System.ComponentModel.DataAnnotations.ValidationResult.yaml
+  name:
+    CSharp: MemberNames
+  qualifiedName:
+    CSharp: System.ComponentModel.DataAnnotations.ValidationResult.MemberNames
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/ValidationResult.cs
+    startLine: 88
+  summary: Gets the collection of member names affected by this result.  The collection may be empty but will never be null.
+  syntax:
+    content:
+      CSharp: public IEnumerable<string> MemberNames { get; }
+    parameters:
+    - id: MemberNames
+      type:
+        id: IEnumerable{System.String}
+        name: IEnumerable{System.String}
+        isExternal: true
+- id: System.ComponentModel.DataAnnotations.ValidationResult.ErrorMessage
+  href: System.ComponentModel.DataAnnotations.ValidationResult.yaml
+  name:
+    CSharp: ErrorMessage
+  qualifiedName:
+    CSharp: System.ComponentModel.DataAnnotations.ValidationResult.ErrorMessage
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/ValidationResult.cs
+    startLine: 96
+  summary: Gets the error message for this result.  It may be null.
+  syntax:
+    content:
+      CSharp: public string ErrorMessage { get; set; }
+    parameters:
+    - id: ErrorMessage
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+- id: System.ComponentModel.DataAnnotations.ValidationResult.ToString
+  href: System.ComponentModel.DataAnnotations.ValidationResult.yaml
+  name:
+    CSharp: ToString
+  qualifiedName:
+    CSharp: System.ComponentModel.DataAnnotations.ValidationResult.ToString
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/ValidationResult.cs
+    startLine: 119
+  summary: >-
+    Override the string representation of this instance, returning
+
+    the [System.ComponentModel.DataAnnotations.ValidationResult.ErrorMessage](System.ComponentModel.DataAnnotations.ValidationResult.yaml) if not null, otherwise
+
+    the base @!:Object.ToString- result.
+  syntax:
+    content:
+      CSharp: public override string ToString()
+    parameters: []
+    return:
+      id: String
+      description: >-
+        The [System.ComponentModel.DataAnnotations.ValidationResult.ErrorMessage](System.ComponentModel.DataAnnotations.ValidationResult.yaml) property value if specified,
+
+        otherwise, the base @!:Object.ToString- result.
