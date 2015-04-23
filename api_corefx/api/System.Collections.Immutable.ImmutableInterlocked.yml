@@ -1,0 +1,666 @@
+items:
+- uid: System.Collections.Immutable.ImmutableInterlocked
+  href: System.Collections.Immutable.ImmutableInterlocked.yml
+  name: ImmutableInterlocked
+  fullName: System.Collections.Immutable.ImmutableInterlocked
+  type: Class
+  source:
+    remote: &o0
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableInterlocked.cs
+    startLine: 12
+  summary: Contains interlocked exchange mechanisms for immutable collections.
+  syntax:
+    content:
+      CSharp: public static class ImmutableInterlocked
+  inheritance:
+  - id: System.Object
+    name: System.Object
+    isExternal: true
+  id: System.Collections.Immutable.ImmutableInterlocked
+  children:
+  - System.Collections.Immutable.ImmutableInterlocked.Update``1(``0@,System.Func{``0,``0})
+  - System.Collections.Immutable.ImmutableInterlocked.Update``2(``0@,System.Func{``0,``1,``0},``1)
+  - System.Collections.Immutable.ImmutableInterlocked.InterlockedExchange``1(System.Collections.Immutable.ImmutableArray{``0}@,System.Collections.Immutable.ImmutableArray{``0})
+  - System.Collections.Immutable.ImmutableInterlocked.InterlockedCompareExchange``1(System.Collections.Immutable.ImmutableArray{``0}@,System.Collections.Immutable.ImmutableArray{``0},System.Collections.Immutable.ImmutableArray{``0})
+  - System.Collections.Immutable.ImmutableInterlocked.InterlockedInitialize``1(System.Collections.Immutable.ImmutableArray{``0}@,System.Collections.Immutable.ImmutableArray{``0})
+  - System.Collections.Immutable.ImmutableInterlocked.GetOrAdd``3(System.Collections.Immutable.ImmutableDictionary{``0,``1}@,``0,System.Func{``0,``2,``1},``2)
+  - System.Collections.Immutable.ImmutableInterlocked.GetOrAdd``2(System.Collections.Immutable.ImmutableDictionary{``0,``1}@,``0,System.Func{``0,``1})
+  - System.Collections.Immutable.ImmutableInterlocked.GetOrAdd``2(System.Collections.Immutable.ImmutableDictionary{``0,``1}@,``0,``1)
+  - System.Collections.Immutable.ImmutableInterlocked.AddOrUpdate``2(System.Collections.Immutable.ImmutableDictionary{``0,``1}@,``0,System.Func{``0,``1},System.Func{``0,``1,``1})
+  - System.Collections.Immutable.ImmutableInterlocked.AddOrUpdate``2(System.Collections.Immutable.ImmutableDictionary{``0,``1}@,``0,``1,System.Func{``0,``1,``1})
+  - System.Collections.Immutable.ImmutableInterlocked.TryAdd``2(System.Collections.Immutable.ImmutableDictionary{``0,``1}@,``0,``1)
+  - System.Collections.Immutable.ImmutableInterlocked.TryUpdate``2(System.Collections.Immutable.ImmutableDictionary{``0,``1}@,``0,``1,``1)
+  - System.Collections.Immutable.ImmutableInterlocked.TryRemove``2(System.Collections.Immutable.ImmutableDictionary{``0,``1}@,``0,``1@)
+  - System.Collections.Immutable.ImmutableInterlocked.TryPop``1(System.Collections.Immutable.ImmutableStack{``0}@,``0@)
+  - System.Collections.Immutable.ImmutableInterlocked.Push``1(System.Collections.Immutable.ImmutableStack{``0}@,``0)
+  - System.Collections.Immutable.ImmutableInterlocked.TryDequeue``1(System.Collections.Immutable.ImmutableQueue{``0}@,``0@)
+  - System.Collections.Immutable.ImmutableInterlocked.Enqueue``1(System.Collections.Immutable.ImmutableQueue{``0}@,``0)
+- uid: System.Collections.Immutable.ImmutableInterlocked.Update``1(``0@,System.Func{``0,``0})
+  href: System.Collections.Immutable.ImmutableInterlocked.yml
+  name: Update<T>(ref T, Func<T, T>)
+  fullName: System.Collections.Immutable.ImmutableInterlocked.Update<T>(ref T, System.Func<T, T>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableInterlocked.cs
+    startLine: 32
+  summary: >-
+    Mutates a value in-place with optimistic locking transaction semantics
+
+    via a specified transformation function.
+
+    The transformation is retried as many times as necessary to win the optimistic locking race.
+  syntax:
+    content:
+      CSharp: 'public static bool Update<T>(ref T location, Func<T, T> transformer)where T : class'
+    parameters:
+    - id: location
+      type:
+        id: T
+        name: T
+        href: T
+      description: The variable or field to be changed, which may be accessed by multiple threads.
+    - id: transformer
+      type:
+        id: System.Func{``0,``0}
+        name: System.Func{``0,``0}
+        isExternal: true
+      description: >-
+        A function that mutates the value. This function should be side-effect free,
+
+        as it may run multiple times when races occur with other threads.
+    return:
+      id: Boolean
+      description: >-
+        true if the location's value is changed by applying the result of the
+
+        function;
+
+        false if the location's value remained the same because the last
+
+        invocation of  returned the existing value.
+  id: System.Collections.Immutable.ImmutableInterlocked.Update``1(``0@,System.Func{``0,``0})
+- uid: System.Collections.Immutable.ImmutableInterlocked.Update``2(``0@,System.Func{``0,``1,``0},``1)
+  href: System.Collections.Immutable.ImmutableInterlocked.yml
+  name: Update<T, TArg>(ref T, Func<T, TArg, T>, TArg)
+  fullName: System.Collections.Immutable.ImmutableInterlocked.Update<T, TArg>(ref T, System.Func<T, TArg, T>, TArg)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableInterlocked.cs
+    startLine: 76
+  summary: >-
+    Mutates a value in-place with optimistic locking transaction semantics
+
+    via a specified transformation function.
+
+    The transformation is retried as many times as necessary to win the optimistic locking race.
+  syntax:
+    content:
+      CSharp: 'public static bool Update<T, TArg>(ref T location, Func<T, TArg, T> transformer, TArg transformerArgument)where T : class'
+    parameters:
+    - id: location
+      type:
+        id: T
+        name: T
+        href: T
+      description: The variable or field to be changed, which may be accessed by multiple threads.
+    - id: transformer
+      type:
+        id: System.Func{``0,``1,``0}
+        name: System.Func{``0,``1,``0}
+        isExternal: true
+      description: >-
+        A function that mutates the value. This function should be side-effect free,
+
+        as it may run multiple times when races occur with other threads.
+    - id: transformerArgument
+      type:
+        id: TArg
+        name: TArg
+        href: TArg
+      description: The argument to pass to .
+    return:
+      id: Boolean
+      description: >-
+        true if the location's value is changed by applying the result of the
+
+        function;
+
+        false if the location's value remained the same because the last
+
+        invocation of  returned the existing value.
+  id: System.Collections.Immutable.ImmutableInterlocked.Update``2(``0@,System.Func{``0,``1,``0},``1)
+- uid: System.Collections.Immutable.ImmutableInterlocked.InterlockedExchange``1(System.Collections.Immutable.ImmutableArray{``0}@,System.Collections.Immutable.ImmutableArray{``0})
+  href: System.Collections.Immutable.ImmutableInterlocked.yml
+  name: InterlockedExchange<T>(ref ImmutableArray<T>, ImmutableArray<T>)
+  fullName: System.Collections.Immutable.ImmutableInterlocked.InterlockedExchange<T>(ref System.Collections.Immutable.ImmutableArray<T>, System.Collections.Immutable.ImmutableArray<T>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableInterlocked.cs
+    startLine: 109
+  summary: Assigns a field or variable containing an immutable array to the specified value and returns the previous value.
+  syntax:
+    content:
+      CSharp: public static ImmutableArray<T> InterlockedExchange<T>(ref ImmutableArray<T> location, ImmutableArray<T> value)
+    parameters:
+    - id: location
+      type:
+        id: System.Collections.Immutable.ImmutableArray{``0}
+        name: ImmutableArray
+        href: System.Collections.Immutable.ImmutableArray{``0}
+      description: The field or local variable to change.
+    - id: value
+      type:
+        id: System.Collections.Immutable.ImmutableArray{``0}
+        name: ImmutableArray
+        href: System.Collections.Immutable.ImmutableArray{``0}
+      description: The new value to assign.
+    return:
+      id: ImmutableArray
+      description: The prior value at the specified .
+  id: System.Collections.Immutable.ImmutableInterlocked.InterlockedExchange``1(System.Collections.Immutable.ImmutableArray{``0}@,System.Collections.Immutable.ImmutableArray{``0})
+- uid: System.Collections.Immutable.ImmutableInterlocked.InterlockedCompareExchange``1(System.Collections.Immutable.ImmutableArray{``0}@,System.Collections.Immutable.ImmutableArray{``0},System.Collections.Immutable.ImmutableArray{``0})
+  href: System.Collections.Immutable.ImmutableInterlocked.yml
+  name: InterlockedCompareExchange<T>(ref ImmutableArray<T>, ImmutableArray<T>, ImmutableArray<T>)
+  fullName: System.Collections.Immutable.ImmutableInterlocked.InterlockedCompareExchange<T>(ref System.Collections.Immutable.ImmutableArray<T>, System.Collections.Immutable.ImmutableArray<T>, System.Collections.Immutable.ImmutableArray<T>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableInterlocked.cs
+    startLine: 123
+  summary: >-
+    Assigns a field or variable containing an immutable array to the specified value
+
+    if it is currently equal to another specified value. Returns the previous value.
+  syntax:
+    content:
+      CSharp: public static ImmutableArray<T> InterlockedCompareExchange<T>(ref ImmutableArray<T> location, ImmutableArray<T> value, ImmutableArray<T> comparand)
+    parameters:
+    - id: location
+      type:
+        id: System.Collections.Immutable.ImmutableArray{``0}
+        name: ImmutableArray
+        href: System.Collections.Immutable.ImmutableArray{``0}
+      description: The field or local variable to change.
+    - id: value
+      type:
+        id: System.Collections.Immutable.ImmutableArray{``0}
+        name: ImmutableArray
+        href: System.Collections.Immutable.ImmutableArray{``0}
+      description: The new value to assign.
+    - id: comparand
+      type:
+        id: System.Collections.Immutable.ImmutableArray{``0}
+        name: ImmutableArray
+        href: System.Collections.Immutable.ImmutableArray{``0}
+      description: The value to check equality for before assigning.
+    return:
+      id: ImmutableArray
+      description: The prior value at the specified .
+  id: System.Collections.Immutable.ImmutableInterlocked.InterlockedCompareExchange``1(System.Collections.Immutable.ImmutableArray{``0}@,System.Collections.Immutable.ImmutableArray{``0},System.Collections.Immutable.ImmutableArray{``0})
+- uid: System.Collections.Immutable.ImmutableInterlocked.InterlockedInitialize``1(System.Collections.Immutable.ImmutableArray{``0}@,System.Collections.Immutable.ImmutableArray{``0})
+  href: System.Collections.Immutable.ImmutableInterlocked.yml
+  name: InterlockedInitialize<T>(ref ImmutableArray<T>, ImmutableArray<T>)
+  fullName: System.Collections.Immutable.ImmutableInterlocked.InterlockedInitialize<T>(ref System.Collections.Immutable.ImmutableArray<T>, System.Collections.Immutable.ImmutableArray<T>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableInterlocked.cs
+    startLine: 136
+  summary: >-
+    Assigns a field or variable containing an immutable array to the specified value
+
+    if it is has not yet been initialized.
+  syntax:
+    content:
+      CSharp: public static bool InterlockedInitialize<T>(ref ImmutableArray<T> location, ImmutableArray<T> value)
+    parameters:
+    - id: location
+      type:
+        id: System.Collections.Immutable.ImmutableArray{``0}
+        name: ImmutableArray
+        href: System.Collections.Immutable.ImmutableArray{``0}
+      description: The field or local variable to change.
+    - id: value
+      type:
+        id: System.Collections.Immutable.ImmutableArray{``0}
+        name: ImmutableArray
+        href: System.Collections.Immutable.ImmutableArray{``0}
+      description: The new value to assign.
+    return:
+      id: Boolean
+      description: True if the field was assigned the specified value; false if it was previously initialized.
+  id: System.Collections.Immutable.ImmutableInterlocked.InterlockedInitialize``1(System.Collections.Immutable.ImmutableArray{``0}@,System.Collections.Immutable.ImmutableArray{``0})
+- uid: System.Collections.Immutable.ImmutableInterlocked.GetOrAdd``3(System.Collections.Immutable.ImmutableDictionary{``0,``1}@,``0,System.Func{``0,``2,``1},``2)
+  href: System.Collections.Immutable.ImmutableInterlocked.yml
+  name: GetOrAdd<TKey, TValue, TArg>(ref ImmutableDictionary<TKey, TValue>, TKey, Func<TKey, TArg, TValue>, TArg)
+  fullName: System.Collections.Immutable.ImmutableInterlocked.GetOrAdd<TKey, TValue, TArg>(ref System.Collections.Immutable.ImmutableDictionary<TKey, TValue>, TKey, System.Func<TKey, TArg, TValue>, TArg)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableInterlocked.cs
+    startLine: 156
+  summary: Obtains the value for the specified key from a dictionary, or adds a new value to the dictionary where the key did not previously exist.
+  syntax:
+    content:
+      CSharp: public static TValue GetOrAdd<TKey, TValue, TArg>(ref ImmutableDictionary<TKey, TValue> location, TKey key, Func<TKey, TArg, TValue> valueFactory, TArg factoryArgument)
+    parameters:
+    - id: location
+      type:
+        id: System.Collections.Immutable.ImmutableDictionary{``0,``1}
+        name: ImmutableDictionary
+        href: System.Collections.Immutable.ImmutableDictionary{``0,``1}
+      description: The variable or field to atomically update if the specified  is not in the dictionary.
+    - id: key
+      type:
+        id: TKey
+        name: TKey
+        href: TKey
+      description: The key for the value to retrieve or add.
+    - id: valueFactory
+      type:
+        id: System.Func{``0,``2,``1}
+        name: System.Func{``0,``2,``1}
+        isExternal: true
+      description: The function to execute to obtain the value to insert into the dictionary if the key is not found.
+    - id: factoryArgument
+      type:
+        id: TArg
+        name: TArg
+        href: TArg
+      description: The argument to pass to the value factory.
+    return:
+      id: TValue
+      description: The value obtained from the dictionary or  if it was not present.
+  id: System.Collections.Immutable.ImmutableInterlocked.GetOrAdd``3(System.Collections.Immutable.ImmutableDictionary{``0,``1}@,``0,System.Func{``0,``2,``1},``2)
+- uid: System.Collections.Immutable.ImmutableInterlocked.GetOrAdd``2(System.Collections.Immutable.ImmutableDictionary{``0,``1}@,``0,System.Func{``0,``1})
+  href: System.Collections.Immutable.ImmutableInterlocked.yml
+  name: GetOrAdd<TKey, TValue>(ref ImmutableDictionary<TKey, TValue>, TKey, Func<TKey, TValue>)
+  fullName: System.Collections.Immutable.ImmutableInterlocked.GetOrAdd<TKey, TValue>(ref System.Collections.Immutable.ImmutableDictionary<TKey, TValue>, TKey, System.Func<TKey, TValue>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableInterlocked.cs
+    startLine: 185
+  summary: Obtains the value for the specified key from a dictionary, or adds a new value to the dictionary where the key did not previously exist.
+  syntax:
+    content:
+      CSharp: public static TValue GetOrAdd<TKey, TValue>(ref ImmutableDictionary<TKey, TValue> location, TKey key, Func<TKey, TValue> valueFactory)
+    parameters:
+    - id: location
+      type:
+        id: System.Collections.Immutable.ImmutableDictionary{``0,``1}
+        name: ImmutableDictionary
+        href: System.Collections.Immutable.ImmutableDictionary{``0,``1}
+      description: The variable or field to atomically update if the specified  is not in the dictionary.
+    - id: key
+      type:
+        id: TKey
+        name: TKey
+        href: TKey
+      description: The key for the value to retrieve or add.
+    - id: valueFactory
+      type:
+        id: System.Func{``0,``1}
+        name: System.Func{``0,``1}
+        isExternal: true
+      description: >-
+        The function to execute to obtain the value to insert into the dictionary if the key is not found.
+
+        This delegate will not be invoked more than once.
+    return:
+      id: TValue
+      description: The value obtained from the dictionary or  if it was not present.
+  id: System.Collections.Immutable.ImmutableInterlocked.GetOrAdd``2(System.Collections.Immutable.ImmutableDictionary{``0,``1}@,``0,System.Func{``0,``1})
+- uid: System.Collections.Immutable.ImmutableInterlocked.GetOrAdd``2(System.Collections.Immutable.ImmutableDictionary{``0,``1}@,``0,``1)
+  href: System.Collections.Immutable.ImmutableInterlocked.yml
+  name: GetOrAdd<TKey, TValue>(ref ImmutableDictionary<TKey, TValue>, TKey, TValue)
+  fullName: System.Collections.Immutable.ImmutableInterlocked.GetOrAdd<TKey, TValue>(ref System.Collections.Immutable.ImmutableDictionary<TKey, TValue>, TKey, TValue)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableInterlocked.cs
+    startLine: 211
+  summary: Obtains the value for the specified key from a dictionary, or adds a new value to the dictionary where the key did not previously exist.
+  syntax:
+    content:
+      CSharp: public static TValue GetOrAdd<TKey, TValue>(ref ImmutableDictionary<TKey, TValue> location, TKey key, TValue value)
+    parameters:
+    - id: location
+      type:
+        id: System.Collections.Immutable.ImmutableDictionary{``0,``1}
+        name: ImmutableDictionary
+        href: System.Collections.Immutable.ImmutableDictionary{``0,``1}
+      description: The variable or field to atomically update if the specified  is not in the dictionary.
+    - id: key
+      type:
+        id: TKey
+        name: TKey
+        href: TKey
+      description: The key for the value to retrieve or add.
+    - id: value
+      type:
+        id: TValue
+        name: TValue
+        href: TValue
+      description: The value to add to the dictionary if one is not already present.
+    return:
+      id: TValue
+      description: The value obtained from the dictionary or  if it was not present.
+  id: System.Collections.Immutable.ImmutableInterlocked.GetOrAdd``2(System.Collections.Immutable.ImmutableDictionary{``0,``1}@,``0,``1)
+- uid: System.Collections.Immutable.ImmutableInterlocked.AddOrUpdate``2(System.Collections.Immutable.ImmutableDictionary{``0,``1}@,``0,System.Func{``0,``1},System.Func{``0,``1,``1})
+  href: System.Collections.Immutable.ImmutableInterlocked.yml
+  name: AddOrUpdate<TKey, TValue>(ref ImmutableDictionary<TKey, TValue>, TKey, Func<TKey, TValue>, Func<TKey, TValue, TValue>)
+  fullName: System.Collections.Immutable.ImmutableInterlocked.AddOrUpdate<TKey, TValue>(ref System.Collections.Immutable.ImmutableDictionary<TKey, TValue>, TKey, System.Func<TKey, TValue>, System.Func<TKey, TValue, TValue>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableInterlocked.cs
+    startLine: 246
+  summary: Obtains the value from a dictionary after having added it or updated an existing entry.
+  syntax:
+    content:
+      CSharp: public static TValue AddOrUpdate<TKey, TValue>(ref ImmutableDictionary<TKey, TValue> location, TKey key, Func<TKey, TValue> addValueFactory, Func<TKey, TValue, TValue> updateValueFactory)
+    parameters:
+    - id: location
+      type:
+        id: System.Collections.Immutable.ImmutableDictionary{``0,``1}
+        name: ImmutableDictionary
+        href: System.Collections.Immutable.ImmutableDictionary{``0,``1}
+      description: The variable or field to atomically update if the specified  is not in the dictionary.
+    - id: key
+      type:
+        id: TKey
+        name: TKey
+        href: TKey
+      description: The key for the value to add or update.
+    - id: addValueFactory
+      type:
+        id: System.Func{``0,``1}
+        name: System.Func{``0,``1}
+        isExternal: true
+      description: The function that receives the key and returns a new value to add to the dictionary when no value previously exists.
+    - id: updateValueFactory
+      type:
+        id: System.Func{``0,``1,``1}
+        name: System.Func{``0,``1,``1}
+        isExternal: true
+      description: The function that receives the key and prior value and returns the new value with which to update the dictionary.
+    return:
+      id: TValue
+      description: The added or updated value.
+  id: System.Collections.Immutable.ImmutableInterlocked.AddOrUpdate``2(System.Collections.Immutable.ImmutableDictionary{``0,``1}@,``0,System.Func{``0,``1},System.Func{``0,``1,``1})
+- uid: System.Collections.Immutable.ImmutableInterlocked.AddOrUpdate``2(System.Collections.Immutable.ImmutableDictionary{``0,``1}@,``0,``1,System.Func{``0,``1,``1})
+  href: System.Collections.Immutable.ImmutableInterlocked.yml
+  name: AddOrUpdate<TKey, TValue>(ref ImmutableDictionary<TKey, TValue>, TKey, TValue, Func<TKey, TValue, TValue>)
+  fullName: System.Collections.Immutable.ImmutableInterlocked.AddOrUpdate<TKey, TValue>(ref System.Collections.Immutable.ImmutableDictionary<TKey, TValue>, TKey, TValue, System.Func<TKey, TValue, TValue>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableInterlocked.cs
+    startLine: 290
+  summary: Obtains the value from a dictionary after having added it or updated an existing entry.
+  syntax:
+    content:
+      CSharp: public static TValue AddOrUpdate<TKey, TValue>(ref ImmutableDictionary<TKey, TValue> location, TKey key, TValue addValue, Func<TKey, TValue, TValue> updateValueFactory)
+    parameters:
+    - id: location
+      type:
+        id: System.Collections.Immutable.ImmutableDictionary{``0,``1}
+        name: ImmutableDictionary
+        href: System.Collections.Immutable.ImmutableDictionary{``0,``1}
+      description: The variable or field to atomically update if the specified  is not in the dictionary.
+    - id: key
+      type:
+        id: TKey
+        name: TKey
+        href: TKey
+      description: The key for the value to add or update.
+    - id: addValue
+      type:
+        id: TValue
+        name: TValue
+        href: TValue
+      description: The value to use if no previous value exists.
+    - id: updateValueFactory
+      type:
+        id: System.Func{``0,``1,``1}
+        name: System.Func{``0,``1,``1}
+        isExternal: true
+      description: The function that receives the key and prior value and returns the new value with which to update the dictionary.
+    return:
+      id: TValue
+      description: The added or updated value.
+  id: System.Collections.Immutable.ImmutableInterlocked.AddOrUpdate``2(System.Collections.Immutable.ImmutableDictionary{``0,``1}@,``0,``1,System.Func{``0,``1,``1})
+- uid: System.Collections.Immutable.ImmutableInterlocked.TryAdd``2(System.Collections.Immutable.ImmutableDictionary{``0,``1}@,``0,``1)
+  href: System.Collections.Immutable.ImmutableInterlocked.yml
+  name: TryAdd<TKey, TValue>(ref ImmutableDictionary<TKey, TValue>, TKey, TValue)
+  fullName: System.Collections.Immutable.ImmutableInterlocked.TryAdd<TKey, TValue>(ref System.Collections.Immutable.ImmutableDictionary<TKey, TValue>, TKey, TValue)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableInterlocked.cs
+    startLine: 332
+  summary: Adds the specified key and value to the dictionary if no colliding key already exists in the dictionary.
+  syntax:
+    content:
+      CSharp: public static bool TryAdd<TKey, TValue>(ref ImmutableDictionary<TKey, TValue> location, TKey key, TValue value)
+    parameters:
+    - id: location
+      type:
+        id: System.Collections.Immutable.ImmutableDictionary{``0,``1}
+        name: ImmutableDictionary
+        href: System.Collections.Immutable.ImmutableDictionary{``0,``1}
+      description: The variable or field to atomically update if the specified  is not in the dictionary.
+    - id: key
+      type:
+        id: TKey
+        name: TKey
+        href: TKey
+      description: The key to add, if is not already defined in the dictionary.
+    - id: value
+      type:
+        id: TValue
+        name: TValue
+        href: TValue
+      description: The value to add.
+    return:
+      id: Boolean
+      description: true if the key was not previously set in the dictionary and the value was set; false otherwise.
+  id: System.Collections.Immutable.ImmutableInterlocked.TryAdd``2(System.Collections.Immutable.ImmutableDictionary{``0,``1}@,``0,``1)
+- uid: System.Collections.Immutable.ImmutableInterlocked.TryUpdate``2(System.Collections.Immutable.ImmutableDictionary{``0,``1}@,``0,``1,``1)
+  href: System.Collections.Immutable.ImmutableInterlocked.yml
+  name: TryUpdate<TKey, TValue>(ref ImmutableDictionary<TKey, TValue>, TKey, TValue, TValue)
+  fullName: System.Collections.Immutable.ImmutableInterlocked.TryUpdate<TKey, TValue>(ref System.Collections.Immutable.ImmutableDictionary<TKey, TValue>, TKey, TValue, TValue)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableInterlocked.cs
+    startLine: 364
+  summary: Sets the specified key to the given value if the key already is set to a specific value.
+  syntax:
+    content:
+      CSharp: public static bool TryUpdate<TKey, TValue>(ref ImmutableDictionary<TKey, TValue> location, TKey key, TValue newValue, TValue comparisonValue)
+    parameters:
+    - id: location
+      type:
+        id: System.Collections.Immutable.ImmutableDictionary{``0,``1}
+        name: ImmutableDictionary
+        href: System.Collections.Immutable.ImmutableDictionary{``0,``1}
+      description: The variable or field to atomically update if the specified  is not in the dictionary.
+    - id: key
+      type:
+        id: TKey
+        name: TKey
+        href: TKey
+      description: The key to update.
+    - id: newValue
+      type:
+        id: TValue
+        name: TValue
+        href: TValue
+      description: The new value to set.
+    - id: comparisonValue
+      type:
+        id: TValue
+        name: TValue
+        href: TValue
+      description: The value that must already be set in the dictionary in order for the update to succeed.
+    return:
+      id: Boolean
+      description: true if the key and comparison value were present in the dictionary and the update was made; false otherwise.
+  id: System.Collections.Immutable.ImmutableInterlocked.TryUpdate``2(System.Collections.Immutable.ImmutableDictionary{``0,``1}@,``0,``1,``1)
+- uid: System.Collections.Immutable.ImmutableInterlocked.TryRemove``2(System.Collections.Immutable.ImmutableDictionary{``0,``1}@,``0,``1@)
+  href: System.Collections.Immutable.ImmutableInterlocked.yml
+  name: TryRemove<TKey, TValue>(ref ImmutableDictionary<TKey, TValue>, TKey, out TValue)
+  fullName: System.Collections.Immutable.ImmutableInterlocked.TryRemove<TKey, TValue>(ref System.Collections.Immutable.ImmutableDictionary<TKey, TValue>, TKey, out TValue)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableInterlocked.cs
+    startLine: 398
+  summary: Removes an entry from the dictionary with the specified key if it is defined and returns its value.
+  syntax:
+    content:
+      CSharp: public static bool TryRemove<TKey, TValue>(ref ImmutableDictionary<TKey, TValue> location, TKey key, out TValue value)
+    parameters:
+    - id: location
+      type:
+        id: System.Collections.Immutable.ImmutableDictionary{``0,``1}
+        name: ImmutableDictionary
+        href: System.Collections.Immutable.ImmutableDictionary{``0,``1}
+      description: The variable or field to atomically update if the specified  is not in the dictionary.
+    - id: key
+      type:
+        id: TKey
+        name: TKey
+        href: TKey
+      description: The key to remove.
+    - id: value
+      type:
+        id: TValue
+        name: TValue
+        href: TValue
+      description: Receives the value from the pre-existing entry, if one exists.
+    return:
+      id: Boolean
+      description: true if the key was found and removed; false otherwise.
+  id: System.Collections.Immutable.ImmutableInterlocked.TryRemove``2(System.Collections.Immutable.ImmutableDictionary{``0,``1}@,``0,``1@)
+- uid: System.Collections.Immutable.ImmutableInterlocked.TryPop``1(System.Collections.Immutable.ImmutableStack{``0}@,``0@)
+  href: System.Collections.Immutable.ImmutableInterlocked.yml
+  name: TryPop<T>(ref ImmutableStack<T>, out T)
+  fullName: System.Collections.Immutable.ImmutableInterlocked.TryPop<T>(ref System.Collections.Immutable.ImmutableStack<T>, out T)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableInterlocked.cs
+    startLine: 431
+  summary: Pushes a new element onto a stack.
+  syntax:
+    content:
+      CSharp: public static bool TryPop<T>(ref ImmutableStack<T> location, out T value)
+    parameters:
+    - id: location
+      type:
+        id: System.Collections.Immutable.ImmutableStack{``0}
+        name: ImmutableStack
+        href: System.Collections.Immutable.ImmutableStack{``0}
+      description: The variable or field to atomically update.
+    - id: value
+      type:
+        id: T
+        name: T
+        href: T
+      description: The value popped from the stack, if it was non-empty.
+    return:
+      id: Boolean
+      description: true if an element was removed from the stack; false otherwise.
+  id: System.Collections.Immutable.ImmutableInterlocked.TryPop``1(System.Collections.Immutable.ImmutableStack{``0}@,``0@)
+- uid: System.Collections.Immutable.ImmutableInterlocked.Push``1(System.Collections.Immutable.ImmutableStack{``0}@,``0)
+  href: System.Collections.Immutable.ImmutableInterlocked.yml
+  name: Push<T>(ref ImmutableStack<T>, T)
+  fullName: System.Collections.Immutable.ImmutableInterlocked.Push<T>(ref System.Collections.Immutable.ImmutableStack<T>, T)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableInterlocked.cs
+    startLine: 460
+  summary: Pushes a new element onto a stack.
+  syntax:
+    content:
+      CSharp: public static void Push<T>(ref ImmutableStack<T> location, T value)
+    parameters:
+    - id: location
+      type:
+        id: System.Collections.Immutable.ImmutableStack{``0}
+        name: ImmutableStack
+        href: System.Collections.Immutable.ImmutableStack{``0}
+      description: The variable or field to atomically update.
+    - id: value
+      type:
+        id: T
+        name: T
+        href: T
+      description: The value to push.
+  id: System.Collections.Immutable.ImmutableInterlocked.Push``1(System.Collections.Immutable.ImmutableStack{``0}@,``0)
+- uid: System.Collections.Immutable.ImmutableInterlocked.TryDequeue``1(System.Collections.Immutable.ImmutableQueue{``0}@,``0@)
+  href: System.Collections.Immutable.ImmutableInterlocked.yml
+  name: TryDequeue<T>(ref ImmutableQueue<T>, out T)
+  fullName: System.Collections.Immutable.ImmutableInterlocked.TryDequeue<T>(ref System.Collections.Immutable.ImmutableQueue<T>, out T)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableInterlocked.cs
+    startLine: 486
+  summary: Atomically removes the element at the head of a queue and returns it to the caller, if the queue is not empty.
+  syntax:
+    content:
+      CSharp: public static bool TryDequeue<T>(ref ImmutableQueue<T> location, out T value)
+    parameters:
+    - id: location
+      type:
+        id: System.Collections.Immutable.ImmutableQueue{``0}
+        name: ImmutableQueue
+        href: System.Collections.Immutable.ImmutableQueue{``0}
+      description: The variable or field to atomically update.
+    - id: value
+      type:
+        id: T
+        name: T
+        href: T
+      description: Receives the value from the head of the queue, if the queue is non-empty.
+    return:
+      id: Boolean
+      description: true if the queue was not empty and the head element was removed; false otherwise.
+  id: System.Collections.Immutable.ImmutableInterlocked.TryDequeue``1(System.Collections.Immutable.ImmutableQueue{``0}@,``0@)
+- uid: System.Collections.Immutable.ImmutableInterlocked.Enqueue``1(System.Collections.Immutable.ImmutableQueue{``0}@,``0)
+  href: System.Collections.Immutable.ImmutableInterlocked.yml
+  name: Enqueue<T>(ref ImmutableQueue<T>, T)
+  fullName: System.Collections.Immutable.ImmutableInterlocked.Enqueue<T>(ref System.Collections.Immutable.ImmutableQueue<T>, T)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableInterlocked.cs
+    startLine: 515
+  summary: Atomically enqueues an element to the tail of a queue.
+  syntax:
+    content:
+      CSharp: public static void Enqueue<T>(ref ImmutableQueue<T> location, T value)
+    parameters:
+    - id: location
+      type:
+        id: System.Collections.Immutable.ImmutableQueue{``0}
+        name: ImmutableQueue
+        href: System.Collections.Immutable.ImmutableQueue{``0}
+      description: The variable or field to atomically update.
+    - id: value
+      type:
+        id: T
+        name: T
+        href: T
+      description: The value to enqueue.
+  id: System.Collections.Immutable.ImmutableInterlocked.Enqueue``1(System.Collections.Immutable.ImmutableQueue{``0}@,``0)

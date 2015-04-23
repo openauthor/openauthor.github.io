@@ -1,0 +1,223 @@
+items:
+- uid: System.Reflection.Metadata.NamespaceDefinitionHandle
+  href: System.Reflection.Metadata.NamespaceDefinitionHandle.yml
+  name: NamespaceDefinitionHandle
+  fullName: System.Reflection.Metadata.NamespaceDefinitionHandle
+  type: Struct
+  source:
+    remote: &o0
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 2076
+  summary: A handle that represents a namespace definition.
+  syntax:
+    content:
+      CSharp: public struct NamespaceDefinitionHandle
+  inheritance:
+  - id: System.ValueType
+    name: System.ValueType
+    isExternal: true
+  id: System.Reflection.Metadata.NamespaceDefinitionHandle
+  children:
+  - System.Reflection.Metadata.NamespaceDefinitionHandle.op_Implicit(System.Reflection.Metadata.NamespaceDefinitionHandle)~System.Reflection.Metadata.Handle
+  - System.Reflection.Metadata.NamespaceDefinitionHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.NamespaceDefinitionHandle
+  - System.Reflection.Metadata.NamespaceDefinitionHandle.IsNil
+  - System.Reflection.Metadata.NamespaceDefinitionHandle.op_Equality(System.Reflection.Metadata.NamespaceDefinitionHandle,System.Reflection.Metadata.NamespaceDefinitionHandle)
+  - System.Reflection.Metadata.NamespaceDefinitionHandle.CompareTo(System.Reflection.Metadata.NamespaceDefinitionHandle)
+  - System.Reflection.Metadata.NamespaceDefinitionHandle.Equals(System.Object)
+  - System.Reflection.Metadata.NamespaceDefinitionHandle.Equals(System.Reflection.Metadata.NamespaceDefinitionHandle)
+  - System.Reflection.Metadata.NamespaceDefinitionHandle.GetHashCode
+  - System.Reflection.Metadata.NamespaceDefinitionHandle.op_Inequality(System.Reflection.Metadata.NamespaceDefinitionHandle,System.Reflection.Metadata.NamespaceDefinitionHandle)
+- uid: System.Reflection.Metadata.NamespaceDefinitionHandle.op_Implicit(System.Reflection.Metadata.NamespaceDefinitionHandle)~System.Reflection.Metadata.Handle
+  href: System.Reflection.Metadata.NamespaceDefinitionHandle.yml
+  name: implicit operator Handle(NamespaceDefinitionHandle)
+  fullName: System.Reflection.Metadata.NamespaceDefinitionHandle.implicit operator System.Reflection.Metadata.Handle(System.Reflection.Metadata.NamespaceDefinitionHandle)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 2116
+  syntax:
+    content:
+      CSharp: public static implicit operator Handle(NamespaceDefinitionHandle handle) { return new Handle(handle._token); }
+    parameters:
+    - id: handle
+      type:
+        id: System.Reflection.Metadata.NamespaceDefinitionHandle
+        name: NamespaceDefinitionHandle
+        href: System.Reflection.Metadata.NamespaceDefinitionHandle.yml
+    return:
+      id: Handle
+  id: System.Reflection.Metadata.NamespaceDefinitionHandle.op_Implicit(System.Reflection.Metadata.NamespaceDefinitionHandle)~System.Reflection.Metadata.Handle
+- uid: System.Reflection.Metadata.NamespaceDefinitionHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.NamespaceDefinitionHandle
+  href: System.Reflection.Metadata.NamespaceDefinitionHandle.yml
+  name: explicit operator NamespaceDefinitionHandle(Handle)
+  fullName: System.Reflection.Metadata.NamespaceDefinitionHandle.explicit operator System.Reflection.Metadata.NamespaceDefinitionHandle(System.Reflection.Metadata.Handle)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 2121
+  syntax:
+    content:
+      CSharp: public static explicit operator NamespaceDefinitionHandle(Handle handle) { if (handle.TokenType < TokenTypeIds.Namespace || handle.TokenType > TokenTypeIds.MaxNamespace) { Handle.ThrowInvalidCast(); } return new NamespaceDefinitionHandle(handle.value); }
+    parameters:
+    - id: handle
+      type:
+        id: System.Reflection.Metadata.Handle
+        name: Handle
+        href: System.Reflection.Metadata.Handle.yml
+    return:
+      id: NamespaceDefinitionHandle
+  id: System.Reflection.Metadata.NamespaceDefinitionHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.NamespaceDefinitionHandle
+- uid: System.Reflection.Metadata.NamespaceDefinitionHandle.IsNil
+  href: System.Reflection.Metadata.NamespaceDefinitionHandle.yml
+  name: IsNil
+  fullName: System.Reflection.Metadata.NamespaceDefinitionHandle.IsNil
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 2131
+  syntax:
+    content:
+      CSharp: public bool IsNil { get; }
+    parameters:
+    - id: IsNil
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+  id: System.Reflection.Metadata.NamespaceDefinitionHandle.IsNil
+- uid: System.Reflection.Metadata.NamespaceDefinitionHandle.op_Equality(System.Reflection.Metadata.NamespaceDefinitionHandle,System.Reflection.Metadata.NamespaceDefinitionHandle)
+  href: System.Reflection.Metadata.NamespaceDefinitionHandle.yml
+  name: operator ==(NamespaceDefinitionHandle, NamespaceDefinitionHandle)
+  fullName: System.Reflection.Metadata.NamespaceDefinitionHandle.operator ==(System.Reflection.Metadata.NamespaceDefinitionHandle, System.Reflection.Metadata.NamespaceDefinitionHandle)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 2178
+  syntax:
+    content:
+      CSharp: public static bool operator ==(NamespaceDefinitionHandle left, NamespaceDefinitionHandle right) { return left._token == right._token; }
+    parameters:
+    - id: left
+      type:
+        id: System.Reflection.Metadata.NamespaceDefinitionHandle
+        name: NamespaceDefinitionHandle
+        href: System.Reflection.Metadata.NamespaceDefinitionHandle.yml
+    - id: right
+      type:
+        id: System.Reflection.Metadata.NamespaceDefinitionHandle
+        name: NamespaceDefinitionHandle
+        href: System.Reflection.Metadata.NamespaceDefinitionHandle.yml
+    return:
+      id: Boolean
+  id: System.Reflection.Metadata.NamespaceDefinitionHandle.op_Equality(System.Reflection.Metadata.NamespaceDefinitionHandle,System.Reflection.Metadata.NamespaceDefinitionHandle)
+- uid: System.Reflection.Metadata.NamespaceDefinitionHandle.CompareTo(System.Reflection.Metadata.NamespaceDefinitionHandle)
+  href: System.Reflection.Metadata.NamespaceDefinitionHandle.yml
+  name: CompareTo(NamespaceDefinitionHandle)
+  fullName: System.Reflection.Metadata.NamespaceDefinitionHandle.CompareTo(System.Reflection.Metadata.NamespaceDefinitionHandle)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 2183
+  syntax:
+    content:
+      CSharp: public int CompareTo(NamespaceDefinitionHandle other)
+    parameters:
+    - id: other
+      type:
+        id: System.Reflection.Metadata.NamespaceDefinitionHandle
+        name: NamespaceDefinitionHandle
+        href: System.Reflection.Metadata.NamespaceDefinitionHandle.yml
+    return:
+      id: Int32
+  id: System.Reflection.Metadata.NamespaceDefinitionHandle.CompareTo(System.Reflection.Metadata.NamespaceDefinitionHandle)
+- uid: System.Reflection.Metadata.NamespaceDefinitionHandle.Equals(System.Object)
+  href: System.Reflection.Metadata.NamespaceDefinitionHandle.yml
+  name: Equals(object)
+  fullName: System.Reflection.Metadata.NamespaceDefinitionHandle.Equals(object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 2188
+  syntax:
+    content:
+      CSharp: public override bool Equals(object obj)
+    parameters:
+    - id: obj
+      type:
+        id: System.Object
+        name: System.Object
+        isExternal: true
+    return:
+      id: Boolean
+  id: System.Reflection.Metadata.NamespaceDefinitionHandle.Equals(System.Object)
+- uid: System.Reflection.Metadata.NamespaceDefinitionHandle.Equals(System.Reflection.Metadata.NamespaceDefinitionHandle)
+  href: System.Reflection.Metadata.NamespaceDefinitionHandle.yml
+  name: Equals(NamespaceDefinitionHandle)
+  fullName: System.Reflection.Metadata.NamespaceDefinitionHandle.Equals(System.Reflection.Metadata.NamespaceDefinitionHandle)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 2193
+  syntax:
+    content:
+      CSharp: public bool Equals(NamespaceDefinitionHandle other)
+    parameters:
+    - id: other
+      type:
+        id: System.Reflection.Metadata.NamespaceDefinitionHandle
+        name: NamespaceDefinitionHandle
+        href: System.Reflection.Metadata.NamespaceDefinitionHandle.yml
+    return:
+      id: Boolean
+  id: System.Reflection.Metadata.NamespaceDefinitionHandle.Equals(System.Reflection.Metadata.NamespaceDefinitionHandle)
+- uid: System.Reflection.Metadata.NamespaceDefinitionHandle.GetHashCode
+  href: System.Reflection.Metadata.NamespaceDefinitionHandle.yml
+  name: GetHashCode()
+  fullName: System.Reflection.Metadata.NamespaceDefinitionHandle.GetHashCode()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 2198
+  syntax:
+    content:
+      CSharp: public override int GetHashCode()
+    parameters: []
+    return:
+      id: Int32
+  id: System.Reflection.Metadata.NamespaceDefinitionHandle.GetHashCode
+- uid: System.Reflection.Metadata.NamespaceDefinitionHandle.op_Inequality(System.Reflection.Metadata.NamespaceDefinitionHandle,System.Reflection.Metadata.NamespaceDefinitionHandle)
+  href: System.Reflection.Metadata.NamespaceDefinitionHandle.yml
+  name: operator !=(NamespaceDefinitionHandle, NamespaceDefinitionHandle)
+  fullName: System.Reflection.Metadata.NamespaceDefinitionHandle.operator !=(System.Reflection.Metadata.NamespaceDefinitionHandle, System.Reflection.Metadata.NamespaceDefinitionHandle)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 2203
+  syntax:
+    content:
+      CSharp: public static bool operator !=(NamespaceDefinitionHandle left, NamespaceDefinitionHandle right) { return left._token != right._token; }
+    parameters:
+    - id: left
+      type:
+        id: System.Reflection.Metadata.NamespaceDefinitionHandle
+        name: NamespaceDefinitionHandle
+        href: System.Reflection.Metadata.NamespaceDefinitionHandle.yml
+    - id: right
+      type:
+        id: System.Reflection.Metadata.NamespaceDefinitionHandle
+        name: NamespaceDefinitionHandle
+        href: System.Reflection.Metadata.NamespaceDefinitionHandle.yml
+    return:
+      id: Boolean
+  id: System.Reflection.Metadata.NamespaceDefinitionHandle.op_Inequality(System.Reflection.Metadata.NamespaceDefinitionHandle,System.Reflection.Metadata.NamespaceDefinitionHandle)

@@ -1,0 +1,49 @@
+items:
+- uid: Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider
+  href: Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider.yml
+  name: CodeRefactoringProvider
+  fullName: Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider
+  type: Class
+  source:
+    remote: &o0
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      description: v1.0-12-gef085ea
+    path: src/Workspaces/Core/Portable/CodeRefactorings/CodeRefactoringProvider.cs
+    startLine: 10
+  summary: >-
+    Inherit this type to provide source code refactorings.
+
+    Remember to use [Microsoft.CodeAnalysis.CodeRefactorings.ExportCodeRefactoringProviderAttribute](Microsoft.CodeAnalysis.CodeRefactorings.ExportCodeRefactoringProviderAttribute.yml) so the host environment can offer your refactorings in a UI.
+  syntax:
+    content:
+      CSharp: public abstract class CodeRefactoringProvider
+  inheritance:
+  - id: System.Object
+    name: System.Object
+    isExternal: true
+  id: Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider
+  children:
+  - Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider.ComputeRefactoringsAsync(Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext)
+- uid: Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider.ComputeRefactoringsAsync(Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext)
+  href: Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider.yml
+  name: ComputeRefactoringsAsync(CodeRefactoringContext)
+  fullName: Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider.ComputeRefactoringsAsync(Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/CodeRefactorings/CodeRefactoringProvider.cs
+    startLine: 15
+  summary: Computes one or more refactorings for the specified [Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext](Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext.yml).
+  syntax:
+    content:
+      CSharp: public abstract Task ComputeRefactoringsAsync(CodeRefactoringContext context);
+    parameters:
+    - id: context
+      type:
+        id: Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext
+        name: CodeRefactoringContext
+        href: Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext.yml
+    return:
+      id: Task
+  id: Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider.ComputeRefactoringsAsync(Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext)

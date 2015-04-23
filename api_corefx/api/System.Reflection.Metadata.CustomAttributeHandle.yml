@@ -1,0 +1,200 @@
+items:
+- uid: System.Reflection.Metadata.CustomAttributeHandle
+  href: System.Reflection.Metadata.CustomAttributeHandle.yml
+  name: CustomAttributeHandle
+  fullName: System.Reflection.Metadata.CustomAttributeHandle
+  type: Struct
+  source:
+    remote: &o0
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 1468
+  syntax:
+    content:
+      CSharp: public struct CustomAttributeHandle
+  inheritance:
+  - id: System.ValueType
+    name: System.ValueType
+    isExternal: true
+  id: System.Reflection.Metadata.CustomAttributeHandle
+  children:
+  - System.Reflection.Metadata.CustomAttributeHandle.op_Implicit(System.Reflection.Metadata.CustomAttributeHandle)~System.Reflection.Metadata.Handle
+  - System.Reflection.Metadata.CustomAttributeHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.CustomAttributeHandle
+  - System.Reflection.Metadata.CustomAttributeHandle.IsNil
+  - System.Reflection.Metadata.CustomAttributeHandle.op_Equality(System.Reflection.Metadata.CustomAttributeHandle,System.Reflection.Metadata.CustomAttributeHandle)
+  - System.Reflection.Metadata.CustomAttributeHandle.Equals(System.Object)
+  - System.Reflection.Metadata.CustomAttributeHandle.Equals(System.Reflection.Metadata.CustomAttributeHandle)
+  - System.Reflection.Metadata.CustomAttributeHandle.GetHashCode
+  - System.Reflection.Metadata.CustomAttributeHandle.op_Inequality(System.Reflection.Metadata.CustomAttributeHandle,System.Reflection.Metadata.CustomAttributeHandle)
+- uid: System.Reflection.Metadata.CustomAttributeHandle.op_Implicit(System.Reflection.Metadata.CustomAttributeHandle)~System.Reflection.Metadata.Handle
+  href: System.Reflection.Metadata.CustomAttributeHandle.yml
+  name: implicit operator Handle(CustomAttributeHandle)
+  fullName: System.Reflection.Metadata.CustomAttributeHandle.implicit operator System.Reflection.Metadata.Handle(System.Reflection.Metadata.CustomAttributeHandle)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 1484
+  syntax:
+    content:
+      CSharp: public static implicit operator Handle(CustomAttributeHandle handle) { return new Handle(handle._rowId | tokenType); }
+    parameters:
+    - id: handle
+      type:
+        id: System.Reflection.Metadata.CustomAttributeHandle
+        name: CustomAttributeHandle
+        href: System.Reflection.Metadata.CustomAttributeHandle.yml
+    return:
+      id: Handle
+  id: System.Reflection.Metadata.CustomAttributeHandle.op_Implicit(System.Reflection.Metadata.CustomAttributeHandle)~System.Reflection.Metadata.Handle
+- uid: System.Reflection.Metadata.CustomAttributeHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.CustomAttributeHandle
+  href: System.Reflection.Metadata.CustomAttributeHandle.yml
+  name: explicit operator CustomAttributeHandle(Handle)
+  fullName: System.Reflection.Metadata.CustomAttributeHandle.explicit operator System.Reflection.Metadata.CustomAttributeHandle(System.Reflection.Metadata.Handle)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 1489
+  syntax:
+    content:
+      CSharp: public static explicit operator CustomAttributeHandle(Handle handle) { if (handle.TokenType != tokenType) { Handle.ThrowInvalidCast(); } return new CustomAttributeHandle(handle.RowId); }
+    parameters:
+    - id: handle
+      type:
+        id: System.Reflection.Metadata.Handle
+        name: Handle
+        href: System.Reflection.Metadata.Handle.yml
+    return:
+      id: CustomAttributeHandle
+  id: System.Reflection.Metadata.CustomAttributeHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.CustomAttributeHandle
+- uid: System.Reflection.Metadata.CustomAttributeHandle.IsNil
+  href: System.Reflection.Metadata.CustomAttributeHandle.yml
+  name: IsNil
+  fullName: System.Reflection.Metadata.CustomAttributeHandle.IsNil
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 1499
+  syntax:
+    content:
+      CSharp: public bool IsNil { get; }
+    parameters:
+    - id: IsNil
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+  id: System.Reflection.Metadata.CustomAttributeHandle.IsNil
+- uid: System.Reflection.Metadata.CustomAttributeHandle.op_Equality(System.Reflection.Metadata.CustomAttributeHandle,System.Reflection.Metadata.CustomAttributeHandle)
+  href: System.Reflection.Metadata.CustomAttributeHandle.yml
+  name: operator ==(CustomAttributeHandle, CustomAttributeHandle)
+  fullName: System.Reflection.Metadata.CustomAttributeHandle.operator ==(System.Reflection.Metadata.CustomAttributeHandle, System.Reflection.Metadata.CustomAttributeHandle)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 1509
+  syntax:
+    content:
+      CSharp: public static bool operator ==(CustomAttributeHandle left, CustomAttributeHandle right) { return left._rowId == right._rowId; }
+    parameters:
+    - id: left
+      type:
+        id: System.Reflection.Metadata.CustomAttributeHandle
+        name: CustomAttributeHandle
+        href: System.Reflection.Metadata.CustomAttributeHandle.yml
+    - id: right
+      type:
+        id: System.Reflection.Metadata.CustomAttributeHandle
+        name: CustomAttributeHandle
+        href: System.Reflection.Metadata.CustomAttributeHandle.yml
+    return:
+      id: Boolean
+  id: System.Reflection.Metadata.CustomAttributeHandle.op_Equality(System.Reflection.Metadata.CustomAttributeHandle,System.Reflection.Metadata.CustomAttributeHandle)
+- uid: System.Reflection.Metadata.CustomAttributeHandle.Equals(System.Object)
+  href: System.Reflection.Metadata.CustomAttributeHandle.yml
+  name: Equals(object)
+  fullName: System.Reflection.Metadata.CustomAttributeHandle.Equals(object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 1514
+  syntax:
+    content:
+      CSharp: public override bool Equals(object obj)
+    parameters:
+    - id: obj
+      type:
+        id: System.Object
+        name: System.Object
+        isExternal: true
+    return:
+      id: Boolean
+  id: System.Reflection.Metadata.CustomAttributeHandle.Equals(System.Object)
+- uid: System.Reflection.Metadata.CustomAttributeHandle.Equals(System.Reflection.Metadata.CustomAttributeHandle)
+  href: System.Reflection.Metadata.CustomAttributeHandle.yml
+  name: Equals(CustomAttributeHandle)
+  fullName: System.Reflection.Metadata.CustomAttributeHandle.Equals(System.Reflection.Metadata.CustomAttributeHandle)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 1519
+  syntax:
+    content:
+      CSharp: public bool Equals(CustomAttributeHandle other)
+    parameters:
+    - id: other
+      type:
+        id: System.Reflection.Metadata.CustomAttributeHandle
+        name: CustomAttributeHandle
+        href: System.Reflection.Metadata.CustomAttributeHandle.yml
+    return:
+      id: Boolean
+  id: System.Reflection.Metadata.CustomAttributeHandle.Equals(System.Reflection.Metadata.CustomAttributeHandle)
+- uid: System.Reflection.Metadata.CustomAttributeHandle.GetHashCode
+  href: System.Reflection.Metadata.CustomAttributeHandle.yml
+  name: GetHashCode()
+  fullName: System.Reflection.Metadata.CustomAttributeHandle.GetHashCode()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 1524
+  syntax:
+    content:
+      CSharp: public override int GetHashCode()
+    parameters: []
+    return:
+      id: Int32
+  id: System.Reflection.Metadata.CustomAttributeHandle.GetHashCode
+- uid: System.Reflection.Metadata.CustomAttributeHandle.op_Inequality(System.Reflection.Metadata.CustomAttributeHandle,System.Reflection.Metadata.CustomAttributeHandle)
+  href: System.Reflection.Metadata.CustomAttributeHandle.yml
+  name: operator !=(CustomAttributeHandle, CustomAttributeHandle)
+  fullName: System.Reflection.Metadata.CustomAttributeHandle.operator !=(System.Reflection.Metadata.CustomAttributeHandle, System.Reflection.Metadata.CustomAttributeHandle)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 1529
+  syntax:
+    content:
+      CSharp: public static bool operator !=(CustomAttributeHandle left, CustomAttributeHandle right) { return left._rowId != right._rowId; }
+    parameters:
+    - id: left
+      type:
+        id: System.Reflection.Metadata.CustomAttributeHandle
+        name: CustomAttributeHandle
+        href: System.Reflection.Metadata.CustomAttributeHandle.yml
+    - id: right
+      type:
+        id: System.Reflection.Metadata.CustomAttributeHandle
+        name: CustomAttributeHandle
+        href: System.Reflection.Metadata.CustomAttributeHandle.yml
+    return:
+      id: Boolean
+  id: System.Reflection.Metadata.CustomAttributeHandle.op_Inequality(System.Reflection.Metadata.CustomAttributeHandle,System.Reflection.Metadata.CustomAttributeHandle)

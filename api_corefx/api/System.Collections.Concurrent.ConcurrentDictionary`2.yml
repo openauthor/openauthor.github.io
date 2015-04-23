@@ -1,0 +1,815 @@
+items:
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2
+  href: System.Collections.Concurrent.ConcurrentDictionary`2.yml
+  name: ConcurrentDictionary<TKey, TValue>
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<TKey, TValue>
+  type: Class
+  source:
+    remote: &o0
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentDictionary.cs
+    startLine: 31
+  summary: Represents a thread-safe collection of keys and values.
+  syntax:
+    content:
+      CSharp: public class ConcurrentDictionary<TKey, TValue>
+  inheritance:
+  - id: IDictionary{`0,`1}
+    name: IDictionary{`0,`1}
+    isExternal: true
+  id: System.Collections.Concurrent.ConcurrentDictionary`2
+  children:
+  - System.Collections.Concurrent.ConcurrentDictionary`2.#ctor
+  - System.Collections.Concurrent.ConcurrentDictionary`2.#ctor(System.Int32,System.Int32)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.#ctor(IEnumerable{KeyValuePair{`0,`1}})
+  - System.Collections.Concurrent.ConcurrentDictionary`2.#ctor(IEqualityComparer{`0})
+  - System.Collections.Concurrent.ConcurrentDictionary`2.#ctor(IEnumerable{KeyValuePair{`0,`1}},IEqualityComparer{`0})
+  - System.Collections.Concurrent.ConcurrentDictionary`2.#ctor(System.Int32,IEnumerable{KeyValuePair{`0,`1}},IEqualityComparer{`0})
+  - System.Collections.Concurrent.ConcurrentDictionary`2.#ctor(System.Int32,System.Int32,IEqualityComparer{`0})
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd(`0,`1)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey(`0)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove(`0,`1@)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue(`0,`1@)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate(`0,`1,`1)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Clear
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ToArray
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Item(`0)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Count
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(`0,Func{`0,`1})
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(`0,`1)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate(`0,Func{`0,`1},Func{`0,`1,`1})
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate(`0,`1,Func{`0,`1,`1})
+  - System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Keys
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Values
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.#ctor
+  href: System.Collections.Concurrent.ConcurrentDictionary`2.yml
+  name: ConcurrentDictionary()
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<TKey, TValue>.ConcurrentDictionary()
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentDictionary.cs
+    startLine: 121
+  summary: >-
+    Initializes a new instance of the [System.Collections.Concurrent.ConcurrentDictionary`2](System.Collections.Concurrent.ConcurrentDictionary`2.yml)
+
+    class that is empty, has the default concurrency level, has the default initial capacity, and
+
+    uses the default comparer for the key type.
+  syntax:
+    content:
+      CSharp: 'public ConcurrentDictionary(): this (DefaultConcurrencyLevel, DEFAULT_CAPACITY, true, EqualityComparer<TKey>.Default)'
+    parameters: []
+  id: System.Collections.Concurrent.ConcurrentDictionary`2.#ctor
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.#ctor(System.Int32,System.Int32)
+  href: System.Collections.Concurrent.ConcurrentDictionary`2.yml
+  name: ConcurrentDictionary(int, int)
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<TKey, TValue>.ConcurrentDictionary(int, int)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentDictionary.cs
+    startLine: 138
+  summary: >-
+    Initializes a new instance of the [System.Collections.Concurrent.ConcurrentDictionary`2](System.Collections.Concurrent.ConcurrentDictionary`2.yml)
+
+    class that is empty, has the specified concurrency level and capacity, and uses the default
+
+    comparer for the key type.
+  syntax:
+    content:
+      CSharp: 'public ConcurrentDictionary(int concurrencyLevel, int capacity): this (concurrencyLevel, capacity, false, EqualityComparer<TKey>.Default)'
+    parameters:
+    - id: concurrencyLevel
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+      description: >-
+        The estimated number of threads that will update the
+
+        [System.Collections.Concurrent.ConcurrentDictionary`2](System.Collections.Concurrent.ConcurrentDictionary`2.yml) concurrently.
+    - id: capacity
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+      description: >-
+        The initial number of elements that the [System.Collections.Concurrent.ConcurrentDictionary`2](System.Collections.Concurrent.ConcurrentDictionary`2.yml)
+
+        can contain.
+  id: System.Collections.Concurrent.ConcurrentDictionary`2.#ctor(System.Int32,System.Int32)
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.#ctor(IEnumerable{KeyValuePair{`0,`1}})
+  href: System.Collections.Concurrent.ConcurrentDictionary`2.yml
+  name: ConcurrentDictionary(IEnumerable<KeyValuePair<TKey, TValue>>)
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<TKey, TValue>.ConcurrentDictionary(IEnumerable<KeyValuePair<TKey, TValue>>)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentDictionary.cs
+    startLine: 154
+  summary: >-
+    Initializes a new instance of the [System.Collections.Concurrent.ConcurrentDictionary`2](System.Collections.Concurrent.ConcurrentDictionary`2.yml)
+
+    class that contains elements copied from the specified [System.Collections.IEnumerable{KeyValuePair{TKey,TValue}}](#), has the default concurrency
+
+    level, has the default initial capacity, and uses the default comparer for the key type.
+  syntax:
+    content:
+      CSharp: 'public ConcurrentDictionary(IEnumerable<KeyValuePair<TKey, TValue>> collection): this (collection, EqualityComparer<TKey>.Default)'
+    parameters:
+    - id: collection
+      type:
+        id: IEnumerable{KeyValuePair{`0,`1}}
+        name: IEnumerable{KeyValuePair{`0,`1}}
+        isExternal: true
+      description: >-
+        The [System.Collections.IEnumerable{KeyValuePair{TKey,TValue}}](#) whose elements are copied to
+
+        the new
+
+        [System.Collections.Concurrent.ConcurrentDictionary`2](System.Collections.Concurrent.ConcurrentDictionary`2.yml).
+  id: System.Collections.Concurrent.ConcurrentDictionary`2.#ctor(IEnumerable{KeyValuePair{`0,`1}})
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.#ctor(IEqualityComparer{`0})
+  href: System.Collections.Concurrent.ConcurrentDictionary`2.yml
+  name: ConcurrentDictionary(IEqualityComparer<TKey>)
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<TKey, TValue>.ConcurrentDictionary(IEqualityComparer<TKey>)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentDictionary.cs
+    startLine: 165
+  summary: >-
+    Initializes a new instance of the [System.Collections.Concurrent.ConcurrentDictionary`2](System.Collections.Concurrent.ConcurrentDictionary`2.yml)
+
+    class that is empty, has the specified concurrency level and capacity, and uses the specified
+
+    [System.Collections.Generic.IEqualityComparer{TKey}](#).
+  syntax:
+    content:
+      CSharp: 'public ConcurrentDictionary(IEqualityComparer<TKey> comparer): this (DefaultConcurrencyLevel, DEFAULT_CAPACITY, true, comparer)'
+    parameters:
+    - id: comparer
+      type:
+        id: IEqualityComparer{`0}
+        name: IEqualityComparer{`0}
+        isExternal: true
+      description: >-
+        The [System.Collections.Generic.IEqualityComparer{TKey}](#)
+
+        implementation to use when comparing keys.
+  id: System.Collections.Concurrent.ConcurrentDictionary`2.#ctor(IEqualityComparer{`0})
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.#ctor(IEnumerable{KeyValuePair{`0,`1}},IEqualityComparer{`0})
+  href: System.Collections.Concurrent.ConcurrentDictionary`2.yml
+  name: ConcurrentDictionary(IEnumerable<KeyValuePair<TKey, TValue>>, IEqualityComparer<TKey>)
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<TKey, TValue>.ConcurrentDictionary(IEnumerable<KeyValuePair<TKey, TValue>>, IEqualityComparer<TKey>)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentDictionary.cs
+    startLine: 184
+  summary: >-
+    Initializes a new instance of the [System.Collections.Concurrent.ConcurrentDictionary`2](System.Collections.Concurrent.ConcurrentDictionary`2.yml)
+
+    class that contains elements copied from the specified [System.Collections.IEnumerable](#), has the default concurrency level, has the default
+
+    initial capacity, and uses the specified
+
+    [System.Collections.Generic.IEqualityComparer{TKey}](#).
+  syntax:
+    content:
+      CSharp: 'public ConcurrentDictionary(IEnumerable<KeyValuePair<TKey, TValue>> collection, IEqualityComparer<TKey> comparer): this (comparer)'
+    parameters:
+    - id: collection
+      type:
+        id: IEnumerable{KeyValuePair{`0,`1}}
+        name: IEnumerable{KeyValuePair{`0,`1}}
+        isExternal: true
+      description: >-
+        The [System.Collections.IEnumerable{KeyValuePair{TKey,TValue}}](#) whose elements are copied to
+
+        the new
+
+        [System.Collections.Concurrent.ConcurrentDictionary`2](System.Collections.Concurrent.ConcurrentDictionary`2.yml).
+    - id: comparer
+      type:
+        id: IEqualityComparer{`0}
+        name: IEqualityComparer{`0}
+        isExternal: true
+      description: >-
+        The [System.Collections.Generic.IEqualityComparer{TKey}](#)
+
+        implementation to use when comparing keys.
+  id: System.Collections.Concurrent.ConcurrentDictionary`2.#ctor(IEnumerable{KeyValuePair{`0,`1}},IEqualityComparer{`0})
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.#ctor(System.Int32,IEnumerable{KeyValuePair{`0,`1}},IEqualityComparer{`0})
+  href: System.Collections.Concurrent.ConcurrentDictionary`2.yml
+  name: ConcurrentDictionary(int, IEnumerable<KeyValuePair<TKey, TValue>>, IEqualityComparer<TKey>)
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<TKey, TValue>.ConcurrentDictionary(int, IEnumerable<KeyValuePair<TKey, TValue>>, IEqualityComparer<TKey>)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentDictionary.cs
+    startLine: 213
+  summary: >-
+    Initializes a new instance of the [System.Collections.Concurrent.ConcurrentDictionary`2](System.Collections.Concurrent.ConcurrentDictionary`2.yml)
+
+    class that contains elements copied from the specified [System.Collections.IEnumerable](#),
+
+    has the specified concurrency level, has the specified initial capacity, and uses the specified
+
+    [System.Collections.Generic.IEqualityComparer{TKey}](#).
+  syntax:
+    content:
+      CSharp: 'public ConcurrentDictionary(int concurrencyLevel, IEnumerable<KeyValuePair<TKey, TValue>> collection, IEqualityComparer<TKey> comparer): this (concurrencyLevel, DEFAULT_CAPACITY, false, comparer)'
+    parameters:
+    - id: concurrencyLevel
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+      description: >-
+        The estimated number of threads that will update the
+
+        [System.Collections.Concurrent.ConcurrentDictionary`2](System.Collections.Concurrent.ConcurrentDictionary`2.yml) concurrently.
+    - id: collection
+      type:
+        id: IEnumerable{KeyValuePair{`0,`1}}
+        name: IEnumerable{KeyValuePair{`0,`1}}
+        isExternal: true
+      description: >-
+        The [System.Collections.IEnumerable{KeyValuePair{TKey,TValue}}](#) whose elements are copied to the new
+
+        [System.Collections.Concurrent.ConcurrentDictionary`2](System.Collections.Concurrent.ConcurrentDictionary`2.yml).
+    - id: comparer
+      type:
+        id: IEqualityComparer{`0}
+        name: IEqualityComparer{`0}
+        isExternal: true
+      description: >-
+        The [System.Collections.Generic.IEqualityComparer{TKey}](#) implementation to use
+
+        when comparing keys.
+  id: System.Collections.Concurrent.ConcurrentDictionary`2.#ctor(System.Int32,IEnumerable{KeyValuePair{`0,`1}},IEqualityComparer{`0})
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.#ctor(System.Int32,System.Int32,IEqualityComparer{`0})
+  href: System.Collections.Concurrent.ConcurrentDictionary`2.yml
+  name: ConcurrentDictionary(int, int, IEqualityComparer<TKey>)
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<TKey, TValue>.ConcurrentDictionary(int, int, IEqualityComparer<TKey>)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentDictionary.cs
+    startLine: 260
+  summary: >-
+    Initializes a new instance of the [System.Collections.Concurrent.ConcurrentDictionary`2](System.Collections.Concurrent.ConcurrentDictionary`2.yml)
+
+    class that is empty, has the specified concurrency level, has the specified initial capacity, and
+
+    uses the specified [System.Collections.Generic.IEqualityComparer{TKey}](#).
+  syntax:
+    content:
+      CSharp: 'public ConcurrentDictionary(int concurrencyLevel, int capacity, IEqualityComparer<TKey> comparer): this (concurrencyLevel, capacity, false, comparer)'
+    parameters:
+    - id: concurrencyLevel
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+      description: >-
+        The estimated number of threads that will update the
+
+        [System.Collections.Concurrent.ConcurrentDictionary`2](System.Collections.Concurrent.ConcurrentDictionary`2.yml) concurrently.
+    - id: capacity
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+      description: >-
+        The initial number of elements that the [System.Collections.Concurrent.ConcurrentDictionary`2](System.Collections.Concurrent.ConcurrentDictionary`2.yml)
+
+        can contain.
+    - id: comparer
+      type:
+        id: IEqualityComparer{`0}
+        name: IEqualityComparer{`0}
+        isExternal: true
+      description: >-
+        The [System.Collections.Generic.IEqualityComparer{TKey}](#)
+
+        implementation to use when comparing keys.
+  id: System.Collections.Concurrent.ConcurrentDictionary`2.#ctor(System.Int32,System.Int32,IEqualityComparer{`0})
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd(`0,`1)
+  href: System.Collections.Concurrent.ConcurrentDictionary`2.yml
+  name: TryAdd(TKey, TValue)
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<TKey, TValue>.TryAdd(TKey, TValue)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentDictionary.cs
+    startLine: 314
+  summary: Attempts to add the specified key and value to the [System.Collections.Concurrent.ConcurrentDictionary`2](System.Collections.Concurrent.ConcurrentDictionary`2.yml).
+  syntax:
+    content:
+      CSharp: public bool TryAdd(TKey key, TValue value)
+    parameters:
+    - id: key
+      type:
+        id: TKey
+        name: TKey
+        href: TKey
+      description: The key of the element to add.
+    - id: value
+      type:
+        id: TValue
+        name: TValue
+        href: TValue
+      description: >-
+        The value of the element to add. The value can be a null reference (Nothing
+
+        in Visual Basic) for reference types.
+    return:
+      id: Boolean
+      description: >-
+        true if the key/value pair was added to the [System.Collections.Concurrent.ConcurrentDictionary`2](System.Collections.Concurrent.ConcurrentDictionary`2.yml)
+
+        successfully; otherwise, false.
+  id: System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd(`0,`1)
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey(`0)
+  href: System.Collections.Concurrent.ConcurrentDictionary`2.yml
+  name: ContainsKey(TKey)
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<TKey, TValue>.ContainsKey(TKey)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentDictionary.cs
+    startLine: 331
+  summary: >-
+    Determines whether the [System.Collections.Concurrent.ConcurrentDictionary`2](System.Collections.Concurrent.ConcurrentDictionary`2.yml) contains the specified
+
+    key.
+  syntax:
+    content:
+      CSharp: public bool ContainsKey(TKey key)
+    parameters:
+    - id: key
+      type:
+        id: TKey
+        name: TKey
+        href: TKey
+      description: The key to locate in the [System.Collections.Concurrent.ConcurrentDictionary`2](System.Collections.Concurrent.ConcurrentDictionary`2.yml).
+    return:
+      id: Boolean
+      description: >-
+        true if the [System.Collections.Concurrent.ConcurrentDictionary`2](System.Collections.Concurrent.ConcurrentDictionary`2.yml) contains an element with
+
+        the specified key; otherwise, false.
+  id: System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey(`0)
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove(`0,`1@)
+  href: System.Collections.Concurrent.ConcurrentDictionary`2.yml
+  name: TryRemove(TKey, out TValue)
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<TKey, TValue>.TryRemove(TKey, out TValue)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentDictionary.cs
+    startLine: 351
+  summary: >-
+    Attempts to remove and return the the value with the specified key from the
+
+    [System.Collections.Concurrent.ConcurrentDictionary`2](System.Collections.Concurrent.ConcurrentDictionary`2.yml).
+  syntax:
+    content:
+      CSharp: public bool TryRemove(TKey key, out TValue value)
+    parameters:
+    - id: key
+      type:
+        id: TKey
+        name: TKey
+        href: TKey
+      description: The key of the element to remove and return.
+    - id: value
+      type:
+        id: TValue
+        name: TValue
+        href: TValue
+      description: >-
+        When this method returns,  contains the object removed from the
+
+        [System.Collections.Concurrent.ConcurrentDictionary`2](System.Collections.Concurrent.ConcurrentDictionary`2.yml) or the default value of
+
+        if the operation failed.
+    return:
+      id: Boolean
+      description: true if an object was removed successfully; otherwise, false.
+  id: System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove(`0,`1@)
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue(`0,`1@)
+  href: System.Collections.Concurrent.ConcurrentDictionary`2.yml
+  name: TryGetValue(TKey, out TValue)
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<TKey, TValue>.TryGetValue(TKey, out TValue)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentDictionary.cs
+    startLine: 440
+  summary: Attempts to get the value associated with the specified key from the [System.Collections.Concurrent.ConcurrentDictionary`2](System.Collections.Concurrent.ConcurrentDictionary`2.yml).
+  syntax:
+    content:
+      CSharp: '[SuppressMessage("Microsoft.Concurrency", "CA8001", Justification = "Reviewed for thread safety")] public bool TryGetValue(TKey key, out TValue value)'
+    parameters:
+    - id: key
+      type:
+        id: TKey
+        name: TKey
+        href: TKey
+      description: The key of the value to get.
+    - id: value
+      type:
+        id: TValue
+        name: TValue
+        href: TValue
+      description: >-
+        When this method returns,  contains the object from
+
+        the
+
+        [System.Collections.Concurrent.ConcurrentDictionary`2](System.Collections.Concurrent.ConcurrentDictionary`2.yml) with the specified key or the default value of
+
+        , if the operation failed.
+    return:
+      id: Boolean
+      description: >-
+        true if the key was found in the [System.Collections.Concurrent.ConcurrentDictionary`2](System.Collections.Concurrent.ConcurrentDictionary`2.yml);
+
+        otherwise, false.
+  id: System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue(`0,`1@)
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate(`0,`1,`1)
+  href: System.Collections.Concurrent.ConcurrentDictionary`2.yml
+  name: TryUpdate(TKey, TValue, TValue)
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<TKey, TValue>.TryUpdate(TKey, TValue, TValue)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentDictionary.cs
+    startLine: 489
+  summary: >-
+    Compares the existing value for the specified key with a specified value, and if they're equal,
+
+    updates the key with a third value.
+  syntax:
+    content:
+      CSharp: '[SuppressMessage("Microsoft.Concurrency", "CA8001", Justification = "Reviewed for thread safety")] public bool TryUpdate(TKey key, TValue newValue, TValue comparisonValue)'
+    parameters:
+    - id: key
+      type:
+        id: TKey
+        name: TKey
+        href: TKey
+      description: >-
+        The key whose value is compared with  and
+
+        possibly replaced.
+    - id: newValue
+      type:
+        id: TValue
+        name: TValue
+        href: TValue
+      description: The value that replaces the value of the element with  if the comparison results in equality.
+    - id: comparisonValue
+      type:
+        id: TValue
+        name: TValue
+        href: TValue
+      description: >-
+        The value that is compared to the value of the element with
+
+        .
+    return:
+      id: Boolean
+      description: >-
+        true if the value with  was equal to  and replaced with ; otherwise,
+
+        false.
+  id: System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate(`0,`1,`1)
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Clear
+  href: System.Collections.Concurrent.ConcurrentDictionary`2.yml
+  name: Clear()
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<TKey, TValue>.Clear()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentDictionary.cs
+    startLine: 580
+  summary: Removes all keys and values from the [System.Collections.Concurrent.ConcurrentDictionary`2](System.Collections.Concurrent.ConcurrentDictionary`2.yml).
+  syntax:
+    content:
+      CSharp: public void Clear()
+    parameters: []
+  id: System.Collections.Concurrent.ConcurrentDictionary`2.Clear
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ToArray
+  href: System.Collections.Concurrent.ConcurrentDictionary`2.yml
+  name: ToArray()
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<TKey, TValue>.ToArray()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentDictionary.cs
+    startLine: 655
+  summary: >-
+    Copies the key and value pairs stored in the [System.Collections.Concurrent.ConcurrentDictionary`2](System.Collections.Concurrent.ConcurrentDictionary`2.yml) to a
+
+    new array.
+  syntax:
+    content:
+      CSharp: '[SuppressMessage("Microsoft.Concurrency", "CA8001", Justification = "ConcurrencyCop just doesn''t know about these locks")] public KeyValuePair<TKey, TValue>[] ToArray()'
+    parameters: []
+    return:
+      description: A new array containing a snapshot of key and value pairs copied from the [System.Collections.Concurrent.ConcurrentDictionary`2](System.Collections.Concurrent.ConcurrentDictionary`2.yml).
+  id: System.Collections.Concurrent.ConcurrentDictionary`2.ToArray
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator
+  href: System.Collections.Concurrent.ConcurrentDictionary`2.yml
+  name: GetEnumerator()
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<TKey, TValue>.GetEnumerator()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentDictionary.cs
+    startLine: 745
+  summary: Returns an enumerator that iterates through the [System.Collections.Concurrent.ConcurrentDictionary`2](System.Collections.Concurrent.ConcurrentDictionary`2.yml).
+  syntax:
+    content:
+      CSharp: public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator()
+    parameters: []
+    return:
+      id: IEnumerator
+      description: An enumerator for the [System.Collections.Concurrent.ConcurrentDictionary`2](System.Collections.Concurrent.ConcurrentDictionary`2.yml).
+  id: System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Item(`0)
+  href: System.Collections.Concurrent.ConcurrentDictionary`2.yml
+  name: this[TKey]
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<TKey, TValue>.this[TKey]
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentDictionary.cs
+    startLine: 886
+  summary: Gets or sets the value associated with the specified key.
+  syntax:
+    content:
+      CSharp: public TValue this[TKey key] { get; set; }
+    parameters:
+    - id: this[]
+      type:
+        id: TValue
+        name: TValue
+        href: TValue
+  id: System.Collections.Concurrent.ConcurrentDictionary`2.Item(`0)
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Count
+  href: System.Collections.Concurrent.ConcurrentDictionary`2.yml
+  name: Count
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<TKey, TValue>.Count
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentDictionary.cs
+    startLine: 916
+  summary: Gets the number of key/value pairs contained in the [System.Collections.Concurrent.ConcurrentDictionary`2](System.Collections.Concurrent.ConcurrentDictionary`2.yml).
+  syntax:
+    content:
+      CSharp: public int Count { [SuppressMessage("Microsoft.Concurrency", "CA8001", Justification = "ConcurrencyCop just doesn't know about these locks")] get; }
+    parameters:
+    - id: Count
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+  id: System.Collections.Concurrent.ConcurrentDictionary`2.Count
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(`0,Func{`0,`1})
+  href: System.Collections.Concurrent.ConcurrentDictionary`2.yml
+  name: GetOrAdd(TKey, Func<TKey, TValue>)
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<TKey, TValue>.GetOrAdd(TKey, Func<TKey, TValue>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentDictionary.cs
+    startLine: 960
+  summary: >-
+    Adds a key/value pair to the [System.Collections.Concurrent.ConcurrentDictionary`2](System.Collections.Concurrent.ConcurrentDictionary`2.yml)
+
+    if the key does not already exist.
+  syntax:
+    content:
+      CSharp: public TValue GetOrAdd(TKey key, Func<TKey, TValue> valueFactory)
+    parameters:
+    - id: key
+      type:
+        id: TKey
+        name: TKey
+        href: TKey
+      description: The key of the element to add.
+    - id: valueFactory
+      type:
+        id: Func{`0,`1}
+        name: Func{`0,`1}
+        isExternal: true
+      description: The function used to generate a value for the key
+    return:
+      id: TValue
+      description: >-
+        The value for the key.  This will be either the existing value for the key if the
+
+        key is already in the dictionary, or the new value for the key as returned by valueFactory
+
+        if the key was not in the dictionary.
+  id: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(`0,Func{`0,`1})
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(`0,`1)
+  href: System.Collections.Concurrent.ConcurrentDictionary`2.yml
+  name: GetOrAdd(TKey, TValue)
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<TKey, TValue>.GetOrAdd(TKey, TValue)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentDictionary.cs
+    startLine: 987
+  summary: >-
+    Adds a key/value pair to the [System.Collections.Concurrent.ConcurrentDictionary`2](System.Collections.Concurrent.ConcurrentDictionary`2.yml)
+
+    if the key does not already exist.
+  syntax:
+    content:
+      CSharp: public TValue GetOrAdd(TKey key, TValue value)
+    parameters:
+    - id: key
+      type:
+        id: TKey
+        name: TKey
+        href: TKey
+      description: The key of the element to add.
+    - id: value
+      type:
+        id: TValue
+        name: TValue
+        href: TValue
+      description: the value to be added, if the key does not already exist
+    return:
+      id: TValue
+      description: >-
+        The value for the key.  This will be either the existing value for the key if the
+
+        key is already in the dictionary, or the new value if the key was not in the dictionary.
+  id: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(`0,`1)
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate(`0,Func{`0,`1},Func{`0,`1,`1})
+  href: System.Collections.Concurrent.ConcurrentDictionary`2.yml
+  name: AddOrUpdate(TKey, Func<TKey, TValue>, Func<TKey, TValue, TValue>)
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<TKey, TValue>.AddOrUpdate(TKey, Func<TKey, TValue>, Func<TKey, TValue, TValue>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentDictionary.cs
+    startLine: 1020
+  summary: >-
+    Adds a key/value pair to the [System.Collections.Concurrent.ConcurrentDictionary`2](System.Collections.Concurrent.ConcurrentDictionary`2.yml) if the key does not already
+
+    exist, or updates a key/value pair in the [System.Collections.Concurrent.ConcurrentDictionary`2](System.Collections.Concurrent.ConcurrentDictionary`2.yml) if the key
+
+    already exists.
+  syntax:
+    content:
+      CSharp: public TValue AddOrUpdate(TKey key, Func<TKey, TValue> addValueFactory, Func<TKey, TValue, TValue> updateValueFactory)
+    parameters:
+    - id: key
+      type:
+        id: TKey
+        name: TKey
+        href: TKey
+      description: The key to be added or whose value should be updated
+    - id: addValueFactory
+      type:
+        id: Func{`0,`1}
+        name: Func{`0,`1}
+        isExternal: true
+      description: The function used to generate a value for an absent key
+    - id: updateValueFactory
+      type:
+        id: Func{`0,`1,`1}
+        name: Func{`0,`1,`1}
+        isExternal: true
+      description: >-
+        The function used to generate a new value for an existing key
+
+        based on the key's existing value
+    return:
+      id: TValue
+      description: >-
+        The new value for the key.  This will be either be the result of addValueFactory (if the key was
+
+        absent) or the result of updateValueFactory (if the key was present).
+  id: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate(`0,Func{`0,`1},Func{`0,`1,`1})
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate(`0,`1,Func{`0,`1,`1})
+  href: System.Collections.Concurrent.ConcurrentDictionary`2.yml
+  name: AddOrUpdate(TKey, TValue, Func<TKey, TValue, TValue>)
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<TKey, TValue>.AddOrUpdate(TKey, TValue, Func<TKey, TValue, TValue>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentDictionary.cs
+    startLine: 1068
+  summary: >-
+    Adds a key/value pair to the [System.Collections.Concurrent.ConcurrentDictionary`2](System.Collections.Concurrent.ConcurrentDictionary`2.yml) if the key does not already
+
+    exist, or updates a key/value pair in the [System.Collections.Concurrent.ConcurrentDictionary`2](System.Collections.Concurrent.ConcurrentDictionary`2.yml) if the key
+
+    already exists.
+  syntax:
+    content:
+      CSharp: public TValue AddOrUpdate(TKey key, TValue addValue, Func<TKey, TValue, TValue> updateValueFactory)
+    parameters:
+    - id: key
+      type:
+        id: TKey
+        name: TKey
+        href: TKey
+      description: The key to be added or whose value should be updated
+    - id: addValue
+      type:
+        id: TValue
+        name: TValue
+        href: TValue
+      description: The value to be added for an absent key
+    - id: updateValueFactory
+      type:
+        id: Func{`0,`1,`1}
+        name: Func{`0,`1,`1}
+        isExternal: true
+      description: >-
+        The function used to generate a new value for an existing key based on
+
+        the key's existing value
+    return:
+      id: TValue
+      description: >-
+        The new value for the key.  This will be either be the result of addValueFactory (if the key was
+
+        absent) or the result of updateValueFactory (if the key was present).
+  id: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate(`0,`1,Func{`0,`1,`1})
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty
+  href: System.Collections.Concurrent.ConcurrentDictionary`2.yml
+  name: IsEmpty
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<TKey, TValue>.IsEmpty
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentDictionary.cs
+    startLine: 1103
+  summary: Gets a value that indicates whether the [System.Collections.Concurrent.ConcurrentDictionary`2](System.Collections.Concurrent.ConcurrentDictionary`2.yml) is empty.
+  syntax:
+    content:
+      CSharp: public bool IsEmpty { [SuppressMessage("Microsoft.Concurrency", "CA8001", Justification = "ConcurrencyCop just doesn't know about these locks")] get; }
+    parameters:
+    - id: IsEmpty
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+  id: System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Keys
+  href: System.Collections.Concurrent.ConcurrentDictionary`2.yml
+  name: Keys
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<TKey, TValue>.Keys
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentDictionary.cs
+    startLine: 1179
+  summary: Gets a collection containing the keys in the [System.Collections.Generic.Dictionary{TKey,TValue}](#).
+  syntax:
+    content:
+      CSharp: public ICollection<TKey> Keys { get; }
+    parameters:
+    - id: Keys
+      type:
+        id: ICollection{`0}
+        name: ICollection{`0}
+        isExternal: true
+  id: System.Collections.Concurrent.ConcurrentDictionary`2.Keys
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Values
+  href: System.Collections.Concurrent.ConcurrentDictionary`2.yml
+  name: Values
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<TKey, TValue>.Values
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentDictionary.cs
+    startLine: 1202
+  summary: Gets a collection containing the values in the [System.Collections.Generic.Dictionary{TKey,TValue}](#).
+  syntax:
+    content:
+      CSharp: public ICollection<TValue> Values { get; }
+    parameters:
+    - id: Values
+      type:
+        id: ICollection{`1}
+        name: ICollection{`1}
+        isExternal: true
+  id: System.Collections.Concurrent.ConcurrentDictionary`2.Values

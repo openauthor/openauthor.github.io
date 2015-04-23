@@ -1,0 +1,128 @@
+items:
+- uid: Microsoft.CodeAnalysis.Host.HostLanguageServices
+  href: Microsoft.CodeAnalysis.Host.HostLanguageServices.yml
+  name: HostLanguageServices
+  fullName: Microsoft.CodeAnalysis.Host.HostLanguageServices
+  type: Class
+  source:
+    remote: &o0
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      description: v1.0-12-gef085ea
+    path: src/Workspaces/Core/Portable/Workspace/Host/HostLanguageServices.cs
+    startLine: 9
+  summary: Per language services provided by the host environment.
+  syntax:
+    content:
+      CSharp: public abstract class HostLanguageServices
+  inheritance:
+  - id: System.Object
+    name: System.Object
+    isExternal: true
+  id: Microsoft.CodeAnalysis.Host.HostLanguageServices
+  children:
+  - Microsoft.CodeAnalysis.Host.HostLanguageServices.WorkspaceServices
+  - Microsoft.CodeAnalysis.Host.HostLanguageServices.Language
+  - Microsoft.CodeAnalysis.Host.HostLanguageServices.GetService``1
+  - Microsoft.CodeAnalysis.Host.HostLanguageServices.GetRequiredService``1
+  - Microsoft.CodeAnalysis.Host.HostLanguageServices.CompilationFactory
+- uid: Microsoft.CodeAnalysis.Host.HostLanguageServices.WorkspaceServices
+  href: Microsoft.CodeAnalysis.Host.HostLanguageServices.yml
+  name: WorkspaceServices
+  fullName: Microsoft.CodeAnalysis.Host.HostLanguageServices.WorkspaceServices
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Host/HostLanguageServices.cs
+    startLine: 14
+  summary: The [Microsoft.CodeAnalysis.Host.HostWorkspaceServices](Microsoft.CodeAnalysis.Host.HostWorkspaceServices.yml) that originated this language service.
+  syntax:
+    content:
+      CSharp: public abstract HostWorkspaceServices WorkspaceServices { get; }
+    parameters:
+    - id: WorkspaceServices
+      type:
+        id: Microsoft.CodeAnalysis.Host.HostWorkspaceServices
+        name: HostWorkspaceServices
+        href: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.yml
+  id: Microsoft.CodeAnalysis.Host.HostLanguageServices.WorkspaceServices
+- uid: Microsoft.CodeAnalysis.Host.HostLanguageServices.Language
+  href: Microsoft.CodeAnalysis.Host.HostLanguageServices.yml
+  name: Language
+  fullName: Microsoft.CodeAnalysis.Host.HostLanguageServices.Language
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Host/HostLanguageServices.cs
+    startLine: 19
+  summary: The name of the language
+  syntax:
+    content:
+      CSharp: public abstract string Language { get; }
+    parameters:
+    - id: Language
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+  id: Microsoft.CodeAnalysis.Host.HostLanguageServices.Language
+- uid: Microsoft.CodeAnalysis.Host.HostLanguageServices.GetService``1
+  href: Microsoft.CodeAnalysis.Host.HostLanguageServices.yml
+  name: GetService<TLanguageService>()
+  fullName: Microsoft.CodeAnalysis.Host.HostLanguageServices.GetService<TLanguageService>()
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Host/HostLanguageServices.cs
+    startLine: 25
+  summary: >-
+    Gets a language specific service provided by the host identified by the service type.
+
+    If the host does not provide the service, this method returns null.
+  syntax:
+    content:
+      CSharp: 'public abstract TLanguageService GetService<TLanguageService>()where TLanguageService : ILanguageService;'
+    parameters: []
+    return:
+      id: TLanguageService
+  id: Microsoft.CodeAnalysis.Host.HostLanguageServices.GetService``1
+- uid: Microsoft.CodeAnalysis.Host.HostLanguageServices.GetRequiredService``1
+  href: Microsoft.CodeAnalysis.Host.HostLanguageServices.yml
+  name: GetRequiredService<TLanguageService>()
+  fullName: Microsoft.CodeAnalysis.Host.HostLanguageServices.GetRequiredService<TLanguageService>()
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Host/HostLanguageServices.cs
+    startLine: 31
+  summary: >-
+    Gets a language specific service provided by the host identified by the service type.
+
+    If the host does not provide the service, this method returns throws [System.InvalidOperationException](#).
+  syntax:
+    content:
+      CSharp: 'public TLanguageService GetRequiredService<TLanguageService>()where TLanguageService : ILanguageService'
+    parameters: []
+    return:
+      id: TLanguageService
+  id: Microsoft.CodeAnalysis.Host.HostLanguageServices.GetRequiredService``1
+- uid: Microsoft.CodeAnalysis.Host.HostLanguageServices.CompilationFactory
+  href: Microsoft.CodeAnalysis.Host.HostLanguageServices.yml
+  name: CompilationFactory
+  fullName: Microsoft.CodeAnalysis.Host.HostLanguageServices.CompilationFactory
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Host/HostLanguageServices.cs
+    startLine: 47
+  summary: A factory for creating compilations instances.
+  syntax:
+    content:
+      CSharp: public virtual ICompilationFactoryService CompilationFactory { get; }
+    parameters:
+    - id: CompilationFactory
+      type:
+        id: Microsoft.CodeAnalysis.Host.ICompilationFactoryService
+        name: ICompilationFactoryService
+        href: Microsoft.CodeAnalysis.Host.ICompilationFactoryService.yml
+  id: Microsoft.CodeAnalysis.Host.HostLanguageServices.CompilationFactory

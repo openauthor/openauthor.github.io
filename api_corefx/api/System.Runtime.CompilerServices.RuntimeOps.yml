@@ -1,0 +1,149 @@
+items:
+- uid: System.Runtime.CompilerServices.RuntimeOps
+  href: System.Runtime.CompilerServices.RuntimeOps.yml
+  name: RuntimeOps
+  fullName: System.Runtime.CompilerServices.RuntimeOps
+  type: Class
+  source:
+    remote: &o0
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+    path: src/System.Linq.Expressions/src/System/Runtime/CompilerServices/RuntimeOps.RuntimeVariableList.cs
+    startLine: 13
+  summary: >-
+    This API supports the .NET Framework infrastructure and is not intended to be used directly from your code.
+
+    Contains helper methods called from dynamically generated methods.
+  syntax:
+    content:
+      CSharp: public partial class RuntimeOps
+  inheritance:
+  - id: System.Object
+    name: System.Object
+    isExternal: true
+  id: System.Runtime.CompilerServices.RuntimeOps
+  children:
+  - System.Runtime.CompilerServices.RuntimeOps.Quote(System.Linq.Expressions.Expression,System.Object,System.Object[])
+  - System.Runtime.CompilerServices.RuntimeOps.MergeRuntimeVariables(System.Runtime.CompilerServices.IRuntimeVariables,System.Runtime.CompilerServices.IRuntimeVariables,System.Int32[])
+  - System.Runtime.CompilerServices.RuntimeOps.CreateRuntimeVariables(System.Object[],System.Int64[])
+  - System.Runtime.CompilerServices.RuntimeOps.CreateRuntimeVariables
+- uid: System.Runtime.CompilerServices.RuntimeOps.Quote(System.Linq.Expressions.Expression,System.Object,System.Object[])
+  href: System.Runtime.CompilerServices.RuntimeOps.yml
+  name: Quote(Expression, object, object[])
+  fullName: System.Runtime.CompilerServices.RuntimeOps.Quote(System.Linq.Expressions.Expression, object, object[])
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Linq.Expressions/src/System/Runtime/CompilerServices/RuntimeOps.ExpressionQuoter.cs
+    startLine: 22
+  summary: Quotes the provided expression tree.
+  syntax:
+    content:
+      CSharp: '[Obsolete("do not use this method", true), EditorBrowsable(EditorBrowsableState.Never)] public static Expression Quote(Expression expression, object hoistedLocals, object[] locals)'
+    parameters:
+    - id: expression
+      type:
+        id: System.Linq.Expressions.Expression
+        name: Expression
+        href: System.Linq.Expressions.Expression
+      description: The expression to quote.
+    - id: hoistedLocals
+      type:
+        id: System.Object
+        name: System.Object
+        isExternal: true
+      description: The hoisted local state provided by the compiler.
+    - id: locals
+      type:
+        id: System.Array
+        name: System.Array
+        isExternal: true
+      description: The actual hoisted local values.
+    return:
+      id: Expression
+      description: The quoted expression.
+  id: System.Runtime.CompilerServices.RuntimeOps.Quote(System.Linq.Expressions.Expression,System.Object,System.Object[])
+- uid: System.Runtime.CompilerServices.RuntimeOps.MergeRuntimeVariables(System.Runtime.CompilerServices.IRuntimeVariables,System.Runtime.CompilerServices.IRuntimeVariables,System.Int32[])
+  href: System.Runtime.CompilerServices.RuntimeOps.yml
+  name: MergeRuntimeVariables(IRuntimeVariables, IRuntimeVariables, int[])
+  fullName: System.Runtime.CompilerServices.RuntimeOps.MergeRuntimeVariables(System.Runtime.CompilerServices.IRuntimeVariables, System.Runtime.CompilerServices.IRuntimeVariables, int[])
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Linq.Expressions/src/System/Runtime/CompilerServices/RuntimeOps.ExpressionQuoter.cs
+    startLine: 37
+  summary: Combines two runtime variable lists and returns a new list.
+  syntax:
+    content:
+      CSharp: '[Obsolete("do not use this method", true), EditorBrowsable(EditorBrowsableState.Never)] public static IRuntimeVariables MergeRuntimeVariables(IRuntimeVariables first, IRuntimeVariables second, int[] indexes)'
+    parameters:
+    - id: first
+      type:
+        id: System.Runtime.CompilerServices.IRuntimeVariables
+        name: IRuntimeVariables
+        href: System.Runtime.CompilerServices.IRuntimeVariables.yml
+      description: The first list.
+    - id: second
+      type:
+        id: System.Runtime.CompilerServices.IRuntimeVariables
+        name: IRuntimeVariables
+        href: System.Runtime.CompilerServices.IRuntimeVariables.yml
+      description: The second list.
+    - id: indexes
+      type:
+        id: System.Array
+        name: System.Array
+        isExternal: true
+      description: The index array indicating which list to get variables from.
+    return:
+      id: IRuntimeVariables
+      description: The merged runtime variables.
+  id: System.Runtime.CompilerServices.RuntimeOps.MergeRuntimeVariables(System.Runtime.CompilerServices.IRuntimeVariables,System.Runtime.CompilerServices.IRuntimeVariables,System.Int32[])
+- uid: System.Runtime.CompilerServices.RuntimeOps.CreateRuntimeVariables(System.Object[],System.Int64[])
+  href: System.Runtime.CompilerServices.RuntimeOps.yml
+  name: CreateRuntimeVariables(object[], long[])
+  fullName: System.Runtime.CompilerServices.RuntimeOps.CreateRuntimeVariables(object[], long[])
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Linq.Expressions/src/System/Runtime/CompilerServices/RuntimeOps.RuntimeVariableList.cs
+    startLine: 22
+  summary: Creates an interface that can be used to modify closed over variables at runtime.
+  syntax:
+    content:
+      CSharp: '[Obsolete("do not use this method", true), EditorBrowsable(EditorBrowsableState.Never)] public static IRuntimeVariables CreateRuntimeVariables(object[] data, long[] indexes)'
+    parameters:
+    - id: data
+      type:
+        id: System.Array
+        name: System.Array
+        isExternal: true
+      description: The closure array.
+    - id: indexes
+      type:
+        id: System.Array
+        name: System.Array
+        isExternal: true
+      description: An array of indicies into the closure array where variables are found.
+    return:
+      id: IRuntimeVariables
+      description: An interface to access variables.
+  id: System.Runtime.CompilerServices.RuntimeOps.CreateRuntimeVariables(System.Object[],System.Int64[])
+- uid: System.Runtime.CompilerServices.RuntimeOps.CreateRuntimeVariables
+  href: System.Runtime.CompilerServices.RuntimeOps.yml
+  name: CreateRuntimeVariables()
+  fullName: System.Runtime.CompilerServices.RuntimeOps.CreateRuntimeVariables()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Linq.Expressions/src/System/Runtime/CompilerServices/RuntimeOps.RuntimeVariableList.cs
+    startLine: 32
+  summary: Creates an interface that can be used to modify closed over variables at runtime.
+  syntax:
+    content:
+      CSharp: '[Obsolete("do not use this method", true), EditorBrowsable(EditorBrowsableState.Never)] public static IRuntimeVariables CreateRuntimeVariables()'
+    parameters: []
+    return:
+      id: IRuntimeVariables
+      description: An interface to access variables.
+  id: System.Runtime.CompilerServices.RuntimeOps.CreateRuntimeVariables

@@ -1,0 +1,347 @@
+items:
+- uid: System.Reflection.PortableExecutable.PEReader
+  href: System.Reflection.PortableExecutable.PEReader.yml
+  name: PEReader
+  fullName: System.Reflection.PortableExecutable.PEReader
+  type: Class
+  source:
+    remote: &o0
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEReader.cs
+    startLine: 19
+  summary: Portable Executable format reader.
+  syntax:
+    content:
+      CSharp: public sealed class PEReader
+  inheritance:
+  - id: IDisposable
+    name: IDisposable
+    isExternal: true
+  id: System.Reflection.PortableExecutable.PEReader
+  children:
+  - System.Reflection.PortableExecutable.PEReader.#ctor(System.Byte*,System.Int32)
+  - System.Reflection.PortableExecutable.PEReader.#ctor(Stream)
+  - System.Reflection.PortableExecutable.PEReader.#ctor(Stream,System.Reflection.PortableExecutable.PEStreamOptions)
+  - System.Reflection.PortableExecutable.PEReader.#ctor(Stream,System.Reflection.PortableExecutable.PEStreamOptions,System.Int32)
+  - System.Reflection.PortableExecutable.PEReader.#ctor(ImmutableArray{System.Byte})
+  - System.Reflection.PortableExecutable.PEReader.Dispose
+  - System.Reflection.PortableExecutable.PEReader.PEHeaders
+  - System.Reflection.PortableExecutable.PEReader.IsEntireImageAvailable
+  - System.Reflection.PortableExecutable.PEReader.GetEntireImage
+  - System.Reflection.PortableExecutable.PEReader.HasMetadata
+  - System.Reflection.PortableExecutable.PEReader.GetMetadata
+  - System.Reflection.PortableExecutable.PEReader.GetSectionData(System.Int32)
+- uid: System.Reflection.PortableExecutable.PEReader.#ctor(System.Byte*,System.Int32)
+  href: System.Reflection.PortableExecutable.PEReader.yml
+  name: PEReader(byte*, int)
+  fullName: System.Reflection.PortableExecutable.PEReader.PEReader(byte*, int)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEReader.cs
+    startLine: 45
+  summary: Creates a Portable Executable reader over a PE image stored in memory.
+  syntax:
+    content:
+      CSharp: public unsafe PEReader(byte *peImage, int size)
+    parameters:
+    - id: peImage
+      type:
+        isExternal: true
+      description: Pointer to the start of the PE image.
+    - id: size
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+      description: The size of the PE image.
+  id: System.Reflection.PortableExecutable.PEReader.#ctor(System.Byte*,System.Int32)
+- uid: System.Reflection.PortableExecutable.PEReader.#ctor(Stream)
+  href: System.Reflection.PortableExecutable.PEReader.yml
+  name: PEReader(Stream)
+  fullName: System.Reflection.PortableExecutable.PEReader.PEReader(Stream)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEReader.cs
+    startLine: 72
+  summary: Creates a Portable Executable reader over a PE image stored in a stream.
+  syntax:
+    content:
+      CSharp: 'public PEReader(Stream peStream): this (peStream, PEStreamOptions.Default)'
+    parameters:
+    - id: peStream
+      type:
+        id: Stream
+        name: Stream
+        isExternal: true
+      description: PE image stream.
+  id: System.Reflection.PortableExecutable.PEReader.#ctor(Stream)
+- uid: System.Reflection.PortableExecutable.PEReader.#ctor(Stream,System.Reflection.PortableExecutable.PEStreamOptions)
+  href: System.Reflection.PortableExecutable.PEReader.yml
+  name: PEReader(Stream, PEStreamOptions)
+  fullName: System.Reflection.PortableExecutable.PEReader.PEReader(Stream, System.Reflection.PortableExecutable.PEStreamOptions)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEReader.cs
+    startLine: 101
+  summary: Creates a Portable Executable reader over a PE image stored in a stream beginning at its current position and ending at the end of the stream.
+  syntax:
+    content:
+      CSharp: 'public PEReader(Stream peStream, PEStreamOptions options): this (peStream, options, (int ? )null)'
+    parameters:
+    - id: peStream
+      type:
+        id: Stream
+        name: Stream
+        isExternal: true
+      description: PE image stream.
+    - id: options
+      type:
+        id: System.Reflection.PortableExecutable.PEStreamOptions
+        name: PEStreamOptions
+        href: System.Reflection.PortableExecutable.PEStreamOptions.yml
+      description: >-
+        Options specifying how sections of the PE image are read from the stream.
+
+
+
+        Unless [System.Reflection.PortableExecutable.PEStreamOptions.LeaveOpen](System.Reflection.PortableExecutable.PEStreamOptions.yml) is specified, ownership of the stream is transferred to the [System.Reflection.PortableExecutable.PEReader](System.Reflection.PortableExecutable.PEReader.yml)
+
+        upon successful argument validation. It will be disposed by the [System.Reflection.PortableExecutable.PEReader](System.Reflection.PortableExecutable.PEReader.yml) and the caller must not manipulate it.
+
+
+
+        Unless [System.Reflection.PortableExecutable.PEStreamOptions.PrefetchMetadata](System.Reflection.PortableExecutable.PEStreamOptions.yml) or [System.Reflection.PortableExecutable.PEStreamOptions.PrefetchEntireImage](System.Reflection.PortableExecutable.PEStreamOptions.yml) is specified no data
+
+        is read from the stream during the construction of the [System.Reflection.PortableExecutable.PEReader](System.Reflection.PortableExecutable.PEReader.yml). Furthermore, the stream must not be manipulated
+
+        by caller while the [System.Reflection.PortableExecutable.PEReader](System.Reflection.PortableExecutable.PEReader.yml) is alive and undisposed.
+
+
+
+        If [System.Reflection.PortableExecutable.PEStreamOptions.PrefetchMetadata](System.Reflection.PortableExecutable.PEStreamOptions.yml) or [System.Reflection.PortableExecutable.PEStreamOptions.PrefetchEntireImage](System.Reflection.PortableExecutable.PEStreamOptions.yml), the [System.Reflection.PortableExecutable.PEReader](System.Reflection.PortableExecutable.PEReader.yml)
+
+        will have read all of the data requested during construction. As such, if [System.Reflection.PortableExecutable.PEStreamOptions.LeaveOpen](System.Reflection.PortableExecutable.PEStreamOptions.yml) is also
+
+        specified, the caller retains full ownership of the stream and is assured that it will not be manipulated by the [System.Reflection.PortableExecutable.PEReader](System.Reflection.PortableExecutable.PEReader.yml)
+
+        after construction.
+  id: System.Reflection.PortableExecutable.PEReader.#ctor(Stream,System.Reflection.PortableExecutable.PEStreamOptions)
+- uid: System.Reflection.PortableExecutable.PEReader.#ctor(Stream,System.Reflection.PortableExecutable.PEStreamOptions,System.Int32)
+  href: System.Reflection.PortableExecutable.PEReader.yml
+  name: PEReader(Stream, PEStreamOptions, int)
+  fullName: System.Reflection.PortableExecutable.PEReader.PEReader(Stream, System.Reflection.PortableExecutable.PEStreamOptions, int)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEReader.cs
+    startLine: 127
+  summary: Creates a Portable Executable reader over a PE image of the given size beginning at the stream's current position.
+  syntax:
+    content:
+      CSharp: 'public PEReader(Stream peStream, PEStreamOptions options, int size): this (peStream, options, (int ? )size)'
+    parameters:
+    - id: peStream
+      type:
+        id: Stream
+        name: Stream
+        isExternal: true
+      description: PE image stream.
+    - id: options
+      type:
+        id: System.Reflection.PortableExecutable.PEStreamOptions
+        name: PEStreamOptions
+        href: System.Reflection.PortableExecutable.PEStreamOptions.yml
+      description: >-
+        Options specifying how sections of the PE image are read from the stream.
+
+
+
+        Unless [System.Reflection.PortableExecutable.PEStreamOptions.LeaveOpen](System.Reflection.PortableExecutable.PEStreamOptions.yml) is specified, ownership of the stream is transferred to the [System.Reflection.PortableExecutable.PEReader](System.Reflection.PortableExecutable.PEReader.yml)
+
+        upon successful argument validation. It will be disposed by the [System.Reflection.PortableExecutable.PEReader](System.Reflection.PortableExecutable.PEReader.yml) and the caller must not manipulate it.
+
+
+
+        Unless [System.Reflection.PortableExecutable.PEStreamOptions.PrefetchMetadata](System.Reflection.PortableExecutable.PEStreamOptions.yml) or [System.Reflection.PortableExecutable.PEStreamOptions.PrefetchEntireImage](System.Reflection.PortableExecutable.PEStreamOptions.yml) is specified no data
+
+        is read from the stream during the construction of the [System.Reflection.PortableExecutable.PEReader](System.Reflection.PortableExecutable.PEReader.yml). Furthermore, the stream must not be manipulated
+
+        by caller while the [System.Reflection.PortableExecutable.PEReader](System.Reflection.PortableExecutable.PEReader.yml) is alive and undisposed.
+
+
+
+        If [System.Reflection.PortableExecutable.PEStreamOptions.PrefetchMetadata](System.Reflection.PortableExecutable.PEStreamOptions.yml) or [System.Reflection.PortableExecutable.PEStreamOptions.PrefetchEntireImage](System.Reflection.PortableExecutable.PEStreamOptions.yml), the [System.Reflection.PortableExecutable.PEReader](System.Reflection.PortableExecutable.PEReader.yml)
+
+        will have read all of the data requested during construction. As such, if [System.Reflection.PortableExecutable.PEStreamOptions.LeaveOpen](System.Reflection.PortableExecutable.PEStreamOptions.yml) is also
+
+        specified, the caller retains full ownership of the stream and is assured that it will not be manipulated by the [System.Reflection.PortableExecutable.PEReader](System.Reflection.PortableExecutable.PEReader.yml)
+
+        after construction.
+    - id: size
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+      description: PE image size.
+  id: System.Reflection.PortableExecutable.PEReader.#ctor(Stream,System.Reflection.PortableExecutable.PEStreamOptions,System.Int32)
+- uid: System.Reflection.PortableExecutable.PEReader.#ctor(ImmutableArray{System.Byte})
+  href: System.Reflection.PortableExecutable.PEReader.yml
+  name: PEReader(ImmutableArray<byte>)
+  fullName: System.Reflection.PortableExecutable.PEReader.PEReader(ImmutableArray<byte>)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEReader.cs
+    startLine: 204
+  summary: Creates a Portable Executable reader over a PE image stored in a byte array.
+  syntax:
+    content:
+      CSharp: public PEReader(ImmutableArray<byte> peImage)
+    parameters:
+    - id: peImage
+      type:
+        id: ImmutableArray{System.Byte}
+        name: ImmutableArray{System.Byte}
+        isExternal: true
+      description: PE image.
+  id: System.Reflection.PortableExecutable.PEReader.#ctor(ImmutableArray{System.Byte})
+- uid: System.Reflection.PortableExecutable.PEReader.Dispose
+  href: System.Reflection.PortableExecutable.PEReader.yml
+  name: Dispose()
+  fullName: System.Reflection.PortableExecutable.PEReader.Dispose()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEReader.cs
+    startLine: 222
+  summary: Disposes all memory allocated by the reader.
+  syntax:
+    content:
+      CSharp: public void Dispose()
+    parameters: []
+  id: System.Reflection.PortableExecutable.PEReader.Dispose
+- uid: System.Reflection.PortableExecutable.PEReader.PEHeaders
+  href: System.Reflection.PortableExecutable.PEReader.yml
+  name: PEHeaders
+  fullName: System.Reflection.PortableExecutable.PEReader.PEHeaders
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEReader.cs
+    startLine: 264
+  summary: Gets the PE headers.
+  syntax:
+    content:
+      CSharp: public PEHeaders PEHeaders { get; }
+    parameters:
+    - id: PEHeaders
+      type:
+        id: System.Reflection.PortableExecutable.PEHeaders
+        name: PEHeaders
+        href: System.Reflection.PortableExecutable.PEHeaders.yml
+  id: System.Reflection.PortableExecutable.PEReader.PEHeaders
+- uid: System.Reflection.PortableExecutable.PEReader.IsEntireImageAvailable
+  href: System.Reflection.PortableExecutable.PEReader.yml
+  name: IsEntireImageAvailable
+  fullName: System.Reflection.PortableExecutable.PEReader.IsEntireImageAvailable
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEReader.cs
+    startLine: 382
+  summary: Return true if the reader can access the entire PE image.
+  syntax:
+    content:
+      CSharp: public bool IsEntireImageAvailable { get; }
+    parameters:
+    - id: IsEntireImageAvailable
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+  id: System.Reflection.PortableExecutable.PEReader.IsEntireImageAvailable
+- uid: System.Reflection.PortableExecutable.PEReader.GetEntireImage
+  href: System.Reflection.PortableExecutable.PEReader.yml
+  name: GetEntireImage()
+  fullName: System.Reflection.PortableExecutable.PEReader.GetEntireImage()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEReader.cs
+    startLine: 391
+  summary: Gets a pointer to and size of the PE image if available ([System.Reflection.PortableExecutable.PEReader.IsEntireImageAvailable](System.Reflection.PortableExecutable.PEReader.yml)).
+  syntax:
+    content:
+      CSharp: public PEMemoryBlock GetEntireImage()
+    parameters: []
+    return:
+      id: PEMemoryBlock
+  id: System.Reflection.PortableExecutable.PEReader.GetEntireImage
+- uid: System.Reflection.PortableExecutable.PEReader.HasMetadata
+  href: System.Reflection.PortableExecutable.PEReader.yml
+  name: HasMetadata
+  fullName: System.Reflection.PortableExecutable.PEReader.HasMetadata
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEReader.cs
+    startLine: 400
+  summary: Returns true if the PE image contains CLI metadata.
+  syntax:
+    content:
+      CSharp: public bool HasMetadata { get; }
+    parameters:
+    - id: HasMetadata
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+  id: System.Reflection.PortableExecutable.PEReader.HasMetadata
+- uid: System.Reflection.PortableExecutable.PEReader.GetMetadata
+  href: System.Reflection.PortableExecutable.PEReader.yml
+  name: GetMetadata()
+  fullName: System.Reflection.PortableExecutable.PEReader.GetMetadata()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEReader.cs
+    startLine: 410
+  summary: Loads PE section that contains CLI metadata.
+  syntax:
+    content:
+      CSharp: public PEMemoryBlock GetMetadata()
+    parameters: []
+    return:
+      id: PEMemoryBlock
+  id: System.Reflection.PortableExecutable.PEReader.GetMetadata
+- uid: System.Reflection.PortableExecutable.PEReader.GetSectionData(System.Int32)
+  href: System.Reflection.PortableExecutable.PEReader.yml
+  name: GetSectionData(int)
+  fullName: System.Reflection.PortableExecutable.PEReader.GetSectionData(int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEReader.cs
+    startLine: 424
+  summary: >-
+    Loads PE section that contains the specified  into memory
+
+    and returns a memory block that starts at  and ends at the end of the containing section.
+  syntax:
+    content:
+      CSharp: public PEMemoryBlock GetSectionData(int relativeVirtualAddress)
+    parameters:
+    - id: relativeVirtualAddress
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+      description: Relative Virtual Address of the data to read.
+    return:
+      id: PEMemoryBlock
+      description: An empty block if  doesn't represent a location in any of the PE sections of this PE image.
+  id: System.Reflection.PortableExecutable.PEReader.GetSectionData(System.Int32)

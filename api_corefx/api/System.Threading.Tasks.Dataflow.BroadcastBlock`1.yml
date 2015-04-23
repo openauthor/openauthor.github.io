@@ -1,0 +1,187 @@
+items:
+- uid: System.Threading.Tasks.Dataflow.BroadcastBlock`1
+  href: System.Threading.Tasks.Dataflow.BroadcastBlock`1.yml
+  name: BroadcastBlock<T>
+  fullName: System.Threading.Tasks.Dataflow.BroadcastBlock<T>
+  type: Class
+  source:
+    remote: &o0
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/BroadcastBlock.cs
+    startLine: 34
+  summary: >-
+    Provides a buffer for storing at most one element at time, overwriting each message with the next as it arrives.
+
+    Messages are broadcast to all linked targets, all of which may consume a clone of the message.
+  syntax:
+    content:
+      CSharp: public sealed class BroadcastBlock<T>
+  inheritance:
+  - id: System.Object
+    name: System.Object
+    isExternal: true
+  id: System.Threading.Tasks.Dataflow.BroadcastBlock`1
+  children:
+  - System.Threading.Tasks.Dataflow.BroadcastBlock`1.#ctor(System.Func{`0,`0})
+  - System.Threading.Tasks.Dataflow.BroadcastBlock`1.#ctor(System.Func{`0,`0},System.Threading.Tasks.Dataflow.DataflowBlockOptions)
+  - System.Threading.Tasks.Dataflow.BroadcastBlock`1.Complete
+  - System.Threading.Tasks.Dataflow.BroadcastBlock`1.LinkTo(System.Threading.Tasks.Dataflow.ITargetBlock{`0},System.Threading.Tasks.Dataflow.DataflowLinkOptions)
+  - System.Threading.Tasks.Dataflow.BroadcastBlock`1.TryReceive(System.Predicate{`0},`0@)
+  - System.Threading.Tasks.Dataflow.BroadcastBlock`1.Completion
+  - System.Threading.Tasks.Dataflow.BroadcastBlock`1.ToString
+- uid: System.Threading.Tasks.Dataflow.BroadcastBlock`1.#ctor(System.Func{`0,`0})
+  href: System.Threading.Tasks.Dataflow.BroadcastBlock`1.yml
+  name: BroadcastBlock(Func<T, T>)
+  fullName: System.Threading.Tasks.Dataflow.BroadcastBlock<T>.BroadcastBlock(System.Func<T, T>)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/BroadcastBlock.cs
+    startLine: 54
+  summary: Initializes the [System.Threading.Tasks.Dataflow.BroadcastBlock`1](System.Threading.Tasks.Dataflow.BroadcastBlock`1.yml) with the specified cloning function.
+  syntax:
+    content:
+      CSharp: 'public BroadcastBlock(Func<T, T> cloningFunction): this (cloningFunction, DataflowBlockOptions.Default)'
+    parameters:
+    - id: cloningFunction
+      type:
+        id: System.Func{`0,`0}
+        name: System.Func{`0,`0}
+        isExternal: true
+      description: >-
+        The function to use to clone the data when offered to other blocks.
+
+        This may be null to indicate that no cloning need be performed.
+  id: System.Threading.Tasks.Dataflow.BroadcastBlock`1.#ctor(System.Func{`0,`0})
+- uid: System.Threading.Tasks.Dataflow.BroadcastBlock`1.#ctor(System.Func{`0,`0},System.Threading.Tasks.Dataflow.DataflowBlockOptions)
+  href: System.Threading.Tasks.Dataflow.BroadcastBlock`1.yml
+  name: BroadcastBlock(Func<T, T>, DataflowBlockOptions)
+  fullName: System.Threading.Tasks.Dataflow.BroadcastBlock<T>.BroadcastBlock(System.Func<T, T>, System.Threading.Tasks.Dataflow.DataflowBlockOptions)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/BroadcastBlock.cs
+    startLine: 65
+  summary: Initializes the [System.Threading.Tasks.Dataflow.BroadcastBlock`1](System.Threading.Tasks.Dataflow.BroadcastBlock`1.yml)  with the specified cloning function and [System.Threading.Tasks.Dataflow.DataflowBlockOptions](System.Threading.Tasks.Dataflow.DataflowBlockOptions.yml).
+  syntax:
+    content:
+      CSharp: public BroadcastBlock(Func<T, T> cloningFunction, DataflowBlockOptions dataflowBlockOptions)
+    parameters:
+    - id: cloningFunction
+      type:
+        id: System.Func{`0,`0}
+        name: System.Func{`0,`0}
+        isExternal: true
+      description: >-
+        The function to use to clone the data when offered to other blocks.
+
+        This may be null to indicate that no cloning need be performed.
+    - id: dataflowBlockOptions
+      type:
+        id: System.Threading.Tasks.Dataflow.DataflowBlockOptions
+        name: DataflowBlockOptions
+        href: System.Threading.Tasks.Dataflow.DataflowBlockOptions.yml
+      description: The options with which to configure this [System.Threading.Tasks.Dataflow.BroadcastBlock`1](System.Threading.Tasks.Dataflow.BroadcastBlock`1.yml).
+  id: System.Threading.Tasks.Dataflow.BroadcastBlock`1.#ctor(System.Func{`0,`0},System.Threading.Tasks.Dataflow.DataflowBlockOptions)
+- uid: System.Threading.Tasks.Dataflow.BroadcastBlock`1.Complete
+  href: System.Threading.Tasks.Dataflow.BroadcastBlock`1.yml
+  name: Complete()
+  fullName: System.Threading.Tasks.Dataflow.BroadcastBlock<T>.Complete()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/BroadcastBlock.cs
+    startLine: 110
+  syntax:
+    content:
+      CSharp: public void Complete()
+    parameters: []
+  id: System.Threading.Tasks.Dataflow.BroadcastBlock`1.Complete
+- uid: System.Threading.Tasks.Dataflow.BroadcastBlock`1.LinkTo(System.Threading.Tasks.Dataflow.ITargetBlock{`0},System.Threading.Tasks.Dataflow.DataflowLinkOptions)
+  href: System.Threading.Tasks.Dataflow.BroadcastBlock`1.yml
+  name: LinkTo(ITargetBlock<T>, DataflowLinkOptions)
+  fullName: System.Threading.Tasks.Dataflow.BroadcastBlock<T>.LinkTo(System.Threading.Tasks.Dataflow.ITargetBlock<T>, System.Threading.Tasks.Dataflow.DataflowLinkOptions)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/BroadcastBlock.cs
+    startLine: 154
+  syntax:
+    content:
+      CSharp: public IDisposable LinkTo(ITargetBlock<T> target, DataflowLinkOptions linkOptions)
+    parameters:
+    - id: target
+      type:
+        id: System.Threading.Tasks.Dataflow.ITargetBlock{`0}
+        name: ITargetBlock
+        href: System.Threading.Tasks.Dataflow.ITargetBlock{`0}
+    - id: linkOptions
+      type:
+        id: System.Threading.Tasks.Dataflow.DataflowLinkOptions
+        name: DataflowLinkOptions
+        href: System.Threading.Tasks.Dataflow.DataflowLinkOptions.yml
+    return:
+      id: IDisposable
+  id: System.Threading.Tasks.Dataflow.BroadcastBlock`1.LinkTo(System.Threading.Tasks.Dataflow.ITargetBlock{`0},System.Threading.Tasks.Dataflow.DataflowLinkOptions)
+- uid: System.Threading.Tasks.Dataflow.BroadcastBlock`1.TryReceive(System.Predicate{`0},`0@)
+  href: System.Threading.Tasks.Dataflow.BroadcastBlock`1.yml
+  name: TryReceive(Predicate<T>, out T)
+  fullName: System.Threading.Tasks.Dataflow.BroadcastBlock<T>.TryReceive(System.Predicate<T>, out T)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/BroadcastBlock.cs
+    startLine: 157
+  syntax:
+    content:
+      CSharp: public Boolean TryReceive(Predicate<T> filter, out T item)
+    parameters:
+    - id: filter
+      type:
+        id: System.Predicate{`0}
+        name: System.Predicate{`0}
+        isExternal: true
+    - id: item
+      type:
+        id: T
+        name: T
+        href: T
+    return:
+      id: Boolean
+  id: System.Threading.Tasks.Dataflow.BroadcastBlock`1.TryReceive(System.Predicate{`0},`0@)
+- uid: System.Threading.Tasks.Dataflow.BroadcastBlock`1.Completion
+  href: System.Threading.Tasks.Dataflow.BroadcastBlock`1.yml
+  name: Completion
+  fullName: System.Threading.Tasks.Dataflow.BroadcastBlock<T>.Completion
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/BroadcastBlock.cs
+    startLine: 163
+  syntax:
+    content:
+      CSharp: public Task Completion { get; }
+    parameters:
+    - id: Completion
+      type:
+        id: System.Threading.Tasks.Task
+        name: System.Threading.Tasks.Task
+        isExternal: true
+  id: System.Threading.Tasks.Dataflow.BroadcastBlock`1.Completion
+- uid: System.Threading.Tasks.Dataflow.BroadcastBlock`1.ToString
+  href: System.Threading.Tasks.Dataflow.BroadcastBlock`1.yml
+  name: ToString()
+  fullName: System.Threading.Tasks.Dataflow.BroadcastBlock<T>.ToString()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/BroadcastBlock.cs
+    startLine: 448
+  syntax:
+    content:
+      CSharp: public override string ToString()
+    parameters: []
+    return:
+      id: String
+  id: System.Threading.Tasks.Dataflow.BroadcastBlock`1.ToString

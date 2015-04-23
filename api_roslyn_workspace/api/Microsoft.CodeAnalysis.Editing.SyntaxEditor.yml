@@ -1,0 +1,323 @@
+items:
+- uid: Microsoft.CodeAnalysis.Editing.SyntaxEditor
+  href: Microsoft.CodeAnalysis.Editing.SyntaxEditor.yml
+  name: SyntaxEditor
+  fullName: Microsoft.CodeAnalysis.Editing.SyntaxEditor
+  type: Class
+  source:
+    remote: &o0
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      description: v1.0-12-gef085ea
+    path: src/Workspaces/Core/Portable/Editing/SyntaxEditor.cs
+    startLine: 14
+  summary: An editor for making changes to a syntax tree.
+  syntax:
+    content:
+      CSharp: public class SyntaxEditor
+  inheritance:
+  - id: System.Object
+    name: System.Object
+    isExternal: true
+  id: Microsoft.CodeAnalysis.Editing.SyntaxEditor
+  children:
+  - Microsoft.CodeAnalysis.Editing.SyntaxEditor.#ctor(Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.Workspace)
+  - Microsoft.CodeAnalysis.Editing.SyntaxEditor.OriginalRoot
+  - Microsoft.CodeAnalysis.Editing.SyntaxEditor.Generator
+  - Microsoft.CodeAnalysis.Editing.SyntaxEditor.GetChangedRoot
+  - Microsoft.CodeAnalysis.Editing.SyntaxEditor.TrackNode(Microsoft.CodeAnalysis.SyntaxNode)
+  - Microsoft.CodeAnalysis.Editing.SyntaxEditor.RemoveNode(Microsoft.CodeAnalysis.SyntaxNode)
+  - Microsoft.CodeAnalysis.Editing.SyntaxEditor.ReplaceNode(Microsoft.CodeAnalysis.SyntaxNode,System.Func{Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.Editing.SyntaxGenerator,Microsoft.CodeAnalysis.SyntaxNode})
+  - Microsoft.CodeAnalysis.Editing.SyntaxEditor.ReplaceNode(Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.SyntaxNode)
+  - Microsoft.CodeAnalysis.Editing.SyntaxEditor.InsertBefore(Microsoft.CodeAnalysis.SyntaxNode,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxNode})
+  - Microsoft.CodeAnalysis.Editing.SyntaxEditor.InsertBefore(Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.SyntaxNode)
+  - Microsoft.CodeAnalysis.Editing.SyntaxEditor.InsertAfter(Microsoft.CodeAnalysis.SyntaxNode,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxNode})
+  - Microsoft.CodeAnalysis.Editing.SyntaxEditor.InsertAfter(Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.SyntaxNode)
+- uid: Microsoft.CodeAnalysis.Editing.SyntaxEditor.#ctor(Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.Workspace)
+  href: Microsoft.CodeAnalysis.Editing.SyntaxEditor.yml
+  name: SyntaxEditor(SyntaxNode, Workspace)
+  fullName: Microsoft.CodeAnalysis.Editing.SyntaxEditor.SyntaxEditor(Microsoft.CodeAnalysis.SyntaxNode, Microsoft.CodeAnalysis.Workspace)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Editing/SyntaxEditor.cs
+    startLine: 23
+  summary: Creates a new [Microsoft.CodeAnalysis.Editing.SyntaxEditor](Microsoft.CodeAnalysis.Editing.SyntaxEditor.yml) instance.
+  syntax:
+    content:
+      CSharp: public SyntaxEditor(SyntaxNode root, Workspace workspace)
+    parameters:
+    - id: root
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: Microsoft.CodeAnalysis.SyntaxNode
+    - id: workspace
+      type:
+        id: Microsoft.CodeAnalysis.Workspace
+        name: Workspace
+        href: Microsoft.CodeAnalysis.Workspace.yml
+  id: Microsoft.CodeAnalysis.Editing.SyntaxEditor.#ctor(Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.Workspace)
+- uid: Microsoft.CodeAnalysis.Editing.SyntaxEditor.OriginalRoot
+  href: Microsoft.CodeAnalysis.Editing.SyntaxEditor.yml
+  name: OriginalRoot
+  fullName: Microsoft.CodeAnalysis.Editing.SyntaxEditor.OriginalRoot
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Editing/SyntaxEditor.cs
+    startLine: 43
+  summary: The [Microsoft.CodeAnalysis.SyntaxNode](#) that was specified when the [Microsoft.CodeAnalysis.Editing.SyntaxEditor](Microsoft.CodeAnalysis.Editing.SyntaxEditor.yml) was constructed.
+  syntax:
+    content:
+      CSharp: public SyntaxNode OriginalRoot { get; }
+    parameters:
+    - id: OriginalRoot
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: Microsoft.CodeAnalysis.SyntaxNode
+  id: Microsoft.CodeAnalysis.Editing.SyntaxEditor.OriginalRoot
+- uid: Microsoft.CodeAnalysis.Editing.SyntaxEditor.Generator
+  href: Microsoft.CodeAnalysis.Editing.SyntaxEditor.yml
+  name: Generator
+  fullName: Microsoft.CodeAnalysis.Editing.SyntaxEditor.Generator
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Editing/SyntaxEditor.cs
+    startLine: 51
+  summary: A [Microsoft.CodeAnalysis.Editing.SyntaxGenerator](Microsoft.CodeAnalysis.Editing.SyntaxGenerator.yml) to use to create and change [Microsoft.CodeAnalysis.SyntaxNode](#)'s.
+  syntax:
+    content:
+      CSharp: public SyntaxGenerator Generator { get; }
+    parameters:
+    - id: Generator
+      type:
+        id: Microsoft.CodeAnalysis.Editing.SyntaxGenerator
+        name: SyntaxGenerator
+        href: Microsoft.CodeAnalysis.Editing.SyntaxGenerator.yml
+  id: Microsoft.CodeAnalysis.Editing.SyntaxEditor.Generator
+- uid: Microsoft.CodeAnalysis.Editing.SyntaxEditor.GetChangedRoot
+  href: Microsoft.CodeAnalysis.Editing.SyntaxEditor.yml
+  name: GetChangedRoot()
+  fullName: Microsoft.CodeAnalysis.Editing.SyntaxEditor.GetChangedRoot()
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Editing/SyntaxEditor.cs
+    startLine: 59
+  summary: Returns the changed root node.
+  syntax:
+    content:
+      CSharp: public SyntaxNode GetChangedRoot()
+    parameters: []
+    return:
+      id: SyntaxNode
+  id: Microsoft.CodeAnalysis.Editing.SyntaxEditor.GetChangedRoot
+- uid: Microsoft.CodeAnalysis.Editing.SyntaxEditor.TrackNode(Microsoft.CodeAnalysis.SyntaxNode)
+  href: Microsoft.CodeAnalysis.Editing.SyntaxEditor.yml
+  name: TrackNode(SyntaxNode)
+  fullName: Microsoft.CodeAnalysis.Editing.SyntaxEditor.TrackNode(Microsoft.CodeAnalysis.SyntaxNode)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Editing/SyntaxEditor.cs
+    startLine: 75
+  summary: Makes sure the node is tracked, even if it is not changed.
+  syntax:
+    content:
+      CSharp: public void TrackNode(SyntaxNode node)
+    parameters:
+    - id: node
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: Microsoft.CodeAnalysis.SyntaxNode
+  id: Microsoft.CodeAnalysis.Editing.SyntaxEditor.TrackNode(Microsoft.CodeAnalysis.SyntaxNode)
+- uid: Microsoft.CodeAnalysis.Editing.SyntaxEditor.RemoveNode(Microsoft.CodeAnalysis.SyntaxNode)
+  href: Microsoft.CodeAnalysis.Editing.SyntaxEditor.yml
+  name: RemoveNode(SyntaxNode)
+  fullName: Microsoft.CodeAnalysis.Editing.SyntaxEditor.RemoveNode(Microsoft.CodeAnalysis.SyntaxNode)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Editing/SyntaxEditor.cs
+    startLine: 85
+  summary: Remove the node from the tree.
+  syntax:
+    content:
+      CSharp: public void RemoveNode(SyntaxNode node)
+    parameters:
+    - id: node
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: Microsoft.CodeAnalysis.SyntaxNode
+      description: The node to remove that currently exists as part of the tree.
+  id: Microsoft.CodeAnalysis.Editing.SyntaxEditor.RemoveNode(Microsoft.CodeAnalysis.SyntaxNode)
+- uid: Microsoft.CodeAnalysis.Editing.SyntaxEditor.ReplaceNode(Microsoft.CodeAnalysis.SyntaxNode,System.Func{Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.Editing.SyntaxGenerator,Microsoft.CodeAnalysis.SyntaxNode})
+  href: Microsoft.CodeAnalysis.Editing.SyntaxEditor.yml
+  name: ReplaceNode(SyntaxNode, Func<SyntaxNode, SyntaxGenerator, SyntaxNode>)
+  fullName: Microsoft.CodeAnalysis.Editing.SyntaxEditor.ReplaceNode(Microsoft.CodeAnalysis.SyntaxNode, System.Func<Microsoft.CodeAnalysis.SyntaxNode, Microsoft.CodeAnalysis.Editing.SyntaxGenerator, Microsoft.CodeAnalysis.SyntaxNode>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Editing/SyntaxEditor.cs
+    startLine: 97
+  summary: Replace the specified node with a node produced by the function.
+  syntax:
+    content:
+      CSharp: public void ReplaceNode(SyntaxNode node, Func<SyntaxNode, SyntaxGenerator, SyntaxNode> computeReplacement)
+    parameters:
+    - id: node
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: Microsoft.CodeAnalysis.SyntaxNode
+      description: The node to replace that already exists in the tree.
+    - id: computeReplacement
+      type:
+        id: System.Func{Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.Editing.SyntaxGenerator,Microsoft.CodeAnalysis.SyntaxNode}
+        name: System.Func{Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.Editing.SyntaxGenerator,Microsoft.CodeAnalysis.SyntaxNode}
+        isExternal: true
+      description: >-
+        A function that computes a replacement node.
+
+        The node passed into the compute function includes changes from prior edits. It will not appear as a descendant of the original root.
+  id: Microsoft.CodeAnalysis.Editing.SyntaxEditor.ReplaceNode(Microsoft.CodeAnalysis.SyntaxNode,System.Func{Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.Editing.SyntaxGenerator,Microsoft.CodeAnalysis.SyntaxNode})
+- uid: Microsoft.CodeAnalysis.Editing.SyntaxEditor.ReplaceNode(Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.SyntaxNode)
+  href: Microsoft.CodeAnalysis.Editing.SyntaxEditor.yml
+  name: ReplaceNode(SyntaxNode, SyntaxNode)
+  fullName: Microsoft.CodeAnalysis.Editing.SyntaxEditor.ReplaceNode(Microsoft.CodeAnalysis.SyntaxNode, Microsoft.CodeAnalysis.SyntaxNode)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Editing/SyntaxEditor.cs
+    startLine: 108
+  summary: Replace the specified node with a different node.
+  syntax:
+    content:
+      CSharp: public void ReplaceNode(SyntaxNode node, SyntaxNode newNode)
+    parameters:
+    - id: node
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: Microsoft.CodeAnalysis.SyntaxNode
+      description: The node to replace that already exists in the tree.
+    - id: newNode
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: Microsoft.CodeAnalysis.SyntaxNode
+      description: The new node that will be placed into the tree in the existing node's location.
+  id: Microsoft.CodeAnalysis.Editing.SyntaxEditor.ReplaceNode(Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.SyntaxNode)
+- uid: Microsoft.CodeAnalysis.Editing.SyntaxEditor.InsertBefore(Microsoft.CodeAnalysis.SyntaxNode,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxNode})
+  href: Microsoft.CodeAnalysis.Editing.SyntaxEditor.yml
+  name: InsertBefore(SyntaxNode, IEnumerable<SyntaxNode>)
+  fullName: Microsoft.CodeAnalysis.Editing.SyntaxEditor.InsertBefore(Microsoft.CodeAnalysis.SyntaxNode, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxNode>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Editing/SyntaxEditor.cs
+    startLine: 119
+  summary: Insert the new nodes before the specified node already existing in the tree.
+  syntax:
+    content:
+      CSharp: public void InsertBefore(SyntaxNode node, IEnumerable<SyntaxNode> newNodes)
+    parameters:
+    - id: node
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: Microsoft.CodeAnalysis.SyntaxNode
+      description: The node already existing in the tree that the new nodes will be placed before. This must be a node this is contained within a syntax list.
+    - id: newNodes
+      type:
+        id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxNode}
+        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxNode}
+        isExternal: true
+      description: The nodes to place before the existing node. These nodes must be of a compatible type to be placed in the same list containing the existing node.
+  id: Microsoft.CodeAnalysis.Editing.SyntaxEditor.InsertBefore(Microsoft.CodeAnalysis.SyntaxNode,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxNode})
+- uid: Microsoft.CodeAnalysis.Editing.SyntaxEditor.InsertBefore(Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.SyntaxNode)
+  href: Microsoft.CodeAnalysis.Editing.SyntaxEditor.yml
+  name: InsertBefore(SyntaxNode, SyntaxNode)
+  fullName: Microsoft.CodeAnalysis.Editing.SyntaxEditor.InsertBefore(Microsoft.CodeAnalysis.SyntaxNode, Microsoft.CodeAnalysis.SyntaxNode)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Editing/SyntaxEditor.cs
+    startLine: 130
+  summary: Insert the new node before the specified node already existing in the tree.
+  syntax:
+    content:
+      CSharp: public void InsertBefore(SyntaxNode node, SyntaxNode newNode)
+    parameters:
+    - id: node
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: Microsoft.CodeAnalysis.SyntaxNode
+      description: The node already existing in the tree that the new nodes will be placed before. This must be a node this is contained within a syntax list.
+    - id: newNode
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: Microsoft.CodeAnalysis.SyntaxNode
+      description: The node to place before the existing node. This node must be of a compatible type to be placed in the same list containing the existing node.
+  id: Microsoft.CodeAnalysis.Editing.SyntaxEditor.InsertBefore(Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.SyntaxNode)
+- uid: Microsoft.CodeAnalysis.Editing.SyntaxEditor.InsertAfter(Microsoft.CodeAnalysis.SyntaxNode,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxNode})
+  href: Microsoft.CodeAnalysis.Editing.SyntaxEditor.yml
+  name: InsertAfter(SyntaxNode, IEnumerable<SyntaxNode>)
+  fullName: Microsoft.CodeAnalysis.Editing.SyntaxEditor.InsertAfter(Microsoft.CodeAnalysis.SyntaxNode, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxNode>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Editing/SyntaxEditor.cs
+    startLine: 141
+  summary: Insert the new nodes after the specified node already existing in the tree.
+  syntax:
+    content:
+      CSharp: public void InsertAfter(SyntaxNode node, IEnumerable<SyntaxNode> newNodes)
+    parameters:
+    - id: node
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: Microsoft.CodeAnalysis.SyntaxNode
+      description: The node already existing in the tree that the new nodes will be placed after. This must be a node this is contained within a syntax list.
+    - id: newNodes
+      type:
+        id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxNode}
+        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxNode}
+        isExternal: true
+      description: The nodes to place after the existing node. These nodes must be of a compatible type to be placed in the same list containing the existing node.
+  id: Microsoft.CodeAnalysis.Editing.SyntaxEditor.InsertAfter(Microsoft.CodeAnalysis.SyntaxNode,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxNode})
+- uid: Microsoft.CodeAnalysis.Editing.SyntaxEditor.InsertAfter(Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.SyntaxNode)
+  href: Microsoft.CodeAnalysis.Editing.SyntaxEditor.yml
+  name: InsertAfter(SyntaxNode, SyntaxNode)
+  fullName: Microsoft.CodeAnalysis.Editing.SyntaxEditor.InsertAfter(Microsoft.CodeAnalysis.SyntaxNode, Microsoft.CodeAnalysis.SyntaxNode)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Editing/SyntaxEditor.cs
+    startLine: 152
+  summary: Insert the new node after the specified node already existing in the tree.
+  syntax:
+    content:
+      CSharp: public void InsertAfter(SyntaxNode node, SyntaxNode newNode)
+    parameters:
+    - id: node
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: Microsoft.CodeAnalysis.SyntaxNode
+      description: The node already existing in the tree that the new nodes will be placed after. This must be a node this is contained within a syntax list.
+    - id: newNode
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: Microsoft.CodeAnalysis.SyntaxNode
+      description: The node to place after the existing node. This node must be of a compatible type to be placed in the same list containing the existing node.
+  id: Microsoft.CodeAnalysis.Editing.SyntaxEditor.InsertAfter(Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.SyntaxNode)

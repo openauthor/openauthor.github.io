@@ -1,0 +1,405 @@
+items:
+- uid: System.Reflection.PortableExecutable.PEHeaders
+  href: System.Reflection.PortableExecutable.PEHeaders.yml
+  name: PEHeaders
+  fullName: System.Reflection.PortableExecutable.PEHeaders
+  type: Class
+  source:
+    remote: &o0
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeaders.cs
+    startLine: 13
+  summary: An object used to read PE (Portable Executable) and COFF (Common Object File Format) headers from a stream.
+  syntax:
+    content:
+      CSharp: public sealed class PEHeaders
+  inheritance:
+  - id: System.Object
+    name: System.Object
+    isExternal: true
+  id: System.Reflection.PortableExecutable.PEHeaders
+  children:
+  - System.Reflection.PortableExecutable.PEHeaders.#ctor(Stream)
+  - System.Reflection.PortableExecutable.PEHeaders.#ctor(Stream,System.Int32)
+  - System.Reflection.PortableExecutable.PEHeaders.MetadataStartOffset
+  - System.Reflection.PortableExecutable.PEHeaders.MetadataSize
+  - System.Reflection.PortableExecutable.PEHeaders.CoffHeader
+  - System.Reflection.PortableExecutable.PEHeaders.CoffHeaderStartOffset
+  - System.Reflection.PortableExecutable.PEHeaders.IsCoffOnly
+  - System.Reflection.PortableExecutable.PEHeaders.PEHeader
+  - System.Reflection.PortableExecutable.PEHeaders.PEHeaderStartOffset
+  - System.Reflection.PortableExecutable.PEHeaders.SectionHeaders
+  - System.Reflection.PortableExecutable.PEHeaders.CorHeader
+  - System.Reflection.PortableExecutable.PEHeaders.CorHeaderStartOffset
+  - System.Reflection.PortableExecutable.PEHeaders.IsConsoleApplication
+  - System.Reflection.PortableExecutable.PEHeaders.IsDll
+  - System.Reflection.PortableExecutable.PEHeaders.IsExe
+  - System.Reflection.PortableExecutable.PEHeaders.TryGetDirectoryOffset(System.Reflection.PortableExecutable.DirectoryEntry,System.Int32@)
+  - System.Reflection.PortableExecutable.PEHeaders.GetContainingSectionIndex(System.Int32)
+- uid: System.Reflection.PortableExecutable.PEHeaders.#ctor(Stream)
+  href: System.Reflection.PortableExecutable.PEHeaders.yml
+  name: PEHeaders(Stream)
+  fullName: System.Reflection.PortableExecutable.PEHeaders.PEHeaders(Stream)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeaders.cs
+    startLine: 33
+  summary: Reads PE headers from the current location in the stream.
+  syntax:
+    content:
+      CSharp: 'public PEHeaders(Stream peStream): this (peStream, null)'
+    parameters:
+    - id: peStream
+      type:
+        id: Stream
+        name: Stream
+        isExternal: true
+      description: Stream containing PE image starting at the stream's current position and ending at the end of the stream.
+  id: System.Reflection.PortableExecutable.PEHeaders.#ctor(Stream)
+- uid: System.Reflection.PortableExecutable.PEHeaders.#ctor(Stream,System.Int32)
+  href: System.Reflection.PortableExecutable.PEHeaders.yml
+  name: PEHeaders(Stream, int)
+  fullName: System.Reflection.PortableExecutable.PEHeaders.PEHeaders(Stream, int)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeaders.cs
+    startLine: 48
+  summary: Reads PE headers from the current location in the stream.
+  syntax:
+    content:
+      CSharp: 'public PEHeaders(Stream peStream, int size): this (peStream, (int ? )size)'
+    parameters:
+    - id: peStream
+      type:
+        id: Stream
+        name: Stream
+        isExternal: true
+      description: Stream containing PE image of the given size starting at its current position.
+    - id: size
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+      description: Size of the PE image.
+  id: System.Reflection.PortableExecutable.PEHeaders.#ctor(Stream,System.Int32)
+- uid: System.Reflection.PortableExecutable.PEHeaders.MetadataStartOffset
+  href: System.Reflection.PortableExecutable.PEHeaders.yml
+  name: MetadataStartOffset
+  fullName: System.Reflection.PortableExecutable.PEHeaders.MetadataStartOffset
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeaders.cs
+    startLine: 100
+  summary: >-
+    Gets the offset (in bytes) from the start of the PE image to the start of the CLI metadata.
+
+    or -1 if the image does not contain metadata.
+  syntax:
+    content:
+      CSharp: public int MetadataStartOffset { get; }
+    parameters:
+    - id: MetadataStartOffset
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+  id: System.Reflection.PortableExecutable.PEHeaders.MetadataStartOffset
+- uid: System.Reflection.PortableExecutable.PEHeaders.MetadataSize
+  href: System.Reflection.PortableExecutable.PEHeaders.yml
+  name: MetadataSize
+  fullName: System.Reflection.PortableExecutable.PEHeaders.MetadataSize
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeaders.cs
+    startLine: 108
+  summary: Gets the size of the CLI metadata 0 if the image does not contain metadata.)
+  syntax:
+    content:
+      CSharp: public int MetadataSize { get; }
+    parameters:
+    - id: MetadataSize
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+  id: System.Reflection.PortableExecutable.PEHeaders.MetadataSize
+- uid: System.Reflection.PortableExecutable.PEHeaders.CoffHeader
+  href: System.Reflection.PortableExecutable.PEHeaders.yml
+  name: CoffHeader
+  fullName: System.Reflection.PortableExecutable.PEHeaders.CoffHeader
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeaders.cs
+    startLine: 116
+  summary: Gets the COFF header of the image.
+  syntax:
+    content:
+      CSharp: public CoffHeader CoffHeader { get; }
+    parameters:
+    - id: CoffHeader
+      type:
+        id: System.Reflection.PortableExecutable.CoffHeader
+        name: CoffHeader
+        href: System.Reflection.PortableExecutable.CoffHeader.yml
+  id: System.Reflection.PortableExecutable.PEHeaders.CoffHeader
+- uid: System.Reflection.PortableExecutable.PEHeaders.CoffHeaderStartOffset
+  href: System.Reflection.PortableExecutable.PEHeaders.yml
+  name: CoffHeaderStartOffset
+  fullName: System.Reflection.PortableExecutable.PEHeaders.CoffHeaderStartOffset
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeaders.cs
+    startLine: 124
+  summary: Gets the byte offset from the start of the PE image to the start of the COFF header.
+  syntax:
+    content:
+      CSharp: public int CoffHeaderStartOffset { get; }
+    parameters:
+    - id: CoffHeaderStartOffset
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+  id: System.Reflection.PortableExecutable.PEHeaders.CoffHeaderStartOffset
+- uid: System.Reflection.PortableExecutable.PEHeaders.IsCoffOnly
+  href: System.Reflection.PortableExecutable.PEHeaders.yml
+  name: IsCoffOnly
+  fullName: System.Reflection.PortableExecutable.PEHeaders.IsCoffOnly
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeaders.cs
+    startLine: 132
+  summary: Determines if the image is Coff only.
+  syntax:
+    content:
+      CSharp: public bool IsCoffOnly { get; }
+    parameters:
+    - id: IsCoffOnly
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+  id: System.Reflection.PortableExecutable.PEHeaders.IsCoffOnly
+- uid: System.Reflection.PortableExecutable.PEHeaders.PEHeader
+  href: System.Reflection.PortableExecutable.PEHeaders.yml
+  name: PEHeader
+  fullName: System.Reflection.PortableExecutable.PEHeaders.PEHeader
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeaders.cs
+    startLine: 140
+  summary: Gets the PE header of the image or null if the image is COFF only.
+  syntax:
+    content:
+      CSharp: public PEHeader PEHeader { get; }
+    parameters:
+    - id: PEHeader
+      type:
+        id: System.Reflection.PortableExecutable.PEHeader
+        name: PEHeader
+        href: System.Reflection.PortableExecutable.PEHeader.yml
+  id: System.Reflection.PortableExecutable.PEHeaders.PEHeader
+- uid: System.Reflection.PortableExecutable.PEHeaders.PEHeaderStartOffset
+  href: System.Reflection.PortableExecutable.PEHeaders.yml
+  name: PEHeaderStartOffset
+  fullName: System.Reflection.PortableExecutable.PEHeaders.PEHeaderStartOffset
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeaders.cs
+    startLine: 148
+  summary: Gets the byte offset from the start of the image to
+  syntax:
+    content:
+      CSharp: public int PEHeaderStartOffset { get; }
+    parameters:
+    - id: PEHeaderStartOffset
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+  id: System.Reflection.PortableExecutable.PEHeaders.PEHeaderStartOffset
+- uid: System.Reflection.PortableExecutable.PEHeaders.SectionHeaders
+  href: System.Reflection.PortableExecutable.PEHeaders.yml
+  name: SectionHeaders
+  fullName: System.Reflection.PortableExecutable.PEHeaders.SectionHeaders
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeaders.cs
+    startLine: 156
+  summary: Gets the PE section headers.
+  syntax:
+    content:
+      CSharp: public ImmutableArray<SectionHeader> SectionHeaders { get; }
+    parameters:
+    - id: SectionHeaders
+      type:
+        id: ImmutableArray{System.Reflection.PortableExecutable.SectionHeader}
+        name: ImmutableArray{System.Reflection.PortableExecutable.SectionHeader}
+        isExternal: true
+  id: System.Reflection.PortableExecutable.PEHeaders.SectionHeaders
+- uid: System.Reflection.PortableExecutable.PEHeaders.CorHeader
+  href: System.Reflection.PortableExecutable.PEHeaders.yml
+  name: CorHeader
+  fullName: System.Reflection.PortableExecutable.PEHeaders.CorHeader
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeaders.cs
+    startLine: 164
+  summary: Gets the CLI header or null if the image does not have one.
+  syntax:
+    content:
+      CSharp: public CorHeader CorHeader { get; }
+    parameters:
+    - id: CorHeader
+      type:
+        id: System.Reflection.PortableExecutable.CorHeader
+        name: CorHeader
+        href: System.Reflection.PortableExecutable.CorHeader.yml
+  id: System.Reflection.PortableExecutable.PEHeaders.CorHeader
+- uid: System.Reflection.PortableExecutable.PEHeaders.CorHeaderStartOffset
+  href: System.Reflection.PortableExecutable.PEHeaders.yml
+  name: CorHeaderStartOffset
+  fullName: System.Reflection.PortableExecutable.PEHeaders.CorHeaderStartOffset
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeaders.cs
+    startLine: 172
+  summary: Gets the byte offset from the start of the image to the COR header or -1 if the image does not have one.
+  syntax:
+    content:
+      CSharp: public int CorHeaderStartOffset { get; }
+    parameters:
+    - id: CorHeaderStartOffset
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+  id: System.Reflection.PortableExecutable.PEHeaders.CorHeaderStartOffset
+- uid: System.Reflection.PortableExecutable.PEHeaders.IsConsoleApplication
+  href: System.Reflection.PortableExecutable.PEHeaders.yml
+  name: IsConsoleApplication
+  fullName: System.Reflection.PortableExecutable.PEHeaders.IsConsoleApplication
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeaders.cs
+    startLine: 180
+  summary: Determines if the image represents a Windows console application.
+  syntax:
+    content:
+      CSharp: public bool IsConsoleApplication { get; }
+    parameters:
+    - id: IsConsoleApplication
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+  id: System.Reflection.PortableExecutable.PEHeaders.IsConsoleApplication
+- uid: System.Reflection.PortableExecutable.PEHeaders.IsDll
+  href: System.Reflection.PortableExecutable.PEHeaders.yml
+  name: IsDll
+  fullName: System.Reflection.PortableExecutable.PEHeaders.IsDll
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeaders.cs
+    startLine: 191
+  summary: Determines if the image represents a dynamically linked library.
+  syntax:
+    content:
+      CSharp: public bool IsDll { get; }
+    parameters:
+    - id: IsDll
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+  id: System.Reflection.PortableExecutable.PEHeaders.IsDll
+- uid: System.Reflection.PortableExecutable.PEHeaders.IsExe
+  href: System.Reflection.PortableExecutable.PEHeaders.yml
+  name: IsExe
+  fullName: System.Reflection.PortableExecutable.PEHeaders.IsExe
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeaders.cs
+    startLine: 202
+  summary: Determines if the image represents an executable.
+  syntax:
+    content:
+      CSharp: public bool IsExe { get; }
+    parameters:
+    - id: IsExe
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+  id: System.Reflection.PortableExecutable.PEHeaders.IsExe
+- uid: System.Reflection.PortableExecutable.PEHeaders.TryGetDirectoryOffset(System.Reflection.PortableExecutable.DirectoryEntry,System.Int32@)
+  href: System.Reflection.PortableExecutable.PEHeaders.yml
+  name: TryGetDirectoryOffset(DirectoryEntry, out int)
+  fullName: System.Reflection.PortableExecutable.PEHeaders.TryGetDirectoryOffset(System.Reflection.PortableExecutable.DirectoryEntry, out int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeaders.cs
+    startLine: 296
+  summary: Gets the offset (in bytes) from the start of the image to the given directory entry.
+  syntax:
+    content:
+      CSharp: public bool TryGetDirectoryOffset(DirectoryEntry directory, out int offset)
+    parameters:
+    - id: directory
+      type:
+        id: System.Reflection.PortableExecutable.DirectoryEntry
+        name: DirectoryEntry
+        href: System.Reflection.PortableExecutable.DirectoryEntry.yml
+    - id: offset
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+    return:
+      id: Boolean
+      description: The section containing the directory could not be found.
+  id: System.Reflection.PortableExecutable.PEHeaders.TryGetDirectoryOffset(System.Reflection.PortableExecutable.DirectoryEntry,System.Int32@)
+- uid: System.Reflection.PortableExecutable.PEHeaders.GetContainingSectionIndex(System.Int32)
+  href: System.Reflection.PortableExecutable.PEHeaders.yml
+  name: GetContainingSectionIndex(int)
+  fullName: System.Reflection.PortableExecutable.PEHeaders.GetContainingSectionIndex(int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeaders.cs
+    startLine: 323
+  summary: Searches sections of the PE image for the one that contains specified Relative Virtual Address.
+  syntax:
+    content:
+      CSharp: public int GetContainingSectionIndex(int relativeVirtualAddress)
+    parameters:
+    - id: relativeVirtualAddress
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+      description: Address.
+    return:
+      id: Int32
+      description: >-
+        Index of the section that contains ,
+
+        or -1 if there is none.
+  id: System.Reflection.PortableExecutable.PEHeaders.GetContainingSectionIndex(System.Int32)

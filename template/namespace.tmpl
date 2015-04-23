@@ -2,10 +2,14 @@
   <!--article-content-->
   <article class="">
     <div id="article-header">
-      <a ng-if="model.mdHref" ng-href="{{model.mdHref}}" class="btn pull-right">Improve this Doc</a>
-      <a class="btn pull-right" ng-href={{ViewSource()}}> View Source</a>
+      <a ng-if="::model.mdHref" ng-href="{{::model.mdHref}}" class="btn pull-right">
+        <span class="glyphicon glyphicon-edit">&nbsp;</span>Improve this Doc
+      </a>
+      <a class="btn pull-right" ng-href={{::getViewSourceHref()}}>
+        <span class="glyphicon glyphicon-eye-open">&nbsp;</span>View Source
+      </a>
       <h1 class="">
-        {{model.type}} {{model.name.CSharp}}
+        {{model.type}} {{model.name}}
       </h1>
       <section class="">
         <div class="" >
@@ -17,13 +21,13 @@
       </section>
     </div>
     <section id="article-body">
-      <div class="" ng-repeat="itemtype in itemtypes" >
-        <h3 class="" ng-if="itemtype.show">{{itemtype.description}}</h3>
+      <div class="" ng-repeat="itemtype in ::partialModel.itemtypes" >
+        <h3 class="" ng-if="::itemtype.show">{{::itemtype.description}}</h3>
         <table ng-if="itemtype.show">
           <tr ng-repeat="item in model.items" ng-show="item.type==itemtype.name">
             <td>
-              <a href="{{GetLinkHref(item.href)}}">
-                {{item.id.replace(model.id + '.', '')}}
+              <a href="{{::getLinkHref(item.href)}}">
+                {{item.name}}
               </a>
             </td>
             <td>

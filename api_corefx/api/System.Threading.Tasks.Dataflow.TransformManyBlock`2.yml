@@ -1,0 +1,302 @@
+items:
+- uid: System.Threading.Tasks.Dataflow.TransformManyBlock`2
+  href: System.Threading.Tasks.Dataflow.TransformManyBlock`2.yml
+  name: TransformManyBlock<TInput, TOutput>
+  fullName: System.Threading.Tasks.Dataflow.TransformManyBlock<TInput, TOutput>
+  type: Class
+  source:
+    remote: &o0
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/TransformManyBlock.cs
+    startLine: 25
+  summary: Provides a dataflow block that invokes a provided [System.Func`2](#) delegate for every data element received.
+  syntax:
+    content:
+      CSharp: public sealed class TransformManyBlock<TInput, TOutput>
+  inheritance:
+  - id: System.Object
+    name: System.Object
+    isExternal: true
+  id: System.Threading.Tasks.Dataflow.TransformManyBlock`2
+  children:
+  - System.Threading.Tasks.Dataflow.TransformManyBlock`2.#ctor(System.Func{`0,System.Collections.Generic.IEnumerable{`1}})
+  - System.Threading.Tasks.Dataflow.TransformManyBlock`2.#ctor(System.Func{`0,System.Collections.Generic.IEnumerable{`1}},System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions)
+  - System.Threading.Tasks.Dataflow.TransformManyBlock`2.#ctor(System.Func{`0,System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{`1}}})
+  - System.Threading.Tasks.Dataflow.TransformManyBlock`2.#ctor(System.Func{`0,System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{`1}}},System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions)
+  - System.Threading.Tasks.Dataflow.TransformManyBlock`2.Complete
+  - System.Threading.Tasks.Dataflow.TransformManyBlock`2.LinkTo(System.Threading.Tasks.Dataflow.ITargetBlock{`1},System.Threading.Tasks.Dataflow.DataflowLinkOptions)
+  - System.Threading.Tasks.Dataflow.TransformManyBlock`2.TryReceive(System.Predicate{`1},`1@)
+  - System.Threading.Tasks.Dataflow.TransformManyBlock`2.TryReceiveAll(System.Collections.Generic.IList{`1}@)
+  - System.Threading.Tasks.Dataflow.TransformManyBlock`2.Completion
+  - System.Threading.Tasks.Dataflow.TransformManyBlock`2.InputCount
+  - System.Threading.Tasks.Dataflow.TransformManyBlock`2.OutputCount
+  - System.Threading.Tasks.Dataflow.TransformManyBlock`2.ToString
+- uid: System.Threading.Tasks.Dataflow.TransformManyBlock`2.#ctor(System.Func{`0,System.Collections.Generic.IEnumerable{`1}})
+  href: System.Threading.Tasks.Dataflow.TransformManyBlock`2.yml
+  name: TransformManyBlock(Func<TInput, IEnumerable<TOutput>>)
+  fullName: System.Threading.Tasks.Dataflow.TransformManyBlock<TInput, TOutput>.TransformManyBlock(System.Func<TInput, System.Collections.Generic.IEnumerable<TOutput>>)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/TransformManyBlock.cs
+    startLine: 45
+  summary: Initializes the [System.Threading.Tasks.Dataflow.TransformManyBlock`2](System.Threading.Tasks.Dataflow.TransformManyBlock`2.yml) with the specified function.
+  syntax:
+    content:
+      CSharp: '[SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures")] public TransformManyBlock(Func<TInput, IEnumerable<TOutput>> transform): this (transform, null, ExecutionDataflowBlockOptions.Default)'
+    parameters:
+    - id: transform
+      type:
+        id: System.Func{`0,System.Collections.Generic.IEnumerable{`1}}
+        name: System.Func{`0,System.Collections.Generic.IEnumerable{`1}}
+        isExternal: true
+      description: >-
+        The function to invoke with each data element received.  All of the data from the returned [System.Collections.Generic.IEnumerable`1](#)
+
+        will be made available as output from this [System.Threading.Tasks.Dataflow.TransformManyBlock`2](System.Threading.Tasks.Dataflow.TransformManyBlock`2.yml).
+  id: System.Threading.Tasks.Dataflow.TransformManyBlock`2.#ctor(System.Func{`0,System.Collections.Generic.IEnumerable{`1}})
+- uid: System.Threading.Tasks.Dataflow.TransformManyBlock`2.#ctor(System.Func{`0,System.Collections.Generic.IEnumerable{`1}},System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions)
+  href: System.Threading.Tasks.Dataflow.TransformManyBlock`2.yml
+  name: TransformManyBlock(Func<TInput, IEnumerable<TOutput>>, ExecutionDataflowBlockOptions)
+  fullName: System.Threading.Tasks.Dataflow.TransformManyBlock<TInput, TOutput>.TransformManyBlock(System.Func<TInput, System.Collections.Generic.IEnumerable<TOutput>>, System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/TransformManyBlock.cs
+    startLine: 58
+  summary: Initializes the [System.Threading.Tasks.Dataflow.TransformManyBlock`2](System.Threading.Tasks.Dataflow.TransformManyBlock`2.yml) with the specified function and [System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions](System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions.yml).
+  syntax:
+    content:
+      CSharp: '[SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures")] public TransformManyBlock(Func<TInput, IEnumerable<TOutput>> transform, ExecutionDataflowBlockOptions dataflowBlockOptions): this (transform, null, dataflowBlockOptions)'
+    parameters:
+    - id: transform
+      type:
+        id: System.Func{`0,System.Collections.Generic.IEnumerable{`1}}
+        name: System.Func{`0,System.Collections.Generic.IEnumerable{`1}}
+        isExternal: true
+      description: >-
+        The function to invoke with each data element received.  All of the data from the returned in the [System.Collections.Generic.IEnumerable`1](#)
+
+        will be made available as output from this [System.Threading.Tasks.Dataflow.TransformManyBlock`2](System.Threading.Tasks.Dataflow.TransformManyBlock`2.yml).
+    - id: dataflowBlockOptions
+      type:
+        id: System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions
+        name: ExecutionDataflowBlockOptions
+        href: System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions.yml
+      description: The options with which to configure this [System.Threading.Tasks.Dataflow.TransformManyBlock`2](System.Threading.Tasks.Dataflow.TransformManyBlock`2.yml).
+  id: System.Threading.Tasks.Dataflow.TransformManyBlock`2.#ctor(System.Func{`0,System.Collections.Generic.IEnumerable{`1}},System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions)
+- uid: System.Threading.Tasks.Dataflow.TransformManyBlock`2.#ctor(System.Func{`0,System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{`1}}})
+  href: System.Threading.Tasks.Dataflow.TransformManyBlock`2.yml
+  name: TransformManyBlock(Func<TInput, Task<IEnumerable<TOutput>>>)
+  fullName: System.Threading.Tasks.Dataflow.TransformManyBlock<TInput, TOutput>.TransformManyBlock(System.Func<TInput, System.Threading.Tasks.Task<System.Collections.Generic.IEnumerable<TOutput>>>)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/TransformManyBlock.cs
+    startLine: 69
+  summary: Initializes the [System.Threading.Tasks.Dataflow.TransformManyBlock`2](System.Threading.Tasks.Dataflow.TransformManyBlock`2.yml) with the specified function.
+  syntax:
+    content:
+      CSharp: '[SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures")] public TransformManyBlock(Func<TInput, Task<IEnumerable<TOutput>>> transform): this (null, transform, ExecutionDataflowBlockOptions.Default)'
+    parameters:
+    - id: transform
+      type:
+        id: System.Func{`0,System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{`1}}}
+        name: System.Func{`0,System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{`1}}}
+        isExternal: true
+      description: >-
+        The function to invoke with each data element received. All of the data asynchronously returned in the [System.Collections.Generic.IEnumerable`1](#)
+
+        will be made available as output from this [System.Threading.Tasks.Dataflow.TransformManyBlock`2](System.Threading.Tasks.Dataflow.TransformManyBlock`2.yml).
+  id: System.Threading.Tasks.Dataflow.TransformManyBlock`2.#ctor(System.Func{`0,System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{`1}}})
+- uid: System.Threading.Tasks.Dataflow.TransformManyBlock`2.#ctor(System.Func{`0,System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{`1}}},System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions)
+  href: System.Threading.Tasks.Dataflow.TransformManyBlock`2.yml
+  name: TransformManyBlock(Func<TInput, Task<IEnumerable<TOutput>>>, ExecutionDataflowBlockOptions)
+  fullName: System.Threading.Tasks.Dataflow.TransformManyBlock<TInput, TOutput>.TransformManyBlock(System.Func<TInput, System.Threading.Tasks.Task<System.Collections.Generic.IEnumerable<TOutput>>>, System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/TransformManyBlock.cs
+    startLine: 82
+  summary: Initializes the [System.Threading.Tasks.Dataflow.TransformManyBlock`2](System.Threading.Tasks.Dataflow.TransformManyBlock`2.yml) with the specified function and [System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions](System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions.yml).
+  syntax:
+    content:
+      CSharp: '[SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures")] public TransformManyBlock(Func<TInput, Task<IEnumerable<TOutput>>> transform, ExecutionDataflowBlockOptions dataflowBlockOptions): this (null, transform, dataflowBlockOptions)'
+    parameters:
+    - id: transform
+      type:
+        id: System.Func{`0,System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{`1}}}
+        name: System.Func{`0,System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{`1}}}
+        isExternal: true
+      description: >-
+        The function to invoke with each data element received. All of the data asynchronously returned in the [System.Collections.Generic.IEnumerable`1](#)
+
+        will be made available as output from this [System.Threading.Tasks.Dataflow.TransformManyBlock`2](System.Threading.Tasks.Dataflow.TransformManyBlock`2.yml).
+    - id: dataflowBlockOptions
+      type:
+        id: System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions
+        name: ExecutionDataflowBlockOptions
+        href: System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions.yml
+      description: The options with which to configure this [System.Threading.Tasks.Dataflow.TransformManyBlock`2](System.Threading.Tasks.Dataflow.TransformManyBlock`2.yml).
+  id: System.Threading.Tasks.Dataflow.TransformManyBlock`2.#ctor(System.Func{`0,System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{`1}}},System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions)
+- uid: System.Threading.Tasks.Dataflow.TransformManyBlock`2.Complete
+  href: System.Threading.Tasks.Dataflow.TransformManyBlock`2.yml
+  name: Complete()
+  fullName: System.Threading.Tasks.Dataflow.TransformManyBlock<TInput, TOutput>.Complete()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/TransformManyBlock.cs
+    startLine: 520
+  syntax:
+    content:
+      CSharp: public void Complete()
+    parameters: []
+  id: System.Threading.Tasks.Dataflow.TransformManyBlock`2.Complete
+- uid: System.Threading.Tasks.Dataflow.TransformManyBlock`2.LinkTo(System.Threading.Tasks.Dataflow.ITargetBlock{`1},System.Threading.Tasks.Dataflow.DataflowLinkOptions)
+  href: System.Threading.Tasks.Dataflow.TransformManyBlock`2.yml
+  name: LinkTo(ITargetBlock<TOutput>, DataflowLinkOptions)
+  fullName: System.Threading.Tasks.Dataflow.TransformManyBlock<TInput, TOutput>.LinkTo(System.Threading.Tasks.Dataflow.ITargetBlock<TOutput>, System.Threading.Tasks.Dataflow.DataflowLinkOptions)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/TransformManyBlock.cs
+    startLine: 532
+  syntax:
+    content:
+      CSharp: public IDisposable LinkTo(ITargetBlock<TOutput> target, DataflowLinkOptions linkOptions)
+    parameters:
+    - id: target
+      type:
+        id: System.Threading.Tasks.Dataflow.ITargetBlock{`1}
+        name: ITargetBlock
+        href: System.Threading.Tasks.Dataflow.ITargetBlock{`1}
+    - id: linkOptions
+      type:
+        id: System.Threading.Tasks.Dataflow.DataflowLinkOptions
+        name: DataflowLinkOptions
+        href: System.Threading.Tasks.Dataflow.DataflowLinkOptions.yml
+    return:
+      id: IDisposable
+  id: System.Threading.Tasks.Dataflow.TransformManyBlock`2.LinkTo(System.Threading.Tasks.Dataflow.ITargetBlock{`1},System.Threading.Tasks.Dataflow.DataflowLinkOptions)
+- uid: System.Threading.Tasks.Dataflow.TransformManyBlock`2.TryReceive(System.Predicate{`1},`1@)
+  href: System.Threading.Tasks.Dataflow.TransformManyBlock`2.yml
+  name: TryReceive(Predicate<TOutput>, out TOutput)
+  fullName: System.Threading.Tasks.Dataflow.TransformManyBlock<TInput, TOutput>.TryReceive(System.Predicate<TOutput>, out TOutput)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/TransformManyBlock.cs
+    startLine: 535
+  syntax:
+    content:
+      CSharp: public Boolean TryReceive(Predicate<TOutput> filter, out TOutput item)
+    parameters:
+    - id: filter
+      type:
+        id: System.Predicate{`1}
+        name: System.Predicate{`1}
+        isExternal: true
+    - id: item
+      type:
+        id: TOutput
+        name: TOutput
+        href: TOutput
+    return:
+      id: Boolean
+  id: System.Threading.Tasks.Dataflow.TransformManyBlock`2.TryReceive(System.Predicate{`1},`1@)
+- uid: System.Threading.Tasks.Dataflow.TransformManyBlock`2.TryReceiveAll(System.Collections.Generic.IList{`1}@)
+  href: System.Threading.Tasks.Dataflow.TransformManyBlock`2.yml
+  name: TryReceiveAll(out IList<TOutput>)
+  fullName: System.Threading.Tasks.Dataflow.TransformManyBlock<TInput, TOutput>.TryReceiveAll(out System.Collections.Generic.IList<TOutput>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/TransformManyBlock.cs
+    startLine: 538
+  syntax:
+    content:
+      CSharp: public bool TryReceiveAll(out IList<TOutput> items)
+    parameters:
+    - id: items
+      type:
+        id: System.Collections.Generic.IList{`1}
+        name: System.Collections.Generic.IList{`1}
+        isExternal: true
+    return:
+      id: Boolean
+  id: System.Threading.Tasks.Dataflow.TransformManyBlock`2.TryReceiveAll(System.Collections.Generic.IList{`1}@)
+- uid: System.Threading.Tasks.Dataflow.TransformManyBlock`2.Completion
+  href: System.Threading.Tasks.Dataflow.TransformManyBlock`2.yml
+  name: Completion
+  fullName: System.Threading.Tasks.Dataflow.TransformManyBlock<TInput, TOutput>.Completion
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/TransformManyBlock.cs
+    startLine: 541
+  syntax:
+    content:
+      CSharp: public Task Completion { get; }
+    parameters:
+    - id: Completion
+      type:
+        id: System.Threading.Tasks.Task
+        name: System.Threading.Tasks.Task
+        isExternal: true
+  id: System.Threading.Tasks.Dataflow.TransformManyBlock`2.Completion
+- uid: System.Threading.Tasks.Dataflow.TransformManyBlock`2.InputCount
+  href: System.Threading.Tasks.Dataflow.TransformManyBlock`2.yml
+  name: InputCount
+  fullName: System.Threading.Tasks.Dataflow.TransformManyBlock<TInput, TOutput>.InputCount
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/TransformManyBlock.cs
+    startLine: 544
+  syntax:
+    content:
+      CSharp: public int InputCount { get; }
+    parameters:
+    - id: InputCount
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+  id: System.Threading.Tasks.Dataflow.TransformManyBlock`2.InputCount
+- uid: System.Threading.Tasks.Dataflow.TransformManyBlock`2.OutputCount
+  href: System.Threading.Tasks.Dataflow.TransformManyBlock`2.yml
+  name: OutputCount
+  fullName: System.Threading.Tasks.Dataflow.TransformManyBlock<TInput, TOutput>.OutputCount
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/TransformManyBlock.cs
+    startLine: 547
+  syntax:
+    content:
+      CSharp: public int OutputCount { get; }
+    parameters:
+    - id: OutputCount
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+  id: System.Threading.Tasks.Dataflow.TransformManyBlock`2.OutputCount
+- uid: System.Threading.Tasks.Dataflow.TransformManyBlock`2.ToString
+  href: System.Threading.Tasks.Dataflow.TransformManyBlock`2.yml
+  name: ToString()
+  fullName: System.Threading.Tasks.Dataflow.TransformManyBlock<TInput, TOutput>.ToString()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/TransformManyBlock.cs
+    startLine: 579
+  syntax:
+    content:
+      CSharp: public override string ToString()
+    parameters: []
+    return:
+      id: String
+  id: System.Threading.Tasks.Dataflow.TransformManyBlock`2.ToString

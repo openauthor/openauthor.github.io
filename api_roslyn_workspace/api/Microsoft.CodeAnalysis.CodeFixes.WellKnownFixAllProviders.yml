@@ -1,0 +1,47 @@
+items:
+- uid: Microsoft.CodeAnalysis.CodeFixes.WellKnownFixAllProviders
+  href: Microsoft.CodeAnalysis.CodeFixes.WellKnownFixAllProviders.yml
+  name: WellKnownFixAllProviders
+  fullName: Microsoft.CodeAnalysis.CodeFixes.WellKnownFixAllProviders
+  type: Class
+  source:
+    remote: &o0
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      description: v1.0-12-gef085ea
+    path: src/Workspaces/Core/Portable/CodeFixes/FixAllOccurrences/WellKnownFixAllProviders.cs
+    startLine: 9
+  summary: Contains well known implementations of [Microsoft.CodeAnalysis.CodeFixes.FixAllProvider](Microsoft.CodeAnalysis.CodeFixes.FixAllProvider.yml).
+  syntax:
+    content:
+      CSharp: public static class WellKnownFixAllProviders
+  inheritance:
+  - id: System.Object
+    name: System.Object
+    isExternal: true
+  id: Microsoft.CodeAnalysis.CodeFixes.WellKnownFixAllProviders
+  children:
+  - Microsoft.CodeAnalysis.CodeFixes.WellKnownFixAllProviders.BatchFixer
+- uid: Microsoft.CodeAnalysis.CodeFixes.WellKnownFixAllProviders.BatchFixer
+  href: Microsoft.CodeAnalysis.CodeFixes.WellKnownFixAllProviders.yml
+  name: BatchFixer
+  fullName: Microsoft.CodeAnalysis.CodeFixes.WellKnownFixAllProviders.BatchFixer
+  type: Field
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/CodeFixes/FixAllOccurrences/WellKnownFixAllProviders.cs
+    startLine: 23
+  summary: >-
+    Default batch fix all provider.
+
+    This provider batches all the individual diagnostic fixes across the scope of fix all action,
+
+    computes fixes in parallel and then merges all the non-conflicting fixes into a single fix all code action.
+
+    This fixer supports fixes for the following fix all scopes:
+
+    [Microsoft.CodeAnalysis.CodeFixes.FixAllScope.Document](Microsoft.CodeAnalysis.CodeFixes.FixAllScope.yml), [Microsoft.CodeAnalysis.CodeFixes.FixAllScope.Project](Microsoft.CodeAnalysis.CodeFixes.FixAllScope.yml) and [Microsoft.CodeAnalysis.CodeFixes.FixAllScope.Solution](Microsoft.CodeAnalysis.CodeFixes.FixAllScope.yml).
+  syntax:
+    content:
+      CSharp: BatchFixer
+  id: Microsoft.CodeAnalysis.CodeFixes.WellKnownFixAllProviders.BatchFixer

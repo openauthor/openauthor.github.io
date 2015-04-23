@@ -1,0 +1,200 @@
+items:
+- uid: System.Reflection.Metadata.PropertyDefinitionHandle
+  href: System.Reflection.Metadata.PropertyDefinitionHandle.yml
+  name: PropertyDefinitionHandle
+  fullName: System.Reflection.Metadata.PropertyDefinitionHandle
+  type: Struct
+  source:
+    remote: &o0
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 969
+  syntax:
+    content:
+      CSharp: public struct PropertyDefinitionHandle
+  inheritance:
+  - id: System.ValueType
+    name: System.ValueType
+    isExternal: true
+  id: System.Reflection.Metadata.PropertyDefinitionHandle
+  children:
+  - System.Reflection.Metadata.PropertyDefinitionHandle.op_Implicit(System.Reflection.Metadata.PropertyDefinitionHandle)~System.Reflection.Metadata.Handle
+  - System.Reflection.Metadata.PropertyDefinitionHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.PropertyDefinitionHandle
+  - System.Reflection.Metadata.PropertyDefinitionHandle.IsNil
+  - System.Reflection.Metadata.PropertyDefinitionHandle.op_Equality(System.Reflection.Metadata.PropertyDefinitionHandle,System.Reflection.Metadata.PropertyDefinitionHandle)
+  - System.Reflection.Metadata.PropertyDefinitionHandle.Equals(System.Object)
+  - System.Reflection.Metadata.PropertyDefinitionHandle.Equals(System.Reflection.Metadata.PropertyDefinitionHandle)
+  - System.Reflection.Metadata.PropertyDefinitionHandle.GetHashCode
+  - System.Reflection.Metadata.PropertyDefinitionHandle.op_Inequality(System.Reflection.Metadata.PropertyDefinitionHandle,System.Reflection.Metadata.PropertyDefinitionHandle)
+- uid: System.Reflection.Metadata.PropertyDefinitionHandle.op_Implicit(System.Reflection.Metadata.PropertyDefinitionHandle)~System.Reflection.Metadata.Handle
+  href: System.Reflection.Metadata.PropertyDefinitionHandle.yml
+  name: implicit operator Handle(PropertyDefinitionHandle)
+  fullName: System.Reflection.Metadata.PropertyDefinitionHandle.implicit operator System.Reflection.Metadata.Handle(System.Reflection.Metadata.PropertyDefinitionHandle)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 985
+  syntax:
+    content:
+      CSharp: public static implicit operator Handle(PropertyDefinitionHandle handle) { return new Handle(handle._rowId | tokenType); }
+    parameters:
+    - id: handle
+      type:
+        id: System.Reflection.Metadata.PropertyDefinitionHandle
+        name: PropertyDefinitionHandle
+        href: System.Reflection.Metadata.PropertyDefinitionHandle.yml
+    return:
+      id: Handle
+  id: System.Reflection.Metadata.PropertyDefinitionHandle.op_Implicit(System.Reflection.Metadata.PropertyDefinitionHandle)~System.Reflection.Metadata.Handle
+- uid: System.Reflection.Metadata.PropertyDefinitionHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.PropertyDefinitionHandle
+  href: System.Reflection.Metadata.PropertyDefinitionHandle.yml
+  name: explicit operator PropertyDefinitionHandle(Handle)
+  fullName: System.Reflection.Metadata.PropertyDefinitionHandle.explicit operator System.Reflection.Metadata.PropertyDefinitionHandle(System.Reflection.Metadata.Handle)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 990
+  syntax:
+    content:
+      CSharp: public static explicit operator PropertyDefinitionHandle(Handle handle) { if (handle.TokenType != tokenType) { Handle.ThrowInvalidCast(); } return new PropertyDefinitionHandle(handle.RowId); }
+    parameters:
+    - id: handle
+      type:
+        id: System.Reflection.Metadata.Handle
+        name: Handle
+        href: System.Reflection.Metadata.Handle.yml
+    return:
+      id: PropertyDefinitionHandle
+  id: System.Reflection.Metadata.PropertyDefinitionHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.PropertyDefinitionHandle
+- uid: System.Reflection.Metadata.PropertyDefinitionHandle.IsNil
+  href: System.Reflection.Metadata.PropertyDefinitionHandle.yml
+  name: IsNil
+  fullName: System.Reflection.Metadata.PropertyDefinitionHandle.IsNil
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 1000
+  syntax:
+    content:
+      CSharp: public bool IsNil { get; }
+    parameters:
+    - id: IsNil
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+  id: System.Reflection.Metadata.PropertyDefinitionHandle.IsNil
+- uid: System.Reflection.Metadata.PropertyDefinitionHandle.op_Equality(System.Reflection.Metadata.PropertyDefinitionHandle,System.Reflection.Metadata.PropertyDefinitionHandle)
+  href: System.Reflection.Metadata.PropertyDefinitionHandle.yml
+  name: operator ==(PropertyDefinitionHandle, PropertyDefinitionHandle)
+  fullName: System.Reflection.Metadata.PropertyDefinitionHandle.operator ==(System.Reflection.Metadata.PropertyDefinitionHandle, System.Reflection.Metadata.PropertyDefinitionHandle)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 1010
+  syntax:
+    content:
+      CSharp: public static bool operator ==(PropertyDefinitionHandle left, PropertyDefinitionHandle right) { return left._rowId == right._rowId; }
+    parameters:
+    - id: left
+      type:
+        id: System.Reflection.Metadata.PropertyDefinitionHandle
+        name: PropertyDefinitionHandle
+        href: System.Reflection.Metadata.PropertyDefinitionHandle.yml
+    - id: right
+      type:
+        id: System.Reflection.Metadata.PropertyDefinitionHandle
+        name: PropertyDefinitionHandle
+        href: System.Reflection.Metadata.PropertyDefinitionHandle.yml
+    return:
+      id: Boolean
+  id: System.Reflection.Metadata.PropertyDefinitionHandle.op_Equality(System.Reflection.Metadata.PropertyDefinitionHandle,System.Reflection.Metadata.PropertyDefinitionHandle)
+- uid: System.Reflection.Metadata.PropertyDefinitionHandle.Equals(System.Object)
+  href: System.Reflection.Metadata.PropertyDefinitionHandle.yml
+  name: Equals(object)
+  fullName: System.Reflection.Metadata.PropertyDefinitionHandle.Equals(object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 1015
+  syntax:
+    content:
+      CSharp: public override bool Equals(object obj)
+    parameters:
+    - id: obj
+      type:
+        id: System.Object
+        name: System.Object
+        isExternal: true
+    return:
+      id: Boolean
+  id: System.Reflection.Metadata.PropertyDefinitionHandle.Equals(System.Object)
+- uid: System.Reflection.Metadata.PropertyDefinitionHandle.Equals(System.Reflection.Metadata.PropertyDefinitionHandle)
+  href: System.Reflection.Metadata.PropertyDefinitionHandle.yml
+  name: Equals(PropertyDefinitionHandle)
+  fullName: System.Reflection.Metadata.PropertyDefinitionHandle.Equals(System.Reflection.Metadata.PropertyDefinitionHandle)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 1020
+  syntax:
+    content:
+      CSharp: public bool Equals(PropertyDefinitionHandle other)
+    parameters:
+    - id: other
+      type:
+        id: System.Reflection.Metadata.PropertyDefinitionHandle
+        name: PropertyDefinitionHandle
+        href: System.Reflection.Metadata.PropertyDefinitionHandle.yml
+    return:
+      id: Boolean
+  id: System.Reflection.Metadata.PropertyDefinitionHandle.Equals(System.Reflection.Metadata.PropertyDefinitionHandle)
+- uid: System.Reflection.Metadata.PropertyDefinitionHandle.GetHashCode
+  href: System.Reflection.Metadata.PropertyDefinitionHandle.yml
+  name: GetHashCode()
+  fullName: System.Reflection.Metadata.PropertyDefinitionHandle.GetHashCode()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 1025
+  syntax:
+    content:
+      CSharp: public override int GetHashCode()
+    parameters: []
+    return:
+      id: Int32
+  id: System.Reflection.Metadata.PropertyDefinitionHandle.GetHashCode
+- uid: System.Reflection.Metadata.PropertyDefinitionHandle.op_Inequality(System.Reflection.Metadata.PropertyDefinitionHandle,System.Reflection.Metadata.PropertyDefinitionHandle)
+  href: System.Reflection.Metadata.PropertyDefinitionHandle.yml
+  name: operator !=(PropertyDefinitionHandle, PropertyDefinitionHandle)
+  fullName: System.Reflection.Metadata.PropertyDefinitionHandle.operator !=(System.Reflection.Metadata.PropertyDefinitionHandle, System.Reflection.Metadata.PropertyDefinitionHandle)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 1030
+  syntax:
+    content:
+      CSharp: public static bool operator !=(PropertyDefinitionHandle left, PropertyDefinitionHandle right) { return left._rowId != right._rowId; }
+    parameters:
+    - id: left
+      type:
+        id: System.Reflection.Metadata.PropertyDefinitionHandle
+        name: PropertyDefinitionHandle
+        href: System.Reflection.Metadata.PropertyDefinitionHandle.yml
+    - id: right
+      type:
+        id: System.Reflection.Metadata.PropertyDefinitionHandle
+        name: PropertyDefinitionHandle
+        href: System.Reflection.Metadata.PropertyDefinitionHandle.yml
+    return:
+      id: Boolean
+  id: System.Reflection.Metadata.PropertyDefinitionHandle.op_Inequality(System.Reflection.Metadata.PropertyDefinitionHandle,System.Reflection.Metadata.PropertyDefinitionHandle)

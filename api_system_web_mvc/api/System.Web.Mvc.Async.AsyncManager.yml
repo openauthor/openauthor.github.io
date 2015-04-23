@@ -1,0 +1,172 @@
+items:
+- uid: System.Web.Mvc.Async.AsyncManager
+  href: System.Web.Mvc.Async.AsyncManager.yml
+  name: AsyncManager
+  fullName: System.Web.Mvc.Async.AsyncManager
+  type: Class
+  source:
+    remote: &o0
+      branch: master
+      repo: https://git01.codeplex.com/aspnetwebstack
+      description: fbv1.1-beta-39-g5fa60ca
+    path: src/System.Web.Mvc/Async/AsyncManager.cs
+    startLine: 7
+  syntax:
+    content:
+      CSharp: public class AsyncManager
+  inheritance:
+  - id: System.Object
+    name: System.Object
+    isExternal: true
+  id: System.Web.Mvc.Async.AsyncManager
+  children:
+  - System.Web.Mvc.Async.AsyncManager.#ctor
+  - System.Web.Mvc.Async.AsyncManager.#ctor(System.Threading.SynchronizationContext)
+  - System.Web.Mvc.Async.AsyncManager.Finished
+  - System.Web.Mvc.Async.AsyncManager.OutstandingOperations
+  - System.Web.Mvc.Async.AsyncManager.Parameters
+  - System.Web.Mvc.Async.AsyncManager.Timeout
+  - System.Web.Mvc.Async.AsyncManager.Finish
+  - System.Web.Mvc.Async.AsyncManager.Sync(System.Action)
+- uid: System.Web.Mvc.Async.AsyncManager.#ctor
+  href: System.Web.Mvc.Async.AsyncManager.yml
+  name: AsyncManager()
+  fullName: System.Web.Mvc.Async.AsyncManager.AsyncManager()
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/Async/AsyncManager.cs
+    startLine: 19
+  syntax:
+    content:
+      CSharp: 'public AsyncManager(): this (null /* syncContext */)'
+    parameters: []
+  id: System.Web.Mvc.Async.AsyncManager.#ctor
+- uid: System.Web.Mvc.Async.AsyncManager.#ctor(System.Threading.SynchronizationContext)
+  href: System.Web.Mvc.Async.AsyncManager.yml
+  name: AsyncManager(SynchronizationContext)
+  fullName: System.Web.Mvc.Async.AsyncManager.AsyncManager(System.Threading.SynchronizationContext)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/Async/AsyncManager.cs
+    startLine: 24
+  syntax:
+    content:
+      CSharp: public AsyncManager(SynchronizationContext syncContext)
+    parameters:
+    - id: syncContext
+      type:
+        id: System.Threading.SynchronizationContext
+        name: System.Threading.SynchronizationContext
+        isExternal: true
+  id: System.Web.Mvc.Async.AsyncManager.#ctor(System.Threading.SynchronizationContext)
+- uid: System.Web.Mvc.Async.AsyncManager.Finished
+  href: System.Web.Mvc.Async.AsyncManager.yml
+  name: Finished
+  fullName: System.Web.Mvc.Async.AsyncManager.Finished
+  type: Event
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/Async/AsyncManager.cs
+    startLine: 37
+  syntax:
+    content:
+      CSharp: Finished
+  id: System.Web.Mvc.Async.AsyncManager.Finished
+- uid: System.Web.Mvc.Async.AsyncManager.OutstandingOperations
+  href: System.Web.Mvc.Async.AsyncManager.yml
+  name: OutstandingOperations
+  fullName: System.Web.Mvc.Async.AsyncManager.OutstandingOperations
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/Async/AsyncManager.cs
+    startLine: 39
+  syntax:
+    content:
+      CSharp: public OperationCounter OutstandingOperations { get; private set; }
+    parameters:
+    - id: OutstandingOperations
+      type:
+        id: System.Web.Mvc.Async.OperationCounter
+        name: OperationCounter
+        href: System.Web.Mvc.Async.OperationCounter.yml
+  id: System.Web.Mvc.Async.AsyncManager.OutstandingOperations
+- uid: System.Web.Mvc.Async.AsyncManager.Parameters
+  href: System.Web.Mvc.Async.AsyncManager.yml
+  name: Parameters
+  fullName: System.Web.Mvc.Async.AsyncManager.Parameters
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/Async/AsyncManager.cs
+    startLine: 41
+  syntax:
+    content:
+      CSharp: public IDictionary<string, object> Parameters { get; private set; }
+    parameters:
+    - id: Parameters
+      type:
+        id: System.Collections.Generic.IDictionary{System.String,System.Object}
+        name: System.Collections.Generic.IDictionary{System.String,System.Object}
+        isExternal: true
+  id: System.Web.Mvc.Async.AsyncManager.Parameters
+- uid: System.Web.Mvc.Async.AsyncManager.Timeout
+  href: System.Web.Mvc.Async.AsyncManager.yml
+  name: Timeout
+  fullName: System.Web.Mvc.Async.AsyncManager.Timeout
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/Async/AsyncManager.cs
+    startLine: 46
+  summary: Measured in milliseconds, Timeout.Infinite means 'no timeout'
+  syntax:
+    content:
+      CSharp: public int Timeout { get; set; }
+    parameters:
+    - id: Timeout
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+  id: System.Web.Mvc.Async.AsyncManager.Timeout
+- uid: System.Web.Mvc.Async.AsyncManager.Finish
+  href: System.Web.Mvc.Async.AsyncManager.yml
+  name: Finish()
+  fullName: System.Web.Mvc.Async.AsyncManager.Finish()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/Async/AsyncManager.cs
+    startLine: 63
+  summary: >-
+    The developer may call this function to signal that all operations are complete instead of
+
+    waiting for the operation counter to reach zero.
+  syntax:
+    content:
+      CSharp: public virtual void Finish()
+    parameters: []
+  id: System.Web.Mvc.Async.AsyncManager.Finish
+- uid: System.Web.Mvc.Async.AsyncManager.Sync(System.Action)
+  href: System.Web.Mvc.Async.AsyncManager.yml
+  name: Sync(Action)
+  fullName: System.Web.Mvc.Async.AsyncManager.Sync(System.Action)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/Async/AsyncManager.cs
+    startLine: 76
+  summary: Executes a callback in the current synchronization context, which gives access to HttpContext and related items.
+  syntax:
+    content:
+      CSharp: public virtual void Sync(Action action)
+    parameters:
+    - id: action
+      type:
+        id: System.Action
+        name: System.Action
+        isExternal: true
+  id: System.Web.Mvc.Async.AsyncManager.Sync(System.Action)

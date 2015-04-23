@@ -2,15 +2,18 @@
   <!--article-content-->
   <article class="">
     <div id="article-header">
-      <a ng-if="::model.mdHref" ng-href="{{::model.mdHref}}" class="btn pull-right">Improve this Doc</a>
-      <a class="btn pull-right" ng-href={{::ViewSource()}}> View Source</a>
-      <h1 ng-if="::model.name.CSharp">{{::model.type}} {{::model.name.CSharp}}</h1>
-      <h1 ng-if="::(!model.name.CSharp && model.name.VB)">{{::model.type}} {{::model.name.VB}}</h1>
+      <a ng-if="::model.mdHref" ng-href="{{::model.mdHref}}" class="btn pull-right">
+        <span class="glyphicon glyphicon-edit">&nbsp;</span>Improve this Doc
+      </a>
+      <a class="btn pull-right" ng-href={{::getViewSourceHref()}}>
+        <span class="glyphicon glyphicon-eye-open">&nbsp;</span>View Source
+      </a>
+      <h1>{{::model.type}} {{::model.name}}</h1>
       <section>
-        <div class="markdown">{{::model.summary}}</div>
+        <markdown ng-model="model.summary"></markdown>
       </section>
       <section>
-        <div class="markdown">{{::model.mdContent}}</div>
+        <markdown ng-model="model.mdContent"></markdown>
       </section>
       <section id="metadata_table" class="inheritance">
         <div class="" ng-if="::model.inheritance">
@@ -19,74 +22,64 @@
           <div class="">
             <div ng-repeat="inhe in ::model.inheritance">
               <span ng-repeat="i in ::getNumber($index) track by $index"></span>↳
-              <a ng-href="{{::GetLinkHref(inhe.href)}}">{{::inhe.id}}</a>
+              <a ng-href="{{::getLinkHref(inhe.href)}}">{{::inhe.id}}</a>
             </div>
             <div class="">
               <span ng-repeat="i in ::getNumber(model.inheritance.length) track by $index"></span>↳
-              <a>{{::model.id}}</a>
+              <a>{{::model.uid}}</a>
             </div>
           </div>
         </div>
       </section>
+
+      <div class="" ng-if="::model.syntax">
+        <div class="declaration">
+          <h5>Syntax</h5>
+            <pre><code class="sudo-pre" ng-model="model.syntax.content"></code></pre>
+        </div>
+      </div>
     </div>
 
     <section id="article-body">
-      <div class="" ng-repeat="itemtype in ::itemtypes">
+      <div class="" ng-repeat="itemtype in ::partialModel.itemtypes">
         <h3 class="" ng-if="::itemtype.show">{{::itemtype.description}}</h3>
         <div class=""  ng-repeat="item in ::model.items" ng-if="::(item.type == itemtype.name)">
-          <!--<div class="" ng-mouseleave="showBtn = false" ng-mouseenter ="showBtn = true" ng-init="showBtn=false">-->
           <div class="item-section">
             <div class="item-header">
-              <a class="item-toggle" ng-click="item.isCollapsed = !item.isCollapsed">
-                <div class="pull-right" ng-show = "item.isCollapsed">Hide</div>
-                <div class="pull-right" ng-show = "!item.isCollapsed">Show</div>
-                <div class="item-title" ng-if="::item.name.CSharp">
-                  {{::item.name.CSharp.replace(',', ', ').replace(',', ', ').replace(',', ', ')}}
+              <div class="pull-right">
+                <a ng-href="{{::getViewSourceHref(item.source.startLine)}}">View Source</a>
+                <span ng-if="model.mdHref">
+                  <span class="divider-brand">|</span>
+                  <a ng-href="{{model.mdHref}}">Improve this Doc</a>
+                </span>
+              </div>
+              <a class="item-toggle" ng-init="item.showDetail = false" ng-click="item.showDetail = !item.showDetail">
+                <div class="item-title">
+                  {{item.name}}
                 </div>
-                <div class="item-title" ng-if="::(!item.name.CSharp && item.name.VB)">
-                  {{::item.name.VB.replace(',', ', ').replace(',', ', ').replace(',', ', ')}}
-                </div>
-                <!--<span class="minus-icon" ng-show = "showDetail"></span>
-                <span class="plus-icon" ng-show = "!showDetail"></span>-->
               </a>
             </div>
-            <!--<div class="view-source btn" ng-show="showBtn">
-              <a ng-href="{{ViewSource(item.source.startLine)}}">View Source</a>
-            </div>
-            <div class="improve-this-doc btn btn-primary" ng-show="showBtn">
-              <div ng-if="model.mdHref" class="improve-this-doc btn btn-primary">
-                <a ng-href="{{model.mdHref}}">Improve this Doc</a>
-              </div>
-            </div>-->
             <div class="item-summary">
-              <div class="markdown">{{::item.summary}}</div>
+              <markdown ng-model="item.summary"></markdown>
             </div>
-            <!--<a class="section-member-detail-before"  ng-init="showDetail=false"  ng-show="showDetail"> - </a>
-            <a class="section-member-detail-before" ng-show="!showDetail"> + </a>
-            <a class="section-member-detail" ng-click="showDetail=!showDetail; GetDetail($event)">
-                details
-            </a>-->
-            <div class="item-collapsible" collapse="!item.isCollapsed">
-              <div class="">
-                <div class="markdown">{{::item.mdContent}}</div>
-              </div>
+            <div class="item-collapsible" ng-show="item.showDetail">
+              <markdown ng-model="item.mdContent"></markdown>
               <div class="" ng-if="::item.syntax">
                 <div class="declaration">
                   <h5>Declaration</h5>
-                    <div class="declaration-content sudo-pre" ng-if="::item.syntax.content.CSharp" ng-language="csharp">{{::item.syntax.content.CSharp}}</div>
-                    <div class="declaration-content sudo-pre" ng-if="::(!item.syntax.content.CSharp && item.syntax.content.VB)" ng-language="vb">{{::item.syntax.content.VB}}</div>
+                    <pre><code class="sudo-pre" ng-model="item.syntax.content"></code></pre>
                 </div>
                 <div class="parameters" ng-if="::(item.syntax.parameters && item.type == 'Property')" >
                   <h5>Property Value</h5>
                   <table>
                     <tr ng-repeat="par in ::item.syntax.parameters">
                       <td scope="row">
-                        <a ng-href="{{::GetLinkHref(par.type.href)}}">{{::par.type.id}}</a>
+                        <a ng-href="{{::getLinkHref(par.type.href)}}">{{::par.type.id}}</a>
                       </td>
                       <td>
                         <div class="">
                           <p class="">
-                            <div class="markdown">{{::par.description}}</div>
+                            <markdown ng-model="par.description"></markdown>
                           </p>
                         </div>
                       </td>
@@ -98,7 +91,7 @@
                   <table>
                     <tr ng-repeat="par in ::item.syntax.parameters">
                       <td scope="row">
-                        <a ng-href="{{::GetLinkHref(par.type.href)}}">{{::par.type.id}}</a>
+                        <a ng-href="{{::getLinkHref(par.type.href)}}">{{::par.type.id}}</a>
                       </td>
                       <td scope="row">
                         <em class="term">{{::par.id}}</em>
@@ -106,7 +99,7 @@
                       <td>
                         <div class="definition">
                           <p class="para">
-                              <div class="markdown">{{::par.description}}</div>
+                              <markdown ng-model="par.description"></markdown>
                           </p>
                         </div>
                       </td>
@@ -118,12 +111,12 @@
                   <table>
                     <tr>
                       <td scope="row">
-                        <a ng-href="{{::GetLinkHref(item.syntax.return.type.href)}}">{{::item.syntax.return.id}}</a>
+                        <a ng-href="{{::getLinkHref(item.syntax.return.type.href)}}">{{::item.syntax.return.id}}</a>
                       </td>
                       <td>
                         <div class="definition">
                           <p class="para">
-                            <div class="markdown">{{::item.syntax.return.description}}</div>
+                              <markdown ng-model="item.syntax.return.description"></markdown>
                           </p>
                         </div>
                       </td>

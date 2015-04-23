@@ -1,0 +1,139 @@
+items:
+- uid: System.ComponentModel.DataAnnotations.StringLengthAttribute
+  href: System.ComponentModel.DataAnnotations.StringLengthAttribute.yml
+  name: StringLengthAttribute
+  fullName: System.ComponentModel.DataAnnotations.StringLengthAttribute
+  type: Class
+  source:
+    remote: &o0
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+    path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/StringLengthAttribute.cs
+    startLine: 10
+  summary: Validation attribute to assert a string property, field or parameter does not exceed a maximum length
+  syntax:
+    content:
+      CSharp: public class StringLengthAttribute
+  inheritance:
+  - id: Attribute
+    name: Attribute
+    isExternal: true
+  - id: System.ComponentModel.DataAnnotations.ValidationAttribute
+    name: ValidationAttribute
+    href: System.ComponentModel.DataAnnotations.ValidationAttribute.yml
+  id: System.ComponentModel.DataAnnotations.StringLengthAttribute
+  children:
+  - System.ComponentModel.DataAnnotations.StringLengthAttribute.#ctor(System.Int32)
+  - System.ComponentModel.DataAnnotations.StringLengthAttribute.MaximumLength
+  - System.ComponentModel.DataAnnotations.StringLengthAttribute.MinimumLength
+  - System.ComponentModel.DataAnnotations.StringLengthAttribute.IsValid(System.Object)
+  - System.ComponentModel.DataAnnotations.StringLengthAttribute.FormatErrorMessage(System.String)
+- uid: System.ComponentModel.DataAnnotations.StringLengthAttribute.#ctor(System.Int32)
+  href: System.ComponentModel.DataAnnotations.StringLengthAttribute.yml
+  name: StringLengthAttribute(int)
+  fullName: System.ComponentModel.DataAnnotations.StringLengthAttribute.StringLengthAttribute(int)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/StringLengthAttribute.cs
+    startLine: 18
+  summary: Constructor that accepts the maximum length of the string.
+  syntax:
+    content:
+      CSharp: 'public StringLengthAttribute(int maximumLength): base (() => SR.StringLengthAttribute_ValidationError)'
+    parameters:
+    - id: maximumLength
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+      description: The maximum length, inclusive.  It may not be negative.
+  id: System.ComponentModel.DataAnnotations.StringLengthAttribute.#ctor(System.Int32)
+- uid: System.ComponentModel.DataAnnotations.StringLengthAttribute.MaximumLength
+  href: System.ComponentModel.DataAnnotations.StringLengthAttribute.yml
+  name: MaximumLength
+  fullName: System.ComponentModel.DataAnnotations.StringLengthAttribute.MaximumLength
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/StringLengthAttribute.cs
+    startLine: 27
+  summary: Gets the maximum acceptable length of the string
+  syntax:
+    content:
+      CSharp: public int MaximumLength { get; private set; }
+    parameters:
+    - id: MaximumLength
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+  id: System.ComponentModel.DataAnnotations.StringLengthAttribute.MaximumLength
+- uid: System.ComponentModel.DataAnnotations.StringLengthAttribute.MinimumLength
+  href: System.ComponentModel.DataAnnotations.StringLengthAttribute.yml
+  name: MinimumLength
+  fullName: System.ComponentModel.DataAnnotations.StringLengthAttribute.MinimumLength
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/StringLengthAttribute.cs
+    startLine: 32
+  summary: Gets or sets the minimum acceptable length of the string
+  syntax:
+    content:
+      CSharp: public int MinimumLength { get; set; }
+    parameters:
+    - id: MinimumLength
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+  id: System.ComponentModel.DataAnnotations.StringLengthAttribute.MinimumLength
+- uid: System.ComponentModel.DataAnnotations.StringLengthAttribute.IsValid(System.Object)
+  href: System.ComponentModel.DataAnnotations.StringLengthAttribute.yml
+  name: IsValid(object)
+  fullName: System.ComponentModel.DataAnnotations.StringLengthAttribute.IsValid(object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/StringLengthAttribute.cs
+    startLine: 44
+  summary: Override of [System.ComponentModel.DataAnnotations.ValidationAttribute.IsValid(System.Object)](System.ComponentModel.DataAnnotations.ValidationAttribute.yml)
+  syntax:
+    content:
+      CSharp: public override bool IsValid(object value)
+    parameters:
+    - id: value
+      type:
+        id: System.Object
+        name: System.Object
+        isExternal: true
+      description: The value to test.
+    return:
+      id: Boolean
+      description: true if the value is null or less than or equal to the set maximum length
+  id: System.ComponentModel.DataAnnotations.StringLengthAttribute.IsValid(System.Object)
+- uid: System.ComponentModel.DataAnnotations.StringLengthAttribute.FormatErrorMessage(System.String)
+  href: System.ComponentModel.DataAnnotations.StringLengthAttribute.yml
+  name: FormatErrorMessage(string)
+  fullName: System.ComponentModel.DataAnnotations.StringLengthAttribute.FormatErrorMessage(string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/StringLengthAttribute.cs
+    startLine: 61
+  summary: Override of [System.ComponentModel.DataAnnotations.ValidationAttribute.FormatErrorMessage(System.String)](System.ComponentModel.DataAnnotations.ValidationAttribute.yml)
+  syntax:
+    content:
+      CSharp: public override string FormatErrorMessage(string name)
+    parameters:
+    - id: name
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+      description: The name to include in the formatted string
+    return:
+      id: String
+      description: A localized string to describe the maximum acceptable length
+  id: System.ComponentModel.DataAnnotations.StringLengthAttribute.FormatErrorMessage(System.String)

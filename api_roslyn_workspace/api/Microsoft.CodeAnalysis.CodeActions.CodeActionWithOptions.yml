@@ -1,0 +1,84 @@
+items:
+- uid: Microsoft.CodeAnalysis.CodeActions.CodeActionWithOptions
+  href: Microsoft.CodeAnalysis.CodeActions.CodeActionWithOptions.yml
+  name: CodeActionWithOptions
+  fullName: Microsoft.CodeAnalysis.CodeActions.CodeActionWithOptions
+  type: Class
+  source:
+    remote: &o0
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      description: v1.0-12-gef085ea
+    path: src/Workspaces/Core/Portable/CodeActions/CodeActionWithOptions.cs
+    startLine: 13
+  summary: A [Microsoft.CodeAnalysis.CodeActions.CodeAction](Microsoft.CodeAnalysis.CodeActions.CodeAction.yml) that can vary with user specified options.
+  syntax:
+    content:
+      CSharp: public abstract class CodeActionWithOptions
+  inheritance:
+  - id: System.Object
+    name: System.Object
+    isExternal: true
+  - id: Microsoft.CodeAnalysis.CodeActions.CodeAction
+    name: CodeAction
+    href: Microsoft.CodeAnalysis.CodeActions.CodeAction.yml
+  id: Microsoft.CodeAnalysis.CodeActions.CodeActionWithOptions
+  children:
+  - Microsoft.CodeAnalysis.CodeActions.CodeActionWithOptions.GetOptions(System.Threading.CancellationToken)
+  - Microsoft.CodeAnalysis.CodeActions.CodeActionWithOptions.GetOperationsAsync(System.Object,System.Threading.CancellationToken)
+- uid: Microsoft.CodeAnalysis.CodeActions.CodeActionWithOptions.GetOptions(System.Threading.CancellationToken)
+  href: Microsoft.CodeAnalysis.CodeActions.CodeActionWithOptions.yml
+  name: GetOptions(CancellationToken)
+  fullName: Microsoft.CodeAnalysis.CodeActions.CodeActionWithOptions.GetOptions(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/CodeActions/CodeActionWithOptions.cs
+    startLine: 21
+  summary: >-
+    Gets the options to use with this code action.
+
+    This method is gauranteed to be called on the UI thread.
+  syntax:
+    content:
+      CSharp: public abstract object GetOptions(CancellationToken cancellationToken);
+    parameters:
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+      description: A cancellation token.
+    return:
+      id: Object
+      description: An implementation specific object instance that holds options for applying the code action.
+  id: Microsoft.CodeAnalysis.CodeActions.CodeActionWithOptions.GetOptions(System.Threading.CancellationToken)
+- uid: Microsoft.CodeAnalysis.CodeActions.CodeActionWithOptions.GetOperationsAsync(System.Object,System.Threading.CancellationToken)
+  href: Microsoft.CodeAnalysis.CodeActions.CodeActionWithOptions.yml
+  name: GetOperationsAsync(object, CancellationToken)
+  fullName: Microsoft.CodeAnalysis.CodeActions.CodeActionWithOptions.GetOperationsAsync(object, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/CodeActions/CodeActionWithOptions.cs
+    startLine: 28
+  summary: Gets the [Microsoft.CodeAnalysis.CodeActions.CodeActionOperation](Microsoft.CodeAnalysis.CodeActions.CodeActionOperation.yml)'s for this [Microsoft.CodeAnalysis.CodeActions.CodeAction](Microsoft.CodeAnalysis.CodeActions.CodeAction.yml) given the specified options.
+  syntax:
+    content:
+      CSharp: public async Task<IEnumerable<CodeActionOperation>> GetOperationsAsync(object options, CancellationToken cancellationToken)
+    parameters:
+    - id: options
+      type:
+        id: System.Object
+        name: System.Object
+        isExternal: true
+      description: An object instance returned from a prior call to [Microsoft.CodeAnalysis.CodeActions.CodeActionWithOptions.GetOptions(System.Threading.CancellationToken)](Microsoft.CodeAnalysis.CodeActions.CodeActionWithOptions.yml).
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+      description: A cancellation token.
+    return:
+      id: Task
+  id: Microsoft.CodeAnalysis.CodeActions.CodeActionWithOptions.GetOperationsAsync(System.Object,System.Threading.CancellationToken)

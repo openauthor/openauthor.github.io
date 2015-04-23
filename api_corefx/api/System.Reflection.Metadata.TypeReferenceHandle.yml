@@ -1,0 +1,200 @@
+items:
+- uid: System.Reflection.Metadata.TypeReferenceHandle
+  href: System.Reflection.Metadata.TypeReferenceHandle.yml
+  name: TypeReferenceHandle
+  fullName: System.Reflection.Metadata.TypeReferenceHandle
+  type: Struct
+  source:
+    remote: &o0
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 634
+  syntax:
+    content:
+      CSharp: public struct TypeReferenceHandle
+  inheritance:
+  - id: System.ValueType
+    name: System.ValueType
+    isExternal: true
+  id: System.Reflection.Metadata.TypeReferenceHandle
+  children:
+  - System.Reflection.Metadata.TypeReferenceHandle.op_Implicit(System.Reflection.Metadata.TypeReferenceHandle)~System.Reflection.Metadata.Handle
+  - System.Reflection.Metadata.TypeReferenceHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.TypeReferenceHandle
+  - System.Reflection.Metadata.TypeReferenceHandle.IsNil
+  - System.Reflection.Metadata.TypeReferenceHandle.op_Equality(System.Reflection.Metadata.TypeReferenceHandle,System.Reflection.Metadata.TypeReferenceHandle)
+  - System.Reflection.Metadata.TypeReferenceHandle.Equals(System.Object)
+  - System.Reflection.Metadata.TypeReferenceHandle.Equals(System.Reflection.Metadata.TypeReferenceHandle)
+  - System.Reflection.Metadata.TypeReferenceHandle.GetHashCode
+  - System.Reflection.Metadata.TypeReferenceHandle.op_Inequality(System.Reflection.Metadata.TypeReferenceHandle,System.Reflection.Metadata.TypeReferenceHandle)
+- uid: System.Reflection.Metadata.TypeReferenceHandle.op_Implicit(System.Reflection.Metadata.TypeReferenceHandle)~System.Reflection.Metadata.Handle
+  href: System.Reflection.Metadata.TypeReferenceHandle.yml
+  name: implicit operator Handle(TypeReferenceHandle)
+  fullName: System.Reflection.Metadata.TypeReferenceHandle.implicit operator System.Reflection.Metadata.Handle(System.Reflection.Metadata.TypeReferenceHandle)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 650
+  syntax:
+    content:
+      CSharp: public static implicit operator Handle(TypeReferenceHandle handle) { return new Handle(handle._rowId | tokenType); }
+    parameters:
+    - id: handle
+      type:
+        id: System.Reflection.Metadata.TypeReferenceHandle
+        name: TypeReferenceHandle
+        href: System.Reflection.Metadata.TypeReferenceHandle.yml
+    return:
+      id: Handle
+  id: System.Reflection.Metadata.TypeReferenceHandle.op_Implicit(System.Reflection.Metadata.TypeReferenceHandle)~System.Reflection.Metadata.Handle
+- uid: System.Reflection.Metadata.TypeReferenceHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.TypeReferenceHandle
+  href: System.Reflection.Metadata.TypeReferenceHandle.yml
+  name: explicit operator TypeReferenceHandle(Handle)
+  fullName: System.Reflection.Metadata.TypeReferenceHandle.explicit operator System.Reflection.Metadata.TypeReferenceHandle(System.Reflection.Metadata.Handle)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 655
+  syntax:
+    content:
+      CSharp: public static explicit operator TypeReferenceHandle(Handle handle) { if (handle.TokenType != tokenType) { Handle.ThrowInvalidCast(); } return new TypeReferenceHandle(handle.RowId); }
+    parameters:
+    - id: handle
+      type:
+        id: System.Reflection.Metadata.Handle
+        name: Handle
+        href: System.Reflection.Metadata.Handle.yml
+    return:
+      id: TypeReferenceHandle
+  id: System.Reflection.Metadata.TypeReferenceHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.TypeReferenceHandle
+- uid: System.Reflection.Metadata.TypeReferenceHandle.IsNil
+  href: System.Reflection.Metadata.TypeReferenceHandle.yml
+  name: IsNil
+  fullName: System.Reflection.Metadata.TypeReferenceHandle.IsNil
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 665
+  syntax:
+    content:
+      CSharp: public bool IsNil { get; }
+    parameters:
+    - id: IsNil
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+  id: System.Reflection.Metadata.TypeReferenceHandle.IsNil
+- uid: System.Reflection.Metadata.TypeReferenceHandle.op_Equality(System.Reflection.Metadata.TypeReferenceHandle,System.Reflection.Metadata.TypeReferenceHandle)
+  href: System.Reflection.Metadata.TypeReferenceHandle.yml
+  name: operator ==(TypeReferenceHandle, TypeReferenceHandle)
+  fullName: System.Reflection.Metadata.TypeReferenceHandle.operator ==(System.Reflection.Metadata.TypeReferenceHandle, System.Reflection.Metadata.TypeReferenceHandle)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 675
+  syntax:
+    content:
+      CSharp: public static bool operator ==(TypeReferenceHandle left, TypeReferenceHandle right) { return left._rowId == right._rowId; }
+    parameters:
+    - id: left
+      type:
+        id: System.Reflection.Metadata.TypeReferenceHandle
+        name: TypeReferenceHandle
+        href: System.Reflection.Metadata.TypeReferenceHandle.yml
+    - id: right
+      type:
+        id: System.Reflection.Metadata.TypeReferenceHandle
+        name: TypeReferenceHandle
+        href: System.Reflection.Metadata.TypeReferenceHandle.yml
+    return:
+      id: Boolean
+  id: System.Reflection.Metadata.TypeReferenceHandle.op_Equality(System.Reflection.Metadata.TypeReferenceHandle,System.Reflection.Metadata.TypeReferenceHandle)
+- uid: System.Reflection.Metadata.TypeReferenceHandle.Equals(System.Object)
+  href: System.Reflection.Metadata.TypeReferenceHandle.yml
+  name: Equals(object)
+  fullName: System.Reflection.Metadata.TypeReferenceHandle.Equals(object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 680
+  syntax:
+    content:
+      CSharp: public override bool Equals(object obj)
+    parameters:
+    - id: obj
+      type:
+        id: System.Object
+        name: System.Object
+        isExternal: true
+    return:
+      id: Boolean
+  id: System.Reflection.Metadata.TypeReferenceHandle.Equals(System.Object)
+- uid: System.Reflection.Metadata.TypeReferenceHandle.Equals(System.Reflection.Metadata.TypeReferenceHandle)
+  href: System.Reflection.Metadata.TypeReferenceHandle.yml
+  name: Equals(TypeReferenceHandle)
+  fullName: System.Reflection.Metadata.TypeReferenceHandle.Equals(System.Reflection.Metadata.TypeReferenceHandle)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 685
+  syntax:
+    content:
+      CSharp: public bool Equals(TypeReferenceHandle other)
+    parameters:
+    - id: other
+      type:
+        id: System.Reflection.Metadata.TypeReferenceHandle
+        name: TypeReferenceHandle
+        href: System.Reflection.Metadata.TypeReferenceHandle.yml
+    return:
+      id: Boolean
+  id: System.Reflection.Metadata.TypeReferenceHandle.Equals(System.Reflection.Metadata.TypeReferenceHandle)
+- uid: System.Reflection.Metadata.TypeReferenceHandle.GetHashCode
+  href: System.Reflection.Metadata.TypeReferenceHandle.yml
+  name: GetHashCode()
+  fullName: System.Reflection.Metadata.TypeReferenceHandle.GetHashCode()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 690
+  syntax:
+    content:
+      CSharp: public override int GetHashCode()
+    parameters: []
+    return:
+      id: Int32
+  id: System.Reflection.Metadata.TypeReferenceHandle.GetHashCode
+- uid: System.Reflection.Metadata.TypeReferenceHandle.op_Inequality(System.Reflection.Metadata.TypeReferenceHandle,System.Reflection.Metadata.TypeReferenceHandle)
+  href: System.Reflection.Metadata.TypeReferenceHandle.yml
+  name: operator !=(TypeReferenceHandle, TypeReferenceHandle)
+  fullName: System.Reflection.Metadata.TypeReferenceHandle.operator !=(System.Reflection.Metadata.TypeReferenceHandle, System.Reflection.Metadata.TypeReferenceHandle)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 695
+  syntax:
+    content:
+      CSharp: public static bool operator !=(TypeReferenceHandle left, TypeReferenceHandle right) { return left._rowId != right._rowId; }
+    parameters:
+    - id: left
+      type:
+        id: System.Reflection.Metadata.TypeReferenceHandle
+        name: TypeReferenceHandle
+        href: System.Reflection.Metadata.TypeReferenceHandle.yml
+    - id: right
+      type:
+        id: System.Reflection.Metadata.TypeReferenceHandle
+        name: TypeReferenceHandle
+        href: System.Reflection.Metadata.TypeReferenceHandle.yml
+    return:
+      id: Boolean
+  id: System.Reflection.Metadata.TypeReferenceHandle.op_Inequality(System.Reflection.Metadata.TypeReferenceHandle,System.Reflection.Metadata.TypeReferenceHandle)

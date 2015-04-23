@@ -1,7 +1,5 @@
-<!--<a href="#" class="navbar-brand"><img src="../logo.png"></img></a>-->
 <ul class="nav navbar-nav">
-  <li ng-repeat="navGroup in model track by navGroup.id" ng-if="model" ng-class="navClass(navGroup)">
-    <a ng-href="{{GetNavHref(navGroup.href)}}" class="">{{ navGroup.id }}</a>
+  <li ng-repeat="navGroup in model track by $index" ng-if="model" ng-class="navClass(navGroup)">
+    <a ng-href="{{getNavHref(navGroup.href)}}" class="">{{ navGroup.name }}</a>
   </li>
-  <!--<li class=""></li>-->
 </ul>

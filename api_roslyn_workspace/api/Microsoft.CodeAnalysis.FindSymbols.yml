@@ -1,0 +1,72 @@
+items:
+- uid: Microsoft.CodeAnalysis.FindSymbols
+  href: Microsoft.CodeAnalysis.FindSymbols.yml
+  name: FindSymbols
+  fullName: Microsoft.CodeAnalysis.FindSymbols
+  type: Namespace
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      description: v1.0-12-gef085ea
+    path: src/Workspaces/Core/Portable/FindSymbols/SyntaxTree/SyntaxTreeInfo.cs
+    startLine: 12
+  id: Microsoft.CodeAnalysis.FindSymbols
+  children:
+  - Microsoft.CodeAnalysis.FindSymbols.IFindReferencesProgress
+  - Microsoft.CodeAnalysis.FindSymbols.ReferencedSymbol
+  - Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation
+  - Microsoft.CodeAnalysis.FindSymbols.SymbolCallerInfo
+  - Microsoft.CodeAnalysis.FindSymbols.SymbolFinder
+references:
+- uid: Microsoft.CodeAnalysis.FindSymbols.IFindReferencesProgress
+  href: Microsoft.CodeAnalysis.FindSymbols.IFindReferencesProgress.yml
+  name: IFindReferencesProgress
+  type: Interface
+  summary: >-
+    Reports the progress of the FindReferences operation.  Note: these methods may be called on
+
+    any thread.
+- uid: Microsoft.CodeAnalysis.FindSymbols.ReferencedSymbol
+  href: Microsoft.CodeAnalysis.FindSymbols.ReferencedSymbol.yml
+  name: ReferencedSymbol
+  type: Class
+  summary: >-
+    Represents a single result of the call to the synchronous
+
+    IFindReferencesService.FindReferences method. Finding the references to a symbol will result
+
+    in a set of definitions being returned (containing at least the symbol requested) as well as
+
+    any references to those definitions in the source. Multiple definitions may be found due to
+
+    how C# and VB allow a symbol to be both a definition and a reference at the same time (for
+
+    example, a method which implements an interface method).
+- uid: Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation
+  href: Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation.yml
+  name: ReferenceLocation
+  type: Struct
+  summary: Information about a reference to a symbol.
+- uid: Microsoft.CodeAnalysis.FindSymbols.SymbolCallerInfo
+  href: Microsoft.CodeAnalysis.FindSymbols.SymbolCallerInfo.yml
+  name: SymbolCallerInfo
+  type: Struct
+  summary: >-
+    Contains information about a call from one symbol to another.  The symbol making the call is
+
+    stored in CallingSymbol and the symbol that the call was made to is stored in CalledSymbol.
+
+    Whether or not the call is direct or indirect is also stored.  A direct call is a call that
+
+    does not go through any other symbols in the inheritance hierarchy of CalledSymbol, while an
+
+    indirect call does go through the inheritance hierarchy.  For example, calls through a base
+
+    member that this symbol overrides, or through an interface member that this symbol
+
+    implements will be considered 'indirect'.
+- uid: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder
+  href: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.yml
+  name: SymbolFinder
+  type: Class
