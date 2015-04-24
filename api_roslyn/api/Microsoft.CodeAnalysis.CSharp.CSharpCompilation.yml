@@ -1,0 +1,1021 @@
+items:
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilation
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.yml
+  name: CSharpCompilation
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilation
+  type: Class
+  source:
+    remote: &o0
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      description: ef085ea0
+    path: src/Compilers/CSharp/Portable/Symbols/ReferenceManager.cs
+    startLine: 17
+  summary: >-
+    The compilation object is an immutable representation of a single invocation of the
+
+    compiler. Although immutable, a compilation is also on-demand, and will realize and cache
+
+    data as necessary. A compilation can produce a new compilation from existing compilation
+
+    with the application of small deltas. In many cases, it is more efficient than creating a
+
+    new compilation from scratch, as the new compilation can reuse information from the old
+
+    compilation.
+  syntax:
+    content:
+      CSharp: public sealed partial class CSharpCompilation
+  inheritance:
+  - id: System.Object
+    name: System.Object
+    isExternal: true
+  - id: Microsoft.CodeAnalysis.Compilation
+    name: Compilation
+    href: Microsoft.CodeAnalysis.Compilation
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilation
+  children:
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilation.Language
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilation.IsCaseSensitive
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilation.Options
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilation.LanguageVersion
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilation.CreateErrorTypeSymbol(Microsoft.CodeAnalysis.INamespaceOrTypeSymbol,System.String,System.Int32)
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilation.Create(System.String,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxTree},System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference},Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions)
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilation.CreateSubmission(System.String,Microsoft.CodeAnalysis.SyntaxTree,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference},Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions,Microsoft.CodeAnalysis.Compilation,System.Type,System.Type)
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilation.Clone
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilation.WithAssemblyName(System.String)
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilation.WithReferences(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference})
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilation.WithReferences(Microsoft.CodeAnalysis.MetadataReference[])
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilation.WithOptions(Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions)
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilation.SyntaxTrees
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilation.ContainsSyntaxTree(Microsoft.CodeAnalysis.SyntaxTree)
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilation.AddSyntaxTrees(Microsoft.CodeAnalysis.SyntaxTree[])
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilation.AddSyntaxTrees(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxTree})
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilation.RemoveSyntaxTrees(Microsoft.CodeAnalysis.SyntaxTree[])
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilation.RemoveSyntaxTrees(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxTree})
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilation.RemoveAllSyntaxTrees
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilation.ReplaceSyntaxTree(Microsoft.CodeAnalysis.SyntaxTree,Microsoft.CodeAnalysis.SyntaxTree)
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilation.DirectiveReferences
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilation.ReferencedAssemblyNames
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilation.GetDirectiveReference(Microsoft.CodeAnalysis.CSharp.Syntax.ReferenceDirectiveTriviaSyntax)
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilation.AddReferences(Microsoft.CodeAnalysis.MetadataReference[])
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilation.AddReferences(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference})
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilation.RemoveReferences(Microsoft.CodeAnalysis.MetadataReference[])
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilation.RemoveReferences(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference})
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilation.RemoveAllReferences
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilation.ReplaceReference(Microsoft.CodeAnalysis.MetadataReference,Microsoft.CodeAnalysis.MetadataReference)
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilation.ToMetadataReference(System.Collections.Immutable.ImmutableArray{System.String},System.Boolean)
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilation.GetMetadataReference(Microsoft.CodeAnalysis.IAssemblySymbol)
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilation.ClassifyConversion(Microsoft.CodeAnalysis.ITypeSymbol,Microsoft.CodeAnalysis.ITypeSymbol)
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilation.GetSemanticModel(Microsoft.CodeAnalysis.SyntaxTree)
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilation.GetParseDiagnostics(System.Threading.CancellationToken)
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilation.GetDeclarationDiagnostics(System.Threading.CancellationToken)
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilation.GetMethodBodyDiagnostics(System.Threading.CancellationToken)
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilation.GetDiagnostics(System.Threading.CancellationToken)
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilation.ContainsSymbolsWithName(System.Func{System.String,System.Boolean},Microsoft.CodeAnalysis.SymbolFilter,System.Threading.CancellationToken)
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilation.GetSymbolsWithName(System.Func{System.String,System.Boolean},Microsoft.CodeAnalysis.SymbolFilter,System.Threading.CancellationToken)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.Language
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.yml
+  name: Language
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.Language
+  type: Property
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Compilation/CSharpCompilation.cs
+    startLine: 114
+  syntax:
+    content:
+      CSharp: public override string Language { get; }
+    parameters:
+    - id: Language
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.Language
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.IsCaseSensitive
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.yml
+  name: IsCaseSensitive
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.IsCaseSensitive
+  type: Property
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Compilation/CSharpCompilation.cs
+    startLine: 122
+  syntax:
+    content:
+      CSharp: public override bool IsCaseSensitive { get; }
+    parameters:
+    - id: IsCaseSensitive
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.IsCaseSensitive
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.Options
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.yml
+  name: Options
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.Options
+  type: Property
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Compilation/CSharpCompilation.cs
+    startLine: 133
+  summary: The options the compilation was created with.
+  syntax:
+    content:
+      CSharp: public new CSharpCompilationOptions Options { get; }
+    parameters:
+    - id: Options
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions
+        name: CSharpCompilationOptions
+        href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.Options
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.LanguageVersion
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.yml
+  name: LanguageVersion
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.LanguageVersion
+  type: Property
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Compilation/CSharpCompilation.cs
+    startLine: 167
+  summary: The language version that was used to parse the syntax trees of this compilation.
+  syntax:
+    content:
+      CSharp: public LanguageVersion LanguageVersion { get; private set; }
+    parameters:
+    - id: LanguageVersion
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.LanguageVersion
+        name: LanguageVersion
+        href: Microsoft.CodeAnalysis.CSharp.LanguageVersion.yml
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.LanguageVersion
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.CreateErrorTypeSymbol(Microsoft.CodeAnalysis.INamespaceOrTypeSymbol,System.String,System.Int32)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.yml
+  name: CreateErrorTypeSymbol(INamespaceOrTypeSymbol, string, int)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.CreateErrorTypeSymbol(Microsoft.CodeAnalysis.INamespaceOrTypeSymbol, string, int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Compilation/CSharpCompilation.cs
+    startLine: 172
+  syntax:
+    content:
+      CSharp: public override INamedTypeSymbol CreateErrorTypeSymbol(INamespaceOrTypeSymbol container, string name, int arity)
+    parameters:
+    - id: container
+      type:
+        id: Microsoft.CodeAnalysis.INamespaceOrTypeSymbol
+        name: INamespaceOrTypeSymbol
+        href: Microsoft.CodeAnalysis.INamespaceOrTypeSymbol
+    - id: name
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+    - id: arity
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+    return:
+      id: INamedTypeSymbol
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.CreateErrorTypeSymbol(Microsoft.CodeAnalysis.INamespaceOrTypeSymbol,System.String,System.Int32)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.Create(System.String,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxTree},System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference},Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.yml
+  name: Create(string, IEnumerable<SyntaxTree>, IEnumerable<MetadataReference>, CSharpCompilationOptions)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.Create(string, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxTree>, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.MetadataReference>, Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Compilation/CSharpCompilation.cs
+    startLine: 191
+  summary: >-
+    Creates a new compilation from scratch. Methods such as AddSyntaxTrees or AddReferences
+
+    on the returned object will allow to continue building up the Compilation incrementally.
+  syntax:
+    content:
+      CSharp: public static CSharpCompilation Create(string assemblyName, IEnumerable<SyntaxTree> syntaxTrees = null, IEnumerable<MetadataReference> references = null, CSharpCompilationOptions options = null)
+    parameters:
+    - id: assemblyName
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+      description: Simple assembly name.
+    - id: syntaxTrees
+      type:
+        id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxTree}
+        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxTree}
+        isExternal: true
+      description: The syntax trees with the source code for the new compilation.
+    - id: references
+      type:
+        id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference}
+        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference}
+        isExternal: true
+      description: The references for the new compilation.
+    - id: options
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions
+        name: CSharpCompilationOptions
+        href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
+      description: The compiler options to use.
+    return:
+      id: CSharpCompilation
+      description: A new compilation.
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.Create(System.String,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxTree},System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference},Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.CreateSubmission(System.String,Microsoft.CodeAnalysis.SyntaxTree,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference},Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions,Microsoft.CodeAnalysis.Compilation,System.Type,System.Type)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.yml
+  name: CreateSubmission(string, SyntaxTree, IEnumerable<MetadataReference>, CSharpCompilationOptions, Compilation, Type, Type)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.CreateSubmission(string, Microsoft.CodeAnalysis.SyntaxTree, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.MetadataReference>, Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions, Microsoft.CodeAnalysis.Compilation, System.Type, System.Type)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Compilation/CSharpCompilation.cs
+    startLine: 211
+  summary: Creates a new compilation that can be used in scripting.
+  syntax:
+    content:
+      CSharp: public static CSharpCompilation CreateSubmission(string assemblyName, SyntaxTree syntaxTree = null, IEnumerable<MetadataReference> references = null, CSharpCompilationOptions options = null, Compilation previousSubmission = null, Type returnType = null, Type hostObjectType = null)
+    parameters:
+    - id: assemblyName
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+    - id: syntaxTree
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxTree
+        name: SyntaxTree
+        href: Microsoft.CodeAnalysis.SyntaxTree
+    - id: references
+      type:
+        id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference}
+        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference}
+        isExternal: true
+    - id: options
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions
+        name: CSharpCompilationOptions
+        href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
+    - id: previousSubmission
+      type:
+        id: Microsoft.CodeAnalysis.Compilation
+        name: Compilation
+        href: Microsoft.CodeAnalysis.Compilation
+    - id: returnType
+      type:
+        id: System.Type
+        name: System.Type
+        isExternal: true
+    - id: hostObjectType
+      type:
+        id: System.Type
+        name: System.Type
+        isExternal: true
+    return:
+      id: CSharpCompilation
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.CreateSubmission(System.String,Microsoft.CodeAnalysis.SyntaxTree,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference},Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions,Microsoft.CodeAnalysis.Compilation,System.Type,System.Type)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.Clone
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.yml
+  name: Clone()
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.Clone()
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Compilation/CSharpCompilation.cs
+    startLine: 361
+  summary: Create a duplicate of this compilation with different symbol instances.
+  syntax:
+    content:
+      CSharp: public new CSharpCompilation Clone()
+    parameters: []
+    return:
+      id: CSharpCompilation
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.Clone
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.WithAssemblyName(System.String)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.yml
+  name: WithAssemblyName(string)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.WithAssemblyName(string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Compilation/CSharpCompilation.cs
+    startLine: 405
+  summary: Creates a new compilation with the specified name.
+  syntax:
+    content:
+      CSharp: public new CSharpCompilation WithAssemblyName(string assemblyName)
+    parameters:
+    - id: assemblyName
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+    return:
+      id: CSharpCompilation
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.WithAssemblyName(System.String)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.WithReferences(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference})
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.yml
+  name: WithReferences(IEnumerable<MetadataReference>)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.WithReferences(System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.MetadataReference>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Compilation/CSharpCompilation.cs
+    startLine: 440
+  summary: Creates a new compilation with the specified references.
+  syntax:
+    content:
+      CSharp: public new CSharpCompilation WithReferences(IEnumerable<MetadataReference> references)
+    parameters:
+    - id: references
+      type:
+        id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference}
+        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference}
+        isExternal: true
+    return:
+      id: CSharpCompilation
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.WithReferences(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference})
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.WithReferences(Microsoft.CodeAnalysis.MetadataReference[])
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.yml
+  name: WithReferences(params MetadataReference[])
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.WithReferences(params Microsoft.CodeAnalysis.MetadataReference[])
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Compilation/CSharpCompilation.cs
+    startLine: 464
+  summary: Creates a new compilation with the specified references.
+  syntax:
+    content:
+      CSharp: public new CSharpCompilation WithReferences(params MetadataReference[] references)
+    parameters:
+    - id: references
+      type:
+        id: System.Array
+        name: System.Array
+        isExternal: true
+    return:
+      id: CSharpCompilation
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.WithReferences(Microsoft.CodeAnalysis.MetadataReference[])
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.WithOptions(Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.yml
+  name: WithOptions(CSharpCompilationOptions)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.WithOptions(Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Compilation/CSharpCompilation.cs
+    startLine: 472
+  summary: Creates a new compilation with the specified compilation options.
+  syntax:
+    content:
+      CSharp: public CSharpCompilation WithOptions(CSharpCompilationOptions options)
+    parameters:
+    - id: options
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions
+        name: CSharpCompilationOptions
+        href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
+    return:
+      id: CSharpCompilation
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.WithOptions(Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.SyntaxTrees
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.yml
+  name: SyntaxTrees
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.SyntaxTrees
+  type: Property
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Compilation/CSharpCompilation.cs
+    startLine: 611
+  summary: The syntax trees (parsed from source code) that this compilation was created with.
+  syntax:
+    content:
+      CSharp: public new ImmutableArray<SyntaxTree> SyntaxTrees { get; }
+    parameters:
+    - id: SyntaxTrees
+      type:
+        id: System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.SyntaxTree}
+        name: System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.SyntaxTree}
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.SyntaxTrees
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.ContainsSyntaxTree(Microsoft.CodeAnalysis.SyntaxTree)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.yml
+  name: ContainsSyntaxTree(SyntaxTree)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.ContainsSyntaxTree(Microsoft.CodeAnalysis.SyntaxTree)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Compilation/CSharpCompilation.cs
+    startLine: 619
+  summary: Returns true if this compilation contains the specified tree.  False otherwise.
+  syntax:
+    content:
+      CSharp: public new bool ContainsSyntaxTree(SyntaxTree syntaxTree)
+    parameters:
+    - id: syntaxTree
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxTree
+        name: SyntaxTree
+        href: Microsoft.CodeAnalysis.SyntaxTree
+    return:
+      id: Boolean
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.ContainsSyntaxTree(Microsoft.CodeAnalysis.SyntaxTree)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.AddSyntaxTrees(Microsoft.CodeAnalysis.SyntaxTree[])
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.yml
+  name: AddSyntaxTrees(params SyntaxTree[])
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.AddSyntaxTrees(params Microsoft.CodeAnalysis.SyntaxTree[])
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Compilation/CSharpCompilation.cs
+    startLine: 628
+  summary: Creates a new compilation with additional syntax trees.
+  syntax:
+    content:
+      CSharp: public new CSharpCompilation AddSyntaxTrees(params SyntaxTree[] trees)
+    parameters:
+    - id: trees
+      type:
+        id: System.Array
+        name: System.Array
+        isExternal: true
+    return:
+      id: CSharpCompilation
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.AddSyntaxTrees(Microsoft.CodeAnalysis.SyntaxTree[])
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.AddSyntaxTrees(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxTree})
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.yml
+  name: AddSyntaxTrees(IEnumerable<SyntaxTree>)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.AddSyntaxTrees(System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxTree>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Compilation/CSharpCompilation.cs
+    startLine: 636
+  summary: Creates a new compilation with additional syntax trees.
+  syntax:
+    content:
+      CSharp: public new CSharpCompilation AddSyntaxTrees(IEnumerable<SyntaxTree> trees)
+    parameters:
+    - id: trees
+      type:
+        id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxTree}
+        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxTree}
+        isExternal: true
+    return:
+      id: CSharpCompilation
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.AddSyntaxTrees(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxTree})
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.RemoveSyntaxTrees(Microsoft.CodeAnalysis.SyntaxTree[])
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.yml
+  name: RemoveSyntaxTrees(params SyntaxTree[])
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.RemoveSyntaxTrees(params Microsoft.CodeAnalysis.SyntaxTree[])
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Compilation/CSharpCompilation.cs
+    startLine: 727
+  summary: >-
+    Creates a new compilation without the specified syntax trees. Preserves metadata info for use with trees
+
+    added later.
+  syntax:
+    content:
+      CSharp: public new CSharpCompilation RemoveSyntaxTrees(params SyntaxTree[] trees)
+    parameters:
+    - id: trees
+      type:
+        id: System.Array
+        name: System.Array
+        isExternal: true
+    return:
+      id: CSharpCompilation
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.RemoveSyntaxTrees(Microsoft.CodeAnalysis.SyntaxTree[])
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.RemoveSyntaxTrees(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxTree})
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.yml
+  name: RemoveSyntaxTrees(IEnumerable<SyntaxTree>)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.RemoveSyntaxTrees(System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxTree>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Compilation/CSharpCompilation.cs
+    startLine: 736
+  summary: >-
+    Creates a new compilation without the specified syntax trees. Preserves metadata info for use with trees
+
+    added later.
+  syntax:
+    content:
+      CSharp: public new CSharpCompilation RemoveSyntaxTrees(IEnumerable<SyntaxTree> trees)
+    parameters:
+    - id: trees
+      type:
+        id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxTree}
+        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxTree}
+        isExternal: true
+    return:
+      id: CSharpCompilation
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.RemoveSyntaxTrees(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxTree})
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.RemoveAllSyntaxTrees
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.yml
+  name: RemoveAllSyntaxTrees()
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.RemoveAllSyntaxTrees()
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Compilation/CSharpCompilation.cs
+    startLine: 802
+  summary: >-
+    Creates a new compilation without any syntax trees. Preserves metadata info
+
+    from this compilation for use with trees added later.
+  syntax:
+    content:
+      CSharp: public new CSharpCompilation RemoveAllSyntaxTrees()
+    parameters: []
+    return:
+      id: CSharpCompilation
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.RemoveAllSyntaxTrees
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.ReplaceSyntaxTree(Microsoft.CodeAnalysis.SyntaxTree,Microsoft.CodeAnalysis.SyntaxTree)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.yml
+  name: ReplaceSyntaxTree(SyntaxTree, SyntaxTree)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.ReplaceSyntaxTree(Microsoft.CodeAnalysis.SyntaxTree, Microsoft.CodeAnalysis.SyntaxTree)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Compilation/CSharpCompilation.cs
+    startLine: 815
+  summary: Creates a new compilation without the old tree but with the new tree.
+  syntax:
+    content:
+      CSharp: public new CSharpCompilation ReplaceSyntaxTree(SyntaxTree oldTree, SyntaxTree newTree)
+    parameters:
+    - id: oldTree
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxTree
+        name: SyntaxTree
+        href: Microsoft.CodeAnalysis.SyntaxTree
+    - id: newTree
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxTree
+        name: SyntaxTree
+        href: Microsoft.CodeAnalysis.SyntaxTree
+    return:
+      id: CSharpCompilation
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.ReplaceSyntaxTree(Microsoft.CodeAnalysis.SyntaxTree,Microsoft.CodeAnalysis.SyntaxTree)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.DirectiveReferences
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.yml
+  name: DirectiveReferences
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.DirectiveReferences
+  type: Property
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Compilation/CSharpCompilation.cs
+    startLine: 896
+  syntax:
+    content:
+      CSharp: public override ImmutableArray<MetadataReference> DirectiveReferences { get; }
+    parameters:
+    - id: DirectiveReferences
+      type:
+        id: System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.MetadataReference}
+        name: System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.MetadataReference}
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.DirectiveReferences
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.ReferencedAssemblyNames
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.yml
+  name: ReferencedAssemblyNames
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.ReferencedAssemblyNames
+  type: Property
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Compilation/CSharpCompilation.cs
+    startLine: 947
+  syntax:
+    content:
+      CSharp: public override IEnumerable<AssemblyIdentity> ReferencedAssemblyNames { get; }
+    parameters:
+    - id: ReferencedAssemblyNames
+      type:
+        id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.AssemblyIdentity}
+        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.AssemblyIdentity}
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.ReferencedAssemblyNames
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.GetDirectiveReference(Microsoft.CodeAnalysis.CSharp.Syntax.ReferenceDirectiveTriviaSyntax)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.yml
+  name: GetDirectiveReference(ReferenceDirectiveTriviaSyntax)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.GetDirectiveReference(Microsoft.CodeAnalysis.CSharp.Syntax.ReferenceDirectiveTriviaSyntax)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Compilation/CSharpCompilation.cs
+    startLine: 968
+  summary: 'Returns a metadata reference that a given #r resolves to.'
+  syntax:
+    content:
+      CSharp: public MetadataReference GetDirectiveReference(ReferenceDirectiveTriviaSyntax directive)
+    parameters:
+    - id: directive
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.Syntax.ReferenceDirectiveTriviaSyntax
+        name: ReferenceDirectiveTriviaSyntax
+        href: Microsoft.CodeAnalysis.CSharp.Syntax.ReferenceDirectiveTriviaSyntax.yml
+      description: '#r directive.'
+    return:
+      id: MetadataReference
+      description: Metadata reference the specified directive resolves to.
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.GetDirectiveReference(Microsoft.CodeAnalysis.CSharp.Syntax.ReferenceDirectiveTriviaSyntax)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.AddReferences(Microsoft.CodeAnalysis.MetadataReference[])
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.yml
+  name: AddReferences(params MetadataReference[])
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.AddReferences(params Microsoft.CodeAnalysis.MetadataReference[])
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Compilation/CSharpCompilation.cs
+    startLine: 976
+  summary: Creates a new compilation with additional metadata references.
+  syntax:
+    content:
+      CSharp: public new CSharpCompilation AddReferences(params MetadataReference[] references)
+    parameters:
+    - id: references
+      type:
+        id: System.Array
+        name: System.Array
+        isExternal: true
+    return:
+      id: CSharpCompilation
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.AddReferences(Microsoft.CodeAnalysis.MetadataReference[])
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.AddReferences(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference})
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.yml
+  name: AddReferences(IEnumerable<MetadataReference>)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.AddReferences(System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.MetadataReference>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Compilation/CSharpCompilation.cs
+    startLine: 984
+  summary: Creates a new compilation with additional metadata references.
+  syntax:
+    content:
+      CSharp: public new CSharpCompilation AddReferences(IEnumerable<MetadataReference> references)
+    parameters:
+    - id: references
+      type:
+        id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference}
+        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference}
+        isExternal: true
+    return:
+      id: CSharpCompilation
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.AddReferences(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference})
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.RemoveReferences(Microsoft.CodeAnalysis.MetadataReference[])
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.yml
+  name: RemoveReferences(params MetadataReference[])
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.RemoveReferences(params Microsoft.CodeAnalysis.MetadataReference[])
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Compilation/CSharpCompilation.cs
+    startLine: 992
+  summary: Creates a new compilation without the specified metadata references.
+  syntax:
+    content:
+      CSharp: public new CSharpCompilation RemoveReferences(params MetadataReference[] references)
+    parameters:
+    - id: references
+      type:
+        id: System.Array
+        name: System.Array
+        isExternal: true
+    return:
+      id: CSharpCompilation
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.RemoveReferences(Microsoft.CodeAnalysis.MetadataReference[])
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.RemoveReferences(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference})
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.yml
+  name: RemoveReferences(IEnumerable<MetadataReference>)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.RemoveReferences(System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.MetadataReference>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Compilation/CSharpCompilation.cs
+    startLine: 1000
+  summary: Creates a new compilation without the specified metadata references.
+  syntax:
+    content:
+      CSharp: public new CSharpCompilation RemoveReferences(IEnumerable<MetadataReference> references)
+    parameters:
+    - id: references
+      type:
+        id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference}
+        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference}
+        isExternal: true
+    return:
+      id: CSharpCompilation
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.RemoveReferences(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference})
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.RemoveAllReferences
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.yml
+  name: RemoveAllReferences()
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.RemoveAllReferences()
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Compilation/CSharpCompilation.cs
+    startLine: 1008
+  summary: Creates a new compilation without any metadata references
+  syntax:
+    content:
+      CSharp: public new CSharpCompilation RemoveAllReferences()
+    parameters: []
+    return:
+      id: CSharpCompilation
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.RemoveAllReferences
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.ReplaceReference(Microsoft.CodeAnalysis.MetadataReference,Microsoft.CodeAnalysis.MetadataReference)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.yml
+  name: ReplaceReference(MetadataReference, MetadataReference)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.ReplaceReference(Microsoft.CodeAnalysis.MetadataReference, Microsoft.CodeAnalysis.MetadataReference)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Compilation/CSharpCompilation.cs
+    startLine: 1016
+  summary: Creates a new compilation with an old metadata reference replaced with a new metadata reference.
+  syntax:
+    content:
+      CSharp: public new CSharpCompilation ReplaceReference(MetadataReference oldReference, MetadataReference newReference)
+    parameters:
+    - id: oldReference
+      type:
+        id: Microsoft.CodeAnalysis.MetadataReference
+        name: MetadataReference
+        href: Microsoft.CodeAnalysis.MetadataReference
+    - id: newReference
+      type:
+        id: Microsoft.CodeAnalysis.MetadataReference
+        name: MetadataReference
+        href: Microsoft.CodeAnalysis.MetadataReference
+    return:
+      id: CSharpCompilation
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.ReplaceReference(Microsoft.CodeAnalysis.MetadataReference,Microsoft.CodeAnalysis.MetadataReference)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.ToMetadataReference(System.Collections.Immutable.ImmutableArray{System.String},System.Boolean)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.yml
+  name: ToMetadataReference(ImmutableArray<string>, bool)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.ToMetadataReference(System.Collections.Immutable.ImmutableArray<string>, bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Compilation/CSharpCompilation.cs
+    startLine: 1021
+  syntax:
+    content:
+      CSharp: public override CompilationReference ToMetadataReference(ImmutableArray<string> aliases = default (ImmutableArray<string>), bool embedInteropTypes = false)
+    parameters:
+    - id: aliases
+      type:
+        id: System.Collections.Immutable.ImmutableArray{System.String}
+        name: System.Collections.Immutable.ImmutableArray{System.String}
+        isExternal: true
+    - id: embedInteropTypes
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+    return:
+      id: CompilationReference
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.ToMetadataReference(System.Collections.Immutable.ImmutableArray{System.String},System.Boolean)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.GetMetadataReference(Microsoft.CodeAnalysis.IAssemblySymbol)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.yml
+  name: GetMetadataReference(IAssemblySymbol)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.GetMetadataReference(Microsoft.CodeAnalysis.IAssemblySymbol)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Compilation/CSharpCompilation.cs
+    startLine: 1058
+  summary: Gets the [Microsoft.CodeAnalysis.MetadataReference](#) that corresponds to the assembly symbol.
+  syntax:
+    content:
+      CSharp: public new MetadataReference GetMetadataReference(IAssemblySymbol assemblySymbol)
+    parameters:
+    - id: assemblySymbol
+      type:
+        id: Microsoft.CodeAnalysis.IAssemblySymbol
+        name: IAssemblySymbol
+        href: Microsoft.CodeAnalysis.IAssemblySymbol
+    return:
+      id: MetadataReference
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.GetMetadataReference(Microsoft.CodeAnalysis.IAssemblySymbol)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.ClassifyConversion(Microsoft.CodeAnalysis.ITypeSymbol,Microsoft.CodeAnalysis.ITypeSymbol)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.yml
+  name: ClassifyConversion(ITypeSymbol, ITypeSymbol)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.ClassifyConversion(Microsoft.CodeAnalysis.ITypeSymbol, Microsoft.CodeAnalysis.ITypeSymbol)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Compilation/CSharpCompilation.cs
+    startLine: 1570
+  syntax:
+    content:
+      CSharp: public Conversion ClassifyConversion(ITypeSymbol source, ITypeSymbol destination)
+    parameters:
+    - id: source
+      type:
+        id: Microsoft.CodeAnalysis.ITypeSymbol
+        name: ITypeSymbol
+        href: Microsoft.CodeAnalysis.ITypeSymbol
+    - id: destination
+      type:
+        id: Microsoft.CodeAnalysis.ITypeSymbol
+        name: ITypeSymbol
+        href: Microsoft.CodeAnalysis.ITypeSymbol
+    return:
+      id: Conversion
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.ClassifyConversion(Microsoft.CodeAnalysis.ITypeSymbol,Microsoft.CodeAnalysis.ITypeSymbol)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.GetSemanticModel(Microsoft.CodeAnalysis.SyntaxTree)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.yml
+  name: GetSemanticModel(SyntaxTree)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.GetSemanticModel(Microsoft.CodeAnalysis.SyntaxTree)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Compilation/CSharpCompilation.cs
+    startLine: 1630
+  summary: Gets a new SyntaxTreeSemanticModel for the specified syntax tree.
+  syntax:
+    content:
+      CSharp: public new SemanticModel GetSemanticModel(SyntaxTree syntaxTree)
+    parameters:
+    - id: syntaxTree
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxTree
+        name: SyntaxTree
+        href: Microsoft.CodeAnalysis.SyntaxTree
+    return:
+      id: SemanticModel
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.GetSemanticModel(Microsoft.CodeAnalysis.SyntaxTree)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.GetParseDiagnostics(System.Threading.CancellationToken)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.yml
+  name: GetParseDiagnostics(CancellationToken)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.GetParseDiagnostics(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Compilation/CSharpCompilation.cs
+    startLine: 1915
+  summary: >-
+    Gets the diagnostics produced during the parsing stage of a compilation. There are no diagnostics for declarations or accessor or
+
+    method bodies, for example.
+  syntax:
+    content:
+      CSharp: public override ImmutableArray<Diagnostic> GetParseDiagnostics(CancellationToken cancellationToken = default (CancellationToken))
+    parameters:
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+    return:
+      id: ImmutableArray
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.GetParseDiagnostics(System.Threading.CancellationToken)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.GetDeclarationDiagnostics(System.Threading.CancellationToken)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.yml
+  name: GetDeclarationDiagnostics(CancellationToken)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.GetDeclarationDiagnostics(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Compilation/CSharpCompilation.cs
+    startLine: 1924
+  summary: >-
+    Gets the diagnostics produced during symbol declaration headers.  There are no diagnostics for accessor or
+
+    method bodies, for example.
+  syntax:
+    content:
+      CSharp: public override ImmutableArray<Diagnostic> GetDeclarationDiagnostics(CancellationToken cancellationToken = default (CancellationToken))
+    parameters:
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+    return:
+      id: ImmutableArray
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.GetDeclarationDiagnostics(System.Threading.CancellationToken)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.GetMethodBodyDiagnostics(System.Threading.CancellationToken)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.yml
+  name: GetMethodBodyDiagnostics(CancellationToken)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.GetMethodBodyDiagnostics(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Compilation/CSharpCompilation.cs
+    startLine: 1932
+  summary: Gets the diagnostics produced during the analysis of method bodies and field initializers.
+  syntax:
+    content:
+      CSharp: public override ImmutableArray<Diagnostic> GetMethodBodyDiagnostics(CancellationToken cancellationToken = default (CancellationToken))
+    parameters:
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+    return:
+      id: ImmutableArray
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.GetMethodBodyDiagnostics(System.Threading.CancellationToken)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.GetDiagnostics(System.Threading.CancellationToken)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.yml
+  name: GetDiagnostics(CancellationToken)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.GetDiagnostics(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Compilation/CSharpCompilation.cs
+    startLine: 1941
+  summary: >-
+    Gets the all the diagnostics for the compilation, including syntax, declaration, and binding. Does not
+
+    include any diagnostics that might be produced during emit.
+  syntax:
+    content:
+      CSharp: public override ImmutableArray<Diagnostic> GetDiagnostics(CancellationToken cancellationToken = default (CancellationToken))
+    parameters:
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+    return:
+      id: ImmutableArray
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.GetDiagnostics(System.Threading.CancellationToken)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.ContainsSymbolsWithName(System.Func{System.String,System.Boolean},Microsoft.CodeAnalysis.SymbolFilter,System.Threading.CancellationToken)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.yml
+  name: ContainsSymbolsWithName(Func<string, bool>, SymbolFilter, CancellationToken)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.ContainsSymbolsWithName(System.Func<string, bool>, Microsoft.CodeAnalysis.SymbolFilter, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Compilation/CSharpCompilation.cs
+    startLine: 2891
+  summary: Return true if there is a source declaration symbol name that meets given predicate.
+  syntax:
+    content:
+      CSharp: public override bool ContainsSymbolsWithName(Func<string, bool> predicate, SymbolFilter filter = SymbolFilter.TypeAndMember, CancellationToken cancellationToken = default (CancellationToken))
+    parameters:
+    - id: predicate
+      type:
+        id: System.Func{System.String,System.Boolean}
+        name: System.Func{System.String,System.Boolean}
+        isExternal: true
+    - id: filter
+      type:
+        id: Microsoft.CodeAnalysis.SymbolFilter
+        name: SymbolFilter
+        href: Microsoft.CodeAnalysis.SymbolFilter
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+    return:
+      id: Boolean
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.ContainsSymbolsWithName(System.Func{System.String,System.Boolean},Microsoft.CodeAnalysis.SymbolFilter,System.Threading.CancellationToken)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.GetSymbolsWithName(System.Func{System.String,System.Boolean},Microsoft.CodeAnalysis.SymbolFilter,System.Threading.CancellationToken)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.yml
+  name: GetSymbolsWithName(Func<string, bool>, SymbolFilter, CancellationToken)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.GetSymbolsWithName(System.Func<string, bool>, Microsoft.CodeAnalysis.SymbolFilter, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Compilation/CSharpCompilation.cs
+    startLine: 2909
+  summary: Return source declaration symbols whose name meets given predicate.
+  syntax:
+    content:
+      CSharp: public override IEnumerable<ISymbol> GetSymbolsWithName(Func<string, bool> predicate, SymbolFilter filter = SymbolFilter.TypeAndMember, CancellationToken cancellationToken = default (CancellationToken))
+    parameters:
+    - id: predicate
+      type:
+        id: System.Func{System.String,System.Boolean}
+        name: System.Func{System.String,System.Boolean}
+        isExternal: true
+    - id: filter
+      type:
+        id: Microsoft.CodeAnalysis.SymbolFilter
+        name: SymbolFilter
+        href: Microsoft.CodeAnalysis.SymbolFilter
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+    return:
+      id: IEnumerable
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilation.GetSymbolsWithName(System.Func{System.String,System.Boolean},Microsoft.CodeAnalysis.SymbolFilter,System.Threading.CancellationToken)

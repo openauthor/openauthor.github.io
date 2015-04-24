@@ -1,0 +1,57 @@
+items:
+- uid: Microsoft.CodeAnalysis.Simplification
+  href: Microsoft.CodeAnalysis.Simplification.yml
+  name: Simplification
+  fullName: Microsoft.CodeAnalysis.Simplification
+  type: Namespace
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      description: ef085ea0
+    path: src/Workspaces/Core/Portable/Simplification/SymbolAnnotation.cs
+    startLine: 5
+  id: Microsoft.CodeAnalysis.Simplification
+  children:
+  - Microsoft.CodeAnalysis.Simplification.SimplificationOptions
+  - Microsoft.CodeAnalysis.Simplification.Simplifier
+references:
+- uid: Microsoft.CodeAnalysis.Simplification.SimplificationOptions
+  href: Microsoft.CodeAnalysis.Simplification.SimplificationOptions.yml
+  name: SimplificationOptions
+  type: Class
+  summary: This Object contains the options that needs to be drilled down to the Simplification Engine
+- uid: Microsoft.CodeAnalysis.Simplification.Simplifier
+  href: Microsoft.CodeAnalysis.Simplification.Simplifier.yml
+  name: Simplifier
+  type: Class
+  summary: >-
+    Expands and Reduces subtrees.
+
+
+
+    Expansion:
+
+    1) Replaces names with fully qualified dotted names.
+
+    2) Adds parentheses around expressions
+
+    3) Adds explicit casts/conversions where implicit conversions exist
+
+    4) Adds escaping to identifiers
+
+    5) Rewrites extension method invocations with explicit calls on the class containing the extension method.
+
+
+
+    Reduction:
+
+    1) Shortens dotted names to their minimally qualified form
+
+    2) Removes unnecessary parentheses
+
+    3) Removes unnecessary casts/conversions
+
+    4) Removes unnecessary escaping
+
+    5) Rewrites explicit calls to extension methods to use dot notation

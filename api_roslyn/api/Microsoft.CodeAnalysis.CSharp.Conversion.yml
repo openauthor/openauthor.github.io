@@ -1,0 +1,602 @@
+items:
+- uid: Microsoft.CodeAnalysis.CSharp.Conversion
+  href: Microsoft.CodeAnalysis.CSharp.Conversion.yml
+  name: Conversion
+  fullName: Microsoft.CodeAnalysis.CSharp.Conversion
+  type: Struct
+  source:
+    remote: &o0
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      description: ef085ea0
+    path: src/Compilers/CSharp/Portable/Binder/Semantics/Conversions/Conversion.cs
+    startLine: 16
+  summary: >-
+    Summarizes whether a conversion is allowed, and if so, which kind of conversion (and in some cases, the
+
+    associated symbol).
+  syntax:
+    content:
+      CSharp: public struct Conversion
+  inheritance:
+  - id: System.Object
+    name: System.Object
+    isExternal: true
+  - id: System.ValueType
+    name: System.ValueType
+    isExternal: true
+  id: Microsoft.CodeAnalysis.CSharp.Conversion
+  children:
+  - Microsoft.CodeAnalysis.CSharp.Conversion.Exists
+  - Microsoft.CodeAnalysis.CSharp.Conversion.IsImplicit
+  - Microsoft.CodeAnalysis.CSharp.Conversion.IsExplicit
+  - Microsoft.CodeAnalysis.CSharp.Conversion.IsIdentity
+  - Microsoft.CodeAnalysis.CSharp.Conversion.IsNumeric
+  - Microsoft.CodeAnalysis.CSharp.Conversion.IsEnumeration
+  - Microsoft.CodeAnalysis.CSharp.Conversion.IsInterpolatedString
+  - Microsoft.CodeAnalysis.CSharp.Conversion.IsNullable
+  - Microsoft.CodeAnalysis.CSharp.Conversion.IsReference
+  - Microsoft.CodeAnalysis.CSharp.Conversion.IsUserDefined
+  - Microsoft.CodeAnalysis.CSharp.Conversion.IsBoxing
+  - Microsoft.CodeAnalysis.CSharp.Conversion.IsUnboxing
+  - Microsoft.CodeAnalysis.CSharp.Conversion.IsNullLiteral
+  - Microsoft.CodeAnalysis.CSharp.Conversion.IsDynamic
+  - Microsoft.CodeAnalysis.CSharp.Conversion.IsConstantExpression
+  - Microsoft.CodeAnalysis.CSharp.Conversion.IsAnonymousFunction
+  - Microsoft.CodeAnalysis.CSharp.Conversion.IsMethodGroup
+  - Microsoft.CodeAnalysis.CSharp.Conversion.IsPointer
+  - Microsoft.CodeAnalysis.CSharp.Conversion.IsIntPtr
+  - Microsoft.CodeAnalysis.CSharp.Conversion.MethodSymbol
+  - Microsoft.CodeAnalysis.CSharp.Conversion.ToString
+  - Microsoft.CodeAnalysis.CSharp.Conversion.Equals(System.Object)
+  - Microsoft.CodeAnalysis.CSharp.Conversion.Equals(Microsoft.CodeAnalysis.CSharp.Conversion)
+  - Microsoft.CodeAnalysis.CSharp.Conversion.GetHashCode
+  - Microsoft.CodeAnalysis.CSharp.Conversion.op_Equality(Microsoft.CodeAnalysis.CSharp.Conversion,Microsoft.CodeAnalysis.CSharp.Conversion)
+  - Microsoft.CodeAnalysis.CSharp.Conversion.op_Inequality(Microsoft.CodeAnalysis.CSharp.Conversion,Microsoft.CodeAnalysis.CSharp.Conversion)
+- uid: Microsoft.CodeAnalysis.CSharp.Conversion.Exists
+  href: Microsoft.CodeAnalysis.CSharp.Conversion.yml
+  name: Exists
+  fullName: Microsoft.CodeAnalysis.CSharp.Conversion.Exists
+  type: Property
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Binder/Semantics/Conversions/Conversion.cs
+    startLine: 129
+  summary: Returns true if the conversion exists, either as an implicit or explicit conversion.
+  syntax:
+    content:
+      CSharp: public bool Exists { get; }
+    parameters:
+    - id: Exists
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CSharp.Conversion.Exists
+- uid: Microsoft.CodeAnalysis.CSharp.Conversion.IsImplicit
+  href: Microsoft.CodeAnalysis.CSharp.Conversion.yml
+  name: IsImplicit
+  fullName: Microsoft.CodeAnalysis.CSharp.Conversion.IsImplicit
+  type: Property
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Binder/Semantics/Conversions/Conversion.cs
+    startLine: 143
+  summary: Returns true if the conversion is implicit.
+  syntax:
+    content:
+      CSharp: public bool IsImplicit { get; }
+    parameters:
+    - id: IsImplicit
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CSharp.Conversion.IsImplicit
+- uid: Microsoft.CodeAnalysis.CSharp.Conversion.IsExplicit
+  href: Microsoft.CodeAnalysis.CSharp.Conversion.yml
+  name: IsExplicit
+  fullName: Microsoft.CodeAnalysis.CSharp.Conversion.IsExplicit
+  type: Property
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Binder/Semantics/Conversions/Conversion.cs
+    startLine: 157
+  summary: Returns true if the conversion is explicit.
+  syntax:
+    content:
+      CSharp: public bool IsExplicit { get; }
+    parameters:
+    - id: IsExplicit
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CSharp.Conversion.IsExplicit
+- uid: Microsoft.CodeAnalysis.CSharp.Conversion.IsIdentity
+  href: Microsoft.CodeAnalysis.CSharp.Conversion.yml
+  name: IsIdentity
+  fullName: Microsoft.CodeAnalysis.CSharp.Conversion.IsIdentity
+  type: Property
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Binder/Semantics/Conversions/Conversion.cs
+    startLine: 172
+  summary: Returns true if the conversion is an identity conversion.
+  syntax:
+    content:
+      CSharp: public bool IsIdentity { get; }
+    parameters:
+    - id: IsIdentity
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CSharp.Conversion.IsIdentity
+- uid: Microsoft.CodeAnalysis.CSharp.Conversion.IsNumeric
+  href: Microsoft.CodeAnalysis.CSharp.Conversion.yml
+  name: IsNumeric
+  fullName: Microsoft.CodeAnalysis.CSharp.Conversion.IsNumeric
+  type: Property
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Binder/Semantics/Conversions/Conversion.cs
+    startLine: 186
+  summary: Returns true if the conversion is an implicit numeric conversion or explicit numeric conversion.
+  syntax:
+    content:
+      CSharp: public bool IsNumeric { get; }
+    parameters:
+    - id: IsNumeric
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CSharp.Conversion.IsNumeric
+- uid: Microsoft.CodeAnalysis.CSharp.Conversion.IsEnumeration
+  href: Microsoft.CodeAnalysis.CSharp.Conversion.yml
+  name: IsEnumeration
+  fullName: Microsoft.CodeAnalysis.CSharp.Conversion.IsEnumeration
+  type: Property
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Binder/Semantics/Conversions/Conversion.cs
+    startLine: 200
+  summary: Returns true if the conversion is an implicit enumeration conversion or explicit enumeration conversion.
+  syntax:
+    content:
+      CSharp: public bool IsEnumeration { get; }
+    parameters:
+    - id: IsEnumeration
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CSharp.Conversion.IsEnumeration
+- uid: Microsoft.CodeAnalysis.CSharp.Conversion.IsInterpolatedString
+  href: Microsoft.CodeAnalysis.CSharp.Conversion.yml
+  name: IsInterpolatedString
+  fullName: Microsoft.CodeAnalysis.CSharp.Conversion.IsInterpolatedString
+  type: Property
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Binder/Semantics/Conversions/Conversion.cs
+    startLine: 215
+  summary: Returns true if the conversion is an interpolated string conversion.
+  syntax:
+    content:
+      CSharp: public bool IsInterpolatedString { get; }
+    parameters:
+    - id: IsInterpolatedString
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CSharp.Conversion.IsInterpolatedString
+- uid: Microsoft.CodeAnalysis.CSharp.Conversion.IsNullable
+  href: Microsoft.CodeAnalysis.CSharp.Conversion.yml
+  name: IsNullable
+  fullName: Microsoft.CodeAnalysis.CSharp.Conversion.IsNullable
+  type: Property
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Binder/Semantics/Conversions/Conversion.cs
+    startLine: 229
+  summary: Returns true if the conversion is an implicit nullable conversion or explicit nullable conversion.
+  syntax:
+    content:
+      CSharp: public bool IsNullable { get; }
+    parameters:
+    - id: IsNullable
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CSharp.Conversion.IsNullable
+- uid: Microsoft.CodeAnalysis.CSharp.Conversion.IsReference
+  href: Microsoft.CodeAnalysis.CSharp.Conversion.yml
+  name: IsReference
+  fullName: Microsoft.CodeAnalysis.CSharp.Conversion.IsReference
+  type: Property
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Binder/Semantics/Conversions/Conversion.cs
+    startLine: 243
+  summary: Returns true if the conversion is an implicit reference conversion or explicit reference conversion.
+  syntax:
+    content:
+      CSharp: public bool IsReference { get; }
+    parameters:
+    - id: IsReference
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CSharp.Conversion.IsReference
+- uid: Microsoft.CodeAnalysis.CSharp.Conversion.IsUserDefined
+  href: Microsoft.CodeAnalysis.CSharp.Conversion.yml
+  name: IsUserDefined
+  fullName: Microsoft.CodeAnalysis.CSharp.Conversion.IsUserDefined
+  type: Property
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Binder/Semantics/Conversions/Conversion.cs
+    startLine: 257
+  summary: Returns true if the conversion is an implicit user-defined conversion or explicit user-defined conversion.
+  syntax:
+    content:
+      CSharp: public bool IsUserDefined { get; }
+    parameters:
+    - id: IsUserDefined
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CSharp.Conversion.IsUserDefined
+- uid: Microsoft.CodeAnalysis.CSharp.Conversion.IsBoxing
+  href: Microsoft.CodeAnalysis.CSharp.Conversion.yml
+  name: IsBoxing
+  fullName: Microsoft.CodeAnalysis.CSharp.Conversion.IsBoxing
+  type: Property
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Binder/Semantics/Conversions/Conversion.cs
+    startLine: 271
+  summary: Returns true if the conversion is an implicit boxing conversion.
+  syntax:
+    content:
+      CSharp: public bool IsBoxing { get; }
+    parameters:
+    - id: IsBoxing
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CSharp.Conversion.IsBoxing
+- uid: Microsoft.CodeAnalysis.CSharp.Conversion.IsUnboxing
+  href: Microsoft.CodeAnalysis.CSharp.Conversion.yml
+  name: IsUnboxing
+  fullName: Microsoft.CodeAnalysis.CSharp.Conversion.IsUnboxing
+  type: Property
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Binder/Semantics/Conversions/Conversion.cs
+    startLine: 285
+  summary: Returns true if the conversion is an explicit unboxing conversion.
+  syntax:
+    content:
+      CSharp: public bool IsUnboxing { get; }
+    parameters:
+    - id: IsUnboxing
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CSharp.Conversion.IsUnboxing
+- uid: Microsoft.CodeAnalysis.CSharp.Conversion.IsNullLiteral
+  href: Microsoft.CodeAnalysis.CSharp.Conversion.yml
+  name: IsNullLiteral
+  fullName: Microsoft.CodeAnalysis.CSharp.Conversion.IsNullLiteral
+  type: Property
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Binder/Semantics/Conversions/Conversion.cs
+    startLine: 299
+  summary: Returns true if the conversion is an implicit null literal conversion.
+  syntax:
+    content:
+      CSharp: public bool IsNullLiteral { get; }
+    parameters:
+    - id: IsNullLiteral
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CSharp.Conversion.IsNullLiteral
+- uid: Microsoft.CodeAnalysis.CSharp.Conversion.IsDynamic
+  href: Microsoft.CodeAnalysis.CSharp.Conversion.yml
+  name: IsDynamic
+  fullName: Microsoft.CodeAnalysis.CSharp.Conversion.IsDynamic
+  type: Property
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Binder/Semantics/Conversions/Conversion.cs
+    startLine: 313
+  summary: Returns true if the conversion is an implicit dynamic conversion.
+  syntax:
+    content:
+      CSharp: public bool IsDynamic { get; }
+    parameters:
+    - id: IsDynamic
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CSharp.Conversion.IsDynamic
+- uid: Microsoft.CodeAnalysis.CSharp.Conversion.IsConstantExpression
+  href: Microsoft.CodeAnalysis.CSharp.Conversion.yml
+  name: IsConstantExpression
+  fullName: Microsoft.CodeAnalysis.CSharp.Conversion.IsConstantExpression
+  type: Property
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Binder/Semantics/Conversions/Conversion.cs
+    startLine: 327
+  summary: Returns true if the conversion is an implicit constant expression conversion.
+  syntax:
+    content:
+      CSharp: public bool IsConstantExpression { get; }
+    parameters:
+    - id: IsConstantExpression
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CSharp.Conversion.IsConstantExpression
+- uid: Microsoft.CodeAnalysis.CSharp.Conversion.IsAnonymousFunction
+  href: Microsoft.CodeAnalysis.CSharp.Conversion.yml
+  name: IsAnonymousFunction
+  fullName: Microsoft.CodeAnalysis.CSharp.Conversion.IsAnonymousFunction
+  type: Property
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Binder/Semantics/Conversions/Conversion.cs
+    startLine: 341
+  summary: Returns true if the conversion is an implicit anonymous function conversion.
+  syntax:
+    content:
+      CSharp: public bool IsAnonymousFunction { get; }
+    parameters:
+    - id: IsAnonymousFunction
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CSharp.Conversion.IsAnonymousFunction
+- uid: Microsoft.CodeAnalysis.CSharp.Conversion.IsMethodGroup
+  href: Microsoft.CodeAnalysis.CSharp.Conversion.yml
+  name: IsMethodGroup
+  fullName: Microsoft.CodeAnalysis.CSharp.Conversion.IsMethodGroup
+  type: Property
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Binder/Semantics/Conversions/Conversion.cs
+    startLine: 355
+  summary: Returns true if the conversion is an implicit method group conversion.
+  syntax:
+    content:
+      CSharp: public bool IsMethodGroup { get; }
+    parameters:
+    - id: IsMethodGroup
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CSharp.Conversion.IsMethodGroup
+- uid: Microsoft.CodeAnalysis.CSharp.Conversion.IsPointer
+  href: Microsoft.CodeAnalysis.CSharp.Conversion.yml
+  name: IsPointer
+  fullName: Microsoft.CodeAnalysis.CSharp.Conversion.IsPointer
+  type: Property
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Binder/Semantics/Conversions/Conversion.cs
+    startLine: 379
+  summary: Returns true if the conversion is a pointer conversion
+  syntax:
+    content:
+      CSharp: public bool IsPointer { get; }
+    parameters:
+    - id: IsPointer
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CSharp.Conversion.IsPointer
+- uid: Microsoft.CodeAnalysis.CSharp.Conversion.IsIntPtr
+  href: Microsoft.CodeAnalysis.CSharp.Conversion.yml
+  name: IsIntPtr
+  fullName: Microsoft.CodeAnalysis.CSharp.Conversion.IsIntPtr
+  type: Property
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Binder/Semantics/Conversions/Conversion.cs
+    startLine: 400
+  summary: Returns true if the conversion is a conversion to or from IntPtr or UIntPtr.
+  syntax:
+    content:
+      CSharp: public bool IsIntPtr { get; }
+    parameters:
+    - id: IsIntPtr
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CSharp.Conversion.IsIntPtr
+- uid: Microsoft.CodeAnalysis.CSharp.Conversion.MethodSymbol
+  href: Microsoft.CodeAnalysis.CSharp.Conversion.yml
+  name: MethodSymbol
+  fullName: Microsoft.CodeAnalysis.CSharp.Conversion.MethodSymbol
+  type: Property
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Binder/Semantics/Conversions/Conversion.cs
+    startLine: 425
+  summary: >-
+    Returns the method used to create the delegate for a method group conversion if [Microsoft.CodeAnalysis.CSharp.Conversion.IsMethodGroup](Microsoft.CodeAnalysis.CSharp.Conversion.yml) is true
+
+    or the method used to perform the conversion for a user-defined conversion if [Microsoft.CodeAnalysis.CSharp.Conversion.IsUserDefined](Microsoft.CodeAnalysis.CSharp.Conversion.yml) is true.
+
+    Otherwise, returns null.
+  syntax:
+    content:
+      CSharp: public IMethodSymbol MethodSymbol { get; }
+    parameters:
+    - id: MethodSymbol
+      type:
+        id: Microsoft.CodeAnalysis.IMethodSymbol
+        name: IMethodSymbol
+        href: Microsoft.CodeAnalysis.IMethodSymbol
+  id: Microsoft.CodeAnalysis.CSharp.Conversion.MethodSymbol
+- uid: Microsoft.CodeAnalysis.CSharp.Conversion.ToString
+  href: Microsoft.CodeAnalysis.CSharp.Conversion.yml
+  name: ToString()
+  fullName: Microsoft.CodeAnalysis.CSharp.Conversion.ToString()
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Binder/Semantics/Conversions/Conversion.cs
+    startLine: 549
+  summary: Returns a string that represents the [Microsoft.CodeAnalysis.CSharp.Conversion.Kind](#) of the conversion.
+  syntax:
+    content:
+      CSharp: public override string ToString()
+    parameters: []
+    return:
+      id: String
+      description: A string that represents the [Microsoft.CodeAnalysis.CSharp.Conversion.Kind](#) of the conversion.
+  id: Microsoft.CodeAnalysis.CSharp.Conversion.ToString
+- uid: Microsoft.CodeAnalysis.CSharp.Conversion.Equals(System.Object)
+  href: Microsoft.CodeAnalysis.CSharp.Conversion.yml
+  name: Equals(object)
+  fullName: Microsoft.CodeAnalysis.CSharp.Conversion.Equals(object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Binder/Semantics/Conversions/Conversion.cs
+    startLine: 559
+  summary: Determines whether the specified [Microsoft.CodeAnalysis.CSharp.Conversion](Microsoft.CodeAnalysis.CSharp.Conversion.yml) object is equal to the current [Microsoft.CodeAnalysis.CSharp.Conversion](Microsoft.CodeAnalysis.CSharp.Conversion.yml) object.
+  syntax:
+    content:
+      CSharp: public override bool Equals(object obj)
+    parameters:
+    - id: obj
+      type:
+        id: System.Object
+        name: System.Object
+        isExternal: true
+      description: The [Microsoft.CodeAnalysis.CSharp.Conversion](Microsoft.CodeAnalysis.CSharp.Conversion.yml) object to compare with the current [Microsoft.CodeAnalysis.CSharp.Conversion](Microsoft.CodeAnalysis.CSharp.Conversion.yml) object.
+    return:
+      id: Boolean
+      description: true if the specified [Microsoft.CodeAnalysis.CSharp.Conversion](Microsoft.CodeAnalysis.CSharp.Conversion.yml) object is equal to the current [Microsoft.CodeAnalysis.CSharp.Conversion](Microsoft.CodeAnalysis.CSharp.Conversion.yml) object; otherwise, false.
+  id: Microsoft.CodeAnalysis.CSharp.Conversion.Equals(System.Object)
+- uid: Microsoft.CodeAnalysis.CSharp.Conversion.Equals(Microsoft.CodeAnalysis.CSharp.Conversion)
+  href: Microsoft.CodeAnalysis.CSharp.Conversion.yml
+  name: Equals(Conversion)
+  fullName: Microsoft.CodeAnalysis.CSharp.Conversion.Equals(Microsoft.CodeAnalysis.CSharp.Conversion)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Binder/Semantics/Conversions/Conversion.cs
+    startLine: 569
+  summary: Determines whether the specified [Microsoft.CodeAnalysis.CSharp.Conversion](Microsoft.CodeAnalysis.CSharp.Conversion.yml) object is equal to the current [Microsoft.CodeAnalysis.CSharp.Conversion](Microsoft.CodeAnalysis.CSharp.Conversion.yml) object.
+  syntax:
+    content:
+      CSharp: public bool Equals(Conversion other)
+    parameters:
+    - id: other
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.Conversion
+        name: Conversion
+        href: Microsoft.CodeAnalysis.CSharp.Conversion.yml
+      description: The [Microsoft.CodeAnalysis.CSharp.Conversion](Microsoft.CodeAnalysis.CSharp.Conversion.yml) object to compare with the current [Microsoft.CodeAnalysis.CSharp.Conversion](Microsoft.CodeAnalysis.CSharp.Conversion.yml) object.
+    return:
+      id: Boolean
+      description: true if the specified [Microsoft.CodeAnalysis.CSharp.Conversion](Microsoft.CodeAnalysis.CSharp.Conversion.yml) object is equal to the current [Microsoft.CodeAnalysis.CSharp.Conversion](Microsoft.CodeAnalysis.CSharp.Conversion.yml) object; otherwise, false.
+  id: Microsoft.CodeAnalysis.CSharp.Conversion.Equals(Microsoft.CodeAnalysis.CSharp.Conversion)
+- uid: Microsoft.CodeAnalysis.CSharp.Conversion.GetHashCode
+  href: Microsoft.CodeAnalysis.CSharp.Conversion.yml
+  name: GetHashCode()
+  fullName: Microsoft.CodeAnalysis.CSharp.Conversion.GetHashCode()
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Binder/Semantics/Conversions/Conversion.cs
+    startLine: 578
+  summary: Returns a hash code for the current [Microsoft.CodeAnalysis.CSharp.Conversion](Microsoft.CodeAnalysis.CSharp.Conversion.yml) object.
+  syntax:
+    content:
+      CSharp: public override int GetHashCode()
+    parameters: []
+    return:
+      id: Int32
+      description: A hash code for the current [Microsoft.CodeAnalysis.CSharp.Conversion](Microsoft.CodeAnalysis.CSharp.Conversion.yml) object.
+  id: Microsoft.CodeAnalysis.CSharp.Conversion.GetHashCode
+- uid: Microsoft.CodeAnalysis.CSharp.Conversion.op_Equality(Microsoft.CodeAnalysis.CSharp.Conversion,Microsoft.CodeAnalysis.CSharp.Conversion)
+  href: Microsoft.CodeAnalysis.CSharp.Conversion.yml
+  name: operator ==(Conversion, Conversion)
+  fullName: Microsoft.CodeAnalysis.CSharp.Conversion.operator ==(Microsoft.CodeAnalysis.CSharp.Conversion, Microsoft.CodeAnalysis.CSharp.Conversion)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Binder/Semantics/Conversions/Conversion.cs
+    startLine: 589
+  summary: Returns true if the specified [Microsoft.CodeAnalysis.CSharp.Conversion](Microsoft.CodeAnalysis.CSharp.Conversion.yml) objects are equal and false otherwise.
+  syntax:
+    content:
+      CSharp: public static bool operator ==(Conversion left, Conversion right) { return left.Equals(right); }
+    parameters:
+    - id: left
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.Conversion
+        name: Conversion
+        href: Microsoft.CodeAnalysis.CSharp.Conversion.yml
+      description: The first [Microsoft.CodeAnalysis.CSharp.Conversion](Microsoft.CodeAnalysis.CSharp.Conversion.yml) object.
+    - id: right
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.Conversion
+        name: Conversion
+        href: Microsoft.CodeAnalysis.CSharp.Conversion.yml
+      description: The second [Microsoft.CodeAnalysis.CSharp.Conversion](Microsoft.CodeAnalysis.CSharp.Conversion.yml) object.
+    return:
+      id: Boolean
+  id: Microsoft.CodeAnalysis.CSharp.Conversion.op_Equality(Microsoft.CodeAnalysis.CSharp.Conversion,Microsoft.CodeAnalysis.CSharp.Conversion)
+- uid: Microsoft.CodeAnalysis.CSharp.Conversion.op_Inequality(Microsoft.CodeAnalysis.CSharp.Conversion,Microsoft.CodeAnalysis.CSharp.Conversion)
+  href: Microsoft.CodeAnalysis.CSharp.Conversion.yml
+  name: operator !=(Conversion, Conversion)
+  fullName: Microsoft.CodeAnalysis.CSharp.Conversion.operator !=(Microsoft.CodeAnalysis.CSharp.Conversion, Microsoft.CodeAnalysis.CSharp.Conversion)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Binder/Semantics/Conversions/Conversion.cs
+    startLine: 600
+  summary: Returns false if the specified [Microsoft.CodeAnalysis.CSharp.Conversion](Microsoft.CodeAnalysis.CSharp.Conversion.yml) objects are equal and true otherwise.
+  syntax:
+    content:
+      CSharp: public static bool operator !=(Conversion left, Conversion right) { return !(left == right); }
+    parameters:
+    - id: left
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.Conversion
+        name: Conversion
+        href: Microsoft.CodeAnalysis.CSharp.Conversion.yml
+      description: The first [Microsoft.CodeAnalysis.CSharp.Conversion](Microsoft.CodeAnalysis.CSharp.Conversion.yml) object.
+    - id: right
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.Conversion
+        name: Conversion
+        href: Microsoft.CodeAnalysis.CSharp.Conversion.yml
+      description: The second [Microsoft.CodeAnalysis.CSharp.Conversion](Microsoft.CodeAnalysis.CSharp.Conversion.yml) object.
+    return:
+      id: Boolean
+  id: Microsoft.CodeAnalysis.CSharp.Conversion.op_Inequality(Microsoft.CodeAnalysis.CSharp.Conversion,Microsoft.CodeAnalysis.CSharp.Conversion)

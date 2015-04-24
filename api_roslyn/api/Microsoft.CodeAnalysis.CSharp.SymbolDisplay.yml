@@ -1,0 +1,281 @@
+items:
+- uid: Microsoft.CodeAnalysis.CSharp.SymbolDisplay
+  href: Microsoft.CodeAnalysis.CSharp.SymbolDisplay.yml
+  name: SymbolDisplay
+  fullName: Microsoft.CodeAnalysis.CSharp.SymbolDisplay
+  type: Class
+  source:
+    remote: &o0
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      description: ef085ea0
+    path: src/Compilers/CSharp/Portable/SymbolDisplay/SymbolDisplay.cs
+    startLine: 14
+  summary: Displays a symbol in the C# style.
+  syntax:
+    content:
+      CSharp: public static class SymbolDisplay
+  inheritance:
+  - id: System.Object
+    name: System.Object
+    isExternal: true
+  id: Microsoft.CodeAnalysis.CSharp.SymbolDisplay
+  children:
+  - Microsoft.CodeAnalysis.CSharp.SymbolDisplay.ToDisplayString(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.SymbolDisplayFormat)
+  - Microsoft.CodeAnalysis.CSharp.SymbolDisplay.ToMinimalDisplayString(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.SemanticModel,System.Int32,Microsoft.CodeAnalysis.SymbolDisplayFormat)
+  - Microsoft.CodeAnalysis.CSharp.SymbolDisplay.ToDisplayParts(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.SymbolDisplayFormat)
+  - Microsoft.CodeAnalysis.CSharp.SymbolDisplay.ToMinimalDisplayParts(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.SemanticModel,System.Int32,Microsoft.CodeAnalysis.SymbolDisplayFormat)
+  - Microsoft.CodeAnalysis.CSharp.SymbolDisplay.FormatPrimitive(System.Object,System.Boolean,System.Boolean)
+  - Microsoft.CodeAnalysis.CSharp.SymbolDisplay.FormatLiteral(System.String,System.Boolean)
+  - Microsoft.CodeAnalysis.CSharp.SymbolDisplay.FormatLiteral(System.Char,System.Boolean)
+- uid: Microsoft.CodeAnalysis.CSharp.SymbolDisplay.ToDisplayString(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.SymbolDisplayFormat)
+  href: Microsoft.CodeAnalysis.CSharp.SymbolDisplay.yml
+  name: ToDisplayString(ISymbol, SymbolDisplayFormat)
+  fullName: Microsoft.CodeAnalysis.CSharp.SymbolDisplay.ToDisplayString(Microsoft.CodeAnalysis.ISymbol, Microsoft.CodeAnalysis.SymbolDisplayFormat)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/SymbolDisplay/SymbolDisplay.cs
+    startLine: 25
+  summary: Displays a symbol in the C# style, based on a [Microsoft.CodeAnalysis.SymbolDisplayFormat](#).
+  syntax:
+    content:
+      CSharp: public static string ToDisplayString(ISymbol symbol, SymbolDisplayFormat format = null)
+    parameters:
+    - id: symbol
+      type:
+        id: Microsoft.CodeAnalysis.ISymbol
+        name: ISymbol
+        href: Microsoft.CodeAnalysis.ISymbol
+      description: The symbol to be displayed.
+    - id: format
+      type:
+        id: Microsoft.CodeAnalysis.SymbolDisplayFormat
+        name: SymbolDisplayFormat
+        href: Microsoft.CodeAnalysis.SymbolDisplayFormat
+      description: The formatting options to apply.  If null is passed, [Microsoft.CodeAnalysis.SymbolDisplayFormat.CSharpErrorMessageFormat](#) will be used.
+    return:
+      id: String
+      description: A formatted string that can be displayed to the user.
+  id: Microsoft.CodeAnalysis.CSharp.SymbolDisplay.ToDisplayString(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.SymbolDisplayFormat)
+- uid: Microsoft.CodeAnalysis.CSharp.SymbolDisplay.ToMinimalDisplayString(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.SemanticModel,System.Int32,Microsoft.CodeAnalysis.SymbolDisplayFormat)
+  href: Microsoft.CodeAnalysis.CSharp.SymbolDisplay.yml
+  name: ToMinimalDisplayString(ISymbol, SemanticModel, int, SymbolDisplayFormat)
+  fullName: Microsoft.CodeAnalysis.CSharp.SymbolDisplay.ToMinimalDisplayString(Microsoft.CodeAnalysis.ISymbol, Microsoft.CodeAnalysis.SemanticModel, int, Microsoft.CodeAnalysis.SymbolDisplayFormat)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/SymbolDisplay/SymbolDisplay.cs
+    startLine: 45
+  summary: >-
+    Displays a symbol in the C# style, based on a [Microsoft.CodeAnalysis.SymbolDisplayFormat](#).
+
+    Based on the context, qualify type and member names as little as possible without
+
+    introducing ambiguities.
+  syntax:
+    content:
+      CSharp: public static string ToMinimalDisplayString(ISymbol symbol, SemanticModel semanticModel, int position, SymbolDisplayFormat format = null)
+    parameters:
+    - id: symbol
+      type:
+        id: Microsoft.CodeAnalysis.ISymbol
+        name: ISymbol
+        href: Microsoft.CodeAnalysis.ISymbol
+      description: The symbol to be displayed.
+    - id: semanticModel
+      type:
+        id: Microsoft.CodeAnalysis.SemanticModel
+        name: SemanticModel
+        href: Microsoft.CodeAnalysis.SemanticModel
+      description: Semantic information about the context in which the symbol is being displayed.
+    - id: position
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+      description: A position within the [Microsoft.CodeAnalysis.SyntaxTree](#) or .
+    - id: format
+      type:
+        id: Microsoft.CodeAnalysis.SymbolDisplayFormat
+        name: SymbolDisplayFormat
+        href: Microsoft.CodeAnalysis.SymbolDisplayFormat
+      description: The formatting options to apply.  If null is passed, [Microsoft.CodeAnalysis.SymbolDisplayFormat.CSharpErrorMessageFormat](#) will be used.
+    return:
+      id: String
+      description: A formatted string that can be displayed to the user.
+  id: Microsoft.CodeAnalysis.CSharp.SymbolDisplay.ToMinimalDisplayString(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.SemanticModel,System.Int32,Microsoft.CodeAnalysis.SymbolDisplayFormat)
+- uid: Microsoft.CodeAnalysis.CSharp.SymbolDisplay.ToDisplayParts(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.SymbolDisplayFormat)
+  href: Microsoft.CodeAnalysis.CSharp.SymbolDisplay.yml
+  name: ToDisplayParts(ISymbol, SymbolDisplayFormat)
+  fullName: Microsoft.CodeAnalysis.CSharp.SymbolDisplay.ToDisplayParts(Microsoft.CodeAnalysis.ISymbol, Microsoft.CodeAnalysis.SymbolDisplayFormat)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/SymbolDisplay/SymbolDisplay.cs
+    startLine: 64
+  summary: >-
+    Convert a symbol to an array of string parts, each of which has a kind. Useful for
+
+    colorizing the display string.
+  syntax:
+    content:
+      CSharp: public static ImmutableArray<SymbolDisplayPart> ToDisplayParts(ISymbol symbol, SymbolDisplayFormat format = null)
+    parameters:
+    - id: symbol
+      type:
+        id: Microsoft.CodeAnalysis.ISymbol
+        name: ISymbol
+        href: Microsoft.CodeAnalysis.ISymbol
+      description: The symbol to be displayed.
+    - id: format
+      type:
+        id: Microsoft.CodeAnalysis.SymbolDisplayFormat
+        name: SymbolDisplayFormat
+        href: Microsoft.CodeAnalysis.SymbolDisplayFormat
+      description: The formatting options to apply.  If null is passed, [Microsoft.CodeAnalysis.SymbolDisplayFormat.CSharpErrorMessageFormat](#) will be used.
+    return:
+      id: ImmutableArray
+      description: A list of display parts.
+  id: Microsoft.CodeAnalysis.CSharp.SymbolDisplay.ToDisplayParts(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.SymbolDisplayFormat)
+- uid: Microsoft.CodeAnalysis.CSharp.SymbolDisplay.ToMinimalDisplayParts(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.SemanticModel,System.Int32,Microsoft.CodeAnalysis.SymbolDisplayFormat)
+  href: Microsoft.CodeAnalysis.CSharp.SymbolDisplay.yml
+  name: ToMinimalDisplayParts(ISymbol, SemanticModel, int, SymbolDisplayFormat)
+  fullName: Microsoft.CodeAnalysis.CSharp.SymbolDisplay.ToMinimalDisplayParts(Microsoft.CodeAnalysis.ISymbol, Microsoft.CodeAnalysis.SemanticModel, int, Microsoft.CodeAnalysis.SymbolDisplayFormat)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/SymbolDisplay/SymbolDisplay.cs
+    startLine: 86
+  summary: >-
+    Convert a symbol to an array of string parts, each of which has a kind. Useful for
+
+    colorizing the display string.
+  syntax:
+    content:
+      CSharp: public static ImmutableArray<SymbolDisplayPart> ToMinimalDisplayParts(ISymbol symbol, SemanticModel semanticModel, int position, SymbolDisplayFormat format = null)
+    parameters:
+    - id: symbol
+      type:
+        id: Microsoft.CodeAnalysis.ISymbol
+        name: ISymbol
+        href: Microsoft.CodeAnalysis.ISymbol
+      description: The symbol to be displayed.
+    - id: semanticModel
+      type:
+        id: Microsoft.CodeAnalysis.SemanticModel
+        name: SemanticModel
+        href: Microsoft.CodeAnalysis.SemanticModel
+      description: Semantic information about the context in which the symbol is being displayed.
+    - id: position
+      type:
+        id: System.Int32
+        name: System.Int32
+        isExternal: true
+      description: A position within the [Microsoft.CodeAnalysis.SyntaxTree](#) or .
+    - id: format
+      type:
+        id: Microsoft.CodeAnalysis.SymbolDisplayFormat
+        name: SymbolDisplayFormat
+        href: Microsoft.CodeAnalysis.SymbolDisplayFormat
+      description: The formatting options to apply.  If null is passed, [Microsoft.CodeAnalysis.SymbolDisplayFormat.CSharpErrorMessageFormat](#) will be used.
+    return:
+      id: ImmutableArray
+      description: A list of display parts.
+  id: Microsoft.CodeAnalysis.CSharp.SymbolDisplay.ToMinimalDisplayParts(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.SemanticModel,System.Int32,Microsoft.CodeAnalysis.SymbolDisplayFormat)
+- uid: Microsoft.CodeAnalysis.CSharp.SymbolDisplay.FormatPrimitive(System.Object,System.Boolean,System.Boolean)
+  href: Microsoft.CodeAnalysis.CSharp.SymbolDisplay.yml
+  name: FormatPrimitive(object, bool, bool)
+  fullName: Microsoft.CodeAnalysis.CSharp.SymbolDisplay.FormatPrimitive(object, bool, bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/SymbolDisplay/SymbolDisplay.cs
+    startLine: 145
+  summary: Returns a string representation of an object of primitive type.
+  syntax:
+    content:
+      CSharp: public static string FormatPrimitive(object obj, bool quoteStrings, bool useHexadecimalNumbers)
+    parameters:
+    - id: obj
+      type:
+        id: System.Object
+        name: System.Object
+        isExternal: true
+      description: A value to display as a string.
+    - id: quoteStrings
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+      description: Whether or not to quote string literals.
+    - id: useHexadecimalNumbers
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+      description: Whether or not to display integral literals in hexadecimal.
+    return:
+      id: String
+      description: A string representation of an object of primitive type (or null if the type is not supported).
+  id: Microsoft.CodeAnalysis.CSharp.SymbolDisplay.FormatPrimitive(System.Object,System.Boolean,System.Boolean)
+- uid: Microsoft.CodeAnalysis.CSharp.SymbolDisplay.FormatLiteral(System.String,System.Boolean)
+  href: Microsoft.CodeAnalysis.CSharp.SymbolDisplay.yml
+  name: FormatLiteral(string, bool)
+  fullName: Microsoft.CodeAnalysis.CSharp.SymbolDisplay.FormatLiteral(string, bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/SymbolDisplay/SymbolDisplay.cs
+    startLine: 168
+  summary: Returns a C# string literal with the given value.
+  syntax:
+    content:
+      CSharp: public static string FormatLiteral(string value, bool quote)
+    parameters:
+    - id: value
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+      description: The value that the resulting string literal should have.
+    - id: quote
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+      description: True to put (double) quotes around the string literal.
+    return:
+      id: String
+      description: A string literal with the given value.
+  id: Microsoft.CodeAnalysis.CSharp.SymbolDisplay.FormatLiteral(System.String,System.Boolean)
+- uid: Microsoft.CodeAnalysis.CSharp.SymbolDisplay.FormatLiteral(System.Char,System.Boolean)
+  href: Microsoft.CodeAnalysis.CSharp.SymbolDisplay.yml
+  name: FormatLiteral(char, bool)
+  fullName: Microsoft.CodeAnalysis.CSharp.SymbolDisplay.FormatLiteral(char, bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/SymbolDisplay/SymbolDisplay.cs
+    startLine: 182
+  summary: Returns a C# character literal with the given value.
+  syntax:
+    content:
+      CSharp: public static string FormatLiteral(char c, bool quote)
+    parameters:
+    - id: c
+      type:
+        id: System.Char
+        name: System.Char
+        isExternal: true
+      description: The value that the resulting character literal should have.
+    - id: quote
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+      description: True to put (single) quotes around the character literal.
+    return:
+      id: String
+      description: A character literal with the given value.
+  id: Microsoft.CodeAnalysis.CSharp.SymbolDisplay.FormatLiteral(System.Char,System.Boolean)

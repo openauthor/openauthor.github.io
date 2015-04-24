@@ -1,0 +1,99 @@
+items:
+- uid: Microsoft.CodeAnalysis.CodeRefactorings.ExportCodeRefactoringProviderAttribute
+  href: Microsoft.CodeAnalysis.CodeRefactorings.ExportCodeRefactoringProviderAttribute.yml
+  name: ExportCodeRefactoringProviderAttribute
+  fullName: Microsoft.CodeAnalysis.CodeRefactorings.ExportCodeRefactoringProviderAttribute
+  type: Class
+  source:
+    remote: &o0
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      description: ef085ea0
+    path: src/Workspaces/Core/Portable/CodeRefactorings/ExportCodeRefactoringProviderAttribute.cs
+    startLine: 10
+  summary: Use this attribute to declare a [Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider](Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider.yml) implementation so that it can be discovered by the host.
+  syntax:
+    content:
+      CSharp: public sealed class ExportCodeRefactoringProviderAttribute
+  inheritance:
+  - id: System.Object
+    name: System.Object
+    isExternal: true
+  - id: System.Attribute
+    name: System.Attribute
+    isExternal: true
+  - id: System.Composition.ExportAttribute
+    name: System.Composition.ExportAttribute
+    isExternal: true
+  id: Microsoft.CodeAnalysis.CodeRefactorings.ExportCodeRefactoringProviderAttribute
+  children:
+  - Microsoft.CodeAnalysis.CodeRefactorings.ExportCodeRefactoringProviderAttribute.Name
+  - Microsoft.CodeAnalysis.CodeRefactorings.ExportCodeRefactoringProviderAttribute.Languages
+  - Microsoft.CodeAnalysis.CodeRefactorings.ExportCodeRefactoringProviderAttribute.#ctor(System.String,System.String[])
+- uid: Microsoft.CodeAnalysis.CodeRefactorings.ExportCodeRefactoringProviderAttribute.Name
+  href: Microsoft.CodeAnalysis.CodeRefactorings.ExportCodeRefactoringProviderAttribute.yml
+  name: Name
+  fullName: Microsoft.CodeAnalysis.CodeRefactorings.ExportCodeRefactoringProviderAttribute.Name
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/CodeRefactorings/ExportCodeRefactoringProviderAttribute.cs
+    startLine: 17
+  summary: The name of the [Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider](Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider.yml).
+  syntax:
+    content:
+      CSharp: public string Name { get; set; }
+    parameters:
+    - id: Name
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CodeRefactorings.ExportCodeRefactoringProviderAttribute.Name
+- uid: Microsoft.CodeAnalysis.CodeRefactorings.ExportCodeRefactoringProviderAttribute.Languages
+  href: Microsoft.CodeAnalysis.CodeRefactorings.ExportCodeRefactoringProviderAttribute.yml
+  name: Languages
+  fullName: Microsoft.CodeAnalysis.CodeRefactorings.ExportCodeRefactoringProviderAttribute.Languages
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/CodeRefactorings/ExportCodeRefactoringProviderAttribute.cs
+    startLine: 22
+  summary: The source languages for which this provider can provide refactorings. See [Microsoft.CodeAnalysis.LanguageNames](#).
+  syntax:
+    content:
+      CSharp: public string[] Languages { get; private set; }
+    parameters:
+    - id: Languages
+      type:
+        id: System.Array
+        name: System.Array
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CodeRefactorings.ExportCodeRefactoringProviderAttribute.Languages
+- uid: Microsoft.CodeAnalysis.CodeRefactorings.ExportCodeRefactoringProviderAttribute.#ctor(System.String,System.String[])
+  href: Microsoft.CodeAnalysis.CodeRefactorings.ExportCodeRefactoringProviderAttribute.yml
+  name: ExportCodeRefactoringProviderAttribute(string, params string[])
+  fullName: Microsoft.CodeAnalysis.CodeRefactorings.ExportCodeRefactoringProviderAttribute.ExportCodeRefactoringProviderAttribute(string, params string[])
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/CodeRefactorings/ExportCodeRefactoringProviderAttribute.cs
+    startLine: 29
+  summary: Attribute constructor used to specify availability of a code refactoring provider.
+  syntax:
+    content:
+      CSharp: 'public ExportCodeRefactoringProviderAttribute(string firstLanguage, params string[] additionalLanguages): base (typeof (CodeRefactoringProvider))'
+    parameters:
+    - id: firstLanguage
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+      description: One language to which the code refactoring provider applies.
+    - id: additionalLanguages
+      type:
+        id: System.Array
+        name: System.Array
+        isExternal: true
+      description: Additional languages to which the code refactoring provider applies. See [Microsoft.CodeAnalysis.LanguageNames](#).
+  id: Microsoft.CodeAnalysis.CodeRefactorings.ExportCodeRefactoringProviderAttribute.#ctor(System.String,System.String[])

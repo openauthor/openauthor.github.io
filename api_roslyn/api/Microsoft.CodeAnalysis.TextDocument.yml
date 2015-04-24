@@ -1,0 +1,222 @@
+items:
+- uid: Microsoft.CodeAnalysis.TextDocument
+  href: Microsoft.CodeAnalysis.TextDocument.yml
+  name: TextDocument
+  fullName: Microsoft.CodeAnalysis.TextDocument
+  type: Class
+  source:
+    remote: &o0
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      description: ef085ea0
+    path: src/Workspaces/Core/Portable/Workspace/Solution/TextDocument.cs
+    startLine: 10
+  syntax:
+    content:
+      CSharp: public class TextDocument
+  inheritance:
+  - id: System.Object
+    name: System.Object
+    isExternal: true
+  id: Microsoft.CodeAnalysis.TextDocument
+  children:
+  - Microsoft.CodeAnalysis.TextDocument.Project
+  - Microsoft.CodeAnalysis.TextDocument.Id
+  - Microsoft.CodeAnalysis.TextDocument.FilePath
+  - Microsoft.CodeAnalysis.TextDocument.Name
+  - Microsoft.CodeAnalysis.TextDocument.Folders
+  - Microsoft.CodeAnalysis.TextDocument.TryGetText(Microsoft.CodeAnalysis.Text.SourceText@)
+  - Microsoft.CodeAnalysis.TextDocument.TryGetTextVersion(Microsoft.CodeAnalysis.VersionStamp@)
+  - Microsoft.CodeAnalysis.TextDocument.GetTextAsync(System.Threading.CancellationToken)
+  - Microsoft.CodeAnalysis.TextDocument.GetTextVersionAsync(System.Threading.CancellationToken)
+- uid: Microsoft.CodeAnalysis.TextDocument.Project
+  href: Microsoft.CodeAnalysis.TextDocument.yml
+  name: Project
+  fullName: Microsoft.CodeAnalysis.TextDocument.Project
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Solution/TextDocument.cs
+    startLine: 22
+  summary: The project this document belongs to.
+  syntax:
+    content:
+      CSharp: public Project Project { get; protected set; }
+    parameters:
+    - id: Project
+      type:
+        id: Microsoft.CodeAnalysis.Project
+        name: Project
+        href: Microsoft.CodeAnalysis.Project.yml
+  id: Microsoft.CodeAnalysis.TextDocument.Project
+- uid: Microsoft.CodeAnalysis.TextDocument.Id
+  href: Microsoft.CodeAnalysis.TextDocument.yml
+  name: Id
+  fullName: Microsoft.CodeAnalysis.TextDocument.Id
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Solution/TextDocument.cs
+    startLine: 41
+  summary: >-
+    The document's identifier. Many document instances may share the same ID, but only one
+
+    document in a solution may have that ID.
+  syntax:
+    content:
+      CSharp: public DocumentId Id { get; }
+    parameters:
+    - id: Id
+      type:
+        id: Microsoft.CodeAnalysis.DocumentId
+        name: DocumentId
+        href: Microsoft.CodeAnalysis.DocumentId.yml
+  id: Microsoft.CodeAnalysis.TextDocument.Id
+- uid: Microsoft.CodeAnalysis.TextDocument.FilePath
+  href: Microsoft.CodeAnalysis.TextDocument.yml
+  name: FilePath
+  fullName: Microsoft.CodeAnalysis.TextDocument.FilePath
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Solution/TextDocument.cs
+    startLine: 49
+  summary: The path to the document file or null if there is no document file.
+  syntax:
+    content:
+      CSharp: public string FilePath { get; }
+    parameters:
+    - id: FilePath
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+  id: Microsoft.CodeAnalysis.TextDocument.FilePath
+- uid: Microsoft.CodeAnalysis.TextDocument.Name
+  href: Microsoft.CodeAnalysis.TextDocument.yml
+  name: Name
+  fullName: Microsoft.CodeAnalysis.TextDocument.Name
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Solution/TextDocument.cs
+    startLine: 57
+  summary: The name of the document.
+  syntax:
+    content:
+      CSharp: public string Name { get; }
+    parameters:
+    - id: Name
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+  id: Microsoft.CodeAnalysis.TextDocument.Name
+- uid: Microsoft.CodeAnalysis.TextDocument.Folders
+  href: Microsoft.CodeAnalysis.TextDocument.yml
+  name: Folders
+  fullName: Microsoft.CodeAnalysis.TextDocument.Folders
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Solution/TextDocument.cs
+    startLine: 68
+  summary: The sequence of logical folders the document is contained in.
+  syntax:
+    content:
+      CSharp: public IReadOnlyList<string> Folders { get; }
+    parameters:
+    - id: Folders
+      type:
+        id: System.Collections.Generic.IReadOnlyList{System.String}
+        name: System.Collections.Generic.IReadOnlyList{System.String}
+        isExternal: true
+  id: Microsoft.CodeAnalysis.TextDocument.Folders
+- uid: Microsoft.CodeAnalysis.TextDocument.TryGetText(Microsoft.CodeAnalysis.Text.SourceText@)
+  href: Microsoft.CodeAnalysis.TextDocument.yml
+  name: TryGetText(out SourceText)
+  fullName: Microsoft.CodeAnalysis.TextDocument.TryGetText(out Microsoft.CodeAnalysis.Text.SourceText)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Solution/TextDocument.cs
+    startLine: 79
+  summary: Get the current text for the document if it is already loaded and available.
+  syntax:
+    content:
+      CSharp: public bool TryGetText(out SourceText text)
+    parameters:
+    - id: text
+      type:
+        id: Microsoft.CodeAnalysis.Text.SourceText
+        name: SourceText
+        href: Microsoft.CodeAnalysis.Text.SourceText
+    return:
+      id: Boolean
+  id: Microsoft.CodeAnalysis.TextDocument.TryGetText(Microsoft.CodeAnalysis.Text.SourceText@)
+- uid: Microsoft.CodeAnalysis.TextDocument.TryGetTextVersion(Microsoft.CodeAnalysis.VersionStamp@)
+  href: Microsoft.CodeAnalysis.TextDocument.yml
+  name: TryGetTextVersion(out VersionStamp)
+  fullName: Microsoft.CodeAnalysis.TextDocument.TryGetTextVersion(out Microsoft.CodeAnalysis.VersionStamp)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Solution/TextDocument.cs
+    startLine: 87
+  summary: Gets the version of the document's text if it is already loaded and available.
+  syntax:
+    content:
+      CSharp: public bool TryGetTextVersion(out VersionStamp version)
+    parameters:
+    - id: version
+      type:
+        id: Microsoft.CodeAnalysis.VersionStamp
+        name: VersionStamp
+        href: Microsoft.CodeAnalysis.VersionStamp.yml
+    return:
+      id: Boolean
+  id: Microsoft.CodeAnalysis.TextDocument.TryGetTextVersion(Microsoft.CodeAnalysis.VersionStamp@)
+- uid: Microsoft.CodeAnalysis.TextDocument.GetTextAsync(System.Threading.CancellationToken)
+  href: Microsoft.CodeAnalysis.TextDocument.yml
+  name: GetTextAsync(CancellationToken)
+  fullName: Microsoft.CodeAnalysis.TextDocument.GetTextAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Solution/TextDocument.cs
+    startLine: 95
+  summary: Gets the current text for the document asynchronously.
+  syntax:
+    content:
+      CSharp: public Task<SourceText> GetTextAsync(CancellationToken cancellationToken = default (CancellationToken))
+    parameters:
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+    return:
+      id: Task
+  id: Microsoft.CodeAnalysis.TextDocument.GetTextAsync(System.Threading.CancellationToken)
+- uid: Microsoft.CodeAnalysis.TextDocument.GetTextVersionAsync(System.Threading.CancellationToken)
+  href: Microsoft.CodeAnalysis.TextDocument.yml
+  name: GetTextVersionAsync(CancellationToken)
+  fullName: Microsoft.CodeAnalysis.TextDocument.GetTextVersionAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Solution/TextDocument.cs
+    startLine: 103
+  summary: Gets the version of the document's text.
+  syntax:
+    content:
+      CSharp: public Task<VersionStamp> GetTextVersionAsync(CancellationToken cancellationToken = default (CancellationToken))
+    parameters:
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+    return:
+      id: Task
+  id: Microsoft.CodeAnalysis.TextDocument.GetTextVersionAsync(System.Threading.CancellationToken)

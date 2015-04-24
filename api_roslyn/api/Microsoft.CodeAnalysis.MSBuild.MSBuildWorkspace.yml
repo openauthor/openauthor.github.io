@@ -1,0 +1,334 @@
+items:
+- uid: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace
+  href: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.yml
+  name: MSBuildWorkspace
+  fullName: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace
+  type: Class
+  source:
+    remote: &o0
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      description: ef085ea0
+    path: src/Workspaces/Core/Desktop/Workspace/MSBuild/MSBuildWorkspace.cs
+    startLine: 28
+  summary: A workspace that can be populated by opening MSBuild solution and project files.
+  syntax:
+    content:
+      CSharp: public sealed class MSBuildWorkspace
+  inheritance:
+  - id: System.Object
+    name: System.Object
+    isExternal: true
+  - id: Microsoft.CodeAnalysis.Workspace
+    name: Workspace
+    href: Microsoft.CodeAnalysis.Workspace.yml
+  id: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace
+  children:
+  - Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.Create
+  - Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.Create(System.Collections.Generic.IDictionary{System.String,System.String})
+  - Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.Create(System.Collections.Generic.IDictionary{System.String,System.String},Microsoft.CodeAnalysis.Host.HostServices)
+  - Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.Properties
+  - Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.LoadMetadataForReferencedProjects
+  - Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.SkipUnrecognizedProjects
+  - Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.AssociateFileExtensionWithLanguage(System.String,System.String)
+  - Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.CloseSolution
+  - Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.OpenSolutionAsync(System.String,System.Threading.CancellationToken)
+  - Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.OpenProjectAsync(System.String,System.Threading.CancellationToken)
+  - Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.CanApplyChange(Microsoft.CodeAnalysis.ApplyChangesKind)
+  - Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.TryApplyChanges(Microsoft.CodeAnalysis.Solution)
+- uid: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.Create
+  href: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.yml
+  name: Create()
+  fullName: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.Create()
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Desktop/Workspace/MSBuild/MSBuildWorkspace.cs
+    startLine: 58
+  summary: Create a new instance of a workspace that can be populated by opening solution and project files.
+  syntax:
+    content:
+      CSharp: public static MSBuildWorkspace Create()
+    parameters: []
+    return:
+      id: MSBuildWorkspace
+  id: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.Create
+- uid: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.Create(System.Collections.Generic.IDictionary{System.String,System.String})
+  href: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.yml
+  name: Create(IDictionary<string, string>)
+  fullName: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.Create(System.Collections.Generic.IDictionary<string, string>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Desktop/Workspace/MSBuild/MSBuildWorkspace.cs
+    startLine: 68
+  summary: Create a new instance of a workspace that can be populated by opening solution and project files.
+  syntax:
+    content:
+      CSharp: public static MSBuildWorkspace Create(IDictionary<string, string> properties)
+    parameters:
+    - id: properties
+      type:
+        id: System.Collections.Generic.IDictionary{System.String,System.String}
+        name: System.Collections.Generic.IDictionary{System.String,System.String}
+        isExternal: true
+      description: >-
+        An optional set of MSBuild properties used when interpreting project files.
+
+        These are the same properties that are passed to msbuild via the /property:<n>=<v> command line argument.
+    return:
+      id: MSBuildWorkspace
+  id: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.Create(System.Collections.Generic.IDictionary{System.String,System.String})
+- uid: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.Create(System.Collections.Generic.IDictionary{System.String,System.String},Microsoft.CodeAnalysis.Host.HostServices)
+  href: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.yml
+  name: Create(IDictionary<string, string>, HostServices)
+  fullName: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.Create(System.Collections.Generic.IDictionary<string, string>, Microsoft.CodeAnalysis.Host.HostServices)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Desktop/Workspace/MSBuild/MSBuildWorkspace.cs
+    startLine: 79
+  summary: Create a new instance of a workspace that can be populated by opening solution and project files.
+  syntax:
+    content:
+      CSharp: public static MSBuildWorkspace Create(IDictionary<string, string> properties, HostServices hostServices)
+    parameters:
+    - id: properties
+      type:
+        id: System.Collections.Generic.IDictionary{System.String,System.String}
+        name: System.Collections.Generic.IDictionary{System.String,System.String}
+        isExternal: true
+      description: >-
+        The MSBuild properties used when interpreting project files.
+
+        These are the same properties that are passed to msbuild via the /property:<n>=<v> command line argument.
+    - id: hostServices
+      type:
+        id: Microsoft.CodeAnalysis.Host.HostServices
+        name: HostServices
+        href: Microsoft.CodeAnalysis.Host.HostServices.yml
+      description: The [Microsoft.CodeAnalysis.Host.HostServices](Microsoft.CodeAnalysis.Host.HostServices.yml) used to configure this workspace.
+    return:
+      id: MSBuildWorkspace
+  id: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.Create(System.Collections.Generic.IDictionary{System.String,System.String},Microsoft.CodeAnalysis.Host.HostServices)
+- uid: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.Properties
+  href: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.yml
+  name: Properties
+  fullName: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.Properties
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Desktop/Workspace/MSBuild/MSBuildWorkspace.cs
+    startLine: 98
+  summary: >-
+    The MSBuild properties used when interpreting project files.
+
+    These are the same properties that are passed to msbuild via the /property:<n>=<v> command line argument.
+  syntax:
+    content:
+      CSharp: public ImmutableDictionary<string, string> Properties { get; }
+    parameters:
+    - id: Properties
+      type:
+        id: System.Collections.Immutable.ImmutableDictionary{System.String,System.String}
+        name: System.Collections.Immutable.ImmutableDictionary{System.String,System.String}
+        isExternal: true
+  id: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.Properties
+- uid: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.LoadMetadataForReferencedProjects
+  href: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.yml
+  name: LoadMetadataForReferencedProjects
+  fullName: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.LoadMetadataForReferencedProjects
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Desktop/Workspace/MSBuild/MSBuildWorkspace.cs
+    startLine: 108
+  summary: >-
+    Determines if metadata from existing output assemblies is loaded instead of opening referenced projects.
+
+    If the referenced project is already opened, the metadata will not be loaded.
+
+    If the metadata assembly cannot be found the referenced project will be opened instead.
+  syntax:
+    content:
+      CSharp: public bool LoadMetadataForReferencedProjects { get; set; }
+    parameters:
+    - id: LoadMetadataForReferencedProjects
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+  id: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.LoadMetadataForReferencedProjects
+- uid: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.SkipUnrecognizedProjects
+  href: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.yml
+  name: SkipUnrecognizedProjects
+  fullName: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.SkipUnrecognizedProjects
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Desktop/Workspace/MSBuild/MSBuildWorkspace.cs
+    startLine: 121
+  summary: >-
+    Determines if unrecognized projects are skipped when solutions or projects are opened.
+
+
+
+    An project is unrecognized if it either has
+
+    a) an invalid file path,
+
+    b) a non-existent project file,
+
+    c) has an unrecognized file extension or
+
+    d) a file extension associated with an unsupported language.
+
+
+
+    If unrecognized projects cannot be skipped a corresponding exception is thrown.
+  syntax:
+    content:
+      CSharp: public bool SkipUnrecognizedProjects { get; set; }
+    parameters:
+    - id: SkipUnrecognizedProjects
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+  id: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.SkipUnrecognizedProjects
+- uid: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.AssociateFileExtensionWithLanguage(System.String,System.String)
+  href: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.yml
+  name: AssociateFileExtensionWithLanguage(string, string)
+  fullName: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.AssociateFileExtensionWithLanguage(string, string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Desktop/Workspace/MSBuild/MSBuildWorkspace.cs
+    startLine: 126
+  summary: Associates a project file extension with a language name.
+  syntax:
+    content:
+      CSharp: public void AssociateFileExtensionWithLanguage(string projectFileExtension, string language)
+    parameters:
+    - id: projectFileExtension
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+    - id: language
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+  id: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.AssociateFileExtensionWithLanguage(System.String,System.String)
+- uid: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.CloseSolution
+  href: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.yml
+  name: CloseSolution()
+  fullName: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.CloseSolution()
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Desktop/Workspace/MSBuild/MSBuildWorkspace.cs
+    startLine: 147
+  summary: Close the open solution, and reset the workspace to a new empty solution.
+  syntax:
+    content:
+      CSharp: public void CloseSolution()
+    parameters: []
+  id: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.CloseSolution
+- uid: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.OpenSolutionAsync(System.String,System.Threading.CancellationToken)
+  href: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.yml
+  name: OpenSolutionAsync(string, CancellationToken)
+  fullName: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.OpenSolutionAsync(string, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Desktop/Workspace/MSBuild/MSBuildWorkspace.cs
+    startLine: 357
+  summary: Open a solution file and all referenced projects.
+  syntax:
+    content:
+      CSharp: public async Task<Solution> OpenSolutionAsync(string solutionFilePath, CancellationToken cancellationToken = default (CancellationToken))
+    parameters:
+    - id: solutionFilePath
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+    return:
+      id: Task
+  id: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.OpenSolutionAsync(System.String,System.Threading.CancellationToken)
+- uid: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.OpenProjectAsync(System.String,System.Threading.CancellationToken)
+  href: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.yml
+  name: OpenProjectAsync(string, CancellationToken)
+  fullName: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.OpenProjectAsync(string, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Desktop/Workspace/MSBuild/MSBuildWorkspace.cs
+    startLine: 499
+  summary: Open a project file and all referenced projects.
+  syntax:
+    content:
+      CSharp: public async Task<Project> OpenProjectAsync(string projectFilePath, CancellationToken cancellationToken = default (CancellationToken))
+    parameters:
+    - id: projectFilePath
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+    return:
+      id: Task
+  id: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.OpenProjectAsync(System.String,System.Threading.CancellationToken)
+- uid: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.CanApplyChange(Microsoft.CodeAnalysis.ApplyChangesKind)
+  href: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.yml
+  name: CanApplyChange(ApplyChangesKind)
+  fullName: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.CanApplyChange(Microsoft.CodeAnalysis.ApplyChangesKind)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Desktop/Workspace/MSBuild/MSBuildWorkspace.cs
+    startLine: 875
+  syntax:
+    content:
+      CSharp: public override bool CanApplyChange(ApplyChangesKind feature)
+    parameters:
+    - id: feature
+      type:
+        id: Microsoft.CodeAnalysis.ApplyChangesKind
+        name: ApplyChangesKind
+        href: Microsoft.CodeAnalysis.ApplyChangesKind.yml
+    return:
+      id: Boolean
+  id: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.CanApplyChange(Microsoft.CodeAnalysis.ApplyChangesKind)
+- uid: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.TryApplyChanges(Microsoft.CodeAnalysis.Solution)
+  href: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.yml
+  name: TryApplyChanges(Solution)
+  fullName: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.TryApplyChanges(Microsoft.CodeAnalysis.Solution)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Desktop/Workspace/MSBuild/MSBuildWorkspace.cs
+    startLine: 908
+  syntax:
+    content:
+      CSharp: public override bool TryApplyChanges(Solution newSolution)
+    parameters:
+    - id: newSolution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
+    return:
+      id: Boolean
+  id: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.TryApplyChanges(Microsoft.CodeAnalysis.Solution)

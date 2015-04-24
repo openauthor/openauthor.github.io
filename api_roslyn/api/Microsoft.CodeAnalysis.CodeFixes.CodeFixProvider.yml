@@ -1,0 +1,93 @@
+items:
+- uid: Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider
+  href: Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider.yml
+  name: CodeFixProvider
+  fullName: Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider
+  type: Class
+  source:
+    remote: &o0
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      description: ef085ea0
+    path: src/Workspaces/Core/Portable/CodeFixes/CodeFixProvider.cs
+    startLine: 11
+  summary: >-
+    Implement this type to provide fixes for source code problems.
+
+    Remember to use [Microsoft.CodeAnalysis.CodeFixes.ExportCodeFixProviderAttribute](Microsoft.CodeAnalysis.CodeFixes.ExportCodeFixProviderAttribute.yml) so the host environment can offer your fixes in a UI.
+  syntax:
+    content:
+      CSharp: public abstract class CodeFixProvider
+  inheritance:
+  - id: System.Object
+    name: System.Object
+    isExternal: true
+  id: Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider
+  children:
+  - Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider.FixableDiagnosticIds
+  - Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider.RegisterCodeFixesAsync(Microsoft.CodeAnalysis.CodeFixes.CodeFixContext)
+  - Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider.GetFixAllProvider
+- uid: Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider.FixableDiagnosticIds
+  href: Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider.yml
+  name: FixableDiagnosticIds
+  fullName: Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider.FixableDiagnosticIds
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/CodeFixes/CodeFixProvider.cs
+    startLine: 16
+  summary: A list of diagnostic IDs that this provider can provider fixes for.
+  syntax:
+    content:
+      CSharp: public abstract ImmutableArray<string> FixableDiagnosticIds { get; }
+    parameters:
+    - id: FixableDiagnosticIds
+      type:
+        id: System.Collections.Immutable.ImmutableArray{System.String}
+        name: System.Collections.Immutable.ImmutableArray{System.String}
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider.FixableDiagnosticIds
+- uid: Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider.RegisterCodeFixesAsync(Microsoft.CodeAnalysis.CodeFixes.CodeFixContext)
+  href: Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider.yml
+  name: RegisterCodeFixesAsync(CodeFixContext)
+  fullName: Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider.RegisterCodeFixesAsync(Microsoft.CodeAnalysis.CodeFixes.CodeFixContext)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/CodeFixes/CodeFixProvider.cs
+    startLine: 21
+  summary: Computes one or more fixes for the specified [Microsoft.CodeAnalysis.CodeFixes.CodeFixContext](Microsoft.CodeAnalysis.CodeFixes.CodeFixContext.yml).
+  syntax:
+    content:
+      CSharp: public abstract Task RegisterCodeFixesAsync(CodeFixContext context);
+    parameters:
+    - id: context
+      type:
+        id: Microsoft.CodeAnalysis.CodeFixes.CodeFixContext
+        name: CodeFixContext
+        href: Microsoft.CodeAnalysis.CodeFixes.CodeFixContext.yml
+    return:
+      id: Task
+  id: Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider.RegisterCodeFixesAsync(Microsoft.CodeAnalysis.CodeFixes.CodeFixContext)
+- uid: Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider.GetFixAllProvider
+  href: Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider.yml
+  name: GetFixAllProvider()
+  fullName: Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider.GetFixAllProvider()
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/CodeFixes/CodeFixProvider.cs
+    startLine: 28
+  summary: >-
+    Gets an optional [Microsoft.CodeAnalysis.CodeFixes.FixAllProvider](Microsoft.CodeAnalysis.CodeFixes.FixAllProvider.yml) that can fix all/multiple occurrences of diagnostics fixed by this code fix provider.
+
+    Return null if the provider doesn't support fix all/multiple occurrences.
+
+    Otherwise, you can return any of the well known fix all providers from [Microsoft.CodeAnalysis.CodeFixes.WellKnownFixAllProviders](Microsoft.CodeAnalysis.CodeFixes.WellKnownFixAllProviders.yml) or implement your own fix all provider.
+  syntax:
+    content:
+      CSharp: public virtual FixAllProvider GetFixAllProvider()
+    parameters: []
+    return:
+      id: FixAllProvider
+  id: Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider.GetFixAllProvider

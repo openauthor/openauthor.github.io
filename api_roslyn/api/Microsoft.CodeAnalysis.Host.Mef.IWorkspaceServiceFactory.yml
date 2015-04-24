@@ -1,0 +1,48 @@
+items:
+- uid: Microsoft.CodeAnalysis.Host.Mef.IWorkspaceServiceFactory
+  href: Microsoft.CodeAnalysis.Host.Mef.IWorkspaceServiceFactory.yml
+  name: IWorkspaceServiceFactory
+  fullName: Microsoft.CodeAnalysis.Host.Mef.IWorkspaceServiceFactory
+  type: Interface
+  source:
+    remote: &o0
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      description: ef085ea0
+    path: src/Workspaces/Core/Portable/Workspace/Host/Mef/IWorkspaceServiceFactory.cs
+    startLine: 9
+  summary: >-
+    A factory that creates instances of a specific [Microsoft.CodeAnalysis.Host.IWorkspaceService](Microsoft.CodeAnalysis.Host.IWorkspaceService.yml).
+
+
+
+    Implement a [Microsoft.CodeAnalysis.Host.Mef.IWorkspaceServiceFactory](Microsoft.CodeAnalysis.Host.Mef.IWorkspaceServiceFactory.yml) when you want to provide [Microsoft.CodeAnalysis.Host.IWorkspaceService](Microsoft.CodeAnalysis.Host.IWorkspaceService.yml) instances that use other services.
+  syntax:
+    content:
+      CSharp: public interface IWorkspaceServiceFactory
+  id: Microsoft.CodeAnalysis.Host.Mef.IWorkspaceServiceFactory
+  children:
+  - Microsoft.CodeAnalysis.Host.Mef.IWorkspaceServiceFactory.CreateService(Microsoft.CodeAnalysis.Host.HostWorkspaceServices)
+- uid: Microsoft.CodeAnalysis.Host.Mef.IWorkspaceServiceFactory.CreateService(Microsoft.CodeAnalysis.Host.HostWorkspaceServices)
+  href: Microsoft.CodeAnalysis.Host.Mef.IWorkspaceServiceFactory.yml
+  name: CreateService(HostWorkspaceServices)
+  fullName: Microsoft.CodeAnalysis.Host.Mef.IWorkspaceServiceFactory.CreateService(Microsoft.CodeAnalysis.Host.HostWorkspaceServices)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Host/Mef/IWorkspaceServiceFactory.cs
+    startLine: 15
+  summary: Creates a new [Microsoft.CodeAnalysis.Host.IWorkspaceService](Microsoft.CodeAnalysis.Host.IWorkspaceService.yml) instance.
+  syntax:
+    content:
+      CSharp: IWorkspaceService CreateService(HostWorkspaceServices workspaceServices);
+    parameters:
+    - id: workspaceServices
+      type:
+        id: Microsoft.CodeAnalysis.Host.HostWorkspaceServices
+        name: HostWorkspaceServices
+        href: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.yml
+      description: The [Microsoft.CodeAnalysis.Host.HostWorkspaceServices](Microsoft.CodeAnalysis.Host.HostWorkspaceServices.yml) that can be used to access other services.
+    return:
+      id: IWorkspaceService
+  id: Microsoft.CodeAnalysis.Host.Mef.IWorkspaceServiceFactory.CreateService(Microsoft.CodeAnalysis.Host.HostWorkspaceServices)

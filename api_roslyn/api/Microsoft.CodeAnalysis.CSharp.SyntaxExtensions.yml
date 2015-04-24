@@ -1,0 +1,351 @@
+items:
+- uid: Microsoft.CodeAnalysis.CSharp.SyntaxExtensions
+  href: Microsoft.CodeAnalysis.CSharp.SyntaxExtensions.yml
+  name: SyntaxExtensions
+  fullName: Microsoft.CodeAnalysis.CSharp.SyntaxExtensions
+  type: Class
+  source:
+    remote: &o0
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      description: ef085ea0
+    path: src/Compilers/CSharp/Portable/Syntax/SyntaxExtensions.cs
+    startLine: 13
+  syntax:
+    content:
+      CSharp: public static class SyntaxExtensions
+  inheritance:
+  - id: System.Object
+    name: System.Object
+    isExternal: true
+  id: Microsoft.CodeAnalysis.CSharp.SyntaxExtensions
+  children:
+  - Microsoft.CodeAnalysis.CSharp.SyntaxExtensions.NormalizeWhitespace(Microsoft.CodeAnalysis.SyntaxToken,System.String,System.Boolean)
+  - Microsoft.CodeAnalysis.CSharp.SyntaxExtensions.NormalizeWhitespace(Microsoft.CodeAnalysis.SyntaxTriviaList,System.String,System.Boolean)
+  - Microsoft.CodeAnalysis.CSharp.SyntaxExtensions.ToSyntaxTriviaList(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxTrivia})
+  - Microsoft.CodeAnalysis.CSharp.SyntaxExtensions.WithIdentifier(Microsoft.CodeAnalysis.CSharp.Syntax.SimpleNameSyntax,Microsoft.CodeAnalysis.SyntaxToken)
+  - Microsoft.CodeAnalysis.CSharp.SyntaxExtensions.Update(Microsoft.CodeAnalysis.CSharp.Syntax.IndexerDeclarationSyntax,Microsoft.CodeAnalysis.SyntaxList{Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax},Microsoft.CodeAnalysis.SyntaxTokenList,Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax,Microsoft.CodeAnalysis.CSharp.Syntax.ExplicitInterfaceSpecifierSyntax,Microsoft.CodeAnalysis.SyntaxToken,Microsoft.CodeAnalysis.CSharp.Syntax.BracketedParameterListSyntax,Microsoft.CodeAnalysis.CSharp.Syntax.AccessorListSyntax)
+  - Microsoft.CodeAnalysis.CSharp.SyntaxExtensions.Update(Microsoft.CodeAnalysis.CSharp.Syntax.OperatorDeclarationSyntax,Microsoft.CodeAnalysis.SyntaxList{Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax},Microsoft.CodeAnalysis.SyntaxTokenList,Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax,Microsoft.CodeAnalysis.SyntaxToken,Microsoft.CodeAnalysis.SyntaxToken,Microsoft.CodeAnalysis.CSharp.Syntax.ParameterListSyntax,Microsoft.CodeAnalysis.CSharp.Syntax.BlockSyntax,Microsoft.CodeAnalysis.SyntaxToken)
+  - Microsoft.CodeAnalysis.CSharp.SyntaxExtensions.Update(Microsoft.CodeAnalysis.CSharp.Syntax.MethodDeclarationSyntax,Microsoft.CodeAnalysis.SyntaxList{Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax},Microsoft.CodeAnalysis.SyntaxTokenList,Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax,Microsoft.CodeAnalysis.CSharp.Syntax.ExplicitInterfaceSpecifierSyntax,Microsoft.CodeAnalysis.SyntaxToken,Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterListSyntax,Microsoft.CodeAnalysis.CSharp.Syntax.ParameterListSyntax,Microsoft.CodeAnalysis.SyntaxList{Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterConstraintClauseSyntax},Microsoft.CodeAnalysis.CSharp.Syntax.BlockSyntax,Microsoft.CodeAnalysis.SyntaxToken)
+- uid: Microsoft.CodeAnalysis.CSharp.SyntaxExtensions.NormalizeWhitespace(Microsoft.CodeAnalysis.SyntaxToken,System.String,System.Boolean)
+  href: Microsoft.CodeAnalysis.CSharp.SyntaxExtensions.yml
+  name: NormalizeWhitespace(SyntaxToken, string, bool)
+  fullName: Microsoft.CodeAnalysis.CSharp.SyntaxExtensions.NormalizeWhitespace(Microsoft.CodeAnalysis.SyntaxToken, string, bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Syntax/SyntaxExtensions.cs
+    startLine: 65
+  summary: >-
+    Creates a new syntax token with all whitespace and end of line trivia replaced with
+
+    regularly formatted trivia.
+  syntax:
+    content:
+      CSharp: public static SyntaxToken NormalizeWhitespace(this SyntaxToken token, string indentation = DefaultIndentation, bool elasticTrivia = false)
+    parameters:
+    - id: token
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxToken
+        name: SyntaxToken
+        href: Microsoft.CodeAnalysis.SyntaxToken
+      description: The token to normalize.
+    - id: indentation
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+      description: >-
+        An optional sequence of whitespace characters that defines a
+
+        single level of indentation.
+    - id: elasticTrivia
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+      description: If true the replaced trivia is elastic trivia.
+    return:
+      id: SyntaxToken
+  id: Microsoft.CodeAnalysis.CSharp.SyntaxExtensions.NormalizeWhitespace(Microsoft.CodeAnalysis.SyntaxToken,System.String,System.Boolean)
+- uid: Microsoft.CodeAnalysis.CSharp.SyntaxExtensions.NormalizeWhitespace(Microsoft.CodeAnalysis.SyntaxTriviaList,System.String,System.Boolean)
+  href: Microsoft.CodeAnalysis.CSharp.SyntaxExtensions.yml
+  name: NormalizeWhitespace(SyntaxTriviaList, string, bool)
+  fullName: Microsoft.CodeAnalysis.CSharp.SyntaxExtensions.NormalizeWhitespace(Microsoft.CodeAnalysis.SyntaxTriviaList, string, bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Syntax/SyntaxExtensions.cs
+    startLine: 78
+  summary: >-
+    Creates a new syntax trivia list with all whitespace and end of line trivia replaced with
+
+    regularly formatted trivia.
+  syntax:
+    content:
+      CSharp: public static SyntaxTriviaList NormalizeWhitespace(this SyntaxTriviaList list, string indentation = DefaultIndentation, bool elasticTrivia = false)
+    parameters:
+    - id: list
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxTriviaList
+        name: SyntaxTriviaList
+        href: Microsoft.CodeAnalysis.SyntaxTriviaList
+      description: The trivia list to normalize.
+    - id: indentation
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+      description: >-
+        An optional sequence of whitespace characters that defines a
+
+        single level of indentation.
+    - id: elasticTrivia
+      type:
+        id: System.Boolean
+        name: System.Boolean
+        isExternal: true
+      description: If true the replaced trivia is elastic trivia.
+    return:
+      id: SyntaxTriviaList
+  id: Microsoft.CodeAnalysis.CSharp.SyntaxExtensions.NormalizeWhitespace(Microsoft.CodeAnalysis.SyntaxTriviaList,System.String,System.Boolean)
+- uid: Microsoft.CodeAnalysis.CSharp.SyntaxExtensions.ToSyntaxTriviaList(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxTrivia})
+  href: Microsoft.CodeAnalysis.CSharp.SyntaxExtensions.yml
+  name: ToSyntaxTriviaList(IEnumerable<SyntaxTrivia>)
+  fullName: Microsoft.CodeAnalysis.CSharp.SyntaxExtensions.ToSyntaxTriviaList(System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxTrivia>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Syntax/SyntaxExtensions.cs
+    startLine: 83
+  syntax:
+    content:
+      CSharp: public static SyntaxTriviaList ToSyntaxTriviaList(this IEnumerable<SyntaxTrivia> sequence)
+    parameters:
+    - id: sequence
+      type:
+        id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxTrivia}
+        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxTrivia}
+        isExternal: true
+    return:
+      id: SyntaxTriviaList
+  id: Microsoft.CodeAnalysis.CSharp.SyntaxExtensions.ToSyntaxTriviaList(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxTrivia})
+- uid: Microsoft.CodeAnalysis.CSharp.SyntaxExtensions.WithIdentifier(Microsoft.CodeAnalysis.CSharp.Syntax.SimpleNameSyntax,Microsoft.CodeAnalysis.SyntaxToken)
+  href: Microsoft.CodeAnalysis.CSharp.SyntaxExtensions.yml
+  name: WithIdentifier(SimpleNameSyntax, SyntaxToken)
+  fullName: Microsoft.CodeAnalysis.CSharp.SyntaxExtensions.WithIdentifier(Microsoft.CodeAnalysis.CSharp.Syntax.SimpleNameSyntax, Microsoft.CodeAnalysis.SyntaxToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Syntax/SyntaxExtensions.cs
+    startLine: 145
+  summary: >-
+    Updates the given SimpleNameSyntax node with the given identifier token.
+
+    This function is a wrapper that calls WithIdentifier on derived syntax nodes.
+  syntax:
+    content:
+      CSharp: public static SimpleNameSyntax WithIdentifier(this SimpleNameSyntax simpleName, SyntaxToken identifier)
+    parameters:
+    - id: simpleName
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.Syntax.SimpleNameSyntax
+        name: SimpleNameSyntax
+        href: Microsoft.CodeAnalysis.CSharp.Syntax.SimpleNameSyntax.yml
+    - id: identifier
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxToken
+        name: SyntaxToken
+        href: Microsoft.CodeAnalysis.SyntaxToken
+    return:
+      id: SimpleNameSyntax
+      description: The given simple name updated with the given identifier.
+  id: Microsoft.CodeAnalysis.CSharp.SyntaxExtensions.WithIdentifier(Microsoft.CodeAnalysis.CSharp.Syntax.SimpleNameSyntax,Microsoft.CodeAnalysis.SyntaxToken)
+- uid: Microsoft.CodeAnalysis.CSharp.SyntaxExtensions.Update(Microsoft.CodeAnalysis.CSharp.Syntax.IndexerDeclarationSyntax,Microsoft.CodeAnalysis.SyntaxList{Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax},Microsoft.CodeAnalysis.SyntaxTokenList,Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax,Microsoft.CodeAnalysis.CSharp.Syntax.ExplicitInterfaceSpecifierSyntax,Microsoft.CodeAnalysis.SyntaxToken,Microsoft.CodeAnalysis.CSharp.Syntax.BracketedParameterListSyntax,Microsoft.CodeAnalysis.CSharp.Syntax.AccessorListSyntax)
+  href: Microsoft.CodeAnalysis.CSharp.SyntaxExtensions.yml
+  name: Update(IndexerDeclarationSyntax, SyntaxList<AttributeListSyntax>, SyntaxTokenList, TypeSyntax, ExplicitInterfaceSpecifierSyntax, SyntaxToken, BracketedParameterListSyntax, AccessorListSyntax)
+  fullName: Microsoft.CodeAnalysis.CSharp.SyntaxExtensions.Update(Microsoft.CodeAnalysis.CSharp.Syntax.IndexerDeclarationSyntax, Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax>, Microsoft.CodeAnalysis.SyntaxTokenList, Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax, Microsoft.CodeAnalysis.CSharp.Syntax.ExplicitInterfaceSpecifierSyntax, Microsoft.CodeAnalysis.SyntaxToken, Microsoft.CodeAnalysis.CSharp.Syntax.BracketedParameterListSyntax, Microsoft.CodeAnalysis.CSharp.Syntax.AccessorListSyntax)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Syntax/SyntaxExtensions.cs
+    startLine: 199
+  syntax:
+    content:
+      CSharp: public static IndexerDeclarationSyntax Update(this IndexerDeclarationSyntax syntax, SyntaxList<AttributeListSyntax> attributeLists, SyntaxTokenList modifiers, TypeSyntax type, ExplicitInterfaceSpecifierSyntax explicitInterfaceSpecifier, SyntaxToken thisKeyword, BracketedParameterListSyntax parameterList, AccessorListSyntax accessorList)
+    parameters:
+    - id: syntax
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.Syntax.IndexerDeclarationSyntax
+        name: IndexerDeclarationSyntax
+        href: Microsoft.CodeAnalysis.CSharp.Syntax.IndexerDeclarationSyntax.yml
+    - id: attributeLists
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxList{Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax}
+        name: SyntaxList
+        href: Microsoft.CodeAnalysis.SyntaxList{Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax}
+    - id: modifiers
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxTokenList
+        name: SyntaxTokenList
+        href: Microsoft.CodeAnalysis.SyntaxTokenList
+    - id: type
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax
+        name: TypeSyntax
+        href: Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax.yml
+    - id: explicitInterfaceSpecifier
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.Syntax.ExplicitInterfaceSpecifierSyntax
+        name: ExplicitInterfaceSpecifierSyntax
+        href: Microsoft.CodeAnalysis.CSharp.Syntax.ExplicitInterfaceSpecifierSyntax.yml
+    - id: thisKeyword
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxToken
+        name: SyntaxToken
+        href: Microsoft.CodeAnalysis.SyntaxToken
+    - id: parameterList
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.Syntax.BracketedParameterListSyntax
+        name: BracketedParameterListSyntax
+        href: Microsoft.CodeAnalysis.CSharp.Syntax.BracketedParameterListSyntax.yml
+    - id: accessorList
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.Syntax.AccessorListSyntax
+        name: AccessorListSyntax
+        href: Microsoft.CodeAnalysis.CSharp.Syntax.AccessorListSyntax.yml
+    return:
+      id: IndexerDeclarationSyntax
+  id: Microsoft.CodeAnalysis.CSharp.SyntaxExtensions.Update(Microsoft.CodeAnalysis.CSharp.Syntax.IndexerDeclarationSyntax,Microsoft.CodeAnalysis.SyntaxList{Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax},Microsoft.CodeAnalysis.SyntaxTokenList,Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax,Microsoft.CodeAnalysis.CSharp.Syntax.ExplicitInterfaceSpecifierSyntax,Microsoft.CodeAnalysis.SyntaxToken,Microsoft.CodeAnalysis.CSharp.Syntax.BracketedParameterListSyntax,Microsoft.CodeAnalysis.CSharp.Syntax.AccessorListSyntax)
+- uid: Microsoft.CodeAnalysis.CSharp.SyntaxExtensions.Update(Microsoft.CodeAnalysis.CSharp.Syntax.OperatorDeclarationSyntax,Microsoft.CodeAnalysis.SyntaxList{Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax},Microsoft.CodeAnalysis.SyntaxTokenList,Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax,Microsoft.CodeAnalysis.SyntaxToken,Microsoft.CodeAnalysis.SyntaxToken,Microsoft.CodeAnalysis.CSharp.Syntax.ParameterListSyntax,Microsoft.CodeAnalysis.CSharp.Syntax.BlockSyntax,Microsoft.CodeAnalysis.SyntaxToken)
+  href: Microsoft.CodeAnalysis.CSharp.SyntaxExtensions.yml
+  name: Update(OperatorDeclarationSyntax, SyntaxList<AttributeListSyntax>, SyntaxTokenList, TypeSyntax, SyntaxToken, SyntaxToken, ParameterListSyntax, BlockSyntax, SyntaxToken)
+  fullName: Microsoft.CodeAnalysis.CSharp.SyntaxExtensions.Update(Microsoft.CodeAnalysis.CSharp.Syntax.OperatorDeclarationSyntax, Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax>, Microsoft.CodeAnalysis.SyntaxTokenList, Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax, Microsoft.CodeAnalysis.SyntaxToken, Microsoft.CodeAnalysis.SyntaxToken, Microsoft.CodeAnalysis.CSharp.Syntax.ParameterListSyntax, Microsoft.CodeAnalysis.CSharp.Syntax.BlockSyntax, Microsoft.CodeAnalysis.SyntaxToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Syntax/SyntaxExtensions.cs
+    startLine: 221
+  syntax:
+    content:
+      CSharp: public static OperatorDeclarationSyntax Update(this OperatorDeclarationSyntax syntax, SyntaxList<AttributeListSyntax> attributeLists, SyntaxTokenList modifiers, TypeSyntax returnType, SyntaxToken operatorKeyword, SyntaxToken operatorToken, ParameterListSyntax parameterList, BlockSyntax block, SyntaxToken semicolonToken)
+    parameters:
+    - id: syntax
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.Syntax.OperatorDeclarationSyntax
+        name: OperatorDeclarationSyntax
+        href: Microsoft.CodeAnalysis.CSharp.Syntax.OperatorDeclarationSyntax.yml
+    - id: attributeLists
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxList{Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax}
+        name: SyntaxList
+        href: Microsoft.CodeAnalysis.SyntaxList{Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax}
+    - id: modifiers
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxTokenList
+        name: SyntaxTokenList
+        href: Microsoft.CodeAnalysis.SyntaxTokenList
+    - id: returnType
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax
+        name: TypeSyntax
+        href: Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax.yml
+    - id: operatorKeyword
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxToken
+        name: SyntaxToken
+        href: Microsoft.CodeAnalysis.SyntaxToken
+    - id: operatorToken
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxToken
+        name: SyntaxToken
+        href: Microsoft.CodeAnalysis.SyntaxToken
+    - id: parameterList
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.Syntax.ParameterListSyntax
+        name: ParameterListSyntax
+        href: Microsoft.CodeAnalysis.CSharp.Syntax.ParameterListSyntax.yml
+    - id: block
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.Syntax.BlockSyntax
+        name: BlockSyntax
+        href: Microsoft.CodeAnalysis.CSharp.Syntax.BlockSyntax.yml
+    - id: semicolonToken
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxToken
+        name: SyntaxToken
+        href: Microsoft.CodeAnalysis.SyntaxToken
+    return:
+      id: OperatorDeclarationSyntax
+  id: Microsoft.CodeAnalysis.CSharp.SyntaxExtensions.Update(Microsoft.CodeAnalysis.CSharp.Syntax.OperatorDeclarationSyntax,Microsoft.CodeAnalysis.SyntaxList{Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax},Microsoft.CodeAnalysis.SyntaxTokenList,Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax,Microsoft.CodeAnalysis.SyntaxToken,Microsoft.CodeAnalysis.SyntaxToken,Microsoft.CodeAnalysis.CSharp.Syntax.ParameterListSyntax,Microsoft.CodeAnalysis.CSharp.Syntax.BlockSyntax,Microsoft.CodeAnalysis.SyntaxToken)
+- uid: Microsoft.CodeAnalysis.CSharp.SyntaxExtensions.Update(Microsoft.CodeAnalysis.CSharp.Syntax.MethodDeclarationSyntax,Microsoft.CodeAnalysis.SyntaxList{Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax},Microsoft.CodeAnalysis.SyntaxTokenList,Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax,Microsoft.CodeAnalysis.CSharp.Syntax.ExplicitInterfaceSpecifierSyntax,Microsoft.CodeAnalysis.SyntaxToken,Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterListSyntax,Microsoft.CodeAnalysis.CSharp.Syntax.ParameterListSyntax,Microsoft.CodeAnalysis.SyntaxList{Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterConstraintClauseSyntax},Microsoft.CodeAnalysis.CSharp.Syntax.BlockSyntax,Microsoft.CodeAnalysis.SyntaxToken)
+  href: Microsoft.CodeAnalysis.CSharp.SyntaxExtensions.yml
+  name: Update(MethodDeclarationSyntax, SyntaxList<AttributeListSyntax>, SyntaxTokenList, TypeSyntax, ExplicitInterfaceSpecifierSyntax, SyntaxToken, TypeParameterListSyntax, ParameterListSyntax, SyntaxList<TypeParameterConstraintClauseSyntax>, BlockSyntax, SyntaxToken)
+  fullName: Microsoft.CodeAnalysis.CSharp.SyntaxExtensions.Update(Microsoft.CodeAnalysis.CSharp.Syntax.MethodDeclarationSyntax, Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax>, Microsoft.CodeAnalysis.SyntaxTokenList, Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax, Microsoft.CodeAnalysis.CSharp.Syntax.ExplicitInterfaceSpecifierSyntax, Microsoft.CodeAnalysis.SyntaxToken, Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterListSyntax, Microsoft.CodeAnalysis.CSharp.Syntax.ParameterListSyntax, Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterConstraintClauseSyntax>, Microsoft.CodeAnalysis.CSharp.Syntax.BlockSyntax, Microsoft.CodeAnalysis.SyntaxToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Syntax/SyntaxExtensions.cs
+    startLine: 244
+  syntax:
+    content:
+      CSharp: public static MethodDeclarationSyntax Update(this MethodDeclarationSyntax syntax, SyntaxList<AttributeListSyntax> attributeLists, SyntaxTokenList modifiers, TypeSyntax returnType, ExplicitInterfaceSpecifierSyntax explicitInterfaceSpecifier, SyntaxToken identifier, TypeParameterListSyntax typeParameterList, ParameterListSyntax parameterList, SyntaxList<TypeParameterConstraintClauseSyntax> constraintClauses, BlockSyntax block, SyntaxToken semicolonToken)
+    parameters:
+    - id: syntax
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.Syntax.MethodDeclarationSyntax
+        name: MethodDeclarationSyntax
+        href: Microsoft.CodeAnalysis.CSharp.Syntax.MethodDeclarationSyntax.yml
+    - id: attributeLists
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxList{Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax}
+        name: SyntaxList
+        href: Microsoft.CodeAnalysis.SyntaxList{Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax}
+    - id: modifiers
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxTokenList
+        name: SyntaxTokenList
+        href: Microsoft.CodeAnalysis.SyntaxTokenList
+    - id: returnType
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax
+        name: TypeSyntax
+        href: Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax.yml
+    - id: explicitInterfaceSpecifier
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.Syntax.ExplicitInterfaceSpecifierSyntax
+        name: ExplicitInterfaceSpecifierSyntax
+        href: Microsoft.CodeAnalysis.CSharp.Syntax.ExplicitInterfaceSpecifierSyntax.yml
+    - id: identifier
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxToken
+        name: SyntaxToken
+        href: Microsoft.CodeAnalysis.SyntaxToken
+    - id: typeParameterList
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterListSyntax
+        name: TypeParameterListSyntax
+        href: Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterListSyntax.yml
+    - id: parameterList
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.Syntax.ParameterListSyntax
+        name: ParameterListSyntax
+        href: Microsoft.CodeAnalysis.CSharp.Syntax.ParameterListSyntax.yml
+    - id: constraintClauses
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxList{Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterConstraintClauseSyntax}
+        name: SyntaxList
+        href: Microsoft.CodeAnalysis.SyntaxList{Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterConstraintClauseSyntax}
+    - id: block
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.Syntax.BlockSyntax
+        name: BlockSyntax
+        href: Microsoft.CodeAnalysis.CSharp.Syntax.BlockSyntax.yml
+    - id: semicolonToken
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxToken
+        name: SyntaxToken
+        href: Microsoft.CodeAnalysis.SyntaxToken
+    return:
+      id: MethodDeclarationSyntax
+  id: Microsoft.CodeAnalysis.CSharp.SyntaxExtensions.Update(Microsoft.CodeAnalysis.CSharp.Syntax.MethodDeclarationSyntax,Microsoft.CodeAnalysis.SyntaxList{Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax},Microsoft.CodeAnalysis.SyntaxTokenList,Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax,Microsoft.CodeAnalysis.CSharp.Syntax.ExplicitInterfaceSpecifierSyntax,Microsoft.CodeAnalysis.SyntaxToken,Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterListSyntax,Microsoft.CodeAnalysis.CSharp.Syntax.ParameterListSyntax,Microsoft.CodeAnalysis.SyntaxList{Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterConstraintClauseSyntax},Microsoft.CodeAnalysis.CSharp.Syntax.BlockSyntax,Microsoft.CodeAnalysis.SyntaxToken)

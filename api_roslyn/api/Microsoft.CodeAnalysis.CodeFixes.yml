@@ -1,0 +1,64 @@
+items:
+- uid: Microsoft.CodeAnalysis.CodeFixes
+  href: Microsoft.CodeAnalysis.CodeFixes.yml
+  name: CodeFixes
+  fullName: Microsoft.CodeAnalysis.CodeFixes
+  type: Namespace
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      description: ef085ea0
+    path: src/Features/Core/CodeFixes/Suppression/SuppressionCodeAction.cs
+    startLine: 5
+  id: Microsoft.CodeAnalysis.CodeFixes
+  children:
+  - Microsoft.CodeAnalysis.CodeFixes.CodeFixContext
+  - Microsoft.CodeAnalysis.CodeFixes.WellKnownFixAllProviders
+  - Microsoft.CodeAnalysis.CodeFixes.FixAllContext
+  - Microsoft.CodeAnalysis.CodeFixes.FixAllScope
+  - Microsoft.CodeAnalysis.CodeFixes.FixAllProvider
+  - Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider
+  - Microsoft.CodeAnalysis.CodeFixes.ExportCodeFixProviderAttribute
+references:
+- uid: Microsoft.CodeAnalysis.CodeFixes.CodeFixContext
+  href: Microsoft.CodeAnalysis.CodeFixes.CodeFixContext.yml
+  name: CodeFixContext
+  type: Struct
+  summary: Context for code fixes provided by an [Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider](Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider.yml).
+- uid: Microsoft.CodeAnalysis.CodeFixes.WellKnownFixAllProviders
+  href: Microsoft.CodeAnalysis.CodeFixes.WellKnownFixAllProviders.yml
+  name: WellKnownFixAllProviders
+  type: Class
+  summary: Contains well known implementations of [Microsoft.CodeAnalysis.CodeFixes.FixAllProvider](Microsoft.CodeAnalysis.CodeFixes.FixAllProvider.yml).
+- uid: Microsoft.CodeAnalysis.CodeFixes.FixAllContext
+  href: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.yml
+  name: FixAllContext
+  type: Class
+  summary: Context for "Fix all occurrences" code fixes provided by an [Microsoft.CodeAnalysis.CodeFixes.FixAllProvider](Microsoft.CodeAnalysis.CodeFixes.FixAllProvider.yml).
+- uid: Microsoft.CodeAnalysis.CodeFixes.FixAllScope
+  href: Microsoft.CodeAnalysis.CodeFixes.FixAllScope.yml
+  name: FixAllScope
+  type: Enum
+  summary: Indicates scope for "Fix all occurrences" code fixes provided by each [Microsoft.CodeAnalysis.CodeFixes.FixAllProvider](Microsoft.CodeAnalysis.CodeFixes.FixAllProvider.yml).
+- uid: Microsoft.CodeAnalysis.CodeFixes.FixAllProvider
+  href: Microsoft.CodeAnalysis.CodeFixes.FixAllProvider.yml
+  name: FixAllProvider
+  type: Class
+  summary: >-
+    Implement this abstract type to provide fix all/multiple occurrences code fixes for source code problems.
+
+    Alternatively, you can use any of the well known fix all providers from [Microsoft.CodeAnalysis.CodeFixes.WellKnownFixAllProviders](Microsoft.CodeAnalysis.CodeFixes.WellKnownFixAllProviders.yml).
+- uid: Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider
+  href: Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider.yml
+  name: CodeFixProvider
+  type: Class
+  summary: >-
+    Implement this type to provide fixes for source code problems.
+
+    Remember to use [Microsoft.CodeAnalysis.CodeFixes.ExportCodeFixProviderAttribute](Microsoft.CodeAnalysis.CodeFixes.ExportCodeFixProviderAttribute.yml) so the host environment can offer your fixes in a UI.
+- uid: Microsoft.CodeAnalysis.CodeFixes.ExportCodeFixProviderAttribute
+  href: Microsoft.CodeAnalysis.CodeFixes.ExportCodeFixProviderAttribute.yml
+  name: ExportCodeFixProviderAttribute
+  type: Class
+  summary: Use this attribute to declare a [Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider](Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider.yml) implementation so that it can be discovered by the host.

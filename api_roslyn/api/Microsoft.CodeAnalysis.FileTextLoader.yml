@@ -1,0 +1,142 @@
+items:
+- uid: Microsoft.CodeAnalysis.FileTextLoader
+  href: Microsoft.CodeAnalysis.FileTextLoader.yml
+  name: FileTextLoader
+  fullName: Microsoft.CodeAnalysis.FileTextLoader
+  type: Class
+  source:
+    remote: &o0
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      description: ef085ea0
+    path: src/Workspaces/Core/Desktop/Workspace/FileTextLoader.cs
+    startLine: 13
+  syntax:
+    content:
+      CSharp: public class FileTextLoader
+  inheritance:
+  - id: System.Object
+    name: System.Object
+    isExternal: true
+  - id: Microsoft.CodeAnalysis.TextLoader
+    name: TextLoader
+    href: Microsoft.CodeAnalysis.TextLoader.yml
+  id: Microsoft.CodeAnalysis.FileTextLoader
+  children:
+  - Microsoft.CodeAnalysis.FileTextLoader.#ctor(System.String,System.Text.Encoding)
+  - Microsoft.CodeAnalysis.FileTextLoader.Path
+  - Microsoft.CodeAnalysis.FileTextLoader.DefaultEncoding
+  - Microsoft.CodeAnalysis.FileTextLoader.LoadTextAndVersionAsync(Microsoft.CodeAnalysis.Workspace,Microsoft.CodeAnalysis.DocumentId,System.Threading.CancellationToken)
+- uid: Microsoft.CodeAnalysis.FileTextLoader.#ctor(System.String,System.Text.Encoding)
+  href: Microsoft.CodeAnalysis.FileTextLoader.yml
+  name: FileTextLoader(string, Encoding)
+  fullName: Microsoft.CodeAnalysis.FileTextLoader.FileTextLoader(string, System.Text.Encoding)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Desktop/Workspace/FileTextLoader.cs
+    startLine: 29
+  summary: Creates a content loader for specified file.
+  syntax:
+    content:
+      CSharp: public FileTextLoader(string path, Encoding defaultEncoding)
+    parameters:
+    - id: path
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+      description: An absolute file path.
+    - id: defaultEncoding
+      type:
+        id: System.Text.Encoding
+        name: System.Text.Encoding
+        isExternal: true
+      description: >-
+        Specifies an encoding to be used if the actual encoding can't be determined from the stream content (the stream doesn't start with Byte Order Mark).
+
+        If not specified auto-detect heuristics are used to determine the encoding. If these heuristics fail the decoding is assumed to be [System.Text.Encoding.Default](#).
+
+        Note that if the stream starts with Byte Order Mark the value of  is ignored.
+  id: Microsoft.CodeAnalysis.FileTextLoader.#ctor(System.String,System.Text.Encoding)
+- uid: Microsoft.CodeAnalysis.FileTextLoader.Path
+  href: Microsoft.CodeAnalysis.FileTextLoader.yml
+  name: Path
+  fullName: Microsoft.CodeAnalysis.FileTextLoader.Path
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Desktop/Workspace/FileTextLoader.cs
+    startLine: 40
+  summary: Absolute path of the file.
+  syntax:
+    content:
+      CSharp: public string Path { get; }
+    parameters:
+    - id: Path
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+  id: Microsoft.CodeAnalysis.FileTextLoader.Path
+- uid: Microsoft.CodeAnalysis.FileTextLoader.DefaultEncoding
+  href: Microsoft.CodeAnalysis.FileTextLoader.yml
+  name: DefaultEncoding
+  fullName: Microsoft.CodeAnalysis.FileTextLoader.DefaultEncoding
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Desktop/Workspace/FileTextLoader.cs
+    startLine: 52
+  summary: >-
+    Specifies an encoding to be used if the actual encoding of the file
+
+    can't be determined from the stream content (the stream doesn't start with Byte Order Mark).
+
+    If null auto-detect heristics are used to determine the encoding.
+
+    If these heuristics fail the decoding is assumed to be [System.Text.Encoding.Default](#).
+
+    Note that if the stream starts with Byte Order Mark the value of [Microsoft.CodeAnalysis.FileTextLoader.DefaultEncoding](Microsoft.CodeAnalysis.FileTextLoader.yml) is ignored.
+  syntax:
+    content:
+      CSharp: public Encoding DefaultEncoding { get; }
+    parameters:
+    - id: DefaultEncoding
+      type:
+        id: System.Text.Encoding
+        name: System.Text.Encoding
+        isExternal: true
+  id: Microsoft.CodeAnalysis.FileTextLoader.DefaultEncoding
+- uid: Microsoft.CodeAnalysis.FileTextLoader.LoadTextAndVersionAsync(Microsoft.CodeAnalysis.Workspace,Microsoft.CodeAnalysis.DocumentId,System.Threading.CancellationToken)
+  href: Microsoft.CodeAnalysis.FileTextLoader.yml
+  name: LoadTextAndVersionAsync(Workspace, DocumentId, CancellationToken)
+  fullName: Microsoft.CodeAnalysis.FileTextLoader.LoadTextAndVersionAsync(Microsoft.CodeAnalysis.Workspace, Microsoft.CodeAnalysis.DocumentId, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Desktop/Workspace/FileTextLoader.cs
+    startLine: 67
+  summary: Load a text and a version of the document in the workspace.
+  syntax:
+    content:
+      CSharp: public override async Task<TextAndVersion> LoadTextAndVersionAsync(Workspace workspace, DocumentId documentId, CancellationToken cancellationToken)
+    parameters:
+    - id: workspace
+      type:
+        id: Microsoft.CodeAnalysis.Workspace
+        name: Workspace
+        href: Microsoft.CodeAnalysis.Workspace.yml
+    - id: documentId
+      type:
+        id: Microsoft.CodeAnalysis.DocumentId
+        name: DocumentId
+        href: Microsoft.CodeAnalysis.DocumentId.yml
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+    return:
+      id: Task
+  id: Microsoft.CodeAnalysis.FileTextLoader.LoadTextAndVersionAsync(Microsoft.CodeAnalysis.Workspace,Microsoft.CodeAnalysis.DocumentId,System.Threading.CancellationToken)

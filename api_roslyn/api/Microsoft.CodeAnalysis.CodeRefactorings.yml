@@ -1,0 +1,37 @@
+items:
+- uid: Microsoft.CodeAnalysis.CodeRefactorings
+  href: Microsoft.CodeAnalysis.CodeRefactorings.yml
+  name: CodeRefactorings
+  fullName: Microsoft.CodeAnalysis.CodeRefactorings
+  type: Namespace
+  source:
+    remote:
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      description: ef085ea0
+    path: src/Features/Core/EncapsulateField/AbstractEncapsulateFieldCodeRefactoringProvider.cs
+    startLine: 6
+  id: Microsoft.CodeAnalysis.CodeRefactorings
+  children:
+  - Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext
+  - Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider
+  - Microsoft.CodeAnalysis.CodeRefactorings.ExportCodeRefactoringProviderAttribute
+references:
+- uid: Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext
+  href: Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext.yml
+  name: CodeRefactoringContext
+  type: Struct
+  summary: Context for code refactorings provided by an [Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider](Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider.yml).
+- uid: Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider
+  href: Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider.yml
+  name: CodeRefactoringProvider
+  type: Class
+  summary: >-
+    Inherit this type to provide source code refactorings.
+
+    Remember to use [Microsoft.CodeAnalysis.CodeRefactorings.ExportCodeRefactoringProviderAttribute](Microsoft.CodeAnalysis.CodeRefactorings.ExportCodeRefactoringProviderAttribute.yml) so the host environment can offer your refactorings in a UI.
+- uid: Microsoft.CodeAnalysis.CodeRefactorings.ExportCodeRefactoringProviderAttribute
+  href: Microsoft.CodeAnalysis.CodeRefactorings.ExportCodeRefactoringProviderAttribute.yml
+  name: ExportCodeRefactoringProviderAttribute
+  type: Class
+  summary: Use this attribute to declare a [Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider](Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider.yml) implementation so that it can be discovered by the host.

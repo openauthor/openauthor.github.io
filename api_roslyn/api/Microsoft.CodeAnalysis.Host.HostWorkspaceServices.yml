@@ -1,0 +1,239 @@
+items:
+- uid: Microsoft.CodeAnalysis.Host.HostWorkspaceServices
+  href: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.yml
+  name: HostWorkspaceServices
+  fullName: Microsoft.CodeAnalysis.Host.HostWorkspaceServices
+  type: Class
+  source:
+    remote: &o0
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      description: ef085ea0
+    path: src/Workspaces/Core/Portable/Workspace/Host/HostWorkspaceServices.cs
+    startLine: 12
+  summary: Per workspace services provided by the host environment.
+  syntax:
+    content:
+      CSharp: public abstract class HostWorkspaceServices
+  inheritance:
+  - id: System.Object
+    name: System.Object
+    isExternal: true
+  id: Microsoft.CodeAnalysis.Host.HostWorkspaceServices
+  children:
+  - Microsoft.CodeAnalysis.Host.HostWorkspaceServices.HostServices
+  - Microsoft.CodeAnalysis.Host.HostWorkspaceServices.Workspace
+  - Microsoft.CodeAnalysis.Host.HostWorkspaceServices.GetService``1
+  - Microsoft.CodeAnalysis.Host.HostWorkspaceServices.GetRequiredService``1
+  - Microsoft.CodeAnalysis.Host.HostWorkspaceServices.PersistentStorage
+  - Microsoft.CodeAnalysis.Host.HostWorkspaceServices.TemporaryStorage
+  - Microsoft.CodeAnalysis.Host.HostWorkspaceServices.SupportedLanguages
+  - Microsoft.CodeAnalysis.Host.HostWorkspaceServices.IsSupported(System.String)
+  - Microsoft.CodeAnalysis.Host.HostWorkspaceServices.GetLanguageServices(System.String)
+  - Microsoft.CodeAnalysis.Host.HostWorkspaceServices.FindLanguageServices``1(Microsoft.CodeAnalysis.Host.HostWorkspaceServices.MetadataFilter)
+- uid: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.HostServices
+  href: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.yml
+  name: HostServices
+  fullName: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.HostServices
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Host/HostWorkspaceServices.cs
+    startLine: 18
+  summary: The host services this workspace services originated from.
+  syntax:
+    content:
+      CSharp: public abstract HostServices HostServices { get; }
+    parameters:
+    - id: HostServices
+      type:
+        id: Microsoft.CodeAnalysis.Host.HostServices
+        name: HostServices
+        href: Microsoft.CodeAnalysis.Host.HostServices.yml
+  id: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.HostServices
+- uid: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.Workspace
+  href: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.yml
+  name: Workspace
+  fullName: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.Workspace
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Host/HostWorkspaceServices.cs
+    startLine: 23
+  summary: The workspace corresponding to this workspace services instantiation
+  syntax:
+    content:
+      CSharp: public abstract Workspace Workspace { get; }
+    parameters:
+    - id: Workspace
+      type:
+        id: Microsoft.CodeAnalysis.Workspace
+        name: Workspace
+        href: Microsoft.CodeAnalysis.Workspace.yml
+  id: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.Workspace
+- uid: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.GetService``1
+  href: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.yml
+  name: GetService<TWorkspaceService>()
+  fullName: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.GetService<TWorkspaceService>()
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Host/HostWorkspaceServices.cs
+    startLine: 29
+  summary: >-
+    Gets a workspace specific service provided by the host identified by the service type.
+
+    If the host does not provide the service, this method returns null.
+  syntax:
+    content:
+      CSharp: 'public abstract TWorkspaceService GetService<TWorkspaceService>()where TWorkspaceService : IWorkspaceService;'
+    parameters: []
+    return:
+      id: TWorkspaceService
+  id: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.GetService``1
+- uid: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.GetRequiredService``1
+  href: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.yml
+  name: GetRequiredService<TWorkspaceService>()
+  fullName: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.GetRequiredService<TWorkspaceService>()
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Host/HostWorkspaceServices.cs
+    startLine: 35
+  summary: >-
+    Gets a workspace specific service provided by the host identified by the service type.
+
+    If the host does not provide the service, this method returns [System.InvalidOperationException](#).
+  syntax:
+    content:
+      CSharp: 'public TWorkspaceService GetRequiredService<TWorkspaceService>()where TWorkspaceService : IWorkspaceService'
+    parameters: []
+    return:
+      id: TWorkspaceService
+  id: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.GetRequiredService``1
+- uid: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.PersistentStorage
+  href: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.yml
+  name: PersistentStorage
+  fullName: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.PersistentStorage
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Host/HostWorkspaceServices.cs
+    startLine: 49
+  summary: A service for storing information across that can be retrieved in a separate process.
+  syntax:
+    content:
+      CSharp: public virtual IPersistentStorageService PersistentStorage { get; }
+    parameters:
+    - id: PersistentStorage
+      type:
+        id: Microsoft.CodeAnalysis.Host.IPersistentStorageService
+        name: IPersistentStorageService
+        href: Microsoft.CodeAnalysis.Host.IPersistentStorageService.yml
+  id: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.PersistentStorage
+- uid: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.TemporaryStorage
+  href: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.yml
+  name: TemporaryStorage
+  fullName: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.TemporaryStorage
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Host/HostWorkspaceServices.cs
+    startLine: 57
+  summary: A service for storing information in a temporary location that only lasts for the duration of the process.
+  syntax:
+    content:
+      CSharp: public virtual ITemporaryStorageService TemporaryStorage { get; }
+    parameters:
+    - id: TemporaryStorage
+      type:
+        id: Microsoft.CodeAnalysis.Host.ITemporaryStorageService
+        name: ITemporaryStorageService
+        href: Microsoft.CodeAnalysis.Host.ITemporaryStorageService.yml
+  id: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.TemporaryStorage
+- uid: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.SupportedLanguages
+  href: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.yml
+  name: SupportedLanguages
+  fullName: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.SupportedLanguages
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Host/HostWorkspaceServices.cs
+    startLine: 73
+  summary: A list of language names for supported language services.
+  syntax:
+    content:
+      CSharp: public virtual IEnumerable<string> SupportedLanguages { get; }
+    parameters:
+    - id: SupportedLanguages
+      type:
+        id: System.Collections.Generic.IEnumerable{System.String}
+        name: System.Collections.Generic.IEnumerable{System.String}
+        isExternal: true
+  id: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.SupportedLanguages
+- uid: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.IsSupported(System.String)
+  href: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.yml
+  name: IsSupported(string)
+  fullName: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.IsSupported(string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Host/HostWorkspaceServices.cs
+    startLine: 81
+  summary: Returns true if the language is supported.
+  syntax:
+    content:
+      CSharp: public virtual bool IsSupported(string languageName)
+    parameters:
+    - id: languageName
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+    return:
+      id: Boolean
+  id: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.IsSupported(System.String)
+- uid: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.GetLanguageServices(System.String)
+  href: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.yml
+  name: GetLanguageServices(string)
+  fullName: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.GetLanguageServices(string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Host/HostWorkspaceServices.cs
+    startLine: 89
+  summary: Gets the [Microsoft.CodeAnalysis.Host.HostLanguageServices](Microsoft.CodeAnalysis.Host.HostLanguageServices.yml) for the language name.
+  syntax:
+    content:
+      CSharp: public virtual HostLanguageServices GetLanguageServices(string languageName)
+    parameters:
+    - id: languageName
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+    return:
+      id: HostLanguageServices
+  id: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.GetLanguageServices(System.String)
+- uid: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.FindLanguageServices``1(Microsoft.CodeAnalysis.Host.HostWorkspaceServices.MetadataFilter)
+  href: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.yml
+  name: FindLanguageServices<TLanguageService>(MetadataFilter)
+  fullName: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.FindLanguageServices<TLanguageService>(Microsoft.CodeAnalysis.Host.HostWorkspaceServices.MetadataFilter)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Host/HostWorkspaceServices.cs
+    startLine: 99
+  summary: Finds all language services of the corresponding type across all supported languages that match the filter criteria.
+  syntax:
+    content:
+      CSharp: public abstract IEnumerable<TLanguageService> FindLanguageServices<TLanguageService>(MetadataFilter filter);
+    parameters:
+    - id: filter
+      type:
+        id: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.MetadataFilter
+        name: MetadataFilter
+        href: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.MetadataFilter.yml
+    return:
+      id: IEnumerable
+  id: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.FindLanguageServices``1(Microsoft.CodeAnalysis.Host.HostWorkspaceServices.MetadataFilter)

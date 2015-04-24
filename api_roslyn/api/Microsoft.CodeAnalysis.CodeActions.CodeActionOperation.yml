@@ -1,0 +1,73 @@
+items:
+- uid: Microsoft.CodeAnalysis.CodeActions.CodeActionOperation
+  href: Microsoft.CodeAnalysis.CodeActions.CodeActionOperation.yml
+  name: CodeActionOperation
+  fullName: Microsoft.CodeAnalysis.CodeActions.CodeActionOperation
+  type: Class
+  source:
+    remote: &o0
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      description: ef085ea0
+    path: src/Workspaces/Core/Portable/CodeActions/Operations/CodeActionOperation.cs
+    startLine: 9
+  summary: Represents a single operation of a multi-operation code action.
+  syntax:
+    content:
+      CSharp: public abstract class CodeActionOperation
+  inheritance:
+  - id: System.Object
+    name: System.Object
+    isExternal: true
+  id: Microsoft.CodeAnalysis.CodeActions.CodeActionOperation
+  children:
+  - Microsoft.CodeAnalysis.CodeActions.CodeActionOperation.Title
+  - Microsoft.CodeAnalysis.CodeActions.CodeActionOperation.Apply(Microsoft.CodeAnalysis.Workspace,System.Threading.CancellationToken)
+- uid: Microsoft.CodeAnalysis.CodeActions.CodeActionOperation.Title
+  href: Microsoft.CodeAnalysis.CodeActions.CodeActionOperation.yml
+  name: Title
+  fullName: Microsoft.CodeAnalysis.CodeActions.CodeActionOperation.Title
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/CodeActions/Operations/CodeActionOperation.cs
+    startLine: 14
+  summary: A short title describing of the effect of the operation.
+  syntax:
+    content:
+      CSharp: public virtual string Title { get; }
+    parameters:
+    - id: Title
+      type:
+        id: System.String
+        name: System.String
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CodeActions.CodeActionOperation.Title
+- uid: Microsoft.CodeAnalysis.CodeActions.CodeActionOperation.Apply(Microsoft.CodeAnalysis.Workspace,System.Threading.CancellationToken)
+  href: Microsoft.CodeAnalysis.CodeActions.CodeActionOperation.yml
+  name: Apply(Workspace, CancellationToken)
+  fullName: Microsoft.CodeAnalysis.CodeActions.CodeActionOperation.Apply(Microsoft.CodeAnalysis.Workspace, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/CodeActions/Operations/CodeActionOperation.cs
+    startLine: 23
+  summary: >-
+    Called by the host environment to apply the effect of the operation.
+
+    This method is guaranteed to be called on the UI thread.
+  syntax:
+    content:
+      CSharp: public virtual void Apply(Workspace workspace, CancellationToken cancellationToken)
+    parameters:
+    - id: workspace
+      type:
+        id: Microsoft.CodeAnalysis.Workspace
+        name: Workspace
+        href: Microsoft.CodeAnalysis.Workspace.yml
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: System.Threading.CancellationToken
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CodeActions.CodeActionOperation.Apply(Microsoft.CodeAnalysis.Workspace,System.Threading.CancellationToken)
