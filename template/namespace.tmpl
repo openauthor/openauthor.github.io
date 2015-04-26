@@ -3,10 +3,10 @@
   <article class="">
     <div id="article-header">
       <a ng-if="::model.mdHref" ng-href="{{::model.mdHref}}" class="btn pull-right">
-        <span class="glyphicon glyphicon-edit">&nbsp;</span>Improve this Doc
+        <!--<span class="glyphicon glyphicon-edit">&nbsp;</span>-->Improve this Doc
       </a>
       <a class="btn pull-right" ng-href={{::getViewSourceHref()}}>
-        <span class="glyphicon glyphicon-eye-open">&nbsp;</span>View Source
+        <!--<span class="glyphicon glyphicon-eye-open">&nbsp;</span>-->View Source
       </a>
       <h1 class="">
         {{model.type}} {{model.name}}
@@ -20,7 +20,7 @@
         </div>
       </section>
     </div>
-    <section id="article-body">
+    <!--<section id="article-body">
       <div class="" ng-repeat="itemtype in ::partialModel.itemtypes" >
         <h3 class="" ng-if="::itemtype.show">{{::itemtype.description}}</h3>
         <table ng-if="itemtype.show">
@@ -38,6 +38,25 @@
             </td>
           </tr>
         </table>
+      </div>
+    </section>-->
+    <section id="article-body">
+      <div class="" ng-repeat="itemtype in ::partialModel.itemtypes">
+        <h3 class="" ng-if="::itemtype.show">{{::itemtype.description}}</h3>
+        <div class=""  ng-repeat="item in ::model.items" ng-if="::(item.type == itemtype.name)">
+          <div class="item-section">
+            <div class="item-header">
+              <a class="item-toggle" href="{{::getLinkHref(item.href)}}">
+                <div class="item-title">
+                  {{item.name}}
+                </div>
+              </a>
+            </div>
+            <div class="item-summary">
+              <markdown ng-model="item.summary"></markdown>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </article>

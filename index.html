@@ -65,11 +65,6 @@
       </div>
       <div class="subnav navbar navbar-default">
         <div class="container">
-            <div ng-if="partialModel.model.items" class="expand-all pull-right">
-              <a ng-click = "expandAll(true);">Expand All</a>
-              <span class="divider">|</span>
-              <a ng-click = "expandAll(false);">Collapse All</a>
-            </div>
             <ul class="breadcrumb">
               <li ng-repeat="crumb in breadcrumb">
                 <a ng-href="{{::getBreadCrumbHref(crumb.url)}}">{{::crumb.name}}</a>
@@ -122,12 +117,12 @@
     <div role="main" class="container">
       <div ng-if="toc" class="grid-left sidenav">
         <div id="tocLoading" ng-show="tocLoading">Loading...</div>
-        <div ng-hide="tocLoading" ng-if="toc" ng-repeat="model in [toc.content]" ng-include="'template/toc.tmpl'"></div>
+        <div ng-hide="tocLoading" ng-cloak ng-repeat="model in [toc.content]" ng-include="'template/toc.tmpl'"></div>
       </div>
       <div ng-class="{grid: !toc, 'grid-right': toc}" class="article">
         <div id="loading" ng-show="loading">Loading...</div>
-        <div markdown ng-if="contentType === 'md'" ng-hide="loading" ng-repeat="model in [partialModel.model]" ng-include="partialModel.path" autoscroll></div>
-          <div ng-if="contentType !== 'md'" ng-hide="loading" ng-repeat="model in [partialModel.model]" ng-include="partialModel.path" autoscroll></div>
+        <div markdown ng-cloak ng-if="partialModel.contentType === 'md'" ng-hide="loading" ng-repeat="model in [partialModel.model]" ng-include="partialModel.path" autoscroll></div>
+          <div ng-cloak ng-if="partialModel.contentType !== 'md'" ng-hide="loading" ng-repeat="model in [partialModel.model]" ng-include="partialModel.path" autoscroll></div>
       </div>
     </div>
     <footer>

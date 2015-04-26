@@ -1,23 +1,27 @@
 <a class="btn toc-toggle" ng-init="tocToggle = false" ng-click="tocToggle = !tocToggle">Show / Hide Table of Contents</a>
-  <form ng-class="{focus:focus}" class="toc-filter" ng-submit="submit()">
-    <span class="glyphicon glyphicon-filter filter-icon"></span>
-    <input type="text" class="filter-toc" placeholder="Enter here to filter..." ng-focus="focus=true" ng-blur="focus=false" ng-change="filteredItems(f)" ng-model="f" autocomplete="off" />
-  </form>
-<div ng-hide="tocToggle">
-  <ul class="nav nav-stacked sidenav-lvl-1">
-    <li ng-repeat="navGroup in model track by $index" ng-class="tocClass(navGroup)" ng-show="!navGroup.hide">
-      <a ng-click="isCollapsed = !isCollapsed" class="sidenav-expand" ng-show="navGroup.items">
-        <span ng-hide="isCollapsed" class="caret"></span>
-        <span ng-hide="!isCollapsed" class="caret caret-side"></span>
-      </a>
-      <a ng-href="{{getTocHref(navGroup.href)}}" class="sidenav-heading">{{ navGroup.uid || navGroup.name}}</a>
-      <div collapse="isCollapsed">
-        <ul ng-if="navGroup.items" class="nav nav-stacked sidenav-lvl-2">
-          <li ng-repeat="navItem in navGroup.items track by $index" ng-class="tocClass(navItem)" ng-show="!navItem.hide">
-            <a tabindex="2" ng-class="linkClass(navItem)" ng-href="{{getTocHref(navItem.href)}}">{{navItem.name}}</a>
-          </li>
-        </ul>
-      </div>
-    </li>
-  </ul>
+<div ng-hide="tocToggle" class="sidetoggle">
+  <div class="sidefilter">
+    <form ng-class="{focus:focus}" class="toc-filter" ng-submit="submit()">
+      <span class="glyphicon glyphicon-filter filter-icon"></span>
+      <input type="text" placeholder="Enter here to filter..." ng-focus="focus=true" ng-blur="focus=false" ng-change="filteredItems(f)" ng-model="f" autocomplete="off" />
+    </form>
+  </div>
+  <div class="sidetoc">
+    <ul class="nav nav-stacked sidetoc-lvl-1">
+      <li ng-repeat="navGroup in model track by $index" ng-class="tocClass(navGroup)" ng-show="!navGroup.hide">
+        <!--<a ng-click="isCollapsed = !isCollapsed" class="sidetoc-expand" ng-show="navGroup.items">
+          <span ng-hide="isCollapsed" class="caret"></span>
+          <span ng-hide="!isCollapsed" class="caret caret-side"></span>
+        </a>-->
+        <a ng-href="{{getTocHref(navGroup.href)}}" class="sidetoc-heading">{{ navGroup.uid || navGroup.name}}</a>
+        <div collapse="isCollapsed">
+          <ul ng-if="navGroup.items" class="nav nav-stacked sidetoc-lvl-2">
+            <li ng-repeat="navItem in navGroup.items track by $index" ng-class="tocClass(navItem)" ng-show="!navItem.hide">
+              <a ng-class="linkClass(navItem)" ng-href="{{getTocHref(navItem.href)}}">{{navItem.name}}</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>

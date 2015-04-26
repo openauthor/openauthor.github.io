@@ -2,11 +2,11 @@
   <!--article-content-->
   <article class="">
     <div id="article-header">
-      <a ng-if="::model.mdHref" ng-href="{{::model.mdHref}}" class="btn pull-right">
-        <span class="glyphicon glyphicon-edit">&nbsp;</span>Improve this Doc
+      <a ng-if="::model.mdHref" ng-href="{{::model.mdHref}}" class="btn pull-right mobile-hide">
+        <!--<span class="glyphicon glyphicon-edit">&nbsp;</span>-->Improve this Doc
       </a>
-      <a class="btn pull-right" ng-href={{::getViewSourceHref()}}>
-        <span class="glyphicon glyphicon-eye-open">&nbsp;</span>View Source
+      <a class="btn pull-right mobile-hide" ng-href={{::getViewSourceHref()}}>
+        <!--<span class="glyphicon glyphicon-eye-open">&nbsp;</span>-->View Source
       </a>
       <h1>{{::model.type}} {{::model.name}}</h1>
       <section>
@@ -31,26 +31,29 @@
           </div>
         </div>
       </section>
-
       <div class="" ng-if="::model.syntax">
         <div class="declaration">
           <h5>Syntax</h5>
-            <pre><code class="sudo-pre" ng-model="model.syntax.content"></code></pre>
+            <pre><code ng-model="model.syntax.content"></code></pre>
         </div>
       </div>
     </div>
-
-    <section id="article-body">
+    <section id="article-body">      
+      <div ng-if="partialModel.model.items">
+        <a ng-click = "expandAll(true);">Expand All</a>
+        <span class="divider">|</span>
+        <a ng-click = "expandAll(false);">Collapse All</a>
+      </div>
       <div class="" ng-repeat="itemtype in ::partialModel.itemtypes">
         <h3 class="" ng-if="::itemtype.show">{{::itemtype.description}}</h3>
         <div class=""  ng-repeat="item in ::model.items" ng-if="::(item.type == itemtype.name)">
           <div class="item-section">
             <div class="item-header">
-              <div class="pull-right">
+              <div class="pull-right mobile-hide">
                 <a ng-href="{{::getViewSourceHref(item.source.startLine)}}">View Source</a>
-                <span ng-if="model.mdHref">
-                  <span class="divider-brand">|</span>
-                  <a ng-href="{{model.mdHref}}">Improve this Doc</a>
+                <span ng-if="item.mdHref">
+                  <span class="divider">|</span>
+                  <a ng-href="{{item.mdHref}}">Improve this Doc</a>
                 </span>
               </div>
               <a class="item-toggle" ng-init="item.showDetail = false" ng-click="item.showDetail = !item.showDetail">
@@ -67,7 +70,7 @@
               <div class="" ng-if="::item.syntax">
                 <div class="declaration">
                   <h5>Declaration</h5>
-                    <pre><code class="sudo-pre" ng-model="item.syntax.content"></code></pre>
+                    <pre><code ng-model="item.syntax.content"></code></pre>
                 </div>
                 <div class="parameters" ng-if="::(item.syntax.parameters && item.type == 'Property')" >
                   <h5>Property Value</h5>

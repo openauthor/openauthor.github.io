@@ -756,7 +756,7 @@ directive.table = function() {
     restrict: 'E',
     link: function(scope, element, attrs) {
       if (!attrs['class']) {
-        element.addClass('table table-bordered table-striped code-table');
+        element.addClass('table table-bordered table-striped');
       }
     }
   };
@@ -1012,10 +1012,10 @@ angular.module('bootstrap', [])
     function tocClass(navItem) {
       /* jshint validthis: true */
       var current = {
-        current: navItem.href && this.pathInfo.contentPath === navItem.href,
+        active: navItem.href && this.pathInfo.contentPath === navItem.href,
         'nav-index-section': navItem.type === 'section'
       };
-      if (current.current === true) {
+      if (current.active === true) {
         $scope.navGroup = this.navGroup;
         $scope.navItem = this.navItem;
       }
@@ -1031,10 +1031,10 @@ angular.module('bootstrap', [])
       }
 
       var current = {
-        current: navPath && navPath === navItem.href,
+        active: navPath && navPath === navItem.href,
       };
 
-      if (current.current === true){
+      if (current.active === true){
         $scope.currentNavItem = navItem;
       }
       return current;
@@ -1154,16 +1154,14 @@ angular.module('bootstrap', [])
 
           // If end with .md
           if ((docConstants.MdRegexExp).test(path)) {
-            $scope.contentType = 'md';
-
             var partialModel = {
+              contentType: 'md',
               path: path,
               title: path,
             };
 
             $scope.partialModel = partialModel;
           } else if ((docConstants.YamlRegexExp).test(path)) {
-            $scope.contentType = 'yaml';
             // if is yaml
             // 1. try get md.yaml from the same path as toc, or current path if toc is not there
             contentService.getMdContent(currentPage).then(function(data){
@@ -1196,7 +1194,7 @@ angular.module('bootstrap', [])
       if (!navItem || !navItem.homepage || !$scope.tocPage) return false;
       if (!$scope.partialModel) $scope.partialModel = {};
       $scope.partialModel.path = navItem.homepage;
-      $scope.contentType = 'md';
+      $scope.partialModel.contentType = 'md';
       return true;
     }
 
@@ -1206,6 +1204,7 @@ angular.module('bootstrap', [])
         path: undefined,
         title: undefined,
         itemtypes: undefined,
+        contentType: 'yaml'
       };
       if (data instanceof Array) {
         // toc list
@@ -1329,6 +1328,13 @@ angular.module('bootstrap', [])
       }
     }
 
+    function bodyOffset() {
+      var navHeight = $('.topnav').height() + $('.subnav').height();
+      $('.sidefilter').css('top', navHeight + 'px');
+      $('.sidetoc').css('top', navHeight + 60 + 'px');
+      $('#wrapper').css('padding-top', navHeight + 'px');
+    }
+
     $scope.$watch(function modelWatch() {
       return $scope.partialModel;
     }, function() {
@@ -1353,6 +1359,7 @@ angular.module('bootstrap', [])
       return $scope.navItem;
     }, function(navItem) {
       breadCrumbWatcher($scope.navGroup, navItem, $scope.currentNavItem);
+      bodyOffset();
     });
 
     $scope.$watch(function modelWatch() {
@@ -1371,6 +1378,14 @@ angular.module('bootstrap', [])
     $scope.$watch(function modelWatch() {
       return $scope.currentNavItem;
     }, loadHomepage);
+
+    // watch for resize and reset height of side section 
+    $(window).resize(function() {
+        $scope.$apply(function() {
+          bodyOffset();
+        });
+    });
+
   }
 
 })();
@@ -1426,14 +1441,16 @@ angular.module('bootstrap', [])
               hljs.highlightBlock(block);
               // Add try button
               block = block.parentNode;
-              var wrapper = document.createElement("div");
-              wrapper.className = "codewrapper";
-              wrapper.innerHTML = '<div class="trydiv"><span class="tryspan">Try this code</span></div>';
-              wrapper.childNodes[0].childNodes[0].onclick = function() {
-                csplayService.tryCode(true, block.innerText);
-              };
-              block.parentNode.replaceChild(wrapper, block);
-              wrapper.appendChild(block);
+              if ($(block).is("pre")) { //make sure the parent is pre and not inline code
+                var wrapper = document.createElement("div");
+                wrapper.className = "codewrapper";
+                wrapper.innerHTML = '<div class="trydiv"><span class="tryspan">Try this code</span></div>';
+                wrapper.childNodes[0].childNodes[0].onclick = function() {
+                  csplayService.tryCode(true, block.innerText);
+                };
+                block.parentNode.replaceChild(wrapper, block);
+                wrapper.appendChild(block);
+              }
             });
             angular.forEach(element.find("a"), function(block) {
               var url = block.attributes['href'] && block.attributes['href'].value;
@@ -1446,6 +1463,9 @@ angular.module('bootstrap', [])
               if (!url) return;
               if (!urlService.isAbsoluteUrl(url))
                 block.attributes['src'].value = urlService.getAbsolutePath($location.path(), url);
+            });
+            angular.forEach(element.find("table"), function(block) {
+              $(block).addClass('table table-bordered table-striped');
             });
           }
 
