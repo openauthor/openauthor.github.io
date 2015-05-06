@@ -1,0 +1,115 @@
+items:
+- uid: Nine.Graphics.UI.Media.Brush
+  href: Nine.Graphics.UI.Media.Brush.yml
+  name: Brush
+  fullName: Nine.Graphics.UI.Media.Brush
+  type: Class
+  source:
+    remote: &o0
+      path: Source/Nine.Graphics.UI/Media/Brushes/Brush.cs
+      branch: master
+      repo: https://github.com/studio-nine/Nine.git
+      key: 2eecd03a
+    path: Source/Nine.Graphics.UI/Media/Brushes/Brush.cs
+    startLine: 36
+  summary: Represents a Brush used to paint to the screen. The type of Brush describes how the area is to be painted.
+  syntax:
+    content:
+      CSharp: public abstract class Brush
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  id: Nine.Graphics.UI.Media.Brush
+  children:
+  - Nine.Graphics.UI.Media.Brush.Alpha
+  - Nine.Graphics.UI.Media.Brush.OnRender(Nine.Graphics.UI.Renderer.Renderer,Nine.BoundingRectangle)
+  - Nine.Graphics.UI.Media.Brush.op_Implicit(Color)~Nine.Graphics.UI.Media.Brush
+  - Nine.Graphics.UI.Media.Brush.op_Implicit(Microsoft.Xna.Framework.Graphics.Texture2D)~Nine.Graphics.UI.Media.Brush
+- uid: Nine.Graphics.UI.Media.Brush.Alpha
+  href: Nine.Graphics.UI.Media.Brush.yml
+  name: Alpha
+  fullName: Nine.Graphics.UI.Media.Brush.Alpha
+  type: Field
+  source:
+    remote: *o0
+    path: Source/Nine.Graphics.UI/Media/Brushes/Brush.cs
+    startLine: 40
+  syntax:
+    content:
+      CSharp: public float Alpha;
+  id: Nine.Graphics.UI.Media.Brush.Alpha
+- uid: Nine.Graphics.UI.Media.Brush.OnRender(Nine.Graphics.UI.Renderer.Renderer,Nine.BoundingRectangle)
+  href: Nine.Graphics.UI.Media.Brush.yml
+  name: OnRender(Renderer, BoundingRectangle)
+  fullName: Nine.Graphics.UI.Media.Brush.OnRender(Nine.Graphics.UI.Renderer.Renderer, Nine.BoundingRectangle)
+  type: Method
+  source:
+    remote: *o0
+    path: Source/Nine.Graphics.UI/Media/Brushes/Brush.cs
+    startLine: 42
+  syntax:
+    content:
+      CSharp: protected internal virtual void OnRender(Renderer renderer, BoundingRectangle bound)
+    parameters:
+    - id: renderer
+      type:
+        id: Nine.Graphics.UI.Renderer.Renderer
+        name: Renderer
+        href: Nine.Graphics.UI.Renderer.Renderer.yml
+    - id: bound
+      type:
+        id: Nine.BoundingRectangle
+        name: BoundingRectangle
+        href: Nine.BoundingRectangle
+  id: Nine.Graphics.UI.Media.Brush.OnRender(Nine.Graphics.UI.Renderer.Renderer,Nine.BoundingRectangle)
+- uid: Nine.Graphics.UI.Media.Brush.op_Implicit(Color)~Nine.Graphics.UI.Media.Brush
+  href: Nine.Graphics.UI.Media.Brush.yml
+  name: implicit operator Brush(Color)
+  fullName: Nine.Graphics.UI.Media.Brush.implicit operator Nine.Graphics.UI.Media.Brush(Color)
+  type: Method
+  source:
+    remote: *o0
+    path: Source/Nine.Graphics.UI/Media/Brushes/Brush.cs
+    startLine: 47
+  syntax:
+    content:
+      CSharp: public static implicit operator Brush(Color c) { return new SolidColorBrush(c.R, c.G, c.B, c.A); }
+    parameters:
+    - id: c
+      type:
+        id: Color
+        name: Color
+        isExternal: true
+    return:
+      id: Brush
+      type:
+        id: Nine.Graphics.UI.Media.Brush
+        name: Brush
+        href: Nine.Graphics.UI.Media.Brush.yml
+  id: Nine.Graphics.UI.Media.Brush.op_Implicit(Color)~Nine.Graphics.UI.Media.Brush
+- uid: Nine.Graphics.UI.Media.Brush.op_Implicit(Microsoft.Xna.Framework.Graphics.Texture2D)~Nine.Graphics.UI.Media.Brush
+  href: Nine.Graphics.UI.Media.Brush.yml
+  name: implicit operator Brush(Texture2D)
+  fullName: Nine.Graphics.UI.Media.Brush.implicit operator Nine.Graphics.UI.Media.Brush(Microsoft.Xna.Framework.Graphics.Texture2D)
+  type: Method
+  source:
+    remote: *o0
+    path: Source/Nine.Graphics.UI/Media/Brushes/Brush.cs
+    startLine: 52
+  syntax:
+    content:
+      CSharp: public static implicit operator Brush(Microsoft.Xna.Framework.Graphics.Texture2D texture) { return new ImageBrush(texture); }
+    parameters:
+    - id: texture
+      type:
+        id: Microsoft.Xna.Framework.Graphics.Texture2D
+        name: Texture2D
+        isExternal: true
+    return:
+      id: Brush
+      type:
+        id: Nine.Graphics.UI.Media.Brush
+        name: Brush
+        href: Nine.Graphics.UI.Media.Brush.yml
+  id: Nine.Graphics.UI.Media.Brush.op_Implicit(Microsoft.Xna.Framework.Graphics.Texture2D)~Nine.Graphics.UI.Media.Brush
