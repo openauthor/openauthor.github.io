@@ -1,0 +1,209 @@
+items:
+- uid: ImageProcessor.Web.Caching.IImageCache
+  href: ImageProcessor.Web.Caching.IImageCache.yml
+  name: IImageCache
+  fullName: ImageProcessor.Web.Caching.IImageCache
+  type: Interface
+  source:
+    remote: &o0
+      path: src/ImageProcessor.Web/Caching/IImageCache.cs
+      branch: V2
+      repo: https://github.com/JimBobSquarePants/ImageProcessor.git
+      key: 6d1ac546
+    path: src/ImageProcessor.Web/Caching/IImageCache.cs
+    startLine: 20
+  summary: Defines properties and methods for allowing caching of images to different sources.
+  syntax:
+    content:
+      CSharp: public interface IImageCache
+  id: ImageProcessor.Web.Caching.IImageCache
+  children:
+  - ImageProcessor.Web.Caching.IImageCache.Settings
+  - ImageProcessor.Web.Caching.IImageCache.CachedPath
+  - ImageProcessor.Web.Caching.IImageCache.MaxDays
+  - ImageProcessor.Web.Caching.IImageCache.IsNewOrUpdatedAsync
+  - ImageProcessor.Web.Caching.IImageCache.AddImageToCacheAsync(System.IO.Stream,System.String)
+  - ImageProcessor.Web.Caching.IImageCache.TrimCacheAsync
+  - ImageProcessor.Web.Caching.IImageCache.CreateCachedFileNameAsync
+  - ImageProcessor.Web.Caching.IImageCache.RewritePath(System.Web.HttpContext)
+- uid: ImageProcessor.Web.Caching.IImageCache.Settings
+  href: ImageProcessor.Web.Caching.IImageCache.yml
+  name: Settings
+  fullName: ImageProcessor.Web.Caching.IImageCache.Settings
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Caching/IImageCache.cs
+    startLine: 25
+  summary: Gets or sets any additional settings required by the cache.
+  syntax:
+    content:
+      CSharp: Dictionary<string, string> Settings { get; set; }
+    parameters:
+    - id: Settings
+      type:
+        id: System.Collections.Generic.Dictionary{System.String,System.String}
+        name: Dictionary<string, string>
+        isExternal: true
+  id: ImageProcessor.Web.Caching.IImageCache.Settings
+- uid: ImageProcessor.Web.Caching.IImageCache.CachedPath
+  href: ImageProcessor.Web.Caching.IImageCache.yml
+  name: CachedPath
+  fullName: ImageProcessor.Web.Caching.IImageCache.CachedPath
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Caching/IImageCache.cs
+    startLine: 30
+  summary: Gets the path to the cached image.
+  syntax:
+    content:
+      CSharp: string CachedPath { get; }
+    parameters:
+    - id: CachedPath
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: ImageProcessor.Web.Caching.IImageCache.CachedPath
+- uid: ImageProcessor.Web.Caching.IImageCache.MaxDays
+  href: ImageProcessor.Web.Caching.IImageCache.yml
+  name: MaxDays
+  fullName: ImageProcessor.Web.Caching.IImageCache.MaxDays
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Caching/IImageCache.cs
+    startLine: 35
+  summary: Gets or sets the maximum number of days to store the image.
+  syntax:
+    content:
+      CSharp: int MaxDays { get; set; }
+    parameters:
+    - id: MaxDays
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: ImageProcessor.Web.Caching.IImageCache.MaxDays
+- uid: ImageProcessor.Web.Caching.IImageCache.IsNewOrUpdatedAsync
+  href: ImageProcessor.Web.Caching.IImageCache.yml
+  name: IsNewOrUpdatedAsync()
+  fullName: ImageProcessor.Web.Caching.IImageCache.IsNewOrUpdatedAsync()
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Caching/IImageCache.cs
+    startLine: 43
+  summary: Gets a value indicating whether the image is new or updated in an asynchronous manner.
+  syntax:
+    content:
+      CSharp: public Task<bool> IsNewOrUpdatedAsync()
+    parameters: []
+    return:
+      id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.Boolean}
+        name: Task<bool>
+        isExternal: true
+      description: The asynchronous [System.Threading.Tasks.Task](#) returning the value.
+  id: ImageProcessor.Web.Caching.IImageCache.IsNewOrUpdatedAsync
+- uid: ImageProcessor.Web.Caching.IImageCache.AddImageToCacheAsync(System.IO.Stream,System.String)
+  href: ImageProcessor.Web.Caching.IImageCache.yml
+  name: AddImageToCacheAsync(Stream, string)
+  fullName: ImageProcessor.Web.Caching.IImageCache.AddImageToCacheAsync(System.IO.Stream, string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Caching/IImageCache.cs
+    startLine: 57
+  summary: Adds the image to the cache in an asynchronous manner.
+  syntax:
+    content:
+      CSharp: public Task AddImageToCacheAsync(Stream stream, string contentType)
+    parameters:
+    - id: stream
+      type:
+        id: System.IO.Stream
+        name: Stream
+        isExternal: true
+      description: The stream containing the image data.
+    - id: contentType
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: The content type of the image.
+    return:
+      id: Task
+      type:
+        id: System.Threading.Tasks.Task
+        name: Task
+        isExternal: true
+      description: The [System.Threading.Tasks.Task](#) representing an asynchronous operation.
+  id: ImageProcessor.Web.Caching.IImageCache.AddImageToCacheAsync(System.IO.Stream,System.String)
+- uid: ImageProcessor.Web.Caching.IImageCache.TrimCacheAsync
+  href: ImageProcessor.Web.Caching.IImageCache.yml
+  name: TrimCacheAsync()
+  fullName: ImageProcessor.Web.Caching.IImageCache.TrimCacheAsync()
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Caching/IImageCache.cs
+    startLine: 65
+  summary: Trims the cache of any expired items in an asynchronous manner.
+  syntax:
+    content:
+      CSharp: public Task TrimCacheAsync()
+    parameters: []
+    return:
+      id: Task
+      type:
+        id: System.Threading.Tasks.Task
+        name: Task
+        isExternal: true
+      description: The asynchronous [System.Threading.Tasks.Task](#) representing an asynchronous operation.
+  id: ImageProcessor.Web.Caching.IImageCache.TrimCacheAsync
+- uid: ImageProcessor.Web.Caching.IImageCache.CreateCachedFileNameAsync
+  href: ImageProcessor.Web.Caching.IImageCache.yml
+  name: CreateCachedFileNameAsync()
+  fullName: ImageProcessor.Web.Caching.IImageCache.CreateCachedFileNameAsync()
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Caching/IImageCache.cs
+    startLine: 73
+  summary: Gets a string identifying the cached file name in an asynchronous manner.
+  syntax:
+    content:
+      CSharp: public Task<string> CreateCachedFileNameAsync()
+    parameters: []
+    return:
+      id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.String}
+        name: Task<string>
+        isExternal: true
+      description: The asynchronous [System.Threading.Tasks.Task](#) returning the value.
+  id: ImageProcessor.Web.Caching.IImageCache.CreateCachedFileNameAsync
+- uid: ImageProcessor.Web.Caching.IImageCache.RewritePath(System.Web.HttpContext)
+  href: ImageProcessor.Web.Caching.IImageCache.yml
+  name: RewritePath(HttpContext)
+  fullName: ImageProcessor.Web.Caching.IImageCache.RewritePath(System.Web.HttpContext)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Caching/IImageCache.cs
+    startLine: 81
+  summary: Rewrites the path to point to the cached image.
+  syntax:
+    content:
+      CSharp: public void RewritePath(HttpContext context)
+    parameters:
+    - id: context
+      type:
+        id: System.Web.HttpContext
+        name: HttpContext
+        isExternal: true
+      description: The [System.Web.HttpContext](#) encapsulating all information about the request.
+  id: ImageProcessor.Web.Caching.IImageCache.RewritePath(System.Web.HttpContext)

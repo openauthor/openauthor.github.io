@@ -1,0 +1,135 @@
+items:
+- uid: ImageProcessor.Web.Processors.AutoRotate
+  href: ImageProcessor.Web.Processors.AutoRotate.yml
+  name: AutoRotate
+  fullName: ImageProcessor.Web.Processors.AutoRotate
+  type: Class
+  source:
+    remote: &o0
+      path: src/ImageProcessor.Web/Processors/AutoRotate.cs
+      branch: V2
+      repo: https://github.com/JimBobSquarePants/ImageProcessor.git
+      key: 6d1ac546
+    path: src/ImageProcessor.Web/Processors/AutoRotate.cs
+    startLine: 20
+  summary: >-
+    Performs auto-rotation to ensure that EXIF defined rotation is reflected in
+
+    the final image.
+  syntax:
+    content:
+      CSharp: 'public class AutoRotate : IWebGraphicsProcessor'
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  id: ImageProcessor.Web.Processors.AutoRotate
+  children:
+  - ImageProcessor.Web.Processors.AutoRotate.#ctor
+  - ImageProcessor.Web.Processors.AutoRotate.RegexPattern
+  - ImageProcessor.Web.Processors.AutoRotate.SortOrder
+  - ImageProcessor.Web.Processors.AutoRotate.Processor
+  - ImageProcessor.Web.Processors.AutoRotate.MatchRegexIndex(System.String)
+- uid: ImageProcessor.Web.Processors.AutoRotate.#ctor
+  href: ImageProcessor.Web.Processors.AutoRotate.yml
+  name: AutoRotate()
+  fullName: ImageProcessor.Web.Processors.AutoRotate.AutoRotate()
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Processors/AutoRotate.cs
+    startLine: 30
+  summary: Initializes a new instance of the [ImageProcessor.Web.Processors.AutoRotate](api/ImageProcessor.Web.Processors.AutoRotate.yml) class.
+  syntax:
+    content:
+      CSharp: public AutoRotate()
+    parameters: []
+  id: ImageProcessor.Web.Processors.AutoRotate.#ctor
+- uid: ImageProcessor.Web.Processors.AutoRotate.RegexPattern
+  href: ImageProcessor.Web.Processors.AutoRotate.yml
+  name: RegexPattern
+  fullName: ImageProcessor.Web.Processors.AutoRotate.RegexPattern
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Processors/AutoRotate.cs
+    startLine: 38
+  summary: Gets the regular expression to search strings for.
+  syntax:
+    content:
+      CSharp: public Regex RegexPattern { get; }
+    parameters:
+    - id: RegexPattern
+      type:
+        id: System.Text.RegularExpressions.Regex
+        name: Regex
+        isExternal: true
+  id: ImageProcessor.Web.Processors.AutoRotate.RegexPattern
+- uid: ImageProcessor.Web.Processors.AutoRotate.SortOrder
+  href: ImageProcessor.Web.Processors.AutoRotate.yml
+  name: SortOrder
+  fullName: ImageProcessor.Web.Processors.AutoRotate.SortOrder
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Processors/AutoRotate.cs
+    startLine: 49
+  summary: Gets the order in which this processor is to be used in a chain.
+  syntax:
+    content:
+      CSharp: public int SortOrder { get; }
+    parameters:
+    - id: SortOrder
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: ImageProcessor.Web.Processors.AutoRotate.SortOrder
+- uid: ImageProcessor.Web.Processors.AutoRotate.Processor
+  href: ImageProcessor.Web.Processors.AutoRotate.yml
+  name: Processor
+  fullName: ImageProcessor.Web.Processors.AutoRotate.Processor
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Processors/AutoRotate.cs
+    startLine: 58
+  summary: Gets the associated graphics processor.
+  syntax:
+    content:
+      CSharp: public IGraphicsProcessor Processor { get; }
+    parameters:
+    - id: Processor
+      type:
+        id: ImageProcessor.Processors.IGraphicsProcessor
+        name: IGraphicsProcessor
+        href: ImageProcessor.Processors.IGraphicsProcessor.yml
+  id: ImageProcessor.Web.Processors.AutoRotate.Processor
+- uid: ImageProcessor.Web.Processors.AutoRotate.MatchRegexIndex(System.String)
+  href: ImageProcessor.Web.Processors.AutoRotate.yml
+  name: MatchRegexIndex(string)
+  fullName: ImageProcessor.Web.Processors.AutoRotate.MatchRegexIndex(string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Processors/AutoRotate.cs
+    startLine: 69
+  summary: The position in the original string where the first character of the captured substring was found.
+  syntax:
+    content:
+      CSharp: public int MatchRegexIndex(string queryString)
+    parameters:
+    - id: queryString
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: The query string to search.
+    return:
+      id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The zero-based starting position in the original string where the captured substring was found.
+  id: ImageProcessor.Web.Processors.AutoRotate.MatchRegexIndex(System.String)

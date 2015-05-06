@@ -1,0 +1,164 @@
+items:
+- uid: ImageProcessor.Web.Processors.Mask
+  href: ImageProcessor.Web.Processors.Mask.yml
+  name: Mask
+  fullName: ImageProcessor.Web.Processors.Mask
+  type: Class
+  source:
+    remote: &o0
+      path: src/ImageProcessor.Web/Processors/Mask.cs
+      branch: V2
+      repo: https://github.com/JimBobSquarePants/ImageProcessor.git
+      key: 6d1ac546
+    path: src/ImageProcessor.Web/Processors/Mask.cs
+    startLine: 28
+  summary: >-
+    Applies a mask to the given image. If the mask is not the same size as the image
+
+    it will be centered against the image.
+  syntax:
+    content:
+      CSharp: 'public class Mask : IWebGraphicsProcessor'
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  id: ImageProcessor.Web.Processors.Mask
+  children:
+  - ImageProcessor.Web.Processors.Mask.#ctor
+  - ImageProcessor.Web.Processors.Mask.RegexPattern
+  - ImageProcessor.Web.Processors.Mask.SortOrder
+  - ImageProcessor.Web.Processors.Mask.Processor
+  - ImageProcessor.Web.Processors.Mask.MatchRegexIndex(System.String)
+  - ImageProcessor.Web.Processors.Mask.ParseImage(System.String)
+- uid: ImageProcessor.Web.Processors.Mask.#ctor
+  href: ImageProcessor.Web.Processors.Mask.yml
+  name: Mask()
+  fullName: ImageProcessor.Web.Processors.Mask.Mask()
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Processors/Mask.cs
+    startLine: 38
+  summary: Initializes a new instance of the [ImageProcessor.Web.Processors.Mask](api/ImageProcessor.Web.Processors.Mask.yml) class.
+  syntax:
+    content:
+      CSharp: public Mask()
+    parameters: []
+  id: ImageProcessor.Web.Processors.Mask.#ctor
+- uid: ImageProcessor.Web.Processors.Mask.RegexPattern
+  href: ImageProcessor.Web.Processors.Mask.yml
+  name: RegexPattern
+  fullName: ImageProcessor.Web.Processors.Mask.RegexPattern
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Processors/Mask.cs
+    startLine: 46
+  summary: Gets the regular expression to search strings for.
+  syntax:
+    content:
+      CSharp: public Regex RegexPattern { get; }
+    parameters:
+    - id: RegexPattern
+      type:
+        id: System.Text.RegularExpressions.Regex
+        name: Regex
+        isExternal: true
+  id: ImageProcessor.Web.Processors.Mask.RegexPattern
+- uid: ImageProcessor.Web.Processors.Mask.SortOrder
+  href: ImageProcessor.Web.Processors.Mask.yml
+  name: SortOrder
+  fullName: ImageProcessor.Web.Processors.Mask.SortOrder
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Processors/Mask.cs
+    startLine: 57
+  summary: Gets the order in which this processor is to be used in a chain.
+  syntax:
+    content:
+      CSharp: public int SortOrder { get; }
+    parameters:
+    - id: SortOrder
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: ImageProcessor.Web.Processors.Mask.SortOrder
+- uid: ImageProcessor.Web.Processors.Mask.Processor
+  href: ImageProcessor.Web.Processors.Mask.yml
+  name: Processor
+  fullName: ImageProcessor.Web.Processors.Mask.Processor
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Processors/Mask.cs
+    startLine: 62
+  summary: Gets the associated graphics processor.
+  syntax:
+    content:
+      CSharp: public IGraphicsProcessor Processor { get; }
+    parameters:
+    - id: Processor
+      type:
+        id: ImageProcessor.Processors.IGraphicsProcessor
+        name: IGraphicsProcessor
+        href: ImageProcessor.Processors.IGraphicsProcessor.yml
+  id: ImageProcessor.Web.Processors.Mask.Processor
+- uid: ImageProcessor.Web.Processors.Mask.MatchRegexIndex(System.String)
+  href: ImageProcessor.Web.Processors.Mask.yml
+  name: MatchRegexIndex(string)
+  fullName: ImageProcessor.Web.Processors.Mask.MatchRegexIndex(string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Processors/Mask.cs
+    startLine: 71
+  summary: The position in the original string where the first character of the captured substring was found.
+  syntax:
+    content:
+      CSharp: public int MatchRegexIndex(string queryString)
+    parameters:
+    - id: queryString
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: The query string to search.
+    return:
+      id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The zero-based starting position in the original string where the captured substring was found.
+  id: ImageProcessor.Web.Processors.Mask.MatchRegexIndex(System.String)
+- uid: ImageProcessor.Web.Processors.Mask.ParseImage(System.String)
+  href: ImageProcessor.Web.Processors.Mask.yml
+  name: ParseImage(string)
+  fullName: ImageProcessor.Web.Processors.Mask.ParseImage(string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Processors/Mask.cs
+    startLine: 100
+  summary: Returns an image from the given input path.
+  syntax:
+    content:
+      CSharp: public Image ParseImage(string input)
+    parameters:
+    - id: input
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: The input containing the value to parse.
+    return:
+      id: Image
+      type:
+        id: System.Drawing.Image
+        name: Image
+        isExternal: true
+      description: The [System.Drawing.Image](#) representing the given image path.
+  id: ImageProcessor.Web.Processors.Mask.ParseImage(System.String)

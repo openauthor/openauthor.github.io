@@ -1,0 +1,421 @@
+items:
+- uid: ImageProcessor.Imaging.Helpers.ImageMaths
+  href: ImageProcessor.Imaging.Helpers.ImageMaths.yml
+  name: ImageMaths
+  fullName: ImageProcessor.Imaging.Helpers.ImageMaths
+  type: Class
+  source:
+    remote: &o0
+      path: src/ImageProcessor/Imaging/Helpers/ImageMaths.cs
+      branch: V2
+      repo: https://github.com/JimBobSquarePants/ImageProcessor.git
+      key: 6d1ac546
+    path: src/ImageProcessor/Imaging/Helpers/ImageMaths.cs
+    startLine: 20
+  summary: Provides reusable mathematical methods to apply to images.
+  syntax:
+    content:
+      CSharp: public class ImageMaths
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  id: ImageProcessor.Imaging.Helpers.ImageMaths
+  children:
+  - ImageProcessor.Imaging.Helpers.ImageMaths.CenteredRectangle(System.Drawing.Rectangle,System.Drawing.Rectangle)
+  - ImageProcessor.Imaging.Helpers.ImageMaths.Clamp``1(``0,``0,``0)
+  - ImageProcessor.Imaging.Helpers.ImageMaths.InRange``1(``0,``0,``0,System.Boolean)
+  - ImageProcessor.Imaging.Helpers.ImageMaths.DegreesToRadians(System.Double)
+  - ImageProcessor.Imaging.Helpers.ImageMaths.GetBoundingRectangle(System.Drawing.Point,System.Drawing.Point)
+  - ImageProcessor.Imaging.Helpers.ImageMaths.GetBoundingRotatedRectangle(System.Int32,System.Int32,System.Single)
+  - ImageProcessor.Imaging.Helpers.ImageMaths.GetFilteredBoundingRectangle(System.Drawing.Image,System.Byte,ImageProcessor.Imaging.Colors.RgbaComponent)
+  - ImageProcessor.Imaging.Helpers.ImageMaths.RotatePoint(System.Drawing.Point,System.Double,System.Nullable{System.Drawing.Point})
+  - ImageProcessor.Imaging.Helpers.ImageMaths.ToPoints(System.Drawing.Rectangle)
+  - ImageProcessor.Imaging.Helpers.ImageMaths.ZoomAfterRotation(System.Int32,System.Int32,System.Single)
+- uid: ImageProcessor.Imaging.Helpers.ImageMaths.CenteredRectangle(System.Drawing.Rectangle,System.Drawing.Rectangle)
+  href: ImageProcessor.Imaging.Helpers.ImageMaths.yml
+  name: CenteredRectangle(Rectangle, Rectangle)
+  fullName: ImageProcessor.Imaging.Helpers.ImageMaths.CenteredRectangle(System.Drawing.Rectangle, System.Drawing.Rectangle)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Helpers/ImageMaths.cs
+    startLine: 34
+  summary: Gets a [System.Drawing.Rectangle](#) representing the child centered relative to the parent.
+  syntax:
+    content:
+      CSharp: public static RectangleF CenteredRectangle(Rectangle parent, Rectangle child)
+    parameters:
+    - id: parent
+      type:
+        id: System.Drawing.Rectangle
+        name: Rectangle
+        isExternal: true
+      description: The parent [System.Drawing.Rectangle](#).
+    - id: child
+      type:
+        id: System.Drawing.Rectangle
+        name: Rectangle
+        isExternal: true
+      description: The child [System.Drawing.Rectangle](#).
+    return:
+      id: RectangleF
+      type:
+        id: System.Drawing.RectangleF
+        name: RectangleF
+        isExternal: true
+      description: The centered [System.Drawing.Rectangle](#).
+  id: ImageProcessor.Imaging.Helpers.ImageMaths.CenteredRectangle(System.Drawing.Rectangle,System.Drawing.Rectangle)
+- uid: ImageProcessor.Imaging.Helpers.ImageMaths.Clamp``1(``0,``0,``0)
+  href: ImageProcessor.Imaging.Helpers.ImageMaths.yml
+  name: Clamp<T>(T, T, T)
+  fullName: ImageProcessor.Imaging.Helpers.ImageMaths.Clamp<T>(T, T, T)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Helpers/ImageMaths.cs
+    startLine: 61
+  summary: Restricts a value to be within a specified range.
+  syntax:
+    content:
+      CSharp: 'public static T Clamp<T>(T value, T min, T max)where T : IComparable<T>'
+    parameters:
+    - id: value
+      type:
+        id: T
+        name: T
+        href: T
+      description: The The value to clamp.
+    - id: min
+      type:
+        id: T
+        name: T
+        href: T
+      description: The minimum value. If value is less than min, min will be returned.
+    - id: max
+      type:
+        id: T
+        name: T
+        href: T
+      description: The maximum value. If value is greater than max, max will be returned.
+    return:
+      id: T
+      type:
+        id: T
+        name: T
+        href: T
+      description: The [System.IComparable`1](#) representing the clamped value.
+  id: ImageProcessor.Imaging.Helpers.ImageMaths.Clamp``1(``0,``0,``0)
+- uid: ImageProcessor.Imaging.Helpers.ImageMaths.InRange``1(``0,``0,``0,System.Boolean)
+  href: ImageProcessor.Imaging.Helpers.ImageMaths.yml
+  name: InRange<T>(T, T, T, bool)
+  fullName: ImageProcessor.Imaging.Helpers.ImageMaths.InRange<T>(T, T, T, bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Helpers/ImageMaths.cs
+    startLine: 100
+  summary: >-
+    Returns value indicating whether the given number is with in the minimum and maximum
+
+    given range.
+  syntax:
+    content:
+      CSharp: 'public static bool InRange<T>(T value, T min, T max, bool include = true)where T : IComparable<T>'
+    parameters:
+    - id: value
+      type:
+        id: T
+        name: T
+        href: T
+      description: The The value to clamp.
+    - id: min
+      type:
+        id: T
+        name: T
+        href: T
+      description: >-
+        If
+
+        The minimum range value.
+    - id: max
+      type:
+        id: T
+        name: T
+        href: T
+      description: The maximum range value.
+    - id: include
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: >-
+        Whether to include the minimum and maximum values.
+
+        Defaults to true.
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: True if the value falls within the maximum and minimum; otherwise, false.
+  id: ImageProcessor.Imaging.Helpers.ImageMaths.InRange``1(``0,``0,``0,System.Boolean)
+- uid: ImageProcessor.Imaging.Helpers.ImageMaths.DegreesToRadians(System.Double)
+  href: ImageProcessor.Imaging.Helpers.ImageMaths.yml
+  name: DegreesToRadians(double)
+  fullName: ImageProcessor.Imaging.Helpers.ImageMaths.DegreesToRadians(double)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Helpers/ImageMaths.cs
+    startLine: 119
+  summary: Returns the given degrees converted to radians.
+  syntax:
+    content:
+      CSharp: public static double DegreesToRadians(double angleInDegrees)
+    parameters:
+    - id: angleInDegrees
+      type:
+        id: System.Double
+        name: double
+        isExternal: true
+      description: The angle in degrees.
+    return:
+      id: Double
+      type:
+        id: System.Double
+        name: double
+        isExternal: true
+      description: The [System.Double](#) representing the degree as radians.
+  id: ImageProcessor.Imaging.Helpers.ImageMaths.DegreesToRadians(System.Double)
+- uid: ImageProcessor.Imaging.Helpers.ImageMaths.GetBoundingRectangle(System.Drawing.Point,System.Drawing.Point)
+  href: ImageProcessor.Imaging.Helpers.ImageMaths.yml
+  name: GetBoundingRectangle(Point, Point)
+  fullName: ImageProcessor.Imaging.Helpers.ImageMaths.GetBoundingRectangle(System.Drawing.Point, System.Drawing.Point)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Helpers/ImageMaths.cs
+    startLine: 136
+  summary: Gets the bounding [System.Drawing.Rectangle](#) from the given points.
+  syntax:
+    content:
+      CSharp: public static Rectangle GetBoundingRectangle(Point topLeft, Point bottomRight)
+    parameters:
+    - id: topLeft
+      type:
+        id: System.Drawing.Point
+        name: Point
+        isExternal: true
+      description: The [System.Drawing.Point](#) designating the top left position.
+    - id: bottomRight
+      type:
+        id: System.Drawing.Point
+        name: Point
+        isExternal: true
+      description: The [System.Drawing.Point](#) designating the bottom right position.
+    return:
+      id: Rectangle
+      type:
+        id: System.Drawing.Rectangle
+        name: Rectangle
+        isExternal: true
+      description: The bounding [System.Drawing.Rectangle](#).
+  id: ImageProcessor.Imaging.Helpers.ImageMaths.GetBoundingRectangle(System.Drawing.Point,System.Drawing.Point)
+- uid: ImageProcessor.Imaging.Helpers.ImageMaths.GetBoundingRotatedRectangle(System.Int32,System.Int32,System.Single)
+  href: ImageProcessor.Imaging.Helpers.ImageMaths.yml
+  name: GetBoundingRotatedRectangle(int, int, float)
+  fullName: ImageProcessor.Imaging.Helpers.ImageMaths.GetBoundingRotatedRectangle(int, int, float)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Helpers/ImageMaths.cs
+    startLine: 148
+  summary: Calculates the new size after rotation.
+  syntax:
+    content:
+      CSharp: public static Rectangle GetBoundingRotatedRectangle(int width, int height, float angleInDegrees)
+    parameters:
+    - id: width
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The width of the image.
+    - id: height
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The height of the image.
+    - id: angleInDegrees
+      type:
+        id: System.Single
+        name: float
+        isExternal: true
+      description: The angle of rotation.
+    return:
+      id: Rectangle
+      type:
+        id: System.Drawing.Rectangle
+        name: Rectangle
+        isExternal: true
+      description: The new size of the image
+  id: ImageProcessor.Imaging.Helpers.ImageMaths.GetBoundingRotatedRectangle(System.Int32,System.Int32,System.Single)
+- uid: ImageProcessor.Imaging.Helpers.ImageMaths.GetFilteredBoundingRectangle(System.Drawing.Image,System.Byte,ImageProcessor.Imaging.Colors.RgbaComponent)
+  href: ImageProcessor.Imaging.Helpers.ImageMaths.yml
+  name: GetFilteredBoundingRectangle(Image, byte, RgbaComponent)
+  fullName: ImageProcessor.Imaging.Helpers.ImageMaths.GetFilteredBoundingRectangle(System.Drawing.Image, byte, ImageProcessor.Imaging.Colors.RgbaComponent)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Helpers/ImageMaths.cs
+    startLine: 189
+  summary: >-
+    Finds the bounding rectangle based on the first instance of any color component other
+
+    than the given one.
+  syntax:
+    content:
+      CSharp: public static Rectangle GetFilteredBoundingRectangle(Image bitmap, byte componentValue, RgbaComponent channel = 0)
+    parameters:
+    - id: bitmap
+      type:
+        id: System.Drawing.Image
+        name: Image
+        isExternal: true
+      description: The [System.Drawing.Image](#) to search within.
+    - id: componentValue
+      type:
+        id: System.Byte
+        name: byte
+        isExternal: true
+      description: The color component value to remove.
+    - id: channel
+      type:
+        id: ImageProcessor.Imaging.Colors.RgbaComponent
+        name: RgbaComponent
+        href: ImageProcessor.Imaging.Colors.RgbaComponent.yml
+      description: The [ImageProcessor.Imaging.Colors.RgbaComponent](api/ImageProcessor.Imaging.Colors.RgbaComponent.yml) channel to test against.
+    return:
+      id: Rectangle
+      type:
+        id: System.Drawing.Rectangle
+        name: Rectangle
+        isExternal: true
+      description: The [System.Drawing.Rectangle](#).
+  id: ImageProcessor.Imaging.Helpers.ImageMaths.GetFilteredBoundingRectangle(System.Drawing.Image,System.Byte,ImageProcessor.Imaging.Colors.RgbaComponent)
+- uid: ImageProcessor.Imaging.Helpers.ImageMaths.RotatePoint(System.Drawing.Point,System.Double,System.Nullable{System.Drawing.Point})
+  href: ImageProcessor.Imaging.Helpers.ImageMaths.yml
+  name: RotatePoint(Point, double, Point?)
+  fullName: ImageProcessor.Imaging.Helpers.ImageMaths.RotatePoint(System.Drawing.Point, double, System.Drawing.Point?)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Helpers/ImageMaths.cs
+    startLine: 303
+  summary: Rotates one point around another
+  syntax:
+    content:
+      CSharp: public static Point RotatePoint(Point pointToRotate, double angleInDegrees, Point? centerPoint = null)
+    parameters:
+    - id: pointToRotate
+      type:
+        id: System.Drawing.Point
+        name: Point
+        isExternal: true
+      description: The point to rotate.
+    - id: angleInDegrees
+      type:
+        id: System.Double
+        name: double
+        isExternal: true
+      description: The rotation angle in degrees.
+    - id: centerPoint
+      type:
+        id: System.Nullable{System.Drawing.Point}
+        name: Point?
+        isExternal: true
+      description: >-
+        The centre point of rotation. If not set the point will equal
+
+        [System.Drawing.Point.Empty](#)
+    return:
+      id: Point
+      type:
+        id: System.Drawing.Point
+        name: Point
+        isExternal: true
+      description: Rotated point
+  id: ImageProcessor.Imaging.Helpers.ImageMaths.RotatePoint(System.Drawing.Point,System.Double,System.Nullable{System.Drawing.Point})
+- uid: ImageProcessor.Imaging.Helpers.ImageMaths.ToPoints(System.Drawing.Rectangle)
+  href: ImageProcessor.Imaging.Helpers.ImageMaths.yml
+  name: ToPoints(Rectangle)
+  fullName: ImageProcessor.Imaging.Helpers.ImageMaths.ToPoints(System.Drawing.Rectangle)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Helpers/ImageMaths.cs
+    startLine: 330
+  summary: Returns the array of [System.Drawing.Point](#) matching the bounds of the given rectangle.
+  syntax:
+    content:
+      CSharp: public static Point[] ToPoints(Rectangle rectangle)
+    parameters:
+    - id: rectangle
+      type:
+        id: System.Drawing.Rectangle
+        name: Rectangle
+        isExternal: true
+      description: The [System.Drawing.Rectangle](#) to return the points from.
+    return:
+      type:
+        id: System.Array
+        name: Point[]
+        isExternal: true
+      description: The [System.Drawing.Point](#) array.
+  id: ImageProcessor.Imaging.Helpers.ImageMaths.ToPoints(System.Drawing.Rectangle)
+- uid: ImageProcessor.Imaging.Helpers.ImageMaths.ZoomAfterRotation(System.Int32,System.Int32,System.Single)
+  href: ImageProcessor.Imaging.Helpers.ImageMaths.yml
+  name: ZoomAfterRotation(int, int, float)
+  fullName: ImageProcessor.Imaging.Helpers.ImageMaths.ZoomAfterRotation(int, int, float)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Helpers/ImageMaths.cs
+    startLine: 352
+  summary: >-
+    Calculates the zoom needed after the rotation to ensure the canvas is covered
+
+    by the rotated image.
+  syntax:
+    content:
+      CSharp: public static float ZoomAfterRotation(int imageWidth, int imageHeight, float angleInDegrees)
+    parameters:
+    - id: imageWidth
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: Width of the image.
+    - id: imageHeight
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: Height of the image.
+    - id: angleInDegrees
+      type:
+        id: System.Single
+        name: float
+        isExternal: true
+      description: The angle in degrees.
+    return:
+      id: Single
+      type:
+        id: System.Single
+        name: float
+        isExternal: true
+      description: The zoom needed
+  id: ImageProcessor.Imaging.Helpers.ImageMaths.ZoomAfterRotation(System.Int32,System.Int32,System.Single)

@@ -1,0 +1,1561 @@
+items:
+- uid: ImageProcessor.ImageFactory
+  href: ImageProcessor.ImageFactory.yml
+  name: ImageFactory
+  fullName: ImageProcessor.ImageFactory
+  type: Class
+  source:
+    remote: &o0
+      path: src/ImageProcessor/ImageFactory.cs
+      branch: V2
+      repo: https://github.com/JimBobSquarePants/ImageProcessor.git
+      key: 6d1ac546
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 33
+  summary: Encapsulates methods for processing image files.
+  syntax:
+    content:
+      CSharp: 'public class ImageFactory : IDisposable'
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  id: ImageProcessor.ImageFactory
+  children:
+  - ImageProcessor.ImageFactory.#ctor(System.Boolean)
+  - ImageProcessor.ImageFactory.#ctor(System.Boolean,System.Boolean)
+  - ImageProcessor.ImageFactory.Finalize
+  - ImageProcessor.ImageFactory.ImagePath
+  - ImageProcessor.ImageFactory.ShouldProcess
+  - ImageProcessor.ImageFactory.CurrentImageFormat
+  - ImageProcessor.ImageFactory.PreserveExifData
+  - ImageProcessor.ImageFactory.FixGamma
+  - ImageProcessor.ImageFactory.CurrentGamma
+  - ImageProcessor.ImageFactory.ExifPropertyItems
+  - ImageProcessor.ImageFactory.Image
+  - ImageProcessor.ImageFactory.Load(System.IO.Stream)
+  - ImageProcessor.ImageFactory.Load(System.String)
+  - ImageProcessor.ImageFactory.Reset
+  - ImageProcessor.ImageFactory.Alpha(System.Int32)
+  - ImageProcessor.ImageFactory.AutoRotate
+  - ImageProcessor.ImageFactory.Brightness(System.Int32)
+  - ImageProcessor.ImageFactory.BackgroundColor(System.Drawing.Color)
+  - ImageProcessor.ImageFactory.Constrain(System.Drawing.Size)
+  - ImageProcessor.ImageFactory.Contrast(System.Int32)
+  - ImageProcessor.ImageFactory.Crop(System.Drawing.Rectangle)
+  - ImageProcessor.ImageFactory.Crop(ImageProcessor.Imaging.CropLayer)
+  - ImageProcessor.ImageFactory.DetectEdges(ImageProcessor.Imaging.Filters.EdgeDetection.IEdgeFilter,System.Boolean)
+  - ImageProcessor.ImageFactory.EntropyCrop(System.Byte)
+  - ImageProcessor.ImageFactory.Filter(ImageProcessor.Imaging.Filters.Photo.IMatrixFilter)
+  - ImageProcessor.ImageFactory.Flip(System.Boolean,System.Boolean)
+  - ImageProcessor.ImageFactory.Format(ImageProcessor.Imaging.Formats.ISupportedImageFormat)
+  - ImageProcessor.ImageFactory.Gamma(System.Single)
+  - ImageProcessor.ImageFactory.GaussianBlur(System.Int32)
+  - ImageProcessor.ImageFactory.GaussianBlur(ImageProcessor.Imaging.GaussianLayer)
+  - ImageProcessor.ImageFactory.GaussianSharpen(System.Int32)
+  - ImageProcessor.ImageFactory.GaussianSharpen(ImageProcessor.Imaging.GaussianLayer)
+  - ImageProcessor.ImageFactory.Hue(System.Int32,System.Boolean)
+  - ImageProcessor.ImageFactory.Halftone(System.Boolean)
+  - ImageProcessor.ImageFactory.Mask(System.Drawing.Image,System.Nullable{System.Drawing.Point})
+  - ImageProcessor.ImageFactory.Overlay(ImageProcessor.Imaging.ImageLayer)
+  - ImageProcessor.ImageFactory.Pixelate(System.Int32,System.Nullable{System.Drawing.Rectangle})
+  - ImageProcessor.ImageFactory.Quality(System.Int32)
+  - ImageProcessor.ImageFactory.ReplaceColor(System.Drawing.Color,System.Drawing.Color,System.Int32)
+  - ImageProcessor.ImageFactory.Resize(System.Drawing.Size)
+  - ImageProcessor.ImageFactory.Resize(ImageProcessor.Imaging.ResizeLayer)
+  - ImageProcessor.ImageFactory.Rotate(System.Single)
+  - ImageProcessor.ImageFactory.RotateBounded(System.Single,System.Boolean)
+  - ImageProcessor.ImageFactory.RoundedCorners(System.Int32)
+  - ImageProcessor.ImageFactory.RoundedCorners(ImageProcessor.Imaging.RoundedCornerLayer)
+  - ImageProcessor.ImageFactory.Saturation(System.Int32)
+  - ImageProcessor.ImageFactory.Tint(System.Drawing.Color)
+  - ImageProcessor.ImageFactory.Vignette(System.Nullable{System.Drawing.Color})
+  - ImageProcessor.ImageFactory.Watermark(ImageProcessor.Imaging.TextLayer)
+  - ImageProcessor.ImageFactory.Save(System.String)
+  - ImageProcessor.ImageFactory.Save(System.IO.Stream)
+  - ImageProcessor.ImageFactory.Dispose
+  - ImageProcessor.ImageFactory.Dispose(System.Boolean)
+- uid: ImageProcessor.ImageFactory.#ctor(System.Boolean)
+  href: ImageProcessor.ImageFactory.yml
+  name: ImageFactory(bool)
+  fullName: ImageProcessor.ImageFactory.ImageFactory(bool)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 67
+  summary: Initializes a new instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  syntax:
+    content:
+      CSharp: 'public ImageFactory(bool preserveExifData = false): this (preserveExifData, true)'
+    parameters:
+    - id: preserveExifData
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: Whether to preserve exif metadata. Defaults to false.
+  id: ImageProcessor.ImageFactory.#ctor(System.Boolean)
+- uid: ImageProcessor.ImageFactory.#ctor(System.Boolean,System.Boolean)
+  href: ImageProcessor.ImageFactory.yml
+  name: ImageFactory(bool, bool)
+  fullName: ImageProcessor.ImageFactory.ImageFactory(bool, bool)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 81
+  summary: Initializes a new instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  syntax:
+    content:
+      CSharp: public ImageFactory(bool preserveExifData, bool fixGamma)
+    parameters:
+    - id: preserveExifData
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: Whether to preserve exif metadata. Defaults to false.
+    - id: fixGamma
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: Whether to fix the gamma component of the image. Defaults to true.
+  id: ImageProcessor.ImageFactory.#ctor(System.Boolean,System.Boolean)
+- uid: ImageProcessor.ImageFactory.Finalize
+  href: ImageProcessor.ImageFactory.yml
+  name: ~ImageFactory()
+  fullName: ImageProcessor.ImageFactory.~ImageFactory()
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 100
+  summary: Finalizes an instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  syntax:
+    content:
+      CSharp: ~ImageFactory() { // Do not re-create Dispose clean-up code here. // Calling Dispose(false) is optimal in terms of // readability and maintainability. this.Dispose(false); }
+    parameters: []
+  id: ImageProcessor.ImageFactory.Finalize
+- uid: ImageProcessor.ImageFactory.ImagePath
+  href: ImageProcessor.ImageFactory.yml
+  name: ImagePath
+  fullName: ImageProcessor.ImageFactory.ImagePath
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 113
+  summary: Gets the path to the local image for manipulation.
+  syntax:
+    content:
+      CSharp: public string ImagePath { get; }
+    parameters:
+    - id: ImagePath
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: ImageProcessor.ImageFactory.ImagePath
+- uid: ImageProcessor.ImageFactory.ShouldProcess
+  href: ImageProcessor.ImageFactory.yml
+  name: ShouldProcess
+  fullName: ImageProcessor.ImageFactory.ShouldProcess
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 118
+  summary: Gets a value indicating whether the image factory should process the file.
+  syntax:
+    content:
+      CSharp: public bool ShouldProcess { get; }
+    parameters:
+    - id: ShouldProcess
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: ImageProcessor.ImageFactory.ShouldProcess
+- uid: ImageProcessor.ImageFactory.CurrentImageFormat
+  href: ImageProcessor.ImageFactory.yml
+  name: CurrentImageFormat
+  fullName: ImageProcessor.ImageFactory.CurrentImageFormat
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 123
+  summary: Gets the supported image format.
+  syntax:
+    content:
+      CSharp: public ISupportedImageFormat CurrentImageFormat { get; }
+    parameters:
+    - id: CurrentImageFormat
+      type:
+        id: ImageProcessor.Imaging.Formats.ISupportedImageFormat
+        name: ISupportedImageFormat
+        href: ImageProcessor.Imaging.Formats.ISupportedImageFormat.yml
+  id: ImageProcessor.ImageFactory.CurrentImageFormat
+- uid: ImageProcessor.ImageFactory.PreserveExifData
+  href: ImageProcessor.ImageFactory.yml
+  name: PreserveExifData
+  fullName: ImageProcessor.ImageFactory.PreserveExifData
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 128
+  summary: Gets or sets a value indicating whether to preserve exif metadata.
+  syntax:
+    content:
+      CSharp: public bool PreserveExifData { get; set; }
+    parameters:
+    - id: PreserveExifData
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: ImageProcessor.ImageFactory.PreserveExifData
+- uid: ImageProcessor.ImageFactory.FixGamma
+  href: ImageProcessor.ImageFactory.yml
+  name: FixGamma
+  fullName: ImageProcessor.ImageFactory.FixGamma
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 133
+  summary: Gets or sets a value indicating whether to fix the gamma component of the current image.
+  syntax:
+    content:
+      CSharp: public bool FixGamma { get; set; }
+    parameters:
+    - id: FixGamma
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: ImageProcessor.ImageFactory.FixGamma
+- uid: ImageProcessor.ImageFactory.CurrentGamma
+  href: ImageProcessor.ImageFactory.yml
+  name: CurrentGamma
+  fullName: ImageProcessor.ImageFactory.CurrentGamma
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 138
+  summary: Gets or the current gamma value.
+  syntax:
+    content:
+      CSharp: public float CurrentGamma { get; }
+    parameters:
+    - id: CurrentGamma
+      type:
+        id: System.Single
+        name: float
+        isExternal: true
+  id: ImageProcessor.ImageFactory.CurrentGamma
+- uid: ImageProcessor.ImageFactory.ExifPropertyItems
+  href: ImageProcessor.ImageFactory.yml
+  name: ExifPropertyItems
+  fullName: ImageProcessor.ImageFactory.ExifPropertyItems
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 143
+  summary: Gets or sets the exif property items.
+  syntax:
+    content:
+      CSharp: public ConcurrentDictionary<int, PropertyItem> ExifPropertyItems { get; set; }
+    parameters:
+    - id: ExifPropertyItems
+      type:
+        id: System.Collections.Concurrent.ConcurrentDictionary{System.Int32,System.Drawing.Imaging.PropertyItem}
+        name: ConcurrentDictionary<int, PropertyItem>
+        isExternal: true
+  id: ImageProcessor.ImageFactory.ExifPropertyItems
+- uid: ImageProcessor.ImageFactory.Image
+  href: ImageProcessor.ImageFactory.yml
+  name: Image
+  fullName: ImageProcessor.ImageFactory.Image
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 148
+  summary: Gets or the local image for manipulation.
+  syntax:
+    content:
+      CSharp: public Image Image { get; }
+    parameters:
+    - id: Image
+      type:
+        id: System.Drawing.Image
+        name: Image
+        isExternal: true
+  id: ImageProcessor.ImageFactory.Image
+- uid: ImageProcessor.ImageFactory.Load(System.IO.Stream)
+  href: ImageProcessor.ImageFactory.yml
+  name: Load(Stream)
+  fullName: ImageProcessor.ImageFactory.Load(System.IO.Stream)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 166
+  summary: Loads the image to process. Always call this method first.
+  syntax:
+    content:
+      CSharp: public ImageFactory Load(Stream stream)
+    parameters:
+    - id: stream
+      type:
+        id: System.IO.Stream
+        name: Stream
+        isExternal: true
+      description: The [System.IO.Stream](#) containing the image information.
+    return:
+      id: ImageFactory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  id: ImageProcessor.ImageFactory.Load(System.IO.Stream)
+- uid: ImageProcessor.ImageFactory.Load(System.String)
+  href: ImageProcessor.ImageFactory.yml
+  name: Load(string)
+  fullName: ImageProcessor.ImageFactory.Load(string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 231
+  summary: Loads the image to process. Always call this method first.
+  syntax:
+    content:
+      CSharp: public ImageFactory Load(string imagePath)
+    parameters:
+    - id: imagePath
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: The absolute path to the image to load.
+    return:
+      id: ImageFactory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  id: ImageProcessor.ImageFactory.Load(System.String)
+- uid: ImageProcessor.ImageFactory.Reset
+  href: ImageProcessor.ImageFactory.yml
+  name: Reset()
+  fullName: ImageProcessor.ImageFactory.Reset()
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 304
+  summary: Resets the current image to its original loaded state.
+  syntax:
+    content:
+      CSharp: public ImageFactory Reset()
+    parameters: []
+    return:
+      id: ImageFactory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  id: ImageProcessor.ImageFactory.Reset
+- uid: ImageProcessor.ImageFactory.Alpha(System.Int32)
+  href: ImageProcessor.ImageFactory.yml
+  name: Alpha(int)
+  fullName: ImageProcessor.ImageFactory.Alpha(int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 340
+  summary: Changes the opacity of the current image.
+  syntax:
+    content:
+      CSharp: public ImageFactory Alpha(int percentage)
+    parameters:
+    - id: percentage
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: >-
+        The percentage by which to alter the images opacity.
+
+        Any integer between 0 and 100.
+    return:
+      id: ImageFactory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  id: ImageProcessor.ImageFactory.Alpha(System.Int32)
+- uid: ImageProcessor.ImageFactory.AutoRotate
+  href: ImageProcessor.ImageFactory.yml
+  name: AutoRotate()
+  fullName: ImageProcessor.ImageFactory.AutoRotate()
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 361
+  summary: >-
+    Performs auto-rotation to ensure that EXIF defined rotation is reflected in
+
+    the final image.
+  syntax:
+    content:
+      CSharp: public ImageFactory AutoRotate()
+    parameters: []
+    return:
+      id: ImageFactory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  id: ImageProcessor.ImageFactory.AutoRotate
+- uid: ImageProcessor.ImageFactory.Brightness(System.Int32)
+  href: ImageProcessor.ImageFactory.yml
+  name: Brightness(int)
+  fullName: ImageProcessor.ImageFactory.Brightness(int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 382
+  summary: Changes the brightness of the current image.
+  syntax:
+    content:
+      CSharp: public ImageFactory Brightness(int percentage)
+    parameters:
+    - id: percentage
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: >-
+        The percentage by which to alter the images brightness.
+
+        Any integer between -100 and 100.
+    return:
+      id: ImageFactory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  id: ImageProcessor.ImageFactory.Brightness(System.Int32)
+- uid: ImageProcessor.ImageFactory.BackgroundColor(System.Drawing.Color)
+  href: ImageProcessor.ImageFactory.yml
+  name: BackgroundColor(Color)
+  fullName: ImageProcessor.ImageFactory.BackgroundColor(System.Drawing.Color)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 408
+  summary: Changes the background color of the current image.
+  syntax:
+    content:
+      CSharp: public ImageFactory BackgroundColor(Color color)
+    parameters:
+    - id: color
+      type:
+        id: System.Drawing.Color
+        name: Color
+        isExternal: true
+      description: The [System.Drawing.Color](#) to paint the image with.
+    return:
+      id: ImageFactory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  id: ImageProcessor.ImageFactory.BackgroundColor(System.Drawing.Color)
+- uid: ImageProcessor.ImageFactory.Constrain(System.Drawing.Size)
+  href: ImageProcessor.ImageFactory.yml
+  name: Constrain(Size)
+  fullName: ImageProcessor.ImageFactory.Constrain(System.Drawing.Size)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 428
+  summary: Constrains the current image, resizing it to fit within the given dimensions whilst keeping its aspect ratio.
+  syntax:
+    content:
+      CSharp: public ImageFactory Constrain(Size size)
+    parameters:
+    - id: size
+      type:
+        id: System.Drawing.Size
+        name: Size
+        isExternal: true
+      description: The [System.Drawing.Size](#) containing the maximum width and height to set the image to.
+    return:
+      id: ImageFactory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  id: ImageProcessor.ImageFactory.Constrain(System.Drawing.Size)
+- uid: ImageProcessor.ImageFactory.Contrast(System.Int32)
+  href: ImageProcessor.ImageFactory.yml
+  name: Contrast(int)
+  fullName: ImageProcessor.ImageFactory.Contrast(int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 450
+  summary: Changes the contrast of the current image.
+  syntax:
+    content:
+      CSharp: public ImageFactory Contrast(int percentage)
+    parameters:
+    - id: percentage
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: >-
+        The percentage by which to alter the images contrast.
+
+        Any integer between -100 and 100.
+    return:
+      id: ImageFactory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  id: ImageProcessor.ImageFactory.Contrast(System.Int32)
+- uid: ImageProcessor.ImageFactory.Crop(System.Drawing.Rectangle)
+  href: ImageProcessor.ImageFactory.yml
+  name: Crop(Rectangle)
+  fullName: ImageProcessor.ImageFactory.Crop(System.Drawing.Rectangle)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 476
+  summary: Crops the current image to the given location and size.
+  syntax:
+    content:
+      CSharp: public ImageFactory Crop(Rectangle rectangle)
+    parameters:
+    - id: rectangle
+      type:
+        id: System.Drawing.Rectangle
+        name: Rectangle
+        isExternal: true
+      description: The [System.Drawing.Rectangle](#) containing the coordinates to crop the image to.
+    return:
+      id: ImageFactory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  id: ImageProcessor.ImageFactory.Crop(System.Drawing.Rectangle)
+- uid: ImageProcessor.ImageFactory.Crop(ImageProcessor.Imaging.CropLayer)
+  href: ImageProcessor.ImageFactory.yml
+  name: Crop(CropLayer)
+  fullName: ImageProcessor.ImageFactory.Crop(ImageProcessor.Imaging.CropLayer)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 496
+  summary: Crops the current image to the given location and size.
+  syntax:
+    content:
+      CSharp: public ImageFactory Crop(CropLayer cropLayer)
+    parameters:
+    - id: cropLayer
+      type:
+        id: ImageProcessor.Imaging.CropLayer
+        name: CropLayer
+        href: ImageProcessor.Imaging.CropLayer.yml
+      description: The [ImageProcessor.Imaging.CropLayer](api/ImageProcessor.Imaging.CropLayer.yml) containing the coordinates and mode to crop the image with.
+    return:
+      id: ImageFactory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  id: ImageProcessor.ImageFactory.Crop(ImageProcessor.Imaging.CropLayer)
+- uid: ImageProcessor.ImageFactory.DetectEdges(ImageProcessor.Imaging.Filters.EdgeDetection.IEdgeFilter,System.Boolean)
+  href: ImageProcessor.ImageFactory.yml
+  name: DetectEdges(IEdgeFilter, bool)
+  fullName: ImageProcessor.ImageFactory.DetectEdges(ImageProcessor.Imaging.Filters.EdgeDetection.IEdgeFilter, bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 519
+  summary: Detects the edges in the current image.
+  syntax:
+    content:
+      CSharp: public ImageFactory DetectEdges(IEdgeFilter filter, bool greyscale = true)
+    parameters:
+    - id: filter
+      type:
+        id: ImageProcessor.Imaging.Filters.EdgeDetection.IEdgeFilter
+        name: IEdgeFilter
+        href: ImageProcessor.Imaging.Filters.EdgeDetection.IEdgeFilter.yml
+      description: The [ImageProcessor.Imaging.Filters.EdgeDetection.IEdgeFilter](api/ImageProcessor.Imaging.Filters.EdgeDetection.IEdgeFilter.yml) to detect edges with.
+    - id: greyscale
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: Whether to convert the image to greyscale first - Defaults to true.
+    return:
+      id: ImageFactory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  id: ImageProcessor.ImageFactory.DetectEdges(ImageProcessor.Imaging.Filters.EdgeDetection.IEdgeFilter,System.Boolean)
+- uid: ImageProcessor.ImageFactory.EntropyCrop(System.Byte)
+  href: ImageProcessor.ImageFactory.yml
+  name: EntropyCrop(byte)
+  fullName: ImageProcessor.ImageFactory.EntropyCrop(byte)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 550
+  summary: Crops an image to the area of greatest entropy.
+  syntax:
+    content:
+      CSharp: public ImageFactory EntropyCrop(byte threshold = 128)
+    parameters:
+    - id: threshold
+      type:
+        id: System.Byte
+        name: byte
+        isExternal: true
+      description: The threshold in bytes to control the entropy.
+    return:
+      id: ImageFactory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  id: ImageProcessor.ImageFactory.EntropyCrop(System.Byte)
+- uid: ImageProcessor.ImageFactory.Filter(ImageProcessor.Imaging.Filters.Photo.IMatrixFilter)
+  href: ImageProcessor.ImageFactory.yml
+  name: Filter(IMatrixFilter)
+  fullName: ImageProcessor.ImageFactory.Filter(ImageProcessor.Imaging.Filters.Photo.IMatrixFilter)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 571
+  summary: >-
+    Applies a filter to the current image. Use the [ImageProcessor.Imaging.Filters.Photo.MatrixFilters](api/ImageProcessor.Imaging.Filters.Photo.MatrixFilters.yml) class to
+
+    assign the correct filter.
+  syntax:
+    content:
+      CSharp: public ImageFactory Filter(IMatrixFilter matrixFilter)
+    parameters:
+    - id: matrixFilter
+      type:
+        id: ImageProcessor.Imaging.Filters.Photo.IMatrixFilter
+        name: IMatrixFilter
+        href: ImageProcessor.Imaging.Filters.Photo.IMatrixFilter.yml
+      description: The [ImageProcessor.Imaging.Filters.Photo.IMatrixFilter](api/ImageProcessor.Imaging.Filters.Photo.IMatrixFilter.yml) of the filter to add to the image.
+    return:
+      id: ImageFactory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  id: ImageProcessor.ImageFactory.Filter(ImageProcessor.Imaging.Filters.Photo.IMatrixFilter)
+- uid: ImageProcessor.ImageFactory.Flip(System.Boolean,System.Boolean)
+  href: ImageProcessor.ImageFactory.yml
+  name: Flip(bool, bool)
+  fullName: ImageProcessor.ImageFactory.Flip(bool, bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 594
+  summary: Flips the current image either horizontally or vertically.
+  syntax:
+    content:
+      CSharp: public ImageFactory Flip(bool flipVertically = false, bool flipBoth = false)
+    parameters:
+    - id: flipVertically
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: Whether to flip the image vertically.
+    - id: flipBoth
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: Whether to flip the image both vertically and horizontally.
+    return:
+      id: ImageFactory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  id: ImageProcessor.ImageFactory.Flip(System.Boolean,System.Boolean)
+- uid: ImageProcessor.ImageFactory.Format(ImageProcessor.Imaging.Formats.ISupportedImageFormat)
+  href: ImageProcessor.ImageFactory.yml
+  name: Format(ISupportedImageFormat)
+  fullName: ImageProcessor.ImageFactory.Format(ImageProcessor.Imaging.Formats.ISupportedImageFormat)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 624
+  summary: Sets the output format of the current image to the matching [System.Drawing.Imaging.ImageFormat](#).
+  syntax:
+    content:
+      CSharp: public ImageFactory Format(ISupportedImageFormat format)
+    parameters:
+    - id: format
+      type:
+        id: ImageProcessor.Imaging.Formats.ISupportedImageFormat
+        name: ISupportedImageFormat
+        href: ImageProcessor.Imaging.Formats.ISupportedImageFormat.yml
+      description: The [ImageProcessor.Imaging.Formats.ISupportedImageFormat](api/ImageProcessor.Imaging.Formats.ISupportedImageFormat.yml). to set the image to.
+    return:
+      id: ImageFactory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  id: ImageProcessor.ImageFactory.Format(ImageProcessor.Imaging.Formats.ISupportedImageFormat)
+- uid: ImageProcessor.ImageFactory.Gamma(System.Single)
+  href: ImageProcessor.ImageFactory.yml
+  name: Gamma(float)
+  fullName: ImageProcessor.ImageFactory.Gamma(float)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 643
+  summary: Adjust the gamma (intensity of the light) component of the given image.
+  syntax:
+    content:
+      CSharp: public ImageFactory Gamma(float value)
+    parameters:
+    - id: value
+      type:
+        id: System.Single
+        name: float
+        isExternal: true
+      description: The value to adjust the gamma by (typically between .2 and 5).
+    return:
+      id: ImageFactory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  id: ImageProcessor.ImageFactory.Gamma(System.Single)
+- uid: ImageProcessor.ImageFactory.GaussianBlur(System.Int32)
+  href: ImageProcessor.ImageFactory.yml
+  name: GaussianBlur(int)
+  fullName: ImageProcessor.ImageFactory.GaussianBlur(int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 676
+  summary: >-
+    Uses a Gaussian kernel to blur the current image.
+
+
+
+    The sigma and threshold values applied to the kernel are
+
+    1.4 and 0 respectively.
+  syntax:
+    content:
+      CSharp: public ImageFactory GaussianBlur(int size)
+    parameters:
+    - id: size
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The size to set the Gaussian kernel to.
+    return:
+      id: ImageFactory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  id: ImageProcessor.ImageFactory.GaussianBlur(System.Int32)
+- uid: ImageProcessor.ImageFactory.GaussianBlur(ImageProcessor.Imaging.GaussianLayer)
+  href: ImageProcessor.ImageFactory.yml
+  name: GaussianBlur(GaussianLayer)
+  fullName: ImageProcessor.ImageFactory.GaussianBlur(ImageProcessor.Imaging.GaussianLayer)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 697
+  summary: Uses a Gaussian kernel to blur the current image.
+  syntax:
+    content:
+      CSharp: public ImageFactory GaussianBlur(GaussianLayer gaussianLayer)
+    parameters:
+    - id: gaussianLayer
+      type:
+        id: ImageProcessor.Imaging.GaussianLayer
+        name: GaussianLayer
+        href: ImageProcessor.Imaging.GaussianLayer.yml
+      description: >-
+        The [ImageProcessor.Imaging.GaussianLayer](api/ImageProcessor.Imaging.GaussianLayer.yml) for applying sharpening and
+
+        blurring methods to an image.
+    return:
+      id: ImageFactory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  id: ImageProcessor.ImageFactory.GaussianBlur(ImageProcessor.Imaging.GaussianLayer)
+- uid: ImageProcessor.ImageFactory.GaussianSharpen(System.Int32)
+  href: ImageProcessor.ImageFactory.yml
+  name: GaussianSharpen(int)
+  fullName: ImageProcessor.ImageFactory.GaussianSharpen(int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 723
+  summary: >-
+    Uses a Gaussian kernel to sharpen the current image.
+
+
+
+    The sigma and threshold values applied to the kernel are
+
+    1.4 and 0 respectively.
+  syntax:
+    content:
+      CSharp: public ImageFactory GaussianSharpen(int size)
+    parameters:
+    - id: size
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The size to set the Gaussian kernel to.
+    return:
+      id: ImageFactory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  id: ImageProcessor.ImageFactory.GaussianSharpen(System.Int32)
+- uid: ImageProcessor.ImageFactory.GaussianSharpen(ImageProcessor.Imaging.GaussianLayer)
+  href: ImageProcessor.ImageFactory.yml
+  name: GaussianSharpen(GaussianLayer)
+  fullName: ImageProcessor.ImageFactory.GaussianSharpen(ImageProcessor.Imaging.GaussianLayer)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 744
+  summary: Uses a Gaussian kernel to sharpen the current image.
+  syntax:
+    content:
+      CSharp: public ImageFactory GaussianSharpen(GaussianLayer gaussianLayer)
+    parameters:
+    - id: gaussianLayer
+      type:
+        id: ImageProcessor.Imaging.GaussianLayer
+        name: GaussianLayer
+        href: ImageProcessor.Imaging.GaussianLayer.yml
+      description: >-
+        The [ImageProcessor.Imaging.GaussianLayer](api/ImageProcessor.Imaging.GaussianLayer.yml) for applying sharpening and
+
+        blurring methods to an image.
+    return:
+      id: ImageFactory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  id: ImageProcessor.ImageFactory.GaussianSharpen(ImageProcessor.Imaging.GaussianLayer)
+- uid: ImageProcessor.ImageFactory.Hue(System.Int32,System.Boolean)
+  href: ImageProcessor.ImageFactory.yml
+  name: Hue(int, bool)
+  fullName: ImageProcessor.ImageFactory.Hue(int, bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 768
+  summary: Alters the hue of the current image changing the overall color.
+  syntax:
+    content:
+      CSharp: public ImageFactory Hue(int degrees, bool rotate = false)
+    parameters:
+    - id: degrees
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: >-
+        The angle by which to alter the images hue.
+
+        Any integer between 0 and 360.
+    - id: rotate
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: Whether to rotate the hue of the current image altering each color
+    return:
+      id: ImageFactory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  id: ImageProcessor.ImageFactory.Hue(System.Int32,System.Boolean)
+- uid: ImageProcessor.ImageFactory.Halftone(System.Boolean)
+  href: ImageProcessor.ImageFactory.yml
+  name: Halftone(bool)
+  fullName: ImageProcessor.ImageFactory.Halftone(bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 794
+  summary: Converts the current image to a CMYK halftone representation of that image.
+  syntax:
+    content:
+      CSharp: public ImageFactory Halftone(bool comicMode = false)
+    parameters:
+    - id: comicMode
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: Whether to trace over the current image and add borders to add a comic book effect.
+    return:
+      id: ImageFactory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  id: ImageProcessor.ImageFactory.Halftone(System.Boolean)
+- uid: ImageProcessor.ImageFactory.Mask(System.Drawing.Image,System.Nullable{System.Drawing.Point})
+  href: ImageProcessor.ImageFactory.yml
+  name: Mask(Image, Point?)
+  fullName: ImageProcessor.ImageFactory.Mask(System.Drawing.Image, System.Drawing.Point?)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 818
+  summary: Applies the given image mask to the current image.
+  syntax:
+    content:
+      CSharp: public ImageFactory Mask(Image imageMask, Point? point = null)
+    parameters:
+    - id: imageMask
+      type:
+        id: System.Drawing.Image
+        name: Image
+        isExternal: true
+      description: The image containing the mask to apply.
+    - id: point
+      type:
+        id: System.Nullable{System.Drawing.Point}
+        name: Point?
+        isExternal: true
+      description: >-
+        The [System.Drawing.Point](#) to place the mask if it not the same dimensions as the original image.
+
+        If no position is set, the mask will be centered within the image.
+    return:
+      id: ImageFactory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  id: ImageProcessor.ImageFactory.Mask(System.Drawing.Image,System.Nullable{System.Drawing.Point})
+- uid: ImageProcessor.ImageFactory.Overlay(ImageProcessor.Imaging.ImageLayer)
+  href: ImageProcessor.ImageFactory.yml
+  name: Overlay(ImageLayer)
+  fullName: ImageProcessor.ImageFactory.Overlay(ImageProcessor.Imaging.ImageLayer)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 839
+  summary: Adds a image overlay to the current image.
+  syntax:
+    content:
+      CSharp: public ImageFactory Overlay(ImageLayer imageLayer)
+    parameters:
+    - id: imageLayer
+      type:
+        id: ImageProcessor.Imaging.ImageLayer
+        name: ImageLayer
+        href: ImageProcessor.Imaging.ImageLayer.yml
+      description: >-
+        The [ImageProcessor.Imaging.ImageLayer](api/ImageProcessor.Imaging.ImageLayer.yml) containing the properties necessary to add
+
+        the image overlay to the image.
+    return:
+      id: ImageFactory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  id: ImageProcessor.ImageFactory.Overlay(ImageProcessor.Imaging.ImageLayer)
+- uid: ImageProcessor.ImageFactory.Pixelate(System.Int32,System.Nullable{System.Drawing.Rectangle})
+  href: ImageProcessor.ImageFactory.yml
+  name: Pixelate(int, Rectangle?)
+  fullName: ImageProcessor.ImageFactory.Pixelate(int, System.Drawing.Rectangle?)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 861
+  summary: Pixelates an image with the given size.
+  syntax:
+    content:
+      CSharp: public ImageFactory Pixelate(int pixelSize, Rectangle? rectangle = null)
+    parameters:
+    - id: pixelSize
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The size of the pixels to create.
+    - id: rectangle
+      type:
+        id: System.Nullable{System.Drawing.Rectangle}
+        name: Rectangle?
+        isExternal: true
+      description: The area in which to pixelate the image. If not set, the whole image is pixelated.
+    return:
+      id: ImageFactory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  id: ImageProcessor.ImageFactory.Pixelate(System.Int32,System.Nullable{System.Drawing.Rectangle})
+- uid: ImageProcessor.ImageFactory.Quality(System.Int32)
+  href: ImageProcessor.ImageFactory.yml
+  name: Quality(int)
+  fullName: ImageProcessor.ImageFactory.Quality(int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 882
+  summary: >-
+    Alters the output quality of the current image.
+
+
+
+    This method will only effect the output quality of jpeg images
+  syntax:
+    content:
+      CSharp: public ImageFactory Quality(int percentage)
+    parameters:
+    - id: percentage
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: A value between 1 and 100 to set the quality to.
+    return:
+      id: ImageFactory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  id: ImageProcessor.ImageFactory.Quality(System.Int32)
+- uid: ImageProcessor.ImageFactory.ReplaceColor(System.Drawing.Color,System.Drawing.Color,System.Int32)
+  href: ImageProcessor.ImageFactory.yml
+  name: ReplaceColor(Color, Color, int)
+  fullName: ImageProcessor.ImageFactory.ReplaceColor(System.Drawing.Color, System.Drawing.Color, int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 907
+  summary: Replaces a color within the current image.
+  syntax:
+    content:
+      CSharp: public ImageFactory ReplaceColor(Color target, Color replacement, int fuzziness = 0)
+    parameters:
+    - id: target
+      type:
+        id: System.Drawing.Color
+        name: Color
+        isExternal: true
+      description: The target [System.Drawing.Color](#).
+    - id: replacement
+      type:
+        id: System.Drawing.Color
+        name: Color
+        isExternal: true
+      description: The replacement [System.Drawing.Color](#).
+    - id: fuzziness
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: A value between 0 and 128 with which to alter the target detection accuracy.
+    return:
+      id: ImageFactory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml).
+  id: ImageProcessor.ImageFactory.ReplaceColor(System.Drawing.Color,System.Drawing.Color,System.Int32)
+- uid: ImageProcessor.ImageFactory.Resize(System.Drawing.Size)
+  href: ImageProcessor.ImageFactory.yml
+  name: Resize(Size)
+  fullName: ImageProcessor.ImageFactory.Resize(System.Drawing.Size)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 936
+  summary: Resizes the current image to the given dimensions.
+  syntax:
+    content:
+      CSharp: public ImageFactory Resize(Size size)
+    parameters:
+    - id: size
+      type:
+        id: System.Drawing.Size
+        name: Size
+        isExternal: true
+      description: The [System.Drawing.Size](#) containing the width and height to set the image to.
+    return:
+      id: ImageFactory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  id: ImageProcessor.ImageFactory.Resize(System.Drawing.Size)
+- uid: ImageProcessor.ImageFactory.Resize(ImageProcessor.Imaging.ResizeLayer)
+  href: ImageProcessor.ImageFactory.yml
+  name: Resize(ResizeLayer)
+  fullName: ImageProcessor.ImageFactory.Resize(ImageProcessor.Imaging.ResizeLayer)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 959
+  summary: Resizes the current image to the given dimensions.
+  syntax:
+    content:
+      CSharp: public ImageFactory Resize(ResizeLayer resizeLayer)
+    parameters:
+    - id: resizeLayer
+      type:
+        id: ImageProcessor.Imaging.ResizeLayer
+        name: ResizeLayer
+        href: ImageProcessor.Imaging.ResizeLayer.yml
+      description: The [ImageProcessor.Imaging.ResizeLayer](api/ImageProcessor.Imaging.ResizeLayer.yml) containing the properties required to resize the image.
+    return:
+      id: ImageFactory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  id: ImageProcessor.ImageFactory.Resize(ImageProcessor.Imaging.ResizeLayer)
+- uid: ImageProcessor.ImageFactory.Rotate(System.Single)
+  href: ImageProcessor.ImageFactory.yml
+  name: Rotate(float)
+  fullName: ImageProcessor.ImageFactory.Rotate(float)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 985
+  summary: Rotates the current image by the given angle.
+  syntax:
+    content:
+      CSharp: public ImageFactory Rotate(float degrees)
+    parameters:
+    - id: degrees
+      type:
+        id: System.Single
+        name: float
+        isExternal: true
+      description: The angle at which to rotate the image in degrees.
+    return:
+      id: ImageFactory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  id: ImageProcessor.ImageFactory.Rotate(System.Single)
+- uid: ImageProcessor.ImageFactory.RotateBounded(System.Single,System.Boolean)
+  href: ImageProcessor.ImageFactory.yml
+  name: RotateBounded(float, bool)
+  fullName: ImageProcessor.ImageFactory.RotateBounded(float, bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 1014
+  summary: Rotates the image without expanding the canvas to fit the image.
+  syntax:
+    content:
+      CSharp: public ImageFactory RotateBounded(float degrees, bool keepSize = false)
+    parameters:
+    - id: degrees
+      type:
+        id: System.Single
+        name: float
+        isExternal: true
+      description: The angle at which to rotate the image in degrees.
+    - id: keepSize
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: >-
+        Whether to keep the original image dimensions.
+
+
+
+        If set to true, the image is zoomed to fit the bounding area.
+
+
+
+        If set to false, the area is cropped to fit the rotated image.
+    return:
+      id: ImageFactory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  id: ImageProcessor.ImageFactory.RotateBounded(System.Single,System.Boolean)
+- uid: ImageProcessor.ImageFactory.RoundedCorners(System.Int32)
+  href: ImageProcessor.ImageFactory.yml
+  name: RoundedCorners(int)
+  fullName: ImageProcessor.ImageFactory.RoundedCorners(int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 1034
+  summary: Adds rounded corners to the current image.
+  syntax:
+    content:
+      CSharp: public ImageFactory RoundedCorners(int radius)
+    parameters:
+    - id: radius
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The radius at which the corner will be rounded.
+    return:
+      id: ImageFactory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  id: ImageProcessor.ImageFactory.RoundedCorners(System.Int32)
+- uid: ImageProcessor.ImageFactory.RoundedCorners(ImageProcessor.Imaging.RoundedCornerLayer)
+  href: ImageProcessor.ImageFactory.yml
+  name: RoundedCorners(RoundedCornerLayer)
+  fullName: ImageProcessor.ImageFactory.RoundedCorners(ImageProcessor.Imaging.RoundedCornerLayer)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 1061
+  summary: Adds rounded corners to the current image.
+  syntax:
+    content:
+      CSharp: public ImageFactory RoundedCorners(RoundedCornerLayer roundedCornerLayer)
+    parameters:
+    - id: roundedCornerLayer
+      type:
+        id: ImageProcessor.Imaging.RoundedCornerLayer
+        name: RoundedCornerLayer
+        href: ImageProcessor.Imaging.RoundedCornerLayer.yml
+      description: The [ImageProcessor.Imaging.RoundedCornerLayer](api/ImageProcessor.Imaging.RoundedCornerLayer.yml) containing the properties to round corners on the image.
+    return:
+      id: ImageFactory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  id: ImageProcessor.ImageFactory.RoundedCorners(ImageProcessor.Imaging.RoundedCornerLayer)
+- uid: ImageProcessor.ImageFactory.Saturation(System.Int32)
+  href: ImageProcessor.ImageFactory.yml
+  name: Saturation(int)
+  fullName: ImageProcessor.ImageFactory.Saturation(int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 1087
+  summary: Changes the saturation of the current image.
+  syntax:
+    content:
+      CSharp: public ImageFactory Saturation(int percentage)
+    parameters:
+    - id: percentage
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: >-
+        The percentage by which to alter the images saturation.
+
+        Any integer between -100 and 100.
+    return:
+      id: ImageFactory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  id: ImageProcessor.ImageFactory.Saturation(System.Int32)
+- uid: ImageProcessor.ImageFactory.Tint(System.Drawing.Color)
+  href: ImageProcessor.ImageFactory.yml
+  name: Tint(Color)
+  fullName: ImageProcessor.ImageFactory.Tint(System.Drawing.Color)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 1113
+  summary: Tints the current image with the given color.
+  syntax:
+    content:
+      CSharp: public ImageFactory Tint(Color color)
+    parameters:
+    - id: color
+      type:
+        id: System.Drawing.Color
+        name: Color
+        isExternal: true
+      description: The [System.Drawing.Color](#) to tint the image with.
+    return:
+      id: ImageFactory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  id: ImageProcessor.ImageFactory.Tint(System.Drawing.Color)
+- uid: ImageProcessor.ImageFactory.Vignette(System.Nullable{System.Drawing.Color})
+  href: ImageProcessor.ImageFactory.yml
+  name: Vignette(Color?)
+  fullName: ImageProcessor.ImageFactory.Vignette(System.Drawing.Color?)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 1133
+  summary: Adds a vignette image effect to the current image.
+  syntax:
+    content:
+      CSharp: public ImageFactory Vignette(Color? color = null)
+    parameters:
+    - id: color
+      type:
+        id: System.Nullable{System.Drawing.Color}
+        name: Color?
+        isExternal: true
+      description: The [System.Drawing.Color](#) to tint the image with. Defaults to black.
+    return:
+      id: ImageFactory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  id: ImageProcessor.ImageFactory.Vignette(System.Nullable{System.Drawing.Color})
+- uid: ImageProcessor.ImageFactory.Watermark(ImageProcessor.Imaging.TextLayer)
+  href: ImageProcessor.ImageFactory.yml
+  name: Watermark(TextLayer)
+  fullName: ImageProcessor.ImageFactory.Watermark(ImageProcessor.Imaging.TextLayer)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 1160
+  summary: Adds a text based watermark to the current image.
+  syntax:
+    content:
+      CSharp: public ImageFactory Watermark(TextLayer textLayer)
+    parameters:
+    - id: textLayer
+      type:
+        id: ImageProcessor.Imaging.TextLayer
+        name: TextLayer
+        href: ImageProcessor.Imaging.TextLayer.yml
+      description: >-
+        The [ImageProcessor.Imaging.TextLayer](api/ImageProcessor.Imaging.TextLayer.yml) containing the properties necessary to add
+
+        the text based watermark to the image.
+    return:
+      id: ImageFactory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  id: ImageProcessor.ImageFactory.Watermark(ImageProcessor.Imaging.TextLayer)
+- uid: ImageProcessor.ImageFactory.Save(System.String)
+  href: ImageProcessor.ImageFactory.yml
+  name: Save(string)
+  fullName: ImageProcessor.ImageFactory.Save(string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 1181
+  summary: >-
+    Saves the current image to the specified file path. If the extension does not
+
+    match the correct extension for the current format it will be replaced by the
+
+    correct default value.
+  syntax:
+    content:
+      CSharp: public ImageFactory Save(string filePath)
+    parameters:
+    - id: filePath
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: The path to save the image to.
+    return:
+      id: ImageFactory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  id: ImageProcessor.ImageFactory.Save(System.String)
+- uid: ImageProcessor.ImageFactory.Save(System.IO.Stream)
+  href: ImageProcessor.ImageFactory.yml
+  name: Save(Stream)
+  fullName: ImageProcessor.ImageFactory.Save(System.IO.Stream)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 1213
+  summary: Saves the current image to the specified output stream.
+  syntax:
+    content:
+      CSharp: public ImageFactory Save(Stream stream)
+    parameters:
+    - id: stream
+      type:
+        id: System.IO.Stream
+        name: Stream
+        isExternal: true
+      description: The [System.IO.MemoryStream](#) to save the image information to.
+    return:
+      id: ImageFactory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  id: ImageProcessor.ImageFactory.Save(System.IO.Stream)
+- uid: ImageProcessor.ImageFactory.Dispose
+  href: ImageProcessor.ImageFactory.yml
+  name: Dispose()
+  fullName: ImageProcessor.ImageFactory.Dispose()
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 1237
+  summary: Disposes the object and frees resources for the Garbage Collector.
+  syntax:
+    content:
+      CSharp: public void Dispose()
+    parameters: []
+  id: ImageProcessor.ImageFactory.Dispose
+- uid: ImageProcessor.ImageFactory.Dispose(System.Boolean)
+  href: ImageProcessor.ImageFactory.yml
+  name: Dispose(bool)
+  fullName: ImageProcessor.ImageFactory.Dispose(bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/ImageFactory.cs
+    startLine: 1253
+  summary: Disposes the object and frees resources for the Garbage Collector.
+  syntax:
+    content:
+      CSharp: protected virtual void Dispose(bool disposing)
+    parameters:
+    - id: disposing
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: If true, the object gets disposed.
+  id: ImageProcessor.ImageFactory.Dispose(System.Boolean)

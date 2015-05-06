@@ -1,0 +1,95 @@
+items:
+- uid: ImageProcessor.Web.Configuration.ImageCacheSection
+  href: ImageProcessor.Web.Configuration.ImageCacheSection.yml
+  name: ImageCacheSection
+  fullName: ImageProcessor.Web.Configuration.ImageCacheSection
+  type: Class
+  source:
+    remote: &o0
+      path: src/ImageProcessor.Web/Configuration/ImageCacheSection.cs
+      branch: V2
+      repo: https://github.com/JimBobSquarePants/ImageProcessor.git
+      key: 6d1ac546
+    path: src/ImageProcessor.Web/Configuration/ImageCacheSection.cs
+    startLine: 21
+  summary: Represents an image cache section within a configuration file.
+  syntax:
+    content:
+      CSharp: 'public sealed class ImageCacheSection : ConfigurationSection'
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.Configuration.ConfigurationElement
+    name: ConfigurationElement
+    isExternal: true
+  - id: System.Configuration.ConfigurationSection
+    name: ConfigurationSection
+    isExternal: true
+  id: ImageProcessor.Web.Configuration.ImageCacheSection
+  children:
+  - ImageProcessor.Web.Configuration.ImageCacheSection.CurrentCache
+  - ImageProcessor.Web.Configuration.ImageCacheSection.ImageCaches
+  - ImageProcessor.Web.Configuration.ImageCacheSection.GetConfiguration
+- uid: ImageProcessor.Web.Configuration.ImageCacheSection.CurrentCache
+  href: ImageProcessor.Web.Configuration.ImageCacheSection.yml
+  name: CurrentCache
+  fullName: ImageProcessor.Web.Configuration.ImageCacheSection.CurrentCache
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Configuration/ImageCacheSection.cs
+    startLine: 27
+  summary: Gets or sets the name of the current cache provider.
+  syntax:
+    content:
+      CSharp: '[ConfigurationProperty("currentCache", DefaultValue = "DiskCache", IsRequired = true)] public string CurrentCache { get; set; }'
+    parameters:
+    - id: CurrentCache
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: ImageProcessor.Web.Configuration.ImageCacheSection.CurrentCache
+- uid: ImageProcessor.Web.Configuration.ImageCacheSection.ImageCaches
+  href: ImageProcessor.Web.Configuration.ImageCacheSection.yml
+  name: ImageCaches
+  fullName: ImageProcessor.Web.Configuration.ImageCacheSection.ImageCaches
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Configuration/ImageCacheSection.cs
+    startLine: 45
+  summary: Gets the [ImageProcessor.Web.Configuration.ImageCacheSection.CacheElementCollection](api/ImageProcessor.Web.Configuration.ImageCacheSection.CacheElementCollection.yml)
+  syntax:
+    content:
+      CSharp: '[ConfigurationProperty("caches", IsRequired = true)] public CacheElementCollection ImageCaches { get; }'
+    parameters:
+    - id: ImageCaches
+      type:
+        id: ImageProcessor.Web.Configuration.ImageCacheSection.CacheElementCollection
+        name: CacheElementCollection
+        href: ImageProcessor.Web.Configuration.ImageCacheSection.CacheElementCollection.yml
+  id: ImageProcessor.Web.Configuration.ImageCacheSection.ImageCaches
+- uid: ImageProcessor.Web.Configuration.ImageCacheSection.GetConfiguration
+  href: ImageProcessor.Web.Configuration.ImageCacheSection.yml
+  name: GetConfiguration()
+  fullName: ImageProcessor.Web.Configuration.ImageCacheSection.GetConfiguration()
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Configuration/ImageCacheSection.cs
+    startLine: 59
+  summary: Retrieves the cache configuration section from the current application configuration.
+  syntax:
+    content:
+      CSharp: public static ImageCacheSection GetConfiguration()
+    parameters: []
+    return:
+      id: ImageCacheSection
+      type:
+        id: ImageProcessor.Web.Configuration.ImageCacheSection
+        name: ImageCacheSection
+        href: ImageProcessor.Web.Configuration.ImageCacheSection.yml
+      description: The cache configuration section from the current application configuration.
+  id: ImageProcessor.Web.Configuration.ImageCacheSection.GetConfiguration

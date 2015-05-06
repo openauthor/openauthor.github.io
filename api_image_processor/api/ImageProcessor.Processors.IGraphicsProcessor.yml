@@ -1,0 +1,93 @@
+items:
+- uid: ImageProcessor.Processors.IGraphicsProcessor
+  href: ImageProcessor.Processors.IGraphicsProcessor.yml
+  name: IGraphicsProcessor
+  fullName: ImageProcessor.Processors.IGraphicsProcessor
+  type: Interface
+  source:
+    remote: &o0
+      path: src/ImageProcessor/Processors/IGraphicsProcessor.cs
+      branch: V2
+      repo: https://github.com/JimBobSquarePants/ImageProcessor.git
+      key: 6d1ac546
+    path: src/ImageProcessor/Processors/IGraphicsProcessor.cs
+    startLine: 21
+  summary: Defines properties and methods for ImageProcessor Plugins.
+  syntax:
+    content:
+      CSharp: public interface IGraphicsProcessor
+  id: ImageProcessor.Processors.IGraphicsProcessor
+  children:
+  - ImageProcessor.Processors.IGraphicsProcessor.DynamicParameter
+  - ImageProcessor.Processors.IGraphicsProcessor.Settings
+  - ImageProcessor.Processors.IGraphicsProcessor.ProcessImage(ImageProcessor.ImageFactory)
+- uid: ImageProcessor.Processors.IGraphicsProcessor.DynamicParameter
+  href: ImageProcessor.Processors.IGraphicsProcessor.yml
+  name: DynamicParameter
+  fullName: ImageProcessor.Processors.IGraphicsProcessor.DynamicParameter
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Processors/IGraphicsProcessor.cs
+    startLine: 27
+  summary: Gets or sets the DynamicParameter.
+  syntax:
+    content:
+      CSharp: dynamic DynamicParameter { get; set; }
+    parameters:
+    - id: DynamicParameter
+      type:
+        name: dynamic
+        isExternal: true
+  id: ImageProcessor.Processors.IGraphicsProcessor.DynamicParameter
+- uid: ImageProcessor.Processors.IGraphicsProcessor.Settings
+  href: ImageProcessor.Processors.IGraphicsProcessor.yml
+  name: Settings
+  fullName: ImageProcessor.Processors.IGraphicsProcessor.Settings
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Processors/IGraphicsProcessor.cs
+    startLine: 32
+  summary: Gets or sets any additional settings required by the processor.
+  syntax:
+    content:
+      CSharp: Dictionary<string, string> Settings { get; set; }
+    parameters:
+    - id: Settings
+      type:
+        id: System.Collections.Generic.Dictionary{System.String,System.String}
+        name: Dictionary<string, string>
+        isExternal: true
+  id: ImageProcessor.Processors.IGraphicsProcessor.Settings
+- uid: ImageProcessor.Processors.IGraphicsProcessor.ProcessImage(ImageProcessor.ImageFactory)
+  href: ImageProcessor.Processors.IGraphicsProcessor.yml
+  name: ProcessImage(ImageFactory)
+  fullName: ImageProcessor.Processors.IGraphicsProcessor.ProcessImage(ImageProcessor.ImageFactory)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Processors/IGraphicsProcessor.cs
+    startLine: 46
+  summary: Processes the image.
+  syntax:
+    content:
+      CSharp: public Image ProcessImage(ImageFactory factory)
+    parameters:
+    - id: factory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: >-
+        The current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class containing
+
+        the image to process.
+    return:
+      id: Image
+      type:
+        id: System.Drawing.Image
+        name: Image
+        isExternal: true
+      description: The processed image from the current instance of the [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml) class.
+  id: ImageProcessor.Processors.IGraphicsProcessor.ProcessImage(ImageProcessor.ImageFactory)

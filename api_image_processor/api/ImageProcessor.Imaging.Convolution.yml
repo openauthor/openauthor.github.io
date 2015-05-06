@@ -1,0 +1,307 @@
+items:
+- uid: ImageProcessor.Imaging.Convolution
+  href: ImageProcessor.Imaging.Convolution.yml
+  name: Convolution
+  fullName: ImageProcessor.Imaging.Convolution
+  type: Class
+  source:
+    remote: &o0
+      path: src/ImageProcessor/Imaging/Convolution.cs
+      branch: V2
+      repo: https://github.com/JimBobSquarePants/ImageProcessor.git
+      key: 6d1ac546
+    path: src/ImageProcessor/Imaging/Convolution.cs
+    startLine: 21
+  summary: Provides methods for applying blurring and sharpening effects to an image..
+  syntax:
+    content:
+      CSharp: public class Convolution
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  id: ImageProcessor.Imaging.Convolution
+  children:
+  - ImageProcessor.Imaging.Convolution.#ctor
+  - ImageProcessor.Imaging.Convolution.#ctor(System.Double)
+  - ImageProcessor.Imaging.Convolution.Threshold
+  - ImageProcessor.Imaging.Convolution.Divider
+  - ImageProcessor.Imaging.Convolution.UseDynamicDividerForEdges
+  - ImageProcessor.Imaging.Convolution.CreateGaussianKernel(System.Int32)
+  - ImageProcessor.Imaging.Convolution.CreateGaussianKernel2D(System.Int32)
+  - ImageProcessor.Imaging.Convolution.CreateGuassianBlurFilter(System.Int32)
+  - ImageProcessor.Imaging.Convolution.CreateGuassianSharpenFilter(System.Int32)
+  - ImageProcessor.Imaging.Convolution.ProcessKernel(System.Drawing.Bitmap,System.Double[0:,0:])
+- uid: ImageProcessor.Imaging.Convolution.#ctor
+  href: ImageProcessor.Imaging.Convolution.yml
+  name: Convolution()
+  fullName: ImageProcessor.Imaging.Convolution.Convolution()
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Convolution.cs
+    startLine: 36
+  summary: Initializes a new instance of the [ImageProcessor.Imaging.Convolution](api/ImageProcessor.Imaging.Convolution.yml) class.
+  syntax:
+    content:
+      CSharp: public Convolution()
+    parameters: []
+  id: ImageProcessor.Imaging.Convolution.#ctor
+- uid: ImageProcessor.Imaging.Convolution.#ctor(System.Double)
+  href: ImageProcessor.Imaging.Convolution.yml
+  name: Convolution(double)
+  fullName: ImageProcessor.Imaging.Convolution.Convolution(double)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Convolution.cs
+    startLine: 46
+  summary: Initializes a new instance of the [ImageProcessor.Imaging.Convolution](api/ImageProcessor.Imaging.Convolution.yml) class.
+  syntax:
+    content:
+      CSharp: public Convolution(double standardDeviation)
+    parameters:
+    - id: standardDeviation
+      type:
+        id: System.Double
+        name: double
+        isExternal: true
+      description: The standard deviation.
+  id: ImageProcessor.Imaging.Convolution.#ctor(System.Double)
+- uid: ImageProcessor.Imaging.Convolution.Threshold
+  href: ImageProcessor.Imaging.Convolution.yml
+  name: Threshold
+  fullName: ImageProcessor.Imaging.Convolution.Threshold
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Convolution.cs
+    startLine: 60
+  summary: >-
+    Gets or sets the threshold to add to the weighted sum.
+
+
+
+    Specifies the threshold value, which is added to each weighted
+
+    sum of pixels.
+  syntax:
+    content:
+      CSharp: public int Threshold { get; set; }
+    parameters:
+    - id: Threshold
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: ImageProcessor.Imaging.Convolution.Threshold
+- uid: ImageProcessor.Imaging.Convolution.Divider
+  href: ImageProcessor.Imaging.Convolution.yml
+  name: Divider
+  fullName: ImageProcessor.Imaging.Convolution.Divider
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Convolution.cs
+    startLine: 69
+  summary: >-
+    Gets or sets the value used to divide convolution; the weighted sum
+
+    of pixels is divided by this value.
+
+    If not set this value will be automatically calculated.
+  syntax:
+    content:
+      CSharp: public double Divider { get; set; }
+    parameters:
+    - id: Divider
+      type:
+        id: System.Double
+        name: double
+        isExternal: true
+  id: ImageProcessor.Imaging.Convolution.Divider
+- uid: ImageProcessor.Imaging.Convolution.UseDynamicDividerForEdges
+  href: ImageProcessor.Imaging.Convolution.yml
+  name: UseDynamicDividerForEdges
+  fullName: ImageProcessor.Imaging.Convolution.UseDynamicDividerForEdges
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Convolution.cs
+    startLine: 85
+  summary: >-
+    Gets or sets a value indicating whether to use the dynamic divider for edges.
+
+
+
+    If it is set to , then the same divider, specified by
+
+    property or calculated automatically, will be applied both for non-edge regions
+
+    and for edge regions. If the value is set to , then the dynamically
+
+    calculated divider will be used for edge regions. This is calculated from the sum of the kernel
+
+    elements used at that region, which are taken into account for particular processed pixel
+
+    (elements, which are not outside image).
+
+    Default value is set to .
+  syntax:
+    content:
+      CSharp: public bool UseDynamicDividerForEdges { get; set; }
+    parameters:
+    - id: UseDynamicDividerForEdges
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: ImageProcessor.Imaging.Convolution.UseDynamicDividerForEdges
+- uid: ImageProcessor.Imaging.Convolution.CreateGaussianKernel(System.Int32)
+  href: ImageProcessor.Imaging.Convolution.yml
+  name: CreateGaussianKernel(int)
+  fullName: ImageProcessor.Imaging.Convolution.CreateGaussianKernel(int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Convolution.cs
+    startLine: 103
+  summary: Create a 1 dimensional Gaussian kernel using the Gaussian G(x) function
+  syntax:
+    content:
+      CSharp: public double[*, *] CreateGaussianKernel(int kernelSize)
+    parameters:
+    - id: kernelSize
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: Kernel Size
+    return:
+      type:
+        id: System.Array
+        name: double[*,*]
+        isExternal: true
+      description: A Gaussian Kernel with the given size and deviation.
+  id: ImageProcessor.Imaging.Convolution.CreateGaussianKernel(System.Int32)
+- uid: ImageProcessor.Imaging.Convolution.CreateGaussianKernel2D(System.Int32)
+  href: ImageProcessor.Imaging.Convolution.yml
+  name: CreateGaussianKernel2D(int)
+  fullName: ImageProcessor.Imaging.Convolution.CreateGaussianKernel2D(int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Convolution.cs
+    startLine: 131
+  summary: Create a 2 dimensional Gaussian kernel using the Gaussian G(x y) function
+  syntax:
+    content:
+      CSharp: public double[*, *] CreateGaussianKernel2D(int kernelSize)
+    parameters:
+    - id: kernelSize
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: Kernel Size
+    return:
+      type:
+        id: System.Array
+        name: double[*,*]
+        isExternal: true
+      description: A Gaussian Kernel with the given size and deviation.
+  id: ImageProcessor.Imaging.Convolution.CreateGaussianKernel2D(System.Int32)
+- uid: ImageProcessor.Imaging.Convolution.CreateGuassianBlurFilter(System.Int32)
+  href: ImageProcessor.Imaging.Convolution.yml
+  name: CreateGuassianBlurFilter(int)
+  fullName: ImageProcessor.Imaging.Convolution.CreateGuassianBlurFilter(int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Convolution.cs
+    startLine: 158
+  summary: >-
+    Create a 2 dimensional Gaussian kernel using the Gaussian G(x y) function for
+
+    blurring images.
+  syntax:
+    content:
+      CSharp: public double[*, *] CreateGuassianBlurFilter(int kernelSize)
+    parameters:
+    - id: kernelSize
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: Kernel Size
+    return:
+      type:
+        id: System.Array
+        name: double[*,*]
+        isExternal: true
+      description: A Gaussian Kernel with the given size.
+  id: ImageProcessor.Imaging.Convolution.CreateGuassianBlurFilter(System.Int32)
+- uid: ImageProcessor.Imaging.Convolution.CreateGuassianSharpenFilter(System.Int32)
+  href: ImageProcessor.Imaging.Convolution.yml
+  name: CreateGuassianSharpenFilter(int)
+  fullName: ImageProcessor.Imaging.Convolution.CreateGuassianSharpenFilter(int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Convolution.cs
+    startLine: 198
+  summary: >-
+    Create a 2 dimensional Gaussian kernel using the Gaussian G(x y) function for
+
+    sharpening images.
+  syntax:
+    content:
+      CSharp: public double[*, *] CreateGuassianSharpenFilter(int kernelSize)
+    parameters:
+    - id: kernelSize
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: Kernel Size
+    return:
+      type:
+        id: System.Array
+        name: double[*,*]
+        isExternal: true
+      description: A Gaussian Kernel with the given size.
+  id: ImageProcessor.Imaging.Convolution.CreateGuassianSharpenFilter(System.Int32)
+- uid: ImageProcessor.Imaging.Convolution.ProcessKernel(System.Drawing.Bitmap,System.Double[0:,0:])
+  href: ImageProcessor.Imaging.Convolution.yml
+  name: ProcessKernel(Bitmap, double[*,*])
+  fullName: ImageProcessor.Imaging.Convolution.ProcessKernel(System.Drawing.Bitmap, double[*,*])
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Convolution.cs
+    startLine: 261
+  summary: Processes the given kernel to produce an array of pixels representing a bitmap.
+  syntax:
+    content:
+      CSharp: public Bitmap ProcessKernel(Bitmap source, double[*, *] kernel)
+    parameters:
+    - id: source
+      type:
+        id: System.Drawing.Bitmap
+        name: Bitmap
+        isExternal: true
+      description: The image to process.
+    - id: kernel
+      type:
+        id: System.Array
+        name: double[*,*]
+        isExternal: true
+      description: The Gaussian kernel to use when performing the method
+    return:
+      id: Bitmap
+      type:
+        id: System.Drawing.Bitmap
+        name: Bitmap
+        isExternal: true
+      description: A processed bitmap.
+  id: ImageProcessor.Imaging.Convolution.ProcessKernel(System.Drawing.Bitmap,System.Double[0:,0:])

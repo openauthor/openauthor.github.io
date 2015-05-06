@@ -1,0 +1,124 @@
+items:
+- uid: ImageProcessor.Web.Extensions.DirectoryInfoExtensions
+  href: ImageProcessor.Web.Extensions.DirectoryInfoExtensions.yml
+  name: DirectoryInfoExtensions
+  fullName: ImageProcessor.Web.Extensions.DirectoryInfoExtensions
+  type: Class
+  source:
+    remote: &o0
+      path: src/ImageProcessor.Web/Extensions/DirectoryInfoExtensions.cs
+      branch: V2
+      repo: https://github.com/JimBobSquarePants/ImageProcessor.git
+      key: 6d1ac546
+    path: src/ImageProcessor.Web/Extensions/DirectoryInfoExtensions.cs
+    startLine: 20
+  summary: Provides extension methods to the [System.IO.DirectoryInfo](#) type.
+  syntax:
+    content:
+      CSharp: public class DirectoryInfoExtensions
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  id: ImageProcessor.Web.Extensions.DirectoryInfoExtensions
+  children:
+  - ImageProcessor.Web.Extensions.DirectoryInfoExtensions.SafeEnumerateDirectoriesAsync(System.IO.DirectoryInfo,System.String,System.IO.SearchOption)
+  - ImageProcessor.Web.Extensions.DirectoryInfoExtensions.SafeEnumerateDirectories(System.IO.DirectoryInfo,System.String,System.IO.SearchOption)
+- uid: ImageProcessor.Web.Extensions.DirectoryInfoExtensions.SafeEnumerateDirectoriesAsync(System.IO.DirectoryInfo,System.String,System.IO.SearchOption)
+  href: ImageProcessor.Web.Extensions.DirectoryInfoExtensions.yml
+  name: SafeEnumerateDirectoriesAsync(DirectoryInfo, string, SearchOption)
+  fullName: ImageProcessor.Web.Extensions.DirectoryInfoExtensions.SafeEnumerateDirectoriesAsync(System.IO.DirectoryInfo, string, System.IO.SearchOption)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Extensions/DirectoryInfoExtensions.cs
+    startLine: 40
+  summary: >-
+    Returns an enumerable collection of directory information that matches a specified search pattern and search subdirectory option.
+
+    Will return an empty enumerable on exception. Quick and dirty but does what I need just now.
+  syntax:
+    content:
+      CSharp: public static Task<IEnumerable<DirectoryInfo>> SafeEnumerateDirectoriesAsync(DirectoryInfo directoryInfo, string searchPattern = "*", SearchOption searchOption = 0)
+    parameters:
+    - id: directoryInfo
+      type:
+        id: System.IO.DirectoryInfo
+        name: DirectoryInfo
+        isExternal: true
+      description: The [System.IO.DirectoryInfo](#) that this method extends.
+    - id: searchPattern
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: >-
+        The search string to match against the names of directories. This parameter can contain a combination of valid literal path
+
+        and wildcard (* and ?) characters (see Remarks), but doesn't support regular expressions. The default pattern is "*", which returns all files.
+    - id: searchOption
+      type:
+        id: System.IO.SearchOption
+        name: SearchOption
+        isExternal: true
+      description: >-
+        One of the enumeration values that specifies whether the search operation should include only
+
+        the current directory or all subdirectories. The default value is TopDirectoryOnly.
+    return:
+      id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{System.IO.DirectoryInfo}}
+        name: Task<IEnumerable<DirectoryInfo>>
+        isExternal: true
+      description: An enumerable collection of directories that matches searchPattern and searchOption.
+  id: ImageProcessor.Web.Extensions.DirectoryInfoExtensions.SafeEnumerateDirectoriesAsync(System.IO.DirectoryInfo,System.String,System.IO.SearchOption)
+- uid: ImageProcessor.Web.Extensions.DirectoryInfoExtensions.SafeEnumerateDirectories(System.IO.DirectoryInfo,System.String,System.IO.SearchOption)
+  href: ImageProcessor.Web.Extensions.DirectoryInfoExtensions.yml
+  name: SafeEnumerateDirectories(DirectoryInfo, string, SearchOption)
+  fullName: ImageProcessor.Web.Extensions.DirectoryInfoExtensions.SafeEnumerateDirectories(System.IO.DirectoryInfo, string, System.IO.SearchOption)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Extensions/DirectoryInfoExtensions.cs
+    startLine: 66
+  summary: >-
+    Returns an enumerable collection of directory information that matches a specified search pattern and search subdirectory option.
+
+    Will return an empty enumerable on exception. Quick and dirty but does what I need just now.
+  syntax:
+    content:
+      CSharp: public static IEnumerable<DirectoryInfo> SafeEnumerateDirectories(DirectoryInfo directoryInfo, string searchPattern = "*", SearchOption searchOption = 0)
+    parameters:
+    - id: directoryInfo
+      type:
+        id: System.IO.DirectoryInfo
+        name: DirectoryInfo
+        isExternal: true
+      description: The [System.IO.DirectoryInfo](#) that this method extends.
+    - id: searchPattern
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: >-
+        The search string to match against the names of directories. This parameter can contain a combination of valid literal path
+
+        and wildcard (* and ?) characters (see Remarks), but doesn't support regular expressions. The default pattern is "*", which returns all files.
+    - id: searchOption
+      type:
+        id: System.IO.SearchOption
+        name: SearchOption
+        isExternal: true
+      description: >-
+        One of the enumeration values that specifies whether the search operation should include only
+
+        the current directory or all subdirectories. The default value is TopDirectoryOnly.
+    return:
+      id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.IO.DirectoryInfo}
+        name: IEnumerable<DirectoryInfo>
+        isExternal: true
+      description: An enumerable collection of directories that matches searchPattern and searchOption.
+  id: ImageProcessor.Web.Extensions.DirectoryInfoExtensions.SafeEnumerateDirectories(System.IO.DirectoryInfo,System.String,System.IO.SearchOption)

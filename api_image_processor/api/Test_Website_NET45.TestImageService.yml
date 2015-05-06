@@ -1,0 +1,174 @@
+items:
+- uid: Test_Website_NET45.TestImageService
+  href: Test_Website_NET45.TestImageService.yml
+  name: TestImageService
+  fullName: Test_Website_NET45.TestImageService
+  type: Class
+  source:
+    remote: &o0
+      path: src/TestWebsites/MVC/TestImageService.cs
+      branch: V2
+      repo: https://github.com/JimBobSquarePants/ImageProcessor.git
+      key: 6d1ac546
+    path: src/TestWebsites/MVC/TestImageService.cs
+    startLine: 25
+  summary: The test image service.
+  syntax:
+    content:
+      CSharp: 'public class TestImageService : IImageService'
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  id: Test_Website_NET45.TestImageService
+  children:
+  - Test_Website_NET45.TestImageService.Prefix
+  - Test_Website_NET45.TestImageService.IsFileLocalService
+  - Test_Website_NET45.TestImageService.Settings
+  - Test_Website_NET45.TestImageService.WhiteList
+  - Test_Website_NET45.TestImageService.IsValidRequest(System.String)
+  - Test_Website_NET45.TestImageService.GetImage(System.Object)
+- uid: Test_Website_NET45.TestImageService.Prefix
+  href: Test_Website_NET45.TestImageService.yml
+  name: Prefix
+  fullName: Test_Website_NET45.TestImageService.Prefix
+  type: Property
+  source:
+    remote: *o0
+    path: src/TestWebsites/MVC/TestImageService.cs
+    startLine: 38
+  summary: >-
+    Gets or sets the prefix for the given implementation.
+
+
+
+    This value is used as a prefix for any image requests that should use this service.
+  syntax:
+    content:
+      CSharp: public string Prefix { get; set; }
+    parameters:
+    - id: Prefix
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: Test_Website_NET45.TestImageService.Prefix
+- uid: Test_Website_NET45.TestImageService.IsFileLocalService
+  href: Test_Website_NET45.TestImageService.yml
+  name: IsFileLocalService
+  fullName: Test_Website_NET45.TestImageService.IsFileLocalService
+  type: Property
+  source:
+    remote: *o0
+    path: src/TestWebsites/MVC/TestImageService.cs
+    startLine: 55
+  summary: >-
+    Gets a value indicating whether the image service requests files from
+
+    the locally based file system.
+  syntax:
+    content:
+      CSharp: public bool IsFileLocalService { get; }
+    parameters:
+    - id: IsFileLocalService
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: Test_Website_NET45.TestImageService.IsFileLocalService
+- uid: Test_Website_NET45.TestImageService.Settings
+  href: Test_Website_NET45.TestImageService.yml
+  name: Settings
+  fullName: Test_Website_NET45.TestImageService.Settings
+  type: Property
+  source:
+    remote: *o0
+    path: src/TestWebsites/MVC/TestImageService.cs
+    startLine: 66
+  summary: Gets or sets any additional settings required by the service.
+  syntax:
+    content:
+      CSharp: public Dictionary<string, string> Settings { get; set; }
+    parameters:
+    - id: Settings
+      type:
+        id: System.Collections.Generic.Dictionary{System.String,System.String}
+        name: Dictionary<string, string>
+        isExternal: true
+  id: Test_Website_NET45.TestImageService.Settings
+- uid: Test_Website_NET45.TestImageService.WhiteList
+  href: Test_Website_NET45.TestImageService.yml
+  name: WhiteList
+  fullName: Test_Website_NET45.TestImageService.WhiteList
+  type: Property
+  source:
+    remote: *o0
+    path: src/TestWebsites/MVC/TestImageService.cs
+    startLine: 71
+  summary: Gets or sets the white list of [System.Uri](#).
+  syntax:
+    content:
+      CSharp: public Uri[] WhiteList { get; set; }
+    parameters:
+    - id: WhiteList
+      type:
+        id: System.Array
+        name: Uri[]
+        isExternal: true
+  id: Test_Website_NET45.TestImageService.WhiteList
+- uid: Test_Website_NET45.TestImageService.IsValidRequest(System.String)
+  href: Test_Website_NET45.TestImageService.yml
+  name: IsValidRequest(string)
+  fullName: Test_Website_NET45.TestImageService.IsValidRequest(string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/TestWebsites/MVC/TestImageService.cs
+    startLine: 82
+  summary: Gets a value indicating whether the current request passes sanitizing rules.
+  syntax:
+    content:
+      CSharp: public bool IsValidRequest(string path)
+    parameters:
+    - id: path
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: The image path.
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: True if the request is valid; otherwise, False.
+  id: Test_Website_NET45.TestImageService.IsValidRequest(System.String)
+- uid: Test_Website_NET45.TestImageService.GetImage(System.Object)
+  href: Test_Website_NET45.TestImageService.yml
+  name: GetImage(object)
+  fullName: Test_Website_NET45.TestImageService.GetImage(object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/TestWebsites/MVC/TestImageService.cs
+    startLine: 96
+  summary: Gets the image using the given identifier.
+  syntax:
+    content:
+      CSharp: public Task<byte[]> GetImage(object id)
+    parameters:
+    - id: id
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+      description: The value identifying the image to fetch.
+    return:
+      id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.Byte[]}
+        name: Task<byte[]>
+        isExternal: true
+      description: The [System.Byte](#) array containing the image data.
+  id: Test_Website_NET45.TestImageService.GetImage(System.Object)

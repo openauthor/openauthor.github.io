@@ -1,0 +1,117 @@
+items:
+- uid: ImageProcessor.Web.Caching.CacheIndexer
+  href: ImageProcessor.Web.Caching.CacheIndexer.yml
+  name: CacheIndexer
+  fullName: ImageProcessor.Web.Caching.CacheIndexer
+  type: Class
+  source:
+    remote: &o0
+      path: src/ImageProcessor.Web/Caching/CacheIndexer.cs
+      branch: V2
+      repo: https://github.com/JimBobSquarePants/ImageProcessor.git
+      key: 6d1ac546
+    path: src/ImageProcessor.Web/Caching/CacheIndexer.cs
+    startLine: 20
+  summary: Represents an in memory collection of cached images whose operations are concurrent.
+  syntax:
+    content:
+      CSharp: public class CacheIndexer
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  id: ImageProcessor.Web.Caching.CacheIndexer
+  children:
+  - ImageProcessor.Web.Caching.CacheIndexer.Get(System.String)
+  - ImageProcessor.Web.Caching.CacheIndexer.Remove(System.String)
+  - ImageProcessor.Web.Caching.CacheIndexer.Add(ImageProcessor.Web.Caching.CachedImage)
+- uid: ImageProcessor.Web.Caching.CacheIndexer.Get(System.String)
+  href: ImageProcessor.Web.Caching.CacheIndexer.yml
+  name: Get(string)
+  fullName: ImageProcessor.Web.Caching.CacheIndexer.Get(string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Caching/CacheIndexer.cs
+    startLine: 32
+  summary: Gets the [ImageProcessor.Web.Caching.CachedImage](api/ImageProcessor.Web.Caching.CachedImage.yml) associated with the specified key.
+  syntax:
+    content:
+      CSharp: public static CachedImage Get(string cachedPath)
+    parameters:
+    - id: cachedPath
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: The cached path of the value to get.
+    return:
+      id: CachedImage
+      type:
+        id: ImageProcessor.Web.Caching.CachedImage
+        name: CachedImage
+        href: ImageProcessor.Web.Caching.CachedImage.yml
+      description: >-
+        The [ImageProcessor.Web.Caching.CachedImage](api/ImageProcessor.Web.Caching.CachedImage.yml) matching the given key if the [ImageProcessor.Web.Caching.CacheIndexer](api/ImageProcessor.Web.Caching.CacheIndexer.yml) contains an element with
+
+        the specified key; otherwise, null.
+  id: ImageProcessor.Web.Caching.CacheIndexer.Get(System.String)
+- uid: ImageProcessor.Web.Caching.CacheIndexer.Remove(System.String)
+  href: ImageProcessor.Web.Caching.CacheIndexer.yml
+  name: Remove(string)
+  fullName: ImageProcessor.Web.Caching.CacheIndexer.Remove(string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Caching/CacheIndexer.cs
+    startLine: 49
+  summary: Removes the value associated with the specified key.
+  syntax:
+    content:
+      CSharp: public static bool Remove(string cachedPath)
+    parameters:
+    - id: cachedPath
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: The key of the item to remove.
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: >-
+        true if the [ImageProcessor.Web.Caching.CacheIndexer](api/ImageProcessor.Web.Caching.CacheIndexer.yml) removes an element with
+
+        the specified key; otherwise, false.
+  id: ImageProcessor.Web.Caching.CacheIndexer.Remove(System.String)
+- uid: ImageProcessor.Web.Caching.CacheIndexer.Add(ImageProcessor.Web.Caching.CachedImage)
+  href: ImageProcessor.Web.Caching.CacheIndexer.yml
+  name: Add(CachedImage)
+  fullName: ImageProcessor.Web.Caching.CacheIndexer.Add(ImageProcessor.Web.Caching.CachedImage)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Caching/CacheIndexer.cs
+    startLine: 64
+  summary: Adds the specified key and value to the dictionary or returns the value if it exists.
+  syntax:
+    content:
+      CSharp: public static CachedImage Add(CachedImage cachedImage)
+    parameters:
+    - id: cachedImage
+      type:
+        id: ImageProcessor.Web.Caching.CachedImage
+        name: CachedImage
+        href: ImageProcessor.Web.Caching.CachedImage.yml
+      description: The cached image to add.
+    return:
+      id: CachedImage
+      type:
+        id: ImageProcessor.Web.Caching.CachedImage
+        name: CachedImage
+        href: ImageProcessor.Web.Caching.CachedImage.yml
+      description: The value of the item to add or get.
+  id: ImageProcessor.Web.Caching.CacheIndexer.Add(ImageProcessor.Web.Caching.CachedImage)

@@ -1,0 +1,85 @@
+items:
+- uid: ImageProcessor.Web.Helpers.AsyncDuplicateLock
+  href: ImageProcessor.Web.Helpers.AsyncDuplicateLock.yml
+  name: AsyncDuplicateLock
+  fullName: ImageProcessor.Web.Helpers.AsyncDuplicateLock
+  type: Class
+  source:
+    remote: &o0
+      path: src/ImageProcessor.Web/Helpers/AsyncDuplicateLock.cs
+      branch: V2
+      repo: https://github.com/JimBobSquarePants/ImageProcessor.git
+      key: 6d1ac546
+    path: src/ImageProcessor.Web/Helpers/AsyncDuplicateLock.cs
+    startLine: 20
+  summary: >-
+    Throttles duplicate requests.
+
+    Based loosely on
+  syntax:
+    content:
+      CSharp: public sealed class AsyncDuplicateLock
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  id: ImageProcessor.Web.Helpers.AsyncDuplicateLock
+  children:
+  - ImageProcessor.Web.Helpers.AsyncDuplicateLock.Lock(System.Object)
+  - ImageProcessor.Web.Helpers.AsyncDuplicateLock.LockAsync(System.Object)
+- uid: ImageProcessor.Web.Helpers.AsyncDuplicateLock.Lock(System.Object)
+  href: ImageProcessor.Web.Helpers.AsyncDuplicateLock.yml
+  name: Lock(object)
+  fullName: ImageProcessor.Web.Helpers.AsyncDuplicateLock.Lock(object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Helpers/AsyncDuplicateLock.cs
+    startLine: 37
+  summary: Locks against the given key.
+  syntax:
+    content:
+      CSharp: public IDisposable Lock(object key)
+    parameters:
+    - id: key
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+      description: The key that identifies the current object.
+    return:
+      id: IDisposable
+      type:
+        id: System.IDisposable
+        name: IDisposable
+        isExternal: true
+      description: The disposable [System.Threading.Tasks.Task](#).
+  id: ImageProcessor.Web.Helpers.AsyncDuplicateLock.Lock(System.Object)
+- uid: ImageProcessor.Web.Helpers.AsyncDuplicateLock.LockAsync(System.Object)
+  href: ImageProcessor.Web.Helpers.AsyncDuplicateLock.yml
+  name: LockAsync(object)
+  fullName: ImageProcessor.Web.Helpers.AsyncDuplicateLock.LockAsync(object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Helpers/AsyncDuplicateLock.cs
+    startLine: 65
+  summary: Asynchronously locks against the given key.
+  syntax:
+    content:
+      CSharp: public Task<IDisposable> LockAsync(object key)
+    parameters:
+    - id: key
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+      description: The key that identifies the current object.
+    return:
+      id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.IDisposable}
+        name: Task<IDisposable>
+        isExternal: true
+      description: The disposable [System.Threading.Tasks.Task](#).
+  id: ImageProcessor.Web.Helpers.AsyncDuplicateLock.LockAsync(System.Object)

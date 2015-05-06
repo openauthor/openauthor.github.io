@@ -1,0 +1,327 @@
+items:
+- uid: ImageProcessor.Web.Caching.ImageCacheBase
+  href: ImageProcessor.Web.Caching.ImageCacheBase.yml
+  name: ImageCacheBase
+  fullName: ImageProcessor.Web.Caching.ImageCacheBase
+  type: Class
+  source:
+    remote: &o0
+      path: src/ImageProcessor.Web/Caching/ImageCacheBase.cs
+      branch: V2
+      repo: https://github.com/JimBobSquarePants/ImageProcessor.git
+      key: 6d1ac546
+    path: src/ImageProcessor.Web/Caching/ImageCacheBase.cs
+    startLine: 28
+  summary: >-
+    The image cache base provides methods for implementing the [ImageProcessor.Web.Caching.IImageCache](api/ImageProcessor.Web.Caching.IImageCache.yml) interface.
+
+    It is recommended that any implementations inherit from this class.
+  syntax:
+    content:
+      CSharp: 'public abstract class ImageCacheBase : IImageCache'
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  id: ImageProcessor.Web.Caching.ImageCacheBase
+  children:
+  - ImageProcessor.Web.Caching.ImageCacheBase.RequestPath
+  - ImageProcessor.Web.Caching.ImageCacheBase.FullPath
+  - ImageProcessor.Web.Caching.ImageCacheBase.Querystring
+  - ImageProcessor.Web.Caching.ImageCacheBase.#ctor(System.String,System.String,System.String)
+  - ImageProcessor.Web.Caching.ImageCacheBase.Settings
+  - ImageProcessor.Web.Caching.ImageCacheBase.CachedPath
+  - ImageProcessor.Web.Caching.ImageCacheBase.MaxDays
+  - ImageProcessor.Web.Caching.ImageCacheBase.IsNewOrUpdatedAsync
+  - ImageProcessor.Web.Caching.ImageCacheBase.AddImageToCacheAsync(System.IO.Stream,System.String)
+  - ImageProcessor.Web.Caching.ImageCacheBase.TrimCacheAsync
+  - ImageProcessor.Web.Caching.ImageCacheBase.CreateCachedFileNameAsync
+  - ImageProcessor.Web.Caching.ImageCacheBase.RewritePath(System.Web.HttpContext)
+  - ImageProcessor.Web.Caching.ImageCacheBase.IsExpired(System.DateTime)
+- uid: ImageProcessor.Web.Caching.ImageCacheBase.RequestPath
+  href: ImageProcessor.Web.Caching.ImageCacheBase.yml
+  name: RequestPath
+  fullName: ImageProcessor.Web.Caching.ImageCacheBase.RequestPath
+  type: Field
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Caching/ImageCacheBase.cs
+    startLine: 33
+  summary: The request path for the image.
+  syntax:
+    content:
+      CSharp: protected readonly string RequestPath;
+  id: ImageProcessor.Web.Caching.ImageCacheBase.RequestPath
+- uid: ImageProcessor.Web.Caching.ImageCacheBase.FullPath
+  href: ImageProcessor.Web.Caching.ImageCacheBase.yml
+  name: FullPath
+  fullName: ImageProcessor.Web.Caching.ImageCacheBase.FullPath
+  type: Field
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Caching/ImageCacheBase.cs
+    startLine: 38
+  summary: The full path for the image.
+  syntax:
+    content:
+      CSharp: protected readonly string FullPath;
+  id: ImageProcessor.Web.Caching.ImageCacheBase.FullPath
+- uid: ImageProcessor.Web.Caching.ImageCacheBase.Querystring
+  href: ImageProcessor.Web.Caching.ImageCacheBase.yml
+  name: Querystring
+  fullName: ImageProcessor.Web.Caching.ImageCacheBase.Querystring
+  type: Field
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Caching/ImageCacheBase.cs
+    startLine: 43
+  summary: The querystring containing processing instructions.
+  syntax:
+    content:
+      CSharp: protected readonly string Querystring;
+  id: ImageProcessor.Web.Caching.ImageCacheBase.Querystring
+- uid: ImageProcessor.Web.Caching.ImageCacheBase.#ctor(System.String,System.String,System.String)
+  href: ImageProcessor.Web.Caching.ImageCacheBase.yml
+  name: ImageCacheBase(string, string, string)
+  fullName: ImageProcessor.Web.Caching.ImageCacheBase.ImageCacheBase(string, string, string)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Caching/ImageCacheBase.cs
+    startLine: 57
+  summary: Initializes a new instance of the [ImageProcessor.Web.Caching.ImageCacheBase](api/ImageProcessor.Web.Caching.ImageCacheBase.yml) class.
+  syntax:
+    content:
+      CSharp: protected ImageCacheBase(string requestPath, string fullPath, string querystring)
+    parameters:
+    - id: requestPath
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: The request path for the image.
+    - id: fullPath
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: The full path for the image.
+    - id: querystring
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: The querystring containing instructions.
+  id: ImageProcessor.Web.Caching.ImageCacheBase.#ctor(System.String,System.String,System.String)
+- uid: ImageProcessor.Web.Caching.ImageCacheBase.Settings
+  href: ImageProcessor.Web.Caching.ImageCacheBase.yml
+  name: Settings
+  fullName: ImageProcessor.Web.Caching.ImageCacheBase.Settings
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Caching/ImageCacheBase.cs
+    startLine: 69
+  summary: Gets or sets any additional settings required by the cache.
+  syntax:
+    content:
+      CSharp: public Dictionary<string, string> Settings { get; set; }
+    parameters:
+    - id: Settings
+      type:
+        id: System.Collections.Generic.Dictionary{System.String,System.String}
+        name: Dictionary<string, string>
+        isExternal: true
+  id: ImageProcessor.Web.Caching.ImageCacheBase.Settings
+- uid: ImageProcessor.Web.Caching.ImageCacheBase.CachedPath
+  href: ImageProcessor.Web.Caching.ImageCacheBase.yml
+  name: CachedPath
+  fullName: ImageProcessor.Web.Caching.ImageCacheBase.CachedPath
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Caching/ImageCacheBase.cs
+    startLine: 74
+  summary: Gets or sets the path to the cached image.
+  syntax:
+    content:
+      CSharp: public string CachedPath { get; set; }
+    parameters:
+    - id: CachedPath
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: ImageProcessor.Web.Caching.ImageCacheBase.CachedPath
+- uid: ImageProcessor.Web.Caching.ImageCacheBase.MaxDays
+  href: ImageProcessor.Web.Caching.ImageCacheBase.yml
+  name: MaxDays
+  fullName: ImageProcessor.Web.Caching.ImageCacheBase.MaxDays
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Caching/ImageCacheBase.cs
+    startLine: 79
+  summary: Gets or sets the maximum number of days to store the image.
+  syntax:
+    content:
+      CSharp: public int MaxDays { get; set; }
+    parameters:
+    - id: MaxDays
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: ImageProcessor.Web.Caching.ImageCacheBase.MaxDays
+- uid: ImageProcessor.Web.Caching.ImageCacheBase.IsNewOrUpdatedAsync
+  href: ImageProcessor.Web.Caching.ImageCacheBase.yml
+  name: IsNewOrUpdatedAsync()
+  fullName: ImageProcessor.Web.Caching.ImageCacheBase.IsNewOrUpdatedAsync()
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Caching/ImageCacheBase.cs
+    startLine: 87
+  summary: Gets a value indicating whether the image is new or updated in an asynchronous manner.
+  syntax:
+    content:
+      CSharp: public abstract Task<bool> IsNewOrUpdatedAsync()
+    parameters: []
+    return:
+      id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.Boolean}
+        name: Task<bool>
+        isExternal: true
+      description: The [System.Threading.Tasks.Task](#).
+  id: ImageProcessor.Web.Caching.ImageCacheBase.IsNewOrUpdatedAsync
+- uid: ImageProcessor.Web.Caching.ImageCacheBase.AddImageToCacheAsync(System.IO.Stream,System.String)
+  href: ImageProcessor.Web.Caching.ImageCacheBase.yml
+  name: AddImageToCacheAsync(Stream, string)
+  fullName: ImageProcessor.Web.Caching.ImageCacheBase.AddImageToCacheAsync(System.IO.Stream, string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Caching/ImageCacheBase.cs
+    startLine: 101
+  summary: Adds the image to the cache in an asynchronous manner.
+  syntax:
+    content:
+      CSharp: public abstract Task AddImageToCacheAsync(Stream stream, string contentType)
+    parameters:
+    - id: stream
+      type:
+        id: System.IO.Stream
+        name: Stream
+        isExternal: true
+      description: The stream containing the image data.
+    - id: contentType
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: The content type of the image.
+    return:
+      id: Task
+      type:
+        id: System.Threading.Tasks.Task
+        name: Task
+        isExternal: true
+      description: The [System.Threading.Tasks.Task](#) representing an asynchronous operation.
+  id: ImageProcessor.Web.Caching.ImageCacheBase.AddImageToCacheAsync(System.IO.Stream,System.String)
+- uid: ImageProcessor.Web.Caching.ImageCacheBase.TrimCacheAsync
+  href: ImageProcessor.Web.Caching.ImageCacheBase.yml
+  name: TrimCacheAsync()
+  fullName: ImageProcessor.Web.Caching.ImageCacheBase.TrimCacheAsync()
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Caching/ImageCacheBase.cs
+    startLine: 109
+  summary: Trims the cache of any expired items in an asynchronous manner.
+  syntax:
+    content:
+      CSharp: public abstract Task TrimCacheAsync()
+    parameters: []
+    return:
+      id: Task
+      type:
+        id: System.Threading.Tasks.Task
+        name: Task
+        isExternal: true
+      description: The asynchronous [System.Threading.Tasks.Task](#) representing an asynchronous operation.
+  id: ImageProcessor.Web.Caching.ImageCacheBase.TrimCacheAsync
+- uid: ImageProcessor.Web.Caching.ImageCacheBase.CreateCachedFileNameAsync
+  href: ImageProcessor.Web.Caching.ImageCacheBase.yml
+  name: CreateCachedFileNameAsync()
+  fullName: ImageProcessor.Web.Caching.ImageCacheBase.CreateCachedFileNameAsync()
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Caching/ImageCacheBase.cs
+    startLine: 117
+  summary: Gets a string identifying the cached file name.
+  syntax:
+    content:
+      CSharp: public virtual Task<string> CreateCachedFileNameAsync()
+    parameters: []
+    return:
+      id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.String}
+        name: Task<string>
+        isExternal: true
+      description: The asynchronous [System.Threading.Tasks.Task](#) returning the value.
+  id: ImageProcessor.Web.Caching.ImageCacheBase.CreateCachedFileNameAsync
+- uid: ImageProcessor.Web.Caching.ImageCacheBase.RewritePath(System.Web.HttpContext)
+  href: ImageProcessor.Web.Caching.ImageCacheBase.yml
+  name: RewritePath(HttpContext)
+  fullName: ImageProcessor.Web.Caching.ImageCacheBase.RewritePath(System.Web.HttpContext)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Caching/ImageCacheBase.cs
+    startLine: 165
+  summary: Rewrites the path to point to the cached image.
+  syntax:
+    content:
+      CSharp: public abstract void RewritePath(HttpContext context)
+    parameters:
+    - id: context
+      type:
+        id: System.Web.HttpContext
+        name: HttpContext
+        isExternal: true
+      description: The [System.Web.HttpContext](#) encapsulating all information about the request.
+  id: ImageProcessor.Web.Caching.ImageCacheBase.RewritePath(System.Web.HttpContext)
+- uid: ImageProcessor.Web.Caching.ImageCacheBase.IsExpired(System.DateTime)
+  href: ImageProcessor.Web.Caching.ImageCacheBase.yml
+  name: IsExpired(DateTime)
+  fullName: ImageProcessor.Web.Caching.ImageCacheBase.IsExpired(System.DateTime)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Caching/ImageCacheBase.cs
+    startLine: 177
+  summary: >-
+    Gets a value indicating whether the given images creation date is out with
+
+    the prescribed limit.
+  syntax:
+    content:
+      CSharp: protected virtual bool IsExpired(DateTime creationDate)
+    parameters:
+    - id: creationDate
+      type:
+        id: System.DateTime
+        name: DateTime
+        isExternal: true
+      description: The creation date.
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: The true if the date is out with the limit, otherwise; false.
+  id: ImageProcessor.Web.Caching.ImageCacheBase.IsExpired(System.DateTime)
