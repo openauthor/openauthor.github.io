@@ -1,0 +1,369 @@
+items:
+- uid: ImageProcessor.Imaging.Formats.FormatBase
+  href: ImageProcessor.Imaging.Formats.FormatBase.yml
+  name: FormatBase
+  fullName: ImageProcessor.Imaging.Formats.FormatBase
+  type: Class
+  source:
+    remote: &o0
+      path: src/ImageProcessor/Imaging/Formats/FormatBase.cs
+      branch: V2
+      repo: https://github.com/JimBobSquarePants/ImageProcessor.git
+      key: 6d1ac546
+    path: src/ImageProcessor/Imaging/Formats/FormatBase.cs
+    startLine: 20
+  summary: The supported format base. Implement this class when building a supported format.
+  syntax:
+    content:
+      CSharp: 'public abstract class FormatBase : ISupportedImageFormat'
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  id: ImageProcessor.Imaging.Formats.FormatBase
+  children:
+  - ImageProcessor.Imaging.Formats.FormatBase.#ctor
+  - ImageProcessor.Imaging.Formats.FormatBase.FileHeaders
+  - ImageProcessor.Imaging.Formats.FormatBase.FileExtensions
+  - ImageProcessor.Imaging.Formats.FormatBase.MimeType
+  - ImageProcessor.Imaging.Formats.FormatBase.DefaultExtension
+  - ImageProcessor.Imaging.Formats.FormatBase.ImageFormat
+  - ImageProcessor.Imaging.Formats.FormatBase.IsIndexed
+  - ImageProcessor.Imaging.Formats.FormatBase.Quality
+  - ImageProcessor.Imaging.Formats.FormatBase.ApplyProcessor(System.Func{ImageProcessor.ImageFactory,System.Drawing.Image},ImageProcessor.ImageFactory)
+  - ImageProcessor.Imaging.Formats.FormatBase.Load(System.IO.Stream)
+  - ImageProcessor.Imaging.Formats.FormatBase.Save(System.IO.Stream,System.Drawing.Image)
+  - ImageProcessor.Imaging.Formats.FormatBase.Save(System.String,System.Drawing.Image)
+  - ImageProcessor.Imaging.Formats.FormatBase.Equals(System.Object)
+  - ImageProcessor.Imaging.Formats.FormatBase.GetHashCode
+- uid: ImageProcessor.Imaging.Formats.FormatBase.#ctor
+  href: ImageProcessor.Imaging.Formats.FormatBase.yml
+  name: FormatBase()
+  fullName: ImageProcessor.Imaging.Formats.FormatBase.FormatBase()
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Formats/FormatBase.cs
+    startLine: 25
+  summary: Initializes a new instance of the [ImageProcessor.Imaging.Formats.FormatBase](api/ImageProcessor.Imaging.Formats.FormatBase.yml) class.
+  syntax:
+    content:
+      CSharp: protected FormatBase()
+    parameters: []
+  id: ImageProcessor.Imaging.Formats.FormatBase.#ctor
+- uid: ImageProcessor.Imaging.Formats.FormatBase.FileHeaders
+  href: ImageProcessor.Imaging.Formats.FormatBase.yml
+  name: FileHeaders
+  fullName: ImageProcessor.Imaging.Formats.FormatBase.FileHeaders
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Formats/FormatBase.cs
+    startLine: 33
+  summary: Gets the file headers.
+  syntax:
+    content:
+      CSharp: public abstract byte[][] FileHeaders { get; }
+    parameters:
+    - id: FileHeaders
+      type:
+        id: System.Array
+        name: byte[][]
+        isExternal: true
+  id: ImageProcessor.Imaging.Formats.FormatBase.FileHeaders
+- uid: ImageProcessor.Imaging.Formats.FormatBase.FileExtensions
+  href: ImageProcessor.Imaging.Formats.FormatBase.yml
+  name: FileExtensions
+  fullName: ImageProcessor.Imaging.Formats.FormatBase.FileExtensions
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Formats/FormatBase.cs
+    startLine: 38
+  summary: Gets the list of file extensions.
+  syntax:
+    content:
+      CSharp: public abstract string[] FileExtensions { get; }
+    parameters:
+    - id: FileExtensions
+      type:
+        id: System.Array
+        name: string[]
+        isExternal: true
+  id: ImageProcessor.Imaging.Formats.FormatBase.FileExtensions
+- uid: ImageProcessor.Imaging.Formats.FormatBase.MimeType
+  href: ImageProcessor.Imaging.Formats.FormatBase.yml
+  name: MimeType
+  fullName: ImageProcessor.Imaging.Formats.FormatBase.MimeType
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Formats/FormatBase.cs
+    startLine: 43
+  summary: Gets the standard identifier used on the Internet to indicate the type of data that a file contains.
+  syntax:
+    content:
+      CSharp: public abstract string MimeType { get; }
+    parameters:
+    - id: MimeType
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: ImageProcessor.Imaging.Formats.FormatBase.MimeType
+- uid: ImageProcessor.Imaging.Formats.FormatBase.DefaultExtension
+  href: ImageProcessor.Imaging.Formats.FormatBase.yml
+  name: DefaultExtension
+  fullName: ImageProcessor.Imaging.Formats.FormatBase.DefaultExtension
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Formats/FormatBase.cs
+    startLine: 48
+  summary: Gets the default file extension.
+  syntax:
+    content:
+      CSharp: public string DefaultExtension { get; }
+    parameters:
+    - id: DefaultExtension
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: ImageProcessor.Imaging.Formats.FormatBase.DefaultExtension
+- uid: ImageProcessor.Imaging.Formats.FormatBase.ImageFormat
+  href: ImageProcessor.Imaging.Formats.FormatBase.yml
+  name: ImageFormat
+  fullName: ImageProcessor.Imaging.Formats.FormatBase.ImageFormat
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Formats/FormatBase.cs
+    startLine: 59
+  summary: Gets the file format of the image.
+  syntax:
+    content:
+      CSharp: public abstract ImageFormat ImageFormat { get; }
+    parameters:
+    - id: ImageFormat
+      type:
+        id: System.Drawing.Imaging.ImageFormat
+        name: ImageFormat
+        isExternal: true
+  id: ImageProcessor.Imaging.Formats.FormatBase.ImageFormat
+- uid: ImageProcessor.Imaging.Formats.FormatBase.IsIndexed
+  href: ImageProcessor.Imaging.Formats.FormatBase.yml
+  name: IsIndexed
+  fullName: ImageProcessor.Imaging.Formats.FormatBase.IsIndexed
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Formats/FormatBase.cs
+    startLine: 64
+  summary: Gets or sets a value indicating whether the image format is indexed.
+  syntax:
+    content:
+      CSharp: public bool IsIndexed { get; set; }
+    parameters:
+    - id: IsIndexed
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: ImageProcessor.Imaging.Formats.FormatBase.IsIndexed
+- uid: ImageProcessor.Imaging.Formats.FormatBase.Quality
+  href: ImageProcessor.Imaging.Formats.FormatBase.yml
+  name: Quality
+  fullName: ImageProcessor.Imaging.Formats.FormatBase.Quality
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Formats/FormatBase.cs
+    startLine: 69
+  summary: Gets or sets the quality of output for images.
+  syntax:
+    content:
+      CSharp: public int Quality { get; set; }
+    parameters:
+    - id: Quality
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: ImageProcessor.Imaging.Formats.FormatBase.Quality
+- uid: ImageProcessor.Imaging.Formats.FormatBase.ApplyProcessor(System.Func{ImageProcessor.ImageFactory,System.Drawing.Image},ImageProcessor.ImageFactory)
+  href: ImageProcessor.Imaging.Formats.FormatBase.yml
+  name: ApplyProcessor(Func<ImageFactory, Image>, ImageFactory)
+  fullName: ImageProcessor.Imaging.Formats.FormatBase.ApplyProcessor(System.Func<ImageProcessor.ImageFactory, System.Drawing.Image>, ImageProcessor.ImageFactory)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Formats/FormatBase.cs
+    startLine: 76
+  summary: Applies the given processor the current image.
+  syntax:
+    content:
+      CSharp: public virtual void ApplyProcessor(Func<ImageFactory, Image> processor, ImageFactory factory)
+    parameters:
+    - id: processor
+      type:
+        id: System.Func{ImageProcessor.ImageFactory,System.Drawing.Image}
+        name: Func<ImageFactory, Image>
+        isExternal: true
+      description: The processor delegate.
+    - id: factory
+      type:
+        id: ImageProcessor.ImageFactory
+        name: ImageFactory
+        href: ImageProcessor.ImageFactory.yml
+      description: The [ImageProcessor.ImageFactory](api/ImageProcessor.ImageFactory.yml).
+  id: ImageProcessor.Imaging.Formats.FormatBase.ApplyProcessor(System.Func{ImageProcessor.ImageFactory,System.Drawing.Image},ImageProcessor.ImageFactory)
+- uid: ImageProcessor.Imaging.Formats.FormatBase.Load(System.IO.Stream)
+  href: ImageProcessor.Imaging.Formats.FormatBase.yml
+  name: Load(Stream)
+  fullName: ImageProcessor.Imaging.Formats.FormatBase.Load(System.IO.Stream)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Formats/FormatBase.cs
+    startLine: 90
+  summary: Decodes the image to process.
+  syntax:
+    content:
+      CSharp: public virtual Image Load(Stream stream)
+    parameters:
+    - id: stream
+      type:
+        id: System.IO.Stream
+        name: Stream
+        isExternal: true
+      description: The [System.IO.stream](#) containing the image information.
+    return:
+      id: Image
+      type:
+        id: System.Drawing.Image
+        name: Image
+        isExternal: true
+      description: The [System.Drawing.Image](#).
+  id: ImageProcessor.Imaging.Formats.FormatBase.Load(System.IO.Stream)
+- uid: ImageProcessor.Imaging.Formats.FormatBase.Save(System.IO.Stream,System.Drawing.Image)
+  href: ImageProcessor.Imaging.Formats.FormatBase.yml
+  name: Save(Stream, Image)
+  fullName: ImageProcessor.Imaging.Formats.FormatBase.Save(System.IO.Stream, System.Drawing.Image)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Formats/FormatBase.cs
+    startLine: 107
+  summary: Saves the current image to the specified output stream.
+  syntax:
+    content:
+      CSharp: public virtual Image Save(Stream stream, Image image)
+    parameters:
+    - id: stream
+      type:
+        id: System.IO.Stream
+        name: Stream
+        isExternal: true
+      description: The [System.IO.Stream](#) to save the image information to.
+    - id: image
+      type:
+        id: System.Drawing.Image
+        name: Image
+        isExternal: true
+      description: The [System.Drawing.Image](#) to save.
+    return:
+      id: Image
+      type:
+        id: System.Drawing.Image
+        name: Image
+        isExternal: true
+      description: The [System.Drawing.Image](#).
+  id: ImageProcessor.Imaging.Formats.FormatBase.Save(System.IO.Stream,System.Drawing.Image)
+- uid: ImageProcessor.Imaging.Formats.FormatBase.Save(System.String,System.Drawing.Image)
+  href: ImageProcessor.Imaging.Formats.FormatBase.yml
+  name: Save(string, Image)
+  fullName: ImageProcessor.Imaging.Formats.FormatBase.Save(string, System.Drawing.Image)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Formats/FormatBase.cs
+    startLine: 122
+  summary: Saves the current image to the specified file path.
+  syntax:
+    content:
+      CSharp: public virtual Image Save(string path, Image image)
+    parameters:
+    - id: path
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: The path to save the image to.
+    - id: image
+      type:
+        id: System.Drawing.Image
+        name: Image
+        isExternal: true
+      description: >-
+        The
+
+        [System.Drawing.Image](#) to save.
+    return:
+      id: Image
+      type:
+        id: System.Drawing.Image
+        name: Image
+        isExternal: true
+      description: The [System.Drawing.Image](#).
+  id: ImageProcessor.Imaging.Formats.FormatBase.Save(System.String,System.Drawing.Image)
+- uid: ImageProcessor.Imaging.Formats.FormatBase.Equals(System.Object)
+  href: ImageProcessor.Imaging.Formats.FormatBase.yml
+  name: Equals(object)
+  fullName: ImageProcessor.Imaging.Formats.FormatBase.Equals(object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Formats/FormatBase.cs
+    startLine: 135
+  summary: Determines whether the specified [System.Object](#), is equal to this instance.
+  syntax:
+    content:
+      CSharp: public override bool Equals(object obj)
+    parameters:
+    - id: obj
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+      description: The [System.Object](#) to compare with this instance.
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: true if the specified [System.Object](#) is equal to this instance; otherwise, false.
+  id: ImageProcessor.Imaging.Formats.FormatBase.Equals(System.Object)
+- uid: ImageProcessor.Imaging.Formats.FormatBase.GetHashCode
+  href: ImageProcessor.Imaging.Formats.FormatBase.yml
+  name: GetHashCode()
+  fullName: ImageProcessor.Imaging.Formats.FormatBase.GetHashCode()
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Formats/FormatBase.cs
+    startLine: 153
+  summary: Returns the hash code for this instance.
+  syntax:
+    content:
+      CSharp: public override int GetHashCode()
+    parameters: []
+    return:
+      id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: A 32-bit signed integer that is the hash code for this instance.
+  id: ImageProcessor.Imaging.Formats.FormatBase.GetHashCode

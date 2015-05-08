@@ -1,0 +1,174 @@
+items:
+- uid: ImageProcessor.Web.Services.LocalFileImageService
+  href: ImageProcessor.Web.Services.LocalFileImageService.yml
+  name: LocalFileImageService
+  fullName: ImageProcessor.Web.Services.LocalFileImageService
+  type: Class
+  source:
+    remote: &o0
+      path: src/ImageProcessor.Web/Services/LocalFileImageService.cs
+      branch: V2
+      repo: https://github.com/JimBobSquarePants/ImageProcessor.git
+      key: 6d1ac546
+    path: src/ImageProcessor.Web/Services/LocalFileImageService.cs
+    startLine: 23
+  summary: The local file image service for retrieving images from the file system.
+  syntax:
+    content:
+      CSharp: 'public class LocalFileImageService : IImageService'
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  id: ImageProcessor.Web.Services.LocalFileImageService
+  children:
+  - ImageProcessor.Web.Services.LocalFileImageService.Prefix
+  - ImageProcessor.Web.Services.LocalFileImageService.IsFileLocalService
+  - ImageProcessor.Web.Services.LocalFileImageService.Settings
+  - ImageProcessor.Web.Services.LocalFileImageService.WhiteList
+  - ImageProcessor.Web.Services.LocalFileImageService.IsValidRequest(System.String)
+  - ImageProcessor.Web.Services.LocalFileImageService.GetImage(System.Object)
+- uid: ImageProcessor.Web.Services.LocalFileImageService.Prefix
+  href: ImageProcessor.Web.Services.LocalFileImageService.yml
+  name: Prefix
+  fullName: ImageProcessor.Web.Services.LocalFileImageService.Prefix
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Services/LocalFileImageService.cs
+    startLine: 36
+  summary: >-
+    Gets or sets the prefix for the given implementation.
+
+
+
+    This value is used as a prefix for any image requests that should use this service.
+  syntax:
+    content:
+      CSharp: public string Prefix { get; set; }
+    parameters:
+    - id: Prefix
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: ImageProcessor.Web.Services.LocalFileImageService.Prefix
+- uid: ImageProcessor.Web.Services.LocalFileImageService.IsFileLocalService
+  href: ImageProcessor.Web.Services.LocalFileImageService.yml
+  name: IsFileLocalService
+  fullName: ImageProcessor.Web.Services.LocalFileImageService.IsFileLocalService
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Services/LocalFileImageService.cs
+    startLine: 53
+  summary: >-
+    Gets a value indicating whether the image service requests files from
+
+    the locally based file system.
+  syntax:
+    content:
+      CSharp: public bool IsFileLocalService { get; }
+    parameters:
+    - id: IsFileLocalService
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: ImageProcessor.Web.Services.LocalFileImageService.IsFileLocalService
+- uid: ImageProcessor.Web.Services.LocalFileImageService.Settings
+  href: ImageProcessor.Web.Services.LocalFileImageService.yml
+  name: Settings
+  fullName: ImageProcessor.Web.Services.LocalFileImageService.Settings
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Services/LocalFileImageService.cs
+    startLine: 64
+  summary: Gets or sets any additional settings required by the service.
+  syntax:
+    content:
+      CSharp: public Dictionary<string, string> Settings { get; set; }
+    parameters:
+    - id: Settings
+      type:
+        id: System.Collections.Generic.Dictionary{System.String,System.String}
+        name: Dictionary<string, string>
+        isExternal: true
+  id: ImageProcessor.Web.Services.LocalFileImageService.Settings
+- uid: ImageProcessor.Web.Services.LocalFileImageService.WhiteList
+  href: ImageProcessor.Web.Services.LocalFileImageService.yml
+  name: WhiteList
+  fullName: ImageProcessor.Web.Services.LocalFileImageService.WhiteList
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Services/LocalFileImageService.cs
+    startLine: 69
+  summary: Gets or sets the white list of [System.Uri](#).
+  syntax:
+    content:
+      CSharp: public Uri[] WhiteList { get; set; }
+    parameters:
+    - id: WhiteList
+      type:
+        id: System.Array
+        name: Uri[]
+        isExternal: true
+  id: ImageProcessor.Web.Services.LocalFileImageService.WhiteList
+- uid: ImageProcessor.Web.Services.LocalFileImageService.IsValidRequest(System.String)
+  href: ImageProcessor.Web.Services.LocalFileImageService.yml
+  name: IsValidRequest(string)
+  fullName: ImageProcessor.Web.Services.LocalFileImageService.IsValidRequest(string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Services/LocalFileImageService.cs
+    startLine: 80
+  summary: Gets a value indicating whether the current request passes sanitizing rules.
+  syntax:
+    content:
+      CSharp: public bool IsValidRequest(string path)
+    parameters:
+    - id: path
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: The image path.
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: True if the request is valid; otherwise, False.
+  id: ImageProcessor.Web.Services.LocalFileImageService.IsValidRequest(System.String)
+- uid: ImageProcessor.Web.Services.LocalFileImageService.GetImage(System.Object)
+  href: ImageProcessor.Web.Services.LocalFileImageService.yml
+  name: GetImage(object)
+  fullName: ImageProcessor.Web.Services.LocalFileImageService.GetImage(object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Services/LocalFileImageService.cs
+    startLine: 94
+  summary: Gets the image using the given identifier.
+  syntax:
+    content:
+      CSharp: public Task<byte[]> GetImage(object id)
+    parameters:
+    - id: id
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+      description: The value identifying the image to fetch.
+    return:
+      id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.Byte[]}
+        name: Task<byte[]>
+        isExternal: true
+      description: The [System.Byte](#) array containing the image data.
+  id: ImageProcessor.Web.Services.LocalFileImageService.GetImage(System.Object)

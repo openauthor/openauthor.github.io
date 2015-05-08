@@ -1,0 +1,53 @@
+items:
+- uid: ImageProcessor.Web.Caching
+  href: ImageProcessor.Web.Caching.yml
+  name: Caching
+  fullName: ImageProcessor.Web.Caching
+  type: Namespace
+  source:
+    remote:
+      path: src/ImageProcessor.Web/Caching/CacheIndexer.cs
+      branch: V2
+      repo: https://github.com/JimBobSquarePants/ImageProcessor.git
+      key: 6d1ac546
+    path: src/ImageProcessor.Web/Caching/CacheIndexer.cs
+    startLine: 10
+  id: ImageProcessor.Web.Caching
+  children:
+  - ImageProcessor.Web.Caching.CachedImage
+  - ImageProcessor.Web.Caching.DiskCache
+  - ImageProcessor.Web.Caching.IImageCache
+  - ImageProcessor.Web.Caching.ImageCacheBase
+  - ImageProcessor.Web.Caching.CacheIndexer
+references:
+- uid: ImageProcessor.Web.Caching.CachedImage
+  href: ImageProcessor.Web.Caching.CachedImage.yml
+  name: CachedImage
+  type: Class
+  summary: Describes a cached image
+- uid: ImageProcessor.Web.Caching.DiskCache
+  href: ImageProcessor.Web.Caching.DiskCache.yml
+  name: DiskCache
+  type: Class
+  summary: >-
+    Provides an [ImageProcessor.Web.Caching.IImageCache](api/ImageProcessor.Web.Caching.IImageCache.yml) implementation that is file system based.
+
+    The cache is self healing and cleaning.
+- uid: ImageProcessor.Web.Caching.IImageCache
+  href: ImageProcessor.Web.Caching.IImageCache.yml
+  name: IImageCache
+  type: Interface
+  summary: Defines properties and methods for allowing caching of images to different sources.
+- uid: ImageProcessor.Web.Caching.ImageCacheBase
+  href: ImageProcessor.Web.Caching.ImageCacheBase.yml
+  name: ImageCacheBase
+  type: Class
+  summary: >-
+    The image cache base provides methods for implementing the [ImageProcessor.Web.Caching.IImageCache](api/ImageProcessor.Web.Caching.IImageCache.yml) interface.
+
+    It is recommended that any implementations inherit from this class.
+- uid: ImageProcessor.Web.Caching.CacheIndexer
+  href: ImageProcessor.Web.Caching.CacheIndexer.yml
+  name: CacheIndexer
+  type: Class
+  summary: Represents an in memory collection of cached images whose operations are concurrent.

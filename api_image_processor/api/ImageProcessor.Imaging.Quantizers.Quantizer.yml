@@ -1,0 +1,233 @@
+items:
+- uid: ImageProcessor.Imaging.Quantizers.Quantizer
+  href: ImageProcessor.Imaging.Quantizers.Quantizer.yml
+  name: Quantizer
+  fullName: ImageProcessor.Imaging.Quantizers.Quantizer
+  type: Class
+  source:
+    remote: &o0
+      path: src/ImageProcessor/Imaging/Quantizers/Quantizer.cs
+      branch: V2
+      repo: https://github.com/JimBobSquarePants/ImageProcessor.git
+      key: 6d1ac546
+    path: src/ImageProcessor/Imaging/Quantizers/Quantizer.cs
+    startLine: 22
+  summary: Encapsulates methods to calculate the color palette of an image.
+  syntax:
+    content:
+      CSharp: 'public abstract class Quantizer : IQuantizer'
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  id: ImageProcessor.Imaging.Quantizers.Quantizer
+  children:
+  - ImageProcessor.Imaging.Quantizers.Quantizer.#ctor(System.Boolean)
+  - ImageProcessor.Imaging.Quantizers.Quantizer.Quantize(System.Drawing.Image)
+  - ImageProcessor.Imaging.Quantizers.Quantizer.FirstPass(System.Drawing.Imaging.BitmapData,System.Int32,System.Int32)
+  - ImageProcessor.Imaging.Quantizers.Quantizer.SecondPass(System.Drawing.Imaging.BitmapData,System.Drawing.Bitmap,System.Int32,System.Int32,System.Drawing.Rectangle)
+  - ImageProcessor.Imaging.Quantizers.Quantizer.InitialQuantizePixel(ImageProcessor.Imaging.Colors.Color32*)
+  - ImageProcessor.Imaging.Quantizers.Quantizer.QuantizePixel(ImageProcessor.Imaging.Colors.Color32*)
+  - ImageProcessor.Imaging.Quantizers.Quantizer.GetPalette(System.Drawing.Imaging.ColorPalette)
+- uid: ImageProcessor.Imaging.Quantizers.Quantizer.#ctor(System.Boolean)
+  href: ImageProcessor.Imaging.Quantizers.Quantizer.yml
+  name: Quantizer(bool)
+  fullName: ImageProcessor.Imaging.Quantizers.Quantizer.Quantizer(bool)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Quantizers/Quantizer.cs
+    startLine: 40
+  summary: Initializes a new instance of the [ImageProcessor.Imaging.Quantizers.Quantizer](api/ImageProcessor.Imaging.Quantizers.Quantizer.yml) class.
+  syntax:
+    content:
+      CSharp: protected Quantizer(bool singlePass)
+    parameters:
+    - id: singlePass
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: If true, the quantization only needs to loop through the source pixels once
+  id: ImageProcessor.Imaging.Quantizers.Quantizer.#ctor(System.Boolean)
+- uid: ImageProcessor.Imaging.Quantizers.Quantizer.Quantize(System.Drawing.Image)
+  href: ImageProcessor.Imaging.Quantizers.Quantizer.yml
+  name: Quantize(Image)
+  fullName: ImageProcessor.Imaging.Quantizers.Quantizer.Quantize(System.Drawing.Image)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Quantizers/Quantizer.cs
+    startLine: 54
+  summary: Quantize an image and return the resulting output bitmap.
+  syntax:
+    content:
+      CSharp: public Bitmap Quantize(Image source)
+    parameters:
+    - id: source
+      type:
+        id: System.Drawing.Image
+        name: Image
+        isExternal: true
+      description: The image to quantize.
+    return:
+      id: Bitmap
+      type:
+        id: System.Drawing.Bitmap
+        name: Bitmap
+        isExternal: true
+      description: A quantized version of the image.
+  id: ImageProcessor.Imaging.Quantizers.Quantizer.Quantize(System.Drawing.Image)
+- uid: ImageProcessor.Imaging.Quantizers.Quantizer.FirstPass(System.Drawing.Imaging.BitmapData,System.Int32,System.Int32)
+  href: ImageProcessor.Imaging.Quantizers.Quantizer.yml
+  name: FirstPass(BitmapData, int, int)
+  fullName: ImageProcessor.Imaging.Quantizers.Quantizer.FirstPass(System.Drawing.Imaging.BitmapData, int, int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Quantizers/Quantizer.cs
+    startLine: 126
+  summary: Execute the first pass through the pixels in the image
+  syntax:
+    content:
+      CSharp: protected virtual void FirstPass(BitmapData sourceData, int width, int height)
+    parameters:
+    - id: sourceData
+      type:
+        id: System.Drawing.Imaging.BitmapData
+        name: BitmapData
+        isExternal: true
+      description: The source data
+    - id: width
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The width in pixels of the image
+    - id: height
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The height in pixels of the image
+  id: ImageProcessor.Imaging.Quantizers.Quantizer.FirstPass(System.Drawing.Imaging.BitmapData,System.Int32,System.Int32)
+- uid: ImageProcessor.Imaging.Quantizers.Quantizer.SecondPass(System.Drawing.Imaging.BitmapData,System.Drawing.Bitmap,System.Int32,System.Int32,System.Drawing.Rectangle)
+  href: ImageProcessor.Imaging.Quantizers.Quantizer.yml
+  name: SecondPass(BitmapData, Bitmap, int, int, Rectangle)
+  fullName: ImageProcessor.Imaging.Quantizers.Quantizer.SecondPass(System.Drawing.Imaging.BitmapData, System.Drawing.Bitmap, int, int, System.Drawing.Rectangle)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Quantizers/Quantizer.cs
+    startLine: 168
+  summary: Execute a second pass through the bitmap
+  syntax:
+    content:
+      CSharp: protected virtual void SecondPass(BitmapData sourceData, Bitmap output, int width, int height, Rectangle bounds)
+    parameters:
+    - id: sourceData
+      type:
+        id: System.Drawing.Imaging.BitmapData
+        name: BitmapData
+        isExternal: true
+      description: The source bitmap, locked into memory
+    - id: output
+      type:
+        id: System.Drawing.Bitmap
+        name: Bitmap
+        isExternal: true
+      description: The output bitmap
+    - id: width
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The width in pixels of the image
+    - id: height
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The height in pixels of the image
+    - id: bounds
+      type:
+        id: System.Drawing.Rectangle
+        name: Rectangle
+        isExternal: true
+      description: The bounding rectangle
+  id: ImageProcessor.Imaging.Quantizers.Quantizer.SecondPass(System.Drawing.Imaging.BitmapData,System.Drawing.Bitmap,System.Int32,System.Int32,System.Drawing.Rectangle)
+- uid: ImageProcessor.Imaging.Quantizers.Quantizer.InitialQuantizePixel(ImageProcessor.Imaging.Colors.Color32*)
+  href: ImageProcessor.Imaging.Quantizers.Quantizer.yml
+  name: InitialQuantizePixel(Color32*)
+  fullName: ImageProcessor.Imaging.Quantizers.Quantizer.InitialQuantizePixel(ImageProcessor.Imaging.Colors.Color32*)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Quantizers/Quantizer.cs
+    startLine: 244
+  summary: Override this to process the pixel in the first pass of the algorithm
+  syntax:
+    content:
+      CSharp: protected virtual void InitialQuantizePixel(Color32*pixel)
+    parameters:
+    - id: pixel
+      type:
+        name: Color32*
+        isExternal: true
+      description: The pixel to quantize
+  id: ImageProcessor.Imaging.Quantizers.Quantizer.InitialQuantizePixel(ImageProcessor.Imaging.Colors.Color32*)
+- uid: ImageProcessor.Imaging.Quantizers.Quantizer.QuantizePixel(ImageProcessor.Imaging.Colors.Color32*)
+  href: ImageProcessor.Imaging.Quantizers.Quantizer.yml
+  name: QuantizePixel(Color32*)
+  fullName: ImageProcessor.Imaging.Quantizers.Quantizer.QuantizePixel(ImageProcessor.Imaging.Colors.Color32*)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Quantizers/Quantizer.cs
+    startLine: 257
+  summary: Override this to process the pixel in the second pass of the algorithm
+  syntax:
+    content:
+      CSharp: protected abstract byte QuantizePixel(Color32*pixel)
+    parameters:
+    - id: pixel
+      type:
+        name: Color32*
+        isExternal: true
+      description: The pixel to quantize
+    return:
+      id: Byte
+      type:
+        id: System.Byte
+        name: byte
+        isExternal: true
+      description: The quantized value
+  id: ImageProcessor.Imaging.Quantizers.Quantizer.QuantizePixel(ImageProcessor.Imaging.Colors.Color32*)
+- uid: ImageProcessor.Imaging.Quantizers.Quantizer.GetPalette(System.Drawing.Imaging.ColorPalette)
+  href: ImageProcessor.Imaging.Quantizers.Quantizer.yml
+  name: GetPalette(ColorPalette)
+  fullName: ImageProcessor.Imaging.Quantizers.Quantizer.GetPalette(System.Drawing.Imaging.ColorPalette)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Quantizers/Quantizer.cs
+    startLine: 268
+  summary: Retrieve the palette for the quantized image
+  syntax:
+    content:
+      CSharp: protected abstract ColorPalette GetPalette(ColorPalette original)
+    parameters:
+    - id: original
+      type:
+        id: System.Drawing.Imaging.ColorPalette
+        name: ColorPalette
+        isExternal: true
+      description: Any old palette, this is overwritten
+    return:
+      id: ColorPalette
+      type:
+        id: System.Drawing.Imaging.ColorPalette
+        name: ColorPalette
+        isExternal: true
+      description: The new color palette
+  id: ImageProcessor.Imaging.Quantizers.Quantizer.GetPalette(System.Drawing.Imaging.ColorPalette)

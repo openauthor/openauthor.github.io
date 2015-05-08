@@ -1,0 +1,190 @@
+items:
+- uid: ImageProcessor.Web.Services.RemoteImageService
+  href: ImageProcessor.Web.Services.RemoteImageService.yml
+  name: RemoteImageService
+  fullName: ImageProcessor.Web.Services.RemoteImageService
+  type: Class
+  source:
+    remote: &o0
+      path: src/ImageProcessor.Web/Services/RemoteImageService.cs
+      branch: V2
+      repo: https://github.com/JimBobSquarePants/ImageProcessor.git
+      key: 6d1ac546
+    path: src/ImageProcessor.Web/Services/RemoteImageService.cs
+    startLine: 24
+  summary: The remote image service.
+  syntax:
+    content:
+      CSharp: 'public class RemoteImageService : IImageService'
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  id: ImageProcessor.Web.Services.RemoteImageService
+  children:
+  - ImageProcessor.Web.Services.RemoteImageService.#ctor
+  - ImageProcessor.Web.Services.RemoteImageService.Prefix
+  - ImageProcessor.Web.Services.RemoteImageService.IsFileLocalService
+  - ImageProcessor.Web.Services.RemoteImageService.Settings
+  - ImageProcessor.Web.Services.RemoteImageService.WhiteList
+  - ImageProcessor.Web.Services.RemoteImageService.IsValidRequest(System.String)
+  - ImageProcessor.Web.Services.RemoteImageService.GetImage(System.Object)
+- uid: ImageProcessor.Web.Services.RemoteImageService.#ctor
+  href: ImageProcessor.Web.Services.RemoteImageService.yml
+  name: RemoteImageService()
+  fullName: ImageProcessor.Web.Services.RemoteImageService.RemoteImageService()
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Services/RemoteImageService.cs
+    startLine: 34
+  summary: Initializes a new instance of the [ImageProcessor.Web.Services.RemoteImageService](api/ImageProcessor.Web.Services.RemoteImageService.yml) class.
+  syntax:
+    content:
+      CSharp: public RemoteImageService()
+    parameters: []
+  id: ImageProcessor.Web.Services.RemoteImageService.#ctor
+- uid: ImageProcessor.Web.Services.RemoteImageService.Prefix
+  href: ImageProcessor.Web.Services.RemoteImageService.yml
+  name: Prefix
+  fullName: ImageProcessor.Web.Services.RemoteImageService.Prefix
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Services/RemoteImageService.cs
+    startLine: 52
+  summary: >-
+    Gets or sets the prefix for the given implementation.
+
+
+
+    This value is used as a prefix for any image requests that should use this service.
+  syntax:
+    content:
+      CSharp: public string Prefix { get; set; }
+    parameters:
+    - id: Prefix
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: ImageProcessor.Web.Services.RemoteImageService.Prefix
+- uid: ImageProcessor.Web.Services.RemoteImageService.IsFileLocalService
+  href: ImageProcessor.Web.Services.RemoteImageService.yml
+  name: IsFileLocalService
+  fullName: ImageProcessor.Web.Services.RemoteImageService.IsFileLocalService
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Services/RemoteImageService.cs
+    startLine: 69
+  summary: >-
+    Gets a value indicating whether the image service requests files from
+
+    the locally based file system.
+  syntax:
+    content:
+      CSharp: public bool IsFileLocalService { get; }
+    parameters:
+    - id: IsFileLocalService
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: ImageProcessor.Web.Services.RemoteImageService.IsFileLocalService
+- uid: ImageProcessor.Web.Services.RemoteImageService.Settings
+  href: ImageProcessor.Web.Services.RemoteImageService.yml
+  name: Settings
+  fullName: ImageProcessor.Web.Services.RemoteImageService.Settings
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Services/RemoteImageService.cs
+    startLine: 80
+  summary: Gets or sets any additional settings required by the service.
+  syntax:
+    content:
+      CSharp: public Dictionary<string, string> Settings { get; set; }
+    parameters:
+    - id: Settings
+      type:
+        id: System.Collections.Generic.Dictionary{System.String,System.String}
+        name: Dictionary<string, string>
+        isExternal: true
+  id: ImageProcessor.Web.Services.RemoteImageService.Settings
+- uid: ImageProcessor.Web.Services.RemoteImageService.WhiteList
+  href: ImageProcessor.Web.Services.RemoteImageService.yml
+  name: WhiteList
+  fullName: ImageProcessor.Web.Services.RemoteImageService.WhiteList
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Services/RemoteImageService.cs
+    startLine: 85
+  summary: Gets or sets the white list of [System.Uri](#).
+  syntax:
+    content:
+      CSharp: public Uri[] WhiteList { get; set; }
+    parameters:
+    - id: WhiteList
+      type:
+        id: System.Array
+        name: Uri[]
+        isExternal: true
+  id: ImageProcessor.Web.Services.RemoteImageService.WhiteList
+- uid: ImageProcessor.Web.Services.RemoteImageService.IsValidRequest(System.String)
+  href: ImageProcessor.Web.Services.RemoteImageService.yml
+  name: IsValidRequest(string)
+  fullName: ImageProcessor.Web.Services.RemoteImageService.IsValidRequest(string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Services/RemoteImageService.cs
+    startLine: 96
+  summary: Gets a value indicating whether the current request passes sanitizing rules.
+  syntax:
+    content:
+      CSharp: public bool IsValidRequest(string path)
+    parameters:
+    - id: path
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: The image path.
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: True if the request is valid; otherwise, False.
+  id: ImageProcessor.Web.Services.RemoteImageService.IsValidRequest(System.String)
+- uid: ImageProcessor.Web.Services.RemoteImageService.GetImage(System.Object)
+  href: ImageProcessor.Web.Services.RemoteImageService.yml
+  name: GetImage(object)
+  fullName: ImageProcessor.Web.Services.RemoteImageService.GetImage(object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Services/RemoteImageService.cs
+    startLine: 134
+  summary: Gets the image using the given identifier.
+  syntax:
+    content:
+      CSharp: public Task<byte[]> GetImage(object id)
+    parameters:
+    - id: id
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+      description: The value identifying the image to fetch.
+    return:
+      id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.Byte[]}
+        name: Task<byte[]>
+        isExternal: true
+      description: The [System.Byte](#) array containing the image data.
+  id: ImageProcessor.Web.Services.RemoteImageService.GetImage(System.Object)

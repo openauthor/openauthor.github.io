@@ -1,0 +1,160 @@
+items:
+- uid: Nine.Graphics.UI.Window
+  href: Nine.Graphics.UI.Window.yml
+  name: Window
+  fullName: Nine.Graphics.UI.Window
+  type: Class
+  source:
+    remote: &o0
+      path: Source/Nine.Graphics.UI/Window.cs
+      branch: master
+      repo: https://github.com/studio-nine/Nine.git
+      key: 2eecd03a
+    path: Source/Nine.Graphics.UI/Window.cs
+    startLine: 36
+  summary: Window is the main host for all [Nine.Graphics.UI.UIElement](api/Nine.Graphics.UI.UIElement.yml)s, it manages the  user input and is the target for Update/Draw calls.
+  syntax:
+    content:
+      CSharp: 'public class Window : BaseWindow, IAttachedPropertyStore, IGraphicsObject, IContainer'
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: Nine.Object
+    name: Object
+    href: Nine.Object
+  - id: Nine.Graphics.Drawing.Pass
+    name: Pass
+    href: Nine.Graphics.Drawing.Pass
+  - id: Nine.Graphics.UI.BaseWindow
+    name: BaseWindow
+    href: Nine.Graphics.UI.BaseWindow.yml
+  id: Nine.Graphics.UI.Window
+  children:
+  - Nine.Graphics.UI.Window.Content
+  - Nine.Graphics.UI.Window.Nine#IContainer#Children
+  - Nine.Graphics.UI.Window.#ctor
+  - Nine.Graphics.UI.Window.#ctor(Nine.Graphics.UI.UIElement)
+  - Nine.Graphics.UI.Window.MouseDown(System.Object,Nine.MouseEventArgs)
+  - Nine.Graphics.UI.Window.Draw(Nine.Graphics.DrawingContext,System.Collections.Generic.IList{Nine.Graphics.IDrawableObject})
+- uid: Nine.Graphics.UI.Window.Content
+  href: Nine.Graphics.UI.Window.yml
+  name: Content
+  fullName: Nine.Graphics.UI.Window.Content
+  type: Property
+  source:
+    remote: *o0
+    path: Source/Nine.Graphics.UI/Window.cs
+    startLine: 41
+  syntax:
+    content:
+      CSharp: public UIElement Content { get; set; }
+    parameters:
+    - id: Content
+      type:
+        id: Nine.Graphics.UI.UIElement
+        name: UIElement
+        href: Nine.Graphics.UI.UIElement.yml
+  id: Nine.Graphics.UI.Window.Content
+- uid: Nine.Graphics.UI.Window.Nine#IContainer#Children
+  href: Nine.Graphics.UI.Window.yml
+  name: IContainer.Children
+  fullName: Nine.Graphics.UI.Window.Nine.IContainer.Children
+  type: Property
+  source:
+    remote: *o0
+    path: Source/Nine.Graphics.UI/Window.cs
+    startLine: 58
+  syntax:
+    content:
+      CSharp: IList IContainer.Children { get; }
+    parameters:
+    - id: Nine.IContainer.Children
+      type:
+        id: System.Collections.IList
+        name: IList
+        isExternal: true
+  id: Nine.Graphics.UI.Window.Nine#IContainer#Children
+- uid: Nine.Graphics.UI.Window.#ctor
+  href: Nine.Graphics.UI.Window.yml
+  name: Window()
+  fullName: Nine.Graphics.UI.Window.Window()
+  type: Constructor
+  source:
+    remote: *o0
+    path: Source/Nine.Graphics.UI/Window.cs
+    startLine: 67
+  summary: Initializes a new instance of the [Nine.Graphics.UI.Window](api/Nine.Graphics.UI.Window.yml) class.
+  syntax:
+    content:
+      CSharp: public Window()
+    parameters: []
+  id: Nine.Graphics.UI.Window.#ctor
+- uid: Nine.Graphics.UI.Window.#ctor(Nine.Graphics.UI.UIElement)
+  href: Nine.Graphics.UI.Window.yml
+  name: Window(UIElement)
+  fullName: Nine.Graphics.UI.Window.Window(Nine.Graphics.UI.UIElement)
+  type: Constructor
+  source:
+    remote: *o0
+    path: Source/Nine.Graphics.UI/Window.cs
+    startLine: 76
+  summary: Initializes a new instance of the [Nine.Graphics.UI.Window](api/Nine.Graphics.UI.Window.yml) class.
+  syntax:
+    content:
+      CSharp: public Window(UIElement content)
+    parameters:
+    - id: content
+      type:
+        id: Nine.Graphics.UI.UIElement
+        name: UIElement
+        href: Nine.Graphics.UI.UIElement.yml
+  id: Nine.Graphics.UI.Window.#ctor(Nine.Graphics.UI.UIElement)
+- uid: Nine.Graphics.UI.Window.MouseDown(System.Object,Nine.MouseEventArgs)
+  href: Nine.Graphics.UI.Window.yml
+  name: MouseDown(object, MouseEventArgs)
+  fullName: Nine.Graphics.UI.Window.MouseDown(object, Nine.MouseEventArgs)
+  type: Method
+  source:
+    remote: *o0
+    path: Source/Nine.Graphics.UI/Window.cs
+    startLine: 85
+  syntax:
+    content:
+      CSharp: protected internal override void MouseDown(object sender, MouseEventArgs e)
+    parameters:
+    - id: sender
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+    - id: e
+      type:
+        id: Nine.MouseEventArgs
+        name: MouseEventArgs
+        href: Nine.MouseEventArgs
+  id: Nine.Graphics.UI.Window.MouseDown(System.Object,Nine.MouseEventArgs)
+- uid: Nine.Graphics.UI.Window.Draw(Nine.Graphics.DrawingContext,System.Collections.Generic.IList{Nine.Graphics.IDrawableObject})
+  href: Nine.Graphics.UI.Window.yml
+  name: Draw(DrawingContext, IList<IDrawableObject>)
+  fullName: Nine.Graphics.UI.Window.Draw(Nine.Graphics.DrawingContext, System.Collections.Generic.IList<Nine.Graphics.IDrawableObject>)
+  type: Method
+  source:
+    remote: *o0
+    path: Source/Nine.Graphics.UI/Window.cs
+    startLine: 96
+  syntax:
+    content:
+      CSharp: public override void Draw(DrawingContext context, IList<IDrawableObject> drawables)
+    parameters:
+    - id: context
+      type:
+        id: Nine.Graphics.DrawingContext
+        name: DrawingContext
+        href: Nine.Graphics.DrawingContext
+    - id: drawables
+      type:
+        id: System.Collections.Generic.IList{Nine.Graphics.IDrawableObject}
+        name: IList<IDrawableObject>
+        isExternal: true
+  id: Nine.Graphics.UI.Window.Draw(Nine.Graphics.DrawingContext,System.Collections.Generic.IList{Nine.Graphics.IDrawableObject})

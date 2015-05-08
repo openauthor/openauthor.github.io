@@ -1,0 +1,167 @@
+items:
+- uid: ImageProcessor.Web.Caching.DiskCache
+  href: ImageProcessor.Web.Caching.DiskCache.yml
+  name: DiskCache
+  fullName: ImageProcessor.Web.Caching.DiskCache
+  type: Class
+  source:
+    remote: &o0
+      path: src/ImageProcessor.Web/Caching/DiskCache.cs
+      branch: V2
+      repo: https://github.com/JimBobSquarePants/ImageProcessor.git
+      key: 6d1ac546
+    path: src/ImageProcessor.Web/Caching/DiskCache.cs
+    startLine: 27
+  summary: >-
+    Provides an [ImageProcessor.Web.Caching.IImageCache](api/ImageProcessor.Web.Caching.IImageCache.yml) implementation that is file system based.
+
+    The cache is self healing and cleaning.
+  syntax:
+    content:
+      CSharp: 'public class DiskCache : ImageCacheBase, IImageCache'
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: ImageProcessor.Web.Caching.ImageCacheBase
+    name: ImageCacheBase
+    href: ImageProcessor.Web.Caching.ImageCacheBase.yml
+  id: ImageProcessor.Web.Caching.DiskCache
+  children:
+  - ImageProcessor.Web.Caching.DiskCache.#ctor(System.String,System.String,System.String)
+  - ImageProcessor.Web.Caching.DiskCache.IsNewOrUpdatedAsync
+  - ImageProcessor.Web.Caching.DiskCache.AddImageToCacheAsync(System.IO.Stream,System.String)
+  - ImageProcessor.Web.Caching.DiskCache.TrimCacheAsync
+  - ImageProcessor.Web.Caching.DiskCache.RewritePath(System.Web.HttpContext)
+- uid: ImageProcessor.Web.Caching.DiskCache.#ctor(System.String,System.String,System.String)
+  href: ImageProcessor.Web.Caching.DiskCache.yml
+  name: DiskCache(string, string, string)
+  fullName: ImageProcessor.Web.Caching.DiskCache.DiskCache(string, string, string)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Caching/DiskCache.cs
+    startLine: 68
+  summary: Initializes a new instance of the [ImageProcessor.Web.Caching.DiskCache](api/ImageProcessor.Web.Caching.DiskCache.yml) class.
+  syntax:
+    content:
+      CSharp: 'public DiskCache(string requestPath, string fullPath, string querystring): base (requestPath, fullPath, querystring)'
+    parameters:
+    - id: requestPath
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: The request path for the image.
+    - id: fullPath
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: The full path for the image.
+    - id: querystring
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: The querystring containing instructions.
+  id: ImageProcessor.Web.Caching.DiskCache.#ctor(System.String,System.String,System.String)
+- uid: ImageProcessor.Web.Caching.DiskCache.IsNewOrUpdatedAsync
+  href: ImageProcessor.Web.Caching.DiskCache.yml
+  name: IsNewOrUpdatedAsync()
+  fullName: ImageProcessor.Web.Caching.DiskCache.IsNewOrUpdatedAsync()
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Caching/DiskCache.cs
+    startLine: 89
+  summary: Gets a value indicating whether the image is new or updated in an asynchronous manner.
+  syntax:
+    content:
+      CSharp: public override Task<bool> IsNewOrUpdatedAsync()
+    parameters: []
+    return:
+      id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.Boolean}
+        name: Task<bool>
+        isExternal: true
+      description: The [System.Threading.Tasks.Task](#).
+  id: ImageProcessor.Web.Caching.DiskCache.IsNewOrUpdatedAsync
+- uid: ImageProcessor.Web.Caching.DiskCache.AddImageToCacheAsync(System.IO.Stream,System.String)
+  href: ImageProcessor.Web.Caching.DiskCache.yml
+  name: AddImageToCacheAsync(Stream, string)
+  fullName: ImageProcessor.Web.Caching.DiskCache.AddImageToCacheAsync(System.IO.Stream, string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Caching/DiskCache.cs
+    startLine: 153
+  summary: Adds the image to the cache in an asynchronous manner.
+  syntax:
+    content:
+      CSharp: public override Task AddImageToCacheAsync(Stream stream, string contentType)
+    parameters:
+    - id: stream
+      type:
+        id: System.IO.Stream
+        name: Stream
+        isExternal: true
+      description: The stream containing the image data.
+    - id: contentType
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: The content type of the image.
+    return:
+      id: Task
+      type:
+        id: System.Threading.Tasks.Task
+        name: Task
+        isExternal: true
+      description: The [System.Threading.Tasks.Task](#) representing an asynchronous operation.
+  id: ImageProcessor.Web.Caching.DiskCache.AddImageToCacheAsync(System.IO.Stream,System.String)
+- uid: ImageProcessor.Web.Caching.DiskCache.TrimCacheAsync
+  href: ImageProcessor.Web.Caching.DiskCache.yml
+  name: TrimCacheAsync()
+  fullName: ImageProcessor.Web.Caching.DiskCache.TrimCacheAsync()
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Caching/DiskCache.cs
+    startLine: 174
+  summary: Trims the cache of any expired items in an asynchronous manner.
+  syntax:
+    content:
+      CSharp: public override Task TrimCacheAsync()
+    parameters: []
+    return:
+      id: Task
+      type:
+        id: System.Threading.Tasks.Task
+        name: Task
+        isExternal: true
+      description: The asynchronous [System.Threading.Tasks.Task](#) representing an asynchronous operation.
+  id: ImageProcessor.Web.Caching.DiskCache.TrimCacheAsync
+- uid: ImageProcessor.Web.Caching.DiskCache.RewritePath(System.Web.HttpContext)
+  href: ImageProcessor.Web.Caching.DiskCache.yml
+  name: RewritePath(HttpContext)
+  fullName: ImageProcessor.Web.Caching.DiskCache.RewritePath(System.Web.HttpContext)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor.Web/Caching/DiskCache.cs
+    startLine: 225
+  summary: Rewrites the path to point to the cached image.
+  syntax:
+    content:
+      CSharp: public override void RewritePath(HttpContext context)
+    parameters:
+    - id: context
+      type:
+        id: System.Web.HttpContext
+        name: HttpContext
+        isExternal: true
+      description: The [System.Web.HttpContext](#) encapsulating all information about the request.
+  id: ImageProcessor.Web.Caching.DiskCache.RewritePath(System.Web.HttpContext)

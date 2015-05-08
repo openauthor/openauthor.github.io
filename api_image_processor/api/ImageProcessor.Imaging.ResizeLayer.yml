@@ -1,0 +1,295 @@
+items:
+- uid: ImageProcessor.Imaging.ResizeLayer
+  href: ImageProcessor.Imaging.ResizeLayer.yml
+  name: ResizeLayer
+  fullName: ImageProcessor.Imaging.ResizeLayer
+  type: Class
+  source:
+    remote: &o0
+      path: src/ImageProcessor/Imaging/ResizeLayer.cs
+      branch: V2
+      repo: https://github.com/JimBobSquarePants/ImageProcessor.git
+      key: 6d1ac546
+    path: src/ImageProcessor/Imaging/ResizeLayer.cs
+    startLine: 23
+  summary: Encapsulates the properties required to resize an image.
+  syntax:
+    content:
+      CSharp: public class ResizeLayer
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  id: ImageProcessor.Imaging.ResizeLayer
+  children:
+  - ImageProcessor.Imaging.ResizeLayer.#ctor(System.Drawing.Size,ImageProcessor.Imaging.ResizeMode,ImageProcessor.Imaging.AnchorPosition,System.Boolean,System.Single[],System.Nullable{System.Drawing.Size},System.Collections.Generic.List{System.Drawing.Size})
+  - ImageProcessor.Imaging.ResizeLayer.Size
+  - ImageProcessor.Imaging.ResizeLayer.MaxSize
+  - ImageProcessor.Imaging.ResizeLayer.RestrictedSizes
+  - ImageProcessor.Imaging.ResizeLayer.ResizeMode
+  - ImageProcessor.Imaging.ResizeLayer.AnchorPosition
+  - ImageProcessor.Imaging.ResizeLayer.Upscale
+  - ImageProcessor.Imaging.ResizeLayer.CenterCoordinates
+  - ImageProcessor.Imaging.ResizeLayer.Equals(System.Object)
+  - ImageProcessor.Imaging.ResizeLayer.GetHashCode
+- uid: ImageProcessor.Imaging.ResizeLayer.#ctor(System.Drawing.Size,ImageProcessor.Imaging.ResizeMode,ImageProcessor.Imaging.AnchorPosition,System.Boolean,System.Single[],System.Nullable{System.Drawing.Size},System.Collections.Generic.List{System.Drawing.Size})
+  href: ImageProcessor.Imaging.ResizeLayer.yml
+  name: ResizeLayer(Size, ResizeMode, AnchorPosition, bool, float[], Size?, List<Size>)
+  fullName: ImageProcessor.Imaging.ResizeLayer.ResizeLayer(System.Drawing.Size, ImageProcessor.Imaging.ResizeMode, ImageProcessor.Imaging.AnchorPosition, bool, float[], System.Drawing.Size?, System.Collections.Generic.List<System.Drawing.Size>)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/ResizeLayer.cs
+    startLine: 53
+  summary: Initializes a new instance of the [ImageProcessor.Imaging.ResizeLayer](api/ImageProcessor.Imaging.ResizeLayer.yml) class.
+  syntax:
+    content:
+      CSharp: public ResizeLayer(Size size, ResizeMode resizeMode = ResizeMode.Pad, AnchorPosition anchorPosition = AnchorPosition.Center, bool upscale = true, float[] centerCoordinates = null, Size? maxSize = null, List<Size> restrictedSizes = null)
+    parameters:
+    - id: size
+      type:
+        id: System.Drawing.Size
+        name: Size
+        isExternal: true
+      description: The [System.Drawing.Size](#) containing the width and height to set the image to.
+    - id: resizeMode
+      type:
+        id: ImageProcessor.Imaging.ResizeMode
+        name: ResizeMode
+        href: ImageProcessor.Imaging.ResizeMode.yml
+      description: The resize mode to apply to resized image. (Default ResizeMode.Pad)
+    - id: anchorPosition
+      type:
+        id: ImageProcessor.Imaging.AnchorPosition
+        name: AnchorPosition
+        href: ImageProcessor.Imaging.AnchorPosition.yml
+      description: The [ImageProcessor.Imaging.ResizeLayer.AnchorPosition](api/ImageProcessor.Imaging.ResizeLayer.yml) to apply to resized image. (Default AnchorPosition.Center)
+    - id: upscale
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: Whether to allow up-scaling of images. (Default true)
+    - id: centerCoordinates
+      type:
+        id: System.Array
+        name: float[]
+        isExternal: true
+      description: The center coordinates (Default null)
+    - id: maxSize
+      type:
+        id: System.Nullable{System.Drawing.Size}
+        name: Size?
+        isExternal: true
+      description: >-
+        The maximum size to resize an image to.
+
+        Used to restrict resizing based on calculated resizing
+    - id: restrictedSizes
+      type:
+        id: System.Collections.Generic.List{System.Drawing.Size}
+        name: List<Size>
+        isExternal: true
+      description: >-
+        The range of sizes to restrict resizing an image to.
+
+        Used to restrict resizing based on calculated resizing
+  id: ImageProcessor.Imaging.ResizeLayer.#ctor(System.Drawing.Size,ImageProcessor.Imaging.ResizeMode,ImageProcessor.Imaging.AnchorPosition,System.Boolean,System.Single[],System.Nullable{System.Drawing.Size},System.Collections.Generic.List{System.Drawing.Size})
+- uid: ImageProcessor.Imaging.ResizeLayer.Size
+  href: ImageProcessor.Imaging.ResizeLayer.yml
+  name: Size
+  fullName: ImageProcessor.Imaging.ResizeLayer.Size
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/ResizeLayer.cs
+    startLine: 76
+  summary: Gets or sets the size.
+  syntax:
+    content:
+      CSharp: public Size Size { get; set; }
+    parameters:
+    - id: Size
+      type:
+        id: System.Drawing.Size
+        name: Size
+        isExternal: true
+  id: ImageProcessor.Imaging.ResizeLayer.Size
+- uid: ImageProcessor.Imaging.ResizeLayer.MaxSize
+  href: ImageProcessor.Imaging.ResizeLayer.yml
+  name: MaxSize
+  fullName: ImageProcessor.Imaging.ResizeLayer.MaxSize
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/ResizeLayer.cs
+    startLine: 81
+  summary: Gets or sets the max size.
+  syntax:
+    content:
+      CSharp: public Size? MaxSize { get; set; }
+    parameters:
+    - id: MaxSize
+      type:
+        id: System.Nullable{System.Drawing.Size}
+        name: Size?
+        isExternal: true
+  id: ImageProcessor.Imaging.ResizeLayer.MaxSize
+- uid: ImageProcessor.Imaging.ResizeLayer.RestrictedSizes
+  href: ImageProcessor.Imaging.ResizeLayer.yml
+  name: RestrictedSizes
+  fullName: ImageProcessor.Imaging.ResizeLayer.RestrictedSizes
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/ResizeLayer.cs
+    startLine: 86
+  summary: Gets or sets the restricted range of sizes. to restrict resizing methods to.
+  syntax:
+    content:
+      CSharp: public List<Size> RestrictedSizes { get; set; }
+    parameters:
+    - id: RestrictedSizes
+      type:
+        id: System.Collections.Generic.List{System.Drawing.Size}
+        name: List<Size>
+        isExternal: true
+  id: ImageProcessor.Imaging.ResizeLayer.RestrictedSizes
+- uid: ImageProcessor.Imaging.ResizeLayer.ResizeMode
+  href: ImageProcessor.Imaging.ResizeLayer.yml
+  name: ResizeMode
+  fullName: ImageProcessor.Imaging.ResizeLayer.ResizeMode
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/ResizeLayer.cs
+    startLine: 91
+  summary: Gets or sets the resize mode.
+  syntax:
+    content:
+      CSharp: public ResizeMode ResizeMode { get; set; }
+    parameters:
+    - id: ResizeMode
+      type:
+        id: ImageProcessor.Imaging.ResizeMode
+        name: ResizeMode
+        href: ImageProcessor.Imaging.ResizeMode.yml
+  id: ImageProcessor.Imaging.ResizeLayer.ResizeMode
+- uid: ImageProcessor.Imaging.ResizeLayer.AnchorPosition
+  href: ImageProcessor.Imaging.ResizeLayer.yml
+  name: AnchorPosition
+  fullName: ImageProcessor.Imaging.ResizeLayer.AnchorPosition
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/ResizeLayer.cs
+    startLine: 96
+  summary: Gets or sets the anchor position.
+  syntax:
+    content:
+      CSharp: public AnchorPosition AnchorPosition { get; set; }
+    parameters:
+    - id: AnchorPosition
+      type:
+        id: ImageProcessor.Imaging.AnchorPosition
+        name: AnchorPosition
+        href: ImageProcessor.Imaging.AnchorPosition.yml
+  id: ImageProcessor.Imaging.ResizeLayer.AnchorPosition
+- uid: ImageProcessor.Imaging.ResizeLayer.Upscale
+  href: ImageProcessor.Imaging.ResizeLayer.yml
+  name: Upscale
+  fullName: ImageProcessor.Imaging.ResizeLayer.Upscale
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/ResizeLayer.cs
+    startLine: 101
+  summary: Gets or sets a value indicating whether to allow up-scaling of images.
+  syntax:
+    content:
+      CSharp: public bool Upscale { get; set; }
+    parameters:
+    - id: Upscale
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: ImageProcessor.Imaging.ResizeLayer.Upscale
+- uid: ImageProcessor.Imaging.ResizeLayer.CenterCoordinates
+  href: ImageProcessor.Imaging.ResizeLayer.yml
+  name: CenterCoordinates
+  fullName: ImageProcessor.Imaging.ResizeLayer.CenterCoordinates
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/ResizeLayer.cs
+    startLine: 106
+  summary: Gets or sets the center coordinates.
+  syntax:
+    content:
+      CSharp: public float[] CenterCoordinates { get; set; }
+    parameters:
+    - id: CenterCoordinates
+      type:
+        id: System.Array
+        name: float[]
+        isExternal: true
+  id: ImageProcessor.Imaging.ResizeLayer.CenterCoordinates
+- uid: ImageProcessor.Imaging.ResizeLayer.Equals(System.Object)
+  href: ImageProcessor.Imaging.ResizeLayer.yml
+  name: Equals(object)
+  fullName: ImageProcessor.Imaging.ResizeLayer.Equals(object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/ResizeLayer.cs
+    startLine: 121
+  summary: >-
+    Returns a value that indicates whether the specified object is an
+
+    [ImageProcessor.Imaging.ResizeLayer](api/ImageProcessor.Imaging.ResizeLayer.yml) object that is equivalent to
+
+    this [ImageProcessor.Imaging.ResizeLayer](api/ImageProcessor.Imaging.ResizeLayer.yml) object.
+  syntax:
+    content:
+      CSharp: public override bool Equals(object obj)
+    parameters:
+    - id: obj
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+      description: The object to test.
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: >-
+        True if the given object  is an [ImageProcessor.Imaging.ResizeLayer](api/ImageProcessor.Imaging.ResizeLayer.yml) object that is equivalent to
+
+        this [ImageProcessor.Imaging.ResizeLayer](api/ImageProcessor.Imaging.ResizeLayer.yml) object; otherwise, false.
+  id: ImageProcessor.Imaging.ResizeLayer.Equals(System.Object)
+- uid: ImageProcessor.Imaging.ResizeLayer.GetHashCode
+  href: ImageProcessor.Imaging.ResizeLayer.yml
+  name: GetHashCode()
+  fullName: ImageProcessor.Imaging.ResizeLayer.GetHashCode()
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/ResizeLayer.cs
+    startLine: 151
+  summary: Returns the hash code for this instance.
+  syntax:
+    content:
+      CSharp: public override int GetHashCode()
+    parameters: []
+    return:
+      id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: A 32-bit signed integer that is the hash code for this instance.
+  id: ImageProcessor.Imaging.ResizeLayer.GetHashCode

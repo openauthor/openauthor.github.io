@@ -1,0 +1,194 @@
+items:
+- uid: ImageProcessor.Imaging.Helpers.Effects
+  href: ImageProcessor.Imaging.Helpers.Effects.yml
+  name: Effects
+  fullName: ImageProcessor.Imaging.Helpers.Effects
+  type: Class
+  source:
+    remote: &o0
+      path: src/ImageProcessor/Imaging/Helpers/Effects.cs
+      branch: V2
+      repo: https://github.com/JimBobSquarePants/ImageProcessor.git
+      key: 6d1ac546
+    path: src/ImageProcessor/Imaging/Helpers/Effects.cs
+    startLine: 23
+  summary: Provides reusable effect methods to apply to images.
+  syntax:
+    content:
+      CSharp: public class Effects
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  id: ImageProcessor.Imaging.Helpers.Effects
+  children:
+  - ImageProcessor.Imaging.Helpers.Effects.Vignette(System.Drawing.Image,System.Drawing.Color,System.Nullable{System.Drawing.Rectangle},System.Boolean)
+  - ImageProcessor.Imaging.Helpers.Effects.Glow(System.Drawing.Image,System.Drawing.Color,System.Nullable{System.Drawing.Rectangle})
+  - ImageProcessor.Imaging.Helpers.Effects.ApplyMask(System.Drawing.Image,System.Drawing.Image)
+  - ImageProcessor.Imaging.Helpers.Effects.Trace(System.Drawing.Image,System.Drawing.Image,System.Byte)
+- uid: ImageProcessor.Imaging.Helpers.Effects.Vignette(System.Drawing.Image,System.Drawing.Color,System.Nullable{System.Drawing.Rectangle},System.Boolean)
+  href: ImageProcessor.Imaging.Helpers.Effects.yml
+  name: Vignette(Image, Color, Rectangle?, bool)
+  fullName: ImageProcessor.Imaging.Helpers.Effects.Vignette(System.Drawing.Image, System.Drawing.Color, System.Drawing.Rectangle?, bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Helpers/Effects.cs
+    startLine: 44
+  summary: Adds a vignette effect to the source image based on the given color.
+  syntax:
+    content:
+      CSharp: public static Bitmap Vignette(Image source, Color baseColor, Rectangle? rectangle = null, bool invert = false)
+    parameters:
+    - id: source
+      type:
+        id: System.Drawing.Image
+        name: Image
+        isExternal: true
+      description: The [System.Drawing.Image](#) source.
+    - id: baseColor
+      type:
+        id: System.Drawing.Color
+        name: Color
+        isExternal: true
+      description: '[System.Drawing.Color](#) to base the vignette on.'
+    - id: rectangle
+      type:
+        id: System.Nullable{System.Drawing.Rectangle}
+        name: Rectangle?
+        isExternal: true
+      description: >-
+        The rectangle to define the bounds of the area to vignette. If null then the effect is applied
+
+        to the entire image.
+    - id: invert
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: Whether to invert the vignette.
+    return:
+      id: Bitmap
+      type:
+        id: System.Drawing.Bitmap
+        name: Bitmap
+        isExternal: true
+      description: The [System.Drawing.Bitmap](#) with the vignette applied.
+  id: ImageProcessor.Imaging.Helpers.Effects.Vignette(System.Drawing.Image,System.Drawing.Color,System.Nullable{System.Drawing.Rectangle},System.Boolean)
+- uid: ImageProcessor.Imaging.Helpers.Effects.Glow(System.Drawing.Image,System.Drawing.Color,System.Nullable{System.Drawing.Rectangle})
+  href: ImageProcessor.Imaging.Helpers.Effects.yml
+  name: Glow(Image, Color, Rectangle?)
+  fullName: ImageProcessor.Imaging.Helpers.Effects.Glow(System.Drawing.Image, System.Drawing.Color, System.Drawing.Rectangle?)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Helpers/Effects.cs
+    startLine: 110
+  summary: Adds a diffused glow (inverted vignette) effect to the source image based on the given color.
+  syntax:
+    content:
+      CSharp: public static Bitmap Glow(Image source, Color baseColor, Rectangle? rectangle = null)
+    parameters:
+    - id: source
+      type:
+        id: System.Drawing.Image
+        name: Image
+        isExternal: true
+      description: The [System.Drawing.Image](#) source.
+    - id: baseColor
+      type:
+        id: System.Drawing.Color
+        name: Color
+        isExternal: true
+      description: '[System.Drawing.Color](#) to base the vignette on.'
+    - id: rectangle
+      type:
+        id: System.Nullable{System.Drawing.Rectangle}
+        name: Rectangle?
+        isExternal: true
+      description: >-
+        The rectangle to define the bounds of the area to vignette. If null then the effect is applied
+
+        to the entire image.
+    return:
+      id: Bitmap
+      type:
+        id: System.Drawing.Bitmap
+        name: Bitmap
+        isExternal: true
+      description: The [System.Drawing.Bitmap](#) with the vignette applied.
+  id: ImageProcessor.Imaging.Helpers.Effects.Glow(System.Drawing.Image,System.Drawing.Color,System.Nullable{System.Drawing.Rectangle})
+- uid: ImageProcessor.Imaging.Helpers.Effects.ApplyMask(System.Drawing.Image,System.Drawing.Image)
+  href: ImageProcessor.Imaging.Helpers.Effects.yml
+  name: ApplyMask(Image, Image)
+  fullName: ImageProcessor.Imaging.Helpers.Effects.ApplyMask(System.Drawing.Image, System.Drawing.Image)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Helpers/Effects.cs
+    startLine: 130
+  summary: Applies the given image mask to the source.
+  syntax:
+    content:
+      CSharp: public static Bitmap ApplyMask(Image source, Image mask)
+    parameters:
+    - id: source
+      type:
+        id: System.Drawing.Image
+        name: Image
+        isExternal: true
+      description: The source [System.Drawing.Image](#).
+    - id: mask
+      type:
+        id: System.Drawing.Image
+        name: Image
+        isExternal: true
+      description: The mask [System.Drawing.Image](#).
+    return:
+      id: Bitmap
+      type:
+        id: System.Drawing.Bitmap
+        name: Bitmap
+        isExternal: true
+      description: The masked [System.Drawing.Bitmap](#).
+  id: ImageProcessor.Imaging.Helpers.Effects.ApplyMask(System.Drawing.Image,System.Drawing.Image)
+- uid: ImageProcessor.Imaging.Helpers.Effects.Trace(System.Drawing.Image,System.Drawing.Image,System.Byte)
+  href: ImageProcessor.Imaging.Helpers.Effects.yml
+  name: Trace(Image, Image, byte)
+  fullName: ImageProcessor.Imaging.Helpers.Effects.Trace(System.Drawing.Image, System.Drawing.Image, byte)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Helpers/Effects.cs
+    startLine: 197
+  summary: Traces the edges of a given [System.Drawing.Image](#).
+  syntax:
+    content:
+      CSharp: public static Bitmap Trace(Image source, Image destination, byte threshold = 0)
+    parameters:
+    - id: source
+      type:
+        id: System.Drawing.Image
+        name: Image
+        isExternal: true
+      description: The source [System.Drawing.Image](#).
+    - id: destination
+      type:
+        id: System.Drawing.Image
+        name: Image
+        isExternal: true
+      description: The destination [System.Drawing.Image](#).
+    - id: threshold
+      type:
+        id: System.Byte
+        name: byte
+        isExternal: true
+      description: The threshold (between 0 and 255).
+    return:
+      id: Bitmap
+      type:
+        id: System.Drawing.Bitmap
+        name: Bitmap
+        isExternal: true
+      description: The a new instance of [System.Drawing.Bitmap](#) traced.
+  id: ImageProcessor.Imaging.Helpers.Effects.Trace(System.Drawing.Image,System.Drawing.Image,System.Byte)

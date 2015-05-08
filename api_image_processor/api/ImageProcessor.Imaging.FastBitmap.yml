@@ -1,0 +1,586 @@
+items:
+- uid: ImageProcessor.Imaging.FastBitmap
+  href: ImageProcessor.Imaging.FastBitmap.yml
+  name: FastBitmap
+  fullName: ImageProcessor.Imaging.FastBitmap
+  type: Class
+  source:
+    remote: &o0
+      path: src/ImageProcessor/Imaging/FastBitmap.cs
+      branch: V2
+      repo: https://github.com/JimBobSquarePants/ImageProcessor.git
+      key: 6d1ac546
+    path: src/ImageProcessor/Imaging/FastBitmap.cs
+    startLine: 22
+  summary: Allows fast access to [System.Drawing.Bitmap](#)'s pixel data.
+  syntax:
+    content:
+      CSharp: 'public class FastBitmap : IDisposable'
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  id: ImageProcessor.Imaging.FastBitmap
+  children:
+  - ImageProcessor.Imaging.FastBitmap.#ctor(System.Drawing.Image)
+  - ImageProcessor.Imaging.FastBitmap.#ctor(System.Drawing.Image,System.Boolean)
+  - ImageProcessor.Imaging.FastBitmap.#ctor(System.Drawing.Image,System.Boolean,System.Boolean)
+  - ImageProcessor.Imaging.FastBitmap.Width
+  - ImageProcessor.Imaging.FastBitmap.Height
+  - ImageProcessor.Imaging.FastBitmap.NormalImage
+  - ImageProcessor.Imaging.FastBitmap.SquaredImage
+  - ImageProcessor.Imaging.FastBitmap.TiltedImage
+  - ImageProcessor.Imaging.FastBitmap.op_Implicit(ImageProcessor.Imaging.FastBitmap)~System.Drawing.Image
+  - ImageProcessor.Imaging.FastBitmap.op_Implicit(ImageProcessor.Imaging.FastBitmap)~System.Drawing.Bitmap
+  - ImageProcessor.Imaging.FastBitmap.GetPixel(System.Int32,System.Int32)
+  - ImageProcessor.Imaging.FastBitmap.SetPixel(System.Int32,System.Int32,System.Drawing.Color)
+  - ImageProcessor.Imaging.FastBitmap.GetSum(System.Int32,System.Int32,System.Int32,System.Int32)
+  - ImageProcessor.Imaging.FastBitmap.GetSum2(System.Int32,System.Int32,System.Int32,System.Int32)
+  - ImageProcessor.Imaging.FastBitmap.GetSumT(System.Int32,System.Int32,System.Int32,System.Int32)
+  - ImageProcessor.Imaging.FastBitmap.Dispose
+  - ImageProcessor.Imaging.FastBitmap.Equals(System.Object)
+  - ImageProcessor.Imaging.FastBitmap.GetHashCode
+  - ImageProcessor.Imaging.FastBitmap.Dispose(System.Boolean)
+- uid: ImageProcessor.Imaging.FastBitmap.#ctor(System.Drawing.Image)
+  href: ImageProcessor.Imaging.FastBitmap.yml
+  name: FastBitmap(Image)
+  fullName: ImageProcessor.Imaging.FastBitmap.FastBitmap(System.Drawing.Image)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/FastBitmap.cs
+    startLine: 170
+  summary: Initializes a new instance of the [ImageProcessor.Imaging.FastBitmap](api/ImageProcessor.Imaging.FastBitmap.yml) class.
+  syntax:
+    content:
+      CSharp: 'public FastBitmap(Image bitmap): this (bitmap, false)'
+    parameters:
+    - id: bitmap
+      type:
+        id: System.Drawing.Image
+        name: Image
+        isExternal: true
+      description: The input bitmap.
+  id: ImageProcessor.Imaging.FastBitmap.#ctor(System.Drawing.Image)
+- uid: ImageProcessor.Imaging.FastBitmap.#ctor(System.Drawing.Image,System.Boolean)
+  href: ImageProcessor.Imaging.FastBitmap.yml
+  name: FastBitmap(Image, bool)
+  fullName: ImageProcessor.Imaging.FastBitmap.FastBitmap(System.Drawing.Image, bool)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/FastBitmap.cs
+    startLine: 182
+  summary: Initializes a new instance of the [ImageProcessor.Imaging.FastBitmap](api/ImageProcessor.Imaging.FastBitmap.yml) class.
+  syntax:
+    content:
+      CSharp: 'public FastBitmap(Image bitmap, bool computeIntegrals): this (bitmap, computeIntegrals, false)'
+    parameters:
+    - id: bitmap
+      type:
+        id: System.Drawing.Image
+        name: Image
+        isExternal: true
+      description: The input bitmap.
+    - id: computeIntegrals
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: Whether to compute integral rectangles.
+  id: ImageProcessor.Imaging.FastBitmap.#ctor(System.Drawing.Image,System.Boolean)
+- uid: ImageProcessor.Imaging.FastBitmap.#ctor(System.Drawing.Image,System.Boolean,System.Boolean)
+  href: ImageProcessor.Imaging.FastBitmap.yml
+  name: FastBitmap(Image, bool, bool)
+  fullName: ImageProcessor.Imaging.FastBitmap.FastBitmap(System.Drawing.Image, bool, bool)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/FastBitmap.cs
+    startLine: 197
+  summary: Initializes a new instance of the [ImageProcessor.Imaging.FastBitmap](api/ImageProcessor.Imaging.FastBitmap.yml) class.
+  syntax:
+    content:
+      CSharp: public FastBitmap(Image bitmap, bool computeIntegrals, bool computeTilted)
+    parameters:
+    - id: bitmap
+      type:
+        id: System.Drawing.Image
+        name: Image
+        isExternal: true
+      description: The input bitmap.
+    - id: computeIntegrals
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: Whether to compute integral rectangles.
+    - id: computeTilted
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: Whether to compute tilted integral rectangles.
+  id: ImageProcessor.Imaging.FastBitmap.#ctor(System.Drawing.Image,System.Boolean,System.Boolean)
+- uid: ImageProcessor.Imaging.FastBitmap.Width
+  href: ImageProcessor.Imaging.FastBitmap.yml
+  name: Width
+  fullName: ImageProcessor.Imaging.FastBitmap.Width
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/FastBitmap.cs
+    startLine: 224
+  summary: Gets the width, in pixels of the [System.Drawing.Bitmap](#).
+  syntax:
+    content:
+      CSharp: public int Width { get; }
+    parameters:
+    - id: Width
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: ImageProcessor.Imaging.FastBitmap.Width
+- uid: ImageProcessor.Imaging.FastBitmap.Height
+  href: ImageProcessor.Imaging.FastBitmap.yml
+  name: Height
+  fullName: ImageProcessor.Imaging.FastBitmap.Height
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/FastBitmap.cs
+    startLine: 235
+  summary: Gets the height, in pixels of the [System.Drawing.Bitmap](#).
+  syntax:
+    content:
+      CSharp: public int Height { get; }
+    parameters:
+    - id: Height
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: ImageProcessor.Imaging.FastBitmap.Height
+- uid: ImageProcessor.Imaging.FastBitmap.NormalImage
+  href: ImageProcessor.Imaging.FastBitmap.yml
+  name: NormalImage
+  fullName: ImageProcessor.Imaging.FastBitmap.NormalImage
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/FastBitmap.cs
+    startLine: 246
+  summary: Gets the Integral Image for values' sum.
+  syntax:
+    content:
+      CSharp: public long[, ] NormalImage { get; }
+    parameters:
+    - id: NormalImage
+      type:
+        id: System.Array
+        name: long[*,*]
+        isExternal: true
+  id: ImageProcessor.Imaging.FastBitmap.NormalImage
+- uid: ImageProcessor.Imaging.FastBitmap.SquaredImage
+  href: ImageProcessor.Imaging.FastBitmap.yml
+  name: SquaredImage
+  fullName: ImageProcessor.Imaging.FastBitmap.SquaredImage
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/FastBitmap.cs
+    startLine: 254
+  summary: Gets the Integral Image for values' squared sum.
+  syntax:
+    content:
+      CSharp: public long[, ] SquaredImage { get; }
+    parameters:
+    - id: SquaredImage
+      type:
+        id: System.Array
+        name: long[*,*]
+        isExternal: true
+  id: ImageProcessor.Imaging.FastBitmap.SquaredImage
+- uid: ImageProcessor.Imaging.FastBitmap.TiltedImage
+  href: ImageProcessor.Imaging.FastBitmap.yml
+  name: TiltedImage
+  fullName: ImageProcessor.Imaging.FastBitmap.TiltedImage
+  type: Property
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/FastBitmap.cs
+    startLine: 262
+  summary: Gets the Integral Image for tilted values' sum.
+  syntax:
+    content:
+      CSharp: public long[, ] TiltedImage { get; }
+    parameters:
+    - id: TiltedImage
+      type:
+        id: System.Array
+        name: long[*,*]
+        isExternal: true
+  id: ImageProcessor.Imaging.FastBitmap.TiltedImage
+- uid: ImageProcessor.Imaging.FastBitmap.op_Implicit(ImageProcessor.Imaging.FastBitmap)~System.Drawing.Image
+  href: ImageProcessor.Imaging.FastBitmap.yml
+  name: implicit operator Image(FastBitmap)
+  fullName: ImageProcessor.Imaging.FastBitmap.implicit operator System.Drawing.Image(ImageProcessor.Imaging.FastBitmap)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/FastBitmap.cs
+    startLine: 294
+  summary: >-
+    Allows the implicit conversion of an instance of [ImageProcessor.Imaging.FastBitmap](api/ImageProcessor.Imaging.FastBitmap.yml) to a
+
+    [System.Drawing.Image](#).
+  syntax:
+    content:
+      CSharp: public static implicit operator Image(FastBitmap fastBitmap) { return fastBitmap.bitmap; }
+    parameters:
+    - id: fastBitmap
+      type:
+        id: ImageProcessor.Imaging.FastBitmap
+        name: FastBitmap
+        href: ImageProcessor.Imaging.FastBitmap.yml
+      description: The instance of [ImageProcessor.Imaging.FastBitmap](api/ImageProcessor.Imaging.FastBitmap.yml) to convert.
+    return:
+      id: Image
+      type:
+        id: System.Drawing.Image
+        name: Image
+        isExternal: true
+      description: An instance of [System.Drawing.Image](#).
+  id: ImageProcessor.Imaging.FastBitmap.op_Implicit(ImageProcessor.Imaging.FastBitmap)~System.Drawing.Image
+- uid: ImageProcessor.Imaging.FastBitmap.op_Implicit(ImageProcessor.Imaging.FastBitmap)~System.Drawing.Bitmap
+  href: ImageProcessor.Imaging.FastBitmap.yml
+  name: implicit operator Bitmap(FastBitmap)
+  fullName: ImageProcessor.Imaging.FastBitmap.implicit operator System.Drawing.Bitmap(ImageProcessor.Imaging.FastBitmap)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/FastBitmap.cs
+    startLine: 309
+  summary: >-
+    Allows the implicit conversion of an instance of [ImageProcessor.Imaging.FastBitmap](api/ImageProcessor.Imaging.FastBitmap.yml) to a
+
+    [System.Drawing.Bitmap](#).
+  syntax:
+    content:
+      CSharp: public static implicit operator Bitmap(FastBitmap fastBitmap) { return fastBitmap.bitmap; }
+    parameters:
+    - id: fastBitmap
+      type:
+        id: ImageProcessor.Imaging.FastBitmap
+        name: FastBitmap
+        href: ImageProcessor.Imaging.FastBitmap.yml
+      description: The instance of [ImageProcessor.Imaging.FastBitmap](api/ImageProcessor.Imaging.FastBitmap.yml) to convert.
+    return:
+      id: Bitmap
+      type:
+        id: System.Drawing.Bitmap
+        name: Bitmap
+        isExternal: true
+      description: An instance of [System.Drawing.Bitmap](#).
+  id: ImageProcessor.Imaging.FastBitmap.op_Implicit(ImageProcessor.Imaging.FastBitmap)~System.Drawing.Bitmap
+- uid: ImageProcessor.Imaging.FastBitmap.GetPixel(System.Int32,System.Int32)
+  href: ImageProcessor.Imaging.FastBitmap.yml
+  name: GetPixel(int, int)
+  fullName: ImageProcessor.Imaging.FastBitmap.GetPixel(int, int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/FastBitmap.cs
+    startLine: 320
+  summary: Gets the color at the specified pixel of the [System.Drawing.Bitmap](#).
+  syntax:
+    content:
+      CSharp: public Color GetPixel(int x, int y)
+    parameters:
+    - id: x
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The x-coordinate of the pixel to retrieve.
+    - id: y
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The y-coordinate of the pixel to retrieve.
+    return:
+      id: Color
+      type:
+        id: System.Drawing.Color
+        name: Color
+        isExternal: true
+      description: The [System.Drawing.Color](#) at the given pixel.
+  id: ImageProcessor.Imaging.FastBitmap.GetPixel(System.Int32,System.Int32)
+- uid: ImageProcessor.Imaging.FastBitmap.SetPixel(System.Int32,System.Int32,System.Drawing.Color)
+  href: ImageProcessor.Imaging.FastBitmap.yml
+  name: SetPixel(int, int, Color)
+  fullName: ImageProcessor.Imaging.FastBitmap.SetPixel(int, int, System.Drawing.Color)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/FastBitmap.cs
+    startLine: 346
+  summary: Sets the color of the specified pixel of the [System.Drawing.Bitmap](#).
+  syntax:
+    content:
+      CSharp: public void SetPixel(int x, int y, Color color)
+    parameters:
+    - id: x
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The x-coordinate of the pixel to set.
+    - id: y
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The y-coordinate of the pixel to set.
+    - id: color
+      type:
+        id: System.Drawing.Color
+        name: Color
+        isExternal: true
+      description: >-
+        A [System.Drawing.Color](#) color structure that represents the
+
+        color to set the specified pixel.
+  id: ImageProcessor.Imaging.FastBitmap.SetPixel(System.Int32,System.Int32,System.Drawing.Color)
+- uid: ImageProcessor.Imaging.FastBitmap.GetSum(System.Int32,System.Int32,System.Int32,System.Int32)
+  href: ImageProcessor.Imaging.FastBitmap.yml
+  name: GetSum(int, int, int, int)
+  fullName: ImageProcessor.Imaging.FastBitmap.GetSum(int, int, int, int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/FastBitmap.cs
+    startLine: 377
+  summary: Gets the sum of the pixels in a rectangle of the Integral image.
+  syntax:
+    content:
+      CSharp: public long GetSum(int x, int y, int rectangleWidth, int rectangleHeight)
+    parameters:
+    - id: x
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The horizontal position of the rectangle x.
+    - id: y
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The vertical position of the rectangle y.
+    - id: rectangleWidth
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The rectangle's width w.
+    - id: rectangleHeight
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The rectangle's height h.
+    return:
+      id: Int64
+      type:
+        id: System.Int64
+        name: long
+        isExternal: true
+      description: >-
+        The sum of all pixels contained in the rectangle, computed
+
+        as I[y, x] + I[y + h, x + w] - I[y + h, x] - I[y, x + w].
+  id: ImageProcessor.Imaging.FastBitmap.GetSum(System.Int32,System.Int32,System.Int32,System.Int32)
+- uid: ImageProcessor.Imaging.FastBitmap.GetSum2(System.Int32,System.Int32,System.Int32,System.Int32)
+  href: ImageProcessor.Imaging.FastBitmap.yml
+  name: GetSum2(int, int, int, int)
+  fullName: ImageProcessor.Imaging.FastBitmap.GetSum2(int, int, int, int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/FastBitmap.cs
+    startLine: 398
+  summary: Gets the sum of the squared pixels in a rectangle of the Integral image.
+  syntax:
+    content:
+      CSharp: public long GetSum2(int x, int y, int rectangleWidth, int rectangleHeight)
+    parameters:
+    - id: x
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The horizontal position of the rectangle x.
+    - id: y
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The vertical position of the rectangle y.
+    - id: rectangleWidth
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The rectangle's width w.
+    - id: rectangleHeight
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The rectangle's height h.
+    return:
+      id: Int64
+      type:
+        id: System.Int64
+        name: long
+        isExternal: true
+      description: "The sum of all pixels contained in the rectangle, computed\r\nas I²[y, x] + I²[y + h, x + w] - I²[y + h, x] - I²[y, x + w]."
+  id: ImageProcessor.Imaging.FastBitmap.GetSum2(System.Int32,System.Int32,System.Int32,System.Int32)
+- uid: ImageProcessor.Imaging.FastBitmap.GetSumT(System.Int32,System.Int32,System.Int32,System.Int32)
+  href: ImageProcessor.Imaging.FastBitmap.yml
+  name: GetSumT(int, int, int, int)
+  fullName: ImageProcessor.Imaging.FastBitmap.GetSumT(int, int, int, int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/FastBitmap.cs
+    startLine: 419
+  summary: Gets the sum of the pixels in a tilted rectangle of the Integral image.
+  syntax:
+    content:
+      CSharp: public long GetSumT(int x, int y, int rectangleWidth, int rectangleHeight)
+    parameters:
+    - id: x
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The horizontal position of the rectangle x.
+    - id: y
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The vertical position of the rectangle y.
+    - id: rectangleWidth
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The rectangle's width w.
+    - id: rectangleHeight
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The rectangle's height h.
+    return:
+      id: Int64
+      type:
+        id: System.Int64
+        name: long
+        isExternal: true
+      description: >-
+        The sum of all pixels contained in the rectangle, computed
+
+        as T[y + w, x + w + 1] + T[y + h, x - h + 1] - T[y, x + 1] - T[y + w + h, x + w - h + 1].
+  id: ImageProcessor.Imaging.FastBitmap.GetSumT(System.Int32,System.Int32,System.Int32,System.Int32)
+- uid: ImageProcessor.Imaging.FastBitmap.Dispose
+  href: ImageProcessor.Imaging.FastBitmap.yml
+  name: Dispose()
+  fullName: ImageProcessor.Imaging.FastBitmap.Dispose()
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/FastBitmap.cs
+    startLine: 432
+  summary: Disposes the object and frees resources for the Garbage Collector.
+  syntax:
+    content:
+      CSharp: public void Dispose()
+    parameters: []
+  id: ImageProcessor.Imaging.FastBitmap.Dispose
+- uid: ImageProcessor.Imaging.FastBitmap.Equals(System.Object)
+  href: ImageProcessor.Imaging.FastBitmap.yml
+  name: Equals(object)
+  fullName: ImageProcessor.Imaging.FastBitmap.Equals(object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/FastBitmap.cs
+    startLine: 451
+  summary: Determines whether the specified [System.Object](#) is equal to the current [System.Object](#).
+  syntax:
+    content:
+      CSharp: public override bool Equals(object obj)
+    parameters:
+    - id: obj
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+      description: The object to compare with the current object.
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: true if the specified object  is equal to the current object; otherwise, false.
+  id: ImageProcessor.Imaging.FastBitmap.Equals(System.Object)
+- uid: ImageProcessor.Imaging.FastBitmap.GetHashCode
+  href: ImageProcessor.Imaging.FastBitmap.yml
+  name: GetHashCode()
+  fullName: ImageProcessor.Imaging.FastBitmap.GetHashCode()
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/FastBitmap.cs
+    startLine: 469
+  summary: Serves as a hash function for a particular type.
+  syntax:
+    content:
+      CSharp: public override int GetHashCode()
+    parameters: []
+    return:
+      id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: A hash code for the current [System.Object](#).
+  id: ImageProcessor.Imaging.FastBitmap.GetHashCode
+- uid: ImageProcessor.Imaging.FastBitmap.Dispose(System.Boolean)
+  href: ImageProcessor.Imaging.FastBitmap.yml
+  name: Dispose(bool)
+  fullName: ImageProcessor.Imaging.FastBitmap.Dispose(bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/FastBitmap.cs
+    startLine: 478
+  summary: Disposes the object and frees resources for the Garbage Collector.
+  syntax:
+    content:
+      CSharp: protected virtual void Dispose(bool disposing)
+    parameters:
+    - id: disposing
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: If true, the object gets disposed.
+  id: ImageProcessor.Imaging.FastBitmap.Dispose(System.Boolean)

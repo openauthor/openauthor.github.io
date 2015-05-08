@@ -1,0 +1,149 @@
+items:
+- uid: ImageProcessor.Imaging.Quantizers.OctreeQuantizer
+  href: ImageProcessor.Imaging.Quantizers.OctreeQuantizer.yml
+  name: OctreeQuantizer
+  fullName: ImageProcessor.Imaging.Quantizers.OctreeQuantizer
+  type: Class
+  source:
+    remote: &o0
+      path: src/ImageProcessor/Imaging/Quantizers/OctreeQuantizer.cs
+      branch: V2
+      repo: https://github.com/JimBobSquarePants/ImageProcessor.git
+      key: 6d1ac546
+    path: src/ImageProcessor/Imaging/Quantizers/OctreeQuantizer.cs
+    startLine: 25
+  summary: Encapsulates methods to calculate the colour palette if an image using an Octree pattern.
+  syntax:
+    content:
+      CSharp: 'public class OctreeQuantizer : Quantizer, IQuantizer'
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: ImageProcessor.Imaging.Quantizers.Quantizer
+    name: Quantizer
+    href: ImageProcessor.Imaging.Quantizers.Quantizer.yml
+  id: ImageProcessor.Imaging.Quantizers.OctreeQuantizer
+  children:
+  - ImageProcessor.Imaging.Quantizers.OctreeQuantizer.#ctor
+  - ImageProcessor.Imaging.Quantizers.OctreeQuantizer.#ctor(System.Int32,System.Int32)
+  - ImageProcessor.Imaging.Quantizers.OctreeQuantizer.InitialQuantizePixel(ImageProcessor.Imaging.Colors.Color32*)
+  - ImageProcessor.Imaging.Quantizers.OctreeQuantizer.QuantizePixel(ImageProcessor.Imaging.Colors.Color32*)
+  - ImageProcessor.Imaging.Quantizers.OctreeQuantizer.GetPalette(System.Drawing.Imaging.ColorPalette)
+- uid: ImageProcessor.Imaging.Quantizers.OctreeQuantizer.#ctor
+  href: ImageProcessor.Imaging.Quantizers.OctreeQuantizer.yml
+  name: OctreeQuantizer()
+  fullName: ImageProcessor.Imaging.Quantizers.OctreeQuantizer.OctreeQuantizer()
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Quantizers/OctreeQuantizer.cs
+    startLine: 47
+  summary: Initializes a new instance of the [ImageProcessor.Imaging.Quantizers.OctreeQuantizer](api/ImageProcessor.Imaging.Quantizers.OctreeQuantizer.yml) class.
+  syntax:
+    content:
+      CSharp: 'public OctreeQuantizer(): this (255, 8)'
+    parameters: []
+  id: ImageProcessor.Imaging.Quantizers.OctreeQuantizer.#ctor
+- uid: ImageProcessor.Imaging.Quantizers.OctreeQuantizer.#ctor(System.Int32,System.Int32)
+  href: ImageProcessor.Imaging.Quantizers.OctreeQuantizer.yml
+  name: OctreeQuantizer(int, int)
+  fullName: ImageProcessor.Imaging.Quantizers.OctreeQuantizer.OctreeQuantizer(int, int)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Quantizers/OctreeQuantizer.cs
+    startLine: 65
+  summary: Initializes a new instance of the [ImageProcessor.Imaging.Quantizers.OctreeQuantizer](api/ImageProcessor.Imaging.Quantizers.OctreeQuantizer.yml) class.
+  syntax:
+    content:
+      CSharp: 'public OctreeQuantizer(int maxColors, int maxColorBits): base (false)'
+    parameters:
+    - id: maxColors
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The maximum number of colors to return
+    - id: maxColorBits
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The number of significant bits
+  id: ImageProcessor.Imaging.Quantizers.OctreeQuantizer.#ctor(System.Int32,System.Int32)
+- uid: ImageProcessor.Imaging.Quantizers.OctreeQuantizer.InitialQuantizePixel(ImageProcessor.Imaging.Colors.Color32*)
+  href: ImageProcessor.Imaging.Quantizers.OctreeQuantizer.yml
+  name: InitialQuantizePixel(Color32*)
+  fullName: ImageProcessor.Imaging.Quantizers.OctreeQuantizer.InitialQuantizePixel(ImageProcessor.Imaging.Colors.Color32*)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Quantizers/OctreeQuantizer.cs
+    startLine: 94
+  summary: Process the pixel in the first pass of the algorithm
+  syntax:
+    content:
+      CSharp: protected override void InitialQuantizePixel(Color32*pixel)
+    parameters:
+    - id: pixel
+      type:
+        name: Color32*
+        isExternal: true
+      description: The pixel to quantize
+  id: ImageProcessor.Imaging.Quantizers.OctreeQuantizer.InitialQuantizePixel(ImageProcessor.Imaging.Colors.Color32*)
+- uid: ImageProcessor.Imaging.Quantizers.OctreeQuantizer.QuantizePixel(ImageProcessor.Imaging.Colors.Color32*)
+  href: ImageProcessor.Imaging.Quantizers.OctreeQuantizer.yml
+  name: QuantizePixel(Color32*)
+  fullName: ImageProcessor.Imaging.Quantizers.OctreeQuantizer.QuantizePixel(ImageProcessor.Imaging.Colors.Color32*)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Quantizers/OctreeQuantizer.cs
+    startLine: 109
+  summary: Override this to process the pixel in the second pass of the algorithm
+  syntax:
+    content:
+      CSharp: protected override byte QuantizePixel(Color32*pixel)
+    parameters:
+    - id: pixel
+      type:
+        name: Color32*
+        isExternal: true
+      description: The pixel to quantize
+    return:
+      id: Byte
+      type:
+        id: System.Byte
+        name: byte
+        isExternal: true
+      description: The quantized value
+  id: ImageProcessor.Imaging.Quantizers.OctreeQuantizer.QuantizePixel(ImageProcessor.Imaging.Colors.Color32*)
+- uid: ImageProcessor.Imaging.Quantizers.OctreeQuantizer.GetPalette(System.Drawing.Imaging.ColorPalette)
+  href: ImageProcessor.Imaging.Quantizers.OctreeQuantizer.yml
+  name: GetPalette(ColorPalette)
+  fullName: ImageProcessor.Imaging.Quantizers.OctreeQuantizer.GetPalette(System.Drawing.Imaging.ColorPalette)
+  type: Method
+  source:
+    remote: *o0
+    path: src/ImageProcessor/Imaging/Quantizers/OctreeQuantizer.cs
+    startLine: 132
+  summary: Retrieve the palette for the quantized image
+  syntax:
+    content:
+      CSharp: protected override ColorPalette GetPalette(ColorPalette original)
+    parameters:
+    - id: original
+      type:
+        id: System.Drawing.Imaging.ColorPalette
+        name: ColorPalette
+        isExternal: true
+      description: Any old palette, this is overwritten
+    return:
+      id: ColorPalette
+      type:
+        id: System.Drawing.Imaging.ColorPalette
+        name: ColorPalette
+        isExternal: true
+      description: The new color palette
+  id: ImageProcessor.Imaging.Quantizers.OctreeQuantizer.GetPalette(System.Drawing.Imaging.ColorPalette)
