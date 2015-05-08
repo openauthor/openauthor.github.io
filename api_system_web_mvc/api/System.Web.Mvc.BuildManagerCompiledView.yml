@@ -6,22 +6,79 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/BuildManagerCompiledView.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/BuildManagerCompiledView.cs
     startLine: 8
   syntax:
     content:
-      CSharp: public abstract class BuildManagerCompiledView
+      CSharp: 'public abstract class BuildManagerCompiledView : IView'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.BuildManagerCompiledView
   children:
+  - System.Web.Mvc.BuildManagerCompiledView.#ctor(System.Web.Mvc.ControllerContext,System.String)
+  - System.Web.Mvc.BuildManagerCompiledView.#ctor(System.Web.Mvc.ControllerContext,System.String,System.Web.Mvc.IViewPageActivator)
   - System.Web.Mvc.BuildManagerCompiledView.ViewPath
   - System.Web.Mvc.BuildManagerCompiledView.Render(System.Web.Mvc.ViewContext,System.IO.TextWriter)
+  - System.Web.Mvc.BuildManagerCompiledView.RenderView(System.Web.Mvc.ViewContext,System.IO.TextWriter,System.Object)
+- uid: System.Web.Mvc.BuildManagerCompiledView.#ctor(System.Web.Mvc.ControllerContext,System.String)
+  href: System.Web.Mvc.BuildManagerCompiledView.yml
+  name: BuildManagerCompiledView(ControllerContext, string)
+  fullName: System.Web.Mvc.BuildManagerCompiledView.BuildManagerCompiledView(System.Web.Mvc.ControllerContext, string)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/BuildManagerCompiledView.cs
+    startLine: 14
+  syntax:
+    content:
+      CSharp: 'protected BuildManagerCompiledView(ControllerContext controllerContext, string viewPath): this (controllerContext, viewPath, null)'
+    parameters:
+    - id: controllerContext
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+    - id: viewPath
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Web.Mvc.BuildManagerCompiledView.#ctor(System.Web.Mvc.ControllerContext,System.String)
+- uid: System.Web.Mvc.BuildManagerCompiledView.#ctor(System.Web.Mvc.ControllerContext,System.String,System.Web.Mvc.IViewPageActivator)
+  href: System.Web.Mvc.BuildManagerCompiledView.yml
+  name: BuildManagerCompiledView(ControllerContext, string, IViewPageActivator)
+  fullName: System.Web.Mvc.BuildManagerCompiledView.BuildManagerCompiledView(System.Web.Mvc.ControllerContext, string, System.Web.Mvc.IViewPageActivator)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/BuildManagerCompiledView.cs
+    startLine: 19
+  syntax:
+    content:
+      CSharp: 'protected BuildManagerCompiledView(ControllerContext controllerContext, string viewPath, IViewPageActivator viewPageActivator): this (controllerContext, viewPath, viewPageActivator, null)'
+    parameters:
+    - id: controllerContext
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+    - id: viewPath
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    - id: viewPageActivator
+      type:
+        id: System.Web.Mvc.IViewPageActivator
+        name: IViewPageActivator
+        href: System.Web.Mvc.IViewPageActivator.yml
+  id: System.Web.Mvc.BuildManagerCompiledView.#ctor(System.Web.Mvc.ControllerContext,System.String,System.Web.Mvc.IViewPageActivator)
 - uid: System.Web.Mvc.BuildManagerCompiledView.ViewPath
   href: System.Web.Mvc.BuildManagerCompiledView.yml
   name: ViewPath
@@ -38,7 +95,7 @@ items:
     - id: ViewPath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.BuildManagerCompiledView.ViewPath
 - uid: System.Web.Mvc.BuildManagerCompiledView.Render(System.Web.Mvc.ViewContext,System.IO.TextWriter)
@@ -62,6 +119,35 @@ items:
     - id: writer
       type:
         id: System.IO.TextWriter
-        name: System.IO.TextWriter
+        name: TextWriter
         isExternal: true
   id: System.Web.Mvc.BuildManagerCompiledView.Render(System.Web.Mvc.ViewContext,System.IO.TextWriter)
+- uid: System.Web.Mvc.BuildManagerCompiledView.RenderView(System.Web.Mvc.ViewContext,System.IO.TextWriter,System.Object)
+  href: System.Web.Mvc.BuildManagerCompiledView.yml
+  name: RenderView(ViewContext, TextWriter, object)
+  fullName: System.Web.Mvc.BuildManagerCompiledView.RenderView(System.Web.Mvc.ViewContext, System.IO.TextWriter, object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/BuildManagerCompiledView.cs
+    startLine: 84
+  syntax:
+    content:
+      CSharp: protected abstract void RenderView(ViewContext viewContext, TextWriter writer, object instance)
+    parameters:
+    - id: viewContext
+      type:
+        id: System.Web.Mvc.ViewContext
+        name: ViewContext
+        href: System.Web.Mvc.ViewContext.yml
+    - id: writer
+      type:
+        id: System.IO.TextWriter
+        name: TextWriter
+        isExternal: true
+    - id: instance
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+  id: System.Web.Mvc.BuildManagerCompiledView.RenderView(System.Web.Mvc.ViewContext,System.IO.TextWriter,System.Object)

@@ -6,20 +6,21 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/BindAttribute.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/BindAttribute.cs
     startLine: 7
   syntax:
     content:
-      CSharp: public sealed class BindAttribute
+      CSharp: 'public sealed class BindAttribute : Attribute, _Attribute'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Attribute
-    name: System.Attribute
+    name: Attribute
     isExternal: true
   id: System.Web.Mvc.BindAttribute
   children:
@@ -43,7 +44,7 @@ items:
     - id: Exclude
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.BindAttribute.Exclude
 - uid: System.Web.Mvc.BindAttribute.Include
@@ -62,7 +63,7 @@ items:
     - id: Include
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.BindAttribute.Include
 - uid: System.Web.Mvc.BindAttribute.Prefix
@@ -81,7 +82,7 @@ items:
     - id: Prefix
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.BindAttribute.Prefix
 - uid: System.Web.Mvc.BindAttribute.IsPropertyAllowed(System.String)
@@ -100,8 +101,12 @@ items:
     - id: propertyName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Web.Mvc.BindAttribute.IsPropertyAllowed(System.String)

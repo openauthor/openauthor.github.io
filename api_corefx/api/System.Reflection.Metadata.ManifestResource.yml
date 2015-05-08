@@ -6,16 +6,21 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/ManifestResource.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/ManifestResource.cs
     startLine: 7
   syntax:
     content:
       CSharp: public struct ManifestResource
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Reflection.Metadata.ManifestResource
   children:
@@ -41,7 +46,7 @@ items:
     - id: Offset
       type:
         id: System.Int64
-        name: System.Int64
+        name: long
         isExternal: true
   id: System.Reflection.Metadata.ManifestResource.Offset
 - uid: System.Reflection.Metadata.ManifestResource.Attributes
@@ -96,13 +101,13 @@ items:
   summary: '[System.Reflection.Metadata.AssemblyFileHandle](System.Reflection.Metadata.AssemblyFileHandle.yml), [System.Reflection.Metadata.AssemblyReferenceHandle](System.Reflection.Metadata.AssemblyReferenceHandle.yml), or nil handle.'
   syntax:
     content:
-      CSharp: public Handle Implementation { get; }
+      CSharp: public EntityHandle Implementation { get; }
     parameters:
     - id: Implementation
       type:
-        id: System.Reflection.Metadata.Handle
-        name: Handle
-        href: System.Reflection.Metadata.Handle.yml
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
   id: System.Reflection.Metadata.ManifestResource.Implementation
 - uid: System.Reflection.Metadata.ManifestResource.GetCustomAttributes
   href: System.Reflection.Metadata.ManifestResource.yml
@@ -119,4 +124,8 @@ items:
     parameters: []
     return:
       id: CustomAttributeHandleCollection
+      type:
+        id: System.Reflection.Metadata.CustomAttributeHandleCollection
+        name: CustomAttributeHandleCollection
+        href: System.Reflection.Metadata.CustomAttributeHandleCollection.yml
   id: System.Reflection.Metadata.ManifestResource.GetCustomAttributes

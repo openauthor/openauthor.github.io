@@ -6,14 +6,16 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Xml.XDocument/src/System/Xml/Linq/XContainer.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XContainer.cs
     startLine: 19
   summary: Represents a node that can contain other nodes.
   syntax:
     content:
-      CSharp: public abstract class XContainer
+      CSharp: 'public abstract class XContainer : XNode'
   inheritance:
   - id: IXmlLineInfo
     name: IXmlLineInfo
@@ -100,7 +102,7 @@ items:
     - id: content
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: >-
         A content object containing simple content or a collection of content objects
@@ -124,7 +126,7 @@ items:
     - id: content
       type:
         id: System.Array
-        name: System.Array
+        name: object[]
         isExternal: true
       description: A parameter list of content objects.
   id: System.Xml.Linq.XContainer.Add(System.Object[])
@@ -145,7 +147,7 @@ items:
     - id: content
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: >-
         A content object containing simple content or a collection of content objects
@@ -169,7 +171,7 @@ items:
     - id: content
       type:
         id: System.Array
-        name: System.Array
+        name: object[]
         isExternal: true
       description: A parameter list of content objects.
   id: System.Xml.Linq.XContainer.AddFirst(System.Object[])
@@ -194,6 +196,10 @@ items:
     parameters: []
     return:
       id: XmlWriter
+      type:
+        id: XmlWriter
+        name: XmlWriter
+        isExternal: true
       description: An @!:XmlWriter-
   id: System.Xml.Linq.XContainer.CreateWriter
 - uid: System.Xml.Linq.XContainer.DescendantNodes
@@ -212,7 +218,11 @@ items:
     parameters: []
     return:
       id: IEnumerable
-      description: over all descendants
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XNode}
+        name: IEnumerable<XNode>
+        isExternal: true
+      description: '[System.Collections.Generic.IEnumerable`1]() over all descendants'
   id: System.Xml.Linq.XContainer.DescendantNodes
 - uid: System.Xml.Linq.XContainer.Descendants
   href: System.Xml.Linq.XContainer.yml
@@ -237,6 +247,10 @@ items:
     parameters: []
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement}
+        name: IEnumerable<XElement>
+        isExternal: true
       description: An IEnumerable of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) with all of the descendants below this [System.Xml.Linq.XContainer](System.Xml.Linq.XContainer.yml) in the XML tree.
   id: System.Xml.Linq.XContainer.Descendants
 - uid: System.Xml.Linq.XContainer.Descendants(System.Xml.Linq.XName)
@@ -264,7 +278,11 @@ items:
       description: The [System.Xml.Linq.XName](System.Xml.Linq.XName.yml) to match against descendant [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml)s.
     return:
       id: IEnumerable
-      description: An @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml)
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement}
+        name: IEnumerable<XElement>
+        isExternal: true
+      description: An [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml)
   id: System.Xml.Linq.XContainer.Descendants(System.Xml.Linq.XName)
 - uid: System.Xml.Linq.XContainer.Element(System.Xml.Linq.XName)
   href: System.Xml.Linq.XContainer.yml
@@ -293,6 +311,10 @@ items:
       description: The [System.Xml.Linq.XName](System.Xml.Linq.XName.yml) to match against this [System.Xml.Linq.XContainer](System.Xml.Linq.XContainer.yml)s child elements.
     return:
       id: XElement
+      type:
+        id: System.Xml.Linq.XElement
+        name: XElement
+        href: System.Xml.Linq.XElement.yml
       description: An [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) child that matches the [System.Xml.Linq.XName](System.Xml.Linq.XName.yml) passed in, or null.
   id: System.Xml.Linq.XContainer.Element(System.Xml.Linq.XName)
 - uid: System.Xml.Linq.XContainer.Elements
@@ -311,7 +333,11 @@ items:
     parameters: []
     return:
       id: IEnumerable
-      description: An @!:System.Collections.IEnumerable- over all of this [System.Xml.Linq.XContainer](System.Xml.Linq.XContainer.yml)'s child [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml)s.
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement}
+        name: IEnumerable<XElement>
+        isExternal: true
+      description: An [System.Collections.IEnumerable]() over all of this [System.Xml.Linq.XContainer](System.Xml.Linq.XContainer.yml)'s child [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml)s.
   id: System.Xml.Linq.XContainer.Elements
 - uid: System.Xml.Linq.XContainer.Elements(System.Xml.Linq.XName)
   href: System.Xml.Linq.XContainer.yml
@@ -335,8 +361,12 @@ items:
       description: The [System.Xml.Linq.XName](System.Xml.Linq.XName.yml) to match against the [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) children of this [System.Xml.Linq.XContainer](System.Xml.Linq.XContainer.yml).
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement}
+        name: IEnumerable<XElement>
+        isExternal: true
       description: >-
-        An @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) children of this [System.Xml.Linq.XContainer](System.Xml.Linq.XContainer.yml) that have
+        An [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) children of this [System.Xml.Linq.XContainer](System.Xml.Linq.XContainer.yml) that have
 
         a matching [System.Xml.Linq.XName](System.Xml.Linq.XName.yml).
   id: System.Xml.Linq.XContainer.Elements(System.Xml.Linq.XName)
@@ -350,7 +380,7 @@ items:
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XContainer.cs
     startLine: 346
   summary: >-
-    Returns the content of this [System.Xml.Linq.XContainer](System.Xml.Linq.XContainer.yml) as an @!:System.Collections.IEnumerable- of @!:System.Object-.  Note
+    Returns the content of this [System.Xml.Linq.XContainer](System.Xml.Linq.XContainer.yml) as an [System.Collections.IEnumerable]() of [System.Object]().  Note
 
     that the content does not include [System.Xml.Linq.XAttribute](System.Xml.Linq.XAttribute.yml)s.
 
@@ -361,6 +391,10 @@ items:
     parameters: []
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XNode}
+        name: IEnumerable<XNode>
+        isExternal: true
       description: The contents of this [System.Xml.Linq.XContainer](System.Xml.Linq.XContainer.yml)
   id: System.Xml.Linq.XContainer.Nodes
 - uid: System.Xml.Linq.XContainer.RemoveNodes
@@ -400,7 +434,7 @@ items:
     - id: content
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: >-
         A content object containing simple content or a collection of content objects
@@ -424,7 +458,7 @@ items:
     - id: content
       type:
         id: System.Array
-        name: System.Array
+        name: object[]
         isExternal: true
       description: A parameter list of content objects.
   id: System.Xml.Linq.XContainer.ReplaceNodes(System.Object[])

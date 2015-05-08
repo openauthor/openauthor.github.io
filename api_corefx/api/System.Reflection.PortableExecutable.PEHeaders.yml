@@ -6,8 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeaders.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeaders.cs
     startLine: 13
   summary: An object used to read PE (Portable Executable) and COFF (Common Object File Format) headers from a stream.
@@ -16,12 +18,12 @@ items:
       CSharp: public sealed class PEHeaders
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Reflection.PortableExecutable.PEHeaders
   children:
-  - System.Reflection.PortableExecutable.PEHeaders.#ctor(Stream)
-  - System.Reflection.PortableExecutable.PEHeaders.#ctor(Stream,System.Int32)
+  - System.Reflection.PortableExecutable.PEHeaders.#ctor(System.IO.Stream)
+  - System.Reflection.PortableExecutable.PEHeaders.#ctor(System.IO.Stream,System.Int32)
   - System.Reflection.PortableExecutable.PEHeaders.MetadataStartOffset
   - System.Reflection.PortableExecutable.PEHeaders.MetadataSize
   - System.Reflection.PortableExecutable.PEHeaders.CoffHeader
@@ -37,10 +39,10 @@ items:
   - System.Reflection.PortableExecutable.PEHeaders.IsExe
   - System.Reflection.PortableExecutable.PEHeaders.TryGetDirectoryOffset(System.Reflection.PortableExecutable.DirectoryEntry,System.Int32@)
   - System.Reflection.PortableExecutable.PEHeaders.GetContainingSectionIndex(System.Int32)
-- uid: System.Reflection.PortableExecutable.PEHeaders.#ctor(Stream)
+- uid: System.Reflection.PortableExecutable.PEHeaders.#ctor(System.IO.Stream)
   href: System.Reflection.PortableExecutable.PEHeaders.yml
   name: PEHeaders(Stream)
-  fullName: System.Reflection.PortableExecutable.PEHeaders.PEHeaders(Stream)
+  fullName: System.Reflection.PortableExecutable.PEHeaders.PEHeaders(System.IO.Stream)
   type: Constructor
   source:
     remote: *o0
@@ -53,15 +55,15 @@ items:
     parameters:
     - id: peStream
       type:
-        id: Stream
+        id: System.IO.Stream
         name: Stream
         isExternal: true
       description: Stream containing PE image starting at the stream's current position and ending at the end of the stream.
-  id: System.Reflection.PortableExecutable.PEHeaders.#ctor(Stream)
-- uid: System.Reflection.PortableExecutable.PEHeaders.#ctor(Stream,System.Int32)
+  id: System.Reflection.PortableExecutable.PEHeaders.#ctor(System.IO.Stream)
+- uid: System.Reflection.PortableExecutable.PEHeaders.#ctor(System.IO.Stream,System.Int32)
   href: System.Reflection.PortableExecutable.PEHeaders.yml
   name: PEHeaders(Stream, int)
-  fullName: System.Reflection.PortableExecutable.PEHeaders.PEHeaders(Stream, int)
+  fullName: System.Reflection.PortableExecutable.PEHeaders.PEHeaders(System.IO.Stream, int)
   type: Constructor
   source:
     remote: *o0
@@ -74,17 +76,17 @@ items:
     parameters:
     - id: peStream
       type:
-        id: Stream
+        id: System.IO.Stream
         name: Stream
         isExternal: true
       description: Stream containing PE image of the given size starting at its current position.
     - id: size
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: Size of the PE image.
-  id: System.Reflection.PortableExecutable.PEHeaders.#ctor(Stream,System.Int32)
+  id: System.Reflection.PortableExecutable.PEHeaders.#ctor(System.IO.Stream,System.Int32)
 - uid: System.Reflection.PortableExecutable.PEHeaders.MetadataStartOffset
   href: System.Reflection.PortableExecutable.PEHeaders.yml
   name: MetadataStartOffset
@@ -105,7 +107,7 @@ items:
     - id: MetadataStartOffset
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Reflection.PortableExecutable.PEHeaders.MetadataStartOffset
 - uid: System.Reflection.PortableExecutable.PEHeaders.MetadataSize
@@ -125,7 +127,7 @@ items:
     - id: MetadataSize
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Reflection.PortableExecutable.PEHeaders.MetadataSize
 - uid: System.Reflection.PortableExecutable.PEHeaders.CoffHeader
@@ -165,7 +167,7 @@ items:
     - id: CoffHeaderStartOffset
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Reflection.PortableExecutable.PEHeaders.CoffHeaderStartOffset
 - uid: System.Reflection.PortableExecutable.PEHeaders.IsCoffOnly
@@ -185,7 +187,7 @@ items:
     - id: IsCoffOnly
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Reflection.PortableExecutable.PEHeaders.IsCoffOnly
 - uid: System.Reflection.PortableExecutable.PEHeaders.PEHeader
@@ -225,7 +227,7 @@ items:
     - id: PEHeaderStartOffset
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Reflection.PortableExecutable.PEHeaders.PEHeaderStartOffset
 - uid: System.Reflection.PortableExecutable.PEHeaders.SectionHeaders
@@ -245,7 +247,7 @@ items:
     - id: SectionHeaders
       type:
         id: ImmutableArray{System.Reflection.PortableExecutable.SectionHeader}
-        name: ImmutableArray{System.Reflection.PortableExecutable.SectionHeader}
+        name: ImmutableArray<SectionHeader>
         isExternal: true
   id: System.Reflection.PortableExecutable.PEHeaders.SectionHeaders
 - uid: System.Reflection.PortableExecutable.PEHeaders.CorHeader
@@ -285,7 +287,7 @@ items:
     - id: CorHeaderStartOffset
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Reflection.PortableExecutable.PEHeaders.CorHeaderStartOffset
 - uid: System.Reflection.PortableExecutable.PEHeaders.IsConsoleApplication
@@ -305,7 +307,7 @@ items:
     - id: IsConsoleApplication
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Reflection.PortableExecutable.PEHeaders.IsConsoleApplication
 - uid: System.Reflection.PortableExecutable.PEHeaders.IsDll
@@ -325,7 +327,7 @@ items:
     - id: IsDll
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Reflection.PortableExecutable.PEHeaders.IsDll
 - uid: System.Reflection.PortableExecutable.PEHeaders.IsExe
@@ -345,7 +347,7 @@ items:
     - id: IsExe
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Reflection.PortableExecutable.PEHeaders.IsExe
 - uid: System.Reflection.PortableExecutable.PEHeaders.TryGetDirectoryOffset(System.Reflection.PortableExecutable.DirectoryEntry,System.Int32@)
@@ -370,10 +372,14 @@ items:
     - id: offset
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: The section containing the directory could not be found.
   id: System.Reflection.PortableExecutable.PEHeaders.TryGetDirectoryOffset(System.Reflection.PortableExecutable.DirectoryEntry,System.Int32@)
 - uid: System.Reflection.PortableExecutable.PEHeaders.GetContainingSectionIndex(System.Int32)
@@ -393,11 +399,15 @@ items:
     - id: relativeVirtualAddress
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: Address.
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: >-
         Index of the section that contains ,
 

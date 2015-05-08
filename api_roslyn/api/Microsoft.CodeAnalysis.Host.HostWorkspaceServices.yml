@@ -6,9 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Workspace/Host/HostWorkspaceServices.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Workspace/Host/HostWorkspaceServices.cs
     startLine: 12
   summary: Per workspace services provided by the host environment.
@@ -17,7 +18,7 @@ items:
       CSharp: public abstract class HostWorkspaceServices
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.Host.HostWorkspaceServices
   children:
@@ -86,10 +87,14 @@ items:
     If the host does not provide the service, this method returns null.
   syntax:
     content:
-      CSharp: 'public abstract TWorkspaceService GetService<TWorkspaceService>()where TWorkspaceService : IWorkspaceService;'
+      CSharp: 'public abstract TWorkspaceService GetService<TWorkspaceService>()where TWorkspaceService : IWorkspaceService'
     parameters: []
     return:
       id: TWorkspaceService
+      type:
+        id: TWorkspaceService
+        name: TWorkspaceService
+        href: TWorkspaceService
   id: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.GetService``1
 - uid: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.GetRequiredService``1
   href: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.yml
@@ -103,13 +108,17 @@ items:
   summary: >-
     Gets a workspace specific service provided by the host identified by the service type.
 
-    If the host does not provide the service, this method returns [System.InvalidOperationException](#).
+    If the host does not provide the service, this method returns [System.InvalidOperationException]().
   syntax:
     content:
       CSharp: 'public TWorkspaceService GetRequiredService<TWorkspaceService>()where TWorkspaceService : IWorkspaceService'
     parameters: []
     return:
       id: TWorkspaceService
+      type:
+        id: TWorkspaceService
+        name: TWorkspaceService
+        href: TWorkspaceService
   id: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.GetRequiredService``1
 - uid: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.PersistentStorage
   href: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.yml
@@ -168,7 +177,7 @@ items:
     - id: SupportedLanguages
       type:
         id: System.Collections.Generic.IEnumerable{System.String}
-        name: System.Collections.Generic.IEnumerable{System.String}
+        name: IEnumerable<string>
         isExternal: true
   id: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.SupportedLanguages
 - uid: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.IsSupported(System.String)
@@ -188,10 +197,14 @@ items:
     - id: languageName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.IsSupported(System.String)
 - uid: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.GetLanguageServices(System.String)
   href: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.yml
@@ -210,10 +223,14 @@ items:
     - id: languageName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: HostLanguageServices
+      type:
+        id: Microsoft.CodeAnalysis.Host.HostLanguageServices
+        name: HostLanguageServices
+        href: Microsoft.CodeAnalysis.Host.HostLanguageServices.yml
   id: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.GetLanguageServices(System.String)
 - uid: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.FindLanguageServices``1(Microsoft.CodeAnalysis.Host.HostWorkspaceServices.MetadataFilter)
   href: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.yml
@@ -227,7 +244,7 @@ items:
   summary: Finds all language services of the corresponding type across all supported languages that match the filter criteria.
   syntax:
     content:
-      CSharp: public abstract IEnumerable<TLanguageService> FindLanguageServices<TLanguageService>(MetadataFilter filter);
+      CSharp: public abstract IEnumerable<TLanguageService> FindLanguageServices<TLanguageService>(MetadataFilter filter)
     parameters:
     - id: filter
       type:
@@ -236,4 +253,8 @@ items:
         href: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.MetadataFilter.yml
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<TLanguageService>
+        isExternal: true
   id: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.FindLanguageServices``1(Microsoft.CodeAnalysis.Host.HostWorkspaceServices.MetadataFilter)

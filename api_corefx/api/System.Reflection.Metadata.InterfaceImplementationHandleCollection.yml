@@ -6,21 +6,28 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
     startLine: 1162
   syntax:
     content:
-      CSharp: public struct InterfaceImplementationHandleCollection
+      CSharp: 'public struct InterfaceImplementationHandleCollection : IReadOnlyCollection<InterfaceImplementationHandle>, IEnumerable<InterfaceImplementationHandle>, IEnumerable'
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Reflection.Metadata.InterfaceImplementationHandleCollection
   children:
   - System.Reflection.Metadata.InterfaceImplementationHandleCollection.Count
   - System.Reflection.Metadata.InterfaceImplementationHandleCollection.GetEnumerator
+  - System.Reflection.Metadata.InterfaceImplementationHandleCollection.System#Collections#Generic#IEnumerable{System#Reflection#Metadata#InterfaceImplementationHandle}#GetEnumerator
+  - System.Reflection.Metadata.InterfaceImplementationHandleCollection.System#Collections#IEnumerable#GetEnumerator
 - uid: System.Reflection.Metadata.InterfaceImplementationHandleCollection.Count
   href: System.Reflection.Metadata.InterfaceImplementationHandleCollection.yml
   name: Count
@@ -37,7 +44,7 @@ items:
     - id: Count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Reflection.Metadata.InterfaceImplementationHandleCollection.Count
 - uid: System.Reflection.Metadata.InterfaceImplementationHandleCollection.GetEnumerator
@@ -55,4 +62,48 @@ items:
     parameters: []
     return:
       id: Enumerator
+      type:
+        id: System.Reflection.Metadata.InterfaceImplementationHandleCollection.Enumerator
+        name: Enumerator
+        href: System.Reflection.Metadata.InterfaceImplementationHandleCollection.Enumerator.yml
   id: System.Reflection.Metadata.InterfaceImplementationHandleCollection.GetEnumerator
+- uid: System.Reflection.Metadata.InterfaceImplementationHandleCollection.System#Collections#Generic#IEnumerable{System#Reflection#Metadata#InterfaceImplementationHandle}#GetEnumerator
+  href: System.Reflection.Metadata.InterfaceImplementationHandleCollection.yml
+  name: IEnumerable<InterfaceImplementationHandle>.GetEnumerator()
+  fullName: System.Reflection.Metadata.InterfaceImplementationHandleCollection.System.Collections.Generic.IEnumerable<System.Reflection.Metadata.InterfaceImplementationHandle>.GetEnumerator()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
+    startLine: 1191
+  syntax:
+    content:
+      CSharp: IEnumerator<InterfaceImplementationHandle> IEnumerable<InterfaceImplementationHandle>.GetEnumerator()
+    parameters: []
+    return:
+      id: IEnumerator
+      type:
+        id: System.Collections.Generic.IEnumerator{System.Reflection.Metadata.InterfaceImplementationHandle}
+        name: IEnumerator<InterfaceImplementationHandle>
+        isExternal: true
+  id: System.Reflection.Metadata.InterfaceImplementationHandleCollection.System#Collections#Generic#IEnumerable{System#Reflection#Metadata#InterfaceImplementationHandle}#GetEnumerator
+- uid: System.Reflection.Metadata.InterfaceImplementationHandleCollection.System#Collections#IEnumerable#GetEnumerator
+  href: System.Reflection.Metadata.InterfaceImplementationHandleCollection.yml
+  name: IEnumerable.GetEnumerator()
+  fullName: System.Reflection.Metadata.InterfaceImplementationHandleCollection.System.Collections.IEnumerable.GetEnumerator()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
+    startLine: 1196
+  syntax:
+    content:
+      CSharp: IEnumerator IEnumerable.GetEnumerator()
+    parameters: []
+    return:
+      id: IEnumerator
+      type:
+        id: System.Collections.IEnumerator
+        name: IEnumerator
+        isExternal: true
+  id: System.Reflection.Metadata.InterfaceImplementationHandleCollection.System#Collections#IEnumerable#GetEnumerator

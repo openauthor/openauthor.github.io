@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/Async/AsyncControllerActionInvoker.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/Async/AsyncControllerActionInvoker.cs
     startLine: 13
   syntax:
     content:
-      CSharp: public class AsyncControllerActionInvoker
+      CSharp: 'public class AsyncControllerActionInvoker : ControllerActionInvoker, IAsyncActionInvoker, IActionInvoker'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.Mvc.ControllerActionInvoker
     name: ControllerActionInvoker
@@ -24,7 +25,12 @@ items:
   id: System.Web.Mvc.Async.AsyncControllerActionInvoker
   children:
   - System.Web.Mvc.Async.AsyncControllerActionInvoker.BeginInvokeAction(System.Web.Mvc.ControllerContext,System.String,System.AsyncCallback,System.Object)
+  - System.Web.Mvc.Async.AsyncControllerActionInvoker.BeginInvokeActionMethod(System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionDescriptor,System.Collections.Generic.IDictionary{System.String,System.Object},System.AsyncCallback,System.Object)
+  - System.Web.Mvc.Async.AsyncControllerActionInvoker.BeginInvokeActionMethodWithFilters(System.Web.Mvc.ControllerContext,System.Collections.Generic.IList{System.Web.Mvc.IActionFilter},System.Web.Mvc.ActionDescriptor,System.Collections.Generic.IDictionary{System.String,System.Object},System.AsyncCallback,System.Object)
   - System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(System.IAsyncResult)
+  - System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(System.IAsyncResult)
+  - System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(System.IAsyncResult)
+  - System.Web.Mvc.Async.AsyncControllerActionInvoker.GetControllerDescriptor(System.Web.Mvc.ControllerContext)
 - uid: System.Web.Mvc.Async.AsyncControllerActionInvoker.BeginInvokeAction(System.Web.Mvc.ControllerContext,System.String,System.AsyncCallback,System.Object)
   href: System.Web.Mvc.Async.AsyncControllerActionInvoker.yml
   name: BeginInvokeAction(ControllerContext, string, AsyncCallback, object)
@@ -36,7 +42,7 @@ items:
     startLine: 19
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = "Refactoring to reduce coupling not currently justified.")] public virtual IAsyncResult BeginInvokeAction(ControllerContext controllerContext, string actionName, AsyncCallback callback, object state)'
+      CSharp: public virtual IAsyncResult BeginInvokeAction(ControllerContext controllerContext, string actionName, AsyncCallback callback, object state)
     parameters:
     - id: controllerContext
       type:
@@ -46,21 +52,120 @@ items:
     - id: actionName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: callback
       type:
         id: System.AsyncCallback
-        name: System.AsyncCallback
+        name: AsyncCallback
         isExternal: true
     - id: state
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: IAsyncResult
+      type:
+        id: System.IAsyncResult
+        name: IAsyncResult
+        isExternal: true
   id: System.Web.Mvc.Async.AsyncControllerActionInvoker.BeginInvokeAction(System.Web.Mvc.ControllerContext,System.String,System.AsyncCallback,System.Object)
+- uid: System.Web.Mvc.Async.AsyncControllerActionInvoker.BeginInvokeActionMethod(System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionDescriptor,System.Collections.Generic.IDictionary{System.String,System.Object},System.AsyncCallback,System.Object)
+  href: System.Web.Mvc.Async.AsyncControllerActionInvoker.yml
+  name: BeginInvokeActionMethod(ControllerContext, ActionDescriptor, IDictionary<string, object>, AsyncCallback, object)
+  fullName: System.Web.Mvc.Async.AsyncControllerActionInvoker.BeginInvokeActionMethod(System.Web.Mvc.ControllerContext, System.Web.Mvc.ActionDescriptor, System.Collections.Generic.IDictionary<string, object>, System.AsyncCallback, object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/Async/AsyncControllerActionInvoker.cs
+    startLine: 172
+  syntax:
+    content:
+      CSharp: protected internal virtual IAsyncResult BeginInvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary<string, object> parameters, AsyncCallback callback, object state)
+    parameters:
+    - id: controllerContext
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+    - id: actionDescriptor
+      type:
+        id: System.Web.Mvc.ActionDescriptor
+        name: ActionDescriptor
+        href: System.Web.Mvc.ActionDescriptor.yml
+    - id: parameters
+      type:
+        id: System.Collections.Generic.IDictionary{System.String,System.Object}
+        name: IDictionary<string, object>
+        isExternal: true
+    - id: callback
+      type:
+        id: System.AsyncCallback
+        name: AsyncCallback
+        isExternal: true
+    - id: state
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+    return:
+      id: IAsyncResult
+      type:
+        id: System.IAsyncResult
+        name: IAsyncResult
+        isExternal: true
+  id: System.Web.Mvc.Async.AsyncControllerActionInvoker.BeginInvokeActionMethod(System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionDescriptor,System.Collections.Generic.IDictionary{System.String,System.Object},System.AsyncCallback,System.Object)
+- uid: System.Web.Mvc.Async.AsyncControllerActionInvoker.BeginInvokeActionMethodWithFilters(System.Web.Mvc.ControllerContext,System.Collections.Generic.IList{System.Web.Mvc.IActionFilter},System.Web.Mvc.ActionDescriptor,System.Collections.Generic.IDictionary{System.String,System.Object},System.AsyncCallback,System.Object)
+  href: System.Web.Mvc.Async.AsyncControllerActionInvoker.yml
+  name: BeginInvokeActionMethodWithFilters(ControllerContext, IList<IActionFilter>, ActionDescriptor, IDictionary<string, object>, AsyncCallback, object)
+  fullName: System.Web.Mvc.Async.AsyncControllerActionInvoker.BeginInvokeActionMethodWithFilters(System.Web.Mvc.ControllerContext, System.Collections.Generic.IList<System.Web.Mvc.IActionFilter>, System.Web.Mvc.ActionDescriptor, System.Collections.Generic.IDictionary<string, object>, System.AsyncCallback, object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/Async/AsyncControllerActionInvoker.cs
+    startLine: 185
+  syntax:
+    content:
+      CSharp: protected internal virtual IAsyncResult BeginInvokeActionMethodWithFilters(ControllerContext controllerContext, IList<IActionFilter> filters, ActionDescriptor actionDescriptor, IDictionary<string, object> parameters, AsyncCallback callback, object state)
+    parameters:
+    - id: controllerContext
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+    - id: filters
+      type:
+        id: System.Collections.Generic.IList{System.Web.Mvc.IActionFilter}
+        name: IList<IActionFilter>
+        isExternal: true
+    - id: actionDescriptor
+      type:
+        id: System.Web.Mvc.ActionDescriptor
+        name: ActionDescriptor
+        href: System.Web.Mvc.ActionDescriptor.yml
+    - id: parameters
+      type:
+        id: System.Collections.Generic.IDictionary{System.String,System.Object}
+        name: IDictionary<string, object>
+        isExternal: true
+    - id: callback
+      type:
+        id: System.AsyncCallback
+        name: AsyncCallback
+        isExternal: true
+    - id: state
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+    return:
+      id: IAsyncResult
+      type:
+        id: System.IAsyncResult
+        name: IAsyncResult
+        isExternal: true
+  id: System.Web.Mvc.Async.AsyncControllerActionInvoker.BeginInvokeActionMethodWithFilters(System.Web.Mvc.ControllerContext,System.Collections.Generic.IList{System.Web.Mvc.IActionFilter},System.Web.Mvc.ActionDescriptor,System.Collections.Generic.IDictionary{System.String,System.Object},System.AsyncCallback,System.Object)
 - uid: System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(System.IAsyncResult)
   href: System.Web.Mvc.Async.AsyncControllerActionInvoker.yml
   name: EndInvokeAction(IAsyncResult)
@@ -77,8 +182,87 @@ items:
     - id: asyncResult
       type:
         id: System.IAsyncResult
-        name: System.IAsyncResult
+        name: IAsyncResult
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(System.IAsyncResult)
+- uid: System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(System.IAsyncResult)
+  href: System.Web.Mvc.Async.AsyncControllerActionInvoker.yml
+  name: EndInvokeActionMethod(IAsyncResult)
+  fullName: System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(System.IAsyncResult)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/Async/AsyncControllerActionInvoker.cs
+    startLine: 251
+  syntax:
+    content:
+      CSharp: protected internal virtual ActionResult EndInvokeActionMethod(IAsyncResult asyncResult)
+    parameters:
+    - id: asyncResult
+      type:
+        id: System.IAsyncResult
+        name: IAsyncResult
+        isExternal: true
+    return:
+      id: ActionResult
+      type:
+        id: System.Web.Mvc.ActionResult
+        name: ActionResult
+        href: System.Web.Mvc.ActionResult.yml
+  id: System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(System.IAsyncResult)
+- uid: System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(System.IAsyncResult)
+  href: System.Web.Mvc.Async.AsyncControllerActionInvoker.yml
+  name: EndInvokeActionMethodWithFilters(IAsyncResult)
+  fullName: System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(System.IAsyncResult)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/Async/AsyncControllerActionInvoker.cs
+    startLine: 256
+  syntax:
+    content:
+      CSharp: protected internal virtual ActionExecutedContext EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+    parameters:
+    - id: asyncResult
+      type:
+        id: System.IAsyncResult
+        name: IAsyncResult
+        isExternal: true
+    return:
+      id: ActionExecutedContext
+      type:
+        id: System.Web.Mvc.ActionExecutedContext
+        name: ActionExecutedContext
+        href: System.Web.Mvc.ActionExecutedContext.yml
+  id: System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(System.IAsyncResult)
+- uid: System.Web.Mvc.Async.AsyncControllerActionInvoker.GetControllerDescriptor(System.Web.Mvc.ControllerContext)
+  href: System.Web.Mvc.Async.AsyncControllerActionInvoker.yml
+  name: GetControllerDescriptor(ControllerContext)
+  fullName: System.Web.Mvc.Async.AsyncControllerActionInvoker.GetControllerDescriptor(System.Web.Mvc.ControllerContext)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/Async/AsyncControllerActionInvoker.cs
+    startLine: 261
+  syntax:
+    content:
+      CSharp: protected override ControllerDescriptor GetControllerDescriptor(ControllerContext controllerContext)
+    parameters:
+    - id: controllerContext
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+    return:
+      id: ControllerDescriptor
+      type:
+        id: System.Web.Mvc.ControllerDescriptor
+        name: ControllerDescriptor
+        href: System.Web.Mvc.ControllerDescriptor.yml
+  id: System.Web.Mvc.Async.AsyncControllerActionInvoker.GetControllerDescriptor(System.Web.Mvc.ControllerContext)

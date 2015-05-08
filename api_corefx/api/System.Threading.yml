@@ -6,8 +6,60 @@ items:
   type: Namespace
   source:
     remote:
+      path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/PlatformHelper.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
-    path: src/System.Threading.Tasks.Parallel/src/System/Threading/Tasks/TaskReplicator.cs
-    startLine: 7
+      key: 882a41e3
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/PlatformHelper.cs
+    startLine: 3
   id: System.Threading
+  children:
+  - System.Threading.WaitHandleExtensions
+  - System.Threading.Semaphore
+  - System.Threading.BarrierPostPhaseException
+  - System.Threading.Barrier
+  - System.Threading.CountdownEvent
+  - System.Threading.LockRecursionPolicy
+  - System.Threading.ReaderWriterLockSlim
+references:
+- uid: System.Threading.WaitHandleExtensions
+  href: System.Threading.WaitHandleExtensions.yml
+  name: WaitHandleExtensions
+  type: Class
+- uid: System.Threading.Semaphore
+  href: System.Threading.Semaphore.yml
+  name: Semaphore
+  type: Class
+- uid: System.Threading.BarrierPostPhaseException
+  href: System.Threading.BarrierPostPhaseException.yml
+  name: BarrierPostPhaseException
+  type: Class
+  summary: The exception that is thrown when the post-phase action of a [System.Threading.Barrier](System.Threading.Barrier.yml) fails.
+- uid: System.Threading.Barrier
+  href: System.Threading.Barrier.yml
+  name: Barrier
+  type: Class
+  summary: Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.
+- uid: System.Threading.CountdownEvent
+  href: System.Threading.CountdownEvent.yml
+  name: CountdownEvent
+  type: Class
+  summary: Represents a synchronization primitive that is signaled when its count reaches zero.
+- uid: System.Threading.LockRecursionPolicy
+  href: System.Threading.LockRecursionPolicy.yml
+  name: LockRecursionPolicy
+  type: Enum
+- uid: System.Threading.ReaderWriterLockSlim
+  href: System.Threading.ReaderWriterLockSlim.yml
+  name: ReaderWriterLockSlim
+  type: Class
+  summary: >-
+    A reader-writer lock implementation that is intended to be simple, yet very
+
+    efficient.  In particular only 1 interlocked operation is taken for any lock
+
+    operation (we use spin locks to achieve this).  The spin lock is never held
+
+    for more than a few instructions (in particular, we never call event APIs
+
+    or in fact any non-trivial API while holding the spin lock).

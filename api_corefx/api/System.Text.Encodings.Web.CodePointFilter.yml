@@ -1,0 +1,465 @@
+items:
+- uid: System.Text.Encodings.Web.CodePointFilter
+  href: System.Text.Encodings.Web.CodePointFilter.yml
+  name: CodePointFilter
+  fullName: System.Text.Encodings.Web.CodePointFilter
+  type: Class
+  source:
+    remote: &o0
+      path: src/System.Text.Encodings.Web/src/System/Text/Encodings/Web/CodePointFilter.cs
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
+    path: src/System.Text.Encodings.Web/src/System/Text/Encodings/Web/CodePointFilter.cs
+    startLine: 11
+  summary: Represents a filter which allows only certain Unicode code points through.
+  syntax:
+    content:
+      CSharp: 'public sealed class CodePointFilter : ICodePointFilter'
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  id: System.Text.Encodings.Web.CodePointFilter
+  children:
+  - System.Text.Encodings.Web.CodePointFilter.#ctor
+  - System.Text.Encodings.Web.CodePointFilter.#ctor(System.Text.Encodings.Web.ICodePointFilter)
+  - System.Text.Encodings.Web.CodePointFilter.#ctor(System.Text.Encodings.Web.UnicodeRange[])
+  - System.Text.Encodings.Web.CodePointFilter.AllowChar(System.Char)
+  - System.Text.Encodings.Web.CodePointFilter.AllowChars(System.Char[])
+  - System.Text.Encodings.Web.CodePointFilter.AllowChars(System.String)
+  - System.Text.Encodings.Web.CodePointFilter.AllowFilter(System.Text.Encodings.Web.ICodePointFilter)
+  - System.Text.Encodings.Web.CodePointFilter.AllowRange(System.Text.Encodings.Web.UnicodeRange)
+  - System.Text.Encodings.Web.CodePointFilter.AllowRanges(System.Text.Encodings.Web.UnicodeRange[])
+  - System.Text.Encodings.Web.CodePointFilter.Clear
+  - System.Text.Encodings.Web.CodePointFilter.ForbidChar(System.Char)
+  - System.Text.Encodings.Web.CodePointFilter.ForbidChars(System.Char[])
+  - System.Text.Encodings.Web.CodePointFilter.ForbidChars(System.String)
+  - System.Text.Encodings.Web.CodePointFilter.ForbidRange(System.Text.Encodings.Web.UnicodeRange)
+  - System.Text.Encodings.Web.CodePointFilter.ForbidRanges(System.Text.Encodings.Web.UnicodeRange[])
+  - System.Text.Encodings.Web.CodePointFilter.GetAllowedCodePoints
+  - System.Text.Encodings.Web.CodePointFilter.IsCharacterAllowed(System.Char)
+- uid: System.Text.Encodings.Web.CodePointFilter.#ctor
+  href: System.Text.Encodings.Web.CodePointFilter.yml
+  name: CodePointFilter()
+  fullName: System.Text.Encodings.Web.CodePointFilter.CodePointFilter()
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Text.Encodings.Web/src/System/Text/Encodings/Web/CodePointFilter.cs
+    startLine: 18
+  summary: Instantiates an empty filter (allows no code points through by default).
+  syntax:
+    content:
+      CSharp: public CodePointFilter()
+    parameters: []
+  id: System.Text.Encodings.Web.CodePointFilter.#ctor
+- uid: System.Text.Encodings.Web.CodePointFilter.#ctor(System.Text.Encodings.Web.ICodePointFilter)
+  href: System.Text.Encodings.Web.CodePointFilter.yml
+  name: CodePointFilter(ICodePointFilter)
+  fullName: System.Text.Encodings.Web.CodePointFilter.CodePointFilter(System.Text.Encodings.Web.ICodePointFilter)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Text.Encodings.Web/src/System/Text/Encodings/Web/CodePointFilter.cs
+    startLine: 26
+  summary: Instantiates the filter by cloning the allow list of another [System.Text.Encodings.Web.ICodePointFilter](System.Text.Encodings.Web.ICodePointFilter.yml).
+  syntax:
+    content:
+      CSharp: public CodePointFilter(ICodePointFilter other)
+    parameters:
+    - id: other
+      type:
+        id: System.Text.Encodings.Web.ICodePointFilter
+        name: ICodePointFilter
+        href: System.Text.Encodings.Web.ICodePointFilter.yml
+  id: System.Text.Encodings.Web.CodePointFilter.#ctor(System.Text.Encodings.Web.ICodePointFilter)
+- uid: System.Text.Encodings.Web.CodePointFilter.#ctor(System.Text.Encodings.Web.UnicodeRange[])
+  href: System.Text.Encodings.Web.CodePointFilter.yml
+  name: CodePointFilter(params UnicodeRange[])
+  fullName: System.Text.Encodings.Web.CodePointFilter.CodePointFilter(params System.Text.Encodings.Web.UnicodeRange[])
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Text.Encodings.Web/src/System/Text/Encodings/Web/CodePointFilter.cs
+    startLine: 44
+  summary: >-
+    Instantiates the filter where only the character ranges specified by
+
+    are allowed by the filter.
+  syntax:
+    content:
+      CSharp: public CodePointFilter(params UnicodeRange[] allowedRanges)
+    parameters:
+    - id: allowedRanges
+      type:
+        id: System.Array
+        name: UnicodeRange[]
+        isExternal: true
+  id: System.Text.Encodings.Web.CodePointFilter.#ctor(System.Text.Encodings.Web.UnicodeRange[])
+- uid: System.Text.Encodings.Web.CodePointFilter.AllowChar(System.Char)
+  href: System.Text.Encodings.Web.CodePointFilter.yml
+  name: AllowChar(char)
+  fullName: System.Text.Encodings.Web.CodePointFilter.AllowChar(char)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Text.Encodings.Web/src/System/Text/Encodings/Web/CodePointFilter.cs
+    startLine: 56
+  summary: Allows the character specified by  through the filter.
+  syntax:
+    content:
+      CSharp: public CodePointFilter AllowChar(char c)
+    parameters:
+    - id: c
+      type:
+        id: System.Char
+        name: char
+        isExternal: true
+    return:
+      id: CodePointFilter
+      type:
+        id: System.Text.Encodings.Web.CodePointFilter
+        name: CodePointFilter
+        href: System.Text.Encodings.Web.CodePointFilter.yml
+      description: The 'this' instance.
+  id: System.Text.Encodings.Web.CodePointFilter.AllowChar(System.Char)
+- uid: System.Text.Encodings.Web.CodePointFilter.AllowChars(System.Char[])
+  href: System.Text.Encodings.Web.CodePointFilter.yml
+  name: AllowChars(params char[])
+  fullName: System.Text.Encodings.Web.CodePointFilter.AllowChars(params char[])
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Text.Encodings.Web/src/System/Text/Encodings/Web/CodePointFilter.cs
+    startLine: 68
+  summary: Allows all characters specified by  through the filter.
+  syntax:
+    content:
+      CSharp: public CodePointFilter AllowChars(params char[] chars)
+    parameters:
+    - id: chars
+      type:
+        id: System.Array
+        name: char[]
+        isExternal: true
+    return:
+      id: CodePointFilter
+      type:
+        id: System.Text.Encodings.Web.CodePointFilter
+        name: CodePointFilter
+        href: System.Text.Encodings.Web.CodePointFilter.yml
+      description: The 'this' instance.
+  id: System.Text.Encodings.Web.CodePointFilter.AllowChars(System.Char[])
+- uid: System.Text.Encodings.Web.CodePointFilter.AllowChars(System.String)
+  href: System.Text.Encodings.Web.CodePointFilter.yml
+  name: AllowChars(string)
+  fullName: System.Text.Encodings.Web.CodePointFilter.AllowChars(string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Text.Encodings.Web/src/System/Text/Encodings/Web/CodePointFilter.cs
+    startLine: 86
+  summary: Allows all characters in the string  through the filter.
+  syntax:
+    content:
+      CSharp: public CodePointFilter AllowChars(string chars)
+    parameters:
+    - id: chars
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      id: CodePointFilter
+      type:
+        id: System.Text.Encodings.Web.CodePointFilter
+        name: CodePointFilter
+        href: System.Text.Encodings.Web.CodePointFilter.yml
+      description: The 'this' instance.
+  id: System.Text.Encodings.Web.CodePointFilter.AllowChars(System.String)
+- uid: System.Text.Encodings.Web.CodePointFilter.AllowFilter(System.Text.Encodings.Web.ICodePointFilter)
+  href: System.Text.Encodings.Web.CodePointFilter.yml
+  name: AllowFilter(ICodePointFilter)
+  fullName: System.Text.Encodings.Web.CodePointFilter.AllowFilter(System.Text.Encodings.Web.ICodePointFilter)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Text.Encodings.Web/src/System/Text/Encodings/Web/CodePointFilter.cs
+    startLine: 101
+  summary: Allows all characters specified by  through the filter.
+  syntax:
+    content:
+      CSharp: public CodePointFilter AllowFilter(ICodePointFilter filter)
+    parameters:
+    - id: filter
+      type:
+        id: System.Text.Encodings.Web.ICodePointFilter
+        name: ICodePointFilter
+        href: System.Text.Encodings.Web.ICodePointFilter.yml
+    return:
+      id: CodePointFilter
+      type:
+        id: System.Text.Encodings.Web.CodePointFilter
+        name: CodePointFilter
+        href: System.Text.Encodings.Web.CodePointFilter.yml
+      description: The 'this' instance.
+  id: System.Text.Encodings.Web.CodePointFilter.AllowFilter(System.Text.Encodings.Web.ICodePointFilter)
+- uid: System.Text.Encodings.Web.CodePointFilter.AllowRange(System.Text.Encodings.Web.UnicodeRange)
+  href: System.Text.Encodings.Web.CodePointFilter.yml
+  name: AllowRange(UnicodeRange)
+  fullName: System.Text.Encodings.Web.CodePointFilter.AllowRange(System.Text.Encodings.Web.UnicodeRange)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Text.Encodings.Web/src/System/Text/Encodings/Web/CodePointFilter.cs
+    startLine: 121
+  summary: Allows all characters specified by  through the filter.
+  syntax:
+    content:
+      CSharp: public CodePointFilter AllowRange(UnicodeRange range)
+    parameters:
+    - id: range
+      type:
+        id: System.Text.Encodings.Web.UnicodeRange
+        name: UnicodeRange
+        href: System.Text.Encodings.Web.UnicodeRange.yml
+    return:
+      id: CodePointFilter
+      type:
+        id: System.Text.Encodings.Web.CodePointFilter
+        name: CodePointFilter
+        href: System.Text.Encodings.Web.CodePointFilter.yml
+      description: The 'this' instance.
+  id: System.Text.Encodings.Web.CodePointFilter.AllowRange(System.Text.Encodings.Web.UnicodeRange)
+- uid: System.Text.Encodings.Web.CodePointFilter.AllowRanges(System.Text.Encodings.Web.UnicodeRange[])
+  href: System.Text.Encodings.Web.CodePointFilter.yml
+  name: AllowRanges(params UnicodeRange[])
+  fullName: System.Text.Encodings.Web.CodePointFilter.AllowRanges(params System.Text.Encodings.Web.UnicodeRange[])
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Text.Encodings.Web/src/System/Text/Encodings/Web/CodePointFilter.cs
+    startLine: 138
+  summary: Allows all characters specified by  through the filter.
+  syntax:
+    content:
+      CSharp: public CodePointFilter AllowRanges(params UnicodeRange[] ranges)
+    parameters:
+    - id: ranges
+      type:
+        id: System.Array
+        name: UnicodeRange[]
+        isExternal: true
+    return:
+      id: CodePointFilter
+      type:
+        id: System.Text.Encodings.Web.CodePointFilter
+        name: CodePointFilter
+        href: System.Text.Encodings.Web.CodePointFilter.yml
+      description: The 'this' instance.
+  id: System.Text.Encodings.Web.CodePointFilter.AllowRanges(System.Text.Encodings.Web.UnicodeRange[])
+- uid: System.Text.Encodings.Web.CodePointFilter.Clear
+  href: System.Text.Encodings.Web.CodePointFilter.yml
+  name: Clear()
+  fullName: System.Text.Encodings.Web.CodePointFilter.Clear()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Text.Encodings.Web/src/System/Text/Encodings/Web/CodePointFilter.cs
+    startLine: 156
+  summary: Resets this filter by disallowing all characters.
+  syntax:
+    content:
+      CSharp: public CodePointFilter Clear()
+    parameters: []
+    return:
+      id: CodePointFilter
+      type:
+        id: System.Text.Encodings.Web.CodePointFilter
+        name: CodePointFilter
+        href: System.Text.Encodings.Web.CodePointFilter.yml
+      description: The 'this' instance.
+  id: System.Text.Encodings.Web.CodePointFilter.Clear
+- uid: System.Text.Encodings.Web.CodePointFilter.ForbidChar(System.Char)
+  href: System.Text.Encodings.Web.CodePointFilter.yml
+  name: ForbidChar(char)
+  fullName: System.Text.Encodings.Web.CodePointFilter.ForbidChar(char)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Text.Encodings.Web/src/System/Text/Encodings/Web/CodePointFilter.cs
+    startLine: 168
+  summary: Disallows the character  through the filter.
+  syntax:
+    content:
+      CSharp: public CodePointFilter ForbidChar(char c)
+    parameters:
+    - id: c
+      type:
+        id: System.Char
+        name: char
+        isExternal: true
+    return:
+      id: CodePointFilter
+      type:
+        id: System.Text.Encodings.Web.CodePointFilter
+        name: CodePointFilter
+        href: System.Text.Encodings.Web.CodePointFilter.yml
+      description: The 'this' instance.
+  id: System.Text.Encodings.Web.CodePointFilter.ForbidChar(System.Char)
+- uid: System.Text.Encodings.Web.CodePointFilter.ForbidChars(System.Char[])
+  href: System.Text.Encodings.Web.CodePointFilter.yml
+  name: ForbidChars(params char[])
+  fullName: System.Text.Encodings.Web.CodePointFilter.ForbidChars(params char[])
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Text.Encodings.Web/src/System/Text/Encodings/Web/CodePointFilter.cs
+    startLine: 180
+  summary: Disallows all characters specified by  through the filter.
+  syntax:
+    content:
+      CSharp: public CodePointFilter ForbidChars(params char[] chars)
+    parameters:
+    - id: chars
+      type:
+        id: System.Array
+        name: char[]
+        isExternal: true
+    return:
+      id: CodePointFilter
+      type:
+        id: System.Text.Encodings.Web.CodePointFilter
+        name: CodePointFilter
+        href: System.Text.Encodings.Web.CodePointFilter.yml
+      description: The 'this' instance.
+  id: System.Text.Encodings.Web.CodePointFilter.ForbidChars(System.Char[])
+- uid: System.Text.Encodings.Web.CodePointFilter.ForbidChars(System.String)
+  href: System.Text.Encodings.Web.CodePointFilter.yml
+  name: ForbidChars(string)
+  fullName: System.Text.Encodings.Web.CodePointFilter.ForbidChars(string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Text.Encodings.Web/src/System/Text/Encodings/Web/CodePointFilter.cs
+    startLine: 198
+  summary: Disallows all characters in the string  through the filter.
+  syntax:
+    content:
+      CSharp: public CodePointFilter ForbidChars(string chars)
+    parameters:
+    - id: chars
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      id: CodePointFilter
+      type:
+        id: System.Text.Encodings.Web.CodePointFilter
+        name: CodePointFilter
+        href: System.Text.Encodings.Web.CodePointFilter.yml
+      description: The 'this' instance.
+  id: System.Text.Encodings.Web.CodePointFilter.ForbidChars(System.String)
+- uid: System.Text.Encodings.Web.CodePointFilter.ForbidRange(System.Text.Encodings.Web.UnicodeRange)
+  href: System.Text.Encodings.Web.CodePointFilter.yml
+  name: ForbidRange(UnicodeRange)
+  fullName: System.Text.Encodings.Web.CodePointFilter.ForbidRange(System.Text.Encodings.Web.UnicodeRange)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Text.Encodings.Web/src/System/Text/Encodings/Web/CodePointFilter.cs
+    startLine: 213
+  summary: Disallows all characters specified by  through the filter.
+  syntax:
+    content:
+      CSharp: public CodePointFilter ForbidRange(UnicodeRange range)
+    parameters:
+    - id: range
+      type:
+        id: System.Text.Encodings.Web.UnicodeRange
+        name: UnicodeRange
+        href: System.Text.Encodings.Web.UnicodeRange.yml
+    return:
+      id: CodePointFilter
+      type:
+        id: System.Text.Encodings.Web.CodePointFilter
+        name: CodePointFilter
+        href: System.Text.Encodings.Web.CodePointFilter.yml
+      description: The 'this' instance.
+  id: System.Text.Encodings.Web.CodePointFilter.ForbidRange(System.Text.Encodings.Web.UnicodeRange)
+- uid: System.Text.Encodings.Web.CodePointFilter.ForbidRanges(System.Text.Encodings.Web.UnicodeRange[])
+  href: System.Text.Encodings.Web.CodePointFilter.yml
+  name: ForbidRanges(params UnicodeRange[])
+  fullName: System.Text.Encodings.Web.CodePointFilter.ForbidRanges(params System.Text.Encodings.Web.UnicodeRange[])
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Text.Encodings.Web/src/System/Text/Encodings/Web/CodePointFilter.cs
+    startLine: 230
+  summary: Disallows all characters specified by  through the filter.
+  syntax:
+    content:
+      CSharp: public CodePointFilter ForbidRanges(params UnicodeRange[] ranges)
+    parameters:
+    - id: ranges
+      type:
+        id: System.Array
+        name: UnicodeRange[]
+        isExternal: true
+    return:
+      id: CodePointFilter
+      type:
+        id: System.Text.Encodings.Web.CodePointFilter
+        name: CodePointFilter
+        href: System.Text.Encodings.Web.CodePointFilter.yml
+      description: The 'this' instance.
+  id: System.Text.Encodings.Web.CodePointFilter.ForbidRanges(System.Text.Encodings.Web.UnicodeRange[])
+- uid: System.Text.Encodings.Web.CodePointFilter.GetAllowedCodePoints
+  href: System.Text.Encodings.Web.CodePointFilter.yml
+  name: GetAllowedCodePoints()
+  fullName: System.Text.Encodings.Web.CodePointFilter.GetAllowedCodePoints()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Text.Encodings.Web/src/System/Text/Encodings/Web/CodePointFilter.cs
+    startLine: 254
+  summary: Gets an enumeration of all allowed code points.
+  syntax:
+    content:
+      CSharp: public IEnumerable<int> GetAllowedCodePoints()
+    parameters: []
+    return:
+      id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Int32}
+        name: IEnumerable<int>
+        isExternal: true
+  id: System.Text.Encodings.Web.CodePointFilter.GetAllowedCodePoints
+- uid: System.Text.Encodings.Web.CodePointFilter.IsCharacterAllowed(System.Char)
+  href: System.Text.Encodings.Web.CodePointFilter.yml
+  name: IsCharacterAllowed(char)
+  fullName: System.Text.Encodings.Web.CodePointFilter.IsCharacterAllowed(char)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Text.Encodings.Web/src/System/Text/Encodings/Web/CodePointFilter.cs
+    startLine: 268
+  summary: Returns a value stating whether the character  is allowed through the filter.
+  syntax:
+    content:
+      CSharp: public bool IsCharacterAllowed(char c)
+    parameters:
+    - id: c
+      type:
+        id: System.Char
+        name: char
+        isExternal: true
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Text.Encodings.Web.CodePointFilter.IsCharacterAllowed(System.Char)

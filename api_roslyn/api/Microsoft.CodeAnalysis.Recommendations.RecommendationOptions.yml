@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Recommendations/RecommendationOptions.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Recommendations/RecommendationOptions.cs
     startLine: 6
   syntax:
     content:
-      CSharp: public static class RecommendationOptions
+      CSharp: public class RecommendationOptions
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.Recommendations.RecommendationOptions
   children:
@@ -33,7 +34,7 @@ items:
     startLine: 10
   syntax:
     content:
-      CSharp: HideAdvancedMembers
+      CSharp: public static readonly PerLanguageOption<bool> HideAdvancedMembers;
   id: Microsoft.CodeAnalysis.Recommendations.RecommendationOptions.HideAdvancedMembers
 - uid: Microsoft.CodeAnalysis.Recommendations.RecommendationOptions.FilterOutOfScopeLocals
   href: Microsoft.CodeAnalysis.Recommendations.RecommendationOptions.yml
@@ -46,5 +47,5 @@ items:
     startLine: 12
   syntax:
     content:
-      CSharp: FilterOutOfScopeLocals
+      CSharp: public static readonly PerLanguageOption<bool> FilterOutOfScopeLocals;
   id: Microsoft.CodeAnalysis.Recommendations.RecommendationOptions.FilterOutOfScopeLocals

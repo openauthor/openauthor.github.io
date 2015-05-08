@@ -6,23 +6,30 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
     startLine: 128
   summary: Represents constraints of a generic type parameter.
   syntax:
     content:
-      CSharp: public struct GenericParameterConstraintHandleCollection
+      CSharp: 'public struct GenericParameterConstraintHandleCollection : IReadOnlyList<GenericParameterConstraintHandle>, IReadOnlyCollection<GenericParameterConstraintHandle>, IEnumerable<GenericParameterConstraintHandle>, IEnumerable'
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Reflection.Metadata.GenericParameterConstraintHandleCollection
   children:
   - System.Reflection.Metadata.GenericParameterConstraintHandleCollection.Count
   - System.Reflection.Metadata.GenericParameterConstraintHandleCollection.Item(System.Int32)
   - System.Reflection.Metadata.GenericParameterConstraintHandleCollection.GetEnumerator
+  - System.Reflection.Metadata.GenericParameterConstraintHandleCollection.System#Collections#Generic#IEnumerable{System#Reflection#Metadata#GenericParameterConstraintHandle}#GetEnumerator
+  - System.Reflection.Metadata.GenericParameterConstraintHandleCollection.System#Collections#IEnumerable#GetEnumerator
 - uid: System.Reflection.Metadata.GenericParameterConstraintHandleCollection.Count
   href: System.Reflection.Metadata.GenericParameterConstraintHandleCollection.yml
   name: Count
@@ -39,7 +46,7 @@ items:
     - id: Count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Reflection.Metadata.GenericParameterConstraintHandleCollection.Count
 - uid: System.Reflection.Metadata.GenericParameterConstraintHandleCollection.Item(System.Int32)
@@ -76,4 +83,48 @@ items:
     parameters: []
     return:
       id: Enumerator
+      type:
+        id: System.Reflection.Metadata.GenericParameterConstraintHandleCollection.Enumerator
+        name: Enumerator
+        href: System.Reflection.Metadata.GenericParameterConstraintHandleCollection.Enumerator.yml
   id: System.Reflection.Metadata.GenericParameterConstraintHandleCollection.GetEnumerator
+- uid: System.Reflection.Metadata.GenericParameterConstraintHandleCollection.System#Collections#Generic#IEnumerable{System#Reflection#Metadata#GenericParameterConstraintHandle}#GetEnumerator
+  href: System.Reflection.Metadata.GenericParameterConstraintHandleCollection.yml
+  name: IEnumerable<GenericParameterConstraintHandle>.GetEnumerator()
+  fullName: System.Reflection.Metadata.GenericParameterConstraintHandleCollection.System.Collections.Generic.IEnumerable<System.Reflection.Metadata.GenericParameterConstraintHandle>.GetEnumerator()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
+    startLine: 171
+  syntax:
+    content:
+      CSharp: IEnumerator<GenericParameterConstraintHandle> IEnumerable<GenericParameterConstraintHandle>.GetEnumerator()
+    parameters: []
+    return:
+      id: IEnumerator
+      type:
+        id: System.Collections.Generic.IEnumerator{System.Reflection.Metadata.GenericParameterConstraintHandle}
+        name: IEnumerator<GenericParameterConstraintHandle>
+        isExternal: true
+  id: System.Reflection.Metadata.GenericParameterConstraintHandleCollection.System#Collections#Generic#IEnumerable{System#Reflection#Metadata#GenericParameterConstraintHandle}#GetEnumerator
+- uid: System.Reflection.Metadata.GenericParameterConstraintHandleCollection.System#Collections#IEnumerable#GetEnumerator
+  href: System.Reflection.Metadata.GenericParameterConstraintHandleCollection.yml
+  name: IEnumerable.GetEnumerator()
+  fullName: System.Reflection.Metadata.GenericParameterConstraintHandleCollection.System.Collections.IEnumerable.GetEnumerator()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
+    startLine: 176
+  syntax:
+    content:
+      CSharp: IEnumerator IEnumerable.GetEnumerator()
+    parameters: []
+    return:
+      id: IEnumerator
+      type:
+        id: System.Collections.IEnumerator
+        name: IEnumerator
+        isExternal: true
+  id: System.Reflection.Metadata.GenericParameterConstraintHandleCollection.System#Collections#IEnumerable#GetEnumerator

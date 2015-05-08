@@ -6,21 +6,28 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1103
+    startLine: 1565
   syntax:
     content:
-      CSharp: public struct ParameterHandle
+      CSharp: 'public struct ParameterHandle : IEquatable<ParameterHandle>'
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Reflection.Metadata.ParameterHandle
   children:
   - System.Reflection.Metadata.ParameterHandle.op_Implicit(System.Reflection.Metadata.ParameterHandle)~System.Reflection.Metadata.Handle
+  - System.Reflection.Metadata.ParameterHandle.op_Implicit(System.Reflection.Metadata.ParameterHandle)~System.Reflection.Metadata.EntityHandle
   - System.Reflection.Metadata.ParameterHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.ParameterHandle
+  - System.Reflection.Metadata.ParameterHandle.op_Explicit(System.Reflection.Metadata.EntityHandle)~System.Reflection.Metadata.ParameterHandle
   - System.Reflection.Metadata.ParameterHandle.IsNil
   - System.Reflection.Metadata.ParameterHandle.op_Equality(System.Reflection.Metadata.ParameterHandle,System.Reflection.Metadata.ParameterHandle)
   - System.Reflection.Metadata.ParameterHandle.Equals(System.Object)
@@ -31,14 +38,14 @@ items:
   href: System.Reflection.Metadata.ParameterHandle.yml
   name: implicit operator Handle(ParameterHandle)
   fullName: System.Reflection.Metadata.ParameterHandle.implicit operator System.Reflection.Metadata.Handle(System.Reflection.Metadata.ParameterHandle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1119
+    startLine: 1582
   syntax:
     content:
-      CSharp: public static implicit operator Handle(ParameterHandle handle) { return new Handle(handle._rowId | tokenType); }
+      CSharp: public static implicit operator Handle(ParameterHandle handle)
     parameters:
     - id: handle
       type:
@@ -47,19 +54,48 @@ items:
         href: System.Reflection.Metadata.ParameterHandle.yml
     return:
       id: Handle
+      type:
+        id: System.Reflection.Metadata.Handle
+        name: Handle
+        href: System.Reflection.Metadata.Handle.yml
   id: System.Reflection.Metadata.ParameterHandle.op_Implicit(System.Reflection.Metadata.ParameterHandle)~System.Reflection.Metadata.Handle
+- uid: System.Reflection.Metadata.ParameterHandle.op_Implicit(System.Reflection.Metadata.ParameterHandle)~System.Reflection.Metadata.EntityHandle
+  href: System.Reflection.Metadata.ParameterHandle.yml
+  name: implicit operator EntityHandle(ParameterHandle)
+  fullName: System.Reflection.Metadata.ParameterHandle.implicit operator System.Reflection.Metadata.EntityHandle(System.Reflection.Metadata.ParameterHandle)
+  type: Operator
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 1587
+  syntax:
+    content:
+      CSharp: public static implicit operator EntityHandle(ParameterHandle handle)
+    parameters:
+    - id: handle
+      type:
+        id: System.Reflection.Metadata.ParameterHandle
+        name: ParameterHandle
+        href: System.Reflection.Metadata.ParameterHandle.yml
+    return:
+      id: EntityHandle
+      type:
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
+  id: System.Reflection.Metadata.ParameterHandle.op_Implicit(System.Reflection.Metadata.ParameterHandle)~System.Reflection.Metadata.EntityHandle
 - uid: System.Reflection.Metadata.ParameterHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.ParameterHandle
   href: System.Reflection.Metadata.ParameterHandle.yml
   name: explicit operator ParameterHandle(Handle)
   fullName: System.Reflection.Metadata.ParameterHandle.explicit operator System.Reflection.Metadata.ParameterHandle(System.Reflection.Metadata.Handle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1124
+    startLine: 1592
   syntax:
     content:
-      CSharp: public static explicit operator ParameterHandle(Handle handle) { if (handle.TokenType != tokenType) { Handle.ThrowInvalidCast(); } return new ParameterHandle(handle.RowId); }
+      CSharp: public static explicit operator ParameterHandle(Handle handle)
     parameters:
     - id: handle
       type:
@@ -68,7 +104,36 @@ items:
         href: System.Reflection.Metadata.Handle.yml
     return:
       id: ParameterHandle
+      type:
+        id: System.Reflection.Metadata.ParameterHandle
+        name: ParameterHandle
+        href: System.Reflection.Metadata.ParameterHandle.yml
   id: System.Reflection.Metadata.ParameterHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.ParameterHandle
+- uid: System.Reflection.Metadata.ParameterHandle.op_Explicit(System.Reflection.Metadata.EntityHandle)~System.Reflection.Metadata.ParameterHandle
+  href: System.Reflection.Metadata.ParameterHandle.yml
+  name: explicit operator ParameterHandle(EntityHandle)
+  fullName: System.Reflection.Metadata.ParameterHandle.explicit operator System.Reflection.Metadata.ParameterHandle(System.Reflection.Metadata.EntityHandle)
+  type: Operator
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 1602
+  syntax:
+    content:
+      CSharp: public static explicit operator ParameterHandle(EntityHandle handle)
+    parameters:
+    - id: handle
+      type:
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
+    return:
+      id: ParameterHandle
+      type:
+        id: System.Reflection.Metadata.ParameterHandle
+        name: ParameterHandle
+        href: System.Reflection.Metadata.ParameterHandle.yml
+  id: System.Reflection.Metadata.ParameterHandle.op_Explicit(System.Reflection.Metadata.EntityHandle)~System.Reflection.Metadata.ParameterHandle
 - uid: System.Reflection.Metadata.ParameterHandle.IsNil
   href: System.Reflection.Metadata.ParameterHandle.yml
   name: IsNil
@@ -77,7 +142,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1134
+    startLine: 1612
   syntax:
     content:
       CSharp: public bool IsNil { get; }
@@ -85,21 +150,21 @@ items:
     - id: IsNil
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Reflection.Metadata.ParameterHandle.IsNil
 - uid: System.Reflection.Metadata.ParameterHandle.op_Equality(System.Reflection.Metadata.ParameterHandle,System.Reflection.Metadata.ParameterHandle)
   href: System.Reflection.Metadata.ParameterHandle.yml
   name: operator ==(ParameterHandle, ParameterHandle)
   fullName: System.Reflection.Metadata.ParameterHandle.operator ==(System.Reflection.Metadata.ParameterHandle, System.Reflection.Metadata.ParameterHandle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1144
+    startLine: 1622
   syntax:
     content:
-      CSharp: public static bool operator ==(ParameterHandle left, ParameterHandle right) { return left._rowId == right._rowId; }
+      CSharp: public static bool operator ==(ParameterHandle left, ParameterHandle right)
     parameters:
     - id: left
       type:
@@ -113,6 +178,10 @@ items:
         href: System.Reflection.Metadata.ParameterHandle.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.ParameterHandle.op_Equality(System.Reflection.Metadata.ParameterHandle,System.Reflection.Metadata.ParameterHandle)
 - uid: System.Reflection.Metadata.ParameterHandle.Equals(System.Object)
   href: System.Reflection.Metadata.ParameterHandle.yml
@@ -122,7 +191,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1149
+    startLine: 1627
   syntax:
     content:
       CSharp: public override bool Equals(object obj)
@@ -130,10 +199,14 @@ items:
     - id: obj
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.ParameterHandle.Equals(System.Object)
 - uid: System.Reflection.Metadata.ParameterHandle.Equals(System.Reflection.Metadata.ParameterHandle)
   href: System.Reflection.Metadata.ParameterHandle.yml
@@ -143,7 +216,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1154
+    startLine: 1632
   syntax:
     content:
       CSharp: public bool Equals(ParameterHandle other)
@@ -155,6 +228,10 @@ items:
         href: System.Reflection.Metadata.ParameterHandle.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.ParameterHandle.Equals(System.Reflection.Metadata.ParameterHandle)
 - uid: System.Reflection.Metadata.ParameterHandle.GetHashCode
   href: System.Reflection.Metadata.ParameterHandle.yml
@@ -164,26 +241,30 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1159
+    startLine: 1637
   syntax:
     content:
       CSharp: public override int GetHashCode()
     parameters: []
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: System.Reflection.Metadata.ParameterHandle.GetHashCode
 - uid: System.Reflection.Metadata.ParameterHandle.op_Inequality(System.Reflection.Metadata.ParameterHandle,System.Reflection.Metadata.ParameterHandle)
   href: System.Reflection.Metadata.ParameterHandle.yml
   name: operator !=(ParameterHandle, ParameterHandle)
   fullName: System.Reflection.Metadata.ParameterHandle.operator !=(System.Reflection.Metadata.ParameterHandle, System.Reflection.Metadata.ParameterHandle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1164
+    startLine: 1642
   syntax:
     content:
-      CSharp: public static bool operator !=(ParameterHandle left, ParameterHandle right) { return left._rowId != right._rowId; }
+      CSharp: public static bool operator !=(ParameterHandle left, ParameterHandle right)
     parameters:
     - id: left
       type:
@@ -197,4 +278,8 @@ items:
         href: System.Reflection.Metadata.ParameterHandle.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.ParameterHandle.op_Inequality(System.Reflection.Metadata.ParameterHandle,System.Reflection.Metadata.ParameterHandle)

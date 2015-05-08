@@ -6,16 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/SourceFilter.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/SourceFilter.cs
     startLine: 8
   syntax:
     content:
-      CSharp: public class SourceFilter
+      CSharp: 'public class SourceFilter : TraceFilter'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Diagnostics.TraceFilter
     name: TraceFilter
@@ -41,7 +43,7 @@ items:
     - id: source
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.SourceFilter.#ctor(System.String)
 - uid: System.Diagnostics.SourceFilter.ShouldTrace(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String,System.Object[],System.Object,System.Object[])
@@ -65,7 +67,7 @@ items:
     - id: source
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: eventType
       type:
@@ -75,30 +77,34 @@ items:
     - id: id
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: formatOrMessage
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: args
       type:
         id: System.Array
-        name: System.Array
+        name: object[]
         isExternal: true
     - id: data1
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     - id: data
       type:
         id: System.Array
-        name: System.Array
+        name: object[]
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Diagnostics.SourceFilter.ShouldTrace(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String,System.Object[],System.Object,System.Object[])
 - uid: System.Diagnostics.SourceFilter.Source
   href: System.Diagnostics.SourceFilter.yml
@@ -115,7 +121,7 @@ items:
     parameters:
     - id: Source
       type:
-        id: String
-        name: String
+        id: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.SourceFilter.Source

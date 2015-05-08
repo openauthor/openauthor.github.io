@@ -6,9 +6,10 @@ items:
   type: Interface
   source:
     remote: &o0
+      path: src/System.Web.Mvc/IViewPageActivator.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/IViewPageActivator.cs
     startLine: 4
   syntax:
@@ -28,7 +29,7 @@ items:
     startLine: 6
   syntax:
     content:
-      CSharp: object Create(ControllerContext controllerContext, Type type);
+      CSharp: public object Create(ControllerContext controllerContext, Type type)
     parameters:
     - id: controllerContext
       type:
@@ -38,8 +39,12 @@ items:
     - id: type
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
     return:
       id: Object
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
   id: System.Web.Mvc.IViewPageActivator.Create(System.Web.Mvc.ControllerContext,System.Type)

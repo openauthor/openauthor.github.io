@@ -6,16 +6,21 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/AssemblyDefinition.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/AssemblyDefinition.cs
     startLine: 7
   syntax:
     content:
       CSharp: public struct AssemblyDefinition
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Reflection.Metadata.AssemblyDefinition
   children:
@@ -35,7 +40,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/AssemblyDefinition.cs
-    startLine: 25
+    startLine: 17
   syntax:
     content:
       CSharp: public AssemblyHashAlgorithm HashAlgorithm { get; }
@@ -54,14 +59,14 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/AssemblyDefinition.cs
-    startLine: 33
+    startLine: 25
   syntax:
     content:
       CSharp: public Version Version { get; }
     parameters:
     - id: Version
       type:
-        id: Version
+        id: System.Version
         name: Version
         isExternal: true
   id: System.Reflection.Metadata.AssemblyDefinition.Version
@@ -73,7 +78,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/AssemblyDefinition.cs
-    startLine: 41
+    startLine: 33
   syntax:
     content:
       CSharp: public AssemblyFlags Flags { get; }
@@ -92,7 +97,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/AssemblyDefinition.cs
-    startLine: 49
+    startLine: 41
   syntax:
     content:
       CSharp: public StringHandle Name { get; }
@@ -111,7 +116,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/AssemblyDefinition.cs
-    startLine: 57
+    startLine: 49
   syntax:
     content:
       CSharp: public StringHandle Culture { get; }
@@ -130,7 +135,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/AssemblyDefinition.cs
-    startLine: 65
+    startLine: 57
   syntax:
     content:
       CSharp: public BlobHandle PublicKey { get; }
@@ -149,13 +154,17 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/AssemblyDefinition.cs
-    startLine: 73
+    startLine: 65
   syntax:
     content:
       CSharp: public CustomAttributeHandleCollection GetCustomAttributes()
     parameters: []
     return:
       id: CustomAttributeHandleCollection
+      type:
+        id: System.Reflection.Metadata.CustomAttributeHandleCollection
+        name: CustomAttributeHandleCollection
+        href: System.Reflection.Metadata.CustomAttributeHandleCollection.yml
   id: System.Reflection.Metadata.AssemblyDefinition.GetCustomAttributes
 - uid: System.Reflection.Metadata.AssemblyDefinition.GetDeclarativeSecurityAttributes
   href: System.Reflection.Metadata.AssemblyDefinition.yml
@@ -165,11 +174,15 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/AssemblyDefinition.cs
-    startLine: 78
+    startLine: 70
   syntax:
     content:
       CSharp: public DeclarativeSecurityAttributeHandleCollection GetDeclarativeSecurityAttributes()
     parameters: []
     return:
       id: DeclarativeSecurityAttributeHandleCollection
+      type:
+        id: System.Reflection.Metadata.DeclarativeSecurityAttributeHandleCollection
+        name: DeclarativeSecurityAttributeHandleCollection
+        href: System.Reflection.Metadata.DeclarativeSecurityAttributeHandleCollection.yml
   id: System.Reflection.Metadata.AssemblyDefinition.GetDeclarativeSecurityAttributes

@@ -6,23 +6,24 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/Razor/MvcCSharpRazorCodeParser.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/Razor/MvcCSharpRazorCodeParser.cs
     startLine: 10
   syntax:
     content:
-      CSharp: public class MvcCSharpRazorCodeParser
+      CSharp: 'public class MvcCSharpRazorCodeParser : CSharpCodeParser'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.Razor.Parser.ParserBase
     name: ParserBase
     href: System.Web.Razor.Parser.ParserBase
   - id: System.Web.Razor.Parser.TokenizerBackedParser{System.Web.Razor.Tokenizer.CSharpTokenizer,System.Web.Razor.Tokenizer.Symbols.CSharpSymbol,System.Web.Razor.Tokenizer.Symbols.CSharpSymbolType}
-    name: TokenizerBackedParser
+    name: TokenizerBackedParser<CSharpTokenizer, CSharpSymbol, CSharpSymbolType>
     href: System.Web.Razor.Parser.TokenizerBackedParser{System.Web.Razor.Tokenizer.CSharpTokenizer,System.Web.Razor.Tokenizer.Symbols.CSharpSymbol,System.Web.Razor.Tokenizer.Symbols.CSharpSymbolType}
   - id: System.Web.Razor.Parser.CSharpCodeParser
     name: CSharpCodeParser
@@ -30,6 +31,8 @@ items:
   id: System.Web.Mvc.Razor.MvcCSharpRazorCodeParser
   children:
   - System.Web.Mvc.Razor.MvcCSharpRazorCodeParser.#ctor
+  - System.Web.Mvc.Razor.MvcCSharpRazorCodeParser.InheritsDirective
+  - System.Web.Mvc.Razor.MvcCSharpRazorCodeParser.ModelDirective
 - uid: System.Web.Mvc.Razor.MvcCSharpRazorCodeParser.#ctor
   href: System.Web.Mvc.Razor.MvcCSharpRazorCodeParser.yml
   name: MvcCSharpRazorCodeParser()
@@ -44,3 +47,31 @@ items:
       CSharp: public MvcCSharpRazorCodeParser()
     parameters: []
   id: System.Web.Mvc.Razor.MvcCSharpRazorCodeParser.#ctor
+- uid: System.Web.Mvc.Razor.MvcCSharpRazorCodeParser.InheritsDirective
+  href: System.Web.Mvc.Razor.MvcCSharpRazorCodeParser.yml
+  name: InheritsDirective()
+  fullName: System.Web.Mvc.Razor.MvcCSharpRazorCodeParser.InheritsDirective()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/Razor/MvcCSharpRazorCodeParser.cs
+    startLine: 22
+  syntax:
+    content:
+      CSharp: protected override void InheritsDirective()
+    parameters: []
+  id: System.Web.Mvc.Razor.MvcCSharpRazorCodeParser.InheritsDirective
+- uid: System.Web.Mvc.Razor.MvcCSharpRazorCodeParser.ModelDirective
+  href: System.Web.Mvc.Razor.MvcCSharpRazorCodeParser.yml
+  name: ModelDirective()
+  fullName: System.Web.Mvc.Razor.MvcCSharpRazorCodeParser.ModelDirective()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/Razor/MvcCSharpRazorCodeParser.cs
+    startLine: 41
+  syntax:
+    content:
+      CSharp: protected virtual void ModelDirective()
+    parameters: []
+  id: System.Web.Mvc.Razor.MvcCSharpRazorCodeParser.ModelDirective

@@ -6,16 +6,21 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Runtime.Numerics/src/System/Numerics/Complex.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Runtime.Numerics/src/System/Numerics/Complex.cs
     startLine: 18
   syntax:
     content:
-      CSharp: public struct Complex
+      CSharp: 'public struct Complex : IEquatable<Complex>, IFormattable'
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Numerics.Complex
   children:
@@ -26,8 +31,8 @@ items:
   - System.Numerics.Complex.Zero
   - System.Numerics.Complex.One
   - System.Numerics.Complex.ImaginaryOne
-  - System.Numerics.Complex.#ctor(Double,Double)
-  - System.Numerics.Complex.FromPolarCoordinates(Double,Double)
+  - System.Numerics.Complex.#ctor(System.Double,System.Double)
+  - System.Numerics.Complex.FromPolarCoordinates(System.Double,System.Double)
   - System.Numerics.Complex.Negate(System.Numerics.Complex)
   - System.Numerics.Complex.Add(System.Numerics.Complex,System.Numerics.Complex)
   - System.Numerics.Complex.Subtract(System.Numerics.Complex,System.Numerics.Complex)
@@ -45,22 +50,22 @@ items:
   - System.Numerics.Complex.op_Inequality(System.Numerics.Complex,System.Numerics.Complex)
   - System.Numerics.Complex.Equals(System.Object)
   - System.Numerics.Complex.Equals(System.Numerics.Complex)
-  - System.Numerics.Complex.op_Implicit(Int16)~System.Numerics.Complex
-  - System.Numerics.Complex.op_Implicit(Int32)~System.Numerics.Complex
-  - System.Numerics.Complex.op_Implicit(Int64)~System.Numerics.Complex
-  - System.Numerics.Complex.op_Implicit(UInt16)~System.Numerics.Complex
-  - System.Numerics.Complex.op_Implicit(UInt32)~System.Numerics.Complex
-  - System.Numerics.Complex.op_Implicit(UInt64)~System.Numerics.Complex
-  - System.Numerics.Complex.op_Implicit(SByte)~System.Numerics.Complex
-  - System.Numerics.Complex.op_Implicit(Byte)~System.Numerics.Complex
-  - System.Numerics.Complex.op_Implicit(Single)~System.Numerics.Complex
-  - System.Numerics.Complex.op_Implicit(Double)~System.Numerics.Complex
+  - System.Numerics.Complex.op_Implicit(System.Int16)~System.Numerics.Complex
+  - System.Numerics.Complex.op_Implicit(System.Int32)~System.Numerics.Complex
+  - System.Numerics.Complex.op_Implicit(System.Int64)~System.Numerics.Complex
+  - System.Numerics.Complex.op_Implicit(System.UInt16)~System.Numerics.Complex
+  - System.Numerics.Complex.op_Implicit(System.UInt32)~System.Numerics.Complex
+  - System.Numerics.Complex.op_Implicit(System.UInt64)~System.Numerics.Complex
+  - System.Numerics.Complex.op_Implicit(System.SByte)~System.Numerics.Complex
+  - System.Numerics.Complex.op_Implicit(System.Byte)~System.Numerics.Complex
+  - System.Numerics.Complex.op_Implicit(System.Single)~System.Numerics.Complex
+  - System.Numerics.Complex.op_Implicit(System.Double)~System.Numerics.Complex
   - System.Numerics.Complex.op_Explicit(System.Numerics.BigInteger)~System.Numerics.Complex
-  - System.Numerics.Complex.op_Explicit(Decimal)~System.Numerics.Complex
+  - System.Numerics.Complex.op_Explicit(System.Decimal)~System.Numerics.Complex
   - System.Numerics.Complex.ToString
-  - System.Numerics.Complex.ToString(String)
-  - System.Numerics.Complex.ToString(IFormatProvider)
-  - System.Numerics.Complex.ToString(String,IFormatProvider)
+  - System.Numerics.Complex.ToString(System.String)
+  - System.Numerics.Complex.ToString(System.IFormatProvider)
+  - System.Numerics.Complex.ToString(System.String,System.IFormatProvider)
   - System.Numerics.Complex.GetHashCode
   - System.Numerics.Complex.Sin(System.Numerics.Complex)
   - System.Numerics.Complex.Sinh(System.Numerics.Complex)
@@ -72,12 +77,12 @@ items:
   - System.Numerics.Complex.Tanh(System.Numerics.Complex)
   - System.Numerics.Complex.Atan(System.Numerics.Complex)
   - System.Numerics.Complex.Log(System.Numerics.Complex)
-  - System.Numerics.Complex.Log(System.Numerics.Complex,Double)
+  - System.Numerics.Complex.Log(System.Numerics.Complex,System.Double)
   - System.Numerics.Complex.Log10(System.Numerics.Complex)
   - System.Numerics.Complex.Exp(System.Numerics.Complex)
   - System.Numerics.Complex.Sqrt(System.Numerics.Complex)
   - System.Numerics.Complex.Pow(System.Numerics.Complex,System.Numerics.Complex)
-  - System.Numerics.Complex.Pow(System.Numerics.Complex,Double)
+  - System.Numerics.Complex.Pow(System.Numerics.Complex,System.Double)
 - uid: System.Numerics.Complex.Real
   href: System.Numerics.Complex.yml
   name: Real
@@ -93,8 +98,8 @@ items:
     parameters:
     - id: Real
       type:
-        id: Double
-        name: Double
+        id: System.Double
+        name: double
         isExternal: true
   id: System.Numerics.Complex.Real
 - uid: System.Numerics.Complex.Imaginary
@@ -112,8 +117,8 @@ items:
     parameters:
     - id: Imaginary
       type:
-        id: Double
-        name: Double
+        id: System.Double
+        name: double
         isExternal: true
   id: System.Numerics.Complex.Imaginary
 - uid: System.Numerics.Complex.Magnitude
@@ -131,8 +136,8 @@ items:
     parameters:
     - id: Magnitude
       type:
-        id: Double
-        name: Double
+        id: System.Double
+        name: double
         isExternal: true
   id: System.Numerics.Complex.Magnitude
 - uid: System.Numerics.Complex.Phase
@@ -150,8 +155,8 @@ items:
     parameters:
     - id: Phase
       type:
-        id: Double
-        name: Double
+        id: System.Double
+        name: double
         isExternal: true
   id: System.Numerics.Complex.Phase
 - uid: System.Numerics.Complex.Zero
@@ -165,7 +170,7 @@ items:
     startLine: 66
   syntax:
     content:
-      CSharp: Zero
+      CSharp: public static readonly Complex Zero;
   id: System.Numerics.Complex.Zero
 - uid: System.Numerics.Complex.One
   href: System.Numerics.Complex.yml
@@ -178,7 +183,7 @@ items:
     startLine: 67
   syntax:
     content:
-      CSharp: One
+      CSharp: public static readonly Complex One;
   id: System.Numerics.Complex.One
 - uid: System.Numerics.Complex.ImaginaryOne
   href: System.Numerics.Complex.yml
@@ -191,12 +196,12 @@ items:
     startLine: 68
   syntax:
     content:
-      CSharp: ImaginaryOne
+      CSharp: public static readonly Complex ImaginaryOne;
   id: System.Numerics.Complex.ImaginaryOne
-- uid: System.Numerics.Complex.#ctor(Double,Double)
+- uid: System.Numerics.Complex.#ctor(System.Double,System.Double)
   href: System.Numerics.Complex.yml
-  name: Complex(Double, Double)
-  fullName: System.Numerics.Complex.Complex(Double, Double)
+  name: Complex(double, double)
+  fullName: System.Numerics.Complex.Complex(double, double)
   type: Constructor
   source:
     remote: *o0
@@ -208,19 +213,19 @@ items:
     parameters:
     - id: real
       type:
-        id: Double
-        name: Double
+        id: System.Double
+        name: double
         isExternal: true
     - id: imaginary
       type:
-        id: Double
-        name: Double
+        id: System.Double
+        name: double
         isExternal: true
-  id: System.Numerics.Complex.#ctor(Double,Double)
-- uid: System.Numerics.Complex.FromPolarCoordinates(Double,Double)
+  id: System.Numerics.Complex.#ctor(System.Double,System.Double)
+- uid: System.Numerics.Complex.FromPolarCoordinates(System.Double,System.Double)
   href: System.Numerics.Complex.yml
-  name: FromPolarCoordinates(Double, Double)
-  fullName: System.Numerics.Complex.FromPolarCoordinates(Double, Double)
+  name: FromPolarCoordinates(double, double)
+  fullName: System.Numerics.Complex.FromPolarCoordinates(double, double)
   type: Method
   source:
     remote: *o0
@@ -228,21 +233,25 @@ items:
     startLine: 78
   syntax:
     content:
-      CSharp: public static Complex FromPolarCoordinates(Double magnitude, Double phase)
+      CSharp: public static Complex FromPolarCoordinates(double magnitude, double phase)
     parameters:
     - id: magnitude
       type:
-        id: Double
-        name: Double
+        id: System.Double
+        name: double
         isExternal: true
     - id: phase
       type:
-        id: Double
-        name: Double
+        id: System.Double
+        name: double
         isExternal: true
     return:
       id: Complex
-  id: System.Numerics.Complex.FromPolarCoordinates(Double,Double)
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
+  id: System.Numerics.Complex.FromPolarCoordinates(System.Double,System.Double)
 - uid: System.Numerics.Complex.Negate(System.Numerics.Complex)
   href: System.Numerics.Complex.yml
   name: Negate(Complex)
@@ -263,6 +272,10 @@ items:
         href: System.Numerics.Complex.yml
     return:
       id: Complex
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
   id: System.Numerics.Complex.Negate(System.Numerics.Complex)
 - uid: System.Numerics.Complex.Add(System.Numerics.Complex,System.Numerics.Complex)
   href: System.Numerics.Complex.yml
@@ -289,6 +302,10 @@ items:
         href: System.Numerics.Complex.yml
     return:
       id: Complex
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
   id: System.Numerics.Complex.Add(System.Numerics.Complex,System.Numerics.Complex)
 - uid: System.Numerics.Complex.Subtract(System.Numerics.Complex,System.Numerics.Complex)
   href: System.Numerics.Complex.yml
@@ -315,6 +332,10 @@ items:
         href: System.Numerics.Complex.yml
     return:
       id: Complex
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
   id: System.Numerics.Complex.Subtract(System.Numerics.Complex,System.Numerics.Complex)
 - uid: System.Numerics.Complex.Multiply(System.Numerics.Complex,System.Numerics.Complex)
   href: System.Numerics.Complex.yml
@@ -341,6 +362,10 @@ items:
         href: System.Numerics.Complex.yml
     return:
       id: Complex
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
   id: System.Numerics.Complex.Multiply(System.Numerics.Complex,System.Numerics.Complex)
 - uid: System.Numerics.Complex.Divide(System.Numerics.Complex,System.Numerics.Complex)
   href: System.Numerics.Complex.yml
@@ -367,19 +392,23 @@ items:
         href: System.Numerics.Complex.yml
     return:
       id: Complex
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
   id: System.Numerics.Complex.Divide(System.Numerics.Complex,System.Numerics.Complex)
 - uid: System.Numerics.Complex.op_UnaryNegation(System.Numerics.Complex)
   href: System.Numerics.Complex.yml
   name: operator -(Complex)
   fullName: System.Numerics.Complex.operator -(System.Numerics.Complex)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Runtime.Numerics/src/System/Numerics/Complex.cs
     startLine: 109
   syntax:
     content:
-      CSharp: public static Complex operator -(Complex value) /* Unary negation of a complex number */ { return (new Complex((-value._real), (-value._imaginary))); }
+      CSharp: public static Complex operator -(Complex value)
     parameters:
     - id: value
       type:
@@ -388,19 +417,23 @@ items:
         href: System.Numerics.Complex.yml
     return:
       id: Complex
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
   id: System.Numerics.Complex.op_UnaryNegation(System.Numerics.Complex)
 - uid: System.Numerics.Complex.op_Addition(System.Numerics.Complex,System.Numerics.Complex)
   href: System.Numerics.Complex.yml
   name: operator +(Complex, Complex)
   fullName: System.Numerics.Complex.operator +(System.Numerics.Complex, System.Numerics.Complex)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Runtime.Numerics/src/System/Numerics/Complex.cs
     startLine: 115
   syntax:
     content:
-      CSharp: public static Complex operator +(Complex left, Complex right) { return (new Complex((left._real + right._real), (left._imaginary + right._imaginary))); }
+      CSharp: public static Complex operator +(Complex left, Complex right)
     parameters:
     - id: left
       type:
@@ -414,19 +447,23 @@ items:
         href: System.Numerics.Complex.yml
     return:
       id: Complex
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
   id: System.Numerics.Complex.op_Addition(System.Numerics.Complex,System.Numerics.Complex)
 - uid: System.Numerics.Complex.op_Subtraction(System.Numerics.Complex,System.Numerics.Complex)
   href: System.Numerics.Complex.yml
   name: operator -(Complex, Complex)
   fullName: System.Numerics.Complex.operator -(System.Numerics.Complex, System.Numerics.Complex)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Runtime.Numerics/src/System/Numerics/Complex.cs
     startLine: 120
   syntax:
     content:
-      CSharp: public static Complex operator -(Complex left, Complex right) { return (new Complex((left._real - right._real), (left._imaginary - right._imaginary))); }
+      CSharp: public static Complex operator -(Complex left, Complex right)
     parameters:
     - id: left
       type:
@@ -440,19 +477,23 @@ items:
         href: System.Numerics.Complex.yml
     return:
       id: Complex
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
   id: System.Numerics.Complex.op_Subtraction(System.Numerics.Complex,System.Numerics.Complex)
 - uid: System.Numerics.Complex.op_Multiply(System.Numerics.Complex,System.Numerics.Complex)
   href: System.Numerics.Complex.yml
   name: operator *(Complex, Complex)
   fullName: System.Numerics.Complex.operator *(System.Numerics.Complex, System.Numerics.Complex)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Runtime.Numerics/src/System/Numerics/Complex.cs
     startLine: 125
   syntax:
     content:
-      CSharp: 'public static Complex operator *(Complex left, Complex right) { // Multiplication: (a + bi)(c + di) = (ac -bd) + (bc + ad)i Double result_Realpart = (left._real * right._real) - (left._imaginary * right._imaginary); Double result_Imaginarypart = (left._imaginary * right._real) + (left._real * right._imaginary); return (new Complex(result_Realpart, result_Imaginarypart)); }'
+      CSharp: public static Complex operator *(Complex left, Complex right)
     parameters:
     - id: left
       type:
@@ -466,19 +507,23 @@ items:
         href: System.Numerics.Complex.yml
     return:
       id: Complex
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
   id: System.Numerics.Complex.op_Multiply(System.Numerics.Complex,System.Numerics.Complex)
 - uid: System.Numerics.Complex.op_Division(System.Numerics.Complex,System.Numerics.Complex)
   href: System.Numerics.Complex.yml
   name: operator /(Complex, Complex)
   fullName: System.Numerics.Complex.operator /(System.Numerics.Complex, System.Numerics.Complex)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Runtime.Numerics/src/System/Numerics/Complex.cs
     startLine: 133
   syntax:
     content:
-      CSharp: 'public static Complex operator /(Complex left, Complex right) { // Division : Smith''s formula. double a = left._real; double b = left._imaginary; double c = right._real; double d = right._imaginary; if (Math.Abs(d) < Math.Abs(c)) { double doc = d / c; return new Complex((a + b * doc) / (c + d * doc), (b - a * doc) / (c + d * doc)); } else { double cod = c / d; return new Complex((b + a * cod) / (d + c * cod), (-a + b * cod) / (d + c * cod)); } }'
+      CSharp: public static Complex operator /(Complex left, Complex right)
     parameters:
     - id: left
       type:
@@ -492,6 +537,10 @@ items:
         href: System.Numerics.Complex.yml
     return:
       id: Complex
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
   id: System.Numerics.Complex.op_Division(System.Numerics.Complex,System.Numerics.Complex)
 - uid: System.Numerics.Complex.Abs(System.Numerics.Complex)
   href: System.Numerics.Complex.yml
@@ -504,7 +553,7 @@ items:
     startLine: 156
   syntax:
     content:
-      CSharp: public static Double Abs(Complex value)
+      CSharp: public static double Abs(Complex value)
     parameters:
     - id: value
       type:
@@ -513,6 +562,10 @@ items:
         href: System.Numerics.Complex.yml
     return:
       id: Double
+      type:
+        id: System.Double
+        name: double
+        isExternal: true
   id: System.Numerics.Complex.Abs(System.Numerics.Complex)
 - uid: System.Numerics.Complex.Conjugate(System.Numerics.Complex)
   href: System.Numerics.Complex.yml
@@ -534,6 +587,10 @@ items:
         href: System.Numerics.Complex.yml
     return:
       id: Complex
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
   id: System.Numerics.Complex.Conjugate(System.Numerics.Complex)
 - uid: System.Numerics.Complex.Reciprocal(System.Numerics.Complex)
   href: System.Numerics.Complex.yml
@@ -555,19 +612,23 @@ items:
         href: System.Numerics.Complex.yml
     return:
       id: Complex
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
   id: System.Numerics.Complex.Reciprocal(System.Numerics.Complex)
 - uid: System.Numerics.Complex.op_Equality(System.Numerics.Complex,System.Numerics.Complex)
   href: System.Numerics.Complex.yml
   name: operator ==(Complex, Complex)
   fullName: System.Numerics.Complex.operator ==(System.Numerics.Complex, System.Numerics.Complex)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Runtime.Numerics/src/System/Numerics/Complex.cs
     startLine: 205
   syntax:
     content:
-      CSharp: public static bool operator ==(Complex left, Complex right) { return ((left._real == right._real) && (left._imaginary == right._imaginary)); }
+      CSharp: public static bool operator ==(Complex left, Complex right)
     parameters:
     - id: left
       type:
@@ -581,19 +642,23 @@ items:
         href: System.Numerics.Complex.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Numerics.Complex.op_Equality(System.Numerics.Complex,System.Numerics.Complex)
 - uid: System.Numerics.Complex.op_Inequality(System.Numerics.Complex,System.Numerics.Complex)
   href: System.Numerics.Complex.yml
   name: operator !=(Complex, Complex)
   fullName: System.Numerics.Complex.operator !=(System.Numerics.Complex, System.Numerics.Complex)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Runtime.Numerics/src/System/Numerics/Complex.cs
     startLine: 209
   syntax:
     content:
-      CSharp: public static bool operator !=(Complex left, Complex right) { return ((left._real != right._real) || (left._imaginary != right._imaginary)); }
+      CSharp: public static bool operator !=(Complex left, Complex right)
     parameters:
     - id: left
       type:
@@ -607,6 +672,10 @@ items:
         href: System.Numerics.Complex.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Numerics.Complex.op_Inequality(System.Numerics.Complex,System.Numerics.Complex)
 - uid: System.Numerics.Complex.Equals(System.Object)
   href: System.Numerics.Complex.yml
@@ -624,10 +693,14 @@ items:
     - id: obj
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Numerics.Complex.Equals(System.Object)
 - uid: System.Numerics.Complex.Equals(System.Numerics.Complex)
   href: System.Numerics.Complex.yml
@@ -649,229 +722,273 @@ items:
         href: System.Numerics.Complex.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Numerics.Complex.Equals(System.Numerics.Complex)
-- uid: System.Numerics.Complex.op_Implicit(Int16)~System.Numerics.Complex
+- uid: System.Numerics.Complex.op_Implicit(System.Int16)~System.Numerics.Complex
   href: System.Numerics.Complex.yml
-  name: implicit operator Complex(Int16)
-  fullName: System.Numerics.Complex.implicit operator System.Numerics.Complex(Int16)
-  type: Method
+  name: implicit operator Complex(short)
+  fullName: System.Numerics.Complex.implicit operator System.Numerics.Complex(short)
+  type: Operator
   source:
     remote: *o0
     path: src/System.Runtime.Numerics/src/System/Numerics/Complex.cs
     startLine: 228
   syntax:
     content:
-      CSharp: public static implicit operator Complex(Int16 value) { return (new Complex(value, 0.0)); }
+      CSharp: public static implicit operator Complex(short value)
     parameters:
     - id: value
       type:
-        id: Int16
-        name: Int16
+        id: System.Int16
+        name: short
         isExternal: true
     return:
       id: Complex
-  id: System.Numerics.Complex.op_Implicit(Int16)~System.Numerics.Complex
-- uid: System.Numerics.Complex.op_Implicit(Int32)~System.Numerics.Complex
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
+  id: System.Numerics.Complex.op_Implicit(System.Int16)~System.Numerics.Complex
+- uid: System.Numerics.Complex.op_Implicit(System.Int32)~System.Numerics.Complex
   href: System.Numerics.Complex.yml
-  name: implicit operator Complex(Int32)
-  fullName: System.Numerics.Complex.implicit operator System.Numerics.Complex(Int32)
-  type: Method
+  name: implicit operator Complex(int)
+  fullName: System.Numerics.Complex.implicit operator System.Numerics.Complex(int)
+  type: Operator
   source:
     remote: *o0
     path: src/System.Runtime.Numerics/src/System/Numerics/Complex.cs
     startLine: 232
   syntax:
     content:
-      CSharp: public static implicit operator Complex(Int32 value) { return (new Complex(value, 0.0)); }
+      CSharp: public static implicit operator Complex(int value)
     parameters:
     - id: value
       type:
-        id: Int32
-        name: Int32
+        id: System.Int32
+        name: int
         isExternal: true
     return:
       id: Complex
-  id: System.Numerics.Complex.op_Implicit(Int32)~System.Numerics.Complex
-- uid: System.Numerics.Complex.op_Implicit(Int64)~System.Numerics.Complex
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
+  id: System.Numerics.Complex.op_Implicit(System.Int32)~System.Numerics.Complex
+- uid: System.Numerics.Complex.op_Implicit(System.Int64)~System.Numerics.Complex
   href: System.Numerics.Complex.yml
-  name: implicit operator Complex(Int64)
-  fullName: System.Numerics.Complex.implicit operator System.Numerics.Complex(Int64)
-  type: Method
+  name: implicit operator Complex(long)
+  fullName: System.Numerics.Complex.implicit operator System.Numerics.Complex(long)
+  type: Operator
   source:
     remote: *o0
     path: src/System.Runtime.Numerics/src/System/Numerics/Complex.cs
     startLine: 236
   syntax:
     content:
-      CSharp: public static implicit operator Complex(Int64 value) { return (new Complex(value, 0.0)); }
+      CSharp: public static implicit operator Complex(long value)
     parameters:
     - id: value
       type:
-        id: Int64
-        name: Int64
+        id: System.Int64
+        name: long
         isExternal: true
     return:
       id: Complex
-  id: System.Numerics.Complex.op_Implicit(Int64)~System.Numerics.Complex
-- uid: System.Numerics.Complex.op_Implicit(UInt16)~System.Numerics.Complex
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
+  id: System.Numerics.Complex.op_Implicit(System.Int64)~System.Numerics.Complex
+- uid: System.Numerics.Complex.op_Implicit(System.UInt16)~System.Numerics.Complex
   href: System.Numerics.Complex.yml
-  name: implicit operator Complex(UInt16)
-  fullName: System.Numerics.Complex.implicit operator System.Numerics.Complex(UInt16)
-  type: Method
+  name: implicit operator Complex(ushort)
+  fullName: System.Numerics.Complex.implicit operator System.Numerics.Complex(ushort)
+  type: Operator
   source:
     remote: *o0
     path: src/System.Runtime.Numerics/src/System/Numerics/Complex.cs
     startLine: 240
   syntax:
     content:
-      CSharp: '[CLSCompliant(false)] public static implicit operator Complex(UInt16 value) { return (new Complex(value, 0.0)); }'
+      CSharp: public static implicit operator Complex(ushort value)
     parameters:
     - id: value
       type:
-        id: UInt16
-        name: UInt16
+        id: System.UInt16
+        name: ushort
         isExternal: true
     return:
       id: Complex
-  id: System.Numerics.Complex.op_Implicit(UInt16)~System.Numerics.Complex
-- uid: System.Numerics.Complex.op_Implicit(UInt32)~System.Numerics.Complex
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
+  id: System.Numerics.Complex.op_Implicit(System.UInt16)~System.Numerics.Complex
+- uid: System.Numerics.Complex.op_Implicit(System.UInt32)~System.Numerics.Complex
   href: System.Numerics.Complex.yml
-  name: implicit operator Complex(UInt32)
-  fullName: System.Numerics.Complex.implicit operator System.Numerics.Complex(UInt32)
-  type: Method
+  name: implicit operator Complex(uint)
+  fullName: System.Numerics.Complex.implicit operator System.Numerics.Complex(uint)
+  type: Operator
   source:
     remote: *o0
     path: src/System.Runtime.Numerics/src/System/Numerics/Complex.cs
     startLine: 245
   syntax:
     content:
-      CSharp: '[CLSCompliant(false)] public static implicit operator Complex(UInt32 value) { return (new Complex(value, 0.0)); }'
+      CSharp: public static implicit operator Complex(uint value)
     parameters:
     - id: value
       type:
-        id: UInt32
-        name: UInt32
+        id: System.UInt32
+        name: uint
         isExternal: true
     return:
       id: Complex
-  id: System.Numerics.Complex.op_Implicit(UInt32)~System.Numerics.Complex
-- uid: System.Numerics.Complex.op_Implicit(UInt64)~System.Numerics.Complex
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
+  id: System.Numerics.Complex.op_Implicit(System.UInt32)~System.Numerics.Complex
+- uid: System.Numerics.Complex.op_Implicit(System.UInt64)~System.Numerics.Complex
   href: System.Numerics.Complex.yml
-  name: implicit operator Complex(UInt64)
-  fullName: System.Numerics.Complex.implicit operator System.Numerics.Complex(UInt64)
-  type: Method
+  name: implicit operator Complex(ulong)
+  fullName: System.Numerics.Complex.implicit operator System.Numerics.Complex(ulong)
+  type: Operator
   source:
     remote: *o0
     path: src/System.Runtime.Numerics/src/System/Numerics/Complex.cs
     startLine: 250
   syntax:
     content:
-      CSharp: '[CLSCompliant(false)] public static implicit operator Complex(UInt64 value) { return (new Complex(value, 0.0)); }'
+      CSharp: public static implicit operator Complex(ulong value)
     parameters:
     - id: value
       type:
-        id: UInt64
-        name: UInt64
+        id: System.UInt64
+        name: ulong
         isExternal: true
     return:
       id: Complex
-  id: System.Numerics.Complex.op_Implicit(UInt64)~System.Numerics.Complex
-- uid: System.Numerics.Complex.op_Implicit(SByte)~System.Numerics.Complex
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
+  id: System.Numerics.Complex.op_Implicit(System.UInt64)~System.Numerics.Complex
+- uid: System.Numerics.Complex.op_Implicit(System.SByte)~System.Numerics.Complex
   href: System.Numerics.Complex.yml
-  name: implicit operator Complex(SByte)
-  fullName: System.Numerics.Complex.implicit operator System.Numerics.Complex(SByte)
-  type: Method
+  name: implicit operator Complex(sbyte)
+  fullName: System.Numerics.Complex.implicit operator System.Numerics.Complex(sbyte)
+  type: Operator
   source:
     remote: *o0
     path: src/System.Runtime.Numerics/src/System/Numerics/Complex.cs
     startLine: 255
   syntax:
     content:
-      CSharp: '[CLSCompliant(false)] public static implicit operator Complex(SByte value) { return (new Complex(value, 0.0)); }'
+      CSharp: public static implicit operator Complex(sbyte value)
     parameters:
     - id: value
       type:
-        id: SByte
-        name: SByte
+        id: System.SByte
+        name: sbyte
         isExternal: true
     return:
       id: Complex
-  id: System.Numerics.Complex.op_Implicit(SByte)~System.Numerics.Complex
-- uid: System.Numerics.Complex.op_Implicit(Byte)~System.Numerics.Complex
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
+  id: System.Numerics.Complex.op_Implicit(System.SByte)~System.Numerics.Complex
+- uid: System.Numerics.Complex.op_Implicit(System.Byte)~System.Numerics.Complex
   href: System.Numerics.Complex.yml
-  name: implicit operator Complex(Byte)
-  fullName: System.Numerics.Complex.implicit operator System.Numerics.Complex(Byte)
-  type: Method
+  name: implicit operator Complex(byte)
+  fullName: System.Numerics.Complex.implicit operator System.Numerics.Complex(byte)
+  type: Operator
   source:
     remote: *o0
     path: src/System.Runtime.Numerics/src/System/Numerics/Complex.cs
     startLine: 260
   syntax:
     content:
-      CSharp: public static implicit operator Complex(Byte value) { return (new Complex(value, 0.0)); }
+      CSharp: public static implicit operator Complex(byte value)
     parameters:
     - id: value
       type:
-        id: Byte
-        name: Byte
+        id: System.Byte
+        name: byte
         isExternal: true
     return:
       id: Complex
-  id: System.Numerics.Complex.op_Implicit(Byte)~System.Numerics.Complex
-- uid: System.Numerics.Complex.op_Implicit(Single)~System.Numerics.Complex
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
+  id: System.Numerics.Complex.op_Implicit(System.Byte)~System.Numerics.Complex
+- uid: System.Numerics.Complex.op_Implicit(System.Single)~System.Numerics.Complex
   href: System.Numerics.Complex.yml
-  name: implicit operator Complex(Single)
-  fullName: System.Numerics.Complex.implicit operator System.Numerics.Complex(Single)
-  type: Method
+  name: implicit operator Complex(float)
+  fullName: System.Numerics.Complex.implicit operator System.Numerics.Complex(float)
+  type: Operator
   source:
     remote: *o0
     path: src/System.Runtime.Numerics/src/System/Numerics/Complex.cs
     startLine: 264
   syntax:
     content:
-      CSharp: public static implicit operator Complex(Single value) { return (new Complex(value, 0.0)); }
+      CSharp: public static implicit operator Complex(float value)
     parameters:
     - id: value
       type:
-        id: Single
-        name: Single
+        id: System.Single
+        name: float
         isExternal: true
     return:
       id: Complex
-  id: System.Numerics.Complex.op_Implicit(Single)~System.Numerics.Complex
-- uid: System.Numerics.Complex.op_Implicit(Double)~System.Numerics.Complex
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
+  id: System.Numerics.Complex.op_Implicit(System.Single)~System.Numerics.Complex
+- uid: System.Numerics.Complex.op_Implicit(System.Double)~System.Numerics.Complex
   href: System.Numerics.Complex.yml
-  name: implicit operator Complex(Double)
-  fullName: System.Numerics.Complex.implicit operator System.Numerics.Complex(Double)
-  type: Method
+  name: implicit operator Complex(double)
+  fullName: System.Numerics.Complex.implicit operator System.Numerics.Complex(double)
+  type: Operator
   source:
     remote: *o0
     path: src/System.Runtime.Numerics/src/System/Numerics/Complex.cs
     startLine: 268
   syntax:
     content:
-      CSharp: public static implicit operator Complex(Double value) { return (new Complex(value, 0.0)); }
+      CSharp: public static implicit operator Complex(double value)
     parameters:
     - id: value
       type:
-        id: Double
-        name: Double
+        id: System.Double
+        name: double
         isExternal: true
     return:
       id: Complex
-  id: System.Numerics.Complex.op_Implicit(Double)~System.Numerics.Complex
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
+  id: System.Numerics.Complex.op_Implicit(System.Double)~System.Numerics.Complex
 - uid: System.Numerics.Complex.op_Explicit(System.Numerics.BigInteger)~System.Numerics.Complex
   href: System.Numerics.Complex.yml
   name: explicit operator Complex(BigInteger)
   fullName: System.Numerics.Complex.explicit operator System.Numerics.Complex(System.Numerics.BigInteger)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Runtime.Numerics/src/System/Numerics/Complex.cs
     startLine: 272
   syntax:
     content:
-      CSharp: public static explicit operator Complex(BigInteger value) { return (new Complex((Double)value, 0.0)); }
+      CSharp: public static explicit operator Complex(BigInteger value)
     parameters:
     - id: value
       type:
@@ -880,28 +997,36 @@ items:
         href: System.Numerics.BigInteger.yml
     return:
       id: Complex
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
   id: System.Numerics.Complex.op_Explicit(System.Numerics.BigInteger)~System.Numerics.Complex
-- uid: System.Numerics.Complex.op_Explicit(Decimal)~System.Numerics.Complex
+- uid: System.Numerics.Complex.op_Explicit(System.Decimal)~System.Numerics.Complex
   href: System.Numerics.Complex.yml
-  name: explicit operator Complex(Decimal)
-  fullName: System.Numerics.Complex.explicit operator System.Numerics.Complex(Decimal)
-  type: Method
+  name: explicit operator Complex(decimal)
+  fullName: System.Numerics.Complex.explicit operator System.Numerics.Complex(decimal)
+  type: Operator
   source:
     remote: *o0
     path: src/System.Runtime.Numerics/src/System/Numerics/Complex.cs
     startLine: 276
   syntax:
     content:
-      CSharp: public static explicit operator Complex(Decimal value) { return (new Complex((Double)value, 0.0)); }
+      CSharp: public static explicit operator Complex(decimal value)
     parameters:
     - id: value
       type:
-        id: Decimal
-        name: Decimal
+        id: System.Decimal
+        name: decimal
         isExternal: true
     return:
       id: Complex
-  id: System.Numerics.Complex.op_Explicit(Decimal)~System.Numerics.Complex
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
+  id: System.Numerics.Complex.op_Explicit(System.Decimal)~System.Numerics.Complex
 - uid: System.Numerics.Complex.ToString
   href: System.Numerics.Complex.yml
   name: ToString()
@@ -913,15 +1038,19 @@ items:
     startLine: 284
   syntax:
     content:
-      CSharp: public override String ToString()
+      CSharp: public override string ToString()
     parameters: []
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Numerics.Complex.ToString
-- uid: System.Numerics.Complex.ToString(String)
+- uid: System.Numerics.Complex.ToString(System.String)
   href: System.Numerics.Complex.yml
-  name: ToString(String)
-  fullName: System.Numerics.Complex.ToString(String)
+  name: ToString(string)
+  fullName: System.Numerics.Complex.ToString(string)
   type: Method
   source:
     remote: *o0
@@ -929,20 +1058,24 @@ items:
     startLine: 289
   syntax:
     content:
-      CSharp: public String ToString(String format)
+      CSharp: public string ToString(string format)
     parameters:
     - id: format
       type:
-        id: String
-        name: String
+        id: System.String
+        name: string
         isExternal: true
     return:
       id: String
-  id: System.Numerics.Complex.ToString(String)
-- uid: System.Numerics.Complex.ToString(IFormatProvider)
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Numerics.Complex.ToString(System.String)
+- uid: System.Numerics.Complex.ToString(System.IFormatProvider)
   href: System.Numerics.Complex.yml
   name: ToString(IFormatProvider)
-  fullName: System.Numerics.Complex.ToString(IFormatProvider)
+  fullName: System.Numerics.Complex.ToString(System.IFormatProvider)
   type: Method
   source:
     remote: *o0
@@ -950,20 +1083,24 @@ items:
     startLine: 294
   syntax:
     content:
-      CSharp: public String ToString(IFormatProvider provider)
+      CSharp: public string ToString(IFormatProvider provider)
     parameters:
     - id: provider
       type:
-        id: IFormatProvider
+        id: System.IFormatProvider
         name: IFormatProvider
         isExternal: true
     return:
       id: String
-  id: System.Numerics.Complex.ToString(IFormatProvider)
-- uid: System.Numerics.Complex.ToString(String,IFormatProvider)
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Numerics.Complex.ToString(System.IFormatProvider)
+- uid: System.Numerics.Complex.ToString(System.String,System.IFormatProvider)
   href: System.Numerics.Complex.yml
-  name: ToString(String, IFormatProvider)
-  fullName: System.Numerics.Complex.ToString(String, IFormatProvider)
+  name: ToString(string, IFormatProvider)
+  fullName: System.Numerics.Complex.ToString(string, System.IFormatProvider)
   type: Method
   source:
     remote: *o0
@@ -971,21 +1108,25 @@ items:
     startLine: 299
   syntax:
     content:
-      CSharp: public String ToString(String format, IFormatProvider provider)
+      CSharp: public string ToString(string format, IFormatProvider provider)
     parameters:
     - id: format
       type:
-        id: String
-        name: String
+        id: System.String
+        name: string
         isExternal: true
     - id: provider
       type:
-        id: IFormatProvider
+        id: System.IFormatProvider
         name: IFormatProvider
         isExternal: true
     return:
       id: String
-  id: System.Numerics.Complex.ToString(String,IFormatProvider)
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Numerics.Complex.ToString(System.String,System.IFormatProvider)
 - uid: System.Numerics.Complex.GetHashCode
   href: System.Numerics.Complex.yml
   name: GetHashCode()
@@ -997,10 +1138,14 @@ items:
     startLine: 305
   syntax:
     content:
-      CSharp: public override Int32 GetHashCode()
+      CSharp: public override int GetHashCode()
     parameters: []
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: System.Numerics.Complex.GetHashCode
 - uid: System.Numerics.Complex.Sin(System.Numerics.Complex)
   href: System.Numerics.Complex.yml
@@ -1022,6 +1167,10 @@ items:
         href: System.Numerics.Complex.yml
     return:
       id: Complex
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
   id: System.Numerics.Complex.Sin(System.Numerics.Complex)
 - uid: System.Numerics.Complex.Sinh(System.Numerics.Complex)
   href: System.Numerics.Complex.yml
@@ -1034,7 +1183,7 @@ items:
     startLine: 325
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Sinh", Justification = "matell: Existing Name")] public static Complex Sinh(Complex value)'
+      CSharp: public static Complex Sinh(Complex value)
     parameters:
     - id: value
       type:
@@ -1043,6 +1192,10 @@ items:
         href: System.Numerics.Complex.yml
     return:
       id: Complex
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
   id: System.Numerics.Complex.Sinh(System.Numerics.Complex)
 - uid: System.Numerics.Complex.Asin(System.Numerics.Complex)
   href: System.Numerics.Complex.yml
@@ -1064,6 +1217,10 @@ items:
         href: System.Numerics.Complex.yml
     return:
       id: Complex
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
   id: System.Numerics.Complex.Asin(System.Numerics.Complex)
 - uid: System.Numerics.Complex.Cos(System.Numerics.Complex)
   href: System.Numerics.Complex.yml
@@ -1085,6 +1242,10 @@ items:
         href: System.Numerics.Complex.yml
     return:
       id: Complex
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
   id: System.Numerics.Complex.Cos(System.Numerics.Complex)
 - uid: System.Numerics.Complex.Cosh(System.Numerics.Complex)
   href: System.Numerics.Complex.yml
@@ -1097,7 +1258,7 @@ items:
     startLine: 348
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Cosh", Justification = "matell: Existing Name")] public static Complex Cosh(Complex value)'
+      CSharp: public static Complex Cosh(Complex value)
     parameters:
     - id: value
       type:
@@ -1106,6 +1267,10 @@ items:
         href: System.Numerics.Complex.yml
     return:
       id: Complex
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
   id: System.Numerics.Complex.Cosh(System.Numerics.Complex)
 - uid: System.Numerics.Complex.Acos(System.Numerics.Complex)
   href: System.Numerics.Complex.yml
@@ -1127,6 +1292,10 @@ items:
         href: System.Numerics.Complex.yml
     return:
       id: Complex
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
   id: System.Numerics.Complex.Acos(System.Numerics.Complex)
 - uid: System.Numerics.Complex.Tan(System.Numerics.Complex)
   href: System.Numerics.Complex.yml
@@ -1148,6 +1317,10 @@ items:
         href: System.Numerics.Complex.yml
     return:
       id: Complex
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
   id: System.Numerics.Complex.Tan(System.Numerics.Complex)
 - uid: System.Numerics.Complex.Tanh(System.Numerics.Complex)
   href: System.Numerics.Complex.yml
@@ -1160,7 +1333,7 @@ items:
     startLine: 368
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Tanh", Justification = "matell: Existing Name")] public static Complex Tanh(Complex value)'
+      CSharp: public static Complex Tanh(Complex value)
     parameters:
     - id: value
       type:
@@ -1169,6 +1342,10 @@ items:
         href: System.Numerics.Complex.yml
     return:
       id: Complex
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
   id: System.Numerics.Complex.Tanh(System.Numerics.Complex)
 - uid: System.Numerics.Complex.Atan(System.Numerics.Complex)
   href: System.Numerics.Complex.yml
@@ -1190,6 +1367,10 @@ items:
         href: System.Numerics.Complex.yml
     return:
       id: Complex
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
   id: System.Numerics.Complex.Atan(System.Numerics.Complex)
 - uid: System.Numerics.Complex.Log(System.Numerics.Complex)
   href: System.Numerics.Complex.yml
@@ -1211,11 +1392,15 @@ items:
         href: System.Numerics.Complex.yml
     return:
       id: Complex
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
   id: System.Numerics.Complex.Log(System.Numerics.Complex)
-- uid: System.Numerics.Complex.Log(System.Numerics.Complex,Double)
+- uid: System.Numerics.Complex.Log(System.Numerics.Complex,System.Double)
   href: System.Numerics.Complex.yml
-  name: Log(Complex, Double)
-  fullName: System.Numerics.Complex.Log(System.Numerics.Complex, Double)
+  name: Log(Complex, double)
+  fullName: System.Numerics.Complex.Log(System.Numerics.Complex, double)
   type: Method
   source:
     remote: *o0
@@ -1223,7 +1408,7 @@ items:
     startLine: 385
   syntax:
     content:
-      CSharp: public static Complex Log(Complex value, Double baseValue)
+      CSharp: public static Complex Log(Complex value, double baseValue)
     parameters:
     - id: value
       type:
@@ -1232,12 +1417,16 @@ items:
         href: System.Numerics.Complex.yml
     - id: baseValue
       type:
-        id: Double
-        name: Double
+        id: System.Double
+        name: double
         isExternal: true
     return:
       id: Complex
-  id: System.Numerics.Complex.Log(System.Numerics.Complex,Double)
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
+  id: System.Numerics.Complex.Log(System.Numerics.Complex,System.Double)
 - uid: System.Numerics.Complex.Log10(System.Numerics.Complex)
   href: System.Numerics.Complex.yml
   name: Log10(Complex)
@@ -1258,6 +1447,10 @@ items:
         href: System.Numerics.Complex.yml
     return:
       id: Complex
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
   id: System.Numerics.Complex.Log10(System.Numerics.Complex)
 - uid: System.Numerics.Complex.Exp(System.Numerics.Complex)
   href: System.Numerics.Complex.yml
@@ -1279,6 +1472,10 @@ items:
         href: System.Numerics.Complex.yml
     return:
       id: Complex
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
   id: System.Numerics.Complex.Exp(System.Numerics.Complex)
 - uid: System.Numerics.Complex.Sqrt(System.Numerics.Complex)
   href: System.Numerics.Complex.yml
@@ -1291,7 +1488,7 @@ items:
     startLine: 402
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Sqrt", Justification = "matell: Existing Name")] public static Complex Sqrt(Complex value)'
+      CSharp: public static Complex Sqrt(Complex value)
     parameters:
     - id: value
       type:
@@ -1300,6 +1497,10 @@ items:
         href: System.Numerics.Complex.yml
     return:
       id: Complex
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
   id: System.Numerics.Complex.Sqrt(System.Numerics.Complex)
 - uid: System.Numerics.Complex.Pow(System.Numerics.Complex,System.Numerics.Complex)
   href: System.Numerics.Complex.yml
@@ -1326,11 +1527,15 @@ items:
         href: System.Numerics.Complex.yml
     return:
       id: Complex
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
   id: System.Numerics.Complex.Pow(System.Numerics.Complex,System.Numerics.Complex)
-- uid: System.Numerics.Complex.Pow(System.Numerics.Complex,Double)
+- uid: System.Numerics.Complex.Pow(System.Numerics.Complex,System.Double)
   href: System.Numerics.Complex.yml
-  name: Pow(Complex, Double)
-  fullName: System.Numerics.Complex.Pow(System.Numerics.Complex, Double)
+  name: Pow(Complex, double)
+  fullName: System.Numerics.Complex.Pow(System.Numerics.Complex, double)
   type: Method
   source:
     remote: *o0
@@ -1338,7 +1543,7 @@ items:
     startLine: 434
   syntax:
     content:
-      CSharp: public static Complex Pow(Complex value, Double power)
+      CSharp: public static Complex Pow(Complex value, double power)
     parameters:
     - id: value
       type:
@@ -1347,9 +1552,13 @@ items:
         href: System.Numerics.Complex.yml
     - id: power
       type:
-        id: Double
-        name: Double
+        id: System.Double
+        name: double
         isExternal: true
     return:
       id: Complex
-  id: System.Numerics.Complex.Pow(System.Numerics.Complex,Double)
+      type:
+        id: System.Numerics.Complex
+        name: Complex
+        href: System.Numerics.Complex.yml
+  id: System.Numerics.Complex.Pow(System.Numerics.Complex,System.Double)

@@ -6,8 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.IO.Compression/src/System/IO/Compression/ZipArchiveEntry.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.IO.Compression/src/System/IO/Compression/ZipArchiveEntry.cs
     startLine: 11
   syntax:
@@ -15,7 +17,7 @@ items:
       CSharp: public class ZipArchiveEntry
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.IO.Compression.ZipArchiveEntry
   children:
@@ -64,8 +66,8 @@ items:
     parameters:
     - id: CompressedLength
       type:
-        id: Int64
-        name: Int64
+        id: System.Int64
+        name: long
         isExternal: true
   id: System.IO.Compression.ZipArchiveEntry.CompressedLength
 - uid: System.IO.Compression.ZipArchiveEntry.FullName
@@ -80,12 +82,12 @@ items:
   summary: The relative path of the entry as stored in the Zip archive. Note that Zip archives allow any string to be the path of the entry, including invalid and absolute paths.
   syntax:
     content:
-      CSharp: public String FullName { get; private set; }
+      CSharp: public String FullName { get; }
     parameters:
     - id: FullName
       type:
-        id: String
-        name: String
+        id: System.String
+        name: string
         isExternal: true
   id: System.IO.Compression.ZipArchiveEntry.FullName
 - uid: System.IO.Compression.ZipArchiveEntry.LastWriteTime
@@ -109,7 +111,7 @@ items:
     parameters:
     - id: LastWriteTime
       type:
-        id: DateTimeOffset
+        id: System.DateTimeOffset
         name: DateTimeOffset
         isExternal: true
   id: System.IO.Compression.ZipArchiveEntry.LastWriteTime
@@ -129,8 +131,8 @@ items:
     parameters:
     - id: Length
       type:
-        id: Int64
-        name: Int64
+        id: System.Int64
+        name: long
         isExternal: true
   id: System.IO.Compression.ZipArchiveEntry.Length
 - uid: System.IO.Compression.ZipArchiveEntry.Name
@@ -149,8 +151,8 @@ items:
     parameters:
     - id: Name
       type:
-        id: String
-        name: String
+        id: System.String
+        name: string
         isExternal: true
   id: System.IO.Compression.ZipArchiveEntry.Name
 - uid: System.IO.Compression.ZipArchiveEntry.Delete
@@ -184,6 +186,10 @@ items:
     parameters: []
     return:
       id: Stream
+      type:
+        id: System.IO.Stream
+        name: Stream
+        isExternal: true
       description: A Stream that represents the contents of the entry.
   id: System.IO.Compression.ZipArchiveEntry.Open
 - uid: System.IO.Compression.ZipArchiveEntry.ToString
@@ -198,9 +204,13 @@ items:
   summary: Returns the FullName of the entry.
   syntax:
     content:
-      CSharp: public override String ToString()
+      CSharp: public override string ToString()
     parameters: []
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
       description: FullName of the entry
   id: System.IO.Compression.ZipArchiveEntry.ToString

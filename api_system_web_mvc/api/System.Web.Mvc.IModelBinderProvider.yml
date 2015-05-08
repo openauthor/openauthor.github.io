@@ -6,9 +6,10 @@ items:
   type: Interface
   source:
     remote: &o0
+      path: src/System.Web.Mvc/IModelBinderProvider.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/IModelBinderProvider.cs
     startLine: 4
   syntax:
@@ -28,13 +29,17 @@ items:
     startLine: 6
   syntax:
     content:
-      CSharp: IModelBinder GetBinder(Type modelType);
+      CSharp: public IModelBinder GetBinder(Type modelType)
     parameters:
     - id: modelType
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
     return:
       id: IModelBinder
+      type:
+        id: System.Web.Mvc.IModelBinder
+        name: IModelBinder
+        href: System.Web.Mvc.IModelBinder.yml
   id: System.Web.Mvc.IModelBinderProvider.GetBinder(System.Type)

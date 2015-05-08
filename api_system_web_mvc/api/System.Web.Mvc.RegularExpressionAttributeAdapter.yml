@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/RegularExpressionAttributeAdapter.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/RegularExpressionAttributeAdapter.cs
     startLine: 7
   syntax:
     content:
-      CSharp: public class RegularExpressionAttributeAdapter
+      CSharp: 'public class RegularExpressionAttributeAdapter : DataAnnotationsModelValidator<RegularExpressionAttribute>'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.Mvc.ModelValidator
     name: ModelValidator
@@ -25,7 +26,7 @@ items:
     name: DataAnnotationsModelValidator
     href: System.Web.Mvc.DataAnnotationsModelValidator.yml
   - id: System.Web.Mvc.DataAnnotationsModelValidator{System.ComponentModel.DataAnnotations.RegularExpressionAttribute}
-    name: DataAnnotationsModelValidator
+    name: DataAnnotationsModelValidator<RegularExpressionAttribute>
     href: System.Web.Mvc.DataAnnotationsModelValidator{System.ComponentModel.DataAnnotations.RegularExpressionAttribute}
   id: System.Web.Mvc.RegularExpressionAttributeAdapter
   children:
@@ -57,7 +58,7 @@ items:
     - id: attribute
       type:
         id: System.ComponentModel.DataAnnotations.RegularExpressionAttribute
-        name: System.ComponentModel.DataAnnotations.RegularExpressionAttribute
+        name: RegularExpressionAttribute
         isExternal: true
   id: System.Web.Mvc.RegularExpressionAttributeAdapter.#ctor(System.Web.Mvc.ModelMetadata,System.Web.Mvc.ControllerContext,System.ComponentModel.DataAnnotations.RegularExpressionAttribute)
 - uid: System.Web.Mvc.RegularExpressionAttributeAdapter.GetClientValidationRules
@@ -75,4 +76,8 @@ items:
     parameters: []
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Web.Mvc.ModelClientValidationRule}
+        name: IEnumerable<ModelClientValidationRule>
+        isExternal: true
   id: System.Web.Mvc.RegularExpressionAttributeAdapter.GetClientValidationRules

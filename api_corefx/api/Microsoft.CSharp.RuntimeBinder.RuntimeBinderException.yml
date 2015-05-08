@@ -6,8 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Microsoft.CSharp/src/Microsoft/CSharp/RuntimeBinder/RuntimeBinderException.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/Microsoft.CSharp/src/Microsoft/CSharp/RuntimeBinder/RuntimeBinderException.cs
     startLine: 12
   summary: >-
@@ -18,16 +20,19 @@ items:
     represents a malfunctioning of the runtime binder itself.
   syntax:
     content:
-      CSharp: public class RuntimeBinderException
+      CSharp: 'public class RuntimeBinderException : Exception, ISerializable, _Exception'
   inheritance:
-  - id: Exception
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.Exception
     name: Exception
     isExternal: true
   id: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException
   children:
   - Microsoft.CSharp.RuntimeBinder.RuntimeBinderException.#ctor
   - Microsoft.CSharp.RuntimeBinder.RuntimeBinderException.#ctor(System.String)
-  - Microsoft.CSharp.RuntimeBinder.RuntimeBinderException.#ctor(System.String,Exception)
+  - Microsoft.CSharp.RuntimeBinder.RuntimeBinderException.#ctor(System.String,System.Exception)
 - uid: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException.#ctor
   href: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException.yml
   name: RuntimeBinderException()
@@ -60,14 +65,14 @@ items:
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The error message that explains the reason for the exception.
   id: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException.#ctor(System.String)
-- uid: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException.#ctor(System.String,Exception)
+- uid: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException.#ctor(System.String,System.Exception)
   href: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException.yml
   name: RuntimeBinderException(string, Exception)
-  fullName: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException.RuntimeBinderException(string, Exception)
+  fullName: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException.RuntimeBinderException(string, System.Exception)
   type: Constructor
   source:
     remote: *o0
@@ -84,13 +89,13 @@ items:
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The error message that explains the reason for the exception.
     - id: innerException
       type:
-        id: Exception
+        id: System.Exception
         name: Exception
         isExternal: true
       description: The exception that is the cause of the current exception, or a null reference if no inner exception is specified.
-  id: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException.#ctor(System.String,Exception)
+  id: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException.#ctor(System.String,System.Exception)

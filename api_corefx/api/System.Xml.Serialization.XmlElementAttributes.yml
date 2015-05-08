@@ -6,16 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlElementAttributes.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlElementAttributes.cs
     startLine: 18
   syntax:
     content:
-      CSharp: public class XmlElementAttributes
+      CSharp: 'public class XmlElementAttributes : IList, ICollection, IEnumerable'
   inheritance:
-  - id: IList
-    name: IList
+  - id: System.Object
+    name: object
     isExternal: true
   id: System.Xml.Serialization.XmlElementAttributes
   children:
@@ -29,6 +31,17 @@ items:
   - System.Xml.Serialization.XmlElementAttributes.Count
   - System.Xml.Serialization.XmlElementAttributes.Clear
   - System.Xml.Serialization.XmlElementAttributes.RemoveAt(System.Int32)
+  - System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#IsReadOnly
+  - System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#IsFixedSize
+  - System.Xml.Serialization.XmlElementAttributes.System#Collections#ICollection#IsSynchronized
+  - System.Xml.Serialization.XmlElementAttributes.System#Collections#ICollection#SyncRoot
+  - System.Xml.Serialization.XmlElementAttributes.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+  - System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#Item(System.Int32)
+  - System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#Contains(System.Object)
+  - System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#Add(System.Object)
+  - System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#Remove(System.Object)
+  - System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#IndexOf(System.Object)
+  - System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#Insert(System.Int32,System.Object)
   - System.Xml.Serialization.XmlElementAttributes.GetEnumerator
 - uid: System.Xml.Serialization.XmlElementAttributes.Item(System.Int32)
   href: System.Xml.Serialization.XmlElementAttributes.yml
@@ -69,6 +82,10 @@ items:
         href: System.Xml.Serialization.XmlElementAttribute.yml
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: System.Xml.Serialization.XmlElementAttributes.Add(System.Xml.Serialization.XmlElementAttribute)
 - uid: System.Xml.Serialization.XmlElementAttributes.Insert(System.Int32,System.Xml.Serialization.XmlElementAttribute)
   href: System.Xml.Serialization.XmlElementAttributes.yml
@@ -86,7 +103,7 @@ items:
     - id: index
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: attribute
       type:
@@ -114,6 +131,10 @@ items:
         href: System.Xml.Serialization.XmlElementAttribute.yml
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: System.Xml.Serialization.XmlElementAttributes.IndexOf(System.Xml.Serialization.XmlElementAttribute)
 - uid: System.Xml.Serialization.XmlElementAttributes.Contains(System.Xml.Serialization.XmlElementAttribute)
   href: System.Xml.Serialization.XmlElementAttributes.yml
@@ -135,6 +156,10 @@ items:
         href: System.Xml.Serialization.XmlElementAttribute.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Xml.Serialization.XmlElementAttributes.Contains(System.Xml.Serialization.XmlElementAttribute)
 - uid: System.Xml.Serialization.XmlElementAttributes.Remove(System.Xml.Serialization.XmlElementAttribute)
   href: System.Xml.Serialization.XmlElementAttributes.yml
@@ -171,12 +196,12 @@ items:
     - id: array
       type:
         id: System.Array
-        name: System.Array
+        name: XmlElementAttribute[]
         isExternal: true
     - id: index
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Xml.Serialization.XmlElementAttributes.CopyTo(System.Xml.Serialization.XmlElementAttribute[],System.Int32)
 - uid: System.Xml.Serialization.XmlElementAttributes.Count
@@ -195,7 +220,7 @@ items:
     - id: Count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Xml.Serialization.XmlElementAttributes.Count
 - uid: System.Xml.Serialization.XmlElementAttributes.Clear
@@ -228,9 +253,246 @@ items:
     - id: index
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Xml.Serialization.XmlElementAttributes.RemoveAt(System.Int32)
+- uid: System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#IsReadOnly
+  href: System.Xml.Serialization.XmlElementAttributes.yml
+  name: IList.IsReadOnly
+  fullName: System.Xml.Serialization.XmlElementAttributes.System.Collections.IList.IsReadOnly
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlElementAttributes.cs
+    startLine: 118
+  syntax:
+    content:
+      CSharp: bool IList.IsReadOnly { get; }
+    parameters:
+    - id: System.Collections.IList.IsReadOnly
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#IsReadOnly
+- uid: System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#IsFixedSize
+  href: System.Xml.Serialization.XmlElementAttributes.yml
+  name: IList.IsFixedSize
+  fullName: System.Xml.Serialization.XmlElementAttributes.System.Collections.IList.IsFixedSize
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlElementAttributes.cs
+    startLine: 123
+  syntax:
+    content:
+      CSharp: bool IList.IsFixedSize { get; }
+    parameters:
+    - id: System.Collections.IList.IsFixedSize
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#IsFixedSize
+- uid: System.Xml.Serialization.XmlElementAttributes.System#Collections#ICollection#IsSynchronized
+  href: System.Xml.Serialization.XmlElementAttributes.yml
+  name: ICollection.IsSynchronized
+  fullName: System.Xml.Serialization.XmlElementAttributes.System.Collections.ICollection.IsSynchronized
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlElementAttributes.cs
+    startLine: 128
+  syntax:
+    content:
+      CSharp: bool ICollection.IsSynchronized { get; }
+    parameters:
+    - id: System.Collections.ICollection.IsSynchronized
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Xml.Serialization.XmlElementAttributes.System#Collections#ICollection#IsSynchronized
+- uid: System.Xml.Serialization.XmlElementAttributes.System#Collections#ICollection#SyncRoot
+  href: System.Xml.Serialization.XmlElementAttributes.yml
+  name: ICollection.SyncRoot
+  fullName: System.Xml.Serialization.XmlElementAttributes.System.Collections.ICollection.SyncRoot
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlElementAttributes.cs
+    startLine: 133
+  syntax:
+    content:
+      CSharp: Object ICollection.SyncRoot { get; }
+    parameters:
+    - id: System.Collections.ICollection.SyncRoot
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+  id: System.Xml.Serialization.XmlElementAttributes.System#Collections#ICollection#SyncRoot
+- uid: System.Xml.Serialization.XmlElementAttributes.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+  href: System.Xml.Serialization.XmlElementAttributes.yml
+  name: ICollection.CopyTo(Array, int)
+  fullName: System.Xml.Serialization.XmlElementAttributes.System.Collections.ICollection.CopyTo(System.Array, int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlElementAttributes.cs
+    startLine: 138
+  syntax:
+    content:
+      CSharp: void ICollection.CopyTo(Array array, int index)
+    parameters:
+    - id: array
+      type:
+        id: System.Array
+        name: Array
+        isExternal: true
+    - id: index
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.Xml.Serialization.XmlElementAttributes.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+- uid: System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#Item(System.Int32)
+  href: System.Xml.Serialization.XmlElementAttributes.yml
+  name: IList.this[int]
+  fullName: System.Xml.Serialization.XmlElementAttributes.System.Collections.IList.this[int]
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlElementAttributes.cs
+    startLine: 143
+  syntax:
+    content:
+      CSharp: Object IList.this[int index] { get; set; }
+    parameters:
+    - id: System.Collections.IList.this[]
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+  id: System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#Item(System.Int32)
+- uid: System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#Contains(System.Object)
+  href: System.Xml.Serialization.XmlElementAttributes.yml
+  name: IList.Contains(object)
+  fullName: System.Xml.Serialization.XmlElementAttributes.System.Collections.IList.Contains(object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlElementAttributes.cs
+    startLine: 155
+  syntax:
+    content:
+      CSharp: bool IList.Contains(object value)
+    parameters:
+    - id: value
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#Contains(System.Object)
+- uid: System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#Add(System.Object)
+  href: System.Xml.Serialization.XmlElementAttributes.yml
+  name: IList.Add(object)
+  fullName: System.Xml.Serialization.XmlElementAttributes.System.Collections.IList.Add(object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlElementAttributes.cs
+    startLine: 160
+  syntax:
+    content:
+      CSharp: int IList.Add(object value)
+    parameters:
+    - id: value
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+    return:
+      id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#Add(System.Object)
+- uid: System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#Remove(System.Object)
+  href: System.Xml.Serialization.XmlElementAttributes.yml
+  name: IList.Remove(object)
+  fullName: System.Xml.Serialization.XmlElementAttributes.System.Collections.IList.Remove(object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlElementAttributes.cs
+    startLine: 165
+  syntax:
+    content:
+      CSharp: void IList.Remove(object value)
+    parameters:
+    - id: value
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+  id: System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#Remove(System.Object)
+- uid: System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#IndexOf(System.Object)
+  href: System.Xml.Serialization.XmlElementAttributes.yml
+  name: IList.IndexOf(object)
+  fullName: System.Xml.Serialization.XmlElementAttributes.System.Collections.IList.IndexOf(object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlElementAttributes.cs
+    startLine: 171
+  syntax:
+    content:
+      CSharp: int IList.IndexOf(object value)
+    parameters:
+    - id: value
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+    return:
+      id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#IndexOf(System.Object)
+- uid: System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#Insert(System.Int32,System.Object)
+  href: System.Xml.Serialization.XmlElementAttributes.yml
+  name: IList.Insert(int, object)
+  fullName: System.Xml.Serialization.XmlElementAttributes.System.Collections.IList.Insert(int, object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlElementAttributes.cs
+    startLine: 176
+  syntax:
+    content:
+      CSharp: void IList.Insert(int index, object value)
+    parameters:
+    - id: index
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: value
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+  id: System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#Insert(System.Int32,System.Object)
 - uid: System.Xml.Serialization.XmlElementAttributes.GetEnumerator
   href: System.Xml.Serialization.XmlElementAttributes.yml
   name: GetEnumerator()
@@ -246,4 +508,8 @@ items:
     parameters: []
     return:
       id: IEnumerator
+      type:
+        id: System.Collections.IEnumerator
+        name: IEnumerator
+        isExternal: true
   id: System.Xml.Serialization.XmlElementAttributes.GetEnumerator

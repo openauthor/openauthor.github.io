@@ -6,9 +6,10 @@ items:
   type: Interface
   source:
     remote: &o0
+      path: src/Common/Routing/IDirectRouteFactory.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/Common/Routing/IDirectRouteFactory.cs
     startLine: 11
   summary: Defines a factory that creates a route directly to a set of action descriptors (an attribute route).
@@ -30,7 +31,7 @@ items:
   summary: Creates a direct route entry.
   syntax:
     content:
-      CSharp: RouteEntry CreateRoute(DirectRouteFactoryContext context);
+      CSharp: public RouteEntry CreateRoute(DirectRouteFactoryContext context)
     parameters:
     - id: context
       type:
@@ -40,5 +41,9 @@ items:
       description: The context to use to create the route.
     return:
       id: RouteEntry
+      type:
+        id: System.Web.Mvc.Routing.RouteEntry
+        name: RouteEntry
+        href: System.Web.Mvc.Routing.RouteEntry.yml
       description: The direct route entry.
   id: System.Web.Mvc.Routing.IDirectRouteFactory.CreateRoute(System.Web.Mvc.Routing.DirectRouteFactoryContext)

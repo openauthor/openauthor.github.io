@@ -6,9 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/CodeFixes/CodeFixProvider.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/CodeFixes/CodeFixProvider.cs
     startLine: 11
   summary: >-
@@ -20,7 +21,7 @@ items:
       CSharp: public abstract class CodeFixProvider
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider
   children:
@@ -44,7 +45,7 @@ items:
     - id: FixableDiagnosticIds
       type:
         id: System.Collections.Immutable.ImmutableArray{System.String}
-        name: System.Collections.Immutable.ImmutableArray{System.String}
+        name: ImmutableArray<string>
         isExternal: true
   id: Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider.FixableDiagnosticIds
 - uid: Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider.RegisterCodeFixesAsync(Microsoft.CodeAnalysis.CodeFixes.CodeFixContext)
@@ -59,7 +60,7 @@ items:
   summary: Computes one or more fixes for the specified [Microsoft.CodeAnalysis.CodeFixes.CodeFixContext](Microsoft.CodeAnalysis.CodeFixes.CodeFixContext.yml).
   syntax:
     content:
-      CSharp: public abstract Task RegisterCodeFixesAsync(CodeFixContext context);
+      CSharp: public abstract Task RegisterCodeFixesAsync(CodeFixContext context)
     parameters:
     - id: context
       type:
@@ -68,6 +69,10 @@ items:
         href: Microsoft.CodeAnalysis.CodeFixes.CodeFixContext.yml
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task
+        name: Task
+        isExternal: true
   id: Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider.RegisterCodeFixesAsync(Microsoft.CodeAnalysis.CodeFixes.CodeFixContext)
 - uid: Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider.GetFixAllProvider
   href: Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider.yml
@@ -90,4 +95,8 @@ items:
     parameters: []
     return:
       id: FixAllProvider
+      type:
+        id: Microsoft.CodeAnalysis.CodeFixes.FixAllProvider
+        name: FixAllProvider
+        href: Microsoft.CodeAnalysis.CodeFixes.FixAllProvider.yml
   id: Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider.GetFixAllProvider

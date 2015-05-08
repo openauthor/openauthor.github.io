@@ -1,0 +1,247 @@
+items:
+- uid: System.Dynamic.DynamicMetaObjectBinder
+  href: System.Dynamic.DynamicMetaObjectBinder.yml
+  name: DynamicMetaObjectBinder
+  fullName: System.Dynamic.DynamicMetaObjectBinder
+  type: Class
+  source:
+    remote: &o0
+      path: src/System.Dynamic.Runtime/src/System/Dynamic/DynamicMetaObjectBinder.cs
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/DynamicMetaObjectBinder.cs
+    startLine: 20
+  summary: The dynamic call site binder that participates in the [System.Dynamic.DynamicMetaObject](System.Dynamic.DynamicMetaObject.yml) binding protocol.
+  syntax:
+    content:
+      CSharp: 'public abstract class DynamicMetaObjectBinder : CallSiteBinder'
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.Runtime.CompilerServices.CallSiteBinder
+    name: CallSiteBinder
+    href: System.Runtime.CompilerServices.CallSiteBinder.yml
+  id: System.Dynamic.DynamicMetaObjectBinder
+  children:
+  - System.Dynamic.DynamicMetaObjectBinder.#ctor
+  - System.Dynamic.DynamicMetaObjectBinder.ReturnType
+  - System.Dynamic.DynamicMetaObjectBinder.Bind(System.Object[],System.Collections.ObjectModel.ReadOnlyCollection{ParameterExpression},LabelTarget)
+  - System.Dynamic.DynamicMetaObjectBinder.Bind(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])
+  - System.Dynamic.DynamicMetaObjectBinder.GetUpdateExpression(System.Type)
+  - System.Dynamic.DynamicMetaObjectBinder.Defer(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])
+  - System.Dynamic.DynamicMetaObjectBinder.Defer(System.Dynamic.DynamicMetaObject[])
+- uid: System.Dynamic.DynamicMetaObjectBinder.#ctor
+  href: System.Dynamic.DynamicMetaObjectBinder.yml
+  name: DynamicMetaObjectBinder()
+  fullName: System.Dynamic.DynamicMetaObjectBinder.DynamicMetaObjectBinder()
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/DynamicMetaObjectBinder.cs
+    startLine: 27
+  summary: Initializes a new instance of the [System.Dynamic.DynamicMetaObjectBinder](System.Dynamic.DynamicMetaObjectBinder.yml) class.
+  syntax:
+    content:
+      CSharp: protected DynamicMetaObjectBinder()
+    parameters: []
+  id: System.Dynamic.DynamicMetaObjectBinder.#ctor
+- uid: System.Dynamic.DynamicMetaObjectBinder.ReturnType
+  href: System.Dynamic.DynamicMetaObjectBinder.yml
+  name: ReturnType
+  fullName: System.Dynamic.DynamicMetaObjectBinder.ReturnType
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/DynamicMetaObjectBinder.cs
+    startLine: 34
+  summary: The result type of the operation.
+  syntax:
+    content:
+      CSharp: public virtual Type ReturnType { get; }
+    parameters:
+    - id: ReturnType
+      type:
+        id: System.Type
+        name: Type
+        isExternal: true
+  id: System.Dynamic.DynamicMetaObjectBinder.ReturnType
+- uid: System.Dynamic.DynamicMetaObjectBinder.Bind(System.Object[],System.Collections.ObjectModel.ReadOnlyCollection{ParameterExpression},LabelTarget)
+  href: System.Dynamic.DynamicMetaObjectBinder.yml
+  name: Bind(object[], ReadOnlyCollection<ParameterExpression>, LabelTarget)
+  fullName: System.Dynamic.DynamicMetaObjectBinder.Bind(object[], System.Collections.ObjectModel.ReadOnlyCollection<ParameterExpression>, LabelTarget)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/DynamicMetaObjectBinder.cs
+    startLine: 51
+  summary: Performs the runtime binding of the dynamic operation on a set of arguments.
+  syntax:
+    content:
+      CSharp: public override sealed Expression Bind(object[] args, ReadOnlyCollection<ParameterExpression> parameters, LabelTarget returnLabel)
+    parameters:
+    - id: args
+      type:
+        id: System.Array
+        name: object[]
+        isExternal: true
+      description: An array of arguments to the dynamic operation.
+    - id: parameters
+      type:
+        id: System.Collections.ObjectModel.ReadOnlyCollection{ParameterExpression}
+        name: ReadOnlyCollection<ParameterExpression>
+        isExternal: true
+      description: The array of @!:ParameterExpression- instances that represent the parameters of the call site in the binding process.
+    - id: returnLabel
+      type:
+        id: LabelTarget
+        name: LabelTarget
+        isExternal: true
+      description: A LabelTarget used to return the result of the dynamic binding.
+    return:
+      id: Expression
+      type:
+        id: Expression
+        name: Expression
+        isExternal: true
+      description: >-
+        An Expression that performs tests on the dynamic operation arguments, and
+
+        performs the dynamic operation if the tests are valid. If the tests fail on
+
+        subsequent occurrences of the dynamic operation, Bind will be called again
+
+        to produce a new @!:Expression- for the new argument types.
+  id: System.Dynamic.DynamicMetaObjectBinder.Bind(System.Object[],System.Collections.ObjectModel.ReadOnlyCollection{ParameterExpression},LabelTarget)
+- uid: System.Dynamic.DynamicMetaObjectBinder.Bind(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])
+  href: System.Dynamic.DynamicMetaObjectBinder.yml
+  name: Bind(DynamicMetaObject, DynamicMetaObject[])
+  fullName: System.Dynamic.DynamicMetaObjectBinder.Bind(System.Dynamic.DynamicMetaObject, System.Dynamic.DynamicMetaObject[])
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/DynamicMetaObjectBinder.cs
+    startLine: 171
+  summary: When overridden in the derived class, performs the binding of the dynamic operation.
+  syntax:
+    content:
+      CSharp: public abstract DynamicMetaObject Bind(DynamicMetaObject target, DynamicMetaObject[] args)
+    parameters:
+    - id: target
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The target of the dynamic operation.
+    - id: args
+      type:
+        id: System.Array
+        name: DynamicMetaObject[]
+        isExternal: true
+      description: An array of arguments of the dynamic operation.
+    return:
+      id: DynamicMetaObject
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The [System.Dynamic.DynamicMetaObject](System.Dynamic.DynamicMetaObject.yml) representing the result of the binding.
+  id: System.Dynamic.DynamicMetaObjectBinder.Bind(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])
+- uid: System.Dynamic.DynamicMetaObjectBinder.GetUpdateExpression(System.Type)
+  href: System.Dynamic.DynamicMetaObjectBinder.yml
+  name: GetUpdateExpression(Type)
+  fullName: System.Dynamic.DynamicMetaObjectBinder.GetUpdateExpression(System.Type)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/DynamicMetaObjectBinder.cs
+    startLine: 181
+  summary: >-
+    Gets an expression that will cause the binding to be updated. It
+
+    indicates that the expression's binding is no longer valid.
+
+    This is typically used when the "version" of a dynamic object has
+
+    changed.
+  syntax:
+    content:
+      CSharp: public Expression GetUpdateExpression(Type type)
+    parameters:
+    - id: type
+      type:
+        id: System.Type
+        name: Type
+        isExternal: true
+      description: The @!:Expression.Type- property of the resulting expression; any type is allowed.
+    return:
+      id: Expression
+      type:
+        id: Expression
+        name: Expression
+        isExternal: true
+      description: The update expression.
+  id: System.Dynamic.DynamicMetaObjectBinder.GetUpdateExpression(System.Type)
+- uid: System.Dynamic.DynamicMetaObjectBinder.Defer(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])
+  href: System.Dynamic.DynamicMetaObjectBinder.yml
+  name: Defer(DynamicMetaObject, params DynamicMetaObject[])
+  fullName: System.Dynamic.DynamicMetaObjectBinder.Defer(System.Dynamic.DynamicMetaObject, params System.Dynamic.DynamicMetaObject[])
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/DynamicMetaObjectBinder.cs
+    startLine: 193
+  summary: Defers the binding of the operation until later time when the runtime values of all dynamic operation arguments have been computed.
+  syntax:
+    content:
+      CSharp: public DynamicMetaObject Defer(DynamicMetaObject target, params DynamicMetaObject[] args)
+    parameters:
+    - id: target
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The target of the dynamic operation.
+    - id: args
+      type:
+        id: System.Array
+        name: DynamicMetaObject[]
+        isExternal: true
+      description: An array of arguments of the dynamic operation.
+    return:
+      id: DynamicMetaObject
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The [System.Dynamic.DynamicMetaObject](System.Dynamic.DynamicMetaObject.yml) representing the result of the binding.
+  id: System.Dynamic.DynamicMetaObjectBinder.Defer(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])
+- uid: System.Dynamic.DynamicMetaObjectBinder.Defer(System.Dynamic.DynamicMetaObject[])
+  href: System.Dynamic.DynamicMetaObjectBinder.yml
+  name: Defer(params DynamicMetaObject[])
+  fullName: System.Dynamic.DynamicMetaObjectBinder.Defer(params System.Dynamic.DynamicMetaObject[])
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/DynamicMetaObjectBinder.cs
+    startLine: 215
+  summary: Defers the binding of the operation until later time when the runtime values of all dynamic operation arguments have been computed.
+  syntax:
+    content:
+      CSharp: public DynamicMetaObject Defer(params DynamicMetaObject[] args)
+    parameters:
+    - id: args
+      type:
+        id: System.Array
+        name: DynamicMetaObject[]
+        isExternal: true
+      description: An array of arguments of the dynamic operation.
+    return:
+      id: DynamicMetaObject
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The [System.Dynamic.DynamicMetaObject](System.Dynamic.DynamicMetaObject.yml) representing the result of the binding.
+  id: System.Dynamic.DynamicMetaObjectBinder.Defer(System.Dynamic.DynamicMetaObject[])

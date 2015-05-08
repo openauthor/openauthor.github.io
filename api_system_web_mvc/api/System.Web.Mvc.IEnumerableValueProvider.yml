@@ -6,14 +6,15 @@ items:
   type: Interface
   source:
     remote: &o0
+      path: src/System.Web.Mvc/IEnumerableValueProvider.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/IEnumerableValueProvider.cs
     startLine: 7
   syntax:
     content:
-      CSharp: public interface IEnumerableValueProvider
+      CSharp: 'public interface IEnumerableValueProvider : IValueProvider'
   id: System.Web.Mvc.IEnumerableValueProvider
   children:
   - System.Web.Mvc.IEnumerableValueProvider.GetKeysFromPrefix(System.String)
@@ -28,13 +29,17 @@ items:
     startLine: 9
   syntax:
     content:
-      CSharp: IDictionary<string, string> GetKeysFromPrefix(string prefix);
+      CSharp: public IDictionary<string, string> GetKeysFromPrefix(string prefix)
     parameters:
     - id: prefix
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: IDictionary
+      type:
+        id: System.Collections.Generic.IDictionary{System.String,System.String}
+        name: IDictionary<string, string>
+        isExternal: true
   id: System.Web.Mvc.IEnumerableValueProvider.GetKeysFromPrefix(System.String)

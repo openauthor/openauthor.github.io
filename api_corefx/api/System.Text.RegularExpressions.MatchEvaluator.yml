@@ -6,15 +6,23 @@ items:
   type: Delegate
   source:
     remote:
+      path: src/System.Text.RegularExpressions/src/System/Text/RegularExpressions/Regex.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Text.RegularExpressions/src/System/Text/RegularExpressions/Regex.cs
     startLine: 951
   syntax:
     content:
-      CSharp: public delegate String MatchEvaluator(Match match);
+      CSharp: public delegate string MatchEvaluator(Match match);
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.Delegate
+    name: Delegate
+    isExternal: true
   - id: System.MulticastDelegate
-    name: System.MulticastDelegate
+    name: MulticastDelegate
     isExternal: true
   id: System.Text.RegularExpressions.MatchEvaluator

@@ -6,22 +6,27 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Xml.XPath/src/System/Xml/XPath/XPathException.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathException.cs
     startLine: 10
   syntax:
     content:
-      CSharp: public class XPathException
+      CSharp: 'public class XPathException : Exception, ISerializable, _Exception'
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.Exception
-    name: System.Exception
+    name: Exception
     isExternal: true
   id: System.Xml.XPath.XPathException
   children:
   - System.Xml.XPath.XPathException.#ctor
   - System.Xml.XPath.XPathException.#ctor(System.String)
-  - System.Xml.XPath.XPathException.#ctor(System.String,Exception)
+  - System.Xml.XPath.XPathException.#ctor(System.String,System.Exception)
 - uid: System.Xml.XPath.XPathException.#ctor
   href: System.Xml.XPath.XPathException.yml
   name: XPathException()
@@ -52,13 +57,13 @@ items:
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.XPath.XPathException.#ctor(System.String)
-- uid: System.Xml.XPath.XPathException.#ctor(System.String,Exception)
+- uid: System.Xml.XPath.XPathException.#ctor(System.String,System.Exception)
   href: System.Xml.XPath.XPathException.yml
   name: XPathException(string, Exception)
-  fullName: System.Xml.XPath.XPathException.XPathException(string, Exception)
+  fullName: System.Xml.XPath.XPathException.XPathException(string, System.Exception)
   type: Constructor
   source:
     remote: *o0
@@ -71,11 +76,11 @@ items:
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: innerException
       type:
-        id: Exception
+        id: System.Exception
         name: Exception
         isExternal: true
-  id: System.Xml.XPath.XPathException.#ctor(System.String,Exception)
+  id: System.Xml.XPath.XPathException.#ctor(System.String,System.Exception)

@@ -6,8 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Xml.XDocument/src/System/Xml/Linq/XNamespace.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XNamespace.cs
     startLine: 12
   summary: Represents an XML namespace. This class cannot be inherited.
@@ -16,7 +18,7 @@ items:
       CSharp: public sealed class XNamespace
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Xml.Linq.XNamespace
   children:
@@ -50,7 +52,7 @@ items:
     - id: NamespaceName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.Linq.XNamespace.NamespaceName
 - uid: System.Xml.Linq.XNamespace.GetName(System.String)
@@ -70,10 +72,14 @@ items:
     - id: localName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: XName
+      type:
+        id: System.Xml.Linq.XName
+        name: XName
+        href: System.Xml.Linq.XName.yml
   id: System.Xml.Linq.XNamespace.GetName(System.String)
 - uid: System.Xml.Linq.XNamespace.ToString
   href: System.Xml.Linq.XNamespace.yml
@@ -91,6 +97,10 @@ items:
     parameters: []
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
       description: A string value containing the namespace name.
   id: System.Xml.Linq.XNamespace.ToString
 - uid: System.Xml.Linq.XNamespace.None
@@ -170,16 +180,20 @@ items:
     - id: namespaceName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: XNamespace
+      type:
+        id: System.Xml.Linq.XNamespace
+        name: XNamespace
+        href: System.Xml.Linq.XNamespace.yml
   id: System.Xml.Linq.XNamespace.Get(System.String)
 - uid: System.Xml.Linq.XNamespace.op_Implicit(System.String)~System.Xml.Linq.XNamespace
   href: System.Xml.Linq.XNamespace.yml
   name: implicit operator XNamespace(string)
   fullName: System.Xml.Linq.XNamespace.implicit operator System.Xml.Linq.XNamespace(string)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XNamespace.cs
@@ -187,23 +201,27 @@ items:
   summary: Converts a string containing a namespace name to an [System.Xml.Linq.XNamespace](System.Xml.Linq.XNamespace.yml).
   syntax:
     content:
-      CSharp: '[CLSCompliant(false)] public static implicit operator XNamespace(string namespaceName) { return namespaceName != null ? Get(namespaceName) : null; }'
+      CSharp: public static implicit operator XNamespace(string namespaceName)
     parameters:
     - id: namespaceName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: A string containing the namespace name.
     return:
       id: XNamespace
+      type:
+        id: System.Xml.Linq.XNamespace
+        name: XNamespace
+        href: System.Xml.Linq.XNamespace.yml
       description: An [System.Xml.Linq.XNamespace](System.Xml.Linq.XNamespace.yml) constructed from the namespace name string.
   id: System.Xml.Linq.XNamespace.op_Implicit(System.String)~System.Xml.Linq.XNamespace
 - uid: System.Xml.Linq.XNamespace.op_Addition(System.Xml.Linq.XNamespace,System.String)
   href: System.Xml.Linq.XNamespace.yml
   name: operator +(XNamespace, string)
   fullName: System.Xml.Linq.XNamespace.operator +(System.Xml.Linq.XNamespace, string)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XNamespace.cs
@@ -211,7 +229,7 @@ items:
   summary: Combines an [System.Xml.Linq.XNamespace](System.Xml.Linq.XNamespace.yml) object with a local name to create an [System.Xml.Linq.XName](System.Xml.Linq.XName.yml).
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Usage", "CA2225:OperatorOverloadsHaveNamedAlternates", Justification = "Functionality available via XNamespace.Get().")] public static XName operator +(XNamespace ns, string localName) { if (ns == null) throw new ArgumentNullException("ns"); return ns.GetName(localName); }'
+      CSharp: public static XName operator +(XNamespace ns, string localName)
     parameters:
     - id: ns
       type:
@@ -222,11 +240,15 @@ items:
     - id: localName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The local name for the expanded name.
     return:
       id: XName
+      type:
+        id: System.Xml.Linq.XName
+        name: XName
+        href: System.Xml.Linq.XName.yml
       description: The new XName constructed from the namespace and local name.
   id: System.Xml.Linq.XNamespace.op_Addition(System.Xml.Linq.XNamespace,System.String)
 - uid: System.Xml.Linq.XNamespace.Equals(System.Object)
@@ -246,11 +268,15 @@ items:
     - id: obj
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: The [System.Xml.Linq.XNamespace](System.Xml.Linq.XNamespace.yml) to compare to the current [System.Xml.Linq.XNamespace](System.Xml.Linq.XNamespace.yml).
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: true if the specified [System.Xml.Linq.XNamespace](System.Xml.Linq.XNamespace.yml) is equal to the current [System.Xml.Linq.XNamespace](System.Xml.Linq.XNamespace.yml); otherwise false.
   id: System.Xml.Linq.XNamespace.Equals(System.Object)
 - uid: System.Xml.Linq.XNamespace.GetHashCode
@@ -272,12 +298,16 @@ items:
     parameters: []
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: System.Xml.Linq.XNamespace.GetHashCode
 - uid: System.Xml.Linq.XNamespace.op_Equality(System.Xml.Linq.XNamespace,System.Xml.Linq.XNamespace)
   href: System.Xml.Linq.XNamespace.yml
   name: operator ==(XNamespace, XNamespace)
   fullName: System.Xml.Linq.XNamespace.operator ==(System.Xml.Linq.XNamespace, System.Xml.Linq.XNamespace)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XNamespace.cs
@@ -285,7 +315,7 @@ items:
   summary: Returns a value indicating whether two instances of [System.Xml.Linq.XNamespace](System.Xml.Linq.XNamespace.yml) are equal.
   syntax:
     content:
-      CSharp: public static bool operator ==(XNamespace left, XNamespace right) { return (object)left == (object)right; }
+      CSharp: public static bool operator ==(XNamespace left, XNamespace right)
     parameters:
     - id: left
       type:
@@ -301,13 +331,17 @@ items:
       description: The second [System.Xml.Linq.XNamespace](System.Xml.Linq.XNamespace.yml) to compare.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: true if left and right are equal; otherwise false.
   id: System.Xml.Linq.XNamespace.op_Equality(System.Xml.Linq.XNamespace,System.Xml.Linq.XNamespace)
 - uid: System.Xml.Linq.XNamespace.op_Inequality(System.Xml.Linq.XNamespace,System.Xml.Linq.XNamespace)
   href: System.Xml.Linq.XNamespace.yml
   name: operator !=(XNamespace, XNamespace)
   fullName: System.Xml.Linq.XNamespace.operator !=(System.Xml.Linq.XNamespace, System.Xml.Linq.XNamespace)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XNamespace.cs
@@ -315,7 +349,7 @@ items:
   summary: Returns a value indicating whether two instances of [System.Xml.Linq.XNamespace](System.Xml.Linq.XNamespace.yml) are not equal.
   syntax:
     content:
-      CSharp: public static bool operator !=(XNamespace left, XNamespace right) { return (object)left != (object)right; }
+      CSharp: public static bool operator !=(XNamespace left, XNamespace right)
     parameters:
     - id: left
       type:
@@ -331,5 +365,9 @@ items:
       description: The second [System.Xml.Linq.XNamespace](System.Xml.Linq.XNamespace.yml) to compare.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: true if left and right are not equal; otherwise false.
   id: System.Xml.Linq.XNamespace.op_Inequality(System.Xml.Linq.XNamespace,System.Xml.Linq.XNamespace)

@@ -6,25 +6,30 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/ModelValidatorProviderCollection.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/ModelValidatorProviderCollection.cs
     startLine: 8
   syntax:
     content:
-      CSharp: public class ModelValidatorProviderCollection
+      CSharp: 'public class ModelValidatorProviderCollection : Collection<ModelValidatorProvider>, IList<ModelValidatorProvider>, ICollection<ModelValidatorProvider>, IList, ICollection, IReadOnlyList<ModelValidatorProvider>, IReadOnlyCollection<ModelValidatorProvider>, IEnumerable<ModelValidatorProvider>, IEnumerable'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Collections.ObjectModel.Collection{System.Web.Mvc.ModelValidatorProvider}
-    name: System.Collections.ObjectModel.Collection{System.Web.Mvc.ModelValidatorProvider}
+    name: Collection<ModelValidatorProvider>
     isExternal: true
   id: System.Web.Mvc.ModelValidatorProviderCollection
   children:
   - System.Web.Mvc.ModelValidatorProviderCollection.#ctor
   - System.Web.Mvc.ModelValidatorProviderCollection.#ctor(System.Collections.Generic.IList{System.Web.Mvc.ModelValidatorProvider})
+  - System.Web.Mvc.ModelValidatorProviderCollection.ClearItems
+  - System.Web.Mvc.ModelValidatorProviderCollection.InsertItem(System.Int32,System.Web.Mvc.ModelValidatorProvider)
+  - System.Web.Mvc.ModelValidatorProviderCollection.RemoveItem(System.Int32)
+  - System.Web.Mvc.ModelValidatorProviderCollection.SetItem(System.Int32,System.Web.Mvc.ModelValidatorProvider)
   - System.Web.Mvc.ModelValidatorProviderCollection.GetValidators(System.Web.Mvc.ModelMetadata,System.Web.Mvc.ControllerContext)
 - uid: System.Web.Mvc.ModelValidatorProviderCollection.#ctor
   href: System.Web.Mvc.ModelValidatorProviderCollection.yml
@@ -56,9 +61,90 @@ items:
     - id: list
       type:
         id: System.Collections.Generic.IList{System.Web.Mvc.ModelValidatorProvider}
-        name: System.Collections.Generic.IList{System.Web.Mvc.ModelValidatorProvider}
+        name: IList<ModelValidatorProvider>
         isExternal: true
   id: System.Web.Mvc.ModelValidatorProviderCollection.#ctor(System.Collections.Generic.IList{System.Web.Mvc.ModelValidatorProvider})
+- uid: System.Web.Mvc.ModelValidatorProviderCollection.ClearItems
+  href: System.Web.Mvc.ModelValidatorProviderCollection.yml
+  name: ClearItems()
+  fullName: System.Web.Mvc.ModelValidatorProviderCollection.ClearItems()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ModelValidatorProviderCollection.cs
+    startLine: 42
+  syntax:
+    content:
+      CSharp: protected override void ClearItems()
+    parameters: []
+  id: System.Web.Mvc.ModelValidatorProviderCollection.ClearItems
+- uid: System.Web.Mvc.ModelValidatorProviderCollection.InsertItem(System.Int32,System.Web.Mvc.ModelValidatorProvider)
+  href: System.Web.Mvc.ModelValidatorProviderCollection.yml
+  name: InsertItem(int, ModelValidatorProvider)
+  fullName: System.Web.Mvc.ModelValidatorProviderCollection.InsertItem(int, System.Web.Mvc.ModelValidatorProvider)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ModelValidatorProviderCollection.cs
+    startLine: 48
+  syntax:
+    content:
+      CSharp: protected override void InsertItem(int index, ModelValidatorProvider item)
+    parameters:
+    - id: index
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: item
+      type:
+        id: System.Web.Mvc.ModelValidatorProvider
+        name: ModelValidatorProvider
+        href: System.Web.Mvc.ModelValidatorProvider.yml
+  id: System.Web.Mvc.ModelValidatorProviderCollection.InsertItem(System.Int32,System.Web.Mvc.ModelValidatorProvider)
+- uid: System.Web.Mvc.ModelValidatorProviderCollection.RemoveItem(System.Int32)
+  href: System.Web.Mvc.ModelValidatorProviderCollection.yml
+  name: RemoveItem(int)
+  fullName: System.Web.Mvc.ModelValidatorProviderCollection.RemoveItem(int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ModelValidatorProviderCollection.cs
+    startLine: 58
+  syntax:
+    content:
+      CSharp: protected override void RemoveItem(int index)
+    parameters:
+    - id: index
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.Web.Mvc.ModelValidatorProviderCollection.RemoveItem(System.Int32)
+- uid: System.Web.Mvc.ModelValidatorProviderCollection.SetItem(System.Int32,System.Web.Mvc.ModelValidatorProvider)
+  href: System.Web.Mvc.ModelValidatorProviderCollection.yml
+  name: SetItem(int, ModelValidatorProvider)
+  fullName: System.Web.Mvc.ModelValidatorProviderCollection.SetItem(int, System.Web.Mvc.ModelValidatorProvider)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ModelValidatorProviderCollection.cs
+    startLine: 64
+  syntax:
+    content:
+      CSharp: protected override void SetItem(int index, ModelValidatorProvider item)
+    parameters:
+    - id: index
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: item
+      type:
+        id: System.Web.Mvc.ModelValidatorProvider
+        name: ModelValidatorProvider
+        href: System.Web.Mvc.ModelValidatorProvider.yml
+  id: System.Web.Mvc.ModelValidatorProviderCollection.SetItem(System.Int32,System.Web.Mvc.ModelValidatorProvider)
 - uid: System.Web.Mvc.ModelValidatorProviderCollection.GetValidators(System.Web.Mvc.ModelMetadata,System.Web.Mvc.ControllerContext)
   href: System.Web.Mvc.ModelValidatorProviderCollection.yml
   name: GetValidators(ModelMetadata, ControllerContext)
@@ -84,4 +170,8 @@ items:
         href: System.Web.Mvc.ControllerContext.yml
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Web.Mvc.ModelValidator}
+        name: IEnumerable<ModelValidator>
+        isExternal: true
   id: System.Web.Mvc.ModelValidatorProviderCollection.GetValidators(System.Web.Mvc.ModelMetadata,System.Web.Mvc.ControllerContext)

@@ -6,9 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/ValueProviderResult.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/ValueProviderResult.cs
     startLine: 10
   syntax:
@@ -16,16 +17,31 @@ items:
       CSharp: public class ValueProviderResult
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.ValueProviderResult
   children:
+  - System.Web.Mvc.ValueProviderResult.#ctor
   - System.Web.Mvc.ValueProviderResult.#ctor(System.Object,System.String,System.Globalization.CultureInfo)
   - System.Web.Mvc.ValueProviderResult.AttemptedValue
   - System.Web.Mvc.ValueProviderResult.Culture
   - System.Web.Mvc.ValueProviderResult.RawValue
   - System.Web.Mvc.ValueProviderResult.ConvertTo(System.Type)
   - System.Web.Mvc.ValueProviderResult.ConvertTo(System.Type,System.Globalization.CultureInfo)
+- uid: System.Web.Mvc.ValueProviderResult.#ctor
+  href: System.Web.Mvc.ValueProviderResult.yml
+  name: ValueProviderResult()
+  fullName: System.Web.Mvc.ValueProviderResult.ValueProviderResult()
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ValueProviderResult.cs
+    startLine: 17
+  syntax:
+    content:
+      CSharp: protected ValueProviderResult()
+    parameters: []
+  id: System.Web.Mvc.ValueProviderResult.#ctor
 - uid: System.Web.Mvc.ValueProviderResult.#ctor(System.Object,System.String,System.Globalization.CultureInfo)
   href: System.Web.Mvc.ValueProviderResult.yml
   name: ValueProviderResult(object, string, CultureInfo)
@@ -42,17 +58,17 @@ items:
     - id: rawValue
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     - id: attemptedValue
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: culture
       type:
         id: System.Globalization.CultureInfo
-        name: System.Globalization.CultureInfo
+        name: CultureInfo
         isExternal: true
   id: System.Web.Mvc.ValueProviderResult.#ctor(System.Object,System.String,System.Globalization.CultureInfo)
 - uid: System.Web.Mvc.ValueProviderResult.AttemptedValue
@@ -71,7 +87,7 @@ items:
     - id: AttemptedValue
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.ValueProviderResult.AttemptedValue
 - uid: System.Web.Mvc.ValueProviderResult.Culture
@@ -90,7 +106,7 @@ items:
     - id: Culture
       type:
         id: System.Globalization.CultureInfo
-        name: System.Globalization.CultureInfo
+        name: CultureInfo
         isExternal: true
   id: System.Web.Mvc.ValueProviderResult.Culture
 - uid: System.Web.Mvc.ValueProviderResult.RawValue
@@ -109,7 +125,7 @@ items:
     - id: RawValue
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.Web.Mvc.ValueProviderResult.RawValue
 - uid: System.Web.Mvc.ValueProviderResult.ConvertTo(System.Type)
@@ -128,10 +144,14 @@ items:
     - id: type
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
     return:
       id: Object
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
   id: System.Web.Mvc.ValueProviderResult.ConvertTo(System.Type)
 - uid: System.Web.Mvc.ValueProviderResult.ConvertTo(System.Type,System.Globalization.CultureInfo)
   href: System.Web.Mvc.ValueProviderResult.yml
@@ -149,13 +169,17 @@ items:
     - id: type
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
     - id: culture
       type:
         id: System.Globalization.CultureInfo
-        name: System.Globalization.CultureInfo
+        name: CultureInfo
         isExternal: true
     return:
       id: Object
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
   id: System.Web.Mvc.ValueProviderResult.ConvertTo(System.Type,System.Globalization.CultureInfo)

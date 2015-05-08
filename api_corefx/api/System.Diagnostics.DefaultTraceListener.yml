@@ -6,16 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/DefaultTraceListener.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/DefaultTraceListener.cs
     startLine: 18
   syntax:
     content:
-      CSharp: public class DefaultTraceListener
+      CSharp: 'public class DefaultTraceListener : TraceListener, IDisposable'
   inheritance:
-  - id: IDisposable
-    name: IDisposable
+  - id: System.Object
+    name: object
     isExternal: true
   - id: System.Diagnostics.TraceListener
     name: TraceListener
@@ -57,7 +59,7 @@ items:
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.DefaultTraceListener.Fail(System.String)
 - uid: System.Diagnostics.DefaultTraceListener.Fail(System.String,System.String)
@@ -76,12 +78,12 @@ items:
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: detailMessage
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.DefaultTraceListener.Fail(System.String,System.String)
 - uid: System.Diagnostics.DefaultTraceListener.Write(System.String)
@@ -100,7 +102,7 @@ items:
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.DefaultTraceListener.Write(System.String)
 - uid: System.Diagnostics.DefaultTraceListener.WriteLine(System.String)
@@ -119,6 +121,6 @@ items:
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.DefaultTraceListener.WriteLine(System.String)

@@ -6,16 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.ServiceProcess.ServiceController/src/System/ServiceProcess/ServiceController.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.ServiceProcess.ServiceController/src/System/ServiceProcess/ServiceController.cs
     startLine: 18
   syntax:
     content:
-      CSharp: public class ServiceController
+      CSharp: 'public class ServiceController : IDisposable'
   inheritance:
-  - id: IDisposable
-    name: IDisposable
+  - id: System.Object
+    name: object
     isExternal: true
   id: System.ServiceProcess.ServiceController
   children:
@@ -33,6 +35,7 @@ items:
   - System.ServiceProcess.ServiceController.Status
   - System.ServiceProcess.ServiceController.ServiceType
   - System.ServiceProcess.ServiceController.Dispose
+  - System.ServiceProcess.ServiceController.Dispose(System.Boolean)
   - System.ServiceProcess.ServiceController.GetDevices
   - System.ServiceProcess.ServiceController.GetDevices(System.String)
   - System.ServiceProcess.ServiceController.GetServices
@@ -44,7 +47,7 @@ items:
   - System.ServiceProcess.ServiceController.Start(System.String[])
   - System.ServiceProcess.ServiceController.Stop
   - System.ServiceProcess.ServiceController.WaitForStatus(System.ServiceProcess.ServiceControllerStatus)
-  - System.ServiceProcess.ServiceController.WaitForStatus(System.ServiceProcess.ServiceControllerStatus,TimeSpan)
+  - System.ServiceProcess.ServiceController.WaitForStatus(System.ServiceProcess.ServiceControllerStatus,System.TimeSpan)
 - uid: System.ServiceProcess.ServiceController.#ctor(System.String)
   href: System.ServiceProcess.ServiceController.yml
   name: ServiceController(string)
@@ -61,7 +64,7 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.ServiceProcess.ServiceController.#ctor(System.String)
 - uid: System.ServiceProcess.ServiceController.#ctor(System.String,System.String)
@@ -80,12 +83,12 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: machineName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.ServiceProcess.ServiceController.#ctor(System.String,System.String)
 - uid: System.ServiceProcess.ServiceController.CanPauseAndContinue
@@ -104,7 +107,7 @@ items:
     - id: CanPauseAndContinue
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.ServiceProcess.ServiceController.CanPauseAndContinue
 - uid: System.ServiceProcess.ServiceController.CanShutdown
@@ -123,7 +126,7 @@ items:
     - id: CanShutdown
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.ServiceProcess.ServiceController.CanShutdown
 - uid: System.ServiceProcess.ServiceController.CanStop
@@ -142,7 +145,7 @@ items:
     - id: CanStop
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.ServiceProcess.ServiceController.CanStop
 - uid: System.ServiceProcess.ServiceController.DisplayName
@@ -161,7 +164,7 @@ items:
     - id: DisplayName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.ServiceProcess.ServiceController.DisplayName
 - uid: System.ServiceProcess.ServiceController.DependentServices
@@ -180,7 +183,7 @@ items:
     - id: DependentServices
       type:
         id: System.Array
-        name: System.Array
+        name: ServiceController[]
         isExternal: true
   id: System.ServiceProcess.ServiceController.DependentServices
 - uid: System.ServiceProcess.ServiceController.MachineName
@@ -199,7 +202,7 @@ items:
     - id: MachineName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.ServiceProcess.ServiceController.MachineName
 - uid: System.ServiceProcess.ServiceController.ServiceName
@@ -218,7 +221,7 @@ items:
     - id: ServiceName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.ServiceProcess.ServiceController.ServiceName
 - uid: System.ServiceProcess.ServiceController.ServicesDependedOn
@@ -237,7 +240,7 @@ items:
     - id: ServicesDependedOn
       type:
         id: System.Array
-        name: System.Array
+        name: ServiceController[]
         isExternal: true
   id: System.ServiceProcess.ServiceController.ServicesDependedOn
 - uid: System.ServiceProcess.ServiceController.ServiceHandle
@@ -255,7 +258,7 @@ items:
     parameters:
     - id: ServiceHandle
       type:
-        id: SafeHandle
+        id: System.Runtime.InteropServices.SafeHandle
         name: SafeHandle
         isExternal: true
   id: System.ServiceProcess.ServiceController.ServiceHandle
@@ -311,6 +314,25 @@ items:
       CSharp: public void Dispose()
     parameters: []
   id: System.ServiceProcess.ServiceController.Dispose
+- uid: System.ServiceProcess.ServiceController.Dispose(System.Boolean)
+  href: System.ServiceProcess.ServiceController.yml
+  name: Dispose(bool)
+  fullName: System.ServiceProcess.ServiceController.Dispose(bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.ServiceProcess.ServiceController/src/System/ServiceProcess/ServiceController.cs
+    startLine: 350
+  syntax:
+    content:
+      CSharp: protected virtual void Dispose(bool disposing)
+    parameters:
+    - id: disposing
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.ServiceProcess.ServiceController.Dispose(System.Boolean)
 - uid: System.ServiceProcess.ServiceController.GetDevices
   href: System.ServiceProcess.ServiceController.yml
   name: GetDevices()
@@ -324,7 +346,11 @@ items:
     content:
       CSharp: public static ServiceController[] GetDevices()
     parameters: []
-    return: {}
+    return:
+      type:
+        id: System.Array
+        name: ServiceController[]
+        isExternal: true
   id: System.ServiceProcess.ServiceController.GetDevices
 - uid: System.ServiceProcess.ServiceController.GetDevices(System.String)
   href: System.ServiceProcess.ServiceController.yml
@@ -342,9 +368,13 @@ items:
     - id: machineName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
-    return: {}
+    return:
+      type:
+        id: System.Array
+        name: ServiceController[]
+        isExternal: true
   id: System.ServiceProcess.ServiceController.GetDevices(System.String)
 - uid: System.ServiceProcess.ServiceController.GetServices
   href: System.ServiceProcess.ServiceController.yml
@@ -359,7 +389,11 @@ items:
     content:
       CSharp: public static ServiceController[] GetServices()
     parameters: []
-    return: {}
+    return:
+      type:
+        id: System.Array
+        name: ServiceController[]
+        isExternal: true
   id: System.ServiceProcess.ServiceController.GetServices
 - uid: System.ServiceProcess.ServiceController.GetServices(System.String)
   href: System.ServiceProcess.ServiceController.yml
@@ -377,9 +411,13 @@ items:
     - id: machineName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
-    return: {}
+    return:
+      type:
+        id: System.Array
+        name: ServiceController[]
+        isExternal: true
   id: System.ServiceProcess.ServiceController.GetServices(System.String)
 - uid: System.ServiceProcess.ServiceController.Pause
   href: System.ServiceProcess.ServiceController.yml
@@ -392,7 +430,7 @@ items:
     startLine: 632
   syntax:
     content:
-      CSharp: public unsafe void Pause()
+      CSharp: public void Pause()
     parameters: []
   id: System.ServiceProcess.ServiceController.Pause
 - uid: System.ServiceProcess.ServiceController.Continue
@@ -406,7 +444,7 @@ items:
     startLine: 652
   syntax:
     content:
-      CSharp: public unsafe void Continue()
+      CSharp: public void Continue()
     parameters: []
   id: System.ServiceProcess.ServiceController.Continue
 - uid: System.ServiceProcess.ServiceController.Refresh
@@ -453,7 +491,7 @@ items:
     - id: args
       type:
         id: System.Array
-        name: System.Array
+        name: string[]
         isExternal: true
   id: System.ServiceProcess.ServiceController.Start(System.String[])
 - uid: System.ServiceProcess.ServiceController.Stop
@@ -467,7 +505,7 @@ items:
     startLine: 742
   syntax:
     content:
-      CSharp: public unsafe void Stop()
+      CSharp: public void Stop()
     parameters: []
   id: System.ServiceProcess.ServiceController.Stop
 - uid: System.ServiceProcess.ServiceController.WaitForStatus(System.ServiceProcess.ServiceControllerStatus)
@@ -489,10 +527,10 @@ items:
         name: ServiceControllerStatus
         href: System.ServiceProcess.ServiceControllerStatus.yml
   id: System.ServiceProcess.ServiceController.WaitForStatus(System.ServiceProcess.ServiceControllerStatus)
-- uid: System.ServiceProcess.ServiceController.WaitForStatus(System.ServiceProcess.ServiceControllerStatus,TimeSpan)
+- uid: System.ServiceProcess.ServiceController.WaitForStatus(System.ServiceProcess.ServiceControllerStatus,System.TimeSpan)
   href: System.ServiceProcess.ServiceController.yml
   name: WaitForStatus(ServiceControllerStatus, TimeSpan)
-  fullName: System.ServiceProcess.ServiceController.WaitForStatus(System.ServiceProcess.ServiceControllerStatus, TimeSpan)
+  fullName: System.ServiceProcess.ServiceController.WaitForStatus(System.ServiceProcess.ServiceControllerStatus, System.TimeSpan)
   type: Method
   source:
     remote: *o0
@@ -509,7 +547,7 @@ items:
         href: System.ServiceProcess.ServiceControllerStatus.yml
     - id: timeout
       type:
-        id: TimeSpan
+        id: System.TimeSpan
         name: TimeSpan
         isExternal: true
-  id: System.ServiceProcess.ServiceController.WaitForStatus(System.ServiceProcess.ServiceControllerStatus,TimeSpan)
+  id: System.ServiceProcess.ServiceController.WaitForStatus(System.ServiceProcess.ServiceControllerStatus,System.TimeSpan)

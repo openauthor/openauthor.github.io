@@ -6,20 +6,21 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/ModelErrorCollection.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/ModelErrorCollection.cs
     startLine: 6
   syntax:
     content:
-      CSharp: public class ModelErrorCollection
+      CSharp: 'public class ModelErrorCollection : Collection<ModelError>, IList<ModelError>, ICollection<ModelError>, IList, ICollection, IReadOnlyList<ModelError>, IReadOnlyCollection<ModelError>, IEnumerable<ModelError>, IEnumerable'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Collections.ObjectModel.Collection{System.Web.Mvc.ModelError}
-    name: System.Collections.ObjectModel.Collection{System.Web.Mvc.ModelError}
+    name: Collection<ModelError>
     isExternal: true
   id: System.Web.Mvc.ModelErrorCollection
   children:
@@ -41,7 +42,7 @@ items:
     - id: exception
       type:
         id: System.Exception
-        name: System.Exception
+        name: Exception
         isExternal: true
   id: System.Web.Mvc.ModelErrorCollection.Add(System.Exception)
 - uid: System.Web.Mvc.ModelErrorCollection.Add(System.String)
@@ -60,6 +61,6 @@ items:
     - id: errorMessage
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.ModelErrorCollection.Add(System.String)

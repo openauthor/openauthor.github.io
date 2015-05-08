@@ -5,17 +5,19 @@ items:
   fullName: System.Security.SecureString
   type: Class
   source:
-    remote: &o0
+    remote:
+      path: src/System.Security.SecureString/src/System/Security/SecureString.Windows.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
-    path: src/System.Security.SecureString/src/System/Security/SecureString.cs
+      key: 882a41e3
+    path: src/System.Security.SecureString/src/System/Security/SecureString.Windows.cs
     startLine: 9
   syntax:
     content:
-      CSharp: public sealed class SecureString
+      CSharp: 'public sealed class SecureString : IDisposable'
   inheritance:
-  - id: IDisposable
-    name: IDisposable
+  - id: System.Object
+    name: object
     isExternal: true
   id: System.Security.SecureString
   children:
@@ -37,12 +39,16 @@ items:
   fullName: System.Security.SecureString.SecureString()
   type: Constructor
   source:
-    remote: *o0
+    remote: &o0
+      path: src/System.Security.SecureString/src/System/Security/SecureString.cs
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Security.SecureString/src/System/Security/SecureString.cs
-    startLine: 34
+    startLine: 14
   syntax:
     content:
-      CSharp: '[System.Security.SecuritySafeCritical] // auto-generated public SecureString()'
+      CSharp: '[System.Security.SecuritySafeCritical] // auto-generated public unsafe SecureString()'
     parameters: []
   id: System.Security.SecureString.#ctor
 - uid: System.Security.SecureString.#ctor(System.Char*,System.Int32)
@@ -53,18 +59,19 @@ items:
   source:
     remote: *o0
     path: src/System.Security.SecureString/src/System/Security/SecureString.cs
-    startLine: 63
+    startLine: 20
   syntax:
     content:
       CSharp: '[System.Security.SecurityCritical] // auto-generated [CLSCompliant(false)] public unsafe SecureString(char *value, int length)'
     parameters:
     - id: value
       type:
+        name: char*
         isExternal: true
     - id: length
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Security.SecureString.#ctor(System.Char*,System.Int32)
 - uid: System.Security.SecureString.Length
@@ -75,7 +82,7 @@ items:
   source:
     remote: *o0
     path: src/System.Security.SecureString/src/System/Security/SecureString.cs
-    startLine: 86
+    startLine: 43
   syntax:
     content:
       CSharp: public int Length { [System.Security.SecuritySafeCritical] // auto-generated get; }
@@ -83,7 +90,7 @@ items:
     - id: Length
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Security.SecureString.Length
 - uid: System.Security.SecureString.AppendChar(System.Char)
@@ -94,15 +101,15 @@ items:
   source:
     remote: *o0
     path: src/System.Security.SecureString/src/System/Security/SecureString.cs
-    startLine: 99
+    startLine: 56
   syntax:
     content:
-      CSharp: '[System.Security.SecuritySafeCritical] // auto-generated public void AppendChar(char c)'
+      CSharp: public void AppendChar(char c)
     parameters:
     - id: c
       type:
         id: System.Char
-        name: System.Char
+        name: char
         isExternal: true
   id: System.Security.SecureString.AppendChar(System.Char)
 - uid: System.Security.SecureString.Clear
@@ -113,10 +120,10 @@ items:
   source:
     remote: *o0
     path: src/System.Security.SecureString/src/System/Security/SecureString.cs
-    startLine: 123
+    startLine: 68
   syntax:
     content:
-      CSharp: '[System.Security.SecuritySafeCritical] // auto-generated public void Clear()'
+      CSharp: public void Clear()
     parameters: []
   id: System.Security.SecureString.Clear
 - uid: System.Security.SecureString.Copy
@@ -127,13 +134,17 @@ items:
   source:
     remote: *o0
     path: src/System.Security.SecureString/src/System/Security/SecureString.cs
-    startLine: 137
+    startLine: 80
   syntax:
     content:
-      CSharp: '[System.Security.SecuritySafeCritical] // auto-generated public SecureString Copy()'
+      CSharp: public SecureString Copy()
     parameters: []
     return:
       id: SecureString
+      type:
+        id: System.Security.SecureString
+        name: SecureString
+        href: System.Security.SecureString.yml
   id: System.Security.SecureString.Copy
 - uid: System.Security.SecureString.Dispose
   href: System.Security.SecureString.yml
@@ -143,10 +154,10 @@ items:
   source:
     remote: *o0
     path: src/System.Security.SecureString/src/System/Security/SecureString.cs
-    startLine: 147
+    startLine: 90
   syntax:
     content:
-      CSharp: '[System.Security.SecuritySafeCritical] // auto-generated public void Dispose()'
+      CSharp: public void Dispose()
     parameters: []
   id: System.Security.SecureString.Dispose
 - uid: System.Security.SecureString.InsertAt(System.Int32,System.Char)
@@ -157,20 +168,20 @@ items:
   source:
     remote: *o0
     path: src/System.Security.SecureString/src/System/Security/SecureString.cs
-    startLine: 160
+    startLine: 99
   syntax:
     content:
-      CSharp: '[System.Security.SecuritySafeCritical] // auto-generated public void InsertAt(int index, char c)'
+      CSharp: public void InsertAt(int index, char c)
     parameters:
     - id: index
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: c
       type:
         id: System.Char
-        name: System.Char
+        name: char
         isExternal: true
   id: System.Security.SecureString.InsertAt(System.Int32,System.Char)
 - uid: System.Security.SecureString.IsReadOnly
@@ -181,13 +192,17 @@ items:
   source:
     remote: *o0
     path: src/System.Security.SecureString/src/System/Security/SecureString.cs
-    startLine: 202
+    startLine: 116
   syntax:
     content:
-      CSharp: '[System.Security.SecuritySafeCritical] // auto-generated public bool IsReadOnly()'
+      CSharp: public bool IsReadOnly()
     parameters: []
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Security.SecureString.IsReadOnly
 - uid: System.Security.SecureString.MakeReadOnly
   href: System.Security.SecureString.yml
@@ -197,10 +212,10 @@ items:
   source:
     remote: *o0
     path: src/System.Security.SecureString/src/System/Security/SecureString.cs
-    startLine: 212
+    startLine: 126
   syntax:
     content:
-      CSharp: '[System.Security.SecuritySafeCritical] // auto-generated public void MakeReadOnly()'
+      CSharp: public void MakeReadOnly()
     parameters: []
   id: System.Security.SecureString.MakeReadOnly
 - uid: System.Security.SecureString.RemoveAt(System.Int32)
@@ -211,15 +226,15 @@ items:
   source:
     remote: *o0
     path: src/System.Security.SecureString/src/System/Security/SecureString.cs
-    startLine: 222
+    startLine: 136
   syntax:
     content:
-      CSharp: '[System.Security.SecuritySafeCritical] // auto-generated public void RemoveAt(int index)'
+      CSharp: public void RemoveAt(int index)
     parameters:
     - id: index
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Security.SecureString.RemoveAt(System.Int32)
 - uid: System.Security.SecureString.SetAt(System.Int32,System.Char)
@@ -230,19 +245,19 @@ items:
   source:
     remote: *o0
     path: src/System.Security.SecureString/src/System/Security/SecureString.cs
-    startLine: 261
+    startLine: 153
   syntax:
     content:
-      CSharp: '[System.Security.SecuritySafeCritical] // auto-generated public void SetAt(int index, char c)'
+      CSharp: public void SetAt(int index, char c)
     parameters:
     - id: index
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: c
       type:
         id: System.Char
-        name: System.Char
+        name: char
         isExternal: true
   id: System.Security.SecureString.SetAt(System.Int32,System.Char)

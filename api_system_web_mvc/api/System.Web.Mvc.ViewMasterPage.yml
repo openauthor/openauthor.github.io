@@ -6,29 +6,30 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/ViewMasterPage.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/ViewMasterPage.cs
     startLine: 8
   syntax:
     content:
-      CSharp: public class ViewMasterPage
+      CSharp: 'public class ViewMasterPage : MasterPage, IComponent, IDisposable, IParserAccessor, IUrlResolutionService, IDataBindingsAccessor, IControlBuilderAccessor, IControlDesignerAccessor, IExpressionsAccessor, IFilterResolutionService, IAttributeAccessor, INonBindingContainer, INamingContainer, IUserControlDesignerAccessor'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.UI.Control
-    name: System.Web.UI.Control
+    name: Control
     isExternal: true
   - id: System.Web.UI.TemplateControl
-    name: System.Web.UI.TemplateControl
+    name: TemplateControl
     isExternal: true
   - id: System.Web.UI.UserControl
-    name: System.Web.UI.UserControl
+    name: UserControl
     isExternal: true
   - id: System.Web.UI.MasterPage
-    name: System.Web.UI.MasterPage
+    name: MasterPage
     isExternal: true
   id: System.Web.Mvc.ViewMasterPage
   children:
@@ -57,7 +58,7 @@ items:
     - id: Ajax
       type:
         id: System.Web.Mvc.AjaxHelper{System.Object}
-        name: AjaxHelper
+        name: AjaxHelper<object>
         href: System.Web.Mvc.AjaxHelper{System.Object}
   id: System.Web.Mvc.ViewMasterPage.Ajax
 - uid: System.Web.Mvc.ViewMasterPage.Html
@@ -76,7 +77,7 @@ items:
     - id: Html
       type:
         id: System.Web.Mvc.HtmlHelper{System.Object}
-        name: HtmlHelper
+        name: HtmlHelper<object>
         href: System.Web.Mvc.HtmlHelper{System.Object}
   id: System.Web.Mvc.ViewMasterPage.Html
 - uid: System.Web.Mvc.ViewMasterPage.Model
@@ -95,7 +96,7 @@ items:
     - id: Model
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.Web.Mvc.ViewMasterPage.Model
 - uid: System.Web.Mvc.ViewMasterPage.TempData
@@ -151,6 +152,7 @@ items:
     parameters:
     - id: ViewBag
       type:
+        name: dynamic
         isExternal: true
   id: System.Web.Mvc.ViewMasterPage.ViewBag
 - uid: System.Web.Mvc.ViewMasterPage.ViewContext
@@ -207,6 +209,6 @@ items:
     - id: Writer
       type:
         id: System.Web.UI.HtmlTextWriter
-        name: System.Web.UI.HtmlTextWriter
+        name: HtmlTextWriter
         isExternal: true
   id: System.Web.Mvc.ViewMasterPage.Writer

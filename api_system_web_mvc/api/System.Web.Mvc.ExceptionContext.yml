@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/ExceptionContext.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/ExceptionContext.cs
     startLine: 6
   syntax:
     content:
-      CSharp: public class ExceptionContext
+      CSharp: 'public class ExceptionContext : ControllerContext'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.Mvc.ControllerContext
     name: ControllerContext
@@ -63,7 +64,7 @@ items:
     - id: exception
       type:
         id: System.Exception
-        name: System.Exception
+        name: Exception
         isExternal: true
   id: System.Web.Mvc.ExceptionContext.#ctor(System.Web.Mvc.ControllerContext,System.Exception)
 - uid: System.Web.Mvc.ExceptionContext.Exception
@@ -82,7 +83,7 @@ items:
     - id: Exception
       type:
         id: System.Exception
-        name: System.Exception
+        name: Exception
         isExternal: true
   id: System.Web.Mvc.ExceptionContext.Exception
 - uid: System.Web.Mvc.ExceptionContext.ExceptionHandled
@@ -101,7 +102,7 @@ items:
     - id: ExceptionHandled
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.ExceptionContext.ExceptionHandled
 - uid: System.Web.Mvc.ExceptionContext.Result

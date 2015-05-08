@@ -5,19 +5,20 @@ items:
   fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree
   type: Class
   source:
-    remote: &o0
+    remote:
+      path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxTree.Dummy.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxTree.Dummy.cs
     startLine: 10
   summary: The parsed representation of a C# source document.
   syntax:
     content:
-      CSharp: public abstract partial class CSharpSyntaxTree
+      CSharp: 'public abstract class CSharpSyntaxTree : SyntaxTree'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: Object
     isExternal: true
   - id: Microsoft.CodeAnalysis.SyntaxTree
     name: SyntaxTree
@@ -25,36 +26,45 @@ items:
   id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree
   children:
   - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.Options
-  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetRoot(System.Threading.CancellationToken)
+  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.CloneNodeAsRoot``1(``0)
+  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetRoot(CancellationToken)
   - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.TryGetRoot(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode@)
-  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetRootAsync(System.Threading.CancellationToken)
-  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetCompilationUnitRoot(System.Threading.CancellationToken)
+  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetRootAsync(CancellationToken)
+  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetCompilationUnitRoot(CancellationToken)
   - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.IsEquivalentTo(Microsoft.CodeAnalysis.SyntaxTree,System.Boolean)
-  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.Create(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode,Microsoft.CodeAnalysis.CSharp.CSharpParseOptions,System.String,System.Text.Encoding)
-  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.ParseText(System.String,Microsoft.CodeAnalysis.CSharp.CSharpParseOptions,System.String,System.Text.Encoding,System.Threading.CancellationToken)
-  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.ParseText(Microsoft.CodeAnalysis.Text.SourceText,Microsoft.CodeAnalysis.CSharp.CSharpParseOptions,System.String,System.Threading.CancellationToken)
+  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.Create(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode,Microsoft.CodeAnalysis.CSharp.CSharpParseOptions,System.String,Encoding)
+  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.ParseText(System.String,Microsoft.CodeAnalysis.CSharp.CSharpParseOptions,System.String,Encoding,CancellationToken)
+  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.ParseText(Microsoft.CodeAnalysis.Text.SourceText,Microsoft.CodeAnalysis.CSharp.CSharpParseOptions,System.String,CancellationToken)
   - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.WithChangedText(Microsoft.CodeAnalysis.Text.SourceText)
   - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetChangedSpans(Microsoft.CodeAnalysis.SyntaxTree)
   - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetChanges(Microsoft.CodeAnalysis.SyntaxTree)
-  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetLineSpan(Microsoft.CodeAnalysis.Text.TextSpan,System.Threading.CancellationToken)
-  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetMappedLineSpan(Microsoft.CodeAnalysis.Text.TextSpan,System.Threading.CancellationToken)
-  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetLineVisibility(System.Int32,System.Threading.CancellationToken)
+  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetLineSpan(Microsoft.CodeAnalysis.Text.TextSpan,CancellationToken)
+  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetMappedLineSpan(Microsoft.CodeAnalysis.Text.TextSpan,CancellationToken)
+  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetLineVisibility(System.Int32,CancellationToken)
   - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.HasHiddenRegions
   - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetLocation(Microsoft.CodeAnalysis.Text.TextSpan)
   - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetDiagnostics(Microsoft.CodeAnalysis.SyntaxNode)
   - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetDiagnostics(Microsoft.CodeAnalysis.SyntaxToken)
   - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetDiagnostics(Microsoft.CodeAnalysis.SyntaxTrivia)
   - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetDiagnostics(Microsoft.CodeAnalysis.SyntaxNodeOrToken)
-  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetDiagnostics(System.Threading.CancellationToken)
+  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetDiagnostics(CancellationToken)
+  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetRootCore(CancellationToken)
+  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetRootAsyncCore(CancellationToken)
+  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.TryGetRootCore(Microsoft.CodeAnalysis.SyntaxNode@)
+  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.OptionsCore
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.Options
   href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.yml
   name: Options
   fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.Options
   type: Property
   source:
-    remote: *o0
+    remote: &o0
+      path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxTree.cs
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      key: e7db1294
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxTree.cs
-    startLine: 27
+    startLine: 26
   summary: The options used by the parser to produce the syntax tree.
   syntax:
     content:
@@ -66,28 +76,67 @@ items:
         name: CSharpParseOptions
         href: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.yml
   id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.Options
-- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetRoot(System.Threading.CancellationToken)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.CloneNodeAsRoot``1(``0)
   href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.yml
-  name: GetRoot(CancellationToken)
-  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetRoot(System.Threading.CancellationToken)
+  name: CloneNodeAsRoot<T>(T)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.CloneNodeAsRoot<T>(T)
   type: Method
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxTree.cs
-    startLine: 57
+    startLine: 48
+  summary: >-
+    Produces a clone of a [Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode](Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.yml) which will have current syntax tree as its parent.
+
+
+
+    Caller must guarantee that if the same instance of [Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode](Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.yml) makes multiple calls
+
+    to this function, only one result is observable.
+  syntax:
+    content:
+      CSharp: 'protected T CloneNodeAsRoot<T>(T node)where T : CSharpSyntaxNode'
+    parameters:
+    - id: node
+      type:
+        id: T
+        name: T
+        href: T
+      description: The original syntax node.
+    return:
+      id: T
+      type:
+        id: T
+        name: T
+        href: T
+      description: A clone of the original syntax node that has current [Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree](Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.yml) as its parent.
+  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.CloneNodeAsRoot``1(``0)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetRoot(CancellationToken)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.yml
+  name: GetRoot(CancellationToken)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetRoot(CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxTree.cs
+    startLine: 56
   summary: Gets the root node of the syntax tree.
   syntax:
     content:
-      CSharp: public new abstract CSharpSyntaxNode GetRoot(CancellationToken cancellationToken = default (CancellationToken));
+      CSharp: public abstract CSharpSyntaxNode GetRoot(CancellationToken cancellationToken = null)
     parameters:
     - id: cancellationToken
       type:
-        id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        id: CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: CSharpSyntaxNode
-  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetRoot(System.Threading.CancellationToken)
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode
+        name: CSharpSyntaxNode
+        href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.yml
+  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetRoot(CancellationToken)
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.TryGetRoot(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode@)
   href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.yml
   name: TryGetRoot(out CSharpSyntaxNode)
@@ -96,11 +145,11 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxTree.cs
-    startLine: 62
+    startLine: 61
   summary: Gets the root node of the syntax tree if it is already available.
   syntax:
     content:
-      CSharp: public abstract bool TryGetRoot(out CSharpSyntaxNode root);
+      CSharp: public abstract bool TryGetRoot(out CSharpSyntaxNode root)
     parameters:
     - id: root
       type:
@@ -109,51 +158,63 @@ items:
         href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.TryGetRoot(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode@)
-- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetRootAsync(System.Threading.CancellationToken)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetRootAsync(CancellationToken)
   href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.yml
   name: GetRootAsync(CancellationToken)
-  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetRootAsync(System.Threading.CancellationToken)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetRootAsync(CancellationToken)
   type: Method
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxTree.cs
-    startLine: 71
+    startLine: 70
   summary: Gets the root node of the syntax tree asynchronously.
   syntax:
     content:
-      CSharp: public new virtual Task<CSharpSyntaxNode> GetRootAsync(CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public virtual Task<CSharpSyntaxNode> GetRootAsync(CancellationToken cancellationToken = null)
     parameters:
     - id: cancellationToken
       type:
-        id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        id: CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
-  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetRootAsync(System.Threading.CancellationToken)
-- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetCompilationUnitRoot(System.Threading.CancellationToken)
+      type:
+        id: Task{Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode}
+        name: Task<CSharpSyntaxNode>
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetRootAsync(CancellationToken)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetCompilationUnitRoot(CancellationToken)
   href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.yml
   name: GetCompilationUnitRoot(CancellationToken)
-  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetCompilationUnitRoot(System.Threading.CancellationToken)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetCompilationUnitRoot(CancellationToken)
   type: Method
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxTree.cs
-    startLine: 84
+    startLine: 83
   summary: Gets the root of the syntax tree statically typed as [Microsoft.CodeAnalysis.CSharp.Syntax.CompilationUnitSyntax](Microsoft.CodeAnalysis.CSharp.Syntax.CompilationUnitSyntax.yml).
   syntax:
     content:
-      CSharp: public CompilationUnitSyntax GetCompilationUnitRoot(CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public CompilationUnitSyntax GetCompilationUnitRoot(CancellationToken cancellationToken = null)
     parameters:
     - id: cancellationToken
       type:
-        id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        id: CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: CompilationUnitSyntax
-  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetCompilationUnitRoot(System.Threading.CancellationToken)
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.Syntax.CompilationUnitSyntax
+        name: CompilationUnitSyntax
+        href: Microsoft.CodeAnalysis.CSharp.Syntax.CompilationUnitSyntax.yml
+  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetCompilationUnitRoot(CancellationToken)
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.IsEquivalentTo(Microsoft.CodeAnalysis.SyntaxTree,System.Boolean)
   href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.yml
   name: IsEquivalentTo(SyntaxTree, bool)
@@ -162,7 +223,7 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxTree.cs
-    startLine: 97
+    startLine: 96
   summary: Determines if two trees are the same, disregarding trivia differences.
   syntax:
     content:
@@ -177,7 +238,7 @@ items:
     - id: topLevel
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
       description: >-
         If true then the trees are equivalent if the contained nodes and tokens declaring metadata visible symbolic information are equivalent,
@@ -185,16 +246,20 @@ items:
         ignoring any differences of nodes inside method bodies or initializer expressions, otherwise all nodes and tokens must be equivalent.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.IsEquivalentTo(Microsoft.CodeAnalysis.SyntaxTree,System.Boolean)
-- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.Create(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode,Microsoft.CodeAnalysis.CSharp.CSharpParseOptions,System.String,System.Text.Encoding)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.Create(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode,Microsoft.CodeAnalysis.CSharp.CSharpParseOptions,System.String,Encoding)
   href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.yml
   name: Create(CSharpSyntaxNode, CSharpParseOptions, string, Encoding)
-  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.Create(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode, Microsoft.CodeAnalysis.CSharp.CSharpParseOptions, string, System.Text.Encoding)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.Create(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode, Microsoft.CodeAnalysis.CSharp.CSharpParseOptions, string, Encoding)
   type: Method
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxTree.cs
-    startLine: 289
+    startLine: 288
   summary: Creates a new syntax tree from a syntax node.
   syntax:
     content:
@@ -213,34 +278,38 @@ items:
     - id: path
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: encoding
       type:
-        id: System.Text.Encoding
-        name: System.Text.Encoding
+        id: Encoding
+        name: Encoding
         isExternal: true
     return:
       id: SyntaxTree
-  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.Create(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode,Microsoft.CodeAnalysis.CSharp.CSharpParseOptions,System.String,System.Text.Encoding)
-- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.ParseText(System.String,Microsoft.CodeAnalysis.CSharp.CSharpParseOptions,System.String,System.Text.Encoding,System.Threading.CancellationToken)
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxTree
+        name: SyntaxTree
+        href: Microsoft.CodeAnalysis.SyntaxTree
+  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.Create(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode,Microsoft.CodeAnalysis.CSharp.CSharpParseOptions,System.String,Encoding)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.ParseText(System.String,Microsoft.CodeAnalysis.CSharp.CSharpParseOptions,System.String,Encoding,CancellationToken)
   href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.yml
   name: ParseText(string, CSharpParseOptions, string, Encoding, CancellationToken)
-  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.ParseText(string, Microsoft.CodeAnalysis.CSharp.CSharpParseOptions, string, System.Text.Encoding, System.Threading.CancellationToken)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.ParseText(string, Microsoft.CodeAnalysis.CSharp.CSharpParseOptions, string, Encoding, CancellationToken)
   type: Method
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxTree.cs
-    startLine: 353
+    startLine: 352
   summary: Produces a syntax tree by parsing the source text.
   syntax:
     content:
-      CSharp: public static SyntaxTree ParseText(string text, CSharpParseOptions options = null, string path = "", Encoding encoding = null, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public static SyntaxTree ParseText(string text, CSharpParseOptions options = null, string path = "", Encoding encoding = null, CancellationToken cancellationToken = null)
     parameters:
     - id: text
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: options
       type:
@@ -250,34 +319,38 @@ items:
     - id: path
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: encoding
       type:
-        id: System.Text.Encoding
-        name: System.Text.Encoding
+        id: Encoding
+        name: Encoding
         isExternal: true
     - id: cancellationToken
       type:
-        id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        id: CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: SyntaxTree
-  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.ParseText(System.String,Microsoft.CodeAnalysis.CSharp.CSharpParseOptions,System.String,System.Text.Encoding,System.Threading.CancellationToken)
-- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.ParseText(Microsoft.CodeAnalysis.Text.SourceText,Microsoft.CodeAnalysis.CSharp.CSharpParseOptions,System.String,System.Threading.CancellationToken)
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxTree
+        name: SyntaxTree
+        href: Microsoft.CodeAnalysis.SyntaxTree
+  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.ParseText(System.String,Microsoft.CodeAnalysis.CSharp.CSharpParseOptions,System.String,Encoding,CancellationToken)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.ParseText(Microsoft.CodeAnalysis.Text.SourceText,Microsoft.CodeAnalysis.CSharp.CSharpParseOptions,System.String,CancellationToken)
   href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.yml
   name: ParseText(SourceText, CSharpParseOptions, string, CancellationToken)
-  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.ParseText(Microsoft.CodeAnalysis.Text.SourceText, Microsoft.CodeAnalysis.CSharp.CSharpParseOptions, string, System.Threading.CancellationToken)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.ParseText(Microsoft.CodeAnalysis.Text.SourceText, Microsoft.CodeAnalysis.CSharp.CSharpParseOptions, string, CancellationToken)
   type: Method
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxTree.cs
-    startLine: 366
+    startLine: 365
   summary: Produces a syntax tree by parsing the source text.
   syntax:
     content:
-      CSharp: public static SyntaxTree ParseText(SourceText text, CSharpParseOptions options = null, string path = "", CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public static SyntaxTree ParseText(SourceText text, CSharpParseOptions options = null, string path = "", CancellationToken cancellationToken = null)
     parameters:
     - id: text
       type:
@@ -292,16 +365,20 @@ items:
     - id: path
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: cancellationToken
       type:
-        id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        id: CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: SyntaxTree
-  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.ParseText(Microsoft.CodeAnalysis.Text.SourceText,Microsoft.CodeAnalysis.CSharp.CSharpParseOptions,System.String,System.Threading.CancellationToken)
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxTree
+        name: SyntaxTree
+        href: Microsoft.CodeAnalysis.SyntaxTree
+  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.ParseText(Microsoft.CodeAnalysis.Text.SourceText,Microsoft.CodeAnalysis.CSharp.CSharpParseOptions,System.String,CancellationToken)
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.WithChangedText(Microsoft.CodeAnalysis.Text.SourceText)
   href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.yml
   name: WithChangedText(SourceText)
@@ -310,7 +387,7 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxTree.cs
-    startLine: 411
+    startLine: 407
   summary: Creates a new syntax based off this tree using a new source text.
   syntax:
     content:
@@ -323,6 +400,10 @@ items:
         href: Microsoft.CodeAnalysis.Text.SourceText
     return:
       id: SyntaxTree
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxTree
+        name: SyntaxTree
+        href: Microsoft.CodeAnalysis.SyntaxTree
   id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.WithChangedText(Microsoft.CodeAnalysis.Text.SourceText)
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetChangedSpans(Microsoft.CodeAnalysis.SyntaxTree)
   href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.yml
@@ -332,7 +413,7 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxTree.cs
-    startLine: 467
+    startLine: 460
   summary: >-
     Produces a pessimistic list of spans that denote the regions of text in this tree that
 
@@ -349,6 +430,10 @@ items:
       description: The old tree. Cannot be null.
     return:
       id: IList
+      type:
+        id: IList{Microsoft.CodeAnalysis.Text.TextSpan}
+        name: IList<TextSpan>
+        isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetChangedSpans(Microsoft.CodeAnalysis.SyntaxTree)
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetChanges(Microsoft.CodeAnalysis.SyntaxTree)
   href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.yml
@@ -358,7 +443,7 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxTree.cs
-    startLine: 482
+    startLine: 475
   summary: Gets a list of text changes that when applied to the old tree produce this tree.
   syntax:
     content:
@@ -372,20 +457,24 @@ items:
       description: The old tree. Cannot be null.
     return:
       id: IList
+      type:
+        id: IList{Microsoft.CodeAnalysis.Text.TextChange}
+        name: IList<TextChange>
+        isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetChanges(Microsoft.CodeAnalysis.SyntaxTree)
-- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetLineSpan(Microsoft.CodeAnalysis.Text.TextSpan,System.Threading.CancellationToken)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetLineSpan(Microsoft.CodeAnalysis.Text.TextSpan,CancellationToken)
   href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.yml
   name: GetLineSpan(TextSpan, CancellationToken)
-  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetLineSpan(Microsoft.CodeAnalysis.Text.TextSpan, System.Threading.CancellationToken)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetLineSpan(Microsoft.CodeAnalysis.Text.TextSpan, CancellationToken)
   type: Method
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxTree.cs
-    startLine: 505
+    startLine: 498
   summary: Gets the location in terms of path, line and column for a given span.
   syntax:
     content:
-      CSharp: public override FileLinePositionSpan GetLineSpan(TextSpan span, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public override FileLinePositionSpan GetLineSpan(TextSpan span, CancellationToken cancellationToken = null)
     parameters:
     - id: span
       type:
@@ -395,27 +484,31 @@ items:
       description: Span within the tree.
     - id: cancellationToken
       type:
-        id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        id: CancellationToken
+        name: CancellationToken
         isExternal: true
       description: Cancellation token.
     return:
       id: FileLinePositionSpan
-      description: '[Microsoft.CodeAnalysis.FileLinePositionSpan](#) that contains path, line and column information.'
-  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetLineSpan(Microsoft.CodeAnalysis.Text.TextSpan,System.Threading.CancellationToken)
-- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetMappedLineSpan(Microsoft.CodeAnalysis.Text.TextSpan,System.Threading.CancellationToken)
+      type:
+        id: Microsoft.CodeAnalysis.FileLinePositionSpan
+        name: FileLinePositionSpan
+        href: Microsoft.CodeAnalysis.FileLinePositionSpan
+      description: '[Microsoft.CodeAnalysis.FileLinePositionSpan]() that contains path, line and column information.'
+  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetLineSpan(Microsoft.CodeAnalysis.Text.TextSpan,CancellationToken)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetMappedLineSpan(Microsoft.CodeAnalysis.Text.TextSpan,CancellationToken)
   href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.yml
   name: GetMappedLineSpan(TextSpan, CancellationToken)
-  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetMappedLineSpan(Microsoft.CodeAnalysis.Text.TextSpan, System.Threading.CancellationToken)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetMappedLineSpan(Microsoft.CodeAnalysis.Text.TextSpan, CancellationToken)
   type: Method
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxTree.cs
-    startLine: 526
+    startLine: 519
   summary: Gets the location in terms of path, line and column after applying source line mapping directives (#line).
   syntax:
     content:
-      CSharp: public override FileLinePositionSpan GetMappedLineSpan(TextSpan span, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public override FileLinePositionSpan GetMappedLineSpan(TextSpan span, CancellationToken cancellationToken = null)
     parameters:
     - id: span
       type:
@@ -425,12 +518,16 @@ items:
       description: Span within the tree.
     - id: cancellationToken
       type:
-        id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        id: CancellationToken
+        name: CancellationToken
         isExternal: true
       description: Cancellation token.
     return:
       id: FileLinePositionSpan
+      type:
+        id: Microsoft.CodeAnalysis.FileLinePositionSpan
+        name: FileLinePositionSpan
+        href: Microsoft.CodeAnalysis.FileLinePositionSpan
       description: >-
         A valid  that contains path, line and column information.
 
@@ -443,33 +540,37 @@ items:
         A location path is considered mapped if the first #line directive that preceeds it and that
 
         either specifies an explicit file path or is #line default exists and specifies an explicit path.
-  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetMappedLineSpan(Microsoft.CodeAnalysis.Text.TextSpan,System.Threading.CancellationToken)
-- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetLineVisibility(System.Int32,System.Threading.CancellationToken)
+  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetMappedLineSpan(Microsoft.CodeAnalysis.Text.TextSpan,CancellationToken)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetLineVisibility(System.Int32,CancellationToken)
   href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.yml
   name: GetLineVisibility(int, CancellationToken)
-  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetLineVisibility(int, System.Threading.CancellationToken)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetLineVisibility(int, CancellationToken)
   type: Method
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxTree.cs
-    startLine: 537
+    startLine: 530
   syntax:
     content:
-      CSharp: public override LineVisibility GetLineVisibility(int position, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public override LineVisibility GetLineVisibility(int position, CancellationToken cancellationToken = null)
     parameters:
     - id: position
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: cancellationToken
       type:
-        id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        id: CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: LineVisibility
-  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetLineVisibility(System.Int32,System.Threading.CancellationToken)
+      type:
+        id: Microsoft.CodeAnalysis.LineVisibility
+        name: LineVisibility
+        href: Microsoft.CodeAnalysis.LineVisibility
+  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetLineVisibility(System.Int32,CancellationToken)
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.HasHiddenRegions
   href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.yml
   name: HasHiddenRegions()
@@ -478,7 +579,7 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxTree.cs
-    startLine: 570
+    startLine: 563
   summary: Gets a boolean value indicating whether there are any hidden regions in the tree.
   syntax:
     content:
@@ -486,6 +587,10 @@ items:
     parameters: []
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: True if there is at least one hidden region.
   id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.HasHiddenRegions
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetLocation(Microsoft.CodeAnalysis.Text.TextSpan)
@@ -496,8 +601,8 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxTree.cs
-    startLine: 609
-  summary: Gets a [Microsoft.CodeAnalysis.Location](#) for the specified text .
+    startLine: 602
+  summary: Gets a [Microsoft.CodeAnalysis.Location]() for the specified text .
   syntax:
     content:
       CSharp: public override Location GetLocation(TextSpan span)
@@ -509,6 +614,10 @@ items:
         href: Microsoft.CodeAnalysis.Text.TextSpan
     return:
       id: Location
+      type:
+        id: Microsoft.CodeAnalysis.Location
+        name: Location
+        href: Microsoft.CodeAnalysis.Location
   id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetLocation(Microsoft.CodeAnalysis.Text.TextSpan)
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetDiagnostics(Microsoft.CodeAnalysis.SyntaxNode)
   href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.yml
@@ -518,7 +627,7 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxTree.cs
-    startLine: 625
+    startLine: 618
   summary: Gets a list of all the diagnostics in the sub tree that has the specified node as its root.
   syntax:
     content:
@@ -531,6 +640,10 @@ items:
         href: Microsoft.CodeAnalysis.SyntaxNode
     return:
       id: IEnumerable
+      type:
+        id: IEnumerable{Microsoft.CodeAnalysis.Diagnostic}
+        name: IEnumerable<Diagnostic>
+        isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetDiagnostics(Microsoft.CodeAnalysis.SyntaxNode)
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetDiagnostics(Microsoft.CodeAnalysis.SyntaxToken)
   href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.yml
@@ -540,7 +653,7 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxTree.cs
-    startLine: 666
+    startLine: 659
   summary: Gets a list of all the diagnostics associated with the token and any related trivia.
   syntax:
     content:
@@ -553,6 +666,10 @@ items:
         href: Microsoft.CodeAnalysis.SyntaxToken
     return:
       id: IEnumerable
+      type:
+        id: IEnumerable{Microsoft.CodeAnalysis.Diagnostic}
+        name: IEnumerable<Diagnostic>
+        isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetDiagnostics(Microsoft.CodeAnalysis.SyntaxToken)
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetDiagnostics(Microsoft.CodeAnalysis.SyntaxTrivia)
   href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.yml
@@ -562,7 +679,7 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxTree.cs
-    startLine: 678
+    startLine: 671
   summary: Gets a list of all the diagnostics associated with the trivia.
   syntax:
     content:
@@ -575,6 +692,10 @@ items:
         href: Microsoft.CodeAnalysis.SyntaxTrivia
     return:
       id: IEnumerable
+      type:
+        id: IEnumerable{Microsoft.CodeAnalysis.Diagnostic}
+        name: IEnumerable<Diagnostic>
+        isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetDiagnostics(Microsoft.CodeAnalysis.SyntaxTrivia)
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetDiagnostics(Microsoft.CodeAnalysis.SyntaxNodeOrToken)
   href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.yml
@@ -584,7 +705,7 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxTree.cs
-    startLine: 691
+    startLine: 684
   summary: >-
     Gets a list of all the diagnostics in either the sub tree that has the specified node as its root or
 
@@ -600,26 +721,128 @@ items:
         href: Microsoft.CodeAnalysis.SyntaxNodeOrToken
     return:
       id: IEnumerable
+      type:
+        id: IEnumerable{Microsoft.CodeAnalysis.Diagnostic}
+        name: IEnumerable<Diagnostic>
+        isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetDiagnostics(Microsoft.CodeAnalysis.SyntaxNodeOrToken)
-- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetDiagnostics(System.Threading.CancellationToken)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetDiagnostics(CancellationToken)
   href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.yml
   name: GetDiagnostics(CancellationToken)
-  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetDiagnostics(System.Threading.CancellationToken)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetDiagnostics(CancellationToken)
   type: Method
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxTree.cs
-    startLine: 703
+    startLine: 696
   summary: Gets a list of all the diagnostics in the syntax tree.
   syntax:
     content:
-      CSharp: public override IEnumerable<Diagnostic> GetDiagnostics(CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public override IEnumerable<Diagnostic> GetDiagnostics(CancellationToken cancellationToken = null)
     parameters:
     - id: cancellationToken
       type:
-        id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        id: CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: IEnumerable
-  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetDiagnostics(System.Threading.CancellationToken)
+      type:
+        id: IEnumerable{Microsoft.CodeAnalysis.Diagnostic}
+        name: IEnumerable<Diagnostic>
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetDiagnostics(CancellationToken)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetRootCore(CancellationToken)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.yml
+  name: GetRootCore(CancellationToken)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetRootCore(CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxTree.cs
+    startLine: 705
+  syntax:
+    content:
+      CSharp: protected override SyntaxNode GetRootCore(CancellationToken cancellationToken)
+    parameters:
+    - id: cancellationToken
+      type:
+        id: CancellationToken
+        name: CancellationToken
+        isExternal: true
+    return:
+      id: SyntaxNode
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: Microsoft.CodeAnalysis.SyntaxNode
+  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetRootCore(CancellationToken)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetRootAsyncCore(CancellationToken)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.yml
+  name: GetRootAsyncCore(CancellationToken)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetRootAsyncCore(CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxTree.cs
+    startLine: 710
+  syntax:
+    content:
+      CSharp: protected override Task<SyntaxNode> GetRootAsyncCore(CancellationToken cancellationToken)
+    parameters:
+    - id: cancellationToken
+      type:
+        id: CancellationToken
+        name: CancellationToken
+        isExternal: true
+    return:
+      id: Task
+      type:
+        id: Task{Microsoft.CodeAnalysis.SyntaxNode}
+        name: Task<SyntaxNode>
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.GetRootAsyncCore(CancellationToken)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.TryGetRootCore(Microsoft.CodeAnalysis.SyntaxNode@)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.yml
+  name: TryGetRootCore(out SyntaxNode)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.TryGetRootCore(out Microsoft.CodeAnalysis.SyntaxNode)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxTree.cs
+    startLine: 715
+  syntax:
+    content:
+      CSharp: protected override bool TryGetRootCore(out SyntaxNode root)
+    parameters:
+    - id: root
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: Microsoft.CodeAnalysis.SyntaxNode
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.TryGetRootCore(Microsoft.CodeAnalysis.SyntaxNode@)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.OptionsCore
+  href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.yml
+  name: OptionsCore
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.OptionsCore
+  type: Property
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxTree.cs
+    startLine: 730
+  syntax:
+    content:
+      CSharp: protected override ParseOptions OptionsCore { get; }
+    parameters:
+    - id: OptionsCore
+      type:
+        id: Microsoft.CodeAnalysis.ParseOptions
+        name: ParseOptions
+        href: Microsoft.CodeAnalysis.ParseOptions
+  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.OptionsCore

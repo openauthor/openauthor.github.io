@@ -6,9 +6,10 @@ items:
   type: Interface
   source:
     remote: &o0
+      path: src/System.Web.Mvc/IValueProvider.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/IValueProvider.cs
     startLine: 7
   summary: Defines the methods that are required for a value provider in ASP.NET MVC.
@@ -31,16 +32,20 @@ items:
   summary: Determines whether the collection contains the specified prefix.
   syntax:
     content:
-      CSharp: bool ContainsPrefix(string prefix);
+      CSharp: public bool ContainsPrefix(string prefix)
     parameters:
     - id: prefix
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The prefix to search for.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: true if the collection contains the specified prefix; otherwise, false.
   id: System.Web.Mvc.IValueProvider.ContainsPrefix(System.String)
 - uid: System.Web.Mvc.IValueProvider.GetValue(System.String)
@@ -55,15 +60,19 @@ items:
   summary: Retrieves a value object using the specified key.
   syntax:
     content:
-      CSharp: ValueProviderResult GetValue(string key);
+      CSharp: public ValueProviderResult GetValue(string key)
     parameters:
     - id: key
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The key of the value object to retrieve.
     return:
       id: ValueProviderResult
+      type:
+        id: System.Web.Mvc.ValueProviderResult
+        name: ValueProviderResult
+        href: System.Web.Mvc.ValueProviderResult.yml
       description: The value object for the specified key. If the exact key is not found, null.
   id: System.Web.Mvc.IValueProvider.GetValue(System.String)

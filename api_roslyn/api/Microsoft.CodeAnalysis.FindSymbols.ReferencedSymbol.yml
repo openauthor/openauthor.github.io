@@ -6,9 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/FindSymbols/ReferencedSymbol.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/FindSymbols/ReferencedSymbol.cs
     startLine: 17
   summary: >-
@@ -28,7 +29,7 @@ items:
       CSharp: public class ReferencedSymbol
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.FindSymbols.ReferencedSymbol
   children:
@@ -46,7 +47,7 @@ items:
   summary: The symbol definition that these are references to.
   syntax:
     content:
-      CSharp: public ISymbol Definition { get; private set; }
+      CSharp: public ISymbol Definition { get; }
     parameters:
     - id: Definition
       type:
@@ -66,11 +67,11 @@ items:
   summary: The set of reference locations in the solution.
   syntax:
     content:
-      CSharp: public IEnumerable<ReferenceLocation> Locations { get; private set; }
+      CSharp: public IEnumerable<ReferenceLocation> Locations { get; }
     parameters:
     - id: Locations
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation}
+        name: IEnumerable<ReferenceLocation>
         isExternal: true
   id: Microsoft.CodeAnalysis.FindSymbols.ReferencedSymbol.Locations

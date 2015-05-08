@@ -6,8 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/Validator.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/Validator.cs
     startLine: 15
   summary: >-
@@ -18,25 +20,25 @@ items:
     custom attributes.
   syntax:
     content:
-      CSharp: public static class Validator
+      CSharp: public class Validator
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.ComponentModel.DataAnnotations.Validator
   children:
-  - System.ComponentModel.DataAnnotations.Validator.TryValidateProperty(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,ICollection{System.ComponentModel.DataAnnotations.ValidationResult})
-  - System.ComponentModel.DataAnnotations.Validator.TryValidateObject(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,ICollection{System.ComponentModel.DataAnnotations.ValidationResult})
-  - System.ComponentModel.DataAnnotations.Validator.TryValidateObject(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,ICollection{System.ComponentModel.DataAnnotations.ValidationResult},System.Boolean)
-  - System.ComponentModel.DataAnnotations.Validator.TryValidateValue(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,ICollection{System.ComponentModel.DataAnnotations.ValidationResult},IEnumerable{System.ComponentModel.DataAnnotations.ValidationAttribute})
+  - System.ComponentModel.DataAnnotations.Validator.TryValidateProperty(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,System.Collections.Generic.ICollection{System.ComponentModel.DataAnnotations.ValidationResult})
+  - System.ComponentModel.DataAnnotations.Validator.TryValidateObject(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,System.Collections.Generic.ICollection{System.ComponentModel.DataAnnotations.ValidationResult})
+  - System.ComponentModel.DataAnnotations.Validator.TryValidateObject(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,System.Collections.Generic.ICollection{System.ComponentModel.DataAnnotations.ValidationResult},System.Boolean)
+  - System.ComponentModel.DataAnnotations.Validator.TryValidateValue(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,System.Collections.Generic.ICollection{System.ComponentModel.DataAnnotations.ValidationResult},System.Collections.Generic.IEnumerable{System.ComponentModel.DataAnnotations.ValidationAttribute})
   - System.ComponentModel.DataAnnotations.Validator.ValidateProperty(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)
   - System.ComponentModel.DataAnnotations.Validator.ValidateObject(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)
   - System.ComponentModel.DataAnnotations.Validator.ValidateObject(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,System.Boolean)
-  - System.ComponentModel.DataAnnotations.Validator.ValidateValue(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,IEnumerable{System.ComponentModel.DataAnnotations.ValidationAttribute})
-- uid: System.ComponentModel.DataAnnotations.Validator.TryValidateProperty(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,ICollection{System.ComponentModel.DataAnnotations.ValidationResult})
+  - System.ComponentModel.DataAnnotations.Validator.ValidateValue(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,System.Collections.Generic.IEnumerable{System.ComponentModel.DataAnnotations.ValidationAttribute})
+- uid: System.ComponentModel.DataAnnotations.Validator.TryValidateProperty(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,System.Collections.Generic.ICollection{System.ComponentModel.DataAnnotations.ValidationResult})
   href: System.ComponentModel.DataAnnotations.Validator.yml
   name: TryValidateProperty(object, ValidationContext, ICollection<ValidationResult>)
-  fullName: System.ComponentModel.DataAnnotations.Validator.TryValidateProperty(object, System.ComponentModel.DataAnnotations.ValidationContext, ICollection<System.ComponentModel.DataAnnotations.ValidationResult>)
+  fullName: System.ComponentModel.DataAnnotations.Validator.TryValidateProperty(object, System.ComponentModel.DataAnnotations.ValidationContext, System.Collections.Generic.ICollection<System.ComponentModel.DataAnnotations.ValidationResult>)
   type: Method
   source:
     remote: *o0
@@ -50,7 +52,7 @@ items:
     - id: value
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: The value to test.
     - id: validationContext
@@ -64,18 +66,22 @@ items:
         validators.
     - id: validationResults
       type:
-        id: ICollection{System.ComponentModel.DataAnnotations.ValidationResult}
-        name: ICollection{System.ComponentModel.DataAnnotations.ValidationResult}
+        id: System.Collections.Generic.ICollection{System.ComponentModel.DataAnnotations.ValidationResult}
+        name: ICollection<ValidationResult>
         isExternal: true
       description: Optional collection to receive [System.ComponentModel.DataAnnotations.ValidationResult](System.ComponentModel.DataAnnotations.ValidationResult.yml)s for the failures.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: true if the value is valid, false if any validation errors are encountered.
-  id: System.ComponentModel.DataAnnotations.Validator.TryValidateProperty(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,ICollection{System.ComponentModel.DataAnnotations.ValidationResult})
-- uid: System.ComponentModel.DataAnnotations.Validator.TryValidateObject(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,ICollection{System.ComponentModel.DataAnnotations.ValidationResult})
+  id: System.ComponentModel.DataAnnotations.Validator.TryValidateProperty(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,System.Collections.Generic.ICollection{System.ComponentModel.DataAnnotations.ValidationResult})
+- uid: System.ComponentModel.DataAnnotations.Validator.TryValidateObject(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,System.Collections.Generic.ICollection{System.ComponentModel.DataAnnotations.ValidationResult})
   href: System.ComponentModel.DataAnnotations.Validator.yml
   name: TryValidateObject(object, ValidationContext, ICollection<ValidationResult>)
-  fullName: System.ComponentModel.DataAnnotations.Validator.TryValidateObject(object, System.ComponentModel.DataAnnotations.ValidationContext, ICollection<System.ComponentModel.DataAnnotations.ValidationResult>)
+  fullName: System.ComponentModel.DataAnnotations.Validator.TryValidateObject(object, System.ComponentModel.DataAnnotations.ValidationContext, System.Collections.Generic.ICollection<System.ComponentModel.DataAnnotations.ValidationResult>)
   type: Method
   source:
     remote: *o0
@@ -89,7 +95,7 @@ items:
     - id: instance
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: The object instance to test.  It cannot be null.
     - id: validationContext
@@ -100,18 +106,22 @@ items:
       description: Describes the object to validate and provides services and context for the validators.
     - id: validationResults
       type:
-        id: ICollection{System.ComponentModel.DataAnnotations.ValidationResult}
-        name: ICollection{System.ComponentModel.DataAnnotations.ValidationResult}
+        id: System.Collections.Generic.ICollection{System.ComponentModel.DataAnnotations.ValidationResult}
+        name: ICollection<ValidationResult>
         isExternal: true
       description: Optional collection to receive [System.ComponentModel.DataAnnotations.ValidationResult](System.ComponentModel.DataAnnotations.ValidationResult.yml)s for the failures.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: true if the object is valid, false if any validation errors are encountered.
-  id: System.ComponentModel.DataAnnotations.Validator.TryValidateObject(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,ICollection{System.ComponentModel.DataAnnotations.ValidationResult})
-- uid: System.ComponentModel.DataAnnotations.Validator.TryValidateObject(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,ICollection{System.ComponentModel.DataAnnotations.ValidationResult},System.Boolean)
+  id: System.ComponentModel.DataAnnotations.Validator.TryValidateObject(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,System.Collections.Generic.ICollection{System.ComponentModel.DataAnnotations.ValidationResult})
+- uid: System.ComponentModel.DataAnnotations.Validator.TryValidateObject(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,System.Collections.Generic.ICollection{System.ComponentModel.DataAnnotations.ValidationResult},System.Boolean)
   href: System.ComponentModel.DataAnnotations.Validator.yml
   name: TryValidateObject(object, ValidationContext, ICollection<ValidationResult>, bool)
-  fullName: System.ComponentModel.DataAnnotations.Validator.TryValidateObject(object, System.ComponentModel.DataAnnotations.ValidationContext, ICollection<System.ComponentModel.DataAnnotations.ValidationResult>, bool)
+  fullName: System.ComponentModel.DataAnnotations.Validator.TryValidateObject(object, System.ComponentModel.DataAnnotations.ValidationContext, System.Collections.Generic.ICollection<System.ComponentModel.DataAnnotations.ValidationResult>, bool)
   type: Method
   source:
     remote: *o0
@@ -125,7 +135,7 @@ items:
     - id: instance
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: The object instance to test.  It cannot be null.
     - id: validationContext
@@ -136,14 +146,14 @@ items:
       description: Describes the object to validate and provides services and context for the validators.
     - id: validationResults
       type:
-        id: ICollection{System.ComponentModel.DataAnnotations.ValidationResult}
-        name: ICollection{System.ComponentModel.DataAnnotations.ValidationResult}
+        id: System.Collections.Generic.ICollection{System.ComponentModel.DataAnnotations.ValidationResult}
+        name: ICollection<ValidationResult>
         isExternal: true
       description: Optional collection to receive [System.ComponentModel.DataAnnotations.ValidationResult](System.ComponentModel.DataAnnotations.ValidationResult.yml)s for the failures.
     - id: validateAllProperties
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
       description: >-
         If true, also evaluates all properties of the object (this process is not
@@ -151,12 +161,16 @@ items:
         recursive over properties of the properties).
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: true if the object is valid, false if any validation errors are encountered.
-  id: System.ComponentModel.DataAnnotations.Validator.TryValidateObject(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,ICollection{System.ComponentModel.DataAnnotations.ValidationResult},System.Boolean)
-- uid: System.ComponentModel.DataAnnotations.Validator.TryValidateValue(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,ICollection{System.ComponentModel.DataAnnotations.ValidationResult},IEnumerable{System.ComponentModel.DataAnnotations.ValidationAttribute})
+  id: System.ComponentModel.DataAnnotations.Validator.TryValidateObject(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,System.Collections.Generic.ICollection{System.ComponentModel.DataAnnotations.ValidationResult},System.Boolean)
+- uid: System.ComponentModel.DataAnnotations.Validator.TryValidateValue(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,System.Collections.Generic.ICollection{System.ComponentModel.DataAnnotations.ValidationResult},System.Collections.Generic.IEnumerable{System.ComponentModel.DataAnnotations.ValidationAttribute})
   href: System.ComponentModel.DataAnnotations.Validator.yml
   name: TryValidateValue(object, ValidationContext, ICollection<ValidationResult>, IEnumerable<ValidationAttribute>)
-  fullName: System.ComponentModel.DataAnnotations.Validator.TryValidateValue(object, System.ComponentModel.DataAnnotations.ValidationContext, ICollection<System.ComponentModel.DataAnnotations.ValidationResult>, IEnumerable<System.ComponentModel.DataAnnotations.ValidationAttribute>)
+  fullName: System.ComponentModel.DataAnnotations.Validator.TryValidateValue(object, System.ComponentModel.DataAnnotations.ValidationContext, System.Collections.Generic.ICollection<System.ComponentModel.DataAnnotations.ValidationResult>, System.Collections.Generic.IEnumerable<System.ComponentModel.DataAnnotations.ValidationAttribute>)
   type: Method
   source:
     remote: *o0
@@ -170,7 +184,7 @@ items:
     - id: value
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: The value to test.  It cannot be null.
     - id: validationContext
@@ -184,14 +198,14 @@ items:
         validators.
     - id: validationResults
       type:
-        id: ICollection{System.ComponentModel.DataAnnotations.ValidationResult}
-        name: ICollection{System.ComponentModel.DataAnnotations.ValidationResult}
+        id: System.Collections.Generic.ICollection{System.ComponentModel.DataAnnotations.ValidationResult}
+        name: ICollection<ValidationResult>
         isExternal: true
       description: Optional collection to receive [System.ComponentModel.DataAnnotations.ValidationResult](System.ComponentModel.DataAnnotations.ValidationResult.yml)s for the failures.
     - id: validationAttributes
       type:
-        id: IEnumerable{System.ComponentModel.DataAnnotations.ValidationAttribute}
-        name: IEnumerable{System.ComponentModel.DataAnnotations.ValidationAttribute}
+        id: System.Collections.Generic.IEnumerable{System.ComponentModel.DataAnnotations.ValidationAttribute}
+        name: IEnumerable<ValidationAttribute>
         isExternal: true
       description: >-
         The list of [System.ComponentModel.DataAnnotations.ValidationAttribute](System.ComponentModel.DataAnnotations.ValidationAttribute.yml)s to validate this
@@ -199,8 +213,12 @@ items:
         against.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: true if the object is valid, false if any validation errors are encountered.
-  id: System.ComponentModel.DataAnnotations.Validator.TryValidateValue(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,ICollection{System.ComponentModel.DataAnnotations.ValidationResult},IEnumerable{System.ComponentModel.DataAnnotations.ValidationAttribute})
+  id: System.ComponentModel.DataAnnotations.Validator.TryValidateValue(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,System.Collections.Generic.ICollection{System.ComponentModel.DataAnnotations.ValidationResult},System.Collections.Generic.IEnumerable{System.ComponentModel.DataAnnotations.ValidationAttribute})
 - uid: System.ComponentModel.DataAnnotations.Validator.ValidateProperty(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)
   href: System.ComponentModel.DataAnnotations.Validator.yml
   name: ValidateProperty(object, ValidationContext)
@@ -218,7 +236,7 @@ items:
     - id: value
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: The value to test.
     - id: validationContext
@@ -248,7 +266,7 @@ items:
     - id: instance
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: The object instance to test.  It cannot be null.
     - id: validationContext
@@ -278,7 +296,7 @@ items:
     - id: instance
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: The object instance to test.  It cannot be null.
     - id: validationContext
@@ -293,14 +311,14 @@ items:
     - id: validateAllProperties
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
       description: If true, also validates all the 's properties.
   id: System.ComponentModel.DataAnnotations.Validator.ValidateObject(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,System.Boolean)
-- uid: System.ComponentModel.DataAnnotations.Validator.ValidateValue(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,IEnumerable{System.ComponentModel.DataAnnotations.ValidationAttribute})
+- uid: System.ComponentModel.DataAnnotations.Validator.ValidateValue(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,System.Collections.Generic.IEnumerable{System.ComponentModel.DataAnnotations.ValidationAttribute})
   href: System.ComponentModel.DataAnnotations.Validator.yml
   name: ValidateValue(object, ValidationContext, IEnumerable<ValidationAttribute>)
-  fullName: System.ComponentModel.DataAnnotations.Validator.ValidateValue(object, System.ComponentModel.DataAnnotations.ValidationContext, IEnumerable<System.ComponentModel.DataAnnotations.ValidationAttribute>)
+  fullName: System.ComponentModel.DataAnnotations.Validator.ValidateValue(object, System.ComponentModel.DataAnnotations.ValidationContext, System.Collections.Generic.IEnumerable<System.ComponentModel.DataAnnotations.ValidationAttribute>)
   type: Method
   source:
     remote: *o0
@@ -317,7 +335,7 @@ items:
     - id: value
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: The value to test.  It cannot be null.
     - id: validationContext
@@ -328,8 +346,8 @@ items:
       description: Describes the object being tested.
     - id: validationAttributes
       type:
-        id: IEnumerable{System.ComponentModel.DataAnnotations.ValidationAttribute}
-        name: IEnumerable{System.ComponentModel.DataAnnotations.ValidationAttribute}
+        id: System.Collections.Generic.IEnumerable{System.ComponentModel.DataAnnotations.ValidationAttribute}
+        name: IEnumerable<ValidationAttribute>
         isExternal: true
       description: The list of [System.ComponentModel.DataAnnotations.ValidationAttribute](System.ComponentModel.DataAnnotations.ValidationAttribute.yml)s to validate against this instance.
-  id: System.ComponentModel.DataAnnotations.Validator.ValidateValue(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,IEnumerable{System.ComponentModel.DataAnnotations.ValidationAttribute})
+  id: System.ComponentModel.DataAnnotations.Validator.ValidateValue(System.Object,System.ComponentModel.DataAnnotations.ValidationContext,System.Collections.Generic.IEnumerable{System.ComponentModel.DataAnnotations.ValidationAttribute})

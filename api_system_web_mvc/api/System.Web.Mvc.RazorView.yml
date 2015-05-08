@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/RazorView.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/RazorView.cs
     startLine: 12
   syntax:
     content:
-      CSharp: public class RazorView
+      CSharp: 'public class RazorView : BuildManagerCompiledView, IView'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.Mvc.BuildManagerCompiledView
     name: BuildManagerCompiledView
@@ -28,6 +29,7 @@ items:
   - System.Web.Mvc.RazorView.LayoutPath
   - System.Web.Mvc.RazorView.RunViewStartPages
   - System.Web.Mvc.RazorView.ViewStartFileExtensions
+  - System.Web.Mvc.RazorView.RenderView(System.Web.Mvc.ViewContext,System.IO.TextWriter,System.Object)
 - uid: System.Web.Mvc.RazorView.#ctor(System.Web.Mvc.ControllerContext,System.String,System.String,System.Boolean,System.Collections.Generic.IEnumerable{System.String})
   href: System.Web.Mvc.RazorView.yml
   name: RazorView(ControllerContext, string, string, bool, IEnumerable<string>)
@@ -49,22 +51,22 @@ items:
     - id: viewPath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: layoutPath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: runViewStartPages
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     - id: viewStartFileExtensions
       type:
         id: System.Collections.Generic.IEnumerable{System.String}
-        name: System.Collections.Generic.IEnumerable{System.String}
+        name: IEnumerable<string>
         isExternal: true
   id: System.Web.Mvc.RazorView.#ctor(System.Web.Mvc.ControllerContext,System.String,System.String,System.Boolean,System.Collections.Generic.IEnumerable{System.String})
 - uid: System.Web.Mvc.RazorView.#ctor(System.Web.Mvc.ControllerContext,System.String,System.String,System.Boolean,System.Collections.Generic.IEnumerable{System.String},System.Web.Mvc.IViewPageActivator)
@@ -88,22 +90,22 @@ items:
     - id: viewPath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: layoutPath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: runViewStartPages
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     - id: viewStartFileExtensions
       type:
         id: System.Collections.Generic.IEnumerable{System.String}
-        name: System.Collections.Generic.IEnumerable{System.String}
+        name: IEnumerable<string>
         isExternal: true
     - id: viewPageActivator
       type:
@@ -122,12 +124,12 @@ items:
     startLine: 28
   syntax:
     content:
-      CSharp: public string LayoutPath { get; private set; }
+      CSharp: public string LayoutPath { get; }
     parameters:
     - id: LayoutPath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.RazorView.LayoutPath
 - uid: System.Web.Mvc.RazorView.RunViewStartPages
@@ -141,12 +143,12 @@ items:
     startLine: 30
   syntax:
     content:
-      CSharp: public bool RunViewStartPages { get; private set; }
+      CSharp: public bool RunViewStartPages { get; }
     parameters:
     - id: RunViewStartPages
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.RazorView.RunViewStartPages
 - uid: System.Web.Mvc.RazorView.ViewStartFileExtensions
@@ -160,11 +162,40 @@ items:
     startLine: 38
   syntax:
     content:
-      CSharp: public IEnumerable<string> ViewStartFileExtensions { get; private set; }
+      CSharp: public IEnumerable<string> ViewStartFileExtensions { get; }
     parameters:
     - id: ViewStartFileExtensions
       type:
         id: System.Collections.Generic.IEnumerable{System.String}
-        name: System.Collections.Generic.IEnumerable{System.String}
+        name: IEnumerable<string>
         isExternal: true
   id: System.Web.Mvc.RazorView.ViewStartFileExtensions
+- uid: System.Web.Mvc.RazorView.RenderView(System.Web.Mvc.ViewContext,System.IO.TextWriter,System.Object)
+  href: System.Web.Mvc.RazorView.yml
+  name: RenderView(ViewContext, TextWriter, object)
+  fullName: System.Web.Mvc.RazorView.RenderView(System.Web.Mvc.ViewContext, System.IO.TextWriter, object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/RazorView.cs
+    startLine: 40
+  syntax:
+    content:
+      CSharp: protected override void RenderView(ViewContext viewContext, TextWriter writer, object instance)
+    parameters:
+    - id: viewContext
+      type:
+        id: System.Web.Mvc.ViewContext
+        name: ViewContext
+        href: System.Web.Mvc.ViewContext.yml
+    - id: writer
+      type:
+        id: System.IO.TextWriter
+        name: TextWriter
+        isExternal: true
+    - id: instance
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+  id: System.Web.Mvc.RazorView.RenderView(System.Web.Mvc.ViewContext,System.IO.TextWriter,System.Object)

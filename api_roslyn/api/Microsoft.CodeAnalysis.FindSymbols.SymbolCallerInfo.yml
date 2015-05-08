@@ -6,9 +6,10 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/FindSymbols/SymbolCallerInfo.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/FindSymbols/SymbolCallerInfo.cs
     startLine: 24
   summary: >-
@@ -30,10 +31,10 @@ items:
       CSharp: public struct SymbolCallerInfo
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: Microsoft.CodeAnalysis.FindSymbols.SymbolCallerInfo
   children:
@@ -53,7 +54,7 @@ items:
   summary: The symbol that is calling the symbol being called.
   syntax:
     content:
-      CSharp: public ISymbol CallingSymbol { get; private set; }
+      CSharp: public ISymbol CallingSymbol { get; }
     parameters:
     - id: CallingSymbol
       type:
@@ -73,12 +74,12 @@ items:
   summary: The locations inside the calling symbol where the called symbol is referenced.
   syntax:
     content:
-      CSharp: public IEnumerable<Location> Locations { get; private set; }
+      CSharp: public IEnumerable<Location> Locations { get; }
     parameters:
     - id: Locations
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Location}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Location}
+        name: IEnumerable<Location>
         isExternal: true
   id: Microsoft.CodeAnalysis.FindSymbols.SymbolCallerInfo.Locations
 - uid: Microsoft.CodeAnalysis.FindSymbols.SymbolCallerInfo.CalledSymbol
@@ -93,7 +94,7 @@ items:
   summary: The symbol being called.
   syntax:
     content:
-      CSharp: public ISymbol CalledSymbol { get; private set; }
+      CSharp: public ISymbol CalledSymbol { get; }
     parameters:
     - id: CalledSymbol
       type:
@@ -120,11 +121,11 @@ items:
     the class method implements.
   syntax:
     content:
-      CSharp: public bool IsDirect { get; private set; }
+      CSharp: public bool IsDirect { get; }
     parameters:
     - id: IsDirect
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.FindSymbols.SymbolCallerInfo.IsDirect

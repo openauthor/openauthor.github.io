@@ -6,20 +6,21 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/ViewType.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/ViewType.cs
     startLine: 7
   syntax:
     content:
-      CSharp: public class ViewType
+      CSharp: 'public class ViewType : Control, IComponent, IDisposable, IParserAccessor, IUrlResolutionService, IDataBindingsAccessor, IControlBuilderAccessor, IControlDesignerAccessor, IExpressionsAccessor'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.UI.Control
-    name: System.Web.UI.Control
+    name: Control
     isExternal: true
   id: System.Web.Mvc.ViewType
   children:
@@ -40,6 +41,6 @@ items:
     - id: TypeName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.ViewType.TypeName

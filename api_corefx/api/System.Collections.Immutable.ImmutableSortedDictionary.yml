@@ -6,17 +6,19 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableSortedDictionary.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableSortedDictionary.cs
     startLine: 14
   summary: A set of initialization methods for instances of [System.Collections.Immutable.ImmutableSortedDictionary`2](System.Collections.Immutable.ImmutableSortedDictionary`2.yml).
   syntax:
     content:
-      CSharp: public static class ImmutableSortedDictionary
+      CSharp: public class ImmutableSortedDictionary
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Collections.Immutable.ImmutableSortedDictionary
   children:
@@ -47,10 +49,14 @@ items:
   summary: Returns an empty collection.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableSortedDictionary<TKey, TValue> Create<TKey, TValue>()'
+      CSharp: public static ImmutableSortedDictionary<TKey, TValue> Create<TKey, TValue>()
     parameters: []
     return:
       id: ImmutableSortedDictionary
+      type:
+        id: System.Collections.Immutable.ImmutableSortedDictionary{``0,``1}
+        name: ImmutableSortedDictionary<TKey, TValue>
+        href: System.Collections.Immutable.ImmutableSortedDictionary{``0,``1}
       description: The immutable collection.
   id: System.Collections.Immutable.ImmutableSortedDictionary.Create``2
 - uid: System.Collections.Immutable.ImmutableSortedDictionary.Create``2(System.Collections.Generic.IComparer{``0})
@@ -65,16 +71,20 @@ items:
   summary: Returns an empty collection.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableSortedDictionary<TKey, TValue> Create<TKey, TValue>(IComparer<TKey> keyComparer)'
+      CSharp: public static ImmutableSortedDictionary<TKey, TValue> Create<TKey, TValue>(IComparer<TKey> keyComparer)
     parameters:
     - id: keyComparer
       type:
         id: System.Collections.Generic.IComparer{``0}
-        name: System.Collections.Generic.IComparer{``0}
+        name: IComparer<TKey>
         isExternal: true
       description: The key comparer.
     return:
       id: ImmutableSortedDictionary
+      type:
+        id: System.Collections.Immutable.ImmutableSortedDictionary{``0,``1}
+        name: ImmutableSortedDictionary<TKey, TValue>
+        href: System.Collections.Immutable.ImmutableSortedDictionary{``0,``1}
       description: The immutable collection.
   id: System.Collections.Immutable.ImmutableSortedDictionary.Create``2(System.Collections.Generic.IComparer{``0})
 - uid: System.Collections.Immutable.ImmutableSortedDictionary.Create``2(System.Collections.Generic.IComparer{``0},System.Collections.Generic.IEqualityComparer{``1})
@@ -89,22 +99,26 @@ items:
   summary: Returns an empty collection.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableSortedDictionary<TKey, TValue> Create<TKey, TValue>(IComparer<TKey> keyComparer, IEqualityComparer<TValue> valueComparer)'
+      CSharp: public static ImmutableSortedDictionary<TKey, TValue> Create<TKey, TValue>(IComparer<TKey> keyComparer, IEqualityComparer<TValue> valueComparer)
     parameters:
     - id: keyComparer
       type:
         id: System.Collections.Generic.IComparer{``0}
-        name: System.Collections.Generic.IComparer{``0}
+        name: IComparer<TKey>
         isExternal: true
       description: The key comparer.
     - id: valueComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{``1}
-        name: System.Collections.Generic.IEqualityComparer{``1}
+        name: IEqualityComparer<TValue>
         isExternal: true
       description: The value comparer.
     return:
       id: ImmutableSortedDictionary
+      type:
+        id: System.Collections.Immutable.ImmutableSortedDictionary{``0,``1}
+        name: ImmutableSortedDictionary<TKey, TValue>
+        href: System.Collections.Immutable.ImmutableSortedDictionary{``0,``1}
       description: The immutable collection.
   id: System.Collections.Immutable.ImmutableSortedDictionary.Create``2(System.Collections.Generic.IComparer{``0},System.Collections.Generic.IEqualityComparer{``1})
 - uid: System.Collections.Immutable.ImmutableSortedDictionary.CreateRange``2(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}})
@@ -119,16 +133,20 @@ items:
   summary: Creates a new immutable collection prefilled with the specified items.
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures")] [Pure] public static ImmutableSortedDictionary<TKey, TValue> CreateRange<TKey, TValue>(IEnumerable<KeyValuePair<TKey, TValue>> items)'
+      CSharp: public static ImmutableSortedDictionary<TKey, TValue> CreateRange<TKey, TValue>(IEnumerable<KeyValuePair<TKey, TValue>> items)
     parameters:
     - id: items
       type:
         id: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}}
-        name: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}}
+        name: IEnumerable<KeyValuePair<TKey, TValue>>
         isExternal: true
       description: The items to prepopulate.
     return:
       id: ImmutableSortedDictionary
+      type:
+        id: System.Collections.Immutable.ImmutableSortedDictionary{``0,``1}
+        name: ImmutableSortedDictionary<TKey, TValue>
+        href: System.Collections.Immutable.ImmutableSortedDictionary{``0,``1}
       description: The new immutable collection.
   id: System.Collections.Immutable.ImmutableSortedDictionary.CreateRange``2(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}})
 - uid: System.Collections.Immutable.ImmutableSortedDictionary.CreateRange``2(System.Collections.Generic.IComparer{``0},System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}})
@@ -143,22 +161,26 @@ items:
   summary: Creates a new immutable collection prefilled with the specified items.
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures")] [Pure] public static ImmutableSortedDictionary<TKey, TValue> CreateRange<TKey, TValue>(IComparer<TKey> keyComparer, IEnumerable<KeyValuePair<TKey, TValue>> items)'
+      CSharp: public static ImmutableSortedDictionary<TKey, TValue> CreateRange<TKey, TValue>(IComparer<TKey> keyComparer, IEnumerable<KeyValuePair<TKey, TValue>> items)
     parameters:
     - id: keyComparer
       type:
         id: System.Collections.Generic.IComparer{``0}
-        name: System.Collections.Generic.IComparer{``0}
+        name: IComparer<TKey>
         isExternal: true
       description: The key comparer.
     - id: items
       type:
         id: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}}
-        name: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}}
+        name: IEnumerable<KeyValuePair<TKey, TValue>>
         isExternal: true
       description: The items to prepopulate.
     return:
       id: ImmutableSortedDictionary
+      type:
+        id: System.Collections.Immutable.ImmutableSortedDictionary{``0,``1}
+        name: ImmutableSortedDictionary<TKey, TValue>
+        href: System.Collections.Immutable.ImmutableSortedDictionary{``0,``1}
       description: The new immutable collection.
   id: System.Collections.Immutable.ImmutableSortedDictionary.CreateRange``2(System.Collections.Generic.IComparer{``0},System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}})
 - uid: System.Collections.Immutable.ImmutableSortedDictionary.CreateRange``2(System.Collections.Generic.IComparer{``0},System.Collections.Generic.IEqualityComparer{``1},System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}})
@@ -173,28 +195,32 @@ items:
   summary: Creates a new immutable collection prefilled with the specified items.
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures")] [Pure] public static ImmutableSortedDictionary<TKey, TValue> CreateRange<TKey, TValue>(IComparer<TKey> keyComparer, IEqualityComparer<TValue> valueComparer, IEnumerable<KeyValuePair<TKey, TValue>> items)'
+      CSharp: public static ImmutableSortedDictionary<TKey, TValue> CreateRange<TKey, TValue>(IComparer<TKey> keyComparer, IEqualityComparer<TValue> valueComparer, IEnumerable<KeyValuePair<TKey, TValue>> items)
     parameters:
     - id: keyComparer
       type:
         id: System.Collections.Generic.IComparer{``0}
-        name: System.Collections.Generic.IComparer{``0}
+        name: IComparer<TKey>
         isExternal: true
       description: The key comparer.
     - id: valueComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{``1}
-        name: System.Collections.Generic.IEqualityComparer{``1}
+        name: IEqualityComparer<TValue>
         isExternal: true
       description: The value comparer.
     - id: items
       type:
         id: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}}
-        name: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}}
+        name: IEnumerable<KeyValuePair<TKey, TValue>>
         isExternal: true
       description: The items to prepopulate.
     return:
       id: ImmutableSortedDictionary
+      type:
+        id: System.Collections.Immutable.ImmutableSortedDictionary{``0,``1}
+        name: ImmutableSortedDictionary<TKey, TValue>
+        href: System.Collections.Immutable.ImmutableSortedDictionary{``0,``1}
       description: The new immutable collection.
   id: System.Collections.Immutable.ImmutableSortedDictionary.CreateRange``2(System.Collections.Generic.IComparer{``0},System.Collections.Generic.IEqualityComparer{``1},System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}})
 - uid: System.Collections.Immutable.ImmutableSortedDictionary.CreateBuilder``2
@@ -209,10 +235,14 @@ items:
   summary: Creates a new immutable sorted dictionary builder.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableSortedDictionary<TKey, TValue>.Builder CreateBuilder<TKey, TValue>()'
+      CSharp: public static Builder CreateBuilder<TKey, TValue>()
     parameters: []
     return:
       id: Builder
+      type:
+        id: System.Collections.Immutable.ImmutableSortedDictionary{``0,``1}.Builder
+        name: Builder
+        href: System.Collections.Immutable.ImmutableSortedDictionary{``0,``1}.Builder
       description: The immutable collection builder.
   id: System.Collections.Immutable.ImmutableSortedDictionary.CreateBuilder``2
 - uid: System.Collections.Immutable.ImmutableSortedDictionary.CreateBuilder``2(System.Collections.Generic.IComparer{``0})
@@ -227,16 +257,20 @@ items:
   summary: Creates a new immutable sorted dictionary builder.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableSortedDictionary<TKey, TValue>.Builder CreateBuilder<TKey, TValue>(IComparer<TKey> keyComparer)'
+      CSharp: public static Builder CreateBuilder<TKey, TValue>(IComparer<TKey> keyComparer)
     parameters:
     - id: keyComparer
       type:
         id: System.Collections.Generic.IComparer{``0}
-        name: System.Collections.Generic.IComparer{``0}
+        name: IComparer<TKey>
         isExternal: true
       description: The key comparer.
     return:
       id: Builder
+      type:
+        id: System.Collections.Immutable.ImmutableSortedDictionary{``0,``1}.Builder
+        name: Builder
+        href: System.Collections.Immutable.ImmutableSortedDictionary{``0,``1}.Builder
       description: The immutable collection builder.
   id: System.Collections.Immutable.ImmutableSortedDictionary.CreateBuilder``2(System.Collections.Generic.IComparer{``0})
 - uid: System.Collections.Immutable.ImmutableSortedDictionary.CreateBuilder``2(System.Collections.Generic.IComparer{``0},System.Collections.Generic.IEqualityComparer{``1})
@@ -251,22 +285,26 @@ items:
   summary: Creates a new immutable sorted dictionary builder.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableSortedDictionary<TKey, TValue>.Builder CreateBuilder<TKey, TValue>(IComparer<TKey> keyComparer, IEqualityComparer<TValue> valueComparer)'
+      CSharp: public static Builder CreateBuilder<TKey, TValue>(IComparer<TKey> keyComparer, IEqualityComparer<TValue> valueComparer)
     parameters:
     - id: keyComparer
       type:
         id: System.Collections.Generic.IComparer{``0}
-        name: System.Collections.Generic.IComparer{``0}
+        name: IComparer<TKey>
         isExternal: true
       description: The key comparer.
     - id: valueComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{``1}
-        name: System.Collections.Generic.IEqualityComparer{``1}
+        name: IEqualityComparer<TValue>
         isExternal: true
       description: The value comparer.
     return:
       id: Builder
+      type:
+        id: System.Collections.Immutable.ImmutableSortedDictionary{``0,``1}.Builder
+        name: Builder
+        href: System.Collections.Immutable.ImmutableSortedDictionary{``0,``1}.Builder
       description: The immutable collection builder.
   id: System.Collections.Immutable.ImmutableSortedDictionary.CreateBuilder``2(System.Collections.Generic.IComparer{``0},System.Collections.Generic.IEqualityComparer{``1})
 - uid: System.Collections.Immutable.ImmutableSortedDictionary.ToImmutableSortedDictionary``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2},System.Collections.Generic.IComparer{``1},System.Collections.Generic.IEqualityComparer{``2})
@@ -281,40 +319,44 @@ items:
   summary: Constructs an immutable sorted dictionary based on some transformation of a sequence.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableSortedDictionary<TKey, TValue> ToImmutableSortedDictionary<TSource, TKey, TValue>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TValue> elementSelector, IComparer<TKey> keyComparer, IEqualityComparer<TValue> valueComparer)'
+      CSharp: public static ImmutableSortedDictionary<TKey, TValue> ToImmutableSortedDictionary<TSource, TKey, TValue>(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TValue> elementSelector, IComparer<TKey> keyComparer, IEqualityComparer<TValue> valueComparer)
     parameters:
     - id: source
       type:
         id: System.Collections.Generic.IEnumerable{``0}
-        name: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<TSource>
         isExternal: true
       description: The sequence to enumerate to generate the map.
     - id: keySelector
       type:
         id: System.Func{``0,``1}
-        name: System.Func{``0,``1}
+        name: Func<TSource, TKey>
         isExternal: true
       description: The function that will produce the key for the map from each sequence element.
     - id: elementSelector
       type:
         id: System.Func{``0,``2}
-        name: System.Func{``0,``2}
+        name: Func<TSource, TValue>
         isExternal: true
       description: The function that will produce the value for the map from each sequence element.
     - id: keyComparer
       type:
         id: System.Collections.Generic.IComparer{``1}
-        name: System.Collections.Generic.IComparer{``1}
+        name: IComparer<TKey>
         isExternal: true
       description: The key comparer to use for the map.
     - id: valueComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{``2}
-        name: System.Collections.Generic.IEqualityComparer{``2}
+        name: IEqualityComparer<TValue>
         isExternal: true
       description: The value comparer to use for the map.
     return:
       id: ImmutableSortedDictionary
+      type:
+        id: System.Collections.Immutable.ImmutableSortedDictionary{``1,``2}
+        name: ImmutableSortedDictionary<TKey, TValue>
+        href: System.Collections.Immutable.ImmutableSortedDictionary{``1,``2}
       description: The immutable map.
   id: System.Collections.Immutable.ImmutableSortedDictionary.ToImmutableSortedDictionary``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2},System.Collections.Generic.IComparer{``1},System.Collections.Generic.IEqualityComparer{``2})
 - uid: System.Collections.Immutable.ImmutableSortedDictionary.ToImmutableSortedDictionary``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2},System.Collections.Generic.IComparer{``1})
@@ -329,34 +371,38 @@ items:
   summary: Constructs an immutable sorted dictionary based on some transformation of a sequence.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableSortedDictionary<TKey, TValue> ToImmutableSortedDictionary<TSource, TKey, TValue>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TValue> elementSelector, IComparer<TKey> keyComparer)'
+      CSharp: public static ImmutableSortedDictionary<TKey, TValue> ToImmutableSortedDictionary<TSource, TKey, TValue>(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TValue> elementSelector, IComparer<TKey> keyComparer)
     parameters:
     - id: source
       type:
         id: System.Collections.Generic.IEnumerable{``0}
-        name: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<TSource>
         isExternal: true
       description: The sequence to enumerate to generate the map.
     - id: keySelector
       type:
         id: System.Func{``0,``1}
-        name: System.Func{``0,``1}
+        name: Func<TSource, TKey>
         isExternal: true
       description: The function that will produce the key for the map from each sequence element.
     - id: elementSelector
       type:
         id: System.Func{``0,``2}
-        name: System.Func{``0,``2}
+        name: Func<TSource, TValue>
         isExternal: true
       description: The function that will produce the value for the map from each sequence element.
     - id: keyComparer
       type:
         id: System.Collections.Generic.IComparer{``1}
-        name: System.Collections.Generic.IComparer{``1}
+        name: IComparer<TKey>
         isExternal: true
       description: The key comparer to use for the map.
     return:
       id: ImmutableSortedDictionary
+      type:
+        id: System.Collections.Immutable.ImmutableSortedDictionary{``1,``2}
+        name: ImmutableSortedDictionary<TKey, TValue>
+        href: System.Collections.Immutable.ImmutableSortedDictionary{``1,``2}
       description: The immutable map.
   id: System.Collections.Immutable.ImmutableSortedDictionary.ToImmutableSortedDictionary``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2},System.Collections.Generic.IComparer{``1})
 - uid: System.Collections.Immutable.ImmutableSortedDictionary.ToImmutableSortedDictionary``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2})
@@ -371,28 +417,32 @@ items:
   summary: Constructs an immutable sorted dictionary based on some transformation of a sequence.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableSortedDictionary<TKey, TValue> ToImmutableSortedDictionary<TSource, TKey, TValue>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TValue> elementSelector)'
+      CSharp: public static ImmutableSortedDictionary<TKey, TValue> ToImmutableSortedDictionary<TSource, TKey, TValue>(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TValue> elementSelector)
     parameters:
     - id: source
       type:
         id: System.Collections.Generic.IEnumerable{``0}
-        name: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<TSource>
         isExternal: true
       description: The sequence to enumerate to generate the map.
     - id: keySelector
       type:
         id: System.Func{``0,``1}
-        name: System.Func{``0,``1}
+        name: Func<TSource, TKey>
         isExternal: true
       description: The function that will produce the key for the map from each sequence element.
     - id: elementSelector
       type:
         id: System.Func{``0,``2}
-        name: System.Func{``0,``2}
+        name: Func<TSource, TValue>
         isExternal: true
       description: The function that will produce the value for the map from each sequence element.
     return:
       id: ImmutableSortedDictionary
+      type:
+        id: System.Collections.Immutable.ImmutableSortedDictionary{``1,``2}
+        name: ImmutableSortedDictionary<TKey, TValue>
+        href: System.Collections.Immutable.ImmutableSortedDictionary{``1,``2}
       description: The immutable map.
   id: System.Collections.Immutable.ImmutableSortedDictionary.ToImmutableSortedDictionary``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2})
 - uid: System.Collections.Immutable.ImmutableSortedDictionary.ToImmutableSortedDictionary``2(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}},System.Collections.Generic.IComparer{``0},System.Collections.Generic.IEqualityComparer{``1})
@@ -407,28 +457,32 @@ items:
   summary: Creates an immutable sorted dictionary given a sequence of key=value pairs.
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures")] [Pure] public static ImmutableSortedDictionary<TKey, TValue> ToImmutableSortedDictionary<TKey, TValue>(this IEnumerable<KeyValuePair<TKey, TValue>> source, IComparer<TKey> keyComparer, IEqualityComparer<TValue> valueComparer)'
+      CSharp: public static ImmutableSortedDictionary<TKey, TValue> ToImmutableSortedDictionary<TKey, TValue>(IEnumerable<KeyValuePair<TKey, TValue>> source, IComparer<TKey> keyComparer, IEqualityComparer<TValue> valueComparer)
     parameters:
     - id: source
       type:
         id: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}}
-        name: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}}
+        name: IEnumerable<KeyValuePair<TKey, TValue>>
         isExternal: true
       description: The sequence of key=value pairs.
     - id: keyComparer
       type:
         id: System.Collections.Generic.IComparer{``0}
-        name: System.Collections.Generic.IComparer{``0}
+        name: IComparer<TKey>
         isExternal: true
       description: The key comparer to use when building the immutable map.
     - id: valueComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{``1}
-        name: System.Collections.Generic.IEqualityComparer{``1}
+        name: IEqualityComparer<TValue>
         isExternal: true
       description: The value comparer to use for the immutable map.
     return:
       id: ImmutableSortedDictionary
+      type:
+        id: System.Collections.Immutable.ImmutableSortedDictionary{``0,``1}
+        name: ImmutableSortedDictionary<TKey, TValue>
+        href: System.Collections.Immutable.ImmutableSortedDictionary{``0,``1}
       description: An immutable map.
   id: System.Collections.Immutable.ImmutableSortedDictionary.ToImmutableSortedDictionary``2(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}},System.Collections.Generic.IComparer{``0},System.Collections.Generic.IEqualityComparer{``1})
 - uid: System.Collections.Immutable.ImmutableSortedDictionary.ToImmutableSortedDictionary``2(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}},System.Collections.Generic.IComparer{``0})
@@ -443,22 +497,26 @@ items:
   summary: Creates an immutable sorted dictionary given a sequence of key=value pairs.
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures")] [Pure] public static ImmutableSortedDictionary<TKey, TValue> ToImmutableSortedDictionary<TKey, TValue>(this IEnumerable<KeyValuePair<TKey, TValue>> source, IComparer<TKey> keyComparer)'
+      CSharp: public static ImmutableSortedDictionary<TKey, TValue> ToImmutableSortedDictionary<TKey, TValue>(IEnumerable<KeyValuePair<TKey, TValue>> source, IComparer<TKey> keyComparer)
     parameters:
     - id: source
       type:
         id: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}}
-        name: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}}
+        name: IEnumerable<KeyValuePair<TKey, TValue>>
         isExternal: true
       description: The sequence of key=value pairs.
     - id: keyComparer
       type:
         id: System.Collections.Generic.IComparer{``0}
-        name: System.Collections.Generic.IComparer{``0}
+        name: IComparer<TKey>
         isExternal: true
       description: The key comparer to use when building the immutable map.
     return:
       id: ImmutableSortedDictionary
+      type:
+        id: System.Collections.Immutable.ImmutableSortedDictionary{``0,``1}
+        name: ImmutableSortedDictionary<TKey, TValue>
+        href: System.Collections.Immutable.ImmutableSortedDictionary{``0,``1}
       description: An immutable map.
   id: System.Collections.Immutable.ImmutableSortedDictionary.ToImmutableSortedDictionary``2(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}},System.Collections.Generic.IComparer{``0})
 - uid: System.Collections.Immutable.ImmutableSortedDictionary.ToImmutableSortedDictionary``2(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}})
@@ -473,15 +531,19 @@ items:
   summary: Creates an immutable sorted dictionary given a sequence of key=value pairs.
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures")] [Pure] public static ImmutableSortedDictionary<TKey, TValue> ToImmutableSortedDictionary<TKey, TValue>(this IEnumerable<KeyValuePair<TKey, TValue>> source)'
+      CSharp: public static ImmutableSortedDictionary<TKey, TValue> ToImmutableSortedDictionary<TKey, TValue>(IEnumerable<KeyValuePair<TKey, TValue>> source)
     parameters:
     - id: source
       type:
         id: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}}
-        name: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}}
+        name: IEnumerable<KeyValuePair<TKey, TValue>>
         isExternal: true
       description: The sequence of key=value pairs.
     return:
       id: ImmutableSortedDictionary
+      type:
+        id: System.Collections.Immutable.ImmutableSortedDictionary{``0,``1}
+        name: ImmutableSortedDictionary<TKey, TValue>
+        href: System.Collections.Immutable.ImmutableSortedDictionary{``0,``1}
       description: An immutable map.
   id: System.Collections.Immutable.ImmutableSortedDictionary.ToImmutableSortedDictionary``2(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}})

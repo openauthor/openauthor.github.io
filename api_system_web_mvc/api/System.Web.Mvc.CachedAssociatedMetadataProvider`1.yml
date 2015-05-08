@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/CachedAssociatedMetadataProvider.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/CachedAssociatedMetadataProvider.cs
     startLine: 9
   syntax:
     content:
-      CSharp: 'public abstract class CachedAssociatedMetadataProvider<TModelMetadata> where TModelMetadata : ModelMetadata'
+      CSharp: 'public abstract class CachedAssociatedMetadataProvider<TModelMetadata> : AssociatedMetadataProvider where TModelMetadata : ModelMetadata'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.Mvc.ModelMetadataProvider
     name: ModelMetadataProvider
@@ -26,9 +27,188 @@ items:
     href: System.Web.Mvc.AssociatedMetadataProvider.yml
   id: System.Web.Mvc.CachedAssociatedMetadataProvider`1
   children:
+  - System.Web.Mvc.CachedAssociatedMetadataProvider`1.CacheItemPolicy
+  - System.Web.Mvc.CachedAssociatedMetadataProvider`1.CacheKeyPrefix
+  - System.Web.Mvc.CachedAssociatedMetadataProvider`1.PrototypeCache
+  - System.Web.Mvc.CachedAssociatedMetadataProvider`1.CreateMetadata(System.Collections.Generic.IEnumerable{System.Attribute},System.Type,System.Func{System.Object},System.Type,System.String)
+  - System.Web.Mvc.CachedAssociatedMetadataProvider`1.CreateMetadataPrototype(System.Collections.Generic.IEnumerable{System.Attribute},System.Type,System.Type,System.String)
+  - System.Web.Mvc.CachedAssociatedMetadataProvider`1.CreateMetadataFromPrototype(`0,System.Func{System.Object})
   - System.Web.Mvc.CachedAssociatedMetadataProvider`1.GetMetadataForProperty(System.Func{System.Object},System.Type,System.String)
+  - System.Web.Mvc.CachedAssociatedMetadataProvider`1.GetMetadataForProperty(System.Func{System.Object},System.Type,System.ComponentModel.PropertyDescriptor)
   - System.Web.Mvc.CachedAssociatedMetadataProvider`1.GetMetadataForProperties(System.Object,System.Type)
   - System.Web.Mvc.CachedAssociatedMetadataProvider`1.GetMetadataForType(System.Func{System.Object},System.Type)
+- uid: System.Web.Mvc.CachedAssociatedMetadataProvider`1.CacheItemPolicy
+  href: System.Web.Mvc.CachedAssociatedMetadataProvider`1.yml
+  name: CacheItemPolicy
+  fullName: System.Web.Mvc.CachedAssociatedMetadataProvider<TModelMetadata>.CacheItemPolicy
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedAssociatedMetadataProvider.cs
+    startLine: 17
+  syntax:
+    content:
+      CSharp: protected internal CacheItemPolicy CacheItemPolicy { get; set; }
+    parameters:
+    - id: CacheItemPolicy
+      type:
+        id: System.Runtime.Caching.CacheItemPolicy
+        name: CacheItemPolicy
+        isExternal: true
+  id: System.Web.Mvc.CachedAssociatedMetadataProvider`1.CacheItemPolicy
+- uid: System.Web.Mvc.CachedAssociatedMetadataProvider`1.CacheKeyPrefix
+  href: System.Web.Mvc.CachedAssociatedMetadataProvider`1.yml
+  name: CacheKeyPrefix
+  fullName: System.Web.Mvc.CachedAssociatedMetadataProvider<TModelMetadata>.CacheKeyPrefix
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedAssociatedMetadataProvider.cs
+    startLine: 23
+  syntax:
+    content:
+      CSharp: protected string CacheKeyPrefix { get; }
+    parameters:
+    - id: CacheKeyPrefix
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Web.Mvc.CachedAssociatedMetadataProvider`1.CacheKeyPrefix
+- uid: System.Web.Mvc.CachedAssociatedMetadataProvider`1.PrototypeCache
+  href: System.Web.Mvc.CachedAssociatedMetadataProvider`1.yml
+  name: PrototypeCache
+  fullName: System.Web.Mvc.CachedAssociatedMetadataProvider<TModelMetadata>.PrototypeCache
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedAssociatedMetadataProvider.cs
+    startLine: 35
+  syntax:
+    content:
+      CSharp: protected internal ObjectCache PrototypeCache { get; set; }
+    parameters:
+    - id: PrototypeCache
+      type:
+        id: System.Runtime.Caching.ObjectCache
+        name: ObjectCache
+        isExternal: true
+  id: System.Web.Mvc.CachedAssociatedMetadataProvider`1.PrototypeCache
+- uid: System.Web.Mvc.CachedAssociatedMetadataProvider`1.CreateMetadata(System.Collections.Generic.IEnumerable{System.Attribute},System.Type,System.Func{System.Object},System.Type,System.String)
+  href: System.Web.Mvc.CachedAssociatedMetadataProvider`1.yml
+  name: CreateMetadata(IEnumerable<Attribute>, Type, Func<object>, Type, string)
+  fullName: System.Web.Mvc.CachedAssociatedMetadataProvider<TModelMetadata>.CreateMetadata(System.Collections.Generic.IEnumerable<System.Attribute>, System.Type, System.Func<object>, System.Type, string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedAssociatedMetadataProvider.cs
+    startLine: 41
+  syntax:
+    content:
+      CSharp: protected override sealed ModelMetadata CreateMetadata(IEnumerable<Attribute> attributes, Type containerType, Func<object> modelAccessor, Type modelType, string propertyName)
+    parameters:
+    - id: attributes
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Attribute}
+        name: IEnumerable<Attribute>
+        isExternal: true
+    - id: containerType
+      type:
+        id: System.Type
+        name: Type
+        isExternal: true
+    - id: modelAccessor
+      type:
+        id: System.Func{System.Object}
+        name: Func<object>
+        isExternal: true
+    - id: modelType
+      type:
+        id: System.Type
+        name: Type
+        isExternal: true
+    - id: propertyName
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      id: ModelMetadata
+      type:
+        id: System.Web.Mvc.ModelMetadata
+        name: ModelMetadata
+        href: System.Web.Mvc.ModelMetadata.yml
+  id: System.Web.Mvc.CachedAssociatedMetadataProvider`1.CreateMetadata(System.Collections.Generic.IEnumerable{System.Attribute},System.Type,System.Func{System.Object},System.Type,System.String)
+- uid: System.Web.Mvc.CachedAssociatedMetadataProvider`1.CreateMetadataPrototype(System.Collections.Generic.IEnumerable{System.Attribute},System.Type,System.Type,System.String)
+  href: System.Web.Mvc.CachedAssociatedMetadataProvider`1.yml
+  name: CreateMetadataPrototype(IEnumerable<Attribute>, Type, Type, string)
+  fullName: System.Web.Mvc.CachedAssociatedMetadataProvider<TModelMetadata>.CreateMetadataPrototype(System.Collections.Generic.IEnumerable<System.Attribute>, System.Type, System.Type, string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedAssociatedMetadataProvider.cs
+    startLine: 58
+  syntax:
+    content:
+      CSharp: protected abstract TModelMetadata CreateMetadataPrototype(IEnumerable<Attribute> attributes, Type containerType, Type modelType, string propertyName)
+    parameters:
+    - id: attributes
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Attribute}
+        name: IEnumerable<Attribute>
+        isExternal: true
+    - id: containerType
+      type:
+        id: System.Type
+        name: Type
+        isExternal: true
+    - id: modelType
+      type:
+        id: System.Type
+        name: Type
+        isExternal: true
+    - id: propertyName
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      id: TModelMetadata
+      type:
+        id: TModelMetadata
+        name: TModelMetadata
+        href: TModelMetadata
+  id: System.Web.Mvc.CachedAssociatedMetadataProvider`1.CreateMetadataPrototype(System.Collections.Generic.IEnumerable{System.Attribute},System.Type,System.Type,System.String)
+- uid: System.Web.Mvc.CachedAssociatedMetadataProvider`1.CreateMetadataFromPrototype(`0,System.Func{System.Object})
+  href: System.Web.Mvc.CachedAssociatedMetadataProvider`1.yml
+  name: CreateMetadataFromPrototype(TModelMetadata, Func<object>)
+  fullName: System.Web.Mvc.CachedAssociatedMetadataProvider<TModelMetadata>.CreateMetadataFromPrototype(TModelMetadata, System.Func<object>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedAssociatedMetadataProvider.cs
+    startLine: 61
+  syntax:
+    content:
+      CSharp: protected abstract TModelMetadata CreateMetadataFromPrototype(TModelMetadata prototype, Func<object> modelAccessor)
+    parameters:
+    - id: prototype
+      type:
+        id: TModelMetadata
+        name: TModelMetadata
+        href: TModelMetadata
+    - id: modelAccessor
+      type:
+        id: System.Func{System.Object}
+        name: Func<object>
+        isExternal: true
+    return:
+      id: TModelMetadata
+      type:
+        id: TModelMetadata
+        name: TModelMetadata
+        href: TModelMetadata
+  id: System.Web.Mvc.CachedAssociatedMetadataProvider`1.CreateMetadataFromPrototype(`0,System.Func{System.Object})
 - uid: System.Web.Mvc.CachedAssociatedMetadataProvider`1.GetMetadataForProperty(System.Func{System.Object},System.Type,System.String)
   href: System.Web.Mvc.CachedAssociatedMetadataProvider`1.yml
   name: GetMetadataForProperty(Func<object>, Type, string)
@@ -40,26 +220,65 @@ items:
     startLine: 69
   syntax:
     content:
-      CSharp: public sealed override ModelMetadata GetMetadataForProperty(Func<object> modelAccessor, Type containerType, string propertyName)
+      CSharp: public override sealed ModelMetadata GetMetadataForProperty(Func<object> modelAccessor, Type containerType, string propertyName)
     parameters:
     - id: modelAccessor
       type:
         id: System.Func{System.Object}
-        name: System.Func{System.Object}
+        name: Func<object>
         isExternal: true
     - id: containerType
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
     - id: propertyName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: ModelMetadata
+      type:
+        id: System.Web.Mvc.ModelMetadata
+        name: ModelMetadata
+        href: System.Web.Mvc.ModelMetadata.yml
   id: System.Web.Mvc.CachedAssociatedMetadataProvider`1.GetMetadataForProperty(System.Func{System.Object},System.Type,System.String)
+- uid: System.Web.Mvc.CachedAssociatedMetadataProvider`1.GetMetadataForProperty(System.Func{System.Object},System.Type,System.ComponentModel.PropertyDescriptor)
+  href: System.Web.Mvc.CachedAssociatedMetadataProvider`1.yml
+  name: GetMetadataForProperty(Func<object>, Type, PropertyDescriptor)
+  fullName: System.Web.Mvc.CachedAssociatedMetadataProvider<TModelMetadata>.GetMetadataForProperty(System.Func<object>, System.Type, System.ComponentModel.PropertyDescriptor)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedAssociatedMetadataProvider.cs
+    startLine: 74
+  syntax:
+    content:
+      CSharp: protected override sealed ModelMetadata GetMetadataForProperty(Func<object> modelAccessor, Type containerType, PropertyDescriptor propertyDescriptor)
+    parameters:
+    - id: modelAccessor
+      type:
+        id: System.Func{System.Object}
+        name: Func<object>
+        isExternal: true
+    - id: containerType
+      type:
+        id: System.Type
+        name: Type
+        isExternal: true
+    - id: propertyDescriptor
+      type:
+        id: System.ComponentModel.PropertyDescriptor
+        name: PropertyDescriptor
+        isExternal: true
+    return:
+      id: ModelMetadata
+      type:
+        id: System.Web.Mvc.ModelMetadata
+        name: ModelMetadata
+        href: System.Web.Mvc.ModelMetadata.yml
+  id: System.Web.Mvc.CachedAssociatedMetadataProvider`1.GetMetadataForProperty(System.Func{System.Object},System.Type,System.ComponentModel.PropertyDescriptor)
 - uid: System.Web.Mvc.CachedAssociatedMetadataProvider`1.GetMetadataForProperties(System.Object,System.Type)
   href: System.Web.Mvc.CachedAssociatedMetadataProvider`1.yml
   name: GetMetadataForProperties(object, Type)
@@ -71,20 +290,24 @@ items:
     startLine: 79
   syntax:
     content:
-      CSharp: public sealed override IEnumerable<ModelMetadata> GetMetadataForProperties(object container, Type containerType)
+      CSharp: public override sealed IEnumerable<ModelMetadata> GetMetadataForProperties(object container, Type containerType)
     parameters:
     - id: container
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     - id: containerType
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Web.Mvc.ModelMetadata}
+        name: IEnumerable<ModelMetadata>
+        isExternal: true
   id: System.Web.Mvc.CachedAssociatedMetadataProvider`1.GetMetadataForProperties(System.Object,System.Type)
 - uid: System.Web.Mvc.CachedAssociatedMetadataProvider`1.GetMetadataForType(System.Func{System.Object},System.Type)
   href: System.Web.Mvc.CachedAssociatedMetadataProvider`1.yml
@@ -97,18 +320,22 @@ items:
     startLine: 84
   syntax:
     content:
-      CSharp: public sealed override ModelMetadata GetMetadataForType(Func<object> modelAccessor, Type modelType)
+      CSharp: public override sealed ModelMetadata GetMetadataForType(Func<object> modelAccessor, Type modelType)
     parameters:
     - id: modelAccessor
       type:
         id: System.Func{System.Object}
-        name: System.Func{System.Object}
+        name: Func<object>
         isExternal: true
     - id: modelType
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
     return:
       id: ModelMetadata
+      type:
+        id: System.Web.Mvc.ModelMetadata
+        name: ModelMetadata
+        href: System.Web.Mvc.ModelMetadata.yml
   id: System.Web.Mvc.CachedAssociatedMetadataProvider`1.GetMetadataForType(System.Func{System.Object},System.Type)

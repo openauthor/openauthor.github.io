@@ -6,16 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/SourceSwitch.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/SourceSwitch.cs
     startLine: 8
   syntax:
     content:
-      CSharp: public class SourceSwitch
+      CSharp: 'public class SourceSwitch : Switch'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Diagnostics.Switch
     name: Switch
@@ -26,6 +28,7 @@ items:
   - System.Diagnostics.SourceSwitch.#ctor(System.String,System.String)
   - System.Diagnostics.SourceSwitch.Level
   - System.Diagnostics.SourceSwitch.ShouldTrace(System.Diagnostics.TraceEventType)
+  - System.Diagnostics.SourceSwitch.OnValueChanged
 - uid: System.Diagnostics.SourceSwitch.#ctor(System.String)
   href: System.Diagnostics.SourceSwitch.yml
   name: SourceSwitch(string)
@@ -42,7 +45,7 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.SourceSwitch.#ctor(System.String)
 - uid: System.Diagnostics.SourceSwitch.#ctor(System.String,System.String)
@@ -61,12 +64,12 @@ items:
     - id: displayName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: defaultSwitchValue
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.SourceSwitch.#ctor(System.String,System.String)
 - uid: System.Diagnostics.SourceSwitch.Level
@@ -108,4 +111,22 @@ items:
         href: System.Diagnostics.TraceEventType.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Diagnostics.SourceSwitch.ShouldTrace(System.Diagnostics.TraceEventType)
+- uid: System.Diagnostics.SourceSwitch.OnValueChanged
+  href: System.Diagnostics.SourceSwitch.yml
+  name: OnValueChanged()
+  fullName: System.Diagnostics.SourceSwitch.OnValueChanged()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/SourceSwitch.cs
+    startLine: 33
+  syntax:
+    content:
+      CSharp: protected override void OnValueChanged()
+    parameters: []
+  id: System.Diagnostics.SourceSwitch.OnValueChanged

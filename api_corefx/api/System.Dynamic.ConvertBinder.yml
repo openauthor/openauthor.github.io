@@ -1,0 +1,220 @@
+items:
+- uid: System.Dynamic.ConvertBinder
+  href: System.Dynamic.ConvertBinder.yml
+  name: ConvertBinder
+  fullName: System.Dynamic.ConvertBinder
+  type: Class
+  source:
+    remote: &o0
+      path: src/System.Dynamic.Runtime/src/System/Dynamic/ConvertBinder.cs
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/ConvertBinder.cs
+    startLine: 10
+  summary: Represents the convert dynamic operation at the call site, providing the binding semantic and the details about the operation.
+  syntax:
+    content:
+      CSharp: 'public abstract class ConvertBinder : DynamicMetaObjectBinder'
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.Runtime.CompilerServices.CallSiteBinder
+    name: CallSiteBinder
+    href: System.Runtime.CompilerServices.CallSiteBinder.yml
+  - id: System.Dynamic.DynamicMetaObjectBinder
+    name: DynamicMetaObjectBinder
+    href: System.Dynamic.DynamicMetaObjectBinder.yml
+  id: System.Dynamic.ConvertBinder
+  children:
+  - System.Dynamic.ConvertBinder.#ctor(System.Type,System.Boolean)
+  - System.Dynamic.ConvertBinder.Type
+  - System.Dynamic.ConvertBinder.Explicit
+  - System.Dynamic.ConvertBinder.FallbackConvert(System.Dynamic.DynamicMetaObject)
+  - System.Dynamic.ConvertBinder.FallbackConvert(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject)
+  - System.Dynamic.ConvertBinder.Bind(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])
+  - System.Dynamic.ConvertBinder.ReturnType
+- uid: System.Dynamic.ConvertBinder.#ctor(System.Type,System.Boolean)
+  href: System.Dynamic.ConvertBinder.yml
+  name: ConvertBinder(Type, bool)
+  fullName: System.Dynamic.ConvertBinder.ConvertBinder(System.Type, bool)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/ConvertBinder.cs
+    startLine: 20
+  summary: Initializes a new intsance of the [System.Dynamic.ConvertBinder](System.Dynamic.ConvertBinder.yml).
+  syntax:
+    content:
+      CSharp: protected ConvertBinder(Type type, bool @explicit)
+    parameters:
+    - id: type
+      type:
+        id: System.Type
+        name: Type
+        isExternal: true
+      description: The type to convert to.
+    - id: explicit
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: true if the conversion should consider explicit conversions; otherwise, false.
+  id: System.Dynamic.ConvertBinder.#ctor(System.Type,System.Boolean)
+- uid: System.Dynamic.ConvertBinder.Type
+  href: System.Dynamic.ConvertBinder.yml
+  name: Type
+  fullName: System.Dynamic.ConvertBinder.Type
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/ConvertBinder.cs
+    startLine: 31
+  summary: The type to convert to.
+  syntax:
+    content:
+      CSharp: '[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1721:PropertyNamesShouldNotMatchGetMethods")] public Type Type { get; }'
+    parameters:
+    - id: Type
+      type:
+        id: System.Type
+        name: Type
+        isExternal: true
+  id: System.Dynamic.ConvertBinder.Type
+- uid: System.Dynamic.ConvertBinder.Explicit
+  href: System.Dynamic.ConvertBinder.yml
+  name: Explicit
+  fullName: System.Dynamic.ConvertBinder.Explicit
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/ConvertBinder.cs
+    startLine: 43
+  summary: Gets the value indicating if the conversion should consider explicit conversions.
+  syntax:
+    content:
+      CSharp: public bool Explicit { get; }
+    parameters:
+    - id: Explicit
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Dynamic.ConvertBinder.Explicit
+- uid: System.Dynamic.ConvertBinder.FallbackConvert(System.Dynamic.DynamicMetaObject)
+  href: System.Dynamic.ConvertBinder.yml
+  name: FallbackConvert(DynamicMetaObject)
+  fullName: System.Dynamic.ConvertBinder.FallbackConvert(System.Dynamic.DynamicMetaObject)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/ConvertBinder.cs
+    startLine: 56
+  summary: Performs the binding of the dynamic convert operation if the target dynamic object cannot bind.
+  syntax:
+    content:
+      CSharp: public DynamicMetaObject FallbackConvert(DynamicMetaObject target)
+    parameters:
+    - id: target
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The target of the dynamic convert operation.
+    return:
+      id: DynamicMetaObject
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The [System.Dynamic.DynamicMetaObject](System.Dynamic.DynamicMetaObject.yml) representing the result of the binding.
+  id: System.Dynamic.ConvertBinder.FallbackConvert(System.Dynamic.DynamicMetaObject)
+- uid: System.Dynamic.ConvertBinder.FallbackConvert(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject)
+  href: System.Dynamic.ConvertBinder.yml
+  name: FallbackConvert(DynamicMetaObject, DynamicMetaObject)
+  fullName: System.Dynamic.ConvertBinder.FallbackConvert(System.Dynamic.DynamicMetaObject, System.Dynamic.DynamicMetaObject)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/ConvertBinder.cs
+    startLine: 67
+  summary: When overridden in the derived class, performs the binding of the dynamic convert operation if the target dynamic object cannot bind.
+  syntax:
+    content:
+      CSharp: public abstract DynamicMetaObject FallbackConvert(DynamicMetaObject target, DynamicMetaObject errorSuggestion)
+    parameters:
+    - id: target
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The target of the dynamic convert operation.
+    - id: errorSuggestion
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The binding result to use if binding fails, or null.
+    return:
+      id: DynamicMetaObject
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The [System.Dynamic.DynamicMetaObject](System.Dynamic.DynamicMetaObject.yml) representing the result of the binding.
+  id: System.Dynamic.ConvertBinder.FallbackConvert(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject)
+- uid: System.Dynamic.ConvertBinder.Bind(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])
+  href: System.Dynamic.ConvertBinder.yml
+  name: Bind(DynamicMetaObject, DynamicMetaObject[])
+  fullName: System.Dynamic.ConvertBinder.Bind(System.Dynamic.DynamicMetaObject, System.Dynamic.DynamicMetaObject[])
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/ConvertBinder.cs
+    startLine: 75
+  summary: Performs the binding of the dynamic convert operation.
+  syntax:
+    content:
+      CSharp: public override sealed DynamicMetaObject Bind(DynamicMetaObject target, DynamicMetaObject[] args)
+    parameters:
+    - id: target
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The target of the dynamic convert operation.
+    - id: args
+      type:
+        id: System.Array
+        name: DynamicMetaObject[]
+        isExternal: true
+      description: An array of arguments of the dynamic convert operation.
+    return:
+      id: DynamicMetaObject
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The [System.Dynamic.DynamicMetaObject](System.Dynamic.DynamicMetaObject.yml) representing the result of the binding.
+  id: System.Dynamic.ConvertBinder.Bind(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])
+- uid: System.Dynamic.ConvertBinder.ReturnType
+  href: System.Dynamic.ConvertBinder.yml
+  name: ReturnType
+  fullName: System.Dynamic.ConvertBinder.ReturnType
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/ConvertBinder.cs
+    startLine: 95
+  summary: The result type of the operation.
+  syntax:
+    content:
+      CSharp: public override sealed Type ReturnType { get; }
+    parameters:
+    - id: ReturnType
+      type:
+        id: System.Type
+        name: Type
+        isExternal: true
+  id: System.Dynamic.ConvertBinder.ReturnType

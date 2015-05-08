@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Compilers/CSharp/Portable/Symbols/TypedConstantExtensions.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Compilers/CSharp/Portable/Symbols/TypedConstantExtensions.cs
     startLine: 16
   syntax:
     content:
-      CSharp: public static class TypedConstantExtensions
+      CSharp: 'public class TypedConstantExtensions : object'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.TypedConstantExtensions
   children:
@@ -33,7 +34,7 @@ items:
   summary: Returns the System.String that represents the current TypedConstant.
   syntax:
     content:
-      CSharp: public static string ToCSharpString(this TypedConstant constant)
+      CSharp: public static string ToCSharpString(TypedConstant constant)
     parameters:
     - id: constant
       type:
@@ -42,5 +43,9 @@ items:
         href: Microsoft.CodeAnalysis.TypedConstant
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
       description: A System.String that represents the current TypedConstant.
   id: Microsoft.CodeAnalysis.CSharp.TypedConstantExtensions.ToCSharpString(Microsoft.CodeAnalysis.TypedConstant)

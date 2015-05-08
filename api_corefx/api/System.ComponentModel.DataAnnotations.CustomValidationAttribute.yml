@@ -6,8 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/CustomValidationAttribute.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/CustomValidationAttribute.cs
     startLine: 53
   summary: >-
@@ -28,9 +30,12 @@ items:
     The value can be strongly typed as type conversion will be attempted.
   syntax:
     content:
-      CSharp: public sealed class CustomValidationAttribute
+      CSharp: 'public sealed class CustomValidationAttribute : ValidationAttribute, _Attribute'
   inheritance:
-  - id: Attribute
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.Attribute
     name: Attribute
     isExternal: true
   - id: System.ComponentModel.DataAnnotations.ValidationAttribute
@@ -38,14 +43,15 @@ items:
     href: System.ComponentModel.DataAnnotations.ValidationAttribute.yml
   id: System.ComponentModel.DataAnnotations.CustomValidationAttribute
   children:
-  - System.ComponentModel.DataAnnotations.CustomValidationAttribute.#ctor(Type,System.String)
+  - System.ComponentModel.DataAnnotations.CustomValidationAttribute.#ctor(System.Type,System.String)
   - System.ComponentModel.DataAnnotations.CustomValidationAttribute.ValidatorType
   - System.ComponentModel.DataAnnotations.CustomValidationAttribute.Method
+  - System.ComponentModel.DataAnnotations.CustomValidationAttribute.IsValid(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)
   - System.ComponentModel.DataAnnotations.CustomValidationAttribute.FormatErrorMessage(System.String)
-- uid: System.ComponentModel.DataAnnotations.CustomValidationAttribute.#ctor(Type,System.String)
+- uid: System.ComponentModel.DataAnnotations.CustomValidationAttribute.#ctor(System.Type,System.String)
   href: System.ComponentModel.DataAnnotations.CustomValidationAttribute.yml
   name: CustomValidationAttribute(Type, string)
-  fullName: System.ComponentModel.DataAnnotations.CustomValidationAttribute.CustomValidationAttribute(Type, string)
+  fullName: System.ComponentModel.DataAnnotations.CustomValidationAttribute.CustomValidationAttribute(System.Type, string)
   type: Constructor
   source:
     remote: *o0
@@ -61,7 +67,7 @@ items:
     parameters:
     - id: validatorType
       type:
-        id: Type
+        id: System.Type
         name: Type
         isExternal: true
       description: >-
@@ -71,10 +77,10 @@ items:
     - id: method
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The name of the method to invoke in .
-  id: System.ComponentModel.DataAnnotations.CustomValidationAttribute.#ctor(Type,System.String)
+  id: System.ComponentModel.DataAnnotations.CustomValidationAttribute.#ctor(System.Type,System.String)
 - uid: System.ComponentModel.DataAnnotations.CustomValidationAttribute.ValidatorType
   href: System.ComponentModel.DataAnnotations.CustomValidationAttribute.yml
   name: ValidatorType
@@ -91,7 +97,7 @@ items:
     parameters:
     - id: ValidatorType
       type:
-        id: Type
+        id: System.Type
         name: Type
         isExternal: true
   id: System.ComponentModel.DataAnnotations.CustomValidationAttribute.ValidatorType
@@ -112,9 +118,46 @@ items:
     - id: Method
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.ComponentModel.DataAnnotations.CustomValidationAttribute.Method
+- uid: System.ComponentModel.DataAnnotations.CustomValidationAttribute.IsValid(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)
+  href: System.ComponentModel.DataAnnotations.CustomValidationAttribute.yml
+  name: IsValid(object, ValidationContext)
+  fullName: System.ComponentModel.DataAnnotations.CustomValidationAttribute.IsValid(object, System.ComponentModel.DataAnnotations.ValidationContext)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/CustomValidationAttribute.cs
+    startLine: 126
+  summary: Override of validation method.  See [System.ComponentModel.DataAnnotations.ValidationAttribute.IsValid(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)](System.ComponentModel.DataAnnotations.ValidationAttribute.yml).
+  syntax:
+    content:
+      CSharp: protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+    parameters:
+    - id: value
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+      description: The value to validate.
+    - id: validationContext
+      type:
+        id: System.ComponentModel.DataAnnotations.ValidationContext
+        name: ValidationContext
+        href: System.ComponentModel.DataAnnotations.ValidationContext.yml
+      description: >-
+        A [System.ComponentModel.DataAnnotations.ValidationContext](System.ComponentModel.DataAnnotations.ValidationContext.yml) instance that provides
+
+        context about the validation operation, such as the object and member being validated.
+    return:
+      id: ValidationResult
+      type:
+        id: System.ComponentModel.DataAnnotations.ValidationResult
+        name: ValidationResult
+        href: System.ComponentModel.DataAnnotations.ValidationResult.yml
+      description: Whatever the [System.ComponentModel.DataAnnotations.CustomValidationAttribute.Method](System.ComponentModel.DataAnnotations.CustomValidationAttribute.yml) in [System.ComponentModel.DataAnnotations.CustomValidationAttribute.ValidatorType](System.ComponentModel.DataAnnotations.CustomValidationAttribute.yml) returns.
+  id: System.ComponentModel.DataAnnotations.CustomValidationAttribute.IsValid(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)
 - uid: System.ComponentModel.DataAnnotations.CustomValidationAttribute.FormatErrorMessage(System.String)
   href: System.ComponentModel.DataAnnotations.CustomValidationAttribute.yml
   name: FormatErrorMessage(string)
@@ -132,10 +175,14 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The name to include in the formatted string
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
       description: A localized string to describe the problem.
   id: System.ComponentModel.DataAnnotations.CustomValidationAttribute.FormatErrorMessage(System.String)

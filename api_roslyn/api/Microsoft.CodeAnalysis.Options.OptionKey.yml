@@ -6,20 +6,21 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Options/OptionKey.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Options/OptionKey.cs
     startLine: 7
   syntax:
     content:
-      CSharp: public struct OptionKey
+      CSharp: 'public struct OptionKey : IEquatable<OptionKey>'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: Microsoft.CodeAnalysis.Options.OptionKey
   children:
@@ -42,7 +43,7 @@ items:
     startLine: 9
   syntax:
     content:
-      CSharp: Option
+      CSharp: public readonly IOption Option;
   id: Microsoft.CodeAnalysis.Options.OptionKey.Option
 - uid: Microsoft.CodeAnalysis.Options.OptionKey.Language
   href: Microsoft.CodeAnalysis.Options.OptionKey.yml
@@ -55,7 +56,7 @@ items:
     startLine: 10
   syntax:
     content:
-      CSharp: Language
+      CSharp: public readonly string Language;
   id: Microsoft.CodeAnalysis.Options.OptionKey.Language
 - uid: Microsoft.CodeAnalysis.Options.OptionKey.#ctor(Microsoft.CodeAnalysis.Options.IOption,System.String)
   href: Microsoft.CodeAnalysis.Options.OptionKey.yml
@@ -78,7 +79,7 @@ items:
     - id: language
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: Microsoft.CodeAnalysis.Options.OptionKey.#ctor(Microsoft.CodeAnalysis.Options.IOption,System.String)
 - uid: Microsoft.CodeAnalysis.Options.OptionKey.Equals(System.Object)
@@ -97,10 +98,14 @@ items:
     - id: obj
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.Options.OptionKey.Equals(System.Object)
 - uid: Microsoft.CodeAnalysis.Options.OptionKey.Equals(Microsoft.CodeAnalysis.Options.OptionKey)
   href: Microsoft.CodeAnalysis.Options.OptionKey.yml
@@ -122,6 +127,10 @@ items:
         href: Microsoft.CodeAnalysis.Options.OptionKey.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.Options.OptionKey.Equals(Microsoft.CodeAnalysis.Options.OptionKey)
 - uid: Microsoft.CodeAnalysis.Options.OptionKey.GetHashCode
   href: Microsoft.CodeAnalysis.Options.OptionKey.yml
@@ -138,19 +147,23 @@ items:
     parameters: []
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: Microsoft.CodeAnalysis.Options.OptionKey.GetHashCode
 - uid: Microsoft.CodeAnalysis.Options.OptionKey.op_Equality(Microsoft.CodeAnalysis.Options.OptionKey,Microsoft.CodeAnalysis.Options.OptionKey)
   href: Microsoft.CodeAnalysis.Options.OptionKey.yml
   name: operator ==(OptionKey, OptionKey)
   fullName: Microsoft.CodeAnalysis.Options.OptionKey.operator ==(Microsoft.CodeAnalysis.Options.OptionKey, Microsoft.CodeAnalysis.Options.OptionKey)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Options/OptionKey.cs
     startLine: 59
   syntax:
     content:
-      CSharp: public static bool operator ==(OptionKey left, OptionKey right) { return left.Equals(right); }
+      CSharp: public static bool operator ==(OptionKey left, OptionKey right)
     parameters:
     - id: left
       type:
@@ -164,19 +177,23 @@ items:
         href: Microsoft.CodeAnalysis.Options.OptionKey.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.Options.OptionKey.op_Equality(Microsoft.CodeAnalysis.Options.OptionKey,Microsoft.CodeAnalysis.Options.OptionKey)
 - uid: Microsoft.CodeAnalysis.Options.OptionKey.op_Inequality(Microsoft.CodeAnalysis.Options.OptionKey,Microsoft.CodeAnalysis.Options.OptionKey)
   href: Microsoft.CodeAnalysis.Options.OptionKey.yml
   name: operator !=(OptionKey, OptionKey)
   fullName: Microsoft.CodeAnalysis.Options.OptionKey.operator !=(Microsoft.CodeAnalysis.Options.OptionKey, Microsoft.CodeAnalysis.Options.OptionKey)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Options/OptionKey.cs
     startLine: 64
   syntax:
     content:
-      CSharp: public static bool operator !=(OptionKey left, OptionKey right) { return !left.Equals(right); }
+      CSharp: public static bool operator !=(OptionKey left, OptionKey right)
     parameters:
     - id: left
       type:
@@ -190,4 +207,8 @@ items:
         href: Microsoft.CodeAnalysis.Options.OptionKey.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.Options.OptionKey.op_Inequality(Microsoft.CodeAnalysis.Options.OptionKey,Microsoft.CodeAnalysis.Options.OptionKey)

@@ -6,18 +6,19 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/CodeActions/Annotations/ConflictAnnotation.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/CodeActions/Annotations/ConflictAnnotation.cs
     startLine: 9
   summary: Apply this annotation to a SyntaxNode to indicate a conflict may exist that requires user understanding and acknowledgement before taking action.
   syntax:
     content:
-      CSharp: public static class ConflictAnnotation
+      CSharp: public class ConflictAnnotation
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.CodeActions.ConflictAnnotation
   children:
@@ -35,7 +36,7 @@ items:
     startLine: 11
   syntax:
     content:
-      CSharp: Kind
+      CSharp: public const string Kind;
   id: Microsoft.CodeAnalysis.CodeActions.ConflictAnnotation.Kind
 - uid: Microsoft.CodeAnalysis.CodeActions.ConflictAnnotation.Create(System.String)
   href: Microsoft.CodeAnalysis.CodeActions.ConflictAnnotation.yml
@@ -53,10 +54,14 @@ items:
     - id: description
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: SyntaxAnnotation
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxAnnotation
+        name: SyntaxAnnotation
+        href: Microsoft.CodeAnalysis.SyntaxAnnotation
   id: Microsoft.CodeAnalysis.CodeActions.ConflictAnnotation.Create(System.String)
 - uid: Microsoft.CodeAnalysis.CodeActions.ConflictAnnotation.GetDescription(Microsoft.CodeAnalysis.SyntaxAnnotation)
   href: Microsoft.CodeAnalysis.CodeActions.ConflictAnnotation.yml
@@ -78,4 +83,8 @@ items:
         href: Microsoft.CodeAnalysis.SyntaxAnnotation
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: Microsoft.CodeAnalysis.CodeActions.ConflictAnnotation.GetDescription(Microsoft.CodeAnalysis.SyntaxAnnotation)

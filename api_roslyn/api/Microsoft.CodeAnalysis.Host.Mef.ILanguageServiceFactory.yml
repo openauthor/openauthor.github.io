@@ -6,9 +6,10 @@ items:
   type: Interface
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Workspace/Host/Mef/ILanguageServiceFactory.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Workspace/Host/Mef/ILanguageServiceFactory.cs
     startLine: 11
   summary: >-
@@ -35,7 +36,7 @@ items:
   summary: Creates a new [Microsoft.CodeAnalysis.Host.ILanguageService](Microsoft.CodeAnalysis.Host.ILanguageService.yml) instance.
   syntax:
     content:
-      CSharp: ILanguageService CreateLanguageService(HostLanguageServices languageServices);
+      CSharp: public ILanguageService CreateLanguageService(HostLanguageServices languageServices)
     parameters:
     - id: languageServices
       type:
@@ -45,4 +46,8 @@ items:
       description: The [Microsoft.CodeAnalysis.Host.HostLanguageServices](Microsoft.CodeAnalysis.Host.HostLanguageServices.yml) that can be used to access other services.
     return:
       id: ILanguageService
+      type:
+        id: Microsoft.CodeAnalysis.Host.ILanguageService
+        name: ILanguageService
+        href: Microsoft.CodeAnalysis.Host.ILanguageService.yml
   id: Microsoft.CodeAnalysis.Host.Mef.ILanguageServiceFactory.CreateLanguageService(Microsoft.CodeAnalysis.Host.HostLanguageServices)

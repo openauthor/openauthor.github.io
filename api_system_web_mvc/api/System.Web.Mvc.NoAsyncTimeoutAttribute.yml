@@ -6,20 +6,21 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/NoAsyncTimeoutAttribute.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/NoAsyncTimeoutAttribute.cs
     startLine: 6
   syntax:
     content:
-      CSharp: public sealed class NoAsyncTimeoutAttribute
+      CSharp: 'public sealed class NoAsyncTimeoutAttribute : AsyncTimeoutAttribute, _Attribute, IMvcFilter, IActionFilter, IResultFilter'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Attribute
-    name: System.Attribute
+    name: Attribute
     isExternal: true
   - id: System.Web.Mvc.FilterAttribute
     name: FilterAttribute

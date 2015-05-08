@@ -6,16 +6,24 @@ items:
   type: Enum
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEFileFlags.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEFileFlags.cs
     startLine: 24
   syntax:
     content:
-      CSharp: public enum PEMagic
+      CSharp: 'public enum PEMagic : ushort'
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.ValueType
+    name: ValueType
+    isExternal: true
   - id: System.Enum
-    name: System.Enum
+    name: Enum
     isExternal: true
   id: System.Reflection.PortableExecutable.PEMagic
   children:

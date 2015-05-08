@@ -6,30 +6,33 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/MetadataTokens.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/MetadataTokens.cs
     startLine: 7
   syntax:
     content:
-      CSharp: public static class MetadataTokens
+      CSharp: public class MetadataTokens
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Reflection.Metadata.Ecma335.MetadataTokens
   children:
   - System.Reflection.Metadata.Ecma335.MetadataTokens.TableCount
   - System.Reflection.Metadata.Ecma335.MetadataTokens.HeapCount
-  - System.Reflection.Metadata.Ecma335.MetadataTokens.GetRowNumber(System.Reflection.Metadata.MetadataReader,System.Reflection.Metadata.Handle)
+  - System.Reflection.Metadata.Ecma335.MetadataTokens.GetRowNumber(System.Reflection.Metadata.MetadataReader,System.Reflection.Metadata.EntityHandle)
   - System.Reflection.Metadata.Ecma335.MetadataTokens.GetHeapOffset(System.Reflection.Metadata.MetadataReader,System.Reflection.Metadata.Handle)
   - System.Reflection.Metadata.Ecma335.MetadataTokens.GetToken(System.Reflection.Metadata.MetadataReader,System.Reflection.Metadata.Handle)
-  - System.Reflection.Metadata.Ecma335.MetadataTokens.GetRowNumber(System.Reflection.Metadata.Handle)
+  - System.Reflection.Metadata.Ecma335.MetadataTokens.GetRowNumber(System.Reflection.Metadata.EntityHandle)
   - System.Reflection.Metadata.Ecma335.MetadataTokens.GetHeapOffset(System.Reflection.Metadata.Handle)
   - System.Reflection.Metadata.Ecma335.MetadataTokens.GetToken(System.Reflection.Metadata.Handle)
   - System.Reflection.Metadata.Ecma335.MetadataTokens.TryGetTableIndex(System.Reflection.Metadata.HandleKind,System.Reflection.Metadata.Ecma335.TableIndex@)
   - System.Reflection.Metadata.Ecma335.MetadataTokens.TryGetHeapIndex(System.Reflection.Metadata.HandleKind,System.Reflection.Metadata.Ecma335.HeapIndex@)
   - System.Reflection.Metadata.Ecma335.MetadataTokens.Handle(System.Int32)
+  - System.Reflection.Metadata.Ecma335.MetadataTokens.EntityHandle(System.Int32)
   - System.Reflection.Metadata.Ecma335.MetadataTokens.Handle(System.Reflection.Metadata.Ecma335.TableIndex,System.Int32)
   - System.Reflection.Metadata.Ecma335.MetadataTokens.MethodDefinitionHandle(System.Int32)
   - System.Reflection.Metadata.Ecma335.MetadataTokens.MethodImplementationHandle(System.Int32)
@@ -69,7 +72,7 @@ items:
   summary: Maximum number of tables that can be present in Ecma335 metadata.
   syntax:
     content:
-      CSharp: TableCount
+      CSharp: public static readonly int TableCount;
   id: System.Reflection.Metadata.Ecma335.MetadataTokens.TableCount
 - uid: System.Reflection.Metadata.Ecma335.MetadataTokens.HeapCount
   href: System.Reflection.Metadata.Ecma335.MetadataTokens.yml
@@ -83,12 +86,12 @@ items:
   summary: Maximum number of tables that can be present in Ecma335 metadata.
   syntax:
     content:
-      CSharp: HeapCount
+      CSharp: public static readonly int HeapCount;
   id: System.Reflection.Metadata.Ecma335.MetadataTokens.HeapCount
-- uid: System.Reflection.Metadata.Ecma335.MetadataTokens.GetRowNumber(System.Reflection.Metadata.MetadataReader,System.Reflection.Metadata.Handle)
+- uid: System.Reflection.Metadata.Ecma335.MetadataTokens.GetRowNumber(System.Reflection.Metadata.MetadataReader,System.Reflection.Metadata.EntityHandle)
   href: System.Reflection.Metadata.Ecma335.MetadataTokens.yml
-  name: GetRowNumber(MetadataReader, Handle)
-  fullName: System.Reflection.Metadata.Ecma335.MetadataTokens.GetRowNumber(System.Reflection.Metadata.MetadataReader, System.Reflection.Metadata.Handle)
+  name: GetRowNumber(MetadataReader, EntityHandle)
+  fullName: System.Reflection.Metadata.Ecma335.MetadataTokens.GetRowNumber(System.Reflection.Metadata.MetadataReader, System.Reflection.Metadata.EntityHandle)
   type: Method
   source:
     remote: *o0
@@ -100,7 +103,7 @@ items:
     to the specified  in the context of .
   syntax:
     content:
-      CSharp: public static int GetRowNumber(this MetadataReader reader, Handle handle)
+      CSharp: public static int GetRowNumber(MetadataReader reader, EntityHandle handle)
     parameters:
     - id: reader
       type:
@@ -109,13 +112,17 @@ items:
         href: System.Reflection.Metadata.MetadataReader.yml
     - id: handle
       type:
-        id: System.Reflection.Metadata.Handle
-        name: Handle
-        href: System.Reflection.Metadata.Handle.yml
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: One based row number.
-  id: System.Reflection.Metadata.Ecma335.MetadataTokens.GetRowNumber(System.Reflection.Metadata.MetadataReader,System.Reflection.Metadata.Handle)
+  id: System.Reflection.Metadata.Ecma335.MetadataTokens.GetRowNumber(System.Reflection.Metadata.MetadataReader,System.Reflection.Metadata.EntityHandle)
 - uid: System.Reflection.Metadata.Ecma335.MetadataTokens.GetHeapOffset(System.Reflection.Metadata.MetadataReader,System.Reflection.Metadata.Handle)
   href: System.Reflection.Metadata.Ecma335.MetadataTokens.yml
   name: GetHeapOffset(MetadataReader, Handle)
@@ -124,14 +131,14 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/MetadataTokens.cs
-    startLine: 47
+    startLine: 42
   summary: >-
     Returns the offset of metadata heap data that corresponds
 
     to the specified  in the context of .
   syntax:
     content:
-      CSharp: public static int GetHeapOffset(this MetadataReader reader, Handle handle)
+      CSharp: public static int GetHeapOffset(MetadataReader reader, Handle handle)
     parameters:
     - id: reader
       type:
@@ -145,6 +152,10 @@ items:
         href: System.Reflection.Metadata.Handle.yml
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: Zero based offset, or -1 if  isn't a metadata heap handle.
   id: System.Reflection.Metadata.Ecma335.MetadataTokens.GetHeapOffset(System.Reflection.Metadata.MetadataReader,System.Reflection.Metadata.Handle)
 - uid: System.Reflection.Metadata.Ecma335.MetadataTokens.GetToken(System.Reflection.Metadata.MetadataReader,System.Reflection.Metadata.Handle)
@@ -155,11 +166,11 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/MetadataTokens.cs
-    startLine: 70
+    startLine: 66
   summary: Returns the metadata token of the specified  in the context of .
   syntax:
     content:
-      CSharp: public static int GetToken(this MetadataReader reader, Handle handle)
+      CSharp: public static int GetToken(MetadataReader reader, Handle handle)
     parameters:
     - id: reader
       type:
@@ -173,37 +184,45 @@ items:
         href: System.Reflection.Metadata.Handle.yml
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: Metadata token.
   id: System.Reflection.Metadata.Ecma335.MetadataTokens.GetToken(System.Reflection.Metadata.MetadataReader,System.Reflection.Metadata.Handle)
-- uid: System.Reflection.Metadata.Ecma335.MetadataTokens.GetRowNumber(System.Reflection.Metadata.Handle)
+- uid: System.Reflection.Metadata.Ecma335.MetadataTokens.GetRowNumber(System.Reflection.Metadata.EntityHandle)
   href: System.Reflection.Metadata.Ecma335.MetadataTokens.yml
-  name: GetRowNumber(Handle)
-  fullName: System.Reflection.Metadata.Ecma335.MetadataTokens.GetRowNumber(System.Reflection.Metadata.Handle)
+  name: GetRowNumber(EntityHandle)
+  fullName: System.Reflection.Metadata.Ecma335.MetadataTokens.GetRowNumber(System.Reflection.Metadata.EntityHandle)
   type: Method
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/MetadataTokens.cs
-    startLine: 112
+    startLine: 108
   summary: >-
     Returns the row number of a metadata table entry that corresponds
 
     to the specified .
   syntax:
     content:
-      CSharp: public static int GetRowNumber(Handle handle)
+      CSharp: public static int GetRowNumber(EntityHandle handle)
     parameters:
     - id: handle
       type:
-        id: System.Reflection.Metadata.Handle
-        name: Handle
-        href: System.Reflection.Metadata.Handle.yml
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: >-
         One based row number, or -1 if  can only be interpreted in a context of a specific [System.Reflection.Metadata.MetadataReader](System.Reflection.Metadata.MetadataReader.yml).
 
-        See [System.Reflection.Metadata.Ecma335.MetadataTokens.GetRowNumber(System.Reflection.Metadata.MetadataReader,System.Reflection.Metadata.Handle)](System.Reflection.Metadata.Ecma335.MetadataTokens.yml).
-  id: System.Reflection.Metadata.Ecma335.MetadataTokens.GetRowNumber(System.Reflection.Metadata.Handle)
+        See [System.Reflection.Metadata.Ecma335.MetadataTokens.GetRowNumber(System.Reflection.Metadata.MetadataReader,System.Reflection.Metadata.EntityHandle)](System.Reflection.Metadata.Ecma335.MetadataTokens.yml).
+  id: System.Reflection.Metadata.Ecma335.MetadataTokens.GetRowNumber(System.Reflection.Metadata.EntityHandle)
 - uid: System.Reflection.Metadata.Ecma335.MetadataTokens.GetHeapOffset(System.Reflection.Metadata.Handle)
   href: System.Reflection.Metadata.Ecma335.MetadataTokens.yml
   name: GetHeapOffset(Handle)
@@ -212,7 +231,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/MetadataTokens.cs
-    startLine: 135
+    startLine: 121
   summary: >-
     Returns the offset of metadata heap data that corresponds
 
@@ -228,6 +247,10 @@ items:
         href: System.Reflection.Metadata.Handle.yml
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: >-
         Zero based offset, or -1 if  can only be interpreted in a context of a specific [System.Reflection.Metadata.MetadataReader](System.Reflection.Metadata.MetadataReader.yml).
 
@@ -241,7 +264,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/MetadataTokens.cs
-    startLine: 161
+    startLine: 147
   summary: Returns the metadata token of the specified .
   syntax:
     content:
@@ -254,6 +277,10 @@ items:
         href: System.Reflection.Metadata.Handle.yml
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: >-
         Metadata token, or 0 if  can only be interpreted in a context of a specific [System.Reflection.Metadata.MetadataReader](System.Reflection.Metadata.MetadataReader.yml).
 
@@ -267,7 +294,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/MetadataTokens.cs
-    startLine: 182
+    startLine: 168
   summary: Gets the [System.Reflection.Metadata.Ecma335.TableIndex](System.Reflection.Metadata.Ecma335.TableIndex.yml) of the table corresponding to the specified [System.Reflection.Metadata.HandleKind](System.Reflection.Metadata.HandleKind.yml).
   syntax:
     content:
@@ -287,6 +314,10 @@ items:
       description: Table index.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: True if the handle type corresponds to an Ecma335 table, false otherwise.
   id: System.Reflection.Metadata.Ecma335.MetadataTokens.TryGetTableIndex(System.Reflection.Metadata.HandleKind,System.Reflection.Metadata.Ecma335.TableIndex@)
 - uid: System.Reflection.Metadata.Ecma335.MetadataTokens.TryGetHeapIndex(System.Reflection.Metadata.HandleKind,System.Reflection.Metadata.Ecma335.HeapIndex@)
@@ -297,7 +328,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/MetadataTokens.cs
-    startLine: 200
+    startLine: 186
   summary: Gets the [System.Reflection.Metadata.Ecma335.HeapIndex](System.Reflection.Metadata.Ecma335.HeapIndex.yml) of the heap corresponding to the specified [System.Reflection.Metadata.HandleKind](System.Reflection.Metadata.HandleKind.yml).
   syntax:
     content:
@@ -317,6 +348,10 @@ items:
       description: Heap index.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: True if the handle type corresponds to an Ecma335 heap, false otherwise.
   id: System.Reflection.Metadata.Ecma335.MetadataTokens.TryGetHeapIndex(System.Reflection.Metadata.HandleKind,System.Reflection.Metadata.Ecma335.HeapIndex@)
 - uid: System.Reflection.Metadata.Ecma335.MetadataTokens.Handle(System.Int32)
@@ -327,7 +362,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/MetadataTokens.cs
-    startLine: 236
+    startLine: 222
   summary: Creates a handle from a token value.
   syntax:
     content:
@@ -336,11 +371,41 @@ items:
     - id: token
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     return:
       id: Handle
+      type:
+        id: System.Reflection.Metadata.Handle
+        name: Handle
+        href: System.Reflection.Metadata.Handle.yml
   id: System.Reflection.Metadata.Ecma335.MetadataTokens.Handle(System.Int32)
+- uid: System.Reflection.Metadata.Ecma335.MetadataTokens.EntityHandle(System.Int32)
+  href: System.Reflection.Metadata.Ecma335.MetadataTokens.yml
+  name: EntityHandle(int)
+  fullName: System.Reflection.Metadata.Ecma335.MetadataTokens.EntityHandle(int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/MetadataTokens.cs
+    startLine: 236
+  summary: Creates an entity handle from a token value.
+  syntax:
+    content:
+      CSharp: public static EntityHandle EntityHandle(int token)
+    parameters:
+    - id: token
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    return:
+      id: EntityHandle
+      type:
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
+  id: System.Reflection.Metadata.Ecma335.MetadataTokens.EntityHandle(System.Int32)
 - uid: System.Reflection.Metadata.Ecma335.MetadataTokens.Handle(System.Reflection.Metadata.Ecma335.TableIndex,System.Int32)
   href: System.Reflection.Metadata.Ecma335.MetadataTokens.yml
   name: Handle(TableIndex, int)
@@ -353,7 +418,7 @@ items:
   summary: Creates a handle from a token value.
   syntax:
     content:
-      CSharp: public static Handle Handle(TableIndex tableIndex, int rowNumber)
+      CSharp: public static EntityHandle Handle(TableIndex tableIndex, int rowNumber)
     parameters:
     - id: tableIndex
       type:
@@ -363,10 +428,14 @@ items:
     - id: rowNumber
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     return:
-      id: Handle
+      id: EntityHandle
+      type:
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
   id: System.Reflection.Metadata.Ecma335.MetadataTokens.Handle(System.Reflection.Metadata.Ecma335.TableIndex,System.Int32)
 - uid: System.Reflection.Metadata.Ecma335.MetadataTokens.MethodDefinitionHandle(System.Int32)
   href: System.Reflection.Metadata.Ecma335.MetadataTokens.yml
@@ -376,7 +445,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/MetadataTokens.cs
-    startLine: 263
+    startLine: 268
   syntax:
     content:
       CSharp: public static MethodDefinitionHandle MethodDefinitionHandle(int rowNumber)
@@ -384,10 +453,14 @@ items:
     - id: rowNumber
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     return:
       id: MethodDefinitionHandle
+      type:
+        id: System.Reflection.Metadata.MethodDefinitionHandle
+        name: MethodDefinitionHandle
+        href: System.Reflection.Metadata.MethodDefinitionHandle.yml
   id: System.Reflection.Metadata.Ecma335.MetadataTokens.MethodDefinitionHandle(System.Int32)
 - uid: System.Reflection.Metadata.Ecma335.MetadataTokens.MethodImplementationHandle(System.Int32)
   href: System.Reflection.Metadata.Ecma335.MetadataTokens.yml
@@ -397,7 +470,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/MetadataTokens.cs
-    startLine: 268
+    startLine: 273
   syntax:
     content:
       CSharp: public static MethodImplementationHandle MethodImplementationHandle(int rowNumber)
@@ -405,10 +478,14 @@ items:
     - id: rowNumber
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     return:
       id: MethodImplementationHandle
+      type:
+        id: System.Reflection.Metadata.MethodImplementationHandle
+        name: MethodImplementationHandle
+        href: System.Reflection.Metadata.MethodImplementationHandle.yml
   id: System.Reflection.Metadata.Ecma335.MetadataTokens.MethodImplementationHandle(System.Int32)
 - uid: System.Reflection.Metadata.Ecma335.MetadataTokens.MethodSpecificationHandle(System.Int32)
   href: System.Reflection.Metadata.Ecma335.MetadataTokens.yml
@@ -418,7 +495,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/MetadataTokens.cs
-    startLine: 273
+    startLine: 278
   syntax:
     content:
       CSharp: public static MethodSpecificationHandle MethodSpecificationHandle(int rowNumber)
@@ -426,10 +503,14 @@ items:
     - id: rowNumber
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     return:
       id: MethodSpecificationHandle
+      type:
+        id: System.Reflection.Metadata.MethodSpecificationHandle
+        name: MethodSpecificationHandle
+        href: System.Reflection.Metadata.MethodSpecificationHandle.yml
   id: System.Reflection.Metadata.Ecma335.MetadataTokens.MethodSpecificationHandle(System.Int32)
 - uid: System.Reflection.Metadata.Ecma335.MetadataTokens.TypeDefinitionHandle(System.Int32)
   href: System.Reflection.Metadata.Ecma335.MetadataTokens.yml
@@ -439,7 +520,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/MetadataTokens.cs
-    startLine: 278
+    startLine: 283
   syntax:
     content:
       CSharp: public static TypeDefinitionHandle TypeDefinitionHandle(int rowNumber)
@@ -447,10 +528,14 @@ items:
     - id: rowNumber
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     return:
       id: TypeDefinitionHandle
+      type:
+        id: System.Reflection.Metadata.TypeDefinitionHandle
+        name: TypeDefinitionHandle
+        href: System.Reflection.Metadata.TypeDefinitionHandle.yml
   id: System.Reflection.Metadata.Ecma335.MetadataTokens.TypeDefinitionHandle(System.Int32)
 - uid: System.Reflection.Metadata.Ecma335.MetadataTokens.ExportedTypeHandle(System.Int32)
   href: System.Reflection.Metadata.Ecma335.MetadataTokens.yml
@@ -460,7 +545,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/MetadataTokens.cs
-    startLine: 283
+    startLine: 288
   syntax:
     content:
       CSharp: public static ExportedTypeHandle ExportedTypeHandle(int rowNumber)
@@ -468,10 +553,14 @@ items:
     - id: rowNumber
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     return:
       id: ExportedTypeHandle
+      type:
+        id: System.Reflection.Metadata.ExportedTypeHandle
+        name: ExportedTypeHandle
+        href: System.Reflection.Metadata.ExportedTypeHandle.yml
   id: System.Reflection.Metadata.Ecma335.MetadataTokens.ExportedTypeHandle(System.Int32)
 - uid: System.Reflection.Metadata.Ecma335.MetadataTokens.TypeReferenceHandle(System.Int32)
   href: System.Reflection.Metadata.Ecma335.MetadataTokens.yml
@@ -481,7 +570,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/MetadataTokens.cs
-    startLine: 288
+    startLine: 293
   syntax:
     content:
       CSharp: public static TypeReferenceHandle TypeReferenceHandle(int rowNumber)
@@ -489,10 +578,14 @@ items:
     - id: rowNumber
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     return:
       id: TypeReferenceHandle
+      type:
+        id: System.Reflection.Metadata.TypeReferenceHandle
+        name: TypeReferenceHandle
+        href: System.Reflection.Metadata.TypeReferenceHandle.yml
   id: System.Reflection.Metadata.Ecma335.MetadataTokens.TypeReferenceHandle(System.Int32)
 - uid: System.Reflection.Metadata.Ecma335.MetadataTokens.TypeSpecificationHandle(System.Int32)
   href: System.Reflection.Metadata.Ecma335.MetadataTokens.yml
@@ -502,7 +595,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/MetadataTokens.cs
-    startLine: 293
+    startLine: 298
   syntax:
     content:
       CSharp: public static TypeSpecificationHandle TypeSpecificationHandle(int rowNumber)
@@ -510,10 +603,14 @@ items:
     - id: rowNumber
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     return:
       id: TypeSpecificationHandle
+      type:
+        id: System.Reflection.Metadata.TypeSpecificationHandle
+        name: TypeSpecificationHandle
+        href: System.Reflection.Metadata.TypeSpecificationHandle.yml
   id: System.Reflection.Metadata.Ecma335.MetadataTokens.TypeSpecificationHandle(System.Int32)
 - uid: System.Reflection.Metadata.Ecma335.MetadataTokens.MemberReferenceHandle(System.Int32)
   href: System.Reflection.Metadata.Ecma335.MetadataTokens.yml
@@ -523,7 +620,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/MetadataTokens.cs
-    startLine: 298
+    startLine: 303
   syntax:
     content:
       CSharp: public static MemberReferenceHandle MemberReferenceHandle(int rowNumber)
@@ -531,10 +628,14 @@ items:
     - id: rowNumber
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     return:
       id: MemberReferenceHandle
+      type:
+        id: System.Reflection.Metadata.MemberReferenceHandle
+        name: MemberReferenceHandle
+        href: System.Reflection.Metadata.MemberReferenceHandle.yml
   id: System.Reflection.Metadata.Ecma335.MetadataTokens.MemberReferenceHandle(System.Int32)
 - uid: System.Reflection.Metadata.Ecma335.MetadataTokens.FieldDefinitionHandle(System.Int32)
   href: System.Reflection.Metadata.Ecma335.MetadataTokens.yml
@@ -544,7 +645,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/MetadataTokens.cs
-    startLine: 303
+    startLine: 308
   syntax:
     content:
       CSharp: public static FieldDefinitionHandle FieldDefinitionHandle(int rowNumber)
@@ -552,10 +653,14 @@ items:
     - id: rowNumber
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     return:
       id: FieldDefinitionHandle
+      type:
+        id: System.Reflection.Metadata.FieldDefinitionHandle
+        name: FieldDefinitionHandle
+        href: System.Reflection.Metadata.FieldDefinitionHandle.yml
   id: System.Reflection.Metadata.Ecma335.MetadataTokens.FieldDefinitionHandle(System.Int32)
 - uid: System.Reflection.Metadata.Ecma335.MetadataTokens.EventDefinitionHandle(System.Int32)
   href: System.Reflection.Metadata.Ecma335.MetadataTokens.yml
@@ -565,7 +670,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/MetadataTokens.cs
-    startLine: 308
+    startLine: 313
   syntax:
     content:
       CSharp: public static EventDefinitionHandle EventDefinitionHandle(int rowNumber)
@@ -573,10 +678,14 @@ items:
     - id: rowNumber
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     return:
       id: EventDefinitionHandle
+      type:
+        id: System.Reflection.Metadata.EventDefinitionHandle
+        name: EventDefinitionHandle
+        href: System.Reflection.Metadata.EventDefinitionHandle.yml
   id: System.Reflection.Metadata.Ecma335.MetadataTokens.EventDefinitionHandle(System.Int32)
 - uid: System.Reflection.Metadata.Ecma335.MetadataTokens.PropertyDefinitionHandle(System.Int32)
   href: System.Reflection.Metadata.Ecma335.MetadataTokens.yml
@@ -586,7 +695,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/MetadataTokens.cs
-    startLine: 313
+    startLine: 318
   syntax:
     content:
       CSharp: public static PropertyDefinitionHandle PropertyDefinitionHandle(int rowNumber)
@@ -594,10 +703,14 @@ items:
     - id: rowNumber
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     return:
       id: PropertyDefinitionHandle
+      type:
+        id: System.Reflection.Metadata.PropertyDefinitionHandle
+        name: PropertyDefinitionHandle
+        href: System.Reflection.Metadata.PropertyDefinitionHandle.yml
   id: System.Reflection.Metadata.Ecma335.MetadataTokens.PropertyDefinitionHandle(System.Int32)
 - uid: System.Reflection.Metadata.Ecma335.MetadataTokens.StandaloneSignatureHandle(System.Int32)
   href: System.Reflection.Metadata.Ecma335.MetadataTokens.yml
@@ -607,7 +720,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/MetadataTokens.cs
-    startLine: 318
+    startLine: 323
   syntax:
     content:
       CSharp: public static StandaloneSignatureHandle StandaloneSignatureHandle(int rowNumber)
@@ -615,10 +728,14 @@ items:
     - id: rowNumber
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     return:
       id: StandaloneSignatureHandle
+      type:
+        id: System.Reflection.Metadata.StandaloneSignatureHandle
+        name: StandaloneSignatureHandle
+        href: System.Reflection.Metadata.StandaloneSignatureHandle.yml
   id: System.Reflection.Metadata.Ecma335.MetadataTokens.StandaloneSignatureHandle(System.Int32)
 - uid: System.Reflection.Metadata.Ecma335.MetadataTokens.ParameterHandle(System.Int32)
   href: System.Reflection.Metadata.Ecma335.MetadataTokens.yml
@@ -628,7 +745,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/MetadataTokens.cs
-    startLine: 323
+    startLine: 328
   syntax:
     content:
       CSharp: public static ParameterHandle ParameterHandle(int rowNumber)
@@ -636,10 +753,14 @@ items:
     - id: rowNumber
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     return:
       id: ParameterHandle
+      type:
+        id: System.Reflection.Metadata.ParameterHandle
+        name: ParameterHandle
+        href: System.Reflection.Metadata.ParameterHandle.yml
   id: System.Reflection.Metadata.Ecma335.MetadataTokens.ParameterHandle(System.Int32)
 - uid: System.Reflection.Metadata.Ecma335.MetadataTokens.GenericParameterHandle(System.Int32)
   href: System.Reflection.Metadata.Ecma335.MetadataTokens.yml
@@ -649,7 +770,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/MetadataTokens.cs
-    startLine: 328
+    startLine: 333
   syntax:
     content:
       CSharp: public static GenericParameterHandle GenericParameterHandle(int rowNumber)
@@ -657,10 +778,14 @@ items:
     - id: rowNumber
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     return:
       id: GenericParameterHandle
+      type:
+        id: System.Reflection.Metadata.GenericParameterHandle
+        name: GenericParameterHandle
+        href: System.Reflection.Metadata.GenericParameterHandle.yml
   id: System.Reflection.Metadata.Ecma335.MetadataTokens.GenericParameterHandle(System.Int32)
 - uid: System.Reflection.Metadata.Ecma335.MetadataTokens.GenericParameterConstraintHandle(System.Int32)
   href: System.Reflection.Metadata.Ecma335.MetadataTokens.yml
@@ -670,7 +795,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/MetadataTokens.cs
-    startLine: 333
+    startLine: 338
   syntax:
     content:
       CSharp: public static GenericParameterConstraintHandle GenericParameterConstraintHandle(int rowNumber)
@@ -678,10 +803,14 @@ items:
     - id: rowNumber
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     return:
       id: GenericParameterConstraintHandle
+      type:
+        id: System.Reflection.Metadata.GenericParameterConstraintHandle
+        name: GenericParameterConstraintHandle
+        href: System.Reflection.Metadata.GenericParameterConstraintHandle.yml
   id: System.Reflection.Metadata.Ecma335.MetadataTokens.GenericParameterConstraintHandle(System.Int32)
 - uid: System.Reflection.Metadata.Ecma335.MetadataTokens.ModuleReferenceHandle(System.Int32)
   href: System.Reflection.Metadata.Ecma335.MetadataTokens.yml
@@ -691,7 +820,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/MetadataTokens.cs
-    startLine: 338
+    startLine: 343
   syntax:
     content:
       CSharp: public static ModuleReferenceHandle ModuleReferenceHandle(int rowNumber)
@@ -699,10 +828,14 @@ items:
     - id: rowNumber
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     return:
       id: ModuleReferenceHandle
+      type:
+        id: System.Reflection.Metadata.ModuleReferenceHandle
+        name: ModuleReferenceHandle
+        href: System.Reflection.Metadata.ModuleReferenceHandle.yml
   id: System.Reflection.Metadata.Ecma335.MetadataTokens.ModuleReferenceHandle(System.Int32)
 - uid: System.Reflection.Metadata.Ecma335.MetadataTokens.AssemblyReferenceHandle(System.Int32)
   href: System.Reflection.Metadata.Ecma335.MetadataTokens.yml
@@ -712,7 +845,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/MetadataTokens.cs
-    startLine: 343
+    startLine: 348
   syntax:
     content:
       CSharp: public static AssemblyReferenceHandle AssemblyReferenceHandle(int rowNumber)
@@ -720,10 +853,14 @@ items:
     - id: rowNumber
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     return:
       id: AssemblyReferenceHandle
+      type:
+        id: System.Reflection.Metadata.AssemblyReferenceHandle
+        name: AssemblyReferenceHandle
+        href: System.Reflection.Metadata.AssemblyReferenceHandle.yml
   id: System.Reflection.Metadata.Ecma335.MetadataTokens.AssemblyReferenceHandle(System.Int32)
 - uid: System.Reflection.Metadata.Ecma335.MetadataTokens.CustomAttributeHandle(System.Int32)
   href: System.Reflection.Metadata.Ecma335.MetadataTokens.yml
@@ -733,7 +870,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/MetadataTokens.cs
-    startLine: 348
+    startLine: 353
   syntax:
     content:
       CSharp: public static CustomAttributeHandle CustomAttributeHandle(int rowNumber)
@@ -741,10 +878,14 @@ items:
     - id: rowNumber
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     return:
       id: CustomAttributeHandle
+      type:
+        id: System.Reflection.Metadata.CustomAttributeHandle
+        name: CustomAttributeHandle
+        href: System.Reflection.Metadata.CustomAttributeHandle.yml
   id: System.Reflection.Metadata.Ecma335.MetadataTokens.CustomAttributeHandle(System.Int32)
 - uid: System.Reflection.Metadata.Ecma335.MetadataTokens.DeclarativeSecurityAttributeHandle(System.Int32)
   href: System.Reflection.Metadata.Ecma335.MetadataTokens.yml
@@ -754,7 +895,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/MetadataTokens.cs
-    startLine: 353
+    startLine: 358
   syntax:
     content:
       CSharp: public static DeclarativeSecurityAttributeHandle DeclarativeSecurityAttributeHandle(int rowNumber)
@@ -762,10 +903,14 @@ items:
     - id: rowNumber
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     return:
       id: DeclarativeSecurityAttributeHandle
+      type:
+        id: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle
+        name: DeclarativeSecurityAttributeHandle
+        href: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.yml
   id: System.Reflection.Metadata.Ecma335.MetadataTokens.DeclarativeSecurityAttributeHandle(System.Int32)
 - uid: System.Reflection.Metadata.Ecma335.MetadataTokens.ConstantHandle(System.Int32)
   href: System.Reflection.Metadata.Ecma335.MetadataTokens.yml
@@ -775,7 +920,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/MetadataTokens.cs
-    startLine: 358
+    startLine: 363
   syntax:
     content:
       CSharp: public static ConstantHandle ConstantHandle(int rowNumber)
@@ -783,10 +928,14 @@ items:
     - id: rowNumber
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     return:
       id: ConstantHandle
+      type:
+        id: System.Reflection.Metadata.ConstantHandle
+        name: ConstantHandle
+        href: System.Reflection.Metadata.ConstantHandle.yml
   id: System.Reflection.Metadata.Ecma335.MetadataTokens.ConstantHandle(System.Int32)
 - uid: System.Reflection.Metadata.Ecma335.MetadataTokens.ManifestResourceHandle(System.Int32)
   href: System.Reflection.Metadata.Ecma335.MetadataTokens.yml
@@ -796,7 +945,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/MetadataTokens.cs
-    startLine: 363
+    startLine: 368
   syntax:
     content:
       CSharp: public static ManifestResourceHandle ManifestResourceHandle(int rowNumber)
@@ -804,10 +953,14 @@ items:
     - id: rowNumber
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     return:
       id: ManifestResourceHandle
+      type:
+        id: System.Reflection.Metadata.ManifestResourceHandle
+        name: ManifestResourceHandle
+        href: System.Reflection.Metadata.ManifestResourceHandle.yml
   id: System.Reflection.Metadata.Ecma335.MetadataTokens.ManifestResourceHandle(System.Int32)
 - uid: System.Reflection.Metadata.Ecma335.MetadataTokens.AssemblyFileHandle(System.Int32)
   href: System.Reflection.Metadata.Ecma335.MetadataTokens.yml
@@ -817,7 +970,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/MetadataTokens.cs
-    startLine: 368
+    startLine: 373
   syntax:
     content:
       CSharp: public static AssemblyFileHandle AssemblyFileHandle(int rowNumber)
@@ -825,10 +978,14 @@ items:
     - id: rowNumber
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     return:
       id: AssemblyFileHandle
+      type:
+        id: System.Reflection.Metadata.AssemblyFileHandle
+        name: AssemblyFileHandle
+        href: System.Reflection.Metadata.AssemblyFileHandle.yml
   id: System.Reflection.Metadata.Ecma335.MetadataTokens.AssemblyFileHandle(System.Int32)
 - uid: System.Reflection.Metadata.Ecma335.MetadataTokens.UserStringHandle(System.Int32)
   href: System.Reflection.Metadata.Ecma335.MetadataTokens.yml
@@ -838,7 +995,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/MetadataTokens.cs
-    startLine: 373
+    startLine: 378
   syntax:
     content:
       CSharp: public static UserStringHandle UserStringHandle(int offset)
@@ -846,10 +1003,14 @@ items:
     - id: offset
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     return:
       id: UserStringHandle
+      type:
+        id: System.Reflection.Metadata.UserStringHandle
+        name: UserStringHandle
+        href: System.Reflection.Metadata.UserStringHandle.yml
   id: System.Reflection.Metadata.Ecma335.MetadataTokens.UserStringHandle(System.Int32)
 - uid: System.Reflection.Metadata.Ecma335.MetadataTokens.StringHandle(System.Int32)
   href: System.Reflection.Metadata.Ecma335.MetadataTokens.yml
@@ -859,7 +1020,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/MetadataTokens.cs
-    startLine: 378
+    startLine: 383
   syntax:
     content:
       CSharp: public static StringHandle StringHandle(int offset)
@@ -867,10 +1028,14 @@ items:
     - id: offset
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     return:
       id: StringHandle
+      type:
+        id: System.Reflection.Metadata.StringHandle
+        name: StringHandle
+        href: System.Reflection.Metadata.StringHandle.yml
   id: System.Reflection.Metadata.Ecma335.MetadataTokens.StringHandle(System.Int32)
 - uid: System.Reflection.Metadata.Ecma335.MetadataTokens.BlobHandle(System.Int32)
   href: System.Reflection.Metadata.Ecma335.MetadataTokens.yml
@@ -880,7 +1045,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/MetadataTokens.cs
-    startLine: 383
+    startLine: 388
   syntax:
     content:
       CSharp: public static BlobHandle BlobHandle(int offset)
@@ -888,10 +1053,14 @@ items:
     - id: offset
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     return:
       id: BlobHandle
+      type:
+        id: System.Reflection.Metadata.BlobHandle
+        name: BlobHandle
+        href: System.Reflection.Metadata.BlobHandle.yml
   id: System.Reflection.Metadata.Ecma335.MetadataTokens.BlobHandle(System.Int32)
 - uid: System.Reflection.Metadata.Ecma335.MetadataTokens.GuidHandle(System.Int32)
   href: System.Reflection.Metadata.Ecma335.MetadataTokens.yml
@@ -901,7 +1070,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/MetadataTokens.cs
-    startLine: 388
+    startLine: 393
   syntax:
     content:
       CSharp: public static GuidHandle GuidHandle(int offset)
@@ -909,8 +1078,12 @@ items:
     - id: offset
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     return:
       id: GuidHandle
+      type:
+        id: System.Reflection.Metadata.GuidHandle
+        name: GuidHandle
+        href: System.Reflection.Metadata.GuidHandle.yml
   id: System.Reflection.Metadata.Ecma335.MetadataTokens.GuidHandle(System.Int32)

@@ -6,20 +6,21 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Workspace/WorkspaceChangeEventArgs.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Workspace/WorkspaceChangeEventArgs.cs
     startLine: 7
   syntax:
     content:
-      CSharp: public class WorkspaceChangeEventArgs
+      CSharp: 'public class WorkspaceChangeEventArgs : EventArgs'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.EventArgs
-    name: System.EventArgs
+    name: EventArgs
     isExternal: true
   id: Microsoft.CodeAnalysis.WorkspaceChangeEventArgs
   children:
@@ -40,7 +41,7 @@ items:
     startLine: 9
   syntax:
     content:
-      CSharp: public WorkspaceChangeKind Kind { get; private set; }
+      CSharp: public WorkspaceChangeKind Kind { get; }
     parameters:
     - id: Kind
       type:
@@ -59,7 +60,7 @@ items:
     startLine: 10
   syntax:
     content:
-      CSharp: public Solution OldSolution { get; private set; }
+      CSharp: public Solution OldSolution { get; }
     parameters:
     - id: OldSolution
       type:
@@ -78,7 +79,7 @@ items:
     startLine: 11
   syntax:
     content:
-      CSharp: public Solution NewSolution { get; private set; }
+      CSharp: public Solution NewSolution { get; }
     parameters:
     - id: NewSolution
       type:
@@ -97,7 +98,7 @@ items:
     startLine: 12
   syntax:
     content:
-      CSharp: public ProjectId ProjectId { get; private set; }
+      CSharp: public ProjectId ProjectId { get; }
     parameters:
     - id: ProjectId
       type:
@@ -116,7 +117,7 @@ items:
     startLine: 13
   syntax:
     content:
-      CSharp: public DocumentId DocumentId { get; private set; }
+      CSharp: public DocumentId DocumentId { get; }
     parameters:
     - id: DocumentId
       type:

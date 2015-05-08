@@ -6,42 +6,52 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/CodeActions/Operations/PreviewOperation.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/CodeActions/Operations/PreviewOperation.cs
-    startLine: 9
+    startLine: 10
   summary: Represents a preview operation for generating a custom user preview for the operation.
   syntax:
     content:
-      CSharp: public abstract class PreviewOperation
+      CSharp: 'public abstract class PreviewOperation : CodeActionOperation'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: Microsoft.CodeAnalysis.CodeActions.CodeActionOperation
     name: CodeActionOperation
     href: Microsoft.CodeAnalysis.CodeActions.CodeActionOperation.yml
   id: Microsoft.CodeAnalysis.CodeActions.PreviewOperation
   children:
-  - Microsoft.CodeAnalysis.CodeActions.PreviewOperation.GetPreview
-- uid: Microsoft.CodeAnalysis.CodeActions.PreviewOperation.GetPreview
+  - Microsoft.CodeAnalysis.CodeActions.PreviewOperation.GetPreviewAsync(System.Threading.CancellationToken)
+- uid: Microsoft.CodeAnalysis.CodeActions.PreviewOperation.GetPreviewAsync(System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.CodeActions.PreviewOperation.yml
-  name: GetPreview()
-  fullName: Microsoft.CodeAnalysis.CodeActions.PreviewOperation.GetPreview()
+  name: GetPreviewAsync(CancellationToken)
+  fullName: Microsoft.CodeAnalysis.CodeActions.PreviewOperation.GetPreviewAsync(System.Threading.CancellationToken)
   type: Method
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/CodeActions/Operations/PreviewOperation.cs
-    startLine: 15
+    startLine: 16
   summary: >-
     Gets a custom preview control for the operation.
 
     If preview is null and [Microsoft.CodeAnalysis.CodeActions.CodeActionOperation.Title](Microsoft.CodeAnalysis.CodeActions.CodeActionOperation.yml) is non-null, then [Microsoft.CodeAnalysis.CodeActions.CodeActionOperation.Title](Microsoft.CodeAnalysis.CodeActions.CodeActionOperation.yml) is used to generate the preview.
   syntax:
     content:
-      CSharp: public abstract object GetPreview();
-    parameters: []
+      CSharp: public abstract Task<object> GetPreviewAsync(CancellationToken cancellationToken)
+    parameters:
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: CancellationToken
+        isExternal: true
     return:
-      id: Object
-  id: Microsoft.CodeAnalysis.CodeActions.PreviewOperation.GetPreview
+      id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.Object}
+        name: Task<object>
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CodeActions.PreviewOperation.GetPreviewAsync(System.Threading.CancellationToken)

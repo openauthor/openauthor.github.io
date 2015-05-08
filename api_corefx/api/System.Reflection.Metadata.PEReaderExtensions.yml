@@ -6,16 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/PEReaderExtensions.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/PEReaderExtensions.cs
     startLine: 11
   syntax:
     content:
-      CSharp: public static class PEReaderExtensions
+      CSharp: public class PEReaderExtensions
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Reflection.Metadata.PEReaderExtensions
   children:
@@ -35,7 +37,7 @@ items:
   summary: Returns a body block of a method with specified Relative Virtual Address (RVA);
   syntax:
     content:
-      CSharp: public static unsafe MethodBodyBlock GetMethodBody(this PEReader peReader, int relativeVirtualAddress)
+      CSharp: public static MethodBodyBlock GetMethodBody(PEReader peReader, int relativeVirtualAddress)
     parameters:
     - id: peReader
       type:
@@ -45,10 +47,14 @@ items:
     - id: relativeVirtualAddress
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     return:
       id: MethodBodyBlock
+      type:
+        id: System.Reflection.Metadata.MethodBodyBlock
+        name: MethodBodyBlock
+        href: System.Reflection.Metadata.MethodBodyBlock.yml
   id: System.Reflection.Metadata.PEReaderExtensions.GetMethodBody(System.Reflection.PortableExecutable.PEReader,System.Int32)
 - uid: System.Reflection.Metadata.PEReaderExtensions.GetMetadataReader(System.Reflection.PortableExecutable.PEReader)
   href: System.Reflection.Metadata.PEReaderExtensions.yml
@@ -62,7 +68,7 @@ items:
   summary: Gets a [System.Reflection.Metadata.MetadataReader](System.Reflection.Metadata.MetadataReader.yml) from a [System.Reflection.PortableExecutable.PEReader](System.Reflection.PortableExecutable.PEReader.yml).
   syntax:
     content:
-      CSharp: public static MetadataReader GetMetadataReader(this PEReader peReader)
+      CSharp: public static MetadataReader GetMetadataReader(PEReader peReader)
     parameters:
     - id: peReader
       type:
@@ -71,6 +77,10 @@ items:
         href: System.Reflection.PortableExecutable.PEReader.yml
     return:
       id: MetadataReader
+      type:
+        id: System.Reflection.Metadata.MetadataReader
+        name: MetadataReader
+        href: System.Reflection.Metadata.MetadataReader.yml
   id: System.Reflection.Metadata.PEReaderExtensions.GetMetadataReader(System.Reflection.PortableExecutable.PEReader)
 - uid: System.Reflection.Metadata.PEReaderExtensions.GetMetadataReader(System.Reflection.PortableExecutable.PEReader,System.Reflection.Metadata.MetadataReaderOptions)
   href: System.Reflection.Metadata.PEReaderExtensions.yml
@@ -84,7 +94,7 @@ items:
   summary: Gets a [System.Reflection.Metadata.MetadataReader](System.Reflection.Metadata.MetadataReader.yml) from a [System.Reflection.PortableExecutable.PEReader](System.Reflection.PortableExecutable.PEReader.yml).
   syntax:
     content:
-      CSharp: public static MetadataReader GetMetadataReader(this PEReader peReader, MetadataReaderOptions options)
+      CSharp: public static MetadataReader GetMetadataReader(PEReader peReader, MetadataReaderOptions options)
     parameters:
     - id: peReader
       type:
@@ -98,6 +108,10 @@ items:
         href: System.Reflection.Metadata.MetadataReaderOptions.yml
     return:
       id: MetadataReader
+      type:
+        id: System.Reflection.Metadata.MetadataReader
+        name: MetadataReader
+        href: System.Reflection.Metadata.MetadataReader.yml
   id: System.Reflection.Metadata.PEReaderExtensions.GetMetadataReader(System.Reflection.PortableExecutable.PEReader,System.Reflection.Metadata.MetadataReaderOptions)
 - uid: System.Reflection.Metadata.PEReaderExtensions.GetMetadataReader(System.Reflection.PortableExecutable.PEReader,System.Reflection.Metadata.MetadataReaderOptions,System.Reflection.Metadata.MetadataStringDecoder)
   href: System.Reflection.Metadata.PEReaderExtensions.yml
@@ -111,7 +125,7 @@ items:
   summary: Gets a [System.Reflection.Metadata.MetadataReader](System.Reflection.Metadata.MetadataReader.yml) from a [System.Reflection.PortableExecutable.PEReader](System.Reflection.PortableExecutable.PEReader.yml).
   syntax:
     content:
-      CSharp: public static unsafe MetadataReader GetMetadataReader(this PEReader peReader, MetadataReaderOptions options, MetadataStringDecoder utf8Decoder)
+      CSharp: public static MetadataReader GetMetadataReader(PEReader peReader, MetadataReaderOptions options, MetadataStringDecoder utf8Decoder)
     parameters:
     - id: peReader
       type:
@@ -130,4 +144,8 @@ items:
         href: System.Reflection.Metadata.MetadataStringDecoder.yml
     return:
       id: MetadataReader
+      type:
+        id: System.Reflection.Metadata.MetadataReader
+        name: MetadataReader
+        href: System.Reflection.Metadata.MetadataReader.yml
   id: System.Reflection.Metadata.PEReaderExtensions.GetMetadataReader(System.Reflection.PortableExecutable.PEReader,System.Reflection.Metadata.MetadataReaderOptions,System.Reflection.Metadata.MetadataStringDecoder)

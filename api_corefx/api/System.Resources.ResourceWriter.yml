@@ -6,32 +6,33 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Resources.ReaderWriter/src/System/Resources/ResourceWriter.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
-    path: src/System.Resources.ResourceWriter/src/System/Resources/ResourceWriter.cs
+      key: 882a41e3
+    path: src/System.Resources.ReaderWriter/src/System/Resources/ResourceWriter.cs
     startLine: 38
   syntax:
     content:
-      CSharp: public sealed class ResourceWriter
+      CSharp: 'public sealed class ResourceWriter : IDisposable'
   inheritance:
-  - id: System.IDisposable
-    name: System.IDisposable
+  - id: System.Object
+    name: object
     isExternal: true
   id: System.Resources.ResourceWriter
   children:
-  - System.Resources.ResourceWriter.#ctor(Stream)
-  - System.Resources.ResourceWriter.AddResource(String,String)
-  - System.Resources.ResourceWriter.Close
+  - System.Resources.ResourceWriter.#ctor(System.IO.Stream)
+  - System.Resources.ResourceWriter.AddResource(System.String,System.String)
   - System.Resources.ResourceWriter.Dispose
   - System.Resources.ResourceWriter.Generate
-- uid: System.Resources.ResourceWriter.#ctor(Stream)
+- uid: System.Resources.ResourceWriter.#ctor(System.IO.Stream)
   href: System.Resources.ResourceWriter.yml
   name: ResourceWriter(Stream)
-  fullName: System.Resources.ResourceWriter.ResourceWriter(Stream)
+  fullName: System.Resources.ResourceWriter.ResourceWriter(System.IO.Stream)
   type: Constructor
   source:
     remote: *o0
-    path: src/System.Resources.ResourceWriter/src/System/Resources/ResourceWriter.cs
+    path: src/System.Resources.ReaderWriter/src/System/Resources/ResourceWriter.cs
     startLine: 54
   syntax:
     content:
@@ -39,48 +40,34 @@ items:
     parameters:
     - id: stream
       type:
-        id: Stream
+        id: System.IO.Stream
         name: Stream
         isExternal: true
-  id: System.Resources.ResourceWriter.#ctor(Stream)
-- uid: System.Resources.ResourceWriter.AddResource(String,String)
+  id: System.Resources.ResourceWriter.#ctor(System.IO.Stream)
+- uid: System.Resources.ResourceWriter.AddResource(System.String,System.String)
   href: System.Resources.ResourceWriter.yml
-  name: AddResource(String, String)
-  fullName: System.Resources.ResourceWriter.AddResource(String, String)
+  name: AddResource(string, string)
+  fullName: System.Resources.ResourceWriter.AddResource(string, string)
   type: Method
   source:
     remote: *o0
-    path: src/System.Resources.ResourceWriter/src/System/Resources/ResourceWriter.cs
+    path: src/System.Resources.ReaderWriter/src/System/Resources/ResourceWriter.cs
     startLine: 69
   syntax:
     content:
-      CSharp: public void AddResource(String name, String value)
+      CSharp: public void AddResource(string name, string value)
     parameters:
     - id: name
       type:
-        id: String
-        name: String
+        id: System.String
+        name: string
         isExternal: true
     - id: value
       type:
-        id: String
-        name: String
+        id: System.String
+        name: string
         isExternal: true
-  id: System.Resources.ResourceWriter.AddResource(String,String)
-- uid: System.Resources.ResourceWriter.Close
-  href: System.Resources.ResourceWriter.yml
-  name: Close()
-  fullName: System.Resources.ResourceWriter.Close()
-  type: Method
-  source:
-    remote: *o0
-    path: src/System.Resources.ResourceWriter/src/System/Resources/ResourceWriter.cs
-    startLine: 82
-  syntax:
-    content:
-      CSharp: public void Close()
-    parameters: []
-  id: System.Resources.ResourceWriter.Close
+  id: System.Resources.ResourceWriter.AddResource(System.String,System.String)
 - uid: System.Resources.ResourceWriter.Dispose
   href: System.Resources.ResourceWriter.yml
   name: Dispose()
@@ -88,8 +75,8 @@ items:
   type: Method
   source:
     remote: *o0
-    path: src/System.Resources.ResourceWriter/src/System/Resources/ResourceWriter.cs
-    startLine: 87
+    path: src/System.Resources.ReaderWriter/src/System/Resources/ResourceWriter.cs
+    startLine: 82
   syntax:
     content:
       CSharp: public void Dispose()
@@ -102,8 +89,8 @@ items:
   type: Method
   source:
     remote: *o0
-    path: src/System.Resources.ResourceWriter/src/System/Resources/ResourceWriter.cs
-    startLine: 108
+    path: src/System.Resources.ReaderWriter/src/System/Resources/ResourceWriter.cs
+    startLine: 103
   syntax:
     content:
       CSharp: public void Generate()

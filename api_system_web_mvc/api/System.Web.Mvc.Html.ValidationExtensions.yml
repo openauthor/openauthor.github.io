@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/Html/ValidationExtensions.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/Html/ValidationExtensions.cs
     startLine: 13
   syntax:
     content:
-      CSharp: public static class ValidationExtensions
+      CSharp: public class ValidationExtensions
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.Html.ValidationExtensions
   children:
@@ -71,7 +72,7 @@ items:
     - id: ResourceClassKey
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.Html.ValidationExtensions.ResourceClassKey
 - uid: System.Web.Mvc.Html.ValidationExtensions.Validate(System.Web.Mvc.HtmlHelper,System.String)
@@ -85,7 +86,7 @@ items:
     startLine: 70
   syntax:
     content:
-      CSharp: public static void Validate(this HtmlHelper htmlHelper, string modelName)
+      CSharp: public static void Validate(HtmlHelper htmlHelper, string modelName)
     parameters:
     - id: htmlHelper
       type:
@@ -95,7 +96,7 @@ items:
     - id: modelName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.Html.ValidationExtensions.Validate(System.Web.Mvc.HtmlHelper,System.String)
 - uid: System.Web.Mvc.Html.ValidationExtensions.ValidateFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})
@@ -109,17 +110,17 @@ items:
     startLine: 82
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Justification = "This is an appropriate nesting of generic types")] public static void ValidateFor<TModel, TProperty>(this HtmlHelper<TModel> htmlHelper, Expression<Func<TModel, TProperty>> expression)'
+      CSharp: public static void ValidateFor<TModel, TProperty>(HtmlHelper<TModel> htmlHelper, Expression<Func<TModel, TProperty>> expression)
     parameters:
     - id: htmlHelper
       type:
         id: System.Web.Mvc.HtmlHelper{``0}
-        name: HtmlHelper
+        name: HtmlHelper<TModel>
         href: System.Web.Mvc.HtmlHelper{``0}
     - id: expression
       type:
         id: System.Linq.Expressions.Expression{System.Func{``0,``1}}
-        name: System.Linq.Expressions.Expression{System.Func{``0,``1}}
+        name: Expression<Func<TModel, TProperty>>
         isExternal: true
   id: System.Web.Mvc.Html.ValidationExtensions.ValidateFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})
 - uid: System.Web.Mvc.Html.ValidationExtensions.ValidationMessage(System.Web.Mvc.HtmlHelper,System.String)
@@ -133,7 +134,7 @@ items:
     startLine: 104
   syntax:
     content:
-      CSharp: public static MvcHtmlString ValidationMessage(this HtmlHelper htmlHelper, string modelName)
+      CSharp: public static MvcHtmlString ValidationMessage(HtmlHelper htmlHelper, string modelName)
     parameters:
     - id: htmlHelper
       type:
@@ -143,10 +144,14 @@ items:
     - id: modelName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
   id: System.Web.Mvc.Html.ValidationExtensions.ValidationMessage(System.Web.Mvc.HtmlHelper,System.String)
 - uid: System.Web.Mvc.Html.ValidationExtensions.ValidationMessage(System.Web.Mvc.HtmlHelper,System.String,System.Object)
   href: System.Web.Mvc.Html.ValidationExtensions.yml
@@ -159,7 +164,7 @@ items:
     startLine: 109
   syntax:
     content:
-      CSharp: public static MvcHtmlString ValidationMessage(this HtmlHelper htmlHelper, string modelName, object htmlAttributes)
+      CSharp: public static MvcHtmlString ValidationMessage(HtmlHelper htmlHelper, string modelName, object htmlAttributes)
     parameters:
     - id: htmlHelper
       type:
@@ -169,15 +174,19 @@ items:
     - id: modelName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: htmlAttributes
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
   id: System.Web.Mvc.Html.ValidationExtensions.ValidationMessage(System.Web.Mvc.HtmlHelper,System.String,System.Object)
 - uid: System.Web.Mvc.Html.ValidationExtensions.ValidationMessage(System.Web.Mvc.HtmlHelper,System.String,System.Object,System.String)
   href: System.Web.Mvc.Html.ValidationExtensions.yml
@@ -194,7 +203,7 @@ items:
     [System.Web.Mvc.ModelStateDictionary](System.Web.Mvc.ModelStateDictionary.yml) object.
   syntax:
     content:
-      CSharp: public static MvcHtmlString ValidationMessage(this HtmlHelper htmlHelper, string modelName, object htmlAttributes, string tag)
+      CSharp: public static MvcHtmlString ValidationMessage(HtmlHelper htmlHelper, string modelName, object htmlAttributes, string tag)
     parameters:
     - id: htmlHelper
       type:
@@ -205,23 +214,27 @@ items:
     - id: modelName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The name of the entry being validated.
     - id: htmlAttributes
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: An object that contains the HTML attributes for the element.
     - id: tag
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The tag to be set for the wrapping HTML element of the validation message.
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
       description: >-
         null if the entry is valid and client-side validation is disabled.
 
@@ -238,7 +251,7 @@ items:
     startLine: 136
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames", Justification = "''validationMessage'' refers to the message that will be rendered by the ValidationMessage helper.")] public static MvcHtmlString ValidationMessage(this HtmlHelper htmlHelper, string modelName, string validationMessage)'
+      CSharp: public static MvcHtmlString ValidationMessage(HtmlHelper htmlHelper, string modelName, string validationMessage)
     parameters:
     - id: htmlHelper
       type:
@@ -248,15 +261,19 @@ items:
     - id: modelName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: validationMessage
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
   id: System.Web.Mvc.Html.ValidationExtensions.ValidationMessage(System.Web.Mvc.HtmlHelper,System.String,System.String)
 - uid: System.Web.Mvc.Html.ValidationExtensions.ValidationMessage(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Object)
   href: System.Web.Mvc.Html.ValidationExtensions.yml
@@ -269,7 +286,7 @@ items:
     startLine: 142
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames", Justification = "''validationMessage'' refers to the message that will be rendered by the ValidationMessage helper.")] public static MvcHtmlString ValidationMessage(this HtmlHelper htmlHelper, string modelName, string validationMessage, object htmlAttributes)'
+      CSharp: public static MvcHtmlString ValidationMessage(HtmlHelper htmlHelper, string modelName, string validationMessage, object htmlAttributes)
     parameters:
     - id: htmlHelper
       type:
@@ -279,20 +296,24 @@ items:
     - id: modelName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: validationMessage
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: htmlAttributes
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
   id: System.Web.Mvc.Html.ValidationExtensions.ValidationMessage(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Object)
 - uid: System.Web.Mvc.Html.ValidationExtensions.ValidationMessage(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Object,System.String)
   href: System.Web.Mvc.Html.ValidationExtensions.yml
@@ -309,7 +330,7 @@ items:
     [System.Web.Mvc.ModelStateDictionary](System.Web.Mvc.ModelStateDictionary.yml) object.
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames", Justification = "''validationMessage'' refers to the message that will be rendered by the ValidationMessage helper.")] public static MvcHtmlString ValidationMessage(this HtmlHelper htmlHelper, string modelName, string validationMessage, object htmlAttributes, string tag)'
+      CSharp: public static MvcHtmlString ValidationMessage(HtmlHelper htmlHelper, string modelName, string validationMessage, object htmlAttributes, string tag)
     parameters:
     - id: htmlHelper
       type:
@@ -320,29 +341,33 @@ items:
     - id: modelName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The name of the entry being validated.
     - id: validationMessage
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The message to display if the specified entry contains an error.
     - id: htmlAttributes
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: An object that contains the HTML attributes for the element.
     - id: tag
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The tag to be set for the wrapping HTML element of the validation message.
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
       description: >-
         null if the entry is valid and client-side validation is disabled.
 
@@ -363,7 +388,7 @@ items:
     [System.Web.Mvc.ModelStateDictionary](System.Web.Mvc.ModelStateDictionary.yml) object.
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames", Justification = "''validationMessage'' refers to the message that will be rendered by the ValidationMessage helper.")] public static MvcHtmlString ValidationMessage(this HtmlHelper htmlHelper, string modelName, string validationMessage, string tag)'
+      CSharp: public static MvcHtmlString ValidationMessage(HtmlHelper htmlHelper, string modelName, string validationMessage, string tag)
     parameters:
     - id: htmlHelper
       type:
@@ -374,23 +399,27 @@ items:
     - id: modelName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The name of the entry being validated.
     - id: validationMessage
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The message to display if the specified entry contains an error.
     - id: tag
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The tag to be set for the wrapping HTML element of the validation message.
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
       description: >-
         null if the entry is valid and client-side validation is disabled.
 
@@ -407,7 +436,7 @@ items:
     startLine: 198
   syntax:
     content:
-      CSharp: public static MvcHtmlString ValidationMessage(this HtmlHelper htmlHelper, string modelName, IDictionary<string, object> htmlAttributes)
+      CSharp: public static MvcHtmlString ValidationMessage(HtmlHelper htmlHelper, string modelName, IDictionary<string, object> htmlAttributes)
     parameters:
     - id: htmlHelper
       type:
@@ -417,15 +446,19 @@ items:
     - id: modelName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: htmlAttributes
       type:
         id: System.Collections.Generic.IDictionary{System.String,System.Object}
-        name: System.Collections.Generic.IDictionary{System.String,System.Object}
+        name: IDictionary<string, object>
         isExternal: true
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
   id: System.Web.Mvc.Html.ValidationExtensions.ValidationMessage(System.Web.Mvc.HtmlHelper,System.String,System.Collections.Generic.IDictionary{System.String,System.Object})
 - uid: System.Web.Mvc.Html.ValidationExtensions.ValidationMessage(System.Web.Mvc.HtmlHelper,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.String)
   href: System.Web.Mvc.Html.ValidationExtensions.yml
@@ -442,7 +475,7 @@ items:
     [System.Web.Mvc.ModelStateDictionary](System.Web.Mvc.ModelStateDictionary.yml) object.
   syntax:
     content:
-      CSharp: public static MvcHtmlString ValidationMessage(this HtmlHelper htmlHelper, string modelName, IDictionary<string, object> htmlAttributes, string tag)
+      CSharp: public static MvcHtmlString ValidationMessage(HtmlHelper htmlHelper, string modelName, IDictionary<string, object> htmlAttributes, string tag)
     parameters:
     - id: htmlHelper
       type:
@@ -453,26 +486,30 @@ items:
     - id: modelName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The name of the entry being validated.
     - id: htmlAttributes
       type:
         id: System.Collections.Generic.IDictionary{System.String,System.Object}
-        name: System.Collections.Generic.IDictionary{System.String,System.Object}
+        name: IDictionary<string, object>
         isExternal: true
       description: >-
-        An [System.Collections.Generic.IDictionary`2](#) that contains the HTML attributes
+        An [System.Collections.Generic.IDictionary`2]() that contains the HTML attributes
 
         for the element.
     - id: tag
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The tag to be set for the wrapping HTML element of the validation message.
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
       description: >-
         null if the entry is valid and client-side validation is disabled.
 
@@ -489,7 +526,7 @@ items:
     startLine: 226
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames", Justification = "''validationMessage'' refers to the message that will be rendered by the ValidationMessage helper.")] public static MvcHtmlString ValidationMessage(this HtmlHelper htmlHelper, string modelName, string validationMessage, IDictionary<string, object> htmlAttributes)'
+      CSharp: public static MvcHtmlString ValidationMessage(HtmlHelper htmlHelper, string modelName, string validationMessage, IDictionary<string, object> htmlAttributes)
     parameters:
     - id: htmlHelper
       type:
@@ -499,20 +536,24 @@ items:
     - id: modelName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: validationMessage
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: htmlAttributes
       type:
         id: System.Collections.Generic.IDictionary{System.String,System.Object}
-        name: System.Collections.Generic.IDictionary{System.String,System.Object}
+        name: IDictionary<string, object>
         isExternal: true
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
   id: System.Web.Mvc.Html.ValidationExtensions.ValidationMessage(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object})
 - uid: System.Web.Mvc.Html.ValidationExtensions.ValidationMessage(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.String)
   href: System.Web.Mvc.Html.ValidationExtensions.yml
@@ -529,7 +570,7 @@ items:
     [System.Web.Mvc.ModelStateDictionary](System.Web.Mvc.ModelStateDictionary.yml) object.
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames", Justification = "''validationMessage'' refers to the message that will be rendered by the ValidationMessage helper.")] public static MvcHtmlString ValidationMessage(this HtmlHelper htmlHelper, string modelName, string validationMessage, IDictionary<string, object> htmlAttributes, string tag)'
+      CSharp: public static MvcHtmlString ValidationMessage(HtmlHelper htmlHelper, string modelName, string validationMessage, IDictionary<string, object> htmlAttributes, string tag)
     parameters:
     - id: htmlHelper
       type:
@@ -540,32 +581,36 @@ items:
     - id: modelName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The name of the model object being validated.
     - id: validationMessage
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The message to display if the specified entry contains an error.
     - id: htmlAttributes
       type:
         id: System.Collections.Generic.IDictionary{System.String,System.Object}
-        name: System.Collections.Generic.IDictionary{System.String,System.Object}
+        name: IDictionary<string, object>
         isExternal: true
       description: >-
-        An [System.Collections.Generic.IDictionary`2](#) that contains the HTML attributes
+        An [System.Collections.Generic.IDictionary`2]() that contains the HTML attributes
 
         for the element.
     - id: tag
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The tag to be set for the wrapping HTML element of the validation message.
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
       description: >-
         null if the model object is valid and client-side validation is disabled.
 
@@ -582,20 +627,24 @@ items:
     startLine: 265
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Justification = "This is an appropriate nesting of generic types")] public static MvcHtmlString ValidationMessageFor<TModel, TProperty>(this HtmlHelper<TModel> htmlHelper, Expression<Func<TModel, TProperty>> expression)'
+      CSharp: public static MvcHtmlString ValidationMessageFor<TModel, TProperty>(HtmlHelper<TModel> htmlHelper, Expression<Func<TModel, TProperty>> expression)
     parameters:
     - id: htmlHelper
       type:
         id: System.Web.Mvc.HtmlHelper{``0}
-        name: HtmlHelper
+        name: HtmlHelper<TModel>
         href: System.Web.Mvc.HtmlHelper{``0}
     - id: expression
       type:
         id: System.Linq.Expressions.Expression{System.Func{``0,``1}}
-        name: System.Linq.Expressions.Expression{System.Func{``0,``1}}
+        name: Expression<Func<TModel, TProperty>>
         isExternal: true
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
   id: System.Web.Mvc.Html.ValidationExtensions.ValidationMessageFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})
 - uid: System.Web.Mvc.Html.ValidationExtensions.ValidationMessageFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.String)
   href: System.Web.Mvc.Html.ValidationExtensions.yml
@@ -608,25 +657,29 @@ items:
     startLine: 271
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Justification = "This is an appropriate nesting of generic types")] public static MvcHtmlString ValidationMessageFor<TModel, TProperty>(this HtmlHelper<TModel> htmlHelper, Expression<Func<TModel, TProperty>> expression, string validationMessage)'
+      CSharp: public static MvcHtmlString ValidationMessageFor<TModel, TProperty>(HtmlHelper<TModel> htmlHelper, Expression<Func<TModel, TProperty>> expression, string validationMessage)
     parameters:
     - id: htmlHelper
       type:
         id: System.Web.Mvc.HtmlHelper{``0}
-        name: HtmlHelper
+        name: HtmlHelper<TModel>
         href: System.Web.Mvc.HtmlHelper{``0}
     - id: expression
       type:
         id: System.Linq.Expressions.Expression{System.Func{``0,``1}}
-        name: System.Linq.Expressions.Expression{System.Func{``0,``1}}
+        name: Expression<Func<TModel, TProperty>>
         isExternal: true
     - id: validationMessage
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
   id: System.Web.Mvc.Html.ValidationExtensions.ValidationMessageFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.String)
 - uid: System.Web.Mvc.Html.ValidationExtensions.ValidationMessageFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.String,System.Object)
   href: System.Web.Mvc.Html.ValidationExtensions.yml
@@ -639,30 +692,34 @@ items:
     startLine: 277
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Justification = "This is an appropriate nesting of generic types")] public static MvcHtmlString ValidationMessageFor<TModel, TProperty>(this HtmlHelper<TModel> htmlHelper, Expression<Func<TModel, TProperty>> expression, string validationMessage, object htmlAttributes)'
+      CSharp: public static MvcHtmlString ValidationMessageFor<TModel, TProperty>(HtmlHelper<TModel> htmlHelper, Expression<Func<TModel, TProperty>> expression, string validationMessage, object htmlAttributes)
     parameters:
     - id: htmlHelper
       type:
         id: System.Web.Mvc.HtmlHelper{``0}
-        name: HtmlHelper
+        name: HtmlHelper<TModel>
         href: System.Web.Mvc.HtmlHelper{``0}
     - id: expression
       type:
         id: System.Linq.Expressions.Expression{System.Func{``0,``1}}
-        name: System.Linq.Expressions.Expression{System.Func{``0,``1}}
+        name: Expression<Func<TModel, TProperty>>
         isExternal: true
     - id: validationMessage
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: htmlAttributes
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
   id: System.Web.Mvc.Html.ValidationExtensions.ValidationMessageFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.String,System.Object)
 - uid: System.Web.Mvc.Html.ValidationExtensions.ValidationMessageFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.String,System.Collections.Generic.IDictionary{System.String,System.Object})
   href: System.Web.Mvc.Html.ValidationExtensions.yml
@@ -675,30 +732,34 @@ items:
     startLine: 283
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Justification = "This is an appropriate nesting of generic types")] public static MvcHtmlString ValidationMessageFor<TModel, TProperty>(this HtmlHelper<TModel> htmlHelper, Expression<Func<TModel, TProperty>> expression, string validationMessage, IDictionary<string, object> htmlAttributes)'
+      CSharp: public static MvcHtmlString ValidationMessageFor<TModel, TProperty>(HtmlHelper<TModel> htmlHelper, Expression<Func<TModel, TProperty>> expression, string validationMessage, IDictionary<string, object> htmlAttributes)
     parameters:
     - id: htmlHelper
       type:
         id: System.Web.Mvc.HtmlHelper{``0}
-        name: HtmlHelper
+        name: HtmlHelper<TModel>
         href: System.Web.Mvc.HtmlHelper{``0}
     - id: expression
       type:
         id: System.Linq.Expressions.Expression{System.Func{``0,``1}}
-        name: System.Linq.Expressions.Expression{System.Func{``0,``1}}
+        name: Expression<Func<TModel, TProperty>>
         isExternal: true
     - id: validationMessage
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: htmlAttributes
       type:
         id: System.Collections.Generic.IDictionary{System.String,System.Object}
-        name: System.Collections.Generic.IDictionary{System.String,System.Object}
+        name: IDictionary<string, object>
         isExternal: true
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
   id: System.Web.Mvc.Html.ValidationExtensions.ValidationMessageFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.String,System.Collections.Generic.IDictionary{System.String,System.Object})
 - uid: System.Web.Mvc.Html.ValidationExtensions.ValidationMessageFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.String,System.String)
   href: System.Web.Mvc.Html.ValidationExtensions.yml
@@ -712,34 +773,38 @@ items:
   summary: Returns the HTML markup for a validation-error message for the specified expression.
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Justification = "This is an appropriate nesting of generic types")] public static MvcHtmlString ValidationMessageFor<TModel, TProperty>(this HtmlHelper<TModel> htmlHelper, Expression<Func<TModel, TProperty>> expression, string validationMessage, string tag)'
+      CSharp: public static MvcHtmlString ValidationMessageFor<TModel, TProperty>(HtmlHelper<TModel> htmlHelper, Expression<Func<TModel, TProperty>> expression, string validationMessage, string tag)
     parameters:
     - id: htmlHelper
       type:
         id: System.Web.Mvc.HtmlHelper{``0}
-        name: HtmlHelper
+        name: HtmlHelper<TModel>
         href: System.Web.Mvc.HtmlHelper{``0}
       description: The HTML helper instance that this method operates on.
     - id: expression
       type:
         id: System.Linq.Expressions.Expression{System.Func{``0,``1}}
-        name: System.Linq.Expressions.Expression{System.Func{``0,``1}}
+        name: Expression<Func<TModel, TProperty>>
         isExternal: true
       description: An expression that identifies the object that contains the properties to render.
     - id: validationMessage
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The message to display if a validation error occurs.
     - id: tag
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The tag to be set for the wrapping HTML element of the validation message.
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
       description: >-
         null if the model object is valid and client-side validation is disabled.
 
@@ -757,40 +822,44 @@ items:
   summary: Returns the HTML markup for a validation-error message for the specified expression.
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Justification = "This is an appropriate nesting of generic types")] public static MvcHtmlString ValidationMessageFor<TModel, TProperty>(this HtmlHelper<TModel> htmlHelper, Expression<Func<TModel, TProperty>> expression, string validationMessage, object htmlAttributes, string tag)'
+      CSharp: public static MvcHtmlString ValidationMessageFor<TModel, TProperty>(HtmlHelper<TModel> htmlHelper, Expression<Func<TModel, TProperty>> expression, string validationMessage, object htmlAttributes, string tag)
     parameters:
     - id: htmlHelper
       type:
         id: System.Web.Mvc.HtmlHelper{``0}
-        name: HtmlHelper
+        name: HtmlHelper<TModel>
         href: System.Web.Mvc.HtmlHelper{``0}
       description: The HTML helper instance that this method operates on.
     - id: expression
       type:
         id: System.Linq.Expressions.Expression{System.Func{``0,``1}}
-        name: System.Linq.Expressions.Expression{System.Func{``0,``1}}
+        name: Expression<Func<TModel, TProperty>>
         isExternal: true
       description: An expression that identifies the object that contains the properties to render.
     - id: validationMessage
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The message to display if a validation error occurs.
     - id: htmlAttributes
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: An object that contains the HTML attributes for the element.
     - id: tag
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The tag to be set for the wrapping HTML element of the validation message.
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
       description: >-
         null if the model object is valid and client-side validation is disabled.
 
@@ -808,43 +877,47 @@ items:
   summary: Returns the HTML markup for a validation-error message for the specified expression.
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Justification = "This is an appropriate nesting of generic types")] public static MvcHtmlString ValidationMessageFor<TModel, TProperty>(this HtmlHelper<TModel> htmlHelper, Expression<Func<TModel, TProperty>> expression, string validationMessage, IDictionary<string, object> htmlAttributes, string tag)'
+      CSharp: public static MvcHtmlString ValidationMessageFor<TModel, TProperty>(HtmlHelper<TModel> htmlHelper, Expression<Func<TModel, TProperty>> expression, string validationMessage, IDictionary<string, object> htmlAttributes, string tag)
     parameters:
     - id: htmlHelper
       type:
         id: System.Web.Mvc.HtmlHelper{``0}
-        name: HtmlHelper
+        name: HtmlHelper<TModel>
         href: System.Web.Mvc.HtmlHelper{``0}
       description: The HTML helper instance that this method operates on.
     - id: expression
       type:
         id: System.Linq.Expressions.Expression{System.Func{``0,``1}}
-        name: System.Linq.Expressions.Expression{System.Func{``0,``1}}
+        name: Expression<Func<TModel, TProperty>>
         isExternal: true
       description: An expression that identifies the object that contains the properties to render.
     - id: validationMessage
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The message to display if a validation error occurs.
     - id: htmlAttributes
       type:
         id: System.Collections.Generic.IDictionary{System.String,System.Object}
-        name: System.Collections.Generic.IDictionary{System.String,System.Object}
+        name: IDictionary<string, object>
         isExternal: true
       description: >-
-        An [System.Collections.Generic.IDictionary`2](#) that contains the HTML attributes
+        An [System.Collections.Generic.IDictionary`2]() that contains the HTML attributes
 
         for the element.
     - id: tag
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The tag to be set for the wrapping HTML element of the validation message.
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
       description: >-
         null if the model object is valid and client-side validation is disabled.
 
@@ -861,7 +934,7 @@ items:
     startLine: 441
   syntax:
     content:
-      CSharp: public static MvcHtmlString ValidationSummary(this HtmlHelper htmlHelper)
+      CSharp: public static MvcHtmlString ValidationSummary(HtmlHelper htmlHelper)
     parameters:
     - id: htmlHelper
       type:
@@ -870,6 +943,10 @@ items:
         href: System.Web.Mvc.HtmlHelper.yml
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
   id: System.Web.Mvc.Html.ValidationExtensions.ValidationSummary(System.Web.Mvc.HtmlHelper)
 - uid: System.Web.Mvc.Html.ValidationExtensions.ValidationSummary(System.Web.Mvc.HtmlHelper,System.Boolean)
   href: System.Web.Mvc.Html.ValidationExtensions.yml
@@ -882,7 +959,7 @@ items:
     startLine: 446
   syntax:
     content:
-      CSharp: public static MvcHtmlString ValidationSummary(this HtmlHelper htmlHelper, bool excludePropertyErrors)
+      CSharp: public static MvcHtmlString ValidationSummary(HtmlHelper htmlHelper, bool excludePropertyErrors)
     parameters:
     - id: htmlHelper
       type:
@@ -892,10 +969,14 @@ items:
     - id: excludePropertyErrors
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
   id: System.Web.Mvc.Html.ValidationExtensions.ValidationSummary(System.Web.Mvc.HtmlHelper,System.Boolean)
 - uid: System.Web.Mvc.Html.ValidationExtensions.ValidationSummary(System.Web.Mvc.HtmlHelper,System.String)
   href: System.Web.Mvc.Html.ValidationExtensions.yml
@@ -908,7 +989,7 @@ items:
     startLine: 451
   syntax:
     content:
-      CSharp: public static MvcHtmlString ValidationSummary(this HtmlHelper htmlHelper, string message)
+      CSharp: public static MvcHtmlString ValidationSummary(HtmlHelper htmlHelper, string message)
     parameters:
     - id: htmlHelper
       type:
@@ -918,10 +999,14 @@ items:
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
   id: System.Web.Mvc.Html.ValidationExtensions.ValidationSummary(System.Web.Mvc.HtmlHelper,System.String)
 - uid: System.Web.Mvc.Html.ValidationExtensions.ValidationSummary(System.Web.Mvc.HtmlHelper,System.String,System.String)
   href: System.Web.Mvc.Html.ValidationExtensions.yml
@@ -934,7 +1019,7 @@ items:
     startLine: 456
   syntax:
     content:
-      CSharp: public static MvcHtmlString ValidationSummary(this HtmlHelper htmlHelper, string message, string headingTag)
+      CSharp: public static MvcHtmlString ValidationSummary(HtmlHelper htmlHelper, string message, string headingTag)
     parameters:
     - id: htmlHelper
       type:
@@ -944,15 +1029,19 @@ items:
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: headingTag
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
   id: System.Web.Mvc.Html.ValidationExtensions.ValidationSummary(System.Web.Mvc.HtmlHelper,System.String,System.String)
 - uid: System.Web.Mvc.Html.ValidationExtensions.ValidationSummary(System.Web.Mvc.HtmlHelper,System.Boolean,System.String)
   href: System.Web.Mvc.Html.ValidationExtensions.yml
@@ -965,7 +1054,7 @@ items:
     startLine: 461
   syntax:
     content:
-      CSharp: public static MvcHtmlString ValidationSummary(this HtmlHelper htmlHelper, bool excludePropertyErrors, string message)
+      CSharp: public static MvcHtmlString ValidationSummary(HtmlHelper htmlHelper, bool excludePropertyErrors, string message)
     parameters:
     - id: htmlHelper
       type:
@@ -975,15 +1064,19 @@ items:
     - id: excludePropertyErrors
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
   id: System.Web.Mvc.Html.ValidationExtensions.ValidationSummary(System.Web.Mvc.HtmlHelper,System.Boolean,System.String)
 - uid: System.Web.Mvc.Html.ValidationExtensions.ValidationSummary(System.Web.Mvc.HtmlHelper,System.Boolean,System.String,System.String)
   href: System.Web.Mvc.Html.ValidationExtensions.yml
@@ -996,7 +1089,7 @@ items:
     startLine: 466
   syntax:
     content:
-      CSharp: public static MvcHtmlString ValidationSummary(this HtmlHelper htmlHelper, bool excludePropertyErrors, string message, string headingTag)
+      CSharp: public static MvcHtmlString ValidationSummary(HtmlHelper htmlHelper, bool excludePropertyErrors, string message, string headingTag)
     parameters:
     - id: htmlHelper
       type:
@@ -1006,20 +1099,24 @@ items:
     - id: excludePropertyErrors
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: headingTag
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
   id: System.Web.Mvc.Html.ValidationExtensions.ValidationSummary(System.Web.Mvc.HtmlHelper,System.Boolean,System.String,System.String)
 - uid: System.Web.Mvc.Html.ValidationExtensions.ValidationSummary(System.Web.Mvc.HtmlHelper,System.String,System.Object)
   href: System.Web.Mvc.Html.ValidationExtensions.yml
@@ -1032,7 +1129,7 @@ items:
     startLine: 471
   syntax:
     content:
-      CSharp: public static MvcHtmlString ValidationSummary(this HtmlHelper htmlHelper, string message, object htmlAttributes)
+      CSharp: public static MvcHtmlString ValidationSummary(HtmlHelper htmlHelper, string message, object htmlAttributes)
     parameters:
     - id: htmlHelper
       type:
@@ -1042,15 +1139,19 @@ items:
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: htmlAttributes
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
   id: System.Web.Mvc.Html.ValidationExtensions.ValidationSummary(System.Web.Mvc.HtmlHelper,System.String,System.Object)
 - uid: System.Web.Mvc.Html.ValidationExtensions.ValidationSummary(System.Web.Mvc.HtmlHelper,System.String,System.Object,System.String)
   href: System.Web.Mvc.Html.ValidationExtensions.yml
@@ -1063,7 +1164,7 @@ items:
     startLine: 476
   syntax:
     content:
-      CSharp: public static MvcHtmlString ValidationSummary(this HtmlHelper htmlHelper, string message, object htmlAttributes, string headingTag)
+      CSharp: public static MvcHtmlString ValidationSummary(HtmlHelper htmlHelper, string message, object htmlAttributes, string headingTag)
     parameters:
     - id: htmlHelper
       type:
@@ -1073,20 +1174,24 @@ items:
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: htmlAttributes
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     - id: headingTag
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
   id: System.Web.Mvc.Html.ValidationExtensions.ValidationSummary(System.Web.Mvc.HtmlHelper,System.String,System.Object,System.String)
 - uid: System.Web.Mvc.Html.ValidationExtensions.ValidationSummary(System.Web.Mvc.HtmlHelper,System.Boolean,System.String,System.Object)
   href: System.Web.Mvc.Html.ValidationExtensions.yml
@@ -1099,7 +1204,7 @@ items:
     startLine: 481
   syntax:
     content:
-      CSharp: public static MvcHtmlString ValidationSummary(this HtmlHelper htmlHelper, bool excludePropertyErrors, string message, object htmlAttributes)
+      CSharp: public static MvcHtmlString ValidationSummary(HtmlHelper htmlHelper, bool excludePropertyErrors, string message, object htmlAttributes)
     parameters:
     - id: htmlHelper
       type:
@@ -1109,20 +1214,24 @@ items:
     - id: excludePropertyErrors
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: htmlAttributes
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
   id: System.Web.Mvc.Html.ValidationExtensions.ValidationSummary(System.Web.Mvc.HtmlHelper,System.Boolean,System.String,System.Object)
 - uid: System.Web.Mvc.Html.ValidationExtensions.ValidationSummary(System.Web.Mvc.HtmlHelper,System.Boolean,System.String,System.Object,System.String)
   href: System.Web.Mvc.Html.ValidationExtensions.yml
@@ -1135,7 +1244,7 @@ items:
     startLine: 486
   syntax:
     content:
-      CSharp: public static MvcHtmlString ValidationSummary(this HtmlHelper htmlHelper, bool excludePropertyErrors, string message, object htmlAttributes, string headingTag)
+      CSharp: public static MvcHtmlString ValidationSummary(HtmlHelper htmlHelper, bool excludePropertyErrors, string message, object htmlAttributes, string headingTag)
     parameters:
     - id: htmlHelper
       type:
@@ -1145,25 +1254,29 @@ items:
     - id: excludePropertyErrors
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: htmlAttributes
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     - id: headingTag
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
   id: System.Web.Mvc.Html.ValidationExtensions.ValidationSummary(System.Web.Mvc.HtmlHelper,System.Boolean,System.String,System.Object,System.String)
 - uid: System.Web.Mvc.Html.ValidationExtensions.ValidationSummary(System.Web.Mvc.HtmlHelper,System.String,System.Collections.Generic.IDictionary{System.String,System.Object})
   href: System.Web.Mvc.Html.ValidationExtensions.yml
@@ -1176,7 +1289,7 @@ items:
     startLine: 491
   syntax:
     content:
-      CSharp: public static MvcHtmlString ValidationSummary(this HtmlHelper htmlHelper, string message, IDictionary<string, object> htmlAttributes)
+      CSharp: public static MvcHtmlString ValidationSummary(HtmlHelper htmlHelper, string message, IDictionary<string, object> htmlAttributes)
     parameters:
     - id: htmlHelper
       type:
@@ -1186,15 +1299,19 @@ items:
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: htmlAttributes
       type:
         id: System.Collections.Generic.IDictionary{System.String,System.Object}
-        name: System.Collections.Generic.IDictionary{System.String,System.Object}
+        name: IDictionary<string, object>
         isExternal: true
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
   id: System.Web.Mvc.Html.ValidationExtensions.ValidationSummary(System.Web.Mvc.HtmlHelper,System.String,System.Collections.Generic.IDictionary{System.String,System.Object})
 - uid: System.Web.Mvc.Html.ValidationExtensions.ValidationSummary(System.Web.Mvc.HtmlHelper,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.String)
   href: System.Web.Mvc.Html.ValidationExtensions.yml
@@ -1207,7 +1324,7 @@ items:
     startLine: 496
   syntax:
     content:
-      CSharp: public static MvcHtmlString ValidationSummary(this HtmlHelper htmlHelper, string message, IDictionary<string, object> htmlAttributes, string headingTag)
+      CSharp: public static MvcHtmlString ValidationSummary(HtmlHelper htmlHelper, string message, IDictionary<string, object> htmlAttributes, string headingTag)
     parameters:
     - id: htmlHelper
       type:
@@ -1217,20 +1334,24 @@ items:
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: htmlAttributes
       type:
         id: System.Collections.Generic.IDictionary{System.String,System.Object}
-        name: System.Collections.Generic.IDictionary{System.String,System.Object}
+        name: IDictionary<string, object>
         isExternal: true
     - id: headingTag
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
   id: System.Web.Mvc.Html.ValidationExtensions.ValidationSummary(System.Web.Mvc.HtmlHelper,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.String)
 - uid: System.Web.Mvc.Html.ValidationExtensions.ValidationSummary(System.Web.Mvc.HtmlHelper,System.Boolean,System.String,System.Collections.Generic.IDictionary{System.String,System.Object})
   href: System.Web.Mvc.Html.ValidationExtensions.yml
@@ -1243,7 +1364,7 @@ items:
     startLine: 501
   syntax:
     content:
-      CSharp: public static MvcHtmlString ValidationSummary(this HtmlHelper htmlHelper, bool excludePropertyErrors, string message, IDictionary<string, object> htmlAttributes)
+      CSharp: public static MvcHtmlString ValidationSummary(HtmlHelper htmlHelper, bool excludePropertyErrors, string message, IDictionary<string, object> htmlAttributes)
     parameters:
     - id: htmlHelper
       type:
@@ -1253,20 +1374,24 @@ items:
     - id: excludePropertyErrors
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: htmlAttributes
       type:
         id: System.Collections.Generic.IDictionary{System.String,System.Object}
-        name: System.Collections.Generic.IDictionary{System.String,System.Object}
+        name: IDictionary<string, object>
         isExternal: true
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
   id: System.Web.Mvc.Html.ValidationExtensions.ValidationSummary(System.Web.Mvc.HtmlHelper,System.Boolean,System.String,System.Collections.Generic.IDictionary{System.String,System.Object})
 - uid: System.Web.Mvc.Html.ValidationExtensions.ValidationSummary(System.Web.Mvc.HtmlHelper,System.Boolean,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.String)
   href: System.Web.Mvc.Html.ValidationExtensions.yml
@@ -1279,7 +1404,7 @@ items:
     startLine: 506
   syntax:
     content:
-      CSharp: public static MvcHtmlString ValidationSummary(this HtmlHelper htmlHelper, bool excludePropertyErrors, string message, IDictionary<string, object> htmlAttributes, string headingTag)
+      CSharp: public static MvcHtmlString ValidationSummary(HtmlHelper htmlHelper, bool excludePropertyErrors, string message, IDictionary<string, object> htmlAttributes, string headingTag)
     parameters:
     - id: htmlHelper
       type:
@@ -1289,23 +1414,27 @@ items:
     - id: excludePropertyErrors
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: htmlAttributes
       type:
         id: System.Collections.Generic.IDictionary{System.String,System.Object}
-        name: System.Collections.Generic.IDictionary{System.String,System.Object}
+        name: IDictionary<string, object>
         isExternal: true
     - id: headingTag
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
   id: System.Web.Mvc.Html.ValidationExtensions.ValidationSummary(System.Web.Mvc.HtmlHelper,System.Boolean,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.String)

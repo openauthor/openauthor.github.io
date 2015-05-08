@@ -1,0 +1,98 @@
+items:
+- uid: System.Linq.Expressions.IDynamicExpression
+  href: System.Linq.Expressions.IDynamicExpression.yml
+  name: IDynamicExpression
+  fullName: System.Linq.Expressions.IDynamicExpression
+  type: Interface
+  source:
+    remote: &o0
+      path: src/System.Linq.Expressions/src/System/Linq/Expressions/IDynamicExpression.cs
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
+    path: src/System.Linq.Expressions/src/System/Linq/Expressions/IDynamicExpression.cs
+    startLine: 5
+  syntax:
+    content:
+      CSharp: 'public interface IDynamicExpression : IArgumentProvider'
+  id: System.Linq.Expressions.IDynamicExpression
+  children:
+  - System.Linq.Expressions.IDynamicExpression.DelegateType
+  - System.Linq.Expressions.IDynamicExpression.Rewrite(System.Linq.Expressions.Expression[])
+  - System.Linq.Expressions.IDynamicExpression.CreateCallSite
+- uid: System.Linq.Expressions.IDynamicExpression.DelegateType
+  href: System.Linq.Expressions.IDynamicExpression.yml
+  name: DelegateType
+  fullName: System.Linq.Expressions.IDynamicExpression.DelegateType
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Linq.Expressions/src/System/Linq/Expressions/IDynamicExpression.cs
+    startLine: 10
+  summary: Gets the type of the delegate used by the CallSite />.
+  syntax:
+    content:
+      CSharp: Type DelegateType { get; }
+    parameters:
+    - id: DelegateType
+      type:
+        id: System.Type
+        name: Type
+        isExternal: true
+  id: System.Linq.Expressions.IDynamicExpression.DelegateType
+- uid: System.Linq.Expressions.IDynamicExpression.Rewrite(System.Linq.Expressions.Expression[])
+  href: System.Linq.Expressions.IDynamicExpression.yml
+  name: Rewrite(Expression[])
+  fullName: System.Linq.Expressions.IDynamicExpression.Rewrite(System.Linq.Expressions.Expression[])
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Linq.Expressions/src/System/Linq/Expressions/IDynamicExpression.cs
+    startLine: 19
+  summary: >-
+    Rewrite this node replacing the args with the provided values.  The
+
+    number of the args needs to match the number of the current block.
+
+
+
+    This helper is provided to allow re-writing of nodes to not depend on the specific
+
+    class of DynamicExpression which is being used.
+  syntax:
+    content:
+      CSharp: public Expression Rewrite(Expression[] args)
+    parameters:
+    - id: args
+      type:
+        id: System.Array
+        name: Expression[]
+        isExternal: true
+    return:
+      id: Expression
+      type:
+        id: System.Linq.Expressions.Expression
+        name: Expression
+        href: System.Linq.Expressions.Expression.yml
+  id: System.Linq.Expressions.IDynamicExpression.Rewrite(System.Linq.Expressions.Expression[])
+- uid: System.Linq.Expressions.IDynamicExpression.CreateCallSite
+  href: System.Linq.Expressions.IDynamicExpression.yml
+  name: CreateCallSite()
+  fullName: System.Linq.Expressions.IDynamicExpression.CreateCallSite()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Linq.Expressions/src/System/Linq/Expressions/IDynamicExpression.cs
+    startLine: 24
+  summary: Creates a CallSite for the node.
+  syntax:
+    content:
+      CSharp: public object CreateCallSite()
+    parameters: []
+    return:
+      id: Object
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+  id: System.Linq.Expressions.IDynamicExpression.CreateCallSite

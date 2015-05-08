@@ -6,20 +6,21 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/AuthorizeAttribute.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/AuthorizeAttribute.cs
     startLine: 9
   syntax:
     content:
-      CSharp: public class AuthorizeAttribute
+      CSharp: 'public class AuthorizeAttribute : FilterAttribute, _Attribute, IMvcFilter, IAuthorizationFilter'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Attribute
-    name: System.Attribute
+    name: Attribute
     isExternal: true
   - id: System.Web.Mvc.FilterAttribute
     name: FilterAttribute
@@ -29,7 +30,10 @@ items:
   - System.Web.Mvc.AuthorizeAttribute.Roles
   - System.Web.Mvc.AuthorizeAttribute.TypeId
   - System.Web.Mvc.AuthorizeAttribute.Users
+  - System.Web.Mvc.AuthorizeAttribute.AuthorizeCore(System.Web.HttpContextBase)
   - System.Web.Mvc.AuthorizeAttribute.OnAuthorization(System.Web.Mvc.AuthorizationContext)
+  - System.Web.Mvc.AuthorizeAttribute.HandleUnauthorizedRequest(System.Web.Mvc.AuthorizationContext)
+  - System.Web.Mvc.AuthorizeAttribute.OnCacheAuthorization(System.Web.HttpContextBase)
 - uid: System.Web.Mvc.AuthorizeAttribute.Roles
   href: System.Web.Mvc.AuthorizeAttribute.yml
   name: Roles
@@ -46,7 +50,7 @@ items:
     - id: Roles
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.AuthorizeAttribute.Roles
 - uid: System.Web.Mvc.AuthorizeAttribute.TypeId
@@ -65,7 +69,7 @@ items:
     - id: TypeId
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.Web.Mvc.AuthorizeAttribute.TypeId
 - uid: System.Web.Mvc.AuthorizeAttribute.Users
@@ -84,9 +88,34 @@ items:
     - id: Users
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.AuthorizeAttribute.Users
+- uid: System.Web.Mvc.AuthorizeAttribute.AuthorizeCore(System.Web.HttpContextBase)
+  href: System.Web.Mvc.AuthorizeAttribute.yml
+  name: AuthorizeCore(HttpContextBase)
+  fullName: System.Web.Mvc.AuthorizeAttribute.AuthorizeCore(System.Web.HttpContextBase)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/AuthorizeAttribute.cs
+    startLine: 47
+  syntax:
+    content:
+      CSharp: protected virtual bool AuthorizeCore(HttpContextBase httpContext)
+    parameters:
+    - id: httpContext
+      type:
+        id: System.Web.HttpContextBase
+        name: HttpContextBase
+        isExternal: true
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Web.Mvc.AuthorizeAttribute.AuthorizeCore(System.Web.HttpContextBase)
 - uid: System.Web.Mvc.AuthorizeAttribute.OnAuthorization(System.Web.Mvc.AuthorizationContext)
   href: System.Web.Mvc.AuthorizeAttribute.yml
   name: OnAuthorization(AuthorizationContext)
@@ -106,3 +135,47 @@ items:
         name: AuthorizationContext
         href: System.Web.Mvc.AuthorizationContext.yml
   id: System.Web.Mvc.AuthorizeAttribute.OnAuthorization(System.Web.Mvc.AuthorizationContext)
+- uid: System.Web.Mvc.AuthorizeAttribute.HandleUnauthorizedRequest(System.Web.Mvc.AuthorizationContext)
+  href: System.Web.Mvc.AuthorizeAttribute.yml
+  name: HandleUnauthorizedRequest(AuthorizationContext)
+  fullName: System.Web.Mvc.AuthorizeAttribute.HandleUnauthorizedRequest(System.Web.Mvc.AuthorizationContext)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/AuthorizeAttribute.cs
+    startLine: 122
+  syntax:
+    content:
+      CSharp: protected virtual void HandleUnauthorizedRequest(AuthorizationContext filterContext)
+    parameters:
+    - id: filterContext
+      type:
+        id: System.Web.Mvc.AuthorizationContext
+        name: AuthorizationContext
+        href: System.Web.Mvc.AuthorizationContext.yml
+  id: System.Web.Mvc.AuthorizeAttribute.HandleUnauthorizedRequest(System.Web.Mvc.AuthorizationContext)
+- uid: System.Web.Mvc.AuthorizeAttribute.OnCacheAuthorization(System.Web.HttpContextBase)
+  href: System.Web.Mvc.AuthorizeAttribute.yml
+  name: OnCacheAuthorization(HttpContextBase)
+  fullName: System.Web.Mvc.AuthorizeAttribute.OnCacheAuthorization(System.Web.HttpContextBase)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/AuthorizeAttribute.cs
+    startLine: 129
+  syntax:
+    content:
+      CSharp: protected virtual HttpValidationStatus OnCacheAuthorization(HttpContextBase httpContext)
+    parameters:
+    - id: httpContext
+      type:
+        id: System.Web.HttpContextBase
+        name: HttpContextBase
+        isExternal: true
+    return:
+      id: HttpValidationStatus
+      type:
+        id: System.Web.HttpValidationStatus
+        name: HttpValidationStatus
+        isExternal: true
+  id: System.Web.Mvc.AuthorizeAttribute.OnCacheAuthorization(System.Web.HttpContextBase)

@@ -6,9 +6,10 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/CodeRefactorings/CodeRefactoringContext.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/CodeRefactorings/CodeRefactoringContext.cs
     startLine: 12
   summary: Context for code refactorings provided by an [Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider](Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider.yml).
@@ -17,10 +18,10 @@ items:
       CSharp: public struct CodeRefactoringContext
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext
   children:
@@ -86,7 +87,7 @@ items:
     - id: CancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
   id: Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext.CancellationToken
 - uid: Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext.#ctor(Microsoft.CodeAnalysis.Document,Microsoft.CodeAnalysis.Text.TextSpan,System.Action{Microsoft.CodeAnalysis.CodeActions.CodeAction},System.Threading.CancellationToken)
@@ -116,12 +117,12 @@ items:
     - id: registerRefactoring
       type:
         id: System.Action{Microsoft.CodeAnalysis.CodeActions.CodeAction}
-        name: System.Action{Microsoft.CodeAnalysis.CodeActions.CodeAction}
+        name: Action<CodeAction>
         isExternal: true
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
   id: Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext.#ctor(Microsoft.CodeAnalysis.Document,Microsoft.CodeAnalysis.Text.TextSpan,System.Action{Microsoft.CodeAnalysis.CodeActions.CodeAction},System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext.RegisterRefactoring(Microsoft.CodeAnalysis.CodeActions.CodeAction)

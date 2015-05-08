@@ -6,18 +6,19 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Common/Routing/Constraints/RangeRouteConstraintBase.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/Common/Routing/Constraints/RangeRouteConstraintBase.cs
     startLine: 22
   summary: Constraints a route parameter to be an integer within a given range of values.
   syntax:
     content:
-      CSharp: 'public class RangeRouteConstraint #endif'
+      CSharp: 'public class RangeRouteConstraint : IRouteConstraint'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.Routing.Constraints.RangeRouteConstraint
   children:
@@ -41,12 +42,12 @@ items:
     - id: min
       type:
         id: System.Int64
-        name: System.Int64
+        name: long
         isExternal: true
     - id: max
       type:
         id: System.Int64
-        name: System.Int64
+        name: long
         isExternal: true
   id: System.Web.Mvc.Routing.Constraints.RangeRouteConstraint.#ctor(System.Int64,System.Int64)
 - uid: System.Web.Mvc.Routing.Constraints.RangeRouteConstraint.Min
@@ -61,12 +62,12 @@ items:
   summary: Gets the minimum value of the route parameter.
   syntax:
     content:
-      CSharp: public long Min { get; private set; }
+      CSharp: public long Min { get; }
     parameters:
     - id: Min
       type:
         id: System.Int64
-        name: System.Int64
+        name: long
         isExternal: true
   id: System.Web.Mvc.Routing.Constraints.RangeRouteConstraint.Min
 - uid: System.Web.Mvc.Routing.Constraints.RangeRouteConstraint.Max
@@ -81,12 +82,12 @@ items:
   summary: Gets the maximum value of the route parameter.
   syntax:
     content:
-      CSharp: public long Max { get; private set; }
+      CSharp: public long Max { get; }
     parameters:
     - id: Max
       type:
         id: System.Int64
-        name: System.Int64
+        name: long
         isExternal: true
   id: System.Web.Mvc.Routing.Constraints.RangeRouteConstraint.Max
 - uid: System.Web.Mvc.Routing.Constraints.RangeRouteConstraint.Match(System.Web.HttpContextBase,System.Web.Routing.Route,System.String,System.Web.Routing.RouteValueDictionary,System.Web.Routing.RouteDirection)
@@ -105,28 +106,32 @@ items:
     - id: httpContext
       type:
         id: System.Web.HttpContextBase
-        name: System.Web.HttpContextBase
+        name: HttpContextBase
         isExternal: true
     - id: route
       type:
         id: System.Web.Routing.Route
-        name: System.Web.Routing.Route
+        name: Route
         isExternal: true
     - id: parameterName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: values
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
     - id: routeDirection
       type:
         id: System.Web.Routing.RouteDirection
-        name: System.Web.Routing.RouteDirection
+        name: RouteDirection
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Web.Mvc.Routing.Constraints.RangeRouteConstraint.Match(System.Web.HttpContextBase,System.Web.Routing.Route,System.String,System.Web.Routing.RouteValueDictionary,System.Web.Routing.RouteDirection)

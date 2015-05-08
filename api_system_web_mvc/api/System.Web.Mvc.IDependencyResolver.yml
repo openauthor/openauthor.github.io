@@ -6,9 +6,10 @@ items:
   type: Interface
   source:
     remote: &o0
+      path: src/System.Web.Mvc/IDependencyResolver.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/IDependencyResolver.cs
     startLine: 6
   syntax:
@@ -29,15 +30,19 @@ items:
     startLine: 8
   syntax:
     content:
-      CSharp: object GetService(Type serviceType);
+      CSharp: public object GetService(Type serviceType)
     parameters:
     - id: serviceType
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
     return:
       id: Object
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
   id: System.Web.Mvc.IDependencyResolver.GetService(System.Type)
 - uid: System.Web.Mvc.IDependencyResolver.GetServices(System.Type)
   href: System.Web.Mvc.IDependencyResolver.yml
@@ -50,13 +55,17 @@ items:
     startLine: 9
   syntax:
     content:
-      CSharp: IEnumerable<object> GetServices(Type serviceType);
+      CSharp: public IEnumerable<object> GetServices(Type serviceType)
     parameters:
     - id: serviceType
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Object}
+        name: IEnumerable<object>
+        isExternal: true
   id: System.Web.Mvc.IDependencyResolver.GetServices(System.Type)

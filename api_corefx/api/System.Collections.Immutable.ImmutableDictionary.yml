@@ -6,17 +6,19 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableDictionary.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableDictionary.cs
     startLine: 14
   summary: A set of initialization methods for instances of [System.Collections.Immutable.ImmutableDictionary`2](System.Collections.Immutable.ImmutableDictionary`2.yml).
   syntax:
     content:
-      CSharp: public static class ImmutableDictionary
+      CSharp: public class ImmutableDictionary
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Collections.Immutable.ImmutableDictionary
   children:
@@ -52,10 +54,14 @@ items:
   summary: Returns an empty collection.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableDictionary<TKey, TValue> Create<TKey, TValue>()'
+      CSharp: public static ImmutableDictionary<TKey, TValue> Create<TKey, TValue>()
     parameters: []
     return:
       id: ImmutableDictionary
+      type:
+        id: System.Collections.Immutable.ImmutableDictionary{``0,``1}
+        name: ImmutableDictionary<TKey, TValue>
+        href: System.Collections.Immutable.ImmutableDictionary{``0,``1}
       description: The immutable collection.
   id: System.Collections.Immutable.ImmutableDictionary.Create``2
 - uid: System.Collections.Immutable.ImmutableDictionary.Create``2(System.Collections.Generic.IEqualityComparer{``0})
@@ -70,16 +76,20 @@ items:
   summary: Returns an empty collection with the specified key comparer.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableDictionary<TKey, TValue> Create<TKey, TValue>(IEqualityComparer<TKey> keyComparer)'
+      CSharp: public static ImmutableDictionary<TKey, TValue> Create<TKey, TValue>(IEqualityComparer<TKey> keyComparer)
     parameters:
     - id: keyComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{``0}
-        name: System.Collections.Generic.IEqualityComparer{``0}
+        name: IEqualityComparer<TKey>
         isExternal: true
       description: The key comparer.
     return:
       id: ImmutableDictionary
+      type:
+        id: System.Collections.Immutable.ImmutableDictionary{``0,``1}
+        name: ImmutableDictionary<TKey, TValue>
+        href: System.Collections.Immutable.ImmutableDictionary{``0,``1}
       description: The immutable collection.
   id: System.Collections.Immutable.ImmutableDictionary.Create``2(System.Collections.Generic.IEqualityComparer{``0})
 - uid: System.Collections.Immutable.ImmutableDictionary.Create``2(System.Collections.Generic.IEqualityComparer{``0},System.Collections.Generic.IEqualityComparer{``1})
@@ -94,22 +104,26 @@ items:
   summary: Returns an empty collection with the specified comparers.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableDictionary<TKey, TValue> Create<TKey, TValue>(IEqualityComparer<TKey> keyComparer, IEqualityComparer<TValue> valueComparer)'
+      CSharp: public static ImmutableDictionary<TKey, TValue> Create<TKey, TValue>(IEqualityComparer<TKey> keyComparer, IEqualityComparer<TValue> valueComparer)
     parameters:
     - id: keyComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{``0}
-        name: System.Collections.Generic.IEqualityComparer{``0}
+        name: IEqualityComparer<TKey>
         isExternal: true
       description: The key comparer.
     - id: valueComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{``1}
-        name: System.Collections.Generic.IEqualityComparer{``1}
+        name: IEqualityComparer<TValue>
         isExternal: true
       description: The value comparer.
     return:
       id: ImmutableDictionary
+      type:
+        id: System.Collections.Immutable.ImmutableDictionary{``0,``1}
+        name: ImmutableDictionary<TKey, TValue>
+        href: System.Collections.Immutable.ImmutableDictionary{``0,``1}
       description: The immutable collection.
   id: System.Collections.Immutable.ImmutableDictionary.Create``2(System.Collections.Generic.IEqualityComparer{``0},System.Collections.Generic.IEqualityComparer{``1})
 - uid: System.Collections.Immutable.ImmutableDictionary.CreateRange``2(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}})
@@ -124,16 +138,20 @@ items:
   summary: Creates a new immutable collection prefilled with the specified items.
   syntax:
     content:
-      CSharp: '[Pure] [SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures")] public static ImmutableDictionary<TKey, TValue> CreateRange<TKey, TValue>(IEnumerable<KeyValuePair<TKey, TValue>> items)'
+      CSharp: public static ImmutableDictionary<TKey, TValue> CreateRange<TKey, TValue>(IEnumerable<KeyValuePair<TKey, TValue>> items)
     parameters:
     - id: items
       type:
         id: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}}
-        name: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}}
+        name: IEnumerable<KeyValuePair<TKey, TValue>>
         isExternal: true
       description: The items to prepopulate.
     return:
       id: ImmutableDictionary
+      type:
+        id: System.Collections.Immutable.ImmutableDictionary{``0,``1}
+        name: ImmutableDictionary<TKey, TValue>
+        href: System.Collections.Immutable.ImmutableDictionary{``0,``1}
       description: The new immutable collection.
   id: System.Collections.Immutable.ImmutableDictionary.CreateRange``2(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}})
 - uid: System.Collections.Immutable.ImmutableDictionary.CreateRange``2(System.Collections.Generic.IEqualityComparer{``0},System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}})
@@ -148,22 +166,26 @@ items:
   summary: Creates a new immutable collection prefilled with the specified items.
   syntax:
     content:
-      CSharp: '[Pure] [SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures")] public static ImmutableDictionary<TKey, TValue> CreateRange<TKey, TValue>(IEqualityComparer<TKey> keyComparer, IEnumerable<KeyValuePair<TKey, TValue>> items)'
+      CSharp: public static ImmutableDictionary<TKey, TValue> CreateRange<TKey, TValue>(IEqualityComparer<TKey> keyComparer, IEnumerable<KeyValuePair<TKey, TValue>> items)
     parameters:
     - id: keyComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{``0}
-        name: System.Collections.Generic.IEqualityComparer{``0}
+        name: IEqualityComparer<TKey>
         isExternal: true
       description: The key comparer.
     - id: items
       type:
         id: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}}
-        name: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}}
+        name: IEnumerable<KeyValuePair<TKey, TValue>>
         isExternal: true
       description: The items to prepopulate.
     return:
       id: ImmutableDictionary
+      type:
+        id: System.Collections.Immutable.ImmutableDictionary{``0,``1}
+        name: ImmutableDictionary<TKey, TValue>
+        href: System.Collections.Immutable.ImmutableDictionary{``0,``1}
       description: The new immutable collection.
   id: System.Collections.Immutable.ImmutableDictionary.CreateRange``2(System.Collections.Generic.IEqualityComparer{``0},System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}})
 - uid: System.Collections.Immutable.ImmutableDictionary.CreateRange``2(System.Collections.Generic.IEqualityComparer{``0},System.Collections.Generic.IEqualityComparer{``1},System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}})
@@ -178,28 +200,32 @@ items:
   summary: Creates a new immutable collection prefilled with the specified items.
   syntax:
     content:
-      CSharp: '[Pure] [SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures")] public static ImmutableDictionary<TKey, TValue> CreateRange<TKey, TValue>(IEqualityComparer<TKey> keyComparer, IEqualityComparer<TValue> valueComparer, IEnumerable<KeyValuePair<TKey, TValue>> items)'
+      CSharp: public static ImmutableDictionary<TKey, TValue> CreateRange<TKey, TValue>(IEqualityComparer<TKey> keyComparer, IEqualityComparer<TValue> valueComparer, IEnumerable<KeyValuePair<TKey, TValue>> items)
     parameters:
     - id: keyComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{``0}
-        name: System.Collections.Generic.IEqualityComparer{``0}
+        name: IEqualityComparer<TKey>
         isExternal: true
       description: The key comparer.
     - id: valueComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{``1}
-        name: System.Collections.Generic.IEqualityComparer{``1}
+        name: IEqualityComparer<TValue>
         isExternal: true
       description: The value comparer.
     - id: items
       type:
         id: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}}
-        name: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}}
+        name: IEnumerable<KeyValuePair<TKey, TValue>>
         isExternal: true
       description: The items to prepopulate.
     return:
       id: ImmutableDictionary
+      type:
+        id: System.Collections.Immutable.ImmutableDictionary{``0,``1}
+        name: ImmutableDictionary<TKey, TValue>
+        href: System.Collections.Immutable.ImmutableDictionary{``0,``1}
       description: The new immutable collection.
   id: System.Collections.Immutable.ImmutableDictionary.CreateRange``2(System.Collections.Generic.IEqualityComparer{``0},System.Collections.Generic.IEqualityComparer{``1},System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}})
 - uid: System.Collections.Immutable.ImmutableDictionary.CreateBuilder``2
@@ -214,10 +240,14 @@ items:
   summary: Creates a new immutable dictionary builder.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableDictionary<TKey, TValue>.Builder CreateBuilder<TKey, TValue>()'
+      CSharp: public static Builder CreateBuilder<TKey, TValue>()
     parameters: []
     return:
       id: Builder
+      type:
+        id: System.Collections.Immutable.ImmutableDictionary{``0,``1}.Builder
+        name: Builder
+        href: System.Collections.Immutable.ImmutableDictionary{``0,``1}.Builder
       description: The new builder.
   id: System.Collections.Immutable.ImmutableDictionary.CreateBuilder``2
 - uid: System.Collections.Immutable.ImmutableDictionary.CreateBuilder``2(System.Collections.Generic.IEqualityComparer{``0})
@@ -232,16 +262,20 @@ items:
   summary: Creates a new immutable dictionary builder.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableDictionary<TKey, TValue>.Builder CreateBuilder<TKey, TValue>(IEqualityComparer<TKey> keyComparer)'
+      CSharp: public static Builder CreateBuilder<TKey, TValue>(IEqualityComparer<TKey> keyComparer)
     parameters:
     - id: keyComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{``0}
-        name: System.Collections.Generic.IEqualityComparer{``0}
+        name: IEqualityComparer<TKey>
         isExternal: true
       description: The key comparer.
     return:
       id: Builder
+      type:
+        id: System.Collections.Immutable.ImmutableDictionary{``0,``1}.Builder
+        name: Builder
+        href: System.Collections.Immutable.ImmutableDictionary{``0,``1}.Builder
       description: The new builder.
   id: System.Collections.Immutable.ImmutableDictionary.CreateBuilder``2(System.Collections.Generic.IEqualityComparer{``0})
 - uid: System.Collections.Immutable.ImmutableDictionary.CreateBuilder``2(System.Collections.Generic.IEqualityComparer{``0},System.Collections.Generic.IEqualityComparer{``1})
@@ -256,22 +290,26 @@ items:
   summary: Creates a new immutable dictionary builder.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableDictionary<TKey, TValue>.Builder CreateBuilder<TKey, TValue>(IEqualityComparer<TKey> keyComparer, IEqualityComparer<TValue> valueComparer)'
+      CSharp: public static Builder CreateBuilder<TKey, TValue>(IEqualityComparer<TKey> keyComparer, IEqualityComparer<TValue> valueComparer)
     parameters:
     - id: keyComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{``0}
-        name: System.Collections.Generic.IEqualityComparer{``0}
+        name: IEqualityComparer<TKey>
         isExternal: true
       description: The key comparer.
     - id: valueComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{``1}
-        name: System.Collections.Generic.IEqualityComparer{``1}
+        name: IEqualityComparer<TValue>
         isExternal: true
       description: The value comparer.
     return:
       id: Builder
+      type:
+        id: System.Collections.Immutable.ImmutableDictionary{``0,``1}.Builder
+        name: Builder
+        href: System.Collections.Immutable.ImmutableDictionary{``0,``1}.Builder
       description: The new builder.
   id: System.Collections.Immutable.ImmutableDictionary.CreateBuilder``2(System.Collections.Generic.IEqualityComparer{``0},System.Collections.Generic.IEqualityComparer{``1})
 - uid: System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2},System.Collections.Generic.IEqualityComparer{``1},System.Collections.Generic.IEqualityComparer{``2})
@@ -286,40 +324,44 @@ items:
   summary: Constructs an immutable dictionary based on some transformation of a sequence.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableDictionary<TKey, TValue> ToImmutableDictionary<TSource, TKey, TValue>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TValue> elementSelector, IEqualityComparer<TKey> keyComparer, IEqualityComparer<TValue> valueComparer)'
+      CSharp: public static ImmutableDictionary<TKey, TValue> ToImmutableDictionary<TSource, TKey, TValue>(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TValue> elementSelector, IEqualityComparer<TKey> keyComparer, IEqualityComparer<TValue> valueComparer)
     parameters:
     - id: source
       type:
         id: System.Collections.Generic.IEnumerable{``0}
-        name: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<TSource>
         isExternal: true
       description: The sequence to enumerate to generate the map.
     - id: keySelector
       type:
         id: System.Func{``0,``1}
-        name: System.Func{``0,``1}
+        name: Func<TSource, TKey>
         isExternal: true
       description: The function that will produce the key for the map from each sequence element.
     - id: elementSelector
       type:
         id: System.Func{``0,``2}
-        name: System.Func{``0,``2}
+        name: Func<TSource, TValue>
         isExternal: true
       description: The function that will produce the value for the map from each sequence element.
     - id: keyComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{``1}
-        name: System.Collections.Generic.IEqualityComparer{``1}
+        name: IEqualityComparer<TKey>
         isExternal: true
       description: The key comparer to use for the map.
     - id: valueComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{``2}
-        name: System.Collections.Generic.IEqualityComparer{``2}
+        name: IEqualityComparer<TValue>
         isExternal: true
       description: The value comparer to use for the map.
     return:
       id: ImmutableDictionary
+      type:
+        id: System.Collections.Immutable.ImmutableDictionary{``1,``2}
+        name: ImmutableDictionary<TKey, TValue>
+        href: System.Collections.Immutable.ImmutableDictionary{``1,``2}
       description: The immutable map.
   id: System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2},System.Collections.Generic.IEqualityComparer{``1},System.Collections.Generic.IEqualityComparer{``2})
 - uid: System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2},System.Collections.Generic.IEqualityComparer{``1})
@@ -334,34 +376,38 @@ items:
   summary: Constructs an immutable dictionary based on some transformation of a sequence.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableDictionary<TKey, TValue> ToImmutableDictionary<TSource, TKey, TValue>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TValue> elementSelector, IEqualityComparer<TKey> keyComparer)'
+      CSharp: public static ImmutableDictionary<TKey, TValue> ToImmutableDictionary<TSource, TKey, TValue>(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TValue> elementSelector, IEqualityComparer<TKey> keyComparer)
     parameters:
     - id: source
       type:
         id: System.Collections.Generic.IEnumerable{``0}
-        name: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<TSource>
         isExternal: true
       description: The sequence to enumerate to generate the map.
     - id: keySelector
       type:
         id: System.Func{``0,``1}
-        name: System.Func{``0,``1}
+        name: Func<TSource, TKey>
         isExternal: true
       description: The function that will produce the key for the map from each sequence element.
     - id: elementSelector
       type:
         id: System.Func{``0,``2}
-        name: System.Func{``0,``2}
+        name: Func<TSource, TValue>
         isExternal: true
       description: The function that will produce the value for the map from each sequence element.
     - id: keyComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{``1}
-        name: System.Collections.Generic.IEqualityComparer{``1}
+        name: IEqualityComparer<TKey>
         isExternal: true
       description: The key comparer to use for the map.
     return:
       id: ImmutableDictionary
+      type:
+        id: System.Collections.Immutable.ImmutableDictionary{``1,``2}
+        name: ImmutableDictionary<TKey, TValue>
+        href: System.Collections.Immutable.ImmutableDictionary{``1,``2}
       description: The immutable map.
   id: System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2},System.Collections.Generic.IEqualityComparer{``1})
 - uid: System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})
@@ -376,22 +422,26 @@ items:
   summary: Constructs an immutable dictionary based on some transformation of a sequence.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableDictionary<TKey, TSource> ToImmutableDictionary<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector)'
+      CSharp: public static ImmutableDictionary<TKey, TSource> ToImmutableDictionary<TSource, TKey>(IEnumerable<TSource> source, Func<TSource, TKey> keySelector)
     parameters:
     - id: source
       type:
         id: System.Collections.Generic.IEnumerable{``0}
-        name: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<TSource>
         isExternal: true
       description: The sequence to enumerate to generate the map.
     - id: keySelector
       type:
         id: System.Func{``0,``1}
-        name: System.Func{``0,``1}
+        name: Func<TSource, TKey>
         isExternal: true
       description: The function that will produce the key for the map from each sequence element.
     return:
       id: ImmutableDictionary
+      type:
+        id: System.Collections.Immutable.ImmutableDictionary{``1,``0}
+        name: ImmutableDictionary<TKey, TSource>
+        href: System.Collections.Immutable.ImmutableDictionary{``1,``0}
       description: The immutable map.
   id: System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})
 - uid: System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Collections.Generic.IEqualityComparer{``1})
@@ -406,28 +456,32 @@ items:
   summary: Constructs an immutable dictionary based on some transformation of a sequence.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableDictionary<TKey, TSource> ToImmutableDictionary<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, IEqualityComparer<TKey> keyComparer)'
+      CSharp: public static ImmutableDictionary<TKey, TSource> ToImmutableDictionary<TSource, TKey>(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, IEqualityComparer<TKey> keyComparer)
     parameters:
     - id: source
       type:
         id: System.Collections.Generic.IEnumerable{``0}
-        name: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<TSource>
         isExternal: true
       description: The sequence to enumerate to generate the map.
     - id: keySelector
       type:
         id: System.Func{``0,``1}
-        name: System.Func{``0,``1}
+        name: Func<TSource, TKey>
         isExternal: true
       description: The function that will produce the key for the map from each sequence element.
     - id: keyComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{``1}
-        name: System.Collections.Generic.IEqualityComparer{``1}
+        name: IEqualityComparer<TKey>
         isExternal: true
       description: The key comparer to use for the map.
     return:
       id: ImmutableDictionary
+      type:
+        id: System.Collections.Immutable.ImmutableDictionary{``1,``0}
+        name: ImmutableDictionary<TKey, TSource>
+        href: System.Collections.Immutable.ImmutableDictionary{``1,``0}
       description: The immutable map.
   id: System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Collections.Generic.IEqualityComparer{``1})
 - uid: System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2})
@@ -442,28 +496,32 @@ items:
   summary: Constructs an immutable dictionary based on some transformation of a sequence.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableDictionary<TKey, TValue> ToImmutableDictionary<TSource, TKey, TValue>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TValue> elementSelector)'
+      CSharp: public static ImmutableDictionary<TKey, TValue> ToImmutableDictionary<TSource, TKey, TValue>(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TValue> elementSelector)
     parameters:
     - id: source
       type:
         id: System.Collections.Generic.IEnumerable{``0}
-        name: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<TSource>
         isExternal: true
       description: The sequence to enumerate to generate the map.
     - id: keySelector
       type:
         id: System.Func{``0,``1}
-        name: System.Func{``0,``1}
+        name: Func<TSource, TKey>
         isExternal: true
       description: The function that will produce the key for the map from each sequence element.
     - id: elementSelector
       type:
         id: System.Func{``0,``2}
-        name: System.Func{``0,``2}
+        name: Func<TSource, TValue>
         isExternal: true
       description: The function that will produce the value for the map from each sequence element.
     return:
       id: ImmutableDictionary
+      type:
+        id: System.Collections.Immutable.ImmutableDictionary{``1,``2}
+        name: ImmutableDictionary<TKey, TValue>
+        href: System.Collections.Immutable.ImmutableDictionary{``1,``2}
       description: The immutable map.
   id: System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2})
 - uid: System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary``2(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}},System.Collections.Generic.IEqualityComparer{``0},System.Collections.Generic.IEqualityComparer{``1})
@@ -478,28 +536,32 @@ items:
   summary: Creates an immutable dictionary given a sequence of key=value pairs.
   syntax:
     content:
-      CSharp: '[Pure] [SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures")] public static ImmutableDictionary<TKey, TValue> ToImmutableDictionary<TKey, TValue>(this IEnumerable<KeyValuePair<TKey, TValue>> source, IEqualityComparer<TKey> keyComparer, IEqualityComparer<TValue> valueComparer)'
+      CSharp: public static ImmutableDictionary<TKey, TValue> ToImmutableDictionary<TKey, TValue>(IEnumerable<KeyValuePair<TKey, TValue>> source, IEqualityComparer<TKey> keyComparer, IEqualityComparer<TValue> valueComparer)
     parameters:
     - id: source
       type:
         id: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}}
-        name: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}}
+        name: IEnumerable<KeyValuePair<TKey, TValue>>
         isExternal: true
       description: The sequence of key=value pairs.
     - id: keyComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{``0}
-        name: System.Collections.Generic.IEqualityComparer{``0}
+        name: IEqualityComparer<TKey>
         isExternal: true
       description: The key comparer to use when building the immutable map.
     - id: valueComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{``1}
-        name: System.Collections.Generic.IEqualityComparer{``1}
+        name: IEqualityComparer<TValue>
         isExternal: true
       description: The value comparer to use for the immutable map.
     return:
       id: ImmutableDictionary
+      type:
+        id: System.Collections.Immutable.ImmutableDictionary{``0,``1}
+        name: ImmutableDictionary<TKey, TValue>
+        href: System.Collections.Immutable.ImmutableDictionary{``0,``1}
       description: An immutable map.
   id: System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary``2(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}},System.Collections.Generic.IEqualityComparer{``0},System.Collections.Generic.IEqualityComparer{``1})
 - uid: System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary``2(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}},System.Collections.Generic.IEqualityComparer{``0})
@@ -514,22 +576,26 @@ items:
   summary: Creates an immutable dictionary given a sequence of key=value pairs.
   syntax:
     content:
-      CSharp: '[Pure] [SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures")] public static ImmutableDictionary<TKey, TValue> ToImmutableDictionary<TKey, TValue>(this IEnumerable<KeyValuePair<TKey, TValue>> source, IEqualityComparer<TKey> keyComparer)'
+      CSharp: public static ImmutableDictionary<TKey, TValue> ToImmutableDictionary<TKey, TValue>(IEnumerable<KeyValuePair<TKey, TValue>> source, IEqualityComparer<TKey> keyComparer)
     parameters:
     - id: source
       type:
         id: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}}
-        name: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}}
+        name: IEnumerable<KeyValuePair<TKey, TValue>>
         isExternal: true
       description: The sequence of key=value pairs.
     - id: keyComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{``0}
-        name: System.Collections.Generic.IEqualityComparer{``0}
+        name: IEqualityComparer<TKey>
         isExternal: true
       description: The key comparer to use when building the immutable map.
     return:
       id: ImmutableDictionary
+      type:
+        id: System.Collections.Immutable.ImmutableDictionary{``0,``1}
+        name: ImmutableDictionary<TKey, TValue>
+        href: System.Collections.Immutable.ImmutableDictionary{``0,``1}
       description: An immutable map.
   id: System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary``2(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}},System.Collections.Generic.IEqualityComparer{``0})
 - uid: System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary``2(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}})
@@ -544,16 +610,20 @@ items:
   summary: Creates an immutable dictionary given a sequence of key=value pairs.
   syntax:
     content:
-      CSharp: '[Pure] [SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures")] public static ImmutableDictionary<TKey, TValue> ToImmutableDictionary<TKey, TValue>(this IEnumerable<KeyValuePair<TKey, TValue>> source)'
+      CSharp: public static ImmutableDictionary<TKey, TValue> ToImmutableDictionary<TKey, TValue>(IEnumerable<KeyValuePair<TKey, TValue>> source)
     parameters:
     - id: source
       type:
         id: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}}
-        name: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}}
+        name: IEnumerable<KeyValuePair<TKey, TValue>>
         isExternal: true
       description: The sequence of key=value pairs.
     return:
       id: ImmutableDictionary
+      type:
+        id: System.Collections.Immutable.ImmutableDictionary{``0,``1}
+        name: ImmutableDictionary<TKey, TValue>
+        href: System.Collections.Immutable.ImmutableDictionary{``0,``1}
       description: An immutable map.
   id: System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary``2(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}})
 - uid: System.Collections.Immutable.ImmutableDictionary.Contains``2(System.Collections.Immutable.IImmutableDictionary{``0,``1},``0,``1)
@@ -568,12 +638,12 @@ items:
   summary: Determines whether this map contains the specified key-value pair.
   syntax:
     content:
-      CSharp: '[Pure] public static bool Contains<TKey, TValue>(this IImmutableDictionary<TKey, TValue> map, TKey key, TValue value)'
+      CSharp: public static bool Contains<TKey, TValue>(IImmutableDictionary<TKey, TValue> map, TKey key, TValue value)
     parameters:
     - id: map
       type:
         id: System.Collections.Immutable.IImmutableDictionary{``0,``1}
-        name: IImmutableDictionary
+        name: IImmutableDictionary<TKey, TValue>
         href: System.Collections.Immutable.IImmutableDictionary{``0,``1}
       description: The map to search.
     - id: key
@@ -590,6 +660,10 @@ items:
       description: The value to check for on a matching key, if found.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: true if this map contains the key-value pair; otherwise, false.
   id: System.Collections.Immutable.ImmutableDictionary.Contains``2(System.Collections.Immutable.IImmutableDictionary{``0,``1},``0,``1)
 - uid: System.Collections.Immutable.ImmutableDictionary.GetValueOrDefault``2(System.Collections.Immutable.IImmutableDictionary{``0,``1},``0)
@@ -604,12 +678,12 @@ items:
   summary: Gets the value for a given key if a matching key exists in the dictionary.
   syntax:
     content:
-      CSharp: '[Pure] public static TValue GetValueOrDefault<TKey, TValue>(this IImmutableDictionary<TKey, TValue> dictionary, TKey key)'
+      CSharp: public static TValue GetValueOrDefault<TKey, TValue>(IImmutableDictionary<TKey, TValue> dictionary, TKey key)
     parameters:
     - id: dictionary
       type:
         id: System.Collections.Immutable.IImmutableDictionary{``0,``1}
-        name: IImmutableDictionary
+        name: IImmutableDictionary<TKey, TValue>
         href: System.Collections.Immutable.IImmutableDictionary{``0,``1}
       description: The dictionary to retrieve the value from.
     - id: key
@@ -620,7 +694,11 @@ items:
       description: The key to search for.
     return:
       id: TValue
-      description: The value for the key, or default(TValue) if no matching key was found.
+      type:
+        id: TValue
+        name: TValue
+        href: TValue
+      description: The value for the key, or the default value of type  if no matching key was found.
   id: System.Collections.Immutable.ImmutableDictionary.GetValueOrDefault``2(System.Collections.Immutable.IImmutableDictionary{``0,``1},``0)
 - uid: System.Collections.Immutable.ImmutableDictionary.GetValueOrDefault``2(System.Collections.Immutable.IImmutableDictionary{``0,``1},``0,``1)
   href: System.Collections.Immutable.ImmutableDictionary.yml
@@ -634,12 +712,12 @@ items:
   summary: Gets the value for a given key if a matching key exists in the dictionary.
   syntax:
     content:
-      CSharp: '[Pure] public static TValue GetValueOrDefault<TKey, TValue>(this IImmutableDictionary<TKey, TValue> dictionary, TKey key, TValue defaultValue)'
+      CSharp: public static TValue GetValueOrDefault<TKey, TValue>(IImmutableDictionary<TKey, TValue> dictionary, TKey key, TValue defaultValue)
     parameters:
     - id: dictionary
       type:
         id: System.Collections.Immutable.IImmutableDictionary{``0,``1}
-        name: IImmutableDictionary
+        name: IImmutableDictionary<TKey, TValue>
         href: System.Collections.Immutable.IImmutableDictionary{``0,``1}
       description: The dictionary to retrieve the value from.
     - id: key
@@ -656,5 +734,9 @@ items:
       description: The default value to return if no matching key is found in the dictionary.
     return:
       id: TValue
+      type:
+        id: TValue
+        name: TValue
+        href: TValue
       description: The value for the key, or  if no matching key was found.
   id: System.Collections.Immutable.ImmutableDictionary.GetValueOrDefault``2(System.Collections.Immutable.IImmutableDictionary{``0,``1},``0,``1)

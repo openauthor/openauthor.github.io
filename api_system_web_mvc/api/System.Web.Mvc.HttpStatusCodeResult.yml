@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/HttpStatusCodeResult.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/HttpStatusCodeResult.cs
     startLine: 6
   syntax:
     content:
-      CSharp: public class HttpStatusCodeResult
+      CSharp: 'public class HttpStatusCodeResult : ActionResult'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.Mvc.ActionResult
     name: ActionResult
@@ -46,7 +47,7 @@ items:
     - id: statusCode
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Web.Mvc.HttpStatusCodeResult.#ctor(System.Int32)
 - uid: System.Web.Mvc.HttpStatusCodeResult.#ctor(System.Net.HttpStatusCode)
@@ -65,7 +66,7 @@ items:
     - id: statusCode
       type:
         id: System.Net.HttpStatusCode
-        name: System.Net.HttpStatusCode
+        name: HttpStatusCode
         isExternal: true
   id: System.Web.Mvc.HttpStatusCodeResult.#ctor(System.Net.HttpStatusCode)
 - uid: System.Web.Mvc.HttpStatusCodeResult.#ctor(System.Net.HttpStatusCode,System.String)
@@ -84,12 +85,12 @@ items:
     - id: statusCode
       type:
         id: System.Net.HttpStatusCode
-        name: System.Net.HttpStatusCode
+        name: HttpStatusCode
         isExternal: true
     - id: statusDescription
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.HttpStatusCodeResult.#ctor(System.Net.HttpStatusCode,System.String)
 - uid: System.Web.Mvc.HttpStatusCodeResult.#ctor(System.Int32,System.String)
@@ -108,12 +109,12 @@ items:
     - id: statusCode
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: statusDescription
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.HttpStatusCodeResult.#ctor(System.Int32,System.String)
 - uid: System.Web.Mvc.HttpStatusCodeResult.StatusCode
@@ -127,12 +128,12 @@ items:
     startLine: 29
   syntax:
     content:
-      CSharp: public int StatusCode { get; private set; }
+      CSharp: public int StatusCode { get; }
     parameters:
     - id: StatusCode
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Web.Mvc.HttpStatusCodeResult.StatusCode
 - uid: System.Web.Mvc.HttpStatusCodeResult.StatusDescription
@@ -146,12 +147,12 @@ items:
     startLine: 31
   syntax:
     content:
-      CSharp: public string StatusDescription { get; private set; }
+      CSharp: public string StatusDescription { get; }
     parameters:
     - id: StatusDescription
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.HttpStatusCodeResult.StatusDescription
 - uid: System.Web.Mvc.HttpStatusCodeResult.ExecuteResult(System.Web.Mvc.ControllerContext)

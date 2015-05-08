@@ -6,9 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
     startLine: 16
   summary: >-
@@ -19,10 +20,10 @@ items:
     generated code, and so on.
   syntax:
     content:
-      CSharp: public sealed class CSharpCompilationOptions
+      CSharp: 'public sealed class CSharpCompilationOptions : CompilationOptions, IEquatable<CSharpCompilationOptions>'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: Object
     isExternal: true
   - id: Microsoft.CodeAnalysis.CompilationOptions
     name: CompilationOptions
@@ -31,24 +32,28 @@ items:
   children:
   - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.AllowUnsafe
   - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.Usings
-  - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.#ctor(Microsoft.CodeAnalysis.OutputKind,System.String,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},Microsoft.CodeAnalysis.OptimizationLevel,System.Boolean,System.Boolean,System.String,System.String,System.Nullable{System.Boolean},Microsoft.CodeAnalysis.Platform,Microsoft.CodeAnalysis.ReportDiagnostic,System.Int32,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Microsoft.CodeAnalysis.ReportDiagnostic}},System.Boolean,Microsoft.CodeAnalysis.XmlReferenceResolver,Microsoft.CodeAnalysis.SourceReferenceResolver,Microsoft.CodeAnalysis.MetadataReferenceResolver,Microsoft.CodeAnalysis.AssemblyIdentityComparer,Microsoft.CodeAnalysis.StrongNameProvider)
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.#ctor(Microsoft.CodeAnalysis.OutputKind,System.String,System.String,System.String,IEnumerable{System.String},Microsoft.CodeAnalysis.OptimizationLevel,System.Boolean,System.Boolean,System.String,System.String,ImmutableArray{System.Byte},System.Nullable{System.Boolean},Microsoft.CodeAnalysis.Platform,Microsoft.CodeAnalysis.ReportDiagnostic,System.Int32,IEnumerable{Roslyn.Utilities.KeyValuePair{System.String,Microsoft.CodeAnalysis.ReportDiagnostic}},System.Boolean,Microsoft.CodeAnalysis.XmlReferenceResolver,Microsoft.CodeAnalysis.SourceReferenceResolver,Microsoft.CodeAnalysis.MetadataReferenceResolver,Microsoft.CodeAnalysis.AssemblyIdentityComparer,Microsoft.CodeAnalysis.StrongNameProvider)
   - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithOutputKind(Microsoft.CodeAnalysis.OutputKind)
   - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithModuleName(System.String)
   - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithScriptClassName(System.String)
   - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithMainTypeName(System.String)
   - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithCryptoKeyContainer(System.String)
   - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithCryptoKeyFile(System.String)
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithCryptoPublicKey(ImmutableArray{System.Byte})
   - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithDelaySign(System.Nullable{System.Boolean})
-  - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithUsings(System.Collections.Immutable.ImmutableArray{System.String})
-  - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithUsings(System.Collections.Generic.IEnumerable{System.String})
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithUsings(ImmutableArray{System.String})
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithUsings(IEnumerable{System.String})
   - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithUsings(System.String[])
   - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithOptimizationLevel(Microsoft.CodeAnalysis.OptimizationLevel)
   - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithOverflowChecks(System.Boolean)
   - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithAllowUnsafe(System.Boolean)
   - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithPlatform(Microsoft.CodeAnalysis.Platform)
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithGeneralDiagnosticOption(Microsoft.CodeAnalysis.ReportDiagnostic)
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithSpecificDiagnosticOptions(ImmutableDictionary{System.String,Microsoft.CodeAnalysis.ReportDiagnostic})
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithSpecificDiagnosticOptions(IEnumerable{Roslyn.Utilities.KeyValuePair{System.String,Microsoft.CodeAnalysis.ReportDiagnostic}})
   - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithGeneralDiagnosticOption(Microsoft.CodeAnalysis.ReportDiagnostic)
-  - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithSpecificDiagnosticOptions(System.Collections.Immutable.ImmutableDictionary{System.String,Microsoft.CodeAnalysis.ReportDiagnostic})
-  - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithSpecificDiagnosticOptions(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Microsoft.CodeAnalysis.ReportDiagnostic}})
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithSpecificDiagnosticOptions(ImmutableDictionary{System.String,Microsoft.CodeAnalysis.ReportDiagnostic})
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithSpecificDiagnosticOptions(IEnumerable{Roslyn.Utilities.KeyValuePair{System.String,Microsoft.CodeAnalysis.ReportDiagnostic}})
   - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithWarningLevel(System.Int32)
   - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithConcurrentBuild(System.Boolean)
   - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithXmlReferenceResolver(Microsoft.CodeAnalysis.XmlReferenceResolver)
@@ -56,6 +61,15 @@ items:
   - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithMetadataReferenceResolver(Microsoft.CodeAnalysis.MetadataReferenceResolver)
   - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithAssemblyIdentityComparer(Microsoft.CodeAnalysis.AssemblyIdentityComparer)
   - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithStrongNameProvider(Microsoft.CodeAnalysis.StrongNameProvider)
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithOutputKind(Microsoft.CodeAnalysis.OutputKind)
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithPlatform(Microsoft.CodeAnalysis.Platform)
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithOptimizationLevel(Microsoft.CodeAnalysis.OptimizationLevel)
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithAssemblyIdentityComparer(Microsoft.CodeAnalysis.AssemblyIdentityComparer)
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithXmlReferenceResolver(Microsoft.CodeAnalysis.XmlReferenceResolver)
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithSourceReferenceResolver(Microsoft.CodeAnalysis.SourceReferenceResolver)
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithMetadataReferenceResolver(Microsoft.CodeAnalysis.MetadataReferenceResolver)
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithStrongNameProvider(Microsoft.CodeAnalysis.StrongNameProvider)
+  - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithFeatures(ImmutableArray{System.String})
   - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.Equals(Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions)
   - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.Equals(System.Object)
   - Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.GetHashCode
@@ -71,12 +85,12 @@ items:
   summary: Allow unsafe regions (i.e. unsafe modifiers on members and unsafe blocks).
   syntax:
     content:
-      CSharp: public bool AllowUnsafe { get; private set; }
+      CSharp: public bool AllowUnsafe { get; }
     parameters:
     - id: AllowUnsafe
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.AllowUnsafe
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.Usings
@@ -91,18 +105,18 @@ items:
   summary: Global namespace usings.
   syntax:
     content:
-      CSharp: public ImmutableArray<string> Usings { get; private set; }
+      CSharp: public ImmutableArray<string> Usings { get; }
     parameters:
     - id: Usings
       type:
-        id: System.Collections.Immutable.ImmutableArray{System.String}
-        name: System.Collections.Immutable.ImmutableArray{System.String}
+        id: ImmutableArray{System.String}
+        name: ImmutableArray<string>
         isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.Usings
-- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.#ctor(Microsoft.CodeAnalysis.OutputKind,System.String,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},Microsoft.CodeAnalysis.OptimizationLevel,System.Boolean,System.Boolean,System.String,System.String,System.Nullable{System.Boolean},Microsoft.CodeAnalysis.Platform,Microsoft.CodeAnalysis.ReportDiagnostic,System.Int32,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Microsoft.CodeAnalysis.ReportDiagnostic}},System.Boolean,Microsoft.CodeAnalysis.XmlReferenceResolver,Microsoft.CodeAnalysis.SourceReferenceResolver,Microsoft.CodeAnalysis.MetadataReferenceResolver,Microsoft.CodeAnalysis.AssemblyIdentityComparer,Microsoft.CodeAnalysis.StrongNameProvider)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.#ctor(Microsoft.CodeAnalysis.OutputKind,System.String,System.String,System.String,IEnumerable{System.String},Microsoft.CodeAnalysis.OptimizationLevel,System.Boolean,System.Boolean,System.String,System.String,ImmutableArray{System.Byte},System.Nullable{System.Boolean},Microsoft.CodeAnalysis.Platform,Microsoft.CodeAnalysis.ReportDiagnostic,System.Int32,IEnumerable{Roslyn.Utilities.KeyValuePair{System.String,Microsoft.CodeAnalysis.ReportDiagnostic}},System.Boolean,Microsoft.CodeAnalysis.XmlReferenceResolver,Microsoft.CodeAnalysis.SourceReferenceResolver,Microsoft.CodeAnalysis.MetadataReferenceResolver,Microsoft.CodeAnalysis.AssemblyIdentityComparer,Microsoft.CodeAnalysis.StrongNameProvider)
   href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
-  name: CSharpCompilationOptions(OutputKind, string, string, string, IEnumerable<string>, OptimizationLevel, bool, bool, string, string, bool?, Platform, ReportDiagnostic, int, IEnumerable<KeyValuePair<string, ReportDiagnostic>>, bool, XmlReferenceResolver, SourceReferenceResolver, MetadataReferenceResolver, AssemblyIdentityComparer, StrongNameProvider)
-  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CSharpCompilationOptions(Microsoft.CodeAnalysis.OutputKind, string, string, string, System.Collections.Generic.IEnumerable<string>, Microsoft.CodeAnalysis.OptimizationLevel, bool, bool, string, string, bool?, Microsoft.CodeAnalysis.Platform, Microsoft.CodeAnalysis.ReportDiagnostic, int, System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string, Microsoft.CodeAnalysis.ReportDiagnostic>>, bool, Microsoft.CodeAnalysis.XmlReferenceResolver, Microsoft.CodeAnalysis.SourceReferenceResolver, Microsoft.CodeAnalysis.MetadataReferenceResolver, Microsoft.CodeAnalysis.AssemblyIdentityComparer, Microsoft.CodeAnalysis.StrongNameProvider)
+  name: CSharpCompilationOptions(OutputKind, string, string, string, IEnumerable<string>, OptimizationLevel, bool, bool, string, string, ImmutableArray<byte>, bool?, Platform, ReportDiagnostic, int, IEnumerable<KeyValuePair<string, ReportDiagnostic>>, bool, XmlReferenceResolver, SourceReferenceResolver, MetadataReferenceResolver, AssemblyIdentityComparer, StrongNameProvider)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CSharpCompilationOptions(Microsoft.CodeAnalysis.OutputKind, string, string, string, IEnumerable<string>, Microsoft.CodeAnalysis.OptimizationLevel, bool, bool, string, string, ImmutableArray<byte>, bool?, Microsoft.CodeAnalysis.Platform, Microsoft.CodeAnalysis.ReportDiagnostic, int, IEnumerable<Roslyn.Utilities.KeyValuePair<string, Microsoft.CodeAnalysis.ReportDiagnostic>>, bool, Microsoft.CodeAnalysis.XmlReferenceResolver, Microsoft.CodeAnalysis.SourceReferenceResolver, Microsoft.CodeAnalysis.MetadataReferenceResolver, Microsoft.CodeAnalysis.AssemblyIdentityComparer, Microsoft.CodeAnalysis.StrongNameProvider)
   type: Constructor
   source:
     remote: *o0
@@ -110,7 +124,7 @@ items:
     startLine: 30
   syntax:
     content:
-      CSharp: 'public CSharpCompilationOptions(OutputKind outputKind, string moduleName = null, string mainTypeName = null, string scriptClassName = null, IEnumerable<string> usings = null, OptimizationLevel optimizationLevel = OptimizationLevel.Debug, bool checkOverflow = false, bool allowUnsafe = false, string cryptoKeyContainer = null, string cryptoKeyFile = null, bool ? delaySign = null, Platform platform = Platform.AnyCpu, ReportDiagnostic generalDiagnosticOption = ReportDiagnostic.Default, int warningLevel = 4, IEnumerable<KeyValuePair<string, ReportDiagnostic>> specificDiagnosticOptions = null, bool concurrentBuild = true, XmlReferenceResolver xmlReferenceResolver = null, SourceReferenceResolver sourceReferenceResolver = null, MetadataReferenceResolver metadataReferenceResolver = null, AssemblyIdentityComparer assemblyIdentityComparer = null, StrongNameProvider strongNameProvider = null): this (outputKind, moduleName, mainTypeName, scriptClassName, usings, optimizationLevel, checkOverflow, allowUnsafe, cryptoKeyContainer, cryptoKeyFile, delaySign, platform, generalDiagnosticOption, warningLevel, specificDiagnosticOptions, concurrentBuild, extendedCustomDebugInformation: true, xmlReferenceResolver: xmlReferenceResolver, sourceReferenceResolver: sourceReferenceResolver, metadataReferenceResolver: metadataReferenceResolver, assemblyIdentityComparer: assemblyIdentityComparer, strongNameProvider: strongNameProvider, metadataImportOptions: MetadataImportOptions.Public, features: ImmutableArray<string>.Empty)'
+      CSharp: 'public CSharpCompilationOptions(OutputKind outputKind, string moduleName = null, string mainTypeName = null, string scriptClassName = null, IEnumerable<string> usings = null, OptimizationLevel optimizationLevel = OptimizationLevel.Debug, bool checkOverflow = false, bool allowUnsafe = false, string cryptoKeyContainer = null, string cryptoKeyFile = null, ImmutableArray<byte> cryptoPublicKey = default (ImmutableArray<byte>), bool ? delaySign = null, Platform platform = Platform.AnyCpu, ReportDiagnostic generalDiagnosticOption = ReportDiagnostic.Default, int warningLevel = 4, IEnumerable<KeyValuePair<string, ReportDiagnostic>> specificDiagnosticOptions = null, bool concurrentBuild = true, XmlReferenceResolver xmlReferenceResolver = null, SourceReferenceResolver sourceReferenceResolver = null, MetadataReferenceResolver metadataReferenceResolver = null, AssemblyIdentityComparer assemblyIdentityComparer = null, StrongNameProvider strongNameProvider = null): this (outputKind, moduleName, mainTypeName, scriptClassName, usings, optimizationLevel, checkOverflow, allowUnsafe, cryptoKeyContainer, cryptoKeyFile, cryptoPublicKey, delaySign, platform, generalDiagnosticOption, warningLevel, specificDiagnosticOptions, concurrentBuild, extendedCustomDebugInformation: true, xmlReferenceResolver: xmlReferenceResolver, sourceReferenceResolver: sourceReferenceResolver, metadataReferenceResolver: metadataReferenceResolver, assemblyIdentityComparer: assemblyIdentityComparer, strongNameProvider: strongNameProvider, metadataImportOptions: MetadataImportOptions.Public, features: ImmutableArray<string>.Empty)'
     parameters:
     - id: outputKind
       type:
@@ -120,22 +134,22 @@ items:
     - id: moduleName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: mainTypeName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: scriptClassName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: usings
       type:
-        id: System.Collections.Generic.IEnumerable{System.String}
-        name: System.Collections.Generic.IEnumerable{System.String}
+        id: IEnumerable{System.String}
+        name: IEnumerable<string>
         isExternal: true
     - id: optimizationLevel
       type:
@@ -145,27 +159,32 @@ items:
     - id: checkOverflow
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     - id: allowUnsafe
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     - id: cryptoKeyContainer
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: cryptoKeyFile
       type:
         id: System.String
-        name: System.String
+        name: string
+        isExternal: true
+    - id: cryptoPublicKey
+      type:
+        id: ImmutableArray{System.Byte}
+        name: ImmutableArray<byte>
         isExternal: true
     - id: delaySign
       type:
         id: System.Nullable{System.Boolean}
-        name: System.Nullable{System.Boolean}
+        name: bool?
         isExternal: true
     - id: platform
       type:
@@ -180,17 +199,17 @@ items:
     - id: warningLevel
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: specificDiagnosticOptions
       type:
-        id: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Microsoft.CodeAnalysis.ReportDiagnostic}}
-        name: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Microsoft.CodeAnalysis.ReportDiagnostic}}
+        id: IEnumerable{Roslyn.Utilities.KeyValuePair{System.String,Microsoft.CodeAnalysis.ReportDiagnostic}}
+        name: IEnumerable<KeyValuePair<string, ReportDiagnostic>>
         isExternal: true
     - id: concurrentBuild
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     - id: xmlReferenceResolver
       type:
@@ -217,7 +236,7 @@ items:
         id: Microsoft.CodeAnalysis.StrongNameProvider
         name: StrongNameProvider
         href: Microsoft.CodeAnalysis.StrongNameProvider
-  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.#ctor(Microsoft.CodeAnalysis.OutputKind,System.String,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},Microsoft.CodeAnalysis.OptimizationLevel,System.Boolean,System.Boolean,System.String,System.String,System.Nullable{System.Boolean},Microsoft.CodeAnalysis.Platform,Microsoft.CodeAnalysis.ReportDiagnostic,System.Int32,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Microsoft.CodeAnalysis.ReportDiagnostic}},System.Boolean,Microsoft.CodeAnalysis.XmlReferenceResolver,Microsoft.CodeAnalysis.SourceReferenceResolver,Microsoft.CodeAnalysis.MetadataReferenceResolver,Microsoft.CodeAnalysis.AssemblyIdentityComparer,Microsoft.CodeAnalysis.StrongNameProvider)
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.#ctor(Microsoft.CodeAnalysis.OutputKind,System.String,System.String,System.String,IEnumerable{System.String},Microsoft.CodeAnalysis.OptimizationLevel,System.Boolean,System.Boolean,System.String,System.String,ImmutableArray{System.Byte},System.Nullable{System.Boolean},Microsoft.CodeAnalysis.Platform,Microsoft.CodeAnalysis.ReportDiagnostic,System.Int32,IEnumerable{Roslyn.Utilities.KeyValuePair{System.String,Microsoft.CodeAnalysis.ReportDiagnostic}},System.Boolean,Microsoft.CodeAnalysis.XmlReferenceResolver,Microsoft.CodeAnalysis.SourceReferenceResolver,Microsoft.CodeAnalysis.MetadataReferenceResolver,Microsoft.CodeAnalysis.AssemblyIdentityComparer,Microsoft.CodeAnalysis.StrongNameProvider)
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithOutputKind(Microsoft.CodeAnalysis.OutputKind)
   href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
   name: WithOutputKind(OutputKind)
@@ -226,10 +245,10 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
-    startLine: 129
+    startLine: 132
   syntax:
     content:
-      CSharp: public new CSharpCompilationOptions WithOutputKind(OutputKind kind)
+      CSharp: public CSharpCompilationOptions WithOutputKind(OutputKind kind)
     parameters:
     - id: kind
       type:
@@ -238,6 +257,10 @@ items:
         href: Microsoft.CodeAnalysis.OutputKind
     return:
       id: CSharpCompilationOptions
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions
+        name: CSharpCompilationOptions
+        href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
   id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithOutputKind(Microsoft.CodeAnalysis.OutputKind)
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithModuleName(System.String)
   href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
@@ -247,7 +270,7 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
-    startLine: 139
+    startLine: 142
   syntax:
     content:
       CSharp: public CSharpCompilationOptions WithModuleName(string moduleName)
@@ -255,10 +278,14 @@ items:
     - id: moduleName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: CSharpCompilationOptions
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions
+        name: CSharpCompilationOptions
+        href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
   id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithModuleName(System.String)
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithScriptClassName(System.String)
   href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
@@ -268,7 +295,7 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
-    startLine: 149
+    startLine: 152
   syntax:
     content:
       CSharp: public CSharpCompilationOptions WithScriptClassName(string name)
@@ -276,10 +303,14 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: CSharpCompilationOptions
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions
+        name: CSharpCompilationOptions
+        href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
   id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithScriptClassName(System.String)
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithMainTypeName(System.String)
   href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
@@ -289,7 +320,7 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
-    startLine: 159
+    startLine: 162
   syntax:
     content:
       CSharp: public CSharpCompilationOptions WithMainTypeName(string name)
@@ -297,10 +328,14 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: CSharpCompilationOptions
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions
+        name: CSharpCompilationOptions
+        href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
   id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithMainTypeName(System.String)
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithCryptoKeyContainer(System.String)
   href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
@@ -310,7 +345,7 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
-    startLine: 169
+    startLine: 172
   syntax:
     content:
       CSharp: public CSharpCompilationOptions WithCryptoKeyContainer(string name)
@@ -318,10 +353,14 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: CSharpCompilationOptions
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions
+        name: CSharpCompilationOptions
+        href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
   id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithCryptoKeyContainer(System.String)
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithCryptoKeyFile(System.String)
   href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
@@ -331,7 +370,7 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
-    startLine: 179
+    startLine: 182
   syntax:
     content:
       CSharp: public CSharpCompilationOptions WithCryptoKeyFile(string path)
@@ -339,11 +378,40 @@ items:
     - id: path
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: CSharpCompilationOptions
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions
+        name: CSharpCompilationOptions
+        href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
   id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithCryptoKeyFile(System.String)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithCryptoPublicKey(ImmutableArray{System.Byte})
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
+  name: WithCryptoPublicKey(ImmutableArray<byte>)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithCryptoPublicKey(ImmutableArray<byte>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
+    startLine: 192
+  syntax:
+    content:
+      CSharp: public CSharpCompilationOptions WithCryptoPublicKey(ImmutableArray<byte> value)
+    parameters:
+    - id: value
+      type:
+        id: ImmutableArray{System.Byte}
+        name: ImmutableArray<byte>
+        isExternal: true
+    return:
+      id: CSharpCompilationOptions
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions
+        name: CSharpCompilationOptions
+        href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithCryptoPublicKey(ImmutableArray{System.Byte})
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithDelaySign(System.Nullable{System.Boolean})
   href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
   name: WithDelaySign(bool?)
@@ -352,7 +420,7 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
-    startLine: 189
+    startLine: 207
   syntax:
     content:
       CSharp: public CSharpCompilationOptions WithDelaySign(bool ? value)
@@ -360,53 +428,65 @@ items:
     - id: value
       type:
         id: System.Nullable{System.Boolean}
-        name: System.Nullable{System.Boolean}
+        name: bool?
         isExternal: true
     return:
       id: CSharpCompilationOptions
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions
+        name: CSharpCompilationOptions
+        href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
   id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithDelaySign(System.Nullable{System.Boolean})
-- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithUsings(System.Collections.Immutable.ImmutableArray{System.String})
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithUsings(ImmutableArray{System.String})
   href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
   name: WithUsings(ImmutableArray<string>)
-  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithUsings(System.Collections.Immutable.ImmutableArray<string>)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithUsings(ImmutableArray<string>)
   type: Method
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
-    startLine: 199
+    startLine: 217
   syntax:
     content:
       CSharp: public CSharpCompilationOptions WithUsings(ImmutableArray<string> usings)
     parameters:
     - id: usings
       type:
-        id: System.Collections.Immutable.ImmutableArray{System.String}
-        name: System.Collections.Immutable.ImmutableArray{System.String}
+        id: ImmutableArray{System.String}
+        name: ImmutableArray<string>
         isExternal: true
     return:
       id: CSharpCompilationOptions
-  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithUsings(System.Collections.Immutable.ImmutableArray{System.String})
-- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithUsings(System.Collections.Generic.IEnumerable{System.String})
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions
+        name: CSharpCompilationOptions
+        href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithUsings(ImmutableArray{System.String})
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithUsings(IEnumerable{System.String})
   href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
   name: WithUsings(IEnumerable<string>)
-  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithUsings(System.Collections.Generic.IEnumerable<string>)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithUsings(IEnumerable<string>)
   type: Method
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
-    startLine: 209
+    startLine: 227
   syntax:
     content:
       CSharp: public CSharpCompilationOptions WithUsings(IEnumerable<string> usings)
     parameters:
     - id: usings
       type:
-        id: System.Collections.Generic.IEnumerable{System.String}
-        name: System.Collections.Generic.IEnumerable{System.String}
+        id: IEnumerable{System.String}
+        name: IEnumerable<string>
         isExternal: true
     return:
       id: CSharpCompilationOptions
-  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithUsings(System.Collections.Generic.IEnumerable{System.String})
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions
+        name: CSharpCompilationOptions
+        href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithUsings(IEnumerable{System.String})
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithUsings(System.String[])
   href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
   name: WithUsings(params string[])
@@ -415,7 +495,7 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
-    startLine: 214
+    startLine: 232
   syntax:
     content:
       CSharp: public CSharpCompilationOptions WithUsings(params string[] usings)
@@ -423,10 +503,14 @@ items:
     - id: usings
       type:
         id: System.Array
-        name: System.Array
+        name: string[]
         isExternal: true
     return:
       id: CSharpCompilationOptions
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions
+        name: CSharpCompilationOptions
+        href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
   id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithUsings(System.String[])
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithOptimizationLevel(Microsoft.CodeAnalysis.OptimizationLevel)
   href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
@@ -436,10 +520,10 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
-    startLine: 219
+    startLine: 237
   syntax:
     content:
-      CSharp: public new CSharpCompilationOptions WithOptimizationLevel(OptimizationLevel value)
+      CSharp: public CSharpCompilationOptions WithOptimizationLevel(OptimizationLevel value)
     parameters:
     - id: value
       type:
@@ -448,6 +532,10 @@ items:
         href: Microsoft.CodeAnalysis.OptimizationLevel
     return:
       id: CSharpCompilationOptions
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions
+        name: CSharpCompilationOptions
+        href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
   id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithOptimizationLevel(Microsoft.CodeAnalysis.OptimizationLevel)
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithOverflowChecks(System.Boolean)
   href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
@@ -457,7 +545,7 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
-    startLine: 229
+    startLine: 247
   syntax:
     content:
       CSharp: public CSharpCompilationOptions WithOverflowChecks(bool enabled)
@@ -465,10 +553,14 @@ items:
     - id: enabled
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     return:
       id: CSharpCompilationOptions
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions
+        name: CSharpCompilationOptions
+        href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
   id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithOverflowChecks(System.Boolean)
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithAllowUnsafe(System.Boolean)
   href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
@@ -478,7 +570,7 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
-    startLine: 239
+    startLine: 257
   syntax:
     content:
       CSharp: public CSharpCompilationOptions WithAllowUnsafe(bool enabled)
@@ -486,10 +578,14 @@ items:
     - id: enabled
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     return:
       id: CSharpCompilationOptions
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions
+        name: CSharpCompilationOptions
+        href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
   id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithAllowUnsafe(System.Boolean)
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithPlatform(Microsoft.CodeAnalysis.Platform)
   href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
@@ -499,10 +595,10 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
-    startLine: 249
+    startLine: 267
   syntax:
     content:
-      CSharp: public new CSharpCompilationOptions WithPlatform(Platform platform)
+      CSharp: public CSharpCompilationOptions WithPlatform(Platform platform)
     parameters:
     - id: platform
       type:
@@ -511,7 +607,86 @@ items:
         href: Microsoft.CodeAnalysis.Platform
     return:
       id: CSharpCompilationOptions
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions
+        name: CSharpCompilationOptions
+        href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
   id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithPlatform(Microsoft.CodeAnalysis.Platform)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithGeneralDiagnosticOption(Microsoft.CodeAnalysis.ReportDiagnostic)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
+  name: CommonWithGeneralDiagnosticOption(ReportDiagnostic)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithGeneralDiagnosticOption(Microsoft.CodeAnalysis.ReportDiagnostic)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
+    startLine: 277
+  syntax:
+    content:
+      CSharp: protected override CompilationOptions CommonWithGeneralDiagnosticOption(ReportDiagnostic value)
+    parameters:
+    - id: value
+      type:
+        id: Microsoft.CodeAnalysis.ReportDiagnostic
+        name: ReportDiagnostic
+        href: Microsoft.CodeAnalysis.ReportDiagnostic
+    return:
+      id: CompilationOptions
+      type:
+        id: Microsoft.CodeAnalysis.CompilationOptions
+        name: CompilationOptions
+        href: Microsoft.CodeAnalysis.CompilationOptions
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithGeneralDiagnosticOption(Microsoft.CodeAnalysis.ReportDiagnostic)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithSpecificDiagnosticOptions(ImmutableDictionary{System.String,Microsoft.CodeAnalysis.ReportDiagnostic})
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
+  name: CommonWithSpecificDiagnosticOptions(ImmutableDictionary<string, ReportDiagnostic>)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithSpecificDiagnosticOptions(ImmutableDictionary<string, Microsoft.CodeAnalysis.ReportDiagnostic>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
+    startLine: 282
+  syntax:
+    content:
+      CSharp: protected override CompilationOptions CommonWithSpecificDiagnosticOptions(ImmutableDictionary<string, ReportDiagnostic> specificDiagnosticOptions)
+    parameters:
+    - id: specificDiagnosticOptions
+      type:
+        id: ImmutableDictionary{System.String,Microsoft.CodeAnalysis.ReportDiagnostic}
+        name: ImmutableDictionary<string, ReportDiagnostic>
+        isExternal: true
+    return:
+      id: CompilationOptions
+      type:
+        id: Microsoft.CodeAnalysis.CompilationOptions
+        name: CompilationOptions
+        href: Microsoft.CodeAnalysis.CompilationOptions
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithSpecificDiagnosticOptions(ImmutableDictionary{System.String,Microsoft.CodeAnalysis.ReportDiagnostic})
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithSpecificDiagnosticOptions(IEnumerable{Roslyn.Utilities.KeyValuePair{System.String,Microsoft.CodeAnalysis.ReportDiagnostic}})
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
+  name: CommonWithSpecificDiagnosticOptions(IEnumerable<KeyValuePair<string, ReportDiagnostic>>)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithSpecificDiagnosticOptions(IEnumerable<Roslyn.Utilities.KeyValuePair<string, Microsoft.CodeAnalysis.ReportDiagnostic>>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
+    startLine: 287
+  syntax:
+    content:
+      CSharp: protected override CompilationOptions CommonWithSpecificDiagnosticOptions(IEnumerable<KeyValuePair<string, ReportDiagnostic>> specificDiagnosticOptions)
+    parameters:
+    - id: specificDiagnosticOptions
+      type:
+        id: IEnumerable{Roslyn.Utilities.KeyValuePair{System.String,Microsoft.CodeAnalysis.ReportDiagnostic}}
+        name: IEnumerable<KeyValuePair<string, ReportDiagnostic>>
+        isExternal: true
+    return:
+      id: CompilationOptions
+      type:
+        id: Microsoft.CodeAnalysis.CompilationOptions
+        name: CompilationOptions
+        href: Microsoft.CodeAnalysis.CompilationOptions
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithSpecificDiagnosticOptions(IEnumerable{Roslyn.Utilities.KeyValuePair{System.String,Microsoft.CodeAnalysis.ReportDiagnostic}})
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithGeneralDiagnosticOption(Microsoft.CodeAnalysis.ReportDiagnostic)
   href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
   name: WithGeneralDiagnosticOption(ReportDiagnostic)
@@ -520,10 +695,10 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
-    startLine: 274
+    startLine: 292
   syntax:
     content:
-      CSharp: public new CSharpCompilationOptions WithGeneralDiagnosticOption(ReportDiagnostic value)
+      CSharp: public CSharpCompilationOptions WithGeneralDiagnosticOption(ReportDiagnostic value)
     parameters:
     - id: value
       type:
@@ -532,49 +707,61 @@ items:
         href: Microsoft.CodeAnalysis.ReportDiagnostic
     return:
       id: CSharpCompilationOptions
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions
+        name: CSharpCompilationOptions
+        href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
   id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithGeneralDiagnosticOption(Microsoft.CodeAnalysis.ReportDiagnostic)
-- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithSpecificDiagnosticOptions(System.Collections.Immutable.ImmutableDictionary{System.String,Microsoft.CodeAnalysis.ReportDiagnostic})
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithSpecificDiagnosticOptions(ImmutableDictionary{System.String,Microsoft.CodeAnalysis.ReportDiagnostic})
   href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
   name: WithSpecificDiagnosticOptions(ImmutableDictionary<string, ReportDiagnostic>)
-  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithSpecificDiagnosticOptions(System.Collections.Immutable.ImmutableDictionary<string, Microsoft.CodeAnalysis.ReportDiagnostic>)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithSpecificDiagnosticOptions(ImmutableDictionary<string, Microsoft.CodeAnalysis.ReportDiagnostic>)
   type: Method
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
-    startLine: 284
+    startLine: 302
   syntax:
     content:
-      CSharp: public new CSharpCompilationOptions WithSpecificDiagnosticOptions(ImmutableDictionary<string, ReportDiagnostic> values)
+      CSharp: public CSharpCompilationOptions WithSpecificDiagnosticOptions(ImmutableDictionary<string, ReportDiagnostic> values)
     parameters:
     - id: values
       type:
-        id: System.Collections.Immutable.ImmutableDictionary{System.String,Microsoft.CodeAnalysis.ReportDiagnostic}
-        name: System.Collections.Immutable.ImmutableDictionary{System.String,Microsoft.CodeAnalysis.ReportDiagnostic}
+        id: ImmutableDictionary{System.String,Microsoft.CodeAnalysis.ReportDiagnostic}
+        name: ImmutableDictionary<string, ReportDiagnostic>
         isExternal: true
     return:
       id: CSharpCompilationOptions
-  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithSpecificDiagnosticOptions(System.Collections.Immutable.ImmutableDictionary{System.String,Microsoft.CodeAnalysis.ReportDiagnostic})
-- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithSpecificDiagnosticOptions(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Microsoft.CodeAnalysis.ReportDiagnostic}})
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions
+        name: CSharpCompilationOptions
+        href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithSpecificDiagnosticOptions(ImmutableDictionary{System.String,Microsoft.CodeAnalysis.ReportDiagnostic})
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithSpecificDiagnosticOptions(IEnumerable{Roslyn.Utilities.KeyValuePair{System.String,Microsoft.CodeAnalysis.ReportDiagnostic}})
   href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
   name: WithSpecificDiagnosticOptions(IEnumerable<KeyValuePair<string, ReportDiagnostic>>)
-  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithSpecificDiagnosticOptions(System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string, Microsoft.CodeAnalysis.ReportDiagnostic>>)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithSpecificDiagnosticOptions(IEnumerable<Roslyn.Utilities.KeyValuePair<string, Microsoft.CodeAnalysis.ReportDiagnostic>>)
   type: Method
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
-    startLine: 299
+    startLine: 317
   syntax:
     content:
-      CSharp: public new CSharpCompilationOptions WithSpecificDiagnosticOptions(IEnumerable<KeyValuePair<string, ReportDiagnostic>> values)
+      CSharp: public CSharpCompilationOptions WithSpecificDiagnosticOptions(IEnumerable<KeyValuePair<string, ReportDiagnostic>> values)
     parameters:
     - id: values
       type:
-        id: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Microsoft.CodeAnalysis.ReportDiagnostic}}
-        name: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Microsoft.CodeAnalysis.ReportDiagnostic}}
+        id: IEnumerable{Roslyn.Utilities.KeyValuePair{System.String,Microsoft.CodeAnalysis.ReportDiagnostic}}
+        name: IEnumerable<KeyValuePair<string, ReportDiagnostic>>
         isExternal: true
     return:
       id: CSharpCompilationOptions
-  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithSpecificDiagnosticOptions(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Microsoft.CodeAnalysis.ReportDiagnostic}})
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions
+        name: CSharpCompilationOptions
+        href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithSpecificDiagnosticOptions(IEnumerable{Roslyn.Utilities.KeyValuePair{System.String,Microsoft.CodeAnalysis.ReportDiagnostic}})
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithWarningLevel(System.Int32)
   href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
   name: WithWarningLevel(int)
@@ -583,7 +770,7 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
-    startLine: 304
+    startLine: 322
   syntax:
     content:
       CSharp: public CSharpCompilationOptions WithWarningLevel(int warningLevel)
@@ -591,10 +778,14 @@ items:
     - id: warningLevel
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     return:
       id: CSharpCompilationOptions
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions
+        name: CSharpCompilationOptions
+        href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
   id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithWarningLevel(System.Int32)
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithConcurrentBuild(System.Boolean)
   href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
@@ -604,7 +795,7 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
-    startLine: 314
+    startLine: 332
   syntax:
     content:
       CSharp: public CSharpCompilationOptions WithConcurrentBuild(bool concurrentBuild)
@@ -612,10 +803,14 @@ items:
     - id: concurrentBuild
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     return:
       id: CSharpCompilationOptions
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions
+        name: CSharpCompilationOptions
+        href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
   id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithConcurrentBuild(System.Boolean)
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithXmlReferenceResolver(Microsoft.CodeAnalysis.XmlReferenceResolver)
   href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
@@ -625,10 +820,10 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
-    startLine: 354
+    startLine: 372
   syntax:
     content:
-      CSharp: public new CSharpCompilationOptions WithXmlReferenceResolver(XmlReferenceResolver resolver)
+      CSharp: public CSharpCompilationOptions WithXmlReferenceResolver(XmlReferenceResolver resolver)
     parameters:
     - id: resolver
       type:
@@ -637,6 +832,10 @@ items:
         href: Microsoft.CodeAnalysis.XmlReferenceResolver
     return:
       id: CSharpCompilationOptions
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions
+        name: CSharpCompilationOptions
+        href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
   id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithXmlReferenceResolver(Microsoft.CodeAnalysis.XmlReferenceResolver)
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithSourceReferenceResolver(Microsoft.CodeAnalysis.SourceReferenceResolver)
   href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
@@ -646,10 +845,10 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
-    startLine: 364
+    startLine: 382
   syntax:
     content:
-      CSharp: public new CSharpCompilationOptions WithSourceReferenceResolver(SourceReferenceResolver resolver)
+      CSharp: public CSharpCompilationOptions WithSourceReferenceResolver(SourceReferenceResolver resolver)
     parameters:
     - id: resolver
       type:
@@ -658,6 +857,10 @@ items:
         href: Microsoft.CodeAnalysis.SourceReferenceResolver
     return:
       id: CSharpCompilationOptions
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions
+        name: CSharpCompilationOptions
+        href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
   id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithSourceReferenceResolver(Microsoft.CodeAnalysis.SourceReferenceResolver)
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithMetadataReferenceResolver(Microsoft.CodeAnalysis.MetadataReferenceResolver)
   href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
@@ -667,10 +870,10 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
-    startLine: 374
+    startLine: 392
   syntax:
     content:
-      CSharp: public new CSharpCompilationOptions WithMetadataReferenceResolver(MetadataReferenceResolver resolver)
+      CSharp: public CSharpCompilationOptions WithMetadataReferenceResolver(MetadataReferenceResolver resolver)
     parameters:
     - id: resolver
       type:
@@ -679,6 +882,10 @@ items:
         href: Microsoft.CodeAnalysis.MetadataReferenceResolver
     return:
       id: CSharpCompilationOptions
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions
+        name: CSharpCompilationOptions
+        href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
   id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithMetadataReferenceResolver(Microsoft.CodeAnalysis.MetadataReferenceResolver)
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithAssemblyIdentityComparer(Microsoft.CodeAnalysis.AssemblyIdentityComparer)
   href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
@@ -688,10 +895,10 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
-    startLine: 384
+    startLine: 402
   syntax:
     content:
-      CSharp: public new CSharpCompilationOptions WithAssemblyIdentityComparer(AssemblyIdentityComparer comparer)
+      CSharp: public CSharpCompilationOptions WithAssemblyIdentityComparer(AssemblyIdentityComparer comparer)
     parameters:
     - id: comparer
       type:
@@ -700,6 +907,10 @@ items:
         href: Microsoft.CodeAnalysis.AssemblyIdentityComparer
     return:
       id: CSharpCompilationOptions
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions
+        name: CSharpCompilationOptions
+        href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
   id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithAssemblyIdentityComparer(Microsoft.CodeAnalysis.AssemblyIdentityComparer)
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithStrongNameProvider(Microsoft.CodeAnalysis.StrongNameProvider)
   href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
@@ -709,10 +920,10 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
-    startLine: 396
+    startLine: 414
   syntax:
     content:
-      CSharp: public new CSharpCompilationOptions WithStrongNameProvider(StrongNameProvider provider)
+      CSharp: public CSharpCompilationOptions WithStrongNameProvider(StrongNameProvider provider)
     parameters:
     - id: provider
       type:
@@ -721,7 +932,236 @@ items:
         href: Microsoft.CodeAnalysis.StrongNameProvider
     return:
       id: CSharpCompilationOptions
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions
+        name: CSharpCompilationOptions
+        href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
   id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.WithStrongNameProvider(Microsoft.CodeAnalysis.StrongNameProvider)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithOutputKind(Microsoft.CodeAnalysis.OutputKind)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
+  name: CommonWithOutputKind(OutputKind)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithOutputKind(Microsoft.CodeAnalysis.OutputKind)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
+    startLine: 424
+  syntax:
+    content:
+      CSharp: protected override CompilationOptions CommonWithOutputKind(OutputKind kind)
+    parameters:
+    - id: kind
+      type:
+        id: Microsoft.CodeAnalysis.OutputKind
+        name: OutputKind
+        href: Microsoft.CodeAnalysis.OutputKind
+    return:
+      id: CompilationOptions
+      type:
+        id: Microsoft.CodeAnalysis.CompilationOptions
+        name: CompilationOptions
+        href: Microsoft.CodeAnalysis.CompilationOptions
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithOutputKind(Microsoft.CodeAnalysis.OutputKind)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithPlatform(Microsoft.CodeAnalysis.Platform)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
+  name: CommonWithPlatform(Platform)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithPlatform(Microsoft.CodeAnalysis.Platform)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
+    startLine: 429
+  syntax:
+    content:
+      CSharp: protected override CompilationOptions CommonWithPlatform(Platform platform)
+    parameters:
+    - id: platform
+      type:
+        id: Microsoft.CodeAnalysis.Platform
+        name: Platform
+        href: Microsoft.CodeAnalysis.Platform
+    return:
+      id: CompilationOptions
+      type:
+        id: Microsoft.CodeAnalysis.CompilationOptions
+        name: CompilationOptions
+        href: Microsoft.CodeAnalysis.CompilationOptions
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithPlatform(Microsoft.CodeAnalysis.Platform)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithOptimizationLevel(Microsoft.CodeAnalysis.OptimizationLevel)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
+  name: CommonWithOptimizationLevel(OptimizationLevel)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithOptimizationLevel(Microsoft.CodeAnalysis.OptimizationLevel)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
+    startLine: 434
+  syntax:
+    content:
+      CSharp: protected override CompilationOptions CommonWithOptimizationLevel(OptimizationLevel value)
+    parameters:
+    - id: value
+      type:
+        id: Microsoft.CodeAnalysis.OptimizationLevel
+        name: OptimizationLevel
+        href: Microsoft.CodeAnalysis.OptimizationLevel
+    return:
+      id: CompilationOptions
+      type:
+        id: Microsoft.CodeAnalysis.CompilationOptions
+        name: CompilationOptions
+        href: Microsoft.CodeAnalysis.CompilationOptions
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithOptimizationLevel(Microsoft.CodeAnalysis.OptimizationLevel)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithAssemblyIdentityComparer(Microsoft.CodeAnalysis.AssemblyIdentityComparer)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
+  name: CommonWithAssemblyIdentityComparer(AssemblyIdentityComparer)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithAssemblyIdentityComparer(Microsoft.CodeAnalysis.AssemblyIdentityComparer)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
+    startLine: 439
+  syntax:
+    content:
+      CSharp: protected override CompilationOptions CommonWithAssemblyIdentityComparer(AssemblyIdentityComparer comparer)
+    parameters:
+    - id: comparer
+      type:
+        id: Microsoft.CodeAnalysis.AssemblyIdentityComparer
+        name: AssemblyIdentityComparer
+        href: Microsoft.CodeAnalysis.AssemblyIdentityComparer
+    return:
+      id: CompilationOptions
+      type:
+        id: Microsoft.CodeAnalysis.CompilationOptions
+        name: CompilationOptions
+        href: Microsoft.CodeAnalysis.CompilationOptions
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithAssemblyIdentityComparer(Microsoft.CodeAnalysis.AssemblyIdentityComparer)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithXmlReferenceResolver(Microsoft.CodeAnalysis.XmlReferenceResolver)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
+  name: CommonWithXmlReferenceResolver(XmlReferenceResolver)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithXmlReferenceResolver(Microsoft.CodeAnalysis.XmlReferenceResolver)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
+    startLine: 444
+  syntax:
+    content:
+      CSharp: protected override CompilationOptions CommonWithXmlReferenceResolver(XmlReferenceResolver resolver)
+    parameters:
+    - id: resolver
+      type:
+        id: Microsoft.CodeAnalysis.XmlReferenceResolver
+        name: XmlReferenceResolver
+        href: Microsoft.CodeAnalysis.XmlReferenceResolver
+    return:
+      id: CompilationOptions
+      type:
+        id: Microsoft.CodeAnalysis.CompilationOptions
+        name: CompilationOptions
+        href: Microsoft.CodeAnalysis.CompilationOptions
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithXmlReferenceResolver(Microsoft.CodeAnalysis.XmlReferenceResolver)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithSourceReferenceResolver(Microsoft.CodeAnalysis.SourceReferenceResolver)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
+  name: CommonWithSourceReferenceResolver(SourceReferenceResolver)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithSourceReferenceResolver(Microsoft.CodeAnalysis.SourceReferenceResolver)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
+    startLine: 449
+  syntax:
+    content:
+      CSharp: protected override CompilationOptions CommonWithSourceReferenceResolver(SourceReferenceResolver resolver)
+    parameters:
+    - id: resolver
+      type:
+        id: Microsoft.CodeAnalysis.SourceReferenceResolver
+        name: SourceReferenceResolver
+        href: Microsoft.CodeAnalysis.SourceReferenceResolver
+    return:
+      id: CompilationOptions
+      type:
+        id: Microsoft.CodeAnalysis.CompilationOptions
+        name: CompilationOptions
+        href: Microsoft.CodeAnalysis.CompilationOptions
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithSourceReferenceResolver(Microsoft.CodeAnalysis.SourceReferenceResolver)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithMetadataReferenceResolver(Microsoft.CodeAnalysis.MetadataReferenceResolver)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
+  name: CommonWithMetadataReferenceResolver(MetadataReferenceResolver)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithMetadataReferenceResolver(Microsoft.CodeAnalysis.MetadataReferenceResolver)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
+    startLine: 454
+  syntax:
+    content:
+      CSharp: protected override CompilationOptions CommonWithMetadataReferenceResolver(MetadataReferenceResolver resolver)
+    parameters:
+    - id: resolver
+      type:
+        id: Microsoft.CodeAnalysis.MetadataReferenceResolver
+        name: MetadataReferenceResolver
+        href: Microsoft.CodeAnalysis.MetadataReferenceResolver
+    return:
+      id: CompilationOptions
+      type:
+        id: Microsoft.CodeAnalysis.CompilationOptions
+        name: CompilationOptions
+        href: Microsoft.CodeAnalysis.CompilationOptions
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithMetadataReferenceResolver(Microsoft.CodeAnalysis.MetadataReferenceResolver)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithStrongNameProvider(Microsoft.CodeAnalysis.StrongNameProvider)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
+  name: CommonWithStrongNameProvider(StrongNameProvider)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithStrongNameProvider(Microsoft.CodeAnalysis.StrongNameProvider)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
+    startLine: 459
+  syntax:
+    content:
+      CSharp: protected override CompilationOptions CommonWithStrongNameProvider(StrongNameProvider provider)
+    parameters:
+    - id: provider
+      type:
+        id: Microsoft.CodeAnalysis.StrongNameProvider
+        name: StrongNameProvider
+        href: Microsoft.CodeAnalysis.StrongNameProvider
+    return:
+      id: CompilationOptions
+      type:
+        id: Microsoft.CodeAnalysis.CompilationOptions
+        name: CompilationOptions
+        href: Microsoft.CodeAnalysis.CompilationOptions
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithStrongNameProvider(Microsoft.CodeAnalysis.StrongNameProvider)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithFeatures(ImmutableArray{System.String})
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
+  name: CommonWithFeatures(ImmutableArray<string>)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithFeatures(ImmutableArray<string>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
+    startLine: 464
+  syntax:
+    content:
+      CSharp: protected override CompilationOptions CommonWithFeatures(ImmutableArray<string> features)
+    parameters:
+    - id: features
+      type:
+        id: ImmutableArray{System.String}
+        name: ImmutableArray<string>
+        isExternal: true
+    return:
+      id: CompilationOptions
+      type:
+        id: Microsoft.CodeAnalysis.CompilationOptions
+        name: CompilationOptions
+        href: Microsoft.CodeAnalysis.CompilationOptions
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.CommonWithFeatures(ImmutableArray{System.String})
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.Equals(Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions)
   href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
   name: Equals(CSharpCompilationOptions)
@@ -730,7 +1170,7 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
-    startLine: 516
+    startLine: 547
   syntax:
     content:
       CSharp: public bool Equals(CSharpCompilationOptions other)
@@ -742,6 +1182,10 @@ items:
         href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.Equals(Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions)
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.Equals(System.Object)
   href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
@@ -751,7 +1195,7 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
-    startLine: 532
+    startLine: 563
   syntax:
     content:
       CSharp: public override bool Equals(object obj)
@@ -759,10 +1203,14 @@ items:
     - id: obj
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.Equals(System.Object)
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.GetHashCode
   href: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.yml
@@ -772,11 +1220,15 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/CSharpCompilationOptions.cs
-    startLine: 537
+    startLine: 568
   syntax:
     content:
       CSharp: public override int GetHashCode()
     parameters: []
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions.GetHashCode

@@ -6,20 +6,21 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/RequireHttpsAttribute.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/RequireHttpsAttribute.cs
     startLine: 7
   syntax:
     content:
-      CSharp: public class RequireHttpsAttribute
+      CSharp: 'public class RequireHttpsAttribute : FilterAttribute, _Attribute, IMvcFilter, IAuthorizationFilter'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Attribute
-    name: System.Attribute
+    name: Attribute
     isExternal: true
   - id: System.Web.Mvc.FilterAttribute
     name: FilterAttribute
@@ -30,6 +31,7 @@ items:
   - System.Web.Mvc.RequireHttpsAttribute.#ctor(System.Boolean)
   - System.Web.Mvc.RequireHttpsAttribute.Permanent
   - System.Web.Mvc.RequireHttpsAttribute.OnAuthorization(System.Web.Mvc.AuthorizationContext)
+  - System.Web.Mvc.RequireHttpsAttribute.HandleNonHttpsRequest(System.Web.Mvc.AuthorizationContext)
 - uid: System.Web.Mvc.RequireHttpsAttribute.#ctor
   href: System.Web.Mvc.RequireHttpsAttribute.yml
   name: RequireHttpsAttribute()
@@ -61,7 +63,7 @@ items:
     - id: permanent
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
       description: Whether the redirect to HTTPS should be a permanent redirect.
   id: System.Web.Mvc.RequireHttpsAttribute.#ctor(System.Boolean)
@@ -77,12 +79,12 @@ items:
   summary: Gets a value indicating whether the redirect to HTTPS should be a permanent redirect.
   syntax:
     content:
-      CSharp: public bool Permanent { get; private set; }
+      CSharp: public bool Permanent { get; }
     parameters:
     - id: Permanent
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.RequireHttpsAttribute.Permanent
 - uid: System.Web.Mvc.RequireHttpsAttribute.OnAuthorization(System.Web.Mvc.AuthorizationContext)
@@ -104,3 +106,22 @@ items:
         name: AuthorizationContext
         href: System.Web.Mvc.AuthorizationContext.yml
   id: System.Web.Mvc.RequireHttpsAttribute.OnAuthorization(System.Web.Mvc.AuthorizationContext)
+- uid: System.Web.Mvc.RequireHttpsAttribute.HandleNonHttpsRequest(System.Web.Mvc.AuthorizationContext)
+  href: System.Web.Mvc.RequireHttpsAttribute.yml
+  name: HandleNonHttpsRequest(AuthorizationContext)
+  fullName: System.Web.Mvc.RequireHttpsAttribute.HandleNonHttpsRequest(System.Web.Mvc.AuthorizationContext)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/RequireHttpsAttribute.cs
+    startLine: 43
+  syntax:
+    content:
+      CSharp: protected virtual void HandleNonHttpsRequest(AuthorizationContext filterContext)
+    parameters:
+    - id: filterContext
+      type:
+        id: System.Web.Mvc.AuthorizationContext
+        name: AuthorizationContext
+        href: System.Web.Mvc.AuthorizationContext.yml
+  id: System.Web.Mvc.RequireHttpsAttribute.HandleNonHttpsRequest(System.Web.Mvc.AuthorizationContext)

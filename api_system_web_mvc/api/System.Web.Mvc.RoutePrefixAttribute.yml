@@ -6,26 +6,43 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/RoutePrefixAttribute.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/RoutePrefixAttribute.cs
     startLine: 10
   summary: Annotates a controller with a route prefix that applies to all actions within the controller.
   syntax:
     content:
-      CSharp: public class RoutePrefixAttribute
+      CSharp: 'public class RoutePrefixAttribute : Attribute, _Attribute, IRoutePrefix'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Attribute
-    name: System.Attribute
+    name: Attribute
     isExternal: true
   id: System.Web.Mvc.RoutePrefixAttribute
   children:
+  - System.Web.Mvc.RoutePrefixAttribute.#ctor
   - System.Web.Mvc.RoutePrefixAttribute.#ctor(System.String)
   - System.Web.Mvc.RoutePrefixAttribute.Prefix
+- uid: System.Web.Mvc.RoutePrefixAttribute.#ctor
+  href: System.Web.Mvc.RoutePrefixAttribute.yml
+  name: RoutePrefixAttribute()
+  fullName: System.Web.Mvc.RoutePrefixAttribute.RoutePrefixAttribute()
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/RoutePrefixAttribute.cs
+    startLine: 17
+  summary: Initializes a new instance of the [System.Web.Mvc.RoutePrefixAttribute](System.Web.Mvc.RoutePrefixAttribute.yml) class without specifying any parameters.
+  syntax:
+    content:
+      CSharp: protected RoutePrefixAttribute()
+    parameters: []
+  id: System.Web.Mvc.RoutePrefixAttribute.#ctor
 - uid: System.Web.Mvc.RoutePrefixAttribute.#ctor(System.String)
   href: System.Web.Mvc.RoutePrefixAttribute.yml
   name: RoutePrefixAttribute(string)
@@ -43,7 +60,7 @@ items:
     - id: prefix
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The route prefix for the controller.
   id: System.Web.Mvc.RoutePrefixAttribute.#ctor(System.String)
@@ -59,11 +76,11 @@ items:
   summary: Gets the route prefix.
   syntax:
     content:
-      CSharp: public virtual string Prefix { get; private set; }
+      CSharp: public virtual string Prefix { get; }
     parameters:
     - id: Prefix
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.RoutePrefixAttribute.Prefix

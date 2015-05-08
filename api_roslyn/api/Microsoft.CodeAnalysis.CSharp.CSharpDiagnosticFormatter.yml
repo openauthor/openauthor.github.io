@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Compilers/CSharp/Portable/Errors/CSharpDiagnosticFormatter.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Compilers/CSharp/Portable/Errors/CSharpDiagnosticFormatter.cs
     startLine: 6
   syntax:
     content:
-      CSharp: public class CSharpDiagnosticFormatter
+      CSharp: 'public class CSharpDiagnosticFormatter : DiagnosticFormatter'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: Object
     isExternal: true
   - id: Microsoft.CodeAnalysis.DiagnosticFormatter
     name: DiagnosticFormatter
@@ -35,5 +36,5 @@ items:
     startLine: 12
   syntax:
     content:
-      CSharp: Instance
+      CSharp: public new static readonly CSharpDiagnosticFormatter Instance;
   id: Microsoft.CodeAnalysis.CSharp.CSharpDiagnosticFormatter.Instance

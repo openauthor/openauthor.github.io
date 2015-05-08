@@ -6,18 +6,19 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/Async/TaskAsyncActionDescriptor.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/Async/TaskAsyncActionDescriptor.cs
     startLine: 19
   summary: When an action method returns either Task or Task{T} the TaskAsyncActionDescriptor provides information about the action.
   syntax:
     content:
-      CSharp: public class TaskAsyncActionDescriptor
+      CSharp: 'public class TaskAsyncActionDescriptor : AsyncActionDescriptor, ICustomAttributeProvider, IUniquelyIdentifiable, IMethodInfoActionDescriptor'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.Mvc.ActionDescriptor
     name: ActionDescriptor
@@ -58,12 +59,12 @@ items:
     - id: taskMethodInfo
       type:
         id: System.Reflection.MethodInfo
-        name: System.Reflection.MethodInfo
+        name: MethodInfo
         isExternal: true
     - id: actionName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: controllerDescriptor
       type:
@@ -87,7 +88,7 @@ items:
     - id: ActionName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.Async.TaskAsyncActionDescriptor.ActionName
 - uid: System.Web.Mvc.Async.TaskAsyncActionDescriptor.TaskMethodInfo
@@ -101,12 +102,12 @@ items:
     startLine: 70
   syntax:
     content:
-      CSharp: public MethodInfo TaskMethodInfo { get; private set; }
+      CSharp: public MethodInfo TaskMethodInfo { get; }
     parameters:
     - id: TaskMethodInfo
       type:
         id: System.Reflection.MethodInfo
-        name: System.Reflection.MethodInfo
+        name: MethodInfo
         isExternal: true
   id: System.Web.Mvc.Async.TaskAsyncActionDescriptor.TaskMethodInfo
 - uid: System.Web.Mvc.Async.TaskAsyncActionDescriptor.ControllerDescriptor
@@ -144,7 +145,7 @@ items:
     - id: MethodInfo
       type:
         id: System.Reflection.MethodInfo
-        name: System.Reflection.MethodInfo
+        name: MethodInfo
         isExternal: true
   id: System.Web.Mvc.Async.TaskAsyncActionDescriptor.MethodInfo
 - uid: System.Web.Mvc.Async.TaskAsyncActionDescriptor.UniqueId
@@ -163,7 +164,7 @@ items:
     - id: UniqueId
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.Async.TaskAsyncActionDescriptor.UniqueId
 - uid: System.Web.Mvc.Async.TaskAsyncActionDescriptor.BeginExecute(System.Web.Mvc.ControllerContext,System.Collections.Generic.IDictionary{System.String,System.Object},System.AsyncCallback,System.Object)
@@ -177,7 +178,7 @@ items:
     startLine: 94
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Web.FxCop", "MW1201:DoNotCallProblematicMethodsOnTask", Justification = "This is commented in great detail.")] public override IAsyncResult BeginExecute(ControllerContext controllerContext, IDictionary<string, object> parameters, AsyncCallback callback, object state)'
+      CSharp: public override IAsyncResult BeginExecute(ControllerContext controllerContext, IDictionary<string, object> parameters, AsyncCallback callback, object state)
     parameters:
     - id: controllerContext
       type:
@@ -187,20 +188,24 @@ items:
     - id: parameters
       type:
         id: System.Collections.Generic.IDictionary{System.String,System.Object}
-        name: System.Collections.Generic.IDictionary{System.String,System.Object}
+        name: IDictionary<string, object>
         isExternal: true
     - id: callback
       type:
         id: System.AsyncCallback
-        name: System.AsyncCallback
+        name: AsyncCallback
         isExternal: true
     - id: state
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: IAsyncResult
+      type:
+        id: System.IAsyncResult
+        name: IAsyncResult
+        isExternal: true
   id: System.Web.Mvc.Async.TaskAsyncActionDescriptor.BeginExecute(System.Web.Mvc.ControllerContext,System.Collections.Generic.IDictionary{System.String,System.Object},System.AsyncCallback,System.Object)
 - uid: System.Web.Mvc.Async.TaskAsyncActionDescriptor.Execute(System.Web.Mvc.ControllerContext,System.Collections.Generic.IDictionary{System.String,System.Object})
   href: System.Web.Mvc.Async.TaskAsyncActionDescriptor.yml
@@ -223,10 +228,14 @@ items:
     - id: parameters
       type:
         id: System.Collections.Generic.IDictionary{System.String,System.Object}
-        name: System.Collections.Generic.IDictionary{System.String,System.Object}
+        name: IDictionary<string, object>
         isExternal: true
     return:
       id: Object
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
   id: System.Web.Mvc.Async.TaskAsyncActionDescriptor.Execute(System.Web.Mvc.ControllerContext,System.Collections.Generic.IDictionary{System.String,System.Object})
 - uid: System.Web.Mvc.Async.TaskAsyncActionDescriptor.EndExecute(System.IAsyncResult)
   href: System.Web.Mvc.Async.TaskAsyncActionDescriptor.yml
@@ -244,10 +253,14 @@ items:
     - id: asyncResult
       type:
         id: System.IAsyncResult
-        name: System.IAsyncResult
+        name: IAsyncResult
         isExternal: true
     return:
       id: Object
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
   id: System.Web.Mvc.Async.TaskAsyncActionDescriptor.EndExecute(System.IAsyncResult)
 - uid: System.Web.Mvc.Async.TaskAsyncActionDescriptor.GetCustomAttributes(System.Boolean)
   href: System.Web.Mvc.Async.TaskAsyncActionDescriptor.yml
@@ -265,9 +278,13 @@ items:
     - id: inherit
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
-    return: {}
+    return:
+      type:
+        id: System.Array
+        name: object[]
+        isExternal: true
   id: System.Web.Mvc.Async.TaskAsyncActionDescriptor.GetCustomAttributes(System.Boolean)
 - uid: System.Web.Mvc.Async.TaskAsyncActionDescriptor.GetCustomAttributes(System.Type,System.Boolean)
   href: System.Web.Mvc.Async.TaskAsyncActionDescriptor.yml
@@ -285,14 +302,18 @@ items:
     - id: attributeType
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
     - id: inherit
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
-    return: {}
+    return:
+      type:
+        id: System.Array
+        name: object[]
+        isExternal: true
   id: System.Web.Mvc.Async.TaskAsyncActionDescriptor.GetCustomAttributes(System.Type,System.Boolean)
 - uid: System.Web.Mvc.Async.TaskAsyncActionDescriptor.GetParameters
   href: System.Web.Mvc.Async.TaskAsyncActionDescriptor.yml
@@ -307,7 +328,11 @@ items:
     content:
       CSharp: public override ParameterDescriptor[] GetParameters()
     parameters: []
-    return: {}
+    return:
+      type:
+        id: System.Array
+        name: ParameterDescriptor[]
+        isExternal: true
   id: System.Web.Mvc.Async.TaskAsyncActionDescriptor.GetParameters
 - uid: System.Web.Mvc.Async.TaskAsyncActionDescriptor.GetSelectors
   href: System.Web.Mvc.Async.TaskAsyncActionDescriptor.yml
@@ -324,6 +349,10 @@ items:
     parameters: []
     return:
       id: ICollection
+      type:
+        id: System.Collections.Generic.ICollection{System.Web.Mvc.ActionSelector}
+        name: ICollection<ActionSelector>
+        isExternal: true
   id: System.Web.Mvc.Async.TaskAsyncActionDescriptor.GetSelectors
 - uid: System.Web.Mvc.Async.TaskAsyncActionDescriptor.IsDefined(System.Type,System.Boolean)
   href: System.Web.Mvc.Async.TaskAsyncActionDescriptor.yml
@@ -341,15 +370,19 @@ items:
     - id: attributeType
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
     - id: inherit
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Web.Mvc.Async.TaskAsyncActionDescriptor.IsDefined(System.Type,System.Boolean)
 - uid: System.Web.Mvc.Async.TaskAsyncActionDescriptor.GetFilterAttributes(System.Boolean)
   href: System.Web.Mvc.Async.TaskAsyncActionDescriptor.yml
@@ -367,8 +400,12 @@ items:
     - id: useCache
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Web.Mvc.FilterAttribute}
+        name: IEnumerable<FilterAttribute>
+        isExternal: true
   id: System.Web.Mvc.Async.TaskAsyncActionDescriptor.GetFilterAttributes(System.Boolean)

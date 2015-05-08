@@ -6,8 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/TraceFilter.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/TraceFilter.cs
     startLine: 7
   syntax:
@@ -15,7 +17,7 @@ items:
       CSharp: public abstract class TraceFilter
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Diagnostics.TraceFilter
   children:
@@ -31,7 +33,7 @@ items:
     startLine: 9
   syntax:
     content:
-      CSharp: public abstract bool ShouldTrace(TraceEventCache cache, string source, TraceEventType eventType, int id, string formatOrMessage, object[] args, object data1, object[] data);
+      CSharp: public abstract bool ShouldTrace(TraceEventCache cache, string source, TraceEventType eventType, int id, string formatOrMessage, object[] args, object data1, object[] data)
     parameters:
     - id: cache
       type:
@@ -41,7 +43,7 @@ items:
     - id: source
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: eventType
       type:
@@ -51,28 +53,32 @@ items:
     - id: id
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: formatOrMessage
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: args
       type:
         id: System.Array
-        name: System.Array
+        name: object[]
         isExternal: true
     - id: data1
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     - id: data
       type:
         id: System.Array
-        name: System.Array
+        name: object[]
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Diagnostics.TraceFilter.ShouldTrace(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String,System.Object[],System.Object,System.Object[])

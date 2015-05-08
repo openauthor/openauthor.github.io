@@ -6,22 +6,29 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
     startLine: 1533
   summary: Represents a collection of [System.Reflection.Metadata.MemberReferenceHandle](System.Reflection.Metadata.MemberReferenceHandle.yml).
   syntax:
     content:
-      CSharp: public struct MemberReferenceHandleCollection
+      CSharp: 'public struct MemberReferenceHandleCollection : IReadOnlyCollection<MemberReferenceHandle>, IEnumerable<MemberReferenceHandle>, IEnumerable'
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Reflection.Metadata.MemberReferenceHandleCollection
   children:
   - System.Reflection.Metadata.MemberReferenceHandleCollection.Count
   - System.Reflection.Metadata.MemberReferenceHandleCollection.GetEnumerator
+  - System.Reflection.Metadata.MemberReferenceHandleCollection.System#Collections#Generic#IEnumerable{System#Reflection#Metadata#MemberReferenceHandle}#GetEnumerator
+  - System.Reflection.Metadata.MemberReferenceHandleCollection.System#Collections#IEnumerable#GetEnumerator
 - uid: System.Reflection.Metadata.MemberReferenceHandleCollection.Count
   href: System.Reflection.Metadata.MemberReferenceHandleCollection.yml
   name: Count
@@ -38,7 +45,7 @@ items:
     - id: Count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Reflection.Metadata.MemberReferenceHandleCollection.Count
 - uid: System.Reflection.Metadata.MemberReferenceHandleCollection.GetEnumerator
@@ -56,4 +63,48 @@ items:
     parameters: []
     return:
       id: Enumerator
+      type:
+        id: System.Reflection.Metadata.MemberReferenceHandleCollection.Enumerator
+        name: Enumerator
+        href: System.Reflection.Metadata.MemberReferenceHandleCollection.Enumerator.yml
   id: System.Reflection.Metadata.MemberReferenceHandleCollection.GetEnumerator
+- uid: System.Reflection.Metadata.MemberReferenceHandleCollection.System#Collections#Generic#IEnumerable{System#Reflection#Metadata#MemberReferenceHandle}#GetEnumerator
+  href: System.Reflection.Metadata.MemberReferenceHandleCollection.yml
+  name: IEnumerable<MemberReferenceHandle>.GetEnumerator()
+  fullName: System.Reflection.Metadata.MemberReferenceHandleCollection.System.Collections.Generic.IEnumerable<System.Reflection.Metadata.MemberReferenceHandle>.GetEnumerator()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
+    startLine: 1553
+  syntax:
+    content:
+      CSharp: IEnumerator<MemberReferenceHandle> IEnumerable<MemberReferenceHandle>.GetEnumerator()
+    parameters: []
+    return:
+      id: IEnumerator
+      type:
+        id: System.Collections.Generic.IEnumerator{System.Reflection.Metadata.MemberReferenceHandle}
+        name: IEnumerator<MemberReferenceHandle>
+        isExternal: true
+  id: System.Reflection.Metadata.MemberReferenceHandleCollection.System#Collections#Generic#IEnumerable{System#Reflection#Metadata#MemberReferenceHandle}#GetEnumerator
+- uid: System.Reflection.Metadata.MemberReferenceHandleCollection.System#Collections#IEnumerable#GetEnumerator
+  href: System.Reflection.Metadata.MemberReferenceHandleCollection.yml
+  name: IEnumerable.GetEnumerator()
+  fullName: System.Reflection.Metadata.MemberReferenceHandleCollection.System.Collections.IEnumerable.GetEnumerator()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
+    startLine: 1558
+  syntax:
+    content:
+      CSharp: IEnumerator IEnumerable.GetEnumerator()
+    parameters: []
+    return:
+      id: IEnumerator
+      type:
+        id: System.Collections.IEnumerator
+        name: IEnumerator
+        isExternal: true
+  id: System.Reflection.Metadata.MemberReferenceHandleCollection.System#Collections#IEnumerable#GetEnumerator

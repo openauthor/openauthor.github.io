@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/RedirectResult.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/RedirectResult.cs
     startLine: 8
   syntax:
     content:
-      CSharp: public class RedirectResult
+      CSharp: 'public class RedirectResult : ActionResult'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.Mvc.ActionResult
     name: ActionResult
@@ -44,7 +45,7 @@ items:
     - id: url
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.RedirectResult.#ctor(System.String)
 - uid: System.Web.Mvc.RedirectResult.#ctor(System.String,System.Boolean)
@@ -63,12 +64,12 @@ items:
     - id: url
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: permanent
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.RedirectResult.#ctor(System.String,System.Boolean)
 - uid: System.Web.Mvc.RedirectResult.Permanent
@@ -82,12 +83,12 @@ items:
     startLine: 28
   syntax:
     content:
-      CSharp: public bool Permanent { get; private set; }
+      CSharp: public bool Permanent { get; }
     parameters:
     - id: Permanent
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.RedirectResult.Permanent
 - uid: System.Web.Mvc.RedirectResult.Url
@@ -101,12 +102,12 @@ items:
     startLine: 30
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Justification = "Response.Redirect() takes its URI as a string parameter.")] public string Url { get; private set; }'
+      CSharp: '[SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Justification = "Response.Redirect() takes its URI as a string parameter.")] public string Url { get; }'
     parameters:
     - id: Url
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.RedirectResult.Url
 - uid: System.Web.Mvc.RedirectResult.ExecuteResult(System.Web.Mvc.ControllerContext)

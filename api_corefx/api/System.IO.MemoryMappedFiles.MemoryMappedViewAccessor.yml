@@ -6,21 +6,27 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.IO.MemoryMappedFiles/src/System/IO/MemoryMappedFiles/MemoryMappedViewAccessor.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.IO.MemoryMappedFiles/src/System/IO/MemoryMappedFiles/MemoryMappedViewAccessor.cs
     startLine: 9
   syntax:
     content:
-      CSharp: public sealed class MemoryMappedViewAccessor
+      CSharp: 'public sealed class MemoryMappedViewAccessor : UnmanagedMemoryAccessor, IDisposable'
   inheritance:
-  - id: UnmanagedMemoryAccessor
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.IO.UnmanagedMemoryAccessor
     name: UnmanagedMemoryAccessor
     isExternal: true
   id: System.IO.MemoryMappedFiles.MemoryMappedViewAccessor
   children:
   - System.IO.MemoryMappedFiles.MemoryMappedViewAccessor.SafeMemoryMappedViewHandle
   - System.IO.MemoryMappedFiles.MemoryMappedViewAccessor.PointerOffset
+  - System.IO.MemoryMappedFiles.MemoryMappedViewAccessor.Dispose(System.Boolean)
   - System.IO.MemoryMappedFiles.MemoryMappedViewAccessor.Flush
 - uid: System.IO.MemoryMappedFiles.MemoryMappedViewAccessor.SafeMemoryMappedViewHandle
   href: System.IO.MemoryMappedFiles.MemoryMappedViewAccessor.yml
@@ -39,7 +45,7 @@ items:
       type:
         id: Microsoft.Win32.SafeHandles.SafeMemoryMappedViewHandle
         name: SafeMemoryMappedViewHandle
-        href: Microsoft.Win32.SafeHandles.SafeMemoryMappedViewHandle
+        href: Microsoft.Win32.SafeHandles.SafeMemoryMappedViewHandle.yml
   id: System.IO.MemoryMappedFiles.MemoryMappedViewAccessor.SafeMemoryMappedViewHandle
 - uid: System.IO.MemoryMappedFiles.MemoryMappedViewAccessor.PointerOffset
   href: System.IO.MemoryMappedFiles.MemoryMappedViewAccessor.yml
@@ -57,9 +63,28 @@ items:
     - id: PointerOffset
       type:
         id: System.Int64
-        name: System.Int64
+        name: long
         isExternal: true
   id: System.IO.MemoryMappedFiles.MemoryMappedViewAccessor.PointerOffset
+- uid: System.IO.MemoryMappedFiles.MemoryMappedViewAccessor.Dispose(System.Boolean)
+  href: System.IO.MemoryMappedFiles.MemoryMappedViewAccessor.yml
+  name: Dispose(bool)
+  fullName: System.IO.MemoryMappedFiles.MemoryMappedViewAccessor.Dispose(bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.MemoryMappedFiles/src/System/IO/MemoryMappedFiles/MemoryMappedViewAccessor.cs
+    startLine: 41
+  syntax:
+    content:
+      CSharp: protected override void Dispose(bool disposing)
+    parameters:
+    - id: disposing
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.IO.MemoryMappedFiles.MemoryMappedViewAccessor.Dispose(System.Boolean)
 - uid: System.IO.MemoryMappedFiles.MemoryMappedViewAccessor.Flush
   href: System.IO.MemoryMappedFiles.MemoryMappedViewAccessor.yml
   name: Flush()
@@ -71,6 +96,6 @@ items:
     startLine: 74
   syntax:
     content:
-      CSharp: '[SecurityCritical] public void Flush()'
+      CSharp: public void Flush()
     parameters: []
   id: System.IO.MemoryMappedFiles.MemoryMappedViewAccessor.Flush

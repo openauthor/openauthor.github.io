@@ -6,18 +6,19 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Common/Routing/Constraints/MaxLengthRouteConstraint.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/Common/Routing/Constraints/MaxLengthRouteConstraint.cs
     startLine: 22
   summary: Constrains a route parameter to be a string with a maximum length.
   syntax:
     content:
-      CSharp: 'public class MaxLengthRouteConstraint #endif'
+      CSharp: 'public class MaxLengthRouteConstraint : IRouteConstraint'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.Routing.Constraints.MaxLengthRouteConstraint
   children:
@@ -40,7 +41,7 @@ items:
     - id: maxLength
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Web.Mvc.Routing.Constraints.MaxLengthRouteConstraint.#ctor(System.Int32)
 - uid: System.Web.Mvc.Routing.Constraints.MaxLengthRouteConstraint.MaxLength
@@ -55,12 +56,12 @@ items:
   summary: Gets the maximum length of the route parameter.
   syntax:
     content:
-      CSharp: public int MaxLength { get; private set; }
+      CSharp: public int MaxLength { get; }
     parameters:
     - id: MaxLength
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Web.Mvc.Routing.Constraints.MaxLengthRouteConstraint.MaxLength
 - uid: System.Web.Mvc.Routing.Constraints.MaxLengthRouteConstraint.Match(System.Web.HttpContextBase,System.Web.Routing.Route,System.String,System.Web.Routing.RouteValueDictionary,System.Web.Routing.RouteDirection)
@@ -79,28 +80,32 @@ items:
     - id: httpContext
       type:
         id: System.Web.HttpContextBase
-        name: System.Web.HttpContextBase
+        name: HttpContextBase
         isExternal: true
     - id: route
       type:
         id: System.Web.Routing.Route
-        name: System.Web.Routing.Route
+        name: Route
         isExternal: true
     - id: parameterName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: values
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
     - id: routeDirection
       type:
         id: System.Web.Routing.RouteDirection
-        name: System.Web.Routing.RouteDirection
+        name: RouteDirection
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Web.Mvc.Routing.Constraints.MaxLengthRouteConstraint.Match(System.Web.HttpContextBase,System.Web.Routing.Route,System.String,System.Web.Routing.RouteValueDictionary,System.Web.Routing.RouteDirection)

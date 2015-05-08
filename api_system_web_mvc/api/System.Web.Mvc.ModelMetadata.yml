@@ -6,9 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/ModelMetadata.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/ModelMetadata.cs
     startLine: 16
   syntax:
@@ -16,7 +17,7 @@ items:
       CSharp: public class ModelMetadata
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.ModelMetadata
   children:
@@ -43,6 +44,7 @@ items:
   - System.Web.Mvc.ModelMetadata.Order
   - System.Web.Mvc.ModelMetadata.Properties
   - System.Web.Mvc.ModelMetadata.PropertyName
+  - System.Web.Mvc.ModelMetadata.Provider
   - System.Web.Mvc.ModelMetadata.RequestValidationEnabled
   - System.Web.Mvc.ModelMetadata.ShortDisplayName
   - System.Web.Mvc.ModelMetadata.ShowForDisplay
@@ -53,6 +55,7 @@ items:
   - System.Web.Mvc.ModelMetadata.FromLambdaExpression``2(System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Web.Mvc.ViewDataDictionary{``0})
   - System.Web.Mvc.ModelMetadata.FromStringExpression(System.String,System.Web.Mvc.ViewDataDictionary)
   - System.Web.Mvc.ModelMetadata.GetDisplayName
+  - System.Web.Mvc.ModelMetadata.GetSimpleDisplayText
   - System.Web.Mvc.ModelMetadata.GetValidators(System.Web.Mvc.ControllerContext)
 - uid: System.Web.Mvc.ModelMetadata.DefaultOrder
   href: System.Web.Mvc.ModelMetadata.yml
@@ -65,7 +68,7 @@ items:
     startLine: 18
   syntax:
     content:
-      CSharp: DefaultOrder
+      CSharp: public const int DefaultOrder;
   id: System.Web.Mvc.ModelMetadata.DefaultOrder
 - uid: System.Web.Mvc.ModelMetadata.#ctor(System.Web.Mvc.ModelMetadataProvider,System.Type,System.Func{System.Object},System.Type,System.String)
   href: System.Web.Mvc.ModelMetadata.yml
@@ -88,22 +91,22 @@ items:
     - id: containerType
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
     - id: modelAccessor
       type:
         id: System.Func{System.Object}
-        name: System.Func{System.Object}
+        name: Func<object>
         isExternal: true
     - id: modelType
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
     - id: propertyName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.ModelMetadata.#ctor(System.Web.Mvc.ModelMetadataProvider,System.Type,System.Func{System.Object},System.Type,System.String)
 - uid: System.Web.Mvc.ModelMetadata.AdditionalValues
@@ -122,7 +125,7 @@ items:
     - id: AdditionalValues
       type:
         id: System.Collections.Generic.Dictionary{System.String,System.Object}
-        name: System.Collections.Generic.Dictionary{System.String,System.Object}
+        name: Dictionary<string, object>
         isExternal: true
   id: System.Web.Mvc.ModelMetadata.AdditionalValues
 - uid: System.Web.Mvc.ModelMetadata.Container
@@ -142,7 +145,7 @@ items:
     - id: Container
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.Web.Mvc.ModelMetadata.Container
 - uid: System.Web.Mvc.ModelMetadata.ContainerType
@@ -161,7 +164,7 @@ items:
     - id: ContainerType
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
   id: System.Web.Mvc.ModelMetadata.ContainerType
 - uid: System.Web.Mvc.ModelMetadata.ConvertEmptyStringToNull
@@ -180,7 +183,7 @@ items:
     - id: ConvertEmptyStringToNull
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.ModelMetadata.ConvertEmptyStringToNull
 - uid: System.Web.Mvc.ModelMetadata.DataTypeName
@@ -199,7 +202,7 @@ items:
     - id: DataTypeName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.ModelMetadata.DataTypeName
 - uid: System.Web.Mvc.ModelMetadata.Description
@@ -218,7 +221,7 @@ items:
     - id: Description
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.ModelMetadata.Description
 - uid: System.Web.Mvc.ModelMetadata.DisplayFormatString
@@ -237,7 +240,7 @@ items:
     - id: DisplayFormatString
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.ModelMetadata.DisplayFormatString
 - uid: System.Web.Mvc.ModelMetadata.DisplayName
@@ -256,7 +259,7 @@ items:
     - id: DisplayName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.ModelMetadata.DisplayName
 - uid: System.Web.Mvc.ModelMetadata.EditFormatString
@@ -275,7 +278,7 @@ items:
     - id: EditFormatString
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.ModelMetadata.EditFormatString
 - uid: System.Web.Mvc.ModelMetadata.HideSurroundingHtml
@@ -294,7 +297,7 @@ items:
     - id: HideSurroundingHtml
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.ModelMetadata.HideSurroundingHtml
 - uid: System.Web.Mvc.ModelMetadata.HtmlEncode
@@ -313,7 +316,7 @@ items:
     - id: HtmlEncode
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.ModelMetadata.HtmlEncode
 - uid: System.Web.Mvc.ModelMetadata.IsComplexType
@@ -332,7 +335,7 @@ items:
     - id: IsComplexType
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.ModelMetadata.IsComplexType
 - uid: System.Web.Mvc.ModelMetadata.IsNullableValueType
@@ -351,7 +354,7 @@ items:
     - id: IsNullableValueType
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.ModelMetadata.IsNullableValueType
 - uid: System.Web.Mvc.ModelMetadata.IsReadOnly
@@ -370,7 +373,7 @@ items:
     - id: IsReadOnly
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.ModelMetadata.IsReadOnly
 - uid: System.Web.Mvc.ModelMetadata.IsRequired
@@ -389,7 +392,7 @@ items:
     - id: IsRequired
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.ModelMetadata.IsRequired
 - uid: System.Web.Mvc.ModelMetadata.Model
@@ -408,7 +411,7 @@ items:
     - id: Model
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.Web.Mvc.ModelMetadata.Model
 - uid: System.Web.Mvc.ModelMetadata.ModelType
@@ -427,7 +430,7 @@ items:
     - id: ModelType
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
   id: System.Web.Mvc.ModelMetadata.ModelType
 - uid: System.Web.Mvc.ModelMetadata.NullDisplayText
@@ -446,7 +449,7 @@ items:
     - id: NullDisplayText
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.ModelMetadata.NullDisplayText
 - uid: System.Web.Mvc.ModelMetadata.Order
@@ -465,7 +468,7 @@ items:
     - id: Order
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Web.Mvc.ModelMetadata.Order
 - uid: System.Web.Mvc.ModelMetadata.Properties
@@ -484,7 +487,7 @@ items:
     - id: Properties
       type:
         id: System.Collections.Generic.IEnumerable{System.Web.Mvc.ModelMetadata}
-        name: System.Collections.Generic.IEnumerable{System.Web.Mvc.ModelMetadata}
+        name: IEnumerable<ModelMetadata>
         isExternal: true
   id: System.Web.Mvc.ModelMetadata.Properties
 - uid: System.Web.Mvc.ModelMetadata.PropertyName
@@ -503,9 +506,28 @@ items:
     - id: PropertyName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.ModelMetadata.PropertyName
+- uid: System.Web.Mvc.ModelMetadata.Provider
+  href: System.Web.Mvc.ModelMetadata.yml
+  name: Provider
+  fullName: System.Web.Mvc.ModelMetadata.Provider
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ModelMetadata.cs
+    startLine: 190
+  syntax:
+    content:
+      CSharp: protected ModelMetadataProvider Provider { get; set; }
+    parameters:
+    - id: Provider
+      type:
+        id: System.Web.Mvc.ModelMetadataProvider
+        name: ModelMetadataProvider
+        href: System.Web.Mvc.ModelMetadataProvider.yml
+  id: System.Web.Mvc.ModelMetadata.Provider
 - uid: System.Web.Mvc.ModelMetadata.RequestValidationEnabled
   href: System.Web.Mvc.ModelMetadata.yml
   name: RequestValidationEnabled
@@ -522,7 +544,7 @@ items:
     - id: RequestValidationEnabled
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.ModelMetadata.RequestValidationEnabled
 - uid: System.Web.Mvc.ModelMetadata.ShortDisplayName
@@ -541,7 +563,7 @@ items:
     - id: ShortDisplayName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.ModelMetadata.ShortDisplayName
 - uid: System.Web.Mvc.ModelMetadata.ShowForDisplay
@@ -560,7 +582,7 @@ items:
     - id: ShowForDisplay
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.ModelMetadata.ShowForDisplay
 - uid: System.Web.Mvc.ModelMetadata.ShowForEdit
@@ -579,7 +601,7 @@ items:
     - id: ShowForEdit
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.ModelMetadata.ShowForEdit
 - uid: System.Web.Mvc.ModelMetadata.SimpleDisplayText
@@ -598,7 +620,7 @@ items:
     - id: SimpleDisplayText
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.ModelMetadata.SimpleDisplayText
 - uid: System.Web.Mvc.ModelMetadata.TemplateHint
@@ -617,7 +639,7 @@ items:
     - id: TemplateHint
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.ModelMetadata.TemplateHint
 - uid: System.Web.Mvc.ModelMetadata.Watermark
@@ -636,7 +658,7 @@ items:
     - id: Watermark
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.ModelMetadata.Watermark
 - uid: System.Web.Mvc.ModelMetadata.FromLambdaExpression``2(System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Web.Mvc.ViewDataDictionary{``0})
@@ -650,20 +672,24 @@ items:
     startLine: 250
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Justification = "This is an appropriate nesting of generic types")] public static ModelMetadata FromLambdaExpression<TParameter, TValue>(Expression<Func<TParameter, TValue>> expression, ViewDataDictionary<TParameter> viewData)'
+      CSharp: public static ModelMetadata FromLambdaExpression<TParameter, TValue>(Expression<Func<TParameter, TValue>> expression, ViewDataDictionary<TParameter> viewData)
     parameters:
     - id: expression
       type:
         id: System.Linq.Expressions.Expression{System.Func{``0,``1}}
-        name: System.Linq.Expressions.Expression{System.Func{``0,``1}}
+        name: Expression<Func<TParameter, TValue>>
         isExternal: true
     - id: viewData
       type:
         id: System.Web.Mvc.ViewDataDictionary{``0}
-        name: ViewDataDictionary
+        name: ViewDataDictionary<TParameter>
         href: System.Web.Mvc.ViewDataDictionary{``0}
     return:
       id: ModelMetadata
+      type:
+        id: System.Web.Mvc.ModelMetadata
+        name: ModelMetadata
+        href: System.Web.Mvc.ModelMetadata.yml
   id: System.Web.Mvc.ModelMetadata.FromLambdaExpression``2(System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Web.Mvc.ViewDataDictionary{``0})
 - uid: System.Web.Mvc.ModelMetadata.FromStringExpression(System.String,System.Web.Mvc.ViewDataDictionary)
   href: System.Web.Mvc.ModelMetadata.yml
@@ -681,7 +707,7 @@ items:
     - id: expression
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: viewData
       type:
@@ -690,6 +716,10 @@ items:
         href: System.Web.Mvc.ViewDataDictionary.yml
     return:
       id: ModelMetadata
+      type:
+        id: System.Web.Mvc.ModelMetadata
+        name: ModelMetadata
+        href: System.Web.Mvc.ModelMetadata.yml
   id: System.Web.Mvc.ModelMetadata.FromStringExpression(System.String,System.Web.Mvc.ViewDataDictionary)
 - uid: System.Web.Mvc.ModelMetadata.GetDisplayName
   href: System.Web.Mvc.ModelMetadata.yml
@@ -702,11 +732,35 @@ items:
     startLine: 390
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Justification = "The method is a delegating helper to choose among multiple property values")] public string GetDisplayName()'
+      CSharp: public string GetDisplayName()
     parameters: []
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.ModelMetadata.GetDisplayName
+- uid: System.Web.Mvc.ModelMetadata.GetSimpleDisplayText
+  href: System.Web.Mvc.ModelMetadata.yml
+  name: GetSimpleDisplayText()
+  fullName: System.Web.Mvc.ModelMetadata.GetSimpleDisplayText()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ModelMetadata.cs
+    startLine: 411
+  syntax:
+    content:
+      CSharp: protected virtual string GetSimpleDisplayText()
+    parameters: []
+    return:
+      id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Web.Mvc.ModelMetadata.GetSimpleDisplayText
 - uid: System.Web.Mvc.ModelMetadata.GetValidators(System.Web.Mvc.ControllerContext)
   href: System.Web.Mvc.ModelMetadata.yml
   name: GetValidators(ControllerContext)
@@ -727,4 +781,8 @@ items:
         href: System.Web.Mvc.ControllerContext.yml
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Web.Mvc.ModelValidator}
+        name: IEnumerable<ModelValidator>
+        isExternal: true
   id: System.Web.Mvc.ModelMetadata.GetValidators(System.Web.Mvc.ControllerContext)

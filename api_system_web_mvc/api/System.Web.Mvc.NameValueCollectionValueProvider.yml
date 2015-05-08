@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/NameValueCollectionValueProvider.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/NameValueCollectionValueProvider.cs
     startLine: 11
   syntax:
     content:
-      CSharp: public class NameValueCollectionValueProvider
+      CSharp: 'public class NameValueCollectionValueProvider : IUnvalidatedValueProvider, IEnumerableValueProvider, IValueProvider'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.NameValueCollectionValueProvider
   children:
@@ -43,12 +44,12 @@ items:
     - id: collection
       type:
         id: System.Collections.Specialized.NameValueCollection
-        name: System.Collections.Specialized.NameValueCollection
+        name: NameValueCollection
         isExternal: true
     - id: culture
       type:
         id: System.Globalization.CultureInfo
-        name: System.Globalization.CultureInfo
+        name: CultureInfo
         isExternal: true
   id: System.Web.Mvc.NameValueCollectionValueProvider.#ctor(System.Collections.Specialized.NameValueCollection,System.Globalization.CultureInfo)
 - uid: System.Web.Mvc.NameValueCollectionValueProvider.#ctor(System.Collections.Specialized.NameValueCollection,System.Collections.Specialized.NameValueCollection,System.Globalization.CultureInfo)
@@ -67,17 +68,17 @@ items:
     - id: collection
       type:
         id: System.Collections.Specialized.NameValueCollection
-        name: System.Collections.Specialized.NameValueCollection
+        name: NameValueCollection
         isExternal: true
     - id: unvalidatedCollection
       type:
         id: System.Collections.Specialized.NameValueCollection
-        name: System.Collections.Specialized.NameValueCollection
+        name: NameValueCollection
         isExternal: true
     - id: culture
       type:
         id: System.Globalization.CultureInfo
-        name: System.Globalization.CultureInfo
+        name: CultureInfo
         isExternal: true
   id: System.Web.Mvc.NameValueCollectionValueProvider.#ctor(System.Collections.Specialized.NameValueCollection,System.Collections.Specialized.NameValueCollection,System.Globalization.CultureInfo)
 - uid: System.Web.Mvc.NameValueCollectionValueProvider.#ctor(System.Collections.Specialized.NameValueCollection,System.Collections.Specialized.NameValueCollection,System.Globalization.CultureInfo,System.Boolean)
@@ -97,25 +98,25 @@ items:
     - id: collection
       type:
         id: System.Collections.Specialized.NameValueCollection
-        name: System.Collections.Specialized.NameValueCollection
+        name: NameValueCollection
         isExternal: true
       description: Key value collection from request.
     - id: unvalidatedCollection
       type:
         id: System.Collections.Specialized.NameValueCollection
-        name: System.Collections.Specialized.NameValueCollection
+        name: NameValueCollection
         isExternal: true
       description: Unvalidated key value collection from the request.
     - id: culture
       type:
         id: System.Globalization.CultureInfo
-        name: System.Globalization.CultureInfo
+        name: CultureInfo
         isExternal: true
       description: Culture with which the values are to be used.
     - id: jQueryToMvcRequestNormalizationRequired
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
       description: >-
         jQuery POST when sending complex Javascript
@@ -140,10 +141,14 @@ items:
     - id: prefix
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Web.Mvc.NameValueCollectionValueProvider.ContainsPrefix(System.String)
 - uid: System.Web.Mvc.NameValueCollectionValueProvider.GetValue(System.String)
   href: System.Web.Mvc.NameValueCollectionValueProvider.yml
@@ -161,10 +166,14 @@ items:
     - id: key
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: ValueProviderResult
+      type:
+        id: System.Web.Mvc.ValueProviderResult
+        name: ValueProviderResult
+        href: System.Web.Mvc.ValueProviderResult.yml
   id: System.Web.Mvc.NameValueCollectionValueProvider.GetValue(System.String)
 - uid: System.Web.Mvc.NameValueCollectionValueProvider.GetValue(System.String,System.Boolean)
   href: System.Web.Mvc.NameValueCollectionValueProvider.yml
@@ -182,15 +191,19 @@ items:
     - id: key
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: skipValidation
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     return:
       id: ValueProviderResult
+      type:
+        id: System.Web.Mvc.ValueProviderResult
+        name: ValueProviderResult
+        href: System.Web.Mvc.ValueProviderResult.yml
   id: System.Web.Mvc.NameValueCollectionValueProvider.GetValue(System.String,System.Boolean)
 - uid: System.Web.Mvc.NameValueCollectionValueProvider.GetKeysFromPrefix(System.String)
   href: System.Web.Mvc.NameValueCollectionValueProvider.yml
@@ -208,8 +221,12 @@ items:
     - id: prefix
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: IDictionary
+      type:
+        id: System.Collections.Generic.IDictionary{System.String,System.String}
+        name: IDictionary<string, string>
+        isExternal: true
   id: System.Web.Mvc.NameValueCollectionValueProvider.GetKeysFromPrefix(System.String)

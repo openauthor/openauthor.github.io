@@ -6,20 +6,21 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/ValidateAntiForgeryTokenAttribute.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/ValidateAntiForgeryTokenAttribute.cs
     startLine: 9
   syntax:
     content:
-      CSharp: public sealed class ValidateAntiForgeryTokenAttribute
+      CSharp: 'public sealed class ValidateAntiForgeryTokenAttribute : FilterAttribute, _Attribute, IMvcFilter, IAuthorizationFilter'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Attribute
-    name: System.Attribute
+    name: Attribute
     isExternal: true
   - id: System.Web.Mvc.FilterAttribute
     name: FilterAttribute
@@ -59,7 +60,7 @@ items:
     - id: Salt
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.ValidateAntiForgeryTokenAttribute.Salt
 - uid: System.Web.Mvc.ValidateAntiForgeryTokenAttribute.OnAuthorization(System.Web.Mvc.AuthorizationContext)

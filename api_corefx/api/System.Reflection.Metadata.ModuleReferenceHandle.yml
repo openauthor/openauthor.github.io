@@ -6,21 +6,28 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1304
+    startLine: 1814
   syntax:
     content:
-      CSharp: public struct ModuleReferenceHandle
+      CSharp: 'public struct ModuleReferenceHandle : IEquatable<ModuleReferenceHandle>'
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Reflection.Metadata.ModuleReferenceHandle
   children:
   - System.Reflection.Metadata.ModuleReferenceHandle.op_Implicit(System.Reflection.Metadata.ModuleReferenceHandle)~System.Reflection.Metadata.Handle
+  - System.Reflection.Metadata.ModuleReferenceHandle.op_Implicit(System.Reflection.Metadata.ModuleReferenceHandle)~System.Reflection.Metadata.EntityHandle
   - System.Reflection.Metadata.ModuleReferenceHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.ModuleReferenceHandle
+  - System.Reflection.Metadata.ModuleReferenceHandle.op_Explicit(System.Reflection.Metadata.EntityHandle)~System.Reflection.Metadata.ModuleReferenceHandle
   - System.Reflection.Metadata.ModuleReferenceHandle.IsNil
   - System.Reflection.Metadata.ModuleReferenceHandle.op_Equality(System.Reflection.Metadata.ModuleReferenceHandle,System.Reflection.Metadata.ModuleReferenceHandle)
   - System.Reflection.Metadata.ModuleReferenceHandle.Equals(System.Object)
@@ -31,14 +38,14 @@ items:
   href: System.Reflection.Metadata.ModuleReferenceHandle.yml
   name: implicit operator Handle(ModuleReferenceHandle)
   fullName: System.Reflection.Metadata.ModuleReferenceHandle.implicit operator System.Reflection.Metadata.Handle(System.Reflection.Metadata.ModuleReferenceHandle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1320
+    startLine: 1831
   syntax:
     content:
-      CSharp: public static implicit operator Handle(ModuleReferenceHandle handle) { return new Handle(handle._rowId | tokenType); }
+      CSharp: public static implicit operator Handle(ModuleReferenceHandle handle)
     parameters:
     - id: handle
       type:
@@ -47,19 +54,48 @@ items:
         href: System.Reflection.Metadata.ModuleReferenceHandle.yml
     return:
       id: Handle
+      type:
+        id: System.Reflection.Metadata.Handle
+        name: Handle
+        href: System.Reflection.Metadata.Handle.yml
   id: System.Reflection.Metadata.ModuleReferenceHandle.op_Implicit(System.Reflection.Metadata.ModuleReferenceHandle)~System.Reflection.Metadata.Handle
+- uid: System.Reflection.Metadata.ModuleReferenceHandle.op_Implicit(System.Reflection.Metadata.ModuleReferenceHandle)~System.Reflection.Metadata.EntityHandle
+  href: System.Reflection.Metadata.ModuleReferenceHandle.yml
+  name: implicit operator EntityHandle(ModuleReferenceHandle)
+  fullName: System.Reflection.Metadata.ModuleReferenceHandle.implicit operator System.Reflection.Metadata.EntityHandle(System.Reflection.Metadata.ModuleReferenceHandle)
+  type: Operator
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 1836
+  syntax:
+    content:
+      CSharp: public static implicit operator EntityHandle(ModuleReferenceHandle handle)
+    parameters:
+    - id: handle
+      type:
+        id: System.Reflection.Metadata.ModuleReferenceHandle
+        name: ModuleReferenceHandle
+        href: System.Reflection.Metadata.ModuleReferenceHandle.yml
+    return:
+      id: EntityHandle
+      type:
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
+  id: System.Reflection.Metadata.ModuleReferenceHandle.op_Implicit(System.Reflection.Metadata.ModuleReferenceHandle)~System.Reflection.Metadata.EntityHandle
 - uid: System.Reflection.Metadata.ModuleReferenceHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.ModuleReferenceHandle
   href: System.Reflection.Metadata.ModuleReferenceHandle.yml
   name: explicit operator ModuleReferenceHandle(Handle)
   fullName: System.Reflection.Metadata.ModuleReferenceHandle.explicit operator System.Reflection.Metadata.ModuleReferenceHandle(System.Reflection.Metadata.Handle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1325
+    startLine: 1841
   syntax:
     content:
-      CSharp: public static explicit operator ModuleReferenceHandle(Handle handle) { if (handle.TokenType != tokenType) { Handle.ThrowInvalidCast(); } return new ModuleReferenceHandle(handle.RowId); }
+      CSharp: public static explicit operator ModuleReferenceHandle(Handle handle)
     parameters:
     - id: handle
       type:
@@ -68,7 +104,36 @@ items:
         href: System.Reflection.Metadata.Handle.yml
     return:
       id: ModuleReferenceHandle
+      type:
+        id: System.Reflection.Metadata.ModuleReferenceHandle
+        name: ModuleReferenceHandle
+        href: System.Reflection.Metadata.ModuleReferenceHandle.yml
   id: System.Reflection.Metadata.ModuleReferenceHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.ModuleReferenceHandle
+- uid: System.Reflection.Metadata.ModuleReferenceHandle.op_Explicit(System.Reflection.Metadata.EntityHandle)~System.Reflection.Metadata.ModuleReferenceHandle
+  href: System.Reflection.Metadata.ModuleReferenceHandle.yml
+  name: explicit operator ModuleReferenceHandle(EntityHandle)
+  fullName: System.Reflection.Metadata.ModuleReferenceHandle.explicit operator System.Reflection.Metadata.ModuleReferenceHandle(System.Reflection.Metadata.EntityHandle)
+  type: Operator
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 1851
+  syntax:
+    content:
+      CSharp: public static explicit operator ModuleReferenceHandle(EntityHandle handle)
+    parameters:
+    - id: handle
+      type:
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
+    return:
+      id: ModuleReferenceHandle
+      type:
+        id: System.Reflection.Metadata.ModuleReferenceHandle
+        name: ModuleReferenceHandle
+        href: System.Reflection.Metadata.ModuleReferenceHandle.yml
+  id: System.Reflection.Metadata.ModuleReferenceHandle.op_Explicit(System.Reflection.Metadata.EntityHandle)~System.Reflection.Metadata.ModuleReferenceHandle
 - uid: System.Reflection.Metadata.ModuleReferenceHandle.IsNil
   href: System.Reflection.Metadata.ModuleReferenceHandle.yml
   name: IsNil
@@ -77,7 +142,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1335
+    startLine: 1861
   syntax:
     content:
       CSharp: public bool IsNil { get; }
@@ -85,21 +150,21 @@ items:
     - id: IsNil
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Reflection.Metadata.ModuleReferenceHandle.IsNil
 - uid: System.Reflection.Metadata.ModuleReferenceHandle.op_Equality(System.Reflection.Metadata.ModuleReferenceHandle,System.Reflection.Metadata.ModuleReferenceHandle)
   href: System.Reflection.Metadata.ModuleReferenceHandle.yml
   name: operator ==(ModuleReferenceHandle, ModuleReferenceHandle)
   fullName: System.Reflection.Metadata.ModuleReferenceHandle.operator ==(System.Reflection.Metadata.ModuleReferenceHandle, System.Reflection.Metadata.ModuleReferenceHandle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1345
+    startLine: 1871
   syntax:
     content:
-      CSharp: public static bool operator ==(ModuleReferenceHandle left, ModuleReferenceHandle right) { return left._rowId == right._rowId; }
+      CSharp: public static bool operator ==(ModuleReferenceHandle left, ModuleReferenceHandle right)
     parameters:
     - id: left
       type:
@@ -113,6 +178,10 @@ items:
         href: System.Reflection.Metadata.ModuleReferenceHandle.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.ModuleReferenceHandle.op_Equality(System.Reflection.Metadata.ModuleReferenceHandle,System.Reflection.Metadata.ModuleReferenceHandle)
 - uid: System.Reflection.Metadata.ModuleReferenceHandle.Equals(System.Object)
   href: System.Reflection.Metadata.ModuleReferenceHandle.yml
@@ -122,7 +191,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1350
+    startLine: 1876
   syntax:
     content:
       CSharp: public override bool Equals(object obj)
@@ -130,10 +199,14 @@ items:
     - id: obj
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.ModuleReferenceHandle.Equals(System.Object)
 - uid: System.Reflection.Metadata.ModuleReferenceHandle.Equals(System.Reflection.Metadata.ModuleReferenceHandle)
   href: System.Reflection.Metadata.ModuleReferenceHandle.yml
@@ -143,7 +216,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1355
+    startLine: 1881
   syntax:
     content:
       CSharp: public bool Equals(ModuleReferenceHandle other)
@@ -155,6 +228,10 @@ items:
         href: System.Reflection.Metadata.ModuleReferenceHandle.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.ModuleReferenceHandle.Equals(System.Reflection.Metadata.ModuleReferenceHandle)
 - uid: System.Reflection.Metadata.ModuleReferenceHandle.GetHashCode
   href: System.Reflection.Metadata.ModuleReferenceHandle.yml
@@ -164,26 +241,30 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1360
+    startLine: 1886
   syntax:
     content:
       CSharp: public override int GetHashCode()
     parameters: []
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: System.Reflection.Metadata.ModuleReferenceHandle.GetHashCode
 - uid: System.Reflection.Metadata.ModuleReferenceHandle.op_Inequality(System.Reflection.Metadata.ModuleReferenceHandle,System.Reflection.Metadata.ModuleReferenceHandle)
   href: System.Reflection.Metadata.ModuleReferenceHandle.yml
   name: operator !=(ModuleReferenceHandle, ModuleReferenceHandle)
   fullName: System.Reflection.Metadata.ModuleReferenceHandle.operator !=(System.Reflection.Metadata.ModuleReferenceHandle, System.Reflection.Metadata.ModuleReferenceHandle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1365
+    startLine: 1891
   syntax:
     content:
-      CSharp: public static bool operator !=(ModuleReferenceHandle left, ModuleReferenceHandle right) { return left._rowId != right._rowId; }
+      CSharp: public static bool operator !=(ModuleReferenceHandle left, ModuleReferenceHandle right)
     parameters:
     - id: left
       type:
@@ -197,4 +278,8 @@ items:
         href: System.Reflection.Metadata.ModuleReferenceHandle.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.ModuleReferenceHandle.op_Inequality(System.Reflection.Metadata.ModuleReferenceHandle,System.Reflection.Metadata.ModuleReferenceHandle)

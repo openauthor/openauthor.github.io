@@ -6,16 +6,21 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MemberReference.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MemberReference.cs
     startLine: 8
   syntax:
     content:
       CSharp: public struct MemberReference
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Reflection.Metadata.MemberReference
   children:
@@ -36,13 +41,13 @@ items:
   summary: MethodDef, ModuleRef,TypeDef, TypeRef, or TypeSpec handle.
   syntax:
     content:
-      CSharp: public Handle Parent { get; }
+      CSharp: public EntityHandle Parent { get; }
     parameters:
     - id: Parent
       type:
-        id: System.Reflection.Metadata.Handle
-        name: Handle
-        href: System.Reflection.Metadata.Handle.yml
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
   id: System.Reflection.Metadata.MemberReference.Parent
 - uid: System.Reflection.Metadata.MemberReference.Name
   href: System.Reflection.Metadata.MemberReference.yml
@@ -98,6 +103,10 @@ items:
     parameters: []
     return:
       id: MemberReferenceKind
+      type:
+        id: System.Reflection.Metadata.MemberReferenceKind
+        name: MemberReferenceKind
+        href: System.Reflection.Metadata.MemberReferenceKind.yml
   id: System.Reflection.Metadata.MemberReference.GetKind
 - uid: System.Reflection.Metadata.MemberReference.GetCustomAttributes
   href: System.Reflection.Metadata.MemberReference.yml
@@ -114,4 +123,8 @@ items:
     parameters: []
     return:
       id: CustomAttributeHandleCollection
+      type:
+        id: System.Reflection.Metadata.CustomAttributeHandleCollection
+        name: CustomAttributeHandleCollection
+        href: System.Reflection.Metadata.CustomAttributeHandleCollection.yml
   id: System.Reflection.Metadata.MemberReference.GetCustomAttributes

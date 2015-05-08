@@ -6,9 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectDependencyGraph.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectDependencyGraph.cs
     startLine: 16
   summary: A [Microsoft.CodeAnalysis.ProjectDependencyGraph](Microsoft.CodeAnalysis.ProjectDependencyGraph.yml) models the dependencies between projects in a solution.
@@ -17,7 +18,7 @@ items:
       CSharp: public class ProjectDependencyGraph
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.ProjectDependencyGraph
   children:
@@ -48,6 +49,10 @@ items:
         href: Microsoft.CodeAnalysis.ProjectId.yml
     return:
       id: IImmutableSet
+      type:
+        id: System.Collections.Immutable.IImmutableSet{Microsoft.CodeAnalysis.ProjectId}
+        name: IImmutableSet<ProjectId>
+        isExternal: true
   id: Microsoft.CodeAnalysis.ProjectDependencyGraph.GetProjectsThatThisProjectDirectlyDependsOn(Microsoft.CodeAnalysis.ProjectId)
 - uid: Microsoft.CodeAnalysis.ProjectDependencyGraph.GetProjectsThatDirectlyDependOnThisProject(Microsoft.CodeAnalysis.ProjectId)
   href: Microsoft.CodeAnalysis.ProjectDependencyGraph.yml
@@ -70,6 +75,10 @@ items:
         href: Microsoft.CodeAnalysis.ProjectId.yml
     return:
       id: IImmutableSet
+      type:
+        id: System.Collections.Immutable.IImmutableSet{Microsoft.CodeAnalysis.ProjectId}
+        name: IImmutableSet<ProjectId>
+        isExternal: true
   id: Microsoft.CodeAnalysis.ProjectDependencyGraph.GetProjectsThatDirectlyDependOnThisProject(Microsoft.CodeAnalysis.ProjectId)
 - uid: Microsoft.CodeAnalysis.ProjectDependencyGraph.GetProjectsThatThisProjectTransitivelyDependsOn(Microsoft.CodeAnalysis.ProjectId)
   href: Microsoft.CodeAnalysis.ProjectDependencyGraph.yml
@@ -92,6 +101,10 @@ items:
         href: Microsoft.CodeAnalysis.ProjectId.yml
     return:
       id: IImmutableSet
+      type:
+        id: System.Collections.Immutable.IImmutableSet{Microsoft.CodeAnalysis.ProjectId}
+        name: IImmutableSet<ProjectId>
+        isExternal: true
   id: Microsoft.CodeAnalysis.ProjectDependencyGraph.GetProjectsThatThisProjectTransitivelyDependsOn(Microsoft.CodeAnalysis.ProjectId)
 - uid: Microsoft.CodeAnalysis.ProjectDependencyGraph.GetProjectsThatTransitivelyDependOnThisProject(Microsoft.CodeAnalysis.ProjectId)
   href: Microsoft.CodeAnalysis.ProjectDependencyGraph.yml
@@ -114,6 +127,10 @@ items:
         href: Microsoft.CodeAnalysis.ProjectId.yml
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectId}
+        name: IEnumerable<ProjectId>
+        isExternal: true
   id: Microsoft.CodeAnalysis.ProjectDependencyGraph.GetProjectsThatTransitivelyDependOnThisProject(Microsoft.CodeAnalysis.ProjectId)
 - uid: Microsoft.CodeAnalysis.ProjectDependencyGraph.GetTopologicallySortedProjects(System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.ProjectDependencyGraph.yml
@@ -132,15 +149,19 @@ items:
     than the projects they depend on.
   syntax:
     content:
-      CSharp: public IEnumerable<ProjectId> GetTopologicallySortedProjects(CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public IEnumerable<ProjectId> GetTopologicallySortedProjects(CancellationToken cancellationToken = null)
     parameters:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectId}
+        name: IEnumerable<ProjectId>
+        isExternal: true
   id: Microsoft.CodeAnalysis.ProjectDependencyGraph.GetTopologicallySortedProjects(System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.ProjectDependencyGraph.GetDependencySets(System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.ProjectDependencyGraph.yml
@@ -157,13 +178,17 @@ items:
     and there is no dependency between sets.
   syntax:
     content:
-      CSharp: public IEnumerable<IEnumerable<ProjectId>> GetDependencySets(CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public IEnumerable<IEnumerable<ProjectId>> GetDependencySets(CancellationToken cancellationToken = null)
     parameters:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectId}}
+        name: IEnumerable<IEnumerable<ProjectId>>
+        isExternal: true
   id: Microsoft.CodeAnalysis.ProjectDependencyGraph.GetDependencySets(System.Threading.CancellationToken)

@@ -1,0 +1,254 @@
+items:
+- uid: System.IO.Compression.ZipFileExtensions
+  href: System.IO.Compression.ZipFileExtensions.yml
+  name: ZipFileExtensions
+  fullName: System.IO.Compression.ZipFileExtensions
+  type: Class
+  source:
+    remote: &o0
+      path: src/System.IO.Compression.ZipFile/src/System/IO/Compression/ZipFileExtensions.cs
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
+    path: src/System.IO.Compression.ZipFile/src/System/IO/Compression/ZipFileExtensions.cs
+    startLine: 8
+  syntax:
+    content:
+      CSharp: public class ZipFileExtensions
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  id: System.IO.Compression.ZipFileExtensions
+  children:
+  - System.IO.Compression.ZipFileExtensions.CreateEntryFromFile(ZipArchive,System.String,System.String)
+  - System.IO.Compression.ZipFileExtensions.CreateEntryFromFile(ZipArchive,System.String,System.String,CompressionLevel)
+  - System.IO.Compression.ZipFileExtensions.ExtractToDirectory(ZipArchive,System.String)
+  - System.IO.Compression.ZipFileExtensions.ExtractToFile(ZipArchiveEntry,System.String)
+  - System.IO.Compression.ZipFileExtensions.ExtractToFile(ZipArchiveEntry,System.String,System.Boolean)
+- uid: System.IO.Compression.ZipFileExtensions.CreateEntryFromFile(ZipArchive,System.String,System.String)
+  href: System.IO.Compression.ZipFileExtensions.yml
+  name: CreateEntryFromFile(ZipArchive, string, string)
+  fullName: System.IO.Compression.ZipFileExtensions.CreateEntryFromFile(ZipArchive, string, string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.Compression.ZipFile/src/System/IO/Compression/ZipFileExtensions.cs
+    startLine: 46
+  summary: >-
+    Adds a file from the file system to the archive under the specified entry name.
+
+    The new entry in the archive will contain the contents of the file.
+
+    The last write time of the archive entry is set to the last write time of the file on the file system.
+
+    If an entry with the specified name already exists in the archive, a second entry will be created that has an identical name.
+
+    If the specified source file has an invalid last modified time, the first datetime representable in the Zip timestamp format
+
+    (midnight on January 1, 1980) will be used.If an entry with the specified name already exists in the archive, a second entry will be created that has an identical name.Since no CompressionLevel is specified, the default provided by the implementation of the underlying compression
+
+    algorithm will be used; the ZipArchive will not impose its own default.
+
+    (Currently, the underlying compression algorithm is provided by the System.IO.Compression.DeflateStream class.)
+  syntax:
+    content:
+      CSharp: public static ZipArchiveEntry CreateEntryFromFile(ZipArchive destination, string sourceFileName, string entryName)
+    parameters:
+    - id: destination
+      type:
+        id: ZipArchive
+        name: ZipArchive
+        isExternal: true
+    - id: sourceFileName
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: >-
+        The path to the file on the file system to be copied from. The path is permitted to specify
+
+        relative or absolute path information. Relative path information is interpreted as relative to the current working directory.
+    - id: entryName
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: The name of the entry to be created.
+    return:
+      id: ZipArchiveEntry
+      type:
+        id: ZipArchiveEntry
+        name: ZipArchiveEntry
+        isExternal: true
+      description: A wrapper for the newly created entry.
+  id: System.IO.Compression.ZipFileExtensions.CreateEntryFromFile(ZipArchive,System.String,System.String)
+- uid: System.IO.Compression.ZipFileExtensions.CreateEntryFromFile(ZipArchive,System.String,System.String,CompressionLevel)
+  href: System.IO.Compression.ZipFileExtensions.yml
+  name: CreateEntryFromFile(ZipArchive, string, string, CompressionLevel)
+  fullName: System.IO.Compression.ZipFileExtensions.CreateEntryFromFile(ZipArchive, string, string, CompressionLevel)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.Compression.ZipFile/src/System/IO/Compression/ZipFileExtensions.cs
+    startLine: 82
+  summary: >-
+    Adds a file from the file system to the archive under the specified entry name.
+
+    The new entry in the archive will contain the contents of the file.
+
+    The last write time of the archive entry is set to the last write time of the file on the file system.
+
+    If an entry with the specified name already exists in the archive, a second entry will be created that has an identical name.
+
+    If the specified source file has an invalid last modified time, the first datetime representable in the Zip timestamp format
+
+    (midnight on January 1, 1980) will be used.If an entry with the specified name already exists in the archive, a second entry will be created that has an identical name.
+  syntax:
+    content:
+      CSharp: public static ZipArchiveEntry CreateEntryFromFile(ZipArchive destination, string sourceFileName, string entryName, CompressionLevel compressionLevel)
+    parameters:
+    - id: destination
+      type:
+        id: ZipArchive
+        name: ZipArchive
+        isExternal: true
+    - id: sourceFileName
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: >-
+        The path to the file on the file system to be copied from. The path is permitted to specify relative
+
+        or absolute path information. Relative path information is interpreted as relative to the current working directory.
+    - id: entryName
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: The name of the entry to be created.
+    - id: compressionLevel
+      type:
+        id: CompressionLevel
+        name: CompressionLevel
+        isExternal: true
+      description: The level of the compression (speed/memory vs. compressed size trade-off).
+    return:
+      id: ZipArchiveEntry
+      type:
+        id: ZipArchiveEntry
+        name: ZipArchiveEntry
+        isExternal: true
+      description: A wrapper for the newly created entry.
+  id: System.IO.Compression.ZipFileExtensions.CreateEntryFromFile(ZipArchive,System.String,System.String,CompressionLevel)
+- uid: System.IO.Compression.ZipFileExtensions.ExtractToDirectory(ZipArchive,System.String)
+  href: System.IO.Compression.ZipFileExtensions.yml
+  name: ExtractToDirectory(ZipArchive, string)
+  fullName: System.IO.Compression.ZipFileExtensions.ExtractToDirectory(ZipArchive, string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.Compression.ZipFile/src/System/IO/Compression/ZipFileExtensions.cs
+    startLine: 122
+  summary: >-
+    Extracts all of the files in the archive to a directory on the file system. The specified directory may already exist.
+
+    This method will create all subdirectories and the specified directory if necessary.
+
+    If there is an error while extracting the archive, the archive will remain partially extracted.
+
+    Each entry will be extracted such that the extracted file has the same relative path to destinationDirectoryName as the
+
+    entry has to the root of the archive. If a file to be archived has an invalid last modified time, the first datetime
+
+    representable in the Zip timestamp format (midnight on January 1, 1980) will be used.
+  syntax:
+    content:
+      CSharp: public static void ExtractToDirectory(ZipArchive source, string destinationDirectoryName)
+    parameters:
+    - id: source
+      type:
+        id: ZipArchive
+        name: ZipArchive
+        isExternal: true
+    - id: destinationDirectoryName
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: >-
+        The path to the directory on the file system.
+
+        The directory specified must not exist. The path is permitted to specify relative or absolute path information.
+
+        Relative path information is interpreted as relative to the current working directory.
+  id: System.IO.Compression.ZipFileExtensions.ExtractToDirectory(ZipArchive,System.String)
+- uid: System.IO.Compression.ZipFileExtensions.ExtractToFile(ZipArchiveEntry,System.String)
+  href: System.IO.Compression.ZipFileExtensions.yml
+  name: ExtractToFile(ZipArchiveEntry, string)
+  fullName: System.IO.Compression.ZipFileExtensions.ExtractToFile(ZipArchiveEntry, string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.Compression.ZipFile/src/System/IO/Compression/ZipFileExtensions.cs
+    startLine: 237
+  summary: "Creates a file on the file system with the entry’s contents and the specified name. The last write time of the file is set to the\r\nentry’s last write time. This method does not allow overwriting of an existing file with the same name. Attempting to extract explicit\r\ndirectories (entries with names that end in directory separator characters) will not result in the creation of a directory."
+  syntax:
+    content:
+      CSharp: public static void ExtractToFile(ZipArchiveEntry source, string destinationFileName)
+    parameters:
+    - id: source
+      type:
+        id: ZipArchiveEntry
+        name: ZipArchiveEntry
+        isExternal: true
+    - id: destinationFileName
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: >-
+        The name of the file that will hold the contents of the entry.
+
+        The path is permitted to specify relative or absolute path information.
+
+        Relative path information is interpreted as relative to the current working directory.
+  id: System.IO.Compression.ZipFileExtensions.ExtractToFile(ZipArchiveEntry,System.String)
+- uid: System.IO.Compression.ZipFileExtensions.ExtractToFile(ZipArchiveEntry,System.String,System.Boolean)
+  href: System.IO.Compression.ZipFileExtensions.yml
+  name: ExtractToFile(ZipArchiveEntry, string, bool)
+  fullName: System.IO.Compression.ZipFileExtensions.ExtractToFile(ZipArchiveEntry, string, bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.Compression.ZipFile/src/System/IO/Compression/ZipFileExtensions.cs
+    startLine: 270
+  summary: "Creates a file on the file system with the entry’s contents and the specified name.\r\nThe last write time of the file is set to the entry’s last write time.\r\nThis method does allows overwriting of an existing file with the same name."
+  syntax:
+    content:
+      CSharp: public static void ExtractToFile(ZipArchiveEntry source, string destinationFileName, bool overwrite)
+    parameters:
+    - id: source
+      type:
+        id: ZipArchiveEntry
+        name: ZipArchiveEntry
+        isExternal: true
+    - id: destinationFileName
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: >-
+        The name of the file that will hold the contents of the entry.
+
+        The path is permitted to specify relative or absolute path information.
+
+        Relative path information is interpreted as relative to the current working directory.
+    - id: overwrite
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: True to indicate overwrite.
+  id: System.IO.Compression.ZipFileExtensions.ExtractToFile(ZipArchiveEntry,System.String,System.Boolean)

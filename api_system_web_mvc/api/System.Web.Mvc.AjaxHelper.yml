@@ -6,9 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/AjaxHelper.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/AjaxHelper.cs
     startLine: 7
   syntax:
@@ -16,7 +17,7 @@ items:
       CSharp: public class AjaxHelper
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.AjaxHelper
   children:
@@ -79,7 +80,7 @@ items:
     - id: routeCollection
       type:
         id: System.Web.Routing.RouteCollection
-        name: System.Web.Routing.RouteCollection
+        name: RouteCollection
         isExternal: true
   id: System.Web.Mvc.AjaxHelper.#ctor(System.Web.Mvc.ViewContext,System.Web.Mvc.IViewDataContainer,System.Web.Routing.RouteCollection)
 - uid: System.Web.Mvc.AjaxHelper.GlobalizationScriptPath
@@ -98,7 +99,7 @@ items:
     - id: GlobalizationScriptPath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.AjaxHelper.GlobalizationScriptPath
 - uid: System.Web.Mvc.AjaxHelper.RouteCollection
@@ -112,12 +113,12 @@ items:
     startLine: 50
   syntax:
     content:
-      CSharp: public RouteCollection RouteCollection { get; private set; }
+      CSharp: public RouteCollection RouteCollection { get; }
     parameters:
     - id: RouteCollection
       type:
         id: System.Web.Routing.RouteCollection
-        name: System.Web.Routing.RouteCollection
+        name: RouteCollection
         isExternal: true
   id: System.Web.Mvc.AjaxHelper.RouteCollection
 - uid: System.Web.Mvc.AjaxHelper.ViewBag
@@ -135,6 +136,7 @@ items:
     parameters:
     - id: ViewBag
       type:
+        name: dynamic
         isExternal: true
   id: System.Web.Mvc.AjaxHelper.ViewBag
 - uid: System.Web.Mvc.AjaxHelper.ViewContext
@@ -148,7 +150,7 @@ items:
     startLine: 64
   syntax:
     content:
-      CSharp: public ViewContext ViewContext { get; private set; }
+      CSharp: public ViewContext ViewContext { get; }
     parameters:
     - id: ViewContext
       type:
@@ -186,7 +188,7 @@ items:
     startLine: 71
   syntax:
     content:
-      CSharp: public IViewDataContainer ViewDataContainer { get; internal set; }
+      CSharp: public IViewDataContainer ViewDataContainer { get; }
     parameters:
     - id: ViewDataContainer
       type:
@@ -205,13 +207,17 @@ items:
     startLine: 73
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Justification = "Instance method for consistency with other helpers.")] public string JavaScriptStringEncode(string message)'
+      CSharp: public string JavaScriptStringEncode(string message)
     parameters:
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.AjaxHelper.JavaScriptStringEncode(System.String)

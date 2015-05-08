@@ -6,8 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEHeader.cs
     startLine: 8
   syntax:
@@ -15,7 +17,7 @@ items:
       CSharp: public sealed class PEHeader
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Reflection.PortableExecutable.PEHeader
   children:
@@ -74,7 +76,7 @@ items:
   summary: Identifies the format of the image file.
   syntax:
     content:
-      CSharp: public PEMagic Magic { get; private set; }
+      CSharp: public PEMagic Magic { get; }
     parameters:
     - id: Magic
       type:
@@ -94,12 +96,12 @@ items:
   summary: The linker major version number.
   syntax:
     content:
-      CSharp: public byte MajorLinkerVersion { get; private set; }
+      CSharp: public byte MajorLinkerVersion { get; }
     parameters:
     - id: MajorLinkerVersion
       type:
         id: System.Byte
-        name: System.Byte
+        name: byte
         isExternal: true
   id: System.Reflection.PortableExecutable.PEHeader.MajorLinkerVersion
 - uid: System.Reflection.PortableExecutable.PEHeader.MinorLinkerVersion
@@ -114,12 +116,12 @@ items:
   summary: The linker minor version number.
   syntax:
     content:
-      CSharp: public byte MinorLinkerVersion { get; private set; }
+      CSharp: public byte MinorLinkerVersion { get; }
     parameters:
     - id: MinorLinkerVersion
       type:
         id: System.Byte
-        name: System.Byte
+        name: byte
         isExternal: true
   id: System.Reflection.PortableExecutable.PEHeader.MinorLinkerVersion
 - uid: System.Reflection.PortableExecutable.PEHeader.SizeOfCode
@@ -134,12 +136,12 @@ items:
   summary: The size of the code (text) section, or the sum of all code sections if there are multiple sections.
   syntax:
     content:
-      CSharp: public int SizeOfCode { get; private set; }
+      CSharp: public int SizeOfCode { get; }
     parameters:
     - id: SizeOfCode
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Reflection.PortableExecutable.PEHeader.SizeOfCode
 - uid: System.Reflection.PortableExecutable.PEHeader.SizeOfInitializedData
@@ -154,12 +156,12 @@ items:
   summary: The size of the initialized data section, or the sum of all such sections if there are multiple data sections.
   syntax:
     content:
-      CSharp: public int SizeOfInitializedData { get; private set; }
+      CSharp: public int SizeOfInitializedData { get; }
     parameters:
     - id: SizeOfInitializedData
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Reflection.PortableExecutable.PEHeader.SizeOfInitializedData
 - uid: System.Reflection.PortableExecutable.PEHeader.SizeOfUninitializedData
@@ -174,12 +176,12 @@ items:
   summary: The size of the uninitialized data section (BSS), or the sum of all such sections if there are multiple BSS sections.
   syntax:
     content:
-      CSharp: public int SizeOfUninitializedData { get; private set; }
+      CSharp: public int SizeOfUninitializedData { get; }
     parameters:
     - id: SizeOfUninitializedData
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Reflection.PortableExecutable.PEHeader.SizeOfUninitializedData
 - uid: System.Reflection.PortableExecutable.PEHeader.AddressOfEntryPoint
@@ -199,12 +201,12 @@ items:
     An entry point is optional for DLLs. When no entry point is present, this field must be zero.
   syntax:
     content:
-      CSharp: public int AddressOfEntryPoint { get; private set; }
+      CSharp: public int AddressOfEntryPoint { get; }
     parameters:
     - id: AddressOfEntryPoint
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Reflection.PortableExecutable.PEHeader.AddressOfEntryPoint
 - uid: System.Reflection.PortableExecutable.PEHeader.BaseOfCode
@@ -219,12 +221,12 @@ items:
   summary: The address that is relative to the image base of the beginning-of-code section when it is loaded into memory.
   syntax:
     content:
-      CSharp: public int BaseOfCode { get; private set; }
+      CSharp: public int BaseOfCode { get; }
     parameters:
     - id: BaseOfCode
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Reflection.PortableExecutable.PEHeader.BaseOfCode
 - uid: System.Reflection.PortableExecutable.PEHeader.BaseOfData
@@ -239,12 +241,12 @@ items:
   summary: The address that is relative to the image base of the beginning-of-data section when it is loaded into memory.
   syntax:
     content:
-      CSharp: public int BaseOfData { get; private set; }
+      CSharp: public int BaseOfData { get; }
     parameters:
     - id: BaseOfData
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Reflection.PortableExecutable.PEHeader.BaseOfData
 - uid: System.Reflection.PortableExecutable.PEHeader.ImageBase
@@ -262,12 +264,12 @@ items:
     must be a multiple of 64K.
   syntax:
     content:
-      CSharp: public ulong ImageBase { get; private set; }
+      CSharp: public ulong ImageBase { get; }
     parameters:
     - id: ImageBase
       type:
         id: System.UInt64
-        name: System.UInt64
+        name: ulong
         isExternal: true
   id: System.Reflection.PortableExecutable.PEHeader.ImageBase
 - uid: System.Reflection.PortableExecutable.PEHeader.SectionAlignment
@@ -285,12 +287,12 @@ items:
     The default is the page size for the architecture.
   syntax:
     content:
-      CSharp: public int SectionAlignment { get; private set; }
+      CSharp: public int SectionAlignment { get; }
     parameters:
     - id: SectionAlignment
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Reflection.PortableExecutable.PEHeader.SectionAlignment
 - uid: System.Reflection.PortableExecutable.PEHeader.FileAlignment
@@ -312,12 +314,12 @@ items:
     then [System.Reflection.PortableExecutable.PEHeader.FileAlignment](System.Reflection.PortableExecutable.PEHeader.yml) must match [System.Reflection.PortableExecutable.PEHeader.SectionAlignment](System.Reflection.PortableExecutable.PEHeader.yml).
   syntax:
     content:
-      CSharp: public int FileAlignment { get; private set; }
+      CSharp: public int FileAlignment { get; }
     parameters:
     - id: FileAlignment
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Reflection.PortableExecutable.PEHeader.FileAlignment
 - uid: System.Reflection.PortableExecutable.PEHeader.MajorOperatingSystemVersion
@@ -332,12 +334,12 @@ items:
   summary: The major version number of the required operating system.
   syntax:
     content:
-      CSharp: public ushort MajorOperatingSystemVersion { get; private set; }
+      CSharp: public ushort MajorOperatingSystemVersion { get; }
     parameters:
     - id: MajorOperatingSystemVersion
       type:
         id: System.UInt16
-        name: System.UInt16
+        name: ushort
         isExternal: true
   id: System.Reflection.PortableExecutable.PEHeader.MajorOperatingSystemVersion
 - uid: System.Reflection.PortableExecutable.PEHeader.MinorOperatingSystemVersion
@@ -352,12 +354,12 @@ items:
   summary: The minor version number of the required operating system.
   syntax:
     content:
-      CSharp: public ushort MinorOperatingSystemVersion { get; private set; }
+      CSharp: public ushort MinorOperatingSystemVersion { get; }
     parameters:
     - id: MinorOperatingSystemVersion
       type:
         id: System.UInt16
-        name: System.UInt16
+        name: ushort
         isExternal: true
   id: System.Reflection.PortableExecutable.PEHeader.MinorOperatingSystemVersion
 - uid: System.Reflection.PortableExecutable.PEHeader.MajorImageVersion
@@ -372,12 +374,12 @@ items:
   summary: The major version number of the image.
   syntax:
     content:
-      CSharp: public ushort MajorImageVersion { get; private set; }
+      CSharp: public ushort MajorImageVersion { get; }
     parameters:
     - id: MajorImageVersion
       type:
         id: System.UInt16
-        name: System.UInt16
+        name: ushort
         isExternal: true
   id: System.Reflection.PortableExecutable.PEHeader.MajorImageVersion
 - uid: System.Reflection.PortableExecutable.PEHeader.MinorImageVersion
@@ -392,12 +394,12 @@ items:
   summary: The minor version number of the image.
   syntax:
     content:
-      CSharp: public ushort MinorImageVersion { get; private set; }
+      CSharp: public ushort MinorImageVersion { get; }
     parameters:
     - id: MinorImageVersion
       type:
         id: System.UInt16
-        name: System.UInt16
+        name: ushort
         isExternal: true
   id: System.Reflection.PortableExecutable.PEHeader.MinorImageVersion
 - uid: System.Reflection.PortableExecutable.PEHeader.MajorSubsystemVersion
@@ -412,12 +414,12 @@ items:
   summary: The major version number of the subsystem.
   syntax:
     content:
-      CSharp: public ushort MajorSubsystemVersion { get; private set; }
+      CSharp: public ushort MajorSubsystemVersion { get; }
     parameters:
     - id: MajorSubsystemVersion
       type:
         id: System.UInt16
-        name: System.UInt16
+        name: ushort
         isExternal: true
   id: System.Reflection.PortableExecutable.PEHeader.MajorSubsystemVersion
 - uid: System.Reflection.PortableExecutable.PEHeader.MinorSubsystemVersion
@@ -432,12 +434,12 @@ items:
   summary: The minor version number of the subsystem.
   syntax:
     content:
-      CSharp: public ushort MinorSubsystemVersion { get; private set; }
+      CSharp: public ushort MinorSubsystemVersion { get; }
     parameters:
     - id: MinorSubsystemVersion
       type:
         id: System.UInt16
-        name: System.UInt16
+        name: ushort
         isExternal: true
   id: System.Reflection.PortableExecutable.PEHeader.MinorSubsystemVersion
 - uid: System.Reflection.PortableExecutable.PEHeader.SizeOfImage
@@ -455,12 +457,12 @@ items:
     It must be a multiple of [System.Reflection.PortableExecutable.PEHeader.SectionAlignment](System.Reflection.PortableExecutable.PEHeader.yml).
   syntax:
     content:
-      CSharp: public int SizeOfImage { get; private set; }
+      CSharp: public int SizeOfImage { get; }
     parameters:
     - id: SizeOfImage
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Reflection.PortableExecutable.PEHeader.SizeOfImage
 - uid: System.Reflection.PortableExecutable.PEHeader.SizeOfHeaders
@@ -475,12 +477,12 @@ items:
   summary: The combined size of an MS DOS stub, PE header, and section headers rounded up to a multiple of FileAlignment.
   syntax:
     content:
-      CSharp: public int SizeOfHeaders { get; private set; }
+      CSharp: public int SizeOfHeaders { get; }
     parameters:
     - id: SizeOfHeaders
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Reflection.PortableExecutable.PEHeader.SizeOfHeaders
 - uid: System.Reflection.PortableExecutable.PEHeader.CheckSum
@@ -495,12 +497,12 @@ items:
   summary: The image file checksum.
   syntax:
     content:
-      CSharp: public uint CheckSum { get; private set; }
+      CSharp: public uint CheckSum { get; }
     parameters:
     - id: CheckSum
       type:
         id: System.UInt32
-        name: System.UInt32
+        name: uint
         isExternal: true
   id: System.Reflection.PortableExecutable.PEHeader.CheckSum
 - uid: System.Reflection.PortableExecutable.PEHeader.Subsystem
@@ -515,7 +517,7 @@ items:
   summary: The subsystem that is required to run this image.
   syntax:
     content:
-      CSharp: public Subsystem Subsystem { get; private set; }
+      CSharp: public Subsystem Subsystem { get; }
     parameters:
     - id: Subsystem
       type:
@@ -534,7 +536,7 @@ items:
     startLine: 134
   syntax:
     content:
-      CSharp: public DllCharacteristics DllCharacteristics { get; private set; }
+      CSharp: public DllCharacteristics DllCharacteristics { get; }
     parameters:
     - id: DllCharacteristics
       type:
@@ -557,12 +559,12 @@ items:
     the rest is made available one page at a time until the reserve size is reached.
   syntax:
     content:
-      CSharp: public ulong SizeOfStackReserve { get; private set; }
+      CSharp: public ulong SizeOfStackReserve { get; }
     parameters:
     - id: SizeOfStackReserve
       type:
         id: System.UInt64
-        name: System.UInt64
+        name: ulong
         isExternal: true
   id: System.Reflection.PortableExecutable.PEHeader.SizeOfStackReserve
 - uid: System.Reflection.PortableExecutable.PEHeader.SizeOfStackCommit
@@ -577,12 +579,12 @@ items:
   summary: The size of the stack to commit.
   syntax:
     content:
-      CSharp: public ulong SizeOfStackCommit { get; private set; }
+      CSharp: public ulong SizeOfStackCommit { get; }
     parameters:
     - id: SizeOfStackCommit
       type:
         id: System.UInt64
-        name: System.UInt64
+        name: ulong
         isExternal: true
   id: System.Reflection.PortableExecutable.PEHeader.SizeOfStackCommit
 - uid: System.Reflection.PortableExecutable.PEHeader.SizeOfHeapReserve
@@ -600,12 +602,12 @@ items:
     the rest is made available one page at a time until the reserve size is reached.
   syntax:
     content:
-      CSharp: public ulong SizeOfHeapReserve { get; private set; }
+      CSharp: public ulong SizeOfHeapReserve { get; }
     parameters:
     - id: SizeOfHeapReserve
       type:
         id: System.UInt64
-        name: System.UInt64
+        name: ulong
         isExternal: true
   id: System.Reflection.PortableExecutable.PEHeader.SizeOfHeapReserve
 - uid: System.Reflection.PortableExecutable.PEHeader.SizeOfHeapCommit
@@ -620,12 +622,12 @@ items:
   summary: The size of the local heap space to commit.
   syntax:
     content:
-      CSharp: public ulong SizeOfHeapCommit { get; private set; }
+      CSharp: public ulong SizeOfHeapCommit { get; }
     parameters:
     - id: SizeOfHeapCommit
       type:
         id: System.UInt64
-        name: System.UInt64
+        name: ulong
         isExternal: true
   id: System.Reflection.PortableExecutable.PEHeader.SizeOfHeapCommit
 - uid: System.Reflection.PortableExecutable.PEHeader.NumberOfRvaAndSizes
@@ -640,12 +642,12 @@ items:
   summary: The number of data-directory entries in the remainder of the [System.Reflection.PortableExecutable.PEHeader](System.Reflection.PortableExecutable.PEHeader.yml). Each describes a location and size.
   syntax:
     content:
-      CSharp: public int NumberOfRvaAndSizes { get; private set; }
+      CSharp: public int NumberOfRvaAndSizes { get; }
     parameters:
     - id: NumberOfRvaAndSizes
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Reflection.PortableExecutable.PEHeader.NumberOfRvaAndSizes
 - uid: System.Reflection.PortableExecutable.PEHeader.ExportTableDirectory
@@ -659,7 +661,7 @@ items:
     startLine: 167
   syntax:
     content:
-      CSharp: public DirectoryEntry ExportTableDirectory { get; private set; }
+      CSharp: public DirectoryEntry ExportTableDirectory { get; }
     parameters:
     - id: ExportTableDirectory
       type:
@@ -678,7 +680,7 @@ items:
     startLine: 168
   syntax:
     content:
-      CSharp: public DirectoryEntry ImportTableDirectory { get; private set; }
+      CSharp: public DirectoryEntry ImportTableDirectory { get; }
     parameters:
     - id: ImportTableDirectory
       type:
@@ -697,7 +699,7 @@ items:
     startLine: 169
   syntax:
     content:
-      CSharp: public DirectoryEntry ResourceTableDirectory { get; private set; }
+      CSharp: public DirectoryEntry ResourceTableDirectory { get; }
     parameters:
     - id: ResourceTableDirectory
       type:
@@ -716,7 +718,7 @@ items:
     startLine: 170
   syntax:
     content:
-      CSharp: public DirectoryEntry ExceptionTableDirectory { get; private set; }
+      CSharp: public DirectoryEntry ExceptionTableDirectory { get; }
     parameters:
     - id: ExceptionTableDirectory
       type:
@@ -741,7 +743,7 @@ items:
     As such, the first field of this entry, which is normally an RVA, is a file pointer instead.
   syntax:
     content:
-      CSharp: public DirectoryEntry CertificateTableDirectory { get; private set; }
+      CSharp: public DirectoryEntry CertificateTableDirectory { get; }
     parameters:
     - id: CertificateTableDirectory
       type:
@@ -760,7 +762,7 @@ items:
     startLine: 179
   syntax:
     content:
-      CSharp: public DirectoryEntry BaseRelocationTableDirectory { get; private set; }
+      CSharp: public DirectoryEntry BaseRelocationTableDirectory { get; }
     parameters:
     - id: BaseRelocationTableDirectory
       type:
@@ -779,7 +781,7 @@ items:
     startLine: 180
   syntax:
     content:
-      CSharp: public DirectoryEntry DebugTableDirectory { get; private set; }
+      CSharp: public DirectoryEntry DebugTableDirectory { get; }
     parameters:
     - id: DebugTableDirectory
       type:
@@ -798,7 +800,7 @@ items:
     startLine: 181
   syntax:
     content:
-      CSharp: public DirectoryEntry CopyrightTableDirectory { get; private set; }
+      CSharp: public DirectoryEntry CopyrightTableDirectory { get; }
     parameters:
     - id: CopyrightTableDirectory
       type:
@@ -817,7 +819,7 @@ items:
     startLine: 182
   syntax:
     content:
-      CSharp: public DirectoryEntry GlobalPointerTableDirectory { get; private set; }
+      CSharp: public DirectoryEntry GlobalPointerTableDirectory { get; }
     parameters:
     - id: GlobalPointerTableDirectory
       type:
@@ -836,7 +838,7 @@ items:
     startLine: 183
   syntax:
     content:
-      CSharp: public DirectoryEntry ThreadLocalStorageTableDirectory { get; private set; }
+      CSharp: public DirectoryEntry ThreadLocalStorageTableDirectory { get; }
     parameters:
     - id: ThreadLocalStorageTableDirectory
       type:
@@ -855,7 +857,7 @@ items:
     startLine: 184
   syntax:
     content:
-      CSharp: public DirectoryEntry LoadConfigTableDirectory { get; private set; }
+      CSharp: public DirectoryEntry LoadConfigTableDirectory { get; }
     parameters:
     - id: LoadConfigTableDirectory
       type:
@@ -874,7 +876,7 @@ items:
     startLine: 185
   syntax:
     content:
-      CSharp: public DirectoryEntry BoundImportTableDirectory { get; private set; }
+      CSharp: public DirectoryEntry BoundImportTableDirectory { get; }
     parameters:
     - id: BoundImportTableDirectory
       type:
@@ -893,7 +895,7 @@ items:
     startLine: 186
   syntax:
     content:
-      CSharp: public DirectoryEntry ImportAddressTableDirectory { get; private set; }
+      CSharp: public DirectoryEntry ImportAddressTableDirectory { get; }
     parameters:
     - id: ImportAddressTableDirectory
       type:
@@ -912,7 +914,7 @@ items:
     startLine: 187
   syntax:
     content:
-      CSharp: public DirectoryEntry DelayImportTableDirectory { get; private set; }
+      CSharp: public DirectoryEntry DelayImportTableDirectory { get; }
     parameters:
     - id: DelayImportTableDirectory
       type:
@@ -931,7 +933,7 @@ items:
     startLine: 188
   syntax:
     content:
-      CSharp: public DirectoryEntry CorHeaderTableDirectory { get; private set; }
+      CSharp: public DirectoryEntry CorHeaderTableDirectory { get; }
     parameters:
     - id: CorHeaderTableDirectory
       type:

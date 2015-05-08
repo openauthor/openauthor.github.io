@@ -6,17 +6,19 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList.cs
     startLine: 12
   summary: A set of initialization methods for instances of [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml).
   syntax:
     content:
-      CSharp: public static class ImmutableList
+      CSharp: public class ImmutableList
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Collections.Immutable.ImmutableList
   children:
@@ -49,10 +51,14 @@ items:
   summary: Returns an empty collection.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableList<T> Create<T>()'
+      CSharp: public static ImmutableList<T> Create<T>()
     parameters: []
     return:
       id: ImmutableList
+      type:
+        id: System.Collections.Immutable.ImmutableList{``0}
+        name: ImmutableList<T>
+        href: System.Collections.Immutable.ImmutableList{``0}
       description: The immutable collection.
   id: System.Collections.Immutable.ImmutableList.Create``1
 - uid: System.Collections.Immutable.ImmutableList.Create``1(``0)
@@ -67,7 +73,7 @@ items:
   summary: Creates a new immutable collection prefilled with the specified item.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableList<T> Create<T>(T item)'
+      CSharp: public static ImmutableList<T> Create<T>(T item)
     parameters:
     - id: item
       type:
@@ -77,6 +83,10 @@ items:
       description: The item to prepopulate.
     return:
       id: ImmutableList
+      type:
+        id: System.Collections.Immutable.ImmutableList{``0}
+        name: ImmutableList<T>
+        href: System.Collections.Immutable.ImmutableList{``0}
       description: The new immutable collection.
   id: System.Collections.Immutable.ImmutableList.Create``1(``0)
 - uid: System.Collections.Immutable.ImmutableList.CreateRange``1(System.Collections.Generic.IEnumerable{``0})
@@ -91,16 +101,20 @@ items:
   summary: Creates a new immutable collection prefilled with the specified items.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableList<T> CreateRange<T>(IEnumerable<T> items)'
+      CSharp: public static ImmutableList<T> CreateRange<T>(IEnumerable<T> items)
     parameters:
     - id: items
       type:
         id: System.Collections.Generic.IEnumerable{``0}
-        name: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<T>
         isExternal: true
       description: The items to prepopulate.
     return:
       id: ImmutableList
+      type:
+        id: System.Collections.Immutable.ImmutableList{``0}
+        name: ImmutableList<T>
+        href: System.Collections.Immutable.ImmutableList{``0}
       description: The new immutable collection.
   id: System.Collections.Immutable.ImmutableList.CreateRange``1(System.Collections.Generic.IEnumerable{``0})
 - uid: System.Collections.Immutable.ImmutableList.Create``1(``0[])
@@ -115,16 +129,20 @@ items:
   summary: Creates a new immutable collection prefilled with the specified items.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableList<T> Create<T>(params T[] items)'
+      CSharp: public static ImmutableList<T> Create<T>(params T[] items)
     parameters:
     - id: items
       type:
         id: System.Array
-        name: System.Array
+        name: T[]
         isExternal: true
       description: The items to prepopulate.
     return:
       id: ImmutableList
+      type:
+        id: System.Collections.Immutable.ImmutableList{``0}
+        name: ImmutableList<T>
+        href: System.Collections.Immutable.ImmutableList{``0}
       description: The new immutable collection.
   id: System.Collections.Immutable.ImmutableList.Create``1(``0[])
 - uid: System.Collections.Immutable.ImmutableList.CreateBuilder``1
@@ -139,10 +157,14 @@ items:
   summary: Creates a new immutable list builder.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableList<T>.Builder CreateBuilder<T>()'
+      CSharp: public static Builder CreateBuilder<T>()
     parameters: []
     return:
       id: Builder
+      type:
+        id: System.Collections.Immutable.ImmutableList{``0}.Builder
+        name: Builder
+        href: System.Collections.Immutable.ImmutableList{``0}.Builder
       description: The immutable collection builder.
   id: System.Collections.Immutable.ImmutableList.CreateBuilder``1
 - uid: System.Collections.Immutable.ImmutableList.ToImmutableList``1(System.Collections.Generic.IEnumerable{``0})
@@ -157,16 +179,20 @@ items:
   summary: Enumerates a sequence exactly once and produces an immutable list of its contents.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableList<TSource> ToImmutableList<TSource>(this IEnumerable<TSource> source)'
+      CSharp: public static ImmutableList<TSource> ToImmutableList<TSource>(IEnumerable<TSource> source)
     parameters:
     - id: source
       type:
         id: System.Collections.Generic.IEnumerable{``0}
-        name: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<TSource>
         isExternal: true
       description: The sequence to enumerate.
     return:
       id: ImmutableList
+      type:
+        id: System.Collections.Immutable.ImmutableList{``0}
+        name: ImmutableList<TSource>
+        href: System.Collections.Immutable.ImmutableList{``0}
       description: An immutable list.
   id: System.Collections.Immutable.ImmutableList.ToImmutableList``1(System.Collections.Generic.IEnumerable{``0})
 - uid: System.Collections.Immutable.ImmutableList.Replace``1(System.Collections.Immutable.IImmutableList{``0},``0,``0)
@@ -181,12 +207,12 @@ items:
   summary: Replaces the first equal element in the list with the specified element.
   syntax:
     content:
-      CSharp: '[Pure] public static IImmutableList<T> Replace<T>(this IImmutableList<T> list, T oldValue, T newValue)'
+      CSharp: public static IImmutableList<T> Replace<T>(IImmutableList<T> list, T oldValue, T newValue)
     parameters:
     - id: list
       type:
         id: System.Collections.Immutable.IImmutableList{``0}
-        name: IImmutableList
+        name: IImmutableList<T>
         href: System.Collections.Immutable.IImmutableList{``0}
       description: The list to search.
     - id: oldValue
@@ -203,6 +229,10 @@ items:
       description: The element to replace the old element with.
     return:
       id: IImmutableList
+      type:
+        id: System.Collections.Immutable.IImmutableList{``0}
+        name: IImmutableList<T>
+        href: System.Collections.Immutable.IImmutableList{``0}
       description: The new list -- even if the value being replaced is equal to the new value for that position.
   id: System.Collections.Immutable.ImmutableList.Replace``1(System.Collections.Immutable.IImmutableList{``0},``0,``0)
 - uid: System.Collections.Immutable.ImmutableList.Remove``1(System.Collections.Immutable.IImmutableList{``0},``0)
@@ -217,12 +247,12 @@ items:
   summary: Removes the specified value from this list.
   syntax:
     content:
-      CSharp: '[Pure] public static IImmutableList<T> Remove<T>(this IImmutableList<T> list, T value)'
+      CSharp: public static IImmutableList<T> Remove<T>(IImmutableList<T> list, T value)
     parameters:
     - id: list
       type:
         id: System.Collections.Immutable.IImmutableList{``0}
-        name: IImmutableList
+        name: IImmutableList<T>
         href: System.Collections.Immutable.IImmutableList{``0}
       description: The list to search.
     - id: value
@@ -233,6 +263,10 @@ items:
       description: The value to remove.
     return:
       id: IImmutableList
+      type:
+        id: System.Collections.Immutable.IImmutableList{``0}
+        name: IImmutableList<T>
+        href: System.Collections.Immutable.IImmutableList{``0}
       description: A new list with the element removed, or this list if the element is not in this list.
   id: System.Collections.Immutable.ImmutableList.Remove``1(System.Collections.Immutable.IImmutableList{``0},``0)
 - uid: System.Collections.Immutable.ImmutableList.RemoveRange``1(System.Collections.Immutable.IImmutableList{``0},System.Collections.Generic.IEnumerable{``0})
@@ -247,22 +281,26 @@ items:
   summary: Removes the specified values from this list.
   syntax:
     content:
-      CSharp: '[Pure] public static IImmutableList<T> RemoveRange<T>(this IImmutableList<T> list, IEnumerable<T> items)'
+      CSharp: public static IImmutableList<T> RemoveRange<T>(IImmutableList<T> list, IEnumerable<T> items)
     parameters:
     - id: list
       type:
         id: System.Collections.Immutable.IImmutableList{``0}
-        name: IImmutableList
+        name: IImmutableList<T>
         href: System.Collections.Immutable.IImmutableList{``0}
       description: The list to search.
     - id: items
       type:
         id: System.Collections.Generic.IEnumerable{``0}
-        name: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<T>
         isExternal: true
       description: The items to remove if matches are found in this list.
     return:
       id: IImmutableList
+      type:
+        id: System.Collections.Immutable.IImmutableList{``0}
+        name: IImmutableList<T>
+        href: System.Collections.Immutable.IImmutableList{``0}
       description: A new list with the elements removed.
   id: System.Collections.Immutable.ImmutableList.RemoveRange``1(System.Collections.Immutable.IImmutableList{``0},System.Collections.Generic.IEnumerable{``0})
 - uid: System.Collections.Immutable.ImmutableList.IndexOf``1(System.Collections.Immutable.IImmutableList{``0},``0)
@@ -277,15 +315,15 @@ items:
   summary: >-
     Searches for the specified object and returns the zero-based index of the
 
-    first occurrence within the ImmutableList<T>
+    first occurrence within the [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml).
   syntax:
     content:
-      CSharp: '[Pure] public static int IndexOf<T>(this IImmutableList<T> list, T item)'
+      CSharp: public static int IndexOf<T>(IImmutableList<T> list, T item)
     parameters:
     - id: list
       type:
         id: System.Collections.Immutable.IImmutableList{``0}
-        name: IImmutableList
+        name: IImmutableList<T>
         href: System.Collections.Immutable.IImmutableList{``0}
       description: The list to search.
     - id: item
@@ -294,15 +332,19 @@ items:
         name: T
         href: T
       description: >-
-        The object to locate in the ImmutableList<T>. The value
+        The object to locate in the [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml). The value
 
         can be null for reference types.
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: >-
         The zero-based index of the first occurrence of item within the range of
 
-        elements in the ImmutableList<T> that extends from index
+        elements in the [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml) that extends from index
 
         to the last element, if found; otherwise, -1.
   id: System.Collections.Immutable.ImmutableList.IndexOf``1(System.Collections.Immutable.IImmutableList{``0},``0)
@@ -318,15 +360,15 @@ items:
   summary: >-
     Searches for the specified object and returns the zero-based index of the
 
-    first occurrence within the ImmutableList<T>
+    first occurrence within the [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml).
   syntax:
     content:
-      CSharp: '[Pure] public static int IndexOf<T>(this IImmutableList<T> list, T item, IEqualityComparer<T> equalityComparer)'
+      CSharp: public static int IndexOf<T>(IImmutableList<T> list, T item, IEqualityComparer<T> equalityComparer)
     parameters:
     - id: list
       type:
         id: System.Collections.Immutable.IImmutableList{``0}
-        name: IImmutableList
+        name: IImmutableList<T>
         href: System.Collections.Immutable.IImmutableList{``0}
       description: The list to search.
     - id: item
@@ -335,21 +377,25 @@ items:
         name: T
         href: T
       description: >-
-        The object to locate in the ImmutableList<T>. The value
+        The object to locate in the [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml). The value
 
         can be null for reference types.
     - id: equalityComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{``0}
-        name: System.Collections.Generic.IEqualityComparer{``0}
+        name: IEqualityComparer<T>
         isExternal: true
       description: The equality comparer to use in the search.
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: >-
         The zero-based index of the first occurrence of item within the range of
 
-        elements in the ImmutableList<T> that extends from index
+        elements in the [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml) that extends from index
 
         to the last element, if found; otherwise, -1.
   id: System.Collections.Immutable.ImmutableList.IndexOf``1(System.Collections.Immutable.IImmutableList{``0},``0,System.Collections.Generic.IEqualityComparer{``0})
@@ -365,17 +411,17 @@ items:
   summary: >-
     Searches for the specified object and returns the zero-based index of the
 
-    first occurrence within the range of elements in the ImmutableList<T>
+    first occurrence within the range of elements in the [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml)
 
     that extends from the specified index to the last element.
   syntax:
     content:
-      CSharp: '[Pure] public static int IndexOf<T>(this IImmutableList<T> list, T item, int startIndex)'
+      CSharp: public static int IndexOf<T>(IImmutableList<T> list, T item, int startIndex)
     parameters:
     - id: list
       type:
         id: System.Collections.Immutable.IImmutableList{``0}
-        name: IImmutableList
+        name: IImmutableList<T>
         href: System.Collections.Immutable.IImmutableList{``0}
       description: The list to search.
     - id: item
@@ -384,13 +430,13 @@ items:
         name: T
         href: T
       description: >-
-        The object to locate in the ImmutableList<T>. The value
+        The object to locate in the [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml). The value
 
         can be null for reference types.
     - id: startIndex
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: >-
         The zero-based starting index of the search. 0 (zero) is valid in an empty
@@ -398,10 +444,14 @@ items:
         list.
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: >-
         The zero-based index of the first occurrence of item within the range of
 
-        elements in the ImmutableList<T> that extends from index
+        elements in the [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml) that extends from index
 
         to the last element, if found; otherwise, -1.
   id: System.Collections.Immutable.ImmutableList.IndexOf``1(System.Collections.Immutable.IImmutableList{``0},``0,System.Int32)
@@ -417,17 +467,17 @@ items:
   summary: >-
     Searches for the specified object and returns the zero-based index of the
 
-    first occurrence within the range of elements in the ImmutableList<T>
+    first occurrence within the range of elements in the [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml)
 
     that extends from the specified index to the last element.
   syntax:
     content:
-      CSharp: '[Pure] public static int IndexOf<T>(this IImmutableList<T> list, T item, int startIndex, int count)'
+      CSharp: public static int IndexOf<T>(IImmutableList<T> list, T item, int startIndex, int count)
     parameters:
     - id: list
       type:
         id: System.Collections.Immutable.IImmutableList{``0}
-        name: IImmutableList
+        name: IImmutableList<T>
         href: System.Collections.Immutable.IImmutableList{``0}
       description: The list to search.
     - id: item
@@ -436,13 +486,13 @@ items:
         name: T
         href: T
       description: >-
-        The object to locate in the ImmutableList<T>. The value
+        The object to locate in the [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml). The value
 
         can be null for reference types.
     - id: startIndex
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: >-
         The zero-based starting index of the search. 0 (zero) is valid in an empty
@@ -451,15 +501,19 @@ items:
     - id: count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The number of elements in the section to search.
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: >-
         The zero-based index of the first occurrence of item within the range of
 
-        elements in the ImmutableList<T> that extends from index
+        elements in the [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml) that extends from index
 
         to the last element, if found; otherwise, -1.
   id: System.Collections.Immutable.ImmutableList.IndexOf``1(System.Collections.Immutable.IImmutableList{``0},``0,System.Int32,System.Int32)
@@ -475,15 +529,15 @@ items:
   summary: >-
     Searches for the specified object and returns the zero-based index of the
 
-    last occurrence within the entire ImmutableList<T>.
+    last occurrence within the entire [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml).
   syntax:
     content:
-      CSharp: '[Pure] public static int LastIndexOf<T>(this IImmutableList<T> list, T item)'
+      CSharp: public static int LastIndexOf<T>(IImmutableList<T> list, T item)
     parameters:
     - id: list
       type:
         id: System.Collections.Immutable.IImmutableList{``0}
-        name: IImmutableList
+        name: IImmutableList<T>
         href: System.Collections.Immutable.IImmutableList{``0}
       description: The list to search.
     - id: item
@@ -492,15 +546,19 @@ items:
         name: T
         href: T
       description: >-
-        The object to locate in the ImmutableList<T>. The value
+        The object to locate in the [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml). The value
 
         can be null for reference types.
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: >-
         The zero-based index of the last occurrence of item within the entire the
 
-        ImmutableList<T>, if found; otherwise, -1.
+        [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml), if found; otherwise, -1.
   id: System.Collections.Immutable.ImmutableList.LastIndexOf``1(System.Collections.Immutable.IImmutableList{``0},``0)
 - uid: System.Collections.Immutable.ImmutableList.LastIndexOf``1(System.Collections.Immutable.IImmutableList{``0},``0,System.Collections.Generic.IEqualityComparer{``0})
   href: System.Collections.Immutable.ImmutableList.yml
@@ -514,15 +572,15 @@ items:
   summary: >-
     Searches for the specified object and returns the zero-based index of the
 
-    last occurrence within the entire ImmutableList<T>.
+    last occurrence within the entire [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml).
   syntax:
     content:
-      CSharp: '[Pure] public static int LastIndexOf<T>(this IImmutableList<T> list, T item, IEqualityComparer<T> equalityComparer)'
+      CSharp: public static int LastIndexOf<T>(IImmutableList<T> list, T item, IEqualityComparer<T> equalityComparer)
     parameters:
     - id: list
       type:
         id: System.Collections.Immutable.IImmutableList{``0}
-        name: IImmutableList
+        name: IImmutableList<T>
         href: System.Collections.Immutable.IImmutableList{``0}
       description: The list to search.
     - id: item
@@ -531,21 +589,25 @@ items:
         name: T
         href: T
       description: >-
-        The object to locate in the ImmutableList<T>. The value
+        The object to locate in the [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml). The value
 
         can be null for reference types.
     - id: equalityComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{``0}
-        name: System.Collections.Generic.IEqualityComparer{``0}
+        name: IEqualityComparer<T>
         isExternal: true
       description: The equality comparer to use in the search.
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: >-
         The zero-based index of the last occurrence of item within the entire the
 
-        ImmutableList<T>, if found; otherwise, -1.
+        [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml), if found; otherwise, -1.
   id: System.Collections.Immutable.ImmutableList.LastIndexOf``1(System.Collections.Immutable.IImmutableList{``0},``0,System.Collections.Generic.IEqualityComparer{``0})
 - uid: System.Collections.Immutable.ImmutableList.LastIndexOf``1(System.Collections.Immutable.IImmutableList{``0},``0,System.Int32)
   href: System.Collections.Immutable.ImmutableList.yml
@@ -559,17 +621,17 @@ items:
   summary: >-
     Searches for the specified object and returns the zero-based index of the
 
-    last occurrence within the range of elements in the ImmutableList<T>
+    last occurrence within the range of elements in the [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml)
 
     that extends from the first element to the specified index.
   syntax:
     content:
-      CSharp: '[Pure] public static int LastIndexOf<T>(this IImmutableList<T> list, T item, int startIndex)'
+      CSharp: public static int LastIndexOf<T>(IImmutableList<T> list, T item, int startIndex)
     parameters:
     - id: list
       type:
         id: System.Collections.Immutable.IImmutableList{``0}
-        name: IImmutableList
+        name: IImmutableList<T>
         href: System.Collections.Immutable.IImmutableList{``0}
       description: The list to search.
     - id: item
@@ -578,21 +640,25 @@ items:
         name: T
         href: T
       description: >-
-        The object to locate in the ImmutableList<T>. The value
+        The object to locate in the [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml). The value
 
         can be null for reference types.
     - id: startIndex
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The zero-based starting index of the backward search.
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: >-
         The zero-based index of the last occurrence of item within the range of elements
 
-        in the ImmutableList<T> that extends from the first element
+        in the [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml) that extends from the first element
 
         to index, if found; otherwise, -1.
   id: System.Collections.Immutable.ImmutableList.LastIndexOf``1(System.Collections.Immutable.IImmutableList{``0},``0,System.Int32)
@@ -608,17 +674,17 @@ items:
   summary: >-
     Searches for the specified object and returns the zero-based index of the
 
-    last occurrence within the range of elements in the ImmutableList<T>
+    last occurrence within the range of elements in the [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml)
 
     that extends from the first element to the specified index.
   syntax:
     content:
-      CSharp: '[Pure] public static int LastIndexOf<T>(this IImmutableList<T> list, T item, int startIndex, int count)'
+      CSharp: public static int LastIndexOf<T>(IImmutableList<T> list, T item, int startIndex, int count)
     parameters:
     - id: list
       type:
         id: System.Collections.Immutable.IImmutableList{``0}
-        name: IImmutableList
+        name: IImmutableList<T>
         href: System.Collections.Immutable.IImmutableList{``0}
       description: The list to search.
     - id: item
@@ -627,27 +693,31 @@ items:
         name: T
         href: T
       description: >-
-        The object to locate in the ImmutableList<T>. The value
+        The object to locate in the [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml). The value
 
         can be null for reference types.
     - id: startIndex
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The zero-based starting index of the backward search.
     - id: count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The number of elements in the section to search.
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: >-
         The zero-based index of the last occurrence of item within the range of elements
 
-        in the ImmutableList<T> that extends from the first element
+        in the [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml) that extends from the first element
 
         to index, if found; otherwise, -1.
   id: System.Collections.Immutable.ImmutableList.LastIndexOf``1(System.Collections.Immutable.IImmutableList{``0},``0,System.Int32,System.Int32)

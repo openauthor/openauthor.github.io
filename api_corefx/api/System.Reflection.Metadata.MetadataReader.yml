@@ -5,18 +5,20 @@ items:
   fullName: System.Reflection.Metadata.MetadataReader
   type: Class
   source:
-    remote: &o0
+    remote:
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.WinMD.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.WinMD.cs
     startLine: 9
   summary: Reads metadata as defined byte the ECMA 335 CLI specification.
   syntax:
     content:
-      CSharp: public sealed partial class MetadataReader
+      CSharp: public sealed class MetadataReader
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Reflection.Metadata.MetadataReader
   children:
@@ -56,7 +58,7 @@ items:
   - System.Reflection.Metadata.MetadataReader.GetNamespaceDefinition(System.Reflection.Metadata.NamespaceDefinitionHandle)
   - System.Reflection.Metadata.MetadataReader.GetTypeReference(System.Reflection.Metadata.TypeReferenceHandle)
   - System.Reflection.Metadata.MetadataReader.GetExportedType(System.Reflection.Metadata.ExportedTypeHandle)
-  - System.Reflection.Metadata.MetadataReader.GetCustomAttributes(System.Reflection.Metadata.Handle)
+  - System.Reflection.Metadata.MetadataReader.GetCustomAttributes(System.Reflection.Metadata.EntityHandle)
   - System.Reflection.Metadata.MetadataReader.GetCustomAttribute(System.Reflection.Metadata.CustomAttributeHandle)
   - System.Reflection.Metadata.MetadataReader.GetDeclarativeSecurityAttribute(System.Reflection.Metadata.DeclarativeSecurityAttributeHandle)
   - System.Reflection.Metadata.MetadataReader.GetConstant(System.Reflection.Metadata.ConstantHandle)
@@ -82,7 +84,11 @@ items:
   fullName: System.Reflection.Metadata.MetadataReader.MetadataReader(byte*, int)
   type: Constructor
   source:
-    remote: *o0
+    remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
     startLine: 36
   summary: Creates a metadata reader from the metadata stored at the given memory location.
@@ -92,11 +98,12 @@ items:
     parameters:
     - id: metadata
       type:
+        name: byte*
         isExternal: true
     - id: length
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Reflection.Metadata.MetadataReader.#ctor(System.Byte*,System.Int32)
 - uid: System.Reflection.Metadata.MetadataReader.#ctor(System.Byte*,System.Int32,System.Reflection.Metadata.MetadataReaderOptions)
@@ -115,11 +122,12 @@ items:
     parameters:
     - id: metadata
       type:
+        name: byte*
         isExternal: true
     - id: length
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: options
       type:
@@ -143,11 +151,12 @@ items:
     parameters:
     - id: metadata
       type:
+        name: byte*
         isExternal: true
     - id: length
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: options
       type:
@@ -168,7 +177,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 829
+    startLine: 835
   syntax:
     content:
       CSharp: public MetadataReaderOptions Options { get; }
@@ -187,7 +196,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 834
+    startLine: 840
   syntax:
     content:
       CSharp: public string MetadataVersion { get; }
@@ -195,7 +204,7 @@ items:
     - id: MetadataVersion
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Reflection.Metadata.MetadataReader.MetadataVersion
 - uid: System.Reflection.Metadata.MetadataReader.MetadataKind
@@ -206,7 +215,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 839
+    startLine: 845
   syntax:
     content:
       CSharp: public MetadataKind MetadataKind { get; }
@@ -225,7 +234,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 844
+    startLine: 850
   syntax:
     content:
       CSharp: public MetadataStringComparer StringComparer { get; }
@@ -244,7 +253,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 849
+    startLine: 855
   syntax:
     content:
       CSharp: public bool IsAssembly { get; }
@@ -252,7 +261,7 @@ items:
     - id: IsAssembly
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Reflection.Metadata.MetadataReader.IsAssembly
 - uid: System.Reflection.Metadata.MetadataReader.AssemblyReferences
@@ -263,7 +272,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 854
+    startLine: 860
   syntax:
     content:
       CSharp: public AssemblyReferenceHandleCollection AssemblyReferences { get; }
@@ -282,7 +291,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 859
+    startLine: 865
   syntax:
     content:
       CSharp: public TypeDefinitionHandleCollection TypeDefinitions { get; }
@@ -301,7 +310,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 864
+    startLine: 870
   syntax:
     content:
       CSharp: public TypeReferenceHandleCollection TypeReferences { get; }
@@ -320,7 +329,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 869
+    startLine: 875
   syntax:
     content:
       CSharp: public CustomAttributeHandleCollection CustomAttributes { get; }
@@ -339,7 +348,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 874
+    startLine: 880
   syntax:
     content:
       CSharp: public DeclarativeSecurityAttributeHandleCollection DeclarativeSecurityAttributes { get; }
@@ -358,7 +367,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 879
+    startLine: 885
   syntax:
     content:
       CSharp: public MemberReferenceHandleCollection MemberReferences { get; }
@@ -377,7 +386,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 884
+    startLine: 890
   syntax:
     content:
       CSharp: public ManifestResourceHandleCollection ManifestResources { get; }
@@ -396,7 +405,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 889
+    startLine: 895
   syntax:
     content:
       CSharp: public AssemblyFileHandleCollection AssemblyFiles { get; }
@@ -415,7 +424,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 894
+    startLine: 900
   syntax:
     content:
       CSharp: public ExportedTypeHandleCollection ExportedTypes { get; }
@@ -434,7 +443,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 899
+    startLine: 905
   syntax:
     content:
       CSharp: public MethodDefinitionHandleCollection MethodDefinitions { get; }
@@ -453,7 +462,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 904
+    startLine: 910
   syntax:
     content:
       CSharp: public FieldDefinitionHandleCollection FieldDefinitions { get; }
@@ -472,7 +481,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 909
+    startLine: 915
   syntax:
     content:
       CSharp: public EventDefinitionHandleCollection EventDefinitions { get; }
@@ -491,7 +500,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 914
+    startLine: 920
   syntax:
     content:
       CSharp: public PropertyDefinitionHandleCollection PropertyDefinitions { get; }
@@ -510,13 +519,17 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 919
+    startLine: 925
   syntax:
     content:
       CSharp: public AssemblyDefinition GetAssemblyDefinition()
     parameters: []
     return:
       id: AssemblyDefinition
+      type:
+        id: System.Reflection.Metadata.AssemblyDefinition
+        name: AssemblyDefinition
+        href: System.Reflection.Metadata.AssemblyDefinition.yml
   id: System.Reflection.Metadata.MetadataReader.GetAssemblyDefinition
 - uid: System.Reflection.Metadata.MetadataReader.GetString(System.Reflection.Metadata.StringHandle)
   href: System.Reflection.Metadata.MetadataReader.yml
@@ -526,7 +539,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 929
+    startLine: 935
   syntax:
     content:
       CSharp: public string GetString(StringHandle handle)
@@ -538,6 +551,10 @@ items:
         href: System.Reflection.Metadata.StringHandle.yml
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Reflection.Metadata.MetadataReader.GetString(System.Reflection.Metadata.StringHandle)
 - uid: System.Reflection.Metadata.MetadataReader.GetString(System.Reflection.Metadata.NamespaceDefinitionHandle)
   href: System.Reflection.Metadata.MetadataReader.yml
@@ -547,7 +564,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 934
+    startLine: 940
   syntax:
     content:
       CSharp: public string GetString(NamespaceDefinitionHandle handle)
@@ -559,6 +576,10 @@ items:
         href: System.Reflection.Metadata.NamespaceDefinitionHandle.yml
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Reflection.Metadata.MetadataReader.GetString(System.Reflection.Metadata.NamespaceDefinitionHandle)
 - uid: System.Reflection.Metadata.MetadataReader.GetBlobBytes(System.Reflection.Metadata.BlobHandle)
   href: System.Reflection.Metadata.MetadataReader.yml
@@ -568,7 +589,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 944
+    startLine: 950
   syntax:
     content:
       CSharp: public byte[] GetBlobBytes(BlobHandle handle)
@@ -578,7 +599,11 @@ items:
         id: System.Reflection.Metadata.BlobHandle
         name: BlobHandle
         href: System.Reflection.Metadata.BlobHandle.yml
-    return: {}
+    return:
+      type:
+        id: System.Array
+        name: byte[]
+        isExternal: true
   id: System.Reflection.Metadata.MetadataReader.GetBlobBytes(System.Reflection.Metadata.BlobHandle)
 - uid: System.Reflection.Metadata.MetadataReader.GetBlobContent(System.Reflection.Metadata.BlobHandle)
   href: System.Reflection.Metadata.MetadataReader.yml
@@ -588,7 +613,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 949
+    startLine: 955
   syntax:
     content:
       CSharp: public ImmutableArray<byte> GetBlobContent(BlobHandle handle)
@@ -600,6 +625,10 @@ items:
         href: System.Reflection.Metadata.BlobHandle.yml
     return:
       id: ImmutableArray
+      type:
+        id: ImmutableArray{System.Byte}
+        name: ImmutableArray<byte>
+        isExternal: true
   id: System.Reflection.Metadata.MetadataReader.GetBlobContent(System.Reflection.Metadata.BlobHandle)
 - uid: System.Reflection.Metadata.MetadataReader.GetBlobReader(System.Reflection.Metadata.BlobHandle)
   href: System.Reflection.Metadata.MetadataReader.yml
@@ -609,7 +638,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 956
+    startLine: 962
   syntax:
     content:
       CSharp: public BlobReader GetBlobReader(BlobHandle handle)
@@ -621,6 +650,10 @@ items:
         href: System.Reflection.Metadata.BlobHandle.yml
     return:
       id: BlobReader
+      type:
+        id: System.Reflection.Metadata.BlobReader
+        name: BlobReader
+        href: System.Reflection.Metadata.BlobReader.yml
   id: System.Reflection.Metadata.MetadataReader.GetBlobReader(System.Reflection.Metadata.BlobHandle)
 - uid: System.Reflection.Metadata.MetadataReader.GetUserString(System.Reflection.Metadata.UserStringHandle)
   href: System.Reflection.Metadata.MetadataReader.yml
@@ -630,7 +663,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 961
+    startLine: 967
   syntax:
     content:
       CSharp: public string GetUserString(UserStringHandle handle)
@@ -642,6 +675,10 @@ items:
         href: System.Reflection.Metadata.UserStringHandle.yml
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Reflection.Metadata.MetadataReader.GetUserString(System.Reflection.Metadata.UserStringHandle)
 - uid: System.Reflection.Metadata.MetadataReader.GetGuid(System.Reflection.Metadata.GuidHandle)
   href: System.Reflection.Metadata.MetadataReader.yml
@@ -651,7 +688,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 966
+    startLine: 972
   syntax:
     content:
       CSharp: public Guid GetGuid(GuidHandle handle)
@@ -663,6 +700,10 @@ items:
         href: System.Reflection.Metadata.GuidHandle.yml
     return:
       id: Guid
+      type:
+        id: System.Guid
+        name: Guid
+        isExternal: true
   id: System.Reflection.Metadata.MetadataReader.GetGuid(System.Reflection.Metadata.GuidHandle)
 - uid: System.Reflection.Metadata.MetadataReader.GetModuleDefinition
   href: System.Reflection.Metadata.MetadataReader.yml
@@ -672,13 +713,17 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 971
+    startLine: 977
   syntax:
     content:
       CSharp: public ModuleDefinition GetModuleDefinition()
     parameters: []
     return:
       id: ModuleDefinition
+      type:
+        id: System.Reflection.Metadata.ModuleDefinition
+        name: ModuleDefinition
+        href: System.Reflection.Metadata.ModuleDefinition.yml
   id: System.Reflection.Metadata.MetadataReader.GetModuleDefinition
 - uid: System.Reflection.Metadata.MetadataReader.GetAssemblyReference(System.Reflection.Metadata.AssemblyReferenceHandle)
   href: System.Reflection.Metadata.MetadataReader.yml
@@ -688,7 +733,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 976
+    startLine: 982
   syntax:
     content:
       CSharp: public AssemblyReference GetAssemblyReference(AssemblyReferenceHandle handle)
@@ -700,6 +745,10 @@ items:
         href: System.Reflection.Metadata.AssemblyReferenceHandle.yml
     return:
       id: AssemblyReference
+      type:
+        id: System.Reflection.Metadata.AssemblyReference
+        name: AssemblyReference
+        href: System.Reflection.Metadata.AssemblyReference.yml
   id: System.Reflection.Metadata.MetadataReader.GetAssemblyReference(System.Reflection.Metadata.AssemblyReferenceHandle)
 - uid: System.Reflection.Metadata.MetadataReader.GetTypeDefinition(System.Reflection.Metadata.TypeDefinitionHandle)
   href: System.Reflection.Metadata.MetadataReader.yml
@@ -709,7 +758,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 981
+    startLine: 987
   syntax:
     content:
       CSharp: public TypeDefinition GetTypeDefinition(TypeDefinitionHandle handle)
@@ -721,6 +770,10 @@ items:
         href: System.Reflection.Metadata.TypeDefinitionHandle.yml
     return:
       id: TypeDefinition
+      type:
+        id: System.Reflection.Metadata.TypeDefinition
+        name: TypeDefinition
+        href: System.Reflection.Metadata.TypeDefinition.yml
   id: System.Reflection.Metadata.MetadataReader.GetTypeDefinition(System.Reflection.Metadata.TypeDefinitionHandle)
 - uid: System.Reflection.Metadata.MetadataReader.GetNamespaceDefinitionRoot
   href: System.Reflection.Metadata.MetadataReader.yml
@@ -730,13 +783,17 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 987
+    startLine: 993
   syntax:
     content:
       CSharp: public NamespaceDefinition GetNamespaceDefinitionRoot()
     parameters: []
     return:
       id: NamespaceDefinition
+      type:
+        id: System.Reflection.Metadata.NamespaceDefinition
+        name: NamespaceDefinition
+        href: System.Reflection.Metadata.NamespaceDefinition.yml
   id: System.Reflection.Metadata.MetadataReader.GetNamespaceDefinitionRoot
 - uid: System.Reflection.Metadata.MetadataReader.GetNamespaceDefinition(System.Reflection.Metadata.NamespaceDefinitionHandle)
   href: System.Reflection.Metadata.MetadataReader.yml
@@ -746,7 +803,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 993
+    startLine: 999
   syntax:
     content:
       CSharp: public NamespaceDefinition GetNamespaceDefinition(NamespaceDefinitionHandle handle)
@@ -758,6 +815,10 @@ items:
         href: System.Reflection.Metadata.NamespaceDefinitionHandle.yml
     return:
       id: NamespaceDefinition
+      type:
+        id: System.Reflection.Metadata.NamespaceDefinition
+        name: NamespaceDefinition
+        href: System.Reflection.Metadata.NamespaceDefinition.yml
   id: System.Reflection.Metadata.MetadataReader.GetNamespaceDefinition(System.Reflection.Metadata.NamespaceDefinitionHandle)
 - uid: System.Reflection.Metadata.MetadataReader.GetTypeReference(System.Reflection.Metadata.TypeReferenceHandle)
   href: System.Reflection.Metadata.MetadataReader.yml
@@ -767,7 +828,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 1010
+    startLine: 1016
   syntax:
     content:
       CSharp: public TypeReference GetTypeReference(TypeReferenceHandle handle)
@@ -779,6 +840,10 @@ items:
         href: System.Reflection.Metadata.TypeReferenceHandle.yml
     return:
       id: TypeReference
+      type:
+        id: System.Reflection.Metadata.TypeReference
+        name: TypeReference
+        href: System.Reflection.Metadata.TypeReference.yml
   id: System.Reflection.Metadata.MetadataReader.GetTypeReference(System.Reflection.Metadata.TypeReferenceHandle)
 - uid: System.Reflection.Metadata.MetadataReader.GetExportedType(System.Reflection.Metadata.ExportedTypeHandle)
   href: System.Reflection.Metadata.MetadataReader.yml
@@ -788,7 +853,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 1027
+    startLine: 1033
   syntax:
     content:
       CSharp: public ExportedType GetExportedType(ExportedTypeHandle handle)
@@ -800,28 +865,36 @@ items:
         href: System.Reflection.Metadata.ExportedTypeHandle.yml
     return:
       id: ExportedType
+      type:
+        id: System.Reflection.Metadata.ExportedType
+        name: ExportedType
+        href: System.Reflection.Metadata.ExportedType.yml
   id: System.Reflection.Metadata.MetadataReader.GetExportedType(System.Reflection.Metadata.ExportedTypeHandle)
-- uid: System.Reflection.Metadata.MetadataReader.GetCustomAttributes(System.Reflection.Metadata.Handle)
+- uid: System.Reflection.Metadata.MetadataReader.GetCustomAttributes(System.Reflection.Metadata.EntityHandle)
   href: System.Reflection.Metadata.MetadataReader.yml
-  name: GetCustomAttributes(Handle)
-  fullName: System.Reflection.Metadata.MetadataReader.GetCustomAttributes(System.Reflection.Metadata.Handle)
+  name: GetCustomAttributes(EntityHandle)
+  fullName: System.Reflection.Metadata.MetadataReader.GetCustomAttributes(System.Reflection.Metadata.EntityHandle)
   type: Method
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 1032
+    startLine: 1038
   syntax:
     content:
-      CSharp: public CustomAttributeHandleCollection GetCustomAttributes(Handle handle)
+      CSharp: public CustomAttributeHandleCollection GetCustomAttributes(EntityHandle handle)
     parameters:
     - id: handle
       type:
-        id: System.Reflection.Metadata.Handle
-        name: Handle
-        href: System.Reflection.Metadata.Handle.yml
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
     return:
       id: CustomAttributeHandleCollection
-  id: System.Reflection.Metadata.MetadataReader.GetCustomAttributes(System.Reflection.Metadata.Handle)
+      type:
+        id: System.Reflection.Metadata.CustomAttributeHandleCollection
+        name: CustomAttributeHandleCollection
+        href: System.Reflection.Metadata.CustomAttributeHandleCollection.yml
+  id: System.Reflection.Metadata.MetadataReader.GetCustomAttributes(System.Reflection.Metadata.EntityHandle)
 - uid: System.Reflection.Metadata.MetadataReader.GetCustomAttribute(System.Reflection.Metadata.CustomAttributeHandle)
   href: System.Reflection.Metadata.MetadataReader.yml
   name: GetCustomAttribute(CustomAttributeHandle)
@@ -830,7 +903,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 1038
+    startLine: 1044
   syntax:
     content:
       CSharp: public CustomAttribute GetCustomAttribute(CustomAttributeHandle handle)
@@ -842,6 +915,10 @@ items:
         href: System.Reflection.Metadata.CustomAttributeHandle.yml
     return:
       id: CustomAttribute
+      type:
+        id: System.Reflection.Metadata.CustomAttribute
+        name: CustomAttribute
+        href: System.Reflection.Metadata.CustomAttribute.yml
   id: System.Reflection.Metadata.MetadataReader.GetCustomAttribute(System.Reflection.Metadata.CustomAttributeHandle)
 - uid: System.Reflection.Metadata.MetadataReader.GetDeclarativeSecurityAttribute(System.Reflection.Metadata.DeclarativeSecurityAttributeHandle)
   href: System.Reflection.Metadata.MetadataReader.yml
@@ -851,7 +928,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 1055
+    startLine: 1061
   syntax:
     content:
       CSharp: public DeclarativeSecurityAttribute GetDeclarativeSecurityAttribute(DeclarativeSecurityAttributeHandle handle)
@@ -863,6 +940,10 @@ items:
         href: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.yml
     return:
       id: DeclarativeSecurityAttribute
+      type:
+        id: System.Reflection.Metadata.DeclarativeSecurityAttribute
+        name: DeclarativeSecurityAttribute
+        href: System.Reflection.Metadata.DeclarativeSecurityAttribute.yml
   id: System.Reflection.Metadata.MetadataReader.GetDeclarativeSecurityAttribute(System.Reflection.Metadata.DeclarativeSecurityAttributeHandle)
 - uid: System.Reflection.Metadata.MetadataReader.GetConstant(System.Reflection.Metadata.ConstantHandle)
   href: System.Reflection.Metadata.MetadataReader.yml
@@ -872,7 +953,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 1061
+    startLine: 1067
   syntax:
     content:
       CSharp: public Constant GetConstant(ConstantHandle handle)
@@ -884,6 +965,10 @@ items:
         href: System.Reflection.Metadata.ConstantHandle.yml
     return:
       id: Constant
+      type:
+        id: System.Reflection.Metadata.Constant
+        name: Constant
+        href: System.Reflection.Metadata.Constant.yml
   id: System.Reflection.Metadata.MetadataReader.GetConstant(System.Reflection.Metadata.ConstantHandle)
 - uid: System.Reflection.Metadata.MetadataReader.GetMethodDefinition(System.Reflection.Metadata.MethodDefinitionHandle)
   href: System.Reflection.Metadata.MetadataReader.yml
@@ -893,7 +978,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 1066
+    startLine: 1072
   syntax:
     content:
       CSharp: public MethodDefinition GetMethodDefinition(MethodDefinitionHandle handle)
@@ -905,6 +990,10 @@ items:
         href: System.Reflection.Metadata.MethodDefinitionHandle.yml
     return:
       id: MethodDefinition
+      type:
+        id: System.Reflection.Metadata.MethodDefinition
+        name: MethodDefinition
+        href: System.Reflection.Metadata.MethodDefinition.yml
   id: System.Reflection.Metadata.MetadataReader.GetMethodDefinition(System.Reflection.Metadata.MethodDefinitionHandle)
 - uid: System.Reflection.Metadata.MetadataReader.GetFieldDefinition(System.Reflection.Metadata.FieldDefinitionHandle)
   href: System.Reflection.Metadata.MetadataReader.yml
@@ -914,7 +1003,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 1083
+    startLine: 1089
   syntax:
     content:
       CSharp: public FieldDefinition GetFieldDefinition(FieldDefinitionHandle handle)
@@ -926,6 +1015,10 @@ items:
         href: System.Reflection.Metadata.FieldDefinitionHandle.yml
     return:
       id: FieldDefinition
+      type:
+        id: System.Reflection.Metadata.FieldDefinition
+        name: FieldDefinition
+        href: System.Reflection.Metadata.FieldDefinition.yml
   id: System.Reflection.Metadata.MetadataReader.GetFieldDefinition(System.Reflection.Metadata.FieldDefinitionHandle)
 - uid: System.Reflection.Metadata.MetadataReader.GetPropertyDefinition(System.Reflection.Metadata.PropertyDefinitionHandle)
   href: System.Reflection.Metadata.MetadataReader.yml
@@ -935,7 +1028,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 1100
+    startLine: 1106
   syntax:
     content:
       CSharp: public PropertyDefinition GetPropertyDefinition(PropertyDefinitionHandle handle)
@@ -947,6 +1040,10 @@ items:
         href: System.Reflection.Metadata.PropertyDefinitionHandle.yml
     return:
       id: PropertyDefinition
+      type:
+        id: System.Reflection.Metadata.PropertyDefinition
+        name: PropertyDefinition
+        href: System.Reflection.Metadata.PropertyDefinition.yml
   id: System.Reflection.Metadata.MetadataReader.GetPropertyDefinition(System.Reflection.Metadata.PropertyDefinitionHandle)
 - uid: System.Reflection.Metadata.MetadataReader.GetEventDefinition(System.Reflection.Metadata.EventDefinitionHandle)
   href: System.Reflection.Metadata.MetadataReader.yml
@@ -956,7 +1053,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 1105
+    startLine: 1111
   syntax:
     content:
       CSharp: public EventDefinition GetEventDefinition(EventDefinitionHandle handle)
@@ -968,6 +1065,10 @@ items:
         href: System.Reflection.Metadata.EventDefinitionHandle.yml
     return:
       id: EventDefinition
+      type:
+        id: System.Reflection.Metadata.EventDefinition
+        name: EventDefinition
+        href: System.Reflection.Metadata.EventDefinition.yml
   id: System.Reflection.Metadata.MetadataReader.GetEventDefinition(System.Reflection.Metadata.EventDefinitionHandle)
 - uid: System.Reflection.Metadata.MetadataReader.GetMethodImplementation(System.Reflection.Metadata.MethodImplementationHandle)
   href: System.Reflection.Metadata.MetadataReader.yml
@@ -977,7 +1078,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 1110
+    startLine: 1116
   syntax:
     content:
       CSharp: public MethodImplementation GetMethodImplementation(MethodImplementationHandle handle)
@@ -989,6 +1090,10 @@ items:
         href: System.Reflection.Metadata.MethodImplementationHandle.yml
     return:
       id: MethodImplementation
+      type:
+        id: System.Reflection.Metadata.MethodImplementation
+        name: MethodImplementation
+        href: System.Reflection.Metadata.MethodImplementation.yml
   id: System.Reflection.Metadata.MetadataReader.GetMethodImplementation(System.Reflection.Metadata.MethodImplementationHandle)
 - uid: System.Reflection.Metadata.MetadataReader.GetMemberReference(System.Reflection.Metadata.MemberReferenceHandle)
   href: System.Reflection.Metadata.MetadataReader.yml
@@ -998,7 +1103,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 1115
+    startLine: 1121
   syntax:
     content:
       CSharp: public MemberReference GetMemberReference(MemberReferenceHandle handle)
@@ -1010,6 +1115,10 @@ items:
         href: System.Reflection.Metadata.MemberReferenceHandle.yml
     return:
       id: MemberReference
+      type:
+        id: System.Reflection.Metadata.MemberReference
+        name: MemberReference
+        href: System.Reflection.Metadata.MemberReference.yml
   id: System.Reflection.Metadata.MetadataReader.GetMemberReference(System.Reflection.Metadata.MemberReferenceHandle)
 - uid: System.Reflection.Metadata.MetadataReader.GetMethodSpecification(System.Reflection.Metadata.MethodSpecificationHandle)
   href: System.Reflection.Metadata.MetadataReader.yml
@@ -1019,7 +1128,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 1132
+    startLine: 1138
   syntax:
     content:
       CSharp: public MethodSpecification GetMethodSpecification(MethodSpecificationHandle handle)
@@ -1031,6 +1140,10 @@ items:
         href: System.Reflection.Metadata.MethodSpecificationHandle.yml
     return:
       id: MethodSpecification
+      type:
+        id: System.Reflection.Metadata.MethodSpecification
+        name: MethodSpecification
+        href: System.Reflection.Metadata.MethodSpecification.yml
   id: System.Reflection.Metadata.MetadataReader.GetMethodSpecification(System.Reflection.Metadata.MethodSpecificationHandle)
 - uid: System.Reflection.Metadata.MetadataReader.GetParameter(System.Reflection.Metadata.ParameterHandle)
   href: System.Reflection.Metadata.MetadataReader.yml
@@ -1040,7 +1153,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 1137
+    startLine: 1143
   syntax:
     content:
       CSharp: public Parameter GetParameter(ParameterHandle handle)
@@ -1052,6 +1165,10 @@ items:
         href: System.Reflection.Metadata.ParameterHandle.yml
     return:
       id: Parameter
+      type:
+        id: System.Reflection.Metadata.Parameter
+        name: Parameter
+        href: System.Reflection.Metadata.Parameter.yml
   id: System.Reflection.Metadata.MetadataReader.GetParameter(System.Reflection.Metadata.ParameterHandle)
 - uid: System.Reflection.Metadata.MetadataReader.GetGenericParameter(System.Reflection.Metadata.GenericParameterHandle)
   href: System.Reflection.Metadata.MetadataReader.yml
@@ -1061,7 +1178,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 1142
+    startLine: 1148
   syntax:
     content:
       CSharp: public GenericParameter GetGenericParameter(GenericParameterHandle handle)
@@ -1073,6 +1190,10 @@ items:
         href: System.Reflection.Metadata.GenericParameterHandle.yml
     return:
       id: GenericParameter
+      type:
+        id: System.Reflection.Metadata.GenericParameter
+        name: GenericParameter
+        href: System.Reflection.Metadata.GenericParameter.yml
   id: System.Reflection.Metadata.MetadataReader.GetGenericParameter(System.Reflection.Metadata.GenericParameterHandle)
 - uid: System.Reflection.Metadata.MetadataReader.GetGenericParameterConstraint(System.Reflection.Metadata.GenericParameterConstraintHandle)
   href: System.Reflection.Metadata.MetadataReader.yml
@@ -1082,7 +1203,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 1147
+    startLine: 1153
   syntax:
     content:
       CSharp: public GenericParameterConstraint GetGenericParameterConstraint(GenericParameterConstraintHandle handle)
@@ -1094,6 +1215,10 @@ items:
         href: System.Reflection.Metadata.GenericParameterConstraintHandle.yml
     return:
       id: GenericParameterConstraint
+      type:
+        id: System.Reflection.Metadata.GenericParameterConstraint
+        name: GenericParameterConstraint
+        href: System.Reflection.Metadata.GenericParameterConstraint.yml
   id: System.Reflection.Metadata.MetadataReader.GetGenericParameterConstraint(System.Reflection.Metadata.GenericParameterConstraintHandle)
 - uid: System.Reflection.Metadata.MetadataReader.GetManifestResource(System.Reflection.Metadata.ManifestResourceHandle)
   href: System.Reflection.Metadata.MetadataReader.yml
@@ -1103,7 +1228,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 1152
+    startLine: 1158
   syntax:
     content:
       CSharp: public ManifestResource GetManifestResource(ManifestResourceHandle handle)
@@ -1115,6 +1240,10 @@ items:
         href: System.Reflection.Metadata.ManifestResourceHandle.yml
     return:
       id: ManifestResource
+      type:
+        id: System.Reflection.Metadata.ManifestResource
+        name: ManifestResource
+        href: System.Reflection.Metadata.ManifestResource.yml
   id: System.Reflection.Metadata.MetadataReader.GetManifestResource(System.Reflection.Metadata.ManifestResourceHandle)
 - uid: System.Reflection.Metadata.MetadataReader.GetAssemblyFile(System.Reflection.Metadata.AssemblyFileHandle)
   href: System.Reflection.Metadata.MetadataReader.yml
@@ -1124,7 +1253,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 1157
+    startLine: 1163
   syntax:
     content:
       CSharp: public AssemblyFile GetAssemblyFile(AssemblyFileHandle handle)
@@ -1136,6 +1265,10 @@ items:
         href: System.Reflection.Metadata.AssemblyFileHandle.yml
     return:
       id: AssemblyFile
+      type:
+        id: System.Reflection.Metadata.AssemblyFile
+        name: AssemblyFile
+        href: System.Reflection.Metadata.AssemblyFile.yml
   id: System.Reflection.Metadata.MetadataReader.GetAssemblyFile(System.Reflection.Metadata.AssemblyFileHandle)
 - uid: System.Reflection.Metadata.MetadataReader.GetStandaloneSignature(System.Reflection.Metadata.StandaloneSignatureHandle)
   href: System.Reflection.Metadata.MetadataReader.yml
@@ -1145,7 +1278,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 1162
+    startLine: 1168
   syntax:
     content:
       CSharp: public StandaloneSignature GetStandaloneSignature(StandaloneSignatureHandle handle)
@@ -1157,6 +1290,10 @@ items:
         href: System.Reflection.Metadata.StandaloneSignatureHandle.yml
     return:
       id: StandaloneSignature
+      type:
+        id: System.Reflection.Metadata.StandaloneSignature
+        name: StandaloneSignature
+        href: System.Reflection.Metadata.StandaloneSignature.yml
   id: System.Reflection.Metadata.MetadataReader.GetStandaloneSignature(System.Reflection.Metadata.StandaloneSignatureHandle)
 - uid: System.Reflection.Metadata.MetadataReader.GetTypeSpecification(System.Reflection.Metadata.TypeSpecificationHandle)
   href: System.Reflection.Metadata.MetadataReader.yml
@@ -1166,7 +1303,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 1167
+    startLine: 1173
   syntax:
     content:
       CSharp: public TypeSpecification GetTypeSpecification(TypeSpecificationHandle handle)
@@ -1178,6 +1315,10 @@ items:
         href: System.Reflection.Metadata.TypeSpecificationHandle.yml
     return:
       id: TypeSpecification
+      type:
+        id: System.Reflection.Metadata.TypeSpecification
+        name: TypeSpecification
+        href: System.Reflection.Metadata.TypeSpecification.yml
   id: System.Reflection.Metadata.MetadataReader.GetTypeSpecification(System.Reflection.Metadata.TypeSpecificationHandle)
 - uid: System.Reflection.Metadata.MetadataReader.GetModuleReference(System.Reflection.Metadata.ModuleReferenceHandle)
   href: System.Reflection.Metadata.MetadataReader.yml
@@ -1187,7 +1328,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 1172
+    startLine: 1178
   syntax:
     content:
       CSharp: public ModuleReference GetModuleReference(ModuleReferenceHandle handle)
@@ -1199,6 +1340,10 @@ items:
         href: System.Reflection.Metadata.ModuleReferenceHandle.yml
     return:
       id: ModuleReference
+      type:
+        id: System.Reflection.Metadata.ModuleReference
+        name: ModuleReference
+        href: System.Reflection.Metadata.ModuleReference.yml
   id: System.Reflection.Metadata.MetadataReader.GetModuleReference(System.Reflection.Metadata.ModuleReferenceHandle)
 - uid: System.Reflection.Metadata.MetadataReader.GetInterfaceImplementation(System.Reflection.Metadata.InterfaceImplementationHandle)
   href: System.Reflection.Metadata.MetadataReader.yml
@@ -1208,7 +1353,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataReader.cs
-    startLine: 1177
+    startLine: 1183
   syntax:
     content:
       CSharp: public InterfaceImplementation GetInterfaceImplementation(InterfaceImplementationHandle handle)
@@ -1220,4 +1365,8 @@ items:
         href: System.Reflection.Metadata.InterfaceImplementationHandle.yml
     return:
       id: InterfaceImplementation
+      type:
+        id: System.Reflection.Metadata.InterfaceImplementation
+        name: InterfaceImplementation
+        href: System.Reflection.Metadata.InterfaceImplementation.yml
   id: System.Reflection.Metadata.MetadataReader.GetInterfaceImplementation(System.Reflection.Metadata.InterfaceImplementationHandle)

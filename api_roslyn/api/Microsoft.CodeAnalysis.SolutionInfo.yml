@@ -6,9 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Workspace/Solution/SolutionInfo.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Workspace/Solution/SolutionInfo.cs
     startLine: 16
   summary: A class that represents all the arguments necessary to create a new solution instance.
@@ -17,7 +18,7 @@ items:
       CSharp: public sealed class SolutionInfo
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.SolutionInfo
   children:
@@ -38,7 +39,7 @@ items:
   summary: The unique Id of the solution.
   syntax:
     content:
-      CSharp: public SolutionId Id { get; private set; }
+      CSharp: public SolutionId Id { get; }
     parameters:
     - id: Id
       type:
@@ -58,7 +59,7 @@ items:
   summary: The version of the solution.
   syntax:
     content:
-      CSharp: public VersionStamp Version { get; private set; }
+      CSharp: public VersionStamp Version { get; }
     parameters:
     - id: Version
       type:
@@ -78,12 +79,12 @@ items:
   summary: The path to the solution file, or null if there is no solution file.
   syntax:
     content:
-      CSharp: public string FilePath { get; private set; }
+      CSharp: public string FilePath { get; }
     parameters:
     - id: FilePath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: Microsoft.CodeAnalysis.SolutionInfo.FilePath
 - uid: Microsoft.CodeAnalysis.SolutionInfo.Projects
@@ -98,12 +99,12 @@ items:
   summary: A list of projects initially associated with the solution.
   syntax:
     content:
-      CSharp: public IReadOnlyList<ProjectInfo> Projects { get; private set; }
+      CSharp: public IReadOnlyList<ProjectInfo> Projects { get; }
     parameters:
     - id: Projects
       type:
         id: System.Collections.Generic.IReadOnlyList{Microsoft.CodeAnalysis.ProjectInfo}
-        name: System.Collections.Generic.IReadOnlyList{Microsoft.CodeAnalysis.ProjectInfo}
+        name: IReadOnlyList<ProjectInfo>
         isExternal: true
   id: Microsoft.CodeAnalysis.SolutionInfo.Projects
 - uid: Microsoft.CodeAnalysis.SolutionInfo.Create(Microsoft.CodeAnalysis.SolutionId,Microsoft.CodeAnalysis.VersionStamp,System.String,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectInfo})
@@ -133,13 +134,17 @@ items:
     - id: filePath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: projects
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectInfo}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectInfo}
+        name: IEnumerable<ProjectInfo>
         isExternal: true
     return:
       id: SolutionInfo
+      type:
+        id: Microsoft.CodeAnalysis.SolutionInfo
+        name: SolutionInfo
+        href: Microsoft.CodeAnalysis.SolutionInfo.yml
   id: Microsoft.CodeAnalysis.SolutionInfo.Create(Microsoft.CodeAnalysis.SolutionId,Microsoft.CodeAnalysis.VersionStamp,System.String,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectInfo})

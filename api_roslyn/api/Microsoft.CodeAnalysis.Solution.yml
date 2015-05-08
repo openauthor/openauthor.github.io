@@ -6,18 +6,19 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Workspace/Solution/Solution.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Workspace/Solution/Solution.cs
     startLine: 22
   summary: Represents a set of projects and their source code documents.
   syntax:
     content:
-      CSharp: public partial class Solution
+      CSharp: public class Solution
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.Solution
   children:
@@ -141,7 +142,7 @@ items:
     - id: FilePath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: Microsoft.CodeAnalysis.Solution.FilePath
 - uid: Microsoft.CodeAnalysis.Solution.Version
@@ -181,7 +182,7 @@ items:
     - id: ProjectIds
       type:
         id: System.Collections.Generic.IReadOnlyList{Microsoft.CodeAnalysis.ProjectId}
-        name: System.Collections.Generic.IReadOnlyList{Microsoft.CodeAnalysis.ProjectId}
+        name: IReadOnlyList<ProjectId>
         isExternal: true
   id: Microsoft.CodeAnalysis.Solution.ProjectIds
 - uid: Microsoft.CodeAnalysis.Solution.Projects
@@ -201,7 +202,7 @@ items:
     - id: Projects
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Project}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Project}
+        name: IEnumerable<Project>
         isExternal: true
   id: Microsoft.CodeAnalysis.Solution.Projects
 - uid: Microsoft.CodeAnalysis.Solution.GetLatestProjectVersion
@@ -220,6 +221,10 @@ items:
     parameters: []
     return:
       id: VersionStamp
+      type:
+        id: Microsoft.CodeAnalysis.VersionStamp
+        name: VersionStamp
+        href: Microsoft.CodeAnalysis.VersionStamp.yml
   id: Microsoft.CodeAnalysis.Solution.GetLatestProjectVersion
 - uid: Microsoft.CodeAnalysis.Solution.ContainsProject(Microsoft.CodeAnalysis.ProjectId)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -242,6 +247,10 @@ items:
         href: Microsoft.CodeAnalysis.ProjectId.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.Solution.ContainsProject(Microsoft.CodeAnalysis.ProjectId)
 - uid: Microsoft.CodeAnalysis.Solution.GetProject(Microsoft.CodeAnalysis.ProjectId)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -269,6 +278,10 @@ items:
         href: Microsoft.CodeAnalysis.ProjectId.yml
     return:
       id: Project
+      type:
+        id: Microsoft.CodeAnalysis.Project
+        name: Project
+        href: Microsoft.CodeAnalysis.Project.yml
   id: Microsoft.CodeAnalysis.Solution.GetProject(Microsoft.CodeAnalysis.ProjectId)
 - uid: Microsoft.CodeAnalysis.Solution.GetProject(Microsoft.CodeAnalysis.IAssemblySymbol,System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -282,7 +295,7 @@ items:
   summary: Gets the [Microsoft.CodeAnalysis.Project](Microsoft.CodeAnalysis.Project.yml) associated with an assembly symbol.
   syntax:
     content:
-      CSharp: public Project GetProject(IAssemblySymbol assemblySymbol, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public Project GetProject(IAssemblySymbol assemblySymbol, CancellationToken cancellationToken = null)
     parameters:
     - id: assemblySymbol
       type:
@@ -292,10 +305,14 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Project
+      type:
+        id: Microsoft.CodeAnalysis.Project
+        name: Project
+        href: Microsoft.CodeAnalysis.Project.yml
   id: Microsoft.CodeAnalysis.Solution.GetProject(Microsoft.CodeAnalysis.IAssemblySymbol,System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.Solution.ContainsDocument(Microsoft.CodeAnalysis.DocumentId)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -318,6 +335,10 @@ items:
         href: Microsoft.CodeAnalysis.DocumentId.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.Solution.ContainsDocument(Microsoft.CodeAnalysis.DocumentId)
 - uid: Microsoft.CodeAnalysis.Solution.ContainsAdditionalDocument(Microsoft.CodeAnalysis.DocumentId)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -340,6 +361,10 @@ items:
         href: Microsoft.CodeAnalysis.DocumentId.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.Solution.ContainsAdditionalDocument(Microsoft.CodeAnalysis.DocumentId)
 - uid: Microsoft.CodeAnalysis.Solution.GetDocumentId(Microsoft.CodeAnalysis.SyntaxTree)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -362,6 +387,10 @@ items:
         href: Microsoft.CodeAnalysis.SyntaxTree
     return:
       id: DocumentId
+      type:
+        id: Microsoft.CodeAnalysis.DocumentId
+        name: DocumentId
+        href: Microsoft.CodeAnalysis.DocumentId.yml
   id: Microsoft.CodeAnalysis.Solution.GetDocumentId(Microsoft.CodeAnalysis.SyntaxTree)
 - uid: Microsoft.CodeAnalysis.Solution.GetDocumentId(Microsoft.CodeAnalysis.SyntaxTree,Microsoft.CodeAnalysis.ProjectId)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -389,6 +418,10 @@ items:
         href: Microsoft.CodeAnalysis.ProjectId.yml
     return:
       id: DocumentId
+      type:
+        id: Microsoft.CodeAnalysis.DocumentId
+        name: DocumentId
+        href: Microsoft.CodeAnalysis.DocumentId.yml
   id: Microsoft.CodeAnalysis.Solution.GetDocumentId(Microsoft.CodeAnalysis.SyntaxTree,Microsoft.CodeAnalysis.ProjectId)
 - uid: Microsoft.CodeAnalysis.Solution.GetDocument(Microsoft.CodeAnalysis.DocumentId)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -411,6 +444,10 @@ items:
         href: Microsoft.CodeAnalysis.DocumentId.yml
     return:
       id: Document
+      type:
+        id: Microsoft.CodeAnalysis.Document
+        name: Document
+        href: Microsoft.CodeAnalysis.Document.yml
   id: Microsoft.CodeAnalysis.Solution.GetDocument(Microsoft.CodeAnalysis.DocumentId)
 - uid: Microsoft.CodeAnalysis.Solution.GetAdditionalDocument(Microsoft.CodeAnalysis.DocumentId)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -433,6 +470,10 @@ items:
         href: Microsoft.CodeAnalysis.DocumentId.yml
     return:
       id: TextDocument
+      type:
+        id: Microsoft.CodeAnalysis.TextDocument
+        name: TextDocument
+        href: Microsoft.CodeAnalysis.TextDocument.yml
   id: Microsoft.CodeAnalysis.Solution.GetAdditionalDocument(Microsoft.CodeAnalysis.DocumentId)
 - uid: Microsoft.CodeAnalysis.Solution.GetDocument(Microsoft.CodeAnalysis.SyntaxTree)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -455,6 +496,10 @@ items:
         href: Microsoft.CodeAnalysis.SyntaxTree
     return:
       id: Document
+      type:
+        id: Microsoft.CodeAnalysis.Document
+        name: Document
+        href: Microsoft.CodeAnalysis.Document.yml
   id: Microsoft.CodeAnalysis.Solution.GetDocument(Microsoft.CodeAnalysis.SyntaxTree)
 - uid: Microsoft.CodeAnalysis.Solution.AddProject(System.String,System.String,System.String)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -476,20 +521,24 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: assemblyName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: language
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Project
+      type:
+        id: Microsoft.CodeAnalysis.Project
+        name: Project
+        href: Microsoft.CodeAnalysis.Project.yml
   id: Microsoft.CodeAnalysis.Solution.AddProject(System.String,System.String,System.String)
 - uid: Microsoft.CodeAnalysis.Solution.AddProject(Microsoft.CodeAnalysis.ProjectId,System.String,System.String,System.String)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -513,20 +562,24 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: assemblyName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: language
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.AddProject(Microsoft.CodeAnalysis.ProjectId,System.String,System.String,System.String)
 - uid: Microsoft.CodeAnalysis.Solution.AddProject(Microsoft.CodeAnalysis.ProjectInfo)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -549,6 +602,10 @@ items:
         href: Microsoft.CodeAnalysis.ProjectInfo.yml
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.AddProject(Microsoft.CodeAnalysis.ProjectInfo)
 - uid: Microsoft.CodeAnalysis.Solution.RemoveProject(Microsoft.CodeAnalysis.ProjectId)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -571,6 +628,10 @@ items:
         href: Microsoft.CodeAnalysis.ProjectId.yml
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.RemoveProject(Microsoft.CodeAnalysis.ProjectId)
 - uid: Microsoft.CodeAnalysis.Solution.WithProjectAssemblyName(Microsoft.CodeAnalysis.ProjectId,System.String)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -597,10 +658,14 @@ items:
     - id: assemblyName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.WithProjectAssemblyName(Microsoft.CodeAnalysis.ProjectId,System.String)
 - uid: Microsoft.CodeAnalysis.Solution.WithProjectOutputFilePath(Microsoft.CodeAnalysis.ProjectId,System.String)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -624,10 +689,14 @@ items:
     - id: outputFilePath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.WithProjectOutputFilePath(Microsoft.CodeAnalysis.ProjectId,System.String)
 - uid: Microsoft.CodeAnalysis.Solution.WithProjectName(Microsoft.CodeAnalysis.ProjectId,System.String)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -651,10 +720,14 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.WithProjectName(Microsoft.CodeAnalysis.ProjectId,System.String)
 - uid: Microsoft.CodeAnalysis.Solution.WithProjectFilePath(Microsoft.CodeAnalysis.ProjectId,System.String)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -678,10 +751,14 @@ items:
     - id: filePath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.WithProjectFilePath(Microsoft.CodeAnalysis.ProjectId,System.String)
 - uid: Microsoft.CodeAnalysis.Solution.WithProjectCompilationOptions(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.CompilationOptions)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -712,6 +789,10 @@ items:
         href: Microsoft.CodeAnalysis.CompilationOptions
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.WithProjectCompilationOptions(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.CompilationOptions)
 - uid: Microsoft.CodeAnalysis.Solution.WithProjectParseOptions(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.ParseOptions)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -742,6 +823,10 @@ items:
         href: Microsoft.CodeAnalysis.ParseOptions
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.WithProjectParseOptions(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.ParseOptions)
 - uid: Microsoft.CodeAnalysis.Solution.AddProjectReference(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.ProjectReference)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -772,6 +857,10 @@ items:
         href: Microsoft.CodeAnalysis.ProjectReference.yml
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.AddProjectReference(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.ProjectReference)
 - uid: Microsoft.CodeAnalysis.Solution.AddProjectReferences(Microsoft.CodeAnalysis.ProjectId,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectReference})
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -798,10 +887,14 @@ items:
     - id: projectReferences
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectReference}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectReference}
+        name: IEnumerable<ProjectReference>
         isExternal: true
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.AddProjectReferences(Microsoft.CodeAnalysis.ProjectId,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectReference})
 - uid: Microsoft.CodeAnalysis.Solution.RemoveProjectReference(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.ProjectReference)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -832,6 +925,10 @@ items:
         href: Microsoft.CodeAnalysis.ProjectReference.yml
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.RemoveProjectReference(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.ProjectReference)
 - uid: Microsoft.CodeAnalysis.Solution.WithProjectReferences(Microsoft.CodeAnalysis.ProjectId,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectReference})
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -858,10 +955,14 @@ items:
     - id: projectReferences
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectReference}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectReference}
+        name: IEnumerable<ProjectReference>
         isExternal: true
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.WithProjectReferences(Microsoft.CodeAnalysis.ProjectId,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectReference})
 - uid: Microsoft.CodeAnalysis.Solution.AddMetadataReference(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.MetadataReference)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -892,6 +993,10 @@ items:
         href: Microsoft.CodeAnalysis.MetadataReference
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.AddMetadataReference(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.MetadataReference)
 - uid: Microsoft.CodeAnalysis.Solution.AddMetadataReferences(Microsoft.CodeAnalysis.ProjectId,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference})
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -918,10 +1023,14 @@ items:
     - id: metadataReferences
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference}
+        name: IEnumerable<MetadataReference>
         isExternal: true
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.AddMetadataReferences(Microsoft.CodeAnalysis.ProjectId,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference})
 - uid: Microsoft.CodeAnalysis.Solution.RemoveMetadataReference(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.MetadataReference)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -952,6 +1061,10 @@ items:
         href: Microsoft.CodeAnalysis.MetadataReference
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.RemoveMetadataReference(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.MetadataReference)
 - uid: Microsoft.CodeAnalysis.Solution.WithProjectMetadataReferences(Microsoft.CodeAnalysis.ProjectId,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference})
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -978,10 +1091,14 @@ items:
     - id: metadataReferences
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference}
+        name: IEnumerable<MetadataReference>
         isExternal: true
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.WithProjectMetadataReferences(Microsoft.CodeAnalysis.ProjectId,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference})
 - uid: Microsoft.CodeAnalysis.Solution.AddAnalyzerReference(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -1012,6 +1129,10 @@ items:
         href: Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.AddAnalyzerReference(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference)
 - uid: Microsoft.CodeAnalysis.Solution.AddAnalyzerReferences(Microsoft.CodeAnalysis.ProjectId,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference})
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -1038,10 +1159,14 @@ items:
     - id: analyzerReferences
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference}
+        name: IEnumerable<AnalyzerReference>
         isExternal: true
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.AddAnalyzerReferences(Microsoft.CodeAnalysis.ProjectId,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference})
 - uid: Microsoft.CodeAnalysis.Solution.RemoveAnalyzerReference(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -1072,6 +1197,10 @@ items:
         href: Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.RemoveAnalyzerReference(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference)
 - uid: Microsoft.CodeAnalysis.Solution.WithProjectAnalyzerReferences(Microsoft.CodeAnalysis.ProjectId,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference})
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -1098,10 +1227,14 @@ items:
     - id: analyzerReferences
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference}
+        name: IEnumerable<AnalyzerReference>
         isExternal: true
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.WithProjectAnalyzerReferences(Microsoft.CodeAnalysis.ProjectId,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference})
 - uid: Microsoft.CodeAnalysis.Solution.AddDocument(Microsoft.CodeAnalysis.DocumentId,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.String)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -1111,7 +1244,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/Solution.cs
-    startLine: 1138
+    startLine: 1141
   summary: >-
     Creates a new solution instance with the corresponding project updated to include a new
 
@@ -1128,25 +1261,29 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: text
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: folders
       type:
         id: System.Collections.Generic.IEnumerable{System.String}
-        name: System.Collections.Generic.IEnumerable{System.String}
+        name: IEnumerable<string>
         isExternal: true
     - id: filePath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.AddDocument(Microsoft.CodeAnalysis.DocumentId,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.String)
 - uid: Microsoft.CodeAnalysis.Solution.AddDocument(Microsoft.CodeAnalysis.DocumentId,System.String,Microsoft.CodeAnalysis.Text.SourceText,System.Collections.Generic.IEnumerable{System.String},System.String,System.Boolean)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -1156,7 +1293,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/Solution.cs
-    startLine: 1147
+    startLine: 1150
   summary: >-
     Creates a new solution instance with the corresponding project updated to include a new
 
@@ -1173,7 +1310,7 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: text
       type:
@@ -1183,20 +1320,24 @@ items:
     - id: folders
       type:
         id: System.Collections.Generic.IEnumerable{System.String}
-        name: System.Collections.Generic.IEnumerable{System.String}
+        name: IEnumerable<string>
         isExternal: true
     - id: filePath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: isGenerated
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.AddDocument(Microsoft.CodeAnalysis.DocumentId,System.String,Microsoft.CodeAnalysis.Text.SourceText,System.Collections.Generic.IEnumerable{System.String},System.String,System.Boolean)
 - uid: Microsoft.CodeAnalysis.Solution.AddDocument(Microsoft.CodeAnalysis.DocumentId,System.String,Microsoft.CodeAnalysis.SyntaxNode,System.Collections.Generic.IEnumerable{System.String},System.String,System.Boolean,Microsoft.CodeAnalysis.PreservationMode)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -1206,14 +1347,14 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/Solution.cs
-    startLine: 1194
+    startLine: 1202
   summary: >-
     Creates a new solution instance with the corresponding project updated to include a new
 
-    document instance defined by its name and root [Microsoft.CodeAnalysis.SyntaxNode](#).
+    document instance defined by its name and root [Microsoft.CodeAnalysis.SyntaxNode]().
   syntax:
     content:
-      CSharp: public Solution AddDocument(DocumentId documentId, string name, SyntaxNode syntaxRoot, IEnumerable<string> folders = null, string filePath = null, bool isGenerated = false, PreservationMode preservationMode = PreservationMode.PreserveValue)
+      CSharp: public Solution AddDocument(DocumentId documentId, string name, SyntaxNode syntaxRoot, IEnumerable<string> folders = null, string filePath = null, bool isGenerated = false, PreservationMode preservationMode = 0)
     parameters:
     - id: documentId
       type:
@@ -1223,7 +1364,7 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: syntaxRoot
       type:
@@ -1233,17 +1374,17 @@ items:
     - id: folders
       type:
         id: System.Collections.Generic.IEnumerable{System.String}
-        name: System.Collections.Generic.IEnumerable{System.String}
+        name: IEnumerable<string>
         isExternal: true
     - id: filePath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: isGenerated
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     - id: preservationMode
       type:
@@ -1252,6 +1393,10 @@ items:
         href: Microsoft.CodeAnalysis.PreservationMode.yml
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.AddDocument(Microsoft.CodeAnalysis.DocumentId,System.String,Microsoft.CodeAnalysis.SyntaxNode,System.Collections.Generic.IEnumerable{System.String},System.String,System.Boolean,Microsoft.CodeAnalysis.PreservationMode)
 - uid: Microsoft.CodeAnalysis.Solution.AddDocument(Microsoft.CodeAnalysis.DocumentId,System.String,Microsoft.CodeAnalysis.TextLoader,System.Collections.Generic.IEnumerable{System.String})
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -1261,7 +1406,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/Solution.cs
-    startLine: 1203
+    startLine: 1211
   summary: >-
     Creates a new solution instance with the project updated to include a new document with
 
@@ -1278,7 +1423,7 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: loader
       type:
@@ -1288,10 +1433,14 @@ items:
     - id: folders
       type:
         id: System.Collections.Generic.IEnumerable{System.String}
-        name: System.Collections.Generic.IEnumerable{System.String}
+        name: IEnumerable<string>
         isExternal: true
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.AddDocument(Microsoft.CodeAnalysis.DocumentId,System.String,Microsoft.CodeAnalysis.TextLoader,System.Collections.Generic.IEnumerable{System.String})
 - uid: Microsoft.CodeAnalysis.Solution.AddDocument(Microsoft.CodeAnalysis.DocumentInfo)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -1301,7 +1450,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/Solution.cs
-    startLine: 1239
+    startLine: 1247
   summary: >-
     Create a new solution instance with the corresponding project updated to include a new
 
@@ -1317,6 +1466,10 @@ items:
         href: Microsoft.CodeAnalysis.DocumentInfo.yml
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.AddDocument(Microsoft.CodeAnalysis.DocumentInfo)
 - uid: Microsoft.CodeAnalysis.Solution.AddAdditionalDocument(Microsoft.CodeAnalysis.DocumentId,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.String)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -1326,7 +1479,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/Solution.cs
-    startLine: 1277
+    startLine: 1285
   summary: >-
     Creates a new solution instance with the corresponding project updated to include a new
 
@@ -1343,25 +1496,29 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: text
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: folders
       type:
         id: System.Collections.Generic.IEnumerable{System.String}
-        name: System.Collections.Generic.IEnumerable{System.String}
+        name: IEnumerable<string>
         isExternal: true
     - id: filePath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.AddAdditionalDocument(Microsoft.CodeAnalysis.DocumentId,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.String)
 - uid: Microsoft.CodeAnalysis.Solution.AddAdditionalDocument(Microsoft.CodeAnalysis.DocumentId,System.String,Microsoft.CodeAnalysis.Text.SourceText,System.Collections.Generic.IEnumerable{System.String},System.String)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -1371,7 +1528,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/Solution.cs
-    startLine: 1286
+    startLine: 1294
   summary: >-
     Creates a new solution instance with the corresponding project updated to include a new
 
@@ -1388,7 +1545,7 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: text
       type:
@@ -1398,15 +1555,19 @@ items:
     - id: folders
       type:
         id: System.Collections.Generic.IEnumerable{System.String}
-        name: System.Collections.Generic.IEnumerable{System.String}
+        name: IEnumerable<string>
         isExternal: true
     - id: filePath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.AddAdditionalDocument(Microsoft.CodeAnalysis.DocumentId,System.String,Microsoft.CodeAnalysis.Text.SourceText,System.Collections.Generic.IEnumerable{System.String},System.String)
 - uid: Microsoft.CodeAnalysis.Solution.AddAdditionalDocument(Microsoft.CodeAnalysis.DocumentInfo)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -1416,7 +1577,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/Solution.cs
-    startLine: 1326
+    startLine: 1334
   syntax:
     content:
       CSharp: public Solution AddAdditionalDocument(DocumentInfo documentInfo)
@@ -1428,6 +1589,10 @@ items:
         href: Microsoft.CodeAnalysis.DocumentInfo.yml
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.AddAdditionalDocument(Microsoft.CodeAnalysis.DocumentInfo)
 - uid: Microsoft.CodeAnalysis.Solution.RemoveDocument(Microsoft.CodeAnalysis.DocumentId)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -1437,11 +1602,11 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/Solution.cs
-    startLine: 1363
+    startLine: 1371
   summary: Creates a new solution instance that no longer includes the specified document.
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.StyleCop.CSharp.SpacingRules", "SA1008:OpeningParenthesisMustBeSpacedCorrectly", Justification = "Working around StyleCop bug 7080")] public Solution RemoveDocument(DocumentId documentId)'
+      CSharp: public Solution RemoveDocument(DocumentId documentId)
     parameters:
     - id: documentId
       type:
@@ -1450,6 +1615,10 @@ items:
         href: Microsoft.CodeAnalysis.DocumentId.yml
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.RemoveDocument(Microsoft.CodeAnalysis.DocumentId)
 - uid: Microsoft.CodeAnalysis.Solution.RemoveAdditionalDocument(Microsoft.CodeAnalysis.DocumentId)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -1459,7 +1628,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/Solution.cs
-    startLine: 1378
+    startLine: 1388
   summary: Creates a new solution instance that no longer includes the specified additional document.
   syntax:
     content:
@@ -1472,6 +1641,10 @@ items:
         href: Microsoft.CodeAnalysis.DocumentId.yml
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.RemoveAdditionalDocument(Microsoft.CodeAnalysis.DocumentId)
 - uid: Microsoft.CodeAnalysis.Solution.WithDocumentFolders(Microsoft.CodeAnalysis.DocumentId,System.Collections.Generic.IEnumerable{System.String})
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -1481,7 +1654,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/Solution.cs
-    startLine: 1392
+    startLine: 1402
   summary: >-
     Creates a new solution instance with the document specified updated to be contained in
 
@@ -1498,10 +1671,14 @@ items:
     - id: folders
       type:
         id: System.Collections.Generic.IEnumerable{System.String}
-        name: System.Collections.Generic.IEnumerable{System.String}
+        name: IEnumerable<string>
         isExternal: true
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.WithDocumentFolders(Microsoft.CodeAnalysis.DocumentId,System.Collections.Generic.IEnumerable{System.String})
 - uid: Microsoft.CodeAnalysis.Solution.WithDocumentText(Microsoft.CodeAnalysis.DocumentId,Microsoft.CodeAnalysis.Text.SourceText,Microsoft.CodeAnalysis.PreservationMode)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -1511,14 +1688,14 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/Solution.cs
-    startLine: 1416
+    startLine: 1426
   summary: >-
     Creates a new solution instance with the document specified updated to have the text
 
     specified.
   syntax:
     content:
-      CSharp: public Solution WithDocumentText(DocumentId documentId, SourceText text, PreservationMode mode = PreservationMode.PreserveValue)
+      CSharp: public Solution WithDocumentText(DocumentId documentId, SourceText text, PreservationMode mode = 0)
     parameters:
     - id: documentId
       type:
@@ -1537,6 +1714,10 @@ items:
         href: Microsoft.CodeAnalysis.PreservationMode.yml
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.WithDocumentText(Microsoft.CodeAnalysis.DocumentId,Microsoft.CodeAnalysis.Text.SourceText,Microsoft.CodeAnalysis.PreservationMode)
 - uid: Microsoft.CodeAnalysis.Solution.WithAdditionalDocumentText(Microsoft.CodeAnalysis.DocumentId,Microsoft.CodeAnalysis.Text.SourceText,Microsoft.CodeAnalysis.PreservationMode)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -1546,14 +1727,14 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/Solution.cs
-    startLine: 1463
+    startLine: 1473
   summary: >-
     Creates a new solution instance with the additional document specified updated to have the text
 
     specified.
   syntax:
     content:
-      CSharp: public Solution WithAdditionalDocumentText(DocumentId documentId, SourceText text, PreservationMode mode = PreservationMode.PreserveValue)
+      CSharp: public Solution WithAdditionalDocumentText(DocumentId documentId, SourceText text, PreservationMode mode = 0)
     parameters:
     - id: documentId
       type:
@@ -1572,6 +1753,10 @@ items:
         href: Microsoft.CodeAnalysis.PreservationMode.yml
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.WithAdditionalDocumentText(Microsoft.CodeAnalysis.DocumentId,Microsoft.CodeAnalysis.Text.SourceText,Microsoft.CodeAnalysis.PreservationMode)
 - uid: Microsoft.CodeAnalysis.Solution.WithDocumentText(Microsoft.CodeAnalysis.DocumentId,Microsoft.CodeAnalysis.TextAndVersion,Microsoft.CodeAnalysis.PreservationMode)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -1581,14 +1766,14 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/Solution.cs
-    startLine: 1521
+    startLine: 1531
   summary: >-
     Creates a new solution instance with the document specified updated to have the text
 
     and version specified.
   syntax:
     content:
-      CSharp: public Solution WithDocumentText(DocumentId documentId, TextAndVersion textAndVersion, PreservationMode mode = PreservationMode.PreserveValue)
+      CSharp: public Solution WithDocumentText(DocumentId documentId, TextAndVersion textAndVersion, PreservationMode mode = 0)
     parameters:
     - id: documentId
       type:
@@ -1607,6 +1792,10 @@ items:
         href: Microsoft.CodeAnalysis.PreservationMode.yml
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.WithDocumentText(Microsoft.CodeAnalysis.DocumentId,Microsoft.CodeAnalysis.TextAndVersion,Microsoft.CodeAnalysis.PreservationMode)
 - uid: Microsoft.CodeAnalysis.Solution.WithAdditionalDocumentText(Microsoft.CodeAnalysis.DocumentId,Microsoft.CodeAnalysis.TextAndVersion,Microsoft.CodeAnalysis.PreservationMode)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -1616,14 +1805,14 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/Solution.cs
-    startLine: 1544
+    startLine: 1554
   summary: >-
     Creates a new solution instance with the additional document specified updated to have the text
 
     and version specified.
   syntax:
     content:
-      CSharp: public Solution WithAdditionalDocumentText(DocumentId documentId, TextAndVersion textAndVersion, PreservationMode mode = PreservationMode.PreserveValue)
+      CSharp: public Solution WithAdditionalDocumentText(DocumentId documentId, TextAndVersion textAndVersion, PreservationMode mode = 0)
     parameters:
     - id: documentId
       type:
@@ -1642,6 +1831,10 @@ items:
         href: Microsoft.CodeAnalysis.PreservationMode.yml
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.WithAdditionalDocumentText(Microsoft.CodeAnalysis.DocumentId,Microsoft.CodeAnalysis.TextAndVersion,Microsoft.CodeAnalysis.PreservationMode)
 - uid: Microsoft.CodeAnalysis.Solution.WithDocumentSyntaxRoot(Microsoft.CodeAnalysis.DocumentId,Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.PreservationMode)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -1651,14 +1844,14 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/Solution.cs
-    startLine: 1567
+    startLine: 1577
   summary: >-
     Creates a new solution instance with the document specified updated to have a syntax tree
 
     rooted by the specified syntax node.
   syntax:
     content:
-      CSharp: public Solution WithDocumentSyntaxRoot(DocumentId documentId, SyntaxNode root, PreservationMode mode = PreservationMode.PreserveValue)
+      CSharp: public Solution WithDocumentSyntaxRoot(DocumentId documentId, SyntaxNode root, PreservationMode mode = 0)
     parameters:
     - id: documentId
       type:
@@ -1677,6 +1870,10 @@ items:
         href: Microsoft.CodeAnalysis.PreservationMode.yml
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.WithDocumentSyntaxRoot(Microsoft.CodeAnalysis.DocumentId,Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.PreservationMode)
 - uid: Microsoft.CodeAnalysis.Solution.WithDocumentSourceCodeKind(Microsoft.CodeAnalysis.DocumentId,Microsoft.CodeAnalysis.SourceCodeKind)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -1686,7 +1883,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/Solution.cs
-    startLine: 1610
+    startLine: 1620
   summary: >-
     Creates a new solution instance with the document specified updated to have the source
 
@@ -1707,6 +1904,10 @@ items:
         href: Microsoft.CodeAnalysis.SourceCodeKind
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.WithDocumentSourceCodeKind(Microsoft.CodeAnalysis.DocumentId,Microsoft.CodeAnalysis.SourceCodeKind)
 - uid: Microsoft.CodeAnalysis.Solution.WithDocumentTextLoader(Microsoft.CodeAnalysis.DocumentId,Microsoft.CodeAnalysis.TextLoader,Microsoft.CodeAnalysis.PreservationMode)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -1716,7 +1917,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/Solution.cs
-    startLine: 1633
+    startLine: 1643
   summary: >-
     Creates a new solution instance with the document specified updated to have the text
 
@@ -1742,6 +1943,10 @@ items:
         href: Microsoft.CodeAnalysis.PreservationMode.yml
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.WithDocumentTextLoader(Microsoft.CodeAnalysis.DocumentId,Microsoft.CodeAnalysis.TextLoader,Microsoft.CodeAnalysis.PreservationMode)
 - uid: Microsoft.CodeAnalysis.Solution.WithAdditionalDocumentTextLoader(Microsoft.CodeAnalysis.DocumentId,Microsoft.CodeAnalysis.TextLoader,Microsoft.CodeAnalysis.PreservationMode)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -1751,7 +1956,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/Solution.cs
-    startLine: 1648
+    startLine: 1658
   summary: >-
     Creates a new solution instance with the additional document specified updated to have the text
 
@@ -1777,6 +1982,10 @@ items:
         href: Microsoft.CodeAnalysis.PreservationMode.yml
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.WithAdditionalDocumentTextLoader(Microsoft.CodeAnalysis.DocumentId,Microsoft.CodeAnalysis.TextLoader,Microsoft.CodeAnalysis.PreservationMode)
 - uid: Microsoft.CodeAnalysis.Solution.GetDocumentIdsWithFilePath(System.String)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -1786,7 +1995,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/Solution.cs
-    startLine: 1786
+    startLine: 1778
   summary: >-
     Gets the set of [Microsoft.CodeAnalysis.DocumentId](Microsoft.CodeAnalysis.DocumentId.yml)s in this [Microsoft.CodeAnalysis.Solution](Microsoft.CodeAnalysis.Solution.yml) with a
 
@@ -1798,10 +2007,14 @@ items:
     - id: filePath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: ImmutableArray
+      type:
+        id: System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.DocumentId}
+        name: ImmutableArray<DocumentId>
+        isExternal: true
   id: Microsoft.CodeAnalysis.Solution.GetDocumentIdsWithFilePath(System.String)
 - uid: Microsoft.CodeAnalysis.Solution.GetIsolatedSolution
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -1811,7 +2024,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/Solution.cs
-    startLine: 1840
+    startLine: 1832
   summary: >-
     Gets a copy of the solution isolated from the original so that they do not share computed state.
 
@@ -1828,6 +2041,10 @@ items:
     parameters: []
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.GetIsolatedSolution
 - uid: Microsoft.CodeAnalysis.Solution.WithDocumentText(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.DocumentId},Microsoft.CodeAnalysis.Text.SourceText,Microsoft.CodeAnalysis.PreservationMode)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -1837,16 +2054,16 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/Solution.cs
-    startLine: 1926
+    startLine: 1918
   summary: Creates a new solution instance with all the documents specified updated to have the same specified text.
   syntax:
     content:
-      CSharp: public Solution WithDocumentText(IEnumerable<DocumentId> documentIds, SourceText text, PreservationMode mode = PreservationMode.PreserveValue)
+      CSharp: public Solution WithDocumentText(IEnumerable<DocumentId> documentIds, SourceText text, PreservationMode mode = 0)
     parameters:
     - id: documentIds
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.DocumentId}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.DocumentId}
+        name: IEnumerable<DocumentId>
         isExternal: true
     - id: text
       type:
@@ -1860,6 +2077,10 @@ items:
         href: Microsoft.CodeAnalysis.PreservationMode.yml
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.Solution.WithDocumentText(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.DocumentId},Microsoft.CodeAnalysis.Text.SourceText,Microsoft.CodeAnalysis.PreservationMode)
 - uid: Microsoft.CodeAnalysis.Solution.GetChanges(Microsoft.CodeAnalysis.Solution)
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -1885,6 +2106,10 @@ items:
         href: Microsoft.CodeAnalysis.Solution.yml
     return:
       id: SolutionChanges
+      type:
+        id: Microsoft.CodeAnalysis.SolutionChanges
+        name: SolutionChanges
+        href: Microsoft.CodeAnalysis.SolutionChanges.yml
   id: Microsoft.CodeAnalysis.Solution.GetChanges(Microsoft.CodeAnalysis.Solution)
 - uid: Microsoft.CodeAnalysis.Solution.GetProjectDependencyGraph
   href: Microsoft.CodeAnalysis.Solution.yml
@@ -1902,4 +2127,8 @@ items:
     parameters: []
     return:
       id: ProjectDependencyGraph
+      type:
+        id: Microsoft.CodeAnalysis.ProjectDependencyGraph
+        name: ProjectDependencyGraph
+        href: Microsoft.CodeAnalysis.ProjectDependencyGraph.yml
   id: Microsoft.CodeAnalysis.Solution.GetProjectDependencyGraph

@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/FilePathResult.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/FilePathResult.cs
     startLine: 6
   syntax:
     content:
-      CSharp: public class FilePathResult
+      CSharp: 'public class FilePathResult : FileResult'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.Mvc.ActionResult
     name: ActionResult
@@ -28,6 +29,7 @@ items:
   children:
   - System.Web.Mvc.FilePathResult.#ctor(System.String,System.String)
   - System.Web.Mvc.FilePathResult.FileName
+  - System.Web.Mvc.FilePathResult.WriteFile(System.Web.HttpResponseBase)
 - uid: System.Web.Mvc.FilePathResult.#ctor(System.String,System.String)
   href: System.Web.Mvc.FilePathResult.yml
   name: FilePathResult(string, string)
@@ -44,12 +46,12 @@ items:
     - id: fileName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: contentType
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.FilePathResult.#ctor(System.String,System.String)
 - uid: System.Web.Mvc.FilePathResult.FileName
@@ -63,11 +65,30 @@ items:
     startLine: 19
   syntax:
     content:
-      CSharp: public string FileName { get; private set; }
+      CSharp: public string FileName { get; }
     parameters:
     - id: FileName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.FilePathResult.FileName
+- uid: System.Web.Mvc.FilePathResult.WriteFile(System.Web.HttpResponseBase)
+  href: System.Web.Mvc.FilePathResult.yml
+  name: WriteFile(HttpResponseBase)
+  fullName: System.Web.Mvc.FilePathResult.WriteFile(System.Web.HttpResponseBase)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/FilePathResult.cs
+    startLine: 21
+  syntax:
+    content:
+      CSharp: protected override void WriteFile(HttpResponseBase response)
+    parameters:
+    - id: response
+      type:
+        id: System.Web.HttpResponseBase
+        name: HttpResponseBase
+        isExternal: true
+  id: System.Web.Mvc.FilePathResult.WriteFile(System.Web.HttpResponseBase)

@@ -6,30 +6,37 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentBag.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentBag.cs
     startLine: 36
   summary: Represents an thread-safe, unordered collection of objects.
   syntax:
     content:
-      CSharp: public class ConcurrentBag<T>
+      CSharp: 'public class ConcurrentBag<T> : IProducerConsumerCollection<T>, ICollection, IReadOnlyCollection<T>, IEnumerable<T>, IEnumerable'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Collections.Concurrent.ConcurrentBag`1
   children:
   - System.Collections.Concurrent.ConcurrentBag`1.#ctor
-  - System.Collections.Concurrent.ConcurrentBag`1.#ctor(IEnumerable{`0})
+  - System.Collections.Concurrent.ConcurrentBag`1.#ctor(System.Collections.Generic.IEnumerable{`0})
   - System.Collections.Concurrent.ConcurrentBag`1.Add(`0)
+  - System.Collections.Concurrent.ConcurrentBag`1.System#Collections#Concurrent#IProducerConsumerCollection{T}#TryAdd(`0)
   - System.Collections.Concurrent.ConcurrentBag`1.TryTake(`0@)
   - System.Collections.Concurrent.ConcurrentBag`1.TryPeek(`0@)
   - System.Collections.Concurrent.ConcurrentBag`1.CopyTo(`0[],System.Int32)
+  - System.Collections.Concurrent.ConcurrentBag`1.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
   - System.Collections.Concurrent.ConcurrentBag`1.ToArray
   - System.Collections.Concurrent.ConcurrentBag`1.GetEnumerator
+  - System.Collections.Concurrent.ConcurrentBag`1.System#Collections#IEnumerable#GetEnumerator
   - System.Collections.Concurrent.ConcurrentBag`1.Count
   - System.Collections.Concurrent.ConcurrentBag`1.IsEmpty
+  - System.Collections.Concurrent.ConcurrentBag`1.System#Collections#ICollection#IsSynchronized
+  - System.Collections.Concurrent.ConcurrentBag`1.System#Collections#ICollection#SyncRoot
 - uid: System.Collections.Concurrent.ConcurrentBag`1.#ctor
   href: System.Collections.Concurrent.ConcurrentBag`1.yml
   name: ConcurrentBag()
@@ -48,10 +55,10 @@ items:
       CSharp: public ConcurrentBag()
     parameters: []
   id: System.Collections.Concurrent.ConcurrentBag`1.#ctor
-- uid: System.Collections.Concurrent.ConcurrentBag`1.#ctor(IEnumerable{`0})
+- uid: System.Collections.Concurrent.ConcurrentBag`1.#ctor(System.Collections.Generic.IEnumerable{`0})
   href: System.Collections.Concurrent.ConcurrentBag`1.yml
   name: ConcurrentBag(IEnumerable<T>)
-  fullName: System.Collections.Concurrent.ConcurrentBag<T>.ConcurrentBag(IEnumerable<T>)
+  fullName: System.Collections.Concurrent.ConcurrentBag<T>.ConcurrentBag(System.Collections.Generic.IEnumerable<T>)
   type: Constructor
   source:
     remote: *o0
@@ -67,11 +74,11 @@ items:
     parameters:
     - id: collection
       type:
-        id: IEnumerable{`0}
-        name: IEnumerable{`0}
+        id: System.Collections.Generic.IEnumerable{`0}
+        name: IEnumerable<T>
         isExternal: true
       description: The collection whose elements are copied to the new [System.Collections.Concurrent.ConcurrentBag`1](System.Collections.Concurrent.ConcurrentBag`1.yml).
-  id: System.Collections.Concurrent.ConcurrentBag`1.#ctor(IEnumerable{`0})
+  id: System.Collections.Concurrent.ConcurrentBag`1.#ctor(System.Collections.Generic.IEnumerable{`0})
 - uid: System.Collections.Concurrent.ConcurrentBag`1.Add(`0)
   href: System.Collections.Concurrent.ConcurrentBag`1.yml
   name: Add(T)
@@ -98,6 +105,39 @@ items:
 
         (Nothing in Visual Basic) for reference types.
   id: System.Collections.Concurrent.ConcurrentBag`1.Add(`0)
+- uid: System.Collections.Concurrent.ConcurrentBag`1.System#Collections#Concurrent#IProducerConsumerCollection{T}#TryAdd(`0)
+  href: System.Collections.Concurrent.ConcurrentBag`1.yml
+  name: IProducerConsumerCollection<T>.TryAdd(T)
+  fullName: System.Collections.Concurrent.ConcurrentBag<T>.System.Collections.Concurrent.IProducerConsumerCollection<T>.TryAdd(T)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentBag.cs
+    startLine: 150
+  summary: Attempts to add an object to the [System.Collections.Concurrent.ConcurrentBag`1](System.Collections.Concurrent.ConcurrentBag`1.yml).
+  syntax:
+    content:
+      CSharp: bool IProducerConsumerCollection<T>.TryAdd(T item)
+    parameters:
+    - id: item
+      type:
+        id: T
+        name: T
+        href: T
+      description: >-
+        The object to be added to the
+
+        [System.Collections.Concurrent.ConcurrentBag`1](System.Collections.Concurrent.ConcurrentBag`1.yml). The value can be a null reference
+
+        (Nothing in Visual Basic) for reference types.
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: Always returns true
+  id: System.Collections.Concurrent.ConcurrentBag`1.System#Collections#Concurrent#IProducerConsumerCollection{T}#TryAdd(`0)
 - uid: System.Collections.Concurrent.ConcurrentBag`1.TryTake(`0@)
   href: System.Collections.Concurrent.ConcurrentBag`1.yml
   name: TryTake(out T)
@@ -125,6 +165,10 @@ items:
         of  if the operation failed.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: true if an object was removed successfully; otherwise, false.
   id: System.Collections.Concurrent.ConcurrentBag`1.TryTake(`0@)
 - uid: System.Collections.Concurrent.ConcurrentBag`1.TryPeek(`0@)
@@ -157,6 +201,10 @@ items:
         if the operation failed.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: true if and object was returned successfully; otherwise, false.
   id: System.Collections.Concurrent.ConcurrentBag`1.TryPeek(`0@)
 - uid: System.Collections.Concurrent.ConcurrentBag`1.CopyTo(`0[],System.Int32)
@@ -171,7 +219,7 @@ items:
   summary: >-
     Copies the [System.Collections.Concurrent.ConcurrentBag`1](System.Collections.Concurrent.ConcurrentBag`1.yml) elements to an existing
 
-    one-dimensional [System.Array](#), starting at the specified array
+    one-dimensional [System.Array](), starting at the specified array
 
     index.
   syntax:
@@ -181,24 +229,62 @@ items:
     - id: array
       type:
         id: System.Array
-        name: System.Array
+        name: T[]
         isExternal: true
       description: >-
-        The one-dimensional [System.Array](#) that is the
+        The one-dimensional [System.Array]() that is the
 
         destination of the elements copied from the
 
-        [System.Collections.Concurrent.ConcurrentBag`1](System.Collections.Concurrent.ConcurrentBag`1.yml). The [System.Array](#) must have zero-based indexing.
+        [System.Collections.Concurrent.ConcurrentBag`1](System.Collections.Concurrent.ConcurrentBag`1.yml). The [System.Array]() must have zero-based indexing.
     - id: index
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: >-
         The zero-based index in  at which copying
 
         begins.
   id: System.Collections.Concurrent.ConcurrentBag`1.CopyTo(`0[],System.Int32)
+- uid: System.Collections.Concurrent.ConcurrentBag`1.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+  href: System.Collections.Concurrent.ConcurrentBag`1.yml
+  name: ICollection.CopyTo(Array, int)
+  fullName: System.Collections.Concurrent.ConcurrentBag<T>.System.Collections.ICollection.CopyTo(System.Array, int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentBag.cs
+    startLine: 486
+  summary: >-
+    Copies the elements of the [System.Collections.ICollection]() to an [System.Array](), starting at a particular
+
+    [System.Array]() index.
+  syntax:
+    content:
+      CSharp: void ICollection.CopyTo(Array array, int index)
+    parameters:
+    - id: array
+      type:
+        id: System.Array
+        name: Array
+        isExternal: true
+      description: >-
+        The one-dimensional [System.Array]() that is the
+
+        destination of the elements copied from the
+
+        [System.Collections.Concurrent.ConcurrentBag`1](System.Collections.Concurrent.ConcurrentBag`1.yml). The [System.Array]() must have zero-based indexing.
+    - id: index
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: >-
+        The zero-based index in  at which copying
+
+        begins.
+  id: System.Collections.Concurrent.ConcurrentBag`1.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
 - uid: System.Collections.Concurrent.ConcurrentBag`1.ToArray
   href: System.Collections.Concurrent.ConcurrentBag`1.yml
   name: ToArray()
@@ -214,6 +300,10 @@ items:
       CSharp: public T[] ToArray()
     parameters: []
     return:
+      type:
+        id: System.Array
+        name: T[]
+        isExternal: true
       description: A new array containing a snapshot of elements copied from the [System.Collections.Concurrent.ConcurrentBag`1](System.Collections.Concurrent.ConcurrentBag`1.yml).
   id: System.Collections.Concurrent.ConcurrentBag`1.ToArray
 - uid: System.Collections.Concurrent.ConcurrentBag`1.GetEnumerator
@@ -232,8 +322,34 @@ items:
     parameters: []
     return:
       id: IEnumerator
+      type:
+        id: System.Collections.Generic.IEnumerator{`0}
+        name: IEnumerator<T>
+        isExternal: true
       description: An enumerator for the contents of the [System.Collections.Concurrent.ConcurrentBag`1](System.Collections.Concurrent.ConcurrentBag`1.yml).
   id: System.Collections.Concurrent.ConcurrentBag`1.GetEnumerator
+- uid: System.Collections.Concurrent.ConcurrentBag`1.System#Collections#IEnumerable#GetEnumerator
+  href: System.Collections.Concurrent.ConcurrentBag`1.yml
+  name: IEnumerable.GetEnumerator()
+  fullName: System.Collections.Concurrent.ConcurrentBag<T>.System.Collections.IEnumerable.GetEnumerator()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentBag.cs
+    startLine: 570
+  summary: Returns an enumerator that iterates through the [System.Collections.Concurrent.ConcurrentBag`1](System.Collections.Concurrent.ConcurrentBag`1.yml).
+  syntax:
+    content:
+      CSharp: IEnumerator IEnumerable.GetEnumerator()
+    parameters: []
+    return:
+      id: IEnumerator
+      type:
+        id: System.Collections.IEnumerator
+        name: IEnumerator
+        isExternal: true
+      description: An enumerator for the contents of the [System.Collections.Concurrent.ConcurrentBag`1](System.Collections.Concurrent.ConcurrentBag`1.yml).
+  id: System.Collections.Concurrent.ConcurrentBag`1.System#Collections#IEnumerable#GetEnumerator
 - uid: System.Collections.Concurrent.ConcurrentBag`1.Count
   href: System.Collections.Concurrent.ConcurrentBag`1.yml
   name: Count
@@ -251,7 +367,7 @@ items:
     - id: Count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Collections.Concurrent.ConcurrentBag`1.Count
 - uid: System.Collections.Concurrent.ConcurrentBag`1.IsEmpty
@@ -271,6 +387,49 @@ items:
     - id: IsEmpty
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Collections.Concurrent.ConcurrentBag`1.IsEmpty
+- uid: System.Collections.Concurrent.ConcurrentBag`1.System#Collections#ICollection#IsSynchronized
+  href: System.Collections.Concurrent.ConcurrentBag`1.yml
+  name: ICollection.IsSynchronized
+  fullName: System.Collections.Concurrent.ConcurrentBag<T>.System.Collections.ICollection.IsSynchronized
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentBag.cs
+    startLine: 646
+  summary: >-
+    Gets a value indicating whether access to the [System.Collections.ICollection]() is
+
+    synchronized with the SyncRoot.
+  syntax:
+    content:
+      CSharp: bool ICollection.IsSynchronized { get; }
+    parameters:
+    - id: System.Collections.ICollection.IsSynchronized
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Collections.Concurrent.ConcurrentBag`1.System#Collections#ICollection#IsSynchronized
+- uid: System.Collections.Concurrent.ConcurrentBag`1.System#Collections#ICollection#SyncRoot
+  href: System.Collections.Concurrent.ConcurrentBag`1.yml
+  name: ICollection.SyncRoot
+  fullName: System.Collections.Concurrent.ConcurrentBag<T>.System.Collections.ICollection.SyncRoot
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentBag.cs
+    startLine: 656
+  summary: Gets an object that can be used to synchronize access to the [System.Collections.ICollection](). This property is not supported.
+  syntax:
+    content:
+      CSharp: object ICollection.SyncRoot { get; }
+    parameters:
+    - id: System.Collections.ICollection.SyncRoot
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+  id: System.Collections.Concurrent.ConcurrentBag`1.System#Collections#ICollection#SyncRoot

@@ -6,21 +6,28 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1602
+    startLine: 2181
   syntax:
     content:
-      CSharp: public struct ConstantHandle
+      CSharp: 'public struct ConstantHandle : IEquatable<ConstantHandle>'
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Reflection.Metadata.ConstantHandle
   children:
   - System.Reflection.Metadata.ConstantHandle.op_Implicit(System.Reflection.Metadata.ConstantHandle)~System.Reflection.Metadata.Handle
+  - System.Reflection.Metadata.ConstantHandle.op_Implicit(System.Reflection.Metadata.ConstantHandle)~System.Reflection.Metadata.EntityHandle
   - System.Reflection.Metadata.ConstantHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.ConstantHandle
+  - System.Reflection.Metadata.ConstantHandle.op_Explicit(System.Reflection.Metadata.EntityHandle)~System.Reflection.Metadata.ConstantHandle
   - System.Reflection.Metadata.ConstantHandle.IsNil
   - System.Reflection.Metadata.ConstantHandle.op_Equality(System.Reflection.Metadata.ConstantHandle,System.Reflection.Metadata.ConstantHandle)
   - System.Reflection.Metadata.ConstantHandle.Equals(System.Object)
@@ -31,14 +38,14 @@ items:
   href: System.Reflection.Metadata.ConstantHandle.yml
   name: implicit operator Handle(ConstantHandle)
   fullName: System.Reflection.Metadata.ConstantHandle.implicit operator System.Reflection.Metadata.Handle(System.Reflection.Metadata.ConstantHandle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1618
+    startLine: 2198
   syntax:
     content:
-      CSharp: public static implicit operator Handle(ConstantHandle handle) { return new Handle(handle._rowId | tokenType); }
+      CSharp: public static implicit operator Handle(ConstantHandle handle)
     parameters:
     - id: handle
       type:
@@ -47,19 +54,48 @@ items:
         href: System.Reflection.Metadata.ConstantHandle.yml
     return:
       id: Handle
+      type:
+        id: System.Reflection.Metadata.Handle
+        name: Handle
+        href: System.Reflection.Metadata.Handle.yml
   id: System.Reflection.Metadata.ConstantHandle.op_Implicit(System.Reflection.Metadata.ConstantHandle)~System.Reflection.Metadata.Handle
+- uid: System.Reflection.Metadata.ConstantHandle.op_Implicit(System.Reflection.Metadata.ConstantHandle)~System.Reflection.Metadata.EntityHandle
+  href: System.Reflection.Metadata.ConstantHandle.yml
+  name: implicit operator EntityHandle(ConstantHandle)
+  fullName: System.Reflection.Metadata.ConstantHandle.implicit operator System.Reflection.Metadata.EntityHandle(System.Reflection.Metadata.ConstantHandle)
+  type: Operator
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 2203
+  syntax:
+    content:
+      CSharp: public static implicit operator EntityHandle(ConstantHandle handle)
+    parameters:
+    - id: handle
+      type:
+        id: System.Reflection.Metadata.ConstantHandle
+        name: ConstantHandle
+        href: System.Reflection.Metadata.ConstantHandle.yml
+    return:
+      id: EntityHandle
+      type:
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
+  id: System.Reflection.Metadata.ConstantHandle.op_Implicit(System.Reflection.Metadata.ConstantHandle)~System.Reflection.Metadata.EntityHandle
 - uid: System.Reflection.Metadata.ConstantHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.ConstantHandle
   href: System.Reflection.Metadata.ConstantHandle.yml
   name: explicit operator ConstantHandle(Handle)
   fullName: System.Reflection.Metadata.ConstantHandle.explicit operator System.Reflection.Metadata.ConstantHandle(System.Reflection.Metadata.Handle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1623
+    startLine: 2208
   syntax:
     content:
-      CSharp: public static explicit operator ConstantHandle(Handle handle) { if (handle.TokenType != tokenType) { Handle.ThrowInvalidCast(); } return new ConstantHandle(handle.RowId); }
+      CSharp: public static explicit operator ConstantHandle(Handle handle)
     parameters:
     - id: handle
       type:
@@ -68,7 +104,36 @@ items:
         href: System.Reflection.Metadata.Handle.yml
     return:
       id: ConstantHandle
+      type:
+        id: System.Reflection.Metadata.ConstantHandle
+        name: ConstantHandle
+        href: System.Reflection.Metadata.ConstantHandle.yml
   id: System.Reflection.Metadata.ConstantHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.ConstantHandle
+- uid: System.Reflection.Metadata.ConstantHandle.op_Explicit(System.Reflection.Metadata.EntityHandle)~System.Reflection.Metadata.ConstantHandle
+  href: System.Reflection.Metadata.ConstantHandle.yml
+  name: explicit operator ConstantHandle(EntityHandle)
+  fullName: System.Reflection.Metadata.ConstantHandle.explicit operator System.Reflection.Metadata.ConstantHandle(System.Reflection.Metadata.EntityHandle)
+  type: Operator
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 2218
+  syntax:
+    content:
+      CSharp: public static explicit operator ConstantHandle(EntityHandle handle)
+    parameters:
+    - id: handle
+      type:
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
+    return:
+      id: ConstantHandle
+      type:
+        id: System.Reflection.Metadata.ConstantHandle
+        name: ConstantHandle
+        href: System.Reflection.Metadata.ConstantHandle.yml
+  id: System.Reflection.Metadata.ConstantHandle.op_Explicit(System.Reflection.Metadata.EntityHandle)~System.Reflection.Metadata.ConstantHandle
 - uid: System.Reflection.Metadata.ConstantHandle.IsNil
   href: System.Reflection.Metadata.ConstantHandle.yml
   name: IsNil
@@ -77,7 +142,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1633
+    startLine: 2228
   syntax:
     content:
       CSharp: public bool IsNil { get; }
@@ -85,21 +150,21 @@ items:
     - id: IsNil
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Reflection.Metadata.ConstantHandle.IsNil
 - uid: System.Reflection.Metadata.ConstantHandle.op_Equality(System.Reflection.Metadata.ConstantHandle,System.Reflection.Metadata.ConstantHandle)
   href: System.Reflection.Metadata.ConstantHandle.yml
   name: operator ==(ConstantHandle, ConstantHandle)
   fullName: System.Reflection.Metadata.ConstantHandle.operator ==(System.Reflection.Metadata.ConstantHandle, System.Reflection.Metadata.ConstantHandle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1643
+    startLine: 2238
   syntax:
     content:
-      CSharp: public static bool operator ==(ConstantHandle left, ConstantHandle right) { return left._rowId == right._rowId; }
+      CSharp: public static bool operator ==(ConstantHandle left, ConstantHandle right)
     parameters:
     - id: left
       type:
@@ -113,6 +178,10 @@ items:
         href: System.Reflection.Metadata.ConstantHandle.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.ConstantHandle.op_Equality(System.Reflection.Metadata.ConstantHandle,System.Reflection.Metadata.ConstantHandle)
 - uid: System.Reflection.Metadata.ConstantHandle.Equals(System.Object)
   href: System.Reflection.Metadata.ConstantHandle.yml
@@ -122,7 +191,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1648
+    startLine: 2243
   syntax:
     content:
       CSharp: public override bool Equals(object obj)
@@ -130,10 +199,14 @@ items:
     - id: obj
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.ConstantHandle.Equals(System.Object)
 - uid: System.Reflection.Metadata.ConstantHandle.Equals(System.Reflection.Metadata.ConstantHandle)
   href: System.Reflection.Metadata.ConstantHandle.yml
@@ -143,7 +216,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1653
+    startLine: 2248
   syntax:
     content:
       CSharp: public bool Equals(ConstantHandle other)
@@ -155,6 +228,10 @@ items:
         href: System.Reflection.Metadata.ConstantHandle.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.ConstantHandle.Equals(System.Reflection.Metadata.ConstantHandle)
 - uid: System.Reflection.Metadata.ConstantHandle.GetHashCode
   href: System.Reflection.Metadata.ConstantHandle.yml
@@ -164,26 +241,30 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1658
+    startLine: 2253
   syntax:
     content:
       CSharp: public override int GetHashCode()
     parameters: []
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: System.Reflection.Metadata.ConstantHandle.GetHashCode
 - uid: System.Reflection.Metadata.ConstantHandle.op_Inequality(System.Reflection.Metadata.ConstantHandle,System.Reflection.Metadata.ConstantHandle)
   href: System.Reflection.Metadata.ConstantHandle.yml
   name: operator !=(ConstantHandle, ConstantHandle)
   fullName: System.Reflection.Metadata.ConstantHandle.operator !=(System.Reflection.Metadata.ConstantHandle, System.Reflection.Metadata.ConstantHandle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1663
+    startLine: 2258
   syntax:
     content:
-      CSharp: public static bool operator !=(ConstantHandle left, ConstantHandle right) { return left._rowId != right._rowId; }
+      CSharp: public static bool operator !=(ConstantHandle left, ConstantHandle right)
     parameters:
     - id: left
       type:
@@ -197,4 +278,8 @@ items:
         href: System.Reflection.Metadata.ConstantHandle.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.ConstantHandle.op_Inequality(System.Reflection.Metadata.ConstantHandle,System.Reflection.Metadata.ConstantHandle)

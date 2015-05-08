@@ -6,9 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/ModelValidator.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/ModelValidator.cs
     startLine: 8
   syntax:
@@ -16,14 +17,60 @@ items:
       CSharp: public abstract class ModelValidator
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.ModelValidator
   children:
+  - System.Web.Mvc.ModelValidator.#ctor(System.Web.Mvc.ModelMetadata,System.Web.Mvc.ControllerContext)
+  - System.Web.Mvc.ModelValidator.ControllerContext
   - System.Web.Mvc.ModelValidator.IsRequired
+  - System.Web.Mvc.ModelValidator.Metadata
   - System.Web.Mvc.ModelValidator.GetClientValidationRules
   - System.Web.Mvc.ModelValidator.GetModelValidator(System.Web.Mvc.ModelMetadata,System.Web.Mvc.ControllerContext)
   - System.Web.Mvc.ModelValidator.Validate(System.Object)
+- uid: System.Web.Mvc.ModelValidator.#ctor(System.Web.Mvc.ModelMetadata,System.Web.Mvc.ControllerContext)
+  href: System.Web.Mvc.ModelValidator.yml
+  name: ModelValidator(ModelMetadata, ControllerContext)
+  fullName: System.Web.Mvc.ModelValidator.ModelValidator(System.Web.Mvc.ModelMetadata, System.Web.Mvc.ControllerContext)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ModelValidator.cs
+    startLine: 10
+  syntax:
+    content:
+      CSharp: protected ModelValidator(ModelMetadata metadata, ControllerContext controllerContext)
+    parameters:
+    - id: metadata
+      type:
+        id: System.Web.Mvc.ModelMetadata
+        name: ModelMetadata
+        href: System.Web.Mvc.ModelMetadata.yml
+    - id: controllerContext
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+  id: System.Web.Mvc.ModelValidator.#ctor(System.Web.Mvc.ModelMetadata,System.Web.Mvc.ControllerContext)
+- uid: System.Web.Mvc.ModelValidator.ControllerContext
+  href: System.Web.Mvc.ModelValidator.yml
+  name: ControllerContext
+  fullName: System.Web.Mvc.ModelValidator.ControllerContext
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ModelValidator.cs
+    startLine: 25
+  syntax:
+    content:
+      CSharp: protected internal ControllerContext ControllerContext { get; }
+    parameters:
+    - id: ControllerContext
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+  id: System.Web.Mvc.ModelValidator.ControllerContext
 - uid: System.Web.Mvc.ModelValidator.IsRequired
   href: System.Web.Mvc.ModelValidator.yml
   name: IsRequired
@@ -40,9 +87,28 @@ items:
     - id: IsRequired
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.ModelValidator.IsRequired
+- uid: System.Web.Mvc.ModelValidator.Metadata
+  href: System.Web.Mvc.ModelValidator.yml
+  name: Metadata
+  fullName: System.Web.Mvc.ModelValidator.Metadata
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ModelValidator.cs
+    startLine: 32
+  syntax:
+    content:
+      CSharp: protected internal ModelMetadata Metadata { get; }
+    parameters:
+    - id: Metadata
+      type:
+        id: System.Web.Mvc.ModelMetadata
+        name: ModelMetadata
+        href: System.Web.Mvc.ModelMetadata.yml
+  id: System.Web.Mvc.ModelValidator.Metadata
 - uid: System.Web.Mvc.ModelValidator.GetClientValidationRules
   href: System.Web.Mvc.ModelValidator.yml
   name: GetClientValidationRules()
@@ -54,10 +120,14 @@ items:
     startLine: 34
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Justification = "This method may perform non-trivial work.")] public virtual IEnumerable<ModelClientValidationRule> GetClientValidationRules()'
+      CSharp: public virtual IEnumerable<ModelClientValidationRule> GetClientValidationRules()
     parameters: []
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Web.Mvc.ModelClientValidationRule}
+        name: IEnumerable<ModelClientValidationRule>
+        isExternal: true
   id: System.Web.Mvc.ModelValidator.GetClientValidationRules
 - uid: System.Web.Mvc.ModelValidator.GetModelValidator(System.Web.Mvc.ModelMetadata,System.Web.Mvc.ControllerContext)
   href: System.Web.Mvc.ModelValidator.yml
@@ -84,6 +154,10 @@ items:
         href: System.Web.Mvc.ControllerContext.yml
     return:
       id: ModelValidator
+      type:
+        id: System.Web.Mvc.ModelValidator
+        name: ModelValidator
+        href: System.Web.Mvc.ModelValidator.yml
   id: System.Web.Mvc.ModelValidator.GetModelValidator(System.Web.Mvc.ModelMetadata,System.Web.Mvc.ControllerContext)
 - uid: System.Web.Mvc.ModelValidator.Validate(System.Object)
   href: System.Web.Mvc.ModelValidator.yml
@@ -96,13 +170,17 @@ items:
     startLine: 45
   syntax:
     content:
-      CSharp: public abstract IEnumerable<ModelValidationResult> Validate(object container);
+      CSharp: public abstract IEnumerable<ModelValidationResult> Validate(object container)
     parameters:
     - id: container
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Web.Mvc.ModelValidationResult}
+        name: IEnumerable<ModelValidationResult>
+        isExternal: true
   id: System.Web.Mvc.ModelValidator.Validate(System.Object)

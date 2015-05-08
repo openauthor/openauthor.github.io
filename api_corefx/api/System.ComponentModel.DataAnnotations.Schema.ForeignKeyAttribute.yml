@@ -6,8 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/Schema/ForeignKeyAttribute.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/Schema/ForeignKeyAttribute.cs
     startLine: 12
   summary: >-
@@ -18,9 +20,12 @@ items:
     or placed on a navigation property and specify the associated foreign key name.
   syntax:
     content:
-      CSharp: public class ForeignKeyAttribute
+      CSharp: 'public class ForeignKeyAttribute : Attribute, _Attribute'
   inheritance:
-  - id: Attribute
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.Attribute
     name: Attribute
     isExternal: true
   id: System.ComponentModel.DataAnnotations.Schema.ForeignKeyAttribute
@@ -44,7 +49,7 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: >-
         If placed on a foreign key property, the name of the associated navigation property.
@@ -73,6 +78,6 @@ items:
     - id: Name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.ComponentModel.DataAnnotations.Schema.ForeignKeyAttribute.Name

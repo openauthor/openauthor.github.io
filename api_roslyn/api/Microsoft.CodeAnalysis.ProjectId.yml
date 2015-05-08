@@ -6,23 +6,25 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectId.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectId.cs
     startLine: 14
   summary: An identifier that can be used to refer to the same [Microsoft.CodeAnalysis.Project](Microsoft.CodeAnalysis.Project.yml) across versions.
   syntax:
     content:
-      CSharp: public class ProjectId
+      CSharp: 'public sealed class ProjectId : IEquatable<ProjectId>'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.ProjectId
   children:
   - Microsoft.CodeAnalysis.ProjectId.Id
   - Microsoft.CodeAnalysis.ProjectId.CreateNewId(System.String)
+  - Microsoft.CodeAnalysis.ProjectId.CreateFromSerialized(System.Guid,System.String)
   - Microsoft.CodeAnalysis.ProjectId.ToString
   - Microsoft.CodeAnalysis.ProjectId.Equals(System.Object)
   - Microsoft.CodeAnalysis.ProjectId.Equals(Microsoft.CodeAnalysis.ProjectId)
@@ -41,12 +43,12 @@ items:
   summary: The system generated unique id.
   syntax:
     content:
-      CSharp: public Guid Id { get; private set; }
+      CSharp: public Guid Id { get; }
     parameters:
     - id: Id
       type:
         id: System.Guid
-        name: System.Guid
+        name: Guid
         isExternal: true
   id: Microsoft.CodeAnalysis.ProjectId.Id
 - uid: Microsoft.CodeAnalysis.ProjectId.CreateNewId(System.String)
@@ -66,12 +68,46 @@ items:
     - id: debugName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: An optional name to make this id easier to recognize while debugging.
     return:
       id: ProjectId
+      type:
+        id: Microsoft.CodeAnalysis.ProjectId
+        name: ProjectId
+        href: Microsoft.CodeAnalysis.ProjectId.yml
   id: Microsoft.CodeAnalysis.ProjectId.CreateNewId(System.String)
+- uid: Microsoft.CodeAnalysis.ProjectId.CreateFromSerialized(System.Guid,System.String)
+  href: Microsoft.CodeAnalysis.ProjectId.yml
+  name: CreateFromSerialized(Guid, string)
+  fullName: Microsoft.CodeAnalysis.ProjectId.CreateFromSerialized(System.Guid, string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectId.cs
+    startLine: 45
+  syntax:
+    content:
+      CSharp: public static ProjectId CreateFromSerialized(Guid id, string debugName = null)
+    parameters:
+    - id: id
+      type:
+        id: System.Guid
+        name: Guid
+        isExternal: true
+    - id: debugName
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      id: ProjectId
+      type:
+        id: Microsoft.CodeAnalysis.ProjectId
+        name: ProjectId
+        href: Microsoft.CodeAnalysis.ProjectId.yml
+  id: Microsoft.CodeAnalysis.ProjectId.CreateFromSerialized(System.Guid,System.String)
 - uid: Microsoft.CodeAnalysis.ProjectId.ToString
   href: Microsoft.CodeAnalysis.ProjectId.yml
   name: ToString()
@@ -80,13 +116,17 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectId.cs
-    startLine: 55
+    startLine: 65
   syntax:
     content:
       CSharp: public override string ToString()
     parameters: []
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: Microsoft.CodeAnalysis.ProjectId.ToString
 - uid: Microsoft.CodeAnalysis.ProjectId.Equals(System.Object)
   href: Microsoft.CodeAnalysis.ProjectId.yml
@@ -96,7 +136,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectId.cs
-    startLine: 60
+    startLine: 70
   syntax:
     content:
       CSharp: public override bool Equals(object obj)
@@ -104,10 +144,14 @@ items:
     - id: obj
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.ProjectId.Equals(System.Object)
 - uid: Microsoft.CodeAnalysis.ProjectId.Equals(Microsoft.CodeAnalysis.ProjectId)
   href: Microsoft.CodeAnalysis.ProjectId.yml
@@ -117,7 +161,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectId.cs
-    startLine: 65
+    startLine: 75
   syntax:
     content:
       CSharp: public bool Equals(ProjectId other)
@@ -129,19 +173,23 @@ items:
         href: Microsoft.CodeAnalysis.ProjectId.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.ProjectId.Equals(Microsoft.CodeAnalysis.ProjectId)
 - uid: Microsoft.CodeAnalysis.ProjectId.op_Equality(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.ProjectId)
   href: Microsoft.CodeAnalysis.ProjectId.yml
   name: operator ==(ProjectId, ProjectId)
   fullName: Microsoft.CodeAnalysis.ProjectId.operator ==(Microsoft.CodeAnalysis.ProjectId, Microsoft.CodeAnalysis.ProjectId)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectId.cs
-    startLine: 72
+    startLine: 82
   syntax:
     content:
-      CSharp: public static bool operator ==(ProjectId left, ProjectId right) { return EqualityComparer<ProjectId>.Default.Equals(left, right); }
+      CSharp: public static bool operator ==(ProjectId left, ProjectId right)
     parameters:
     - id: left
       type:
@@ -155,19 +203,23 @@ items:
         href: Microsoft.CodeAnalysis.ProjectId.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.ProjectId.op_Equality(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.ProjectId)
 - uid: Microsoft.CodeAnalysis.ProjectId.op_Inequality(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.ProjectId)
   href: Microsoft.CodeAnalysis.ProjectId.yml
   name: operator !=(ProjectId, ProjectId)
   fullName: Microsoft.CodeAnalysis.ProjectId.operator !=(Microsoft.CodeAnalysis.ProjectId, Microsoft.CodeAnalysis.ProjectId)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectId.cs
-    startLine: 77
+    startLine: 87
   syntax:
     content:
-      CSharp: public static bool operator !=(ProjectId left, ProjectId right) { return !(left == right); }
+      CSharp: public static bool operator !=(ProjectId left, ProjectId right)
     parameters:
     - id: left
       type:
@@ -181,6 +233,10 @@ items:
         href: Microsoft.CodeAnalysis.ProjectId.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.ProjectId.op_Inequality(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.ProjectId)
 - uid: Microsoft.CodeAnalysis.ProjectId.GetHashCode
   href: Microsoft.CodeAnalysis.ProjectId.yml
@@ -190,11 +246,15 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectId.cs
-    startLine: 82
+    startLine: 92
   syntax:
     content:
       CSharp: public override int GetHashCode()
     parameters: []
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: Microsoft.CodeAnalysis.ProjectId.GetHashCode

@@ -6,18 +6,19 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/VisualStudio/Core/Def/Progression/GraphNodeCreation.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/VisualStudio/Core/Def/Progression/GraphNodeCreation.cs
     startLine: 14
-  summary: A helper class that implements the creation of [Microsoft.VisualStudio.GraphModel.GraphNode](#)s.
+  summary: A helper class that implements the creation of [Microsoft.VisualStudio.GraphModel.GraphNode]()s.
   syntax:
     content:
-      CSharp: public static class GraphNodeCreation
+      CSharp: public class GraphNodeCreation
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.VisualStudio.LanguageServices.Progression.GraphNodeCreation
   children:
@@ -34,7 +35,7 @@ items:
     startLine: 16
   syntax:
     content:
-      CSharp: public static async Task<GraphNodeId> CreateNodeIdAsync(ISymbol symbol, Solution solution, CancellationToken cancellationToken)
+      CSharp: public static Task<GraphNodeId> CreateNodeIdAsync(ISymbol symbol, Solution solution, CancellationToken cancellationToken)
     parameters:
     - id: symbol
       type:
@@ -49,10 +50,14 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.VisualStudio.GraphModel.GraphNodeId}
+        name: Task<GraphNodeId>
+        isExternal: true
   id: Microsoft.VisualStudio.LanguageServices.Progression.GraphNodeCreation.CreateNodeIdAsync(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Solution,System.Threading.CancellationToken)
 - uid: Microsoft.VisualStudio.LanguageServices.Progression.GraphNodeCreation.CreateNodeAsync(Microsoft.VisualStudio.GraphModel.Graph,Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Solution,System.Threading.CancellationToken)
   href: Microsoft.VisualStudio.LanguageServices.Progression.GraphNodeCreation.yml
@@ -65,12 +70,12 @@ items:
     startLine: 57
   syntax:
     content:
-      CSharp: public static async Task<GraphNode> CreateNodeAsync(this Graph graph, ISymbol symbol, Solution solution, CancellationToken cancellationToken)
+      CSharp: public static Task<GraphNode> CreateNodeAsync(Graph graph, ISymbol symbol, Solution solution, CancellationToken cancellationToken)
     parameters:
     - id: graph
       type:
         id: Microsoft.VisualStudio.GraphModel.Graph
-        name: Microsoft.VisualStudio.GraphModel.Graph
+        name: Graph
         isExternal: true
     - id: symbol
       type:
@@ -85,8 +90,12 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.VisualStudio.GraphModel.GraphNode}
+        name: Task<GraphNode>
+        isExternal: true
   id: Microsoft.VisualStudio.LanguageServices.Progression.GraphNodeCreation.CreateNodeAsync(Microsoft.VisualStudio.GraphModel.Graph,Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Solution,System.Threading.CancellationToken)

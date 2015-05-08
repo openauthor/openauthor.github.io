@@ -6,21 +6,22 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/OverrideExceptionFiltersAttribute.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/OverrideExceptionFiltersAttribute.cs
     startLine: 7
   summary: Represents a filter attribute that overrides exception filters defined at a higher level.
   syntax:
     content:
-      CSharp: public sealed class OverrideExceptionFiltersAttribute
+      CSharp: 'public sealed class OverrideExceptionFiltersAttribute : FilterAttribute, _Attribute, IMvcFilter, IOverrideFilter'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Attribute
-    name: System.Attribute
+    name: Attribute
     isExternal: true
   - id: System.Web.Mvc.FilterAttribute
     name: FilterAttribute
@@ -44,6 +45,6 @@ items:
     - id: FiltersToOverride
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
   id: System.Web.Mvc.OverrideExceptionFiltersAttribute.FiltersToOverride

@@ -6,9 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Common/Routing/DefaultInlineConstraintResolver.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/Common/Routing/DefaultInlineConstraintResolver.cs
     startLine: 26
   summary: >-
@@ -19,10 +20,10 @@ items:
     appropriate constructor for the constraint type.
   syntax:
     content:
-      CSharp: public class DefaultInlineConstraintResolver
+      CSharp: 'public class DefaultInlineConstraintResolver : IInlineConstraintResolver'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.Routing.DefaultInlineConstraintResolver
   children:
@@ -45,7 +46,7 @@ items:
     - id: ConstraintMap
       type:
         id: System.Collections.Generic.IDictionary{System.String,System.Type}
-        name: System.Collections.Generic.IDictionary{System.String,System.Type}
+        name: IDictionary<string, Type>
         isExternal: true
   id: System.Web.Mvc.Routing.DefaultInlineConstraintResolver.ConstraintMap
 - uid: System.Web.Mvc.Routing.DefaultInlineConstraintResolver.ResolveConstraint(System.String)
@@ -64,8 +65,12 @@ items:
     - id: inlineConstraint
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: IRouteConstraint
+      type:
+        id: System.Web.Routing.IRouteConstraint
+        name: IRouteConstraint
+        isExternal: true
   id: System.Web.Mvc.Routing.DefaultInlineConstraintResolver.ResolveConstraint(System.String)

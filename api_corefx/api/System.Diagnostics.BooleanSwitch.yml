@@ -6,16 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/BooleanSwitch.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/BooleanSwitch.cs
     startLine: 12
   syntax:
     content:
-      CSharp: public class BooleanSwitch
+      CSharp: 'public class BooleanSwitch : Switch'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Diagnostics.Switch
     name: Switch
@@ -25,6 +27,7 @@ items:
   - System.Diagnostics.BooleanSwitch.#ctor(System.String,System.String)
   - System.Diagnostics.BooleanSwitch.#ctor(System.String,System.String,System.String)
   - System.Diagnostics.BooleanSwitch.Enabled
+  - System.Diagnostics.BooleanSwitch.OnValueChanged
 - uid: System.Diagnostics.BooleanSwitch.#ctor(System.String,System.String)
   href: System.Diagnostics.BooleanSwitch.yml
   name: BooleanSwitch(string, string)
@@ -41,12 +44,12 @@ items:
     - id: displayName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: description
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.BooleanSwitch.#ctor(System.String,System.String)
 - uid: System.Diagnostics.BooleanSwitch.#ctor(System.String,System.String,System.String)
@@ -65,17 +68,17 @@ items:
     - id: displayName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: description
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: defaultSwitchValue
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.BooleanSwitch.#ctor(System.String,System.String,System.String)
 - uid: System.Diagnostics.BooleanSwitch.Enabled
@@ -94,6 +97,20 @@ items:
     - id: Enabled
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Diagnostics.BooleanSwitch.Enabled
+- uid: System.Diagnostics.BooleanSwitch.OnValueChanged
+  href: System.Diagnostics.BooleanSwitch.yml
+  name: OnValueChanged()
+  fullName: System.Diagnostics.BooleanSwitch.OnValueChanged()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/BooleanSwitch.cs
+    startLine: 43
+  syntax:
+    content:
+      CSharp: protected override void OnValueChanged()
+    parameters: []
+  id: System.Diagnostics.BooleanSwitch.OnValueChanged

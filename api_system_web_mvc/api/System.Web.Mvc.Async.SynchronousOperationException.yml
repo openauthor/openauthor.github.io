@@ -6,29 +6,30 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/Async/SynchronousOperationException.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/Async/SynchronousOperationException.cs
     startLine: 9
   syntax:
     content:
-      CSharp: public sealed class SynchronousOperationException
+      CSharp: 'public sealed class SynchronousOperationException : HttpException, ISerializable, _Exception'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Exception
-    name: System.Exception
+    name: Exception
     isExternal: true
   - id: System.SystemException
-    name: System.SystemException
+    name: SystemException
     isExternal: true
   - id: System.Runtime.InteropServices.ExternalException
-    name: System.Runtime.InteropServices.ExternalException
+    name: ExternalException
     isExternal: true
   - id: System.Web.HttpException
-    name: System.Web.HttpException
+    name: HttpException
     isExternal: true
   id: System.Web.Mvc.Async.SynchronousOperationException
   children:
@@ -65,7 +66,7 @@ items:
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.Async.SynchronousOperationException.#ctor(System.String)
 - uid: System.Web.Mvc.Async.SynchronousOperationException.#ctor(System.String,System.Exception)
@@ -84,11 +85,11 @@ items:
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: innerException
       type:
         id: System.Exception
-        name: System.Exception
+        name: Exception
         isExternal: true
   id: System.Web.Mvc.Async.SynchronousOperationException.#ctor(System.String,System.Exception)

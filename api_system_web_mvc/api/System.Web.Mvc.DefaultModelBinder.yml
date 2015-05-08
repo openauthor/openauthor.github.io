@@ -6,22 +6,58 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/DefaultModelBinder.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/DefaultModelBinder.cs
     startLine: 14
   syntax:
     content:
-      CSharp: public class DefaultModelBinder
+      CSharp: 'public class DefaultModelBinder : IModelBinder'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.DefaultModelBinder
   children:
+  - System.Web.Mvc.DefaultModelBinder.Binders
   - System.Web.Mvc.DefaultModelBinder.ResourceClassKey
   - System.Web.Mvc.DefaultModelBinder.BindModel(System.Web.Mvc.ControllerContext,System.Web.Mvc.ModelBindingContext)
+  - System.Web.Mvc.DefaultModelBinder.BindProperty(System.Web.Mvc.ControllerContext,System.Web.Mvc.ModelBindingContext,System.ComponentModel.PropertyDescriptor)
+  - System.Web.Mvc.DefaultModelBinder.CreateModel(System.Web.Mvc.ControllerContext,System.Web.Mvc.ModelBindingContext,System.Type)
+  - System.Web.Mvc.DefaultModelBinder.CreateSubIndexName(System.String,System.Int32)
+  - System.Web.Mvc.DefaultModelBinder.CreateSubIndexName(System.String,System.String)
+  - System.Web.Mvc.DefaultModelBinder.CreateSubPropertyName(System.String,System.String)
+  - System.Web.Mvc.DefaultModelBinder.GetFilteredModelProperties(System.Web.Mvc.ControllerContext,System.Web.Mvc.ModelBindingContext)
+  - System.Web.Mvc.DefaultModelBinder.GetModelProperties(System.Web.Mvc.ControllerContext,System.Web.Mvc.ModelBindingContext)
+  - System.Web.Mvc.DefaultModelBinder.GetPropertyValue(System.Web.Mvc.ControllerContext,System.Web.Mvc.ModelBindingContext,System.ComponentModel.PropertyDescriptor,System.Web.Mvc.IModelBinder)
+  - System.Web.Mvc.DefaultModelBinder.GetTypeDescriptor(System.Web.Mvc.ControllerContext,System.Web.Mvc.ModelBindingContext)
+  - System.Web.Mvc.DefaultModelBinder.IsModelValid(System.Web.Mvc.ModelBindingContext)
+  - System.Web.Mvc.DefaultModelBinder.OnModelUpdated(System.Web.Mvc.ControllerContext,System.Web.Mvc.ModelBindingContext)
+  - System.Web.Mvc.DefaultModelBinder.OnModelUpdating(System.Web.Mvc.ControllerContext,System.Web.Mvc.ModelBindingContext)
+  - System.Web.Mvc.DefaultModelBinder.OnPropertyValidated(System.Web.Mvc.ControllerContext,System.Web.Mvc.ModelBindingContext,System.ComponentModel.PropertyDescriptor,System.Object)
+  - System.Web.Mvc.DefaultModelBinder.OnPropertyValidating(System.Web.Mvc.ControllerContext,System.Web.Mvc.ModelBindingContext,System.ComponentModel.PropertyDescriptor,System.Object)
+  - System.Web.Mvc.DefaultModelBinder.SetProperty(System.Web.Mvc.ControllerContext,System.Web.Mvc.ModelBindingContext,System.ComponentModel.PropertyDescriptor,System.Object)
+- uid: System.Web.Mvc.DefaultModelBinder.Binders
+  href: System.Web.Mvc.DefaultModelBinder.yml
+  name: Binders
+  fullName: System.Web.Mvc.DefaultModelBinder.Binders
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/DefaultModelBinder.cs
+    startLine: 19
+  syntax:
+    content:
+      CSharp: '[SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly", Justification = "Property is settable so that the dictionary can be provided for unit testing purposes.")] protected internal ModelBinderDictionary Binders { get; set; }'
+    parameters:
+    - id: Binders
+      type:
+        id: System.Web.Mvc.ModelBinderDictionary
+        name: ModelBinderDictionary
+        href: System.Web.Mvc.ModelBinderDictionary.yml
+  id: System.Web.Mvc.DefaultModelBinder.Binders
 - uid: System.Web.Mvc.DefaultModelBinder.ResourceClassKey
   href: System.Web.Mvc.DefaultModelBinder.yml
   name: ResourceClassKey
@@ -38,7 +74,7 @@ items:
     - id: ResourceClassKey
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.DefaultModelBinder.ResourceClassKey
 - uid: System.Web.Mvc.DefaultModelBinder.BindModel(System.Web.Mvc.ControllerContext,System.Web.Mvc.ModelBindingContext)
@@ -66,4 +102,479 @@ items:
         href: System.Web.Mvc.ModelBindingContext.yml
     return:
       id: Object
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
   id: System.Web.Mvc.DefaultModelBinder.BindModel(System.Web.Mvc.ControllerContext,System.Web.Mvc.ModelBindingContext)
+- uid: System.Web.Mvc.DefaultModelBinder.BindProperty(System.Web.Mvc.ControllerContext,System.Web.Mvc.ModelBindingContext,System.ComponentModel.PropertyDescriptor)
+  href: System.Web.Mvc.DefaultModelBinder.yml
+  name: BindProperty(ControllerContext, ModelBindingContext, PropertyDescriptor)
+  fullName: System.Web.Mvc.DefaultModelBinder.BindProperty(System.Web.Mvc.ControllerContext, System.Web.Mvc.ModelBindingContext, System.ComponentModel.PropertyDescriptor)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/DefaultModelBinder.cs
+    startLine: 211
+  syntax:
+    content:
+      CSharp: protected virtual void BindProperty(ControllerContext controllerContext, ModelBindingContext bindingContext, PropertyDescriptor propertyDescriptor)
+    parameters:
+    - id: controllerContext
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+    - id: bindingContext
+      type:
+        id: System.Web.Mvc.ModelBindingContext
+        name: ModelBindingContext
+        href: System.Web.Mvc.ModelBindingContext.yml
+    - id: propertyDescriptor
+      type:
+        id: System.ComponentModel.PropertyDescriptor
+        name: PropertyDescriptor
+        isExternal: true
+  id: System.Web.Mvc.DefaultModelBinder.BindProperty(System.Web.Mvc.ControllerContext,System.Web.Mvc.ModelBindingContext,System.ComponentModel.PropertyDescriptor)
+- uid: System.Web.Mvc.DefaultModelBinder.CreateModel(System.Web.Mvc.ControllerContext,System.Web.Mvc.ModelBindingContext,System.Type)
+  href: System.Web.Mvc.DefaultModelBinder.yml
+  name: CreateModel(ControllerContext, ModelBindingContext, Type)
+  fullName: System.Web.Mvc.DefaultModelBinder.CreateModel(System.Web.Mvc.ControllerContext, System.Web.Mvc.ModelBindingContext, System.Type)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/DefaultModelBinder.cs
+    startLine: 376
+  syntax:
+    content:
+      CSharp: protected virtual object CreateModel(ControllerContext controllerContext, ModelBindingContext bindingContext, Type modelType)
+    parameters:
+    - id: controllerContext
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+    - id: bindingContext
+      type:
+        id: System.Web.Mvc.ModelBindingContext
+        name: ModelBindingContext
+        href: System.Web.Mvc.ModelBindingContext.yml
+    - id: modelType
+      type:
+        id: System.Type
+        name: Type
+        isExternal: true
+    return:
+      id: Object
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+  id: System.Web.Mvc.DefaultModelBinder.CreateModel(System.Web.Mvc.ControllerContext,System.Web.Mvc.ModelBindingContext,System.Type)
+- uid: System.Web.Mvc.DefaultModelBinder.CreateSubIndexName(System.String,System.Int32)
+  href: System.Web.Mvc.DefaultModelBinder.yml
+  name: CreateSubIndexName(string, int)
+  fullName: System.Web.Mvc.DefaultModelBinder.CreateSubIndexName(string, int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/DefaultModelBinder.cs
+    startLine: 413
+  syntax:
+    content:
+      CSharp: protected static string CreateSubIndexName(string prefix, int index)
+    parameters:
+    - id: prefix
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    - id: index
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    return:
+      id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Web.Mvc.DefaultModelBinder.CreateSubIndexName(System.String,System.Int32)
+- uid: System.Web.Mvc.DefaultModelBinder.CreateSubIndexName(System.String,System.String)
+  href: System.Web.Mvc.DefaultModelBinder.yml
+  name: CreateSubIndexName(string, string)
+  fullName: System.Web.Mvc.DefaultModelBinder.CreateSubIndexName(string, string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/DefaultModelBinder.cs
+    startLine: 418
+  syntax:
+    content:
+      CSharp: protected static string CreateSubIndexName(string prefix, string index)
+    parameters:
+    - id: prefix
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    - id: index
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Web.Mvc.DefaultModelBinder.CreateSubIndexName(System.String,System.String)
+- uid: System.Web.Mvc.DefaultModelBinder.CreateSubPropertyName(System.String,System.String)
+  href: System.Web.Mvc.DefaultModelBinder.yml
+  name: CreateSubPropertyName(string, string)
+  fullName: System.Web.Mvc.DefaultModelBinder.CreateSubPropertyName(string, string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/DefaultModelBinder.cs
+    startLine: 423
+  syntax:
+    content:
+      CSharp: protected internal static string CreateSubPropertyName(string prefix, string propertyName)
+    parameters:
+    - id: prefix
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    - id: propertyName
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Web.Mvc.DefaultModelBinder.CreateSubPropertyName(System.String,System.String)
+- uid: System.Web.Mvc.DefaultModelBinder.GetFilteredModelProperties(System.Web.Mvc.ControllerContext,System.Web.Mvc.ModelBindingContext)
+  href: System.Web.Mvc.DefaultModelBinder.yml
+  name: GetFilteredModelProperties(ControllerContext, ModelBindingContext)
+  fullName: System.Web.Mvc.DefaultModelBinder.GetFilteredModelProperties(System.Web.Mvc.ControllerContext, System.Web.Mvc.ModelBindingContext)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/DefaultModelBinder.cs
+    startLine: 439
+  syntax:
+    content:
+      CSharp: protected IEnumerable<PropertyDescriptor> GetFilteredModelProperties(ControllerContext controllerContext, ModelBindingContext bindingContext)
+    parameters:
+    - id: controllerContext
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+    - id: bindingContext
+      type:
+        id: System.Web.Mvc.ModelBindingContext
+        name: ModelBindingContext
+        href: System.Web.Mvc.ModelBindingContext.yml
+    return:
+      id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.ComponentModel.PropertyDescriptor}
+        name: IEnumerable<PropertyDescriptor>
+        isExternal: true
+  id: System.Web.Mvc.DefaultModelBinder.GetFilteredModelProperties(System.Web.Mvc.ControllerContext,System.Web.Mvc.ModelBindingContext)
+- uid: System.Web.Mvc.DefaultModelBinder.GetModelProperties(System.Web.Mvc.ControllerContext,System.Web.Mvc.ModelBindingContext)
+  href: System.Web.Mvc.DefaultModelBinder.yml
+  name: GetModelProperties(ControllerContext, ModelBindingContext)
+  fullName: System.Web.Mvc.DefaultModelBinder.GetModelProperties(System.Web.Mvc.ControllerContext, System.Web.Mvc.ModelBindingContext)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/DefaultModelBinder.cs
+    startLine: 472
+  syntax:
+    content:
+      CSharp: protected virtual PropertyDescriptorCollection GetModelProperties(ControllerContext controllerContext, ModelBindingContext bindingContext)
+    parameters:
+    - id: controllerContext
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+    - id: bindingContext
+      type:
+        id: System.Web.Mvc.ModelBindingContext
+        name: ModelBindingContext
+        href: System.Web.Mvc.ModelBindingContext.yml
+    return:
+      id: PropertyDescriptorCollection
+      type:
+        id: System.ComponentModel.PropertyDescriptorCollection
+        name: PropertyDescriptorCollection
+        isExternal: true
+  id: System.Web.Mvc.DefaultModelBinder.GetModelProperties(System.Web.Mvc.ControllerContext,System.Web.Mvc.ModelBindingContext)
+- uid: System.Web.Mvc.DefaultModelBinder.GetPropertyValue(System.Web.Mvc.ControllerContext,System.Web.Mvc.ModelBindingContext,System.ComponentModel.PropertyDescriptor,System.Web.Mvc.IModelBinder)
+  href: System.Web.Mvc.DefaultModelBinder.yml
+  name: GetPropertyValue(ControllerContext, ModelBindingContext, PropertyDescriptor, IModelBinder)
+  fullName: System.Web.Mvc.DefaultModelBinder.GetPropertyValue(System.Web.Mvc.ControllerContext, System.Web.Mvc.ModelBindingContext, System.ComponentModel.PropertyDescriptor, System.Web.Mvc.IModelBinder)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/DefaultModelBinder.cs
+    startLine: 477
+  syntax:
+    content:
+      CSharp: protected virtual object GetPropertyValue(ControllerContext controllerContext, ModelBindingContext bindingContext, PropertyDescriptor propertyDescriptor, IModelBinder propertyBinder)
+    parameters:
+    - id: controllerContext
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+    - id: bindingContext
+      type:
+        id: System.Web.Mvc.ModelBindingContext
+        name: ModelBindingContext
+        href: System.Web.Mvc.ModelBindingContext.yml
+    - id: propertyDescriptor
+      type:
+        id: System.ComponentModel.PropertyDescriptor
+        name: PropertyDescriptor
+        isExternal: true
+    - id: propertyBinder
+      type:
+        id: System.Web.Mvc.IModelBinder
+        name: IModelBinder
+        href: System.Web.Mvc.IModelBinder.yml
+    return:
+      id: Object
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+  id: System.Web.Mvc.DefaultModelBinder.GetPropertyValue(System.Web.Mvc.ControllerContext,System.Web.Mvc.ModelBindingContext,System.ComponentModel.PropertyDescriptor,System.Web.Mvc.IModelBinder)
+- uid: System.Web.Mvc.DefaultModelBinder.GetTypeDescriptor(System.Web.Mvc.ControllerContext,System.Web.Mvc.ModelBindingContext)
+  href: System.Web.Mvc.DefaultModelBinder.yml
+  name: GetTypeDescriptor(ControllerContext, ModelBindingContext)
+  fullName: System.Web.Mvc.DefaultModelBinder.GetTypeDescriptor(System.Web.Mvc.ControllerContext, System.Web.Mvc.ModelBindingContext)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/DefaultModelBinder.cs
+    startLine: 489
+  syntax:
+    content:
+      CSharp: protected virtual ICustomTypeDescriptor GetTypeDescriptor(ControllerContext controllerContext, ModelBindingContext bindingContext)
+    parameters:
+    - id: controllerContext
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+    - id: bindingContext
+      type:
+        id: System.Web.Mvc.ModelBindingContext
+        name: ModelBindingContext
+        href: System.Web.Mvc.ModelBindingContext.yml
+    return:
+      id: ICustomTypeDescriptor
+      type:
+        id: System.ComponentModel.ICustomTypeDescriptor
+        name: ICustomTypeDescriptor
+        isExternal: true
+  id: System.Web.Mvc.DefaultModelBinder.GetTypeDescriptor(System.Web.Mvc.ControllerContext,System.Web.Mvc.ModelBindingContext)
+- uid: System.Web.Mvc.DefaultModelBinder.IsModelValid(System.Web.Mvc.ModelBindingContext)
+  href: System.Web.Mvc.DefaultModelBinder.yml
+  name: IsModelValid(ModelBindingContext)
+  fullName: System.Web.Mvc.DefaultModelBinder.IsModelValid(System.Web.Mvc.ModelBindingContext)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/DefaultModelBinder.cs
+    startLine: 530
+  syntax:
+    content:
+      CSharp: protected static bool IsModelValid(ModelBindingContext bindingContext)
+    parameters:
+    - id: bindingContext
+      type:
+        id: System.Web.Mvc.ModelBindingContext
+        name: ModelBindingContext
+        href: System.Web.Mvc.ModelBindingContext.yml
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Web.Mvc.DefaultModelBinder.IsModelValid(System.Web.Mvc.ModelBindingContext)
+- uid: System.Web.Mvc.DefaultModelBinder.OnModelUpdated(System.Web.Mvc.ControllerContext,System.Web.Mvc.ModelBindingContext)
+  href: System.Web.Mvc.DefaultModelBinder.yml
+  name: OnModelUpdated(ControllerContext, ModelBindingContext)
+  fullName: System.Web.Mvc.DefaultModelBinder.OnModelUpdated(System.Web.Mvc.ControllerContext, System.Web.Mvc.ModelBindingContext)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/DefaultModelBinder.cs
+    startLine: 543
+  syntax:
+    content:
+      CSharp: protected virtual void OnModelUpdated(ControllerContext controllerContext, ModelBindingContext bindingContext)
+    parameters:
+    - id: controllerContext
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+    - id: bindingContext
+      type:
+        id: System.Web.Mvc.ModelBindingContext
+        name: ModelBindingContext
+        href: System.Web.Mvc.ModelBindingContext.yml
+  id: System.Web.Mvc.DefaultModelBinder.OnModelUpdated(System.Web.Mvc.ControllerContext,System.Web.Mvc.ModelBindingContext)
+- uid: System.Web.Mvc.DefaultModelBinder.OnModelUpdating(System.Web.Mvc.ControllerContext,System.Web.Mvc.ModelBindingContext)
+  href: System.Web.Mvc.DefaultModelBinder.yml
+  name: OnModelUpdating(ControllerContext, ModelBindingContext)
+  fullName: System.Web.Mvc.DefaultModelBinder.OnModelUpdating(System.Web.Mvc.ControllerContext, System.Web.Mvc.ModelBindingContext)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/DefaultModelBinder.cs
+    startLine: 563
+  syntax:
+    content:
+      CSharp: protected virtual bool OnModelUpdating(ControllerContext controllerContext, ModelBindingContext bindingContext)
+    parameters:
+    - id: controllerContext
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+    - id: bindingContext
+      type:
+        id: System.Web.Mvc.ModelBindingContext
+        name: ModelBindingContext
+        href: System.Web.Mvc.ModelBindingContext.yml
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Web.Mvc.DefaultModelBinder.OnModelUpdating(System.Web.Mvc.ControllerContext,System.Web.Mvc.ModelBindingContext)
+- uid: System.Web.Mvc.DefaultModelBinder.OnPropertyValidated(System.Web.Mvc.ControllerContext,System.Web.Mvc.ModelBindingContext,System.ComponentModel.PropertyDescriptor,System.Object)
+  href: System.Web.Mvc.DefaultModelBinder.yml
+  name: OnPropertyValidated(ControllerContext, ModelBindingContext, PropertyDescriptor, object)
+  fullName: System.Web.Mvc.DefaultModelBinder.OnPropertyValidated(System.Web.Mvc.ControllerContext, System.Web.Mvc.ModelBindingContext, System.ComponentModel.PropertyDescriptor, object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/DefaultModelBinder.cs
+    startLine: 569
+  syntax:
+    content:
+      CSharp: protected virtual void OnPropertyValidated(ControllerContext controllerContext, ModelBindingContext bindingContext, PropertyDescriptor propertyDescriptor, object value)
+    parameters:
+    - id: controllerContext
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+    - id: bindingContext
+      type:
+        id: System.Web.Mvc.ModelBindingContext
+        name: ModelBindingContext
+        href: System.Web.Mvc.ModelBindingContext.yml
+    - id: propertyDescriptor
+      type:
+        id: System.ComponentModel.PropertyDescriptor
+        name: PropertyDescriptor
+        isExternal: true
+    - id: value
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+  id: System.Web.Mvc.DefaultModelBinder.OnPropertyValidated(System.Web.Mvc.ControllerContext,System.Web.Mvc.ModelBindingContext,System.ComponentModel.PropertyDescriptor,System.Object)
+- uid: System.Web.Mvc.DefaultModelBinder.OnPropertyValidating(System.Web.Mvc.ControllerContext,System.Web.Mvc.ModelBindingContext,System.ComponentModel.PropertyDescriptor,System.Object)
+  href: System.Web.Mvc.DefaultModelBinder.yml
+  name: OnPropertyValidating(ControllerContext, ModelBindingContext, PropertyDescriptor, object)
+  fullName: System.Web.Mvc.DefaultModelBinder.OnPropertyValidating(System.Web.Mvc.ControllerContext, System.Web.Mvc.ModelBindingContext, System.ComponentModel.PropertyDescriptor, object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/DefaultModelBinder.cs
+    startLine: 574
+  syntax:
+    content:
+      CSharp: protected virtual bool OnPropertyValidating(ControllerContext controllerContext, ModelBindingContext bindingContext, PropertyDescriptor propertyDescriptor, object value)
+    parameters:
+    - id: controllerContext
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+    - id: bindingContext
+      type:
+        id: System.Web.Mvc.ModelBindingContext
+        name: ModelBindingContext
+        href: System.Web.Mvc.ModelBindingContext.yml
+    - id: propertyDescriptor
+      type:
+        id: System.ComponentModel.PropertyDescriptor
+        name: PropertyDescriptor
+        isExternal: true
+    - id: value
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Web.Mvc.DefaultModelBinder.OnPropertyValidating(System.Web.Mvc.ControllerContext,System.Web.Mvc.ModelBindingContext,System.ComponentModel.PropertyDescriptor,System.Object)
+- uid: System.Web.Mvc.DefaultModelBinder.SetProperty(System.Web.Mvc.ControllerContext,System.Web.Mvc.ModelBindingContext,System.ComponentModel.PropertyDescriptor,System.Object)
+  href: System.Web.Mvc.DefaultModelBinder.yml
+  name: SetProperty(ControllerContext, ModelBindingContext, PropertyDescriptor, object)
+  fullName: System.Web.Mvc.DefaultModelBinder.SetProperty(System.Web.Mvc.ControllerContext, System.Web.Mvc.ModelBindingContext, System.ComponentModel.PropertyDescriptor, object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/DefaultModelBinder.cs
+    startLine: 580
+  syntax:
+    content:
+      CSharp: protected virtual void SetProperty(ControllerContext controllerContext, ModelBindingContext bindingContext, PropertyDescriptor propertyDescriptor, object value)
+    parameters:
+    - id: controllerContext
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+    - id: bindingContext
+      type:
+        id: System.Web.Mvc.ModelBindingContext
+        name: ModelBindingContext
+        href: System.Web.Mvc.ModelBindingContext.yml
+    - id: propertyDescriptor
+      type:
+        id: System.ComponentModel.PropertyDescriptor
+        name: PropertyDescriptor
+        isExternal: true
+    - id: value
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+  id: System.Web.Mvc.DefaultModelBinder.SetProperty(System.Web.Mvc.ControllerContext,System.Web.Mvc.ModelBindingContext,System.ComponentModel.PropertyDescriptor,System.Object)

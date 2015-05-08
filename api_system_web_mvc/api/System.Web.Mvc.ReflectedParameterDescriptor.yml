@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/ReflectedParameterDescriptor.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/ReflectedParameterDescriptor.cs
     startLine: 6
   syntax:
     content:
-      CSharp: public class ReflectedParameterDescriptor
+      CSharp: 'public class ReflectedParameterDescriptor : ParameterDescriptor, ICustomAttributeProvider'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.Mvc.ParameterDescriptor
     name: ParameterDescriptor
@@ -49,7 +50,7 @@ items:
     - id: parameterInfo
       type:
         id: System.Reflection.ParameterInfo
-        name: System.Reflection.ParameterInfo
+        name: ParameterInfo
         isExternal: true
     - id: actionDescriptor
       type:
@@ -111,7 +112,7 @@ items:
     - id: DefaultValue
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.Web.Mvc.ReflectedParameterDescriptor.DefaultValue
 - uid: System.Web.Mvc.ReflectedParameterDescriptor.ParameterInfo
@@ -125,12 +126,12 @@ items:
     startLine: 53
   syntax:
     content:
-      CSharp: public ParameterInfo ParameterInfo { get; private set; }
+      CSharp: public ParameterInfo ParameterInfo { get; }
     parameters:
     - id: ParameterInfo
       type:
         id: System.Reflection.ParameterInfo
-        name: System.Reflection.ParameterInfo
+        name: ParameterInfo
         isExternal: true
   id: System.Web.Mvc.ReflectedParameterDescriptor.ParameterInfo
 - uid: System.Web.Mvc.ReflectedParameterDescriptor.ParameterName
@@ -149,7 +150,7 @@ items:
     - id: ParameterName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.ReflectedParameterDescriptor.ParameterName
 - uid: System.Web.Mvc.ReflectedParameterDescriptor.ParameterType
@@ -168,7 +169,7 @@ items:
     - id: ParameterType
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
   id: System.Web.Mvc.ReflectedParameterDescriptor.ParameterType
 - uid: System.Web.Mvc.ReflectedParameterDescriptor.GetCustomAttributes(System.Boolean)
@@ -187,9 +188,13 @@ items:
     - id: inherit
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
-    return: {}
+    return:
+      type:
+        id: System.Array
+        name: object[]
+        isExternal: true
   id: System.Web.Mvc.ReflectedParameterDescriptor.GetCustomAttributes(System.Boolean)
 - uid: System.Web.Mvc.ReflectedParameterDescriptor.GetCustomAttributes(System.Type,System.Boolean)
   href: System.Web.Mvc.ReflectedParameterDescriptor.yml
@@ -207,14 +212,18 @@ items:
     - id: attributeType
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
     - id: inherit
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
-    return: {}
+    return:
+      type:
+        id: System.Array
+        name: object[]
+        isExternal: true
   id: System.Web.Mvc.ReflectedParameterDescriptor.GetCustomAttributes(System.Type,System.Boolean)
 - uid: System.Web.Mvc.ReflectedParameterDescriptor.IsDefined(System.Type,System.Boolean)
   href: System.Web.Mvc.ReflectedParameterDescriptor.yml
@@ -232,13 +241,17 @@ items:
     - id: attributeType
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
     - id: inherit
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Web.Mvc.ReflectedParameterDescriptor.IsDefined(System.Type,System.Boolean)

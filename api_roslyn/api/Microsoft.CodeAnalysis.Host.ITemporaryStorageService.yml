@@ -6,15 +6,16 @@ items:
   type: Interface
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Workspace/Host/TemporaryStorage/ITemporaryStorageService.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Workspace/Host/TemporaryStorage/ITemporaryStorageService.cs
     startLine: 9
   summary: This service allows you to access temporary storage.
   syntax:
     content:
-      CSharp: public interface ITemporaryStorageService
+      CSharp: 'public interface ITemporaryStorageService : IWorkspaceService'
   id: Microsoft.CodeAnalysis.Host.ITemporaryStorageService
   children:
   - Microsoft.CodeAnalysis.Host.ITemporaryStorageService.CreateTemporaryStreamStorage(System.Threading.CancellationToken)
@@ -30,15 +31,19 @@ items:
     startLine: 11
   syntax:
     content:
-      CSharp: ITemporaryStreamStorage CreateTemporaryStreamStorage(CancellationToken cancellationToken = default (CancellationToken));
+      CSharp: public ITemporaryStreamStorage CreateTemporaryStreamStorage(CancellationToken cancellationToken = null)
     parameters:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: ITemporaryStreamStorage
+      type:
+        id: Microsoft.CodeAnalysis.Host.ITemporaryStreamStorage
+        name: ITemporaryStreamStorage
+        href: Microsoft.CodeAnalysis.Host.ITemporaryStreamStorage.yml
   id: Microsoft.CodeAnalysis.Host.ITemporaryStorageService.CreateTemporaryStreamStorage(System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.Host.ITemporaryStorageService.CreateTemporaryTextStorage(System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.Host.ITemporaryStorageService.yml
@@ -51,13 +56,17 @@ items:
     startLine: 12
   syntax:
     content:
-      CSharp: ITemporaryTextStorage CreateTemporaryTextStorage(CancellationToken cancellationToken = default (CancellationToken));
+      CSharp: public ITemporaryTextStorage CreateTemporaryTextStorage(CancellationToken cancellationToken = null)
     parameters:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: ITemporaryTextStorage
+      type:
+        id: Microsoft.CodeAnalysis.Host.ITemporaryTextStorage
+        name: ITemporaryTextStorage
+        href: Microsoft.CodeAnalysis.Host.ITemporaryTextStorage.yml
   id: Microsoft.CodeAnalysis.Host.ITemporaryStorageService.CreateTemporaryTextStorage(System.Threading.CancellationToken)

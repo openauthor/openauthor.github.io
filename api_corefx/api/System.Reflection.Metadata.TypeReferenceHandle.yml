@@ -6,21 +6,28 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 634
+    startLine: 984
   syntax:
     content:
-      CSharp: public struct TypeReferenceHandle
+      CSharp: 'public struct TypeReferenceHandle : IEquatable<TypeReferenceHandle>'
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Reflection.Metadata.TypeReferenceHandle
   children:
   - System.Reflection.Metadata.TypeReferenceHandle.op_Implicit(System.Reflection.Metadata.TypeReferenceHandle)~System.Reflection.Metadata.Handle
+  - System.Reflection.Metadata.TypeReferenceHandle.op_Implicit(System.Reflection.Metadata.TypeReferenceHandle)~System.Reflection.Metadata.EntityHandle
   - System.Reflection.Metadata.TypeReferenceHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.TypeReferenceHandle
+  - System.Reflection.Metadata.TypeReferenceHandle.op_Explicit(System.Reflection.Metadata.EntityHandle)~System.Reflection.Metadata.TypeReferenceHandle
   - System.Reflection.Metadata.TypeReferenceHandle.IsNil
   - System.Reflection.Metadata.TypeReferenceHandle.op_Equality(System.Reflection.Metadata.TypeReferenceHandle,System.Reflection.Metadata.TypeReferenceHandle)
   - System.Reflection.Metadata.TypeReferenceHandle.Equals(System.Object)
@@ -31,14 +38,14 @@ items:
   href: System.Reflection.Metadata.TypeReferenceHandle.yml
   name: implicit operator Handle(TypeReferenceHandle)
   fullName: System.Reflection.Metadata.TypeReferenceHandle.implicit operator System.Reflection.Metadata.Handle(System.Reflection.Metadata.TypeReferenceHandle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 650
+    startLine: 1001
   syntax:
     content:
-      CSharp: public static implicit operator Handle(TypeReferenceHandle handle) { return new Handle(handle._rowId | tokenType); }
+      CSharp: public static implicit operator Handle(TypeReferenceHandle handle)
     parameters:
     - id: handle
       type:
@@ -47,19 +54,48 @@ items:
         href: System.Reflection.Metadata.TypeReferenceHandle.yml
     return:
       id: Handle
+      type:
+        id: System.Reflection.Metadata.Handle
+        name: Handle
+        href: System.Reflection.Metadata.Handle.yml
   id: System.Reflection.Metadata.TypeReferenceHandle.op_Implicit(System.Reflection.Metadata.TypeReferenceHandle)~System.Reflection.Metadata.Handle
+- uid: System.Reflection.Metadata.TypeReferenceHandle.op_Implicit(System.Reflection.Metadata.TypeReferenceHandle)~System.Reflection.Metadata.EntityHandle
+  href: System.Reflection.Metadata.TypeReferenceHandle.yml
+  name: implicit operator EntityHandle(TypeReferenceHandle)
+  fullName: System.Reflection.Metadata.TypeReferenceHandle.implicit operator System.Reflection.Metadata.EntityHandle(System.Reflection.Metadata.TypeReferenceHandle)
+  type: Operator
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 1006
+  syntax:
+    content:
+      CSharp: public static implicit operator EntityHandle(TypeReferenceHandle handle)
+    parameters:
+    - id: handle
+      type:
+        id: System.Reflection.Metadata.TypeReferenceHandle
+        name: TypeReferenceHandle
+        href: System.Reflection.Metadata.TypeReferenceHandle.yml
+    return:
+      id: EntityHandle
+      type:
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
+  id: System.Reflection.Metadata.TypeReferenceHandle.op_Implicit(System.Reflection.Metadata.TypeReferenceHandle)~System.Reflection.Metadata.EntityHandle
 - uid: System.Reflection.Metadata.TypeReferenceHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.TypeReferenceHandle
   href: System.Reflection.Metadata.TypeReferenceHandle.yml
   name: explicit operator TypeReferenceHandle(Handle)
   fullName: System.Reflection.Metadata.TypeReferenceHandle.explicit operator System.Reflection.Metadata.TypeReferenceHandle(System.Reflection.Metadata.Handle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 655
+    startLine: 1011
   syntax:
     content:
-      CSharp: public static explicit operator TypeReferenceHandle(Handle handle) { if (handle.TokenType != tokenType) { Handle.ThrowInvalidCast(); } return new TypeReferenceHandle(handle.RowId); }
+      CSharp: public static explicit operator TypeReferenceHandle(Handle handle)
     parameters:
     - id: handle
       type:
@@ -68,7 +104,36 @@ items:
         href: System.Reflection.Metadata.Handle.yml
     return:
       id: TypeReferenceHandle
+      type:
+        id: System.Reflection.Metadata.TypeReferenceHandle
+        name: TypeReferenceHandle
+        href: System.Reflection.Metadata.TypeReferenceHandle.yml
   id: System.Reflection.Metadata.TypeReferenceHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.TypeReferenceHandle
+- uid: System.Reflection.Metadata.TypeReferenceHandle.op_Explicit(System.Reflection.Metadata.EntityHandle)~System.Reflection.Metadata.TypeReferenceHandle
+  href: System.Reflection.Metadata.TypeReferenceHandle.yml
+  name: explicit operator TypeReferenceHandle(EntityHandle)
+  fullName: System.Reflection.Metadata.TypeReferenceHandle.explicit operator System.Reflection.Metadata.TypeReferenceHandle(System.Reflection.Metadata.EntityHandle)
+  type: Operator
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 1021
+  syntax:
+    content:
+      CSharp: public static explicit operator TypeReferenceHandle(EntityHandle handle)
+    parameters:
+    - id: handle
+      type:
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
+    return:
+      id: TypeReferenceHandle
+      type:
+        id: System.Reflection.Metadata.TypeReferenceHandle
+        name: TypeReferenceHandle
+        href: System.Reflection.Metadata.TypeReferenceHandle.yml
+  id: System.Reflection.Metadata.TypeReferenceHandle.op_Explicit(System.Reflection.Metadata.EntityHandle)~System.Reflection.Metadata.TypeReferenceHandle
 - uid: System.Reflection.Metadata.TypeReferenceHandle.IsNil
   href: System.Reflection.Metadata.TypeReferenceHandle.yml
   name: IsNil
@@ -77,7 +142,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 665
+    startLine: 1031
   syntax:
     content:
       CSharp: public bool IsNil { get; }
@@ -85,21 +150,21 @@ items:
     - id: IsNil
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Reflection.Metadata.TypeReferenceHandle.IsNil
 - uid: System.Reflection.Metadata.TypeReferenceHandle.op_Equality(System.Reflection.Metadata.TypeReferenceHandle,System.Reflection.Metadata.TypeReferenceHandle)
   href: System.Reflection.Metadata.TypeReferenceHandle.yml
   name: operator ==(TypeReferenceHandle, TypeReferenceHandle)
   fullName: System.Reflection.Metadata.TypeReferenceHandle.operator ==(System.Reflection.Metadata.TypeReferenceHandle, System.Reflection.Metadata.TypeReferenceHandle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 675
+    startLine: 1041
   syntax:
     content:
-      CSharp: public static bool operator ==(TypeReferenceHandle left, TypeReferenceHandle right) { return left._rowId == right._rowId; }
+      CSharp: public static bool operator ==(TypeReferenceHandle left, TypeReferenceHandle right)
     parameters:
     - id: left
       type:
@@ -113,6 +178,10 @@ items:
         href: System.Reflection.Metadata.TypeReferenceHandle.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.TypeReferenceHandle.op_Equality(System.Reflection.Metadata.TypeReferenceHandle,System.Reflection.Metadata.TypeReferenceHandle)
 - uid: System.Reflection.Metadata.TypeReferenceHandle.Equals(System.Object)
   href: System.Reflection.Metadata.TypeReferenceHandle.yml
@@ -122,7 +191,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 680
+    startLine: 1046
   syntax:
     content:
       CSharp: public override bool Equals(object obj)
@@ -130,10 +199,14 @@ items:
     - id: obj
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.TypeReferenceHandle.Equals(System.Object)
 - uid: System.Reflection.Metadata.TypeReferenceHandle.Equals(System.Reflection.Metadata.TypeReferenceHandle)
   href: System.Reflection.Metadata.TypeReferenceHandle.yml
@@ -143,7 +216,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 685
+    startLine: 1051
   syntax:
     content:
       CSharp: public bool Equals(TypeReferenceHandle other)
@@ -155,6 +228,10 @@ items:
         href: System.Reflection.Metadata.TypeReferenceHandle.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.TypeReferenceHandle.Equals(System.Reflection.Metadata.TypeReferenceHandle)
 - uid: System.Reflection.Metadata.TypeReferenceHandle.GetHashCode
   href: System.Reflection.Metadata.TypeReferenceHandle.yml
@@ -164,26 +241,30 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 690
+    startLine: 1056
   syntax:
     content:
       CSharp: public override int GetHashCode()
     parameters: []
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: System.Reflection.Metadata.TypeReferenceHandle.GetHashCode
 - uid: System.Reflection.Metadata.TypeReferenceHandle.op_Inequality(System.Reflection.Metadata.TypeReferenceHandle,System.Reflection.Metadata.TypeReferenceHandle)
   href: System.Reflection.Metadata.TypeReferenceHandle.yml
   name: operator !=(TypeReferenceHandle, TypeReferenceHandle)
   fullName: System.Reflection.Metadata.TypeReferenceHandle.operator !=(System.Reflection.Metadata.TypeReferenceHandle, System.Reflection.Metadata.TypeReferenceHandle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 695
+    startLine: 1061
   syntax:
     content:
-      CSharp: public static bool operator !=(TypeReferenceHandle left, TypeReferenceHandle right) { return left._rowId != right._rowId; }
+      CSharp: public static bool operator !=(TypeReferenceHandle left, TypeReferenceHandle right)
     parameters:
     - id: left
       type:
@@ -197,4 +278,8 @@ items:
         href: System.Reflection.Metadata.TypeReferenceHandle.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.TypeReferenceHandle.op_Inequality(System.Reflection.Metadata.TypeReferenceHandle,System.Reflection.Metadata.TypeReferenceHandle)

@@ -6,9 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Workspace/Host/HostLanguageServices.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Workspace/Host/HostLanguageServices.cs
     startLine: 9
   summary: Per language services provided by the host environment.
@@ -17,7 +18,7 @@ items:
       CSharp: public abstract class HostLanguageServices
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.Host.HostLanguageServices
   children:
@@ -63,7 +64,7 @@ items:
     - id: Language
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: Microsoft.CodeAnalysis.Host.HostLanguageServices.Language
 - uid: Microsoft.CodeAnalysis.Host.HostLanguageServices.GetService``1
@@ -81,10 +82,14 @@ items:
     If the host does not provide the service, this method returns null.
   syntax:
     content:
-      CSharp: 'public abstract TLanguageService GetService<TLanguageService>()where TLanguageService : ILanguageService;'
+      CSharp: 'public abstract TLanguageService GetService<TLanguageService>()where TLanguageService : ILanguageService'
     parameters: []
     return:
       id: TLanguageService
+      type:
+        id: TLanguageService
+        name: TLanguageService
+        href: TLanguageService
   id: Microsoft.CodeAnalysis.Host.HostLanguageServices.GetService``1
 - uid: Microsoft.CodeAnalysis.Host.HostLanguageServices.GetRequiredService``1
   href: Microsoft.CodeAnalysis.Host.HostLanguageServices.yml
@@ -98,13 +103,17 @@ items:
   summary: >-
     Gets a language specific service provided by the host identified by the service type.
 
-    If the host does not provide the service, this method returns throws [System.InvalidOperationException](#).
+    If the host does not provide the service, this method returns throws [System.InvalidOperationException]().
   syntax:
     content:
       CSharp: 'public TLanguageService GetRequiredService<TLanguageService>()where TLanguageService : ILanguageService'
     parameters: []
     return:
       id: TLanguageService
+      type:
+        id: TLanguageService
+        name: TLanguageService
+        href: TLanguageService
   id: Microsoft.CodeAnalysis.Host.HostLanguageServices.GetRequiredService``1
 - uid: Microsoft.CodeAnalysis.Host.HostLanguageServices.CompilationFactory
   href: Microsoft.CodeAnalysis.Host.HostLanguageServices.yml

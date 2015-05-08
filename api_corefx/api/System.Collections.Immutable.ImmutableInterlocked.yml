@@ -6,17 +6,19 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableInterlocked.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableInterlocked.cs
     startLine: 12
   summary: Contains interlocked exchange mechanisms for immutable collections.
   syntax:
     content:
-      CSharp: public static class ImmutableInterlocked
+      CSharp: public class ImmutableInterlocked
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Collections.Immutable.ImmutableInterlocked
   children:
@@ -65,7 +67,7 @@ items:
     - id: transformer
       type:
         id: System.Func{``0,``0}
-        name: System.Func{``0,``0}
+        name: Func<T, T>
         isExternal: true
       description: >-
         A function that mutates the value. This function should be side-effect free,
@@ -73,6 +75,10 @@ items:
         as it may run multiple times when races occur with other threads.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: >-
         true if the location's value is changed by applying the result of the
 
@@ -110,7 +116,7 @@ items:
     - id: transformer
       type:
         id: System.Func{``0,``1,``0}
-        name: System.Func{``0,``1,``0}
+        name: Func<T, TArg, T>
         isExternal: true
       description: >-
         A function that mutates the value. This function should be side-effect free,
@@ -124,6 +130,10 @@ items:
       description: The argument to pass to .
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: >-
         true if the location's value is changed by applying the result of the
 
@@ -150,17 +160,21 @@ items:
     - id: location
       type:
         id: System.Collections.Immutable.ImmutableArray{``0}
-        name: ImmutableArray
+        name: ImmutableArray<T>
         href: System.Collections.Immutable.ImmutableArray{``0}
       description: The field or local variable to change.
     - id: value
       type:
         id: System.Collections.Immutable.ImmutableArray{``0}
-        name: ImmutableArray
+        name: ImmutableArray<T>
         href: System.Collections.Immutable.ImmutableArray{``0}
       description: The new value to assign.
     return:
       id: ImmutableArray
+      type:
+        id: System.Collections.Immutable.ImmutableArray{``0}
+        name: ImmutableArray<T>
+        href: System.Collections.Immutable.ImmutableArray{``0}
       description: The prior value at the specified .
   id: System.Collections.Immutable.ImmutableInterlocked.InterlockedExchange``1(System.Collections.Immutable.ImmutableArray{``0}@,System.Collections.Immutable.ImmutableArray{``0})
 - uid: System.Collections.Immutable.ImmutableInterlocked.InterlockedCompareExchange``1(System.Collections.Immutable.ImmutableArray{``0}@,System.Collections.Immutable.ImmutableArray{``0},System.Collections.Immutable.ImmutableArray{``0})
@@ -183,23 +197,27 @@ items:
     - id: location
       type:
         id: System.Collections.Immutable.ImmutableArray{``0}
-        name: ImmutableArray
+        name: ImmutableArray<T>
         href: System.Collections.Immutable.ImmutableArray{``0}
       description: The field or local variable to change.
     - id: value
       type:
         id: System.Collections.Immutable.ImmutableArray{``0}
-        name: ImmutableArray
+        name: ImmutableArray<T>
         href: System.Collections.Immutable.ImmutableArray{``0}
       description: The new value to assign.
     - id: comparand
       type:
         id: System.Collections.Immutable.ImmutableArray{``0}
-        name: ImmutableArray
+        name: ImmutableArray<T>
         href: System.Collections.Immutable.ImmutableArray{``0}
       description: The value to check equality for before assigning.
     return:
       id: ImmutableArray
+      type:
+        id: System.Collections.Immutable.ImmutableArray{``0}
+        name: ImmutableArray<T>
+        href: System.Collections.Immutable.ImmutableArray{``0}
       description: The prior value at the specified .
   id: System.Collections.Immutable.ImmutableInterlocked.InterlockedCompareExchange``1(System.Collections.Immutable.ImmutableArray{``0}@,System.Collections.Immutable.ImmutableArray{``0},System.Collections.Immutable.ImmutableArray{``0})
 - uid: System.Collections.Immutable.ImmutableInterlocked.InterlockedInitialize``1(System.Collections.Immutable.ImmutableArray{``0}@,System.Collections.Immutable.ImmutableArray{``0})
@@ -222,17 +240,21 @@ items:
     - id: location
       type:
         id: System.Collections.Immutable.ImmutableArray{``0}
-        name: ImmutableArray
+        name: ImmutableArray<T>
         href: System.Collections.Immutable.ImmutableArray{``0}
       description: The field or local variable to change.
     - id: value
       type:
         id: System.Collections.Immutable.ImmutableArray{``0}
-        name: ImmutableArray
+        name: ImmutableArray<T>
         href: System.Collections.Immutable.ImmutableArray{``0}
       description: The new value to assign.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: True if the field was assigned the specified value; false if it was previously initialized.
   id: System.Collections.Immutable.ImmutableInterlocked.InterlockedInitialize``1(System.Collections.Immutable.ImmutableArray{``0}@,System.Collections.Immutable.ImmutableArray{``0})
 - uid: System.Collections.Immutable.ImmutableInterlocked.GetOrAdd``3(System.Collections.Immutable.ImmutableDictionary{``0,``1}@,``0,System.Func{``0,``2,``1},``2)
@@ -252,7 +274,7 @@ items:
     - id: location
       type:
         id: System.Collections.Immutable.ImmutableDictionary{``0,``1}
-        name: ImmutableDictionary
+        name: ImmutableDictionary<TKey, TValue>
         href: System.Collections.Immutable.ImmutableDictionary{``0,``1}
       description: The variable or field to atomically update if the specified  is not in the dictionary.
     - id: key
@@ -264,7 +286,7 @@ items:
     - id: valueFactory
       type:
         id: System.Func{``0,``2,``1}
-        name: System.Func{``0,``2,``1}
+        name: Func<TKey, TArg, TValue>
         isExternal: true
       description: The function to execute to obtain the value to insert into the dictionary if the key is not found.
     - id: factoryArgument
@@ -275,6 +297,10 @@ items:
       description: The argument to pass to the value factory.
     return:
       id: TValue
+      type:
+        id: TValue
+        name: TValue
+        href: TValue
       description: The value obtained from the dictionary or  if it was not present.
   id: System.Collections.Immutable.ImmutableInterlocked.GetOrAdd``3(System.Collections.Immutable.ImmutableDictionary{``0,``1}@,``0,System.Func{``0,``2,``1},``2)
 - uid: System.Collections.Immutable.ImmutableInterlocked.GetOrAdd``2(System.Collections.Immutable.ImmutableDictionary{``0,``1}@,``0,System.Func{``0,``1})
@@ -294,7 +320,7 @@ items:
     - id: location
       type:
         id: System.Collections.Immutable.ImmutableDictionary{``0,``1}
-        name: ImmutableDictionary
+        name: ImmutableDictionary<TKey, TValue>
         href: System.Collections.Immutable.ImmutableDictionary{``0,``1}
       description: The variable or field to atomically update if the specified  is not in the dictionary.
     - id: key
@@ -306,7 +332,7 @@ items:
     - id: valueFactory
       type:
         id: System.Func{``0,``1}
-        name: System.Func{``0,``1}
+        name: Func<TKey, TValue>
         isExternal: true
       description: >-
         The function to execute to obtain the value to insert into the dictionary if the key is not found.
@@ -314,6 +340,10 @@ items:
         This delegate will not be invoked more than once.
     return:
       id: TValue
+      type:
+        id: TValue
+        name: TValue
+        href: TValue
       description: The value obtained from the dictionary or  if it was not present.
   id: System.Collections.Immutable.ImmutableInterlocked.GetOrAdd``2(System.Collections.Immutable.ImmutableDictionary{``0,``1}@,``0,System.Func{``0,``1})
 - uid: System.Collections.Immutable.ImmutableInterlocked.GetOrAdd``2(System.Collections.Immutable.ImmutableDictionary{``0,``1}@,``0,``1)
@@ -333,7 +363,7 @@ items:
     - id: location
       type:
         id: System.Collections.Immutable.ImmutableDictionary{``0,``1}
-        name: ImmutableDictionary
+        name: ImmutableDictionary<TKey, TValue>
         href: System.Collections.Immutable.ImmutableDictionary{``0,``1}
       description: The variable or field to atomically update if the specified  is not in the dictionary.
     - id: key
@@ -350,6 +380,10 @@ items:
       description: The value to add to the dictionary if one is not already present.
     return:
       id: TValue
+      type:
+        id: TValue
+        name: TValue
+        href: TValue
       description: The value obtained from the dictionary or  if it was not present.
   id: System.Collections.Immutable.ImmutableInterlocked.GetOrAdd``2(System.Collections.Immutable.ImmutableDictionary{``0,``1}@,``0,``1)
 - uid: System.Collections.Immutable.ImmutableInterlocked.AddOrUpdate``2(System.Collections.Immutable.ImmutableDictionary{``0,``1}@,``0,System.Func{``0,``1},System.Func{``0,``1,``1})
@@ -369,7 +403,7 @@ items:
     - id: location
       type:
         id: System.Collections.Immutable.ImmutableDictionary{``0,``1}
-        name: ImmutableDictionary
+        name: ImmutableDictionary<TKey, TValue>
         href: System.Collections.Immutable.ImmutableDictionary{``0,``1}
       description: The variable or field to atomically update if the specified  is not in the dictionary.
     - id: key
@@ -381,17 +415,21 @@ items:
     - id: addValueFactory
       type:
         id: System.Func{``0,``1}
-        name: System.Func{``0,``1}
+        name: Func<TKey, TValue>
         isExternal: true
       description: The function that receives the key and returns a new value to add to the dictionary when no value previously exists.
     - id: updateValueFactory
       type:
         id: System.Func{``0,``1,``1}
-        name: System.Func{``0,``1,``1}
+        name: Func<TKey, TValue, TValue>
         isExternal: true
       description: The function that receives the key and prior value and returns the new value with which to update the dictionary.
     return:
       id: TValue
+      type:
+        id: TValue
+        name: TValue
+        href: TValue
       description: The added or updated value.
   id: System.Collections.Immutable.ImmutableInterlocked.AddOrUpdate``2(System.Collections.Immutable.ImmutableDictionary{``0,``1}@,``0,System.Func{``0,``1},System.Func{``0,``1,``1})
 - uid: System.Collections.Immutable.ImmutableInterlocked.AddOrUpdate``2(System.Collections.Immutable.ImmutableDictionary{``0,``1}@,``0,``1,System.Func{``0,``1,``1})
@@ -411,7 +449,7 @@ items:
     - id: location
       type:
         id: System.Collections.Immutable.ImmutableDictionary{``0,``1}
-        name: ImmutableDictionary
+        name: ImmutableDictionary<TKey, TValue>
         href: System.Collections.Immutable.ImmutableDictionary{``0,``1}
       description: The variable or field to atomically update if the specified  is not in the dictionary.
     - id: key
@@ -429,11 +467,15 @@ items:
     - id: updateValueFactory
       type:
         id: System.Func{``0,``1,``1}
-        name: System.Func{``0,``1,``1}
+        name: Func<TKey, TValue, TValue>
         isExternal: true
       description: The function that receives the key and prior value and returns the new value with which to update the dictionary.
     return:
       id: TValue
+      type:
+        id: TValue
+        name: TValue
+        href: TValue
       description: The added or updated value.
   id: System.Collections.Immutable.ImmutableInterlocked.AddOrUpdate``2(System.Collections.Immutable.ImmutableDictionary{``0,``1}@,``0,``1,System.Func{``0,``1,``1})
 - uid: System.Collections.Immutable.ImmutableInterlocked.TryAdd``2(System.Collections.Immutable.ImmutableDictionary{``0,``1}@,``0,``1)
@@ -453,7 +495,7 @@ items:
     - id: location
       type:
         id: System.Collections.Immutable.ImmutableDictionary{``0,``1}
-        name: ImmutableDictionary
+        name: ImmutableDictionary<TKey, TValue>
         href: System.Collections.Immutable.ImmutableDictionary{``0,``1}
       description: The variable or field to atomically update if the specified  is not in the dictionary.
     - id: key
@@ -470,6 +512,10 @@ items:
       description: The value to add.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: true if the key was not previously set in the dictionary and the value was set; false otherwise.
   id: System.Collections.Immutable.ImmutableInterlocked.TryAdd``2(System.Collections.Immutable.ImmutableDictionary{``0,``1}@,``0,``1)
 - uid: System.Collections.Immutable.ImmutableInterlocked.TryUpdate``2(System.Collections.Immutable.ImmutableDictionary{``0,``1}@,``0,``1,``1)
@@ -489,7 +535,7 @@ items:
     - id: location
       type:
         id: System.Collections.Immutable.ImmutableDictionary{``0,``1}
-        name: ImmutableDictionary
+        name: ImmutableDictionary<TKey, TValue>
         href: System.Collections.Immutable.ImmutableDictionary{``0,``1}
       description: The variable or field to atomically update if the specified  is not in the dictionary.
     - id: key
@@ -512,6 +558,10 @@ items:
       description: The value that must already be set in the dictionary in order for the update to succeed.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: true if the key and comparison value were present in the dictionary and the update was made; false otherwise.
   id: System.Collections.Immutable.ImmutableInterlocked.TryUpdate``2(System.Collections.Immutable.ImmutableDictionary{``0,``1}@,``0,``1,``1)
 - uid: System.Collections.Immutable.ImmutableInterlocked.TryRemove``2(System.Collections.Immutable.ImmutableDictionary{``0,``1}@,``0,``1@)
@@ -531,7 +581,7 @@ items:
     - id: location
       type:
         id: System.Collections.Immutable.ImmutableDictionary{``0,``1}
-        name: ImmutableDictionary
+        name: ImmutableDictionary<TKey, TValue>
         href: System.Collections.Immutable.ImmutableDictionary{``0,``1}
       description: The variable or field to atomically update if the specified  is not in the dictionary.
     - id: key
@@ -548,6 +598,10 @@ items:
       description: Receives the value from the pre-existing entry, if one exists.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: true if the key was found and removed; false otherwise.
   id: System.Collections.Immutable.ImmutableInterlocked.TryRemove``2(System.Collections.Immutable.ImmutableDictionary{``0,``1}@,``0,``1@)
 - uid: System.Collections.Immutable.ImmutableInterlocked.TryPop``1(System.Collections.Immutable.ImmutableStack{``0}@,``0@)
@@ -567,7 +621,7 @@ items:
     - id: location
       type:
         id: System.Collections.Immutable.ImmutableStack{``0}
-        name: ImmutableStack
+        name: ImmutableStack<T>
         href: System.Collections.Immutable.ImmutableStack{``0}
       description: The variable or field to atomically update.
     - id: value
@@ -578,6 +632,10 @@ items:
       description: The value popped from the stack, if it was non-empty.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: true if an element was removed from the stack; false otherwise.
   id: System.Collections.Immutable.ImmutableInterlocked.TryPop``1(System.Collections.Immutable.ImmutableStack{``0}@,``0@)
 - uid: System.Collections.Immutable.ImmutableInterlocked.Push``1(System.Collections.Immutable.ImmutableStack{``0}@,``0)
@@ -597,7 +655,7 @@ items:
     - id: location
       type:
         id: System.Collections.Immutable.ImmutableStack{``0}
-        name: ImmutableStack
+        name: ImmutableStack<T>
         href: System.Collections.Immutable.ImmutableStack{``0}
       description: The variable or field to atomically update.
     - id: value
@@ -624,7 +682,7 @@ items:
     - id: location
       type:
         id: System.Collections.Immutable.ImmutableQueue{``0}
-        name: ImmutableQueue
+        name: ImmutableQueue<T>
         href: System.Collections.Immutable.ImmutableQueue{``0}
       description: The variable or field to atomically update.
     - id: value
@@ -635,6 +693,10 @@ items:
       description: Receives the value from the head of the queue, if the queue is non-empty.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: true if the queue was not empty and the head element was removed; false otherwise.
   id: System.Collections.Immutable.ImmutableInterlocked.TryDequeue``1(System.Collections.Immutable.ImmutableQueue{``0}@,``0@)
 - uid: System.Collections.Immutable.ImmutableInterlocked.Enqueue``1(System.Collections.Immutable.ImmutableQueue{``0}@,``0)
@@ -654,7 +716,7 @@ items:
     - id: location
       type:
         id: System.Collections.Immutable.ImmutableQueue{``0}
-        name: ImmutableQueue
+        name: ImmutableQueue<T>
         href: System.Collections.Immutable.ImmutableQueue{``0}
       description: The variable or field to atomically update.
     - id: value

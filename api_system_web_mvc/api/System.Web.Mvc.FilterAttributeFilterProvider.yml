@@ -6,22 +6,25 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/FilterAttributeFilterProvider.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/FilterAttributeFilterProvider.cs
     startLine: 7
   syntax:
     content:
-      CSharp: public class FilterAttributeFilterProvider
+      CSharp: 'public class FilterAttributeFilterProvider : IFilterProvider'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.FilterAttributeFilterProvider
   children:
   - System.Web.Mvc.FilterAttributeFilterProvider.#ctor
   - System.Web.Mvc.FilterAttributeFilterProvider.#ctor(System.Boolean)
+  - System.Web.Mvc.FilterAttributeFilterProvider.GetActionAttributes(System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionDescriptor)
+  - System.Web.Mvc.FilterAttributeFilterProvider.GetControllerAttributes(System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionDescriptor)
   - System.Web.Mvc.FilterAttributeFilterProvider.GetFilters(System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionDescriptor)
 - uid: System.Web.Mvc.FilterAttributeFilterProvider.#ctor
   href: System.Web.Mvc.FilterAttributeFilterProvider.yml
@@ -53,9 +56,69 @@ items:
     - id: cacheAttributeInstances
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.FilterAttributeFilterProvider.#ctor(System.Boolean)
+- uid: System.Web.Mvc.FilterAttributeFilterProvider.GetActionAttributes(System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionDescriptor)
+  href: System.Web.Mvc.FilterAttributeFilterProvider.yml
+  name: GetActionAttributes(ControllerContext, ActionDescriptor)
+  fullName: System.Web.Mvc.FilterAttributeFilterProvider.GetActionAttributes(System.Web.Mvc.ControllerContext, System.Web.Mvc.ActionDescriptor)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/FilterAttributeFilterProvider.cs
+    startLine: 21
+  syntax:
+    content:
+      CSharp: protected virtual IEnumerable<FilterAttribute> GetActionAttributes(ControllerContext controllerContext, ActionDescriptor actionDescriptor)
+    parameters:
+    - id: controllerContext
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+    - id: actionDescriptor
+      type:
+        id: System.Web.Mvc.ActionDescriptor
+        name: ActionDescriptor
+        href: System.Web.Mvc.ActionDescriptor.yml
+    return:
+      id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Web.Mvc.FilterAttribute}
+        name: IEnumerable<FilterAttribute>
+        isExternal: true
+  id: System.Web.Mvc.FilterAttributeFilterProvider.GetActionAttributes(System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionDescriptor)
+- uid: System.Web.Mvc.FilterAttributeFilterProvider.GetControllerAttributes(System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionDescriptor)
+  href: System.Web.Mvc.FilterAttributeFilterProvider.yml
+  name: GetControllerAttributes(ControllerContext, ActionDescriptor)
+  fullName: System.Web.Mvc.FilterAttributeFilterProvider.GetControllerAttributes(System.Web.Mvc.ControllerContext, System.Web.Mvc.ActionDescriptor)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/FilterAttributeFilterProvider.cs
+    startLine: 26
+  syntax:
+    content:
+      CSharp: protected virtual IEnumerable<FilterAttribute> GetControllerAttributes(ControllerContext controllerContext, ActionDescriptor actionDescriptor)
+    parameters:
+    - id: controllerContext
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+    - id: actionDescriptor
+      type:
+        id: System.Web.Mvc.ActionDescriptor
+        name: ActionDescriptor
+        href: System.Web.Mvc.ActionDescriptor.yml
+    return:
+      id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Web.Mvc.FilterAttribute}
+        name: IEnumerable<FilterAttribute>
+        isExternal: true
+  id: System.Web.Mvc.FilterAttributeFilterProvider.GetControllerAttributes(System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionDescriptor)
 - uid: System.Web.Mvc.FilterAttributeFilterProvider.GetFilters(System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionDescriptor)
   href: System.Web.Mvc.FilterAttributeFilterProvider.yml
   name: GetFilters(ControllerContext, ActionDescriptor)
@@ -81,4 +144,8 @@ items:
         href: System.Web.Mvc.ActionDescriptor.yml
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Web.Mvc.Filter}
+        name: IEnumerable<Filter>
+        isExternal: true
   id: System.Web.Mvc.FilterAttributeFilterProvider.GetFilters(System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionDescriptor)

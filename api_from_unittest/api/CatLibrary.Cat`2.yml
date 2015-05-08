@@ -6,18 +6,19 @@ items:
   type: Class
   source:
     remote: &o0
-      branch: develop
-      repo: https://capservice.visualstudio.com/DefaultCollection/CAPS/_git/DocAsCode
-      description: f06ffe28
-    path: TestResults/Deploy_lianwei 2015-04-23 20_41_49/Out/Assets/TestClass1/CatLibrary/Class1.cs
-    startLine: 112
+      path: Class1.cs
+      branch: master
+      repo: https://github.com/vicancy/CatLibrary.git
+      key: 42596848
+    path: Class1.cs
+    startLine: 122
   summary: 'Here''s main class of this Demo.You can see mostly type of article within this class and you for more detail, please see the remarks.this class is a template class. It has two Generic parameter. they are:  and .The extension method of this class can refer to  class'
   syntax:
     content:
-      CSharp: 'public class Cat<T, K> where T : class, new ()where K : struct'
+      CSharp: 'public class Cat<T, K> : ICat, IAnimal where T : class, new ()where K : struct'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: CatLibrary.Cat`2
   children:
@@ -32,9 +33,15 @@ items:
   - CatLibrary.Cat`2.op_Subtraction(CatLibrary.Cat{`0,`1},System.Int32)
   - CatLibrary.Cat`2.op_Explicit(CatLibrary.Cat{`0,`1})~CatLibrary.Tom
   - CatLibrary.Cat`2.Item(System.String)
+  - CatLibrary.Cat`2.Age
   - CatLibrary.Cat`2.ownEat
   - CatLibrary.Cat`2.isHealthy
+  - CatLibrary.Cat`2.CatLibrary#IAnimal#Eat
+  - CatLibrary.Cat`2.CatLibrary#IAnimal#Eat``1(``0)
+  - CatLibrary.Cat`2.CatLibrary#IAnimal#Eat(System.String)
   - CatLibrary.Cat`2.Name
+  - CatLibrary.Cat`2.CatLibrary#IAnimal#Item(System.Int32)
+  - CatLibrary.Cat`2.CatLibrary#ICat#eat
 - uid: CatLibrary.Cat`2.#ctor
   href: CatLibrary.Cat`2.yml
   name: Cat()
@@ -42,8 +49,8 @@ items:
   type: Constructor
   source:
     remote: *o0
-    path: TestResults/Deploy_lianwei 2015-04-23 20_41_49/Out/Assets/TestClass1/CatLibrary/Class1.cs
-    startLine: 121
+    path: Class1.cs
+    startLine: 131
   summary: Default constructor.
   syntax:
     content:
@@ -57,8 +64,8 @@ items:
   type: Constructor
   source:
     remote: *o0
-    path: TestResults/Deploy_lianwei 2015-04-23 20_41_49/Out/Assets/TestClass1/CatLibrary/Class1.cs
-    startLine: 127
+    path: Class1.cs
+    startLine: 137
   summary: Constructor with one generic parameter.
   syntax:
     content:
@@ -78,8 +85,8 @@ items:
   type: Constructor
   source:
     remote: *o0
-    path: TestResults/Deploy_lianwei 2015-04-23 20_41_49/Out/Assets/TestClass1/CatLibrary/Class1.cs
-    startLine: 136
+    path: Class1.cs
+    startLine: 146
   summary: It's a complex constructor. The parameter will have some attributes.
   syntax:
     content:
@@ -88,25 +95,25 @@ items:
     - id: nickName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: it's string type.
     - id: age
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: It's an out and ref parameter.
     - id: realName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: It's an out paramter.
     - id: isHealthy
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
       description: It's an in parameter.
   id: CatLibrary.Cat`2.#ctor(System.String,System.Int32@,System.String,System.Boolean)
@@ -117,8 +124,8 @@ items:
   type: Method
   source:
     remote: *o0
-    path: TestResults/Deploy_lianwei 2015-04-23 20_41_49/Out/Assets/TestClass1/CatLibrary/Class1.cs
-    startLine: 144
+    path: Class1.cs
+    startLine: 154
   summary: It's a method with complex return type.
   syntax:
     content:
@@ -127,11 +134,15 @@ items:
     - id: date
       type:
         id: System.DateTime
-        name: System.DateTime
+        name: DateTime
         isExternal: true
       description: Date time to now.
     return:
       id: Dictionary
+      type:
+        id: System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.Int32}}
+        name: Dictionary<string, List<int>>
+        isExternal: true
       description: It's a relationship map of different kind food.
   id: CatLibrary.Cat`2.CalculateFood(System.DateTime)
 - uid: CatLibrary.Cat`2.Jump(`0,`1,System.Boolean@)
@@ -141,12 +152,12 @@ items:
   type: Method
   source:
     remote: *o0
-    path: TestResults/Deploy_lianwei 2015-04-23 20_41_49/Out/Assets/TestClass1/CatLibrary/Class1.cs
-    startLine: 152
+    path: Class1.cs
+    startLine: 162
   summary: This method have attribute above it.
   syntax:
     content:
-      CSharp: '[Conditional("Debug")] public void Jump(T ownType, K anotherOwnType, ref bool cheat)'
+      CSharp: public void Jump(T ownType, K anotherOwnType, ref bool cheat)
     parameters:
     - id: ownType
       type:
@@ -163,7 +174,7 @@ items:
     - id: cheat
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
       description: Hint whether this cat has cheat mode.
   id: CatLibrary.Cat`2.Jump(`0,`1,System.Boolean@)
@@ -174,8 +185,8 @@ items:
   type: Method
   source:
     remote: *o0
-    path: TestResults/Deploy_lianwei 2015-04-23 20_41_49/Out/Assets/TestClass1/CatLibrary/Class1.cs
-    startLine: 163
+    path: Class1.cs
+    startLine: 173
   summary: Override the method of Object.Equals(object obj).
   syntax:
     content:
@@ -184,11 +195,15 @@ items:
     - id: obj
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: Can pass any class type.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: The return value tell you whehter the compare operation is successful.
   id: CatLibrary.Cat`2.Equals(System.Object)
 - uid: CatLibrary.Cat`2.GetTailLength(System.Int32*,System.Object[])
@@ -198,83 +213,96 @@ items:
   type: Method
   source:
     remote: *o0
-    path: TestResults/Deploy_lianwei 2015-04-23 20_41_49/Out/Assets/TestClass1/CatLibrary/Class1.cs
-    startLine: 171
+    path: Class1.cs
+    startLine: 181
   summary: It's an unsafe method.
   syntax:
     content:
-      CSharp: public unsafe long GetTailLength(int *catName, params object[] parameters)
+      CSharp: public long GetTailLength(int *catName, params object[] parameters)
     parameters:
     - id: catName
       type:
+        name: int*
         isExternal: true
       description: Thie represent for cat name length.
     - id: parameters
       type:
         id: System.Array
-        name: System.Array
+        name: object[]
         isExternal: true
       description: Optional parameters.
     return:
       id: Int64
+      type:
+        id: System.Int64
+        name: long
+        isExternal: true
       description: Return cat tail's length.
   id: CatLibrary.Cat`2.GetTailLength(System.Int32*,System.Object[])
 - uid: CatLibrary.Cat`2.op_Addition(CatLibrary.Cat{`0,`1},System.Int32)
   href: CatLibrary.Cat`2.yml
   name: operator +(Cat<T, K>, int)
   fullName: CatLibrary.Cat<T, K>.operator +(CatLibrary.Cat<T, K>, int)
-  type: Method
+  type: Operator
   source:
     remote: *o0
-    path: TestResults/Deploy_lianwei 2015-04-23 20_41_49/Out/Assets/TestClass1/CatLibrary/Class1.cs
-    startLine: 180
+    path: Class1.cs
+    startLine: 190
   summary: Addition operator of this class.
   syntax:
     content:
-      CSharp: public static int operator +(Cat<T, K> lsr, int rsr) { return 1; }
+      CSharp: public static int operator +(Cat<T, K> lsr, int rsr)
     parameters:
     - id: lsr
       type:
         id: CatLibrary.Cat`2
-        name: Cat
+        name: Cat<T, K>
         href: CatLibrary.Cat`2.yml
       description: '...'
     - id: rsr
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: ~~~
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: Result with int type.
   id: CatLibrary.Cat`2.op_Addition(CatLibrary.Cat{`0,`1},System.Int32)
 - uid: CatLibrary.Cat`2.op_Subtraction(CatLibrary.Cat{`0,`1},System.Int32)
   href: CatLibrary.Cat`2.yml
   name: operator -(Cat<T, K>, int)
   fullName: CatLibrary.Cat<T, K>.operator -(CatLibrary.Cat<T, K>, int)
-  type: Method
+  type: Operator
   source:
     remote: *o0
-    path: TestResults/Deploy_lianwei 2015-04-23 20_41_49/Out/Assets/TestClass1/CatLibrary/Class1.cs
-    startLine: 185
+    path: Class1.cs
+    startLine: 195
   summary: Similar with operaotr +, refer to that topic.
   syntax:
     content:
-      CSharp: public static int operator -(Cat<T, K> lsr, int rsr) { return 1; }
+      CSharp: public static int operator -(Cat<T, K> lsr, int rsr)
     parameters:
     - id: lsr
       type:
         id: CatLibrary.Cat`2
-        name: Cat
+        name: Cat<T, K>
         href: CatLibrary.Cat`2.yml
     - id: rsr
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: CatLibrary.Cat`2.op_Subtraction(CatLibrary.Cat{`0,`1},System.Int32)
 - uid: CatLibrary.Cat`2.op_Explicit(CatLibrary.Cat{`0,`1})~CatLibrary.Tom
   href: CatLibrary.Cat`2.yml
@@ -283,8 +311,8 @@ items:
   type: Method
   source:
     remote: *o0
-    path: TestResults/Deploy_lianwei 2015-04-23 20_41_49/Out/Assets/TestClass1/CatLibrary/Class1.cs
-    startLine: 193
+    path: Class1.cs
+    startLine: 203
   summary: >-
     Expilicit operator of this class.
 
@@ -296,11 +324,15 @@ items:
     - id: src
       type:
         id: CatLibrary.Cat`2
-        name: Cat
+        name: Cat<T, K>
         href: CatLibrary.Cat`2.yml
       description: Instance of this class.
     return:
       id: Tom
+      type:
+        id: CatLibrary.Tom
+        name: Tom
+        href: CatLibrary.Tom.yml
       description: Advanced class type of cat.
   id: CatLibrary.Cat`2.op_Explicit(CatLibrary.Cat{`0,`1})~CatLibrary.Tom
 - uid: CatLibrary.Cat`2.Item(System.String)
@@ -310,8 +342,8 @@ items:
   type: Property
   source:
     remote: *o0
-    path: TestResults/Deploy_lianwei 2015-04-23 20_41_49/Out/Assets/TestClass1/CatLibrary/Class1.cs
-    startLine: 201
+    path: Class1.cs
+    startLine: 211
   summary: This is index property of Cat. You can see that the visibility is different between get and set method.
   syntax:
     content:
@@ -320,9 +352,29 @@ items:
     - id: this[]
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: CatLibrary.Cat`2.Item(System.String)
+- uid: CatLibrary.Cat`2.Age
+  href: CatLibrary.Cat`2.yml
+  name: Age
+  fullName: CatLibrary.Cat<T, K>.Age
+  type: Property
+  source:
+    remote: *o0
+    path: Class1.cs
+    startLine: 220
+  summary: Hint cat's age.
+  syntax:
+    content:
+      CSharp: protected int Age { get; set; }
+    parameters:
+    - id: Age
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: CatLibrary.Cat`2.Age
 - uid: CatLibrary.Cat`2.ownEat
   href: CatLibrary.Cat`2.yml
   name: ownEat
@@ -330,12 +382,12 @@ items:
   type: Event
   source:
     remote: *o0
-    path: TestResults/Deploy_lianwei 2015-04-23 20_41_49/Out/Assets/TestClass1/CatLibrary/Class1.cs
-    startLine: 220
+    path: Class1.cs
+    startLine: 230
   summary: Eat event of this cat
   syntax:
     content:
-      CSharp: ownEat
+      CSharp: public event EventHandler ownEat;
   id: CatLibrary.Cat`2.ownEat
 - uid: CatLibrary.Cat`2.isHealthy
   href: CatLibrary.Cat`2.yml
@@ -344,13 +396,70 @@ items:
   type: Field
   source:
     remote: *o0
-    path: TestResults/Deploy_lianwei 2015-04-23 20_41_49/Out/Assets/TestClass1/CatLibrary/Class1.cs
-    startLine: 228
+    path: Class1.cs
+    startLine: 238
   summary: Field with attribute.
   syntax:
     content:
-      CSharp: isHealthy
+      CSharp: '[ContextStatic] [NonSerialized] public bool isHealthy;'
   id: CatLibrary.Cat`2.isHealthy
+- uid: CatLibrary.Cat`2.CatLibrary#IAnimal#Eat
+  href: CatLibrary.Cat`2.yml
+  name: IAnimal.Eat()
+  fullName: CatLibrary.Cat<T, K>.CatLibrary.IAnimal.Eat()
+  type: Method
+  source:
+    remote: *o0
+    path: Class1.cs
+    startLine: 244
+  summary: EII method.
+  syntax:
+    content:
+      CSharp: void IAnimal.Eat()
+    parameters: []
+  id: CatLibrary.Cat`2.CatLibrary#IAnimal#Eat
+- uid: CatLibrary.Cat`2.CatLibrary#IAnimal#Eat``1(``0)
+  href: CatLibrary.Cat`2.yml
+  name: IAnimal.Eat<Tool>(Tool)
+  fullName: CatLibrary.Cat<T, K>.CatLibrary.IAnimal.Eat<Tool>(Tool)
+  type: Method
+  source:
+    remote: *o0
+    path: Class1.cs
+    startLine: 250
+  summary: EII template method.
+  syntax:
+    content:
+      CSharp: 'void IAnimal.Eat<Tool>(Tool a)where Tool : class'
+    parameters:
+    - id: a
+      type:
+        id: Tool
+        name: Tool
+        href: Tool
+      description: Tool name.
+  id: CatLibrary.Cat`2.CatLibrary#IAnimal#Eat``1(``0)
+- uid: CatLibrary.Cat`2.CatLibrary#IAnimal#Eat(System.String)
+  href: CatLibrary.Cat`2.yml
+  name: IAnimal.Eat(string)
+  fullName: CatLibrary.Cat<T, K>.CatLibrary.IAnimal.Eat(string)
+  type: Method
+  source:
+    remote: *o0
+    path: Class1.cs
+    startLine: 256
+  summary: Implementation of Eat(food)
+  syntax:
+    content:
+      CSharp: void IAnimal.Eat(string food)
+    parameters:
+    - id: food
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: Food to eat
+  id: CatLibrary.Cat`2.CatLibrary#IAnimal#Eat(System.String)
 - uid: CatLibrary.Cat`2.Name
   href: CatLibrary.Cat`2.yml
   name: Name
@@ -358,8 +467,8 @@ items:
   type: Property
   source:
     remote: *o0
-    path: TestResults/Deploy_lianwei 2015-04-23 20_41_49/Out/Assets/TestClass1/CatLibrary/Class1.cs
-    startLine: 252
+    path: Class1.cs
+    startLine: 262
   summary: EII property.
   syntax:
     content:
@@ -368,6 +477,40 @@ items:
     - id: Name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: CatLibrary.Cat`2.Name
+- uid: CatLibrary.Cat`2.CatLibrary#IAnimal#Item(System.Int32)
+  href: CatLibrary.Cat`2.yml
+  name: IAnimal.this[int]
+  fullName: CatLibrary.Cat<T, K>.CatLibrary.IAnimal.this[int]
+  type: Property
+  source:
+    remote: *o0
+    path: Class1.cs
+    startLine: 269
+  summary: EII index.
+  syntax:
+    content:
+      CSharp: string IAnimal.this[int a] { get; }
+    parameters:
+    - id: CatLibrary.IAnimal.this[]
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: CatLibrary.Cat`2.CatLibrary#IAnimal#Item(System.Int32)
+- uid: CatLibrary.Cat`2.CatLibrary#ICat#eat
+  href: CatLibrary.Cat`2.yml
+  name: ICat.eat
+  fullName: CatLibrary.Cat<T, K>.CatLibrary.ICat.eat
+  type: Event
+  source:
+    remote: *o0
+    path: Class1.cs
+    startLine: 275
+  summary: EII event.
+  syntax:
+    content:
+      CSharp: event EventHandler ICat.eat
+  id: CatLibrary.Cat`2.CatLibrary#ICat#eat

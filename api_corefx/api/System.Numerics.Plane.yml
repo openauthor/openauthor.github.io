@@ -1,0 +1,575 @@
+items:
+- uid: System.Numerics.Plane
+  href: System.Numerics.Plane.yml
+  name: Plane
+  fullName: System.Numerics.Plane
+  type: Struct
+  source:
+    remote: &o0
+      path: src/System.Numerics.Vectors/src/System/Numerics/Plane.cs
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
+    path: src/System.Numerics.Vectors/src/System/Numerics/Plane.cs
+    startLine: 11
+  summary: A structure encapsulating a 3D Plane
+  syntax:
+    content:
+      CSharp: 'public struct Plane : IEquatable<Plane>'
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.ValueType
+    name: ValueType
+    isExternal: true
+  id: System.Numerics.Plane
+  children:
+  - System.Numerics.Plane.Normal
+  - System.Numerics.Plane.D
+  - System.Numerics.Plane.#ctor(System.Single,System.Single,System.Single,System.Single)
+  - System.Numerics.Plane.#ctor(System.Numerics.Vector3,System.Single)
+  - System.Numerics.Plane.#ctor(System.Numerics.Vector4)
+  - System.Numerics.Plane.CreateFromVertices(System.Numerics.Vector3,System.Numerics.Vector3,System.Numerics.Vector3)
+  - System.Numerics.Plane.Normalize(System.Numerics.Plane)
+  - System.Numerics.Plane.Transform(System.Numerics.Plane,System.Numerics.Matrix4x4)
+  - System.Numerics.Plane.Transform(System.Numerics.Plane,System.Numerics.Quaternion)
+  - System.Numerics.Plane.Dot(System.Numerics.Plane,System.Numerics.Vector4)
+  - System.Numerics.Plane.DotCoordinate(System.Numerics.Plane,System.Numerics.Vector3)
+  - System.Numerics.Plane.DotNormal(System.Numerics.Plane,System.Numerics.Vector3)
+  - System.Numerics.Plane.op_Equality(System.Numerics.Plane,System.Numerics.Plane)
+  - System.Numerics.Plane.op_Inequality(System.Numerics.Plane,System.Numerics.Plane)
+  - System.Numerics.Plane.Equals(System.Numerics.Plane)
+  - System.Numerics.Plane.Equals(System.Object)
+  - System.Numerics.Plane.ToString
+  - System.Numerics.Plane.GetHashCode
+- uid: System.Numerics.Plane.Normal
+  href: System.Numerics.Plane.yml
+  name: Normal
+  fullName: System.Numerics.Plane.Normal
+  type: Field
+  source:
+    remote: *o0
+    path: src/System.Numerics.Vectors/src/System/Numerics/Plane.cs
+    startLine: 16
+  summary: The normal vector of the Plane.
+  syntax:
+    content:
+      CSharp: public Vector3 Normal;
+  id: System.Numerics.Plane.Normal
+- uid: System.Numerics.Plane.D
+  href: System.Numerics.Plane.yml
+  name: D
+  fullName: System.Numerics.Plane.D
+  type: Field
+  source:
+    remote: *o0
+    path: src/System.Numerics.Vectors/src/System/Numerics/Plane.cs
+    startLine: 20
+  summary: The distance of the Plane along its normal from the origin.
+  syntax:
+    content:
+      CSharp: public float D;
+  id: System.Numerics.Plane.D
+- uid: System.Numerics.Plane.#ctor(System.Single,System.Single,System.Single,System.Single)
+  href: System.Numerics.Plane.yml
+  name: Plane(float, float, float, float)
+  fullName: System.Numerics.Plane.Plane(float, float, float, float)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Numerics.Vectors/src/System/Numerics/Plane.cs
+    startLine: 29
+  summary: Constructs a Plane from the X, Y, and Z components of its normal, and its distance from the origin on that normal.
+  syntax:
+    content:
+      CSharp: public Plane(float x, float y, float z, float d)
+    parameters:
+    - id: x
+      type:
+        id: System.Single
+        name: float
+        isExternal: true
+      description: The X-component of the normal.
+    - id: y
+      type:
+        id: System.Single
+        name: float
+        isExternal: true
+      description: The Y-component of the normal.
+    - id: z
+      type:
+        id: System.Single
+        name: float
+        isExternal: true
+      description: The Z-component of the normal.
+    - id: d
+      type:
+        id: System.Single
+        name: float
+        isExternal: true
+      description: The distance of the Plane along its normal from the origin.
+  id: System.Numerics.Plane.#ctor(System.Single,System.Single,System.Single,System.Single)
+- uid: System.Numerics.Plane.#ctor(System.Numerics.Vector3,System.Single)
+  href: System.Numerics.Plane.yml
+  name: Plane(Vector3, float)
+  fullName: System.Numerics.Plane.Plane(System.Numerics.Vector3, float)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Numerics.Vectors/src/System/Numerics/Plane.cs
+    startLine: 40
+  summary: Constructs a Plane from the given normal and distance along the normal from the origin.
+  syntax:
+    content:
+      CSharp: public Plane(Vector3 normal, float d)
+    parameters:
+    - id: normal
+      type:
+        id: System.Numerics.Vector3
+        name: Vector3
+        href: System.Numerics.Vector3.yml
+      description: The Plane's normal vector.
+    - id: d
+      type:
+        id: System.Single
+        name: float
+        isExternal: true
+      description: The Plane's distance from the origin along its normal vector.
+  id: System.Numerics.Plane.#ctor(System.Numerics.Vector3,System.Single)
+- uid: System.Numerics.Plane.#ctor(System.Numerics.Vector4)
+  href: System.Numerics.Plane.yml
+  name: Plane(Vector4)
+  fullName: System.Numerics.Plane.Plane(System.Numerics.Vector4)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Numerics.Vectors/src/System/Numerics/Plane.cs
+    startLine: 51
+  summary: Constructs a Plane from the given Vector4.
+  syntax:
+    content:
+      CSharp: public Plane(Vector4 value)
+    parameters:
+    - id: value
+      type:
+        id: System.Numerics.Vector4
+        name: Vector4
+        href: System.Numerics.Vector4.yml
+      description: >-
+        A vector whose first 3 elements describe the normal vector,
+
+        and whose W component defines the distance along that normal from the origin.
+  id: System.Numerics.Plane.#ctor(System.Numerics.Vector4)
+- uid: System.Numerics.Plane.CreateFromVertices(System.Numerics.Vector3,System.Numerics.Vector3,System.Numerics.Vector3)
+  href: System.Numerics.Plane.yml
+  name: CreateFromVertices(Vector3, Vector3, Vector3)
+  fullName: System.Numerics.Plane.CreateFromVertices(System.Numerics.Vector3, System.Numerics.Vector3, System.Numerics.Vector3)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Numerics.Vectors/src/System/Numerics/Plane.cs
+    startLine: 64
+  summary: Creates a Plane that contains the three given points.
+  syntax:
+    content:
+      CSharp: public static Plane CreateFromVertices(Vector3 point1, Vector3 point2, Vector3 point3)
+    parameters:
+    - id: point1
+      type:
+        id: System.Numerics.Vector3
+        name: Vector3
+        href: System.Numerics.Vector3.yml
+      description: The first point defining the Plane.
+    - id: point2
+      type:
+        id: System.Numerics.Vector3
+        name: Vector3
+        href: System.Numerics.Vector3.yml
+      description: The second point defining the Plane.
+    - id: point3
+      type:
+        id: System.Numerics.Vector3
+        name: Vector3
+        href: System.Numerics.Vector3.yml
+      description: The third point defining the Plane.
+    return:
+      id: Plane
+      type:
+        id: System.Numerics.Plane
+        name: Plane
+        href: System.Numerics.Plane.yml
+      description: The Plane containing the three points.
+  id: System.Numerics.Plane.CreateFromVertices(System.Numerics.Vector3,System.Numerics.Vector3,System.Numerics.Vector3)
+- uid: System.Numerics.Plane.Normalize(System.Numerics.Plane)
+  href: System.Numerics.Plane.yml
+  name: Normalize(Plane)
+  fullName: System.Numerics.Plane.Normalize(System.Numerics.Plane)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Numerics.Vectors/src/System/Numerics/Plane.cs
+    startLine: 116
+  summary: Creates a new Plane whose normal vector is the source Plane's normal vector normalized.
+  syntax:
+    content:
+      CSharp: public static Plane Normalize(Plane value)
+    parameters:
+    - id: value
+      type:
+        id: System.Numerics.Plane
+        name: Plane
+        href: System.Numerics.Plane.yml
+      description: The source Plane.
+    return:
+      id: Plane
+      type:
+        id: System.Numerics.Plane
+        name: Plane
+        href: System.Numerics.Plane.yml
+      description: The normalized Plane.
+  id: System.Numerics.Plane.Normalize(System.Numerics.Plane)
+- uid: System.Numerics.Plane.Transform(System.Numerics.Plane,System.Numerics.Matrix4x4)
+  href: System.Numerics.Plane.yml
+  name: Transform(Plane, Matrix4x4)
+  fullName: System.Numerics.Plane.Transform(System.Numerics.Plane, System.Numerics.Matrix4x4)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Numerics.Vectors/src/System/Numerics/Plane.cs
+    startLine: 159
+  summary: Transforms a normalized Plane by a Matrix.
+  syntax:
+    content:
+      CSharp: public static Plane Transform(Plane plane, Matrix4x4 matrix)
+    parameters:
+    - id: plane
+      type:
+        id: System.Numerics.Plane
+        name: Plane
+        href: System.Numerics.Plane.yml
+      description: >-
+        The normalized Plane to transform.
+
+        This Plane must already be normalized, so that its Normal vector is of unit length, before this method is called.
+    - id: matrix
+      type:
+        id: System.Numerics.Matrix4x4
+        name: Matrix4x4
+        href: System.Numerics.Matrix4x4.yml
+      description: The transformation matrix to apply to the Plane.
+    return:
+      id: Plane
+      type:
+        id: System.Numerics.Plane
+        name: Plane
+        href: System.Numerics.Plane.yml
+      description: The transformed Plane.
+  id: System.Numerics.Plane.Transform(System.Numerics.Plane,System.Numerics.Matrix4x4)
+- uid: System.Numerics.Plane.Transform(System.Numerics.Plane,System.Numerics.Quaternion)
+  href: System.Numerics.Plane.yml
+  name: Transform(Plane, Quaternion)
+  fullName: System.Numerics.Plane.Transform(System.Numerics.Plane, System.Numerics.Quaternion)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Numerics.Vectors/src/System/Numerics/Plane.cs
+    startLine: 181
+  summary: Transforms a normalized Plane by a Quaternion rotation.
+  syntax:
+    content:
+      CSharp: public static Plane Transform(Plane plane, Quaternion rotation)
+    parameters:
+    - id: plane
+      type:
+        id: System.Numerics.Plane
+        name: Plane
+        href: System.Numerics.Plane.yml
+      description: >-
+        The normalized Plane to transform.
+
+        This Plane must already be normalized, so that its Normal vector is of unit length, before this method is called.
+    - id: rotation
+      type:
+        id: System.Numerics.Quaternion
+        name: Quaternion
+        href: System.Numerics.Quaternion.yml
+      description: The Quaternion rotation to apply to the Plane.
+    return:
+      id: Plane
+      type:
+        id: System.Numerics.Plane
+        name: Plane
+        href: System.Numerics.Plane.yml
+      description: A new Plane that results from applying the rotation.
+  id: System.Numerics.Plane.Transform(System.Numerics.Plane,System.Numerics.Quaternion)
+- uid: System.Numerics.Plane.Dot(System.Numerics.Plane,System.Numerics.Vector4)
+  href: System.Numerics.Plane.yml
+  name: Dot(Plane, Vector4)
+  fullName: System.Numerics.Plane.Dot(System.Numerics.Plane, System.Numerics.Vector4)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Numerics.Vectors/src/System/Numerics/Plane.cs
+    startLine: 226
+  summary: Calculates the dot product of a Plane and Vector4.
+  syntax:
+    content:
+      CSharp: public static float Dot(Plane plane, Vector4 value)
+    parameters:
+    - id: plane
+      type:
+        id: System.Numerics.Plane
+        name: Plane
+        href: System.Numerics.Plane.yml
+      description: The Plane.
+    - id: value
+      type:
+        id: System.Numerics.Vector4
+        name: Vector4
+        href: System.Numerics.Vector4.yml
+      description: The Vector4.
+    return:
+      id: Single
+      type:
+        id: System.Single
+        name: float
+        isExternal: true
+      description: The dot product.
+  id: System.Numerics.Plane.Dot(System.Numerics.Plane,System.Numerics.Vector4)
+- uid: System.Numerics.Plane.DotCoordinate(System.Numerics.Plane,System.Numerics.Vector3)
+  href: System.Numerics.Plane.yml
+  name: DotCoordinate(Plane, Vector3)
+  fullName: System.Numerics.Plane.DotCoordinate(System.Numerics.Plane, System.Numerics.Vector3)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Numerics.Vectors/src/System/Numerics/Plane.cs
+    startLine: 241
+  summary: Returns the dot product of a specified Vector3 and the normal vector of this Plane plus the distance (D) value of the Plane.
+  syntax:
+    content:
+      CSharp: public static float DotCoordinate(Plane plane, Vector3 value)
+    parameters:
+    - id: plane
+      type:
+        id: System.Numerics.Plane
+        name: Plane
+        href: System.Numerics.Plane.yml
+      description: The plane.
+    - id: value
+      type:
+        id: System.Numerics.Vector3
+        name: Vector3
+        href: System.Numerics.Vector3.yml
+      description: The Vector3.
+    return:
+      id: Single
+      type:
+        id: System.Single
+        name: float
+        isExternal: true
+      description: The resulting value.
+  id: System.Numerics.Plane.DotCoordinate(System.Numerics.Plane,System.Numerics.Vector3)
+- uid: System.Numerics.Plane.DotNormal(System.Numerics.Plane,System.Numerics.Vector3)
+  href: System.Numerics.Plane.yml
+  name: DotNormal(Plane, Vector3)
+  fullName: System.Numerics.Plane.DotNormal(System.Numerics.Plane, System.Numerics.Vector3)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Numerics.Vectors/src/System/Numerics/Plane.cs
+    startLine: 263
+  summary: Returns the dot product of a specified Vector3 and the Normal vector of this Plane.
+  syntax:
+    content:
+      CSharp: public static float DotNormal(Plane plane, Vector3 value)
+    parameters:
+    - id: plane
+      type:
+        id: System.Numerics.Plane
+        name: Plane
+        href: System.Numerics.Plane.yml
+      description: The plane.
+    - id: value
+      type:
+        id: System.Numerics.Vector3
+        name: Vector3
+        href: System.Numerics.Vector3.yml
+      description: The Vector3.
+    return:
+      id: Single
+      type:
+        id: System.Single
+        name: float
+        isExternal: true
+      description: The resulting dot product.
+  id: System.Numerics.Plane.DotNormal(System.Numerics.Plane,System.Numerics.Vector3)
+- uid: System.Numerics.Plane.op_Equality(System.Numerics.Plane,System.Numerics.Plane)
+  href: System.Numerics.Plane.yml
+  name: operator ==(Plane, Plane)
+  fullName: System.Numerics.Plane.operator ==(System.Numerics.Plane, System.Numerics.Plane)
+  type: Operator
+  source:
+    remote: *o0
+    path: src/System.Numerics.Vectors/src/System/Numerics/Plane.cs
+    startLine: 284
+  summary: Returns a boolean indicating whether the two given Planes are equal.
+  syntax:
+    content:
+      CSharp: public static bool operator ==(Plane value1, Plane value2)
+    parameters:
+    - id: value1
+      type:
+        id: System.Numerics.Plane
+        name: Plane
+        href: System.Numerics.Plane.yml
+      description: The first Plane to compare.
+    - id: value2
+      type:
+        id: System.Numerics.Plane
+        name: Plane
+        href: System.Numerics.Plane.yml
+      description: The second Plane to compare.
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: True if the Planes are equal; False otherwise.
+  id: System.Numerics.Plane.op_Equality(System.Numerics.Plane,System.Numerics.Plane)
+- uid: System.Numerics.Plane.op_Inequality(System.Numerics.Plane,System.Numerics.Plane)
+  href: System.Numerics.Plane.yml
+  name: operator !=(Plane, Plane)
+  fullName: System.Numerics.Plane.operator !=(System.Numerics.Plane, System.Numerics.Plane)
+  type: Operator
+  source:
+    remote: *o0
+    path: src/System.Numerics.Vectors/src/System/Numerics/Plane.cs
+    startLine: 299
+  summary: Returns a boolean indicating whether the two given Planes are not equal.
+  syntax:
+    content:
+      CSharp: public static bool operator !=(Plane value1, Plane value2)
+    parameters:
+    - id: value1
+      type:
+        id: System.Numerics.Plane
+        name: Plane
+        href: System.Numerics.Plane.yml
+      description: The first Plane to compare.
+    - id: value2
+      type:
+        id: System.Numerics.Plane
+        name: Plane
+        href: System.Numerics.Plane.yml
+      description: The second Plane to compare.
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: True if the Planes are not equal; False if they are equal.
+  id: System.Numerics.Plane.op_Inequality(System.Numerics.Plane,System.Numerics.Plane)
+- uid: System.Numerics.Plane.Equals(System.Numerics.Plane)
+  href: System.Numerics.Plane.yml
+  name: Equals(Plane)
+  fullName: System.Numerics.Plane.Equals(System.Numerics.Plane)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Numerics.Vectors/src/System/Numerics/Plane.cs
+    startLine: 313
+  summary: Returns a boolean indicating whether the given Plane is equal to this Plane instance.
+  syntax:
+    content:
+      CSharp: public bool Equals(Plane other)
+    parameters:
+    - id: other
+      type:
+        id: System.Numerics.Plane
+        name: Plane
+        href: System.Numerics.Plane.yml
+      description: The Plane to compare this instance to.
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: True if the other Plane is equal to this instance; False otherwise.
+  id: System.Numerics.Plane.Equals(System.Numerics.Plane)
+- uid: System.Numerics.Plane.Equals(System.Object)
+  href: System.Numerics.Plane.yml
+  name: Equals(object)
+  fullName: System.Numerics.Plane.Equals(object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Numerics.Vectors/src/System/Numerics/Plane.cs
+    startLine: 334
+  summary: Returns a boolean indicating whether the given Object is equal to this Plane instance.
+  syntax:
+    content:
+      CSharp: public override bool Equals(object obj)
+    parameters:
+    - id: obj
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+      description: The Object to compare against.
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: True if the Object is equal to this Plane; False otherwise.
+  id: System.Numerics.Plane.Equals(System.Object)
+- uid: System.Numerics.Plane.ToString
+  href: System.Numerics.Plane.yml
+  name: ToString()
+  fullName: System.Numerics.Plane.ToString()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Numerics.Vectors/src/System/Numerics/Plane.cs
+    startLine: 349
+  summary: Returns a String representing this Plane instance.
+  syntax:
+    content:
+      CSharp: public override string ToString()
+    parameters: []
+    return:
+      id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: The string representation.
+  id: System.Numerics.Plane.ToString
+- uid: System.Numerics.Plane.GetHashCode
+  href: System.Numerics.Plane.yml
+  name: GetHashCode()
+  fullName: System.Numerics.Plane.GetHashCode()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Numerics.Vectors/src/System/Numerics/Plane.cs
+    startLine: 360
+  summary: Returns the hash code for this instance.
+  syntax:
+    content:
+      CSharp: public override int GetHashCode()
+    parameters: []
+    return:
+      id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The hash code.
+  id: System.Numerics.Plane.GetHashCode

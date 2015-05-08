@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/DefaultViewLocationCache.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/DefaultViewLocationCache.cs
     startLine: 8
   syntax:
     content:
-      CSharp: public class DefaultViewLocationCache
+      CSharp: 'public class DefaultViewLocationCache : IViewLocationCache'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.DefaultViewLocationCache
   children:
@@ -37,7 +38,7 @@ items:
     startLine: 13
   syntax:
     content:
-      CSharp: 
+      CSharp: '[SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = "The reference type is immutable. ")] public static readonly IViewLocationCache Null;'
   id: System.Web.Mvc.DefaultViewLocationCache.Null
 - uid: System.Web.Mvc.DefaultViewLocationCache.#ctor
   href: System.Web.Mvc.DefaultViewLocationCache.yml
@@ -69,7 +70,7 @@ items:
     - id: timeSpan
       type:
         id: System.TimeSpan
-        name: System.TimeSpan
+        name: TimeSpan
         isExternal: true
   id: System.Web.Mvc.DefaultViewLocationCache.#ctor(System.TimeSpan)
 - uid: System.Web.Mvc.DefaultViewLocationCache.TimeSpan
@@ -83,12 +84,12 @@ items:
     startLine: 29
   syntax:
     content:
-      CSharp: public TimeSpan TimeSpan { get; private set; }
+      CSharp: public TimeSpan TimeSpan { get; }
     parameters:
     - id: TimeSpan
       type:
         id: System.TimeSpan
-        name: System.TimeSpan
+        name: TimeSpan
         isExternal: true
   id: System.Web.Mvc.DefaultViewLocationCache.TimeSpan
 - uid: System.Web.Mvc.DefaultViewLocationCache.GetViewLocation(System.Web.HttpContextBase,System.String)
@@ -107,15 +108,19 @@ items:
     - id: httpContext
       type:
         id: System.Web.HttpContextBase
-        name: System.Web.HttpContextBase
+        name: HttpContextBase
         isExternal: true
     - id: key
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.DefaultViewLocationCache.GetViewLocation(System.Web.HttpContextBase,System.String)
 - uid: System.Web.Mvc.DefaultViewLocationCache.InsertViewLocation(System.Web.HttpContextBase,System.String,System.String)
   href: System.Web.Mvc.DefaultViewLocationCache.yml
@@ -133,16 +138,16 @@ items:
     - id: httpContext
       type:
         id: System.Web.HttpContextBase
-        name: System.Web.HttpContextBase
+        name: HttpContextBase
         isExternal: true
     - id: key
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: virtualPath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.DefaultViewLocationCache.InsertViewLocation(System.Web.HttpContextBase,System.String,System.String)

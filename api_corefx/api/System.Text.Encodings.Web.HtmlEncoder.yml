@@ -1,0 +1,218 @@
+items:
+- uid: System.Text.Encodings.Web.HtmlEncoder
+  href: System.Text.Encodings.Web.HtmlEncoder.yml
+  name: HtmlEncoder
+  fullName: System.Text.Encodings.Web.HtmlEncoder
+  type: Class
+  source:
+    remote: &o0
+      path: src/System.Text.Encodings.Web/src/System/Text/Encodings/Web/HtmlEncoder.cs
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
+    path: src/System.Text.Encodings.Web/src/System/Text/Encodings/Web/HtmlEncoder.cs
+    startLine: 20
+  summary: >-
+    A class which can perform HTML encoding given an allow list of characters which
+
+    can be represented unencoded.
+  syntax:
+    content:
+      CSharp: 'public sealed class HtmlEncoder : IHtmlEncoder'
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  id: System.Text.Encodings.Web.HtmlEncoder
+  children:
+  - System.Text.Encodings.Web.HtmlEncoder.#ctor
+  - System.Text.Encodings.Web.HtmlEncoder.#ctor(System.Text.Encodings.Web.UnicodeRange[])
+  - System.Text.Encodings.Web.HtmlEncoder.#ctor(System.Text.Encodings.Web.ICodePointFilter)
+  - System.Text.Encodings.Web.HtmlEncoder.Default
+  - System.Text.Encodings.Web.HtmlEncoder.HtmlEncode(System.Char[],System.Int32,System.Int32,System.IO.TextWriter)
+  - System.Text.Encodings.Web.HtmlEncoder.HtmlEncode(System.String)
+  - System.Text.Encodings.Web.HtmlEncoder.HtmlEncode(System.String,System.Int32,System.Int32,System.IO.TextWriter)
+- uid: System.Text.Encodings.Web.HtmlEncoder.#ctor
+  href: System.Text.Encodings.Web.HtmlEncoder.yml
+  name: HtmlEncoder()
+  fullName: System.Text.Encodings.Web.HtmlEncoder.HtmlEncoder()
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Text.Encodings.Web/src/System/Text/Encodings/Web/HtmlEncoder.cs
+    startLine: 32
+  summary: >-
+    Instantiates an encoder using [System.Text.Encodings.Web.UnicodeRanges.BasicLatin](System.Text.Encodings.Web.UnicodeRanges.yml) as its allow list.
+
+    Any character not in the [System.Text.Encodings.Web.UnicodeRanges.BasicLatin](System.Text.Encodings.Web.UnicodeRanges.yml) range will be escaped.
+  syntax:
+    content:
+      CSharp: 'public HtmlEncoder(): this (HtmlUnicodeEncoder.BasicLatin)'
+    parameters: []
+  id: System.Text.Encodings.Web.HtmlEncoder.#ctor
+- uid: System.Text.Encodings.Web.HtmlEncoder.#ctor(System.Text.Encodings.Web.UnicodeRange[])
+  href: System.Text.Encodings.Web.HtmlEncoder.yml
+  name: HtmlEncoder(params UnicodeRange[])
+  fullName: System.Text.Encodings.Web.HtmlEncoder.HtmlEncoder(params System.Text.Encodings.Web.UnicodeRange[])
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Text.Encodings.Web/src/System/Text/Encodings/Web/HtmlEncoder.cs
+    startLine: 42
+  summary: >-
+    Instantiates an encoder specifying which Unicode character ranges are allowed to
+
+    pass through the encoder unescaped. Any character not in the set of ranges specified
+
+    by  will be escaped.
+  syntax:
+    content:
+      CSharp: 'public HtmlEncoder(params UnicodeRange[] allowedRanges): this (new HtmlUnicodeEncoder(new CodePointFilter(allowedRanges)))'
+    parameters:
+    - id: allowedRanges
+      type:
+        id: System.Array
+        name: UnicodeRange[]
+        isExternal: true
+  id: System.Text.Encodings.Web.HtmlEncoder.#ctor(System.Text.Encodings.Web.UnicodeRange[])
+- uid: System.Text.Encodings.Web.HtmlEncoder.#ctor(System.Text.Encodings.Web.ICodePointFilter)
+  href: System.Text.Encodings.Web.HtmlEncoder.yml
+  name: HtmlEncoder(ICodePointFilter)
+  fullName: System.Text.Encodings.Web.HtmlEncoder.HtmlEncoder(System.Text.Encodings.Web.ICodePointFilter)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Text.Encodings.Web/src/System/Text/Encodings/Web/HtmlEncoder.cs
+    startLine: 52
+  summary: >-
+    Instantiates an encoder using a custom code point filter. Any character not in the
+
+    set returned by 's [System.Text.Encodings.Web.ICodePointFilter.GetAllowedCodePoints](System.Text.Encodings.Web.ICodePointFilter.yml)
+
+    method will be escaped.
+  syntax:
+    content:
+      CSharp: 'public HtmlEncoder(ICodePointFilter filter): this (new HtmlUnicodeEncoder(CodePointFilter.Wrap(filter)))'
+    parameters:
+    - id: filter
+      type:
+        id: System.Text.Encodings.Web.ICodePointFilter
+        name: ICodePointFilter
+        href: System.Text.Encodings.Web.ICodePointFilter.yml
+  id: System.Text.Encodings.Web.HtmlEncoder.#ctor(System.Text.Encodings.Web.ICodePointFilter)
+- uid: System.Text.Encodings.Web.HtmlEncoder.Default
+  href: System.Text.Encodings.Web.HtmlEncoder.yml
+  name: Default
+  fullName: System.Text.Encodings.Web.HtmlEncoder.Default
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Text.Encodings.Web/src/System/Text/Encodings/Web/HtmlEncoder.cs
+    startLine: 70
+  summary: A default instance of [System.Text.Encodings.Web.HtmlEncoder](System.Text.Encodings.Web.HtmlEncoder.yml).
+  syntax:
+    content:
+      CSharp: public static HtmlEncoder Default { get; set; }
+    parameters:
+    - id: Default
+      type:
+        id: System.Text.Encodings.Web.HtmlEncoder
+        name: HtmlEncoder
+        href: System.Text.Encodings.Web.HtmlEncoder.yml
+  id: System.Text.Encodings.Web.HtmlEncoder.Default
+- uid: System.Text.Encodings.Web.HtmlEncoder.HtmlEncode(System.Char[],System.Int32,System.Int32,System.IO.TextWriter)
+  href: System.Text.Encodings.Web.HtmlEncoder.yml
+  name: HtmlEncode(char[], int, int, TextWriter)
+  fullName: System.Text.Encodings.Web.HtmlEncoder.HtmlEncode(char[], int, int, System.IO.TextWriter)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Text.Encodings.Web/src/System/Text/Encodings/Web/HtmlEncoder.cs
+    startLine: 96
+  summary: Everybody's favorite HtmlEncode routine.
+  syntax:
+    content:
+      CSharp: public void HtmlEncode(char[] value, int startIndex, int charCount, TextWriter output)
+    parameters:
+    - id: value
+      type:
+        id: System.Array
+        name: char[]
+        isExternal: true
+    - id: startIndex
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: charCount
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: output
+      type:
+        id: System.IO.TextWriter
+        name: TextWriter
+        isExternal: true
+  id: System.Text.Encodings.Web.HtmlEncoder.HtmlEncode(System.Char[],System.Int32,System.Int32,System.IO.TextWriter)
+- uid: System.Text.Encodings.Web.HtmlEncoder.HtmlEncode(System.String)
+  href: System.Text.Encodings.Web.HtmlEncoder.yml
+  name: HtmlEncode(string)
+  fullName: System.Text.Encodings.Web.HtmlEncoder.HtmlEncode(string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Text.Encodings.Web/src/System/Text/Encodings/Web/HtmlEncoder.cs
+    startLine: 104
+  summary: Everybody's favorite HtmlEncode routine.
+  syntax:
+    content:
+      CSharp: public string HtmlEncode(string value)
+    parameters:
+    - id: value
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Text.Encodings.Web.HtmlEncoder.HtmlEncode(System.String)
+- uid: System.Text.Encodings.Web.HtmlEncoder.HtmlEncode(System.String,System.Int32,System.Int32,System.IO.TextWriter)
+  href: System.Text.Encodings.Web.HtmlEncoder.yml
+  name: HtmlEncode(string, int, int, TextWriter)
+  fullName: System.Text.Encodings.Web.HtmlEncoder.HtmlEncode(string, int, int, System.IO.TextWriter)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Text.Encodings.Web/src/System/Text/Encodings/Web/HtmlEncoder.cs
+    startLine: 112
+  summary: Everybody's favorite HtmlEncode routine.
+  syntax:
+    content:
+      CSharp: public void HtmlEncode(string value, int startIndex, int charCount, TextWriter output)
+    parameters:
+    - id: value
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    - id: startIndex
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: charCount
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: output
+      type:
+        id: System.IO.TextWriter
+        name: TextWriter
+        isExternal: true
+  id: System.Text.Encodings.Web.HtmlEncoder.HtmlEncode(System.String,System.Int32,System.Int32,System.IO.TextWriter)

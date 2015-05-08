@@ -6,8 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Xml.XPath/src/System/Xml/XPath/XPathExpr.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathExpr.cs
     startLine: 38
   syntax:
@@ -15,12 +17,12 @@ items:
       CSharp: public abstract class XPathExpression
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Xml.XPath.XPathExpression
   children:
   - System.Xml.XPath.XPathExpression.Expression
-  - System.Xml.XPath.XPathExpression.AddSort(System.Object,IComparer)
+  - System.Xml.XPath.XPathExpression.AddSort(System.Object,System.Collections.IComparer)
   - System.Xml.XPath.XPathExpression.AddSort(System.Object,System.Xml.XPath.XmlSortOrder,System.Xml.XPath.XmlCaseOrder,System.String,System.Xml.XPath.XmlDataType)
   - System.Xml.XPath.XPathExpression.Clone
   - System.Xml.XPath.XPathExpression.SetContext(XmlNamespaceManager)
@@ -44,13 +46,13 @@ items:
     - id: Expression
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.XPath.XPathExpression.Expression
-- uid: System.Xml.XPath.XPathExpression.AddSort(System.Object,IComparer)
+- uid: System.Xml.XPath.XPathExpression.AddSort(System.Object,System.Collections.IComparer)
   href: System.Xml.XPath.XPathExpression.yml
   name: AddSort(object, IComparer)
-  fullName: System.Xml.XPath.XPathExpression.AddSort(object, IComparer)
+  fullName: System.Xml.XPath.XPathExpression.AddSort(object, System.Collections.IComparer)
   type: Method
   source:
     remote: *o0
@@ -58,19 +60,19 @@ items:
     startLine: 44
   syntax:
     content:
-      CSharp: public abstract void AddSort(object expr, IComparer comparer);
+      CSharp: public abstract void AddSort(object expr, IComparer comparer)
     parameters:
     - id: expr
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     - id: comparer
       type:
-        id: IComparer
+        id: System.Collections.IComparer
         name: IComparer
         isExternal: true
-  id: System.Xml.XPath.XPathExpression.AddSort(System.Object,IComparer)
+  id: System.Xml.XPath.XPathExpression.AddSort(System.Object,System.Collections.IComparer)
 - uid: System.Xml.XPath.XPathExpression.AddSort(System.Object,System.Xml.XPath.XmlSortOrder,System.Xml.XPath.XmlCaseOrder,System.String,System.Xml.XPath.XmlDataType)
   href: System.Xml.XPath.XPathExpression.yml
   name: AddSort(object, XmlSortOrder, XmlCaseOrder, string, XmlDataType)
@@ -82,12 +84,12 @@ items:
     startLine: 46
   syntax:
     content:
-      CSharp: public abstract void AddSort(object expr, XmlSortOrder order, XmlCaseOrder caseOrder, string lang, XmlDataType dataType);
+      CSharp: public abstract void AddSort(object expr, XmlSortOrder order, XmlCaseOrder caseOrder, string lang, XmlDataType dataType)
     parameters:
     - id: expr
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     - id: order
       type:
@@ -102,7 +104,7 @@ items:
     - id: lang
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: dataType
       type:
@@ -121,10 +123,14 @@ items:
     startLine: 48
   syntax:
     content:
-      CSharp: public abstract XPathExpression Clone();
+      CSharp: public abstract XPathExpression Clone()
     parameters: []
     return:
       id: XPathExpression
+      type:
+        id: System.Xml.XPath.XPathExpression
+        name: XPathExpression
+        href: System.Xml.XPath.XPathExpression.yml
   id: System.Xml.XPath.XPathExpression.Clone
 - uid: System.Xml.XPath.XPathExpression.SetContext(XmlNamespaceManager)
   href: System.Xml.XPath.XPathExpression.yml
@@ -137,7 +143,7 @@ items:
     startLine: 50
   syntax:
     content:
-      CSharp: public abstract void SetContext(XmlNamespaceManager nsManager);
+      CSharp: public abstract void SetContext(XmlNamespaceManager nsManager)
     parameters:
     - id: nsManager
       type:
@@ -156,7 +162,7 @@ items:
     startLine: 52
   syntax:
     content:
-      CSharp: public abstract void SetContext(IXmlNamespaceResolver nsResolver);
+      CSharp: public abstract void SetContext(IXmlNamespaceResolver nsResolver)
     parameters:
     - id: nsResolver
       type:
@@ -199,10 +205,14 @@ items:
     - id: xpath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: XPathExpression
+      type:
+        id: System.Xml.XPath.XPathExpression
+        name: XPathExpression
+        href: System.Xml.XPath.XPathExpression.yml
   id: System.Xml.XPath.XPathExpression.Compile(System.String)
 - uid: System.Xml.XPath.XPathExpression.Compile(System.String,IXmlNamespaceResolver)
   href: System.Xml.XPath.XPathExpression.yml
@@ -220,7 +230,7 @@ items:
     - id: xpath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: nsResolver
       type:
@@ -229,4 +239,8 @@ items:
         isExternal: true
     return:
       id: XPathExpression
+      type:
+        id: System.Xml.XPath.XPathExpression
+        name: XPathExpression
+        href: System.Xml.XPath.XPathExpression.yml
   id: System.Xml.XPath.XPathExpression.Compile(System.String,IXmlNamespaceResolver)

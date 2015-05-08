@@ -6,25 +6,30 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/ViewEngineCollection.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/ViewEngineCollection.cs
     startLine: 9
   syntax:
     content:
-      CSharp: public class ViewEngineCollection
+      CSharp: 'public class ViewEngineCollection : Collection<IViewEngine>, IList<IViewEngine>, ICollection<IViewEngine>, IList, ICollection, IReadOnlyList<IViewEngine>, IReadOnlyCollection<IViewEngine>, IEnumerable<IViewEngine>, IEnumerable'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Collections.ObjectModel.Collection{System.Web.Mvc.IViewEngine}
-    name: System.Collections.ObjectModel.Collection{System.Web.Mvc.IViewEngine}
+    name: Collection<IViewEngine>
     isExternal: true
   id: System.Web.Mvc.ViewEngineCollection
   children:
   - System.Web.Mvc.ViewEngineCollection.#ctor
   - System.Web.Mvc.ViewEngineCollection.#ctor(System.Collections.Generic.IList{System.Web.Mvc.IViewEngine})
+  - System.Web.Mvc.ViewEngineCollection.ClearItems
+  - System.Web.Mvc.ViewEngineCollection.InsertItem(System.Int32,System.Web.Mvc.IViewEngine)
+  - System.Web.Mvc.ViewEngineCollection.RemoveItem(System.Int32)
+  - System.Web.Mvc.ViewEngineCollection.SetItem(System.Int32,System.Web.Mvc.IViewEngine)
   - System.Web.Mvc.ViewEngineCollection.FindPartialView(System.Web.Mvc.ControllerContext,System.String)
   - System.Web.Mvc.ViewEngineCollection.FindView(System.Web.Mvc.ControllerContext,System.String,System.String)
 - uid: System.Web.Mvc.ViewEngineCollection.#ctor
@@ -57,9 +62,90 @@ items:
     - id: list
       type:
         id: System.Collections.Generic.IList{System.Web.Mvc.IViewEngine}
-        name: System.Collections.Generic.IList{System.Web.Mvc.IViewEngine}
+        name: IList<IViewEngine>
         isExternal: true
   id: System.Web.Mvc.ViewEngineCollection.#ctor(System.Collections.Generic.IList{System.Web.Mvc.IViewEngine})
+- uid: System.Web.Mvc.ViewEngineCollection.ClearItems
+  href: System.Web.Mvc.ViewEngineCollection.yml
+  name: ClearItems()
+  fullName: System.Web.Mvc.ViewEngineCollection.ClearItems()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ViewEngineCollection.cs
+    startLine: 43
+  syntax:
+    content:
+      CSharp: protected override void ClearItems()
+    parameters: []
+  id: System.Web.Mvc.ViewEngineCollection.ClearItems
+- uid: System.Web.Mvc.ViewEngineCollection.InsertItem(System.Int32,System.Web.Mvc.IViewEngine)
+  href: System.Web.Mvc.ViewEngineCollection.yml
+  name: InsertItem(int, IViewEngine)
+  fullName: System.Web.Mvc.ViewEngineCollection.InsertItem(int, System.Web.Mvc.IViewEngine)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ViewEngineCollection.cs
+    startLine: 49
+  syntax:
+    content:
+      CSharp: protected override void InsertItem(int index, IViewEngine item)
+    parameters:
+    - id: index
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: item
+      type:
+        id: System.Web.Mvc.IViewEngine
+        name: IViewEngine
+        href: System.Web.Mvc.IViewEngine.yml
+  id: System.Web.Mvc.ViewEngineCollection.InsertItem(System.Int32,System.Web.Mvc.IViewEngine)
+- uid: System.Web.Mvc.ViewEngineCollection.RemoveItem(System.Int32)
+  href: System.Web.Mvc.ViewEngineCollection.yml
+  name: RemoveItem(int)
+  fullName: System.Web.Mvc.ViewEngineCollection.RemoveItem(int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ViewEngineCollection.cs
+    startLine: 59
+  syntax:
+    content:
+      CSharp: protected override void RemoveItem(int index)
+    parameters:
+    - id: index
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.Web.Mvc.ViewEngineCollection.RemoveItem(System.Int32)
+- uid: System.Web.Mvc.ViewEngineCollection.SetItem(System.Int32,System.Web.Mvc.IViewEngine)
+  href: System.Web.Mvc.ViewEngineCollection.yml
+  name: SetItem(int, IViewEngine)
+  fullName: System.Web.Mvc.ViewEngineCollection.SetItem(int, System.Web.Mvc.IViewEngine)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ViewEngineCollection.cs
+    startLine: 65
+  syntax:
+    content:
+      CSharp: protected override void SetItem(int index, IViewEngine item)
+    parameters:
+    - id: index
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: item
+      type:
+        id: System.Web.Mvc.IViewEngine
+        name: IViewEngine
+        href: System.Web.Mvc.IViewEngine.yml
+  id: System.Web.Mvc.ViewEngineCollection.SetItem(System.Int32,System.Web.Mvc.IViewEngine)
 - uid: System.Web.Mvc.ViewEngineCollection.FindPartialView(System.Web.Mvc.ControllerContext,System.String)
   href: System.Web.Mvc.ViewEngineCollection.yml
   name: FindPartialView(ControllerContext, string)
@@ -81,10 +167,14 @@ items:
     - id: partialViewName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: ViewEngineResult
+      type:
+        id: System.Web.Mvc.ViewEngineResult
+        name: ViewEngineResult
+        href: System.Web.Mvc.ViewEngineResult.yml
   id: System.Web.Mvc.ViewEngineCollection.FindPartialView(System.Web.Mvc.ControllerContext,System.String)
 - uid: System.Web.Mvc.ViewEngineCollection.FindView(System.Web.Mvc.ControllerContext,System.String,System.String)
   href: System.Web.Mvc.ViewEngineCollection.yml
@@ -107,13 +197,17 @@ items:
     - id: viewName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: masterName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: ViewEngineResult
+      type:
+        id: System.Web.Mvc.ViewEngineResult
+        name: ViewEngineResult
+        href: System.Web.Mvc.ViewEngineResult.yml
   id: System.Web.Mvc.ViewEngineCollection.FindView(System.Web.Mvc.ControllerContext,System.String,System.String)

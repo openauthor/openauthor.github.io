@@ -6,20 +6,21 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/AdditionalMetaDataAttribute.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/AdditionalMetaDataAttribute.cs
     startLine: 4
   syntax:
     content:
-      CSharp: public sealed class AdditionalMetadataAttribute
+      CSharp: 'public sealed class AdditionalMetadataAttribute : Attribute, _Attribute, IMetadataAware'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Attribute
-    name: System.Attribute
+    name: Attribute
     isExternal: true
   id: System.Web.Mvc.AdditionalMetadataAttribute
   children:
@@ -44,12 +45,12 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: value
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.Web.Mvc.AdditionalMetadataAttribute.#ctor(System.String,System.Object)
 - uid: System.Web.Mvc.AdditionalMetadataAttribute.TypeId
@@ -68,7 +69,7 @@ items:
     - id: TypeId
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.Web.Mvc.AdditionalMetadataAttribute.TypeId
 - uid: System.Web.Mvc.AdditionalMetadataAttribute.Name
@@ -82,12 +83,12 @@ items:
     startLine: 25
   syntax:
     content:
-      CSharp: public string Name { get; private set; }
+      CSharp: public string Name { get; }
     parameters:
     - id: Name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.AdditionalMetadataAttribute.Name
 - uid: System.Web.Mvc.AdditionalMetadataAttribute.Value
@@ -101,12 +102,12 @@ items:
     startLine: 27
   syntax:
     content:
-      CSharp: public object Value { get; private set; }
+      CSharp: public object Value { get; }
     parameters:
     - id: Value
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.Web.Mvc.AdditionalMetadataAttribute.Value
 - uid: System.Web.Mvc.AdditionalMetadataAttribute.OnMetadataCreated(System.Web.Mvc.ModelMetadata)

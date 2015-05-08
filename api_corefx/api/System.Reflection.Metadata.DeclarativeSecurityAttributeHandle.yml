@@ -6,21 +6,28 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1535
+    startLine: 2098
   syntax:
     content:
-      CSharp: public struct DeclarativeSecurityAttributeHandle
+      CSharp: 'public struct DeclarativeSecurityAttributeHandle : IEquatable<DeclarativeSecurityAttributeHandle>'
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle
   children:
   - System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.op_Implicit(System.Reflection.Metadata.DeclarativeSecurityAttributeHandle)~System.Reflection.Metadata.Handle
+  - System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.op_Implicit(System.Reflection.Metadata.DeclarativeSecurityAttributeHandle)~System.Reflection.Metadata.EntityHandle
   - System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.DeclarativeSecurityAttributeHandle
+  - System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.op_Explicit(System.Reflection.Metadata.EntityHandle)~System.Reflection.Metadata.DeclarativeSecurityAttributeHandle
   - System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.IsNil
   - System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.op_Equality(System.Reflection.Metadata.DeclarativeSecurityAttributeHandle,System.Reflection.Metadata.DeclarativeSecurityAttributeHandle)
   - System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.Equals(System.Object)
@@ -31,14 +38,14 @@ items:
   href: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.yml
   name: implicit operator Handle(DeclarativeSecurityAttributeHandle)
   fullName: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.implicit operator System.Reflection.Metadata.Handle(System.Reflection.Metadata.DeclarativeSecurityAttributeHandle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1551
+    startLine: 2115
   syntax:
     content:
-      CSharp: public static implicit operator Handle(DeclarativeSecurityAttributeHandle handle) { return new Handle(handle._rowId | tokenType); }
+      CSharp: public static implicit operator Handle(DeclarativeSecurityAttributeHandle handle)
     parameters:
     - id: handle
       type:
@@ -47,19 +54,48 @@ items:
         href: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.yml
     return:
       id: Handle
+      type:
+        id: System.Reflection.Metadata.Handle
+        name: Handle
+        href: System.Reflection.Metadata.Handle.yml
   id: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.op_Implicit(System.Reflection.Metadata.DeclarativeSecurityAttributeHandle)~System.Reflection.Metadata.Handle
+- uid: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.op_Implicit(System.Reflection.Metadata.DeclarativeSecurityAttributeHandle)~System.Reflection.Metadata.EntityHandle
+  href: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.yml
+  name: implicit operator EntityHandle(DeclarativeSecurityAttributeHandle)
+  fullName: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.implicit operator System.Reflection.Metadata.EntityHandle(System.Reflection.Metadata.DeclarativeSecurityAttributeHandle)
+  type: Operator
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 2120
+  syntax:
+    content:
+      CSharp: public static implicit operator EntityHandle(DeclarativeSecurityAttributeHandle handle)
+    parameters:
+    - id: handle
+      type:
+        id: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle
+        name: DeclarativeSecurityAttributeHandle
+        href: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.yml
+    return:
+      id: EntityHandle
+      type:
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
+  id: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.op_Implicit(System.Reflection.Metadata.DeclarativeSecurityAttributeHandle)~System.Reflection.Metadata.EntityHandle
 - uid: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.DeclarativeSecurityAttributeHandle
   href: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.yml
   name: explicit operator DeclarativeSecurityAttributeHandle(Handle)
   fullName: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.explicit operator System.Reflection.Metadata.DeclarativeSecurityAttributeHandle(System.Reflection.Metadata.Handle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1556
+    startLine: 2125
   syntax:
     content:
-      CSharp: public static explicit operator DeclarativeSecurityAttributeHandle(Handle handle) { if (handle.TokenType != tokenType) { Handle.ThrowInvalidCast(); } return new DeclarativeSecurityAttributeHandle(handle.RowId); }
+      CSharp: public static explicit operator DeclarativeSecurityAttributeHandle(Handle handle)
     parameters:
     - id: handle
       type:
@@ -68,7 +104,36 @@ items:
         href: System.Reflection.Metadata.Handle.yml
     return:
       id: DeclarativeSecurityAttributeHandle
+      type:
+        id: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle
+        name: DeclarativeSecurityAttributeHandle
+        href: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.yml
   id: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.DeclarativeSecurityAttributeHandle
+- uid: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.op_Explicit(System.Reflection.Metadata.EntityHandle)~System.Reflection.Metadata.DeclarativeSecurityAttributeHandle
+  href: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.yml
+  name: explicit operator DeclarativeSecurityAttributeHandle(EntityHandle)
+  fullName: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.explicit operator System.Reflection.Metadata.DeclarativeSecurityAttributeHandle(System.Reflection.Metadata.EntityHandle)
+  type: Operator
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 2135
+  syntax:
+    content:
+      CSharp: public static explicit operator DeclarativeSecurityAttributeHandle(EntityHandle handle)
+    parameters:
+    - id: handle
+      type:
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
+    return:
+      id: DeclarativeSecurityAttributeHandle
+      type:
+        id: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle
+        name: DeclarativeSecurityAttributeHandle
+        href: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.yml
+  id: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.op_Explicit(System.Reflection.Metadata.EntityHandle)~System.Reflection.Metadata.DeclarativeSecurityAttributeHandle
 - uid: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.IsNil
   href: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.yml
   name: IsNil
@@ -77,7 +142,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1566
+    startLine: 2145
   syntax:
     content:
       CSharp: public bool IsNil { get; }
@@ -85,21 +150,21 @@ items:
     - id: IsNil
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.IsNil
 - uid: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.op_Equality(System.Reflection.Metadata.DeclarativeSecurityAttributeHandle,System.Reflection.Metadata.DeclarativeSecurityAttributeHandle)
   href: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.yml
   name: operator ==(DeclarativeSecurityAttributeHandle, DeclarativeSecurityAttributeHandle)
   fullName: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.operator ==(System.Reflection.Metadata.DeclarativeSecurityAttributeHandle, System.Reflection.Metadata.DeclarativeSecurityAttributeHandle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1576
+    startLine: 2155
   syntax:
     content:
-      CSharp: public static bool operator ==(DeclarativeSecurityAttributeHandle left, DeclarativeSecurityAttributeHandle right) { return left._rowId == right._rowId; }
+      CSharp: public static bool operator ==(DeclarativeSecurityAttributeHandle left, DeclarativeSecurityAttributeHandle right)
     parameters:
     - id: left
       type:
@@ -113,6 +178,10 @@ items:
         href: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.op_Equality(System.Reflection.Metadata.DeclarativeSecurityAttributeHandle,System.Reflection.Metadata.DeclarativeSecurityAttributeHandle)
 - uid: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.Equals(System.Object)
   href: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.yml
@@ -122,7 +191,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1581
+    startLine: 2160
   syntax:
     content:
       CSharp: public override bool Equals(object obj)
@@ -130,10 +199,14 @@ items:
     - id: obj
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.Equals(System.Object)
 - uid: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.Equals(System.Reflection.Metadata.DeclarativeSecurityAttributeHandle)
   href: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.yml
@@ -143,7 +216,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1586
+    startLine: 2165
   syntax:
     content:
       CSharp: public bool Equals(DeclarativeSecurityAttributeHandle other)
@@ -155,6 +228,10 @@ items:
         href: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.Equals(System.Reflection.Metadata.DeclarativeSecurityAttributeHandle)
 - uid: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.GetHashCode
   href: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.yml
@@ -164,26 +241,30 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1591
+    startLine: 2170
   syntax:
     content:
       CSharp: public override int GetHashCode()
     parameters: []
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.GetHashCode
 - uid: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.op_Inequality(System.Reflection.Metadata.DeclarativeSecurityAttributeHandle,System.Reflection.Metadata.DeclarativeSecurityAttributeHandle)
   href: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.yml
   name: operator !=(DeclarativeSecurityAttributeHandle, DeclarativeSecurityAttributeHandle)
   fullName: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.operator !=(System.Reflection.Metadata.DeclarativeSecurityAttributeHandle, System.Reflection.Metadata.DeclarativeSecurityAttributeHandle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1596
+    startLine: 2175
   syntax:
     content:
-      CSharp: public static bool operator !=(DeclarativeSecurityAttributeHandle left, DeclarativeSecurityAttributeHandle right) { return left._rowId != right._rowId; }
+      CSharp: public static bool operator !=(DeclarativeSecurityAttributeHandle left, DeclarativeSecurityAttributeHandle right)
     parameters:
     - id: left
       type:
@@ -197,4 +278,8 @@ items:
         href: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.DeclarativeSecurityAttributeHandle.op_Inequality(System.Reflection.Metadata.DeclarativeSecurityAttributeHandle,System.Reflection.Metadata.DeclarativeSecurityAttributeHandle)

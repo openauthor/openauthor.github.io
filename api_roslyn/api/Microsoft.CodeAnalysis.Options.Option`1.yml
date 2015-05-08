@@ -6,18 +6,19 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Options/Option`1.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Options/Option`1.cs
     startLine: 9
   summary: An global option. An instance of this class can be used to access an option value from an OptionSet.
   syntax:
     content:
-      CSharp: public class Option<T>
+      CSharp: 'public class Option<T> : IOption'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.Options.Option`1
   children:
@@ -26,6 +27,9 @@ items:
   - Microsoft.CodeAnalysis.Options.Option`1.Type
   - Microsoft.CodeAnalysis.Options.Option`1.DefaultValue
   - Microsoft.CodeAnalysis.Options.Option`1.#ctor(System.String,System.String,`0)
+  - Microsoft.CodeAnalysis.Options.Option`1.Microsoft#CodeAnalysis#Options#IOption#Type
+  - Microsoft.CodeAnalysis.Options.Option`1.Microsoft#CodeAnalysis#Options#IOption#DefaultValue
+  - Microsoft.CodeAnalysis.Options.Option`1.Microsoft#CodeAnalysis#Options#IOption#IsPerLanguage
   - Microsoft.CodeAnalysis.Options.Option`1.ToString
   - Microsoft.CodeAnalysis.Options.Option`1.op_Implicit(Microsoft.CodeAnalysis.Options.Option{`0})~Microsoft.CodeAnalysis.Options.OptionKey
 - uid: Microsoft.CodeAnalysis.Options.Option`1.Feature
@@ -40,12 +44,12 @@ items:
   summary: Feature this option is associated with.
   syntax:
     content:
-      CSharp: public string Feature { get; private set; }
+      CSharp: public string Feature { get; }
     parameters:
     - id: Feature
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: Microsoft.CodeAnalysis.Options.Option`1.Feature
 - uid: Microsoft.CodeAnalysis.Options.Option`1.Name
@@ -60,12 +64,12 @@ items:
   summary: The name of the option.
   syntax:
     content:
-      CSharp: public string Name { get; private set; }
+      CSharp: public string Name { get; }
     parameters:
     - id: Name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: Microsoft.CodeAnalysis.Options.Option`1.Name
 - uid: Microsoft.CodeAnalysis.Options.Option`1.Type
@@ -85,7 +89,7 @@ items:
     - id: Type
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
   id: Microsoft.CodeAnalysis.Options.Option`1.Type
 - uid: Microsoft.CodeAnalysis.Options.Option`1.DefaultValue
@@ -100,7 +104,7 @@ items:
   summary: The default value of the option.
   syntax:
     content:
-      CSharp: public T DefaultValue { get; private set; }
+      CSharp: public T DefaultValue { get; }
     parameters:
     - id: DefaultValue
       type:
@@ -124,12 +128,12 @@ items:
     - id: feature
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: defaultValue
       type:
@@ -137,6 +141,63 @@ items:
         name: T
         href: T
   id: Microsoft.CodeAnalysis.Options.Option`1.#ctor(System.String,System.String,`0)
+- uid: Microsoft.CodeAnalysis.Options.Option`1.Microsoft#CodeAnalysis#Options#IOption#Type
+  href: Microsoft.CodeAnalysis.Options.Option`1.yml
+  name: IOption.Type
+  fullName: Microsoft.CodeAnalysis.Options.Option<T>.Microsoft.CodeAnalysis.Options.IOption.Type
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Options/Option`1.cs
+    startLine: 51
+  syntax:
+    content:
+      CSharp: Type IOption.Type { get; }
+    parameters:
+    - id: Microsoft.CodeAnalysis.Options.IOption.Type
+      type:
+        id: System.Type
+        name: Type
+        isExternal: true
+  id: Microsoft.CodeAnalysis.Options.Option`1.Microsoft#CodeAnalysis#Options#IOption#Type
+- uid: Microsoft.CodeAnalysis.Options.Option`1.Microsoft#CodeAnalysis#Options#IOption#DefaultValue
+  href: Microsoft.CodeAnalysis.Options.Option`1.yml
+  name: IOption.DefaultValue
+  fullName: Microsoft.CodeAnalysis.Options.Option<T>.Microsoft.CodeAnalysis.Options.IOption.DefaultValue
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Options/Option`1.cs
+    startLine: 56
+  syntax:
+    content:
+      CSharp: object IOption.DefaultValue { get; }
+    parameters:
+    - id: Microsoft.CodeAnalysis.Options.IOption.DefaultValue
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+  id: Microsoft.CodeAnalysis.Options.Option`1.Microsoft#CodeAnalysis#Options#IOption#DefaultValue
+- uid: Microsoft.CodeAnalysis.Options.Option`1.Microsoft#CodeAnalysis#Options#IOption#IsPerLanguage
+  href: Microsoft.CodeAnalysis.Options.Option`1.yml
+  name: IOption.IsPerLanguage
+  fullName: Microsoft.CodeAnalysis.Options.Option<T>.Microsoft.CodeAnalysis.Options.IOption.IsPerLanguage
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Options/Option`1.cs
+    startLine: 61
+  syntax:
+    content:
+      CSharp: bool IOption.IsPerLanguage { get; }
+    parameters:
+    - id: Microsoft.CodeAnalysis.Options.IOption.IsPerLanguage
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: Microsoft.CodeAnalysis.Options.Option`1.Microsoft#CodeAnalysis#Options#IOption#IsPerLanguage
 - uid: Microsoft.CodeAnalysis.Options.Option`1.ToString
   href: Microsoft.CodeAnalysis.Options.Option`1.yml
   name: ToString()
@@ -152,25 +213,33 @@ items:
     parameters: []
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: Microsoft.CodeAnalysis.Options.Option`1.ToString
 - uid: Microsoft.CodeAnalysis.Options.Option`1.op_Implicit(Microsoft.CodeAnalysis.Options.Option{`0})~Microsoft.CodeAnalysis.Options.OptionKey
   href: Microsoft.CodeAnalysis.Options.Option`1.yml
   name: implicit operator OptionKey(Option<T>)
   fullName: Microsoft.CodeAnalysis.Options.Option<T>.implicit operator Microsoft.CodeAnalysis.Options.OptionKey(Microsoft.CodeAnalysis.Options.Option<T>)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Options/Option`1.cs
     startLine: 71
   syntax:
     content:
-      CSharp: public static implicit operator OptionKey(Option<T> option) { return new OptionKey(option); }
+      CSharp: public static implicit operator OptionKey(Option<T> option)
     parameters:
     - id: option
       type:
         id: Microsoft.CodeAnalysis.Options.Option`1
-        name: Option
+        name: Option<T>
         href: Microsoft.CodeAnalysis.Options.Option`1.yml
     return:
       id: OptionKey
+      type:
+        id: Microsoft.CodeAnalysis.Options.OptionKey
+        name: OptionKey
+        href: Microsoft.CodeAnalysis.Options.OptionKey.yml
   id: Microsoft.CodeAnalysis.Options.Option`1.op_Implicit(Microsoft.CodeAnalysis.Options.Option{`0})~Microsoft.CodeAnalysis.Options.OptionKey

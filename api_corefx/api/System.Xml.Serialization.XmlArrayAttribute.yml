@@ -6,16 +6,21 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlArrayAttribute.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlArrayAttribute.cs
     startLine: 16
   syntax:
     content:
-      CSharp: public class XmlArrayAttribute
+      CSharp: 'public class XmlArrayAttribute : Attribute, _Attribute'
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.Attribute
-    name: System.Attribute
+    name: Attribute
     isExternal: true
   id: System.Xml.Serialization.XmlArrayAttribute
   children:
@@ -56,7 +61,7 @@ items:
     - id: elementName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.Serialization.XmlArrayAttribute.#ctor(System.String)
 - uid: System.Xml.Serialization.XmlArrayAttribute.ElementName
@@ -75,7 +80,7 @@ items:
     - id: ElementName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.Serialization.XmlArrayAttribute.ElementName
 - uid: System.Xml.Serialization.XmlArrayAttribute.Namespace
@@ -94,7 +99,7 @@ items:
     - id: Namespace
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.Serialization.XmlArrayAttribute.Namespace
 - uid: System.Xml.Serialization.XmlArrayAttribute.IsNullable
@@ -113,7 +118,7 @@ items:
     - id: IsNullable
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Xml.Serialization.XmlArrayAttribute.IsNullable
 - uid: System.Xml.Serialization.XmlArrayAttribute.Form
@@ -151,6 +156,6 @@ items:
     - id: Order
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Xml.Serialization.XmlArrayAttribute.Order

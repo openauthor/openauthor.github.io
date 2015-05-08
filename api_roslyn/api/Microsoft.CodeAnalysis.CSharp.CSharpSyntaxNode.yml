@@ -6,18 +6,19 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxNode.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxNode.cs
-    startLine: 27
+    startLine: 23
   summary: Represents a non-terminal node in the syntax tree.
   syntax:
     content:
-      CSharp: public abstract partial class CSharpSyntaxNode
+      CSharp: 'public abstract class CSharpSyntaxNode : SyntaxNode, IMessageSerializable'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: Object
     isExternal: true
   - id: Microsoft.CodeAnalysis.SyntaxNode
     name: SyntaxNode
@@ -27,24 +28,40 @@ items:
   - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.Accept``1(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor{``0})
   - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor)
   - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.Kind
+  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.KindText
   - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.Language
   - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.GetLeadingTrivia
   - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.GetTrailingTrivia
   - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.ToString
   - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.ToFullString
   - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.WriteTo(System.IO.TextWriter)
-  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.SerializeTo(System.IO.Stream,System.Threading.CancellationToken)
-  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.DeserializeFrom(System.IO.Stream,System.Threading.CancellationToken)
+  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.SerializeTo(Stream,CancellationToken)
+  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.DeserializeFrom(Stream,CancellationToken)
   - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.GetLocation
   - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.GetDiagnostics
-  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.GetFirstDirective(System.Func{Microsoft.CodeAnalysis.CSharp.Syntax.DirectiveTriviaSyntax,System.Boolean})
-  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.GetLastDirective(System.Func{Microsoft.CodeAnalysis.CSharp.Syntax.DirectiveTriviaSyntax,System.Boolean})
+  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.GetFirstDirective(Func{Microsoft.CodeAnalysis.CSharp.Syntax.DirectiveTriviaSyntax,System.Boolean})
+  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.GetLastDirective(Func{Microsoft.CodeAnalysis.CSharp.Syntax.DirectiveTriviaSyntax,System.Boolean})
   - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.ChildThatContainsPosition(System.Int32)
   - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.GetFirstToken(System.Boolean,System.Boolean,System.Boolean,System.Boolean)
   - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.GetLastToken(System.Boolean,System.Boolean,System.Boolean,System.Boolean)
   - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.FindToken(System.Int32,System.Boolean)
-  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.FindTrivia(System.Int32,System.Func{Microsoft.CodeAnalysis.SyntaxTrivia,System.Boolean})
+  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.FindTrivia(System.Int32,Func{Microsoft.CodeAnalysis.SyntaxTrivia,System.Boolean})
   - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.FindTrivia(System.Int32,System.Boolean)
+  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.EquivalentToCore(Microsoft.CodeAnalysis.SyntaxNode)
+  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.SyntaxTreeCore
+  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.FindTokenCore(System.Int32,System.Boolean)
+  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.FindTokenCore(System.Int32,Func{Microsoft.CodeAnalysis.SyntaxTrivia,System.Boolean})
+  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.FindTriviaCore(System.Int32,System.Boolean)
+  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.ReplaceCore``1(IEnumerable{``0},Func{``0,``0,Microsoft.CodeAnalysis.SyntaxNode},IEnumerable{Microsoft.CodeAnalysis.SyntaxToken},Func{Microsoft.CodeAnalysis.SyntaxToken,Microsoft.CodeAnalysis.SyntaxToken,Microsoft.CodeAnalysis.SyntaxToken},IEnumerable{Microsoft.CodeAnalysis.SyntaxTrivia},Func{Microsoft.CodeAnalysis.SyntaxTrivia,Microsoft.CodeAnalysis.SyntaxTrivia,Microsoft.CodeAnalysis.SyntaxTrivia})
+  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.ReplaceNodeInListCore(Microsoft.CodeAnalysis.SyntaxNode,IEnumerable{Microsoft.CodeAnalysis.SyntaxNode})
+  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.InsertNodesInListCore(Microsoft.CodeAnalysis.SyntaxNode,IEnumerable{Microsoft.CodeAnalysis.SyntaxNode},System.Boolean)
+  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.ReplaceTokenInListCore(Microsoft.CodeAnalysis.SyntaxToken,IEnumerable{Microsoft.CodeAnalysis.SyntaxToken})
+  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.InsertTokensInListCore(Microsoft.CodeAnalysis.SyntaxToken,IEnumerable{Microsoft.CodeAnalysis.SyntaxToken},System.Boolean)
+  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.ReplaceTriviaInListCore(Microsoft.CodeAnalysis.SyntaxTrivia,IEnumerable{Microsoft.CodeAnalysis.SyntaxTrivia})
+  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.InsertTriviaInListCore(Microsoft.CodeAnalysis.SyntaxTrivia,IEnumerable{Microsoft.CodeAnalysis.SyntaxTrivia},System.Boolean)
+  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.RemoveNodesCore(IEnumerable{Microsoft.CodeAnalysis.SyntaxNode},Microsoft.CodeAnalysis.SyntaxRemoveOptions)
+  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.NormalizeWhitespaceCore(System.String,System.Boolean)
+  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.IsEquivalentToCore(Microsoft.CodeAnalysis.SyntaxNode,System.Boolean)
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.Accept``1(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor{``0})
   href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.yml
   name: Accept<TResult>(CSharpSyntaxVisitor<TResult>)
@@ -53,18 +70,22 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxNode.cs
-    startLine: 132
+    startLine: 128
   syntax:
     content:
-      CSharp: public abstract TResult Accept<TResult>(CSharpSyntaxVisitor<TResult> visitor);
+      CSharp: public abstract TResult Accept<TResult>(CSharpSyntaxVisitor<TResult> visitor)
     parameters:
     - id: visitor
       type:
         id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor{``0}
-        name: CSharpSyntaxVisitor
+        name: CSharpSyntaxVisitor<TResult>
         href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor{``0}
     return:
       id: TResult
+      type:
+        id: TResult
+        name: TResult
+        href: TResult
   id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.Accept``1(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor{``0})
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor)
   href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.yml
@@ -74,10 +95,10 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxNode.cs
-    startLine: 134
+    startLine: 130
   syntax:
     content:
-      CSharp: public abstract void Accept(CSharpSyntaxVisitor visitor);
+      CSharp: public abstract void Accept(CSharpSyntaxVisitor visitor)
     parameters:
     - id: visitor
       type:
@@ -93,7 +114,7 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxNode.cs
-    startLine: 164
+    startLine: 160
   summary: Returns the [Microsoft.CodeAnalysis.CSharp.SyntaxKind](Microsoft.CodeAnalysis.CSharp.SyntaxKind.yml) of the node.
   syntax:
     content:
@@ -101,7 +122,30 @@ items:
     parameters: []
     return:
       id: SyntaxKind
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.SyntaxKind
+        name: SyntaxKind
+        href: Microsoft.CodeAnalysis.CSharp.SyntaxKind.yml
   id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.Kind
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.KindText
+  href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.yml
+  name: KindText
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.KindText
+  type: Property
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxNode.cs
+    startLine: 165
+  syntax:
+    content:
+      CSharp: protected override string KindText { get; }
+    parameters:
+    - id: KindText
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.KindText
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.Language
   href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.yml
   name: Language
@@ -110,7 +154,7 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxNode.cs
-    startLine: 180
+    startLine: 176
   summary: The language name that this node is syntax of.
   syntax:
     content:
@@ -119,7 +163,7 @@ items:
     - id: Language
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.Language
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.GetLeadingTrivia
@@ -130,14 +174,18 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxNode.cs
-    startLine: 206
+    startLine: 202
   summary: The list of trivia that appears before this node in the source code.
   syntax:
     content:
-      CSharp: public new SyntaxTriviaList GetLeadingTrivia()
+      CSharp: public SyntaxTriviaList GetLeadingTrivia()
     parameters: []
     return:
       id: SyntaxTriviaList
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxTriviaList
+        name: SyntaxTriviaList
+        href: Microsoft.CodeAnalysis.SyntaxTriviaList
   id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.GetLeadingTrivia
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.GetTrailingTrivia
   href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.yml
@@ -147,14 +195,18 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxNode.cs
-    startLine: 215
+    startLine: 211
   summary: The list of trivia that appears after this node in the source code.
   syntax:
     content:
-      CSharp: public new SyntaxTriviaList GetTrailingTrivia()
+      CSharp: public SyntaxTriviaList GetTrailingTrivia()
     parameters: []
     return:
       id: SyntaxTriviaList
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxTriviaList
+        name: SyntaxTriviaList
+        href: Microsoft.CodeAnalysis.SyntaxTriviaList
   id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.GetTrailingTrivia
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.ToString
   href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.yml
@@ -164,14 +216,18 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxNode.cs
-    startLine: 245
+    startLine: 241
   summary: Returns the string representation of this node, not including its leading and trailing trivia.
   syntax:
     content:
-      CSharp: public sealed override string ToString()
+      CSharp: public override sealed string ToString()
     parameters: []
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
       description: The string representation of this node, not including its leading and trailing trivia.
   id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.ToString
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.ToFullString
@@ -182,14 +238,18 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxNode.cs
-    startLine: 255
+    startLine: 251
   summary: Returns full string representation of this node including its leading and trailing trivia.
   syntax:
     content:
-      CSharp: public sealed override string ToFullString()
+      CSharp: public override sealed string ToFullString()
     parameters: []
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
       description: The full string representation of this node including its leading and trailing trivia.
   id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.ToFullString
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.WriteTo(System.IO.TextWriter)
@@ -200,70 +260,74 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxNode.cs
-    startLine: 263
+    startLine: 259
   summary: Writes the full text of this node to the specified TextWriter.
   syntax:
     content:
-      CSharp: public override void WriteTo(System.IO.TextWriter writer)
+      CSharp: public override void WriteTo(TextWriter writer)
     parameters:
     - id: writer
       type:
         id: System.IO.TextWriter
-        name: System.IO.TextWriter
+        name: TextWriter
         isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.WriteTo(System.IO.TextWriter)
-- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.SerializeTo(System.IO.Stream,System.Threading.CancellationToken)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.SerializeTo(Stream,CancellationToken)
   href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.yml
   name: SerializeTo(Stream, CancellationToken)
-  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.SerializeTo(System.IO.Stream, System.Threading.CancellationToken)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.SerializeTo(Stream, CancellationToken)
   type: Method
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxNode.cs
-    startLine: 276
+    startLine: 272
   summary: Serialize the syntax node into a byte stream.
   syntax:
     content:
-      CSharp: public override void SerializeTo(Stream stream, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public override void SerializeTo(Stream stream, CancellationToken cancellationToken = null)
     parameters:
     - id: stream
       type:
-        id: System.IO.Stream
-        name: System.IO.Stream
+        id: Stream
+        name: Stream
         isExternal: true
     - id: cancellationToken
       type:
-        id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        id: CancellationToken
+        name: CancellationToken
         isExternal: true
-  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.SerializeTo(System.IO.Stream,System.Threading.CancellationToken)
-- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.DeserializeFrom(System.IO.Stream,System.Threading.CancellationToken)
+  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.SerializeTo(Stream,CancellationToken)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.DeserializeFrom(Stream,CancellationToken)
   href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.yml
   name: DeserializeFrom(Stream, CancellationToken)
-  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.DeserializeFrom(System.IO.Stream, System.Threading.CancellationToken)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.DeserializeFrom(Stream, CancellationToken)
   type: Method
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxNode.cs
-    startLine: 300
+    startLine: 293
   summary: Deserialize a syntax node from the byte stream.
   syntax:
     content:
-      CSharp: public static SyntaxNode DeserializeFrom(Stream stream, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public static SyntaxNode DeserializeFrom(Stream stream, CancellationToken cancellationToken = null)
     parameters:
     - id: stream
       type:
-        id: System.IO.Stream
-        name: System.IO.Stream
+        id: Stream
+        name: Stream
         isExternal: true
     - id: cancellationToken
       type:
-        id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        id: CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: SyntaxNode
-  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.DeserializeFrom(System.IO.Stream,System.Threading.CancellationToken)
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: Microsoft.CodeAnalysis.SyntaxNode
+  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.DeserializeFrom(Stream,CancellationToken)
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.GetLocation
   href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.yml
   name: GetLocation()
@@ -272,14 +336,18 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxNode.cs
-    startLine: 428
-  summary: Gets a [Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.Location](#) for this node.
+    startLine: 418
+  summary: Gets a [Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.Location]() for this node.
   syntax:
     content:
-      CSharp: public new Location GetLocation()
+      CSharp: public Location GetLocation()
     parameters: []
     return:
       id: Location
+      type:
+        id: Microsoft.CodeAnalysis.Location
+        name: Location
+        href: Microsoft.CodeAnalysis.Location
   id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.GetLocation
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.GetDiagnostics
   href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.yml
@@ -289,7 +357,7 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxNode.cs
-    startLine: 448
+    startLine: 438
   summary: >-
     Gets a list of all the diagnostics in the sub tree that has this node as its root.
 
@@ -298,20 +366,24 @@ items:
     like nowarn, warnaserror etc.
   syntax:
     content:
-      CSharp: public new IEnumerable<Diagnostic> GetDiagnostics()
+      CSharp: public IEnumerable<Diagnostic> GetDiagnostics()
     parameters: []
     return:
       id: IEnumerable
+      type:
+        id: IEnumerable{Microsoft.CodeAnalysis.Diagnostic}
+        name: IEnumerable<Diagnostic>
+        isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.GetDiagnostics
-- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.GetFirstDirective(System.Func{Microsoft.CodeAnalysis.CSharp.Syntax.DirectiveTriviaSyntax,System.Boolean})
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.GetFirstDirective(Func{Microsoft.CodeAnalysis.CSharp.Syntax.DirectiveTriviaSyntax,System.Boolean})
   href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.yml
   name: GetFirstDirective(Func<DirectiveTriviaSyntax, bool>)
-  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.GetFirstDirective(System.Func<Microsoft.CodeAnalysis.CSharp.Syntax.DirectiveTriviaSyntax, bool>)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.GetFirstDirective(Func<Microsoft.CodeAnalysis.CSharp.Syntax.DirectiveTriviaSyntax, bool>)
   type: Method
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxNode.cs
-    startLine: 468
+    startLine: 463
   summary: Gets the first directive of the tree rooted by this node.
   syntax:
     content:
@@ -319,21 +391,25 @@ items:
     parameters:
     - id: predicate
       type:
-        id: System.Func{Microsoft.CodeAnalysis.CSharp.Syntax.DirectiveTriviaSyntax,System.Boolean}
-        name: System.Func{Microsoft.CodeAnalysis.CSharp.Syntax.DirectiveTriviaSyntax,System.Boolean}
+        id: Func{Microsoft.CodeAnalysis.CSharp.Syntax.DirectiveTriviaSyntax,System.Boolean}
+        name: Func<DirectiveTriviaSyntax, bool>
         isExternal: true
     return:
       id: DirectiveTriviaSyntax
-  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.GetFirstDirective(System.Func{Microsoft.CodeAnalysis.CSharp.Syntax.DirectiveTriviaSyntax,System.Boolean})
-- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.GetLastDirective(System.Func{Microsoft.CodeAnalysis.CSharp.Syntax.DirectiveTriviaSyntax,System.Boolean})
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.Syntax.DirectiveTriviaSyntax
+        name: DirectiveTriviaSyntax
+        href: Microsoft.CodeAnalysis.CSharp.Syntax.DirectiveTriviaSyntax.yml
+  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.GetFirstDirective(Func{Microsoft.CodeAnalysis.CSharp.Syntax.DirectiveTriviaSyntax,System.Boolean})
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.GetLastDirective(Func{Microsoft.CodeAnalysis.CSharp.Syntax.DirectiveTriviaSyntax,System.Boolean})
   href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.yml
   name: GetLastDirective(Func<DirectiveTriviaSyntax, bool>)
-  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.GetLastDirective(System.Func<Microsoft.CodeAnalysis.CSharp.Syntax.DirectiveTriviaSyntax, bool>)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.GetLastDirective(Func<Microsoft.CodeAnalysis.CSharp.Syntax.DirectiveTriviaSyntax, bool>)
   type: Method
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxNode.cs
-    startLine: 508
+    startLine: 503
   summary: Gets the last directive of the tree rooted by this node.
   syntax:
     content:
@@ -341,12 +417,16 @@ items:
     parameters:
     - id: predicate
       type:
-        id: System.Func{Microsoft.CodeAnalysis.CSharp.Syntax.DirectiveTriviaSyntax,System.Boolean}
-        name: System.Func{Microsoft.CodeAnalysis.CSharp.Syntax.DirectiveTriviaSyntax,System.Boolean}
+        id: Func{Microsoft.CodeAnalysis.CSharp.Syntax.DirectiveTriviaSyntax,System.Boolean}
+        name: Func<DirectiveTriviaSyntax, bool>
         isExternal: true
     return:
       id: DirectiveTriviaSyntax
-  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.GetLastDirective(System.Func{Microsoft.CodeAnalysis.CSharp.Syntax.DirectiveTriviaSyntax,System.Boolean})
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.Syntax.DirectiveTriviaSyntax
+        name: DirectiveTriviaSyntax
+        href: Microsoft.CodeAnalysis.CSharp.Syntax.DirectiveTriviaSyntax.yml
+  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.GetLastDirective(Func{Microsoft.CodeAnalysis.CSharp.Syntax.DirectiveTriviaSyntax,System.Boolean})
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.ChildThatContainsPosition(System.Int32)
   href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.yml
   name: ChildThatContainsPosition(int)
@@ -355,7 +435,7 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxNode.cs
-    startLine: 552
+    startLine: 547
   summary: Returns child node or token that contains given position.
   syntax:
     content:
@@ -364,10 +444,14 @@ items:
     - id: position
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     return:
       id: SyntaxNodeOrToken
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNodeOrToken
+        name: SyntaxNodeOrToken
+        href: Microsoft.CodeAnalysis.SyntaxNodeOrToken
   id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.ChildThatContainsPosition(System.Int32)
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.GetFirstToken(System.Boolean,System.Boolean,System.Boolean,System.Boolean)
   href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.yml
@@ -377,16 +461,16 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxNode.cs
-    startLine: 579
+    startLine: 574
   summary: Gets the first token of the tree rooted by this node.
   syntax:
     content:
-      CSharp: public new SyntaxToken GetFirstToken(bool includeZeroWidth = false, bool includeSkipped = false, bool includeDirectives = false, bool includeDocumentationComments = false)
+      CSharp: public SyntaxToken GetFirstToken(bool includeZeroWidth = false, bool includeSkipped = false, bool includeDirectives = false, bool includeDocumentationComments = false)
     parameters:
     - id: includeZeroWidth
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
       description: >-
         True if zero width tokens should be included, false by
@@ -395,19 +479,19 @@ items:
     - id: includeSkipped
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
       description: True if skipped tokens should be included, false by default.
     - id: includeDirectives
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
       description: True if directives should be included, false by default.
     - id: includeDocumentationComments
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
       description: >-
         True if documentation comments should be
@@ -415,6 +499,10 @@ items:
         included, false by default.
     return:
       id: SyntaxToken
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxToken
+        name: SyntaxToken
+        href: Microsoft.CodeAnalysis.SyntaxToken
   id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.GetFirstToken(System.Boolean,System.Boolean,System.Boolean,System.Boolean)
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.GetLastToken(System.Boolean,System.Boolean,System.Boolean,System.Boolean)
   href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.yml
@@ -424,16 +512,16 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxNode.cs
-    startLine: 607
+    startLine: 602
   summary: Gets the last non-zero-width token of the tree rooted by this node.
   syntax:
     content:
-      CSharp: public new SyntaxToken GetLastToken(bool includeZeroWidth = false, bool includeSkipped = false, bool includeDirectives = false, bool includeDocumentationComments = false)
+      CSharp: public SyntaxToken GetLastToken(bool includeZeroWidth = false, bool includeSkipped = false, bool includeDirectives = false, bool includeDocumentationComments = false)
     parameters:
     - id: includeZeroWidth
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
       description: >-
         True if zero width tokens should be included, false by
@@ -442,19 +530,19 @@ items:
     - id: includeSkipped
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
       description: True if skipped tokens should be included, false by default.
     - id: includeDirectives
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
       description: True if directives should be included, false by default.
     - id: includeDocumentationComments
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
       description: >-
         True if documentation comments should be
@@ -462,6 +550,10 @@ items:
         included, false by default.
     return:
       id: SyntaxToken
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxToken
+        name: SyntaxToken
+        href: Microsoft.CodeAnalysis.SyntaxToken
   id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.GetLastToken(System.Boolean,System.Boolean,System.Boolean,System.Boolean)
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.FindToken(System.Int32,System.Boolean)
   href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.yml
@@ -471,7 +563,7 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxNode.cs
-    startLine: 706
+    startLine: 701
   summary: >-
     Finds a token according to the following rules:
 
@@ -490,30 +582,34 @@ items:
     3) Otherwise an ArgumentOutOfRangeException is thrown
   syntax:
     content:
-      CSharp: public new SyntaxToken FindToken(int position, bool findInsideTrivia = false)
+      CSharp: public SyntaxToken FindToken(int position, bool findInsideTrivia = false)
     parameters:
     - id: position
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: findInsideTrivia
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     return:
       id: SyntaxToken
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxToken
+        name: SyntaxToken
+        href: Microsoft.CodeAnalysis.SyntaxToken
   id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.FindToken(System.Int32,System.Boolean)
-- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.FindTrivia(System.Int32,System.Func{Microsoft.CodeAnalysis.SyntaxTrivia,System.Boolean})
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.FindTrivia(System.Int32,Func{Microsoft.CodeAnalysis.SyntaxTrivia,System.Boolean})
   href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.yml
   name: FindTrivia(int, Func<SyntaxTrivia, bool>)
-  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.FindTrivia(int, System.Func<Microsoft.CodeAnalysis.SyntaxTrivia, bool>)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.FindTrivia(int, Func<Microsoft.CodeAnalysis.SyntaxTrivia, bool>)
   type: Method
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxNode.cs
-    startLine: 802
+    startLine: 797
   summary: >-
     Finds a descendant trivia of this node at the specified position, where the position is
 
@@ -525,7 +621,7 @@ items:
     - id: position
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: >-
         The character position of the trivia relative to the beginning of
@@ -533,8 +629,8 @@ items:
         the file.
     - id: stepInto
       type:
-        id: System.Func{Microsoft.CodeAnalysis.SyntaxTrivia,System.Boolean}
-        name: System.Func{Microsoft.CodeAnalysis.SyntaxTrivia,System.Boolean}
+        id: Func{Microsoft.CodeAnalysis.SyntaxTrivia,System.Boolean}
+        name: Func<SyntaxTrivia, bool>
         isExternal: true
       description: >-
         Specifies a function that determines per trivia node, whether to
@@ -542,7 +638,11 @@ items:
         descend into structured trivia of that node.
     return:
       id: SyntaxTrivia
-  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.FindTrivia(System.Int32,System.Func{Microsoft.CodeAnalysis.SyntaxTrivia,System.Boolean})
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxTrivia
+        name: SyntaxTrivia
+        href: Microsoft.CodeAnalysis.SyntaxTrivia
+  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.FindTrivia(System.Int32,Func{Microsoft.CodeAnalysis.SyntaxTrivia,System.Boolean})
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.FindTrivia(System.Int32,System.Boolean)
   href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.yml
   name: FindTrivia(int, bool)
@@ -551,16 +651,16 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxNode.cs
-    startLine: 818
+    startLine: 813
   summary: Finds a descendant trivia of this node whose span includes the supplied position.
   syntax:
     content:
-      CSharp: public new SyntaxTrivia FindTrivia(int position, bool findInsideTrivia = false)
+      CSharp: public SyntaxTrivia FindTrivia(int position, bool findInsideTrivia = false)
     parameters:
     - id: position
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: >-
         The character position of the trivia relative to the beginning of
@@ -569,9 +669,483 @@ items:
     - id: findInsideTrivia
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
       description: Whether to search inside structured trivia.
     return:
       id: SyntaxTrivia
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxTrivia
+        name: SyntaxTrivia
+        href: Microsoft.CodeAnalysis.SyntaxTrivia
   id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.FindTrivia(System.Int32,System.Boolean)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.EquivalentToCore(Microsoft.CodeAnalysis.SyntaxNode)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.yml
+  name: EquivalentToCore(SyntaxNode)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.EquivalentToCore(Microsoft.CodeAnalysis.SyntaxNode)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxNode.cs
+    startLine: 891
+  summary: Determine if this node is structurally equivalent to another.
+  syntax:
+    content:
+      CSharp: protected override bool EquivalentToCore(SyntaxNode other)
+    parameters:
+    - id: other
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: Microsoft.CodeAnalysis.SyntaxNode
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.EquivalentToCore(Microsoft.CodeAnalysis.SyntaxNode)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.SyntaxTreeCore
+  href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.yml
+  name: SyntaxTreeCore
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.SyntaxTreeCore
+  type: Property
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxNode.cs
+    startLine: 896
+  syntax:
+    content:
+      CSharp: protected override SyntaxTree SyntaxTreeCore { get; }
+    parameters:
+    - id: SyntaxTreeCore
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxTree
+        name: SyntaxTree
+        href: Microsoft.CodeAnalysis.SyntaxTree
+  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.SyntaxTreeCore
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.FindTokenCore(System.Int32,System.Boolean)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.yml
+  name: FindTokenCore(int, bool)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.FindTokenCore(int, bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxNode.cs
+    startLine: 904
+  syntax:
+    content:
+      CSharp: protected override SyntaxToken FindTokenCore(int position, bool findInsideTrivia)
+    parameters:
+    - id: position
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: findInsideTrivia
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+    return:
+      id: SyntaxToken
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxToken
+        name: SyntaxToken
+        href: Microsoft.CodeAnalysis.SyntaxToken
+  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.FindTokenCore(System.Int32,System.Boolean)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.FindTokenCore(System.Int32,Func{Microsoft.CodeAnalysis.SyntaxTrivia,System.Boolean})
+  href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.yml
+  name: FindTokenCore(int, Func<SyntaxTrivia, bool>)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.FindTokenCore(int, Func<Microsoft.CodeAnalysis.SyntaxTrivia, bool>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxNode.cs
+    startLine: 909
+  syntax:
+    content:
+      CSharp: protected override SyntaxToken FindTokenCore(int position, Func<SyntaxTrivia, bool> stepInto)
+    parameters:
+    - id: position
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: stepInto
+      type:
+        id: Func{Microsoft.CodeAnalysis.SyntaxTrivia,System.Boolean}
+        name: Func<SyntaxTrivia, bool>
+        isExternal: true
+    return:
+      id: SyntaxToken
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxToken
+        name: SyntaxToken
+        href: Microsoft.CodeAnalysis.SyntaxToken
+  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.FindTokenCore(System.Int32,Func{Microsoft.CodeAnalysis.SyntaxTrivia,System.Boolean})
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.FindTriviaCore(System.Int32,System.Boolean)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.yml
+  name: FindTriviaCore(int, bool)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.FindTriviaCore(int, bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxNode.cs
+    startLine: 914
+  syntax:
+    content:
+      CSharp: protected override SyntaxTrivia FindTriviaCore(int position, bool findInsideTrivia)
+    parameters:
+    - id: position
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: findInsideTrivia
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+    return:
+      id: SyntaxTrivia
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxTrivia
+        name: SyntaxTrivia
+        href: Microsoft.CodeAnalysis.SyntaxTrivia
+  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.FindTriviaCore(System.Int32,System.Boolean)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.ReplaceCore``1(IEnumerable{``0},Func{``0,``0,Microsoft.CodeAnalysis.SyntaxNode},IEnumerable{Microsoft.CodeAnalysis.SyntaxToken},Func{Microsoft.CodeAnalysis.SyntaxToken,Microsoft.CodeAnalysis.SyntaxToken,Microsoft.CodeAnalysis.SyntaxToken},IEnumerable{Microsoft.CodeAnalysis.SyntaxTrivia},Func{Microsoft.CodeAnalysis.SyntaxTrivia,Microsoft.CodeAnalysis.SyntaxTrivia,Microsoft.CodeAnalysis.SyntaxTrivia})
+  href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.yml
+  name: ReplaceCore<TNode>(IEnumerable<TNode>, Func<TNode, TNode, SyntaxNode>, IEnumerable<SyntaxToken>, Func<SyntaxToken, SyntaxToken, SyntaxToken>, IEnumerable<SyntaxTrivia>, Func<SyntaxTrivia, SyntaxTrivia, SyntaxTrivia>)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.ReplaceCore<TNode>(IEnumerable<TNode>, Func<TNode, TNode, Microsoft.CodeAnalysis.SyntaxNode>, IEnumerable<Microsoft.CodeAnalysis.SyntaxToken>, Func<Microsoft.CodeAnalysis.SyntaxToken, Microsoft.CodeAnalysis.SyntaxToken, Microsoft.CodeAnalysis.SyntaxToken>, IEnumerable<Microsoft.CodeAnalysis.SyntaxTrivia>, Func<Microsoft.CodeAnalysis.SyntaxTrivia, Microsoft.CodeAnalysis.SyntaxTrivia, Microsoft.CodeAnalysis.SyntaxTrivia>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxNode.cs
+    startLine: 919
+  syntax:
+    content:
+      CSharp: protected internal override SyntaxNode ReplaceCore<TNode>(IEnumerable<TNode> nodes = null, Func<TNode, TNode, SyntaxNode> computeReplacementNode = null, IEnumerable<SyntaxToken> tokens = null, Func<SyntaxToken, SyntaxToken, SyntaxToken> computeReplacementToken = null, IEnumerable<SyntaxTrivia> trivia = null, Func<SyntaxTrivia, SyntaxTrivia, SyntaxTrivia> computeReplacementTrivia = null)
+    parameters:
+    - id: nodes
+      type:
+        id: IEnumerable{``0}
+        name: IEnumerable<TNode>
+        isExternal: true
+    - id: computeReplacementNode
+      type:
+        id: Func{``0,``0,Microsoft.CodeAnalysis.SyntaxNode}
+        name: Func<TNode, TNode, SyntaxNode>
+        isExternal: true
+    - id: tokens
+      type:
+        id: IEnumerable{Microsoft.CodeAnalysis.SyntaxToken}
+        name: IEnumerable<SyntaxToken>
+        isExternal: true
+    - id: computeReplacementToken
+      type:
+        id: Func{Microsoft.CodeAnalysis.SyntaxToken,Microsoft.CodeAnalysis.SyntaxToken,Microsoft.CodeAnalysis.SyntaxToken}
+        name: Func<SyntaxToken, SyntaxToken, SyntaxToken>
+        isExternal: true
+    - id: trivia
+      type:
+        id: IEnumerable{Microsoft.CodeAnalysis.SyntaxTrivia}
+        name: IEnumerable<SyntaxTrivia>
+        isExternal: true
+    - id: computeReplacementTrivia
+      type:
+        id: Func{Microsoft.CodeAnalysis.SyntaxTrivia,Microsoft.CodeAnalysis.SyntaxTrivia,Microsoft.CodeAnalysis.SyntaxTrivia}
+        name: Func<SyntaxTrivia, SyntaxTrivia, SyntaxTrivia>
+        isExternal: true
+    return:
+      id: SyntaxNode
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: Microsoft.CodeAnalysis.SyntaxNode
+  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.ReplaceCore``1(IEnumerable{``0},Func{``0,``0,Microsoft.CodeAnalysis.SyntaxNode},IEnumerable{Microsoft.CodeAnalysis.SyntaxToken},Func{Microsoft.CodeAnalysis.SyntaxToken,Microsoft.CodeAnalysis.SyntaxToken,Microsoft.CodeAnalysis.SyntaxToken},IEnumerable{Microsoft.CodeAnalysis.SyntaxTrivia},Func{Microsoft.CodeAnalysis.SyntaxTrivia,Microsoft.CodeAnalysis.SyntaxTrivia,Microsoft.CodeAnalysis.SyntaxTrivia})
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.ReplaceNodeInListCore(Microsoft.CodeAnalysis.SyntaxNode,IEnumerable{Microsoft.CodeAnalysis.SyntaxNode})
+  href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.yml
+  name: ReplaceNodeInListCore(SyntaxNode, IEnumerable<SyntaxNode>)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.ReplaceNodeInListCore(Microsoft.CodeAnalysis.SyntaxNode, IEnumerable<Microsoft.CodeAnalysis.SyntaxNode>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxNode.cs
+    startLine: 930
+  syntax:
+    content:
+      CSharp: protected internal override SyntaxNode ReplaceNodeInListCore(SyntaxNode originalNode, IEnumerable<SyntaxNode> replacementNodes)
+    parameters:
+    - id: originalNode
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: Microsoft.CodeAnalysis.SyntaxNode
+    - id: replacementNodes
+      type:
+        id: IEnumerable{Microsoft.CodeAnalysis.SyntaxNode}
+        name: IEnumerable<SyntaxNode>
+        isExternal: true
+    return:
+      id: SyntaxNode
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: Microsoft.CodeAnalysis.SyntaxNode
+  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.ReplaceNodeInListCore(Microsoft.CodeAnalysis.SyntaxNode,IEnumerable{Microsoft.CodeAnalysis.SyntaxNode})
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.InsertNodesInListCore(Microsoft.CodeAnalysis.SyntaxNode,IEnumerable{Microsoft.CodeAnalysis.SyntaxNode},System.Boolean)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.yml
+  name: InsertNodesInListCore(SyntaxNode, IEnumerable<SyntaxNode>, bool)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.InsertNodesInListCore(Microsoft.CodeAnalysis.SyntaxNode, IEnumerable<Microsoft.CodeAnalysis.SyntaxNode>, bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxNode.cs
+    startLine: 935
+  syntax:
+    content:
+      CSharp: protected internal override SyntaxNode InsertNodesInListCore(SyntaxNode nodeInList, IEnumerable<SyntaxNode> nodesToInsert, bool insertBefore)
+    parameters:
+    - id: nodeInList
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: Microsoft.CodeAnalysis.SyntaxNode
+    - id: nodesToInsert
+      type:
+        id: IEnumerable{Microsoft.CodeAnalysis.SyntaxNode}
+        name: IEnumerable<SyntaxNode>
+        isExternal: true
+    - id: insertBefore
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+    return:
+      id: SyntaxNode
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: Microsoft.CodeAnalysis.SyntaxNode
+  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.InsertNodesInListCore(Microsoft.CodeAnalysis.SyntaxNode,IEnumerable{Microsoft.CodeAnalysis.SyntaxNode},System.Boolean)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.ReplaceTokenInListCore(Microsoft.CodeAnalysis.SyntaxToken,IEnumerable{Microsoft.CodeAnalysis.SyntaxToken})
+  href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.yml
+  name: ReplaceTokenInListCore(SyntaxToken, IEnumerable<SyntaxToken>)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.ReplaceTokenInListCore(Microsoft.CodeAnalysis.SyntaxToken, IEnumerable<Microsoft.CodeAnalysis.SyntaxToken>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxNode.cs
+    startLine: 940
+  syntax:
+    content:
+      CSharp: protected internal override SyntaxNode ReplaceTokenInListCore(SyntaxToken originalToken, IEnumerable<SyntaxToken> newTokens)
+    parameters:
+    - id: originalToken
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxToken
+        name: SyntaxToken
+        href: Microsoft.CodeAnalysis.SyntaxToken
+    - id: newTokens
+      type:
+        id: IEnumerable{Microsoft.CodeAnalysis.SyntaxToken}
+        name: IEnumerable<SyntaxToken>
+        isExternal: true
+    return:
+      id: SyntaxNode
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: Microsoft.CodeAnalysis.SyntaxNode
+  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.ReplaceTokenInListCore(Microsoft.CodeAnalysis.SyntaxToken,IEnumerable{Microsoft.CodeAnalysis.SyntaxToken})
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.InsertTokensInListCore(Microsoft.CodeAnalysis.SyntaxToken,IEnumerable{Microsoft.CodeAnalysis.SyntaxToken},System.Boolean)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.yml
+  name: InsertTokensInListCore(SyntaxToken, IEnumerable<SyntaxToken>, bool)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.InsertTokensInListCore(Microsoft.CodeAnalysis.SyntaxToken, IEnumerable<Microsoft.CodeAnalysis.SyntaxToken>, bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxNode.cs
+    startLine: 945
+  syntax:
+    content:
+      CSharp: protected internal override SyntaxNode InsertTokensInListCore(SyntaxToken originalToken, IEnumerable<SyntaxToken> newTokens, bool insertBefore)
+    parameters:
+    - id: originalToken
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxToken
+        name: SyntaxToken
+        href: Microsoft.CodeAnalysis.SyntaxToken
+    - id: newTokens
+      type:
+        id: IEnumerable{Microsoft.CodeAnalysis.SyntaxToken}
+        name: IEnumerable<SyntaxToken>
+        isExternal: true
+    - id: insertBefore
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+    return:
+      id: SyntaxNode
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: Microsoft.CodeAnalysis.SyntaxNode
+  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.InsertTokensInListCore(Microsoft.CodeAnalysis.SyntaxToken,IEnumerable{Microsoft.CodeAnalysis.SyntaxToken},System.Boolean)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.ReplaceTriviaInListCore(Microsoft.CodeAnalysis.SyntaxTrivia,IEnumerable{Microsoft.CodeAnalysis.SyntaxTrivia})
+  href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.yml
+  name: ReplaceTriviaInListCore(SyntaxTrivia, IEnumerable<SyntaxTrivia>)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.ReplaceTriviaInListCore(Microsoft.CodeAnalysis.SyntaxTrivia, IEnumerable<Microsoft.CodeAnalysis.SyntaxTrivia>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxNode.cs
+    startLine: 950
+  syntax:
+    content:
+      CSharp: protected internal override SyntaxNode ReplaceTriviaInListCore(SyntaxTrivia originalTrivia, IEnumerable<SyntaxTrivia> newTrivia)
+    parameters:
+    - id: originalTrivia
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxTrivia
+        name: SyntaxTrivia
+        href: Microsoft.CodeAnalysis.SyntaxTrivia
+    - id: newTrivia
+      type:
+        id: IEnumerable{Microsoft.CodeAnalysis.SyntaxTrivia}
+        name: IEnumerable<SyntaxTrivia>
+        isExternal: true
+    return:
+      id: SyntaxNode
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: Microsoft.CodeAnalysis.SyntaxNode
+  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.ReplaceTriviaInListCore(Microsoft.CodeAnalysis.SyntaxTrivia,IEnumerable{Microsoft.CodeAnalysis.SyntaxTrivia})
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.InsertTriviaInListCore(Microsoft.CodeAnalysis.SyntaxTrivia,IEnumerable{Microsoft.CodeAnalysis.SyntaxTrivia},System.Boolean)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.yml
+  name: InsertTriviaInListCore(SyntaxTrivia, IEnumerable<SyntaxTrivia>, bool)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.InsertTriviaInListCore(Microsoft.CodeAnalysis.SyntaxTrivia, IEnumerable<Microsoft.CodeAnalysis.SyntaxTrivia>, bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxNode.cs
+    startLine: 955
+  syntax:
+    content:
+      CSharp: protected internal override SyntaxNode InsertTriviaInListCore(SyntaxTrivia originalTrivia, IEnumerable<SyntaxTrivia> newTrivia, bool insertBefore)
+    parameters:
+    - id: originalTrivia
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxTrivia
+        name: SyntaxTrivia
+        href: Microsoft.CodeAnalysis.SyntaxTrivia
+    - id: newTrivia
+      type:
+        id: IEnumerable{Microsoft.CodeAnalysis.SyntaxTrivia}
+        name: IEnumerable<SyntaxTrivia>
+        isExternal: true
+    - id: insertBefore
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+    return:
+      id: SyntaxNode
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: Microsoft.CodeAnalysis.SyntaxNode
+  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.InsertTriviaInListCore(Microsoft.CodeAnalysis.SyntaxTrivia,IEnumerable{Microsoft.CodeAnalysis.SyntaxTrivia},System.Boolean)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.RemoveNodesCore(IEnumerable{Microsoft.CodeAnalysis.SyntaxNode},Microsoft.CodeAnalysis.SyntaxRemoveOptions)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.yml
+  name: RemoveNodesCore(IEnumerable<SyntaxNode>, SyntaxRemoveOptions)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.RemoveNodesCore(IEnumerable<Microsoft.CodeAnalysis.SyntaxNode>, Microsoft.CodeAnalysis.SyntaxRemoveOptions)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxNode.cs
+    startLine: 960
+  syntax:
+    content:
+      CSharp: protected internal override SyntaxNode RemoveNodesCore(IEnumerable<SyntaxNode> nodes, SyntaxRemoveOptions options)
+    parameters:
+    - id: nodes
+      type:
+        id: IEnumerable{Microsoft.CodeAnalysis.SyntaxNode}
+        name: IEnumerable<SyntaxNode>
+        isExternal: true
+    - id: options
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxRemoveOptions
+        name: SyntaxRemoveOptions
+        href: Microsoft.CodeAnalysis.SyntaxRemoveOptions
+    return:
+      id: SyntaxNode
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: Microsoft.CodeAnalysis.SyntaxNode
+  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.RemoveNodesCore(IEnumerable{Microsoft.CodeAnalysis.SyntaxNode},Microsoft.CodeAnalysis.SyntaxRemoveOptions)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.NormalizeWhitespaceCore(System.String,System.Boolean)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.yml
+  name: NormalizeWhitespaceCore(string, bool)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.NormalizeWhitespaceCore(string, bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxNode.cs
+    startLine: 965
+  syntax:
+    content:
+      CSharp: protected internal override SyntaxNode NormalizeWhitespaceCore(string indentation, bool elasticTrivia)
+    parameters:
+    - id: indentation
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    - id: elasticTrivia
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+    return:
+      id: SyntaxNode
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: Microsoft.CodeAnalysis.SyntaxNode
+  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.NormalizeWhitespaceCore(System.String,System.Boolean)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.IsEquivalentToCore(Microsoft.CodeAnalysis.SyntaxNode,System.Boolean)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.yml
+  name: IsEquivalentToCore(SyntaxNode, bool)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.IsEquivalentToCore(Microsoft.CodeAnalysis.SyntaxNode, bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxNode.cs
+    startLine: 970
+  syntax:
+    content:
+      CSharp: protected override bool IsEquivalentToCore(SyntaxNode node, bool topLevel = false)
+    parameters:
+    - id: node
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: Microsoft.CodeAnalysis.SyntaxNode
+    - id: topLevel
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.IsEquivalentToCore(Microsoft.CodeAnalysis.SyntaxNode,System.Boolean)

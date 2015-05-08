@@ -6,21 +6,19 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/Compilers/CSharp/Portable/Compilation/AwaitExpressionInfo.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Compilers/CSharp/Portable/Compilation/AwaitExpressionInfo.cs
     startLine: 11
   summary: Structure containing all semantic information about an await expression.
   syntax:
     content:
-      CSharp: public struct AwaitExpressionInfo
+      CSharp: 'public struct AwaitExpressionInfo : IEquatable<AwaitExpressionInfo>'
   inheritance:
-  - id: System.Object
-    name: System.Object
-    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.AwaitExpressionInfo
   children:
@@ -42,7 +40,7 @@ items:
     startLine: 13
   syntax:
     content:
-      CSharp: GetAwaiterMethod
+      CSharp: public readonly IMethodSymbol GetAwaiterMethod;
   id: Microsoft.CodeAnalysis.CSharp.AwaitExpressionInfo.GetAwaiterMethod
 - uid: Microsoft.CodeAnalysis.CSharp.AwaitExpressionInfo.IsCompletedProperty
   href: Microsoft.CodeAnalysis.CSharp.AwaitExpressionInfo.yml
@@ -55,7 +53,7 @@ items:
     startLine: 15
   syntax:
     content:
-      CSharp: IsCompletedProperty
+      CSharp: public readonly IPropertySymbol IsCompletedProperty;
   id: Microsoft.CodeAnalysis.CSharp.AwaitExpressionInfo.IsCompletedProperty
 - uid: Microsoft.CodeAnalysis.CSharp.AwaitExpressionInfo.GetResultMethod
   href: Microsoft.CodeAnalysis.CSharp.AwaitExpressionInfo.yml
@@ -68,7 +66,7 @@ items:
     startLine: 17
   syntax:
     content:
-      CSharp: GetResultMethod
+      CSharp: public readonly IMethodSymbol GetResultMethod;
   id: Microsoft.CodeAnalysis.CSharp.AwaitExpressionInfo.GetResultMethod
 - uid: Microsoft.CodeAnalysis.CSharp.AwaitExpressionInfo.IsDynamic
   href: Microsoft.CodeAnalysis.CSharp.AwaitExpressionInfo.yml
@@ -81,7 +79,7 @@ items:
     startLine: 19
   syntax:
     content:
-      CSharp: IsDynamic
+      CSharp: public readonly bool IsDynamic;
   id: Microsoft.CodeAnalysis.CSharp.AwaitExpressionInfo.IsDynamic
 - uid: Microsoft.CodeAnalysis.CSharp.AwaitExpressionInfo.Equals(System.Object)
   href: Microsoft.CodeAnalysis.CSharp.AwaitExpressionInfo.yml
@@ -99,10 +97,14 @@ items:
     - id: obj
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.AwaitExpressionInfo.Equals(System.Object)
 - uid: Microsoft.CodeAnalysis.CSharp.AwaitExpressionInfo.Equals(Microsoft.CodeAnalysis.CSharp.AwaitExpressionInfo)
   href: Microsoft.CodeAnalysis.CSharp.AwaitExpressionInfo.yml
@@ -124,6 +126,10 @@ items:
         href: Microsoft.CodeAnalysis.CSharp.AwaitExpressionInfo.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.AwaitExpressionInfo.Equals(Microsoft.CodeAnalysis.CSharp.AwaitExpressionInfo)
 - uid: Microsoft.CodeAnalysis.CSharp.AwaitExpressionInfo.GetHashCode
   href: Microsoft.CodeAnalysis.CSharp.AwaitExpressionInfo.yml
@@ -140,4 +146,8 @@ items:
     parameters: []
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.AwaitExpressionInfo.GetHashCode

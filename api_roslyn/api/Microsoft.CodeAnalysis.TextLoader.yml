@@ -6,9 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Workspace/Solution/TextLoader.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Workspace/Solution/TextLoader.cs
     startLine: 12
   summary: A class that represents access to a source text and its version from a storage location.
@@ -17,7 +18,7 @@ items:
       CSharp: public abstract class TextLoader
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.TextLoader
   children:
@@ -36,7 +37,7 @@ items:
   summary: Load a text and a version of the document in the workspace.
   syntax:
     content:
-      CSharp: public abstract Task<TextAndVersion> LoadTextAndVersionAsync(Workspace workspace, DocumentId documentId, CancellationToken cancellationToken);
+      CSharp: public abstract Task<TextAndVersion> LoadTextAndVersionAsync(Workspace workspace, DocumentId documentId, CancellationToken cancellationToken)
     parameters:
     - id: workspace
       type:
@@ -51,10 +52,14 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.CodeAnalysis.TextAndVersion}
+        name: Task<TextAndVersion>
+        isExternal: true
   id: Microsoft.CodeAnalysis.TextLoader.LoadTextAndVersionAsync(Microsoft.CodeAnalysis.Workspace,Microsoft.CodeAnalysis.DocumentId,System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.TextLoader.From(Microsoft.CodeAnalysis.TextAndVersion)
   href: Microsoft.CodeAnalysis.TextLoader.yml
@@ -77,6 +82,10 @@ items:
         href: Microsoft.CodeAnalysis.TextAndVersion.yml
     return:
       id: TextLoader
+      type:
+        id: Microsoft.CodeAnalysis.TextLoader
+        name: TextLoader
+        href: Microsoft.CodeAnalysis.TextLoader.yml
   id: Microsoft.CodeAnalysis.TextLoader.From(Microsoft.CodeAnalysis.TextAndVersion)
 - uid: Microsoft.CodeAnalysis.TextLoader.From(Microsoft.CodeAnalysis.Text.SourceTextContainer,Microsoft.CodeAnalysis.VersionStamp,System.String)
   href: Microsoft.CodeAnalysis.TextLoader.yml
@@ -112,8 +121,12 @@ items:
     - id: filePath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: TextLoader
+      type:
+        id: Microsoft.CodeAnalysis.TextLoader
+        name: TextLoader
+        href: Microsoft.CodeAnalysis.TextLoader.yml
   id: Microsoft.CodeAnalysis.TextLoader.From(Microsoft.CodeAnalysis.Text.SourceTextContainer,Microsoft.CodeAnalysis.VersionStamp,System.String)

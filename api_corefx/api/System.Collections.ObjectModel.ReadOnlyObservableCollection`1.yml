@@ -6,21 +6,32 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.ObjectModel/src/System/Collections/ObjectModel/ReadOnlyObservableCollection.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.ObjectModel/src/System/Collections/ObjectModel/ReadOnlyObservableCollection.cs
     startLine: 16
   summary: Read-only wrapper around an ObservableCollection.
   syntax:
     content:
-      CSharp: public class ReadOnlyObservableCollection<T>
+      CSharp: 'public class ReadOnlyObservableCollection<T> : ReadOnlyCollection<T>, IList<T>, ICollection<T>, IList, ICollection, IReadOnlyList<T>, IReadOnlyCollection<T>, IEnumerable<T>, IEnumerable, INotifyCollectionChanged, INotifyPropertyChanged'
   inheritance:
-  - id: ReadOnlyCollection{`0}
-    name: ReadOnlyCollection{`0}
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.Collections.ObjectModel.ReadOnlyCollection{`0}
+    name: ReadOnlyCollection<T>
     isExternal: true
   id: System.Collections.ObjectModel.ReadOnlyObservableCollection`1
   children:
   - System.Collections.ObjectModel.ReadOnlyObservableCollection`1.#ctor(System.Collections.ObjectModel.ObservableCollection{`0})
+  - System.Collections.ObjectModel.ReadOnlyObservableCollection`1.System#Collections#Specialized#INotifyCollectionChanged#CollectionChanged
+  - System.Collections.ObjectModel.ReadOnlyObservableCollection`1.CollectionChanged
+  - System.Collections.ObjectModel.ReadOnlyObservableCollection`1.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)
+  - System.Collections.ObjectModel.ReadOnlyObservableCollection`1.System#ComponentModel#INotifyPropertyChanged#PropertyChanged
+  - System.Collections.ObjectModel.ReadOnlyObservableCollection`1.PropertyChanged
+  - System.Collections.ObjectModel.ReadOnlyObservableCollection`1.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)
 - uid: System.Collections.ObjectModel.ReadOnlyObservableCollection`1.#ctor(System.Collections.ObjectModel.ObservableCollection{`0})
   href: System.Collections.ObjectModel.ReadOnlyObservableCollection`1.yml
   name: ReadOnlyObservableCollection(ObservableCollection<T>)
@@ -41,6 +52,102 @@ items:
     - id: list
       type:
         id: System.Collections.ObjectModel.ObservableCollection{`0}
-        name: ObservableCollection
+        name: ObservableCollection<T>
         href: System.Collections.ObjectModel.ObservableCollection{`0}
   id: System.Collections.ObjectModel.ReadOnlyObservableCollection`1.#ctor(System.Collections.ObjectModel.ObservableCollection{`0})
+- uid: System.Collections.ObjectModel.ReadOnlyObservableCollection`1.System#Collections#Specialized#INotifyCollectionChanged#CollectionChanged
+  href: System.Collections.ObjectModel.ReadOnlyObservableCollection`1.yml
+  name: INotifyCollectionChanged.CollectionChanged
+  fullName: System.Collections.ObjectModel.ReadOnlyObservableCollection<T>.System.Collections.Specialized.INotifyCollectionChanged.CollectionChanged
+  type: Event
+  source:
+    remote: *o0
+    path: src/System.ObjectModel/src/System/Collections/ObjectModel/ReadOnlyObservableCollection.cs
+    startLine: 53
+  summary: CollectionChanged event (per [System.Collections.Specialized.INotifyCollectionChanged](System.Collections.Specialized.INotifyCollectionChanged.yml)).
+  syntax:
+    content:
+      CSharp: event NotifyCollectionChangedEventHandler INotifyCollectionChanged.CollectionChanged
+  id: System.Collections.ObjectModel.ReadOnlyObservableCollection`1.System#Collections#Specialized#INotifyCollectionChanged#CollectionChanged
+- uid: System.Collections.ObjectModel.ReadOnlyObservableCollection`1.CollectionChanged
+  href: System.Collections.ObjectModel.ReadOnlyObservableCollection`1.yml
+  name: CollectionChanged
+  fullName: System.Collections.ObjectModel.ReadOnlyObservableCollection<T>.CollectionChanged
+  type: Event
+  source:
+    remote: *o0
+    path: src/System.ObjectModel/src/System/Collections/ObjectModel/ReadOnlyObservableCollection.cs
+    startLine: 65
+  summary: Occurs when the collection changes, either by adding or removing an item.
+  syntax:
+    content:
+      CSharp: protected virtual event NotifyCollectionChangedEventHandler CollectionChanged;
+  id: System.Collections.ObjectModel.ReadOnlyObservableCollection`1.CollectionChanged
+- uid: System.Collections.ObjectModel.ReadOnlyObservableCollection`1.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)
+  href: System.Collections.ObjectModel.ReadOnlyObservableCollection`1.yml
+  name: OnCollectionChanged(NotifyCollectionChangedEventArgs)
+  fullName: System.Collections.ObjectModel.ReadOnlyObservableCollection<T>.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.ObjectModel/src/System/Collections/ObjectModel/ReadOnlyObservableCollection.cs
+    startLine: 70
+  summary: raise CollectionChanged event to any listeners
+  syntax:
+    content:
+      CSharp: protected virtual void OnCollectionChanged(NotifyCollectionChangedEventArgs args)
+    parameters:
+    - id: args
+      type:
+        id: System.Collections.Specialized.NotifyCollectionChangedEventArgs
+        name: NotifyCollectionChangedEventArgs
+        href: System.Collections.Specialized.NotifyCollectionChangedEventArgs.yml
+  id: System.Collections.ObjectModel.ReadOnlyObservableCollection`1.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)
+- uid: System.Collections.ObjectModel.ReadOnlyObservableCollection`1.System#ComponentModel#INotifyPropertyChanged#PropertyChanged
+  href: System.Collections.ObjectModel.ReadOnlyObservableCollection`1.yml
+  name: INotifyPropertyChanged.PropertyChanged
+  fullName: System.Collections.ObjectModel.ReadOnlyObservableCollection<T>.System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+  type: Event
+  source:
+    remote: *o0
+    path: src/System.ObjectModel/src/System/Collections/ObjectModel/ReadOnlyObservableCollection.cs
+    startLine: 85
+  summary: PropertyChanged event (per [System.ComponentModel.INotifyPropertyChanged](System.ComponentModel.INotifyPropertyChanged.yml)).
+  syntax:
+    content:
+      CSharp: event PropertyChangedEventHandler INotifyPropertyChanged.PropertyChanged
+  id: System.Collections.ObjectModel.ReadOnlyObservableCollection`1.System#ComponentModel#INotifyPropertyChanged#PropertyChanged
+- uid: System.Collections.ObjectModel.ReadOnlyObservableCollection`1.PropertyChanged
+  href: System.Collections.ObjectModel.ReadOnlyObservableCollection`1.yml
+  name: PropertyChanged
+  fullName: System.Collections.ObjectModel.ReadOnlyObservableCollection<T>.PropertyChanged
+  type: Event
+  source:
+    remote: *o0
+    path: src/System.ObjectModel/src/System/Collections/ObjectModel/ReadOnlyObservableCollection.cs
+    startLine: 97
+  summary: Occurs when a property changes.
+  syntax:
+    content:
+      CSharp: protected virtual event PropertyChangedEventHandler PropertyChanged;
+  id: System.Collections.ObjectModel.ReadOnlyObservableCollection`1.PropertyChanged
+- uid: System.Collections.ObjectModel.ReadOnlyObservableCollection`1.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)
+  href: System.Collections.ObjectModel.ReadOnlyObservableCollection`1.yml
+  name: OnPropertyChanged(PropertyChangedEventArgs)
+  fullName: System.Collections.ObjectModel.ReadOnlyObservableCollection<T>.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.ObjectModel/src/System/Collections/ObjectModel/ReadOnlyObservableCollection.cs
+    startLine: 102
+  summary: raise PropertyChanged event to any listeners
+  syntax:
+    content:
+      CSharp: protected virtual void OnPropertyChanged(PropertyChangedEventArgs args)
+    parameters:
+    - id: args
+      type:
+        id: System.ComponentModel.PropertyChangedEventArgs
+        name: PropertyChangedEventArgs
+        href: System.ComponentModel.PropertyChangedEventArgs.yml
+  id: System.Collections.ObjectModel.ReadOnlyObservableCollection`1.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)

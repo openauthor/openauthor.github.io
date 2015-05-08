@@ -5,18 +5,19 @@ items:
   fullName: System.Web.Mvc.CachedDataAnnotationsModelMetadataProvider
   type: Class
   source:
-    remote:
+    remote: &o0
+      path: src/System.Web.Mvc/CachedDataAnnotationsModelMetadataProvider.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/CachedDataAnnotationsModelMetadataProvider.cs
     startLine: 6
   syntax:
     content:
-      CSharp: public class CachedDataAnnotationsModelMetadataProvider
+      CSharp: 'public class CachedDataAnnotationsModelMetadataProvider : CachedAssociatedMetadataProvider<CachedDataAnnotationsModelMetadata>'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.Mvc.ModelMetadataProvider
     name: ModelMetadataProvider
@@ -25,6 +26,79 @@ items:
     name: AssociatedMetadataProvider
     href: System.Web.Mvc.AssociatedMetadataProvider.yml
   - id: System.Web.Mvc.CachedAssociatedMetadataProvider{System.Web.Mvc.CachedDataAnnotationsModelMetadata}
-    name: CachedAssociatedMetadataProvider
+    name: CachedAssociatedMetadataProvider<CachedDataAnnotationsModelMetadata>
     href: System.Web.Mvc.CachedAssociatedMetadataProvider{System.Web.Mvc.CachedDataAnnotationsModelMetadata}
   id: System.Web.Mvc.CachedDataAnnotationsModelMetadataProvider
+  children:
+  - System.Web.Mvc.CachedDataAnnotationsModelMetadataProvider.CreateMetadataPrototype(System.Collections.Generic.IEnumerable{System.Attribute},System.Type,System.Type,System.String)
+  - System.Web.Mvc.CachedDataAnnotationsModelMetadataProvider.CreateMetadataFromPrototype(System.Web.Mvc.CachedDataAnnotationsModelMetadata,System.Func{System.Object})
+- uid: System.Web.Mvc.CachedDataAnnotationsModelMetadataProvider.CreateMetadataPrototype(System.Collections.Generic.IEnumerable{System.Attribute},System.Type,System.Type,System.String)
+  href: System.Web.Mvc.CachedDataAnnotationsModelMetadataProvider.yml
+  name: CreateMetadataPrototype(IEnumerable<Attribute>, Type, Type, string)
+  fullName: System.Web.Mvc.CachedDataAnnotationsModelMetadataProvider.CreateMetadataPrototype(System.Collections.Generic.IEnumerable<System.Attribute>, System.Type, System.Type, string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedDataAnnotationsModelMetadataProvider.cs
+    startLine: 8
+  syntax:
+    content:
+      CSharp: protected override CachedDataAnnotationsModelMetadata CreateMetadataPrototype(IEnumerable<Attribute> attributes, Type containerType, Type modelType, string propertyName)
+    parameters:
+    - id: attributes
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Attribute}
+        name: IEnumerable<Attribute>
+        isExternal: true
+    - id: containerType
+      type:
+        id: System.Type
+        name: Type
+        isExternal: true
+    - id: modelType
+      type:
+        id: System.Type
+        name: Type
+        isExternal: true
+    - id: propertyName
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      id: CachedDataAnnotationsModelMetadata
+      type:
+        id: System.Web.Mvc.CachedDataAnnotationsModelMetadata
+        name: CachedDataAnnotationsModelMetadata
+        href: System.Web.Mvc.CachedDataAnnotationsModelMetadata.yml
+  id: System.Web.Mvc.CachedDataAnnotationsModelMetadataProvider.CreateMetadataPrototype(System.Collections.Generic.IEnumerable{System.Attribute},System.Type,System.Type,System.String)
+- uid: System.Web.Mvc.CachedDataAnnotationsModelMetadataProvider.CreateMetadataFromPrototype(System.Web.Mvc.CachedDataAnnotationsModelMetadata,System.Func{System.Object})
+  href: System.Web.Mvc.CachedDataAnnotationsModelMetadataProvider.yml
+  name: CreateMetadataFromPrototype(CachedDataAnnotationsModelMetadata, Func<object>)
+  fullName: System.Web.Mvc.CachedDataAnnotationsModelMetadataProvider.CreateMetadataFromPrototype(System.Web.Mvc.CachedDataAnnotationsModelMetadata, System.Func<object>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedDataAnnotationsModelMetadataProvider.cs
+    startLine: 13
+  syntax:
+    content:
+      CSharp: protected override CachedDataAnnotationsModelMetadata CreateMetadataFromPrototype(CachedDataAnnotationsModelMetadata prototype, Func<object> modelAccessor)
+    parameters:
+    - id: prototype
+      type:
+        id: System.Web.Mvc.CachedDataAnnotationsModelMetadata
+        name: CachedDataAnnotationsModelMetadata
+        href: System.Web.Mvc.CachedDataAnnotationsModelMetadata.yml
+    - id: modelAccessor
+      type:
+        id: System.Func{System.Object}
+        name: Func<object>
+        isExternal: true
+    return:
+      id: CachedDataAnnotationsModelMetadata
+      type:
+        id: System.Web.Mvc.CachedDataAnnotationsModelMetadata
+        name: CachedDataAnnotationsModelMetadata
+        href: System.Web.Mvc.CachedDataAnnotationsModelMetadata.yml
+  id: System.Web.Mvc.CachedDataAnnotationsModelMetadataProvider.CreateMetadataFromPrototype(System.Web.Mvc.CachedDataAnnotationsModelMetadata,System.Func{System.Object})

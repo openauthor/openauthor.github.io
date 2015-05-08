@@ -6,20 +6,21 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Workspace/WorkspaceDiagnosticEventArgs.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Workspace/WorkspaceDiagnosticEventArgs.cs
     startLine: 7
   syntax:
     content:
-      CSharp: public class WorkspaceDiagnosticEventArgs
+      CSharp: 'public class WorkspaceDiagnosticEventArgs : EventArgs'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.EventArgs
-    name: System.EventArgs
+    name: EventArgs
     isExternal: true
   id: Microsoft.CodeAnalysis.WorkspaceDiagnosticEventArgs
   children:
@@ -36,7 +37,7 @@ items:
     startLine: 9
   syntax:
     content:
-      CSharp: public WorkspaceDiagnostic Diagnostic { get; private set; }
+      CSharp: public WorkspaceDiagnostic Diagnostic { get; }
     parameters:
     - id: Diagnostic
       type:

@@ -6,21 +6,29 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
     startLine: 181
   syntax:
     content:
-      CSharp: public struct Enumerator
+      CSharp: 'public struct Enumerator : IEnumerator<GenericParameterConstraintHandle>, IDisposable, IEnumerator'
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Reflection.Metadata.GenericParameterConstraintHandleCollection.Enumerator
   children:
   - System.Reflection.Metadata.GenericParameterConstraintHandleCollection.Enumerator.Current
   - System.Reflection.Metadata.GenericParameterConstraintHandleCollection.Enumerator.MoveNext
+  - System.Reflection.Metadata.GenericParameterConstraintHandleCollection.Enumerator.System#Collections#IEnumerator#Current
+  - System.Reflection.Metadata.GenericParameterConstraintHandleCollection.Enumerator.System#Collections#IEnumerator#Reset
+  - System.Reflection.Metadata.GenericParameterConstraintHandleCollection.Enumerator.System#IDisposable#Dispose
 - uid: System.Reflection.Metadata.GenericParameterConstraintHandleCollection.Enumerator.Current
   href: System.Reflection.Metadata.GenericParameterConstraintHandleCollection.Enumerator.yml
   name: Current
@@ -55,4 +63,55 @@ items:
     parameters: []
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.GenericParameterConstraintHandleCollection.Enumerator.MoveNext
+- uid: System.Reflection.Metadata.GenericParameterConstraintHandleCollection.Enumerator.System#Collections#IEnumerator#Current
+  href: System.Reflection.Metadata.GenericParameterConstraintHandleCollection.Enumerator.yml
+  name: IEnumerator.Current
+  fullName: System.Reflection.Metadata.GenericParameterConstraintHandleCollection.Enumerator.System.Collections.IEnumerator.Current
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
+    startLine: 223
+  syntax:
+    content:
+      CSharp: object IEnumerator.Current { get; }
+    parameters:
+    - id: System.Collections.IEnumerator.Current
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+  id: System.Reflection.Metadata.GenericParameterConstraintHandleCollection.Enumerator.System#Collections#IEnumerator#Current
+- uid: System.Reflection.Metadata.GenericParameterConstraintHandleCollection.Enumerator.System#Collections#IEnumerator#Reset
+  href: System.Reflection.Metadata.GenericParameterConstraintHandleCollection.Enumerator.yml
+  name: IEnumerator.Reset()
+  fullName: System.Reflection.Metadata.GenericParameterConstraintHandleCollection.Enumerator.System.Collections.IEnumerator.Reset()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
+    startLine: 228
+  syntax:
+    content:
+      CSharp: void IEnumerator.Reset()
+    parameters: []
+  id: System.Reflection.Metadata.GenericParameterConstraintHandleCollection.Enumerator.System#Collections#IEnumerator#Reset
+- uid: System.Reflection.Metadata.GenericParameterConstraintHandleCollection.Enumerator.System#IDisposable#Dispose
+  href: System.Reflection.Metadata.GenericParameterConstraintHandleCollection.Enumerator.yml
+  name: IDisposable.Dispose()
+  fullName: System.Reflection.Metadata.GenericParameterConstraintHandleCollection.Enumerator.System.IDisposable.Dispose()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
+    startLine: 233
+  syntax:
+    content:
+      CSharp: void IDisposable.Dispose()
+    parameters: []
+  id: System.Reflection.Metadata.GenericParameterConstraintHandleCollection.Enumerator.System#IDisposable#Dispose

@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/DependencyResolverExtensions.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/DependencyResolverExtensions.cs
     startLine: 7
   syntax:
     content:
-      CSharp: public static class DependencyResolverExtensions
+      CSharp: public class DependencyResolverExtensions
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.DependencyResolverExtensions
   children:
@@ -33,7 +34,7 @@ items:
     startLine: 9
   syntax:
     content:
-      CSharp: public static TService GetService<TService>(this IDependencyResolver resolver)
+      CSharp: public static TService GetService<TService>(IDependencyResolver resolver)
     parameters:
     - id: resolver
       type:
@@ -42,6 +43,10 @@ items:
         href: System.Web.Mvc.IDependencyResolver.yml
     return:
       id: TService
+      type:
+        id: TService
+        name: TService
+        href: TService
   id: System.Web.Mvc.DependencyResolverExtensions.GetService``1(System.Web.Mvc.IDependencyResolver)
 - uid: System.Web.Mvc.DependencyResolverExtensions.GetServices``1(System.Web.Mvc.IDependencyResolver)
   href: System.Web.Mvc.DependencyResolverExtensions.yml
@@ -54,7 +59,7 @@ items:
     startLine: 14
   syntax:
     content:
-      CSharp: public static IEnumerable<TService> GetServices<TService>(this IDependencyResolver resolver)
+      CSharp: public static IEnumerable<TService> GetServices<TService>(IDependencyResolver resolver)
     parameters:
     - id: resolver
       type:
@@ -63,4 +68,8 @@ items:
         href: System.Web.Mvc.IDependencyResolver.yml
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<TService>
+        isExternal: true
   id: System.Web.Mvc.DependencyResolverExtensions.GetServices``1(System.Web.Mvc.IDependencyResolver)

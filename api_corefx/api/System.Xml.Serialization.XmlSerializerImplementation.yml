@@ -6,8 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializer.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializer.cs
     startLine: 29
   syntax:
@@ -15,7 +17,7 @@ items:
       CSharp: public abstract class XmlSerializerImplementation
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Xml.Serialization.XmlSerializerImplementation
   children:
@@ -24,8 +26,8 @@ items:
   - System.Xml.Serialization.XmlSerializerImplementation.XmlReadMethods
   - System.Xml.Serialization.XmlSerializerImplementation.XmlWriteMethods
   - System.Xml.Serialization.XmlSerializerImplementation.XmlTypedSerializers
-  - System.Xml.Serialization.XmlSerializerImplementation.CanSerialize(Type)
-  - System.Xml.Serialization.XmlSerializerImplementation.GetSerializer(Type)
+  - System.Xml.Serialization.XmlSerializerImplementation.CanSerialize(System.Type)
+  - System.Xml.Serialization.XmlSerializerImplementation.GetSerializer(System.Type)
 - uid: System.Xml.Serialization.XmlSerializerImplementation.Reader
   href: System.Xml.Serialization.XmlSerializerImplementation.yml
   name: Reader
@@ -79,7 +81,7 @@ items:
     parameters:
     - id: XmlReadMethods
       type:
-        id: IDictionary
+        id: System.Collections.IDictionary
         name: IDictionary
         isExternal: true
   id: System.Xml.Serialization.XmlSerializerImplementation.XmlReadMethods
@@ -98,7 +100,7 @@ items:
     parameters:
     - id: XmlWriteMethods
       type:
-        id: IDictionary
+        id: System.Collections.IDictionary
         name: IDictionary
         isExternal: true
   id: System.Xml.Serialization.XmlSerializerImplementation.XmlWriteMethods
@@ -117,14 +119,14 @@ items:
     parameters:
     - id: XmlTypedSerializers
       type:
-        id: IDictionary
+        id: System.Collections.IDictionary
         name: IDictionary
         isExternal: true
   id: System.Xml.Serialization.XmlSerializerImplementation.XmlTypedSerializers
-- uid: System.Xml.Serialization.XmlSerializerImplementation.CanSerialize(Type)
+- uid: System.Xml.Serialization.XmlSerializerImplementation.CanSerialize(System.Type)
   href: System.Xml.Serialization.XmlSerializerImplementation.yml
   name: CanSerialize(Type)
-  fullName: System.Xml.Serialization.XmlSerializerImplementation.CanSerialize(Type)
+  fullName: System.Xml.Serialization.XmlSerializerImplementation.CanSerialize(System.Type)
   type: Method
   source:
     remote: *o0
@@ -136,16 +138,20 @@ items:
     parameters:
     - id: type
       type:
-        id: Type
+        id: System.Type
         name: Type
         isExternal: true
     return:
       id: Boolean
-  id: System.Xml.Serialization.XmlSerializerImplementation.CanSerialize(Type)
-- uid: System.Xml.Serialization.XmlSerializerImplementation.GetSerializer(Type)
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializerImplementation.CanSerialize(System.Type)
+- uid: System.Xml.Serialization.XmlSerializerImplementation.GetSerializer(System.Type)
   href: System.Xml.Serialization.XmlSerializerImplementation.yml
   name: GetSerializer(Type)
-  fullName: System.Xml.Serialization.XmlSerializerImplementation.GetSerializer(Type)
+  fullName: System.Xml.Serialization.XmlSerializerImplementation.GetSerializer(System.Type)
   type: Method
   source:
     remote: *o0
@@ -157,9 +163,13 @@ items:
     parameters:
     - id: type
       type:
-        id: Type
+        id: System.Type
         name: Type
         isExternal: true
     return:
       id: XmlSerializer
-  id: System.Xml.Serialization.XmlSerializerImplementation.GetSerializer(Type)
+      type:
+        id: System.Xml.Serialization.XmlSerializer
+        name: XmlSerializer
+        href: System.Xml.Serialization.XmlSerializer.yml
+  id: System.Xml.Serialization.XmlSerializerImplementation.GetSerializer(System.Type)

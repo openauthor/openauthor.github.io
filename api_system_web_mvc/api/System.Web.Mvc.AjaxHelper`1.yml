@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/AjaxHelperOfTModel.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/AjaxHelperOfTModel.cs
     startLine: 6
   syntax:
     content:
-      CSharp: public class AjaxHelper<TModel>
+      CSharp: 'public class AjaxHelper<TModel> : AjaxHelper'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.Mvc.AjaxHelper
     name: AjaxHelper
@@ -77,7 +78,7 @@ items:
     - id: routeCollection
       type:
         id: System.Web.Routing.RouteCollection
-        name: System.Web.Routing.RouteCollection
+        name: RouteCollection
         isExternal: true
   id: System.Web.Mvc.AjaxHelper`1.#ctor(System.Web.Mvc.ViewContext,System.Web.Mvc.IViewDataContainer,System.Web.Routing.RouteCollection)
 - uid: System.Web.Mvc.AjaxHelper`1.ViewBag
@@ -95,6 +96,7 @@ items:
     parameters:
     - id: ViewBag
       type:
+        name: dynamic
         isExternal: true
   id: System.Web.Mvc.AjaxHelper`1.ViewBag
 - uid: System.Web.Mvc.AjaxHelper`1.ViewData
@@ -113,6 +115,6 @@ items:
     - id: ViewData
       type:
         id: System.Web.Mvc.ViewDataDictionary{`0}
-        name: ViewDataDictionary
+        name: ViewDataDictionary<TModel>
         href: System.Web.Mvc.ViewDataDictionary{`0}
   id: System.Web.Mvc.AjaxHelper`1.ViewData

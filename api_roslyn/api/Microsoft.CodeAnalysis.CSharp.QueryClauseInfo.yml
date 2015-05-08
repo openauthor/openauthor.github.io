@@ -6,21 +6,19 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/Compilers/CSharp/Portable/Compilation/QueryClauseInfo.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Compilers/CSharp/Portable/Compilation/QueryClauseInfo.cs
     startLine: 13
   summary: Semantic information associated with a query clause in a C# query expression.
   syntax:
     content:
-      CSharp: public struct QueryClauseInfo
+      CSharp: 'public struct QueryClauseInfo : IEquatable<QueryClauseInfo>'
   inheritance:
-  - id: System.Object
-    name: System.Object
-    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.QueryClauseInfo
   children:
@@ -37,11 +35,11 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Compilation/QueryClauseInfo.cs
-    startLine: 28
+    startLine: 33
   summary: >-
-    The .Cast<T>() operation generated from the query range variable's type restriction.
+    The .Cast<T>() operation generated from the query range variable's type restriction,
 
-    If you want the type restriction, when this is non-null use Cast.TypeArguments[0].
+    or null if the type restriction isn't specified.
   syntax:
     content:
       CSharp: public SymbolInfo CastInfo { get; }
@@ -60,11 +58,8 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Compilation/QueryClauseInfo.cs
-    startLine: 37
-  summary: >-
-    The operation (e.g. Select(), Where(), etc) that implements the given clause.
-
-    If it is an extension method, it is returned in reduced form.
+    startLine: 46
+  summary: The operation (e.g. Select(), Where(), etc) that implements the given clause.
   syntax:
     content:
       CSharp: public SymbolInfo OperationInfo { get; }
@@ -83,7 +78,7 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Compilation/QueryClauseInfo.cs
-    startLine: 42
+    startLine: 51
   syntax:
     content:
       CSharp: public override bool Equals(object obj)
@@ -91,10 +86,14 @@ items:
     - id: obj
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.QueryClauseInfo.Equals(System.Object)
 - uid: Microsoft.CodeAnalysis.CSharp.QueryClauseInfo.Equals(Microsoft.CodeAnalysis.CSharp.QueryClauseInfo)
   href: Microsoft.CodeAnalysis.CSharp.QueryClauseInfo.yml
@@ -104,7 +103,7 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Compilation/QueryClauseInfo.cs
-    startLine: 47
+    startLine: 56
   syntax:
     content:
       CSharp: public bool Equals(QueryClauseInfo other)
@@ -116,6 +115,10 @@ items:
         href: Microsoft.CodeAnalysis.CSharp.QueryClauseInfo.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.QueryClauseInfo.Equals(Microsoft.CodeAnalysis.CSharp.QueryClauseInfo)
 - uid: Microsoft.CodeAnalysis.CSharp.QueryClauseInfo.GetHashCode
   href: Microsoft.CodeAnalysis.CSharp.QueryClauseInfo.yml
@@ -125,11 +128,15 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Compilation/QueryClauseInfo.cs
-    startLine: 53
+    startLine: 62
   syntax:
     content:
       CSharp: public override int GetHashCode()
     parameters: []
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.QueryClauseInfo.GetHashCode

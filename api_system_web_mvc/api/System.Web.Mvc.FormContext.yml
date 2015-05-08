@@ -6,9 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/FormContext.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/FormContext.cs
     startLine: 8
   syntax:
@@ -16,7 +17,7 @@ items:
       CSharp: public class FormContext
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.FormContext
   children:
@@ -45,7 +46,7 @@ items:
     - id: FieldValidators
       type:
         id: System.Collections.Generic.IDictionary{System.String,System.Web.Mvc.FieldValidationMetadata}
-        name: System.Collections.Generic.IDictionary{System.String,System.Web.Mvc.FieldValidationMetadata}
+        name: IDictionary<string, FieldValidationMetadata>
         isExternal: true
   id: System.Web.Mvc.FormContext.FieldValidators
 - uid: System.Web.Mvc.FormContext.FormId
@@ -64,7 +65,7 @@ items:
     - id: FormId
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.FormContext.FormId
 - uid: System.Web.Mvc.FormContext.ReplaceValidationSummary
@@ -83,7 +84,7 @@ items:
     - id: ReplaceValidationSummary
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.FormContext.ReplaceValidationSummary
 - uid: System.Web.Mvc.FormContext.ValidationSummaryId
@@ -102,7 +103,7 @@ items:
     - id: ValidationSummaryId
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.FormContext.ValidationSummaryId
 - uid: System.Web.Mvc.FormContext.GetJsonValidationMetadata
@@ -116,10 +117,14 @@ items:
     startLine: 24
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Justification = "Performs a potentially time-consuming conversion.")] public string GetJsonValidationMetadata()'
+      CSharp: public string GetJsonValidationMetadata()
     parameters: []
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.FormContext.GetJsonValidationMetadata
 - uid: System.Web.Mvc.FormContext.GetValidationMetadataForField(System.String)
   href: System.Web.Mvc.FormContext.yml
@@ -137,10 +142,14 @@ items:
     - id: fieldName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: FieldValidationMetadata
+      type:
+        id: System.Web.Mvc.FieldValidationMetadata
+        name: FieldValidationMetadata
+        href: System.Web.Mvc.FieldValidationMetadata.yml
   id: System.Web.Mvc.FormContext.GetValidationMetadataForField(System.String)
 - uid: System.Web.Mvc.FormContext.GetValidationMetadataForField(System.String,System.Boolean)
   href: System.Web.Mvc.FormContext.yml
@@ -158,15 +167,19 @@ items:
     - id: fieldName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: createIfNotFound
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     return:
       id: FieldValidationMetadata
+      type:
+        id: System.Web.Mvc.FieldValidationMetadata
+        name: FieldValidationMetadata
+        href: System.Web.Mvc.FieldValidationMetadata.yml
   id: System.Web.Mvc.FormContext.GetValidationMetadataForField(System.String,System.Boolean)
 - uid: System.Web.Mvc.FormContext.RenderedField(System.String)
   href: System.Web.Mvc.FormContext.yml
@@ -184,10 +197,14 @@ items:
     - id: fieldName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Web.Mvc.FormContext.RenderedField(System.String)
 - uid: System.Web.Mvc.FormContext.RenderedField(System.String,System.Boolean)
   href: System.Web.Mvc.FormContext.yml
@@ -205,11 +222,11 @@ items:
     - id: fieldName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: value
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.FormContext.RenderedField(System.String,System.Boolean)

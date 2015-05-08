@@ -1,0 +1,205 @@
+items:
+- uid: System.Dynamic.InvokeBinder
+  href: System.Dynamic.InvokeBinder.yml
+  name: InvokeBinder
+  fullName: System.Dynamic.InvokeBinder
+  type: Class
+  source:
+    remote: &o0
+      path: src/System.Dynamic.Runtime/src/System/Dynamic/InvokeBinder.cs
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/InvokeBinder.cs
+    startLine: 10
+  summary: Represents the invoke dynamic operation at the call site, providing the binding semantic and the details about the operation.
+  syntax:
+    content:
+      CSharp: 'public abstract class InvokeBinder : DynamicMetaObjectBinder'
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.Runtime.CompilerServices.CallSiteBinder
+    name: CallSiteBinder
+    href: System.Runtime.CompilerServices.CallSiteBinder.yml
+  - id: System.Dynamic.DynamicMetaObjectBinder
+    name: DynamicMetaObjectBinder
+    href: System.Dynamic.DynamicMetaObjectBinder.yml
+  id: System.Dynamic.InvokeBinder
+  children:
+  - System.Dynamic.InvokeBinder.#ctor(System.Dynamic.CallInfo)
+  - System.Dynamic.InvokeBinder.ReturnType
+  - System.Dynamic.InvokeBinder.CallInfo
+  - System.Dynamic.InvokeBinder.FallbackInvoke(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])
+  - System.Dynamic.InvokeBinder.FallbackInvoke(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[],System.Dynamic.DynamicMetaObject)
+  - System.Dynamic.InvokeBinder.Bind(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])
+- uid: System.Dynamic.InvokeBinder.#ctor(System.Dynamic.CallInfo)
+  href: System.Dynamic.InvokeBinder.yml
+  name: InvokeBinder(CallInfo)
+  fullName: System.Dynamic.InvokeBinder.InvokeBinder(System.Dynamic.CallInfo)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/InvokeBinder.cs
+    startLine: 18
+  summary: Initializes a new instance of the [System.Dynamic.InvokeBinder](System.Dynamic.InvokeBinder.yml).
+  syntax:
+    content:
+      CSharp: protected InvokeBinder(CallInfo callInfo)
+    parameters:
+    - id: callInfo
+      type:
+        id: System.Dynamic.CallInfo
+        name: CallInfo
+        href: System.Dynamic.CallInfo.yml
+      description: The signature of the arguments at the call site.
+  id: System.Dynamic.InvokeBinder.#ctor(System.Dynamic.CallInfo)
+- uid: System.Dynamic.InvokeBinder.ReturnType
+  href: System.Dynamic.InvokeBinder.yml
+  name: ReturnType
+  fullName: System.Dynamic.InvokeBinder.ReturnType
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/InvokeBinder.cs
+    startLine: 27
+  summary: The result type of the operation.
+  syntax:
+    content:
+      CSharp: public override sealed Type ReturnType { get; }
+    parameters:
+    - id: ReturnType
+      type:
+        id: System.Type
+        name: Type
+        isExternal: true
+  id: System.Dynamic.InvokeBinder.ReturnType
+- uid: System.Dynamic.InvokeBinder.CallInfo
+  href: System.Dynamic.InvokeBinder.yml
+  name: CallInfo
+  fullName: System.Dynamic.InvokeBinder.CallInfo
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/InvokeBinder.cs
+    startLine: 35
+  summary: Gets the signature of the arguments at the call site.
+  syntax:
+    content:
+      CSharp: public CallInfo CallInfo { get; }
+    parameters:
+    - id: CallInfo
+      type:
+        id: System.Dynamic.CallInfo
+        name: CallInfo
+        href: System.Dynamic.CallInfo.yml
+  id: System.Dynamic.InvokeBinder.CallInfo
+- uid: System.Dynamic.InvokeBinder.FallbackInvoke(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])
+  href: System.Dynamic.InvokeBinder.yml
+  name: FallbackInvoke(DynamicMetaObject, DynamicMetaObject[])
+  fullName: System.Dynamic.InvokeBinder.FallbackInvoke(System.Dynamic.DynamicMetaObject, System.Dynamic.DynamicMetaObject[])
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/InvokeBinder.cs
+    startLine: 46
+  summary: Performs the binding of the dynamic invoke operation if the target dynamic object cannot bind.
+  syntax:
+    content:
+      CSharp: public DynamicMetaObject FallbackInvoke(DynamicMetaObject target, DynamicMetaObject[] args)
+    parameters:
+    - id: target
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The target of the dynamic invoke operation.
+    - id: args
+      type:
+        id: System.Array
+        name: DynamicMetaObject[]
+        isExternal: true
+      description: The arguments of the dynamic invoke operation.
+    return:
+      id: DynamicMetaObject
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The [System.Dynamic.DynamicMetaObject](System.Dynamic.DynamicMetaObject.yml) representing the result of the binding.
+  id: System.Dynamic.InvokeBinder.FallbackInvoke(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])
+- uid: System.Dynamic.InvokeBinder.FallbackInvoke(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[],System.Dynamic.DynamicMetaObject)
+  href: System.Dynamic.InvokeBinder.yml
+  name: FallbackInvoke(DynamicMetaObject, DynamicMetaObject[], DynamicMetaObject)
+  fullName: System.Dynamic.InvokeBinder.FallbackInvoke(System.Dynamic.DynamicMetaObject, System.Dynamic.DynamicMetaObject[], System.Dynamic.DynamicMetaObject)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/InvokeBinder.cs
+    startLine: 58
+  summary: Performs the binding of the dynamic invoke operation if the target dynamic object cannot bind.
+  syntax:
+    content:
+      CSharp: public abstract DynamicMetaObject FallbackInvoke(DynamicMetaObject target, DynamicMetaObject[] args, DynamicMetaObject errorSuggestion)
+    parameters:
+    - id: target
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The target of the dynamic invoke operation.
+    - id: args
+      type:
+        id: System.Array
+        name: DynamicMetaObject[]
+        isExternal: true
+      description: The arguments of the dynamic invoke operation.
+    - id: errorSuggestion
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The binding result to use if binding fails, or null.
+    return:
+      id: DynamicMetaObject
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The [System.Dynamic.DynamicMetaObject](System.Dynamic.DynamicMetaObject.yml) representing the result of the binding.
+  id: System.Dynamic.InvokeBinder.FallbackInvoke(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[],System.Dynamic.DynamicMetaObject)
+- uid: System.Dynamic.InvokeBinder.Bind(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])
+  href: System.Dynamic.InvokeBinder.yml
+  name: Bind(DynamicMetaObject, DynamicMetaObject[])
+  fullName: System.Dynamic.InvokeBinder.Bind(System.Dynamic.DynamicMetaObject, System.Dynamic.DynamicMetaObject[])
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/InvokeBinder.cs
+    startLine: 66
+  summary: Performs the binding of the dynamic invoke operation.
+  syntax:
+    content:
+      CSharp: public override sealed DynamicMetaObject Bind(DynamicMetaObject target, DynamicMetaObject[] args)
+    parameters:
+    - id: target
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The target of the dynamic invoke operation.
+    - id: args
+      type:
+        id: System.Array
+        name: DynamicMetaObject[]
+        isExternal: true
+      description: An array of arguments of the dynamic invoke operation.
+    return:
+      id: DynamicMetaObject
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The [System.Dynamic.DynamicMetaObject](System.Dynamic.DynamicMetaObject.yml) representing the result of the binding.
+  id: System.Dynamic.InvokeBinder.Bind(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])

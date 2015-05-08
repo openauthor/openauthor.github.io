@@ -6,16 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/TraceSwitch.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/TraceSwitch.cs
     startLine: 11
   syntax:
     content:
-      CSharp: public class TraceSwitch
+      CSharp: 'public class TraceSwitch : Switch'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Diagnostics.Switch
     name: Switch
@@ -29,6 +31,8 @@ items:
   - System.Diagnostics.TraceSwitch.TraceWarning
   - System.Diagnostics.TraceSwitch.TraceInfo
   - System.Diagnostics.TraceSwitch.TraceVerbose
+  - System.Diagnostics.TraceSwitch.OnSwitchSettingChanged
+  - System.Diagnostics.TraceSwitch.OnValueChanged
 - uid: System.Diagnostics.TraceSwitch.#ctor(System.String,System.String)
   href: System.Diagnostics.TraceSwitch.yml
   name: TraceSwitch(string, string)
@@ -45,12 +49,12 @@ items:
     - id: displayName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: description
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.TraceSwitch.#ctor(System.String,System.String)
 - uid: System.Diagnostics.TraceSwitch.#ctor(System.String,System.String,System.String)
@@ -69,17 +73,17 @@ items:
     - id: displayName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: description
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: defaultSwitchValue
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.TraceSwitch.#ctor(System.String,System.String,System.String)
 - uid: System.Diagnostics.TraceSwitch.Level
@@ -117,7 +121,7 @@ items:
     - id: TraceError
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Diagnostics.TraceSwitch.TraceError
 - uid: System.Diagnostics.TraceSwitch.TraceWarning
@@ -136,7 +140,7 @@ items:
     - id: TraceWarning
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Diagnostics.TraceSwitch.TraceWarning
 - uid: System.Diagnostics.TraceSwitch.TraceInfo
@@ -155,7 +159,7 @@ items:
     - id: TraceInfo
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Diagnostics.TraceSwitch.TraceInfo
 - uid: System.Diagnostics.TraceSwitch.TraceVerbose
@@ -174,6 +178,34 @@ items:
     - id: TraceVerbose
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Diagnostics.TraceSwitch.TraceVerbose
+- uid: System.Diagnostics.TraceSwitch.OnSwitchSettingChanged
+  href: System.Diagnostics.TraceSwitch.yml
+  name: OnSwitchSettingChanged()
+  fullName: System.Diagnostics.TraceSwitch.OnSwitchSettingChanged()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/TraceSwitch.cs
+    startLine: 102
+  syntax:
+    content:
+      CSharp: protected override void OnSwitchSettingChanged()
+    parameters: []
+  id: System.Diagnostics.TraceSwitch.OnSwitchSettingChanged
+- uid: System.Diagnostics.TraceSwitch.OnValueChanged
+  href: System.Diagnostics.TraceSwitch.yml
+  name: OnValueChanged()
+  fullName: System.Diagnostics.TraceSwitch.OnValueChanged()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/TraceSwitch.cs
+    startLine: 117
+  syntax:
+    content:
+      CSharp: protected override void OnValueChanged()
+    parameters: []
+  id: System.Diagnostics.TraceSwitch.OnValueChanged

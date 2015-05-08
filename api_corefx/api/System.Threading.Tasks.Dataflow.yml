@@ -6,12 +6,37 @@ items:
   type: Namespace
   source:
     remote:
+      path: src/System.Threading.Tasks.Dataflow/src/Internal/Threading.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Threading.Tasks.Dataflow/src/Internal/Threading.cs
     startLine: 10
   id: System.Threading.Tasks.Dataflow
   children:
+  - System.Threading.Tasks.Dataflow.DataflowBlock
+  - System.Threading.Tasks.Dataflow.DataflowBlockOptions
+  - System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions
+  - System.Threading.Tasks.Dataflow.GroupingDataflowBlockOptions
+  - System.Threading.Tasks.Dataflow.DataflowLinkOptions
+  - System.Threading.Tasks.Dataflow.DataflowMessageHeader
+  - System.Threading.Tasks.Dataflow.DataflowMessageStatus
+  - System.Threading.Tasks.Dataflow.IDataflowBlock
+  - System.Threading.Tasks.Dataflow.IPropagatorBlock`2
+  - System.Threading.Tasks.Dataflow.IReceivableSourceBlock`1
+  - System.Threading.Tasks.Dataflow.ISourceBlock`1
+  - System.Threading.Tasks.Dataflow.ITargetBlock`1
+  - System.Threading.Tasks.Dataflow.ActionBlock`1
+  - System.Threading.Tasks.Dataflow.BatchBlock`1
+  - System.Threading.Tasks.Dataflow.BatchedJoinBlock`2
+  - System.Threading.Tasks.Dataflow.BatchedJoinBlock`3
+  - System.Threading.Tasks.Dataflow.BroadcastBlock`1
+  - System.Threading.Tasks.Dataflow.BufferBlock`1
+  - System.Threading.Tasks.Dataflow.JoinBlock`2
+  - System.Threading.Tasks.Dataflow.JoinBlock`3
+  - System.Threading.Tasks.Dataflow.TransformBlock`2
+  - System.Threading.Tasks.Dataflow.TransformManyBlock`2
+  - System.Threading.Tasks.Dataflow.WriteOnceBlock`1
   - System.Threading.Tasks.Dataflow.DataflowBlock
   - System.Threading.Tasks.Dataflow.DataflowBlockOptions
   - System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions
@@ -110,7 +135,7 @@ references:
   href: System.Threading.Tasks.Dataflow.ActionBlock`1.yml
   name: ActionBlock<TInput>
   type: Class
-  summary: Provides a dataflow block that invokes a provided [System.Action`1](#) delegate for every data element received.
+  summary: Provides a dataflow block that invokes a provided [System.Action`1]() delegate for every data element received.
 - uid: System.Threading.Tasks.Dataflow.BatchBlock`1
   href: System.Threading.Tasks.Dataflow.BatchBlock`1.yml
   name: BatchBlock<T>
@@ -159,12 +184,146 @@ references:
   href: System.Threading.Tasks.Dataflow.TransformBlock`2.yml
   name: TransformBlock<TInput, TOutput>
   type: Class
-  summary: Provides a dataflow block that invokes a provided [System.Func`2](#) delegate for every data element received.
+  summary: Provides a dataflow block that invokes a provided [System.Func`2]() delegate for every data element received.
 - uid: System.Threading.Tasks.Dataflow.TransformManyBlock`2
   href: System.Threading.Tasks.Dataflow.TransformManyBlock`2.yml
   name: TransformManyBlock<TInput, TOutput>
   type: Class
-  summary: Provides a dataflow block that invokes a provided [System.Func`2](#) delegate for every data element received.
+  summary: Provides a dataflow block that invokes a provided [System.Func`2]() delegate for every data element received.
+- uid: System.Threading.Tasks.Dataflow.WriteOnceBlock`1
+  href: System.Threading.Tasks.Dataflow.WriteOnceBlock`1.yml
+  name: WriteOnceBlock<T>
+  type: Class
+  summary: Provides a buffer for receiving and storing at most one element in a network of dataflow blocks.
+- uid: System.Threading.Tasks.Dataflow.DataflowBlock
+  href: System.Threading.Tasks.Dataflow.DataflowBlock.yml
+  name: DataflowBlock
+  type: Class
+  summary: Provides a set of static (Shared in Visual Basic) methods for working with dataflow blocks.
+- uid: System.Threading.Tasks.Dataflow.DataflowBlockOptions
+  href: System.Threading.Tasks.Dataflow.DataflowBlockOptions.yml
+  name: DataflowBlockOptions
+  type: Class
+  summary: Provides options used to configure the processing performed by dataflow blocks.
+- uid: System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions
+  href: System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions.yml
+  name: ExecutionDataflowBlockOptions
+  type: Class
+  summary: >-
+    Provides options used to configure the processing performed by dataflow blocks that
+
+    process each message through the invocation of a user-provided delegate, blocks such
+
+    as [System.Threading.Tasks.Dataflow.ActionBlock`1](System.Threading.Tasks.Dataflow.ActionBlock`1.yml) and [System.Threading.Tasks.Dataflow.TransformBlock`2](System.Threading.Tasks.Dataflow.TransformBlock`2.yml).
+- uid: System.Threading.Tasks.Dataflow.GroupingDataflowBlockOptions
+  href: System.Threading.Tasks.Dataflow.GroupingDataflowBlockOptions.yml
+  name: GroupingDataflowBlockOptions
+  type: Class
+  summary: >-
+    Provides options used to configure the processing performed by dataflow blocks that
+
+    group together multiple messages, blocks such as [System.Threading.Tasks.Dataflow.JoinBlock`2](System.Threading.Tasks.Dataflow.JoinBlock`2.yml) and
+
+    [System.Threading.Tasks.Dataflow.BatchBlock`1](System.Threading.Tasks.Dataflow.BatchBlock`1.yml).
+- uid: System.Threading.Tasks.Dataflow.DataflowLinkOptions
+  href: System.Threading.Tasks.Dataflow.DataflowLinkOptions.yml
+  name: DataflowLinkOptions
+  type: Class
+  summary: Provides options used to configure a link between dataflow blocks.
+- uid: System.Threading.Tasks.Dataflow.DataflowMessageHeader
+  href: System.Threading.Tasks.Dataflow.DataflowMessageHeader.yml
+  name: DataflowMessageHeader
+  type: Struct
+  summary: Provides a container of data attributes for passing between dataflow blocks.
+- uid: System.Threading.Tasks.Dataflow.DataflowMessageStatus
+  href: System.Threading.Tasks.Dataflow.DataflowMessageStatus.yml
+  name: DataflowMessageStatus
+  type: Enum
+  summary: Represents the status of a [System.Threading.Tasks.Dataflow.DataflowMessageHeader](System.Threading.Tasks.Dataflow.DataflowMessageHeader.yml) when passed between dataflow blocks.
+- uid: System.Threading.Tasks.Dataflow.IDataflowBlock
+  href: System.Threading.Tasks.Dataflow.IDataflowBlock.yml
+  name: IDataflowBlock
+  type: Interface
+  summary: Represents a dataflow block.
+- uid: System.Threading.Tasks.Dataflow.IPropagatorBlock`2
+  href: System.Threading.Tasks.Dataflow.IPropagatorBlock`2.yml
+  name: IPropagatorBlock<TInput, TOutput>
+  type: Interface
+  summary: Represents a dataflow block that is both a target for data and a source of data.
+- uid: System.Threading.Tasks.Dataflow.IReceivableSourceBlock`1
+  href: System.Threading.Tasks.Dataflow.IReceivableSourceBlock`1.yml
+  name: IReceivableSourceBlock<TOutput>
+  type: Interface
+  summary: Represents a dataflow block that supports receiving of messages without linking.
+- uid: System.Threading.Tasks.Dataflow.ISourceBlock`1
+  href: System.Threading.Tasks.Dataflow.ISourceBlock`1.yml
+  name: ISourceBlock<TOutput>
+  type: Interface
+  summary: Represents a dataflow block that is a source of data.
+- uid: System.Threading.Tasks.Dataflow.ITargetBlock`1
+  href: System.Threading.Tasks.Dataflow.ITargetBlock`1.yml
+  name: ITargetBlock<TInput>
+  type: Interface
+  summary: Represents a dataflow block that is a target for data.
+- uid: System.Threading.Tasks.Dataflow.ActionBlock`1
+  href: System.Threading.Tasks.Dataflow.ActionBlock`1.yml
+  name: ActionBlock<TInput>
+  type: Class
+  summary: Provides a dataflow block that invokes a provided [System.Action`1]() delegate for every data element received.
+- uid: System.Threading.Tasks.Dataflow.BatchBlock`1
+  href: System.Threading.Tasks.Dataflow.BatchBlock`1.yml
+  name: BatchBlock<T>
+  type: Class
+  summary: Provides a dataflow block that batches inputs into arrays.
+- uid: System.Threading.Tasks.Dataflow.BatchedJoinBlock`2
+  href: System.Threading.Tasks.Dataflow.BatchedJoinBlock`2.yml
+  name: BatchedJoinBlock<T1, T2>
+  type: Class
+  summary: >-
+    Provides a dataflow block that batches a specified number of inputs of potentially differing types
+
+    provided to one or more of its targets.
+- uid: System.Threading.Tasks.Dataflow.BatchedJoinBlock`3
+  href: System.Threading.Tasks.Dataflow.BatchedJoinBlock`3.yml
+  name: BatchedJoinBlock<T1, T2, T3>
+  type: Class
+  summary: >-
+    Provides a dataflow block that batches a specified number of inputs of potentially differing types
+
+    provided to one or more of its targets.
+- uid: System.Threading.Tasks.Dataflow.BroadcastBlock`1
+  href: System.Threading.Tasks.Dataflow.BroadcastBlock`1.yml
+  name: BroadcastBlock<T>
+  type: Class
+  summary: >-
+    Provides a buffer for storing at most one element at time, overwriting each message with the next as it arrives.
+
+    Messages are broadcast to all linked targets, all of which may consume a clone of the message.
+- uid: System.Threading.Tasks.Dataflow.BufferBlock`1
+  href: System.Threading.Tasks.Dataflow.BufferBlock`1.yml
+  name: BufferBlock<T>
+  type: Class
+  summary: Provides a buffer for storing data.
+- uid: System.Threading.Tasks.Dataflow.JoinBlock`2
+  href: System.Threading.Tasks.Dataflow.JoinBlock`2.yml
+  name: JoinBlock<T1, T2>
+  type: Class
+  summary: "Provides a dataflow block that joins across multiple dataflow sources, not necessarily of the same type,\r\nwaiting for one item to arrive for each type before they’re all released together as a tuple of one item per type."
+- uid: System.Threading.Tasks.Dataflow.JoinBlock`3
+  href: System.Threading.Tasks.Dataflow.JoinBlock`3.yml
+  name: JoinBlock<T1, T2, T3>
+  type: Class
+  summary: "Provides a dataflow block that joins across multiple dataflow sources, not necessarily of the same type,\r\nwaiting for one item to arrive for each type before they’re all released together as a tuple of one item per type."
+- uid: System.Threading.Tasks.Dataflow.TransformBlock`2
+  href: System.Threading.Tasks.Dataflow.TransformBlock`2.yml
+  name: TransformBlock<TInput, TOutput>
+  type: Class
+  summary: Provides a dataflow block that invokes a provided [System.Func`2]() delegate for every data element received.
+- uid: System.Threading.Tasks.Dataflow.TransformManyBlock`2
+  href: System.Threading.Tasks.Dataflow.TransformManyBlock`2.yml
+  name: TransformManyBlock<TInput, TOutput>
+  type: Class
+  summary: Provides a dataflow block that invokes a provided [System.Func`2]() delegate for every data element received.
 - uid: System.Threading.Tasks.Dataflow.WriteOnceBlock`1
   href: System.Threading.Tasks.Dataflow.WriteOnceBlock`1.yml
   name: WriteOnceBlock<T>

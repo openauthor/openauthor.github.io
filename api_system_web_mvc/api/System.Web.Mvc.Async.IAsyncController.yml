@@ -6,14 +6,15 @@ items:
   type: Interface
   source:
     remote: &o0
+      path: src/System.Web.Mvc/Async/IAsyncController.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/Async/IAsyncController.cs
     startLine: 6
   syntax:
     content:
-      CSharp: public interface IAsyncController
+      CSharp: 'public interface IAsyncController : IController'
   id: System.Web.Mvc.Async.IAsyncController
   children:
   - System.Web.Mvc.Async.IAsyncController.BeginExecute(System.Web.Routing.RequestContext,System.AsyncCallback,System.Object)
@@ -29,25 +30,29 @@ items:
     startLine: 8
   syntax:
     content:
-      CSharp: IAsyncResult BeginExecute(RequestContext requestContext, AsyncCallback callback, object state);
+      CSharp: public IAsyncResult BeginExecute(RequestContext requestContext, AsyncCallback callback, object state)
     parameters:
     - id: requestContext
       type:
         id: System.Web.Routing.RequestContext
-        name: System.Web.Routing.RequestContext
+        name: RequestContext
         isExternal: true
     - id: callback
       type:
         id: System.AsyncCallback
-        name: System.AsyncCallback
+        name: AsyncCallback
         isExternal: true
     - id: state
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: IAsyncResult
+      type:
+        id: System.IAsyncResult
+        name: IAsyncResult
+        isExternal: true
   id: System.Web.Mvc.Async.IAsyncController.BeginExecute(System.Web.Routing.RequestContext,System.AsyncCallback,System.Object)
 - uid: System.Web.Mvc.Async.IAsyncController.EndExecute(System.IAsyncResult)
   href: System.Web.Mvc.Async.IAsyncController.yml
@@ -60,11 +65,11 @@ items:
     startLine: 9
   syntax:
     content:
-      CSharp: void EndExecute(IAsyncResult asyncResult);
+      CSharp: public void EndExecute(IAsyncResult asyncResult)
     parameters:
     - id: asyncResult
       type:
         id: System.IAsyncResult
-        name: System.IAsyncResult
+        name: IAsyncResult
         isExternal: true
   id: System.Web.Mvc.Async.IAsyncController.EndExecute(System.IAsyncResult)

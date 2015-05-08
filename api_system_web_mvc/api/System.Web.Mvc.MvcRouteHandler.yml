@@ -6,22 +6,26 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/MvcRouteHandler.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/MvcRouteHandler.cs
     startLine: 8
   syntax:
     content:
-      CSharp: public class MvcRouteHandler
+      CSharp: 'public class MvcRouteHandler : IRouteHandler'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.MvcRouteHandler
   children:
   - System.Web.Mvc.MvcRouteHandler.#ctor
   - System.Web.Mvc.MvcRouteHandler.#ctor(System.Web.Mvc.IControllerFactory)
+  - System.Web.Mvc.MvcRouteHandler.GetHttpHandler(System.Web.Routing.RequestContext)
+  - System.Web.Mvc.MvcRouteHandler.GetSessionStateBehavior(System.Web.Routing.RequestContext)
+  - System.Web.Mvc.MvcRouteHandler.System#Web#Routing#IRouteHandler#GetHttpHandler(System.Web.Routing.RequestContext)
 - uid: System.Web.Mvc.MvcRouteHandler.#ctor
   href: System.Web.Mvc.MvcRouteHandler.yml
   name: MvcRouteHandler()
@@ -55,3 +59,78 @@ items:
         name: IControllerFactory
         href: System.Web.Mvc.IControllerFactory.yml
   id: System.Web.Mvc.MvcRouteHandler.#ctor(System.Web.Mvc.IControllerFactory)
+- uid: System.Web.Mvc.MvcRouteHandler.GetHttpHandler(System.Web.Routing.RequestContext)
+  href: System.Web.Mvc.MvcRouteHandler.yml
+  name: GetHttpHandler(RequestContext)
+  fullName: System.Web.Mvc.MvcRouteHandler.GetHttpHandler(System.Web.Routing.RequestContext)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/MvcRouteHandler.cs
+    startLine: 21
+  syntax:
+    content:
+      CSharp: protected virtual IHttpHandler GetHttpHandler(RequestContext requestContext)
+    parameters:
+    - id: requestContext
+      type:
+        id: System.Web.Routing.RequestContext
+        name: RequestContext
+        isExternal: true
+    return:
+      id: IHttpHandler
+      type:
+        id: System.Web.IHttpHandler
+        name: IHttpHandler
+        isExternal: true
+  id: System.Web.Mvc.MvcRouteHandler.GetHttpHandler(System.Web.Routing.RequestContext)
+- uid: System.Web.Mvc.MvcRouteHandler.GetSessionStateBehavior(System.Web.Routing.RequestContext)
+  href: System.Web.Mvc.MvcRouteHandler.yml
+  name: GetSessionStateBehavior(RequestContext)
+  fullName: System.Web.Mvc.MvcRouteHandler.GetSessionStateBehavior(System.Web.Routing.RequestContext)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/MvcRouteHandler.cs
+    startLine: 27
+  syntax:
+    content:
+      CSharp: protected virtual SessionStateBehavior GetSessionStateBehavior(RequestContext requestContext)
+    parameters:
+    - id: requestContext
+      type:
+        id: System.Web.Routing.RequestContext
+        name: RequestContext
+        isExternal: true
+    return:
+      id: SessionStateBehavior
+      type:
+        id: System.Web.SessionState.SessionStateBehavior
+        name: SessionStateBehavior
+        isExternal: true
+  id: System.Web.Mvc.MvcRouteHandler.GetSessionStateBehavior(System.Web.Routing.RequestContext)
+- uid: System.Web.Mvc.MvcRouteHandler.System#Web#Routing#IRouteHandler#GetHttpHandler(System.Web.Routing.RequestContext)
+  href: System.Web.Mvc.MvcRouteHandler.yml
+  name: IRouteHandler.GetHttpHandler(RequestContext)
+  fullName: System.Web.Mvc.MvcRouteHandler.System.Web.Routing.IRouteHandler.GetHttpHandler(System.Web.Routing.RequestContext)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/MvcRouteHandler.cs
+    startLine: 41
+  syntax:
+    content:
+      CSharp: IHttpHandler IRouteHandler.GetHttpHandler(RequestContext requestContext)
+    parameters:
+    - id: requestContext
+      type:
+        id: System.Web.Routing.RequestContext
+        name: RequestContext
+        isExternal: true
+    return:
+      id: IHttpHandler
+      type:
+        id: System.Web.IHttpHandler
+        name: IHttpHandler
+        isExternal: true
+  id: System.Web.Mvc.MvcRouteHandler.System#Web#Routing#IRouteHandler#GetHttpHandler(System.Web.Routing.RequestContext)

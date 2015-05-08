@@ -6,8 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializer.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializer.cs
     startLine: 51
   syntax:
@@ -15,34 +17,53 @@ items:
       CSharp: public class XmlSerializer
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Xml.Serialization.XmlSerializer
   children:
-  - System.Xml.Serialization.XmlSerializer.#ctor(Type,System.Xml.Serialization.XmlAttributeOverrides,Type[],System.Xml.Serialization.XmlRootAttribute,System.String)
-  - System.Xml.Serialization.XmlSerializer.#ctor(Type,System.Xml.Serialization.XmlRootAttribute)
-  - System.Xml.Serialization.XmlSerializer.#ctor(Type,Type[])
-  - System.Xml.Serialization.XmlSerializer.#ctor(Type,System.Xml.Serialization.XmlAttributeOverrides)
+  - System.Xml.Serialization.XmlSerializer.#ctor
+  - System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.Xml.Serialization.XmlAttributeOverrides,System.Type[],System.Xml.Serialization.XmlRootAttribute,System.String)
+  - System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.Xml.Serialization.XmlRootAttribute)
+  - System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.Type[])
+  - System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.Xml.Serialization.XmlAttributeOverrides)
   - System.Xml.Serialization.XmlSerializer.#ctor(System.Xml.Serialization.XmlTypeMapping)
-  - System.Xml.Serialization.XmlSerializer.#ctor(Type)
-  - System.Xml.Serialization.XmlSerializer.#ctor(Type,System.String)
-  - System.Xml.Serialization.XmlSerializer.Serialize(TextWriter,System.Object)
-  - System.Xml.Serialization.XmlSerializer.Serialize(TextWriter,System.Object,System.Xml.Serialization.XmlSerializerNamespaces)
-  - System.Xml.Serialization.XmlSerializer.Serialize(Stream,System.Object)
-  - System.Xml.Serialization.XmlSerializer.Serialize(Stream,System.Object,System.Xml.Serialization.XmlSerializerNamespaces)
+  - System.Xml.Serialization.XmlSerializer.#ctor(System.Type)
+  - System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.String)
+  - System.Xml.Serialization.XmlSerializer.Serialize(System.IO.TextWriter,System.Object)
+  - System.Xml.Serialization.XmlSerializer.Serialize(System.IO.TextWriter,System.Object,System.Xml.Serialization.XmlSerializerNamespaces)
+  - System.Xml.Serialization.XmlSerializer.Serialize(System.IO.Stream,System.Object)
+  - System.Xml.Serialization.XmlSerializer.Serialize(System.IO.Stream,System.Object,System.Xml.Serialization.XmlSerializerNamespaces)
   - System.Xml.Serialization.XmlSerializer.Serialize(XmlWriter,System.Object)
   - System.Xml.Serialization.XmlSerializer.Serialize(XmlWriter,System.Object,System.Xml.Serialization.XmlSerializerNamespaces)
-  - System.Xml.Serialization.XmlSerializer.Deserialize(Stream)
-  - System.Xml.Serialization.XmlSerializer.Deserialize(TextReader)
+  - System.Xml.Serialization.XmlSerializer.Deserialize(System.IO.Stream)
+  - System.Xml.Serialization.XmlSerializer.Deserialize(System.IO.TextReader)
   - System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader)
   - System.Xml.Serialization.XmlSerializer.CanDeserialize(XmlReader)
   - System.Xml.Serialization.XmlSerializer.FromMappings(System.Xml.Serialization.XmlMapping[])
-  - System.Xml.Serialization.XmlSerializer.FromMappings(System.Xml.Serialization.XmlMapping[],Type)
-  - System.Xml.Serialization.XmlSerializer.FromTypes(Type[])
-- uid: System.Xml.Serialization.XmlSerializer.#ctor(Type,System.Xml.Serialization.XmlAttributeOverrides,Type[],System.Xml.Serialization.XmlRootAttribute,System.String)
+  - System.Xml.Serialization.XmlSerializer.FromMappings(System.Xml.Serialization.XmlMapping[],System.Type)
+  - System.Xml.Serialization.XmlSerializer.FromTypes(System.Type[])
+  - System.Xml.Serialization.XmlSerializer.CreateReader
+  - System.Xml.Serialization.XmlSerializer.Deserialize(System.Xml.Serialization.XmlSerializationReader)
+  - System.Xml.Serialization.XmlSerializer.CreateWriter
+  - System.Xml.Serialization.XmlSerializer.Serialize(System.Object,System.Xml.Serialization.XmlSerializationWriter)
+- uid: System.Xml.Serialization.XmlSerializer.#ctor
+  href: System.Xml.Serialization.XmlSerializer.yml
+  name: XmlSerializer()
+  fullName: System.Xml.Serialization.XmlSerializer.XmlSerializer()
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializer.cs
+    startLine: 83
+  syntax:
+    content:
+      CSharp: protected XmlSerializer()
+    parameters: []
+  id: System.Xml.Serialization.XmlSerializer.#ctor
+- uid: System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.Xml.Serialization.XmlAttributeOverrides,System.Type[],System.Xml.Serialization.XmlRootAttribute,System.String)
   href: System.Xml.Serialization.XmlSerializer.yml
   name: XmlSerializer(Type, XmlAttributeOverrides, Type[], XmlRootAttribute, string)
-  fullName: System.Xml.Serialization.XmlSerializer.XmlSerializer(Type, System.Xml.Serialization.XmlAttributeOverrides, Type[], System.Xml.Serialization.XmlRootAttribute, string)
+  fullName: System.Xml.Serialization.XmlSerializer.XmlSerializer(System.Type, System.Xml.Serialization.XmlAttributeOverrides, System.Type[], System.Xml.Serialization.XmlRootAttribute, string)
   type: Constructor
   source:
     remote: *o0
@@ -54,7 +75,7 @@ items:
     parameters:
     - id: type
       type:
-        id: Type
+        id: System.Type
         name: Type
         isExternal: true
     - id: overrides
@@ -65,7 +86,7 @@ items:
     - id: extraTypes
       type:
         id: System.Array
-        name: System.Array
+        name: Type[]
         isExternal: true
     - id: root
       type:
@@ -75,13 +96,13 @@ items:
     - id: defaultNamespace
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
-  id: System.Xml.Serialization.XmlSerializer.#ctor(Type,System.Xml.Serialization.XmlAttributeOverrides,Type[],System.Xml.Serialization.XmlRootAttribute,System.String)
-- uid: System.Xml.Serialization.XmlSerializer.#ctor(Type,System.Xml.Serialization.XmlRootAttribute)
+  id: System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.Xml.Serialization.XmlAttributeOverrides,System.Type[],System.Xml.Serialization.XmlRootAttribute,System.String)
+- uid: System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.Xml.Serialization.XmlRootAttribute)
   href: System.Xml.Serialization.XmlSerializer.yml
   name: XmlSerializer(Type, XmlRootAttribute)
-  fullName: System.Xml.Serialization.XmlSerializer.XmlSerializer(Type, System.Xml.Serialization.XmlRootAttribute)
+  fullName: System.Xml.Serialization.XmlSerializer.XmlSerializer(System.Type, System.Xml.Serialization.XmlRootAttribute)
   type: Constructor
   source:
     remote: *o0
@@ -89,11 +110,11 @@ items:
     startLine: 100
   syntax:
     content:
-      CSharp: 'public XmlSerializer(Type type, XmlRootAttribute root): this (type, null, new Type[0], root, null, null, null)'
+      CSharp: 'public XmlSerializer(Type type, XmlRootAttribute root): this (type, null, Array.Empty<Type>(), root, null, null, null)'
     parameters:
     - id: type
       type:
-        id: Type
+        id: System.Type
         name: Type
         isExternal: true
     - id: root
@@ -101,11 +122,11 @@ items:
         id: System.Xml.Serialization.XmlRootAttribute
         name: XmlRootAttribute
         href: System.Xml.Serialization.XmlRootAttribute.yml
-  id: System.Xml.Serialization.XmlSerializer.#ctor(Type,System.Xml.Serialization.XmlRootAttribute)
-- uid: System.Xml.Serialization.XmlSerializer.#ctor(Type,Type[])
+  id: System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.Xml.Serialization.XmlRootAttribute)
+- uid: System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.Type[])
   href: System.Xml.Serialization.XmlSerializer.yml
   name: XmlSerializer(Type, Type[])
-  fullName: System.Xml.Serialization.XmlSerializer.XmlSerializer(Type, Type[])
+  fullName: System.Xml.Serialization.XmlSerializer.XmlSerializer(System.Type, System.Type[])
   type: Constructor
   source:
     remote: *o0
@@ -117,19 +138,19 @@ items:
     parameters:
     - id: type
       type:
-        id: Type
+        id: System.Type
         name: Type
         isExternal: true
     - id: extraTypes
       type:
         id: System.Array
-        name: System.Array
+        name: Type[]
         isExternal: true
-  id: System.Xml.Serialization.XmlSerializer.#ctor(Type,Type[])
-- uid: System.Xml.Serialization.XmlSerializer.#ctor(Type,System.Xml.Serialization.XmlAttributeOverrides)
+  id: System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.Type[])
+- uid: System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.Xml.Serialization.XmlAttributeOverrides)
   href: System.Xml.Serialization.XmlSerializer.yml
   name: XmlSerializer(Type, XmlAttributeOverrides)
-  fullName: System.Xml.Serialization.XmlSerializer.XmlSerializer(Type, System.Xml.Serialization.XmlAttributeOverrides)
+  fullName: System.Xml.Serialization.XmlSerializer.XmlSerializer(System.Type, System.Xml.Serialization.XmlAttributeOverrides)
   type: Constructor
   source:
     remote: *o0
@@ -137,11 +158,11 @@ items:
     startLine: 116
   syntax:
     content:
-      CSharp: 'public XmlSerializer(Type type, XmlAttributeOverrides overrides): this (type, overrides, new Type[0], null, null, null, null)'
+      CSharp: 'public XmlSerializer(Type type, XmlAttributeOverrides overrides): this (type, overrides, Array.Empty<Type>(), null, null, null, null)'
     parameters:
     - id: type
       type:
-        id: Type
+        id: System.Type
         name: Type
         isExternal: true
     - id: overrides
@@ -149,7 +170,7 @@ items:
         id: System.Xml.Serialization.XmlAttributeOverrides
         name: XmlAttributeOverrides
         href: System.Xml.Serialization.XmlAttributeOverrides.yml
-  id: System.Xml.Serialization.XmlSerializer.#ctor(Type,System.Xml.Serialization.XmlAttributeOverrides)
+  id: System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.Xml.Serialization.XmlAttributeOverrides)
 - uid: System.Xml.Serialization.XmlSerializer.#ctor(System.Xml.Serialization.XmlTypeMapping)
   href: System.Xml.Serialization.XmlSerializer.yml
   name: XmlSerializer(XmlTypeMapping)
@@ -169,10 +190,10 @@ items:
         name: XmlTypeMapping
         href: System.Xml.Serialization.XmlTypeMapping.yml
   id: System.Xml.Serialization.XmlSerializer.#ctor(System.Xml.Serialization.XmlTypeMapping)
-- uid: System.Xml.Serialization.XmlSerializer.#ctor(Type)
+- uid: System.Xml.Serialization.XmlSerializer.#ctor(System.Type)
   href: System.Xml.Serialization.XmlSerializer.yml
   name: XmlSerializer(Type)
-  fullName: System.Xml.Serialization.XmlSerializer.XmlSerializer(Type)
+  fullName: System.Xml.Serialization.XmlSerializer.XmlSerializer(System.Type)
   type: Constructor
   source:
     remote: *o0
@@ -184,14 +205,14 @@ items:
     parameters:
     - id: type
       type:
-        id: Type
+        id: System.Type
         name: Type
         isExternal: true
-  id: System.Xml.Serialization.XmlSerializer.#ctor(Type)
-- uid: System.Xml.Serialization.XmlSerializer.#ctor(Type,System.String)
+  id: System.Xml.Serialization.XmlSerializer.#ctor(System.Type)
+- uid: System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.String)
   href: System.Xml.Serialization.XmlSerializer.yml
   name: XmlSerializer(Type, string)
-  fullName: System.Xml.Serialization.XmlSerializer.XmlSerializer(Type, string)
+  fullName: System.Xml.Serialization.XmlSerializer.XmlSerializer(System.Type, string)
   type: Constructor
   source:
     remote: *o0
@@ -203,19 +224,19 @@ items:
     parameters:
     - id: type
       type:
-        id: Type
+        id: System.Type
         name: Type
         isExternal: true
     - id: defaultNamespace
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
-  id: System.Xml.Serialization.XmlSerializer.#ctor(Type,System.String)
-- uid: System.Xml.Serialization.XmlSerializer.Serialize(TextWriter,System.Object)
+  id: System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.String)
+- uid: System.Xml.Serialization.XmlSerializer.Serialize(System.IO.TextWriter,System.Object)
   href: System.Xml.Serialization.XmlSerializer.yml
   name: Serialize(TextWriter, object)
-  fullName: System.Xml.Serialization.XmlSerializer.Serialize(TextWriter, object)
+  fullName: System.Xml.Serialization.XmlSerializer.Serialize(System.IO.TextWriter, object)
   type: Method
   source:
     remote: *o0
@@ -227,19 +248,19 @@ items:
     parameters:
     - id: textWriter
       type:
-        id: TextWriter
+        id: System.IO.TextWriter
         name: TextWriter
         isExternal: true
     - id: o
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
-  id: System.Xml.Serialization.XmlSerializer.Serialize(TextWriter,System.Object)
-- uid: System.Xml.Serialization.XmlSerializer.Serialize(TextWriter,System.Object,System.Xml.Serialization.XmlSerializerNamespaces)
+  id: System.Xml.Serialization.XmlSerializer.Serialize(System.IO.TextWriter,System.Object)
+- uid: System.Xml.Serialization.XmlSerializer.Serialize(System.IO.TextWriter,System.Object,System.Xml.Serialization.XmlSerializerNamespaces)
   href: System.Xml.Serialization.XmlSerializer.yml
   name: Serialize(TextWriter, object, XmlSerializerNamespaces)
-  fullName: System.Xml.Serialization.XmlSerializer.Serialize(TextWriter, object, System.Xml.Serialization.XmlSerializerNamespaces)
+  fullName: System.Xml.Serialization.XmlSerializer.Serialize(System.IO.TextWriter, object, System.Xml.Serialization.XmlSerializerNamespaces)
   type: Method
   source:
     remote: *o0
@@ -251,24 +272,24 @@ items:
     parameters:
     - id: textWriter
       type:
-        id: TextWriter
+        id: System.IO.TextWriter
         name: TextWriter
         isExternal: true
     - id: o
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     - id: namespaces
       type:
         id: System.Xml.Serialization.XmlSerializerNamespaces
         name: XmlSerializerNamespaces
         href: System.Xml.Serialization.XmlSerializerNamespaces.yml
-  id: System.Xml.Serialization.XmlSerializer.Serialize(TextWriter,System.Object,System.Xml.Serialization.XmlSerializerNamespaces)
-- uid: System.Xml.Serialization.XmlSerializer.Serialize(Stream,System.Object)
+  id: System.Xml.Serialization.XmlSerializer.Serialize(System.IO.TextWriter,System.Object,System.Xml.Serialization.XmlSerializerNamespaces)
+- uid: System.Xml.Serialization.XmlSerializer.Serialize(System.IO.Stream,System.Object)
   href: System.Xml.Serialization.XmlSerializer.yml
   name: Serialize(Stream, object)
-  fullName: System.Xml.Serialization.XmlSerializer.Serialize(Stream, object)
+  fullName: System.Xml.Serialization.XmlSerializer.Serialize(System.IO.Stream, object)
   type: Method
   source:
     remote: *o0
@@ -280,19 +301,19 @@ items:
     parameters:
     - id: stream
       type:
-        id: Stream
+        id: System.IO.Stream
         name: Stream
         isExternal: true
     - id: o
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
-  id: System.Xml.Serialization.XmlSerializer.Serialize(Stream,System.Object)
-- uid: System.Xml.Serialization.XmlSerializer.Serialize(Stream,System.Object,System.Xml.Serialization.XmlSerializerNamespaces)
+  id: System.Xml.Serialization.XmlSerializer.Serialize(System.IO.Stream,System.Object)
+- uid: System.Xml.Serialization.XmlSerializer.Serialize(System.IO.Stream,System.Object,System.Xml.Serialization.XmlSerializerNamespaces)
   href: System.Xml.Serialization.XmlSerializer.yml
   name: Serialize(Stream, object, XmlSerializerNamespaces)
-  fullName: System.Xml.Serialization.XmlSerializer.Serialize(Stream, object, System.Xml.Serialization.XmlSerializerNamespaces)
+  fullName: System.Xml.Serialization.XmlSerializer.Serialize(System.IO.Stream, object, System.Xml.Serialization.XmlSerializerNamespaces)
   type: Method
   source:
     remote: *o0
@@ -304,20 +325,20 @@ items:
     parameters:
     - id: stream
       type:
-        id: Stream
+        id: System.IO.Stream
         name: Stream
         isExternal: true
     - id: o
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     - id: namespaces
       type:
         id: System.Xml.Serialization.XmlSerializerNamespaces
         name: XmlSerializerNamespaces
         href: System.Xml.Serialization.XmlSerializerNamespaces.yml
-  id: System.Xml.Serialization.XmlSerializer.Serialize(Stream,System.Object,System.Xml.Serialization.XmlSerializerNamespaces)
+  id: System.Xml.Serialization.XmlSerializer.Serialize(System.IO.Stream,System.Object,System.Xml.Serialization.XmlSerializerNamespaces)
 - uid: System.Xml.Serialization.XmlSerializer.Serialize(XmlWriter,System.Object)
   href: System.Xml.Serialization.XmlSerializer.yml
   name: Serialize(XmlWriter, object)
@@ -339,7 +360,7 @@ items:
     - id: o
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.Xml.Serialization.XmlSerializer.Serialize(XmlWriter,System.Object)
 - uid: System.Xml.Serialization.XmlSerializer.Serialize(XmlWriter,System.Object,System.Xml.Serialization.XmlSerializerNamespaces)
@@ -363,7 +384,7 @@ items:
     - id: o
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     - id: namespaces
       type:
@@ -371,10 +392,10 @@ items:
         name: XmlSerializerNamespaces
         href: System.Xml.Serialization.XmlSerializerNamespaces.yml
   id: System.Xml.Serialization.XmlSerializer.Serialize(XmlWriter,System.Object,System.Xml.Serialization.XmlSerializerNamespaces)
-- uid: System.Xml.Serialization.XmlSerializer.Deserialize(Stream)
+- uid: System.Xml.Serialization.XmlSerializer.Deserialize(System.IO.Stream)
   href: System.Xml.Serialization.XmlSerializer.yml
   name: Deserialize(Stream)
-  fullName: System.Xml.Serialization.XmlSerializer.Deserialize(Stream)
+  fullName: System.Xml.Serialization.XmlSerializer.Deserialize(System.IO.Stream)
   type: Method
   source:
     remote: *o0
@@ -386,16 +407,20 @@ items:
     parameters:
     - id: stream
       type:
-        id: Stream
+        id: System.IO.Stream
         name: Stream
         isExternal: true
     return:
       id: Object
-  id: System.Xml.Serialization.XmlSerializer.Deserialize(Stream)
-- uid: System.Xml.Serialization.XmlSerializer.Deserialize(TextReader)
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializer.Deserialize(System.IO.Stream)
+- uid: System.Xml.Serialization.XmlSerializer.Deserialize(System.IO.TextReader)
   href: System.Xml.Serialization.XmlSerializer.yml
   name: Deserialize(TextReader)
-  fullName: System.Xml.Serialization.XmlSerializer.Deserialize(TextReader)
+  fullName: System.Xml.Serialization.XmlSerializer.Deserialize(System.IO.TextReader)
   type: Method
   source:
     remote: *o0
@@ -407,12 +432,16 @@ items:
     parameters:
     - id: textReader
       type:
-        id: TextReader
+        id: System.IO.TextReader
         name: TextReader
         isExternal: true
     return:
       id: Object
-  id: System.Xml.Serialization.XmlSerializer.Deserialize(TextReader)
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializer.Deserialize(System.IO.TextReader)
 - uid: System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader)
   href: System.Xml.Serialization.XmlSerializer.yml
   name: Deserialize(XmlReader)
@@ -433,6 +462,10 @@ items:
         isExternal: true
     return:
       id: Object
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
   id: System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader)
 - uid: System.Xml.Serialization.XmlSerializer.CanDeserialize(XmlReader)
   href: System.Xml.Serialization.XmlSerializer.yml
@@ -454,6 +487,10 @@ items:
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Xml.Serialization.XmlSerializer.CanDeserialize(XmlReader)
 - uid: System.Xml.Serialization.XmlSerializer.FromMappings(System.Xml.Serialization.XmlMapping[])
   href: System.Xml.Serialization.XmlSerializer.yml
@@ -471,14 +508,18 @@ items:
     - id: mappings
       type:
         id: System.Array
-        name: System.Array
+        name: XmlMapping[]
         isExternal: true
-    return: {}
+    return:
+      type:
+        id: System.Array
+        name: XmlSerializer[]
+        isExternal: true
   id: System.Xml.Serialization.XmlSerializer.FromMappings(System.Xml.Serialization.XmlMapping[])
-- uid: System.Xml.Serialization.XmlSerializer.FromMappings(System.Xml.Serialization.XmlMapping[],Type)
+- uid: System.Xml.Serialization.XmlSerializer.FromMappings(System.Xml.Serialization.XmlMapping[],System.Type)
   href: System.Xml.Serialization.XmlSerializer.yml
   name: FromMappings(XmlMapping[], Type)
-  fullName: System.Xml.Serialization.XmlSerializer.FromMappings(System.Xml.Serialization.XmlMapping[], Type)
+  fullName: System.Xml.Serialization.XmlSerializer.FromMappings(System.Xml.Serialization.XmlMapping[], System.Type)
   type: Method
   source:
     remote: *o0
@@ -491,19 +532,23 @@ items:
     - id: mappings
       type:
         id: System.Array
-        name: System.Array
+        name: XmlMapping[]
         isExternal: true
     - id: type
       type:
-        id: Type
+        id: System.Type
         name: Type
         isExternal: true
-    return: {}
-  id: System.Xml.Serialization.XmlSerializer.FromMappings(System.Xml.Serialization.XmlMapping[],Type)
-- uid: System.Xml.Serialization.XmlSerializer.FromTypes(Type[])
+    return:
+      type:
+        id: System.Array
+        name: XmlSerializer[]
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializer.FromMappings(System.Xml.Serialization.XmlMapping[],System.Type)
+- uid: System.Xml.Serialization.XmlSerializer.FromTypes(System.Type[])
   href: System.Xml.Serialization.XmlSerializer.yml
   name: FromTypes(Type[])
-  fullName: System.Xml.Serialization.XmlSerializer.FromTypes(Type[])
+  fullName: System.Xml.Serialization.XmlSerializer.FromTypes(System.Type[])
   type: Method
   source:
     remote: *o0
@@ -516,7 +561,100 @@ items:
     - id: types
       type:
         id: System.Array
-        name: System.Array
+        name: Type[]
         isExternal: true
-    return: {}
-  id: System.Xml.Serialization.XmlSerializer.FromTypes(Type[])
+    return:
+      type:
+        id: System.Array
+        name: XmlSerializer[]
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializer.FromTypes(System.Type[])
+- uid: System.Xml.Serialization.XmlSerializer.CreateReader
+  href: System.Xml.Serialization.XmlSerializer.yml
+  name: CreateReader()
+  fullName: System.Xml.Serialization.XmlSerializer.CreateReader()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializer.cs
+    startLine: 559
+  syntax:
+    content:
+      CSharp: protected virtual XmlSerializationReader CreateReader()
+    parameters: []
+    return:
+      id: XmlSerializationReader
+      type:
+        id: System.Xml.Serialization.XmlSerializationReader
+        name: XmlSerializationReader
+        href: System.Xml.Serialization.XmlSerializationReader.yml
+  id: System.Xml.Serialization.XmlSerializer.CreateReader
+- uid: System.Xml.Serialization.XmlSerializer.Deserialize(System.Xml.Serialization.XmlSerializationReader)
+  href: System.Xml.Serialization.XmlSerializer.yml
+  name: Deserialize(XmlSerializationReader)
+  fullName: System.Xml.Serialization.XmlSerializer.Deserialize(System.Xml.Serialization.XmlSerializationReader)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializer.cs
+    startLine: 562
+  syntax:
+    content:
+      CSharp: protected virtual object Deserialize(XmlSerializationReader reader)
+    parameters:
+    - id: reader
+      type:
+        id: System.Xml.Serialization.XmlSerializationReader
+        name: XmlSerializationReader
+        href: System.Xml.Serialization.XmlSerializationReader.yml
+    return:
+      id: Object
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializer.Deserialize(System.Xml.Serialization.XmlSerializationReader)
+- uid: System.Xml.Serialization.XmlSerializer.CreateWriter
+  href: System.Xml.Serialization.XmlSerializer.yml
+  name: CreateWriter()
+  fullName: System.Xml.Serialization.XmlSerializer.CreateWriter()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializer.cs
+    startLine: 565
+  syntax:
+    content:
+      CSharp: protected virtual XmlSerializationWriter CreateWriter()
+    parameters: []
+    return:
+      id: XmlSerializationWriter
+      type:
+        id: System.Xml.Serialization.XmlSerializationWriter
+        name: XmlSerializationWriter
+        href: System.Xml.Serialization.XmlSerializationWriter.yml
+  id: System.Xml.Serialization.XmlSerializer.CreateWriter
+- uid: System.Xml.Serialization.XmlSerializer.Serialize(System.Object,System.Xml.Serialization.XmlSerializationWriter)
+  href: System.Xml.Serialization.XmlSerializer.yml
+  name: Serialize(object, XmlSerializationWriter)
+  fullName: System.Xml.Serialization.XmlSerializer.Serialize(object, System.Xml.Serialization.XmlSerializationWriter)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializer.cs
+    startLine: 568
+  syntax:
+    content:
+      CSharp: protected virtual void Serialize(object o, XmlSerializationWriter writer)
+    parameters:
+    - id: o
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+    - id: writer
+      type:
+        id: System.Xml.Serialization.XmlSerializationWriter
+        name: XmlSerializationWriter
+        href: System.Xml.Serialization.XmlSerializationWriter.yml
+  id: System.Xml.Serialization.XmlSerializer.Serialize(System.Object,System.Xml.Serialization.XmlSerializationWriter)

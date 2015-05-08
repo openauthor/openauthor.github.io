@@ -6,26 +6,32 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/TraceListener.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/TraceListener.cs
     startLine: 15
   syntax:
     content:
-      CSharp: public abstract class TraceListener
+      CSharp: 'public abstract class TraceListener : IDisposable'
   inheritance:
-  - id: IDisposable
-    name: IDisposable
+  - id: System.Object
+    name: object
     isExternal: true
   id: System.Diagnostics.TraceListener
   children:
+  - System.Diagnostics.TraceListener.#ctor
+  - System.Diagnostics.TraceListener.#ctor(System.String)
   - System.Diagnostics.TraceListener.Name
   - System.Diagnostics.TraceListener.IsThreadSafe
   - System.Diagnostics.TraceListener.Dispose
+  - System.Diagnostics.TraceListener.Dispose(System.Boolean)
   - System.Diagnostics.TraceListener.Flush
   - System.Diagnostics.TraceListener.IndentLevel
   - System.Diagnostics.TraceListener.IndentSize
   - System.Diagnostics.TraceListener.Filter
+  - System.Diagnostics.TraceListener.NeedIndent
   - System.Diagnostics.TraceListener.TraceOutputOptions
   - System.Diagnostics.TraceListener.Fail(System.String)
   - System.Diagnostics.TraceListener.Fail(System.String,System.String)
@@ -33,15 +39,49 @@ items:
   - System.Diagnostics.TraceListener.Write(System.Object)
   - System.Diagnostics.TraceListener.Write(System.String,System.String)
   - System.Diagnostics.TraceListener.Write(System.Object,System.String)
+  - System.Diagnostics.TraceListener.WriteIndent
   - System.Diagnostics.TraceListener.WriteLine(System.String)
   - System.Diagnostics.TraceListener.WriteLine(System.Object)
   - System.Diagnostics.TraceListener.WriteLine(System.String,System.String)
   - System.Diagnostics.TraceListener.WriteLine(System.Object,System.String)
-  - System.Diagnostics.TraceListener.TraceData(System.Diagnostics.TraceEventCache,String,System.Diagnostics.TraceEventType,System.Int32,System.Object)
-  - System.Diagnostics.TraceListener.TraceData(System.Diagnostics.TraceEventCache,String,System.Diagnostics.TraceEventType,System.Int32,System.Object[])
-  - System.Diagnostics.TraceListener.TraceEvent(System.Diagnostics.TraceEventCache,String,System.Diagnostics.TraceEventType,System.Int32)
-  - System.Diagnostics.TraceListener.TraceEvent(System.Diagnostics.TraceEventCache,String,System.Diagnostics.TraceEventType,System.Int32,System.String)
-  - System.Diagnostics.TraceListener.TraceEvent(System.Diagnostics.TraceEventCache,String,System.Diagnostics.TraceEventType,System.Int32,System.String,System.Object[])
+  - System.Diagnostics.TraceListener.TraceData(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.Object)
+  - System.Diagnostics.TraceListener.TraceData(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.Object[])
+  - System.Diagnostics.TraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32)
+  - System.Diagnostics.TraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String)
+  - System.Diagnostics.TraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String,System.Object[])
+- uid: System.Diagnostics.TraceListener.#ctor
+  href: System.Diagnostics.TraceListener.yml
+  name: TraceListener()
+  fullName: System.Diagnostics.TraceListener.TraceListener()
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/TraceListener.cs
+    startLine: 28
+  syntax:
+    content:
+      CSharp: protected TraceListener()
+    parameters: []
+  id: System.Diagnostics.TraceListener.#ctor
+- uid: System.Diagnostics.TraceListener.#ctor(System.String)
+  href: System.Diagnostics.TraceListener.yml
+  name: TraceListener(string)
+  fullName: System.Diagnostics.TraceListener.TraceListener(string)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/TraceListener.cs
+    startLine: 36
+  syntax:
+    content:
+      CSharp: protected TraceListener(string name)
+    parameters:
+    - id: name
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Diagnostics.TraceListener.#ctor(System.String)
 - uid: System.Diagnostics.TraceListener.Name
   href: System.Diagnostics.TraceListener.yml
   name: Name
@@ -58,7 +98,7 @@ items:
     - id: Name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.TraceListener.Name
 - uid: System.Diagnostics.TraceListener.IsThreadSafe
@@ -77,7 +117,7 @@ items:
     - id: IsThreadSafe
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Diagnostics.TraceListener.IsThreadSafe
 - uid: System.Diagnostics.TraceListener.Dispose
@@ -94,6 +134,25 @@ items:
       CSharp: public void Dispose()
     parameters: []
   id: System.Diagnostics.TraceListener.Dispose
+- uid: System.Diagnostics.TraceListener.Dispose(System.Boolean)
+  href: System.Diagnostics.TraceListener.yml
+  name: Dispose(bool)
+  fullName: System.Diagnostics.TraceListener.Dispose(bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/TraceListener.cs
+    startLine: 66
+  syntax:
+    content:
+      CSharp: protected virtual void Dispose(bool disposing)
+    parameters:
+    - id: disposing
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Diagnostics.TraceListener.Dispose(System.Boolean)
 - uid: System.Diagnostics.TraceListener.Flush
   href: System.Diagnostics.TraceListener.yml
   name: Flush()
@@ -124,7 +183,7 @@ items:
     - id: IndentLevel
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Diagnostics.TraceListener.IndentLevel
 - uid: System.Diagnostics.TraceListener.IndentSize
@@ -143,7 +202,7 @@ items:
     - id: IndentSize
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Diagnostics.TraceListener.IndentSize
 - uid: System.Diagnostics.TraceListener.Filter
@@ -165,6 +224,25 @@ items:
         name: TraceFilter
         href: System.Diagnostics.TraceFilter.yml
   id: System.Diagnostics.TraceListener.Filter
+- uid: System.Diagnostics.TraceListener.NeedIndent
+  href: System.Diagnostics.TraceListener.yml
+  name: NeedIndent
+  fullName: System.Diagnostics.TraceListener.NeedIndent
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/TraceListener.cs
+    startLine: 129
+  syntax:
+    content:
+      CSharp: protected bool NeedIndent { get; set; }
+    parameters:
+    - id: NeedIndent
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Diagnostics.TraceListener.NeedIndent
 - uid: System.Diagnostics.TraceListener.TraceOutputOptions
   href: System.Diagnostics.TraceListener.yml
   name: TraceOutputOptions
@@ -200,7 +278,7 @@ items:
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.TraceListener.Fail(System.String)
 - uid: System.Diagnostics.TraceListener.Fail(System.String,System.String)
@@ -219,12 +297,12 @@ items:
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: detailMessage
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.TraceListener.Fail(System.String,System.String)
 - uid: System.Diagnostics.TraceListener.Write(System.String)
@@ -238,12 +316,12 @@ items:
     startLine: 186
   syntax:
     content:
-      CSharp: public abstract void Write(string message);
+      CSharp: public abstract void Write(string message)
     parameters:
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.TraceListener.Write(System.String)
 - uid: System.Diagnostics.TraceListener.Write(System.Object)
@@ -262,7 +340,7 @@ items:
     - id: o
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.Diagnostics.TraceListener.Write(System.Object)
 - uid: System.Diagnostics.TraceListener.Write(System.String,System.String)
@@ -281,12 +359,12 @@ items:
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: category
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.TraceListener.Write(System.String,System.String)
 - uid: System.Diagnostics.TraceListener.Write(System.Object,System.String)
@@ -305,14 +383,28 @@ items:
     - id: o
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     - id: category
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.TraceListener.Write(System.Object,System.String)
+- uid: System.Diagnostics.TraceListener.WriteIndent
+  href: System.Diagnostics.TraceListener.yml
+  name: WriteIndent()
+  fullName: System.Diagnostics.TraceListener.WriteIndent()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/TraceListener.cs
+    startLine: 238
+  syntax:
+    content:
+      CSharp: protected virtual void WriteIndent()
+    parameters: []
+  id: System.Diagnostics.TraceListener.WriteIndent
 - uid: System.Diagnostics.TraceListener.WriteLine(System.String)
   href: System.Diagnostics.TraceListener.yml
   name: WriteLine(string)
@@ -324,12 +416,12 @@ items:
     startLine: 260
   syntax:
     content:
-      CSharp: public abstract void WriteLine(string message);
+      CSharp: public abstract void WriteLine(string message)
     parameters:
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.TraceListener.WriteLine(System.String)
 - uid: System.Diagnostics.TraceListener.WriteLine(System.Object)
@@ -348,7 +440,7 @@ items:
     - id: o
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.Diagnostics.TraceListener.WriteLine(System.Object)
 - uid: System.Diagnostics.TraceListener.WriteLine(System.String,System.String)
@@ -367,12 +459,12 @@ items:
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: category
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.TraceListener.WriteLine(System.String,System.String)
 - uid: System.Diagnostics.TraceListener.WriteLine(System.Object,System.String)
@@ -391,18 +483,18 @@ items:
     - id: o
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     - id: category
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.TraceListener.WriteLine(System.Object,System.String)
-- uid: System.Diagnostics.TraceListener.TraceData(System.Diagnostics.TraceEventCache,String,System.Diagnostics.TraceEventType,System.Int32,System.Object)
+- uid: System.Diagnostics.TraceListener.TraceData(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.Object)
   href: System.Diagnostics.TraceListener.yml
-  name: TraceData(TraceEventCache, String, TraceEventType, int, object)
-  fullName: System.Diagnostics.TraceListener.TraceData(System.Diagnostics.TraceEventCache, String, System.Diagnostics.TraceEventType, int, object)
+  name: TraceData(TraceEventCache, string, TraceEventType, int, object)
+  fullName: System.Diagnostics.TraceListener.TraceData(System.Diagnostics.TraceEventCache, string, System.Diagnostics.TraceEventType, int, object)
   type: Method
   source:
     remote: *o0
@@ -410,7 +502,7 @@ items:
     startLine: 308
   syntax:
     content:
-      CSharp: public virtual void TraceData(TraceEventCache eventCache, String source, TraceEventType eventType, int id, object data)
+      CSharp: public virtual void TraceData(TraceEventCache eventCache, string source, TraceEventType eventType, int id, object data)
     parameters:
     - id: eventCache
       type:
@@ -419,8 +511,8 @@ items:
         href: System.Diagnostics.TraceEventCache.yml
     - id: source
       type:
-        id: String
-        name: String
+        id: System.String
+        name: string
         isExternal: true
     - id: eventType
       type:
@@ -430,18 +522,18 @@ items:
     - id: id
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: data
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
-  id: System.Diagnostics.TraceListener.TraceData(System.Diagnostics.TraceEventCache,String,System.Diagnostics.TraceEventType,System.Int32,System.Object)
-- uid: System.Diagnostics.TraceListener.TraceData(System.Diagnostics.TraceEventCache,String,System.Diagnostics.TraceEventType,System.Int32,System.Object[])
+  id: System.Diagnostics.TraceListener.TraceData(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.Object)
+- uid: System.Diagnostics.TraceListener.TraceData(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.Object[])
   href: System.Diagnostics.TraceListener.yml
-  name: TraceData(TraceEventCache, String, TraceEventType, int, params object[])
-  fullName: System.Diagnostics.TraceListener.TraceData(System.Diagnostics.TraceEventCache, String, System.Diagnostics.TraceEventType, int, params object[])
+  name: TraceData(TraceEventCache, string, TraceEventType, int, params object[])
+  fullName: System.Diagnostics.TraceListener.TraceData(System.Diagnostics.TraceEventCache, string, System.Diagnostics.TraceEventType, int, params object[])
   type: Method
   source:
     remote: *o0
@@ -449,7 +541,7 @@ items:
     startLine: 322
   syntax:
     content:
-      CSharp: public virtual void TraceData(TraceEventCache eventCache, String source, TraceEventType eventType, int id, params object[] data)
+      CSharp: public virtual void TraceData(TraceEventCache eventCache, string source, TraceEventType eventType, int id, params object[] data)
     parameters:
     - id: eventCache
       type:
@@ -458,8 +550,8 @@ items:
         href: System.Diagnostics.TraceEventCache.yml
     - id: source
       type:
-        id: String
-        name: String
+        id: System.String
+        name: string
         isExternal: true
     - id: eventType
       type:
@@ -469,18 +561,18 @@ items:
     - id: id
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: data
       type:
         id: System.Array
-        name: System.Array
+        name: object[]
         isExternal: true
-  id: System.Diagnostics.TraceListener.TraceData(System.Diagnostics.TraceEventCache,String,System.Diagnostics.TraceEventType,System.Int32,System.Object[])
-- uid: System.Diagnostics.TraceListener.TraceEvent(System.Diagnostics.TraceEventCache,String,System.Diagnostics.TraceEventType,System.Int32)
+  id: System.Diagnostics.TraceListener.TraceData(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.Object[])
+- uid: System.Diagnostics.TraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32)
   href: System.Diagnostics.TraceListener.yml
-  name: TraceEvent(TraceEventCache, String, TraceEventType, int)
-  fullName: System.Diagnostics.TraceListener.TraceEvent(System.Diagnostics.TraceEventCache, String, System.Diagnostics.TraceEventType, int)
+  name: TraceEvent(TraceEventCache, string, TraceEventType, int)
+  fullName: System.Diagnostics.TraceListener.TraceEvent(System.Diagnostics.TraceEventCache, string, System.Diagnostics.TraceEventType, int)
   type: Method
   source:
     remote: *o0
@@ -488,7 +580,7 @@ items:
     startLine: 346
   syntax:
     content:
-      CSharp: public virtual void TraceEvent(TraceEventCache eventCache, String source, TraceEventType eventType, int id)
+      CSharp: public virtual void TraceEvent(TraceEventCache eventCache, string source, TraceEventType eventType, int id)
     parameters:
     - id: eventCache
       type:
@@ -497,8 +589,8 @@ items:
         href: System.Diagnostics.TraceEventCache.yml
     - id: source
       type:
-        id: String
-        name: String
+        id: System.String
+        name: string
         isExternal: true
     - id: eventType
       type:
@@ -508,13 +600,13 @@ items:
     - id: id
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
-  id: System.Diagnostics.TraceListener.TraceEvent(System.Diagnostics.TraceEventCache,String,System.Diagnostics.TraceEventType,System.Int32)
-- uid: System.Diagnostics.TraceListener.TraceEvent(System.Diagnostics.TraceEventCache,String,System.Diagnostics.TraceEventType,System.Int32,System.String)
+  id: System.Diagnostics.TraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32)
+- uid: System.Diagnostics.TraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String)
   href: System.Diagnostics.TraceListener.yml
-  name: TraceEvent(TraceEventCache, String, TraceEventType, int, string)
-  fullName: System.Diagnostics.TraceListener.TraceEvent(System.Diagnostics.TraceEventCache, String, System.Diagnostics.TraceEventType, int, string)
+  name: TraceEvent(TraceEventCache, string, TraceEventType, int, string)
+  fullName: System.Diagnostics.TraceListener.TraceEvent(System.Diagnostics.TraceEventCache, string, System.Diagnostics.TraceEventType, int, string)
   type: Method
   source:
     remote: *o0
@@ -522,7 +614,7 @@ items:
     startLine: 352
   syntax:
     content:
-      CSharp: public virtual void TraceEvent(TraceEventCache eventCache, String source, TraceEventType eventType, int id, string message)
+      CSharp: public virtual void TraceEvent(TraceEventCache eventCache, string source, TraceEventType eventType, int id, string message)
     parameters:
     - id: eventCache
       type:
@@ -531,8 +623,8 @@ items:
         href: System.Diagnostics.TraceEventCache.yml
     - id: source
       type:
-        id: String
-        name: String
+        id: System.String
+        name: string
         isExternal: true
     - id: eventType
       type:
@@ -542,18 +634,18 @@ items:
     - id: id
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
-  id: System.Diagnostics.TraceListener.TraceEvent(System.Diagnostics.TraceEventCache,String,System.Diagnostics.TraceEventType,System.Int32,System.String)
-- uid: System.Diagnostics.TraceListener.TraceEvent(System.Diagnostics.TraceEventCache,String,System.Diagnostics.TraceEventType,System.Int32,System.String,System.Object[])
+  id: System.Diagnostics.TraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String)
+- uid: System.Diagnostics.TraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String,System.Object[])
   href: System.Diagnostics.TraceListener.yml
-  name: TraceEvent(TraceEventCache, String, TraceEventType, int, string, params object[])
-  fullName: System.Diagnostics.TraceListener.TraceEvent(System.Diagnostics.TraceEventCache, String, System.Diagnostics.TraceEventType, int, string, params object[])
+  name: TraceEvent(TraceEventCache, string, TraceEventType, int, string, params object[])
+  fullName: System.Diagnostics.TraceListener.TraceEvent(System.Diagnostics.TraceEventCache, string, System.Diagnostics.TraceEventType, int, string, params object[])
   type: Method
   source:
     remote: *o0
@@ -561,7 +653,7 @@ items:
     startLine: 363
   syntax:
     content:
-      CSharp: public virtual void TraceEvent(TraceEventCache eventCache, String source, TraceEventType eventType, int id, string format, params object[] args)
+      CSharp: public virtual void TraceEvent(TraceEventCache eventCache, string source, TraceEventType eventType, int id, string format, params object[] args)
     parameters:
     - id: eventCache
       type:
@@ -570,8 +662,8 @@ items:
         href: System.Diagnostics.TraceEventCache.yml
     - id: source
       type:
-        id: String
-        name: String
+        id: System.String
+        name: string
         isExternal: true
     - id: eventType
       type:
@@ -581,16 +673,16 @@ items:
     - id: id
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: format
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: args
       type:
         id: System.Array
-        name: System.Array
+        name: object[]
         isExternal: true
-  id: System.Diagnostics.TraceListener.TraceEvent(System.Diagnostics.TraceEventCache,String,System.Diagnostics.TraceEventType,System.Int32,System.String,System.Object[])
+  id: System.Diagnostics.TraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String,System.Object[])

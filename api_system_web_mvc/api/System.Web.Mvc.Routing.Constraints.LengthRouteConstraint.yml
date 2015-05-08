@@ -6,18 +6,19 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Common/Routing/Constraints/LengthRouteConstraint.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/Common/Routing/Constraints/LengthRouteConstraint.cs
     startLine: 22
   summary: Constrains a route parameter to be a string of a given length or within a given range of lengths.
   syntax:
     content:
-      CSharp: 'public class LengthRouteConstraint #endif'
+      CSharp: 'public class LengthRouteConstraint : IRouteConstraint'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.Routing.Constraints.LengthRouteConstraint
   children:
@@ -43,7 +44,7 @@ items:
     - id: length
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Web.Mvc.Routing.Constraints.LengthRouteConstraint.#ctor(System.Int32)
 - uid: System.Web.Mvc.Routing.Constraints.LengthRouteConstraint.#ctor(System.Int32,System.Int32)
@@ -66,13 +67,13 @@ items:
     - id: minLength
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The minimum length of the route parameter.
     - id: maxLength
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The maximum length of the route parameter.
   id: System.Web.Mvc.Routing.Constraints.LengthRouteConstraint.#ctor(System.Int32,System.Int32)
@@ -88,12 +89,12 @@ items:
   summary: Gets the length of the route parameter, if one is set.
   syntax:
     content:
-      CSharp: public int ? Length { get; private set; }
+      CSharp: public int ? Length { get; }
     parameters:
     - id: Length
       type:
         id: System.Nullable{System.Int32}
-        name: System.Nullable{System.Int32}
+        name: int?
         isExternal: true
   id: System.Web.Mvc.Routing.Constraints.LengthRouteConstraint.Length
 - uid: System.Web.Mvc.Routing.Constraints.LengthRouteConstraint.MinLength
@@ -108,12 +109,12 @@ items:
   summary: Gets the minimum length of the route parameter, if one is set.
   syntax:
     content:
-      CSharp: public int ? MinLength { get; private set; }
+      CSharp: public int ? MinLength { get; }
     parameters:
     - id: MinLength
       type:
         id: System.Nullable{System.Int32}
-        name: System.Nullable{System.Int32}
+        name: int?
         isExternal: true
   id: System.Web.Mvc.Routing.Constraints.LengthRouteConstraint.MinLength
 - uid: System.Web.Mvc.Routing.Constraints.LengthRouteConstraint.MaxLength
@@ -128,12 +129,12 @@ items:
   summary: Gets the maximum length of the route parameter, if one is set.
   syntax:
     content:
-      CSharp: public int ? MaxLength { get; private set; }
+      CSharp: public int ? MaxLength { get; }
     parameters:
     - id: MaxLength
       type:
         id: System.Nullable{System.Int32}
-        name: System.Nullable{System.Int32}
+        name: int?
         isExternal: true
   id: System.Web.Mvc.Routing.Constraints.LengthRouteConstraint.MaxLength
 - uid: System.Web.Mvc.Routing.Constraints.LengthRouteConstraint.Match(System.Web.HttpContextBase,System.Web.Routing.Route,System.String,System.Web.Routing.RouteValueDictionary,System.Web.Routing.RouteDirection)
@@ -152,28 +153,32 @@ items:
     - id: httpContext
       type:
         id: System.Web.HttpContextBase
-        name: System.Web.HttpContextBase
+        name: HttpContextBase
         isExternal: true
     - id: route
       type:
         id: System.Web.Routing.Route
-        name: System.Web.Routing.Route
+        name: Route
         isExternal: true
     - id: parameterName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: values
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
     - id: routeDirection
       type:
         id: System.Web.Routing.RouteDirection
-        name: System.Web.Routing.RouteDirection
+        name: RouteDirection
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Web.Mvc.Routing.Constraints.LengthRouteConstraint.Match(System.Web.HttpContextBase,System.Web.Routing.Route,System.String,System.Web.Routing.RouteValueDictionary,System.Web.Routing.RouteDirection)

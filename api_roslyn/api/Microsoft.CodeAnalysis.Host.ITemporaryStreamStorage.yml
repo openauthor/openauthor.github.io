@@ -6,14 +6,15 @@ items:
   type: Interface
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Workspace/Host/TemporaryStorage/ITemporaryStorage.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Workspace/Host/TemporaryStorage/ITemporaryStorage.cs
     startLine: 21
   syntax:
     content:
-      CSharp: public interface ITemporaryStreamStorage
+      CSharp: 'public interface ITemporaryStreamStorage : IDisposable'
   id: Microsoft.CodeAnalysis.Host.ITemporaryStreamStorage
   children:
   - Microsoft.CodeAnalysis.Host.ITemporaryStreamStorage.ReadStream(System.Threading.CancellationToken)
@@ -31,15 +32,19 @@ items:
     startLine: 23
   syntax:
     content:
-      CSharp: Stream ReadStream(CancellationToken cancellationToken = default (CancellationToken));
+      CSharp: public Stream ReadStream(CancellationToken cancellationToken = null)
     parameters:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Stream
+      type:
+        id: System.IO.Stream
+        name: Stream
+        isExternal: true
   id: Microsoft.CodeAnalysis.Host.ITemporaryStreamStorage.ReadStream(System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.Host.ITemporaryStreamStorage.ReadStreamAsync(System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.Host.ITemporaryStreamStorage.yml
@@ -52,15 +57,19 @@ items:
     startLine: 24
   syntax:
     content:
-      CSharp: Task<Stream> ReadStreamAsync(CancellationToken cancellationToken = default (CancellationToken));
+      CSharp: public Task<Stream> ReadStreamAsync(CancellationToken cancellationToken = null)
     parameters:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.IO.Stream}
+        name: Task<Stream>
+        isExternal: true
   id: Microsoft.CodeAnalysis.Host.ITemporaryStreamStorage.ReadStreamAsync(System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.Host.ITemporaryStreamStorage.WriteStream(System.IO.Stream,System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.Host.ITemporaryStreamStorage.yml
@@ -73,17 +82,17 @@ items:
     startLine: 25
   syntax:
     content:
-      CSharp: void WriteStream(Stream stream, CancellationToken cancellationToken = default (CancellationToken));
+      CSharp: public void WriteStream(Stream stream, CancellationToken cancellationToken = null)
     parameters:
     - id: stream
       type:
         id: System.IO.Stream
-        name: System.IO.Stream
+        name: Stream
         isExternal: true
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
   id: Microsoft.CodeAnalysis.Host.ITemporaryStreamStorage.WriteStream(System.IO.Stream,System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.Host.ITemporaryStreamStorage.WriteStreamAsync(System.IO.Stream,System.Threading.CancellationToken)
@@ -97,18 +106,22 @@ items:
     startLine: 26
   syntax:
     content:
-      CSharp: Task WriteStreamAsync(Stream stream, CancellationToken cancellationToken = default (CancellationToken));
+      CSharp: public Task WriteStreamAsync(Stream stream, CancellationToken cancellationToken = null)
     parameters:
     - id: stream
       type:
         id: System.IO.Stream
-        name: System.IO.Stream
+        name: Stream
         isExternal: true
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task
+        name: Task
+        isExternal: true
   id: Microsoft.CodeAnalysis.Host.ITemporaryStreamStorage.WriteStreamAsync(System.IO.Stream,System.Threading.CancellationToken)

@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/Html/EnumHelper.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/Html/EnumHelper.cs
     startLine: 11
   syntax:
     content:
-      CSharp: public static class EnumHelper
+      CSharp: public class EnumHelper
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.Html.EnumHelper
   children:
@@ -38,7 +39,7 @@ items:
   summary: >-
     Gets a value indicating whether the given  or an expression of this
 
-    [System.Type](#) is suitable for use in [System.Web.Mvc.Html.EnumHelper.GetSelectList(System.Type)](System.Web.Mvc.Html.EnumHelper.yml) and [System.Web.Mvc.Html.SelectExtensions.EnumDropDownListFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})](System.Web.Mvc.Html.SelectExtensions.yml)
+    [System.Type]() is suitable for use in [System.Web.Mvc.Html.EnumHelper.GetSelectList(System.Type)](System.Web.Mvc.Html.EnumHelper.yml) and [System.Web.Mvc.Html.SelectExtensions.EnumDropDownListFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})](System.Web.Mvc.Html.SelectExtensions.yml)
 
     calls.
   syntax:
@@ -48,17 +49,21 @@ items:
     - id: type
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
-      description: The [System.Type](#) to check.
+      description: The [System.Type]() to check.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: >-
         if [System.Web.Mvc.Html.EnumHelper.GetSelectList(System.Type)](System.Web.Mvc.Html.EnumHelper.yml) will not throw when passed given
 
-        [System.Type](#) and [System.Web.Mvc.Html.SelectExtensions.EnumDropDownListFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})](System.Web.Mvc.Html.SelectExtensions.yml)
+        [System.Type]() and [System.Web.Mvc.Html.SelectExtensions.EnumDropDownListFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})](System.Web.Mvc.Html.SelectExtensions.yml)
 
-        will not throw when passed an expression of this [System.Type](#);  otherwise.
+        will not throw when passed an expression of this [System.Type]();  otherwise.
   id: System.Web.Mvc.Html.EnumHelper.IsValidForEnumHelper(System.Type)
 - uid: System.Web.Mvc.Html.EnumHelper.IsValidForEnumHelper(System.Web.Mvc.ModelMetadata)
   href: System.Web.Mvc.Html.EnumHelper.yml
@@ -87,6 +92,10 @@ items:
       description: The [System.Web.Mvc.ModelMetadata](System.Web.Mvc.ModelMetadata.yml) to check.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: >-
         if [System.Web.Mvc.Html.EnumHelper.GetSelectList(System.Web.Mvc.ModelMetadata)](System.Web.Mvc.Html.EnumHelper.yml) will return not throw when passed
 
@@ -114,12 +123,16 @@ items:
     - id: type
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
-      description: The [System.Type](#) to evaluate.
+      description: The [System.Type]() to evaluate.
     return:
       id: IList
-      description: An [System.Collections.Generic.IList`1](#) for the given .
+      type:
+        id: System.Collections.Generic.IList{System.Web.Mvc.SelectListItem}
+        name: IList<SelectListItem>
+        isExternal: true
+      description: An [System.Collections.Generic.IList`1]() for the given .
   id: System.Web.Mvc.Html.EnumHelper.GetSelectList(System.Type)
 - uid: System.Web.Mvc.Html.EnumHelper.GetSelectList(System.Web.Mvc.ModelMetadata)
   href: System.Web.Mvc.Html.EnumHelper.yml
@@ -146,7 +159,11 @@ items:
       description: The [System.Web.Mvc.ModelMetadata](System.Web.Mvc.ModelMetadata.yml) to evaluate.
     return:
       id: IList
-      description: An [System.Collections.Generic.IList`1](#) for the given .
+      type:
+        id: System.Collections.Generic.IList{System.Web.Mvc.SelectListItem}
+        name: IList<SelectListItem>
+        isExternal: true
+      description: An [System.Collections.Generic.IList`1]() for the given .
   id: System.Web.Mvc.Html.EnumHelper.GetSelectList(System.Web.Mvc.ModelMetadata)
 - uid: System.Web.Mvc.Html.EnumHelper.GetSelectList(System.Type,System.Enum)
   href: System.Web.Mvc.Html.EnumHelper.yml
@@ -172,19 +189,23 @@ items:
     - id: type
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
-      description: The [System.Type](#) to evaluate.
+      description: The [System.Type]() to evaluate.
     - id: value
       type:
         id: System.Enum
-        name: System.Enum
+        name: Enum
         isExternal: true
-      description: Value from [System.Type](#) to select.
+      description: Value from [System.Type]() to select.
     return:
       id: IList
+      type:
+        id: System.Collections.Generic.IList{System.Web.Mvc.SelectListItem}
+        name: IList<SelectListItem>
+        isExternal: true
       description: >-
-        An [System.Collections.Generic.IList`1](#) for the given , possibly extended to
+        An [System.Collections.Generic.IList`1]() for the given , possibly extended to
 
         include an unrecognized .
   id: System.Web.Mvc.Html.EnumHelper.GetSelectList(System.Type,System.Enum)
@@ -218,13 +239,17 @@ items:
     - id: value
       type:
         id: System.Enum
-        name: System.Enum
+        name: Enum
         isExternal: true
-      description: Value from [System.Type](#) of  to select.
+      description: Value from [System.Type]() of  to select.
     return:
       id: IList
+      type:
+        id: System.Collections.Generic.IList{System.Web.Mvc.SelectListItem}
+        name: IList<SelectListItem>
+        isExternal: true
       description: >-
-        An [System.Collections.Generic.IList`1](#) for the given , possibly extended to
+        An [System.Collections.Generic.IList`1]() for the given , possibly extended to
 
         include an unrecognized .
   id: System.Web.Mvc.Html.EnumHelper.GetSelectList(System.Web.Mvc.ModelMetadata,System.Enum)

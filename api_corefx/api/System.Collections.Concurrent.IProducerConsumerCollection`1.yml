@@ -6,14 +6,16 @@ items:
   type: Interface
   source:
     remote: &o0
+      path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/IProducerConsumerCollection.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/IProducerConsumerCollection.cs
     startLine: 26
   summary: Defines methods to manipulate thread-safe collections intended for producer/consumer usage.
   syntax:
     content:
-      CSharp: public interface IProducerConsumerCollection<T>
+      CSharp: 'public interface IProducerConsumerCollection<T> : IEnumerable<T>, ICollection, IEnumerable'
   id: System.Collections.Concurrent.IProducerConsumerCollection`1
   children:
   - System.Collections.Concurrent.IProducerConsumerCollection`1.CopyTo(`0[],System.Int32)
@@ -34,18 +36,18 @@ items:
 
     an
 
-    [System.Array](#), starting at a specified index.
+    [System.Array](), starting at a specified index.
   syntax:
     content:
-      CSharp: void CopyTo(T[] array, int index);
+      CSharp: public void CopyTo(T[] array, int index)
     parameters:
     - id: array
       type:
         id: System.Array
-        name: System.Array
+        name: T[]
         isExternal: true
       description: >-
-        The one-dimensional [System.Array](#) that is the destination of
+        The one-dimensional [System.Array]() that is the destination of
 
         the elements copied from the [System.Collections.Concurrent.IProducerConsumerCollection`1](System.Collections.Concurrent.IProducerConsumerCollection`1.yml).
 
@@ -53,7 +55,7 @@ items:
     - id: index
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: >-
         The zero-based index in  at which copying
@@ -72,7 +74,7 @@ items:
   summary: Attempts to add an object to the [System.Collections.Concurrent.IProducerConsumerCollection`1](System.Collections.Concurrent.IProducerConsumerCollection`1.yml).
   syntax:
     content:
-      CSharp: bool TryAdd(T item);
+      CSharp: public bool TryAdd(T item)
     parameters:
     - id: item
       type:
@@ -82,6 +84,10 @@ items:
       description: The object to add to the [System.Collections.Concurrent.IProducerConsumerCollection`1](System.Collections.Concurrent.IProducerConsumerCollection`1.yml).
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: true if the object was added successfully; otherwise, false.
   id: System.Collections.Concurrent.IProducerConsumerCollection`1.TryAdd(`0)
 - uid: System.Collections.Concurrent.IProducerConsumerCollection`1.TryTake(`0@)
@@ -96,7 +102,7 @@ items:
   summary: Attempts to remove and return an object from the [System.Collections.Concurrent.IProducerConsumerCollection`1](System.Collections.Concurrent.IProducerConsumerCollection`1.yml).
   syntax:
     content:
-      CSharp: bool TryTake(out T item);
+      CSharp: public bool TryTake(out T item)
     parameters:
     - id: item
       type:
@@ -109,6 +115,10 @@ items:
         unspecified.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: true if an object was removed and returned successfully; otherwise, false.
   id: System.Collections.Concurrent.IProducerConsumerCollection`1.TryTake(`0@)
 - uid: System.Collections.Concurrent.IProducerConsumerCollection`1.ToArray
@@ -123,8 +133,12 @@ items:
   summary: Copies the elements contained in the [System.Collections.Concurrent.IProducerConsumerCollection`1](System.Collections.Concurrent.IProducerConsumerCollection`1.yml) to a new array.
   syntax:
     content:
-      CSharp: T[] ToArray();
+      CSharp: public T[] ToArray()
     parameters: []
     return:
+      type:
+        id: System.Array
+        name: T[]
+        isExternal: true
       description: A new array containing the elements copied from the [System.Collections.Concurrent.IProducerConsumerCollection`1](System.Collections.Concurrent.IProducerConsumerCollection`1.yml).
   id: System.Collections.Concurrent.IProducerConsumerCollection`1.ToArray

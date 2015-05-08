@@ -6,16 +6,21 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/TypeReference.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/TypeReference.cs
     startLine: 8
   syntax:
     content:
       CSharp: public struct TypeReference
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Reflection.Metadata.TypeReference
   children:
@@ -34,13 +39,13 @@ items:
   summary: Resolution scope in which the target type is defined and is uniquely identified by the specified [System.Reflection.Metadata.TypeReference.Namespace](System.Reflection.Metadata.TypeReference.yml) and [System.Reflection.Metadata.TypeReference.Name](System.Reflection.Metadata.TypeReference.yml).
   syntax:
     content:
-      CSharp: public Handle ResolutionScope { get; }
+      CSharp: public EntityHandle ResolutionScope { get; }
     parameters:
     - id: ResolutionScope
       type:
-        id: System.Reflection.Metadata.Handle
-        name: Handle
-        href: System.Reflection.Metadata.Handle.yml
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
   id: System.Reflection.Metadata.TypeReference.ResolutionScope
 - uid: System.Reflection.Metadata.TypeReference.Name
   href: System.Reflection.Metadata.TypeReference.yml
@@ -71,7 +76,7 @@ items:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/TypeReference.cs
     startLine: 84
-  summary: Name of the namespace where the target type is defined, or nil if the type is nested or defined in a root namespace.
+  summary: Full name of the namespace where the target type is defined, or nil if the type is nested or defined in a root namespace.
   syntax:
     content:
       CSharp: public StringHandle Namespace { get; }

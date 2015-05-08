@@ -6,35 +6,43 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentStack.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentStack.cs
     startLine: 35
   summary: Represents a thread-safe last-in, first-out collection of objects.
   syntax:
     content:
-      CSharp: public class ConcurrentStack<T>
+      CSharp: 'public class ConcurrentStack<T> : IProducerConsumerCollection<T>, ICollection, IReadOnlyCollection<T>, IEnumerable<T>, IEnumerable'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Collections.Concurrent.ConcurrentStack`1
   children:
   - System.Collections.Concurrent.ConcurrentStack`1.#ctor
-  - System.Collections.Concurrent.ConcurrentStack`1.#ctor(IEnumerable{`0})
+  - System.Collections.Concurrent.ConcurrentStack`1.#ctor(System.Collections.Generic.IEnumerable{`0})
   - System.Collections.Concurrent.ConcurrentStack`1.IsEmpty
   - System.Collections.Concurrent.ConcurrentStack`1.Count
+  - System.Collections.Concurrent.ConcurrentStack`1.System#Collections#ICollection#IsSynchronized
+  - System.Collections.Concurrent.ConcurrentStack`1.System#Collections#ICollection#SyncRoot
   - System.Collections.Concurrent.ConcurrentStack`1.Clear
+  - System.Collections.Concurrent.ConcurrentStack`1.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
   - System.Collections.Concurrent.ConcurrentStack`1.CopyTo(`0[],System.Int32)
   - System.Collections.Concurrent.ConcurrentStack`1.Push(`0)
   - System.Collections.Concurrent.ConcurrentStack`1.PushRange(`0[])
   - System.Collections.Concurrent.ConcurrentStack`1.PushRange(`0[],System.Int32,System.Int32)
+  - System.Collections.Concurrent.ConcurrentStack`1.System#Collections#Concurrent#IProducerConsumerCollection{T}#TryAdd(`0)
   - System.Collections.Concurrent.ConcurrentStack`1.TryPeek(`0@)
   - System.Collections.Concurrent.ConcurrentStack`1.TryPop(`0@)
   - System.Collections.Concurrent.ConcurrentStack`1.TryPopRange(`0[])
   - System.Collections.Concurrent.ConcurrentStack`1.TryPopRange(`0[],System.Int32,System.Int32)
+  - System.Collections.Concurrent.ConcurrentStack`1.System#Collections#Concurrent#IProducerConsumerCollection{T}#TryTake(`0@)
   - System.Collections.Concurrent.ConcurrentStack`1.ToArray
   - System.Collections.Concurrent.ConcurrentStack`1.GetEnumerator
+  - System.Collections.Concurrent.ConcurrentStack`1.System#Collections#IEnumerable#GetEnumerator
 - uid: System.Collections.Concurrent.ConcurrentStack`1.#ctor
   href: System.Collections.Concurrent.ConcurrentStack`1.yml
   name: ConcurrentStack()
@@ -53,10 +61,10 @@ items:
       CSharp: public ConcurrentStack()
     parameters: []
   id: System.Collections.Concurrent.ConcurrentStack`1.#ctor
-- uid: System.Collections.Concurrent.ConcurrentStack`1.#ctor(IEnumerable{`0})
+- uid: System.Collections.Concurrent.ConcurrentStack`1.#ctor(System.Collections.Generic.IEnumerable{`0})
   href: System.Collections.Concurrent.ConcurrentStack`1.yml
   name: ConcurrentStack(IEnumerable<T>)
-  fullName: System.Collections.Concurrent.ConcurrentStack<T>.ConcurrentStack(IEnumerable<T>)
+  fullName: System.Collections.Concurrent.ConcurrentStack<T>.ConcurrentStack(System.Collections.Generic.IEnumerable<T>)
   type: Constructor
   source:
     remote: *o0
@@ -72,11 +80,11 @@ items:
     parameters:
     - id: collection
       type:
-        id: IEnumerable{`0}
-        name: IEnumerable{`0}
+        id: System.Collections.Generic.IEnumerable{`0}
+        name: IEnumerable<T>
         isExternal: true
       description: The collection whose elements are copied to the new [System.Collections.Concurrent.ConcurrentStack`1](System.Collections.Concurrent.ConcurrentStack`1.yml).
-  id: System.Collections.Concurrent.ConcurrentStack`1.#ctor(IEnumerable{`0})
+  id: System.Collections.Concurrent.ConcurrentStack`1.#ctor(System.Collections.Generic.IEnumerable{`0})
 - uid: System.Collections.Concurrent.ConcurrentStack`1.IsEmpty
   href: System.Collections.Concurrent.ConcurrentStack`1.yml
   name: IsEmpty
@@ -94,7 +102,7 @@ items:
     - id: IsEmpty
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Collections.Concurrent.ConcurrentStack`1.IsEmpty
 - uid: System.Collections.Concurrent.ConcurrentStack`1.Count
@@ -114,9 +122,52 @@ items:
     - id: Count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Collections.Concurrent.ConcurrentStack`1.Count
+- uid: System.Collections.Concurrent.ConcurrentStack`1.System#Collections#ICollection#IsSynchronized
+  href: System.Collections.Concurrent.ConcurrentStack`1.yml
+  name: ICollection.IsSynchronized
+  fullName: System.Collections.Concurrent.ConcurrentStack<T>.System.Collections.ICollection.IsSynchronized
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentStack.cs
+    startLine: 167
+  summary: >-
+    Gets a value indicating whether access to the [System.Collections.ICollection]() is
+
+    synchronized with the SyncRoot.
+  syntax:
+    content:
+      CSharp: bool ICollection.IsSynchronized { // Gets a value indicating whether access to this collection is synchronized. Always returns // false. The reason is subtle. While access is in face thread safe, it's not the case that // locking on the SyncRoot would have prevented concurrent pushes and pops, as this property // would typically indicate; that's because we internally use CAS operations vs. true locks. get; }
+    parameters:
+    - id: System.Collections.ICollection.IsSynchronized
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Collections.Concurrent.ConcurrentStack`1.System#Collections#ICollection#IsSynchronized
+- uid: System.Collections.Concurrent.ConcurrentStack`1.System#Collections#ICollection#SyncRoot
+  href: System.Collections.Concurrent.ConcurrentStack`1.yml
+  name: ICollection.SyncRoot
+  fullName: System.Collections.Concurrent.ConcurrentStack<T>.System.Collections.ICollection.SyncRoot
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentStack.cs
+    startLine: 181
+  summary: Gets an object that can be used to synchronize access to the [System.Collections.ICollection](). This property is not supported.
+  syntax:
+    content:
+      CSharp: object ICollection.SyncRoot { get; }
+    parameters:
+    - id: System.Collections.ICollection.SyncRoot
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+  id: System.Collections.Concurrent.ConcurrentStack`1.System#Collections#ICollection#SyncRoot
 - uid: System.Collections.Concurrent.ConcurrentStack`1.Clear
   href: System.Collections.Concurrent.ConcurrentStack`1.yml
   name: Clear()
@@ -132,6 +183,46 @@ items:
       CSharp: public void Clear()
     parameters: []
   id: System.Collections.Concurrent.ConcurrentStack`1.Clear
+- uid: System.Collections.Concurrent.ConcurrentStack`1.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+  href: System.Collections.Concurrent.ConcurrentStack`1.yml
+  name: ICollection.CopyTo(Array, int)
+  fullName: System.Collections.Concurrent.ConcurrentStack<T>.System.Collections.ICollection.CopyTo(System.Array, int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentStack.cs
+    startLine: 226
+  summary: >-
+    Copies the elements of the [System.Collections.ICollection]() to an [System.Array](), starting at a particular
+
+    [System.Array]() index.
+  syntax:
+    content:
+      CSharp: void ICollection.CopyTo(Array array, int index)
+    parameters:
+    - id: array
+      type:
+        id: System.Array
+        name: Array
+        isExternal: true
+      description: >-
+        The one-dimensional [System.Array]() that is the destination of
+
+        the elements copied from the
+
+        [System.Collections.Concurrent.ConcurrentStack`1](System.Collections.Concurrent.ConcurrentStack`1.yml). The [System.Array]() must
+
+        have zero-based indexing.
+    - id: index
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: >-
+        The zero-based index in  at which copying
+
+        begins.
+  id: System.Collections.Concurrent.ConcurrentStack`1.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
 - uid: System.Collections.Concurrent.ConcurrentStack`1.CopyTo(`0[],System.Int32)
   href: System.Collections.Concurrent.ConcurrentStack`1.yml
   name: CopyTo(T[], int)
@@ -141,7 +232,7 @@ items:
     remote: *o0
     path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentStack.cs
     startLine: 261
-  summary: Copies the [System.Collections.Concurrent.ConcurrentStack`1](System.Collections.Concurrent.ConcurrentStack`1.yml) elements to an existing one-dimensional [System.Array](#), starting at the specified array index.
+  summary: Copies the [System.Collections.Concurrent.ConcurrentStack`1](System.Collections.Concurrent.ConcurrentStack`1.yml) elements to an existing one-dimensional [System.Array](), starting at the specified array index.
   syntax:
     content:
       CSharp: public void CopyTo(T[] array, int index)
@@ -149,20 +240,20 @@ items:
     - id: array
       type:
         id: System.Array
-        name: System.Array
+        name: T[]
         isExternal: true
       description: >-
-        The one-dimensional [System.Array](#) that is the destination of
+        The one-dimensional [System.Array]() that is the destination of
 
         the elements copied from the
 
-        [System.Collections.Concurrent.ConcurrentStack`1](System.Collections.Concurrent.ConcurrentStack`1.yml). The [System.Array](#) must have zero-based
+        [System.Collections.Concurrent.ConcurrentStack`1](System.Collections.Concurrent.ConcurrentStack`1.yml). The [System.Array]() must have zero-based
 
         indexing.
     - id: index
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: >-
         The zero-based index in  at which copying
@@ -210,7 +301,7 @@ items:
     - id: items
       type:
         id: System.Array
-        name: System.Array
+        name: T[]
         isExternal: true
       description: The objects to push onto the [System.Collections.Concurrent.ConcurrentStack`1](System.Collections.Concurrent.ConcurrentStack`1.yml).
   id: System.Collections.Concurrent.ConcurrentStack`1.PushRange(`0[])
@@ -231,13 +322,13 @@ items:
     - id: items
       type:
         id: System.Array
-        name: System.Array
+        name: T[]
         isExternal: true
       description: The objects to push onto the [System.Collections.Concurrent.ConcurrentStack`1](System.Collections.Concurrent.ConcurrentStack`1.yml).
     - id: startIndex
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: >-
         The zero-based offset in  at which to begin
@@ -246,10 +337,41 @@ items:
     - id: count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The number of elements to be inserted onto the top of the [System.Collections.Concurrent.ConcurrentStack`1](System.Collections.Concurrent.ConcurrentStack`1.yml).
   id: System.Collections.Concurrent.ConcurrentStack`1.PushRange(`0[],System.Int32,System.Int32)
+- uid: System.Collections.Concurrent.ConcurrentStack`1.System#Collections#Concurrent#IProducerConsumerCollection{T}#TryAdd(`0)
+  href: System.Collections.Concurrent.ConcurrentStack`1.yml
+  name: IProducerConsumerCollection<T>.TryAdd(T)
+  fullName: System.Collections.Concurrent.ConcurrentStack<T>.System.Collections.Concurrent.IProducerConsumerCollection<T>.TryAdd(T)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentStack.cs
+    startLine: 437
+  summary: Attempts to add an object to the [System.Collections.Concurrent.IProducerConsumerCollection{T}]().
+  syntax:
+    content:
+      CSharp: bool IProducerConsumerCollection<T>.TryAdd(T item)
+    parameters:
+    - id: item
+      type:
+        id: T
+        name: T
+        href: T
+      description: >-
+        The object to add to the [System.Collections.Concurrent.IProducerConsumerCollection{T}](). The value can be a null
+
+        reference (Nothing in Visual Basic) for reference types.
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: true if the object was added successfully; otherwise, false.
+  id: System.Collections.Concurrent.ConcurrentStack`1.System#Collections#Concurrent#IProducerConsumerCollection{T}#TryAdd(`0)
 - uid: System.Collections.Concurrent.ConcurrentStack`1.TryPeek(`0@)
   href: System.Collections.Concurrent.ConcurrentStack`1.yml
   name: TryPeek(out T)
@@ -275,11 +397,15 @@ items:
       description: >-
         When this method returns,  contains an object from
 
-        the top of the [System.Collections.Concurrent.ConcurrentStack{T}](#) or an
+        the top of the [System.Collections.Concurrent.ConcurrentStack{T}]() or an
 
         unspecified value if the operation failed.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: true if and object was returned successfully; otherwise, false.
   id: System.Collections.Concurrent.ConcurrentStack`1.TryPeek(`0@)
 - uid: System.Collections.Concurrent.ConcurrentStack`1.TryPop(`0@)
@@ -307,6 +433,10 @@ items:
         object removed. If no object was available to be removed, the value is unspecified.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: >-
         true if an element was removed and returned from the top of the [System.Collections.Concurrent.ConcurrentStack`1](System.Collections.Concurrent.ConcurrentStack`1.yml)
 
@@ -332,11 +462,15 @@ items:
     - id: items
       type:
         id: System.Array
-        name: System.Array
+        name: T[]
         isExternal: true
-      description: The [System.Array](#) to which objects popped from the top of the [System.Collections.Concurrent.ConcurrentStack`1](System.Collections.Concurrent.ConcurrentStack`1.yml) will be added.
+      description: The [System.Array]() to which objects popped from the top of the [System.Collections.Concurrent.ConcurrentStack`1](System.Collections.Concurrent.ConcurrentStack`1.yml) will be added.
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: >-
         The number of objects successfully popped from the top of the [System.Collections.Concurrent.ConcurrentStack`1](System.Collections.Concurrent.ConcurrentStack`1.yml) and inserted in
 
@@ -362,13 +496,13 @@ items:
     - id: items
       type:
         id: System.Array
-        name: System.Array
+        name: T[]
         isExternal: true
-      description: The [System.Array](#) to which objects popped from the top of the [System.Collections.Concurrent.ConcurrentStack`1](System.Collections.Concurrent.ConcurrentStack`1.yml) will be added.
+      description: The [System.Array]() to which objects popped from the top of the [System.Collections.Concurrent.ConcurrentStack`1](System.Collections.Concurrent.ConcurrentStack`1.yml) will be added.
     - id: startIndex
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: >-
         The zero-based offset in  at which to begin
@@ -377,16 +511,51 @@ items:
     - id: count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The number of elements to be popped from top of the [System.Collections.Concurrent.ConcurrentStack`1](System.Collections.Concurrent.ConcurrentStack`1.yml) and inserted into .
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: >-
         The number of objects successfully popped from the top of
 
         the [System.Collections.Concurrent.ConcurrentStack`1](System.Collections.Concurrent.ConcurrentStack`1.yml) and inserted in .
   id: System.Collections.Concurrent.ConcurrentStack`1.TryPopRange(`0[],System.Int32,System.Int32)
+- uid: System.Collections.Concurrent.ConcurrentStack`1.System#Collections#Concurrent#IProducerConsumerCollection{T}#TryTake(`0@)
+  href: System.Collections.Concurrent.ConcurrentStack`1.yml
+  name: IProducerConsumerCollection<T>.TryTake(out T)
+  fullName: System.Collections.Concurrent.ConcurrentStack<T>.System.Collections.Concurrent.IProducerConsumerCollection<T>.TryTake(out T)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentStack.cs
+    startLine: 688
+  summary: Attempts to remove and return an object from the [System.Collections.Concurrent.IProducerConsumerCollection{T}]().
+  syntax:
+    content:
+      CSharp: bool IProducerConsumerCollection<T>.TryTake(out T item)
+    parameters:
+    - id: item
+      type:
+        id: T
+        name: T
+        href: T
+      description: >-
+        When this method returns, if the operation was successful,  contains the
+
+        object removed. If no object was available to be removed, the value is unspecified.
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: true if an element was removed and returned successfully; otherwise, false.
+  id: System.Collections.Concurrent.ConcurrentStack`1.System#Collections#Concurrent#IProducerConsumerCollection{T}#TryTake(`0@)
 - uid: System.Collections.Concurrent.ConcurrentStack`1.ToArray
   href: System.Collections.Concurrent.ConcurrentStack`1.yml
   name: ToArray()
@@ -402,6 +571,10 @@ items:
       CSharp: public T[] ToArray()
     parameters: []
     return:
+      type:
+        id: System.Array
+        name: T[]
+        isExternal: true
       description: A new array containing a snapshot of elements copied from the [System.Collections.Concurrent.ConcurrentStack`1](System.Collections.Concurrent.ConcurrentStack`1.yml).
   id: System.Collections.Concurrent.ConcurrentStack`1.ToArray
 - uid: System.Collections.Concurrent.ConcurrentStack`1.GetEnumerator
@@ -420,5 +593,34 @@ items:
     parameters: []
     return:
       id: IEnumerator
+      type:
+        id: System.Collections.Generic.IEnumerator{`0}
+        name: IEnumerator<T>
+        isExternal: true
       description: An enumerator for the [System.Collections.Concurrent.ConcurrentStack`1](System.Collections.Concurrent.ConcurrentStack`1.yml).
   id: System.Collections.Concurrent.ConcurrentStack`1.GetEnumerator
+- uid: System.Collections.Concurrent.ConcurrentStack`1.System#Collections#IEnumerable#GetEnumerator
+  href: System.Collections.Concurrent.ConcurrentStack`1.yml
+  name: IEnumerable.GetEnumerator()
+  fullName: System.Collections.Concurrent.ConcurrentStack<T>.System.Collections.IEnumerable.GetEnumerator()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/ConcurrentStack.cs
+    startLine: 766
+  summary: Returns an enumerator that iterates through a collection.
+  syntax:
+    content:
+      CSharp: IEnumerator IEnumerable.GetEnumerator()
+    parameters: []
+    return:
+      id: IEnumerator
+      type:
+        id: System.Collections.IEnumerator
+        name: IEnumerator
+        isExternal: true
+      description: >-
+        An [System.Collections.IEnumerator]() that can be used to iterate through
+
+        the collection.
+  id: System.Collections.Concurrent.ConcurrentStack`1.System#Collections#IEnumerable#GetEnumerator

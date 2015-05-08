@@ -5,17 +5,25 @@ items:
   fullName: System.IO.Pipes.NamedPipeServerStream
   type: Class
   source:
-    remote: &o0
+    remote: &o1
+      path: src/System.IO.Pipes/src/System/IO/Pipes/NamedPipeServerStream.Windows.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.IO.Pipes/src/System/IO/Pipes/NamedPipeServerStream.Windows.cs
     startLine: 17
   summary: Named pipe server
   syntax:
     content:
-      CSharp: public sealed partial class NamedPipeServerStream
+      CSharp: 'public sealed class NamedPipeServerStream : PipeStream, IDisposable'
   inheritance:
-  - id: Stream
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.MarshalByRefObject
+    name: MarshalByRefObject
+    isExternal: true
+  - id: System.IO.Stream
     name: Stream
     isExternal: true
   - id: System.IO.Pipes.PipeStream
@@ -23,25 +31,30 @@ items:
     href: System.IO.Pipes.PipeStream.yml
   id: System.IO.Pipes.NamedPipeServerStream
   children:
-  - System.IO.Pipes.NamedPipeServerStream.#ctor(String)
-  - System.IO.Pipes.NamedPipeServerStream.#ctor(String,System.IO.Pipes.PipeDirection)
-  - System.IO.Pipes.NamedPipeServerStream.#ctor(String,System.IO.Pipes.PipeDirection,System.Int32)
-  - System.IO.Pipes.NamedPipeServerStream.#ctor(String,System.IO.Pipes.PipeDirection,System.Int32,System.IO.Pipes.PipeTransmissionMode)
-  - System.IO.Pipes.NamedPipeServerStream.#ctor(String,System.IO.Pipes.PipeDirection,System.Int32,System.IO.Pipes.PipeTransmissionMode,System.IO.Pipes.PipeOptions)
-  - System.IO.Pipes.NamedPipeServerStream.#ctor(String,System.IO.Pipes.PipeDirection,System.Int32,System.IO.Pipes.PipeTransmissionMode,System.IO.Pipes.PipeOptions,System.Int32,System.Int32)
+  - System.IO.Pipes.NamedPipeServerStream.#ctor(System.String)
+  - System.IO.Pipes.NamedPipeServerStream.#ctor(System.String,System.IO.Pipes.PipeDirection)
+  - System.IO.Pipes.NamedPipeServerStream.#ctor(System.String,System.IO.Pipes.PipeDirection,System.Int32)
+  - System.IO.Pipes.NamedPipeServerStream.#ctor(System.String,System.IO.Pipes.PipeDirection,System.Int32,System.IO.Pipes.PipeTransmissionMode)
+  - System.IO.Pipes.NamedPipeServerStream.#ctor(System.String,System.IO.Pipes.PipeDirection,System.Int32,System.IO.Pipes.PipeTransmissionMode,System.IO.Pipes.PipeOptions)
+  - System.IO.Pipes.NamedPipeServerStream.#ctor(System.String,System.IO.Pipes.PipeDirection,System.Int32,System.IO.Pipes.PipeTransmissionMode,System.IO.Pipes.PipeOptions,System.Int32,System.Int32)
   - System.IO.Pipes.NamedPipeServerStream.#ctor(System.IO.Pipes.PipeDirection,System.Boolean,System.Boolean,Microsoft.Win32.SafeHandles.SafePipeHandle)
+  - System.IO.Pipes.NamedPipeServerStream.Finalize
   - System.IO.Pipes.NamedPipeServerStream.WaitForConnectionAsync
   - System.IO.Pipes.NamedPipeServerStream.WaitForConnection
-  - System.IO.Pipes.NamedPipeServerStream.WaitForConnectionAsync(CancellationToken)
+  - System.IO.Pipes.NamedPipeServerStream.WaitForConnectionAsync(System.Threading.CancellationToken)
   - System.IO.Pipes.NamedPipeServerStream.Disconnect
   - System.IO.Pipes.NamedPipeServerStream.GetImpersonationUserName
-- uid: System.IO.Pipes.NamedPipeServerStream.#ctor(String)
+- uid: System.IO.Pipes.NamedPipeServerStream.#ctor(System.String)
   href: System.IO.Pipes.NamedPipeServerStream.yml
-  name: NamedPipeServerStream(String)
-  fullName: System.IO.Pipes.NamedPipeServerStream.NamedPipeServerStream(String)
+  name: NamedPipeServerStream(string)
+  fullName: System.IO.Pipes.NamedPipeServerStream.NamedPipeServerStream(string)
   type: Constructor
   source:
-    remote: *o0
+    remote: &o0
+      path: src/System.IO.Pipes/src/System/IO/Pipes/NamedPipeServerStream.cs
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.IO.Pipes/src/System/IO/Pipes/NamedPipeServerStream.cs
     startLine: 19
   syntax:
@@ -50,14 +63,14 @@ items:
     parameters:
     - id: pipeName
       type:
-        id: String
-        name: String
+        id: System.String
+        name: string
         isExternal: true
-  id: System.IO.Pipes.NamedPipeServerStream.#ctor(String)
-- uid: System.IO.Pipes.NamedPipeServerStream.#ctor(String,System.IO.Pipes.PipeDirection)
+  id: System.IO.Pipes.NamedPipeServerStream.#ctor(System.String)
+- uid: System.IO.Pipes.NamedPipeServerStream.#ctor(System.String,System.IO.Pipes.PipeDirection)
   href: System.IO.Pipes.NamedPipeServerStream.yml
-  name: NamedPipeServerStream(String, PipeDirection)
-  fullName: System.IO.Pipes.NamedPipeServerStream.NamedPipeServerStream(String, System.IO.Pipes.PipeDirection)
+  name: NamedPipeServerStream(string, PipeDirection)
+  fullName: System.IO.Pipes.NamedPipeServerStream.NamedPipeServerStream(string, System.IO.Pipes.PipeDirection)
   type: Constructor
   source:
     remote: *o0
@@ -69,19 +82,19 @@ items:
     parameters:
     - id: pipeName
       type:
-        id: String
-        name: String
+        id: System.String
+        name: string
         isExternal: true
     - id: direction
       type:
         id: System.IO.Pipes.PipeDirection
         name: PipeDirection
         href: System.IO.Pipes.PipeDirection.yml
-  id: System.IO.Pipes.NamedPipeServerStream.#ctor(String,System.IO.Pipes.PipeDirection)
-- uid: System.IO.Pipes.NamedPipeServerStream.#ctor(String,System.IO.Pipes.PipeDirection,System.Int32)
+  id: System.IO.Pipes.NamedPipeServerStream.#ctor(System.String,System.IO.Pipes.PipeDirection)
+- uid: System.IO.Pipes.NamedPipeServerStream.#ctor(System.String,System.IO.Pipes.PipeDirection,System.Int32)
   href: System.IO.Pipes.NamedPipeServerStream.yml
-  name: NamedPipeServerStream(String, PipeDirection, int)
-  fullName: System.IO.Pipes.NamedPipeServerStream.NamedPipeServerStream(String, System.IO.Pipes.PipeDirection, int)
+  name: NamedPipeServerStream(string, PipeDirection, int)
+  fullName: System.IO.Pipes.NamedPipeServerStream.NamedPipeServerStream(string, System.IO.Pipes.PipeDirection, int)
   type: Constructor
   source:
     remote: *o0
@@ -93,8 +106,8 @@ items:
     parameters:
     - id: pipeName
       type:
-        id: String
-        name: String
+        id: System.String
+        name: string
         isExternal: true
     - id: direction
       type:
@@ -104,13 +117,13 @@ items:
     - id: maxNumberOfServerInstances
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
-  id: System.IO.Pipes.NamedPipeServerStream.#ctor(String,System.IO.Pipes.PipeDirection,System.Int32)
-- uid: System.IO.Pipes.NamedPipeServerStream.#ctor(String,System.IO.Pipes.PipeDirection,System.Int32,System.IO.Pipes.PipeTransmissionMode)
+  id: System.IO.Pipes.NamedPipeServerStream.#ctor(System.String,System.IO.Pipes.PipeDirection,System.Int32)
+- uid: System.IO.Pipes.NamedPipeServerStream.#ctor(System.String,System.IO.Pipes.PipeDirection,System.Int32,System.IO.Pipes.PipeTransmissionMode)
   href: System.IO.Pipes.NamedPipeServerStream.yml
-  name: NamedPipeServerStream(String, PipeDirection, int, PipeTransmissionMode)
-  fullName: System.IO.Pipes.NamedPipeServerStream.NamedPipeServerStream(String, System.IO.Pipes.PipeDirection, int, System.IO.Pipes.PipeTransmissionMode)
+  name: NamedPipeServerStream(string, PipeDirection, int, PipeTransmissionMode)
+  fullName: System.IO.Pipes.NamedPipeServerStream.NamedPipeServerStream(string, System.IO.Pipes.PipeDirection, int, System.IO.Pipes.PipeTransmissionMode)
   type: Constructor
   source:
     remote: *o0
@@ -122,8 +135,8 @@ items:
     parameters:
     - id: pipeName
       type:
-        id: String
-        name: String
+        id: System.String
+        name: string
         isExternal: true
     - id: direction
       type:
@@ -133,18 +146,18 @@ items:
     - id: maxNumberOfServerInstances
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: transmissionMode
       type:
         id: System.IO.Pipes.PipeTransmissionMode
         name: PipeTransmissionMode
         href: System.IO.Pipes.PipeTransmissionMode.yml
-  id: System.IO.Pipes.NamedPipeServerStream.#ctor(String,System.IO.Pipes.PipeDirection,System.Int32,System.IO.Pipes.PipeTransmissionMode)
-- uid: System.IO.Pipes.NamedPipeServerStream.#ctor(String,System.IO.Pipes.PipeDirection,System.Int32,System.IO.Pipes.PipeTransmissionMode,System.IO.Pipes.PipeOptions)
+  id: System.IO.Pipes.NamedPipeServerStream.#ctor(System.String,System.IO.Pipes.PipeDirection,System.Int32,System.IO.Pipes.PipeTransmissionMode)
+- uid: System.IO.Pipes.NamedPipeServerStream.#ctor(System.String,System.IO.Pipes.PipeDirection,System.Int32,System.IO.Pipes.PipeTransmissionMode,System.IO.Pipes.PipeOptions)
   href: System.IO.Pipes.NamedPipeServerStream.yml
-  name: NamedPipeServerStream(String, PipeDirection, int, PipeTransmissionMode, PipeOptions)
-  fullName: System.IO.Pipes.NamedPipeServerStream.NamedPipeServerStream(String, System.IO.Pipes.PipeDirection, int, System.IO.Pipes.PipeTransmissionMode, System.IO.Pipes.PipeOptions)
+  name: NamedPipeServerStream(string, PipeDirection, int, PipeTransmissionMode, PipeOptions)
+  fullName: System.IO.Pipes.NamedPipeServerStream.NamedPipeServerStream(string, System.IO.Pipes.PipeDirection, int, System.IO.Pipes.PipeTransmissionMode, System.IO.Pipes.PipeOptions)
   type: Constructor
   source:
     remote: *o0
@@ -156,8 +169,8 @@ items:
     parameters:
     - id: pipeName
       type:
-        id: String
-        name: String
+        id: System.String
+        name: string
         isExternal: true
     - id: direction
       type:
@@ -167,7 +180,7 @@ items:
     - id: maxNumberOfServerInstances
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: transmissionMode
       type:
@@ -179,11 +192,11 @@ items:
         id: System.IO.Pipes.PipeOptions
         name: PipeOptions
         href: System.IO.Pipes.PipeOptions.yml
-  id: System.IO.Pipes.NamedPipeServerStream.#ctor(String,System.IO.Pipes.PipeDirection,System.Int32,System.IO.Pipes.PipeTransmissionMode,System.IO.Pipes.PipeOptions)
-- uid: System.IO.Pipes.NamedPipeServerStream.#ctor(String,System.IO.Pipes.PipeDirection,System.Int32,System.IO.Pipes.PipeTransmissionMode,System.IO.Pipes.PipeOptions,System.Int32,System.Int32)
+  id: System.IO.Pipes.NamedPipeServerStream.#ctor(System.String,System.IO.Pipes.PipeDirection,System.Int32,System.IO.Pipes.PipeTransmissionMode,System.IO.Pipes.PipeOptions)
+- uid: System.IO.Pipes.NamedPipeServerStream.#ctor(System.String,System.IO.Pipes.PipeDirection,System.Int32,System.IO.Pipes.PipeTransmissionMode,System.IO.Pipes.PipeOptions,System.Int32,System.Int32)
   href: System.IO.Pipes.NamedPipeServerStream.yml
-  name: NamedPipeServerStream(String, PipeDirection, int, PipeTransmissionMode, PipeOptions, int, int)
-  fullName: System.IO.Pipes.NamedPipeServerStream.NamedPipeServerStream(String, System.IO.Pipes.PipeDirection, int, System.IO.Pipes.PipeTransmissionMode, System.IO.Pipes.PipeOptions, int, int)
+  name: NamedPipeServerStream(string, PipeDirection, int, PipeTransmissionMode, PipeOptions, int, int)
+  fullName: System.IO.Pipes.NamedPipeServerStream.NamedPipeServerStream(string, System.IO.Pipes.PipeDirection, int, System.IO.Pipes.PipeTransmissionMode, System.IO.Pipes.PipeOptions, int, int)
   type: Constructor
   source:
     remote: *o0
@@ -195,8 +208,8 @@ items:
     parameters:
     - id: pipeName
       type:
-        id: String
-        name: String
+        id: System.String
+        name: string
         isExternal: true
     - id: direction
       type:
@@ -206,7 +219,7 @@ items:
     - id: maxNumberOfServerInstances
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: transmissionMode
       type:
@@ -221,14 +234,14 @@ items:
     - id: inBufferSize
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: outBufferSize
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
-  id: System.IO.Pipes.NamedPipeServerStream.#ctor(String,System.IO.Pipes.PipeDirection,System.Int32,System.IO.Pipes.PipeTransmissionMode,System.IO.Pipes.PipeOptions,System.Int32,System.Int32)
+  id: System.IO.Pipes.NamedPipeServerStream.#ctor(System.String,System.IO.Pipes.PipeDirection,System.Int32,System.IO.Pipes.PipeTransmissionMode,System.IO.Pipes.PipeOptions,System.Int32,System.Int32)
 - uid: System.IO.Pipes.NamedPipeServerStream.#ctor(System.IO.Pipes.PipeDirection,System.Boolean,System.Boolean,Microsoft.Win32.SafeHandles.SafePipeHandle)
   href: System.IO.Pipes.NamedPipeServerStream.yml
   name: NamedPipeServerStream(PipeDirection, bool, bool, SafePipeHandle)
@@ -250,19 +263,33 @@ items:
     - id: isAsync
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     - id: isConnected
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     - id: safePipeHandle
       type:
         id: Microsoft.Win32.SafeHandles.SafePipeHandle
         name: SafePipeHandle
-        href: Microsoft.Win32.SafeHandles.SafePipeHandle
+        href: Microsoft.Win32.SafeHandles.SafePipeHandle.yml
   id: System.IO.Pipes.NamedPipeServerStream.#ctor(System.IO.Pipes.PipeDirection,System.Boolean,System.Boolean,Microsoft.Win32.SafeHandles.SafePipeHandle)
+- uid: System.IO.Pipes.NamedPipeServerStream.Finalize
+  href: System.IO.Pipes.NamedPipeServerStream.yml
+  name: ~NamedPipeServerStream()
+  fullName: System.IO.Pipes.NamedPipeServerStream.~NamedPipeServerStream()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.Pipes/src/System/IO/Pipes/NamedPipeServerStream.cs
+    startLine: 142
+  syntax:
+    content:
+      CSharp: protected void Finalize()
+    parameters: []
+  id: System.IO.Pipes.NamedPipeServerStream.Finalize
 - uid: System.IO.Pipes.NamedPipeServerStream.WaitForConnectionAsync
   href: System.IO.Pipes.NamedPipeServerStream.yml
   name: WaitForConnectionAsync()
@@ -278,6 +305,10 @@ items:
     parameters: []
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task
+        name: Task
+        isExternal: true
   id: System.IO.Pipes.NamedPipeServerStream.WaitForConnectionAsync
 - uid: System.IO.Pipes.NamedPipeServerStream.WaitForConnection
   href: System.IO.Pipes.NamedPipeServerStream.yml
@@ -285,21 +316,21 @@ items:
   fullName: System.IO.Pipes.NamedPipeServerStream.WaitForConnection()
   type: Method
   source:
-    remote: *o0
+    remote: *o1
     path: src/System.IO.Pipes/src/System/IO/Pipes/NamedPipeServerStream.Windows.cs
     startLine: 70
   syntax:
     content:
-      CSharp: '[SecurityCritical] [SuppressMessage("Microsoft.Security", "CA2122:DoNotIndirectlyExposeMethodsWithLinkDemands", Justification = "Security model of pipes: demand at creation but no subsequent demands")] public void WaitForConnection()'
+      CSharp: public void WaitForConnection()
     parameters: []
   id: System.IO.Pipes.NamedPipeServerStream.WaitForConnection
-- uid: System.IO.Pipes.NamedPipeServerStream.WaitForConnectionAsync(CancellationToken)
+- uid: System.IO.Pipes.NamedPipeServerStream.WaitForConnectionAsync(System.Threading.CancellationToken)
   href: System.IO.Pipes.NamedPipeServerStream.yml
   name: WaitForConnectionAsync(CancellationToken)
-  fullName: System.IO.Pipes.NamedPipeServerStream.WaitForConnectionAsync(CancellationToken)
+  fullName: System.IO.Pipes.NamedPipeServerStream.WaitForConnectionAsync(System.Threading.CancellationToken)
   type: Method
   source:
-    remote: *o0
+    remote: *o1
     path: src/System.IO.Pipes/src/System/IO/Pipes/NamedPipeServerStream.Windows.cs
     startLine: 106
   syntax:
@@ -308,24 +339,28 @@ items:
     parameters:
     - id: cancellationToken
       type:
-        id: CancellationToken
+        id: System.Threading.CancellationToken
         name: CancellationToken
         isExternal: true
     return:
       id: Task
-  id: System.IO.Pipes.NamedPipeServerStream.WaitForConnectionAsync(CancellationToken)
+      type:
+        id: System.Threading.Tasks.Task
+        name: Task
+        isExternal: true
+  id: System.IO.Pipes.NamedPipeServerStream.WaitForConnectionAsync(System.Threading.CancellationToken)
 - uid: System.IO.Pipes.NamedPipeServerStream.Disconnect
   href: System.IO.Pipes.NamedPipeServerStream.yml
   name: Disconnect()
   fullName: System.IO.Pipes.NamedPipeServerStream.Disconnect()
   type: Method
   source:
-    remote: *o0
+    remote: *o1
     path: src/System.IO.Pipes/src/System/IO/Pipes/NamedPipeServerStream.Windows.cs
     startLine: 124
   syntax:
     content:
-      CSharp: '[SecurityCritical] public void Disconnect()'
+      CSharp: public void Disconnect()
     parameters: []
   id: System.IO.Pipes.NamedPipeServerStream.Disconnect
 - uid: System.IO.Pipes.NamedPipeServerStream.GetImpersonationUserName
@@ -334,13 +369,17 @@ items:
   fullName: System.IO.Pipes.NamedPipeServerStream.GetImpersonationUserName()
   type: Method
   source:
-    remote: *o0
+    remote: *o1
     path: src/System.IO.Pipes/src/System/IO/Pipes/NamedPipeServerStream.Windows.cs
     startLine: 141
   syntax:
     content:
-      CSharp: '[SecurityCritical] public String GetImpersonationUserName()'
+      CSharp: public string GetImpersonationUserName()
     parameters: []
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.IO.Pipes.NamedPipeServerStream.GetImpersonationUserName

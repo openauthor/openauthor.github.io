@@ -6,8 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Xml.XDocument/src/System/Xml/Linq/XNodeDocumentOrderComparer.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XNodeDocumentOrderComparer.cs
     startLine: 13
   summary: >-
@@ -16,14 +18,15 @@ items:
     This class cannot be inherited.
   syntax:
     content:
-      CSharp: public sealed class XNodeDocumentOrderComparer
+      CSharp: 'public sealed class XNodeDocumentOrderComparer : IComparer, IComparer<XNode>'
   inheritance:
-  - id: System.Collections.IComparer
-    name: System.Collections.IComparer
+  - id: System.Object
+    name: object
     isExternal: true
   id: System.Xml.Linq.XNodeDocumentOrderComparer
   children:
   - System.Xml.Linq.XNodeDocumentOrderComparer.Compare(System.Xml.Linq.XNode,System.Xml.Linq.XNode)
+  - System.Xml.Linq.XNodeDocumentOrderComparer.System#Collections#IComparer#Compare(System.Object,System.Object)
 - uid: System.Xml.Linq.XNodeDocumentOrderComparer.Compare(System.Xml.Linq.XNode,System.Xml.Linq.XNode)
   href: System.Xml.Linq.XNodeDocumentOrderComparer.yml
   name: Compare(XNode, XNode)
@@ -52,6 +55,10 @@ items:
       description: The second node to compare.
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: >-
         0 if the nodes are equal;
 
@@ -59,3 +66,42 @@ items:
 
         1 if x is after y.
   id: System.Xml.Linq.XNodeDocumentOrderComparer.Compare(System.Xml.Linq.XNode,System.Xml.Linq.XNode)
+- uid: System.Xml.Linq.XNodeDocumentOrderComparer.System#Collections#IComparer#Compare(System.Object,System.Object)
+  href: System.Xml.Linq.XNodeDocumentOrderComparer.yml
+  name: IComparer.Compare(object, object)
+  fullName: System.Xml.Linq.XNodeDocumentOrderComparer.System.Collections.IComparer.Compare(object, object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XDocument/src/System/Xml/Linq/XNodeDocumentOrderComparer.cs
+    startLine: 51
+  summary: Compares two nodes to determine their relative XML document order.
+  syntax:
+    content:
+      CSharp: int IComparer.Compare(object x, object y)
+    parameters:
+    - id: x
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+      description: The first node to compare.
+    - id: y
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+      description: The second node to compare.
+    return:
+      id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: >-
+        0 if the nodes are equal;
+
+        -1 if x is before y;
+
+        1 if x is after y.
+  id: System.Xml.Linq.XNodeDocumentOrderComparer.System#Collections#IComparer#Compare(System.Object,System.Object)

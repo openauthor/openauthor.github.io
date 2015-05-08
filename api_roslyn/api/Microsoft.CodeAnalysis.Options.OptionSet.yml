@@ -6,9 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Options/OptionSet.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Options/OptionSet.cs
     startLine: 7
   syntax:
@@ -16,7 +17,7 @@ items:
       CSharp: public sealed class OptionSet
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.Options.OptionSet
   children:
@@ -43,10 +44,14 @@ items:
     - id: option
       type:
         id: Microsoft.CodeAnalysis.Options.Option{``0}
-        name: Option
+        name: Option<T>
         href: Microsoft.CodeAnalysis.Options.Option{``0}
     return:
       id: T
+      type:
+        id: T
+        name: T
+        href: T
   id: Microsoft.CodeAnalysis.Options.OptionSet.GetOption``1(Microsoft.CodeAnalysis.Options.Option{``0})
 - uid: Microsoft.CodeAnalysis.Options.OptionSet.GetOption``1(Microsoft.CodeAnalysis.Options.PerLanguageOption{``0},System.String)
   href: Microsoft.CodeAnalysis.Options.OptionSet.yml
@@ -65,15 +70,19 @@ items:
     - id: option
       type:
         id: Microsoft.CodeAnalysis.Options.PerLanguageOption{``0}
-        name: PerLanguageOption
+        name: PerLanguageOption<T>
         href: Microsoft.CodeAnalysis.Options.PerLanguageOption{``0}
     - id: language
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: T
+      type:
+        id: T
+        name: T
+        href: T
   id: Microsoft.CodeAnalysis.Options.OptionSet.GetOption``1(Microsoft.CodeAnalysis.Options.PerLanguageOption{``0},System.String)
 - uid: Microsoft.CodeAnalysis.Options.OptionSet.GetOption(Microsoft.CodeAnalysis.Options.OptionKey)
   href: Microsoft.CodeAnalysis.Options.OptionSet.yml
@@ -96,6 +105,10 @@ items:
         href: Microsoft.CodeAnalysis.Options.OptionKey.yml
     return:
       id: Object
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
   id: Microsoft.CodeAnalysis.Options.OptionSet.GetOption(Microsoft.CodeAnalysis.Options.OptionKey)
 - uid: Microsoft.CodeAnalysis.Options.OptionSet.WithChangedOption``1(Microsoft.CodeAnalysis.Options.Option{``0},``0)
   href: Microsoft.CodeAnalysis.Options.OptionSet.yml
@@ -114,7 +127,7 @@ items:
     - id: option
       type:
         id: Microsoft.CodeAnalysis.Options.Option{``0}
-        name: Option
+        name: Option<T>
         href: Microsoft.CodeAnalysis.Options.Option{``0}
     - id: value
       type:
@@ -123,6 +136,10 @@ items:
         href: T
     return:
       id: OptionSet
+      type:
+        id: Microsoft.CodeAnalysis.Options.OptionSet
+        name: OptionSet
+        href: Microsoft.CodeAnalysis.Options.OptionSet.yml
   id: Microsoft.CodeAnalysis.Options.OptionSet.WithChangedOption``1(Microsoft.CodeAnalysis.Options.Option{``0},``0)
 - uid: Microsoft.CodeAnalysis.Options.OptionSet.WithChangedOption``1(Microsoft.CodeAnalysis.Options.PerLanguageOption{``0},System.String,``0)
   href: Microsoft.CodeAnalysis.Options.OptionSet.yml
@@ -141,12 +158,12 @@ items:
     - id: option
       type:
         id: Microsoft.CodeAnalysis.Options.PerLanguageOption{``0}
-        name: PerLanguageOption
+        name: PerLanguageOption<T>
         href: Microsoft.CodeAnalysis.Options.PerLanguageOption{``0}
     - id: language
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: value
       type:
@@ -155,6 +172,10 @@ items:
         href: T
     return:
       id: OptionSet
+      type:
+        id: Microsoft.CodeAnalysis.Options.OptionSet
+        name: OptionSet
+        href: Microsoft.CodeAnalysis.Options.OptionSet.yml
   id: Microsoft.CodeAnalysis.Options.OptionSet.WithChangedOption``1(Microsoft.CodeAnalysis.Options.PerLanguageOption{``0},System.String,``0)
 - uid: Microsoft.CodeAnalysis.Options.OptionSet.WithChangedOption(Microsoft.CodeAnalysis.Options.OptionKey,System.Object)
   href: Microsoft.CodeAnalysis.Options.OptionSet.yml
@@ -178,8 +199,12 @@ items:
     - id: value
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: OptionSet
+      type:
+        id: Microsoft.CodeAnalysis.Options.OptionSet
+        name: OptionSet
+        href: Microsoft.CodeAnalysis.Options.OptionSet.yml
   id: Microsoft.CodeAnalysis.Options.OptionSet.WithChangedOption(Microsoft.CodeAnalysis.Options.OptionKey,System.Object)

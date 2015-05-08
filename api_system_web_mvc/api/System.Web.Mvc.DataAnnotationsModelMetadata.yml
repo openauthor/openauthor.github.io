@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/DataAnnotationsModelMetadata.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/DataAnnotationsModelMetadata.cs
     startLine: 9
   syntax:
     content:
-      CSharp: public class DataAnnotationsModelMetadata
+      CSharp: 'public class DataAnnotationsModelMetadata : ModelMetadata'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.Mvc.ModelMetadata
     name: ModelMetadata
@@ -24,6 +25,7 @@ items:
   id: System.Web.Mvc.DataAnnotationsModelMetadata
   children:
   - System.Web.Mvc.DataAnnotationsModelMetadata.#ctor(System.Web.Mvc.DataAnnotationsModelMetadataProvider,System.Type,System.Func{System.Object},System.Type,System.String,System.ComponentModel.DataAnnotations.DisplayColumnAttribute)
+  - System.Web.Mvc.DataAnnotationsModelMetadata.GetSimpleDisplayText
 - uid: System.Web.Mvc.DataAnnotationsModelMetadata.#ctor(System.Web.Mvc.DataAnnotationsModelMetadataProvider,System.Type,System.Func{System.Object},System.Type,System.String,System.ComponentModel.DataAnnotations.DisplayColumnAttribute)
   href: System.Web.Mvc.DataAnnotationsModelMetadata.yml
   name: DataAnnotationsModelMetadata(DataAnnotationsModelMetadataProvider, Type, Func<object>, Type, string, DisplayColumnAttribute)
@@ -45,26 +47,46 @@ items:
     - id: containerType
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
     - id: modelAccessor
       type:
         id: System.Func{System.Object}
-        name: System.Func{System.Object}
+        name: Func<object>
         isExternal: true
     - id: modelType
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
     - id: propertyName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: displayColumnAttribute
       type:
         id: System.ComponentModel.DataAnnotations.DisplayColumnAttribute
-        name: System.ComponentModel.DataAnnotations.DisplayColumnAttribute
+        name: DisplayColumnAttribute
         isExternal: true
   id: System.Web.Mvc.DataAnnotationsModelMetadata.#ctor(System.Web.Mvc.DataAnnotationsModelMetadataProvider,System.Type,System.Func{System.Object},System.Type,System.String,System.ComponentModel.DataAnnotations.DisplayColumnAttribute)
+- uid: System.Web.Mvc.DataAnnotationsModelMetadata.GetSimpleDisplayText
+  href: System.Web.Mvc.DataAnnotationsModelMetadata.yml
+  name: GetSimpleDisplayText()
+  fullName: System.Web.Mvc.DataAnnotationsModelMetadata.GetSimpleDisplayText()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/DataAnnotationsModelMetadata.cs
+    startLine: 21
+  syntax:
+    content:
+      CSharp: protected override string GetSimpleDisplayText()
+    parameters: []
+    return:
+      id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Web.Mvc.DataAnnotationsModelMetadata.GetSimpleDisplayText

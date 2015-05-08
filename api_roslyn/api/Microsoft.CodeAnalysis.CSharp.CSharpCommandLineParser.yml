@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Compilers/CSharp/Desktop/CommandLine/CommandLineParser.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Compilers/CSharp/Desktop/CommandLine/CommandLineParser.cs
-    startLine: 18
+    startLine: 17
   syntax:
     content:
-      CSharp: public class CSharpCommandLineParser
+      CSharp: 'public class CSharpCommandLineParser : CommandLineParser'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: Microsoft.CodeAnalysis.CommandLineParser
     name: CommandLineParser
@@ -25,7 +26,9 @@ items:
   children:
   - Microsoft.CodeAnalysis.CSharp.CSharpCommandLineParser.Default
   - Microsoft.CodeAnalysis.CSharp.CSharpCommandLineParser.Interactive
-  - Microsoft.CodeAnalysis.CSharp.CSharpCommandLineParser.Parse(System.Collections.Generic.IEnumerable{System.String},System.String,System.String)
+  - Microsoft.CodeAnalysis.CSharp.CSharpCommandLineParser.RegularFileExtension
+  - Microsoft.CodeAnalysis.CSharp.CSharpCommandLineParser.ScriptFileExtension
+  - Microsoft.CodeAnalysis.CSharp.CSharpCommandLineParser.Parse(System.Collections.Generic.IEnumerable{System.String},System.String,System.String,System.String)
   - Microsoft.CodeAnalysis.CSharp.CSharpCommandLineParser.ParseConditionalCompilationSymbols(System.String,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Diagnostic}@)
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpCommandLineParser.Default
   href: Microsoft.CodeAnalysis.CSharp.CSharpCommandLineParser.yml
@@ -35,10 +38,10 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Desktop/CommandLine/CommandLineParser.cs
-    startLine: 20
+    startLine: 19
   syntax:
     content:
-      CSharp: Default
+      CSharp: public static readonly CSharpCommandLineParser Default;
   id: Microsoft.CodeAnalysis.CSharp.CSharpCommandLineParser.Default
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpCommandLineParser.Interactive
   href: Microsoft.CodeAnalysis.CSharp.CSharpCommandLineParser.yml
@@ -48,42 +51,95 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Desktop/CommandLine/CommandLineParser.cs
-    startLine: 21
+    startLine: 20
   syntax:
     content:
-      CSharp: Interactive
+      CSharp: public static readonly CSharpCommandLineParser Interactive;
   id: Microsoft.CodeAnalysis.CSharp.CSharpCommandLineParser.Interactive
-- uid: Microsoft.CodeAnalysis.CSharp.CSharpCommandLineParser.Parse(System.Collections.Generic.IEnumerable{System.String},System.String,System.String)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCommandLineParser.RegularFileExtension
   href: Microsoft.CodeAnalysis.CSharp.CSharpCommandLineParser.yml
-  name: Parse(IEnumerable<string>, string, string)
-  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCommandLineParser.Parse(System.Collections.Generic.IEnumerable<string>, string, string)
+  name: RegularFileExtension
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCommandLineParser.RegularFileExtension
+  type: Property
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Desktop/CommandLine/CommandLineParser.cs
+    startLine: 27
+  syntax:
+    content:
+      CSharp: protected override string RegularFileExtension { get; }
+    parameters:
+    - id: RegularFileExtension
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCommandLineParser.RegularFileExtension
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCommandLineParser.ScriptFileExtension
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCommandLineParser.yml
+  name: ScriptFileExtension
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCommandLineParser.ScriptFileExtension
+  type: Property
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Desktop/CommandLine/CommandLineParser.cs
+    startLine: 28
+  syntax:
+    content:
+      CSharp: protected override string ScriptFileExtension { get; }
+    parameters:
+    - id: ScriptFileExtension
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCommandLineParser.ScriptFileExtension
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpCommandLineParser.Parse(System.Collections.Generic.IEnumerable{System.String},System.String,System.String,System.String)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpCommandLineParser.yml
+  name: Parse(IEnumerable<string>, string, string, string)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpCommandLineParser.Parse(System.Collections.Generic.IEnumerable<string>, string, string, string)
   type: Method
   source:
     remote: *o0
     path: src/Compilers/CSharp/Desktop/CommandLine/CommandLineParser.cs
-    startLine: 36
+    startLine: 43
+  summary: Parses a command line.
   syntax:
     content:
-      CSharp: public new CSharpCommandLineArguments Parse(IEnumerable<string> args, string baseDirectory, string additionalReferencePaths = null)
+      CSharp: public CSharpCommandLineArguments Parse(IEnumerable<string> args, string baseDirectory, string sdkDirectory, string additionalReferenceDirectories = null)
     parameters:
     - id: args
       type:
         id: System.Collections.Generic.IEnumerable{System.String}
-        name: System.Collections.Generic.IEnumerable{System.String}
+        name: IEnumerable<string>
         isExternal: true
+      description: A collection of strings representing the command line arguments.
     - id: baseDirectory
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
-    - id: additionalReferencePaths
+      description: The base directory used for qualifying file locations.
+    - id: sdkDirectory
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
+      description: The directory to search for mscorlib.
+    - id: additionalReferenceDirectories
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: A string representing additional reference paths.
     return:
       id: CSharpCommandLineArguments
-  id: Microsoft.CodeAnalysis.CSharp.CSharpCommandLineParser.Parse(System.Collections.Generic.IEnumerable{System.String},System.String,System.String)
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.CSharpCommandLineArguments
+        name: CSharpCommandLineArguments
+        href: Microsoft.CodeAnalysis.CSharp.CSharpCommandLineArguments.yml
+      description: a commandlinearguments object representing the parsed command line.
+  id: Microsoft.CodeAnalysis.CSharp.CSharpCommandLineParser.Parse(System.Collections.Generic.IEnumerable{System.String},System.String,System.String,System.String)
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpCommandLineParser.ParseConditionalCompilationSymbols(System.String,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Diagnostic}@)
   href: Microsoft.CodeAnalysis.CSharp.CSharpCommandLineParser.yml
   name: ParseConditionalCompilationSymbols(string, out IEnumerable<Diagnostic>)
@@ -92,7 +148,7 @@ items:
   source:
     remote: *o0
     path: src/Compilers/CSharp/Desktop/CommandLine/CommandLineParser.cs
-    startLine: 1209
+    startLine: 1256
   syntax:
     content:
       CSharp: public static IEnumerable<string> ParseConditionalCompilationSymbols(string value, out IEnumerable<Diagnostic> diagnostics)
@@ -100,13 +156,17 @@ items:
     - id: value
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: diagnostics
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Diagnostic}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Diagnostic}
+        name: IEnumerable<Diagnostic>
         isExternal: true
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.String}
+        name: IEnumerable<string>
+        isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.CSharpCommandLineParser.ParseConditionalCompilationSymbols(System.String,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Diagnostic}@)

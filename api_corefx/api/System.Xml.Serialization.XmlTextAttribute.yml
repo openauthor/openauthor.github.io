@@ -6,21 +6,26 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlTextAttribute.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlTextAttribute.cs
     startLine: 15
   syntax:
     content:
-      CSharp: public class XmlTextAttribute
+      CSharp: 'public class XmlTextAttribute : Attribute, _Attribute'
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.Attribute
-    name: System.Attribute
+    name: Attribute
     isExternal: true
   id: System.Xml.Serialization.XmlTextAttribute
   children:
   - System.Xml.Serialization.XmlTextAttribute.#ctor
-  - System.Xml.Serialization.XmlTextAttribute.#ctor(Type)
+  - System.Xml.Serialization.XmlTextAttribute.#ctor(System.Type)
   - System.Xml.Serialization.XmlTextAttribute.Type
   - System.Xml.Serialization.XmlTextAttribute.DataType
 - uid: System.Xml.Serialization.XmlTextAttribute.#ctor
@@ -37,10 +42,10 @@ items:
       CSharp: public XmlTextAttribute()
     parameters: []
   id: System.Xml.Serialization.XmlTextAttribute.#ctor
-- uid: System.Xml.Serialization.XmlTextAttribute.#ctor(Type)
+- uid: System.Xml.Serialization.XmlTextAttribute.#ctor(System.Type)
   href: System.Xml.Serialization.XmlTextAttribute.yml
   name: XmlTextAttribute(Type)
-  fullName: System.Xml.Serialization.XmlTextAttribute.XmlTextAttribute(Type)
+  fullName: System.Xml.Serialization.XmlTextAttribute.XmlTextAttribute(System.Type)
   type: Constructor
   source:
     remote: *o0
@@ -52,10 +57,10 @@ items:
     parameters:
     - id: type
       type:
-        id: Type
+        id: System.Type
         name: Type
         isExternal: true
-  id: System.Xml.Serialization.XmlTextAttribute.#ctor(Type)
+  id: System.Xml.Serialization.XmlTextAttribute.#ctor(System.Type)
 - uid: System.Xml.Serialization.XmlTextAttribute.Type
   href: System.Xml.Serialization.XmlTextAttribute.yml
   name: Type
@@ -71,7 +76,7 @@ items:
     parameters:
     - id: Type
       type:
-        id: Type
+        id: System.Type
         name: Type
         isExternal: true
   id: System.Xml.Serialization.XmlTextAttribute.Type
@@ -91,6 +96,6 @@ items:
     - id: DataType
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.Serialization.XmlTextAttribute.DataType

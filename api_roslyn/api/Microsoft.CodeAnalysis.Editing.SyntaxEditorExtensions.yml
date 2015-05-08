@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Editing/SyntaxEditorExtensions.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Editing/SyntaxEditorExtensions.cs
     startLine: 12
   syntax:
     content:
-      CSharp: public static class SyntaxEditorExtensions
+      CSharp: public class SyntaxEditorExtensions
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.Editing.SyntaxEditorExtensions
   children:
@@ -49,7 +50,7 @@ items:
     startLine: 14
   syntax:
     content:
-      CSharp: public static void SetAccessibility(this SyntaxEditor editor, SyntaxNode declaration, Accessibility accessibility)
+      CSharp: public static void SetAccessibility(SyntaxEditor editor, SyntaxNode declaration, Accessibility accessibility)
     parameters:
     - id: editor
       type:
@@ -78,7 +79,7 @@ items:
     startLine: 19
   syntax:
     content:
-      CSharp: public static void SetModifiers(this SyntaxEditor editor, SyntaxNode declaration, DeclarationModifiers modifiers)
+      CSharp: public static void SetModifiers(SyntaxEditor editor, SyntaxNode declaration, DeclarationModifiers modifiers)
     parameters:
     - id: editor
       type:
@@ -107,7 +108,7 @@ items:
     startLine: 24
   syntax:
     content:
-      CSharp: public static void SetName(this SyntaxEditor editor, SyntaxNode declaration, string name)
+      CSharp: public static void SetName(SyntaxEditor editor, SyntaxNode declaration, string name)
     parameters:
     - id: editor
       type:
@@ -122,7 +123,7 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: Microsoft.CodeAnalysis.Editing.SyntaxEditorExtensions.SetName(Microsoft.CodeAnalysis.Editing.SyntaxEditor,Microsoft.CodeAnalysis.SyntaxNode,System.String)
 - uid: Microsoft.CodeAnalysis.Editing.SyntaxEditorExtensions.SetType(Microsoft.CodeAnalysis.Editing.SyntaxEditor,Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.SyntaxNode)
@@ -136,7 +137,7 @@ items:
     startLine: 29
   syntax:
     content:
-      CSharp: public static void SetType(this SyntaxEditor editor, SyntaxNode declaration, SyntaxNode type)
+      CSharp: public static void SetType(SyntaxEditor editor, SyntaxNode declaration, SyntaxNode type)
     parameters:
     - id: editor
       type:
@@ -165,7 +166,7 @@ items:
     startLine: 34
   syntax:
     content:
-      CSharp: public static void SetTypeParameters(this SyntaxEditor editor, SyntaxNode declaration, IEnumerable<string> typeParameters)
+      CSharp: public static void SetTypeParameters(SyntaxEditor editor, SyntaxNode declaration, IEnumerable<string> typeParameters)
     parameters:
     - id: editor
       type:
@@ -180,7 +181,7 @@ items:
     - id: typeParameters
       type:
         id: System.Collections.Generic.IEnumerable{System.String}
-        name: System.Collections.Generic.IEnumerable{System.String}
+        name: IEnumerable<string>
         isExternal: true
   id: Microsoft.CodeAnalysis.Editing.SyntaxEditorExtensions.SetTypeParameters(Microsoft.CodeAnalysis.Editing.SyntaxEditor,Microsoft.CodeAnalysis.SyntaxNode,System.Collections.Generic.IEnumerable{System.String})
 - uid: Microsoft.CodeAnalysis.Editing.SyntaxEditorExtensions.SetTypeConstraint(Microsoft.CodeAnalysis.Editing.SyntaxEditor,Microsoft.CodeAnalysis.SyntaxNode,System.String,Microsoft.CodeAnalysis.Editing.SpecialTypeConstraintKind,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxNode})
@@ -194,7 +195,7 @@ items:
     startLine: 39
   syntax:
     content:
-      CSharp: public static void SetTypeConstraint(this SyntaxEditor editor, SyntaxNode declaration, string typeParameterName, SpecialTypeConstraintKind kind, IEnumerable<SyntaxNode> types)
+      CSharp: public static void SetTypeConstraint(SyntaxEditor editor, SyntaxNode declaration, string typeParameterName, SpecialTypeConstraintKind kind, IEnumerable<SyntaxNode> types)
     parameters:
     - id: editor
       type:
@@ -209,7 +210,7 @@ items:
     - id: typeParameterName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: kind
       type:
@@ -219,7 +220,7 @@ items:
     - id: types
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxNode}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxNode}
+        name: IEnumerable<SyntaxNode>
         isExternal: true
   id: Microsoft.CodeAnalysis.Editing.SyntaxEditorExtensions.SetTypeConstraint(Microsoft.CodeAnalysis.Editing.SyntaxEditor,Microsoft.CodeAnalysis.SyntaxNode,System.String,Microsoft.CodeAnalysis.Editing.SpecialTypeConstraintKind,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxNode})
 - uid: Microsoft.CodeAnalysis.Editing.SyntaxEditorExtensions.SetExpression(Microsoft.CodeAnalysis.Editing.SyntaxEditor,Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.SyntaxNode)
@@ -233,7 +234,7 @@ items:
     startLine: 44
   syntax:
     content:
-      CSharp: public static void SetExpression(this SyntaxEditor editor, SyntaxNode declaration, SyntaxNode expression)
+      CSharp: public static void SetExpression(SyntaxEditor editor, SyntaxNode declaration, SyntaxNode expression)
     parameters:
     - id: editor
       type:
@@ -262,7 +263,7 @@ items:
     startLine: 49
   syntax:
     content:
-      CSharp: public static void SetStatements(this SyntaxEditor editor, SyntaxNode declaration, IEnumerable<SyntaxNode> statements)
+      CSharp: public static void SetStatements(SyntaxEditor editor, SyntaxNode declaration, IEnumerable<SyntaxNode> statements)
     parameters:
     - id: editor
       type:
@@ -277,7 +278,7 @@ items:
     - id: statements
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxNode}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxNode}
+        name: IEnumerable<SyntaxNode>
         isExternal: true
   id: Microsoft.CodeAnalysis.Editing.SyntaxEditorExtensions.SetStatements(Microsoft.CodeAnalysis.Editing.SyntaxEditor,Microsoft.CodeAnalysis.SyntaxNode,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxNode})
 - uid: Microsoft.CodeAnalysis.Editing.SyntaxEditorExtensions.SetGetAccessorStatements(Microsoft.CodeAnalysis.Editing.SyntaxEditor,Microsoft.CodeAnalysis.SyntaxNode,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxNode})
@@ -291,7 +292,7 @@ items:
     startLine: 54
   syntax:
     content:
-      CSharp: public static void SetGetAccessorStatements(this SyntaxEditor editor, SyntaxNode declaration, IEnumerable<SyntaxNode> statements)
+      CSharp: public static void SetGetAccessorStatements(SyntaxEditor editor, SyntaxNode declaration, IEnumerable<SyntaxNode> statements)
     parameters:
     - id: editor
       type:
@@ -306,7 +307,7 @@ items:
     - id: statements
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxNode}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxNode}
+        name: IEnumerable<SyntaxNode>
         isExternal: true
   id: Microsoft.CodeAnalysis.Editing.SyntaxEditorExtensions.SetGetAccessorStatements(Microsoft.CodeAnalysis.Editing.SyntaxEditor,Microsoft.CodeAnalysis.SyntaxNode,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxNode})
 - uid: Microsoft.CodeAnalysis.Editing.SyntaxEditorExtensions.SetSetAccessorStatements(Microsoft.CodeAnalysis.Editing.SyntaxEditor,Microsoft.CodeAnalysis.SyntaxNode,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxNode})
@@ -320,7 +321,7 @@ items:
     startLine: 59
   syntax:
     content:
-      CSharp: public static void SetSetAccessorStatements(this SyntaxEditor editor, SyntaxNode declaration, IEnumerable<SyntaxNode> statements)
+      CSharp: public static void SetSetAccessorStatements(SyntaxEditor editor, SyntaxNode declaration, IEnumerable<SyntaxNode> statements)
     parameters:
     - id: editor
       type:
@@ -335,7 +336,7 @@ items:
     - id: statements
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxNode}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxNode}
+        name: IEnumerable<SyntaxNode>
         isExternal: true
   id: Microsoft.CodeAnalysis.Editing.SyntaxEditorExtensions.SetSetAccessorStatements(Microsoft.CodeAnalysis.Editing.SyntaxEditor,Microsoft.CodeAnalysis.SyntaxNode,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxNode})
 - uid: Microsoft.CodeAnalysis.Editing.SyntaxEditorExtensions.AddParameter(Microsoft.CodeAnalysis.Editing.SyntaxEditor,Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.SyntaxNode)
@@ -349,7 +350,7 @@ items:
     startLine: 64
   syntax:
     content:
-      CSharp: public static void AddParameter(this SyntaxEditor editor, SyntaxNode declaration, SyntaxNode parameter)
+      CSharp: public static void AddParameter(SyntaxEditor editor, SyntaxNode declaration, SyntaxNode parameter)
     parameters:
     - id: editor
       type:
@@ -378,7 +379,7 @@ items:
     startLine: 69
   syntax:
     content:
-      CSharp: public static void AddAttribute(this SyntaxEditor editor, SyntaxNode declaration, SyntaxNode attribute)
+      CSharp: public static void AddAttribute(SyntaxEditor editor, SyntaxNode declaration, SyntaxNode attribute)
     parameters:
     - id: editor
       type:
@@ -407,7 +408,7 @@ items:
     startLine: 74
   syntax:
     content:
-      CSharp: public static void AddReturnAttribute(this SyntaxEditor editor, SyntaxNode declaration, SyntaxNode attribute)
+      CSharp: public static void AddReturnAttribute(SyntaxEditor editor, SyntaxNode declaration, SyntaxNode attribute)
     parameters:
     - id: editor
       type:
@@ -436,7 +437,7 @@ items:
     startLine: 79
   syntax:
     content:
-      CSharp: public static void AddAttributeArgument(this SyntaxEditor editor, SyntaxNode attributeDeclaration, SyntaxNode attributeArgument)
+      CSharp: public static void AddAttributeArgument(SyntaxEditor editor, SyntaxNode attributeDeclaration, SyntaxNode attributeArgument)
     parameters:
     - id: editor
       type:
@@ -465,7 +466,7 @@ items:
     startLine: 84
   syntax:
     content:
-      CSharp: public static void AddMember(this SyntaxEditor editor, SyntaxNode declaration, SyntaxNode member)
+      CSharp: public static void AddMember(SyntaxEditor editor, SyntaxNode declaration, SyntaxNode member)
     parameters:
     - id: editor
       type:
@@ -494,7 +495,7 @@ items:
     startLine: 89
   syntax:
     content:
-      CSharp: public static void InsertMembers(this SyntaxEditor editor, SyntaxNode declaration, int index, IEnumerable<SyntaxNode> members)
+      CSharp: public static void InsertMembers(SyntaxEditor editor, SyntaxNode declaration, int index, IEnumerable<SyntaxNode> members)
     parameters:
     - id: editor
       type:
@@ -509,12 +510,12 @@ items:
     - id: index
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: members
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxNode}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxNode}
+        name: IEnumerable<SyntaxNode>
         isExternal: true
   id: Microsoft.CodeAnalysis.Editing.SyntaxEditorExtensions.InsertMembers(Microsoft.CodeAnalysis.Editing.SyntaxEditor,Microsoft.CodeAnalysis.SyntaxNode,System.Int32,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxNode})
 - uid: Microsoft.CodeAnalysis.Editing.SyntaxEditorExtensions.AddInterfaceType(Microsoft.CodeAnalysis.Editing.SyntaxEditor,Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.SyntaxNode)
@@ -528,7 +529,7 @@ items:
     startLine: 94
   syntax:
     content:
-      CSharp: public static void AddInterfaceType(this SyntaxEditor editor, SyntaxNode declaration, SyntaxNode interfaceType)
+      CSharp: public static void AddInterfaceType(SyntaxEditor editor, SyntaxNode declaration, SyntaxNode interfaceType)
     parameters:
     - id: editor
       type:
@@ -557,7 +558,7 @@ items:
     startLine: 99
   syntax:
     content:
-      CSharp: public static void AddBaseType(this SyntaxEditor editor, SyntaxNode declaration, SyntaxNode baseType)
+      CSharp: public static void AddBaseType(SyntaxEditor editor, SyntaxNode declaration, SyntaxNode baseType)
     parameters:
     - id: editor
       type:

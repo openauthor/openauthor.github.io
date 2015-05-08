@@ -6,8 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.ObjectModel/src/System/Collections/ObjectModel/ObservableCollection.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.ObjectModel/src/System/Collections/ObjectModel/ObservableCollection.cs
     startLine: 18
   summary: >-
@@ -18,17 +20,31 @@ items:
     when items get added, removed or the whole list is refreshed.
   syntax:
     content:
-      CSharp: public class ObservableCollection<T>
+      CSharp: 'public class ObservableCollection<T> : Collection<T>, IList<T>, ICollection<T>, IList, ICollection, IReadOnlyList<T>, IReadOnlyCollection<T>, IEnumerable<T>, IEnumerable, INotifyCollectionChanged, INotifyPropertyChanged'
   inheritance:
-  - id: Collection{`0}
-    name: Collection{`0}
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.Collections.ObjectModel.Collection{`0}
+    name: Collection<T>
     isExternal: true
   id: System.Collections.ObjectModel.ObservableCollection`1
   children:
   - System.Collections.ObjectModel.ObservableCollection`1.#ctor
-  - System.Collections.ObjectModel.ObservableCollection`1.#ctor(IEnumerable{`0})
+  - System.Collections.ObjectModel.ObservableCollection`1.#ctor(System.Collections.Generic.IEnumerable{`0})
   - System.Collections.ObjectModel.ObservableCollection`1.Move(System.Int32,System.Int32)
+  - System.Collections.ObjectModel.ObservableCollection`1.System#ComponentModel#INotifyPropertyChanged#PropertyChanged
   - System.Collections.ObjectModel.ObservableCollection`1.CollectionChanged
+  - System.Collections.ObjectModel.ObservableCollection`1.ClearItems
+  - System.Collections.ObjectModel.ObservableCollection`1.RemoveItem(System.Int32)
+  - System.Collections.ObjectModel.ObservableCollection`1.InsertItem(System.Int32,`0)
+  - System.Collections.ObjectModel.ObservableCollection`1.SetItem(System.Int32,`0)
+  - System.Collections.ObjectModel.ObservableCollection`1.MoveItem(System.Int32,System.Int32)
+  - System.Collections.ObjectModel.ObservableCollection`1.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)
+  - System.Collections.ObjectModel.ObservableCollection`1.PropertyChanged
+  - System.Collections.ObjectModel.ObservableCollection`1.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)
+  - System.Collections.ObjectModel.ObservableCollection`1.BlockReentrancy
+  - System.Collections.ObjectModel.ObservableCollection`1.CheckReentrancy
 - uid: System.Collections.ObjectModel.ObservableCollection`1.#ctor
   href: System.Collections.ObjectModel.ObservableCollection`1.yml
   name: ObservableCollection()
@@ -44,10 +60,10 @@ items:
       CSharp: 'public ObservableCollection(): base ()'
     parameters: []
   id: System.Collections.ObjectModel.ObservableCollection`1.#ctor
-- uid: System.Collections.ObjectModel.ObservableCollection`1.#ctor(IEnumerable{`0})
+- uid: System.Collections.ObjectModel.ObservableCollection`1.#ctor(System.Collections.Generic.IEnumerable{`0})
   href: System.Collections.ObjectModel.ObservableCollection`1.yml
   name: ObservableCollection(IEnumerable<T>)
-  fullName: System.Collections.ObjectModel.ObservableCollection<T>.ObservableCollection(IEnumerable<T>)
+  fullName: System.Collections.ObjectModel.ObservableCollection<T>.ObservableCollection(System.Collections.Generic.IEnumerable<T>)
   type: Constructor
   source:
     remote: *o0
@@ -65,11 +81,11 @@ items:
     parameters:
     - id: collection
       type:
-        id: IEnumerable{`0}
-        name: IEnumerable{`0}
+        id: System.Collections.Generic.IEnumerable{`0}
+        name: IEnumerable<T>
         isExternal: true
       description: The collection whose elements are copied to the new list.
-  id: System.Collections.ObjectModel.ObservableCollection`1.#ctor(IEnumerable{`0})
+  id: System.Collections.ObjectModel.ObservableCollection`1.#ctor(System.Collections.Generic.IEnumerable{`0})
 - uid: System.Collections.ObjectModel.ObservableCollection`1.Move(System.Int32,System.Int32)
   href: System.Collections.ObjectModel.ObservableCollection`1.yml
   name: Move(int, int)
@@ -87,14 +103,28 @@ items:
     - id: oldIndex
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: newIndex
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Collections.ObjectModel.ObservableCollection`1.Move(System.Int32,System.Int32)
+- uid: System.Collections.ObjectModel.ObservableCollection`1.System#ComponentModel#INotifyPropertyChanged#PropertyChanged
+  href: System.Collections.ObjectModel.ObservableCollection`1.yml
+  name: INotifyPropertyChanged.PropertyChanged
+  fullName: System.Collections.ObjectModel.ObservableCollection<T>.System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+  type: Event
+  source:
+    remote: *o0
+    path: src/System.ObjectModel/src/System/Collections/ObjectModel/ObservableCollection.cs
+    startLine: 104
+  summary: PropertyChanged event (per [System.ComponentModel.INotifyPropertyChanged](System.ComponentModel.INotifyPropertyChanged.yml)).
+  syntax:
+    content:
+      CSharp: event PropertyChangedEventHandler INotifyPropertyChanged.PropertyChanged
+  id: System.Collections.ObjectModel.ObservableCollection`1.System#ComponentModel#INotifyPropertyChanged#PropertyChanged
 - uid: System.Collections.ObjectModel.ObservableCollection`1.CollectionChanged
   href: System.Collections.ObjectModel.ObservableCollection`1.yml
   name: CollectionChanged
@@ -107,5 +137,228 @@ items:
   summary: Occurs when the collection changes, either by adding or removing an item.
   syntax:
     content:
-      CSharp: CollectionChanged
+      CSharp: public virtual event NotifyCollectionChangedEventHandler CollectionChanged;
   id: System.Collections.ObjectModel.ObservableCollection`1.CollectionChanged
+- uid: System.Collections.ObjectModel.ObservableCollection`1.ClearItems
+  href: System.Collections.ObjectModel.ObservableCollection`1.yml
+  name: ClearItems()
+  fullName: System.Collections.ObjectModel.ObservableCollection<T>.ClearItems()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.ObjectModel/src/System/Collections/ObjectModel/ObservableCollection.cs
+    startLine: 142
+  summary: >-
+    Called by base class Collection<T> when the list is being cleared;
+
+    raises a CollectionChanged event to any listeners.
+  syntax:
+    content:
+      CSharp: protected override void ClearItems()
+    parameters: []
+  id: System.Collections.ObjectModel.ObservableCollection`1.ClearItems
+- uid: System.Collections.ObjectModel.ObservableCollection`1.RemoveItem(System.Int32)
+  href: System.Collections.ObjectModel.ObservableCollection`1.yml
+  name: RemoveItem(int)
+  fullName: System.Collections.ObjectModel.ObservableCollection<T>.RemoveItem(int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.ObjectModel/src/System/Collections/ObjectModel/ObservableCollection.cs
+    startLine: 155
+  summary: >-
+    Called by base class Collection<T> when an item is removed from list;
+
+    raises a CollectionChanged event to any listeners.
+  syntax:
+    content:
+      CSharp: protected override void RemoveItem(int index)
+    parameters:
+    - id: index
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.Collections.ObjectModel.ObservableCollection`1.RemoveItem(System.Int32)
+- uid: System.Collections.ObjectModel.ObservableCollection`1.InsertItem(System.Int32,`0)
+  href: System.Collections.ObjectModel.ObservableCollection`1.yml
+  name: InsertItem(int, T)
+  fullName: System.Collections.ObjectModel.ObservableCollection<T>.InsertItem(int, T)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.ObjectModel/src/System/Collections/ObjectModel/ObservableCollection.cs
+    startLine: 171
+  summary: >-
+    Called by base class Collection<T> when an item is added to list;
+
+    raises a CollectionChanged event to any listeners.
+  syntax:
+    content:
+      CSharp: protected override void InsertItem(int index, T item)
+    parameters:
+    - id: index
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: item
+      type:
+        id: T
+        name: T
+        href: T
+  id: System.Collections.ObjectModel.ObservableCollection`1.InsertItem(System.Int32,`0)
+- uid: System.Collections.ObjectModel.ObservableCollection`1.SetItem(System.Int32,`0)
+  href: System.Collections.ObjectModel.ObservableCollection`1.yml
+  name: SetItem(int, T)
+  fullName: System.Collections.ObjectModel.ObservableCollection<T>.SetItem(int, T)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.ObjectModel/src/System/Collections/ObjectModel/ObservableCollection.cs
+    startLine: 185
+  summary: >-
+    Called by base class Collection<T> when an item is set in list;
+
+    raises a CollectionChanged event to any listeners.
+  syntax:
+    content:
+      CSharp: protected override void SetItem(int index, T item)
+    parameters:
+    - id: index
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: item
+      type:
+        id: T
+        name: T
+        href: T
+  id: System.Collections.ObjectModel.ObservableCollection`1.SetItem(System.Int32,`0)
+- uid: System.Collections.ObjectModel.ObservableCollection`1.MoveItem(System.Int32,System.Int32)
+  href: System.Collections.ObjectModel.ObservableCollection`1.yml
+  name: MoveItem(int, int)
+  fullName: System.Collections.ObjectModel.ObservableCollection<T>.MoveItem(int, int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.ObjectModel/src/System/Collections/ObjectModel/ObservableCollection.cs
+    startLine: 199
+  summary: >-
+    Called by base class ObservableCollection<T> when an item is to be moved within the list;
+
+    raises a CollectionChanged event to any listeners.
+  syntax:
+    content:
+      CSharp: protected virtual void MoveItem(int oldIndex, int newIndex)
+    parameters:
+    - id: oldIndex
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: newIndex
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.Collections.ObjectModel.ObservableCollection`1.MoveItem(System.Int32,System.Int32)
+- uid: System.Collections.ObjectModel.ObservableCollection`1.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)
+  href: System.Collections.ObjectModel.ObservableCollection`1.yml
+  name: OnPropertyChanged(PropertyChangedEventArgs)
+  fullName: System.Collections.ObjectModel.ObservableCollection<T>.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.ObjectModel/src/System/Collections/ObjectModel/ObservableCollection.cs
+    startLine: 216
+  summary: Raises a PropertyChanged event (per [System.ComponentModel.INotifyPropertyChanged](System.ComponentModel.INotifyPropertyChanged.yml)).
+  syntax:
+    content:
+      CSharp: protected virtual void OnPropertyChanged(PropertyChangedEventArgs e)
+    parameters:
+    - id: e
+      type:
+        id: System.ComponentModel.PropertyChangedEventArgs
+        name: PropertyChangedEventArgs
+        href: System.ComponentModel.PropertyChangedEventArgs.yml
+  id: System.Collections.ObjectModel.ObservableCollection`1.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)
+- uid: System.Collections.ObjectModel.ObservableCollection`1.PropertyChanged
+  href: System.Collections.ObjectModel.ObservableCollection`1.yml
+  name: PropertyChanged
+  fullName: System.Collections.ObjectModel.ObservableCollection<T>.PropertyChanged
+  type: Event
+  source:
+    remote: *o0
+    path: src/System.ObjectModel/src/System/Collections/ObjectModel/ObservableCollection.cs
+    startLine: 227
+  summary: PropertyChanged event (per [System.ComponentModel.INotifyPropertyChanged](System.ComponentModel.INotifyPropertyChanged.yml)).
+  syntax:
+    content:
+      CSharp: protected virtual event PropertyChangedEventHandler PropertyChanged;
+  id: System.Collections.ObjectModel.ObservableCollection`1.PropertyChanged
+- uid: System.Collections.ObjectModel.ObservableCollection`1.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)
+  href: System.Collections.ObjectModel.ObservableCollection`1.yml
+  name: OnCollectionChanged(NotifyCollectionChangedEventArgs)
+  fullName: System.Collections.ObjectModel.ObservableCollection<T>.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.ObjectModel/src/System/Collections/ObjectModel/ObservableCollection.cs
+    startLine: 238
+  summary: >-
+    Raise CollectionChanged event to any listeners.
+
+    Properties/methods modifying this ObservableCollection will raise
+
+    a collection changed event through this virtual method.
+  syntax:
+    content:
+      CSharp: protected virtual void OnCollectionChanged(NotifyCollectionChangedEventArgs e)
+    parameters:
+    - id: e
+      type:
+        id: System.Collections.Specialized.NotifyCollectionChangedEventArgs
+        name: NotifyCollectionChangedEventArgs
+        href: System.Collections.Specialized.NotifyCollectionChangedEventArgs.yml
+  id: System.Collections.ObjectModel.ObservableCollection`1.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)
+- uid: System.Collections.ObjectModel.ObservableCollection`1.BlockReentrancy
+  href: System.Collections.ObjectModel.ObservableCollection`1.yml
+  name: BlockReentrancy()
+  fullName: System.Collections.ObjectModel.ObservableCollection<T>.BlockReentrancy()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.ObjectModel/src/System/Collections/ObjectModel/ObservableCollection.cs
+    startLine: 262
+  summary: >-
+    Disallow reentrant attempts to change this collection. E.g. a event handler
+
+    of the CollectionChanged event is not allowed to make changes to this collection.
+  syntax:
+    content:
+      CSharp: protected IDisposable BlockReentrancy()
+    parameters: []
+    return:
+      id: IDisposable
+      type:
+        id: System.IDisposable
+        name: IDisposable
+        isExternal: true
+  id: System.Collections.ObjectModel.ObservableCollection`1.BlockReentrancy
+- uid: System.Collections.ObjectModel.ObservableCollection`1.CheckReentrancy
+  href: System.Collections.ObjectModel.ObservableCollection`1.yml
+  name: CheckReentrancy()
+  fullName: System.Collections.ObjectModel.ObservableCollection<T>.CheckReentrancy()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.ObjectModel/src/System/Collections/ObjectModel/ObservableCollection.cs
+    startLine: 271
+  summary: Check and assert for reentrant attempts to change this collection.
+  syntax:
+    content:
+      CSharp: protected void CheckReentrancy()
+    parameters: []
+  id: System.Collections.ObjectModel.ObservableCollection`1.CheckReentrancy

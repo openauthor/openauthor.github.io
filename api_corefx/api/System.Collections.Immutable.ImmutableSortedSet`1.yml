@@ -6,17 +6,19 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableSortedSet`1.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableSortedSet`1.cs
     startLine: 21
   summary: An immutable sorted set implementation.
   syntax:
     content:
-      CSharp: public sealed partial class ImmutableSortedSet<T>
+      CSharp: 'public sealed class ImmutableSortedSet<T> : IImmutableSet<T>, ISortKeyCollection<T>, IReadOnlyList<T>, IReadOnlyCollection<T>, IList<T>, ICollection<T>, IEnumerable<T>, ISet<T>, IList, ICollection, IEnumerable, IStrongEnumerable<T, Enumerator>'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Collections.Immutable.ImmutableSortedSet`1
   children:
@@ -46,6 +48,36 @@ items:
   - System.Collections.Immutable.ImmutableSortedSet`1.Reverse
   - System.Collections.Immutable.ImmutableSortedSet`1.IndexOf(`0)
   - System.Collections.Immutable.ImmutableSortedSet`1.Contains(`0)
+  - System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Immutable#IImmutableSet{T}#Clear
+  - System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Immutable#IImmutableSet{T}#Add(`0)
+  - System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Immutable#IImmutableSet{T}#Remove(`0)
+  - System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Immutable#IImmutableSet{T}#Intersect(System.Collections.Generic.IEnumerable{`0})
+  - System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Immutable#IImmutableSet{T}#Except(System.Collections.Generic.IEnumerable{`0})
+  - System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Immutable#IImmutableSet{T}#SymmetricExcept(System.Collections.Generic.IEnumerable{`0})
+  - System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Immutable#IImmutableSet{T}#Union(System.Collections.Generic.IEnumerable{`0})
+  - System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Generic#ICollection{T}#IsReadOnly
+  - System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Generic#ICollection{T}#CopyTo(`0[],System.Int32)
+  - System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Generic#ICollection{T}#Add(`0)
+  - System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Generic#ICollection{T}#Clear
+  - System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Generic#ICollection{T}#Remove(`0)
+  - System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Generic#IList{T}#Item(System.Int32)
+  - System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Generic#IList{T}#Insert(System.Int32,`0)
+  - System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Generic#IList{T}#RemoveAt(System.Int32)
+  - System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#IList#IsFixedSize
+  - System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#IList#IsReadOnly
+  - System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#ICollection#SyncRoot
+  - System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#ICollection#IsSynchronized
+  - System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#IList#Add(System.Object)
+  - System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#IList#Clear
+  - System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#IList#Contains(System.Object)
+  - System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#IList#IndexOf(System.Object)
+  - System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#IList#Insert(System.Int32,System.Object)
+  - System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#IList#Remove(System.Object)
+  - System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#IList#RemoveAt(System.Int32)
+  - System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#IList#Item(System.Int32)
+  - System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+  - System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Generic#IEnumerable{T}#GetEnumerator
+  - System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#IEnumerable#GetEnumerator
   - System.Collections.Immutable.ImmutableSortedSet`1.GetEnumerator
 - uid: System.Collections.Immutable.ImmutableSortedSet`1.Empty
   href: System.Collections.Immutable.ImmutableSortedSet`1.yml
@@ -59,7 +91,7 @@ items:
   summary: An empty sorted set with the default sort comparer.
   syntax:
     content:
-      CSharp: Empty
+      CSharp: '[SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")] public static readonly ImmutableSortedSet<T> Empty;'
   id: System.Collections.Immutable.ImmutableSortedSet`1.Empty
 - uid: System.Collections.Immutable.ImmutableSortedSet`1.Clear
   href: System.Collections.Immutable.ImmutableSortedSet`1.yml
@@ -77,6 +109,10 @@ items:
     parameters: []
     return:
       id: ImmutableSortedSet
+      type:
+        id: System.Collections.Immutable.ImmutableSortedSet`1
+        name: ImmutableSortedSet<T>
+        href: System.Collections.Immutable.ImmutableSortedSet`1.yml
   id: System.Collections.Immutable.ImmutableSortedSet`1.Clear
 - uid: System.Collections.Immutable.ImmutableSortedSet`1.Max
   href: System.Collections.Immutable.ImmutableSortedSet`1.yml
@@ -135,7 +171,7 @@ items:
     - id: IsEmpty
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Collections.Immutable.ImmutableSortedSet`1.IsEmpty
 - uid: System.Collections.Immutable.ImmutableSortedSet`1.Count
@@ -155,7 +191,7 @@ items:
     - id: Count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Collections.Immutable.ImmutableSortedSet`1.Count
 - uid: System.Collections.Immutable.ImmutableSortedSet`1.KeyComparer
@@ -167,7 +203,7 @@ items:
     remote: *o0
     path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableSortedSet`1.cs
     startLine: 126
-  summary: See the [System.Collections.Generic.ISortKeyCollection`1](#) interface.
+  summary: See the [System.Collections.Generic.ISortKeyCollection`1]() interface.
   syntax:
     content:
       CSharp: public IComparer<T> KeyComparer { get; }
@@ -175,7 +211,7 @@ items:
     - id: KeyComparer
       type:
         id: System.Collections.Generic.IComparer{`0}
-        name: System.Collections.Generic.IComparer{`0}
+        name: IComparer<T>
         isExternal: true
   id: System.Collections.Immutable.ImmutableSortedSet`1.KeyComparer
 - uid: System.Collections.Immutable.ImmutableSortedSet`1.Item(System.Int32)
@@ -215,10 +251,14 @@ items:
     mutable interfaces.
   syntax:
     content:
-      CSharp: '[Pure] public Builder ToBuilder()'
+      CSharp: public Builder ToBuilder()
     parameters: []
     return:
       id: Builder
+      type:
+        id: System.Collections.Immutable.ImmutableSortedSet`1.Builder
+        name: Builder
+        href: System.Collections.Immutable.ImmutableSortedSet`1.Builder.yml
   id: System.Collections.Immutable.ImmutableSortedSet`1.ToBuilder
 - uid: System.Collections.Immutable.ImmutableSortedSet`1.Add(`0)
   href: System.Collections.Immutable.ImmutableSortedSet`1.yml
@@ -232,7 +272,7 @@ items:
   summary: See the [System.Collections.Immutable.IImmutableSet`1](System.Collections.Immutable.IImmutableSet`1.yml) interface.
   syntax:
     content:
-      CSharp: '[Pure] public ImmutableSortedSet<T> Add(T value)'
+      CSharp: public ImmutableSortedSet<T> Add(T value)
     parameters:
     - id: value
       type:
@@ -241,6 +281,10 @@ items:
         href: T
     return:
       id: ImmutableSortedSet
+      type:
+        id: System.Collections.Immutable.ImmutableSortedSet`1
+        name: ImmutableSortedSet<T>
+        href: System.Collections.Immutable.ImmutableSortedSet`1.yml
   id: System.Collections.Immutable.ImmutableSortedSet`1.Add(`0)
 - uid: System.Collections.Immutable.ImmutableSortedSet`1.Remove(`0)
   href: System.Collections.Immutable.ImmutableSortedSet`1.yml
@@ -254,7 +298,7 @@ items:
   summary: See the [System.Collections.Immutable.IImmutableSet`1](System.Collections.Immutable.IImmutableSet`1.yml) interface.
   syntax:
     content:
-      CSharp: '[Pure] public ImmutableSortedSet<T> Remove(T value)'
+      CSharp: public ImmutableSortedSet<T> Remove(T value)
     parameters:
     - id: value
       type:
@@ -263,6 +307,10 @@ items:
         href: T
     return:
       id: ImmutableSortedSet
+      type:
+        id: System.Collections.Immutable.ImmutableSortedSet`1
+        name: ImmutableSortedSet<T>
+        href: System.Collections.Immutable.ImmutableSortedSet`1.yml
   id: System.Collections.Immutable.ImmutableSortedSet`1.Remove(`0)
 - uid: System.Collections.Immutable.ImmutableSortedSet`1.TryGetValue(`0,`0@)
   href: System.Collections.Immutable.ImmutableSortedSet`1.yml
@@ -276,7 +324,7 @@ items:
   summary: Searches the set for a given value and returns the equal value it finds, if any.
   syntax:
     content:
-      CSharp: '[Pure] public bool TryGetValue(T equalValue, out T actualValue)'
+      CSharp: public bool TryGetValue(T equalValue, out T actualValue)
     parameters:
     - id: equalValue
       type:
@@ -292,6 +340,10 @@ items:
       description: The value from the set that the search found, or the original value if the search yielded no match.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: A value indicating whether the search was successful.
   id: System.Collections.Immutable.ImmutableSortedSet`1.TryGetValue(`0,`0@)
 - uid: System.Collections.Immutable.ImmutableSortedSet`1.Intersect(System.Collections.Generic.IEnumerable{`0})
@@ -306,15 +358,19 @@ items:
   summary: See the [System.Collections.Immutable.IImmutableSet`1](System.Collections.Immutable.IImmutableSet`1.yml) interface.
   syntax:
     content:
-      CSharp: '[Pure] public ImmutableSortedSet<T> Intersect(IEnumerable<T> other)'
+      CSharp: public ImmutableSortedSet<T> Intersect(IEnumerable<T> other)
     parameters:
     - id: other
       type:
         id: System.Collections.Generic.IEnumerable{`0}
-        name: System.Collections.Generic.IEnumerable{`0}
+        name: IEnumerable<T>
         isExternal: true
     return:
       id: ImmutableSortedSet
+      type:
+        id: System.Collections.Immutable.ImmutableSortedSet`1
+        name: ImmutableSortedSet<T>
+        href: System.Collections.Immutable.ImmutableSortedSet`1.yml
   id: System.Collections.Immutable.ImmutableSortedSet`1.Intersect(System.Collections.Generic.IEnumerable{`0})
 - uid: System.Collections.Immutable.ImmutableSortedSet`1.Except(System.Collections.Generic.IEnumerable{`0})
   href: System.Collections.Immutable.ImmutableSortedSet`1.yml
@@ -328,15 +384,19 @@ items:
   summary: See the [System.Collections.Immutable.IImmutableSet`1](System.Collections.Immutable.IImmutableSet`1.yml) interface.
   syntax:
     content:
-      CSharp: '[Pure] public ImmutableSortedSet<T> Except(IEnumerable<T> other)'
+      CSharp: public ImmutableSortedSet<T> Except(IEnumerable<T> other)
     parameters:
     - id: other
       type:
         id: System.Collections.Generic.IEnumerable{`0}
-        name: System.Collections.Generic.IEnumerable{`0}
+        name: IEnumerable<T>
         isExternal: true
     return:
       id: ImmutableSortedSet
+      type:
+        id: System.Collections.Immutable.ImmutableSortedSet`1
+        name: ImmutableSortedSet<T>
+        href: System.Collections.Immutable.ImmutableSortedSet`1.yml
   id: System.Collections.Immutable.ImmutableSortedSet`1.Except(System.Collections.Generic.IEnumerable{`0})
 - uid: System.Collections.Immutable.ImmutableSortedSet`1.SymmetricExcept(System.Collections.Generic.IEnumerable{`0})
   href: System.Collections.Immutable.ImmutableSortedSet`1.yml
@@ -350,16 +410,20 @@ items:
   summary: Produces a set that contains elements either in this set or a given sequence, but not both.
   syntax:
     content:
-      CSharp: '[Pure] public ImmutableSortedSet<T> SymmetricExcept(IEnumerable<T> other)'
+      CSharp: public ImmutableSortedSet<T> SymmetricExcept(IEnumerable<T> other)
     parameters:
     - id: other
       type:
         id: System.Collections.Generic.IEnumerable{`0}
-        name: System.Collections.Generic.IEnumerable{`0}
+        name: IEnumerable<T>
         isExternal: true
       description: The other sequence of items.
     return:
       id: ImmutableSortedSet
+      type:
+        id: System.Collections.Immutable.ImmutableSortedSet`1
+        name: ImmutableSortedSet<T>
+        href: System.Collections.Immutable.ImmutableSortedSet`1.yml
       description: The new set.
   id: System.Collections.Immutable.ImmutableSortedSet`1.SymmetricExcept(System.Collections.Generic.IEnumerable{`0})
 - uid: System.Collections.Immutable.ImmutableSortedSet`1.Union(System.Collections.Generic.IEnumerable{`0})
@@ -374,15 +438,19 @@ items:
   summary: See the [System.Collections.Immutable.IImmutableSet`1](System.Collections.Immutable.IImmutableSet`1.yml) interface.
   syntax:
     content:
-      CSharp: '[Pure] public ImmutableSortedSet<T> Union(IEnumerable<T> other)'
+      CSharp: public ImmutableSortedSet<T> Union(IEnumerable<T> other)
     parameters:
     - id: other
       type:
         id: System.Collections.Generic.IEnumerable{`0}
-        name: System.Collections.Generic.IEnumerable{`0}
+        name: IEnumerable<T>
         isExternal: true
     return:
       id: ImmutableSortedSet
+      type:
+        id: System.Collections.Immutable.ImmutableSortedSet`1
+        name: ImmutableSortedSet<T>
+        href: System.Collections.Immutable.ImmutableSortedSet`1.yml
   id: System.Collections.Immutable.ImmutableSortedSet`1.Union(System.Collections.Generic.IEnumerable{`0})
 - uid: System.Collections.Immutable.ImmutableSortedSet`1.WithComparer(System.Collections.Generic.IComparer{`0})
   href: System.Collections.Immutable.ImmutableSortedSet`1.yml
@@ -396,15 +464,19 @@ items:
   summary: See the [System.Collections.Immutable.IImmutableSet`1](System.Collections.Immutable.IImmutableSet`1.yml) interface.
   syntax:
     content:
-      CSharp: '[Pure] public ImmutableSortedSet<T> WithComparer(IComparer<T> comparer)'
+      CSharp: public ImmutableSortedSet<T> WithComparer(IComparer<T> comparer)
     parameters:
     - id: comparer
       type:
         id: System.Collections.Generic.IComparer{`0}
-        name: System.Collections.Generic.IComparer{`0}
+        name: IComparer<T>
         isExternal: true
     return:
       id: ImmutableSortedSet
+      type:
+        id: System.Collections.Immutable.ImmutableSortedSet`1
+        name: ImmutableSortedSet<T>
+        href: System.Collections.Immutable.ImmutableSortedSet`1.yml
   id: System.Collections.Immutable.ImmutableSortedSet`1.WithComparer(System.Collections.Generic.IComparer{`0})
 - uid: System.Collections.Immutable.ImmutableSortedSet`1.SetEquals(System.Collections.Generic.IEnumerable{`0})
   href: System.Collections.Immutable.ImmutableSortedSet`1.yml
@@ -418,16 +490,20 @@ items:
   summary: Checks whether a given sequence of items entirely describe the contents of this set.
   syntax:
     content:
-      CSharp: '[Pure] public bool SetEquals(IEnumerable<T> other)'
+      CSharp: public bool SetEquals(IEnumerable<T> other)
     parameters:
     - id: other
       type:
         id: System.Collections.Generic.IEnumerable{`0}
-        name: System.Collections.Generic.IEnumerable{`0}
+        name: IEnumerable<T>
         isExternal: true
       description: The sequence of items to check against this set.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: A value indicating whether the sets are equal.
   id: System.Collections.Immutable.ImmutableSortedSet`1.SetEquals(System.Collections.Generic.IEnumerable{`0})
 - uid: System.Collections.Immutable.ImmutableSortedSet`1.IsProperSubsetOf(System.Collections.Generic.IEnumerable{`0})
@@ -442,16 +518,20 @@ items:
   summary: Determines whether the current set is a property (strict) subset of a specified collection.
   syntax:
     content:
-      CSharp: '[Pure] public bool IsProperSubsetOf(IEnumerable<T> other)'
+      CSharp: public bool IsProperSubsetOf(IEnumerable<T> other)
     parameters:
     - id: other
       type:
         id: System.Collections.Generic.IEnumerable{`0}
-        name: System.Collections.Generic.IEnumerable{`0}
+        name: IEnumerable<T>
         isExternal: true
       description: The collection to compare to the current set.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: true if the current set is a correct subset of other; otherwise, false.
   id: System.Collections.Immutable.ImmutableSortedSet`1.IsProperSubsetOf(System.Collections.Generic.IEnumerable{`0})
 - uid: System.Collections.Immutable.ImmutableSortedSet`1.IsProperSupersetOf(System.Collections.Generic.IEnumerable{`0})
@@ -466,16 +546,20 @@ items:
   summary: Determines whether the current set is a correct superset of a specified collection.
   syntax:
     content:
-      CSharp: '[Pure] public bool IsProperSupersetOf(IEnumerable<T> other)'
+      CSharp: public bool IsProperSupersetOf(IEnumerable<T> other)
     parameters:
     - id: other
       type:
         id: System.Collections.Generic.IEnumerable{`0}
-        name: System.Collections.Generic.IEnumerable{`0}
+        name: IEnumerable<T>
         isExternal: true
       description: The collection to compare to the current set.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: true if the current set is a correct superset of other; otherwise, false.
   id: System.Collections.Immutable.ImmutableSortedSet`1.IsProperSupersetOf(System.Collections.Generic.IEnumerable{`0})
 - uid: System.Collections.Immutable.ImmutableSortedSet`1.IsSubsetOf(System.Collections.Generic.IEnumerable{`0})
@@ -490,16 +574,20 @@ items:
   summary: Determines whether a set is a subset of a specified collection.
   syntax:
     content:
-      CSharp: '[Pure] public bool IsSubsetOf(IEnumerable<T> other)'
+      CSharp: public bool IsSubsetOf(IEnumerable<T> other)
     parameters:
     - id: other
       type:
         id: System.Collections.Generic.IEnumerable{`0}
-        name: System.Collections.Generic.IEnumerable{`0}
+        name: IEnumerable<T>
         isExternal: true
       description: The collection to compare to the current set.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: true if the current set is a subset of other; otherwise, false.
   id: System.Collections.Immutable.ImmutableSortedSet`1.IsSubsetOf(System.Collections.Generic.IEnumerable{`0})
 - uid: System.Collections.Immutable.ImmutableSortedSet`1.IsSupersetOf(System.Collections.Generic.IEnumerable{`0})
@@ -514,16 +602,20 @@ items:
   summary: Determines whether the current set is a superset of a specified collection.
   syntax:
     content:
-      CSharp: '[Pure] public bool IsSupersetOf(IEnumerable<T> other)'
+      CSharp: public bool IsSupersetOf(IEnumerable<T> other)
     parameters:
     - id: other
       type:
         id: System.Collections.Generic.IEnumerable{`0}
-        name: System.Collections.Generic.IEnumerable{`0}
+        name: IEnumerable<T>
         isExternal: true
       description: The collection to compare to the current set.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: true if the current set is a superset of other; otherwise, false.
   id: System.Collections.Immutable.ImmutableSortedSet`1.IsSupersetOf(System.Collections.Generic.IEnumerable{`0})
 - uid: System.Collections.Immutable.ImmutableSortedSet`1.Overlaps(System.Collections.Generic.IEnumerable{`0})
@@ -538,16 +630,20 @@ items:
   summary: Determines whether the current set overlaps with the specified collection.
   syntax:
     content:
-      CSharp: '[Pure] public bool Overlaps(IEnumerable<T> other)'
+      CSharp: public bool Overlaps(IEnumerable<T> other)
     parameters:
     - id: other
       type:
         id: System.Collections.Generic.IEnumerable{`0}
-        name: System.Collections.Generic.IEnumerable{`0}
+        name: IEnumerable<T>
         isExternal: true
       description: The collection to compare to the current set.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: true if the current set and other share at least one common element; otherwise, false.
   id: System.Collections.Immutable.ImmutableSortedSet`1.Overlaps(System.Collections.Generic.IEnumerable{`0})
 - uid: System.Collections.Immutable.ImmutableSortedSet`1.Reverse
@@ -560,17 +656,21 @@ items:
     path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableSortedSet`1.cs
     startLine: 573
   summary: >-
-    Returns an System.Collections.Generic.IEnumerable<T> that iterates over this
+    Returns an [System.Collections.Generic.IEnumerable`1]() that iterates over this
 
     collection in reverse order.
   syntax:
     content:
-      CSharp: '[Pure] public IEnumerable<T> Reverse()'
+      CSharp: public IEnumerable<T> Reverse()
     parameters: []
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{`0}
+        name: IEnumerable<T>
+        isExternal: true
       description: >-
-        An enumerator that iterates over the System.Collections.Generic.SortedSet<T>
+        An enumerator that iterates over the [System.Collections.Immutable.ImmutableSortedSet`1](System.Collections.Immutable.ImmutableSortedSet`1.yml)
 
         in reverse order.
   id: System.Collections.Immutable.ImmutableSortedSet`1.Reverse
@@ -596,6 +696,10 @@ items:
       description: The value whose position is being sought.
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: >-
         The index of the specified  in the sorted set,
 
@@ -634,7 +738,700 @@ items:
         href: T
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Collections.Immutable.ImmutableSortedSet`1.Contains(`0)
+- uid: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Immutable#IImmutableSet{T}#Clear
+  href: System.Collections.Immutable.ImmutableSortedSet`1.yml
+  name: IImmutableSet<T>.Clear()
+  fullName: System.Collections.Immutable.ImmutableSortedSet<T>.System.Collections.Immutable.IImmutableSet<T>.Clear()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableSortedSet`1.cs
+    startLine: 615
+  summary: See the [System.Collections.Immutable.IImmutableSet`1](System.Collections.Immutable.IImmutableSet`1.yml) interface.
+  syntax:
+    content:
+      CSharp: IImmutableSet<T> IImmutableSet<T>.Clear()
+    parameters: []
+    return:
+      id: IImmutableSet
+      type:
+        id: System.Collections.Immutable.IImmutableSet{`0}
+        name: IImmutableSet<T>
+        href: System.Collections.Immutable.IImmutableSet{`0}
+  id: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Immutable#IImmutableSet{T}#Clear
+- uid: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Immutable#IImmutableSet{T}#Add(`0)
+  href: System.Collections.Immutable.ImmutableSortedSet`1.yml
+  name: IImmutableSet<T>.Add(T)
+  fullName: System.Collections.Immutable.ImmutableSortedSet<T>.System.Collections.Immutable.IImmutableSet<T>.Add(T)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableSortedSet`1.cs
+    startLine: 624
+  summary: See the [System.Collections.Immutable.IImmutableSet`1](System.Collections.Immutable.IImmutableSet`1.yml) interface.
+  syntax:
+    content:
+      CSharp: IImmutableSet<T> IImmutableSet<T>.Add(T value)
+    parameters:
+    - id: value
+      type:
+        id: T
+        name: T
+        href: T
+    return:
+      id: IImmutableSet
+      type:
+        id: System.Collections.Immutable.IImmutableSet{`0}
+        name: IImmutableSet<T>
+        href: System.Collections.Immutable.IImmutableSet{`0}
+  id: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Immutable#IImmutableSet{T}#Add(`0)
+- uid: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Immutable#IImmutableSet{T}#Remove(`0)
+  href: System.Collections.Immutable.ImmutableSortedSet`1.yml
+  name: IImmutableSet<T>.Remove(T)
+  fullName: System.Collections.Immutable.ImmutableSortedSet<T>.System.Collections.Immutable.IImmutableSet<T>.Remove(T)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableSortedSet`1.cs
+    startLine: 633
+  summary: See the [System.Collections.Immutable.IImmutableSet`1](System.Collections.Immutable.IImmutableSet`1.yml) interface.
+  syntax:
+    content:
+      CSharp: IImmutableSet<T> IImmutableSet<T>.Remove(T value)
+    parameters:
+    - id: value
+      type:
+        id: T
+        name: T
+        href: T
+    return:
+      id: IImmutableSet
+      type:
+        id: System.Collections.Immutable.IImmutableSet{`0}
+        name: IImmutableSet<T>
+        href: System.Collections.Immutable.IImmutableSet{`0}
+  id: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Immutable#IImmutableSet{T}#Remove(`0)
+- uid: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Immutable#IImmutableSet{T}#Intersect(System.Collections.Generic.IEnumerable{`0})
+  href: System.Collections.Immutable.ImmutableSortedSet`1.yml
+  name: IImmutableSet<T>.Intersect(IEnumerable<T>)
+  fullName: System.Collections.Immutable.ImmutableSortedSet<T>.System.Collections.Immutable.IImmutableSet<T>.Intersect(System.Collections.Generic.IEnumerable<T>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableSortedSet`1.cs
+    startLine: 642
+  summary: See the [System.Collections.Immutable.IImmutableSet`1](System.Collections.Immutable.IImmutableSet`1.yml) interface.
+  syntax:
+    content:
+      CSharp: IImmutableSet<T> IImmutableSet<T>.Intersect(IEnumerable<T> other)
+    parameters:
+    - id: other
+      type:
+        id: System.Collections.Generic.IEnumerable{`0}
+        name: IEnumerable<T>
+        isExternal: true
+    return:
+      id: IImmutableSet
+      type:
+        id: System.Collections.Immutable.IImmutableSet{`0}
+        name: IImmutableSet<T>
+        href: System.Collections.Immutable.IImmutableSet{`0}
+  id: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Immutable#IImmutableSet{T}#Intersect(System.Collections.Generic.IEnumerable{`0})
+- uid: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Immutable#IImmutableSet{T}#Except(System.Collections.Generic.IEnumerable{`0})
+  href: System.Collections.Immutable.ImmutableSortedSet`1.yml
+  name: IImmutableSet<T>.Except(IEnumerable<T>)
+  fullName: System.Collections.Immutable.ImmutableSortedSet<T>.System.Collections.Immutable.IImmutableSet<T>.Except(System.Collections.Generic.IEnumerable<T>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableSortedSet`1.cs
+    startLine: 651
+  summary: See the [System.Collections.Immutable.IImmutableSet`1](System.Collections.Immutable.IImmutableSet`1.yml) interface.
+  syntax:
+    content:
+      CSharp: IImmutableSet<T> IImmutableSet<T>.Except(IEnumerable<T> other)
+    parameters:
+    - id: other
+      type:
+        id: System.Collections.Generic.IEnumerable{`0}
+        name: IEnumerable<T>
+        isExternal: true
+    return:
+      id: IImmutableSet
+      type:
+        id: System.Collections.Immutable.IImmutableSet{`0}
+        name: IImmutableSet<T>
+        href: System.Collections.Immutable.IImmutableSet{`0}
+  id: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Immutable#IImmutableSet{T}#Except(System.Collections.Generic.IEnumerable{`0})
+- uid: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Immutable#IImmutableSet{T}#SymmetricExcept(System.Collections.Generic.IEnumerable{`0})
+  href: System.Collections.Immutable.ImmutableSortedSet`1.yml
+  name: IImmutableSet<T>.SymmetricExcept(IEnumerable<T>)
+  fullName: System.Collections.Immutable.ImmutableSortedSet<T>.System.Collections.Immutable.IImmutableSet<T>.SymmetricExcept(System.Collections.Generic.IEnumerable<T>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableSortedSet`1.cs
+    startLine: 662
+  summary: Produces a set that contains elements either in this set or a given sequence, but not both.
+  syntax:
+    content:
+      CSharp: IImmutableSet<T> IImmutableSet<T>.SymmetricExcept(IEnumerable<T> other)
+    parameters:
+    - id: other
+      type:
+        id: System.Collections.Generic.IEnumerable{`0}
+        name: IEnumerable<T>
+        isExternal: true
+      description: The other sequence of items.
+    return:
+      id: IImmutableSet
+      type:
+        id: System.Collections.Immutable.IImmutableSet{`0}
+        name: IImmutableSet<T>
+        href: System.Collections.Immutable.IImmutableSet{`0}
+      description: The new set.
+  id: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Immutable#IImmutableSet{T}#SymmetricExcept(System.Collections.Generic.IEnumerable{`0})
+- uid: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Immutable#IImmutableSet{T}#Union(System.Collections.Generic.IEnumerable{`0})
+  href: System.Collections.Immutable.ImmutableSortedSet`1.yml
+  name: IImmutableSet<T>.Union(IEnumerable<T>)
+  fullName: System.Collections.Immutable.ImmutableSortedSet<T>.System.Collections.Immutable.IImmutableSet<T>.Union(System.Collections.Generic.IEnumerable<T>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableSortedSet`1.cs
+    startLine: 671
+  summary: See the [System.Collections.Immutable.IImmutableSet`1](System.Collections.Immutable.IImmutableSet`1.yml) interface.
+  syntax:
+    content:
+      CSharp: IImmutableSet<T> IImmutableSet<T>.Union(IEnumerable<T> other)
+    parameters:
+    - id: other
+      type:
+        id: System.Collections.Generic.IEnumerable{`0}
+        name: IEnumerable<T>
+        isExternal: true
+    return:
+      id: IImmutableSet
+      type:
+        id: System.Collections.Immutable.IImmutableSet{`0}
+        name: IImmutableSet<T>
+        href: System.Collections.Immutable.IImmutableSet{`0}
+  id: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Immutable#IImmutableSet{T}#Union(System.Collections.Generic.IEnumerable{`0})
+- uid: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Generic#ICollection{T}#IsReadOnly
+  href: System.Collections.Immutable.ImmutableSortedSet`1.yml
+  name: ICollection<T>.IsReadOnly
+  fullName: System.Collections.Immutable.ImmutableSortedSet<T>.System.Collections.Generic.ICollection<T>.IsReadOnly
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableSortedSet`1.cs
+    startLine: 728
+  summary: See the [System.Collections.Generic.ICollection`1]() interface.
+  syntax:
+    content:
+      CSharp: bool ICollection<T>.IsReadOnly { get; }
+    parameters:
+    - id: System.Collections.Generic.ICollection<T>.IsReadOnly
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Generic#ICollection{T}#IsReadOnly
+- uid: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Generic#ICollection{T}#CopyTo(`0[],System.Int32)
+  href: System.Collections.Immutable.ImmutableSortedSet`1.yml
+  name: ICollection<T>.CopyTo(T[], int)
+  fullName: System.Collections.Immutable.ImmutableSortedSet<T>.System.Collections.Generic.ICollection<T>.CopyTo(T[], int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableSortedSet`1.cs
+    startLine: 736
+  summary: See the [System.Collections.Generic.ICollection`1]() interface.
+  syntax:
+    content:
+      CSharp: void ICollection<T>.CopyTo(T[] array, int arrayIndex)
+    parameters:
+    - id: array
+      type:
+        id: System.Array
+        name: T[]
+        isExternal: true
+    - id: arrayIndex
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Generic#ICollection{T}#CopyTo(`0[],System.Int32)
+- uid: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Generic#ICollection{T}#Add(`0)
+  href: System.Collections.Immutable.ImmutableSortedSet`1.yml
+  name: ICollection<T>.Add(T)
+  fullName: System.Collections.Immutable.ImmutableSortedSet<T>.System.Collections.Generic.ICollection<T>.Add(T)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableSortedSet`1.cs
+    startLine: 744
+  summary: See the [System.Collections.Generic.IList`1]() interface.
+  syntax:
+    content:
+      CSharp: void ICollection<T>.Add(T item)
+    parameters:
+    - id: item
+      type:
+        id: T
+        name: T
+        href: T
+  id: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Generic#ICollection{T}#Add(`0)
+- uid: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Generic#ICollection{T}#Clear
+  href: System.Collections.Immutable.ImmutableSortedSet`1.yml
+  name: ICollection<T>.Clear()
+  fullName: System.Collections.Immutable.ImmutableSortedSet<T>.System.Collections.Generic.ICollection<T>.Clear()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableSortedSet`1.cs
+    startLine: 752
+  summary: See the [System.Collections.Generic.ICollection`1]() interface.
+  syntax:
+    content:
+      CSharp: void ICollection<T>.Clear()
+    parameters: []
+  id: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Generic#ICollection{T}#Clear
+- uid: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Generic#ICollection{T}#Remove(`0)
+  href: System.Collections.Immutable.ImmutableSortedSet`1.yml
+  name: ICollection<T>.Remove(T)
+  fullName: System.Collections.Immutable.ImmutableSortedSet<T>.System.Collections.Generic.ICollection<T>.Remove(T)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableSortedSet`1.cs
+    startLine: 760
+  summary: See the [System.Collections.Generic.IList`1]() interface.
+  syntax:
+    content:
+      CSharp: bool ICollection<T>.Remove(T item)
+    parameters:
+    - id: item
+      type:
+        id: T
+        name: T
+        href: T
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Generic#ICollection{T}#Remove(`0)
+- uid: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Generic#IList{T}#Item(System.Int32)
+  href: System.Collections.Immutable.ImmutableSortedSet`1.yml
+  name: IList<T>.this[int]
+  fullName: System.Collections.Immutable.ImmutableSortedSet<T>.System.Collections.Generic.IList<T>.this[int]
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableSortedSet`1.cs
+    startLine: 772
+  summary: See the [System.Collections.Generic.IList`1]() interface.
+  syntax:
+    content:
+      CSharp: T IList<T>.this[int index] { get; set; }
+    parameters:
+    - id: System.Collections.Generic.IList<T>.this[]
+      type:
+        id: T
+        name: T
+        href: T
+  id: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Generic#IList{T}#Item(System.Int32)
+- uid: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Generic#IList{T}#Insert(System.Int32,`0)
+  href: System.Collections.Immutable.ImmutableSortedSet`1.yml
+  name: IList<T>.Insert(int, T)
+  fullName: System.Collections.Immutable.ImmutableSortedSet<T>.System.Collections.Generic.IList<T>.Insert(int, T)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableSortedSet`1.cs
+    startLine: 781
+  summary: See the [System.Collections.Generic.IList`1]() interface.
+  syntax:
+    content:
+      CSharp: void IList<T>.Insert(int index, T item)
+    parameters:
+    - id: index
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: item
+      type:
+        id: T
+        name: T
+        href: T
+  id: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Generic#IList{T}#Insert(System.Int32,`0)
+- uid: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Generic#IList{T}#RemoveAt(System.Int32)
+  href: System.Collections.Immutable.ImmutableSortedSet`1.yml
+  name: IList<T>.RemoveAt(int)
+  fullName: System.Collections.Immutable.ImmutableSortedSet<T>.System.Collections.Generic.IList<T>.RemoveAt(int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableSortedSet`1.cs
+    startLine: 789
+  summary: See the [System.Collections.Generic.IList`1]() interface.
+  syntax:
+    content:
+      CSharp: void IList<T>.RemoveAt(int index)
+    parameters:
+    - id: index
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Generic#IList{T}#RemoveAt(System.Int32)
+- uid: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#IList#IsFixedSize
+  href: System.Collections.Immutable.ImmutableSortedSet`1.yml
+  name: IList.IsFixedSize
+  fullName: System.Collections.Immutable.ImmutableSortedSet<T>.System.Collections.IList.IsFixedSize
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableSortedSet`1.cs
+    startLine: 802
+  summary: Gets a value indicating whether the [System.Collections.IList]() has a fixed size.
+  syntax:
+    content:
+      CSharp: bool IList.IsFixedSize { get; }
+    parameters:
+    - id: System.Collections.IList.IsFixedSize
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#IList#IsFixedSize
+- uid: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#IList#IsReadOnly
+  href: System.Collections.Immutable.ImmutableSortedSet`1.yml
+  name: IList.IsReadOnly
+  fullName: System.Collections.Immutable.ImmutableSortedSet<T>.System.Collections.IList.IsReadOnly
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableSortedSet`1.cs
+    startLine: 812
+  summary: Gets a value indicating whether the [System.Collections.Generic.ICollection`1]() is read-only.
+  syntax:
+    content:
+      CSharp: bool IList.IsReadOnly { get; }
+    parameters:
+    - id: System.Collections.IList.IsReadOnly
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#IList#IsReadOnly
+- uid: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#ICollection#SyncRoot
+  href: System.Collections.Immutable.ImmutableSortedSet`1.yml
+  name: ICollection.SyncRoot
+  fullName: System.Collections.Immutable.ImmutableSortedSet<T>.System.Collections.ICollection.SyncRoot
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableSortedSet`1.cs
+    startLine: 824
+  summary: See [System.Collections.ICollection]().
+  syntax:
+    content:
+      CSharp: '[DebuggerBrowsable(DebuggerBrowsableState.Never)] object ICollection.SyncRoot { get; }'
+    parameters:
+    - id: System.Collections.ICollection.SyncRoot
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+  id: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#ICollection#SyncRoot
+- uid: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#ICollection#IsSynchronized
+  href: System.Collections.Immutable.ImmutableSortedSet`1.yml
+  name: ICollection.IsSynchronized
+  fullName: System.Collections.Immutable.ImmutableSortedSet<T>.System.Collections.ICollection.IsSynchronized
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableSortedSet`1.cs
+    startLine: 833
+  summary: See the [System.Collections.ICollection]() interface.
+  syntax:
+    content:
+      CSharp: '[DebuggerBrowsable(DebuggerBrowsableState.Never)] bool ICollection.IsSynchronized { get; }'
+    parameters:
+    - id: System.Collections.ICollection.IsSynchronized
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#ICollection#IsSynchronized
+- uid: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#IList#Add(System.Object)
+  href: System.Collections.Immutable.ImmutableSortedSet`1.yml
+  name: IList.Add(object)
+  fullName: System.Collections.Immutable.ImmutableSortedSet<T>.System.Collections.IList.Add(object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableSortedSet`1.cs
+    startLine: 855
+  summary: Adds an item to the [System.Collections.IList]().
+  syntax:
+    content:
+      CSharp: int IList.Add(object value)
+    parameters:
+    - id: value
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+      description: The object to add to the [System.Collections.IList]().
+    return:
+      id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The position into which the new element was inserted, or -1 to indicate that the item was not inserted into the collection,
+  id: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#IList#Add(System.Object)
+- uid: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#IList#Clear
+  href: System.Collections.Immutable.ImmutableSortedSet`1.yml
+  name: IList.Clear()
+  fullName: System.Collections.Immutable.ImmutableSortedSet<T>.System.Collections.IList.Clear()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableSortedSet`1.cs
+    startLine: 864
+  summary: Clears this instance.
+  syntax:
+    content:
+      CSharp: void IList.Clear()
+    parameters: []
+  id: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#IList#Clear
+- uid: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#IList#Contains(System.Object)
+  href: System.Collections.Immutable.ImmutableSortedSet`1.yml
+  name: IList.Contains(object)
+  fullName: System.Collections.Immutable.ImmutableSortedSet<T>.System.Collections.IList.Contains(object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableSortedSet`1.cs
+    startLine: 876
+  summary: Determines whether the [System.Collections.IList]() contains a specific value.
+  syntax:
+    content:
+      CSharp: bool IList.Contains(object value)
+    parameters:
+    - id: value
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+      description: The object to locate in the [System.Collections.IList]().
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: true if the [System.Object]() is found in the [System.Collections.IList](); otherwise, false.
+  id: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#IList#Contains(System.Object)
+- uid: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#IList#IndexOf(System.Object)
+  href: System.Collections.Immutable.ImmutableSortedSet`1.yml
+  name: IList.IndexOf(object)
+  fullName: System.Collections.Immutable.ImmutableSortedSet<T>.System.Collections.IList.IndexOf(object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableSortedSet`1.cs
+    startLine: 888
+  summary: Determines the index of a specific item in the [System.Collections.IList]().
+  syntax:
+    content:
+      CSharp: int IList.IndexOf(object value)
+    parameters:
+    - id: value
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+      description: The object to locate in the [System.Collections.IList]().
+    return:
+      id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The index of  if found in the list; otherwise, -1.
+  id: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#IList#IndexOf(System.Object)
+- uid: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#IList#Insert(System.Int32,System.Object)
+  href: System.Collections.Immutable.ImmutableSortedSet`1.yml
+  name: IList.Insert(int, object)
+  fullName: System.Collections.Immutable.ImmutableSortedSet<T>.System.Collections.IList.Insert(int, object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableSortedSet`1.cs
+    startLine: 899
+  summary: Inserts an item to the [System.Collections.IList]() at the specified index.
+  syntax:
+    content:
+      CSharp: void IList.Insert(int index, object value)
+    parameters:
+    - id: index
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The zero-based index at which  should be inserted.
+    - id: value
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+      description: The object to insert into the [System.Collections.IList]().
+  id: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#IList#Insert(System.Int32,System.Object)
+- uid: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#IList#Remove(System.Object)
+  href: System.Collections.Immutable.ImmutableSortedSet`1.yml
+  name: IList.Remove(object)
+  fullName: System.Collections.Immutable.ImmutableSortedSet<T>.System.Collections.IList.Remove(object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableSortedSet`1.cs
+    startLine: 909
+  summary: Removes the first occurrence of a specific object from the [System.Collections.IList]().
+  syntax:
+    content:
+      CSharp: void IList.Remove(object value)
+    parameters:
+    - id: value
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+      description: The object to remove from the [System.Collections.IList]().
+  id: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#IList#Remove(System.Object)
+- uid: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#IList#RemoveAt(System.Int32)
+  href: System.Collections.Immutable.ImmutableSortedSet`1.yml
+  name: IList.RemoveAt(int)
+  fullName: System.Collections.Immutable.ImmutableSortedSet<T>.System.Collections.IList.RemoveAt(int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableSortedSet`1.cs
+    startLine: 919
+  summary: Removes at.
+  syntax:
+    content:
+      CSharp: void IList.RemoveAt(int index)
+    parameters:
+    - id: index
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The index.
+  id: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#IList#RemoveAt(System.Int32)
+- uid: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#IList#Item(System.Int32)
+  href: System.Collections.Immutable.ImmutableSortedSet`1.yml
+  name: IList.this[int]
+  fullName: System.Collections.Immutable.ImmutableSortedSet<T>.System.Collections.IList.this[int]
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableSortedSet`1.cs
+    startLine: 932
+  summary: Gets or sets the [System.Object]() at the specified index.
+  syntax:
+    content:
+      CSharp: object IList.this[int index] { get; set; }
+    parameters:
+    - id: System.Collections.IList.this[]
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+  id: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#IList#Item(System.Int32)
+- uid: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+  href: System.Collections.Immutable.ImmutableSortedSet`1.yml
+  name: ICollection.CopyTo(Array, int)
+  fullName: System.Collections.Immutable.ImmutableSortedSet<T>.System.Collections.ICollection.CopyTo(System.Array, int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableSortedSet`1.cs
+    startLine: 947
+  summary: Copies the elements of the [System.Collections.ICollection]() to an [System.Array](), starting at a particular [System.Array]() index.
+  syntax:
+    content:
+      CSharp: void ICollection.CopyTo(Array array, int index)
+    parameters:
+    - id: array
+      type:
+        id: System.Array
+        name: Array
+        isExternal: true
+      description: The one-dimensional [System.Array]() that is the destination of the elements copied from [System.Collections.ICollection](). The [System.Array]() must have zero-based indexing.
+    - id: index
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The zero-based index in  at which copying begins.
+  id: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+- uid: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Generic#IEnumerable{T}#GetEnumerator
+  href: System.Collections.Immutable.ImmutableSortedSet`1.yml
+  name: IEnumerable<T>.GetEnumerator()
+  fullName: System.Collections.Immutable.ImmutableSortedSet<T>.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableSortedSet`1.cs
+    startLine: 962
+  summary: Returns an enumerator that iterates through the collection.
+  syntax:
+    content:
+      CSharp: IEnumerator<T> IEnumerable<T>.GetEnumerator()
+    parameters: []
+    return:
+      id: IEnumerator
+      type:
+        id: System.Collections.Generic.IEnumerator{`0}
+        name: IEnumerator<T>
+        isExternal: true
+      description: A [System.Collections.Generic.IEnumerator`1]() that can be used to iterate through the collection.
+  id: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#Generic#IEnumerable{T}#GetEnumerator
+- uid: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#IEnumerable#GetEnumerator
+  href: System.Collections.Immutable.ImmutableSortedSet`1.yml
+  name: IEnumerable.GetEnumerator()
+  fullName: System.Collections.Immutable.ImmutableSortedSet<T>.System.Collections.IEnumerable.GetEnumerator()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableSortedSet`1.cs
+    startLine: 978
+  summary: Returns an enumerator that iterates through a collection.
+  syntax:
+    content:
+      CSharp: IEnumerator IEnumerable.GetEnumerator()
+    parameters: []
+    return:
+      id: IEnumerator
+      type:
+        id: System.Collections.IEnumerator
+        name: IEnumerator
+        isExternal: true
+      description: An [System.Collections.IEnumerator]() object that can be used to iterate through the collection.
+  id: System.Collections.Immutable.ImmutableSortedSet`1.System#Collections#IEnumerable#GetEnumerator
 - uid: System.Collections.Immutable.ImmutableSortedSet`1.GetEnumerator
   href: System.Collections.Immutable.ImmutableSortedSet`1.yml
   name: GetEnumerator()
@@ -651,5 +1448,9 @@ items:
     parameters: []
     return:
       id: Enumerator
-      description: A [System.Collections.Generic.IEnumerator`1](#) that can be used to iterate through the collection.
+      type:
+        id: System.Collections.Immutable.ImmutableSortedSet`1.Enumerator
+        name: Enumerator
+        href: System.Collections.Immutable.ImmutableSortedSet`1.Enumerator.yml
+      description: A [System.Collections.Generic.IEnumerator`1]() that can be used to iterate through the collection.
   id: System.Collections.Immutable.ImmutableSortedSet`1.GetEnumerator

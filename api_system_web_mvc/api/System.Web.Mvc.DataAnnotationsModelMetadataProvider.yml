@@ -5,18 +5,19 @@ items:
   fullName: System.Web.Mvc.DataAnnotationsModelMetadataProvider
   type: Class
   source:
-    remote:
+    remote: &o0
+      path: src/System.Web.Mvc/DataAnnotationsModelMetadataProvider.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/DataAnnotationsModelMetadataProvider.cs
     startLine: 9
   syntax:
     content:
-      CSharp: public class DataAnnotationsModelMetadataProvider
+      CSharp: 'public class DataAnnotationsModelMetadataProvider : AssociatedMetadataProvider'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.Mvc.ModelMetadataProvider
     name: ModelMetadataProvider
@@ -25,3 +26,50 @@ items:
     name: AssociatedMetadataProvider
     href: System.Web.Mvc.AssociatedMetadataProvider.yml
   id: System.Web.Mvc.DataAnnotationsModelMetadataProvider
+  children:
+  - System.Web.Mvc.DataAnnotationsModelMetadataProvider.CreateMetadata(System.Collections.Generic.IEnumerable{System.Attribute},System.Type,System.Func{System.Object},System.Type,System.String)
+- uid: System.Web.Mvc.DataAnnotationsModelMetadataProvider.CreateMetadata(System.Collections.Generic.IEnumerable{System.Attribute},System.Type,System.Func{System.Object},System.Type,System.String)
+  href: System.Web.Mvc.DataAnnotationsModelMetadataProvider.yml
+  name: CreateMetadata(IEnumerable<Attribute>, Type, Func<object>, Type, string)
+  fullName: System.Web.Mvc.DataAnnotationsModelMetadataProvider.CreateMetadata(System.Collections.Generic.IEnumerable<System.Attribute>, System.Type, System.Func<object>, System.Type, string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/DataAnnotationsModelMetadataProvider.cs
+    startLine: 11
+  syntax:
+    content:
+      CSharp: protected override ModelMetadata CreateMetadata(IEnumerable<Attribute> attributes, Type containerType, Func<object> modelAccessor, Type modelType, string propertyName)
+    parameters:
+    - id: attributes
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Attribute}
+        name: IEnumerable<Attribute>
+        isExternal: true
+    - id: containerType
+      type:
+        id: System.Type
+        name: Type
+        isExternal: true
+    - id: modelAccessor
+      type:
+        id: System.Func{System.Object}
+        name: Func<object>
+        isExternal: true
+    - id: modelType
+      type:
+        id: System.Type
+        name: Type
+        isExternal: true
+    - id: propertyName
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      id: ModelMetadata
+      type:
+        id: System.Web.Mvc.ModelMetadata
+        name: ModelMetadata
+        href: System.Web.Mvc.ModelMetadata.yml
+  id: System.Web.Mvc.DataAnnotationsModelMetadataProvider.CreateMetadata(System.Collections.Generic.IEnumerable{System.Attribute},System.Type,System.Func{System.Object},System.Type,System.String)

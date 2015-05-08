@@ -6,9 +6,10 @@ items:
   type: Interface
   source:
     remote: &o0
+      path: src/Common/Routing/IDirectRouteBuilder.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/Common/Routing/IDirectRouteBuilder.cs
     startLine: 20
   summary: Defines a builder that creates direct routes to actions (attribute routes).
@@ -44,7 +45,7 @@ items:
     - id: Name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.Routing.IDirectRouteBuilder.Name
 - uid: System.Web.Mvc.Routing.IDirectRouteBuilder.Template
@@ -64,7 +65,7 @@ items:
     - id: Template
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.Routing.IDirectRouteBuilder.Template
 - uid: System.Web.Mvc.Routing.IDirectRouteBuilder.Defaults
@@ -84,7 +85,7 @@ items:
     - id: Defaults
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
   id: System.Web.Mvc.Routing.IDirectRouteBuilder.Defaults
 - uid: System.Web.Mvc.Routing.IDirectRouteBuilder.Constraints
@@ -104,7 +105,7 @@ items:
     - id: Constraints
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
   id: System.Web.Mvc.Routing.IDirectRouteBuilder.Constraints
 - uid: System.Web.Mvc.Routing.IDirectRouteBuilder.DataTokens
@@ -124,7 +125,7 @@ items:
     - id: DataTokens
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
   id: System.Web.Mvc.Routing.IDirectRouteBuilder.DataTokens
 - uid: System.Web.Mvc.Routing.IDirectRouteBuilder.Order
@@ -144,7 +145,7 @@ items:
     - id: Order
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Web.Mvc.Routing.IDirectRouteBuilder.Order
 - uid: System.Web.Mvc.Routing.IDirectRouteBuilder.Precedence
@@ -164,7 +165,7 @@ items:
     - id: Precedence
       type:
         id: System.Decimal
-        name: System.Decimal
+        name: decimal
         isExternal: true
   id: System.Web.Mvc.Routing.IDirectRouteBuilder.Precedence
 - uid: System.Web.Mvc.Routing.IDirectRouteBuilder.Actions
@@ -184,7 +185,7 @@ items:
     - id: Actions
       type:
         id: System.Collections.Generic.IReadOnlyCollection{System.Web.Mvc.ActionDescriptor}
-        name: System.Collections.Generic.IReadOnlyCollection{System.Web.Mvc.ActionDescriptor}
+        name: IReadOnlyCollection<ActionDescriptor>
         isExternal: true
   id: System.Web.Mvc.Routing.IDirectRouteBuilder.Actions
 - uid: System.Web.Mvc.Routing.IDirectRouteBuilder.TargetIsAction
@@ -204,7 +205,7 @@ items:
     - id: TargetIsAction
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.Routing.IDirectRouteBuilder.TargetIsAction
 - uid: System.Web.Mvc.Routing.IDirectRouteBuilder.Build
@@ -219,9 +220,13 @@ items:
   summary: Creates a route entry based on the current property values.
   syntax:
     content:
-      CSharp: RouteEntry Build();
+      CSharp: public RouteEntry Build()
     parameters: []
     return:
       id: RouteEntry
+      type:
+        id: System.Web.Mvc.Routing.RouteEntry
+        name: RouteEntry
+        href: System.Web.Mvc.Routing.RouteEntry.yml
       description: The route entry created.
   id: System.Web.Mvc.Routing.IDirectRouteBuilder.Build

@@ -6,14 +6,16 @@ items:
   type: Interface
   source:
     remote: &o0
+      path: src/System.Collections.Immutable/src/System/Collections/Immutable/IImmutableStack.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Collections.Immutable/src/System/Collections/Immutable/IImmutableStack.cs
     startLine: 13
   summary: An immutable stack.
   syntax:
     content:
-      CSharp: public interface IImmutableStack<T>
+      CSharp: 'public interface IImmutableStack<T> : IEnumerable<T>, IEnumerable'
   id: System.Collections.Immutable.IImmutableStack`1
   children:
   - System.Collections.Immutable.IImmutableStack`1.IsEmpty
@@ -38,7 +40,7 @@ items:
     - id: IsEmpty
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Collections.Immutable.IImmutableStack`1.IsEmpty
 - uid: System.Collections.Immutable.IImmutableStack`1.Clear
@@ -53,10 +55,14 @@ items:
   summary: Gets an empty stack.
   syntax:
     content:
-      CSharp: '[Pure] IImmutableStack<T> Clear();'
+      CSharp: public IImmutableStack<T> Clear()
     parameters: []
     return:
       id: IImmutableStack
+      type:
+        id: System.Collections.Immutable.IImmutableStack`1
+        name: IImmutableStack<T>
+        href: System.Collections.Immutable.IImmutableStack`1.yml
   id: System.Collections.Immutable.IImmutableStack`1.Clear
 - uid: System.Collections.Immutable.IImmutableStack`1.Push(`0)
   href: System.Collections.Immutable.IImmutableStack`1.yml
@@ -70,7 +76,7 @@ items:
   summary: Pushes an element onto a stack and returns the new stack.
   syntax:
     content:
-      CSharp: '[Pure] IImmutableStack<T> Push(T value);'
+      CSharp: public IImmutableStack<T> Push(T value)
     parameters:
     - id: value
       type:
@@ -80,6 +86,10 @@ items:
       description: The element to push onto the stack.
     return:
       id: IImmutableStack
+      type:
+        id: System.Collections.Immutable.IImmutableStack`1
+        name: IImmutableStack<T>
+        href: System.Collections.Immutable.IImmutableStack`1.yml
       description: The new stack.
   id: System.Collections.Immutable.IImmutableStack`1.Push(`0)
 - uid: System.Collections.Immutable.IImmutableStack`1.Pop
@@ -94,10 +104,14 @@ items:
   summary: Pops the top element off the stack.
   syntax:
     content:
-      CSharp: '[Pure] IImmutableStack<T> Pop();'
+      CSharp: public IImmutableStack<T> Pop()
     parameters: []
     return:
       id: IImmutableStack
+      type:
+        id: System.Collections.Immutable.IImmutableStack`1
+        name: IImmutableStack<T>
+        href: System.Collections.Immutable.IImmutableStack`1.yml
       description: The new stack; never null
   id: System.Collections.Immutable.IImmutableStack`1.Pop
 - uid: System.Collections.Immutable.IImmutableStack`1.Peek
@@ -112,8 +126,12 @@ items:
   summary: Gets the element on the top of the stack.
   syntax:
     content:
-      CSharp: '[Pure] T Peek();'
+      CSharp: public T Peek()
     parameters: []
     return:
       id: T
+      type:
+        id: T
+        name: T
+        href: T
   id: System.Collections.Immutable.IImmutableStack`1.Peek

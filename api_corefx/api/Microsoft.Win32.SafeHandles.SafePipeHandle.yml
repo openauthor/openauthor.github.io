@@ -1,0 +1,99 @@
+items:
+- uid: Microsoft.Win32.SafeHandles.SafePipeHandle
+  href: Microsoft.Win32.SafeHandles.SafePipeHandle.yml
+  name: SafePipeHandle
+  fullName: Microsoft.Win32.SafeHandles.SafePipeHandle
+  type: Class
+  source:
+    remote: &o0
+      path: src/System.IO.Pipes/src/Microsoft/Win32/SafeHandles/SafePipeHandle.Windows.cs
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
+    path: src/System.IO.Pipes/src/Microsoft/Win32/SafeHandles/SafePipeHandle.Windows.cs
+    startLine: 9
+  syntax:
+    content:
+      CSharp: 'public sealed class SafePipeHandle : SafeHandle, IDisposable'
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.Runtime.ConstrainedExecution.CriticalFinalizerObject
+    name: CriticalFinalizerObject
+    isExternal: true
+  - id: System.Runtime.InteropServices.SafeHandle
+    name: SafeHandle
+    isExternal: true
+  id: Microsoft.Win32.SafeHandles.SafePipeHandle
+  children:
+  - Microsoft.Win32.SafeHandles.SafePipeHandle.#ctor(System.IntPtr,System.Boolean)
+  - Microsoft.Win32.SafeHandles.SafePipeHandle.ReleaseHandle
+  - Microsoft.Win32.SafeHandles.SafePipeHandle.IsInvalid
+- uid: Microsoft.Win32.SafeHandles.SafePipeHandle.#ctor(System.IntPtr,System.Boolean)
+  href: Microsoft.Win32.SafeHandles.SafePipeHandle.yml
+  name: SafePipeHandle(IntPtr, bool)
+  fullName: Microsoft.Win32.SafeHandles.SafePipeHandle.SafePipeHandle(System.IntPtr, bool)
+  type: Constructor
+  source:
+    remote:
+      path: src/System.IO.Pipes/src/Microsoft/Win32/SafeHandles/SafePipeHandle.cs
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
+    path: src/System.IO.Pipes/src/Microsoft/Win32/SafeHandles/SafePipeHandle.cs
+    startLine: 17
+  syntax:
+    content:
+      CSharp: 'public SafePipeHandle(IntPtr preexistingHandle, bool ownsHandle): base (new IntPtr(DefaultInvalidHandle), ownsHandle)'
+    parameters:
+    - id: preexistingHandle
+      type:
+        id: System.IntPtr
+        name: IntPtr
+        isExternal: true
+    - id: ownsHandle
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: Microsoft.Win32.SafeHandles.SafePipeHandle.#ctor(System.IntPtr,System.Boolean)
+- uid: Microsoft.Win32.SafeHandles.SafePipeHandle.ReleaseHandle
+  href: Microsoft.Win32.SafeHandles.SafePipeHandle.yml
+  name: ReleaseHandle()
+  fullName: Microsoft.Win32.SafeHandles.SafePipeHandle.ReleaseHandle()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.Pipes/src/Microsoft/Win32/SafeHandles/SafePipeHandle.Windows.cs
+    startLine: 13
+  syntax:
+    content:
+      CSharp: protected override bool ReleaseHandle()
+    parameters: []
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: Microsoft.Win32.SafeHandles.SafePipeHandle.ReleaseHandle
+- uid: Microsoft.Win32.SafeHandles.SafePipeHandle.IsInvalid
+  href: Microsoft.Win32.SafeHandles.SafePipeHandle.yml
+  name: IsInvalid
+  fullName: Microsoft.Win32.SafeHandles.SafePipeHandle.IsInvalid
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.IO.Pipes/src/Microsoft/Win32/SafeHandles/SafePipeHandle.Windows.cs
+    startLine: 18
+  syntax:
+    content:
+      CSharp: public override bool IsInvalid { [SecurityCritical] get; }
+    parameters:
+    - id: IsInvalid
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: Microsoft.Win32.SafeHandles.SafePipeHandle.IsInvalid

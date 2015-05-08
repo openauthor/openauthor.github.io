@@ -5,19 +5,20 @@ items:
   fullName: Microsoft.CodeAnalysis.Project
   type: Class
   source:
-    remote: &o0
+    remote:
+      path: src/Workspaces/Core/Portable/Workspace/Solution/Project.EquivalenceResult.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Workspace/Solution/Project.EquivalenceResult.cs
     startLine: 6
   summary: Represents a project that is part of a [Microsoft.CodeAnalysis.Project.Solution](Microsoft.CodeAnalysis.Project.yml).
   syntax:
     content:
-      CSharp: public partial class Project
+      CSharp: public class Project
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.Project
   children:
@@ -85,7 +86,11 @@ items:
   fullName: Microsoft.CodeAnalysis.Project.Solution
   type: Property
   source:
-    remote: *o0
+    remote: &o0
+      path: src/Workspaces/Core/Portable/Workspace/Solution/Project.cs
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Workspace/Solution/Project.cs
     startLine: 45
   summary: The solution this project is part of.
@@ -139,7 +144,7 @@ items:
     - id: FilePath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: Microsoft.CodeAnalysis.Project.FilePath
 - uid: Microsoft.CodeAnalysis.Project.OutputFilePath
@@ -159,7 +164,7 @@ items:
     - id: OutputFilePath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: Microsoft.CodeAnalysis.Project.OutputFilePath
 - uid: Microsoft.CodeAnalysis.Project.SupportsCompilation
@@ -186,7 +191,7 @@ items:
     - id: SupportsCompilation
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.Project.SupportsCompilation
 - uid: Microsoft.CodeAnalysis.Project.LanguageServices
@@ -226,7 +231,7 @@ items:
     - id: Language
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: Microsoft.CodeAnalysis.Project.Language
 - uid: Microsoft.CodeAnalysis.Project.AssemblyName
@@ -246,7 +251,7 @@ items:
     - id: AssemblyName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: Microsoft.CodeAnalysis.Project.AssemblyName
 - uid: Microsoft.CodeAnalysis.Project.Name
@@ -266,7 +271,7 @@ items:
     - id: Name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: Microsoft.CodeAnalysis.Project.Name
 - uid: Microsoft.CodeAnalysis.Project.MetadataReferences
@@ -286,7 +291,7 @@ items:
     - id: MetadataReferences
       type:
         id: System.Collections.Generic.IReadOnlyList{Microsoft.CodeAnalysis.MetadataReference}
-        name: System.Collections.Generic.IReadOnlyList{Microsoft.CodeAnalysis.MetadataReference}
+        name: IReadOnlyList<MetadataReference>
         isExternal: true
   id: Microsoft.CodeAnalysis.Project.MetadataReferences
 - uid: Microsoft.CodeAnalysis.Project.ProjectReferences
@@ -306,7 +311,7 @@ items:
     - id: ProjectReferences
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectReference}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectReference}
+        name: IEnumerable<ProjectReference>
         isExternal: true
   id: Microsoft.CodeAnalysis.Project.ProjectReferences
 - uid: Microsoft.CodeAnalysis.Project.AllProjectReferences
@@ -329,7 +334,7 @@ items:
     - id: AllProjectReferences
       type:
         id: System.Collections.Generic.IReadOnlyList{Microsoft.CodeAnalysis.ProjectReference}
-        name: System.Collections.Generic.IReadOnlyList{Microsoft.CodeAnalysis.ProjectReference}
+        name: IReadOnlyList<ProjectReference>
         isExternal: true
   id: Microsoft.CodeAnalysis.Project.AllProjectReferences
 - uid: Microsoft.CodeAnalysis.Project.AnalyzerReferences
@@ -349,7 +354,7 @@ items:
     - id: AnalyzerReferences
       type:
         id: System.Collections.Generic.IReadOnlyList{Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference}
-        name: System.Collections.Generic.IReadOnlyList{Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference}
+        name: IReadOnlyList<AnalyzerReference>
         isExternal: true
   id: Microsoft.CodeAnalysis.Project.AnalyzerReferences
 - uid: Microsoft.CodeAnalysis.Project.AnalyzerOptions
@@ -429,7 +434,7 @@ items:
     - id: IsSubmission
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.Project.IsSubmission
 - uid: Microsoft.CodeAnalysis.Project.HasDocuments
@@ -449,7 +454,7 @@ items:
     - id: HasDocuments
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.Project.HasDocuments
 - uid: Microsoft.CodeAnalysis.Project.DocumentIds
@@ -469,7 +474,7 @@ items:
     - id: DocumentIds
       type:
         id: System.Collections.Generic.IReadOnlyList{Microsoft.CodeAnalysis.DocumentId}
-        name: System.Collections.Generic.IReadOnlyList{Microsoft.CodeAnalysis.DocumentId}
+        name: IReadOnlyList<DocumentId>
         isExternal: true
   id: Microsoft.CodeAnalysis.Project.DocumentIds
 - uid: Microsoft.CodeAnalysis.Project.AdditionalDocumentIds
@@ -489,7 +494,7 @@ items:
     - id: AdditionalDocumentIds
       type:
         id: System.Collections.Generic.IReadOnlyList{Microsoft.CodeAnalysis.DocumentId}
-        name: System.Collections.Generic.IReadOnlyList{Microsoft.CodeAnalysis.DocumentId}
+        name: IReadOnlyList<DocumentId>
         isExternal: true
   id: Microsoft.CodeAnalysis.Project.AdditionalDocumentIds
 - uid: Microsoft.CodeAnalysis.Project.Documents
@@ -509,7 +514,7 @@ items:
     - id: Documents
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Document}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Document}
+        name: IEnumerable<Document>
         isExternal: true
   id: Microsoft.CodeAnalysis.Project.Documents
 - uid: Microsoft.CodeAnalysis.Project.AdditionalDocuments
@@ -528,7 +533,7 @@ items:
     - id: AdditionalDocuments
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.TextDocument}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.TextDocument}
+        name: IEnumerable<TextDocument>
         isExternal: true
   id: Microsoft.CodeAnalysis.Project.AdditionalDocuments
 - uid: Microsoft.CodeAnalysis.Project.ContainsDocument(Microsoft.CodeAnalysis.DocumentId)
@@ -552,6 +557,10 @@ items:
         href: Microsoft.CodeAnalysis.DocumentId.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.Project.ContainsDocument(Microsoft.CodeAnalysis.DocumentId)
 - uid: Microsoft.CodeAnalysis.Project.ContainsAdditionalDocument(Microsoft.CodeAnalysis.DocumentId)
   href: Microsoft.CodeAnalysis.Project.yml
@@ -574,6 +583,10 @@ items:
         href: Microsoft.CodeAnalysis.DocumentId.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.Project.ContainsAdditionalDocument(Microsoft.CodeAnalysis.DocumentId)
 - uid: Microsoft.CodeAnalysis.Project.GetDocumentId(Microsoft.CodeAnalysis.SyntaxTree)
   href: Microsoft.CodeAnalysis.Project.yml
@@ -596,6 +609,10 @@ items:
         href: Microsoft.CodeAnalysis.SyntaxTree
     return:
       id: DocumentId
+      type:
+        id: Microsoft.CodeAnalysis.DocumentId
+        name: DocumentId
+        href: Microsoft.CodeAnalysis.DocumentId.yml
   id: Microsoft.CodeAnalysis.Project.GetDocumentId(Microsoft.CodeAnalysis.SyntaxTree)
 - uid: Microsoft.CodeAnalysis.Project.GetDocument(Microsoft.CodeAnalysis.SyntaxTree)
   href: Microsoft.CodeAnalysis.Project.yml
@@ -618,6 +635,10 @@ items:
         href: Microsoft.CodeAnalysis.SyntaxTree
     return:
       id: Document
+      type:
+        id: Microsoft.CodeAnalysis.Document
+        name: Document
+        href: Microsoft.CodeAnalysis.Document.yml
   id: Microsoft.CodeAnalysis.Project.GetDocument(Microsoft.CodeAnalysis.SyntaxTree)
 - uid: Microsoft.CodeAnalysis.Project.GetDocument(Microsoft.CodeAnalysis.DocumentId)
   href: Microsoft.CodeAnalysis.Project.yml
@@ -640,6 +661,10 @@ items:
         href: Microsoft.CodeAnalysis.DocumentId.yml
     return:
       id: Document
+      type:
+        id: Microsoft.CodeAnalysis.Document
+        name: Document
+        href: Microsoft.CodeAnalysis.Document.yml
   id: Microsoft.CodeAnalysis.Project.GetDocument(Microsoft.CodeAnalysis.DocumentId)
 - uid: Microsoft.CodeAnalysis.Project.GetAdditionalDocument(Microsoft.CodeAnalysis.DocumentId)
   href: Microsoft.CodeAnalysis.Project.yml
@@ -662,6 +687,10 @@ items:
         href: Microsoft.CodeAnalysis.DocumentId.yml
     return:
       id: TextDocument
+      type:
+        id: Microsoft.CodeAnalysis.TextDocument
+        name: TextDocument
+        href: Microsoft.CodeAnalysis.TextDocument.yml
   id: Microsoft.CodeAnalysis.Project.GetAdditionalDocument(Microsoft.CodeAnalysis.DocumentId)
 - uid: Microsoft.CodeAnalysis.Project.TryGetCompilation(Microsoft.CodeAnalysis.Compilation@)
   href: Microsoft.CodeAnalysis.Project.yml
@@ -672,7 +701,7 @@ items:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/Project.cs
     startLine: 376
-  summary: Get the [Microsoft.CodeAnalysis.Compilation](#) for this project if it is available.
+  summary: Get the [Microsoft.CodeAnalysis.Compilation]() for this project if it is available.
   syntax:
     content:
       CSharp: public bool TryGetCompilation(out Compilation compilation)
@@ -684,6 +713,10 @@ items:
         href: Microsoft.CodeAnalysis.Compilation
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.Project.TryGetCompilation(Microsoft.CodeAnalysis.Compilation@)
 - uid: Microsoft.CodeAnalysis.Project.GetCompilationAsync(System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.Project.yml
@@ -694,18 +727,22 @@ items:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/Project.cs
     startLine: 384
-  summary: Get the [Microsoft.CodeAnalysis.Compilation](#) for this project asynchronously.
+  summary: Get the [Microsoft.CodeAnalysis.Compilation]() for this project asynchronously.
   syntax:
     content:
-      CSharp: public Task<Compilation> GetCompilationAsync(CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public Task<Compilation> GetCompilationAsync(CancellationToken cancellationToken = null)
     parameters:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.CodeAnalysis.Compilation}
+        name: Task<Compilation>
+        isExternal: true
   id: Microsoft.CodeAnalysis.Project.GetCompilationAsync(System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.Project.GetChanges(Microsoft.CodeAnalysis.Project)
   href: Microsoft.CodeAnalysis.Project.yml
@@ -728,6 +765,10 @@ items:
         href: Microsoft.CodeAnalysis.Project.yml
     return:
       id: ProjectChanges
+      type:
+        id: Microsoft.CodeAnalysis.ProjectChanges
+        name: ProjectChanges
+        href: Microsoft.CodeAnalysis.ProjectChanges.yml
   id: Microsoft.CodeAnalysis.Project.GetChanges(Microsoft.CodeAnalysis.Project)
 - uid: Microsoft.CodeAnalysis.Project.Version
   href: Microsoft.CodeAnalysis.Project.yml
@@ -761,15 +802,19 @@ items:
   summary: The version of the most recently modified document.
   syntax:
     content:
-      CSharp: public Task<VersionStamp> GetLatestDocumentVersionAsync(CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public Task<VersionStamp> GetLatestDocumentVersionAsync(CancellationToken cancellationToken = null)
     parameters:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.CodeAnalysis.VersionStamp}
+        name: Task<VersionStamp>
+        isExternal: true
   id: Microsoft.CodeAnalysis.Project.GetLatestDocumentVersionAsync(System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.Project.GetDependentVersionAsync(System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.Project.yml
@@ -783,15 +828,19 @@ items:
   summary: The most recent version of the project, its documents and all dependent projects and documents.
   syntax:
     content:
-      CSharp: public Task<VersionStamp> GetDependentVersionAsync(CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public Task<VersionStamp> GetDependentVersionAsync(CancellationToken cancellationToken = null)
     parameters:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.CodeAnalysis.VersionStamp}
+        name: Task<VersionStamp>
+        isExternal: true
   id: Microsoft.CodeAnalysis.Project.GetDependentVersionAsync(System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.Project.GetDependentSemanticVersionAsync(System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.Project.yml
@@ -808,15 +857,19 @@ items:
     This version changes whenever the consumable declarations of this project and/or projects it depends on change.
   syntax:
     content:
-      CSharp: public Task<VersionStamp> GetDependentSemanticVersionAsync(CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public Task<VersionStamp> GetDependentSemanticVersionAsync(CancellationToken cancellationToken = null)
     parameters:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.CodeAnalysis.VersionStamp}
+        name: Task<VersionStamp>
+        isExternal: true
   id: Microsoft.CodeAnalysis.Project.GetDependentSemanticVersionAsync(System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.Project.GetSemanticVersionAsync(System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.Project.yml
@@ -833,15 +886,19 @@ items:
     This version changes only when the consumable declarations of this project change.
   syntax:
     content:
-      CSharp: public async Task<VersionStamp> GetSemanticVersionAsync(CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public Task<VersionStamp> GetSemanticVersionAsync(CancellationToken cancellationToken = null)
     parameters:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.CodeAnalysis.VersionStamp}
+        name: Task<VersionStamp>
+        isExternal: true
   id: Microsoft.CodeAnalysis.Project.GetSemanticVersionAsync(System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.Project.WithAssemblyName(System.String)
   href: Microsoft.CodeAnalysis.Project.yml
@@ -860,10 +917,14 @@ items:
     - id: assemblyName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Project
+      type:
+        id: Microsoft.CodeAnalysis.Project
+        name: Project
+        href: Microsoft.CodeAnalysis.Project.yml
   id: Microsoft.CodeAnalysis.Project.WithAssemblyName(System.String)
 - uid: Microsoft.CodeAnalysis.Project.WithCompilationOptions(Microsoft.CodeAnalysis.CompilationOptions)
   href: Microsoft.CodeAnalysis.Project.yml
@@ -886,6 +947,10 @@ items:
         href: Microsoft.CodeAnalysis.CompilationOptions
     return:
       id: Project
+      type:
+        id: Microsoft.CodeAnalysis.Project
+        name: Project
+        href: Microsoft.CodeAnalysis.Project.yml
   id: Microsoft.CodeAnalysis.Project.WithCompilationOptions(Microsoft.CodeAnalysis.CompilationOptions)
 - uid: Microsoft.CodeAnalysis.Project.WithParseOptions(Microsoft.CodeAnalysis.ParseOptions)
   href: Microsoft.CodeAnalysis.Project.yml
@@ -908,6 +973,10 @@ items:
         href: Microsoft.CodeAnalysis.ParseOptions
     return:
       id: Project
+      type:
+        id: Microsoft.CodeAnalysis.Project
+        name: Project
+        href: Microsoft.CodeAnalysis.Project.yml
   id: Microsoft.CodeAnalysis.Project.WithParseOptions(Microsoft.CodeAnalysis.ParseOptions)
 - uid: Microsoft.CodeAnalysis.Project.AddProjectReference(Microsoft.CodeAnalysis.ProjectReference)
   href: Microsoft.CodeAnalysis.Project.yml
@@ -933,6 +1002,10 @@ items:
         href: Microsoft.CodeAnalysis.ProjectReference.yml
     return:
       id: Project
+      type:
+        id: Microsoft.CodeAnalysis.Project
+        name: Project
+        href: Microsoft.CodeAnalysis.Project.yml
   id: Microsoft.CodeAnalysis.Project.AddProjectReference(Microsoft.CodeAnalysis.ProjectReference)
 - uid: Microsoft.CodeAnalysis.Project.AddProjectReferences(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectReference})
   href: Microsoft.CodeAnalysis.Project.yml
@@ -954,10 +1027,14 @@ items:
     - id: projectReferences
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectReference}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectReference}
+        name: IEnumerable<ProjectReference>
         isExternal: true
     return:
       id: Project
+      type:
+        id: Microsoft.CodeAnalysis.Project
+        name: Project
+        href: Microsoft.CodeAnalysis.Project.yml
   id: Microsoft.CodeAnalysis.Project.AddProjectReferences(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectReference})
 - uid: Microsoft.CodeAnalysis.Project.RemoveProjectReference(Microsoft.CodeAnalysis.ProjectReference)
   href: Microsoft.CodeAnalysis.Project.yml
@@ -980,6 +1057,10 @@ items:
         href: Microsoft.CodeAnalysis.ProjectReference.yml
     return:
       id: Project
+      type:
+        id: Microsoft.CodeAnalysis.Project
+        name: Project
+        href: Microsoft.CodeAnalysis.Project.yml
   id: Microsoft.CodeAnalysis.Project.RemoveProjectReference(Microsoft.CodeAnalysis.ProjectReference)
 - uid: Microsoft.CodeAnalysis.Project.WithProjectReferences(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectReference})
   href: Microsoft.CodeAnalysis.Project.yml
@@ -1001,10 +1082,14 @@ items:
     - id: projectReferences
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectReference}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectReference}
+        name: IEnumerable<ProjectReference>
         isExternal: true
     return:
       id: Project
+      type:
+        id: Microsoft.CodeAnalysis.Project
+        name: Project
+        href: Microsoft.CodeAnalysis.Project.yml
   id: Microsoft.CodeAnalysis.Project.WithProjectReferences(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectReference})
 - uid: Microsoft.CodeAnalysis.Project.AddMetadataReference(Microsoft.CodeAnalysis.MetadataReference)
   href: Microsoft.CodeAnalysis.Project.yml
@@ -1030,6 +1115,10 @@ items:
         href: Microsoft.CodeAnalysis.MetadataReference
     return:
       id: Project
+      type:
+        id: Microsoft.CodeAnalysis.Project
+        name: Project
+        href: Microsoft.CodeAnalysis.Project.yml
   id: Microsoft.CodeAnalysis.Project.AddMetadataReference(Microsoft.CodeAnalysis.MetadataReference)
 - uid: Microsoft.CodeAnalysis.Project.AddMetadataReferences(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference})
   href: Microsoft.CodeAnalysis.Project.yml
@@ -1051,10 +1140,14 @@ items:
     - id: metadataReferences
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference}
+        name: IEnumerable<MetadataReference>
         isExternal: true
     return:
       id: Project
+      type:
+        id: Microsoft.CodeAnalysis.Project
+        name: Project
+        href: Microsoft.CodeAnalysis.Project.yml
   id: Microsoft.CodeAnalysis.Project.AddMetadataReferences(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference})
 - uid: Microsoft.CodeAnalysis.Project.RemoveMetadataReference(Microsoft.CodeAnalysis.MetadataReference)
   href: Microsoft.CodeAnalysis.Project.yml
@@ -1077,6 +1170,10 @@ items:
         href: Microsoft.CodeAnalysis.MetadataReference
     return:
       id: Project
+      type:
+        id: Microsoft.CodeAnalysis.Project
+        name: Project
+        href: Microsoft.CodeAnalysis.Project.yml
   id: Microsoft.CodeAnalysis.Project.RemoveMetadataReference(Microsoft.CodeAnalysis.MetadataReference)
 - uid: Microsoft.CodeAnalysis.Project.WithMetadataReferences(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference})
   href: Microsoft.CodeAnalysis.Project.yml
@@ -1098,10 +1195,14 @@ items:
     - id: metadataReferences
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference}
+        name: IEnumerable<MetadataReference>
         isExternal: true
     return:
       id: Project
+      type:
+        id: Microsoft.CodeAnalysis.Project
+        name: Project
+        href: Microsoft.CodeAnalysis.Project.yml
   id: Microsoft.CodeAnalysis.Project.WithMetadataReferences(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference})
 - uid: Microsoft.CodeAnalysis.Project.AddAnalyzerReference(Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference)
   href: Microsoft.CodeAnalysis.Project.yml
@@ -1127,6 +1228,10 @@ items:
         href: Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference
     return:
       id: Project
+      type:
+        id: Microsoft.CodeAnalysis.Project
+        name: Project
+        href: Microsoft.CodeAnalysis.Project.yml
   id: Microsoft.CodeAnalysis.Project.AddAnalyzerReference(Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference)
 - uid: Microsoft.CodeAnalysis.Project.AddAnalyzerReferences(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference})
   href: Microsoft.CodeAnalysis.Project.yml
@@ -1148,10 +1253,14 @@ items:
     - id: analyzerReferences
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference}
+        name: IEnumerable<AnalyzerReference>
         isExternal: true
     return:
       id: Project
+      type:
+        id: Microsoft.CodeAnalysis.Project
+        name: Project
+        href: Microsoft.CodeAnalysis.Project.yml
   id: Microsoft.CodeAnalysis.Project.AddAnalyzerReferences(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference})
 - uid: Microsoft.CodeAnalysis.Project.RemoveAnalyzerReference(Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference)
   href: Microsoft.CodeAnalysis.Project.yml
@@ -1174,6 +1283,10 @@ items:
         href: Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference
     return:
       id: Project
+      type:
+        id: Microsoft.CodeAnalysis.Project
+        name: Project
+        href: Microsoft.CodeAnalysis.Project.yml
   id: Microsoft.CodeAnalysis.Project.RemoveAnalyzerReference(Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference)
 - uid: Microsoft.CodeAnalysis.Project.WithAnalyzerReferences(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference})
   href: Microsoft.CodeAnalysis.Project.yml
@@ -1195,10 +1308,14 @@ items:
     - id: analyzerReferencs
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference}
+        name: IEnumerable<AnalyzerReference>
         isExternal: true
     return:
       id: Project
+      type:
+        id: Microsoft.CodeAnalysis.Project
+        name: Project
+        href: Microsoft.CodeAnalysis.Project.yml
   id: Microsoft.CodeAnalysis.Project.WithAnalyzerReferences(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference})
 - uid: Microsoft.CodeAnalysis.Project.AddDocument(System.String,Microsoft.CodeAnalysis.SyntaxNode,System.Collections.Generic.IEnumerable{System.String},System.String)
   href: Microsoft.CodeAnalysis.Project.yml
@@ -1217,7 +1334,7 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: syntaxRoot
       type:
@@ -1227,15 +1344,19 @@ items:
     - id: folders
       type:
         id: System.Collections.Generic.IEnumerable{System.String}
-        name: System.Collections.Generic.IEnumerable{System.String}
+        name: IEnumerable<string>
         isExternal: true
     - id: filePath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Document
+      type:
+        id: Microsoft.CodeAnalysis.Document
+        name: Document
+        href: Microsoft.CodeAnalysis.Document.yml
   id: Microsoft.CodeAnalysis.Project.AddDocument(System.String,Microsoft.CodeAnalysis.SyntaxNode,System.Collections.Generic.IEnumerable{System.String},System.String)
 - uid: Microsoft.CodeAnalysis.Project.AddDocument(System.String,Microsoft.CodeAnalysis.Text.SourceText,System.Collections.Generic.IEnumerable{System.String},System.String)
   href: Microsoft.CodeAnalysis.Project.yml
@@ -1254,7 +1375,7 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: text
       type:
@@ -1264,15 +1385,19 @@ items:
     - id: folders
       type:
         id: System.Collections.Generic.IEnumerable{System.String}
-        name: System.Collections.Generic.IEnumerable{System.String}
+        name: IEnumerable<string>
         isExternal: true
     - id: filePath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Document
+      type:
+        id: Microsoft.CodeAnalysis.Document
+        name: Document
+        href: Microsoft.CodeAnalysis.Document.yml
   id: Microsoft.CodeAnalysis.Project.AddDocument(System.String,Microsoft.CodeAnalysis.Text.SourceText,System.Collections.Generic.IEnumerable{System.String},System.String)
 - uid: Microsoft.CodeAnalysis.Project.AddDocument(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.String)
   href: Microsoft.CodeAnalysis.Project.yml
@@ -1291,25 +1416,29 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: text
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: folders
       type:
         id: System.Collections.Generic.IEnumerable{System.String}
-        name: System.Collections.Generic.IEnumerable{System.String}
+        name: IEnumerable<string>
         isExternal: true
     - id: filePath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Document
+      type:
+        id: Microsoft.CodeAnalysis.Document
+        name: Document
+        href: Microsoft.CodeAnalysis.Document.yml
   id: Microsoft.CodeAnalysis.Project.AddDocument(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.String)
 - uid: Microsoft.CodeAnalysis.Project.AddAdditionalDocument(System.String,Microsoft.CodeAnalysis.Text.SourceText,System.Collections.Generic.IEnumerable{System.String},System.String)
   href: Microsoft.CodeAnalysis.Project.yml
@@ -1328,7 +1457,7 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: text
       type:
@@ -1338,15 +1467,19 @@ items:
     - id: folders
       type:
         id: System.Collections.Generic.IEnumerable{System.String}
-        name: System.Collections.Generic.IEnumerable{System.String}
+        name: IEnumerable<string>
         isExternal: true
     - id: filePath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: TextDocument
+      type:
+        id: Microsoft.CodeAnalysis.TextDocument
+        name: TextDocument
+        href: Microsoft.CodeAnalysis.TextDocument.yml
   id: Microsoft.CodeAnalysis.Project.AddAdditionalDocument(System.String,Microsoft.CodeAnalysis.Text.SourceText,System.Collections.Generic.IEnumerable{System.String},System.String)
 - uid: Microsoft.CodeAnalysis.Project.AddAdditionalDocument(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.String)
   href: Microsoft.CodeAnalysis.Project.yml
@@ -1365,25 +1498,29 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: text
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: folders
       type:
         id: System.Collections.Generic.IEnumerable{System.String}
-        name: System.Collections.Generic.IEnumerable{System.String}
+        name: IEnumerable<string>
         isExternal: true
     - id: filePath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: TextDocument
+      type:
+        id: Microsoft.CodeAnalysis.TextDocument
+        name: TextDocument
+        href: Microsoft.CodeAnalysis.TextDocument.yml
   id: Microsoft.CodeAnalysis.Project.AddAdditionalDocument(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.String)
 - uid: Microsoft.CodeAnalysis.Project.RemoveDocument(Microsoft.CodeAnalysis.DocumentId)
   href: Microsoft.CodeAnalysis.Project.yml
@@ -1406,6 +1543,10 @@ items:
         href: Microsoft.CodeAnalysis.DocumentId.yml
     return:
       id: Project
+      type:
+        id: Microsoft.CodeAnalysis.Project
+        name: Project
+        href: Microsoft.CodeAnalysis.Project.yml
   id: Microsoft.CodeAnalysis.Project.RemoveDocument(Microsoft.CodeAnalysis.DocumentId)
 - uid: Microsoft.CodeAnalysis.Project.RemoveAdditionalDocument(Microsoft.CodeAnalysis.DocumentId)
   href: Microsoft.CodeAnalysis.Project.yml
@@ -1428,4 +1569,8 @@ items:
         href: Microsoft.CodeAnalysis.DocumentId.yml
     return:
       id: Project
+      type:
+        id: Microsoft.CodeAnalysis.Project
+        name: Project
+        href: Microsoft.CodeAnalysis.Project.yml
   id: Microsoft.CodeAnalysis.Project.RemoveAdditionalDocument(Microsoft.CodeAnalysis.DocumentId)

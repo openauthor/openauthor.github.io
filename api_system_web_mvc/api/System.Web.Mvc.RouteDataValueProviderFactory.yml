@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/RouteDataValueProviderFactory.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/RouteDataValueProviderFactory.cs
     startLine: 4
   syntax:
     content:
-      CSharp: public sealed class RouteDataValueProviderFactory
+      CSharp: 'public sealed class RouteDataValueProviderFactory : ValueProviderFactory'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.Mvc.ValueProviderFactory
     name: ValueProviderFactory
@@ -44,4 +45,8 @@ items:
         href: System.Web.Mvc.ControllerContext.yml
     return:
       id: IValueProvider
+      type:
+        id: System.Web.Mvc.IValueProvider
+        name: IValueProvider
+        href: System.Web.Mvc.IValueProvider.yml
   id: System.Web.Mvc.RouteDataValueProviderFactory.GetValueProvider(System.Web.Mvc.ControllerContext)

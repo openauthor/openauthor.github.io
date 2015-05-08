@@ -6,8 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/Switch.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/Switch.cs
     startLine: 17
   syntax:
@@ -15,12 +17,71 @@ items:
       CSharp: public abstract class Switch
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Diagnostics.Switch
   children:
+  - System.Diagnostics.Switch.#ctor(System.String,System.String)
+  - System.Diagnostics.Switch.#ctor(System.String,System.String,System.String)
   - System.Diagnostics.Switch.DisplayName
   - System.Diagnostics.Switch.Description
+  - System.Diagnostics.Switch.SwitchSetting
+  - System.Diagnostics.Switch.Value
+  - System.Diagnostics.Switch.OnSwitchSettingChanged
+  - System.Diagnostics.Switch.OnValueChanged
+- uid: System.Diagnostics.Switch.#ctor(System.String,System.String)
+  href: System.Diagnostics.Switch.yml
+  name: Switch(string, string)
+  fullName: System.Diagnostics.Switch.Switch(string, string)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/Switch.cs
+    startLine: 50
+  syntax:
+    content:
+      CSharp: 'protected Switch(string displayName, string description): this (displayName, description, "0")'
+    parameters:
+    - id: displayName
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    - id: description
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Diagnostics.Switch.#ctor(System.String,System.String)
+- uid: System.Diagnostics.Switch.#ctor(System.String,System.String,System.String)
+  href: System.Diagnostics.Switch.yml
+  name: Switch(string, string, string)
+  fullName: System.Diagnostics.Switch.Switch(string, string, string)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/Switch.cs
+    startLine: 54
+  syntax:
+    content:
+      CSharp: protected Switch(string displayName, string description, string defaultSwitchValue)
+    parameters:
+    - id: displayName
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    - id: description
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    - id: defaultSwitchValue
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Diagnostics.Switch.#ctor(System.String,System.String,System.String)
 - uid: System.Diagnostics.Switch.DisplayName
   href: System.Diagnostics.Switch.yml
   name: DisplayName
@@ -37,7 +98,7 @@ items:
     - id: DisplayName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.Switch.DisplayName
 - uid: System.Diagnostics.Switch.Description
@@ -56,6 +117,72 @@ items:
     - id: Description
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.Switch.Description
+- uid: System.Diagnostics.Switch.SwitchSetting
+  href: System.Diagnostics.Switch.yml
+  name: SwitchSetting
+  fullName: System.Diagnostics.Switch.SwitchSetting
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/Switch.cs
+    startLine: 126
+  syntax:
+    content:
+      CSharp: protected int SwitchSetting { [SuppressMessage("Microsoft.Concurrency", "CA8001", Justification = "reviewed for thread-safety")] get; [SuppressMessage("Microsoft.Concurrency", "CA8001", Justification = "reviewed for thread-safety")] set; }
+    parameters:
+    - id: SwitchSetting
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.Diagnostics.Switch.SwitchSetting
+- uid: System.Diagnostics.Switch.Value
+  href: System.Diagnostics.Switch.yml
+  name: Value
+  fullName: System.Diagnostics.Switch.Value
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/Switch.cs
+    startLine: 159
+  syntax:
+    content:
+      CSharp: protected string Value { get; set; }
+    parameters:
+    - id: Value
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Diagnostics.Switch.Value
+- uid: System.Diagnostics.Switch.OnSwitchSettingChanged
+  href: System.Diagnostics.Switch.yml
+  name: OnSwitchSettingChanged()
+  fullName: System.Diagnostics.Switch.OnSwitchSettingChanged()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/Switch.cs
+    startLine: 210
+  syntax:
+    content:
+      CSharp: protected virtual void OnSwitchSettingChanged()
+    parameters: []
+  id: System.Diagnostics.Switch.OnSwitchSettingChanged
+- uid: System.Diagnostics.Switch.OnValueChanged
+  href: System.Diagnostics.Switch.yml
+  name: OnValueChanged()
+  fullName: System.Diagnostics.Switch.OnValueChanged()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/Switch.cs
+    startLine: 214
+  syntax:
+    content:
+      CSharp: protected virtual void OnValueChanged()
+    parameters: []
+  id: System.Diagnostics.Switch.OnValueChanged

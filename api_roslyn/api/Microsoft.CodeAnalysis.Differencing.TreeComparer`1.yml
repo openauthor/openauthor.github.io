@@ -6,9 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Differencing/TreeComparer.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Differencing/TreeComparer.cs
     startLine: 21
   summary: Implements a tree differencing algorithm.
@@ -17,14 +18,37 @@ items:
       CSharp: public abstract class TreeComparer<TNode>
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.Differencing.TreeComparer`1
   children:
+  - Microsoft.CodeAnalysis.Differencing.TreeComparer`1.#ctor
   - Microsoft.CodeAnalysis.Differencing.TreeComparer`1.ComputeEditScript(`0,`0)
   - Microsoft.CodeAnalysis.Differencing.TreeComparer`1.ComputeMatch(`0,`0,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{`0,`0}})
   - Microsoft.CodeAnalysis.Differencing.TreeComparer`1.GetDistance(`0,`0)
   - Microsoft.CodeAnalysis.Differencing.TreeComparer`1.ValuesEqual(`0,`0)
+  - Microsoft.CodeAnalysis.Differencing.TreeComparer`1.LabelCount
+  - Microsoft.CodeAnalysis.Differencing.TreeComparer`1.GetLabel(`0)
+  - Microsoft.CodeAnalysis.Differencing.TreeComparer`1.TiedToAncestor(System.Int32)
+  - Microsoft.CodeAnalysis.Differencing.TreeComparer`1.GetChildren(`0)
+  - Microsoft.CodeAnalysis.Differencing.TreeComparer`1.GetDescendants(`0)
+  - Microsoft.CodeAnalysis.Differencing.TreeComparer`1.TryGetParent(`0,`0@)
+  - Microsoft.CodeAnalysis.Differencing.TreeComparer`1.TreesEqual(`0,`0)
+  - Microsoft.CodeAnalysis.Differencing.TreeComparer`1.GetSpan(`0)
+- uid: Microsoft.CodeAnalysis.Differencing.TreeComparer`1.#ctor
+  href: Microsoft.CodeAnalysis.Differencing.TreeComparer`1.yml
+  name: TreeComparer()
+  fullName: Microsoft.CodeAnalysis.Differencing.TreeComparer<TNode>.TreeComparer()
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Differencing/TreeComparer.cs
+    startLine: 23
+  syntax:
+    content:
+      CSharp: protected TreeComparer()
+    parameters: []
+  id: Microsoft.CodeAnalysis.Differencing.TreeComparer`1.#ctor
 - uid: Microsoft.CodeAnalysis.Differencing.TreeComparer`1.ComputeEditScript(`0,`0)
   href: Microsoft.CodeAnalysis.Differencing.TreeComparer`1.yml
   name: ComputeEditScript(TNode, TNode)
@@ -51,6 +75,10 @@ items:
         href: TNode
     return:
       id: EditScript
+      type:
+        id: Microsoft.CodeAnalysis.Differencing.EditScript{`0}
+        name: EditScript<TNode>
+        href: Microsoft.CodeAnalysis.Differencing.EditScript{`0}
   id: Microsoft.CodeAnalysis.Differencing.TreeComparer`1.ComputeEditScript(`0,`0)
 - uid: Microsoft.CodeAnalysis.Differencing.TreeComparer`1.ComputeMatch(`0,`0,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{`0,`0}})
   href: Microsoft.CodeAnalysis.Differencing.TreeComparer`1.yml
@@ -79,10 +107,14 @@ items:
     - id: knownMatches
       type:
         id: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{`0,`0}}
-        name: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{`0,`0}}
+        name: IEnumerable<KeyValuePair<TNode, TNode>>
         isExternal: true
     return:
       id: Match
+      type:
+        id: Microsoft.CodeAnalysis.Differencing.Match{`0}
+        name: Match<TNode>
+        href: Microsoft.CodeAnalysis.Differencing.Match{`0}
   id: Microsoft.CodeAnalysis.Differencing.TreeComparer`1.ComputeMatch(`0,`0,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{`0,`0}})
 - uid: Microsoft.CodeAnalysis.Differencing.TreeComparer`1.GetDistance(`0,`0)
   href: Microsoft.CodeAnalysis.Differencing.TreeComparer`1.yml
@@ -96,7 +128,7 @@ items:
   summary: Calculates the distance [0..1] of two nodes.
   syntax:
     content:
-      CSharp: public abstract double GetDistance(TNode oldNode, TNode newNode);
+      CSharp: public abstract double GetDistance(TNode oldNode, TNode newNode)
     parameters:
     - id: oldNode
       type:
@@ -110,6 +142,10 @@ items:
         href: TNode
     return:
       id: Double
+      type:
+        id: System.Double
+        name: double
+        isExternal: true
   id: Microsoft.CodeAnalysis.Differencing.TreeComparer`1.GetDistance(`0,`0)
 - uid: Microsoft.CodeAnalysis.Differencing.TreeComparer`1.ValuesEqual(`0,`0)
   href: Microsoft.CodeAnalysis.Differencing.TreeComparer`1.yml
@@ -123,7 +159,7 @@ items:
   summary: Returns true if the specified nodes have equal values.
   syntax:
     content:
-      CSharp: public abstract bool ValuesEqual(TNode oldNode, TNode newNode);
+      CSharp: public abstract bool ValuesEqual(TNode oldNode, TNode newNode)
     parameters:
     - id: oldNode
       type:
@@ -137,4 +173,220 @@ items:
         href: TNode
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.Differencing.TreeComparer`1.ValuesEqual(`0,`0)
+- uid: Microsoft.CodeAnalysis.Differencing.TreeComparer`1.LabelCount
+  href: Microsoft.CodeAnalysis.Differencing.TreeComparer`1.yml
+  name: LabelCount
+  fullName: Microsoft.CodeAnalysis.Differencing.TreeComparer<TNode>.LabelCount
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Differencing/TreeComparer.cs
+    startLine: 66
+  summary: The number of distinct labels used in the tree.
+  syntax:
+    content:
+      CSharp: protected internal abstract int LabelCount { get; }
+    parameters:
+    - id: LabelCount
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: Microsoft.CodeAnalysis.Differencing.TreeComparer`1.LabelCount
+- uid: Microsoft.CodeAnalysis.Differencing.TreeComparer`1.GetLabel(`0)
+  href: Microsoft.CodeAnalysis.Differencing.TreeComparer`1.yml
+  name: GetLabel(TNode)
+  fullName: Microsoft.CodeAnalysis.Differencing.TreeComparer<TNode>.GetLabel(TNode)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Differencing/TreeComparer.cs
+    startLine: 72
+  summary: Returns an integer label corresponding to the given node.
+  syntax:
+    content:
+      CSharp: protected internal abstract int GetLabel(TNode node)
+    parameters:
+    - id: node
+      type:
+        id: TNode
+        name: TNode
+        href: TNode
+    return:
+      id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: Microsoft.CodeAnalysis.Differencing.TreeComparer`1.GetLabel(`0)
+- uid: Microsoft.CodeAnalysis.Differencing.TreeComparer`1.TiedToAncestor(System.Int32)
+  href: Microsoft.CodeAnalysis.Differencing.TreeComparer`1.yml
+  name: TiedToAncestor(int)
+  fullName: Microsoft.CodeAnalysis.Differencing.TreeComparer<TNode>.TiedToAncestor(int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Differencing/TreeComparer.cs
+    startLine: 82
+  summary: Returns N > 0 if the node with specified label can't change its N-th ancestor node, zero otherwise.
+  syntax:
+    content:
+      CSharp: protected internal abstract int TiedToAncestor(int label)
+    parameters:
+    - id: label
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    return:
+      id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: Microsoft.CodeAnalysis.Differencing.TreeComparer`1.TiedToAncestor(System.Int32)
+- uid: Microsoft.CodeAnalysis.Differencing.TreeComparer`1.GetChildren(`0)
+  href: Microsoft.CodeAnalysis.Differencing.TreeComparer`1.yml
+  name: GetChildren(TNode)
+  fullName: Microsoft.CodeAnalysis.Differencing.TreeComparer<TNode>.GetChildren(TNode)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Differencing/TreeComparer.cs
+    startLine: 87
+  summary: May return null if the  is a leaf.
+  syntax:
+    content:
+      CSharp: protected internal abstract IEnumerable<TNode> GetChildren(TNode node)
+    parameters:
+    - id: node
+      type:
+        id: TNode
+        name: TNode
+        href: TNode
+    return:
+      id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{`0}
+        name: IEnumerable<TNode>
+        isExternal: true
+  id: Microsoft.CodeAnalysis.Differencing.TreeComparer`1.GetChildren(`0)
+- uid: Microsoft.CodeAnalysis.Differencing.TreeComparer`1.GetDescendants(`0)
+  href: Microsoft.CodeAnalysis.Differencing.TreeComparer`1.yml
+  name: GetDescendants(TNode)
+  fullName: Microsoft.CodeAnalysis.Differencing.TreeComparer<TNode>.GetDescendants(TNode)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Differencing/TreeComparer.cs
+    startLine: 92
+  summary: Enumerates all descendant nodes of the given node in depth-first prefix order.
+  syntax:
+    content:
+      CSharp: protected internal abstract IEnumerable<TNode> GetDescendants(TNode node)
+    parameters:
+    - id: node
+      type:
+        id: TNode
+        name: TNode
+        href: TNode
+    return:
+      id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{`0}
+        name: IEnumerable<TNode>
+        isExternal: true
+  id: Microsoft.CodeAnalysis.Differencing.TreeComparer`1.GetDescendants(`0)
+- uid: Microsoft.CodeAnalysis.Differencing.TreeComparer`1.TryGetParent(`0,`0@)
+  href: Microsoft.CodeAnalysis.Differencing.TreeComparer`1.yml
+  name: TryGetParent(TNode, out TNode)
+  fullName: Microsoft.CodeAnalysis.Differencing.TreeComparer<TNode>.TryGetParent(TNode, out TNode)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Differencing/TreeComparer.cs
+    startLine: 97
+  summary: Returns a parent for the specified node.
+  syntax:
+    content:
+      CSharp: protected internal abstract bool TryGetParent(TNode node, out TNode parent)
+    parameters:
+    - id: node
+      type:
+        id: TNode
+        name: TNode
+        href: TNode
+    - id: parent
+      type:
+        id: TNode
+        name: TNode
+        href: TNode
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: Microsoft.CodeAnalysis.Differencing.TreeComparer`1.TryGetParent(`0,`0@)
+- uid: Microsoft.CodeAnalysis.Differencing.TreeComparer`1.TreesEqual(`0,`0)
+  href: Microsoft.CodeAnalysis.Differencing.TreeComparer`1.yml
+  name: TreesEqual(TNode, TNode)
+  fullName: Microsoft.CodeAnalysis.Differencing.TreeComparer<TNode>.TreesEqual(TNode, TNode)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Differencing/TreeComparer.cs
+    startLine: 121
+  summary: Return true if specified nodes belong to the same tree.
+  syntax:
+    content:
+      CSharp: protected internal abstract bool TreesEqual(TNode oldNode, TNode newNode)
+    parameters:
+    - id: oldNode
+      type:
+        id: TNode
+        name: TNode
+        href: TNode
+    - id: newNode
+      type:
+        id: TNode
+        name: TNode
+        href: TNode
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: Microsoft.CodeAnalysis.Differencing.TreeComparer`1.TreesEqual(`0,`0)
+- uid: Microsoft.CodeAnalysis.Differencing.TreeComparer`1.GetSpan(`0)
+  href: Microsoft.CodeAnalysis.Differencing.TreeComparer`1.yml
+  name: GetSpan(TNode)
+  fullName: Microsoft.CodeAnalysis.Differencing.TreeComparer<TNode>.GetSpan(TNode)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Differencing/TreeComparer.cs
+    startLine: 126
+  summary: Returns the position of the node.
+  syntax:
+    content:
+      CSharp: protected internal abstract TextSpan GetSpan(TNode node)
+    parameters:
+    - id: node
+      type:
+        id: TNode
+        name: TNode
+        href: TNode
+    return:
+      id: TextSpan
+      type:
+        id: Microsoft.CodeAnalysis.Text.TextSpan
+        name: TextSpan
+        href: Microsoft.CodeAnalysis.Text.TextSpan
+  id: Microsoft.CodeAnalysis.Differencing.TreeComparer`1.GetSpan(`0)

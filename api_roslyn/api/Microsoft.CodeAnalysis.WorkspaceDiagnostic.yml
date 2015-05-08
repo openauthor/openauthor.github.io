@@ -6,9 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Workspace/WorkspaceDiagnostic.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Workspace/WorkspaceDiagnostic.cs
     startLine: 6
   syntax:
@@ -16,7 +17,7 @@ items:
       CSharp: public class WorkspaceDiagnostic
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.WorkspaceDiagnostic
   children:
@@ -35,7 +36,7 @@ items:
     startLine: 9
   syntax:
     content:
-      CSharp: public WorkspaceDiagnosticKind Kind { get; private set; }
+      CSharp: public WorkspaceDiagnosticKind Kind { get; }
     parameters:
     - id: Kind
       type:
@@ -54,12 +55,12 @@ items:
     startLine: 10
   syntax:
     content:
-      CSharp: public string Message { get; private set; }
+      CSharp: public string Message { get; }
     parameters:
     - id: Message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: Microsoft.CodeAnalysis.WorkspaceDiagnostic.Message
 - uid: Microsoft.CodeAnalysis.WorkspaceDiagnostic.#ctor(Microsoft.CodeAnalysis.WorkspaceDiagnosticKind,System.String)
@@ -83,7 +84,7 @@ items:
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: Microsoft.CodeAnalysis.WorkspaceDiagnostic.#ctor(Microsoft.CodeAnalysis.WorkspaceDiagnosticKind,System.String)
 - uid: Microsoft.CodeAnalysis.WorkspaceDiagnostic.ToString
@@ -101,4 +102,8 @@ items:
     parameters: []
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: Microsoft.CodeAnalysis.WorkspaceDiagnostic.ToString

@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/EmptyModelValidatorProvider.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/EmptyModelValidatorProvider.cs
     startLine: 7
   syntax:
     content:
-      CSharp: public class EmptyModelValidatorProvider
+      CSharp: 'public class EmptyModelValidatorProvider : ModelValidatorProvider'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.Mvc.ModelValidatorProvider
     name: ModelValidatorProvider
@@ -49,4 +50,8 @@ items:
         href: System.Web.Mvc.ControllerContext.yml
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Web.Mvc.ModelValidator}
+        name: IEnumerable<ModelValidator>
+        isExternal: true
   id: System.Web.Mvc.EmptyModelValidatorProvider.GetValidators(System.Web.Mvc.ModelMetadata,System.Web.Mvc.ControllerContext)

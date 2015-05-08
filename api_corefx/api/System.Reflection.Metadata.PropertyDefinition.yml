@@ -6,16 +6,21 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/PropertyDefinition.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/PropertyDefinition.cs
     startLine: 7
   syntax:
     content:
       CSharp: public struct PropertyDefinition
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Reflection.Metadata.PropertyDefinition
   children:
@@ -59,7 +64,7 @@ items:
     parameters:
     - id: Attributes
       type:
-        id: PropertyAttributes
+        id: System.Reflection.PropertyAttributes
         name: PropertyAttributes
         isExternal: true
   id: System.Reflection.Metadata.PropertyDefinition.Attributes
@@ -97,6 +102,10 @@ items:
     parameters: []
     return:
       id: ConstantHandle
+      type:
+        id: System.Reflection.Metadata.ConstantHandle
+        name: ConstantHandle
+        href: System.Reflection.Metadata.ConstantHandle.yml
   id: System.Reflection.Metadata.PropertyDefinition.GetDefaultValue
 - uid: System.Reflection.Metadata.PropertyDefinition.GetCustomAttributes
   href: System.Reflection.Metadata.PropertyDefinition.yml
@@ -113,6 +122,10 @@ items:
     parameters: []
     return:
       id: CustomAttributeHandleCollection
+      type:
+        id: System.Reflection.Metadata.CustomAttributeHandleCollection
+        name: CustomAttributeHandleCollection
+        href: System.Reflection.Metadata.CustomAttributeHandleCollection.yml
   id: System.Reflection.Metadata.PropertyDefinition.GetCustomAttributes
 - uid: System.Reflection.Metadata.PropertyDefinition.GetAccessors
   href: System.Reflection.Metadata.PropertyDefinition.yml
@@ -129,4 +142,8 @@ items:
     parameters: []
     return:
       id: PropertyAccessors
+      type:
+        id: System.Reflection.Metadata.PropertyAccessors
+        name: PropertyAccessors
+        href: System.Reflection.Metadata.PropertyAccessors.yml
   id: System.Reflection.Metadata.PropertyDefinition.GetAccessors

@@ -6,9 +6,10 @@ items:
   type: Interface
   source:
     remote: &o0
+      path: src/System.Web.Mvc/IViewEngine.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/IViewEngine.cs
     startLine: 4
   syntax:
@@ -30,7 +31,7 @@ items:
     startLine: 6
   syntax:
     content:
-      CSharp: ViewEngineResult FindPartialView(ControllerContext controllerContext, string partialViewName, bool useCache);
+      CSharp: public ViewEngineResult FindPartialView(ControllerContext controllerContext, string partialViewName, bool useCache)
     parameters:
     - id: controllerContext
       type:
@@ -40,15 +41,19 @@ items:
     - id: partialViewName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: useCache
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     return:
       id: ViewEngineResult
+      type:
+        id: System.Web.Mvc.ViewEngineResult
+        name: ViewEngineResult
+        href: System.Web.Mvc.ViewEngineResult.yml
   id: System.Web.Mvc.IViewEngine.FindPartialView(System.Web.Mvc.ControllerContext,System.String,System.Boolean)
 - uid: System.Web.Mvc.IViewEngine.FindView(System.Web.Mvc.ControllerContext,System.String,System.String,System.Boolean)
   href: System.Web.Mvc.IViewEngine.yml
@@ -61,7 +66,7 @@ items:
     startLine: 7
   syntax:
     content:
-      CSharp: ViewEngineResult FindView(ControllerContext controllerContext, string viewName, string masterName, bool useCache);
+      CSharp: public ViewEngineResult FindView(ControllerContext controllerContext, string viewName, string masterName, bool useCache)
     parameters:
     - id: controllerContext
       type:
@@ -71,20 +76,24 @@ items:
     - id: viewName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: masterName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: useCache
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     return:
       id: ViewEngineResult
+      type:
+        id: System.Web.Mvc.ViewEngineResult
+        name: ViewEngineResult
+        href: System.Web.Mvc.ViewEngineResult.yml
   id: System.Web.Mvc.IViewEngine.FindView(System.Web.Mvc.ControllerContext,System.String,System.String,System.Boolean)
 - uid: System.Web.Mvc.IViewEngine.ReleaseView(System.Web.Mvc.ControllerContext,System.Web.Mvc.IView)
   href: System.Web.Mvc.IViewEngine.yml
@@ -97,7 +106,7 @@ items:
     startLine: 8
   syntax:
     content:
-      CSharp: void ReleaseView(ControllerContext controllerContext, IView view);
+      CSharp: public void ReleaseView(ControllerContext controllerContext, IView view)
     parameters:
     - id: controllerContext
       type:

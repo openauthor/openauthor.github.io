@@ -6,22 +6,38 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/ControllerActionInvoker.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/ControllerActionInvoker.cs
     startLine: 18
   syntax:
     content:
-      CSharp: public class ControllerActionInvoker
+      CSharp: 'public class ControllerActionInvoker : IActionInvoker'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.ControllerActionInvoker
   children:
   - System.Web.Mvc.ControllerActionInvoker.#ctor
+  - System.Web.Mvc.ControllerActionInvoker.Binders
+  - System.Web.Mvc.ControllerActionInvoker.CreateActionResult(System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionDescriptor,System.Object)
+  - System.Web.Mvc.ControllerActionInvoker.GetControllerDescriptor(System.Web.Mvc.ControllerContext)
+  - System.Web.Mvc.ControllerActionInvoker.FindAction(System.Web.Mvc.ControllerContext,System.Web.Mvc.ControllerDescriptor,System.String)
+  - System.Web.Mvc.ControllerActionInvoker.GetFilters(System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionDescriptor)
+  - System.Web.Mvc.ControllerActionInvoker.GetParameterValue(System.Web.Mvc.ControllerContext,System.Web.Mvc.ParameterDescriptor)
+  - System.Web.Mvc.ControllerActionInvoker.GetParameterValues(System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionDescriptor)
   - System.Web.Mvc.ControllerActionInvoker.InvokeAction(System.Web.Mvc.ControllerContext,System.String)
+  - System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionDescriptor,System.Collections.Generic.IDictionary{System.String,System.Object})
+  - System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(System.Web.Mvc.ControllerContext,System.Collections.Generic.IList{System.Web.Mvc.IActionFilter},System.Web.Mvc.ActionDescriptor,System.Collections.Generic.IDictionary{System.String,System.Object})
+  - System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionResult)
+  - System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(System.Web.Mvc.ControllerContext,System.Collections.Generic.IList{System.Web.Mvc.IResultFilter},System.Web.Mvc.ActionResult)
+  - System.Web.Mvc.ControllerActionInvoker.InvokeAuthenticationFilters(System.Web.Mvc.ControllerContext,System.Collections.Generic.IList{System.Web.Mvc.Filters.IAuthenticationFilter},System.Web.Mvc.ActionDescriptor)
+  - System.Web.Mvc.ControllerActionInvoker.InvokeAuthenticationFiltersChallenge(System.Web.Mvc.ControllerContext,System.Collections.Generic.IList{System.Web.Mvc.Filters.IAuthenticationFilter},System.Web.Mvc.ActionDescriptor,System.Web.Mvc.ActionResult)
+  - System.Web.Mvc.ControllerActionInvoker.InvokeAuthorizationFilters(System.Web.Mvc.ControllerContext,System.Collections.Generic.IList{System.Web.Mvc.IAuthorizationFilter},System.Web.Mvc.ActionDescriptor)
+  - System.Web.Mvc.ControllerActionInvoker.InvokeExceptionFilters(System.Web.Mvc.ControllerContext,System.Collections.Generic.IList{System.Web.Mvc.IExceptionFilter},System.Exception)
 - uid: System.Web.Mvc.ControllerActionInvoker.#ctor
   href: System.Web.Mvc.ControllerActionInvoker.yml
   name: ControllerActionInvoker()
@@ -36,6 +52,210 @@ items:
       CSharp: public ControllerActionInvoker()
     parameters: []
   id: System.Web.Mvc.ControllerActionInvoker.#ctor
+- uid: System.Web.Mvc.ControllerActionInvoker.Binders
+  href: System.Web.Mvc.ControllerActionInvoker.yml
+  name: Binders
+  fullName: System.Web.Mvc.ControllerActionInvoker.Binders
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ControllerActionInvoker.cs
+    startLine: 44
+  syntax:
+    content:
+      CSharp: '[SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly", Justification = "Property is settable so that the dictionary can be provided for unit testing purposes.")] protected internal ModelBinderDictionary Binders { get; set; }'
+    parameters:
+    - id: Binders
+      type:
+        id: System.Web.Mvc.ModelBinderDictionary
+        name: ModelBinderDictionary
+        href: System.Web.Mvc.ModelBinderDictionary.yml
+  id: System.Web.Mvc.ControllerActionInvoker.Binders
+- uid: System.Web.Mvc.ControllerActionInvoker.CreateActionResult(System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionDescriptor,System.Object)
+  href: System.Web.Mvc.ControllerActionInvoker.yml
+  name: CreateActionResult(ControllerContext, ActionDescriptor, object)
+  fullName: System.Web.Mvc.ControllerActionInvoker.CreateActionResult(System.Web.Mvc.ControllerContext, System.Web.Mvc.ActionDescriptor, object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ControllerActionInvoker.cs
+    startLine: 71
+  syntax:
+    content:
+      CSharp: protected virtual ActionResult CreateActionResult(ControllerContext controllerContext, ActionDescriptor actionDescriptor, object actionReturnValue)
+    parameters:
+    - id: controllerContext
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+    - id: actionDescriptor
+      type:
+        id: System.Web.Mvc.ActionDescriptor
+        name: ActionDescriptor
+        href: System.Web.Mvc.ActionDescriptor.yml
+    - id: actionReturnValue
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+    return:
+      id: ActionResult
+      type:
+        id: System.Web.Mvc.ActionResult
+        name: ActionResult
+        href: System.Web.Mvc.ActionResult.yml
+  id: System.Web.Mvc.ControllerActionInvoker.CreateActionResult(System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionDescriptor,System.Object)
+- uid: System.Web.Mvc.ControllerActionInvoker.GetControllerDescriptor(System.Web.Mvc.ControllerContext)
+  href: System.Web.Mvc.ControllerActionInvoker.yml
+  name: GetControllerDescriptor(ControllerContext)
+  fullName: System.Web.Mvc.ControllerActionInvoker.GetControllerDescriptor(System.Web.Mvc.ControllerContext)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ControllerActionInvoker.cs
+    startLine: 83
+  syntax:
+    content:
+      CSharp: protected virtual ControllerDescriptor GetControllerDescriptor(ControllerContext controllerContext)
+    parameters:
+    - id: controllerContext
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+    return:
+      id: ControllerDescriptor
+      type:
+        id: System.Web.Mvc.ControllerDescriptor
+        name: ControllerDescriptor
+        href: System.Web.Mvc.ControllerDescriptor.yml
+  id: System.Web.Mvc.ControllerActionInvoker.GetControllerDescriptor(System.Web.Mvc.ControllerContext)
+- uid: System.Web.Mvc.ControllerActionInvoker.FindAction(System.Web.Mvc.ControllerContext,System.Web.Mvc.ControllerDescriptor,System.String)
+  href: System.Web.Mvc.ControllerActionInvoker.yml
+  name: FindAction(ControllerContext, ControllerDescriptor, string)
+  fullName: System.Web.Mvc.ControllerActionInvoker.FindAction(System.Web.Mvc.ControllerContext, System.Web.Mvc.ControllerDescriptor, string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ControllerActionInvoker.cs
+    startLine: 94
+  syntax:
+    content:
+      CSharp: protected virtual ActionDescriptor FindAction(ControllerContext controllerContext, ControllerDescriptor controllerDescriptor, string actionName)
+    parameters:
+    - id: controllerContext
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+    - id: controllerDescriptor
+      type:
+        id: System.Web.Mvc.ControllerDescriptor
+        name: ControllerDescriptor
+        href: System.Web.Mvc.ControllerDescriptor.yml
+    - id: actionName
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      id: ActionDescriptor
+      type:
+        id: System.Web.Mvc.ActionDescriptor
+        name: ActionDescriptor
+        href: System.Web.Mvc.ActionDescriptor.yml
+  id: System.Web.Mvc.ControllerActionInvoker.FindAction(System.Web.Mvc.ControllerContext,System.Web.Mvc.ControllerDescriptor,System.String)
+- uid: System.Web.Mvc.ControllerActionInvoker.GetFilters(System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionDescriptor)
+  href: System.Web.Mvc.ControllerActionInvoker.yml
+  name: GetFilters(ControllerContext, ActionDescriptor)
+  fullName: System.Web.Mvc.ControllerActionInvoker.GetFilters(System.Web.Mvc.ControllerContext, System.Web.Mvc.ActionDescriptor)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ControllerActionInvoker.cs
+    startLine: 176
+  syntax:
+    content:
+      CSharp: protected virtual FilterInfo GetFilters(ControllerContext controllerContext, ActionDescriptor actionDescriptor)
+    parameters:
+    - id: controllerContext
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+    - id: actionDescriptor
+      type:
+        id: System.Web.Mvc.ActionDescriptor
+        name: ActionDescriptor
+        href: System.Web.Mvc.ActionDescriptor.yml
+    return:
+      id: FilterInfo
+      type:
+        id: System.Web.Mvc.FilterInfo
+        name: FilterInfo
+        href: System.Web.Mvc.FilterInfo.yml
+  id: System.Web.Mvc.ControllerActionInvoker.GetFilters(System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionDescriptor)
+- uid: System.Web.Mvc.ControllerActionInvoker.GetParameterValue(System.Web.Mvc.ControllerContext,System.Web.Mvc.ParameterDescriptor)
+  href: System.Web.Mvc.ControllerActionInvoker.yml
+  name: GetParameterValue(ControllerContext, ParameterDescriptor)
+  fullName: System.Web.Mvc.ControllerActionInvoker.GetParameterValue(System.Web.Mvc.ControllerContext, System.Web.Mvc.ParameterDescriptor)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ControllerActionInvoker.cs
+    startLine: 187
+  syntax:
+    content:
+      CSharp: protected virtual object GetParameterValue(ControllerContext controllerContext, ParameterDescriptor parameterDescriptor)
+    parameters:
+    - id: controllerContext
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+    - id: parameterDescriptor
+      type:
+        id: System.Web.Mvc.ParameterDescriptor
+        name: ParameterDescriptor
+        href: System.Web.Mvc.ParameterDescriptor.yml
+    return:
+      id: Object
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+  id: System.Web.Mvc.ControllerActionInvoker.GetParameterValue(System.Web.Mvc.ControllerContext,System.Web.Mvc.ParameterDescriptor)
+- uid: System.Web.Mvc.ControllerActionInvoker.GetParameterValues(System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionDescriptor)
+  href: System.Web.Mvc.ControllerActionInvoker.yml
+  name: GetParameterValues(ControllerContext, ActionDescriptor)
+  fullName: System.Web.Mvc.ControllerActionInvoker.GetParameterValues(System.Web.Mvc.ControllerContext, System.Web.Mvc.ActionDescriptor)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ControllerActionInvoker.cs
+    startLine: 211
+  syntax:
+    content:
+      CSharp: protected virtual IDictionary<string, object> GetParameterValues(ControllerContext controllerContext, ActionDescriptor actionDescriptor)
+    parameters:
+    - id: controllerContext
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+    - id: actionDescriptor
+      type:
+        id: System.Web.Mvc.ActionDescriptor
+        name: ActionDescriptor
+        href: System.Web.Mvc.ActionDescriptor.yml
+    return:
+      id: IDictionary
+      type:
+        id: System.Collections.Generic.IDictionary{System.String,System.Object}
+        name: IDictionary<string, object>
+        isExternal: true
+  id: System.Web.Mvc.ControllerActionInvoker.GetParameterValues(System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionDescriptor)
 - uid: System.Web.Mvc.ControllerActionInvoker.InvokeAction(System.Web.Mvc.ControllerContext,System.String)
   href: System.Web.Mvc.ControllerActionInvoker.yml
   name: InvokeAction(ControllerContext, string)
@@ -57,8 +277,291 @@ items:
     - id: actionName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Web.Mvc.ControllerActionInvoker.InvokeAction(System.Web.Mvc.ControllerContext,System.String)
+- uid: System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionDescriptor,System.Collections.Generic.IDictionary{System.String,System.Object})
+  href: System.Web.Mvc.ControllerActionInvoker.yml
+  name: InvokeActionMethod(ControllerContext, ActionDescriptor, IDictionary<string, object>)
+  fullName: System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(System.Web.Mvc.ControllerContext, System.Web.Mvc.ActionDescriptor, System.Collections.Generic.IDictionary<string, object>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ControllerActionInvoker.cs
+    startLine: 321
+  syntax:
+    content:
+      CSharp: protected virtual ActionResult InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary<string, object> parameters)
+    parameters:
+    - id: controllerContext
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+    - id: actionDescriptor
+      type:
+        id: System.Web.Mvc.ActionDescriptor
+        name: ActionDescriptor
+        href: System.Web.Mvc.ActionDescriptor.yml
+    - id: parameters
+      type:
+        id: System.Collections.Generic.IDictionary{System.String,System.Object}
+        name: IDictionary<string, object>
+        isExternal: true
+    return:
+      id: ActionResult
+      type:
+        id: System.Web.Mvc.ActionResult
+        name: ActionResult
+        href: System.Web.Mvc.ActionResult.yml
+  id: System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionDescriptor,System.Collections.Generic.IDictionary{System.String,System.Object})
+- uid: System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(System.Web.Mvc.ControllerContext,System.Collections.Generic.IList{System.Web.Mvc.IActionFilter},System.Web.Mvc.ActionDescriptor,System.Collections.Generic.IDictionary{System.String,System.Object})
+  href: System.Web.Mvc.ControllerActionInvoker.yml
+  name: InvokeActionMethodWithFilters(ControllerContext, IList<IActionFilter>, ActionDescriptor, IDictionary<string, object>)
+  fullName: System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(System.Web.Mvc.ControllerContext, System.Collections.Generic.IList<System.Web.Mvc.IActionFilter>, System.Web.Mvc.ActionDescriptor, System.Collections.Generic.IDictionary<string, object>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ControllerActionInvoker.cs
+    startLine: 370
+  syntax:
+    content:
+      CSharp: protected virtual ActionExecutedContext InvokeActionMethodWithFilters(ControllerContext controllerContext, IList<IActionFilter> filters, ActionDescriptor actionDescriptor, IDictionary<string, object> parameters)
+    parameters:
+    - id: controllerContext
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+    - id: filters
+      type:
+        id: System.Collections.Generic.IList{System.Web.Mvc.IActionFilter}
+        name: IList<IActionFilter>
+        isExternal: true
+    - id: actionDescriptor
+      type:
+        id: System.Web.Mvc.ActionDescriptor
+        name: ActionDescriptor
+        href: System.Web.Mvc.ActionDescriptor.yml
+    - id: parameters
+      type:
+        id: System.Collections.Generic.IDictionary{System.String,System.Object}
+        name: IDictionary<string, object>
+        isExternal: true
+    return:
+      id: ActionExecutedContext
+      type:
+        id: System.Web.Mvc.ActionExecutedContext
+        name: ActionExecutedContext
+        href: System.Web.Mvc.ActionExecutedContext.yml
+  id: System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(System.Web.Mvc.ControllerContext,System.Collections.Generic.IList{System.Web.Mvc.IActionFilter},System.Web.Mvc.ActionDescriptor,System.Collections.Generic.IDictionary{System.String,System.Object})
+- uid: System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionResult)
+  href: System.Web.Mvc.ControllerActionInvoker.yml
+  name: InvokeActionResult(ControllerContext, ActionResult)
+  fullName: System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(System.Web.Mvc.ControllerContext, System.Web.Mvc.ActionResult)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ControllerActionInvoker.cs
+    startLine: 385
+  syntax:
+    content:
+      CSharp: protected virtual void InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+    parameters:
+    - id: controllerContext
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+    - id: actionResult
+      type:
+        id: System.Web.Mvc.ActionResult
+        name: ActionResult
+        href: System.Web.Mvc.ActionResult.yml
+  id: System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionResult)
+- uid: System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(System.Web.Mvc.ControllerContext,System.Collections.Generic.IList{System.Web.Mvc.IResultFilter},System.Web.Mvc.ActionResult)
+  href: System.Web.Mvc.ControllerActionInvoker.yml
+  name: InvokeActionResultWithFilters(ControllerContext, IList<IResultFilter>, ActionResult)
+  fullName: System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(System.Web.Mvc.ControllerContext, System.Collections.Generic.IList<System.Web.Mvc.IResultFilter>, System.Web.Mvc.ActionResult)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ControllerActionInvoker.cs
+    startLine: 449
+  syntax:
+    content:
+      CSharp: protected virtual ResultExecutedContext InvokeActionResultWithFilters(ControllerContext controllerContext, IList<IResultFilter> filters, ActionResult actionResult)
+    parameters:
+    - id: controllerContext
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+    - id: filters
+      type:
+        id: System.Collections.Generic.IList{System.Web.Mvc.IResultFilter}
+        name: IList<IResultFilter>
+        isExternal: true
+    - id: actionResult
+      type:
+        id: System.Web.Mvc.ActionResult
+        name: ActionResult
+        href: System.Web.Mvc.ActionResult.yml
+    return:
+      id: ResultExecutedContext
+      type:
+        id: System.Web.Mvc.ResultExecutedContext
+        name: ResultExecutedContext
+        href: System.Web.Mvc.ResultExecutedContext.yml
+  id: System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(System.Web.Mvc.ControllerContext,System.Collections.Generic.IList{System.Web.Mvc.IResultFilter},System.Web.Mvc.ActionResult)
+- uid: System.Web.Mvc.ControllerActionInvoker.InvokeAuthenticationFilters(System.Web.Mvc.ControllerContext,System.Collections.Generic.IList{System.Web.Mvc.Filters.IAuthenticationFilter},System.Web.Mvc.ActionDescriptor)
+  href: System.Web.Mvc.ControllerActionInvoker.yml
+  name: InvokeAuthenticationFilters(ControllerContext, IList<IAuthenticationFilter>, ActionDescriptor)
+  fullName: System.Web.Mvc.ControllerActionInvoker.InvokeAuthenticationFilters(System.Web.Mvc.ControllerContext, System.Collections.Generic.IList<System.Web.Mvc.Filters.IAuthenticationFilter>, System.Web.Mvc.ActionDescriptor)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ControllerActionInvoker.cs
+    startLine: 457
+  syntax:
+    content:
+      CSharp: protected virtual AuthenticationContext InvokeAuthenticationFilters(ControllerContext controllerContext, IList<IAuthenticationFilter> filters, ActionDescriptor actionDescriptor)
+    parameters:
+    - id: controllerContext
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+    - id: filters
+      type:
+        id: System.Collections.Generic.IList{System.Web.Mvc.Filters.IAuthenticationFilter}
+        name: IList<IAuthenticationFilter>
+        isExternal: true
+    - id: actionDescriptor
+      type:
+        id: System.Web.Mvc.ActionDescriptor
+        name: ActionDescriptor
+        href: System.Web.Mvc.ActionDescriptor.yml
+    return:
+      id: AuthenticationContext
+      type:
+        id: System.Web.Mvc.Filters.AuthenticationContext
+        name: AuthenticationContext
+        href: System.Web.Mvc.Filters.AuthenticationContext.yml
+  id: System.Web.Mvc.ControllerActionInvoker.InvokeAuthenticationFilters(System.Web.Mvc.ControllerContext,System.Collections.Generic.IList{System.Web.Mvc.Filters.IAuthenticationFilter},System.Web.Mvc.ActionDescriptor)
+- uid: System.Web.Mvc.ControllerActionInvoker.InvokeAuthenticationFiltersChallenge(System.Web.Mvc.ControllerContext,System.Collections.Generic.IList{System.Web.Mvc.Filters.IAuthenticationFilter},System.Web.Mvc.ActionDescriptor,System.Web.Mvc.ActionResult)
+  href: System.Web.Mvc.ControllerActionInvoker.yml
+  name: InvokeAuthenticationFiltersChallenge(ControllerContext, IList<IAuthenticationFilter>, ActionDescriptor, ActionResult)
+  fullName: System.Web.Mvc.ControllerActionInvoker.InvokeAuthenticationFiltersChallenge(System.Web.Mvc.ControllerContext, System.Collections.Generic.IList<System.Web.Mvc.Filters.IAuthenticationFilter>, System.Web.Mvc.ActionDescriptor, System.Web.Mvc.ActionResult)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ControllerActionInvoker.cs
+    startLine: 491
+  syntax:
+    content:
+      CSharp: protected virtual AuthenticationChallengeContext InvokeAuthenticationFiltersChallenge(ControllerContext controllerContext, IList<IAuthenticationFilter> filters, ActionDescriptor actionDescriptor, ActionResult result)
+    parameters:
+    - id: controllerContext
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+    - id: filters
+      type:
+        id: System.Collections.Generic.IList{System.Web.Mvc.Filters.IAuthenticationFilter}
+        name: IList<IAuthenticationFilter>
+        isExternal: true
+    - id: actionDescriptor
+      type:
+        id: System.Web.Mvc.ActionDescriptor
+        name: ActionDescriptor
+        href: System.Web.Mvc.ActionDescriptor.yml
+    - id: result
+      type:
+        id: System.Web.Mvc.ActionResult
+        name: ActionResult
+        href: System.Web.Mvc.ActionResult.yml
+    return:
+      id: AuthenticationChallengeContext
+      type:
+        id: System.Web.Mvc.Filters.AuthenticationChallengeContext
+        name: AuthenticationChallengeContext
+        href: System.Web.Mvc.Filters.AuthenticationChallengeContext.yml
+  id: System.Web.Mvc.ControllerActionInvoker.InvokeAuthenticationFiltersChallenge(System.Web.Mvc.ControllerContext,System.Collections.Generic.IList{System.Web.Mvc.Filters.IAuthenticationFilter},System.Web.Mvc.ActionDescriptor,System.Web.Mvc.ActionResult)
+- uid: System.Web.Mvc.ControllerActionInvoker.InvokeAuthorizationFilters(System.Web.Mvc.ControllerContext,System.Collections.Generic.IList{System.Web.Mvc.IAuthorizationFilter},System.Web.Mvc.ActionDescriptor)
+  href: System.Web.Mvc.ControllerActionInvoker.yml
+  name: InvokeAuthorizationFilters(ControllerContext, IList<IAuthorizationFilter>, ActionDescriptor)
+  fullName: System.Web.Mvc.ControllerActionInvoker.InvokeAuthorizationFilters(System.Web.Mvc.ControllerContext, System.Collections.Generic.IList<System.Web.Mvc.IAuthorizationFilter>, System.Web.Mvc.ActionDescriptor)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ControllerActionInvoker.cs
+    startLine: 507
+  syntax:
+    content:
+      CSharp: protected virtual AuthorizationContext InvokeAuthorizationFilters(ControllerContext controllerContext, IList<IAuthorizationFilter> filters, ActionDescriptor actionDescriptor)
+    parameters:
+    - id: controllerContext
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+    - id: filters
+      type:
+        id: System.Collections.Generic.IList{System.Web.Mvc.IAuthorizationFilter}
+        name: IList<IAuthorizationFilter>
+        isExternal: true
+    - id: actionDescriptor
+      type:
+        id: System.Web.Mvc.ActionDescriptor
+        name: ActionDescriptor
+        href: System.Web.Mvc.ActionDescriptor.yml
+    return:
+      id: AuthorizationContext
+      type:
+        id: System.Web.Mvc.AuthorizationContext
+        name: AuthorizationContext
+        href: System.Web.Mvc.AuthorizationContext.yml
+  id: System.Web.Mvc.ControllerActionInvoker.InvokeAuthorizationFilters(System.Web.Mvc.ControllerContext,System.Collections.Generic.IList{System.Web.Mvc.IAuthorizationFilter},System.Web.Mvc.ActionDescriptor)
+- uid: System.Web.Mvc.ControllerActionInvoker.InvokeExceptionFilters(System.Web.Mvc.ControllerContext,System.Collections.Generic.IList{System.Web.Mvc.IExceptionFilter},System.Exception)
+  href: System.Web.Mvc.ControllerActionInvoker.yml
+  name: InvokeExceptionFilters(ControllerContext, IList<IExceptionFilter>, Exception)
+  fullName: System.Web.Mvc.ControllerActionInvoker.InvokeExceptionFilters(System.Web.Mvc.ControllerContext, System.Collections.Generic.IList<System.Web.Mvc.IExceptionFilter>, System.Exception)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ControllerActionInvoker.cs
+    startLine: 523
+  syntax:
+    content:
+      CSharp: protected virtual ExceptionContext InvokeExceptionFilters(ControllerContext controllerContext, IList<IExceptionFilter> filters, Exception exception)
+    parameters:
+    - id: controllerContext
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+    - id: filters
+      type:
+        id: System.Collections.Generic.IList{System.Web.Mvc.IExceptionFilter}
+        name: IList<IExceptionFilter>
+        isExternal: true
+    - id: exception
+      type:
+        id: System.Exception
+        name: Exception
+        isExternal: true
+    return:
+      id: ExceptionContext
+      type:
+        id: System.Web.Mvc.ExceptionContext
+        name: ExceptionContext
+        href: System.Web.Mvc.ExceptionContext.yml
+  id: System.Web.Mvc.ControllerActionInvoker.InvokeExceptionFilters(System.Web.Mvc.ControllerContext,System.Collections.Generic.IList{System.Web.Mvc.IExceptionFilter},System.Exception)

@@ -6,15 +6,20 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Runtime.Serialization.Primitives/src/System/Runtime/Serialization/ContractNamespaceAttribute.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Runtime.Serialization.Primitives/src/System/Runtime/Serialization/ContractNamespaceAttribute.cs
     startLine: 7
   syntax:
     content:
-      CSharp: public sealed class ContractNamespaceAttribute
+      CSharp: 'public sealed class ContractNamespaceAttribute : Attribute, _Attribute'
   inheritance:
-  - id: Attribute
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.Attribute
     name: Attribute
     isExternal: true
   id: System.Runtime.Serialization.ContractNamespaceAttribute
@@ -38,7 +43,7 @@ items:
     - id: contractNamespace
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Runtime.Serialization.ContractNamespaceAttribute.#ctor(System.String)
 - uid: System.Runtime.Serialization.ContractNamespaceAttribute.ClrNamespace
@@ -57,7 +62,7 @@ items:
     - id: ClrNamespace
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Runtime.Serialization.ContractNamespaceAttribute.ClrNamespace
 - uid: System.Runtime.Serialization.ContractNamespaceAttribute.ContractNamespace
@@ -76,6 +81,6 @@ items:
     - id: ContractNamespace
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Runtime.Serialization.ContractNamespaceAttribute.ContractNamespace

@@ -6,18 +6,19 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectInfo.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectInfo.cs
-    startLine: 14
+    startLine: 15
   summary: A class that represents all the arguments necessary to create a new project instance.
   syntax:
     content:
       CSharp: public sealed class ProjectInfo
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.ProjectInfo
   children:
@@ -58,11 +59,11 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectInfo.cs
-    startLine: 19
+    startLine: 21
   summary: The unique Id of the project.
   syntax:
     content:
-      CSharp: public ProjectId Id { get; private set; }
+      CSharp: public ProjectId Id { get; }
     parameters:
     - id: Id
       type:
@@ -78,11 +79,11 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectInfo.cs
-    startLine: 24
+    startLine: 26
   summary: The version of the project.
   syntax:
     content:
-      CSharp: public VersionStamp Version { get; private set; }
+      CSharp: public VersionStamp Version { get; }
     parameters:
     - id: Version
       type:
@@ -98,16 +99,16 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectInfo.cs
-    startLine: 29
+    startLine: 31
   summary: The name of the project. This may differ from the project's filename.
   syntax:
     content:
-      CSharp: public string Name { get; private set; }
+      CSharp: public string Name { get; }
     parameters:
     - id: Name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: Microsoft.CodeAnalysis.ProjectInfo.Name
 - uid: Microsoft.CodeAnalysis.ProjectInfo.AssemblyName
@@ -118,16 +119,16 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectInfo.cs
-    startLine: 34
+    startLine: 36
   summary: The name of the assembly that this project will create, without file extension.
   syntax:
     content:
-      CSharp: public string AssemblyName { get; private set; }
+      CSharp: public string AssemblyName { get; }
     parameters:
     - id: AssemblyName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: Microsoft.CodeAnalysis.ProjectInfo.AssemblyName
 - uid: Microsoft.CodeAnalysis.ProjectInfo.Language
@@ -138,16 +139,16 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectInfo.cs
-    startLine: 39
+    startLine: 41
   summary: The language of the project.
   syntax:
     content:
-      CSharp: public string Language { get; private set; }
+      CSharp: public string Language { get; }
     parameters:
     - id: Language
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: Microsoft.CodeAnalysis.ProjectInfo.Language
 - uid: Microsoft.CodeAnalysis.ProjectInfo.FilePath
@@ -158,16 +159,16 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectInfo.cs
-    startLine: 44
+    startLine: 46
   summary: The path to the project file or null if there is no project file.
   syntax:
     content:
-      CSharp: public string FilePath { get; private set; }
+      CSharp: public string FilePath { get; }
     parameters:
     - id: FilePath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: Microsoft.CodeAnalysis.ProjectInfo.FilePath
 - uid: Microsoft.CodeAnalysis.ProjectInfo.OutputFilePath
@@ -178,16 +179,16 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectInfo.cs
-    startLine: 49
+    startLine: 51
   summary: The path to the output file (module or assembly).
   syntax:
     content:
-      CSharp: public string OutputFilePath { get; private set; }
+      CSharp: public string OutputFilePath { get; }
     parameters:
     - id: OutputFilePath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: Microsoft.CodeAnalysis.ProjectInfo.OutputFilePath
 - uid: Microsoft.CodeAnalysis.ProjectInfo.CompilationOptions
@@ -198,11 +199,11 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectInfo.cs
-    startLine: 54
+    startLine: 56
   summary: The initial compilation options for the project, or null if the default options should be used.
   syntax:
     content:
-      CSharp: public CompilationOptions CompilationOptions { get; private set; }
+      CSharp: public CompilationOptions CompilationOptions { get; }
     parameters:
     - id: CompilationOptions
       type:
@@ -218,11 +219,11 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectInfo.cs
-    startLine: 59
+    startLine: 61
   summary: The initial parse options for the source code documents in this project, or null if the default options should be used.
   syntax:
     content:
-      CSharp: public ParseOptions ParseOptions { get; private set; }
+      CSharp: public ParseOptions ParseOptions { get; }
     parameters:
     - id: ParseOptions
       type:
@@ -238,16 +239,16 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectInfo.cs
-    startLine: 64
+    startLine: 66
   summary: The list of source documents initially associated with the project.
   syntax:
     content:
-      CSharp: public IReadOnlyList<DocumentInfo> Documents { get; private set; }
+      CSharp: public IReadOnlyList<DocumentInfo> Documents { get; }
     parameters:
     - id: Documents
       type:
         id: System.Collections.Generic.IReadOnlyList{Microsoft.CodeAnalysis.DocumentInfo}
-        name: System.Collections.Generic.IReadOnlyList{Microsoft.CodeAnalysis.DocumentInfo}
+        name: IReadOnlyList<DocumentInfo>
         isExternal: true
   id: Microsoft.CodeAnalysis.ProjectInfo.Documents
 - uid: Microsoft.CodeAnalysis.ProjectInfo.ProjectReferences
@@ -258,16 +259,16 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectInfo.cs
-    startLine: 69
+    startLine: 71
   summary: The project references initially defined for the project.
   syntax:
     content:
-      CSharp: public IReadOnlyList<ProjectReference> ProjectReferences { get; private set; }
+      CSharp: public IReadOnlyList<ProjectReference> ProjectReferences { get; }
     parameters:
     - id: ProjectReferences
       type:
         id: System.Collections.Generic.IReadOnlyList{Microsoft.CodeAnalysis.ProjectReference}
-        name: System.Collections.Generic.IReadOnlyList{Microsoft.CodeAnalysis.ProjectReference}
+        name: IReadOnlyList<ProjectReference>
         isExternal: true
   id: Microsoft.CodeAnalysis.ProjectInfo.ProjectReferences
 - uid: Microsoft.CodeAnalysis.ProjectInfo.MetadataReferences
@@ -278,16 +279,16 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectInfo.cs
-    startLine: 74
+    startLine: 76
   summary: The metadata references initially defined for the project.
   syntax:
     content:
-      CSharp: public IReadOnlyList<MetadataReference> MetadataReferences { get; private set; }
+      CSharp: public IReadOnlyList<MetadataReference> MetadataReferences { get; }
     parameters:
     - id: MetadataReferences
       type:
         id: System.Collections.Generic.IReadOnlyList{Microsoft.CodeAnalysis.MetadataReference}
-        name: System.Collections.Generic.IReadOnlyList{Microsoft.CodeAnalysis.MetadataReference}
+        name: IReadOnlyList<MetadataReference>
         isExternal: true
   id: Microsoft.CodeAnalysis.ProjectInfo.MetadataReferences
 - uid: Microsoft.CodeAnalysis.ProjectInfo.AnalyzerReferences
@@ -298,16 +299,16 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectInfo.cs
-    startLine: 79
+    startLine: 81
   summary: The analyzers initially associated with this project.
   syntax:
     content:
-      CSharp: public IReadOnlyList<AnalyzerReference> AnalyzerReferences { get; private set; }
+      CSharp: public IReadOnlyList<AnalyzerReference> AnalyzerReferences { get; }
     parameters:
     - id: AnalyzerReferences
       type:
         id: System.Collections.Generic.IReadOnlyList{Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference}
-        name: System.Collections.Generic.IReadOnlyList{Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference}
+        name: IReadOnlyList<AnalyzerReference>
         isExternal: true
   id: Microsoft.CodeAnalysis.ProjectInfo.AnalyzerReferences
 - uid: Microsoft.CodeAnalysis.ProjectInfo.AdditionalDocuments
@@ -318,16 +319,16 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectInfo.cs
-    startLine: 84
+    startLine: 86
   summary: The list of non-source documents associated with this project.
   syntax:
     content:
-      CSharp: public IReadOnlyList<DocumentInfo> AdditionalDocuments { get; private set; }
+      CSharp: public IReadOnlyList<DocumentInfo> AdditionalDocuments { get; }
     parameters:
     - id: AdditionalDocuments
       type:
         id: System.Collections.Generic.IReadOnlyList{Microsoft.CodeAnalysis.DocumentInfo}
-        name: System.Collections.Generic.IReadOnlyList{Microsoft.CodeAnalysis.DocumentInfo}
+        name: IReadOnlyList<DocumentInfo>
         isExternal: true
   id: Microsoft.CodeAnalysis.ProjectInfo.AdditionalDocuments
 - uid: Microsoft.CodeAnalysis.ProjectInfo.IsSubmission
@@ -338,16 +339,16 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectInfo.cs
-    startLine: 89
+    startLine: 91
   summary: True if this is a submission project for interactive sessions.
   syntax:
     content:
-      CSharp: public bool IsSubmission { get; private set; }
+      CSharp: public bool IsSubmission { get; }
     parameters:
     - id: IsSubmission
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.ProjectInfo.IsSubmission
 - uid: Microsoft.CodeAnalysis.ProjectInfo.HostObjectType
@@ -358,16 +359,16 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectInfo.cs
-    startLine: 94
+    startLine: 96
   summary: Type of the host object.
   syntax:
     content:
-      CSharp: public Type HostObjectType { get; private set; }
+      CSharp: public Type HostObjectType { get; }
     parameters:
     - id: HostObjectType
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
   id: Microsoft.CodeAnalysis.ProjectInfo.HostObjectType
 - uid: Microsoft.CodeAnalysis.ProjectInfo.Create(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.VersionStamp,System.String,System.String,System.String,System.String,System.String,Microsoft.CodeAnalysis.CompilationOptions,Microsoft.CodeAnalysis.ParseOptions,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.DocumentInfo},System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectReference},System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference},System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference},System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.DocumentInfo},System.Boolean,System.Type)
@@ -378,7 +379,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectInfo.cs
-    startLine: 155
+    startLine: 157
   summary: Create a new instance of a ProjectInfo.
   syntax:
     content:
@@ -397,27 +398,27 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: assemblyName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: language
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: filePath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: outputFilePath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: compilationOptions
       type:
@@ -432,40 +433,44 @@ items:
     - id: documents
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.DocumentInfo}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.DocumentInfo}
+        name: IEnumerable<DocumentInfo>
         isExternal: true
     - id: projectReferences
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectReference}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectReference}
+        name: IEnumerable<ProjectReference>
         isExternal: true
     - id: metadataReferences
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference}
+        name: IEnumerable<MetadataReference>
         isExternal: true
     - id: analyzerReferences
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference}
+        name: IEnumerable<AnalyzerReference>
         isExternal: true
     - id: additionalDocuments
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.DocumentInfo}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.DocumentInfo}
+        name: IEnumerable<DocumentInfo>
         isExternal: true
     - id: isSubmission
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     - id: hostObjectType
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
     return:
       id: ProjectInfo
+      type:
+        id: Microsoft.CodeAnalysis.ProjectInfo
+        name: ProjectInfo
+        href: Microsoft.CodeAnalysis.ProjectInfo.yml
   id: Microsoft.CodeAnalysis.ProjectInfo.Create(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.VersionStamp,System.String,System.String,System.String,System.String,System.String,Microsoft.CodeAnalysis.CompilationOptions,Microsoft.CodeAnalysis.ParseOptions,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.DocumentInfo},System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectReference},System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference},System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference},System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.DocumentInfo},System.Boolean,System.Type)
 - uid: Microsoft.CodeAnalysis.ProjectInfo.WithDocuments(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.DocumentInfo})
   href: Microsoft.CodeAnalysis.ProjectInfo.yml
@@ -475,7 +480,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectInfo.cs
-    startLine: 266
+    startLine: 268
   syntax:
     content:
       CSharp: public ProjectInfo WithDocuments(IEnumerable<DocumentInfo> documents)
@@ -483,10 +488,14 @@ items:
     - id: documents
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.DocumentInfo}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.DocumentInfo}
+        name: IEnumerable<DocumentInfo>
         isExternal: true
     return:
       id: ProjectInfo
+      type:
+        id: Microsoft.CodeAnalysis.ProjectInfo
+        name: ProjectInfo
+        href: Microsoft.CodeAnalysis.ProjectInfo.yml
   id: Microsoft.CodeAnalysis.ProjectInfo.WithDocuments(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.DocumentInfo})
 - uid: Microsoft.CodeAnalysis.ProjectInfo.WithAdditionalDocuments(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.DocumentInfo})
   href: Microsoft.CodeAnalysis.ProjectInfo.yml
@@ -496,7 +505,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectInfo.cs
-    startLine: 271
+    startLine: 273
   syntax:
     content:
       CSharp: public ProjectInfo WithAdditionalDocuments(IEnumerable<DocumentInfo> additionalDocuments)
@@ -504,10 +513,14 @@ items:
     - id: additionalDocuments
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.DocumentInfo}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.DocumentInfo}
+        name: IEnumerable<DocumentInfo>
         isExternal: true
     return:
       id: ProjectInfo
+      type:
+        id: Microsoft.CodeAnalysis.ProjectInfo
+        name: ProjectInfo
+        href: Microsoft.CodeAnalysis.ProjectInfo.yml
   id: Microsoft.CodeAnalysis.ProjectInfo.WithAdditionalDocuments(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.DocumentInfo})
 - uid: Microsoft.CodeAnalysis.ProjectInfo.WithVersion(Microsoft.CodeAnalysis.VersionStamp)
   href: Microsoft.CodeAnalysis.ProjectInfo.yml
@@ -517,7 +530,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectInfo.cs
-    startLine: 276
+    startLine: 278
   syntax:
     content:
       CSharp: public ProjectInfo WithVersion(VersionStamp version)
@@ -529,6 +542,10 @@ items:
         href: Microsoft.CodeAnalysis.VersionStamp.yml
     return:
       id: ProjectInfo
+      type:
+        id: Microsoft.CodeAnalysis.ProjectInfo
+        name: ProjectInfo
+        href: Microsoft.CodeAnalysis.ProjectInfo.yml
   id: Microsoft.CodeAnalysis.ProjectInfo.WithVersion(Microsoft.CodeAnalysis.VersionStamp)
 - uid: Microsoft.CodeAnalysis.ProjectInfo.WithName(System.String)
   href: Microsoft.CodeAnalysis.ProjectInfo.yml
@@ -538,7 +555,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectInfo.cs
-    startLine: 281
+    startLine: 283
   syntax:
     content:
       CSharp: public ProjectInfo WithName(string name)
@@ -546,10 +563,14 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: ProjectInfo
+      type:
+        id: Microsoft.CodeAnalysis.ProjectInfo
+        name: ProjectInfo
+        href: Microsoft.CodeAnalysis.ProjectInfo.yml
   id: Microsoft.CodeAnalysis.ProjectInfo.WithName(System.String)
 - uid: Microsoft.CodeAnalysis.ProjectInfo.WithFilePath(System.String)
   href: Microsoft.CodeAnalysis.ProjectInfo.yml
@@ -559,7 +580,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectInfo.cs
-    startLine: 286
+    startLine: 288
   syntax:
     content:
       CSharp: public ProjectInfo WithFilePath(string filePath)
@@ -567,10 +588,14 @@ items:
     - id: filePath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: ProjectInfo
+      type:
+        id: Microsoft.CodeAnalysis.ProjectInfo
+        name: ProjectInfo
+        href: Microsoft.CodeAnalysis.ProjectInfo.yml
   id: Microsoft.CodeAnalysis.ProjectInfo.WithFilePath(System.String)
 - uid: Microsoft.CodeAnalysis.ProjectInfo.WithAssemblyName(System.String)
   href: Microsoft.CodeAnalysis.ProjectInfo.yml
@@ -580,7 +605,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectInfo.cs
-    startLine: 291
+    startLine: 293
   syntax:
     content:
       CSharp: public ProjectInfo WithAssemblyName(string assemblyName)
@@ -588,10 +613,14 @@ items:
     - id: assemblyName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: ProjectInfo
+      type:
+        id: Microsoft.CodeAnalysis.ProjectInfo
+        name: ProjectInfo
+        href: Microsoft.CodeAnalysis.ProjectInfo.yml
   id: Microsoft.CodeAnalysis.ProjectInfo.WithAssemblyName(System.String)
 - uid: Microsoft.CodeAnalysis.ProjectInfo.WithOutputFilePath(System.String)
   href: Microsoft.CodeAnalysis.ProjectInfo.yml
@@ -601,7 +630,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectInfo.cs
-    startLine: 296
+    startLine: 298
   syntax:
     content:
       CSharp: public ProjectInfo WithOutputFilePath(string outputFilePath)
@@ -609,10 +638,14 @@ items:
     - id: outputFilePath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: ProjectInfo
+      type:
+        id: Microsoft.CodeAnalysis.ProjectInfo
+        name: ProjectInfo
+        href: Microsoft.CodeAnalysis.ProjectInfo.yml
   id: Microsoft.CodeAnalysis.ProjectInfo.WithOutputFilePath(System.String)
 - uid: Microsoft.CodeAnalysis.ProjectInfo.WithCompilationOptions(Microsoft.CodeAnalysis.CompilationOptions)
   href: Microsoft.CodeAnalysis.ProjectInfo.yml
@@ -622,7 +655,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectInfo.cs
-    startLine: 301
+    startLine: 303
   syntax:
     content:
       CSharp: public ProjectInfo WithCompilationOptions(CompilationOptions compilationOptions)
@@ -634,6 +667,10 @@ items:
         href: Microsoft.CodeAnalysis.CompilationOptions
     return:
       id: ProjectInfo
+      type:
+        id: Microsoft.CodeAnalysis.ProjectInfo
+        name: ProjectInfo
+        href: Microsoft.CodeAnalysis.ProjectInfo.yml
   id: Microsoft.CodeAnalysis.ProjectInfo.WithCompilationOptions(Microsoft.CodeAnalysis.CompilationOptions)
 - uid: Microsoft.CodeAnalysis.ProjectInfo.WithParseOptions(Microsoft.CodeAnalysis.ParseOptions)
   href: Microsoft.CodeAnalysis.ProjectInfo.yml
@@ -643,7 +680,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectInfo.cs
-    startLine: 306
+    startLine: 308
   syntax:
     content:
       CSharp: public ProjectInfo WithParseOptions(ParseOptions parseOptions)
@@ -655,6 +692,10 @@ items:
         href: Microsoft.CodeAnalysis.ParseOptions
     return:
       id: ProjectInfo
+      type:
+        id: Microsoft.CodeAnalysis.ProjectInfo
+        name: ProjectInfo
+        href: Microsoft.CodeAnalysis.ProjectInfo.yml
   id: Microsoft.CodeAnalysis.ProjectInfo.WithParseOptions(Microsoft.CodeAnalysis.ParseOptions)
 - uid: Microsoft.CodeAnalysis.ProjectInfo.WithProjectReferences(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectReference})
   href: Microsoft.CodeAnalysis.ProjectInfo.yml
@@ -664,7 +705,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectInfo.cs
-    startLine: 311
+    startLine: 313
   syntax:
     content:
       CSharp: public ProjectInfo WithProjectReferences(IEnumerable<ProjectReference> projectReferences)
@@ -672,10 +713,14 @@ items:
     - id: projectReferences
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectReference}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectReference}
+        name: IEnumerable<ProjectReference>
         isExternal: true
     return:
       id: ProjectInfo
+      type:
+        id: Microsoft.CodeAnalysis.ProjectInfo
+        name: ProjectInfo
+        href: Microsoft.CodeAnalysis.ProjectInfo.yml
   id: Microsoft.CodeAnalysis.ProjectInfo.WithProjectReferences(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectReference})
 - uid: Microsoft.CodeAnalysis.ProjectInfo.WithMetadataReferences(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference})
   href: Microsoft.CodeAnalysis.ProjectInfo.yml
@@ -685,7 +730,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectInfo.cs
-    startLine: 316
+    startLine: 318
   syntax:
     content:
       CSharp: public ProjectInfo WithMetadataReferences(IEnumerable<MetadataReference> metadataReferences)
@@ -693,10 +738,14 @@ items:
     - id: metadataReferences
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference}
+        name: IEnumerable<MetadataReference>
         isExternal: true
     return:
       id: ProjectInfo
+      type:
+        id: Microsoft.CodeAnalysis.ProjectInfo
+        name: ProjectInfo
+        href: Microsoft.CodeAnalysis.ProjectInfo.yml
   id: Microsoft.CodeAnalysis.ProjectInfo.WithMetadataReferences(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.MetadataReference})
 - uid: Microsoft.CodeAnalysis.ProjectInfo.WithAnalyzerReferences(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference})
   href: Microsoft.CodeAnalysis.ProjectInfo.yml
@@ -706,7 +755,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectInfo.cs
-    startLine: 321
+    startLine: 323
   syntax:
     content:
       CSharp: public ProjectInfo WithAnalyzerReferences(IEnumerable<AnalyzerReference> analyzerReferences)
@@ -714,8 +763,12 @@ items:
     - id: analyzerReferences
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference}
+        name: IEnumerable<AnalyzerReference>
         isExternal: true
     return:
       id: ProjectInfo
+      type:
+        id: Microsoft.CodeAnalysis.ProjectInfo
+        name: ProjectInfo
+        href: Microsoft.CodeAnalysis.ProjectInfo.yml
   id: Microsoft.CodeAnalysis.ProjectInfo.WithAnalyzerReferences(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference})

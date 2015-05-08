@@ -6,17 +6,19 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/ExportedTypeExtensions.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/ExportedTypeExtensions.cs
     startLine: 8
   summary: Provides an extension method to access the TypeDefinitionId column of the ExportedType table.
   syntax:
     content:
-      CSharp: public static class ExportedTypeExtensions
+      CSharp: public class ExportedTypeExtensions
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Reflection.Metadata.Ecma335.ExportedTypeExtensions
   children:
@@ -40,7 +42,7 @@ items:
     true.
   syntax:
     content:
-      CSharp: public static int GetTypeDefinitionId(this ExportedType exportedType)
+      CSharp: public static int GetTypeDefinitionId(ExportedType exportedType)
     parameters:
     - id: exportedType
       type:
@@ -49,4 +51,8 @@ items:
         href: System.Reflection.Metadata.ExportedType.yml
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: System.Reflection.Metadata.Ecma335.ExportedTypeExtensions.GetTypeDefinitionId(System.Reflection.Metadata.ExportedType)

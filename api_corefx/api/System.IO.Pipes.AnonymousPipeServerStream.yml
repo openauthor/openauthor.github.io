@@ -5,17 +5,25 @@ items:
   fullName: System.IO.Pipes.AnonymousPipeServerStream
   type: Class
   source:
-    remote: &o0
+    remote:
+      path: src/System.IO.Pipes/src/System/IO/Pipes/AnonymousPipeServerStream.Windows.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.IO.Pipes/src/System/IO/Pipes/AnonymousPipeServerStream.Windows.cs
     startLine: 13
   summary: Anonymous pipe server stream
   syntax:
     content:
-      CSharp: public sealed partial class AnonymousPipeServerStream
+      CSharp: 'public sealed class AnonymousPipeServerStream : PipeStream, IDisposable'
   inheritance:
-  - id: Stream
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.MarshalByRefObject
+    name: MarshalByRefObject
+    isExternal: true
+  - id: System.IO.Stream
     name: Stream
     isExternal: true
   - id: System.IO.Pipes.PipeStream
@@ -28,9 +36,11 @@ items:
   - System.IO.Pipes.AnonymousPipeServerStream.#ctor(System.IO.Pipes.PipeDirection,HandleInheritability)
   - System.IO.Pipes.AnonymousPipeServerStream.#ctor(System.IO.Pipes.PipeDirection,Microsoft.Win32.SafeHandles.SafePipeHandle,Microsoft.Win32.SafeHandles.SafePipeHandle)
   - System.IO.Pipes.AnonymousPipeServerStream.#ctor(System.IO.Pipes.PipeDirection,HandleInheritability,System.Int32)
+  - System.IO.Pipes.AnonymousPipeServerStream.Finalize
   - System.IO.Pipes.AnonymousPipeServerStream.GetClientHandleAsString
   - System.IO.Pipes.AnonymousPipeServerStream.ClientSafePipeHandle
   - System.IO.Pipes.AnonymousPipeServerStream.DisposeLocalCopyOfClientHandle
+  - System.IO.Pipes.AnonymousPipeServerStream.Dispose(System.Boolean)
   - System.IO.Pipes.AnonymousPipeServerStream.TransmissionMode
   - System.IO.Pipes.AnonymousPipeServerStream.ReadMode
 - uid: System.IO.Pipes.AnonymousPipeServerStream.#ctor
@@ -39,7 +49,11 @@ items:
   fullName: System.IO.Pipes.AnonymousPipeServerStream.AnonymousPipeServerStream()
   type: Constructor
   source:
-    remote: *o0
+    remote: &o0
+      path: src/System.IO.Pipes/src/System/IO/Pipes/AnonymousPipeServerStream.cs
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.IO.Pipes/src/System/IO/Pipes/AnonymousPipeServerStream.cs
     startLine: 17
   syntax:
@@ -112,12 +126,12 @@ items:
       type:
         id: Microsoft.Win32.SafeHandles.SafePipeHandle
         name: SafePipeHandle
-        href: Microsoft.Win32.SafeHandles.SafePipeHandle
+        href: Microsoft.Win32.SafeHandles.SafePipeHandle.yml
     - id: clientSafePipeHandle
       type:
         id: Microsoft.Win32.SafeHandles.SafePipeHandle
         name: SafePipeHandle
-        href: Microsoft.Win32.SafeHandles.SafePipeHandle
+        href: Microsoft.Win32.SafeHandles.SafePipeHandle.yml
   id: System.IO.Pipes.AnonymousPipeServerStream.#ctor(System.IO.Pipes.PipeDirection,Microsoft.Win32.SafeHandles.SafePipeHandle,Microsoft.Win32.SafeHandles.SafePipeHandle)
 - uid: System.IO.Pipes.AnonymousPipeServerStream.#ctor(System.IO.Pipes.PipeDirection,HandleInheritability,System.Int32)
   href: System.IO.Pipes.AnonymousPipeServerStream.yml
@@ -145,9 +159,23 @@ items:
     - id: bufferSize
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.IO.Pipes.AnonymousPipeServerStream.#ctor(System.IO.Pipes.PipeDirection,HandleInheritability,System.Int32)
+- uid: System.IO.Pipes.AnonymousPipeServerStream.Finalize
+  href: System.IO.Pipes.AnonymousPipeServerStream.yml
+  name: ~AnonymousPipeServerStream()
+  fullName: System.IO.Pipes.AnonymousPipeServerStream.~AnonymousPipeServerStream()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.Pipes/src/System/IO/Pipes/AnonymousPipeServerStream.cs
+    startLine: 88
+  syntax:
+    content:
+      CSharp: protected void Finalize()
+    parameters: []
+  id: System.IO.Pipes.AnonymousPipeServerStream.Finalize
 - uid: System.IO.Pipes.AnonymousPipeServerStream.GetClientHandleAsString
   href: System.IO.Pipes.AnonymousPipeServerStream.yml
   name: GetClientHandleAsString()
@@ -159,10 +187,14 @@ items:
     startLine: 95
   syntax:
     content:
-      CSharp: '[SecurityCritical] [SuppressMessage("Microsoft.Reliability", "CA2001:AvoidCallingProblematicMethods", MessageId = "System.Runtime.InteropServices.SafeHandle.DangerousGetHandle", Justification = "By design")] public String GetClientHandleAsString()'
+      CSharp: public string GetClientHandleAsString()
     parameters: []
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.IO.Pipes.AnonymousPipeServerStream.GetClientHandleAsString
 - uid: System.IO.Pipes.AnonymousPipeServerStream.ClientSafePipeHandle
   href: System.IO.Pipes.AnonymousPipeServerStream.yml
@@ -181,7 +213,7 @@ items:
       type:
         id: Microsoft.Win32.SafeHandles.SafePipeHandle
         name: SafePipeHandle
-        href: Microsoft.Win32.SafeHandles.SafePipeHandle
+        href: Microsoft.Win32.SafeHandles.SafePipeHandle.yml
   id: System.IO.Pipes.AnonymousPipeServerStream.ClientSafePipeHandle
 - uid: System.IO.Pipes.AnonymousPipeServerStream.DisposeLocalCopyOfClientHandle
   href: System.IO.Pipes.AnonymousPipeServerStream.yml
@@ -194,9 +226,28 @@ items:
     startLine: 124
   syntax:
     content:
-      CSharp: '[SecurityCritical] public void DisposeLocalCopyOfClientHandle()'
+      CSharp: public void DisposeLocalCopyOfClientHandle()
     parameters: []
   id: System.IO.Pipes.AnonymousPipeServerStream.DisposeLocalCopyOfClientHandle
+- uid: System.IO.Pipes.AnonymousPipeServerStream.Dispose(System.Boolean)
+  href: System.IO.Pipes.AnonymousPipeServerStream.yml
+  name: Dispose(bool)
+  fullName: System.IO.Pipes.AnonymousPipeServerStream.Dispose(bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.Pipes/src/System/IO/Pipes/AnonymousPipeServerStream.cs
+    startLine: 133
+  syntax:
+    content:
+      CSharp: protected override void Dispose(bool disposing)
+    parameters:
+    - id: disposing
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.IO.Pipes.AnonymousPipeServerStream.Dispose(System.Boolean)
 - uid: System.IO.Pipes.AnonymousPipeServerStream.TransmissionMode
   href: System.IO.Pipes.AnonymousPipeServerStream.yml
   name: TransmissionMode

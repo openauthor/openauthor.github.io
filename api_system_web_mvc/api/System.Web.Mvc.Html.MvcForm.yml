@@ -6,23 +6,25 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/Html/MvcForm.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/Html/MvcForm.cs
     startLine: 7
   syntax:
     content:
-      CSharp: public class MvcForm
+      CSharp: 'public class MvcForm : IDisposable'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.Html.MvcForm
   children:
   - System.Web.Mvc.Html.MvcForm.#ctor(System.Web.HttpResponseBase)
   - System.Web.Mvc.Html.MvcForm.#ctor(System.Web.Mvc.ViewContext)
   - System.Web.Mvc.Html.MvcForm.Dispose
+  - System.Web.Mvc.Html.MvcForm.Dispose(System.Boolean)
   - System.Web.Mvc.Html.MvcForm.EndForm
 - uid: System.Web.Mvc.Html.MvcForm.#ctor(System.Web.HttpResponseBase)
   href: System.Web.Mvc.Html.MvcForm.yml
@@ -40,7 +42,7 @@ items:
     - id: httpResponse
       type:
         id: System.Web.HttpResponseBase
-        name: System.Web.HttpResponseBase
+        name: HttpResponseBase
         isExternal: true
   id: System.Web.Mvc.Html.MvcForm.#ctor(System.Web.HttpResponseBase)
 - uid: System.Web.Mvc.Html.MvcForm.#ctor(System.Web.Mvc.ViewContext)
@@ -76,6 +78,25 @@ items:
       CSharp: public void Dispose()
     parameters: []
   id: System.Web.Mvc.Html.MvcForm.Dispose
+- uid: System.Web.Mvc.Html.MvcForm.Dispose(System.Boolean)
+  href: System.Web.Mvc.Html.MvcForm.yml
+  name: Dispose(bool)
+  fullName: System.Web.Mvc.Html.MvcForm.Dispose(bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/Html/MvcForm.cs
+    startLine: 38
+  syntax:
+    content:
+      CSharp: protected virtual void Dispose(bool disposing)
+    parameters:
+    - id: disposing
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Web.Mvc.Html.MvcForm.Dispose(System.Boolean)
 - uid: System.Web.Mvc.Html.MvcForm.EndForm
   href: System.Web.Mvc.Html.MvcForm.yml
   name: EndForm()

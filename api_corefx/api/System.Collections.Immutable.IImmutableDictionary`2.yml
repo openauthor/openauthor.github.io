@@ -6,14 +6,16 @@ items:
   type: Interface
   source:
     remote: &o0
+      path: src/System.Collections.Immutable/src/System/Collections/Immutable/IImmutableDictionary.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Collections.Immutable/src/System/Collections/Immutable/IImmutableDictionary.cs
     startLine: 14
   summary: An immutable key-value dictionary.
   syntax:
     content:
-      CSharp: public interface IImmutableDictionary<TKey, TValue>
+      CSharp: 'public interface IImmutableDictionary<TKey, TValue> : IReadOnlyDictionary<TKey, TValue>, IReadOnlyCollection<KeyValuePair<TKey, TValue>>, IEnumerable<KeyValuePair<TKey, TValue>>, IEnumerable'
   id: System.Collections.Immutable.IImmutableDictionary`2
   children:
   - System.Collections.Immutable.IImmutableDictionary`2.Clear
@@ -37,10 +39,14 @@ items:
   summary: Gets an empty dictionary with equivalent ordering and key/value comparison rules.
   syntax:
     content:
-      CSharp: '[Pure] IImmutableDictionary<TKey, TValue> Clear();'
+      CSharp: public IImmutableDictionary<TKey, TValue> Clear()
     parameters: []
     return:
       id: IImmutableDictionary
+      type:
+        id: System.Collections.Immutable.IImmutableDictionary`2
+        name: IImmutableDictionary<TKey, TValue>
+        href: System.Collections.Immutable.IImmutableDictionary`2.yml
   id: System.Collections.Immutable.IImmutableDictionary`2.Clear
 - uid: System.Collections.Immutable.IImmutableDictionary`2.Add(`0,`1)
   href: System.Collections.Immutable.IImmutableDictionary`2.yml
@@ -54,7 +60,7 @@ items:
   summary: Adds the specified key and value to the dictionary.
   syntax:
     content:
-      CSharp: '[Pure] IImmutableDictionary<TKey, TValue> Add(TKey key, TValue value);'
+      CSharp: public IImmutableDictionary<TKey, TValue> Add(TKey key, TValue value)
     parameters:
     - id: key
       type:
@@ -70,6 +76,10 @@ items:
       description: The value of the entry to add.
     return:
       id: IImmutableDictionary
+      type:
+        id: System.Collections.Immutable.IImmutableDictionary`2
+        name: IImmutableDictionary<TKey, TValue>
+        href: System.Collections.Immutable.IImmutableDictionary`2.yml
       description: The new dictionary containing the additional key-value pair.
   id: System.Collections.Immutable.IImmutableDictionary`2.Add(`0,`1)
 - uid: System.Collections.Immutable.IImmutableDictionary`2.AddRange(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{`0,`1}})
@@ -84,16 +94,20 @@ items:
   summary: Adds the specified key-value pairs to the dictionary.
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures")] [Pure] IImmutableDictionary<TKey, TValue> AddRange(IEnumerable<KeyValuePair<TKey, TValue>> pairs);'
+      CSharp: public IImmutableDictionary<TKey, TValue> AddRange(IEnumerable<KeyValuePair<TKey, TValue>> pairs)
     parameters:
     - id: pairs
       type:
         id: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{`0,`1}}
-        name: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{`0,`1}}
+        name: IEnumerable<KeyValuePair<TKey, TValue>>
         isExternal: true
       description: The pairs.
     return:
       id: IImmutableDictionary
+      type:
+        id: System.Collections.Immutable.IImmutableDictionary`2
+        name: IImmutableDictionary<TKey, TValue>
+        href: System.Collections.Immutable.IImmutableDictionary`2.yml
       description: The new dictionary containing the additional key-value pairs.
   id: System.Collections.Immutable.IImmutableDictionary`2.AddRange(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{`0,`1}})
 - uid: System.Collections.Immutable.IImmutableDictionary`2.SetItem(`0,`1)
@@ -108,7 +122,7 @@ items:
   summary: Sets the specified key and value to the dictionary, possibly overwriting an existing value for the given key.
   syntax:
     content:
-      CSharp: '[Pure] IImmutableDictionary<TKey, TValue> SetItem(TKey key, TValue value);'
+      CSharp: public IImmutableDictionary<TKey, TValue> SetItem(TKey key, TValue value)
     parameters:
     - id: key
       type:
@@ -124,6 +138,10 @@ items:
       description: The value of the entry to add.
     return:
       id: IImmutableDictionary
+      type:
+        id: System.Collections.Immutable.IImmutableDictionary`2
+        name: IImmutableDictionary<TKey, TValue>
+        href: System.Collections.Immutable.IImmutableDictionary`2.yml
       description: The new dictionary containing the additional key-value pair.
   id: System.Collections.Immutable.IImmutableDictionary`2.SetItem(`0,`1)
 - uid: System.Collections.Immutable.IImmutableDictionary`2.SetItems(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{`0,`1}})
@@ -138,16 +156,20 @@ items:
   summary: Applies a given set of key=value pairs to an immutable dictionary, replacing any conflicting keys in the resulting dictionary.
   syntax:
     content:
-      CSharp: '[Pure] [SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures")] IImmutableDictionary<TKey, TValue> SetItems(IEnumerable<KeyValuePair<TKey, TValue>> items);'
+      CSharp: public IImmutableDictionary<TKey, TValue> SetItems(IEnumerable<KeyValuePair<TKey, TValue>> items)
     parameters:
     - id: items
       type:
         id: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{`0,`1}}
-        name: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{`0,`1}}
+        name: IEnumerable<KeyValuePair<TKey, TValue>>
         isExternal: true
       description: The key=value pairs to set on the dictionary.  Any keys that conflict with existing keys will overwrite the previous values.
     return:
       id: IImmutableDictionary
+      type:
+        id: System.Collections.Immutable.IImmutableDictionary`2
+        name: IImmutableDictionary<TKey, TValue>
+        href: System.Collections.Immutable.IImmutableDictionary`2.yml
       description: An immutable dictionary.
   id: System.Collections.Immutable.IImmutableDictionary`2.SetItems(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{`0,`1}})
 - uid: System.Collections.Immutable.IImmutableDictionary`2.RemoveRange(System.Collections.Generic.IEnumerable{`0})
@@ -162,16 +184,20 @@ items:
   summary: Removes the specified keys from the dictionary with their associated values.
   syntax:
     content:
-      CSharp: '[Pure] IImmutableDictionary<TKey, TValue> RemoveRange(IEnumerable<TKey> keys);'
+      CSharp: public IImmutableDictionary<TKey, TValue> RemoveRange(IEnumerable<TKey> keys)
     parameters:
     - id: keys
       type:
         id: System.Collections.Generic.IEnumerable{`0}
-        name: System.Collections.Generic.IEnumerable{`0}
+        name: IEnumerable<TKey>
         isExternal: true
       description: The keys to remove.
     return:
       id: IImmutableDictionary
+      type:
+        id: System.Collections.Immutable.IImmutableDictionary`2
+        name: IImmutableDictionary<TKey, TValue>
+        href: System.Collections.Immutable.IImmutableDictionary`2.yml
       description: A new dictionary with those keys removed; or this instance if those keys are not in the dictionary.
   id: System.Collections.Immutable.IImmutableDictionary`2.RemoveRange(System.Collections.Generic.IEnumerable{`0})
 - uid: System.Collections.Immutable.IImmutableDictionary`2.Remove(`0)
@@ -186,7 +212,7 @@ items:
   summary: Removes the specified key from the dictionary with its associated value.
   syntax:
     content:
-      CSharp: '[Pure] IImmutableDictionary<TKey, TValue> Remove(TKey key);'
+      CSharp: public IImmutableDictionary<TKey, TValue> Remove(TKey key)
     parameters:
     - id: key
       type:
@@ -196,6 +222,10 @@ items:
       description: The key to remove.
     return:
       id: IImmutableDictionary
+      type:
+        id: System.Collections.Immutable.IImmutableDictionary`2
+        name: IImmutableDictionary<TKey, TValue>
+        href: System.Collections.Immutable.IImmutableDictionary`2.yml
       description: A new dictionary with the matching entry removed; or this instance if the key is not in the dictionary.
   id: System.Collections.Immutable.IImmutableDictionary`2.Remove(`0)
 - uid: System.Collections.Immutable.IImmutableDictionary`2.Contains(System.Collections.Generic.KeyValuePair{`0,`1})
@@ -210,16 +240,20 @@ items:
   summary: Determines whether this dictionary contains the specified key-value pair.
   syntax:
     content:
-      CSharp: '[Pure] bool Contains(KeyValuePair<TKey, TValue> pair);'
+      CSharp: public bool Contains(KeyValuePair<TKey, TValue> pair)
     parameters:
     - id: pair
       type:
         id: System.Collections.Generic.KeyValuePair{`0,`1}
-        name: System.Collections.Generic.KeyValuePair{`0,`1}
+        name: KeyValuePair<TKey, TValue>
         isExternal: true
       description: The key value pair.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: true if this dictionary contains the key-value pair; otherwise, false.
   id: System.Collections.Immutable.IImmutableDictionary`2.Contains(System.Collections.Generic.KeyValuePair{`0,`1})
 - uid: System.Collections.Immutable.IImmutableDictionary`2.TryGetKey(`0,`0@)
@@ -234,7 +268,7 @@ items:
   summary: Searches the dictionary for a given key and returns the equal key it finds, if any.
   syntax:
     content:
-      CSharp: '[Pure] bool TryGetKey(TKey equalKey, out TKey actualKey);'
+      CSharp: public bool TryGetKey(TKey equalKey, out TKey actualKey)
     parameters:
     - id: equalKey
       type:
@@ -250,5 +284,9 @@ items:
       description: The key from the dictionary that the search found, or  if the search yielded no match.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: A value indicating whether the search was successful.
   id: System.Collections.Immutable.IImmutableDictionary`2.TryGetKey(`0,`0@)

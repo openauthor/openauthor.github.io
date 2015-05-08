@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/ViewDataDictionaryOfTModel.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/ViewDataDictionaryOfTModel.cs
     startLine: 4
   syntax:
     content:
-      CSharp: public class ViewDataDictionary<TModel>
+      CSharp: 'public class ViewDataDictionary<TModel> : ViewDataDictionary, IDictionary<string, object>, ICollection<KeyValuePair<string, object>>, IEnumerable<KeyValuePair<string, object>>, IEnumerable'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.Mvc.ViewDataDictionary
     name: ViewDataDictionary
@@ -28,6 +29,7 @@ items:
   - System.Web.Mvc.ViewDataDictionary`1.#ctor(System.Web.Mvc.ViewDataDictionary)
   - System.Web.Mvc.ViewDataDictionary`1.Model
   - System.Web.Mvc.ViewDataDictionary`1.ModelMetadata
+  - System.Web.Mvc.ViewDataDictionary`1.SetModel(System.Object)
 - uid: System.Web.Mvc.ViewDataDictionary`1.#ctor
   href: System.Web.Mvc.ViewDataDictionary`1.yml
   name: ViewDataDictionary()
@@ -118,3 +120,22 @@ items:
         name: ModelMetadata
         href: System.Web.Mvc.ModelMetadata.yml
   id: System.Web.Mvc.ViewDataDictionary`1.ModelMetadata
+- uid: System.Web.Mvc.ViewDataDictionary`1.SetModel(System.Object)
+  href: System.Web.Mvc.ViewDataDictionary`1.yml
+  name: SetModel(object)
+  fullName: System.Web.Mvc.ViewDataDictionary<TModel>.SetModel(object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ViewDataDictionaryOfTModel.cs
+    startLine: 44
+  syntax:
+    content:
+      CSharp: protected override void SetModel(object value)
+    parameters:
+    - id: value
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+  id: System.Web.Mvc.ViewDataDictionary`1.SetModel(System.Object)

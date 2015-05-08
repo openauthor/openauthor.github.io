@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/DataAnnotationsModelValidator.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/DataAnnotationsModelValidator.cs
     startLine: 8
   syntax:
     content:
-      CSharp: public class DataAnnotationsModelValidator
+      CSharp: 'public class DataAnnotationsModelValidator : ModelValidator'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.Mvc.ModelValidator
     name: ModelValidator
@@ -24,6 +25,8 @@ items:
   id: System.Web.Mvc.DataAnnotationsModelValidator
   children:
   - System.Web.Mvc.DataAnnotationsModelValidator.#ctor(System.Web.Mvc.ModelMetadata,System.Web.Mvc.ControllerContext,System.ComponentModel.DataAnnotations.ValidationAttribute)
+  - System.Web.Mvc.DataAnnotationsModelValidator.Attribute
+  - System.Web.Mvc.DataAnnotationsModelValidator.ErrorMessage
   - System.Web.Mvc.DataAnnotationsModelValidator.IsRequired
   - System.Web.Mvc.DataAnnotationsModelValidator.GetClientValidationRules
   - System.Web.Mvc.DataAnnotationsModelValidator.Validate(System.Object)
@@ -53,9 +56,47 @@ items:
     - id: attribute
       type:
         id: System.ComponentModel.DataAnnotations.ValidationAttribute
-        name: System.ComponentModel.DataAnnotations.ValidationAttribute
+        name: ValidationAttribute
         isExternal: true
   id: System.Web.Mvc.DataAnnotationsModelValidator.#ctor(System.Web.Mvc.ModelMetadata,System.Web.Mvc.ControllerContext,System.ComponentModel.DataAnnotations.ValidationAttribute)
+- uid: System.Web.Mvc.DataAnnotationsModelValidator.Attribute
+  href: System.Web.Mvc.DataAnnotationsModelValidator.yml
+  name: Attribute
+  fullName: System.Web.Mvc.DataAnnotationsModelValidator.Attribute
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/DataAnnotationsModelValidator.cs
+    startLine: 21
+  syntax:
+    content:
+      CSharp: protected internal ValidationAttribute Attribute { get; }
+    parameters:
+    - id: Attribute
+      type:
+        id: System.ComponentModel.DataAnnotations.ValidationAttribute
+        name: ValidationAttribute
+        isExternal: true
+  id: System.Web.Mvc.DataAnnotationsModelValidator.Attribute
+- uid: System.Web.Mvc.DataAnnotationsModelValidator.ErrorMessage
+  href: System.Web.Mvc.DataAnnotationsModelValidator.yml
+  name: ErrorMessage
+  fullName: System.Web.Mvc.DataAnnotationsModelValidator.ErrorMessage
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/DataAnnotationsModelValidator.cs
+    startLine: 23
+  syntax:
+    content:
+      CSharp: protected internal string ErrorMessage { get; }
+    parameters:
+    - id: ErrorMessage
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Web.Mvc.DataAnnotationsModelValidator.ErrorMessage
 - uid: System.Web.Mvc.DataAnnotationsModelValidator.IsRequired
   href: System.Web.Mvc.DataAnnotationsModelValidator.yml
   name: IsRequired
@@ -72,7 +113,7 @@ items:
     - id: IsRequired
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.DataAnnotationsModelValidator.IsRequired
 - uid: System.Web.Mvc.DataAnnotationsModelValidator.GetClientValidationRules
@@ -90,6 +131,10 @@ items:
     parameters: []
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Web.Mvc.ModelClientValidationRule}
+        name: IEnumerable<ModelClientValidationRule>
+        isExternal: true
   id: System.Web.Mvc.DataAnnotationsModelValidator.GetClientValidationRules
 - uid: System.Web.Mvc.DataAnnotationsModelValidator.Validate(System.Object)
   href: System.Web.Mvc.DataAnnotationsModelValidator.yml
@@ -107,8 +152,12 @@ items:
     - id: container
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Web.Mvc.ModelValidationResult}
+        name: IEnumerable<ModelValidationResult>
+        isExternal: true
   id: System.Web.Mvc.DataAnnotationsModelValidator.Validate(System.Object)

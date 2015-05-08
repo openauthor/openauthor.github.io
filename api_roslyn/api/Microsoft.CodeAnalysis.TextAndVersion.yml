@@ -6,9 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Workspace/Solution/TextAndVersion.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Workspace/Solution/TextAndVersion.cs
     startLine: 15
   summary: A class that represents both a source text and its version stamp.
@@ -17,7 +18,7 @@ items:
       CSharp: public sealed class TextAndVersion
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.TextAndVersion
   children:
@@ -37,7 +38,7 @@ items:
   summary: The source text.
   syntax:
     content:
-      CSharp: public SourceText Text { get; private set; }
+      CSharp: public SourceText Text { get; }
     parameters:
     - id: Text
       type:
@@ -57,7 +58,7 @@ items:
   summary: The version of the source text
   syntax:
     content:
-      CSharp: public VersionStamp Version { get; private set; }
+      CSharp: public VersionStamp Version { get; }
     parameters:
     - id: Version
       type:
@@ -77,12 +78,12 @@ items:
   summary: An optional file path that identifies the origin of the source text
   syntax:
     content:
-      CSharp: public string FilePath { get; private set; }
+      CSharp: public string FilePath { get; }
     parameters:
     - id: FilePath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: Microsoft.CodeAnalysis.TextAndVersion.FilePath
 - uid: Microsoft.CodeAnalysis.TextAndVersion.Create(Microsoft.CodeAnalysis.Text.SourceText,Microsoft.CodeAnalysis.VersionStamp,System.String)
@@ -114,9 +115,13 @@ items:
     - id: filePath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: An optional file path that identifies the original of the source text.
     return:
       id: TextAndVersion
+      type:
+        id: Microsoft.CodeAnalysis.TextAndVersion
+        name: TextAndVersion
+        href: Microsoft.CodeAnalysis.TextAndVersion.yml
   id: Microsoft.CodeAnalysis.TextAndVersion.Create(Microsoft.CodeAnalysis.Text.SourceText,Microsoft.CodeAnalysis.VersionStamp,System.String)

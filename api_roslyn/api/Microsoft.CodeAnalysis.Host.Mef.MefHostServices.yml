@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Workspace/Host/Mef/MefHostServices.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Workspace/Host/Mef/MefHostServices.cs
-    startLine: 14
+    startLine: 16
   syntax:
     content:
-      CSharp: public class MefHostServices
+      CSharp: 'public class MefHostServices : HostServices, IMefHostExportProvider'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: Microsoft.CodeAnalysis.Host.HostServices
     name: HostServices
@@ -26,6 +27,7 @@ items:
   - Microsoft.CodeAnalysis.Host.Mef.MefHostServices.#ctor(System.Composition.CompositionContext)
   - Microsoft.CodeAnalysis.Host.Mef.MefHostServices.Create(System.Composition.CompositionContext)
   - Microsoft.CodeAnalysis.Host.Mef.MefHostServices.Create(System.Collections.Generic.IEnumerable{System.Reflection.Assembly})
+  - Microsoft.CodeAnalysis.Host.Mef.MefHostServices.CreateWorkspaceServices(Microsoft.CodeAnalysis.Workspace)
   - Microsoft.CodeAnalysis.Host.Mef.MefHostServices.DefaultHost
   - Microsoft.CodeAnalysis.Host.Mef.MefHostServices.DefaultAssemblies
 - uid: Microsoft.CodeAnalysis.Host.Mef.MefHostServices.#ctor(System.Composition.CompositionContext)
@@ -36,7 +38,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Host/Mef/MefHostServices.cs
-    startLine: 18
+    startLine: 20
   syntax:
     content:
       CSharp: public MefHostServices(CompositionContext compositionContext)
@@ -44,7 +46,7 @@ items:
     - id: compositionContext
       type:
         id: System.Composition.CompositionContext
-        name: System.Composition.CompositionContext
+        name: CompositionContext
         isExternal: true
   id: Microsoft.CodeAnalysis.Host.Mef.MefHostServices.#ctor(System.Composition.CompositionContext)
 - uid: Microsoft.CodeAnalysis.Host.Mef.MefHostServices.Create(System.Composition.CompositionContext)
@@ -55,7 +57,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Host/Mef/MefHostServices.cs
-    startLine: 23
+    startLine: 25
   syntax:
     content:
       CSharp: public static MefHostServices Create(CompositionContext compositionContext)
@@ -63,10 +65,14 @@ items:
     - id: compositionContext
       type:
         id: System.Composition.CompositionContext
-        name: System.Composition.CompositionContext
+        name: CompositionContext
         isExternal: true
     return:
       id: MefHostServices
+      type:
+        id: Microsoft.CodeAnalysis.Host.Mef.MefHostServices
+        name: MefHostServices
+        href: Microsoft.CodeAnalysis.Host.Mef.MefHostServices.yml
   id: Microsoft.CodeAnalysis.Host.Mef.MefHostServices.Create(System.Composition.CompositionContext)
 - uid: Microsoft.CodeAnalysis.Host.Mef.MefHostServices.Create(System.Collections.Generic.IEnumerable{System.Reflection.Assembly})
   href: Microsoft.CodeAnalysis.Host.Mef.MefHostServices.yml
@@ -76,19 +82,48 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Host/Mef/MefHostServices.cs
-    startLine: 33
+    startLine: 35
   syntax:
     content:
-      CSharp: public static MefHostServices Create(IEnumerable<System.Reflection.Assembly> assemblies)
+      CSharp: public static MefHostServices Create(IEnumerable<Assembly> assemblies)
     parameters:
     - id: assemblies
       type:
         id: System.Collections.Generic.IEnumerable{System.Reflection.Assembly}
-        name: System.Collections.Generic.IEnumerable{System.Reflection.Assembly}
+        name: IEnumerable<Assembly>
         isExternal: true
     return:
       id: MefHostServices
+      type:
+        id: Microsoft.CodeAnalysis.Host.Mef.MefHostServices
+        name: MefHostServices
+        href: Microsoft.CodeAnalysis.Host.Mef.MefHostServices.yml
   id: Microsoft.CodeAnalysis.Host.Mef.MefHostServices.Create(System.Collections.Generic.IEnumerable{System.Reflection.Assembly})
+- uid: Microsoft.CodeAnalysis.Host.Mef.MefHostServices.CreateWorkspaceServices(Microsoft.CodeAnalysis.Workspace)
+  href: Microsoft.CodeAnalysis.Host.Mef.MefHostServices.yml
+  name: CreateWorkspaceServices(Workspace)
+  fullName: Microsoft.CodeAnalysis.Host.Mef.MefHostServices.CreateWorkspaceServices(Microsoft.CodeAnalysis.Workspace)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Host/Mef/MefHostServices.cs
+    startLine: 47
+  syntax:
+    content:
+      CSharp: protected internal override HostWorkspaceServices CreateWorkspaceServices(Workspace workspace)
+    parameters:
+    - id: workspace
+      type:
+        id: Microsoft.CodeAnalysis.Workspace
+        name: Workspace
+        href: Microsoft.CodeAnalysis.Workspace.yml
+    return:
+      id: HostWorkspaceServices
+      type:
+        id: Microsoft.CodeAnalysis.Host.HostWorkspaceServices
+        name: HostWorkspaceServices
+        href: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.yml
+  id: Microsoft.CodeAnalysis.Host.Mef.MefHostServices.CreateWorkspaceServices(Microsoft.CodeAnalysis.Workspace)
 - uid: Microsoft.CodeAnalysis.Host.Mef.MefHostServices.DefaultHost
   href: Microsoft.CodeAnalysis.Host.Mef.MefHostServices.yml
   name: DefaultHost
@@ -97,7 +132,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Host/Mef/MefHostServices.cs
-    startLine: 71
+    startLine: 73
   syntax:
     content:
       CSharp: public static MefHostServices DefaultHost { get; }
@@ -116,7 +151,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Host/Mef/MefHostServices.cs
-    startLine: 86
+    startLine: 88
   syntax:
     content:
       CSharp: public static ImmutableArray<Assembly> DefaultAssemblies { get; }
@@ -124,6 +159,6 @@ items:
     - id: DefaultAssemblies
       type:
         id: System.Collections.Immutable.ImmutableArray{System.Reflection.Assembly}
-        name: System.Collections.Immutable.ImmutableArray{System.Reflection.Assembly}
+        name: ImmutableArray<Assembly>
         isExternal: true
   id: Microsoft.CodeAnalysis.Host.Mef.MefHostServices.DefaultAssemblies

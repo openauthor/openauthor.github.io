@@ -6,18 +6,19 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/CodeActions/CodeAction.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/CodeActions/CodeAction.cs
-    startLine: 19
+    startLine: 20
   summary: An action produced by a [Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider](Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider.yml) or a [Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider](Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider.yml).
   syntax:
     content:
       CSharp: public abstract class CodeAction
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.CodeActions.CodeAction
   children:
@@ -25,6 +26,13 @@ items:
   - Microsoft.CodeAnalysis.CodeActions.CodeAction.EquivalenceKey
   - Microsoft.CodeAnalysis.CodeActions.CodeAction.GetOperationsAsync(System.Threading.CancellationToken)
   - Microsoft.CodeAnalysis.CodeActions.CodeAction.GetPreviewOperationsAsync(System.Threading.CancellationToken)
+  - Microsoft.CodeAnalysis.CodeActions.CodeAction.ComputeOperationsAsync(System.Threading.CancellationToken)
+  - Microsoft.CodeAnalysis.CodeActions.CodeAction.ComputePreviewOperationsAsync(System.Threading.CancellationToken)
+  - Microsoft.CodeAnalysis.CodeActions.CodeAction.GetChangedSolutionAsync(System.Threading.CancellationToken)
+  - Microsoft.CodeAnalysis.CodeActions.CodeAction.GetChangedDocumentAsync(System.Threading.CancellationToken)
+  - Microsoft.CodeAnalysis.CodeActions.CodeAction.PostProcessAsync(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.CodeActions.CodeActionOperation},System.Threading.CancellationToken)
+  - Microsoft.CodeAnalysis.CodeActions.CodeAction.PostProcessChangesAsync(Microsoft.CodeAnalysis.Solution,System.Threading.CancellationToken)
+  - Microsoft.CodeAnalysis.CodeActions.CodeAction.PostProcessChangesAsync(Microsoft.CodeAnalysis.Document,System.Threading.CancellationToken)
   - Microsoft.CodeAnalysis.CodeActions.CodeAction.Create(System.String,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{Microsoft.CodeAnalysis.Document}},System.String)
   - Microsoft.CodeAnalysis.CodeActions.CodeAction.Create(System.String,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{Microsoft.CodeAnalysis.Solution}},System.String)
 - uid: Microsoft.CodeAnalysis.CodeActions.CodeAction.Title
@@ -35,7 +43,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/CodeActions/CodeAction.cs
-    startLine: 24
+    startLine: 25
   summary: A short title describing the action that may appear in a menu.
   syntax:
     content:
@@ -44,7 +52,7 @@ items:
     - id: Title
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: Microsoft.CodeAnalysis.CodeActions.CodeAction.Title
 - uid: Microsoft.CodeAnalysis.CodeActions.CodeAction.EquivalenceKey
@@ -55,7 +63,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/CodeActions/CodeAction.cs
-    startLine: 40
+    startLine: 41
   summary: >-
     Two code actions are treated as equivalent if they have equal non-null [Microsoft.CodeAnalysis.CodeActions.CodeAction.EquivalenceKey](Microsoft.CodeAnalysis.CodeActions.CodeAction.yml) values and were generated
 
@@ -67,7 +75,7 @@ items:
     - id: EquivalenceKey
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: Microsoft.CodeAnalysis.CodeActions.CodeAction.EquivalenceKey
 - uid: Microsoft.CodeAnalysis.CodeActions.CodeAction.GetOperationsAsync(System.Threading.CancellationToken)
@@ -78,19 +86,23 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/CodeActions/CodeAction.cs
-    startLine: 45
+    startLine: 46
   summary: The sequence of operations that define the code action.
   syntax:
     content:
-      CSharp: public async Task<ImmutableArray<CodeActionOperation>> GetOperationsAsync(CancellationToken cancellationToken)
+      CSharp: public Task<ImmutableArray<CodeActionOperation>> GetOperationsAsync(CancellationToken cancellationToken)
     parameters:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.CodeActions.CodeActionOperation}}
+        name: Task<ImmutableArray<CodeActionOperation>>
+        isExternal: true
   id: Microsoft.CodeAnalysis.CodeActions.CodeAction.GetOperationsAsync(System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.CodeActions.CodeAction.GetPreviewOperationsAsync(System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.CodeActions.CodeAction.yml
@@ -100,20 +112,243 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/CodeActions/CodeAction.cs
-    startLine: 68
+    startLine: 69
   summary: The sequence of operations used to construct a preview.
   syntax:
     content:
-      CSharp: public async Task<ImmutableArray<CodeActionOperation>> GetPreviewOperationsAsync(CancellationToken cancellationToken)
+      CSharp: public Task<ImmutableArray<CodeActionOperation>> GetPreviewOperationsAsync(CancellationToken cancellationToken)
     parameters:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.CodeActions.CodeActionOperation}}
+        name: Task<ImmutableArray<CodeActionOperation>>
+        isExternal: true
   id: Microsoft.CodeAnalysis.CodeActions.CodeAction.GetPreviewOperationsAsync(System.Threading.CancellationToken)
+- uid: Microsoft.CodeAnalysis.CodeActions.CodeAction.ComputeOperationsAsync(System.Threading.CancellationToken)
+  href: Microsoft.CodeAnalysis.CodeActions.CodeAction.yml
+  name: ComputeOperationsAsync(CancellationToken)
+  fullName: Microsoft.CodeAnalysis.CodeActions.CodeAction.ComputeOperationsAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/CodeActions/CodeAction.cs
+    startLine: 84
+  summary: Override this method if you want to implement a [Microsoft.CodeAnalysis.CodeActions.CodeAction](Microsoft.CodeAnalysis.CodeActions.CodeAction.yml) subclass that includes custom [Microsoft.CodeAnalysis.CodeActions.CodeActionOperation](Microsoft.CodeAnalysis.CodeActions.CodeActionOperation.yml)'s.
+  syntax:
+    content:
+      CSharp: protected virtual Task<IEnumerable<CodeActionOperation>> ComputeOperationsAsync(CancellationToken cancellationToken)
+    parameters:
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: CancellationToken
+        isExternal: true
+    return:
+      id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.CodeActions.CodeActionOperation}}
+        name: Task<IEnumerable<CodeActionOperation>>
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CodeActions.CodeAction.ComputeOperationsAsync(System.Threading.CancellationToken)
+- uid: Microsoft.CodeAnalysis.CodeActions.CodeAction.ComputePreviewOperationsAsync(System.Threading.CancellationToken)
+  href: Microsoft.CodeAnalysis.CodeActions.CodeAction.yml
+  name: ComputePreviewOperationsAsync(CancellationToken)
+  fullName: Microsoft.CodeAnalysis.CodeActions.CodeAction.ComputePreviewOperationsAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/CodeActions/CodeAction.cs
+    startLine: 99
+  summary: >-
+    Override this method if you want to implement a [Microsoft.CodeAnalysis.CodeActions.CodeAction](Microsoft.CodeAnalysis.CodeActions.CodeAction.yml) that has a set of preview operations that are different
+
+    than the operations produced by [Microsoft.CodeAnalysis.CodeActions.CodeAction.ComputeOperationsAsync(System.Threading.CancellationToken)](Microsoft.CodeAnalysis.CodeActions.CodeAction.yml).
+  syntax:
+    content:
+      CSharp: protected virtual Task<IEnumerable<CodeActionOperation>> ComputePreviewOperationsAsync(CancellationToken cancellationToken)
+    parameters:
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: CancellationToken
+        isExternal: true
+    return:
+      id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.CodeActions.CodeActionOperation}}
+        name: Task<IEnumerable<CodeActionOperation>>
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CodeActions.CodeAction.ComputePreviewOperationsAsync(System.Threading.CancellationToken)
+- uid: Microsoft.CodeAnalysis.CodeActions.CodeAction.GetChangedSolutionAsync(System.Threading.CancellationToken)
+  href: Microsoft.CodeAnalysis.CodeActions.CodeAction.yml
+  name: GetChangedSolutionAsync(CancellationToken)
+  fullName: Microsoft.CodeAnalysis.CodeActions.CodeAction.GetChangedSolutionAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/CodeActions/CodeAction.cs
+    startLine: 108
+  summary: >-
+    Computes all changes for an entire solution.
+
+    Override this method if you want to implement a [Microsoft.CodeAnalysis.CodeActions.CodeAction](Microsoft.CodeAnalysis.CodeActions.CodeAction.yml) subclass that changes more than one document.
+  syntax:
+    content:
+      CSharp: protected virtual Task<Solution> GetChangedSolutionAsync(CancellationToken cancellationToken)
+    parameters:
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: CancellationToken
+        isExternal: true
+    return:
+      id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.CodeAnalysis.Solution}
+        name: Task<Solution>
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CodeActions.CodeAction.GetChangedSolutionAsync(System.Threading.CancellationToken)
+- uid: Microsoft.CodeAnalysis.CodeActions.CodeAction.GetChangedDocumentAsync(System.Threading.CancellationToken)
+  href: Microsoft.CodeAnalysis.CodeActions.CodeAction.yml
+  name: GetChangedDocumentAsync(CancellationToken)
+  fullName: Microsoft.CodeAnalysis.CodeActions.CodeAction.GetChangedDocumentAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/CodeActions/CodeAction.cs
+    startLine: 123
+  summary: >-
+    Computes changes for a single document.
+
+    Override this method if you want to implement a [Microsoft.CodeAnalysis.CodeActions.CodeAction](Microsoft.CodeAnalysis.CodeActions.CodeAction.yml) subclass that changes a single document.
+  syntax:
+    content:
+      CSharp: protected virtual Task<Document> GetChangedDocumentAsync(CancellationToken cancellationToken)
+    parameters:
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: CancellationToken
+        isExternal: true
+    return:
+      id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.CodeAnalysis.Document}
+        name: Task<Document>
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CodeActions.CodeAction.GetChangedDocumentAsync(System.Threading.CancellationToken)
+- uid: Microsoft.CodeAnalysis.CodeActions.CodeAction.PostProcessAsync(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.CodeActions.CodeActionOperation},System.Threading.CancellationToken)
+  href: Microsoft.CodeAnalysis.CodeActions.CodeAction.yml
+  name: PostProcessAsync(IEnumerable<CodeActionOperation>, CancellationToken)
+  fullName: Microsoft.CodeAnalysis.CodeActions.CodeAction.PostProcessAsync(System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.CodeActions.CodeActionOperation>, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/CodeActions/CodeAction.cs
+    startLine: 153
+  summary: Apply post processing steps to any [Microsoft.CodeAnalysis.CodeActions.ApplyChangesOperation](Microsoft.CodeAnalysis.CodeActions.ApplyChangesOperation.yml)'s.
+  syntax:
+    content:
+      CSharp: protected Task<ImmutableArray<CodeActionOperation>> PostProcessAsync(IEnumerable<CodeActionOperation> operations, CancellationToken cancellationToken)
+    parameters:
+    - id: operations
+      type:
+        id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.CodeActions.CodeActionOperation}
+        name: IEnumerable<CodeActionOperation>
+        isExternal: true
+      description: A list of operations.
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: CancellationToken
+        isExternal: true
+      description: A cancellation token.
+    return:
+      id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.CodeActions.CodeActionOperation}}
+        name: Task<ImmutableArray<CodeActionOperation>>
+        isExternal: true
+      description: A new list of operations with post processing steps applied to any [Microsoft.CodeAnalysis.CodeActions.ApplyChangesOperation](Microsoft.CodeAnalysis.CodeActions.ApplyChangesOperation.yml)'s.
+  id: Microsoft.CodeAnalysis.CodeActions.CodeAction.PostProcessAsync(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.CodeActions.CodeActionOperation},System.Threading.CancellationToken)
+- uid: Microsoft.CodeAnalysis.CodeActions.CodeAction.PostProcessChangesAsync(Microsoft.CodeAnalysis.Solution,System.Threading.CancellationToken)
+  href: Microsoft.CodeAnalysis.CodeActions.CodeAction.yml
+  name: PostProcessChangesAsync(Solution, CancellationToken)
+  fullName: Microsoft.CodeAnalysis.CodeActions.CodeAction.PostProcessChangesAsync(Microsoft.CodeAnalysis.Solution, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/CodeActions/CodeAction.cs
+    startLine: 178
+  summary: Apply post processing steps to solution changes, like formatting and simplification.
+  syntax:
+    content:
+      CSharp: protected Task<Solution> PostProcessChangesAsync(Solution changedSolution, CancellationToken cancellationToken)
+    parameters:
+    - id: changedSolution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
+      description: The solution changed by the [Microsoft.CodeAnalysis.CodeActions.CodeAction](Microsoft.CodeAnalysis.CodeActions.CodeAction.yml).
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: CancellationToken
+        isExternal: true
+      description: A cancellation token
+    return:
+      id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.CodeAnalysis.Solution}
+        name: Task<Solution>
+        isExternal: true
+  id: Microsoft.CodeAnalysis.CodeActions.CodeAction.PostProcessChangesAsync(Microsoft.CodeAnalysis.Solution,System.Threading.CancellationToken)
+- uid: Microsoft.CodeAnalysis.CodeActions.CodeAction.PostProcessChangesAsync(Microsoft.CodeAnalysis.Document,System.Threading.CancellationToken)
+  href: Microsoft.CodeAnalysis.CodeActions.CodeAction.yml
+  name: PostProcessChangesAsync(Document, CancellationToken)
+  fullName: Microsoft.CodeAnalysis.CodeActions.CodeAction.PostProcessChangesAsync(Microsoft.CodeAnalysis.Document, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/CodeActions/CodeAction.cs
+    startLine: 222
+  summary: >-
+    Apply post processing steps to a single document:
+
+    Reducing nodes annotated with [Microsoft.CodeAnalysis.Simplification.Simplifier.Annotation](Microsoft.CodeAnalysis.Simplification.Simplifier.yml)
+
+    Formatting nodes annotated with [Microsoft.CodeAnalysis.Formatting.Formatter.Annotation](Microsoft.CodeAnalysis.Formatting.Formatter.yml)
+  syntax:
+    content:
+      CSharp: protected virtual Task<Document> PostProcessChangesAsync(Document document, CancellationToken cancellationToken)
+    parameters:
+    - id: document
+      type:
+        id: Microsoft.CodeAnalysis.Document
+        name: Document
+        href: Microsoft.CodeAnalysis.Document.yml
+      description: The document changed by the [Microsoft.CodeAnalysis.CodeActions.CodeAction](Microsoft.CodeAnalysis.CodeActions.CodeAction.yml).
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: CancellationToken
+        isExternal: true
+      description: A cancellation token.
+    return:
+      id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.CodeAnalysis.Document}
+        name: Task<Document>
+        isExternal: true
+      description: A document with the post processing changes applied.
+  id: Microsoft.CodeAnalysis.CodeActions.CodeAction.PostProcessChangesAsync(Microsoft.CodeAnalysis.Document,System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.CodeActions.CodeAction.Create(System.String,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{Microsoft.CodeAnalysis.Document}},System.String)
   href: Microsoft.CodeAnalysis.CodeActions.CodeAction.yml
   name: Create(string, Func<CancellationToken, Task<Document>>, string)
@@ -122,7 +357,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/CodeActions/CodeAction.cs
-    startLine: 229
+    startLine: 249
   summary: >-
     Creates a [Microsoft.CodeAnalysis.CodeActions.CodeAction](Microsoft.CodeAnalysis.CodeActions.CodeAction.yml) for a change to a single [Microsoft.CodeAnalysis.Document](Microsoft.CodeAnalysis.Document.yml).
 
@@ -134,23 +369,27 @@ items:
     - id: title
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: Title of the [Microsoft.CodeAnalysis.CodeActions.CodeAction](Microsoft.CodeAnalysis.CodeActions.CodeAction.yml).
     - id: createChangedDocument
       type:
         id: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{Microsoft.CodeAnalysis.Document}}
-        name: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{Microsoft.CodeAnalysis.Document}}
+        name: Func<CancellationToken, Task<Document>>
         isExternal: true
       description: Function to create the [Microsoft.CodeAnalysis.Document](Microsoft.CodeAnalysis.Document.yml).
     - id: equivalenceKey
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: Optional value used to determine the equivalence of the [Microsoft.CodeAnalysis.CodeActions.CodeAction](Microsoft.CodeAnalysis.CodeActions.CodeAction.yml) with other [Microsoft.CodeAnalysis.CodeActions.CodeAction](Microsoft.CodeAnalysis.CodeActions.CodeAction.yml)s. See [Microsoft.CodeAnalysis.CodeActions.CodeAction.EquivalenceKey](Microsoft.CodeAnalysis.CodeActions.CodeAction.yml).
     return:
       id: CodeAction
+      type:
+        id: Microsoft.CodeAnalysis.CodeActions.CodeAction
+        name: CodeAction
+        href: Microsoft.CodeAnalysis.CodeActions.CodeAction.yml
   id: Microsoft.CodeAnalysis.CodeActions.CodeAction.Create(System.String,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{Microsoft.CodeAnalysis.Document}},System.String)
 - uid: Microsoft.CodeAnalysis.CodeActions.CodeAction.Create(System.String,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{Microsoft.CodeAnalysis.Solution}},System.String)
   href: Microsoft.CodeAnalysis.CodeActions.CodeAction.yml
@@ -160,7 +399,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/CodeActions/CodeAction.cs
-    startLine: 251
+    startLine: 271
   summary: >-
     Creates a [Microsoft.CodeAnalysis.CodeActions.CodeAction](Microsoft.CodeAnalysis.CodeActions.CodeAction.yml) for a change to more than one [Microsoft.CodeAnalysis.Document](Microsoft.CodeAnalysis.Document.yml) within a [Microsoft.CodeAnalysis.Solution](Microsoft.CodeAnalysis.Solution.yml).
 
@@ -172,21 +411,25 @@ items:
     - id: title
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: Title of the [Microsoft.CodeAnalysis.CodeActions.CodeAction](Microsoft.CodeAnalysis.CodeActions.CodeAction.yml).
     - id: createChangedSolution
       type:
         id: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{Microsoft.CodeAnalysis.Solution}}
-        name: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{Microsoft.CodeAnalysis.Solution}}
+        name: Func<CancellationToken, Task<Solution>>
         isExternal: true
       description: Function to create the [Microsoft.CodeAnalysis.Solution](Microsoft.CodeAnalysis.Solution.yml).
     - id: equivalenceKey
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: Optional value used to determine the equivalence of the [Microsoft.CodeAnalysis.CodeActions.CodeAction](Microsoft.CodeAnalysis.CodeActions.CodeAction.yml) with other [Microsoft.CodeAnalysis.CodeActions.CodeAction](Microsoft.CodeAnalysis.CodeActions.CodeAction.yml)s. See [Microsoft.CodeAnalysis.CodeActions.CodeAction.EquivalenceKey](Microsoft.CodeAnalysis.CodeActions.CodeAction.yml).
     return:
       id: CodeAction
+      type:
+        id: Microsoft.CodeAnalysis.CodeActions.CodeAction
+        name: CodeAction
+        href: Microsoft.CodeAnalysis.CodeActions.CodeAction.yml
   id: Microsoft.CodeAnalysis.CodeActions.CodeAction.Create(System.String,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{Microsoft.CodeAnalysis.Solution}},System.String)

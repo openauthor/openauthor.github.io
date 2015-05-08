@@ -6,28 +6,35 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableStack`1.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableStack`1.cs
     startLine: 17
   summary: An immutable stack.
   syntax:
     content:
-      CSharp: public sealed class ImmutableStack<T>
+      CSharp: 'public sealed class ImmutableStack<T> : IImmutableStack<T>, IEnumerable<T>, IEnumerable'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Collections.Immutable.ImmutableStack`1
   children:
   - System.Collections.Immutable.ImmutableStack`1.Empty
   - System.Collections.Immutable.ImmutableStack`1.Clear
+  - System.Collections.Immutable.ImmutableStack`1.System#Collections#Immutable#IImmutableStack{T}#Clear
   - System.Collections.Immutable.ImmutableStack`1.IsEmpty
   - System.Collections.Immutable.ImmutableStack`1.Peek
   - System.Collections.Immutable.ImmutableStack`1.Push(`0)
+  - System.Collections.Immutable.ImmutableStack`1.System#Collections#Immutable#IImmutableStack{T}#Push(`0)
   - System.Collections.Immutable.ImmutableStack`1.Pop
   - System.Collections.Immutable.ImmutableStack`1.Pop(`0@)
+  - System.Collections.Immutable.ImmutableStack`1.System#Collections#Immutable#IImmutableStack{T}#Pop
   - System.Collections.Immutable.ImmutableStack`1.GetEnumerator
+  - System.Collections.Immutable.ImmutableStack`1.System#Collections#Generic#IEnumerable{T}#GetEnumerator
+  - System.Collections.Immutable.ImmutableStack`1.System#Collections#IEnumerable#GetEnumerator
 - uid: System.Collections.Immutable.ImmutableStack`1.Empty
   href: System.Collections.Immutable.ImmutableStack`1.yml
   name: Empty
@@ -45,7 +52,7 @@ items:
     - id: Empty
       type:
         id: System.Collections.Immutable.ImmutableStack`1
-        name: ImmutableStack
+        name: ImmutableStack<T>
         href: System.Collections.Immutable.ImmutableStack`1.yml
   id: System.Collections.Immutable.ImmutableStack`1.Empty
 - uid: System.Collections.Immutable.ImmutableStack`1.Clear
@@ -64,7 +71,32 @@ items:
     parameters: []
     return:
       id: ImmutableStack
+      type:
+        id: System.Collections.Immutable.ImmutableStack`1
+        name: ImmutableStack<T>
+        href: System.Collections.Immutable.ImmutableStack`1.yml
   id: System.Collections.Immutable.ImmutableStack`1.Clear
+- uid: System.Collections.Immutable.ImmutableStack`1.System#Collections#Immutable#IImmutableStack{T}#Clear
+  href: System.Collections.Immutable.ImmutableStack`1.yml
+  name: IImmutableStack<T>.Clear()
+  fullName: System.Collections.Immutable.ImmutableStack<T>.System.Collections.Immutable.IImmutableStack<T>.Clear()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableStack`1.cs
+    startLine: 89
+  summary: Gets an empty stack.
+  syntax:
+    content:
+      CSharp: IImmutableStack<T> IImmutableStack<T>.Clear()
+    parameters: []
+    return:
+      id: IImmutableStack
+      type:
+        id: System.Collections.Immutable.IImmutableStack{`0}
+        name: IImmutableStack<T>
+        href: System.Collections.Immutable.IImmutableStack{`0}
+  id: System.Collections.Immutable.ImmutableStack`1.System#Collections#Immutable#IImmutableStack{T}#Clear
 - uid: System.Collections.Immutable.ImmutableStack`1.IsEmpty
   href: System.Collections.Immutable.ImmutableStack`1.yml
   name: IsEmpty
@@ -82,7 +114,7 @@ items:
     - id: IsEmpty
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Collections.Immutable.ImmutableStack`1.IsEmpty
 - uid: System.Collections.Immutable.ImmutableStack`1.Peek
@@ -97,10 +129,14 @@ items:
   summary: Gets the element on the top of the stack.
   syntax:
     content:
-      CSharp: '[Pure] public T Peek()'
+      CSharp: public T Peek()
     parameters: []
     return:
       id: T
+      type:
+        id: T
+        name: T
+        href: T
       description: The element on the top of the stack.
   id: System.Collections.Immutable.ImmutableStack`1.Peek
 - uid: System.Collections.Immutable.ImmutableStack`1.Push(`0)
@@ -115,7 +151,7 @@ items:
   summary: Pushes an element onto a stack and returns the new stack.
   syntax:
     content:
-      CSharp: '[Pure] public ImmutableStack<T> Push(T value)'
+      CSharp: public ImmutableStack<T> Push(T value)
     parameters:
     - id: value
       type:
@@ -125,8 +161,40 @@ items:
       description: The element to push onto the stack.
     return:
       id: ImmutableStack
+      type:
+        id: System.Collections.Immutable.ImmutableStack`1
+        name: ImmutableStack<T>
+        href: System.Collections.Immutable.ImmutableStack`1.yml
       description: The new stack.
   id: System.Collections.Immutable.ImmutableStack`1.Push(`0)
+- uid: System.Collections.Immutable.ImmutableStack`1.System#Collections#Immutable#IImmutableStack{T}#Push(`0)
+  href: System.Collections.Immutable.ImmutableStack`1.yml
+  name: IImmutableStack<T>.Push(T)
+  fullName: System.Collections.Immutable.ImmutableStack<T>.System.Collections.Immutable.IImmutableStack<T>.Push(T)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableStack`1.cs
+    startLine: 141
+  summary: Pushes an element onto a stack and returns the new stack.
+  syntax:
+    content:
+      CSharp: IImmutableStack<T> IImmutableStack<T>.Push(T value)
+    parameters:
+    - id: value
+      type:
+        id: T
+        name: T
+        href: T
+      description: The element to push onto the stack.
+    return:
+      id: IImmutableStack
+      type:
+        id: System.Collections.Immutable.IImmutableStack{`0}
+        name: IImmutableStack<T>
+        href: System.Collections.Immutable.IImmutableStack{`0}
+      description: The new stack.
+  id: System.Collections.Immutable.ImmutableStack`1.System#Collections#Immutable#IImmutableStack{T}#Push(`0)
 - uid: System.Collections.Immutable.ImmutableStack`1.Pop
   href: System.Collections.Immutable.ImmutableStack`1.yml
   name: Pop()
@@ -139,10 +207,14 @@ items:
   summary: Returns a stack that lacks the top element on this stack.
   syntax:
     content:
-      CSharp: '[Pure] public ImmutableStack<T> Pop()'
+      CSharp: public ImmutableStack<T> Pop()
     parameters: []
     return:
       id: ImmutableStack
+      type:
+        id: System.Collections.Immutable.ImmutableStack`1
+        name: ImmutableStack<T>
+        href: System.Collections.Immutable.ImmutableStack`1.yml
       description: A stack; never null
   id: System.Collections.Immutable.ImmutableStack`1.Pop
 - uid: System.Collections.Immutable.ImmutableStack`1.Pop(`0@)
@@ -157,7 +229,7 @@ items:
   summary: Pops the top element off the stack.
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1021:AvoidOutParameters", MessageId = "0#")] [Pure] public ImmutableStack<T> Pop(out T value)'
+      CSharp: public ImmutableStack<T> Pop(out T value)
     parameters:
     - id: value
       type:
@@ -167,8 +239,34 @@ items:
       description: The value that was removed from the stack.
     return:
       id: ImmutableStack
+      type:
+        id: System.Collections.Immutable.ImmutableStack`1
+        name: ImmutableStack<T>
+        href: System.Collections.Immutable.ImmutableStack`1.yml
       description: A stack; never null
   id: System.Collections.Immutable.ImmutableStack`1.Pop(`0@)
+- uid: System.Collections.Immutable.ImmutableStack`1.System#Collections#Immutable#IImmutableStack{T}#Pop
+  href: System.Collections.Immutable.ImmutableStack`1.yml
+  name: IImmutableStack<T>.Pop()
+  fullName: System.Collections.Immutable.ImmutableStack<T>.System.Collections.Immutable.IImmutableStack<T>.Pop()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableStack`1.cs
+    startLine: 184
+  summary: Returns a stack that lacks the top element on this stack.
+  syntax:
+    content:
+      CSharp: IImmutableStack<T> IImmutableStack<T>.Pop()
+    parameters: []
+    return:
+      id: IImmutableStack
+      type:
+        id: System.Collections.Immutable.IImmutableStack{`0}
+        name: IImmutableStack<T>
+        href: System.Collections.Immutable.IImmutableStack{`0}
+      description: A stack; never null
+  id: System.Collections.Immutable.ImmutableStack`1.System#Collections#Immutable#IImmutableStack{T}#Pop
 - uid: System.Collections.Immutable.ImmutableStack`1.GetEnumerator
   href: System.Collections.Immutable.ImmutableStack`1.yml
   name: GetEnumerator()
@@ -181,9 +279,57 @@ items:
   summary: Returns an enumerator that iterates through the collection.
   syntax:
     content:
-      CSharp: '[Pure] public Enumerator GetEnumerator()'
+      CSharp: public Enumerator GetEnumerator()
     parameters: []
     return:
       id: Enumerator
-      description: An [Enumerator](#) that can be used to iterate through the collection.
+      type:
+        id: System.Collections.Immutable.ImmutableStack`1.Enumerator
+        name: Enumerator
+        href: System.Collections.Immutable.ImmutableStack`1.Enumerator.yml
+      description: An [System.Collections.Immutable.ImmutableStack`1.Enumerator](System.Collections.Immutable.ImmutableStack`1.Enumerator.yml) that can be used to iterate through the collection.
   id: System.Collections.Immutable.ImmutableStack`1.GetEnumerator
+- uid: System.Collections.Immutable.ImmutableStack`1.System#Collections#Generic#IEnumerable{T}#GetEnumerator
+  href: System.Collections.Immutable.ImmutableStack`1.yml
+  name: IEnumerable<T>.GetEnumerator()
+  fullName: System.Collections.Immutable.ImmutableStack<T>.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableStack`1.cs
+    startLine: 208
+  summary: Returns an enumerator that iterates through the collection.
+  syntax:
+    content:
+      CSharp: IEnumerator<T> IEnumerable<T>.GetEnumerator()
+    parameters: []
+    return:
+      id: IEnumerator
+      type:
+        id: System.Collections.Generic.IEnumerator{`0}
+        name: IEnumerator<T>
+        isExternal: true
+      description: A [System.Collections.Generic.IEnumerator`1]() that can be used to iterate through the collection.
+  id: System.Collections.Immutable.ImmutableStack`1.System#Collections#Generic#IEnumerable{T}#GetEnumerator
+- uid: System.Collections.Immutable.ImmutableStack`1.System#Collections#IEnumerable#GetEnumerator
+  href: System.Collections.Immutable.ImmutableStack`1.yml
+  name: IEnumerable.GetEnumerator()
+  fullName: System.Collections.Immutable.ImmutableStack<T>.System.Collections.IEnumerable.GetEnumerator()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableStack`1.cs
+    startLine: 220
+  summary: Returns an enumerator that iterates through a collection.
+  syntax:
+    content:
+      CSharp: IEnumerator IEnumerable.GetEnumerator()
+    parameters: []
+    return:
+      id: IEnumerator
+      type:
+        id: System.Collections.IEnumerator
+        name: IEnumerator
+        isExternal: true
+      description: An [System.Collections.IEnumerator]() object that can be used to iterate through the collection.
+  id: System.Collections.Immutable.ImmutableStack`1.System#Collections#IEnumerable#GetEnumerator

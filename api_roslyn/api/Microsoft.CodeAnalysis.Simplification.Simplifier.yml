@@ -6,9 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Simplification/Simplifier.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Simplification/Simplifier.cs
     startLine: 30
   summary: >-
@@ -43,10 +44,10 @@ items:
     5) Rewrites explicit calls to extension methods to use dot notation
   syntax:
     content:
-      CSharp: public static partial class Simplifier
+      CSharp: public class Simplifier
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.Simplification.Simplifier
   children:
@@ -75,7 +76,7 @@ items:
     The Expand operations add this annotation to nodes so that the Reduce operations later find them.
   syntax:
     content:
-      CSharp: Annotation
+      CSharp: public static readonly SyntaxAnnotation Annotation;
   id: Microsoft.CodeAnalysis.Simplification.Simplifier.Annotation
 - uid: Microsoft.CodeAnalysis.Simplification.Simplifier.SpecialTypeAnnotation
   href: Microsoft.CodeAnalysis.Simplification.Simplifier.yml
@@ -92,7 +93,7 @@ items:
     them from over simplification
   syntax:
     content:
-      CSharp: SpecialTypeAnnotation
+      CSharp: public static readonly SyntaxAnnotation SpecialTypeAnnotation;
   id: Microsoft.CodeAnalysis.Simplification.Simplifier.SpecialTypeAnnotation
 - uid: Microsoft.CodeAnalysis.Simplification.Simplifier.ExpandAsync``1(``0,Microsoft.CodeAnalysis.Document,System.Func{Microsoft.CodeAnalysis.SyntaxNode,System.Boolean},System.Boolean,System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.Simplification.Simplifier.yml
@@ -106,7 +107,7 @@ items:
   summary: Expand qualifying parts of the specified subtree, annotating the parts using the [Microsoft.CodeAnalysis.Simplification.Simplifier.Annotation](Microsoft.CodeAnalysis.Simplification.Simplifier.yml) annotation.
   syntax:
     content:
-      CSharp: 'public static async Task<TNode> ExpandAsync<TNode>(TNode node, Document document, Func<SyntaxNode, bool> expandInsideNode = null, bool expandParameter = false, CancellationToken cancellationToken = default (CancellationToken))where TNode : SyntaxNode'
+      CSharp: 'public static Task<TNode> ExpandAsync<TNode>(TNode node, Document document, Func<SyntaxNode, bool> expandInsideNode = null, bool expandParameter = false, CancellationToken cancellationToken = null)where TNode : SyntaxNode'
     parameters:
     - id: node
       type:
@@ -121,20 +122,24 @@ items:
     - id: expandInsideNode
       type:
         id: System.Func{Microsoft.CodeAnalysis.SyntaxNode,System.Boolean}
-        name: System.Func{Microsoft.CodeAnalysis.SyntaxNode,System.Boolean}
+        name: Func<SyntaxNode, bool>
         isExternal: true
     - id: expandParameter
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{``0}
+        name: Task<TNode>
+        isExternal: true
   id: Microsoft.CodeAnalysis.Simplification.Simplifier.ExpandAsync``1(``0,Microsoft.CodeAnalysis.Document,System.Func{Microsoft.CodeAnalysis.SyntaxNode,System.Boolean},System.Boolean,System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.Simplification.Simplifier.Expand``1(``0,Microsoft.CodeAnalysis.SemanticModel,Microsoft.CodeAnalysis.Workspace,System.Func{Microsoft.CodeAnalysis.SyntaxNode,System.Boolean},System.Boolean,System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.Simplification.Simplifier.yml
@@ -148,7 +153,7 @@ items:
   summary: Expand qualifying parts of the specified subtree, annotating the parts using the [Microsoft.CodeAnalysis.Simplification.Simplifier.Annotation](Microsoft.CodeAnalysis.Simplification.Simplifier.yml) annotation.
   syntax:
     content:
-      CSharp: 'public static TNode Expand<TNode>(TNode node, SemanticModel semanticModel, Workspace workspace, Func<SyntaxNode, bool> expandInsideNode = null, bool expandParameter = false, CancellationToken cancellationToken = default (CancellationToken))where TNode : SyntaxNode'
+      CSharp: 'public static TNode Expand<TNode>(TNode node, SemanticModel semanticModel, Workspace workspace, Func<SyntaxNode, bool> expandInsideNode = null, bool expandParameter = false, CancellationToken cancellationToken = null)where TNode : SyntaxNode'
     parameters:
     - id: node
       type:
@@ -168,20 +173,24 @@ items:
     - id: expandInsideNode
       type:
         id: System.Func{Microsoft.CodeAnalysis.SyntaxNode,System.Boolean}
-        name: System.Func{Microsoft.CodeAnalysis.SyntaxNode,System.Boolean}
+        name: Func<SyntaxNode, bool>
         isExternal: true
     - id: expandParameter
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: TNode
+      type:
+        id: TNode
+        name: TNode
+        href: TNode
   id: Microsoft.CodeAnalysis.Simplification.Simplifier.Expand``1(``0,Microsoft.CodeAnalysis.SemanticModel,Microsoft.CodeAnalysis.Workspace,System.Func{Microsoft.CodeAnalysis.SyntaxNode,System.Boolean},System.Boolean,System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.Simplification.Simplifier.ExpandAsync(Microsoft.CodeAnalysis.SyntaxToken,Microsoft.CodeAnalysis.Document,System.Func{Microsoft.CodeAnalysis.SyntaxNode,System.Boolean},System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.Simplification.Simplifier.yml
@@ -195,7 +204,7 @@ items:
   summary: Expand qualifying parts of the specified subtree, annotating the parts using the [Microsoft.CodeAnalysis.Simplification.Simplifier.Annotation](Microsoft.CodeAnalysis.Simplification.Simplifier.yml) annotation.
   syntax:
     content:
-      CSharp: public static async Task<SyntaxToken> ExpandAsync(SyntaxToken token, Document document, Func<SyntaxNode, bool> expandInsideNode = null, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public static Task<SyntaxToken> ExpandAsync(SyntaxToken token, Document document, Func<SyntaxNode, bool> expandInsideNode = null, CancellationToken cancellationToken = null)
     parameters:
     - id: token
       type:
@@ -210,15 +219,19 @@ items:
     - id: expandInsideNode
       type:
         id: System.Func{Microsoft.CodeAnalysis.SyntaxNode,System.Boolean}
-        name: System.Func{Microsoft.CodeAnalysis.SyntaxNode,System.Boolean}
+        name: Func<SyntaxNode, bool>
         isExternal: true
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.CodeAnalysis.SyntaxToken}
+        name: Task<SyntaxToken>
+        isExternal: true
   id: Microsoft.CodeAnalysis.Simplification.Simplifier.ExpandAsync(Microsoft.CodeAnalysis.SyntaxToken,Microsoft.CodeAnalysis.Document,System.Func{Microsoft.CodeAnalysis.SyntaxNode,System.Boolean},System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.Simplification.Simplifier.Expand(Microsoft.CodeAnalysis.SyntaxToken,Microsoft.CodeAnalysis.SemanticModel,Microsoft.CodeAnalysis.Workspace,System.Func{Microsoft.CodeAnalysis.SyntaxNode,System.Boolean},System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.Simplification.Simplifier.yml
@@ -232,7 +245,7 @@ items:
   summary: Expand qualifying parts of the specified subtree, annotating the parts using the [Microsoft.CodeAnalysis.Simplification.Simplifier.Annotation](Microsoft.CodeAnalysis.Simplification.Simplifier.yml) annotation.
   syntax:
     content:
-      CSharp: public static SyntaxToken Expand(SyntaxToken token, SemanticModel semanticModel, Workspace workspace, Func<SyntaxNode, bool> expandInsideNode = null, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public static SyntaxToken Expand(SyntaxToken token, SemanticModel semanticModel, Workspace workspace, Func<SyntaxNode, bool> expandInsideNode = null, CancellationToken cancellationToken = null)
     parameters:
     - id: token
       type:
@@ -252,15 +265,19 @@ items:
     - id: expandInsideNode
       type:
         id: System.Func{Microsoft.CodeAnalysis.SyntaxNode,System.Boolean}
-        name: System.Func{Microsoft.CodeAnalysis.SyntaxNode,System.Boolean}
+        name: Func<SyntaxNode, bool>
         isExternal: true
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: SyntaxToken
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxToken
+        name: SyntaxToken
+        href: Microsoft.CodeAnalysis.SyntaxToken
   id: Microsoft.CodeAnalysis.Simplification.Simplifier.Expand(Microsoft.CodeAnalysis.SyntaxToken,Microsoft.CodeAnalysis.SemanticModel,Microsoft.CodeAnalysis.Workspace,System.Func{Microsoft.CodeAnalysis.SyntaxNode,System.Boolean},System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.Simplification.Simplifier.ReduceAsync(Microsoft.CodeAnalysis.Document,Microsoft.CodeAnalysis.Options.OptionSet,System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.Simplification.Simplifier.yml
@@ -274,7 +291,7 @@ items:
   summary: Reduce all sub-trees annotated with [Microsoft.CodeAnalysis.Simplification.Simplifier.Annotation](Microsoft.CodeAnalysis.Simplification.Simplifier.yml) found within the document. The annotated node and all child nodes will be reduced.
   syntax:
     content:
-      CSharp: public static async Task<Document> ReduceAsync(Document document, OptionSet optionSet = null, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public static Task<Document> ReduceAsync(Document document, OptionSet optionSet = null, CancellationToken cancellationToken = null)
     parameters:
     - id: document
       type:
@@ -289,10 +306,14 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.CodeAnalysis.Document}
+        name: Task<Document>
+        isExternal: true
   id: Microsoft.CodeAnalysis.Simplification.Simplifier.ReduceAsync(Microsoft.CodeAnalysis.Document,Microsoft.CodeAnalysis.Options.OptionSet,System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.Simplification.Simplifier.ReduceAsync(Microsoft.CodeAnalysis.Document,Microsoft.CodeAnalysis.SyntaxAnnotation,Microsoft.CodeAnalysis.Options.OptionSet,System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.Simplification.Simplifier.yml
@@ -309,7 +330,7 @@ items:
     The annotated node and all child nodes will be reduced.
   syntax:
     content:
-      CSharp: public static async Task<Document> ReduceAsync(Document document, SyntaxAnnotation annotation, OptionSet optionSet = null, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public static Task<Document> ReduceAsync(Document document, SyntaxAnnotation annotation, OptionSet optionSet = null, CancellationToken cancellationToken = null)
     parameters:
     - id: document
       type:
@@ -329,10 +350,14 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.CodeAnalysis.Document}
+        name: Task<Document>
+        isExternal: true
   id: Microsoft.CodeAnalysis.Simplification.Simplifier.ReduceAsync(Microsoft.CodeAnalysis.Document,Microsoft.CodeAnalysis.SyntaxAnnotation,Microsoft.CodeAnalysis.Options.OptionSet,System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.Simplification.Simplifier.ReduceAsync(Microsoft.CodeAnalysis.Document,Microsoft.CodeAnalysis.Text.TextSpan,Microsoft.CodeAnalysis.Options.OptionSet,System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.Simplification.Simplifier.yml
@@ -349,7 +374,7 @@ items:
     The annotated node and all child nodes will be reduced.
   syntax:
     content:
-      CSharp: public static Task<Document> ReduceAsync(Document document, TextSpan span, OptionSet optionSet = null, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public static Task<Document> ReduceAsync(Document document, TextSpan span, OptionSet optionSet = null, CancellationToken cancellationToken = null)
     parameters:
     - id: document
       type:
@@ -369,10 +394,14 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.CodeAnalysis.Document}
+        name: Task<Document>
+        isExternal: true
   id: Microsoft.CodeAnalysis.Simplification.Simplifier.ReduceAsync(Microsoft.CodeAnalysis.Document,Microsoft.CodeAnalysis.Text.TextSpan,Microsoft.CodeAnalysis.Options.OptionSet,System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.Simplification.Simplifier.ReduceAsync(Microsoft.CodeAnalysis.Document,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Text.TextSpan},Microsoft.CodeAnalysis.Options.OptionSet,System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.Simplification.Simplifier.yml
@@ -389,7 +418,7 @@ items:
     The annotated node and all child nodes will be reduced.
   syntax:
     content:
-      CSharp: public static Task<Document> ReduceAsync(Document document, IEnumerable<TextSpan> spans, OptionSet optionSet = null, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public static Task<Document> ReduceAsync(Document document, IEnumerable<TextSpan> spans, OptionSet optionSet = null, CancellationToken cancellationToken = null)
     parameters:
     - id: document
       type:
@@ -399,7 +428,7 @@ items:
     - id: spans
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Text.TextSpan}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Text.TextSpan}
+        name: IEnumerable<TextSpan>
         isExternal: true
     - id: optionSet
       type:
@@ -409,8 +438,12 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.CodeAnalysis.Document}
+        name: Task<Document>
+        isExternal: true
   id: Microsoft.CodeAnalysis.Simplification.Simplifier.ReduceAsync(Microsoft.CodeAnalysis.Document,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Text.TextSpan},Microsoft.CodeAnalysis.Options.OptionSet,System.Threading.CancellationToken)

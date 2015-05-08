@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/DictionaryValueProvider.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/DictionaryValueProvider.cs
     startLine: 7
   syntax:
     content:
-      CSharp: public class DictionaryValueProvider<TValue>
+      CSharp: 'public class DictionaryValueProvider<TValue> : IEnumerableValueProvider, IValueProvider'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.DictionaryValueProvider`1
   children:
@@ -40,12 +41,12 @@ items:
     - id: dictionary
       type:
         id: System.Collections.Generic.IDictionary{System.String,`0}
-        name: System.Collections.Generic.IDictionary{System.String,`0}
+        name: IDictionary<string, TValue>
         isExternal: true
     - id: culture
       type:
         id: System.Globalization.CultureInfo
-        name: System.Globalization.CultureInfo
+        name: CultureInfo
         isExternal: true
   id: System.Web.Mvc.DictionaryValueProvider`1.#ctor(System.Collections.Generic.IDictionary{System.String,`0},System.Globalization.CultureInfo)
 - uid: System.Web.Mvc.DictionaryValueProvider`1.ContainsPrefix(System.String)
@@ -64,10 +65,14 @@ items:
     - id: prefix
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Web.Mvc.DictionaryValueProvider`1.ContainsPrefix(System.String)
 - uid: System.Web.Mvc.DictionaryValueProvider`1.GetValue(System.String)
   href: System.Web.Mvc.DictionaryValueProvider`1.yml
@@ -85,10 +90,14 @@ items:
     - id: key
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: ValueProviderResult
+      type:
+        id: System.Web.Mvc.ValueProviderResult
+        name: ValueProviderResult
+        href: System.Web.Mvc.ValueProviderResult.yml
   id: System.Web.Mvc.DictionaryValueProvider`1.GetValue(System.String)
 - uid: System.Web.Mvc.DictionaryValueProvider`1.GetKeysFromPrefix(System.String)
   href: System.Web.Mvc.DictionaryValueProvider`1.yml
@@ -106,8 +115,12 @@ items:
     - id: prefix
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: IDictionary
+      type:
+        id: System.Collections.Generic.IDictionary{System.String,System.String}
+        name: IDictionary<string, string>
+        isExternal: true
   id: System.Web.Mvc.DictionaryValueProvider`1.GetKeysFromPrefix(System.String)

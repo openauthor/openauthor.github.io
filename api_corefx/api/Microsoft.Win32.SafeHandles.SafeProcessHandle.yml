@@ -1,0 +1,99 @@
+items:
+- uid: Microsoft.Win32.SafeHandles.SafeProcessHandle
+  href: Microsoft.Win32.SafeHandles.SafeProcessHandle.yml
+  name: SafeProcessHandle
+  fullName: Microsoft.Win32.SafeHandles.SafeProcessHandle
+  type: Class
+  source:
+    remote: &o0
+      path: src/System.Diagnostics.Process/src/Microsoft/Win32/SafeHandles/SafeProcessHandle.Windows.cs
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
+    path: src/System.Diagnostics.Process/src/Microsoft/Win32/SafeHandles/SafeProcessHandle.Windows.cs
+    startLine: 18
+  syntax:
+    content:
+      CSharp: 'public sealed class SafeProcessHandle : SafeHandle, IDisposable'
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.Runtime.ConstrainedExecution.CriticalFinalizerObject
+    name: CriticalFinalizerObject
+    isExternal: true
+  - id: System.Runtime.InteropServices.SafeHandle
+    name: SafeHandle
+    isExternal: true
+  id: Microsoft.Win32.SafeHandles.SafeProcessHandle
+  children:
+  - Microsoft.Win32.SafeHandles.SafeProcessHandle.#ctor(System.IntPtr,System.Boolean)
+  - Microsoft.Win32.SafeHandles.SafeProcessHandle.IsInvalid
+  - Microsoft.Win32.SafeHandles.SafeProcessHandle.ReleaseHandle
+- uid: Microsoft.Win32.SafeHandles.SafeProcessHandle.#ctor(System.IntPtr,System.Boolean)
+  href: Microsoft.Win32.SafeHandles.SafeProcessHandle.yml
+  name: SafeProcessHandle(IntPtr, bool)
+  fullName: Microsoft.Win32.SafeHandles.SafeProcessHandle.SafeProcessHandle(System.IntPtr, bool)
+  type: Constructor
+  source:
+    remote:
+      path: src/System.Diagnostics.Process/src/Microsoft/Win32/SafeHandles/SafeProcessHandle.cs
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
+    path: src/System.Diagnostics.Process/src/Microsoft/Win32/SafeHandles/SafeProcessHandle.cs
+    startLine: 35
+  syntax:
+    content:
+      CSharp: 'public SafeProcessHandle(IntPtr handle, bool ownsHandle): base (new IntPtr(DefaultInvalidHandleValue), ownsHandle)'
+    parameters:
+    - id: handle
+      type:
+        id: System.IntPtr
+        name: IntPtr
+        isExternal: true
+    - id: ownsHandle
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: Microsoft.Win32.SafeHandles.SafeProcessHandle.#ctor(System.IntPtr,System.Boolean)
+- uid: Microsoft.Win32.SafeHandles.SafeProcessHandle.IsInvalid
+  href: Microsoft.Win32.SafeHandles.SafeProcessHandle.yml
+  name: IsInvalid
+  fullName: Microsoft.Win32.SafeHandles.SafeProcessHandle.IsInvalid
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Diagnostics.Process/src/Microsoft/Win32/SafeHandles/SafeProcessHandle.Windows.cs
+    startLine: 22
+  syntax:
+    content:
+      CSharp: public override bool IsInvalid { [SecurityCritical] get; }
+    parameters:
+    - id: IsInvalid
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: Microsoft.Win32.SafeHandles.SafeProcessHandle.IsInvalid
+- uid: Microsoft.Win32.SafeHandles.SafeProcessHandle.ReleaseHandle
+  href: Microsoft.Win32.SafeHandles.SafeProcessHandle.yml
+  name: ReleaseHandle()
+  fullName: Microsoft.Win32.SafeHandles.SafeProcessHandle.ReleaseHandle()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Diagnostics.Process/src/Microsoft/Win32/SafeHandles/SafeProcessHandle.Windows.cs
+    startLine: 28
+  syntax:
+    content:
+      CSharp: protected override bool ReleaseHandle()
+    parameters: []
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: Microsoft.Win32.SafeHandles.SafeProcessHandle.ReleaseHandle

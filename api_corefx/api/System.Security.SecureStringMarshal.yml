@@ -6,21 +6,23 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Security.SecureString/src/System/Security/SecureStringMarshal.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Security.SecureString/src/System/Security/SecureStringMarshal.cs
     startLine: 7
   syntax:
     content:
-      CSharp: public static class SecureStringMarshal
+      CSharp: public class SecureStringMarshal
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Security.SecureStringMarshal
   children:
   - System.Security.SecureStringMarshal.SecureStringToCoTaskMemUnicode(System.Security.SecureString)
-  - System.Security.SecureStringMarshal.ZeroFreeCoTaskMemUnicode(IntPtr)
+  - System.Security.SecureStringMarshal.ZeroFreeCoTaskMemUnicode(System.IntPtr)
 - uid: System.Security.SecureStringMarshal.SecureStringToCoTaskMemUnicode(System.Security.SecureString)
   href: System.Security.SecureStringMarshal.yml
   name: SecureStringToCoTaskMemUnicode(SecureString)
@@ -32,7 +34,7 @@ items:
     startLine: 9
   syntax:
     content:
-      CSharp: '[System.Security.SecurityCritical] public static IntPtr SecureStringToCoTaskMemUnicode(SecureString s)'
+      CSharp: public static IntPtr SecureStringToCoTaskMemUnicode(SecureString s)
     parameters:
     - id: s
       type:
@@ -41,11 +43,15 @@ items:
         href: System.Security.SecureString.yml
     return:
       id: IntPtr
+      type:
+        id: System.IntPtr
+        name: IntPtr
+        isExternal: true
   id: System.Security.SecureStringMarshal.SecureStringToCoTaskMemUnicode(System.Security.SecureString)
-- uid: System.Security.SecureStringMarshal.ZeroFreeCoTaskMemUnicode(IntPtr)
+- uid: System.Security.SecureStringMarshal.ZeroFreeCoTaskMemUnicode(System.IntPtr)
   href: System.Security.SecureStringMarshal.yml
   name: ZeroFreeCoTaskMemUnicode(IntPtr)
-  fullName: System.Security.SecureStringMarshal.ZeroFreeCoTaskMemUnicode(IntPtr)
+  fullName: System.Security.SecureStringMarshal.ZeroFreeCoTaskMemUnicode(System.IntPtr)
   type: Method
   source:
     remote: *o0
@@ -53,11 +59,11 @@ items:
     startLine: 20
   syntax:
     content:
-      CSharp: '[System.Security.SecurityCritical] public static void ZeroFreeCoTaskMemUnicode(IntPtr s)'
+      CSharp: public static void ZeroFreeCoTaskMemUnicode(IntPtr s)
     parameters:
     - id: s
       type:
-        id: IntPtr
+        id: System.IntPtr
         name: IntPtr
         isExternal: true
-  id: System.Security.SecureStringMarshal.ZeroFreeCoTaskMemUnicode(IntPtr)
+  id: System.Security.SecureStringMarshal.ZeroFreeCoTaskMemUnicode(System.IntPtr)

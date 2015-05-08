@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Classification/Classifier.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Classification/Classifier.cs
     startLine: 15
   syntax:
     content:
-      CSharp: public static class Classifier
+      CSharp: public class Classifier
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.Classification.Classifier
   children:
@@ -33,7 +34,7 @@ items:
     startLine: 17
   syntax:
     content:
-      CSharp: public static async Task<IEnumerable<ClassifiedSpan>> GetClassifiedSpansAsync(Document document, TextSpan textSpan, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public static Task<IEnumerable<ClassifiedSpan>> GetClassifiedSpansAsync(Document document, TextSpan textSpan, CancellationToken cancellationToken = null)
     parameters:
     - id: document
       type:
@@ -48,10 +49,14 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Classification.ClassifiedSpan}}
+        name: Task<IEnumerable<ClassifiedSpan>>
+        isExternal: true
   id: Microsoft.CodeAnalysis.Classification.Classifier.GetClassifiedSpansAsync(Microsoft.CodeAnalysis.Document,Microsoft.CodeAnalysis.Text.TextSpan,System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.Classification.Classifier.GetClassifiedSpans(Microsoft.CodeAnalysis.SemanticModel,Microsoft.CodeAnalysis.Text.TextSpan,Microsoft.CodeAnalysis.Workspace,System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.Classification.Classifier.yml
@@ -64,7 +69,7 @@ items:
     startLine: 26
   syntax:
     content:
-      CSharp: public static IEnumerable<ClassifiedSpan> GetClassifiedSpans(SemanticModel semanticModel, TextSpan textSpan, Workspace workspace, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public static IEnumerable<ClassifiedSpan> GetClassifiedSpans(SemanticModel semanticModel, TextSpan textSpan, Workspace workspace, CancellationToken cancellationToken = null)
     parameters:
     - id: semanticModel
       type:
@@ -84,8 +89,12 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Classification.ClassifiedSpan}
+        name: IEnumerable<ClassifiedSpan>
+        isExternal: true
   id: Microsoft.CodeAnalysis.Classification.Classifier.GetClassifiedSpans(Microsoft.CodeAnalysis.SemanticModel,Microsoft.CodeAnalysis.Text.TextSpan,Microsoft.CodeAnalysis.Workspace,System.Threading.CancellationToken)

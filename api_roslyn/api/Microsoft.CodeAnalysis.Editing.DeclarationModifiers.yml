@@ -6,20 +6,21 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
     startLine: 7
   syntax:
     content:
-      CSharp: public struct DeclarationModifiers
+      CSharp: 'public struct DeclarationModifiers : IEquatable<DeclarationModifiers>'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers
   children:
@@ -36,6 +37,7 @@ items:
   - Microsoft.CodeAnalysis.Editing.DeclarationModifiers.IsWithEvents
   - Microsoft.CodeAnalysis.Editing.DeclarationModifiers.IsPartial
   - Microsoft.CodeAnalysis.Editing.DeclarationModifiers.IsAsync
+  - Microsoft.CodeAnalysis.Editing.DeclarationModifiers.IsWriteOnly
   - Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WithIsStatic(System.Boolean)
   - Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WithIsAbstract(System.Boolean)
   - Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WithIsNew(System.Boolean)
@@ -48,6 +50,7 @@ items:
   - Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WithWithEvents(System.Boolean)
   - Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WithPartial(System.Boolean)
   - Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WithAsync(System.Boolean)
+  - Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WithIsWriteOnly(System.Boolean)
   - Microsoft.CodeAnalysis.Editing.DeclarationModifiers.None
   - Microsoft.CodeAnalysis.Editing.DeclarationModifiers.Static
   - Microsoft.CodeAnalysis.Editing.DeclarationModifiers.Abstract
@@ -61,6 +64,7 @@ items:
   - Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WithEvents
   - Microsoft.CodeAnalysis.Editing.DeclarationModifiers.Partial
   - Microsoft.CodeAnalysis.Editing.DeclarationModifiers.Async
+  - Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WriteOnly
   - Microsoft.CodeAnalysis.Editing.DeclarationModifiers.op_BitwiseOr(Microsoft.CodeAnalysis.Editing.DeclarationModifiers,Microsoft.CodeAnalysis.Editing.DeclarationModifiers)
   - Microsoft.CodeAnalysis.Editing.DeclarationModifiers.op_BitwiseAnd(Microsoft.CodeAnalysis.Editing.DeclarationModifiers,Microsoft.CodeAnalysis.Editing.DeclarationModifiers)
   - Microsoft.CodeAnalysis.Editing.DeclarationModifiers.op_Addition(Microsoft.CodeAnalysis.Editing.DeclarationModifiers,Microsoft.CodeAnalysis.Editing.DeclarationModifiers)
@@ -79,7 +83,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 45
+    startLine: 46
   syntax:
     content:
       CSharp: public static DeclarationModifiers From(ISymbol symbol)
@@ -91,6 +95,10 @@ items:
         href: Microsoft.CodeAnalysis.ISymbol
     return:
       id: DeclarationModifiers
+      type:
+        id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers
+        name: DeclarationModifiers
+        href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.From(Microsoft.CodeAnalysis.ISymbol)
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.IsStatic
   href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
@@ -100,7 +108,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 62
+    startLine: 63
   syntax:
     content:
       CSharp: public bool IsStatic { get; }
@@ -108,7 +116,7 @@ items:
     - id: IsStatic
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.IsStatic
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.IsAbstract
@@ -119,7 +127,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 67
+    startLine: 68
   syntax:
     content:
       CSharp: public bool IsAbstract { get; }
@@ -127,7 +135,7 @@ items:
     - id: IsAbstract
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.IsAbstract
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.IsNew
@@ -138,7 +146,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 72
+    startLine: 73
   syntax:
     content:
       CSharp: public bool IsNew { get; }
@@ -146,7 +154,7 @@ items:
     - id: IsNew
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.IsNew
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.IsUnsafe
@@ -157,7 +165,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 77
+    startLine: 78
   syntax:
     content:
       CSharp: public bool IsUnsafe { get; }
@@ -165,7 +173,7 @@ items:
     - id: IsUnsafe
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.IsUnsafe
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.IsReadOnly
@@ -176,7 +184,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 82
+    startLine: 83
   syntax:
     content:
       CSharp: public bool IsReadOnly { get; }
@@ -184,7 +192,7 @@ items:
     - id: IsReadOnly
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.IsReadOnly
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.IsVirtual
@@ -195,7 +203,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 87
+    startLine: 88
   syntax:
     content:
       CSharp: public bool IsVirtual { get; }
@@ -203,7 +211,7 @@ items:
     - id: IsVirtual
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.IsVirtual
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.IsOverride
@@ -214,7 +222,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 92
+    startLine: 93
   syntax:
     content:
       CSharp: public bool IsOverride { get; }
@@ -222,7 +230,7 @@ items:
     - id: IsOverride
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.IsOverride
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.IsSealed
@@ -233,7 +241,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 97
+    startLine: 98
   syntax:
     content:
       CSharp: public bool IsSealed { get; }
@@ -241,7 +249,7 @@ items:
     - id: IsSealed
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.IsSealed
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.IsConst
@@ -252,7 +260,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 102
+    startLine: 103
   syntax:
     content:
       CSharp: public bool IsConst { get; }
@@ -260,7 +268,7 @@ items:
     - id: IsConst
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.IsConst
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.IsWithEvents
@@ -271,7 +279,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 107
+    startLine: 108
   syntax:
     content:
       CSharp: public bool IsWithEvents { get; }
@@ -279,7 +287,7 @@ items:
     - id: IsWithEvents
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.IsWithEvents
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.IsPartial
@@ -290,7 +298,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 112
+    startLine: 113
   syntax:
     content:
       CSharp: public bool IsPartial { get; }
@@ -298,7 +306,7 @@ items:
     - id: IsPartial
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.IsPartial
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.IsAsync
@@ -309,7 +317,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 117
+    startLine: 118
   syntax:
     content:
       CSharp: public bool IsAsync { get; }
@@ -317,9 +325,28 @@ items:
     - id: IsAsync
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.IsAsync
+- uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.IsWriteOnly
+  href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
+  name: IsWriteOnly
+  fullName: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.IsWriteOnly
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
+    startLine: 123
+  syntax:
+    content:
+      CSharp: public bool IsWriteOnly { get; }
+    parameters:
+    - id: IsWriteOnly
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.IsWriteOnly
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WithIsStatic(System.Boolean)
   href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
   name: WithIsStatic(bool)
@@ -328,7 +355,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 122
+    startLine: 128
   syntax:
     content:
       CSharp: public DeclarationModifiers WithIsStatic(bool isStatic)
@@ -336,10 +363,14 @@ items:
     - id: isStatic
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     return:
       id: DeclarationModifiers
+      type:
+        id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers
+        name: DeclarationModifiers
+        href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WithIsStatic(System.Boolean)
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WithIsAbstract(System.Boolean)
   href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
@@ -349,7 +380,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 127
+    startLine: 133
   syntax:
     content:
       CSharp: public DeclarationModifiers WithIsAbstract(bool isAbstract)
@@ -357,10 +388,14 @@ items:
     - id: isAbstract
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     return:
       id: DeclarationModifiers
+      type:
+        id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers
+        name: DeclarationModifiers
+        href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WithIsAbstract(System.Boolean)
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WithIsNew(System.Boolean)
   href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
@@ -370,7 +405,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 132
+    startLine: 138
   syntax:
     content:
       CSharp: public DeclarationModifiers WithIsNew(bool isNew)
@@ -378,10 +413,14 @@ items:
     - id: isNew
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     return:
       id: DeclarationModifiers
+      type:
+        id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers
+        name: DeclarationModifiers
+        href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WithIsNew(System.Boolean)
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WithIsUnsafe(System.Boolean)
   href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
@@ -391,7 +430,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 137
+    startLine: 143
   syntax:
     content:
       CSharp: public DeclarationModifiers WithIsUnsafe(bool isUnsafe)
@@ -399,10 +438,14 @@ items:
     - id: isUnsafe
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     return:
       id: DeclarationModifiers
+      type:
+        id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers
+        name: DeclarationModifiers
+        href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WithIsUnsafe(System.Boolean)
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WithIsReadOnly(System.Boolean)
   href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
@@ -412,7 +455,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 142
+    startLine: 148
   syntax:
     content:
       CSharp: public DeclarationModifiers WithIsReadOnly(bool isReadOnly)
@@ -420,10 +463,14 @@ items:
     - id: isReadOnly
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     return:
       id: DeclarationModifiers
+      type:
+        id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers
+        name: DeclarationModifiers
+        href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WithIsReadOnly(System.Boolean)
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WithIsVirtual(System.Boolean)
   href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
@@ -433,7 +480,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 147
+    startLine: 153
   syntax:
     content:
       CSharp: public DeclarationModifiers WithIsVirtual(bool isVirtual)
@@ -441,10 +488,14 @@ items:
     - id: isVirtual
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     return:
       id: DeclarationModifiers
+      type:
+        id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers
+        name: DeclarationModifiers
+        href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WithIsVirtual(System.Boolean)
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WithIsOverride(System.Boolean)
   href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
@@ -454,7 +505,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 152
+    startLine: 158
   syntax:
     content:
       CSharp: public DeclarationModifiers WithIsOverride(bool isOverride)
@@ -462,10 +513,14 @@ items:
     - id: isOverride
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     return:
       id: DeclarationModifiers
+      type:
+        id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers
+        name: DeclarationModifiers
+        href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WithIsOverride(System.Boolean)
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WithIsSealed(System.Boolean)
   href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
@@ -475,7 +530,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 157
+    startLine: 163
   syntax:
     content:
       CSharp: public DeclarationModifiers WithIsSealed(bool isSealed)
@@ -483,10 +538,14 @@ items:
     - id: isSealed
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     return:
       id: DeclarationModifiers
+      type:
+        id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers
+        name: DeclarationModifiers
+        href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WithIsSealed(System.Boolean)
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WithIsConst(System.Boolean)
   href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
@@ -496,7 +555,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 162
+    startLine: 168
   syntax:
     content:
       CSharp: public DeclarationModifiers WithIsConst(bool isConst)
@@ -504,10 +563,14 @@ items:
     - id: isConst
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     return:
       id: DeclarationModifiers
+      type:
+        id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers
+        name: DeclarationModifiers
+        href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WithIsConst(System.Boolean)
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WithWithEvents(System.Boolean)
   href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
@@ -517,7 +580,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 167
+    startLine: 173
   syntax:
     content:
       CSharp: public DeclarationModifiers WithWithEvents(bool withEvents)
@@ -525,10 +588,14 @@ items:
     - id: withEvents
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     return:
       id: DeclarationModifiers
+      type:
+        id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers
+        name: DeclarationModifiers
+        href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WithWithEvents(System.Boolean)
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WithPartial(System.Boolean)
   href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
@@ -538,7 +605,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 172
+    startLine: 178
   syntax:
     content:
       CSharp: public DeclarationModifiers WithPartial(bool isPartial)
@@ -546,10 +613,14 @@ items:
     - id: isPartial
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     return:
       id: DeclarationModifiers
+      type:
+        id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers
+        name: DeclarationModifiers
+        href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WithPartial(System.Boolean)
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WithAsync(System.Boolean)
   href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
@@ -559,7 +630,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 177
+    startLine: 183
   syntax:
     content:
       CSharp: public DeclarationModifiers WithAsync(bool isAsync)
@@ -567,11 +638,40 @@ items:
     - id: isAsync
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     return:
       id: DeclarationModifiers
+      type:
+        id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers
+        name: DeclarationModifiers
+        href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WithAsync(System.Boolean)
+- uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WithIsWriteOnly(System.Boolean)
+  href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
+  name: WithIsWriteOnly(bool)
+  fullName: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WithIsWriteOnly(bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
+    startLine: 188
+  syntax:
+    content:
+      CSharp: public DeclarationModifiers WithIsWriteOnly(bool isWriteOnly)
+    parameters:
+    - id: isWriteOnly
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+    return:
+      id: DeclarationModifiers
+      type:
+        id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers
+        name: DeclarationModifiers
+        href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
+  id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WithIsWriteOnly(System.Boolean)
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.None
   href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
   name: None
@@ -580,10 +680,10 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 205
+    startLine: 217
   syntax:
     content:
-      CSharp: None
+      CSharp: public static readonly DeclarationModifiers None;
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.None
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.Static
   href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
@@ -593,10 +693,10 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 207
+    startLine: 219
   syntax:
     content:
-      CSharp: Static
+      CSharp: public static readonly DeclarationModifiers Static;
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.Static
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.Abstract
   href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
@@ -606,10 +706,10 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 208
+    startLine: 220
   syntax:
     content:
-      CSharp: Abstract
+      CSharp: public static readonly DeclarationModifiers Abstract;
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.Abstract
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.New
   href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
@@ -619,10 +719,10 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 209
+    startLine: 221
   syntax:
     content:
-      CSharp: New
+      CSharp: public static readonly DeclarationModifiers New;
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.New
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.Unsafe
   href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
@@ -632,10 +732,10 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 210
+    startLine: 222
   syntax:
     content:
-      CSharp: Unsafe
+      CSharp: public static readonly DeclarationModifiers Unsafe;
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.Unsafe
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.ReadOnly
   href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
@@ -645,10 +745,10 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 211
+    startLine: 223
   syntax:
     content:
-      CSharp: ReadOnly
+      CSharp: public static readonly DeclarationModifiers ReadOnly;
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.ReadOnly
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.Virtual
   href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
@@ -658,10 +758,10 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 212
+    startLine: 224
   syntax:
     content:
-      CSharp: Virtual
+      CSharp: public static readonly DeclarationModifiers Virtual;
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.Virtual
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.Override
   href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
@@ -671,10 +771,10 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 213
+    startLine: 225
   syntax:
     content:
-      CSharp: Override
+      CSharp: public static readonly DeclarationModifiers Override;
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.Override
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.Sealed
   href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
@@ -684,10 +784,10 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 214
+    startLine: 226
   syntax:
     content:
-      CSharp: Sealed
+      CSharp: public static readonly DeclarationModifiers Sealed;
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.Sealed
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.Const
   href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
@@ -697,10 +797,10 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 215
+    startLine: 227
   syntax:
     content:
-      CSharp: Const
+      CSharp: public static readonly DeclarationModifiers Const;
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.Const
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WithEvents
   href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
@@ -710,10 +810,10 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 216
+    startLine: 228
   syntax:
     content:
-      CSharp: WithEvents
+      CSharp: public static readonly DeclarationModifiers WithEvents;
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WithEvents
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.Partial
   href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
@@ -723,10 +823,10 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 217
+    startLine: 229
   syntax:
     content:
-      CSharp: Partial
+      CSharp: public static readonly DeclarationModifiers Partial;
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.Partial
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.Async
   href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
@@ -736,23 +836,36 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 218
+    startLine: 230
   syntax:
     content:
-      CSharp: Async
+      CSharp: public static readonly DeclarationModifiers Async;
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.Async
+- uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WriteOnly
+  href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
+  name: WriteOnly
+  fullName: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WriteOnly
+  type: Field
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
+    startLine: 231
+  syntax:
+    content:
+      CSharp: public static readonly DeclarationModifiers WriteOnly;
+  id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.WriteOnly
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.op_BitwiseOr(Microsoft.CodeAnalysis.Editing.DeclarationModifiers,Microsoft.CodeAnalysis.Editing.DeclarationModifiers)
   href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
   name: operator |(DeclarationModifiers, DeclarationModifiers)
   fullName: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.operator |(Microsoft.CodeAnalysis.Editing.DeclarationModifiers, Microsoft.CodeAnalysis.Editing.DeclarationModifiers)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 220
+    startLine: 233
   syntax:
     content:
-      CSharp: public static DeclarationModifiers operator |(DeclarationModifiers left, DeclarationModifiers right) { return new DeclarationModifiers(left._modifiers | right._modifiers); }
+      CSharp: public static DeclarationModifiers operator |(DeclarationModifiers left, DeclarationModifiers right)
     parameters:
     - id: left
       type:
@@ -766,19 +879,23 @@ items:
         href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
     return:
       id: DeclarationModifiers
+      type:
+        id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers
+        name: DeclarationModifiers
+        href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.op_BitwiseOr(Microsoft.CodeAnalysis.Editing.DeclarationModifiers,Microsoft.CodeAnalysis.Editing.DeclarationModifiers)
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.op_BitwiseAnd(Microsoft.CodeAnalysis.Editing.DeclarationModifiers,Microsoft.CodeAnalysis.Editing.DeclarationModifiers)
   href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
   name: operator &(DeclarationModifiers, DeclarationModifiers)
   fullName: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.operator &(Microsoft.CodeAnalysis.Editing.DeclarationModifiers, Microsoft.CodeAnalysis.Editing.DeclarationModifiers)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 225
+    startLine: 238
   syntax:
     content:
-      CSharp: public static DeclarationModifiers operator &(DeclarationModifiers left, DeclarationModifiers right) { return new DeclarationModifiers(left._modifiers & right._modifiers); }
+      CSharp: public static DeclarationModifiers operator &(DeclarationModifiers left, DeclarationModifiers right)
     parameters:
     - id: left
       type:
@@ -792,19 +909,23 @@ items:
         href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
     return:
       id: DeclarationModifiers
+      type:
+        id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers
+        name: DeclarationModifiers
+        href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.op_BitwiseAnd(Microsoft.CodeAnalysis.Editing.DeclarationModifiers,Microsoft.CodeAnalysis.Editing.DeclarationModifiers)
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.op_Addition(Microsoft.CodeAnalysis.Editing.DeclarationModifiers,Microsoft.CodeAnalysis.Editing.DeclarationModifiers)
   href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
   name: operator +(DeclarationModifiers, DeclarationModifiers)
   fullName: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.operator +(Microsoft.CodeAnalysis.Editing.DeclarationModifiers, Microsoft.CodeAnalysis.Editing.DeclarationModifiers)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 230
+    startLine: 243
   syntax:
     content:
-      CSharp: public static DeclarationModifiers operator +(DeclarationModifiers left, DeclarationModifiers right) { return new DeclarationModifiers(left._modifiers | right._modifiers); }
+      CSharp: public static DeclarationModifiers operator +(DeclarationModifiers left, DeclarationModifiers right)
     parameters:
     - id: left
       type:
@@ -818,19 +939,23 @@ items:
         href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
     return:
       id: DeclarationModifiers
+      type:
+        id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers
+        name: DeclarationModifiers
+        href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.op_Addition(Microsoft.CodeAnalysis.Editing.DeclarationModifiers,Microsoft.CodeAnalysis.Editing.DeclarationModifiers)
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.op_Subtraction(Microsoft.CodeAnalysis.Editing.DeclarationModifiers,Microsoft.CodeAnalysis.Editing.DeclarationModifiers)
   href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
   name: operator -(DeclarationModifiers, DeclarationModifiers)
   fullName: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.operator -(Microsoft.CodeAnalysis.Editing.DeclarationModifiers, Microsoft.CodeAnalysis.Editing.DeclarationModifiers)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 235
+    startLine: 248
   syntax:
     content:
-      CSharp: public static DeclarationModifiers operator -(DeclarationModifiers left, DeclarationModifiers right) { return new DeclarationModifiers(left._modifiers & ~right._modifiers); }
+      CSharp: public static DeclarationModifiers operator -(DeclarationModifiers left, DeclarationModifiers right)
     parameters:
     - id: left
       type:
@@ -844,6 +969,10 @@ items:
         href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
     return:
       id: DeclarationModifiers
+      type:
+        id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers
+        name: DeclarationModifiers
+        href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.op_Subtraction(Microsoft.CodeAnalysis.Editing.DeclarationModifiers,Microsoft.CodeAnalysis.Editing.DeclarationModifiers)
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.Equals(Microsoft.CodeAnalysis.Editing.DeclarationModifiers)
   href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
@@ -853,7 +982,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 240
+    startLine: 253
   syntax:
     content:
       CSharp: public bool Equals(DeclarationModifiers modifiers)
@@ -865,6 +994,10 @@ items:
         href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.Equals(Microsoft.CodeAnalysis.Editing.DeclarationModifiers)
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.Equals(System.Object)
   href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
@@ -874,7 +1007,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 245
+    startLine: 258
   syntax:
     content:
       CSharp: public override bool Equals(object obj)
@@ -882,10 +1015,14 @@ items:
     - id: obj
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.Equals(System.Object)
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.GetHashCode
   href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
@@ -895,26 +1032,30 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 250
+    startLine: 263
   syntax:
     content:
       CSharp: public override int GetHashCode()
     parameters: []
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.GetHashCode
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.op_Equality(Microsoft.CodeAnalysis.Editing.DeclarationModifiers,Microsoft.CodeAnalysis.Editing.DeclarationModifiers)
   href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
   name: operator ==(DeclarationModifiers, DeclarationModifiers)
   fullName: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.operator ==(Microsoft.CodeAnalysis.Editing.DeclarationModifiers, Microsoft.CodeAnalysis.Editing.DeclarationModifiers)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 255
+    startLine: 268
   syntax:
     content:
-      CSharp: public static bool operator ==(DeclarationModifiers left, DeclarationModifiers right) { return left._modifiers == right._modifiers; }
+      CSharp: public static bool operator ==(DeclarationModifiers left, DeclarationModifiers right)
     parameters:
     - id: left
       type:
@@ -928,19 +1069,23 @@ items:
         href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.op_Equality(Microsoft.CodeAnalysis.Editing.DeclarationModifiers,Microsoft.CodeAnalysis.Editing.DeclarationModifiers)
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.op_Inequality(Microsoft.CodeAnalysis.Editing.DeclarationModifiers,Microsoft.CodeAnalysis.Editing.DeclarationModifiers)
   href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
   name: operator !=(DeclarationModifiers, DeclarationModifiers)
   fullName: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.operator !=(Microsoft.CodeAnalysis.Editing.DeclarationModifiers, Microsoft.CodeAnalysis.Editing.DeclarationModifiers)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 260
+    startLine: 273
   syntax:
     content:
-      CSharp: public static bool operator !=(DeclarationModifiers left, DeclarationModifiers right) { return left._modifiers != right._modifiers; }
+      CSharp: public static bool operator !=(DeclarationModifiers left, DeclarationModifiers right)
     parameters:
     - id: left
       type:
@@ -954,6 +1099,10 @@ items:
         href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.op_Inequality(Microsoft.CodeAnalysis.Editing.DeclarationModifiers,Microsoft.CodeAnalysis.Editing.DeclarationModifiers)
 - uid: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.ToString
   href: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.yml
@@ -963,11 +1112,15 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DeclarationModifiers.cs
-    startLine: 265
+    startLine: 278
   syntax:
     content:
       CSharp: public override string ToString()
     parameters: []
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: Microsoft.CodeAnalysis.Editing.DeclarationModifiers.ToString

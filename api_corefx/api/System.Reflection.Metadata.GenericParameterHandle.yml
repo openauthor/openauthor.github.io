@@ -6,21 +6,28 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1170
+    startLine: 1648
   syntax:
     content:
-      CSharp: public struct GenericParameterHandle
+      CSharp: 'public struct GenericParameterHandle : IEquatable<GenericParameterHandle>'
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Reflection.Metadata.GenericParameterHandle
   children:
   - System.Reflection.Metadata.GenericParameterHandle.op_Implicit(System.Reflection.Metadata.GenericParameterHandle)~System.Reflection.Metadata.Handle
+  - System.Reflection.Metadata.GenericParameterHandle.op_Implicit(System.Reflection.Metadata.GenericParameterHandle)~System.Reflection.Metadata.EntityHandle
   - System.Reflection.Metadata.GenericParameterHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.GenericParameterHandle
+  - System.Reflection.Metadata.GenericParameterHandle.op_Explicit(System.Reflection.Metadata.EntityHandle)~System.Reflection.Metadata.GenericParameterHandle
   - System.Reflection.Metadata.GenericParameterHandle.IsNil
   - System.Reflection.Metadata.GenericParameterHandle.op_Equality(System.Reflection.Metadata.GenericParameterHandle,System.Reflection.Metadata.GenericParameterHandle)
   - System.Reflection.Metadata.GenericParameterHandle.Equals(System.Object)
@@ -31,14 +38,14 @@ items:
   href: System.Reflection.Metadata.GenericParameterHandle.yml
   name: implicit operator Handle(GenericParameterHandle)
   fullName: System.Reflection.Metadata.GenericParameterHandle.implicit operator System.Reflection.Metadata.Handle(System.Reflection.Metadata.GenericParameterHandle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1186
+    startLine: 1665
   syntax:
     content:
-      CSharp: public static implicit operator Handle(GenericParameterHandle handle) { return new Handle(handle._rowId | tokenType); }
+      CSharp: public static implicit operator Handle(GenericParameterHandle handle)
     parameters:
     - id: handle
       type:
@@ -47,19 +54,48 @@ items:
         href: System.Reflection.Metadata.GenericParameterHandle.yml
     return:
       id: Handle
+      type:
+        id: System.Reflection.Metadata.Handle
+        name: Handle
+        href: System.Reflection.Metadata.Handle.yml
   id: System.Reflection.Metadata.GenericParameterHandle.op_Implicit(System.Reflection.Metadata.GenericParameterHandle)~System.Reflection.Metadata.Handle
+- uid: System.Reflection.Metadata.GenericParameterHandle.op_Implicit(System.Reflection.Metadata.GenericParameterHandle)~System.Reflection.Metadata.EntityHandle
+  href: System.Reflection.Metadata.GenericParameterHandle.yml
+  name: implicit operator EntityHandle(GenericParameterHandle)
+  fullName: System.Reflection.Metadata.GenericParameterHandle.implicit operator System.Reflection.Metadata.EntityHandle(System.Reflection.Metadata.GenericParameterHandle)
+  type: Operator
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 1670
+  syntax:
+    content:
+      CSharp: public static implicit operator EntityHandle(GenericParameterHandle handle)
+    parameters:
+    - id: handle
+      type:
+        id: System.Reflection.Metadata.GenericParameterHandle
+        name: GenericParameterHandle
+        href: System.Reflection.Metadata.GenericParameterHandle.yml
+    return:
+      id: EntityHandle
+      type:
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
+  id: System.Reflection.Metadata.GenericParameterHandle.op_Implicit(System.Reflection.Metadata.GenericParameterHandle)~System.Reflection.Metadata.EntityHandle
 - uid: System.Reflection.Metadata.GenericParameterHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.GenericParameterHandle
   href: System.Reflection.Metadata.GenericParameterHandle.yml
   name: explicit operator GenericParameterHandle(Handle)
   fullName: System.Reflection.Metadata.GenericParameterHandle.explicit operator System.Reflection.Metadata.GenericParameterHandle(System.Reflection.Metadata.Handle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1191
+    startLine: 1675
   syntax:
     content:
-      CSharp: public static explicit operator GenericParameterHandle(Handle handle) { if (handle.TokenType != tokenType) { Handle.ThrowInvalidCast(); } return new GenericParameterHandle(handle.RowId); }
+      CSharp: public static explicit operator GenericParameterHandle(Handle handle)
     parameters:
     - id: handle
       type:
@@ -68,7 +104,36 @@ items:
         href: System.Reflection.Metadata.Handle.yml
     return:
       id: GenericParameterHandle
+      type:
+        id: System.Reflection.Metadata.GenericParameterHandle
+        name: GenericParameterHandle
+        href: System.Reflection.Metadata.GenericParameterHandle.yml
   id: System.Reflection.Metadata.GenericParameterHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.GenericParameterHandle
+- uid: System.Reflection.Metadata.GenericParameterHandle.op_Explicit(System.Reflection.Metadata.EntityHandle)~System.Reflection.Metadata.GenericParameterHandle
+  href: System.Reflection.Metadata.GenericParameterHandle.yml
+  name: explicit operator GenericParameterHandle(EntityHandle)
+  fullName: System.Reflection.Metadata.GenericParameterHandle.explicit operator System.Reflection.Metadata.GenericParameterHandle(System.Reflection.Metadata.EntityHandle)
+  type: Operator
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 1685
+  syntax:
+    content:
+      CSharp: public static explicit operator GenericParameterHandle(EntityHandle handle)
+    parameters:
+    - id: handle
+      type:
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
+    return:
+      id: GenericParameterHandle
+      type:
+        id: System.Reflection.Metadata.GenericParameterHandle
+        name: GenericParameterHandle
+        href: System.Reflection.Metadata.GenericParameterHandle.yml
+  id: System.Reflection.Metadata.GenericParameterHandle.op_Explicit(System.Reflection.Metadata.EntityHandle)~System.Reflection.Metadata.GenericParameterHandle
 - uid: System.Reflection.Metadata.GenericParameterHandle.IsNil
   href: System.Reflection.Metadata.GenericParameterHandle.yml
   name: IsNil
@@ -77,7 +142,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1201
+    startLine: 1695
   syntax:
     content:
       CSharp: public bool IsNil { get; }
@@ -85,21 +150,21 @@ items:
     - id: IsNil
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Reflection.Metadata.GenericParameterHandle.IsNil
 - uid: System.Reflection.Metadata.GenericParameterHandle.op_Equality(System.Reflection.Metadata.GenericParameterHandle,System.Reflection.Metadata.GenericParameterHandle)
   href: System.Reflection.Metadata.GenericParameterHandle.yml
   name: operator ==(GenericParameterHandle, GenericParameterHandle)
   fullName: System.Reflection.Metadata.GenericParameterHandle.operator ==(System.Reflection.Metadata.GenericParameterHandle, System.Reflection.Metadata.GenericParameterHandle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1211
+    startLine: 1705
   syntax:
     content:
-      CSharp: public static bool operator ==(GenericParameterHandle left, GenericParameterHandle right) { return left._rowId == right._rowId; }
+      CSharp: public static bool operator ==(GenericParameterHandle left, GenericParameterHandle right)
     parameters:
     - id: left
       type:
@@ -113,6 +178,10 @@ items:
         href: System.Reflection.Metadata.GenericParameterHandle.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.GenericParameterHandle.op_Equality(System.Reflection.Metadata.GenericParameterHandle,System.Reflection.Metadata.GenericParameterHandle)
 - uid: System.Reflection.Metadata.GenericParameterHandle.Equals(System.Object)
   href: System.Reflection.Metadata.GenericParameterHandle.yml
@@ -122,7 +191,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1216
+    startLine: 1710
   syntax:
     content:
       CSharp: public override bool Equals(object obj)
@@ -130,10 +199,14 @@ items:
     - id: obj
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.GenericParameterHandle.Equals(System.Object)
 - uid: System.Reflection.Metadata.GenericParameterHandle.Equals(System.Reflection.Metadata.GenericParameterHandle)
   href: System.Reflection.Metadata.GenericParameterHandle.yml
@@ -143,7 +216,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1221
+    startLine: 1715
   syntax:
     content:
       CSharp: public bool Equals(GenericParameterHandle other)
@@ -155,6 +228,10 @@ items:
         href: System.Reflection.Metadata.GenericParameterHandle.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.GenericParameterHandle.Equals(System.Reflection.Metadata.GenericParameterHandle)
 - uid: System.Reflection.Metadata.GenericParameterHandle.GetHashCode
   href: System.Reflection.Metadata.GenericParameterHandle.yml
@@ -164,26 +241,30 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1226
+    startLine: 1720
   syntax:
     content:
       CSharp: public override int GetHashCode()
     parameters: []
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: System.Reflection.Metadata.GenericParameterHandle.GetHashCode
 - uid: System.Reflection.Metadata.GenericParameterHandle.op_Inequality(System.Reflection.Metadata.GenericParameterHandle,System.Reflection.Metadata.GenericParameterHandle)
   href: System.Reflection.Metadata.GenericParameterHandle.yml
   name: operator !=(GenericParameterHandle, GenericParameterHandle)
   fullName: System.Reflection.Metadata.GenericParameterHandle.operator !=(System.Reflection.Metadata.GenericParameterHandle, System.Reflection.Metadata.GenericParameterHandle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1231
+    startLine: 1725
   syntax:
     content:
-      CSharp: public static bool operator !=(GenericParameterHandle left, GenericParameterHandle right) { return left._rowId != right._rowId; }
+      CSharp: public static bool operator !=(GenericParameterHandle left, GenericParameterHandle right)
     parameters:
     - id: left
       type:
@@ -197,4 +278,8 @@ items:
         href: System.Reflection.Metadata.GenericParameterHandle.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.GenericParameterHandle.op_Inequality(System.Reflection.Metadata.GenericParameterHandle,System.Reflection.Metadata.GenericParameterHandle)

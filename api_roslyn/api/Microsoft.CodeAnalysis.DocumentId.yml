@@ -6,9 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Workspace/Solution/DocumentId.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Workspace/Solution/DocumentId.cs
     startLine: 15
   summary: >-
@@ -17,16 +18,17 @@ items:
     workspace.
   syntax:
     content:
-      CSharp: public class DocumentId
+      CSharp: 'public sealed class DocumentId : IEquatable<DocumentId>'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.DocumentId
   children:
   - Microsoft.CodeAnalysis.DocumentId.ProjectId
   - Microsoft.CodeAnalysis.DocumentId.Id
   - Microsoft.CodeAnalysis.DocumentId.CreateNewId(Microsoft.CodeAnalysis.ProjectId,System.String)
+  - Microsoft.CodeAnalysis.DocumentId.CreateFromSerialized(Microsoft.CodeAnalysis.ProjectId,System.Guid,System.String)
   - Microsoft.CodeAnalysis.DocumentId.ToString
   - Microsoft.CodeAnalysis.DocumentId.Equals(System.Object)
   - Microsoft.CodeAnalysis.DocumentId.Equals(Microsoft.CodeAnalysis.DocumentId)
@@ -44,7 +46,7 @@ items:
     startLine: 18
   syntax:
     content:
-      CSharp: public ProjectId ProjectId { get; private set; }
+      CSharp: public ProjectId ProjectId { get; }
     parameters:
     - id: ProjectId
       type:
@@ -63,12 +65,12 @@ items:
     startLine: 19
   syntax:
     content:
-      CSharp: public Guid Id { get; private set; }
+      CSharp: public Guid Id { get; }
     parameters:
     - id: Id
       type:
         id: System.Guid
-        name: System.Guid
+        name: Guid
         isExternal: true
   id: Microsoft.CodeAnalysis.DocumentId.Id
 - uid: Microsoft.CodeAnalysis.DocumentId.CreateNewId(Microsoft.CodeAnalysis.ProjectId,System.String)
@@ -94,12 +96,51 @@ items:
     - id: debugName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: An optional name to make this id easier to recognize while debugging.
     return:
       id: DocumentId
+      type:
+        id: Microsoft.CodeAnalysis.DocumentId
+        name: DocumentId
+        href: Microsoft.CodeAnalysis.DocumentId.yml
   id: Microsoft.CodeAnalysis.DocumentId.CreateNewId(Microsoft.CodeAnalysis.ProjectId,System.String)
+- uid: Microsoft.CodeAnalysis.DocumentId.CreateFromSerialized(Microsoft.CodeAnalysis.ProjectId,System.Guid,System.String)
+  href: Microsoft.CodeAnalysis.DocumentId.yml
+  name: CreateFromSerialized(ProjectId, Guid, string)
+  fullName: Microsoft.CodeAnalysis.DocumentId.CreateFromSerialized(Microsoft.CodeAnalysis.ProjectId, System.Guid, string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Solution/DocumentId.cs
+    startLine: 52
+  syntax:
+    content:
+      CSharp: public static DocumentId CreateFromSerialized(ProjectId projectId, Guid id, string debugName = null)
+    parameters:
+    - id: projectId
+      type:
+        id: Microsoft.CodeAnalysis.ProjectId
+        name: ProjectId
+        href: Microsoft.CodeAnalysis.ProjectId.yml
+    - id: id
+      type:
+        id: System.Guid
+        name: Guid
+        isExternal: true
+    - id: debugName
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      id: DocumentId
+      type:
+        id: Microsoft.CodeAnalysis.DocumentId
+        name: DocumentId
+        href: Microsoft.CodeAnalysis.DocumentId.yml
+  id: Microsoft.CodeAnalysis.DocumentId.CreateFromSerialized(Microsoft.CodeAnalysis.ProjectId,System.Guid,System.String)
 - uid: Microsoft.CodeAnalysis.DocumentId.ToString
   href: Microsoft.CodeAnalysis.DocumentId.yml
   name: ToString()
@@ -108,13 +149,17 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/DocumentId.cs
-    startLine: 59
+    startLine: 74
   syntax:
     content:
       CSharp: public override string ToString()
     parameters: []
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: Microsoft.CodeAnalysis.DocumentId.ToString
 - uid: Microsoft.CodeAnalysis.DocumentId.Equals(System.Object)
   href: Microsoft.CodeAnalysis.DocumentId.yml
@@ -124,7 +169,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/DocumentId.cs
-    startLine: 64
+    startLine: 79
   syntax:
     content:
       CSharp: public override bool Equals(object obj)
@@ -132,10 +177,14 @@ items:
     - id: obj
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.DocumentId.Equals(System.Object)
 - uid: Microsoft.CodeAnalysis.DocumentId.Equals(Microsoft.CodeAnalysis.DocumentId)
   href: Microsoft.CodeAnalysis.DocumentId.yml
@@ -145,7 +194,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/DocumentId.cs
-    startLine: 69
+    startLine: 84
   syntax:
     content:
       CSharp: public bool Equals(DocumentId other)
@@ -157,6 +206,10 @@ items:
         href: Microsoft.CodeAnalysis.DocumentId.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.DocumentId.Equals(Microsoft.CodeAnalysis.DocumentId)
 - uid: Microsoft.CodeAnalysis.DocumentId.GetHashCode
   href: Microsoft.CodeAnalysis.DocumentId.yml
@@ -166,26 +219,30 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/DocumentId.cs
-    startLine: 78
+    startLine: 93
   syntax:
     content:
       CSharp: public override int GetHashCode()
     parameters: []
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: Microsoft.CodeAnalysis.DocumentId.GetHashCode
 - uid: Microsoft.CodeAnalysis.DocumentId.op_Equality(Microsoft.CodeAnalysis.DocumentId,Microsoft.CodeAnalysis.DocumentId)
   href: Microsoft.CodeAnalysis.DocumentId.yml
   name: operator ==(DocumentId, DocumentId)
   fullName: Microsoft.CodeAnalysis.DocumentId.operator ==(Microsoft.CodeAnalysis.DocumentId, Microsoft.CodeAnalysis.DocumentId)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/DocumentId.cs
-    startLine: 83
+    startLine: 98
   syntax:
     content:
-      CSharp: public static bool operator ==(DocumentId left, DocumentId right) { return EqualityComparer<DocumentId>.Default.Equals(left, right); }
+      CSharp: public static bool operator ==(DocumentId left, DocumentId right)
     parameters:
     - id: left
       type:
@@ -199,19 +256,23 @@ items:
         href: Microsoft.CodeAnalysis.DocumentId.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.DocumentId.op_Equality(Microsoft.CodeAnalysis.DocumentId,Microsoft.CodeAnalysis.DocumentId)
 - uid: Microsoft.CodeAnalysis.DocumentId.op_Inequality(Microsoft.CodeAnalysis.DocumentId,Microsoft.CodeAnalysis.DocumentId)
   href: Microsoft.CodeAnalysis.DocumentId.yml
   name: operator !=(DocumentId, DocumentId)
   fullName: Microsoft.CodeAnalysis.DocumentId.operator !=(Microsoft.CodeAnalysis.DocumentId, Microsoft.CodeAnalysis.DocumentId)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/DocumentId.cs
-    startLine: 88
+    startLine: 103
   syntax:
     content:
-      CSharp: public static bool operator !=(DocumentId left, DocumentId right) { return !(left == right); }
+      CSharp: public static bool operator !=(DocumentId left, DocumentId right)
     parameters:
     - id: left
       type:
@@ -225,4 +286,8 @@ items:
         href: Microsoft.CodeAnalysis.DocumentId.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.DocumentId.op_Inequality(Microsoft.CodeAnalysis.DocumentId,Microsoft.CodeAnalysis.DocumentId)

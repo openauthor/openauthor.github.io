@@ -6,16 +6,24 @@ items:
   type: Enum
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleKind.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleKind.cs
     startLine: 7
   syntax:
     content:
-      CSharp: public enum HandleKind
+      CSharp: 'public enum HandleKind : byte'
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.ValueType
+    name: ValueType
+    isExternal: true
   - id: System.Enum
-    name: System.Enum
+    name: Enum
     isExternal: true
   id: System.Reflection.Metadata.HandleKind
   children:
@@ -60,7 +68,7 @@ items:
     startLine: 9
   syntax:
     content:
-      CSharp: ModuleDefinition = (byte)(TokenTypeIds.Module >> TokenTypeIds.RowIdBitCount)
+      CSharp: ModuleDefinition = (byte)HandleType.Module
   id: System.Reflection.Metadata.HandleKind.ModuleDefinition
 - uid: System.Reflection.Metadata.HandleKind.TypeReference
   href: System.Reflection.Metadata.HandleKind.yml
@@ -73,7 +81,7 @@ items:
     startLine: 10
   syntax:
     content:
-      CSharp: TypeReference = (byte)(TokenTypeIds.TypeRef >> TokenTypeIds.RowIdBitCount)
+      CSharp: TypeReference = (byte)HandleType.TypeRef
   id: System.Reflection.Metadata.HandleKind.TypeReference
 - uid: System.Reflection.Metadata.HandleKind.TypeDefinition
   href: System.Reflection.Metadata.HandleKind.yml
@@ -86,7 +94,7 @@ items:
     startLine: 11
   syntax:
     content:
-      CSharp: TypeDefinition = (byte)(TokenTypeIds.TypeDef >> TokenTypeIds.RowIdBitCount)
+      CSharp: TypeDefinition = (byte)HandleType.TypeDef
   id: System.Reflection.Metadata.HandleKind.TypeDefinition
 - uid: System.Reflection.Metadata.HandleKind.FieldDefinition
   href: System.Reflection.Metadata.HandleKind.yml
@@ -99,7 +107,7 @@ items:
     startLine: 12
   syntax:
     content:
-      CSharp: FieldDefinition = (byte)(TokenTypeIds.FieldDef >> TokenTypeIds.RowIdBitCount)
+      CSharp: FieldDefinition = (byte)HandleType.FieldDef
   id: System.Reflection.Metadata.HandleKind.FieldDefinition
 - uid: System.Reflection.Metadata.HandleKind.MethodDefinition
   href: System.Reflection.Metadata.HandleKind.yml
@@ -112,7 +120,7 @@ items:
     startLine: 13
   syntax:
     content:
-      CSharp: MethodDefinition = (byte)(TokenTypeIds.MethodDef >> TokenTypeIds.RowIdBitCount)
+      CSharp: MethodDefinition = (byte)HandleType.MethodDef
   id: System.Reflection.Metadata.HandleKind.MethodDefinition
 - uid: System.Reflection.Metadata.HandleKind.Parameter
   href: System.Reflection.Metadata.HandleKind.yml
@@ -125,7 +133,7 @@ items:
     startLine: 14
   syntax:
     content:
-      CSharp: Parameter = (byte)(TokenTypeIds.ParamDef >> TokenTypeIds.RowIdBitCount)
+      CSharp: Parameter = (byte)HandleType.ParamDef
   id: System.Reflection.Metadata.HandleKind.Parameter
 - uid: System.Reflection.Metadata.HandleKind.InterfaceImplementation
   href: System.Reflection.Metadata.HandleKind.yml
@@ -138,7 +146,7 @@ items:
     startLine: 15
   syntax:
     content:
-      CSharp: InterfaceImplementation = (byte)(TokenTypeIds.InterfaceImpl >> TokenTypeIds.RowIdBitCount)
+      CSharp: InterfaceImplementation = (byte)HandleType.InterfaceImpl
   id: System.Reflection.Metadata.HandleKind.InterfaceImplementation
 - uid: System.Reflection.Metadata.HandleKind.MemberReference
   href: System.Reflection.Metadata.HandleKind.yml
@@ -151,7 +159,7 @@ items:
     startLine: 16
   syntax:
     content:
-      CSharp: MemberReference = (byte)(TokenTypeIds.MemberRef >> TokenTypeIds.RowIdBitCount)
+      CSharp: MemberReference = (byte)HandleType.MemberRef
   id: System.Reflection.Metadata.HandleKind.MemberReference
 - uid: System.Reflection.Metadata.HandleKind.Constant
   href: System.Reflection.Metadata.HandleKind.yml
@@ -164,7 +172,7 @@ items:
     startLine: 17
   syntax:
     content:
-      CSharp: Constant = (byte)(TokenTypeIds.Constant >> TokenTypeIds.RowIdBitCount)
+      CSharp: Constant = (byte)HandleType.Constant
   id: System.Reflection.Metadata.HandleKind.Constant
 - uid: System.Reflection.Metadata.HandleKind.CustomAttribute
   href: System.Reflection.Metadata.HandleKind.yml
@@ -177,7 +185,7 @@ items:
     startLine: 18
   syntax:
     content:
-      CSharp: CustomAttribute = (byte)(TokenTypeIds.CustomAttribute >> TokenTypeIds.RowIdBitCount)
+      CSharp: CustomAttribute = (byte)HandleType.CustomAttribute
   id: System.Reflection.Metadata.HandleKind.CustomAttribute
 - uid: System.Reflection.Metadata.HandleKind.DeclarativeSecurityAttribute
   href: System.Reflection.Metadata.HandleKind.yml
@@ -190,7 +198,7 @@ items:
     startLine: 19
   syntax:
     content:
-      CSharp: DeclarativeSecurityAttribute = (byte)(TokenTypeIds.DeclSecurity >> TokenTypeIds.RowIdBitCount)
+      CSharp: DeclarativeSecurityAttribute = (byte)HandleType.DeclSecurity
   id: System.Reflection.Metadata.HandleKind.DeclarativeSecurityAttribute
 - uid: System.Reflection.Metadata.HandleKind.StandaloneSignature
   href: System.Reflection.Metadata.HandleKind.yml
@@ -203,7 +211,7 @@ items:
     startLine: 20
   syntax:
     content:
-      CSharp: StandaloneSignature = (byte)(TokenTypeIds.Signature >> TokenTypeIds.RowIdBitCount)
+      CSharp: StandaloneSignature = (byte)HandleType.Signature
   id: System.Reflection.Metadata.HandleKind.StandaloneSignature
 - uid: System.Reflection.Metadata.HandleKind.EventDefinition
   href: System.Reflection.Metadata.HandleKind.yml
@@ -216,7 +224,7 @@ items:
     startLine: 21
   syntax:
     content:
-      CSharp: EventDefinition = (byte)(TokenTypeIds.Event >> TokenTypeIds.RowIdBitCount)
+      CSharp: EventDefinition = (byte)HandleType.Event
   id: System.Reflection.Metadata.HandleKind.EventDefinition
 - uid: System.Reflection.Metadata.HandleKind.PropertyDefinition
   href: System.Reflection.Metadata.HandleKind.yml
@@ -229,7 +237,7 @@ items:
     startLine: 22
   syntax:
     content:
-      CSharp: PropertyDefinition = (byte)(TokenTypeIds.Property >> TokenTypeIds.RowIdBitCount)
+      CSharp: PropertyDefinition = (byte)HandleType.Property
   id: System.Reflection.Metadata.HandleKind.PropertyDefinition
 - uid: System.Reflection.Metadata.HandleKind.MethodImplementation
   href: System.Reflection.Metadata.HandleKind.yml
@@ -242,7 +250,7 @@ items:
     startLine: 23
   syntax:
     content:
-      CSharp: MethodImplementation = (byte)(TokenTypeIds.MethodImpl >> TokenTypeIds.RowIdBitCount)
+      CSharp: MethodImplementation = (byte)HandleType.MethodImpl
   id: System.Reflection.Metadata.HandleKind.MethodImplementation
 - uid: System.Reflection.Metadata.HandleKind.ModuleReference
   href: System.Reflection.Metadata.HandleKind.yml
@@ -255,7 +263,7 @@ items:
     startLine: 24
   syntax:
     content:
-      CSharp: ModuleReference = (byte)(TokenTypeIds.ModuleRef >> TokenTypeIds.RowIdBitCount)
+      CSharp: ModuleReference = (byte)HandleType.ModuleRef
   id: System.Reflection.Metadata.HandleKind.ModuleReference
 - uid: System.Reflection.Metadata.HandleKind.TypeSpecification
   href: System.Reflection.Metadata.HandleKind.yml
@@ -268,7 +276,7 @@ items:
     startLine: 25
   syntax:
     content:
-      CSharp: TypeSpecification = (byte)(TokenTypeIds.TypeSpec >> TokenTypeIds.RowIdBitCount)
+      CSharp: TypeSpecification = (byte)HandleType.TypeSpec
   id: System.Reflection.Metadata.HandleKind.TypeSpecification
 - uid: System.Reflection.Metadata.HandleKind.AssemblyDefinition
   href: System.Reflection.Metadata.HandleKind.yml
@@ -281,7 +289,7 @@ items:
     startLine: 26
   syntax:
     content:
-      CSharp: AssemblyDefinition = (byte)(TokenTypeIds.Assembly >> TokenTypeIds.RowIdBitCount)
+      CSharp: AssemblyDefinition = (byte)HandleType.Assembly
   id: System.Reflection.Metadata.HandleKind.AssemblyDefinition
 - uid: System.Reflection.Metadata.HandleKind.AssemblyFile
   href: System.Reflection.Metadata.HandleKind.yml
@@ -294,7 +302,7 @@ items:
     startLine: 27
   syntax:
     content:
-      CSharp: AssemblyFile = (byte)(TokenTypeIds.File >> TokenTypeIds.RowIdBitCount)
+      CSharp: AssemblyFile = (byte)HandleType.File
   id: System.Reflection.Metadata.HandleKind.AssemblyFile
 - uid: System.Reflection.Metadata.HandleKind.AssemblyReference
   href: System.Reflection.Metadata.HandleKind.yml
@@ -307,7 +315,7 @@ items:
     startLine: 28
   syntax:
     content:
-      CSharp: AssemblyReference = (byte)(TokenTypeIds.AssemblyRef >> TokenTypeIds.RowIdBitCount)
+      CSharp: AssemblyReference = (byte)HandleType.AssemblyRef
   id: System.Reflection.Metadata.HandleKind.AssemblyReference
 - uid: System.Reflection.Metadata.HandleKind.ExportedType
   href: System.Reflection.Metadata.HandleKind.yml
@@ -320,7 +328,7 @@ items:
     startLine: 29
   syntax:
     content:
-      CSharp: ExportedType = (byte)(TokenTypeIds.ExportedType >> TokenTypeIds.RowIdBitCount)
+      CSharp: ExportedType = (byte)HandleType.ExportedType
   id: System.Reflection.Metadata.HandleKind.ExportedType
 - uid: System.Reflection.Metadata.HandleKind.GenericParameter
   href: System.Reflection.Metadata.HandleKind.yml
@@ -333,7 +341,7 @@ items:
     startLine: 30
   syntax:
     content:
-      CSharp: GenericParameter = (byte)(TokenTypeIds.GenericParam >> TokenTypeIds.RowIdBitCount)
+      CSharp: GenericParameter = (byte)HandleType.GenericParam
   id: System.Reflection.Metadata.HandleKind.GenericParameter
 - uid: System.Reflection.Metadata.HandleKind.MethodSpecification
   href: System.Reflection.Metadata.HandleKind.yml
@@ -346,7 +354,7 @@ items:
     startLine: 31
   syntax:
     content:
-      CSharp: MethodSpecification = (byte)(TokenTypeIds.MethodSpec >> TokenTypeIds.RowIdBitCount)
+      CSharp: MethodSpecification = (byte)HandleType.MethodSpec
   id: System.Reflection.Metadata.HandleKind.MethodSpecification
 - uid: System.Reflection.Metadata.HandleKind.GenericParameterConstraint
   href: System.Reflection.Metadata.HandleKind.yml
@@ -359,7 +367,7 @@ items:
     startLine: 32
   syntax:
     content:
-      CSharp: GenericParameterConstraint = (byte)(TokenTypeIds.GenericParamConstraint >> TokenTypeIds.RowIdBitCount)
+      CSharp: GenericParameterConstraint = (byte)HandleType.GenericParamConstraint
   id: System.Reflection.Metadata.HandleKind.GenericParameterConstraint
 - uid: System.Reflection.Metadata.HandleKind.ManifestResource
   href: System.Reflection.Metadata.HandleKind.yml
@@ -372,7 +380,7 @@ items:
     startLine: 33
   syntax:
     content:
-      CSharp: ManifestResource = (byte)(TokenTypeIds.ManifestResource >> TokenTypeIds.RowIdBitCount)
+      CSharp: ManifestResource = (byte)HandleType.ManifestResource
   id: System.Reflection.Metadata.HandleKind.ManifestResource
 - uid: System.Reflection.Metadata.HandleKind.NamespaceDefinition
   href: System.Reflection.Metadata.HandleKind.yml
@@ -385,7 +393,7 @@ items:
     startLine: 35
   syntax:
     content:
-      CSharp: NamespaceDefinition = (byte)(TokenTypeIds.Namespace >> TokenTypeIds.RowIdBitCount)
+      CSharp: NamespaceDefinition = (byte)HandleType.Namespace
   id: System.Reflection.Metadata.HandleKind.NamespaceDefinition
 - uid: System.Reflection.Metadata.HandleKind.UserString
   href: System.Reflection.Metadata.HandleKind.yml
@@ -398,7 +406,7 @@ items:
     startLine: 36
   syntax:
     content:
-      CSharp: UserString = (byte)(TokenTypeIds.UserString >> TokenTypeIds.RowIdBitCount)
+      CSharp: UserString = (byte)HandleType.UserString
   id: System.Reflection.Metadata.HandleKind.UserString
 - uid: System.Reflection.Metadata.HandleKind.String
   href: System.Reflection.Metadata.HandleKind.yml
@@ -411,7 +419,7 @@ items:
     startLine: 37
   syntax:
     content:
-      CSharp: String = (byte)(TokenTypeIds.String >> TokenTypeIds.RowIdBitCount)
+      CSharp: String = (byte)HandleType.String
   id: System.Reflection.Metadata.HandleKind.String
 - uid: System.Reflection.Metadata.HandleKind.Blob
   href: System.Reflection.Metadata.HandleKind.yml
@@ -424,7 +432,7 @@ items:
     startLine: 38
   syntax:
     content:
-      CSharp: Blob = (byte)(TokenTypeIds.Blob >> TokenTypeIds.RowIdBitCount)
+      CSharp: Blob = (byte)HandleType.Blob
   id: System.Reflection.Metadata.HandleKind.Blob
 - uid: System.Reflection.Metadata.HandleKind.Guid
   href: System.Reflection.Metadata.HandleKind.yml
@@ -437,5 +445,5 @@ items:
     startLine: 39
   syntax:
     content:
-      CSharp: Guid = (byte)(TokenTypeIds.Guid >> TokenTypeIds.RowIdBitCount)
+      CSharp: Guid = (byte)HandleType.Guid
   id: System.Reflection.Metadata.HandleKind.Guid

@@ -6,17 +6,19 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
     startLine: 16
   summary: An immutable list implementation.
   syntax:
     content:
-      CSharp: public sealed partial class ImmutableList<T>
+      CSharp: 'public sealed class ImmutableList<T> : IImmutableList<T>, IList<T>, ICollection<T>, IList, ICollection, IOrderedCollection<T>, IImmutableListQueries<T>, IReadOnlyList<T>, IReadOnlyCollection<T>, IEnumerable<T>, IEnumerable, IStrongEnumerable<T, Enumerator>'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Collections.Immutable.ImmutableList`1
   children:
@@ -26,7 +28,10 @@ items:
   - System.Collections.Immutable.ImmutableList`1.BinarySearch(`0,System.Collections.Generic.IComparer{`0})
   - System.Collections.Immutable.ImmutableList`1.BinarySearch(System.Int32,System.Int32,`0,System.Collections.Generic.IComparer{`0})
   - System.Collections.Immutable.ImmutableList`1.IsEmpty
+  - System.Collections.Immutable.ImmutableList`1.System#Collections#Immutable#IImmutableList{T}#Clear
   - System.Collections.Immutable.ImmutableList`1.Count
+  - System.Collections.Immutable.ImmutableList`1.System#Collections#ICollection#SyncRoot
+  - System.Collections.Immutable.ImmutableList`1.System#Collections#ICollection#IsSynchronized
   - System.Collections.Immutable.ImmutableList`1.Item(System.Int32)
   - System.Collections.Immutable.ImmutableList`1.ToBuilder
   - System.Collections.Immutable.ImmutableList`1.Add(`0)
@@ -70,6 +75,37 @@ items:
   - System.Collections.Immutable.ImmutableList`1.TrueForAll(System.Predicate{`0})
   - System.Collections.Immutable.ImmutableList`1.Contains(`0)
   - System.Collections.Immutable.ImmutableList`1.IndexOf(`0)
+  - System.Collections.Immutable.ImmutableList`1.System#Collections#Immutable#IImmutableList{T}#Add(`0)
+  - System.Collections.Immutable.ImmutableList`1.System#Collections#Immutable#IImmutableList{T}#AddRange(System.Collections.Generic.IEnumerable{`0})
+  - System.Collections.Immutable.ImmutableList`1.System#Collections#Immutable#IImmutableList{T}#Insert(System.Int32,`0)
+  - System.Collections.Immutable.ImmutableList`1.System#Collections#Immutable#IImmutableList{T}#InsertRange(System.Int32,System.Collections.Generic.IEnumerable{`0})
+  - System.Collections.Immutable.ImmutableList`1.System#Collections#Immutable#IImmutableList{T}#Remove(`0,System.Collections.Generic.IEqualityComparer{`0})
+  - System.Collections.Immutable.ImmutableList`1.System#Collections#Immutable#IImmutableList{T}#RemoveAll(System.Predicate{`0})
+  - System.Collections.Immutable.ImmutableList`1.System#Collections#Immutable#IImmutableList{T}#RemoveRange(System.Collections.Generic.IEnumerable{`0},System.Collections.Generic.IEqualityComparer{`0})
+  - System.Collections.Immutable.ImmutableList`1.System#Collections#Immutable#IImmutableList{T}#RemoveRange(System.Int32,System.Int32)
+  - System.Collections.Immutable.ImmutableList`1.System#Collections#Immutable#IImmutableList{T}#RemoveAt(System.Int32)
+  - System.Collections.Immutable.ImmutableList`1.System#Collections#Immutable#IImmutableList{T}#SetItem(System.Int32,`0)
+  - System.Collections.Immutable.ImmutableList`1.System#Collections#Immutable#IImmutableList{T}#Replace(`0,`0,System.Collections.Generic.IEqualityComparer{`0})
+  - System.Collections.Immutable.ImmutableList`1.System#Collections#Generic#IEnumerable{T}#GetEnumerator
+  - System.Collections.Immutable.ImmutableList`1.System#Collections#IEnumerable#GetEnumerator
+  - System.Collections.Immutable.ImmutableList`1.System#Collections#Generic#IList{T}#Insert(System.Int32,`0)
+  - System.Collections.Immutable.ImmutableList`1.System#Collections#Generic#IList{T}#RemoveAt(System.Int32)
+  - System.Collections.Immutable.ImmutableList`1.System#Collections#Generic#IList{T}#Item(System.Int32)
+  - System.Collections.Immutable.ImmutableList`1.System#Collections#Generic#ICollection{T}#Add(`0)
+  - System.Collections.Immutable.ImmutableList`1.System#Collections#Generic#ICollection{T}#Clear
+  - System.Collections.Immutable.ImmutableList`1.System#Collections#Generic#ICollection{T}#IsReadOnly
+  - System.Collections.Immutable.ImmutableList`1.System#Collections#Generic#ICollection{T}#Remove(`0)
+  - System.Collections.Immutable.ImmutableList`1.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+  - System.Collections.Immutable.ImmutableList`1.System#Collections#IList#Add(System.Object)
+  - System.Collections.Immutable.ImmutableList`1.System#Collections#IList#RemoveAt(System.Int32)
+  - System.Collections.Immutable.ImmutableList`1.System#Collections#IList#Clear
+  - System.Collections.Immutable.ImmutableList`1.System#Collections#IList#Contains(System.Object)
+  - System.Collections.Immutable.ImmutableList`1.System#Collections#IList#IndexOf(System.Object)
+  - System.Collections.Immutable.ImmutableList`1.System#Collections#IList#Insert(System.Int32,System.Object)
+  - System.Collections.Immutable.ImmutableList`1.System#Collections#IList#IsFixedSize
+  - System.Collections.Immutable.ImmutableList`1.System#Collections#IList#IsReadOnly
+  - System.Collections.Immutable.ImmutableList`1.System#Collections#IList#Remove(System.Object)
+  - System.Collections.Immutable.ImmutableList`1.System#Collections#IList#Item(System.Int32)
   - System.Collections.Immutable.ImmutableList`1.GetEnumerator
 - uid: System.Collections.Immutable.ImmutableList`1.Empty
   href: System.Collections.Immutable.ImmutableList`1.yml
@@ -83,7 +119,7 @@ items:
   summary: An empty immutable list.
   syntax:
     content:
-      CSharp: Empty
+      CSharp: '[SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")] public static readonly ImmutableList<T> Empty;'
   id: System.Collections.Immutable.ImmutableList`1.Empty
 - uid: System.Collections.Immutable.ImmutableList`1.Clear
   href: System.Collections.Immutable.ImmutableList`1.yml
@@ -101,6 +137,10 @@ items:
     parameters: []
     return:
       id: ImmutableList
+      type:
+        id: System.Collections.Immutable.ImmutableList`1
+        name: ImmutableList<T>
+        href: System.Collections.Immutable.ImmutableList`1.yml
   id: System.Collections.Immutable.ImmutableList`1.Clear
 - uid: System.Collections.Immutable.ImmutableList`1.BinarySearch(`0)
   href: System.Collections.Immutable.ImmutableList`1.yml
@@ -112,7 +152,7 @@ items:
     path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
     startLine: 77
   summary: >-
-    Searches the entire sorted System.Collections.Generic.List<T> for an element
+    Searches the entire sorted [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml) for an element
 
     using the default comparer and returns the zero-based index of the element.
   syntax:
@@ -127,14 +167,18 @@ items:
       description: The object to locate. The value can be null for reference types.
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: >-
-        The zero-based index of item in the sorted System.Collections.Generic.List<T>,
+        The zero-based index of item in the sorted [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml),
 
         if item is found; otherwise, a negative number that is the bitwise complement
 
         of the index of the next element that is larger than item or, if there is
 
-        no larger element, the bitwise complement of System.Collections.Generic.List<T>.Count.
+        no larger element, the bitwise complement of [System.Collections.Immutable.ImmutableList`1.Count](System.Collections.Immutable.ImmutableList`1.yml).
   id: System.Collections.Immutable.ImmutableList`1.BinarySearch(`0)
 - uid: System.Collections.Immutable.ImmutableList`1.BinarySearch(`0,System.Collections.Generic.IComparer{`0})
   href: System.Collections.Immutable.ImmutableList`1.yml
@@ -146,7 +190,7 @@ items:
     path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
     startLine: 102
   summary: >-
-    Searches the entire sorted System.Collections.Generic.List<T> for an element
+    Searches the entire sorted [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml) for an element
 
     using the specified comparer and returns the zero-based index of the element.
   syntax:
@@ -162,22 +206,26 @@ items:
     - id: comparer
       type:
         id: System.Collections.Generic.IComparer{`0}
-        name: System.Collections.Generic.IComparer{`0}
+        name: IComparer<T>
         isExternal: true
       description: >-
-        The System.Collections.Generic.IComparer<T> implementation to use when comparing
+        The [System.Collections.Generic.IComparer`1]() implementation to use when comparing
 
-        elements.-or-null to use the default comparer System.Collections.Generic.Comparer<T>.Default.
+        elements.-or-null to use the default comparer [System.Collections.Generic.Comparer`1.Default]().
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: >-
-        The zero-based index of item in the sorted System.Collections.Generic.List<T>,
+        The zero-based index of item in the sorted [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml),
 
         if item is found; otherwise, a negative number that is the bitwise complement
 
         of the index of the next element that is larger than item or, if there is
 
-        no larger element, the bitwise complement of System.Collections.Generic.List<T>.Count.
+        no larger element, the bitwise complement of [System.Collections.Immutable.ImmutableList`1.Count](System.Collections.Immutable.ImmutableList`1.yml).
   id: System.Collections.Immutable.ImmutableList`1.BinarySearch(`0,System.Collections.Generic.IComparer{`0})
 - uid: System.Collections.Immutable.ImmutableList`1.BinarySearch(System.Int32,System.Int32,`0,System.Collections.Generic.IComparer{`0})
   href: System.Collections.Immutable.ImmutableList`1.yml
@@ -189,7 +237,7 @@ items:
     path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
     startLine: 136
   summary: >-
-    Searches a range of elements in the sorted System.Collections.Generic.List<T>
+    Searches a range of elements in the sorted [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml)
 
     for an element using the specified comparer and returns the zero-based index
 
@@ -201,13 +249,13 @@ items:
     - id: index
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The zero-based starting index of the range to search.
     - id: count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The length of the range to search.
     - id: item
@@ -219,22 +267,26 @@ items:
     - id: comparer
       type:
         id: System.Collections.Generic.IComparer{`0}
-        name: System.Collections.Generic.IComparer{`0}
+        name: IComparer<T>
         isExternal: true
       description: >-
-        The System.Collections.Generic.IComparer<T> implementation to use when comparing
+        The [System.Collections.Generic.IComparer`1]() implementation to use when comparing
 
-        elements, or null to use the default comparer System.Collections.Generic.Comparer<T>.Default.
+        elements, or null to use the default comparer [System.Collections.Generic.Comparer`1.Default]().
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: >-
-        The zero-based index of item in the sorted System.Collections.Generic.List<T>,
+        The zero-based index of item in the sorted [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml),
 
         if item is found; otherwise, a negative number that is the bitwise complement
 
         of the index of the next element that is larger than item or, if there is
 
-        no larger element, the bitwise complement of System.Collections.Generic.List<T>.Count.
+        no larger element, the bitwise complement of [System.Collections.Immutable.ImmutableList`1.Count](System.Collections.Immutable.ImmutableList`1.yml).
   id: System.Collections.Immutable.ImmutableList`1.BinarySearch(System.Int32,System.Int32,`0,System.Collections.Generic.IComparer{`0})
 - uid: System.Collections.Immutable.ImmutableList`1.IsEmpty
   href: System.Collections.Immutable.ImmutableList`1.yml
@@ -253,9 +305,30 @@ items:
     - id: IsEmpty
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Collections.Immutable.ImmutableList`1.IsEmpty
+- uid: System.Collections.Immutable.ImmutableList`1.System#Collections#Immutable#IImmutableList{T}#Clear
+  href: System.Collections.Immutable.ImmutableList`1.yml
+  name: IImmutableList<T>.Clear()
+  fullName: System.Collections.Immutable.ImmutableList<T>.System.Collections.Immutable.IImmutableList<T>.Clear()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
+    startLine: 159
+  summary: See the [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml) interface.
+  syntax:
+    content:
+      CSharp: IImmutableList<T> IImmutableList<T>.Clear()
+    parameters: []
+    return:
+      id: IImmutableList
+      type:
+        id: System.Collections.Immutable.IImmutableList{`0}
+        name: IImmutableList<T>
+        href: System.Collections.Immutable.IImmutableList{`0}
+  id: System.Collections.Immutable.ImmutableList`1.System#Collections#Immutable#IImmutableList{T}#Clear
 - uid: System.Collections.Immutable.ImmutableList`1.Count
   href: System.Collections.Immutable.ImmutableList`1.yml
   name: Count
@@ -273,9 +346,49 @@ items:
     - id: Count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Collections.Immutable.ImmutableList`1.Count
+- uid: System.Collections.Immutable.ImmutableList`1.System#Collections#ICollection#SyncRoot
+  href: System.Collections.Immutable.ImmutableList`1.yml
+  name: ICollection.SyncRoot
+  fullName: System.Collections.Immutable.ImmutableList<T>.System.Collections.ICollection.SyncRoot
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
+    startLine: 184
+  summary: See [System.Collections.ICollection]().
+  syntax:
+    content:
+      CSharp: '[DebuggerBrowsable(DebuggerBrowsableState.Never)] object ICollection.SyncRoot { get; }'
+    parameters:
+    - id: System.Collections.ICollection.SyncRoot
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+  id: System.Collections.Immutable.ImmutableList`1.System#Collections#ICollection#SyncRoot
+- uid: System.Collections.Immutable.ImmutableList`1.System#Collections#ICollection#IsSynchronized
+  href: System.Collections.Immutable.ImmutableList`1.yml
+  name: ICollection.IsSynchronized
+  fullName: System.Collections.Immutable.ImmutableList<T>.System.Collections.ICollection.IsSynchronized
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
+    startLine: 193
+  summary: See the [System.Collections.ICollection]() interface.
+  syntax:
+    content:
+      CSharp: '[DebuggerBrowsable(DebuggerBrowsableState.Never)] bool ICollection.IsSynchronized { get; }'
+    parameters:
+    - id: System.Collections.ICollection.IsSynchronized
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Collections.Immutable.ImmutableList`1.System#Collections#ICollection#IsSynchronized
 - uid: System.Collections.Immutable.ImmutableList`1.Item(System.Int32)
   href: System.Collections.Immutable.ImmutableList`1.yml
   name: this[int]
@@ -313,10 +426,14 @@ items:
     mutable interfaces.
   syntax:
     content:
-      CSharp: '[Pure] public Builder ToBuilder()'
+      CSharp: public Builder ToBuilder()
     parameters: []
     return:
       id: Builder
+      type:
+        id: System.Collections.Immutable.ImmutableList`1.Builder
+        name: Builder
+        href: System.Collections.Immutable.ImmutableList`1.Builder.yml
   id: System.Collections.Immutable.ImmutableList`1.ToBuilder
 - uid: System.Collections.Immutable.ImmutableList`1.Add(`0)
   href: System.Collections.Immutable.ImmutableList`1.yml
@@ -330,7 +447,7 @@ items:
   summary: See the [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml) interface.
   syntax:
     content:
-      CSharp: '[Pure] public ImmutableList<T> Add(T value)'
+      CSharp: public ImmutableList<T> Add(T value)
     parameters:
     - id: value
       type:
@@ -339,6 +456,10 @@ items:
         href: T
     return:
       id: ImmutableList
+      type:
+        id: System.Collections.Immutable.ImmutableList`1
+        name: ImmutableList<T>
+        href: System.Collections.Immutable.ImmutableList`1.yml
   id: System.Collections.Immutable.ImmutableList`1.Add(`0)
 - uid: System.Collections.Immutable.ImmutableList`1.AddRange(System.Collections.Generic.IEnumerable{`0})
   href: System.Collections.Immutable.ImmutableList`1.yml
@@ -352,15 +473,19 @@ items:
   summary: See the [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml) interface.
   syntax:
     content:
-      CSharp: '[Pure] public ImmutableList<T> AddRange(IEnumerable<T> items)'
+      CSharp: public ImmutableList<T> AddRange(IEnumerable<T> items)
     parameters:
     - id: items
       type:
         id: System.Collections.Generic.IEnumerable{`0}
-        name: System.Collections.Generic.IEnumerable{`0}
+        name: IEnumerable<T>
         isExternal: true
     return:
       id: ImmutableList
+      type:
+        id: System.Collections.Immutable.ImmutableList`1
+        name: ImmutableList<T>
+        href: System.Collections.Immutable.ImmutableList`1.yml
   id: System.Collections.Immutable.ImmutableList`1.AddRange(System.Collections.Generic.IEnumerable{`0})
 - uid: System.Collections.Immutable.ImmutableList`1.Insert(System.Int32,`0)
   href: System.Collections.Immutable.ImmutableList`1.yml
@@ -374,12 +499,12 @@ items:
   summary: See the [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml) interface.
   syntax:
     content:
-      CSharp: '[Pure] public ImmutableList<T> Insert(int index, T item)'
+      CSharp: public ImmutableList<T> Insert(int index, T item)
     parameters:
     - id: index
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: item
       type:
@@ -388,6 +513,10 @@ items:
         href: T
     return:
       id: ImmutableList
+      type:
+        id: System.Collections.Immutable.ImmutableList`1
+        name: ImmutableList<T>
+        href: System.Collections.Immutable.ImmutableList`1.yml
   id: System.Collections.Immutable.ImmutableList`1.Insert(System.Int32,`0)
 - uid: System.Collections.Immutable.ImmutableList`1.InsertRange(System.Int32,System.Collections.Generic.IEnumerable{`0})
   href: System.Collections.Immutable.ImmutableList`1.yml
@@ -401,20 +530,24 @@ items:
   summary: See the [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml) interface.
   syntax:
     content:
-      CSharp: '[Pure] public ImmutableList<T> InsertRange(int index, IEnumerable<T> items)'
+      CSharp: public ImmutableList<T> InsertRange(int index, IEnumerable<T> items)
     parameters:
     - id: index
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: items
       type:
         id: System.Collections.Generic.IEnumerable{`0}
-        name: System.Collections.Generic.IEnumerable{`0}
+        name: IEnumerable<T>
         isExternal: true
     return:
       id: ImmutableList
+      type:
+        id: System.Collections.Immutable.ImmutableList`1
+        name: ImmutableList<T>
+        href: System.Collections.Immutable.ImmutableList`1.yml
   id: System.Collections.Immutable.ImmutableList`1.InsertRange(System.Int32,System.Collections.Generic.IEnumerable{`0})
 - uid: System.Collections.Immutable.ImmutableList`1.Remove(`0)
   href: System.Collections.Immutable.ImmutableList`1.yml
@@ -428,7 +561,7 @@ items:
   summary: See the [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml) interface.
   syntax:
     content:
-      CSharp: '[Pure] public ImmutableList<T> Remove(T value)'
+      CSharp: public ImmutableList<T> Remove(T value)
     parameters:
     - id: value
       type:
@@ -437,6 +570,10 @@ items:
         href: T
     return:
       id: ImmutableList
+      type:
+        id: System.Collections.Immutable.ImmutableList`1
+        name: ImmutableList<T>
+        href: System.Collections.Immutable.ImmutableList`1.yml
   id: System.Collections.Immutable.ImmutableList`1.Remove(`0)
 - uid: System.Collections.Immutable.ImmutableList`1.Remove(`0,System.Collections.Generic.IEqualityComparer{`0})
   href: System.Collections.Immutable.ImmutableList`1.yml
@@ -450,7 +587,7 @@ items:
   summary: See the [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml) interface.
   syntax:
     content:
-      CSharp: '[Pure] public ImmutableList<T> Remove(T value, IEqualityComparer<T> equalityComparer)'
+      CSharp: public ImmutableList<T> Remove(T value, IEqualityComparer<T> equalityComparer)
     parameters:
     - id: value
       type:
@@ -460,10 +597,14 @@ items:
     - id: equalityComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{`0}
-        name: System.Collections.Generic.IEqualityComparer{`0}
+        name: IEqualityComparer<T>
         isExternal: true
     return:
       id: ImmutableList
+      type:
+        id: System.Collections.Immutable.ImmutableList`1
+        name: ImmutableList<T>
+        href: System.Collections.Immutable.ImmutableList`1.yml
   id: System.Collections.Immutable.ImmutableList`1.Remove(`0,System.Collections.Generic.IEqualityComparer{`0})
 - uid: System.Collections.Immutable.ImmutableList`1.RemoveRange(System.Int32,System.Int32)
   href: System.Collections.Immutable.ImmutableList`1.yml
@@ -477,22 +618,26 @@ items:
   summary: Removes the specified values from this list.
   syntax:
     content:
-      CSharp: '[Pure] public ImmutableList<T> RemoveRange(int index, int count)'
+      CSharp: public ImmutableList<T> RemoveRange(int index, int count)
     parameters:
     - id: index
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The starting index to begin removal.
     - id: count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The number of elements to remove.
     return:
       id: ImmutableList
+      type:
+        id: System.Collections.Immutable.ImmutableList`1
+        name: ImmutableList<T>
+        href: System.Collections.Immutable.ImmutableList`1.yml
       description: A new list with the elements removed.
   id: System.Collections.Immutable.ImmutableList`1.RemoveRange(System.Int32,System.Int32)
 - uid: System.Collections.Immutable.ImmutableList`1.RemoveRange(System.Collections.Generic.IEnumerable{`0})
@@ -507,16 +652,20 @@ items:
   summary: Removes the specified values from this list.
   syntax:
     content:
-      CSharp: '[Pure] public ImmutableList<T> RemoveRange(IEnumerable<T> items)'
+      CSharp: public ImmutableList<T> RemoveRange(IEnumerable<T> items)
     parameters:
     - id: items
       type:
         id: System.Collections.Generic.IEnumerable{`0}
-        name: System.Collections.Generic.IEnumerable{`0}
+        name: IEnumerable<T>
         isExternal: true
       description: The items to remove if matches are found in this list.
     return:
       id: ImmutableList
+      type:
+        id: System.Collections.Immutable.ImmutableList`1
+        name: ImmutableList<T>
+        href: System.Collections.Immutable.ImmutableList`1.yml
       description: A new list with the elements removed.
   id: System.Collections.Immutable.ImmutableList`1.RemoveRange(System.Collections.Generic.IEnumerable{`0})
 - uid: System.Collections.Immutable.ImmutableList`1.RemoveRange(System.Collections.Generic.IEnumerable{`0},System.Collections.Generic.IEqualityComparer{`0})
@@ -531,22 +680,26 @@ items:
   summary: Removes the specified values from this list.
   syntax:
     content:
-      CSharp: '[Pure] public ImmutableList<T> RemoveRange(IEnumerable<T> items, IEqualityComparer<T> equalityComparer)'
+      CSharp: public ImmutableList<T> RemoveRange(IEnumerable<T> items, IEqualityComparer<T> equalityComparer)
     parameters:
     - id: items
       type:
         id: System.Collections.Generic.IEnumerable{`0}
-        name: System.Collections.Generic.IEnumerable{`0}
+        name: IEnumerable<T>
         isExternal: true
       description: The items to remove if matches are found in this list.
     - id: equalityComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{`0}
-        name: System.Collections.Generic.IEqualityComparer{`0}
+        name: IEqualityComparer<T>
         isExternal: true
       description: The equality comparer to use in the search.
     return:
       id: ImmutableList
+      type:
+        id: System.Collections.Immutable.ImmutableList`1
+        name: ImmutableList<T>
+        href: System.Collections.Immutable.ImmutableList`1.yml
       description: A new list with the elements removed.
   id: System.Collections.Immutable.ImmutableList`1.RemoveRange(System.Collections.Generic.IEnumerable{`0},System.Collections.Generic.IEqualityComparer{`0})
 - uid: System.Collections.Immutable.ImmutableList`1.RemoveAt(System.Int32)
@@ -561,15 +714,19 @@ items:
   summary: See the [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml) interface.
   syntax:
     content:
-      CSharp: '[Pure] public ImmutableList<T> RemoveAt(int index)'
+      CSharp: public ImmutableList<T> RemoveAt(int index)
     parameters:
     - id: index
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     return:
       id: ImmutableList
+      type:
+        id: System.Collections.Immutable.ImmutableList`1
+        name: ImmutableList<T>
+        href: System.Collections.Immutable.ImmutableList`1.yml
   id: System.Collections.Immutable.ImmutableList`1.RemoveAt(System.Int32)
 - uid: System.Collections.Immutable.ImmutableList`1.RemoveAll(System.Predicate{`0})
   href: System.Collections.Immutable.ImmutableList`1.yml
@@ -586,19 +743,23 @@ items:
     predicate.
   syntax:
     content:
-      CSharp: '[Pure] public ImmutableList<T> RemoveAll(Predicate<T> match)'
+      CSharp: public ImmutableList<T> RemoveAll(Predicate<T> match)
     parameters:
     - id: match
       type:
         id: System.Predicate{`0}
-        name: System.Predicate{`0}
+        name: Predicate<T>
         isExternal: true
       description: >-
-        The System.Predicate<T> delegate that defines the conditions of the elements
+        The [System.Predicate`1]() delegate that defines the conditions of the elements
 
         to remove.
     return:
       id: ImmutableList
+      type:
+        id: System.Collections.Immutable.ImmutableList`1
+        name: ImmutableList<T>
+        href: System.Collections.Immutable.ImmutableList`1.yml
       description: The new list.
   id: System.Collections.Immutable.ImmutableList`1.RemoveAll(System.Predicate{`0})
 - uid: System.Collections.Immutable.ImmutableList`1.SetItem(System.Int32,`0)
@@ -613,12 +774,12 @@ items:
   summary: See the [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml) interface.
   syntax:
     content:
-      CSharp: '[Pure] public ImmutableList<T> SetItem(int index, T value)'
+      CSharp: public ImmutableList<T> SetItem(int index, T value)
     parameters:
     - id: index
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: value
       type:
@@ -627,6 +788,10 @@ items:
         href: T
     return:
       id: ImmutableList
+      type:
+        id: System.Collections.Immutable.ImmutableList`1
+        name: ImmutableList<T>
+        href: System.Collections.Immutable.ImmutableList`1.yml
   id: System.Collections.Immutable.ImmutableList`1.SetItem(System.Int32,`0)
 - uid: System.Collections.Immutable.ImmutableList`1.Replace(`0,`0)
   href: System.Collections.Immutable.ImmutableList`1.yml
@@ -640,7 +805,7 @@ items:
   summary: See the [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml) interface.
   syntax:
     content:
-      CSharp: '[Pure] public ImmutableList<T> Replace(T oldValue, T newValue)'
+      CSharp: public ImmutableList<T> Replace(T oldValue, T newValue)
     parameters:
     - id: oldValue
       type:
@@ -654,6 +819,10 @@ items:
         href: T
     return:
       id: ImmutableList
+      type:
+        id: System.Collections.Immutable.ImmutableList`1
+        name: ImmutableList<T>
+        href: System.Collections.Immutable.ImmutableList`1.yml
   id: System.Collections.Immutable.ImmutableList`1.Replace(`0,`0)
 - uid: System.Collections.Immutable.ImmutableList`1.Replace(`0,`0,System.Collections.Generic.IEqualityComparer{`0})
   href: System.Collections.Immutable.ImmutableList`1.yml
@@ -667,7 +836,7 @@ items:
   summary: See the [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml) interface.
   syntax:
     content:
-      CSharp: '[Pure] public ImmutableList<T> Replace(T oldValue, T newValue, IEqualityComparer<T> equalityComparer)'
+      CSharp: public ImmutableList<T> Replace(T oldValue, T newValue, IEqualityComparer<T> equalityComparer)
     parameters:
     - id: oldValue
       type:
@@ -682,10 +851,14 @@ items:
     - id: equalityComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{`0}
-        name: System.Collections.Generic.IEqualityComparer{`0}
+        name: IEqualityComparer<T>
         isExternal: true
     return:
       id: ImmutableList
+      type:
+        id: System.Collections.Immutable.ImmutableList`1
+        name: ImmutableList<T>
+        href: System.Collections.Immutable.ImmutableList`1.yml
   id: System.Collections.Immutable.ImmutableList`1.Replace(`0,`0,System.Collections.Generic.IEqualityComparer{`0})
 - uid: System.Collections.Immutable.ImmutableList`1.Reverse
   href: System.Collections.Immutable.ImmutableList`1.yml
@@ -696,13 +869,17 @@ items:
     remote: *o0
     path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
     startLine: 486
-  summary: Reverses the order of the elements in the entire ImmutableList<T>.
+  summary: Reverses the order of the elements in the entire [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml).
   syntax:
     content:
-      CSharp: '[Pure] public ImmutableList<T> Reverse()'
+      CSharp: public ImmutableList<T> Reverse()
     parameters: []
     return:
       id: ImmutableList
+      type:
+        id: System.Collections.Immutable.ImmutableList`1
+        name: ImmutableList<T>
+        href: System.Collections.Immutable.ImmutableList`1.yml
       description: The reversed list.
   id: System.Collections.Immutable.ImmutableList`1.Reverse
 - uid: System.Collections.Immutable.ImmutableList`1.Reverse(System.Int32,System.Int32)
@@ -717,22 +894,26 @@ items:
   summary: Reverses the order of the elements in the specified range.
   syntax:
     content:
-      CSharp: '[Pure] public ImmutableList<T> Reverse(int index, int count)'
+      CSharp: public ImmutableList<T> Reverse(int index, int count)
     parameters:
     - id: index
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The zero-based starting index of the range to reverse.
     - id: count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The number of elements in the range to reverse.
     return:
       id: ImmutableList
+      type:
+        id: System.Collections.Immutable.ImmutableList`1
+        name: ImmutableList<T>
+        href: System.Collections.Immutable.ImmutableList`1.yml
       description: The reversed list.
   id: System.Collections.Immutable.ImmutableList`1.Reverse(System.Int32,System.Int32)
 - uid: System.Collections.Immutable.ImmutableList`1.Sort
@@ -745,15 +926,19 @@ items:
     path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
     startLine: 509
   summary: >-
-    Sorts the elements in the entire ImmutableList<T> using
+    Sorts the elements in the entire [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml) using
 
     the default comparer.
   syntax:
     content:
-      CSharp: '[Pure] public ImmutableList<T> Sort()'
+      CSharp: public ImmutableList<T> Sort()
     parameters: []
     return:
       id: ImmutableList
+      type:
+        id: System.Collections.Immutable.ImmutableList`1
+        name: ImmutableList<T>
+        href: System.Collections.Immutable.ImmutableList`1.yml
   id: System.Collections.Immutable.ImmutableList`1.Sort
 - uid: System.Collections.Immutable.ImmutableList`1.Sort(System.Comparison{`0})
   href: System.Collections.Immutable.ImmutableList`1.yml
@@ -765,21 +950,25 @@ items:
     path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
     startLine: 524
   summary: >-
-    Sorts the elements in the entire ImmutableList<T> using
+    Sorts the elements in the entire [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml) using
 
-    the specified System.Comparison<T>.
+    the specified [System.Comparison`1]().
   syntax:
     content:
-      CSharp: '[Pure] public ImmutableList<T> Sort(Comparison<T> comparison)'
+      CSharp: public ImmutableList<T> Sort(Comparison<T> comparison)
     parameters:
     - id: comparison
       type:
         id: System.Comparison{`0}
-        name: System.Comparison{`0}
+        name: Comparison<T>
         isExternal: true
-      description: The System.Comparison<T> to use when comparing elements.
+      description: The [System.Comparison`1]() to use when comparing elements.
     return:
       id: ImmutableList
+      type:
+        id: System.Collections.Immutable.ImmutableList`1
+        name: ImmutableList<T>
+        href: System.Collections.Immutable.ImmutableList`1.yml
       description: The sorted list.
   id: System.Collections.Immutable.ImmutableList`1.Sort(System.Comparison{`0})
 - uid: System.Collections.Immutable.ImmutableList`1.Sort(System.Collections.Generic.IComparer{`0})
@@ -792,24 +981,28 @@ items:
     path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
     startLine: 541
   summary: >-
-    Sorts the elements in the entire ImmutableList<T> using
+    Sorts the elements in the entire [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml) using
 
     the specified comparer.
   syntax:
     content:
-      CSharp: '[Pure] public ImmutableList<T> Sort(IComparer<T> comparer)'
+      CSharp: public ImmutableList<T> Sort(IComparer<T> comparer)
     parameters:
     - id: comparer
       type:
         id: System.Collections.Generic.IComparer{`0}
-        name: System.Collections.Generic.IComparer{`0}
+        name: IComparer<T>
         isExternal: true
       description: >-
-        The System.Collections.Generic.IComparer<T> implementation to use when comparing
+        The [System.Collections.Generic.IComparer`1]() implementation to use when comparing
 
-        elements, or null to use the default comparer System.Collections.Generic.Comparer<T>.Default.
+        elements, or null to use the default comparer [System.Collections.Generic.Comparer`1.Default]().
     return:
       id: ImmutableList
+      type:
+        id: System.Collections.Immutable.ImmutableList`1
+        name: ImmutableList<T>
+        href: System.Collections.Immutable.ImmutableList`1.yml
       description: The sorted list.
   id: System.Collections.Immutable.ImmutableList`1.Sort(System.Collections.Generic.IComparer{`0})
 - uid: System.Collections.Immutable.ImmutableList`1.Sort(System.Int32,System.Int32,System.Collections.Generic.IComparer{`0})
@@ -822,36 +1015,40 @@ items:
     path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
     startLine: 564
   summary: >-
-    Sorts the elements in a range of elements in ImmutableList<T>
+    Sorts the elements in a range of elements in [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml)
 
     using the specified comparer.
   syntax:
     content:
-      CSharp: '[Pure] public ImmutableList<T> Sort(int index, int count, IComparer<T> comparer)'
+      CSharp: public ImmutableList<T> Sort(int index, int count, IComparer<T> comparer)
     parameters:
     - id: index
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The zero-based starting index of the range to sort.
     - id: count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The length of the range to sort.
     - id: comparer
       type:
         id: System.Collections.Generic.IComparer{`0}
-        name: System.Collections.Generic.IComparer{`0}
+        name: IComparer<T>
         isExternal: true
       description: >-
-        The System.Collections.Generic.IComparer<T> implementation to use when comparing
+        The [System.Collections.Generic.IComparer`1]() implementation to use when comparing
 
-        elements, or null to use the default comparer System.Collections.Generic.Comparer<T>.Default.
+        elements, or null to use the default comparer [System.Collections.Generic.Comparer`1.Default]().
     return:
       id: ImmutableList
+      type:
+        id: System.Collections.Immutable.ImmutableList`1
+        name: ImmutableList<T>
+        href: System.Collections.Immutable.ImmutableList`1.yml
       description: The sorted list.
   id: System.Collections.Immutable.ImmutableList`1.Sort(System.Int32,System.Int32,System.Collections.Generic.IComparer{`0})
 - uid: System.Collections.Immutable.ImmutableList`1.ForEach(System.Action{`0})
@@ -871,7 +1068,7 @@ items:
     - id: action
       type:
         id: System.Action{`0}
-        name: System.Action{`0}
+        name: Action<T>
         isExternal: true
       description: The System.Action<T> delegate to perform on each element of the list.
   id: System.Collections.Immutable.ImmutableList`1.ForEach(System.Action{`0})
@@ -885,7 +1082,7 @@ items:
     path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
     startLine: 603
   summary: >-
-    Copies the entire ImmutableList<T> to a compatible one-dimensional
+    Copies the entire [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml) to a compatible one-dimensional
 
     array, starting at the beginning of the target array.
   syntax:
@@ -895,12 +1092,12 @@ items:
     - id: array
       type:
         id: System.Array
-        name: System.Array
+        name: T[]
         isExternal: true
       description: >-
-        The one-dimensional System.Array that is the destination of the elements
+        The one-dimensional [System.Array]() that is the destination of the elements
 
-        copied from ImmutableList<T>. The System.Array must have
+        copied from [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml). The [System.Array]() must have
 
         zero-based indexing.
   id: System.Collections.Immutable.ImmutableList`1.CopyTo(`0[])
@@ -914,7 +1111,7 @@ items:
     path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
     startLine: 622
   summary: >-
-    Copies the entire ImmutableList<T> to a compatible one-dimensional
+    Copies the entire [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml) to a compatible one-dimensional
 
     array, starting at the specified index of the target array.
   syntax:
@@ -924,18 +1121,18 @@ items:
     - id: array
       type:
         id: System.Array
-        name: System.Array
+        name: T[]
         isExternal: true
       description: >-
-        The one-dimensional System.Array that is the destination of the elements
+        The one-dimensional [System.Array]() that is the destination of the elements
 
-        copied from ImmutableList<T>. The System.Array must have
+        copied from [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml). The [System.Array]() must have
 
         zero-based indexing.
     - id: arrayIndex
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The zero-based index in array at which copying begins.
   id: System.Collections.Immutable.ImmutableList`1.CopyTo(`0[],System.Int32)
@@ -949,7 +1146,7 @@ items:
     path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
     startLine: 646
   summary: >-
-    Copies a range of elements from the ImmutableList<T> to
+    Copies a range of elements from the [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml) to
 
     a compatible one-dimensional array, starting at the specified index of the
 
@@ -961,33 +1158,33 @@ items:
     - id: index
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: >-
-        The zero-based index in the source ImmutableList<T> at
+        The zero-based index in the source [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml) at
 
         which copying begins.
     - id: array
       type:
         id: System.Array
-        name: System.Array
+        name: T[]
         isExternal: true
       description: >-
-        The one-dimensional System.Array that is the destination of the elements
+        The one-dimensional [System.Array]() that is the destination of the elements
 
-        copied from ImmutableList<T>. The System.Array must have
+        copied from [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml). The [System.Array]() must have
 
         zero-based indexing.
     - id: arrayIndex
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The zero-based index in array at which copying begins.
     - id: count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The number of elements to copy.
   id: System.Collections.Immutable.ImmutableList`1.CopyTo(System.Int32,`0[],System.Int32,System.Int32)
@@ -1000,7 +1197,7 @@ items:
     remote: *o0
     path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
     startLine: 664
-  summary: Creates a shallow copy of a range of elements in the source ImmutableList<T>.
+  summary: Creates a shallow copy of a range of elements in the source [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml).
   syntax:
     content:
       CSharp: public ImmutableList<T> GetRange(int index, int count)
@@ -1008,21 +1205,25 @@ items:
     - id: index
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: >-
-        The zero-based ImmutableList<T> index at which the range
+        The zero-based [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml) index at which the range
 
         starts.
     - id: count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The number of elements in the range.
     return:
       id: ImmutableList
-      description: A shallow copy of a range of elements in the source ImmutableList<T>.
+      type:
+        id: System.Collections.Immutable.ImmutableList`1
+        name: ImmutableList<T>
+        href: System.Collections.Immutable.ImmutableList`1.yml
+      description: A shallow copy of a range of elements in the source [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml).
   id: System.Collections.Immutable.ImmutableList`1.GetRange(System.Int32,System.Int32)
 - uid: System.Collections.Immutable.ImmutableList`1.ConvertAll``1(System.Func{`0,``0})
   href: System.Collections.Immutable.ImmutableList`1.yml
@@ -1034,7 +1235,7 @@ items:
     path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
     startLine: 687
   summary: >-
-    Converts the elements in the current ImmutableList<T> to
+    Converts the elements in the current [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml) to
 
     another type, and returns a list containing the converted elements.
   syntax:
@@ -1044,18 +1245,22 @@ items:
     - id: converter
       type:
         id: System.Func{`0,``0}
-        name: System.Func{`0,``0}
+        name: Func<T, TOutput>
         isExternal: true
       description: >-
-        A System.Converter<TInput,TOutput> delegate that converts each element from
+        A [System.Func`2]() delegate that converts each element from
 
         one type to another type.
     return:
       id: ImmutableList
+      type:
+        id: System.Collections.Immutable.ImmutableList{``0}
+        name: ImmutableList<TOutput>
+        href: System.Collections.Immutable.ImmutableList{``0}
       description: >-
-        A ImmutableList<T> of the target type containing the converted
+        A [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml) of the target type containing the converted
 
-        elements from the current ImmutableList<T>.
+        elements from the current [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml).
   id: System.Collections.Immutable.ImmutableList`1.ConvertAll``1(System.Func{`0,``0})
 - uid: System.Collections.Immutable.ImmutableList`1.Exists(System.Predicate{`0})
   href: System.Collections.Immutable.ImmutableList`1.yml
@@ -1067,7 +1272,7 @@ items:
     path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
     startLine: 706
   summary: >-
-    Determines whether the ImmutableList<T> contains elements
+    Determines whether the [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml) contains elements
 
     that match the conditions defined by the specified predicate.
   syntax:
@@ -1077,16 +1282,20 @@ items:
     - id: match
       type:
         id: System.Predicate{`0}
-        name: System.Predicate{`0}
+        name: Predicate<T>
         isExternal: true
       description: >-
-        The System.Predicate<T> delegate that defines the conditions of the elements
+        The [System.Predicate`1]() delegate that defines the conditions of the elements
 
         to search for.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: >-
-        true if the ImmutableList<T> contains one or more elements
+        true if the [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml) contains one or more elements
 
         that match the conditions defined by the specified predicate; otherwise,
 
@@ -1104,7 +1313,7 @@ items:
   summary: >-
     Searches for an element that matches the conditions defined by the specified
 
-    predicate, and returns the first occurrence within the entire ImmutableList<T>.
+    predicate, and returns the first occurrence within the entire [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml).
   syntax:
     content:
       CSharp: public T Find(Predicate<T> match)
@@ -1112,18 +1321,22 @@ items:
     - id: match
       type:
         id: System.Predicate{`0}
-        name: System.Predicate{`0}
+        name: Predicate<T>
         isExternal: true
       description: >-
-        The System.Predicate<T> delegate that defines the conditions of the element
+        The [System.Predicate`1]() delegate that defines the conditions of the element
 
         to search for.
     return:
       id: T
+      type:
+        id: T
+        name: T
+        href: T
       description: >-
         The first element that matches the conditions defined by the specified predicate,
 
-        if found; otherwise, the default value for type T.
+        if found; otherwise, the default value for type .
   id: System.Collections.Immutable.ImmutableList`1.Find(System.Predicate{`0})
 - uid: System.Collections.Immutable.ImmutableList`1.FindAll(System.Predicate{`0})
   href: System.Collections.Immutable.ImmutableList`1.yml
@@ -1145,20 +1358,24 @@ items:
     - id: match
       type:
         id: System.Predicate{`0}
-        name: System.Predicate{`0}
+        name: Predicate<T>
         isExternal: true
       description: >-
-        The System.Predicate<T> delegate that defines the conditions of the elements
+        The [System.Predicate`1]() delegate that defines the conditions of the elements
 
         to search for.
     return:
       id: ImmutableList
+      type:
+        id: System.Collections.Immutable.ImmutableList`1
+        name: ImmutableList<T>
+        href: System.Collections.Immutable.ImmutableList`1.yml
       description: >-
-        A ImmutableList<T> containing all the elements that match
+        A [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml) containing all the elements that match
 
         the conditions defined by the specified predicate, if found; otherwise, an
 
-        empty ImmutableList<T>.
+        empty [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml).
   id: System.Collections.Immutable.ImmutableList`1.FindAll(System.Predicate{`0})
 - uid: System.Collections.Immutable.ImmutableList`1.FindIndex(System.Predicate{`0})
   href: System.Collections.Immutable.ImmutableList`1.yml
@@ -1174,7 +1391,7 @@ items:
 
     predicate, and returns the zero-based index of the first occurrence within
 
-    the entire ImmutableList<T>.
+    the entire [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml).
   syntax:
     content:
       CSharp: public int FindIndex(Predicate<T> match)
@@ -1182,18 +1399,22 @@ items:
     - id: match
       type:
         id: System.Predicate{`0}
-        name: System.Predicate{`0}
+        name: Predicate<T>
         isExternal: true
       description: >-
-        The System.Predicate<T> delegate that defines the conditions of the element
+        The [System.Predicate`1]() delegate that defines the conditions of the element
 
         to search for.
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: >-
         The zero-based index of the first occurrence of an element that matches the
 
-        conditions defined by match, if found; otherwise, -1.
+        conditions defined by , if found; otherwise, -1.
   id: System.Collections.Immutable.ImmutableList`1.FindIndex(System.Predicate{`0})
 - uid: System.Collections.Immutable.ImmutableList`1.FindIndex(System.Int32,System.Predicate{`0})
   href: System.Collections.Immutable.ImmutableList`1.yml
@@ -1209,7 +1430,7 @@ items:
 
     predicate, and returns the zero-based index of the first occurrence within
 
-    the range of elements in the ImmutableList<T> that extends
+    the range of elements in the [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml) that extends
 
     from the specified index to the last element.
   syntax:
@@ -1219,21 +1440,25 @@ items:
     - id: startIndex
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The zero-based starting index of the search.
     - id: match
       type:
         id: System.Predicate{`0}
-        name: System.Predicate{`0}
+        name: Predicate<T>
         isExternal: true
-      description: The System.Predicate<T> delegate that defines the conditions of the element to search for.
+      description: The [System.Predicate`1]() delegate that defines the conditions of the element to search for.
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: >-
         The zero-based index of the first occurrence of an element that matches the
 
-        conditions defined by match, if found; otherwise, -1.
+        conditions defined by , if found; otherwise, -1.
   id: System.Collections.Immutable.ImmutableList`1.FindIndex(System.Int32,System.Predicate{`0})
 - uid: System.Collections.Immutable.ImmutableList`1.FindIndex(System.Int32,System.Int32,System.Predicate{`0})
   href: System.Collections.Immutable.ImmutableList`1.yml
@@ -1249,7 +1474,7 @@ items:
 
     predicate, and returns the zero-based index of the first occurrence within
 
-    the range of elements in the ImmutableList<T> that starts
+    the range of elements in the [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml) that starts
 
     at the specified index and contains the specified number of elements.
   syntax:
@@ -1259,27 +1484,31 @@ items:
     - id: startIndex
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The zero-based starting index of the search.
     - id: count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The number of elements in the section to search.
     - id: match
       type:
         id: System.Predicate{`0}
-        name: System.Predicate{`0}
+        name: Predicate<T>
         isExternal: true
-      description: The System.Predicate<T> delegate that defines the conditions of the element to search for.
+      description: The [System.Predicate`1]() delegate that defines the conditions of the element to search for.
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: >-
         The zero-based index of the first occurrence of an element that matches the
 
-        conditions defined by match, if found; otherwise, -1.
+        conditions defined by , if found; otherwise, -1.
   id: System.Collections.Immutable.ImmutableList`1.FindIndex(System.Int32,System.Int32,System.Predicate{`0})
 - uid: System.Collections.Immutable.ImmutableList`1.FindLast(System.Predicate{`0})
   href: System.Collections.Immutable.ImmutableList`1.yml
@@ -1293,7 +1522,7 @@ items:
   summary: >-
     Searches for an element that matches the conditions defined by the specified
 
-    predicate, and returns the last occurrence within the entire ImmutableList<T>.
+    predicate, and returns the last occurrence within the entire [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml).
   syntax:
     content:
       CSharp: public T FindLast(Predicate<T> match)
@@ -1301,18 +1530,22 @@ items:
     - id: match
       type:
         id: System.Predicate{`0}
-        name: System.Predicate{`0}
+        name: Predicate<T>
         isExternal: true
       description: >-
-        The System.Predicate<T> delegate that defines the conditions of the element
+        The [System.Predicate`1]() delegate that defines the conditions of the element
 
         to search for.
     return:
       id: T
+      type:
+        id: T
+        name: T
+        href: T
       description: >-
         The last element that matches the conditions defined by the specified predicate,
 
-        if found; otherwise, the default value for type T.
+        if found; otherwise, the default value for type .
   id: System.Collections.Immutable.ImmutableList`1.FindLast(System.Predicate{`0})
 - uid: System.Collections.Immutable.ImmutableList`1.FindLastIndex(System.Predicate{`0})
   href: System.Collections.Immutable.ImmutableList`1.yml
@@ -1328,7 +1561,7 @@ items:
 
     predicate, and returns the zero-based index of the last occurrence within
 
-    the entire ImmutableList<T>.
+    the entire [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml).
   syntax:
     content:
       CSharp: public int FindLastIndex(Predicate<T> match)
@@ -1336,18 +1569,22 @@ items:
     - id: match
       type:
         id: System.Predicate{`0}
-        name: System.Predicate{`0}
+        name: Predicate<T>
         isExternal: true
       description: >-
-        The System.Predicate<T> delegate that defines the conditions of the element
+        The [System.Predicate`1]() delegate that defines the conditions of the element
 
         to search for.
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: >-
         The zero-based index of the last occurrence of an element that matches the
 
-        conditions defined by match, if found; otherwise, -1.
+        conditions defined by , if found; otherwise, -1.
   id: System.Collections.Immutable.ImmutableList`1.FindLastIndex(System.Predicate{`0})
 - uid: System.Collections.Immutable.ImmutableList`1.FindLastIndex(System.Int32,System.Predicate{`0})
   href: System.Collections.Immutable.ImmutableList`1.yml
@@ -1363,7 +1600,7 @@ items:
 
     predicate, and returns the zero-based index of the last occurrence within
 
-    the range of elements in the ImmutableList<T> that extends
+    the range of elements in the [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml) that extends
 
     from the first element to the specified index.
   syntax:
@@ -1373,24 +1610,28 @@ items:
     - id: startIndex
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The zero-based starting index of the backward search.
     - id: match
       type:
         id: System.Predicate{`0}
-        name: System.Predicate{`0}
+        name: Predicate<T>
         isExternal: true
       description: >-
-        The System.Predicate<T> delegate that defines the conditions of the element
+        The [System.Predicate`1]() delegate that defines the conditions of the element
 
         to search for.
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: >-
         The zero-based index of the last occurrence of an element that matches the
 
-        conditions defined by match, if found; otherwise, -1.
+        conditions defined by , if found; otherwise, -1.
   id: System.Collections.Immutable.ImmutableList`1.FindLastIndex(System.Int32,System.Predicate{`0})
 - uid: System.Collections.Immutable.ImmutableList`1.FindLastIndex(System.Int32,System.Int32,System.Predicate{`0})
   href: System.Collections.Immutable.ImmutableList`1.yml
@@ -1406,7 +1647,7 @@ items:
 
     predicate, and returns the zero-based index of the last occurrence within
 
-    the range of elements in the ImmutableList<T> that contains
+    the range of elements in the [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml) that contains
 
     the specified number of elements and ends at the specified index.
   syntax:
@@ -1416,30 +1657,34 @@ items:
     - id: startIndex
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The zero-based starting index of the backward search.
     - id: count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The number of elements in the section to search.
     - id: match
       type:
         id: System.Predicate{`0}
-        name: System.Predicate{`0}
+        name: Predicate<T>
         isExternal: true
       description: >-
-        The System.Predicate<T> delegate that defines the conditions of the element
+        The [System.Predicate`1]() delegate that defines the conditions of the element
 
         to search for.
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: >-
         The zero-based index of the last occurrence of an element that matches the
 
-        conditions defined by match, if found; otherwise, -1.
+        conditions defined by , if found; otherwise, -1.
   id: System.Collections.Immutable.ImmutableList`1.FindLastIndex(System.Int32,System.Int32,System.Predicate{`0})
 - uid: System.Collections.Immutable.ImmutableList`1.IndexOf(`0,System.Int32,System.Int32,System.Collections.Generic.IEqualityComparer{`0})
   href: System.Collections.Immutable.ImmutableList`1.yml
@@ -1453,12 +1698,12 @@ items:
   summary: >-
     Searches for the specified object and returns the zero-based index of the
 
-    first occurrence within the range of elements in the ImmutableList<T>
+    first occurrence within the range of elements in the [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml)
 
     that starts at the specified index and contains the specified number of elements.
   syntax:
     content:
-      CSharp: '[Pure] public int IndexOf(T item, int index, int count, IEqualityComparer<T> equalityComparer)'
+      CSharp: public int IndexOf(T item, int index, int count, IEqualityComparer<T> equalityComparer)
     parameters:
     - id: item
       type:
@@ -1466,13 +1711,13 @@ items:
         name: T
         href: T
       description: >-
-        The object to locate in the ImmutableList<T>. The value
+        The object to locate in the [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml). The value
 
         can be null for reference types.
     - id: index
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: >-
         The zero-based starting index of the search. 0 (zero) is valid in an empty
@@ -1481,23 +1726,27 @@ items:
     - id: count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The number of elements in the section to search.
     - id: equalityComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{`0}
-        name: System.Collections.Generic.IEqualityComparer{`0}
+        name: IEqualityComparer<T>
         isExternal: true
       description: The equality comparer to use in the search.
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: >-
-        The zero-based index of the first occurrence of item within the range of
+        The zero-based index of the first occurrence of  within the range of
 
-        elements in the ImmutableList<T> that starts at index and
+        elements in the [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml) that starts at  and
 
-        contains count number of elements, if found; otherwise, -1.
+        contains  number of elements, if found; otherwise, -1.
   id: System.Collections.Immutable.ImmutableList`1.IndexOf(`0,System.Int32,System.Int32,System.Collections.Generic.IEqualityComparer{`0})
 - uid: System.Collections.Immutable.ImmutableList`1.LastIndexOf(`0,System.Int32,System.Int32,System.Collections.Generic.IEqualityComparer{`0})
   href: System.Collections.Immutable.ImmutableList`1.yml
@@ -1511,14 +1760,14 @@ items:
   summary: >-
     Searches for the specified object and returns the zero-based index of the
 
-    last occurrence within the range of elements in the ImmutableList<T>
+    last occurrence within the range of elements in the [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml)
 
     that contains the specified number of elements and ends at the specified
 
     index.
   syntax:
     content:
-      CSharp: '[Pure] public int LastIndexOf(T item, int index, int count, IEqualityComparer<T> equalityComparer)'
+      CSharp: public int LastIndexOf(T item, int index, int count, IEqualityComparer<T> equalityComparer)
     parameters:
     - id: item
       type:
@@ -1526,35 +1775,39 @@ items:
         name: T
         href: T
       description: >-
-        The object to locate in the ImmutableList<T>. The value
+        The object to locate in the [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml). The value
 
         can be null for reference types.
     - id: index
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The zero-based starting index of the backward search.
     - id: count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The number of elements in the section to search.
     - id: equalityComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{`0}
-        name: System.Collections.Generic.IEqualityComparer{`0}
+        name: IEqualityComparer<T>
         isExternal: true
       description: The equality comparer to use in the search.
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: >-
-        The zero-based index of the last occurrence of item within the range of elements
+        The zero-based index of the last occurrence of  within the range of elements
 
-        in the ImmutableList<T> that contains count number of elements
+        in the [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml) that contains  number of elements
 
-        and ends at index, if found; otherwise, -1.
+        and ends at , if found; otherwise, -1.
   id: System.Collections.Immutable.ImmutableList`1.LastIndexOf(`0,System.Int32,System.Int32,System.Collections.Generic.IEqualityComparer{`0})
 - uid: System.Collections.Immutable.ImmutableList`1.TrueForAll(System.Predicate{`0})
   href: System.Collections.Immutable.ImmutableList`1.yml
@@ -1566,7 +1819,7 @@ items:
     path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
     startLine: 964
   summary: >-
-    Determines whether every element in the ImmutableList<T>
+    Determines whether every element in the [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml)
 
     matches the conditions defined by the specified predicate.
   syntax:
@@ -1576,16 +1829,20 @@ items:
     - id: match
       type:
         id: System.Predicate{`0}
-        name: System.Predicate{`0}
+        name: Predicate<T>
         isExternal: true
       description: >-
-        The System.Predicate<T> delegate that defines the conditions to check against
+        The [System.Predicate`1]() delegate that defines the conditions to check against
 
         the elements.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: >-
-        true if every element in the ImmutableList<T> matches the
+        true if every element in the [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml) matches the
 
         conditions defined by the specified predicate; otherwise, false. If the list
 
@@ -1612,6 +1869,10 @@ items:
         href: T
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Collections.Immutable.ImmutableList`1.Contains(`0)
 - uid: System.Collections.Immutable.ImmutableList`1.IndexOf(`0)
   href: System.Collections.Immutable.ImmutableList`1.yml
@@ -1634,7 +1895,800 @@ items:
         href: T
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: System.Collections.Immutable.ImmutableList`1.IndexOf(`0)
+- uid: System.Collections.Immutable.ImmutableList`1.System#Collections#Immutable#IImmutableList{T}#Add(`0)
+  href: System.Collections.Immutable.ImmutableList`1.yml
+  name: IImmutableList<T>.Add(T)
+  fullName: System.Collections.Immutable.ImmutableList<T>.System.Collections.Immutable.IImmutableList<T>.Add(T)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
+    startLine: 994
+  summary: See the [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml) interface.
+  syntax:
+    content:
+      CSharp: IImmutableList<T> IImmutableList<T>.Add(T value)
+    parameters:
+    - id: value
+      type:
+        id: T
+        name: T
+        href: T
+    return:
+      id: IImmutableList
+      type:
+        id: System.Collections.Immutable.IImmutableList{`0}
+        name: IImmutableList<T>
+        href: System.Collections.Immutable.IImmutableList{`0}
+  id: System.Collections.Immutable.ImmutableList`1.System#Collections#Immutable#IImmutableList{T}#Add(`0)
+- uid: System.Collections.Immutable.ImmutableList`1.System#Collections#Immutable#IImmutableList{T}#AddRange(System.Collections.Generic.IEnumerable{`0})
+  href: System.Collections.Immutable.ImmutableList`1.yml
+  name: IImmutableList<T>.AddRange(IEnumerable<T>)
+  fullName: System.Collections.Immutable.ImmutableList<T>.System.Collections.Immutable.IImmutableList<T>.AddRange(System.Collections.Generic.IEnumerable<T>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
+    startLine: 1003
+  summary: See the [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml) interface.
+  syntax:
+    content:
+      CSharp: IImmutableList<T> IImmutableList<T>.AddRange(IEnumerable<T> items)
+    parameters:
+    - id: items
+      type:
+        id: System.Collections.Generic.IEnumerable{`0}
+        name: IEnumerable<T>
+        isExternal: true
+    return:
+      id: IImmutableList
+      type:
+        id: System.Collections.Immutable.IImmutableList{`0}
+        name: IImmutableList<T>
+        href: System.Collections.Immutable.IImmutableList{`0}
+  id: System.Collections.Immutable.ImmutableList`1.System#Collections#Immutable#IImmutableList{T}#AddRange(System.Collections.Generic.IEnumerable{`0})
+- uid: System.Collections.Immutable.ImmutableList`1.System#Collections#Immutable#IImmutableList{T}#Insert(System.Int32,`0)
+  href: System.Collections.Immutable.ImmutableList`1.yml
+  name: IImmutableList<T>.Insert(int, T)
+  fullName: System.Collections.Immutable.ImmutableList<T>.System.Collections.Immutable.IImmutableList<T>.Insert(int, T)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
+    startLine: 1015
+  summary: Inserts the specified value at the specified index.
+  syntax:
+    content:
+      CSharp: IImmutableList<T> IImmutableList<T>.Insert(int index, T item)
+    parameters:
+    - id: index
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The index at which to insert the value.
+    - id: item
+      type:
+        id: T
+        name: T
+        href: T
+      description: The element to add.
+    return:
+      id: IImmutableList
+      type:
+        id: System.Collections.Immutable.IImmutableList{`0}
+        name: IImmutableList<T>
+        href: System.Collections.Immutable.IImmutableList{`0}
+      description: The new immutable list.
+  id: System.Collections.Immutable.ImmutableList`1.System#Collections#Immutable#IImmutableList{T}#Insert(System.Int32,`0)
+- uid: System.Collections.Immutable.ImmutableList`1.System#Collections#Immutable#IImmutableList{T}#InsertRange(System.Int32,System.Collections.Generic.IEnumerable{`0})
+  href: System.Collections.Immutable.ImmutableList`1.yml
+  name: IImmutableList<T>.InsertRange(int, IEnumerable<T>)
+  fullName: System.Collections.Immutable.ImmutableList<T>.System.Collections.Immutable.IImmutableList<T>.InsertRange(int, System.Collections.Generic.IEnumerable<T>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
+    startLine: 1027
+  summary: Inserts the specified value at the specified index.
+  syntax:
+    content:
+      CSharp: IImmutableList<T> IImmutableList<T>.InsertRange(int index, IEnumerable<T> items)
+    parameters:
+    - id: index
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The index at which to insert the value.
+    - id: items
+      type:
+        id: System.Collections.Generic.IEnumerable{`0}
+        name: IEnumerable<T>
+        isExternal: true
+      description: The elements to add.
+    return:
+      id: IImmutableList
+      type:
+        id: System.Collections.Immutable.IImmutableList{`0}
+        name: IImmutableList<T>
+        href: System.Collections.Immutable.IImmutableList{`0}
+      description: The new immutable list.
+  id: System.Collections.Immutable.ImmutableList`1.System#Collections#Immutable#IImmutableList{T}#InsertRange(System.Int32,System.Collections.Generic.IEnumerable{`0})
+- uid: System.Collections.Immutable.ImmutableList`1.System#Collections#Immutable#IImmutableList{T}#Remove(`0,System.Collections.Generic.IEqualityComparer{`0})
+  href: System.Collections.Immutable.ImmutableList`1.yml
+  name: IImmutableList<T>.Remove(T, IEqualityComparer<T>)
+  fullName: System.Collections.Immutable.ImmutableList<T>.System.Collections.Immutable.IImmutableList<T>.Remove(T, System.Collections.Generic.IEqualityComparer<T>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
+    startLine: 1036
+  summary: See the [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml) interface.
+  syntax:
+    content:
+      CSharp: IImmutableList<T> IImmutableList<T>.Remove(T value, IEqualityComparer<T> equalityComparer)
+    parameters:
+    - id: value
+      type:
+        id: T
+        name: T
+        href: T
+    - id: equalityComparer
+      type:
+        id: System.Collections.Generic.IEqualityComparer{`0}
+        name: IEqualityComparer<T>
+        isExternal: true
+    return:
+      id: IImmutableList
+      type:
+        id: System.Collections.Immutable.IImmutableList{`0}
+        name: IImmutableList<T>
+        href: System.Collections.Immutable.IImmutableList{`0}
+  id: System.Collections.Immutable.ImmutableList`1.System#Collections#Immutable#IImmutableList{T}#Remove(`0,System.Collections.Generic.IEqualityComparer{`0})
+- uid: System.Collections.Immutable.ImmutableList`1.System#Collections#Immutable#IImmutableList{T}#RemoveAll(System.Predicate{`0})
+  href: System.Collections.Immutable.ImmutableList`1.yml
+  name: IImmutableList<T>.RemoveAll(Predicate<T>)
+  fullName: System.Collections.Immutable.ImmutableList<T>.System.Collections.Immutable.IImmutableList<T>.RemoveAll(System.Predicate<T>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
+    startLine: 1045
+  summary: See the [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml) interface.
+  syntax:
+    content:
+      CSharp: IImmutableList<T> IImmutableList<T>.RemoveAll(Predicate<T> match)
+    parameters:
+    - id: match
+      type:
+        id: System.Predicate{`0}
+        name: Predicate<T>
+        isExternal: true
+    return:
+      id: IImmutableList
+      type:
+        id: System.Collections.Immutable.IImmutableList{`0}
+        name: IImmutableList<T>
+        href: System.Collections.Immutable.IImmutableList{`0}
+  id: System.Collections.Immutable.ImmutableList`1.System#Collections#Immutable#IImmutableList{T}#RemoveAll(System.Predicate{`0})
+- uid: System.Collections.Immutable.ImmutableList`1.System#Collections#Immutable#IImmutableList{T}#RemoveRange(System.Collections.Generic.IEnumerable{`0},System.Collections.Generic.IEqualityComparer{`0})
+  href: System.Collections.Immutable.ImmutableList`1.yml
+  name: IImmutableList<T>.RemoveRange(IEnumerable<T>, IEqualityComparer<T>)
+  fullName: System.Collections.Immutable.ImmutableList<T>.System.Collections.Immutable.IImmutableList<T>.RemoveRange(System.Collections.Generic.IEnumerable<T>, System.Collections.Generic.IEqualityComparer<T>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
+    startLine: 1054
+  summary: See the [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml) interface.
+  syntax:
+    content:
+      CSharp: IImmutableList<T> IImmutableList<T>.RemoveRange(IEnumerable<T> items, IEqualityComparer<T> equalityComparer)
+    parameters:
+    - id: items
+      type:
+        id: System.Collections.Generic.IEnumerable{`0}
+        name: IEnumerable<T>
+        isExternal: true
+    - id: equalityComparer
+      type:
+        id: System.Collections.Generic.IEqualityComparer{`0}
+        name: IEqualityComparer<T>
+        isExternal: true
+    return:
+      id: IImmutableList
+      type:
+        id: System.Collections.Immutable.IImmutableList{`0}
+        name: IImmutableList<T>
+        href: System.Collections.Immutable.IImmutableList{`0}
+  id: System.Collections.Immutable.ImmutableList`1.System#Collections#Immutable#IImmutableList{T}#RemoveRange(System.Collections.Generic.IEnumerable{`0},System.Collections.Generic.IEqualityComparer{`0})
+- uid: System.Collections.Immutable.ImmutableList`1.System#Collections#Immutable#IImmutableList{T}#RemoveRange(System.Int32,System.Int32)
+  href: System.Collections.Immutable.ImmutableList`1.yml
+  name: IImmutableList<T>.RemoveRange(int, int)
+  fullName: System.Collections.Immutable.ImmutableList<T>.System.Collections.Immutable.IImmutableList<T>.RemoveRange(int, int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
+    startLine: 1063
+  summary: See the [System.Collections.Immutable.IImmutableList`1](System.Collections.Immutable.IImmutableList`1.yml) interface.
+  syntax:
+    content:
+      CSharp: IImmutableList<T> IImmutableList<T>.RemoveRange(int index, int count)
+    parameters:
+    - id: index
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: count
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    return:
+      id: IImmutableList
+      type:
+        id: System.Collections.Immutable.IImmutableList{`0}
+        name: IImmutableList<T>
+        href: System.Collections.Immutable.IImmutableList{`0}
+  id: System.Collections.Immutable.ImmutableList`1.System#Collections#Immutable#IImmutableList{T}#RemoveRange(System.Int32,System.Int32)
+- uid: System.Collections.Immutable.ImmutableList`1.System#Collections#Immutable#IImmutableList{T}#RemoveAt(System.Int32)
+  href: System.Collections.Immutable.ImmutableList`1.yml
+  name: IImmutableList<T>.RemoveAt(int)
+  fullName: System.Collections.Immutable.ImmutableList<T>.System.Collections.Immutable.IImmutableList<T>.RemoveAt(int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
+    startLine: 1074
+  summary: Removes the element at the specified index.
+  syntax:
+    content:
+      CSharp: IImmutableList<T> IImmutableList<T>.RemoveAt(int index)
+    parameters:
+    - id: index
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The index.
+    return:
+      id: IImmutableList
+      type:
+        id: System.Collections.Immutable.IImmutableList{`0}
+        name: IImmutableList<T>
+        href: System.Collections.Immutable.IImmutableList{`0}
+      description: A new list with the elements removed.
+  id: System.Collections.Immutable.ImmutableList`1.System#Collections#Immutable#IImmutableList{T}#RemoveAt(System.Int32)
+- uid: System.Collections.Immutable.ImmutableList`1.System#Collections#Immutable#IImmutableList{T}#SetItem(System.Int32,`0)
+  href: System.Collections.Immutable.ImmutableList`1.yml
+  name: IImmutableList<T>.SetItem(int, T)
+  fullName: System.Collections.Immutable.ImmutableList<T>.System.Collections.Immutable.IImmutableList<T>.SetItem(int, T)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
+    startLine: 1086
+  summary: Replaces an element in the list at a given position with the specified element.
+  syntax:
+    content:
+      CSharp: IImmutableList<T> IImmutableList<T>.SetItem(int index, T value)
+    parameters:
+    - id: index
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The position in the list of the element to replace.
+    - id: value
+      type:
+        id: T
+        name: T
+        href: T
+      description: The element to replace the old element with.
+    return:
+      id: IImmutableList
+      type:
+        id: System.Collections.Immutable.IImmutableList{`0}
+        name: IImmutableList<T>
+        href: System.Collections.Immutable.IImmutableList{`0}
+      description: The new list.
+  id: System.Collections.Immutable.ImmutableList`1.System#Collections#Immutable#IImmutableList{T}#SetItem(System.Int32,`0)
+- uid: System.Collections.Immutable.ImmutableList`1.System#Collections#Immutable#IImmutableList{T}#Replace(`0,`0,System.Collections.Generic.IEqualityComparer{`0})
+  href: System.Collections.Immutable.ImmutableList`1.yml
+  name: IImmutableList<T>.Replace(T, T, IEqualityComparer<T>)
+  fullName: System.Collections.Immutable.ImmutableList<T>.System.Collections.Immutable.IImmutableList<T>.Replace(T, T, System.Collections.Generic.IEqualityComparer<T>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
+    startLine: 1102
+  summary: Replaces an element in the list with the specified element.
+  syntax:
+    content:
+      CSharp: IImmutableList<T> IImmutableList<T>.Replace(T oldValue, T newValue, IEqualityComparer<T> equalityComparer)
+    parameters:
+    - id: oldValue
+      type:
+        id: T
+        name: T
+        href: T
+      description: The element to replace.
+    - id: newValue
+      type:
+        id: T
+        name: T
+        href: T
+      description: The element to replace the old element with.
+    - id: equalityComparer
+      type:
+        id: System.Collections.Generic.IEqualityComparer{`0}
+        name: IEqualityComparer<T>
+        isExternal: true
+      description: The equality comparer to use in the search.
+    return:
+      id: IImmutableList
+      type:
+        id: System.Collections.Immutable.IImmutableList{`0}
+        name: IImmutableList<T>
+        href: System.Collections.Immutable.IImmutableList{`0}
+      description: The new list.
+  id: System.Collections.Immutable.ImmutableList`1.System#Collections#Immutable#IImmutableList{T}#Replace(`0,`0,System.Collections.Generic.IEqualityComparer{`0})
+- uid: System.Collections.Immutable.ImmutableList`1.System#Collections#Generic#IEnumerable{T}#GetEnumerator
+  href: System.Collections.Immutable.ImmutableList`1.yml
+  name: IEnumerable<T>.GetEnumerator()
+  fullName: System.Collections.Immutable.ImmutableList<T>.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
+    startLine: 1118
+  summary: Returns an enumerator that iterates through the collection.
+  syntax:
+    content:
+      CSharp: IEnumerator<T> IEnumerable<T>.GetEnumerator()
+    parameters: []
+    return:
+      id: IEnumerator
+      type:
+        id: System.Collections.Generic.IEnumerator{`0}
+        name: IEnumerator<T>
+        isExternal: true
+      description: A [System.Collections.Generic.IEnumerator`1]() that can be used to iterate through the collection.
+  id: System.Collections.Immutable.ImmutableList`1.System#Collections#Generic#IEnumerable{T}#GetEnumerator
+- uid: System.Collections.Immutable.ImmutableList`1.System#Collections#IEnumerable#GetEnumerator
+  href: System.Collections.Immutable.ImmutableList`1.yml
+  name: IEnumerable.GetEnumerator()
+  fullName: System.Collections.Immutable.ImmutableList<T>.System.Collections.IEnumerable.GetEnumerator()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
+    startLine: 1133
+  summary: Returns an enumerator that iterates through a collection.
+  syntax:
+    content:
+      CSharp: IEnumerator IEnumerable.GetEnumerator()
+    parameters: []
+    return:
+      id: IEnumerator
+      type:
+        id: System.Collections.IEnumerator
+        name: IEnumerator
+        isExternal: true
+      description: An [System.Collections.IEnumerator]() object that can be used to iterate through the collection.
+  id: System.Collections.Immutable.ImmutableList`1.System#Collections#IEnumerable#GetEnumerator
+- uid: System.Collections.Immutable.ImmutableList`1.System#Collections#Generic#IList{T}#Insert(System.Int32,`0)
+  href: System.Collections.Immutable.ImmutableList`1.yml
+  name: IList<T>.Insert(int, T)
+  fullName: System.Collections.Immutable.ImmutableList<T>.System.Collections.Generic.IList<T>.Insert(int, T)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
+    startLine: 1148
+  summary: Inserts the specified index.
+  syntax:
+    content:
+      CSharp: void IList<T>.Insert(int index, T item)
+    parameters:
+    - id: index
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The index.
+    - id: item
+      type:
+        id: T
+        name: T
+        href: T
+      description: The item.
+  id: System.Collections.Immutable.ImmutableList`1.System#Collections#Generic#IList{T}#Insert(System.Int32,`0)
+- uid: System.Collections.Immutable.ImmutableList`1.System#Collections#Generic#IList{T}#RemoveAt(System.Int32)
+  href: System.Collections.Immutable.ImmutableList`1.yml
+  name: IList<T>.RemoveAt(int)
+  fullName: System.Collections.Immutable.ImmutableList<T>.System.Collections.Generic.IList<T>.RemoveAt(int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
+    startLine: 1158
+  summary: Removes the value at the specified index.
+  syntax:
+    content:
+      CSharp: void IList<T>.RemoveAt(int index)
+    parameters:
+    - id: index
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The index.
+  id: System.Collections.Immutable.ImmutableList`1.System#Collections#Generic#IList{T}#RemoveAt(System.Int32)
+- uid: System.Collections.Immutable.ImmutableList`1.System#Collections#Generic#IList{T}#Item(System.Int32)
+  href: System.Collections.Immutable.ImmutableList`1.yml
+  name: IList<T>.this[int]
+  fullName: System.Collections.Immutable.ImmutableList<T>.System.Collections.Generic.IList<T>.this[int]
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
+    startLine: 1166
+  summary: Gets or sets the value at the specified index.
+  syntax:
+    content:
+      CSharp: T IList<T>.this[int index] { get; set; }
+    parameters:
+    - id: System.Collections.Generic.IList<T>.this[]
+      type:
+        id: T
+        name: T
+        href: T
+  id: System.Collections.Immutable.ImmutableList`1.System#Collections#Generic#IList{T}#Item(System.Int32)
+- uid: System.Collections.Immutable.ImmutableList`1.System#Collections#Generic#ICollection{T}#Add(`0)
+  href: System.Collections.Immutable.ImmutableList`1.yml
+  name: ICollection<T>.Add(T)
+  fullName: System.Collections.Immutable.ImmutableList<T>.System.Collections.Generic.ICollection<T>.Add(T)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
+    startLine: 1181
+  summary: Adds the specified item.
+  syntax:
+    content:
+      CSharp: void ICollection<T>.Add(T item)
+    parameters:
+    - id: item
+      type:
+        id: T
+        name: T
+        href: T
+      description: The item.
+  id: System.Collections.Immutable.ImmutableList`1.System#Collections#Generic#ICollection{T}#Add(`0)
+- uid: System.Collections.Immutable.ImmutableList`1.System#Collections#Generic#ICollection{T}#Clear
+  href: System.Collections.Immutable.ImmutableList`1.yml
+  name: ICollection<T>.Clear()
+  fullName: System.Collections.Immutable.ImmutableList<T>.System.Collections.Generic.ICollection<T>.Clear()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
+    startLine: 1190
+  summary: Clears this instance.
+  syntax:
+    content:
+      CSharp: void ICollection<T>.Clear()
+    parameters: []
+  id: System.Collections.Immutable.ImmutableList`1.System#Collections#Generic#ICollection{T}#Clear
+- uid: System.Collections.Immutable.ImmutableList`1.System#Collections#Generic#ICollection{T}#IsReadOnly
+  href: System.Collections.Immutable.ImmutableList`1.yml
+  name: ICollection<T>.IsReadOnly
+  fullName: System.Collections.Immutable.ImmutableList<T>.System.Collections.Generic.ICollection<T>.IsReadOnly
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
+    startLine: 1200
+  summary: Gets a value indicating whether the [System.Collections.Generic.ICollection`1]() is read-only.
+  syntax:
+    content:
+      CSharp: bool ICollection<T>.IsReadOnly { get; }
+    parameters:
+    - id: System.Collections.Generic.ICollection<T>.IsReadOnly
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Collections.Immutable.ImmutableList`1.System#Collections#Generic#ICollection{T}#IsReadOnly
+- uid: System.Collections.Immutable.ImmutableList`1.System#Collections#Generic#ICollection{T}#Remove(`0)
+  href: System.Collections.Immutable.ImmutableList`1.yml
+  name: ICollection<T>.Remove(T)
+  fullName: System.Collections.Immutable.ImmutableList<T>.System.Collections.Generic.ICollection<T>.Remove(T)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
+    startLine: 1211
+  summary: Removes the specified item.
+  syntax:
+    content:
+      CSharp: bool ICollection<T>.Remove(T item)
+    parameters:
+    - id: item
+      type:
+        id: T
+        name: T
+        href: T
+      description: The item.
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Collections.Immutable.ImmutableList`1.System#Collections#Generic#ICollection{T}#Remove(`0)
+- uid: System.Collections.Immutable.ImmutableList`1.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+  href: System.Collections.Immutable.ImmutableList`1.yml
+  name: ICollection.CopyTo(Array, int)
+  fullName: System.Collections.Immutable.ImmutableList<T>.System.Collections.ICollection.CopyTo(System.Array, int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
+    startLine: 1223
+  summary: See the [System.Collections.ICollection]() interface.
+  syntax:
+    content:
+      CSharp: void ICollection.CopyTo(Array array, int arrayIndex)
+    parameters:
+    - id: array
+      type:
+        id: System.Array
+        name: Array
+        isExternal: true
+    - id: arrayIndex
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.Collections.Immutable.ImmutableList`1.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+- uid: System.Collections.Immutable.ImmutableList`1.System#Collections#IList#Add(System.Object)
+  href: System.Collections.Immutable.ImmutableList`1.yml
+  name: IList.Add(object)
+  fullName: System.Collections.Immutable.ImmutableList<T>.System.Collections.IList.Add(object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
+    startLine: 1240
+  summary: Adds an item to the [System.Collections.IList]().
+  syntax:
+    content:
+      CSharp: int IList.Add(object value)
+    parameters:
+    - id: value
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+      description: The object to add to the [System.Collections.IList]().
+    return:
+      id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The position into which the new element was inserted, or -1 to indicate that the item was not inserted into the collection,
+  id: System.Collections.Immutable.ImmutableList`1.System#Collections#IList#Add(System.Object)
+- uid: System.Collections.Immutable.ImmutableList`1.System#Collections#IList#RemoveAt(System.Int32)
+  href: System.Collections.Immutable.ImmutableList`1.yml
+  name: IList.RemoveAt(int)
+  fullName: System.Collections.Immutable.ImmutableList<T>.System.Collections.IList.RemoveAt(int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
+    startLine: 1250
+  summary: Removes the [System.Collections.IList]() item at the specified index.
+  syntax:
+    content:
+      CSharp: void IList.RemoveAt(int index)
+    parameters:
+    - id: index
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The zero-based index of the item to remove.
+  id: System.Collections.Immutable.ImmutableList`1.System#Collections#IList#RemoveAt(System.Int32)
+- uid: System.Collections.Immutable.ImmutableList`1.System#Collections#IList#Clear
+  href: System.Collections.Immutable.ImmutableList`1.yml
+  name: IList.Clear()
+  fullName: System.Collections.Immutable.ImmutableList<T>.System.Collections.IList.Clear()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
+    startLine: 1259
+  summary: Clears this instance.
+  syntax:
+    content:
+      CSharp: void IList.Clear()
+    parameters: []
+  id: System.Collections.Immutable.ImmutableList`1.System#Collections#IList#Clear
+- uid: System.Collections.Immutable.ImmutableList`1.System#Collections#IList#Contains(System.Object)
+  href: System.Collections.Immutable.ImmutableList`1.yml
+  name: IList.Contains(object)
+  fullName: System.Collections.Immutable.ImmutableList<T>.System.Collections.IList.Contains(object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
+    startLine: 1272
+  summary: Determines whether the [System.Collections.IList]() contains a specific value.
+  syntax:
+    content:
+      CSharp: bool IList.Contains(object value)
+    parameters:
+    - id: value
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+      description: The object to locate in the [System.Collections.IList]().
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: true if the [System.Object]() is found in the [System.Collections.IList](); otherwise, false.
+  id: System.Collections.Immutable.ImmutableList`1.System#Collections#IList#Contains(System.Object)
+- uid: System.Collections.Immutable.ImmutableList`1.System#Collections#IList#IndexOf(System.Object)
+  href: System.Collections.Immutable.ImmutableList`1.yml
+  name: IList.IndexOf(object)
+  fullName: System.Collections.Immutable.ImmutableList<T>.System.Collections.IList.IndexOf(object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
+    startLine: 1285
+  summary: Determines the index of a specific item in the [System.Collections.IList]().
+  syntax:
+    content:
+      CSharp: int IList.IndexOf(object value)
+    parameters:
+    - id: value
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+      description: The object to locate in the [System.Collections.IList]().
+    return:
+      id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The index of  if found in the list; otherwise, -1.
+  id: System.Collections.Immutable.ImmutableList`1.System#Collections#IList#IndexOf(System.Object)
+- uid: System.Collections.Immutable.ImmutableList`1.System#Collections#IList#Insert(System.Int32,System.Object)
+  href: System.Collections.Immutable.ImmutableList`1.yml
+  name: IList.Insert(int, object)
+  fullName: System.Collections.Immutable.ImmutableList<T>.System.Collections.IList.Insert(int, object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
+    startLine: 1296
+  summary: Inserts an item to the [System.Collections.IList]() at the specified index.
+  syntax:
+    content:
+      CSharp: void IList.Insert(int index, object value)
+    parameters:
+    - id: index
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The zero-based index at which  should be inserted.
+    - id: value
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+      description: The object to insert into the [System.Collections.IList]().
+  id: System.Collections.Immutable.ImmutableList`1.System#Collections#IList#Insert(System.Int32,System.Object)
+- uid: System.Collections.Immutable.ImmutableList`1.System#Collections#IList#IsFixedSize
+  href: System.Collections.Immutable.ImmutableList`1.yml
+  name: IList.IsFixedSize
+  fullName: System.Collections.Immutable.ImmutableList<T>.System.Collections.IList.IsFixedSize
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
+    startLine: 1306
+  summary: Gets a value indicating whether the [System.Collections.IList]() has a fixed size.
+  syntax:
+    content:
+      CSharp: bool IList.IsFixedSize { get; }
+    parameters:
+    - id: System.Collections.IList.IsFixedSize
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Collections.Immutable.ImmutableList`1.System#Collections#IList#IsFixedSize
+- uid: System.Collections.Immutable.ImmutableList`1.System#Collections#IList#IsReadOnly
+  href: System.Collections.Immutable.ImmutableList`1.yml
+  name: IList.IsReadOnly
+  fullName: System.Collections.Immutable.ImmutableList<T>.System.Collections.IList.IsReadOnly
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
+    startLine: 1317
+  summary: Gets a value indicating whether the [System.Collections.Generic.ICollection`1]() is read-only.
+  syntax:
+    content:
+      CSharp: bool IList.IsReadOnly { get; }
+    parameters:
+    - id: System.Collections.IList.IsReadOnly
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Collections.Immutable.ImmutableList`1.System#Collections#IList#IsReadOnly
+- uid: System.Collections.Immutable.ImmutableList`1.System#Collections#IList#Remove(System.Object)
+  href: System.Collections.Immutable.ImmutableList`1.yml
+  name: IList.Remove(object)
+  fullName: System.Collections.Immutable.ImmutableList<T>.System.Collections.IList.Remove(object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
+    startLine: 1327
+  summary: Removes the first occurrence of a specific object from the [System.Collections.IList]().
+  syntax:
+    content:
+      CSharp: void IList.Remove(object value)
+    parameters:
+    - id: value
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+      description: The object to remove from the [System.Collections.IList]().
+  id: System.Collections.Immutable.ImmutableList`1.System#Collections#IList#Remove(System.Object)
+- uid: System.Collections.Immutable.ImmutableList`1.System#Collections#IList#Item(System.Int32)
+  href: System.Collections.Immutable.ImmutableList`1.yml
+  name: IList.this[int]
+  fullName: System.Collections.Immutable.ImmutableList<T>.System.Collections.IList.this[int]
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList`1.cs
+    startLine: 1341
+  summary: Gets or sets the [System.Object]() at the specified index.
+  syntax:
+    content:
+      CSharp: object IList.this[int index] { get; set; }
+    parameters:
+    - id: System.Collections.IList.this[]
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+  id: System.Collections.Immutable.ImmutableList`1.System#Collections#IList#Item(System.Int32)
 - uid: System.Collections.Immutable.ImmutableList`1.GetEnumerator
   href: System.Collections.Immutable.ImmutableList`1.yml
   name: GetEnumerator()
@@ -1651,5 +2705,9 @@ items:
     parameters: []
     return:
       id: Enumerator
-      description: A [System.Collections.Generic.IEnumerator`1](#) that can be used to iterate through the collection.
+      type:
+        id: System.Collections.Immutable.ImmutableList`1.Enumerator
+        name: Enumerator
+        href: System.Collections.Immutable.ImmutableList`1.Enumerator.yml
+      description: A [System.Collections.Generic.IEnumerator`1]() that can be used to iterate through the collection.
   id: System.Collections.Immutable.ImmutableList`1.GetEnumerator

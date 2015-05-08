@@ -1,0 +1,218 @@
+items:
+- uid: System.Text.Encodings.Web.JavaScriptStringEncoder
+  href: System.Text.Encodings.Web.JavaScriptStringEncoder.yml
+  name: JavaScriptStringEncoder
+  fullName: System.Text.Encodings.Web.JavaScriptStringEncoder
+  type: Class
+  source:
+    remote: &o0
+      path: src/System.Text.Encodings.Web/src/System/Text/Encodings/Web/JavaScriptStringEncoder.cs
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
+    path: src/System.Text.Encodings.Web/src/System/Text/Encodings/Web/JavaScriptStringEncoder.cs
+    startLine: 20
+  summary: >-
+    A class which can perform JavaScript string escaping given an allow list of characters which
+
+    can be represented unescaped.
+  syntax:
+    content:
+      CSharp: 'public sealed class JavaScriptStringEncoder : IJavaScriptStringEncoder'
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  id: System.Text.Encodings.Web.JavaScriptStringEncoder
+  children:
+  - System.Text.Encodings.Web.JavaScriptStringEncoder.#ctor
+  - System.Text.Encodings.Web.JavaScriptStringEncoder.#ctor(System.Text.Encodings.Web.UnicodeRange[])
+  - System.Text.Encodings.Web.JavaScriptStringEncoder.#ctor(System.Text.Encodings.Web.ICodePointFilter)
+  - System.Text.Encodings.Web.JavaScriptStringEncoder.Default
+  - System.Text.Encodings.Web.JavaScriptStringEncoder.JavaScriptStringEncode(System.Char[],System.Int32,System.Int32,System.IO.TextWriter)
+  - System.Text.Encodings.Web.JavaScriptStringEncoder.JavaScriptStringEncode(System.String)
+  - System.Text.Encodings.Web.JavaScriptStringEncoder.JavaScriptStringEncode(System.String,System.Int32,System.Int32,System.IO.TextWriter)
+- uid: System.Text.Encodings.Web.JavaScriptStringEncoder.#ctor
+  href: System.Text.Encodings.Web.JavaScriptStringEncoder.yml
+  name: JavaScriptStringEncoder()
+  fullName: System.Text.Encodings.Web.JavaScriptStringEncoder.JavaScriptStringEncoder()
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Text.Encodings.Web/src/System/Text/Encodings/Web/JavaScriptStringEncoder.cs
+    startLine: 32
+  summary: >-
+    Instantiates an encoder using [System.Text.Encodings.Web.UnicodeRanges.BasicLatin](System.Text.Encodings.Web.UnicodeRanges.yml) as its allow list.
+
+    Any character not in the [System.Text.Encodings.Web.UnicodeRanges.BasicLatin](System.Text.Encodings.Web.UnicodeRanges.yml) range will be escaped.
+  syntax:
+    content:
+      CSharp: 'public JavaScriptStringEncoder(): this (JavaScriptStringUnicodeEncoder.BasicLatin)'
+    parameters: []
+  id: System.Text.Encodings.Web.JavaScriptStringEncoder.#ctor
+- uid: System.Text.Encodings.Web.JavaScriptStringEncoder.#ctor(System.Text.Encodings.Web.UnicodeRange[])
+  href: System.Text.Encodings.Web.JavaScriptStringEncoder.yml
+  name: JavaScriptStringEncoder(params UnicodeRange[])
+  fullName: System.Text.Encodings.Web.JavaScriptStringEncoder.JavaScriptStringEncoder(params System.Text.Encodings.Web.UnicodeRange[])
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Text.Encodings.Web/src/System/Text/Encodings/Web/JavaScriptStringEncoder.cs
+    startLine: 42
+  summary: >-
+    Instantiates an encoder specifying which Unicode character ranges are allowed to
+
+    pass through the encoder unescaped. Any character not in the set of ranges specified
+
+    by  will be escaped.
+  syntax:
+    content:
+      CSharp: 'public JavaScriptStringEncoder(params UnicodeRange[] allowedRanges): this (new JavaScriptStringUnicodeEncoder(new CodePointFilter(allowedRanges)))'
+    parameters:
+    - id: allowedRanges
+      type:
+        id: System.Array
+        name: UnicodeRange[]
+        isExternal: true
+  id: System.Text.Encodings.Web.JavaScriptStringEncoder.#ctor(System.Text.Encodings.Web.UnicodeRange[])
+- uid: System.Text.Encodings.Web.JavaScriptStringEncoder.#ctor(System.Text.Encodings.Web.ICodePointFilter)
+  href: System.Text.Encodings.Web.JavaScriptStringEncoder.yml
+  name: JavaScriptStringEncoder(ICodePointFilter)
+  fullName: System.Text.Encodings.Web.JavaScriptStringEncoder.JavaScriptStringEncoder(System.Text.Encodings.Web.ICodePointFilter)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Text.Encodings.Web/src/System/Text/Encodings/Web/JavaScriptStringEncoder.cs
+    startLine: 52
+  summary: >-
+    Instantiates an encoder using a custom code point filter. Any character not in the
+
+    set returned by 's [System.Text.Encodings.Web.ICodePointFilter.GetAllowedCodePoints](System.Text.Encodings.Web.ICodePointFilter.yml)
+
+    method will be escaped.
+  syntax:
+    content:
+      CSharp: 'public JavaScriptStringEncoder(ICodePointFilter filter): this (new JavaScriptStringUnicodeEncoder(CodePointFilter.Wrap(filter)))'
+    parameters:
+    - id: filter
+      type:
+        id: System.Text.Encodings.Web.ICodePointFilter
+        name: ICodePointFilter
+        href: System.Text.Encodings.Web.ICodePointFilter.yml
+  id: System.Text.Encodings.Web.JavaScriptStringEncoder.#ctor(System.Text.Encodings.Web.ICodePointFilter)
+- uid: System.Text.Encodings.Web.JavaScriptStringEncoder.Default
+  href: System.Text.Encodings.Web.JavaScriptStringEncoder.yml
+  name: Default
+  fullName: System.Text.Encodings.Web.JavaScriptStringEncoder.Default
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Text.Encodings.Web/src/System/Text/Encodings/Web/JavaScriptStringEncoder.cs
+    startLine: 70
+  summary: A default instance of [System.Text.Encodings.Web.JavaScriptStringEncoder](System.Text.Encodings.Web.JavaScriptStringEncoder.yml).
+  syntax:
+    content:
+      CSharp: public static JavaScriptStringEncoder Default { get; set; }
+    parameters:
+    - id: Default
+      type:
+        id: System.Text.Encodings.Web.JavaScriptStringEncoder
+        name: JavaScriptStringEncoder
+        href: System.Text.Encodings.Web.JavaScriptStringEncoder.yml
+  id: System.Text.Encodings.Web.JavaScriptStringEncoder.Default
+- uid: System.Text.Encodings.Web.JavaScriptStringEncoder.JavaScriptStringEncode(System.Char[],System.Int32,System.Int32,System.IO.TextWriter)
+  href: System.Text.Encodings.Web.JavaScriptStringEncoder.yml
+  name: JavaScriptStringEncode(char[], int, int, TextWriter)
+  fullName: System.Text.Encodings.Web.JavaScriptStringEncoder.JavaScriptStringEncode(char[], int, int, System.IO.TextWriter)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Text.Encodings.Web/src/System/Text/Encodings/Web/JavaScriptStringEncoder.cs
+    startLine: 96
+  summary: Everybody's favorite JavaScriptStringEncode routine.
+  syntax:
+    content:
+      CSharp: public void JavaScriptStringEncode(char[] value, int startIndex, int charCount, TextWriter output)
+    parameters:
+    - id: value
+      type:
+        id: System.Array
+        name: char[]
+        isExternal: true
+    - id: startIndex
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: charCount
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: output
+      type:
+        id: System.IO.TextWriter
+        name: TextWriter
+        isExternal: true
+  id: System.Text.Encodings.Web.JavaScriptStringEncoder.JavaScriptStringEncode(System.Char[],System.Int32,System.Int32,System.IO.TextWriter)
+- uid: System.Text.Encodings.Web.JavaScriptStringEncoder.JavaScriptStringEncode(System.String)
+  href: System.Text.Encodings.Web.JavaScriptStringEncoder.yml
+  name: JavaScriptStringEncode(string)
+  fullName: System.Text.Encodings.Web.JavaScriptStringEncoder.JavaScriptStringEncode(string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Text.Encodings.Web/src/System/Text/Encodings/Web/JavaScriptStringEncoder.cs
+    startLine: 104
+  summary: Everybody's favorite JavaScriptStringEncode routine.
+  syntax:
+    content:
+      CSharp: public string JavaScriptStringEncode(string value)
+    parameters:
+    - id: value
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Text.Encodings.Web.JavaScriptStringEncoder.JavaScriptStringEncode(System.String)
+- uid: System.Text.Encodings.Web.JavaScriptStringEncoder.JavaScriptStringEncode(System.String,System.Int32,System.Int32,System.IO.TextWriter)
+  href: System.Text.Encodings.Web.JavaScriptStringEncoder.yml
+  name: JavaScriptStringEncode(string, int, int, TextWriter)
+  fullName: System.Text.Encodings.Web.JavaScriptStringEncoder.JavaScriptStringEncode(string, int, int, System.IO.TextWriter)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Text.Encodings.Web/src/System/Text/Encodings/Web/JavaScriptStringEncoder.cs
+    startLine: 112
+  summary: Everybody's favorite JavaScriptStringEncode routine.
+  syntax:
+    content:
+      CSharp: public void JavaScriptStringEncode(string value, int startIndex, int charCount, TextWriter output)
+    parameters:
+    - id: value
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    - id: startIndex
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: charCount
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: output
+      type:
+        id: System.IO.TextWriter
+        name: TextWriter
+        isExternal: true
+  id: System.Text.Encodings.Web.JavaScriptStringEncoder.JavaScriptStringEncode(System.String,System.Int32,System.Int32,System.IO.TextWriter)

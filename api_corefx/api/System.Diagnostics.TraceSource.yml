@@ -6,8 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/TraceSource.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/TraceSource.cs
     startLine: 10
   syntax:
@@ -15,7 +17,7 @@ items:
       CSharp: public class TraceSource
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Diagnostics.TraceSource
   children:
@@ -49,7 +51,7 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.TraceSource.#ctor(System.String)
 - uid: System.Diagnostics.TraceSource.#ctor(System.String,System.Diagnostics.SourceLevels)
@@ -68,7 +70,7 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: defaultLevel
       type:
@@ -115,7 +117,7 @@ items:
     startLine: 169
   syntax:
     content:
-      CSharp: '[Conditional("TRACE")] public void TraceEvent(TraceEventType eventType, int id)'
+      CSharp: public void TraceEvent(TraceEventType eventType, int id)
     parameters:
     - id: eventType
       type:
@@ -125,7 +127,7 @@ items:
     - id: id
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Diagnostics.TraceSource.TraceEvent(System.Diagnostics.TraceEventType,System.Int32)
 - uid: System.Diagnostics.TraceSource.TraceEvent(System.Diagnostics.TraceEventType,System.Int32,System.String)
@@ -139,7 +141,7 @@ items:
     startLine: 214
   syntax:
     content:
-      CSharp: '[Conditional("TRACE")] public void TraceEvent(TraceEventType eventType, int id, string message)'
+      CSharp: public void TraceEvent(TraceEventType eventType, int id, string message)
     parameters:
     - id: eventType
       type:
@@ -149,12 +151,12 @@ items:
     - id: id
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.TraceSource.TraceEvent(System.Diagnostics.TraceEventType,System.Int32,System.String)
 - uid: System.Diagnostics.TraceSource.TraceEvent(System.Diagnostics.TraceEventType,System.Int32,System.String,System.Object[])
@@ -168,7 +170,7 @@ items:
     startLine: 259
   syntax:
     content:
-      CSharp: '[Conditional("TRACE")] public void TraceEvent(TraceEventType eventType, int id, string format, params object[] args)'
+      CSharp: public void TraceEvent(TraceEventType eventType, int id, string format, params object[] args)
     parameters:
     - id: eventType
       type:
@@ -178,17 +180,17 @@ items:
     - id: id
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: format
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: args
       type:
         id: System.Array
-        name: System.Array
+        name: object[]
         isExternal: true
   id: System.Diagnostics.TraceSource.TraceEvent(System.Diagnostics.TraceEventType,System.Int32,System.String,System.Object[])
 - uid: System.Diagnostics.TraceSource.TraceData(System.Diagnostics.TraceEventType,System.Int32,System.Object)
@@ -202,7 +204,7 @@ items:
     startLine: 304
   syntax:
     content:
-      CSharp: '[Conditional("TRACE")] public void TraceData(TraceEventType eventType, int id, object data)'
+      CSharp: public void TraceData(TraceEventType eventType, int id, object data)
     parameters:
     - id: eventType
       type:
@@ -212,12 +214,12 @@ items:
     - id: id
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: data
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.Diagnostics.TraceSource.TraceData(System.Diagnostics.TraceEventType,System.Int32,System.Object)
 - uid: System.Diagnostics.TraceSource.TraceData(System.Diagnostics.TraceEventType,System.Int32,System.Object[])
@@ -231,7 +233,7 @@ items:
     startLine: 349
   syntax:
     content:
-      CSharp: '[Conditional("TRACE")] public void TraceData(TraceEventType eventType, int id, params object[] data)'
+      CSharp: public void TraceData(TraceEventType eventType, int id, params object[] data)
     parameters:
     - id: eventType
       type:
@@ -241,12 +243,12 @@ items:
     - id: id
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: data
       type:
         id: System.Array
-        name: System.Array
+        name: object[]
         isExternal: true
   id: System.Diagnostics.TraceSource.TraceData(System.Diagnostics.TraceEventType,System.Int32,System.Object[])
 - uid: System.Diagnostics.TraceSource.TraceInformation(System.String)
@@ -260,12 +262,12 @@ items:
     startLine: 394
   syntax:
     content:
-      CSharp: '[Conditional("TRACE")] public void TraceInformation(string message)'
+      CSharp: public void TraceInformation(string message)
     parameters:
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.TraceSource.TraceInformation(System.String)
 - uid: System.Diagnostics.TraceSource.TraceInformation(System.String,System.Object[])
@@ -279,17 +281,17 @@ items:
     startLine: 401
   syntax:
     content:
-      CSharp: '[Conditional("TRACE")] public void TraceInformation(string format, params object[] args)'
+      CSharp: public void TraceInformation(string format, params object[] args)
     parameters:
     - id: format
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: args
       type:
         id: System.Array
-        name: System.Array
+        name: object[]
         isExternal: true
   id: System.Diagnostics.TraceSource.TraceInformation(System.String,System.Object[])
 - uid: System.Diagnostics.TraceSource.Name
@@ -308,7 +310,7 @@ items:
     - id: Name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.TraceSource.Name
 - uid: System.Diagnostics.TraceSource.Listeners

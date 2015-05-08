@@ -6,24 +6,36 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/MvcHandler.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/MvcHandler.cs
     startLine: 15
   syntax:
     content:
-      CSharp: public class MvcHandler
+      CSharp: 'public class MvcHandler : IHttpAsyncHandler, IHttpHandler, IRequiresSessionState'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.MvcHandler
   children:
   - System.Web.Mvc.MvcHandler.MvcVersionHeaderName
   - System.Web.Mvc.MvcHandler.#ctor(System.Web.Routing.RequestContext)
   - System.Web.Mvc.MvcHandler.DisableMvcResponseHeader
+  - System.Web.Mvc.MvcHandler.IsReusable
   - System.Web.Mvc.MvcHandler.RequestContext
+  - System.Web.Mvc.MvcHandler.AddVersionHeader(System.Web.HttpContextBase)
+  - System.Web.Mvc.MvcHandler.BeginProcessRequest(System.Web.HttpContext,System.AsyncCallback,System.Object)
+  - System.Web.Mvc.MvcHandler.BeginProcessRequest(System.Web.HttpContextBase,System.AsyncCallback,System.Object)
+  - System.Web.Mvc.MvcHandler.EndProcessRequest(System.IAsyncResult)
+  - System.Web.Mvc.MvcHandler.ProcessRequest(System.Web.HttpContext)
+  - System.Web.Mvc.MvcHandler.ProcessRequest(System.Web.HttpContextBase)
+  - System.Web.Mvc.MvcHandler.System#Web#IHttpHandler#IsReusable
+  - System.Web.Mvc.MvcHandler.System#Web#IHttpHandler#ProcessRequest(System.Web.HttpContext)
+  - System.Web.Mvc.MvcHandler.System#Web#IHttpAsyncHandler#BeginProcessRequest(System.Web.HttpContext,System.AsyncCallback,System.Object)
+  - System.Web.Mvc.MvcHandler.System#Web#IHttpAsyncHandler#EndProcessRequest(System.IAsyncResult)
 - uid: System.Web.Mvc.MvcHandler.MvcVersionHeaderName
   href: System.Web.Mvc.MvcHandler.yml
   name: MvcVersionHeaderName
@@ -35,7 +47,7 @@ items:
     startLine: 20
   syntax:
     content:
-      CSharp: MvcVersionHeaderName
+      CSharp: public static readonly string MvcVersionHeaderName;
   id: System.Web.Mvc.MvcHandler.MvcVersionHeaderName
 - uid: System.Web.Mvc.MvcHandler.#ctor(System.Web.Routing.RequestContext)
   href: System.Web.Mvc.MvcHandler.yml
@@ -53,7 +65,7 @@ items:
     - id: requestContext
       type:
         id: System.Web.Routing.RequestContext
-        name: System.Web.Routing.RequestContext
+        name: RequestContext
         isExternal: true
   id: System.Web.Mvc.MvcHandler.#ctor(System.Web.Routing.RequestContext)
 - uid: System.Web.Mvc.MvcHandler.DisableMvcResponseHeader
@@ -72,9 +84,28 @@ items:
     - id: DisableMvcResponseHeader
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.MvcHandler.DisableMvcResponseHeader
+- uid: System.Web.Mvc.MvcHandler.IsReusable
+  href: System.Web.Mvc.MvcHandler.yml
+  name: IsReusable
+  fullName: System.Web.Mvc.MvcHandler.IsReusable
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/MvcHandler.cs
+    startLine: 48
+  syntax:
+    content:
+      CSharp: protected virtual bool IsReusable { get; }
+    parameters:
+    - id: IsReusable
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Web.Mvc.MvcHandler.IsReusable
 - uid: System.Web.Mvc.MvcHandler.RequestContext
   href: System.Web.Mvc.MvcHandler.yml
   name: RequestContext
@@ -86,11 +117,249 @@ items:
     startLine: 53
   syntax:
     content:
-      CSharp: public RequestContext RequestContext { get; private set; }
+      CSharp: public RequestContext RequestContext { get; }
     parameters:
     - id: RequestContext
       type:
         id: System.Web.Routing.RequestContext
-        name: System.Web.Routing.RequestContext
+        name: RequestContext
         isExternal: true
   id: System.Web.Mvc.MvcHandler.RequestContext
+- uid: System.Web.Mvc.MvcHandler.AddVersionHeader(System.Web.HttpContextBase)
+  href: System.Web.Mvc.MvcHandler.yml
+  name: AddVersionHeader(HttpContextBase)
+  fullName: System.Web.Mvc.MvcHandler.AddVersionHeader(System.Web.HttpContextBase)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/MvcHandler.cs
+    startLine: 55
+  syntax:
+    content:
+      CSharp: protected internal virtual void AddVersionHeader(HttpContextBase httpContext)
+    parameters:
+    - id: httpContext
+      type:
+        id: System.Web.HttpContextBase
+        name: HttpContextBase
+        isExternal: true
+  id: System.Web.Mvc.MvcHandler.AddVersionHeader(System.Web.HttpContextBase)
+- uid: System.Web.Mvc.MvcHandler.BeginProcessRequest(System.Web.HttpContext,System.AsyncCallback,System.Object)
+  href: System.Web.Mvc.MvcHandler.yml
+  name: BeginProcessRequest(HttpContext, AsyncCallback, object)
+  fullName: System.Web.Mvc.MvcHandler.BeginProcessRequest(System.Web.HttpContext, System.AsyncCallback, object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/MvcHandler.cs
+    startLine: 63
+  syntax:
+    content:
+      CSharp: protected virtual IAsyncResult BeginProcessRequest(HttpContext httpContext, AsyncCallback callback, object state)
+    parameters:
+    - id: httpContext
+      type:
+        id: System.Web.HttpContext
+        name: HttpContext
+        isExternal: true
+    - id: callback
+      type:
+        id: System.AsyncCallback
+        name: AsyncCallback
+        isExternal: true
+    - id: state
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+    return:
+      id: IAsyncResult
+      type:
+        id: System.IAsyncResult
+        name: IAsyncResult
+        isExternal: true
+  id: System.Web.Mvc.MvcHandler.BeginProcessRequest(System.Web.HttpContext,System.AsyncCallback,System.Object)
+- uid: System.Web.Mvc.MvcHandler.BeginProcessRequest(System.Web.HttpContextBase,System.AsyncCallback,System.Object)
+  href: System.Web.Mvc.MvcHandler.yml
+  name: BeginProcessRequest(HttpContextBase, AsyncCallback, object)
+  fullName: System.Web.Mvc.MvcHandler.BeginProcessRequest(System.Web.HttpContextBase, System.AsyncCallback, object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/MvcHandler.cs
+    startLine: 69
+  syntax:
+    content:
+      CSharp: protected internal virtual IAsyncResult BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, object state)
+    parameters:
+    - id: httpContext
+      type:
+        id: System.Web.HttpContextBase
+        name: HttpContextBase
+        isExternal: true
+    - id: callback
+      type:
+        id: System.AsyncCallback
+        name: AsyncCallback
+        isExternal: true
+    - id: state
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+    return:
+      id: IAsyncResult
+      type:
+        id: System.IAsyncResult
+        name: IAsyncResult
+        isExternal: true
+  id: System.Web.Mvc.MvcHandler.BeginProcessRequest(System.Web.HttpContextBase,System.AsyncCallback,System.Object)
+- uid: System.Web.Mvc.MvcHandler.EndProcessRequest(System.IAsyncResult)
+  href: System.Web.Mvc.MvcHandler.yml
+  name: EndProcessRequest(IAsyncResult)
+  fullName: System.Web.Mvc.MvcHandler.EndProcessRequest(System.IAsyncResult)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/MvcHandler.cs
+    startLine: 132
+  syntax:
+    content:
+      CSharp: protected internal virtual void EndProcessRequest(IAsyncResult asyncResult)
+    parameters:
+    - id: asyncResult
+      type:
+        id: System.IAsyncResult
+        name: IAsyncResult
+        isExternal: true
+  id: System.Web.Mvc.MvcHandler.EndProcessRequest(System.IAsyncResult)
+- uid: System.Web.Mvc.MvcHandler.ProcessRequest(System.Web.HttpContext)
+  href: System.Web.Mvc.MvcHandler.yml
+  name: ProcessRequest(HttpContext)
+  fullName: System.Web.Mvc.MvcHandler.ProcessRequest(System.Web.HttpContext)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/MvcHandler.cs
+    startLine: 145
+  syntax:
+    content:
+      CSharp: protected virtual void ProcessRequest(HttpContext httpContext)
+    parameters:
+    - id: httpContext
+      type:
+        id: System.Web.HttpContext
+        name: HttpContext
+        isExternal: true
+  id: System.Web.Mvc.MvcHandler.ProcessRequest(System.Web.HttpContext)
+- uid: System.Web.Mvc.MvcHandler.ProcessRequest(System.Web.HttpContextBase)
+  href: System.Web.Mvc.MvcHandler.yml
+  name: ProcessRequest(HttpContextBase)
+  fullName: System.Web.Mvc.MvcHandler.ProcessRequest(System.Web.HttpContextBase)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/MvcHandler.cs
+    startLine: 151
+  syntax:
+    content:
+      CSharp: protected internal virtual void ProcessRequest(HttpContextBase httpContext)
+    parameters:
+    - id: httpContext
+      type:
+        id: System.Web.HttpContextBase
+        name: HttpContextBase
+        isExternal: true
+  id: System.Web.Mvc.MvcHandler.ProcessRequest(System.Web.HttpContextBase)
+- uid: System.Web.Mvc.MvcHandler.System#Web#IHttpHandler#IsReusable
+  href: System.Web.Mvc.MvcHandler.yml
+  name: IHttpHandler.IsReusable
+  fullName: System.Web.Mvc.MvcHandler.System.Web.IHttpHandler.IsReusable
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/MvcHandler.cs
+    startLine: 212
+  syntax:
+    content:
+      CSharp: bool IHttpHandler.IsReusable { get; }
+    parameters:
+    - id: System.Web.IHttpHandler.IsReusable
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Web.Mvc.MvcHandler.System#Web#IHttpHandler#IsReusable
+- uid: System.Web.Mvc.MvcHandler.System#Web#IHttpHandler#ProcessRequest(System.Web.HttpContext)
+  href: System.Web.Mvc.MvcHandler.yml
+  name: IHttpHandler.ProcessRequest(HttpContext)
+  fullName: System.Web.Mvc.MvcHandler.System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/MvcHandler.cs
+    startLine: 217
+  syntax:
+    content:
+      CSharp: void IHttpHandler.ProcessRequest(HttpContext httpContext)
+    parameters:
+    - id: httpContext
+      type:
+        id: System.Web.HttpContext
+        name: HttpContext
+        isExternal: true
+  id: System.Web.Mvc.MvcHandler.System#Web#IHttpHandler#ProcessRequest(System.Web.HttpContext)
+- uid: System.Web.Mvc.MvcHandler.System#Web#IHttpAsyncHandler#BeginProcessRequest(System.Web.HttpContext,System.AsyncCallback,System.Object)
+  href: System.Web.Mvc.MvcHandler.yml
+  name: IHttpAsyncHandler.BeginProcessRequest(HttpContext, AsyncCallback, object)
+  fullName: System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.BeginProcessRequest(System.Web.HttpContext, System.AsyncCallback, object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/MvcHandler.cs
+    startLine: 226
+  syntax:
+    content:
+      CSharp: IAsyncResult IHttpAsyncHandler.BeginProcessRequest(HttpContext context, AsyncCallback cb, object extraData)
+    parameters:
+    - id: context
+      type:
+        id: System.Web.HttpContext
+        name: HttpContext
+        isExternal: true
+    - id: cb
+      type:
+        id: System.AsyncCallback
+        name: AsyncCallback
+        isExternal: true
+    - id: extraData
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+    return:
+      id: IAsyncResult
+      type:
+        id: System.IAsyncResult
+        name: IAsyncResult
+        isExternal: true
+  id: System.Web.Mvc.MvcHandler.System#Web#IHttpAsyncHandler#BeginProcessRequest(System.Web.HttpContext,System.AsyncCallback,System.Object)
+- uid: System.Web.Mvc.MvcHandler.System#Web#IHttpAsyncHandler#EndProcessRequest(System.IAsyncResult)
+  href: System.Web.Mvc.MvcHandler.yml
+  name: IHttpAsyncHandler.EndProcessRequest(IAsyncResult)
+  fullName: System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(System.IAsyncResult)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/MvcHandler.cs
+    startLine: 231
+  syntax:
+    content:
+      CSharp: void IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+    parameters:
+    - id: result
+      type:
+        id: System.IAsyncResult
+        name: IAsyncResult
+        isExternal: true
+  id: System.Web.Mvc.MvcHandler.System#Web#IHttpAsyncHandler#EndProcessRequest(System.IAsyncResult)

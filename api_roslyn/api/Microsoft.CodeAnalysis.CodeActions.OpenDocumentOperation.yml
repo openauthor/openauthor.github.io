@@ -6,18 +6,19 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/CodeActions/Operations/OpenDocumentOperation.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/CodeActions/Operations/OpenDocumentOperation.cs
     startLine: 10
   summary: A code action operation for requesting a document be opened in the host environment.
   syntax:
     content:
-      CSharp: public sealed class OpenDocumentOperation
+      CSharp: 'public sealed class OpenDocumentOperation : CodeActionOperation'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: Microsoft.CodeAnalysis.CodeActions.CodeActionOperation
     name: CodeActionOperation
@@ -48,7 +49,7 @@ items:
     - id: activateIfAlreadyOpen
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.CodeActions.OpenDocumentOperation.#ctor(Microsoft.CodeAnalysis.DocumentId,System.Boolean)
 - uid: Microsoft.CodeAnalysis.CodeActions.OpenDocumentOperation.DocumentId
@@ -91,6 +92,6 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
   id: Microsoft.CodeAnalysis.CodeActions.OpenDocumentOperation.Apply(Microsoft.CodeAnalysis.Workspace,System.Threading.CancellationToken)

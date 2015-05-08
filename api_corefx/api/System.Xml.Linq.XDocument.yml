@@ -6,14 +6,16 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Xml.XDocument/src/System/Xml/Linq/XDocument.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XDocument.cs
     startLine: 24
   summary: Represents an XML document.
   syntax:
     content:
-      CSharp: public class XDocument
+      CSharp: 'public class XDocument : XContainer'
   inheritance:
   - id: IXmlLineInfo
     name: IXmlLineInfo
@@ -39,18 +41,18 @@ items:
   - System.Xml.Linq.XDocument.Root
   - System.Xml.Linq.XDocument.Load(System.String)
   - System.Xml.Linq.XDocument.Load(System.String,System.Xml.Linq.LoadOptions)
-  - System.Xml.Linq.XDocument.Load(Stream)
-  - System.Xml.Linq.XDocument.Load(Stream,System.Xml.Linq.LoadOptions)
-  - System.Xml.Linq.XDocument.Load(TextReader)
-  - System.Xml.Linq.XDocument.Load(TextReader,System.Xml.Linq.LoadOptions)
+  - System.Xml.Linq.XDocument.Load(System.IO.Stream)
+  - System.Xml.Linq.XDocument.Load(System.IO.Stream,System.Xml.Linq.LoadOptions)
+  - System.Xml.Linq.XDocument.Load(System.IO.TextReader)
+  - System.Xml.Linq.XDocument.Load(System.IO.TextReader,System.Xml.Linq.LoadOptions)
   - System.Xml.Linq.XDocument.Load(XmlReader)
   - System.Xml.Linq.XDocument.Load(XmlReader,System.Xml.Linq.LoadOptions)
   - System.Xml.Linq.XDocument.Parse(System.String)
   - System.Xml.Linq.XDocument.Parse(System.String,System.Xml.Linq.LoadOptions)
-  - System.Xml.Linq.XDocument.Save(Stream)
-  - System.Xml.Linq.XDocument.Save(Stream,System.Xml.Linq.SaveOptions)
-  - System.Xml.Linq.XDocument.Save(TextWriter)
-  - System.Xml.Linq.XDocument.Save(TextWriter,System.Xml.Linq.SaveOptions)
+  - System.Xml.Linq.XDocument.Save(System.IO.Stream)
+  - System.Xml.Linq.XDocument.Save(System.IO.Stream,System.Xml.Linq.SaveOptions)
+  - System.Xml.Linq.XDocument.Save(System.IO.TextWriter)
+  - System.Xml.Linq.XDocument.Save(System.IO.TextWriter,System.Xml.Linq.SaveOptions)
   - System.Xml.Linq.XDocument.Save(XmlWriter)
   - System.Xml.Linq.XDocument.WriteTo(XmlWriter)
 - uid: System.Xml.Linq.XDocument.#ctor
@@ -85,7 +87,7 @@ items:
     - id: content
       type:
         id: System.Array
-        name: System.Array
+        name: object[]
         isExternal: true
       description: A parameter list of content objects to add to this document.
   id: System.Xml.Linq.XDocument.#ctor(System.Object[])
@@ -115,7 +117,7 @@ items:
     - id: content
       type:
         id: System.Array
-        name: System.Array
+        name: object[]
         isExternal: true
       description: The contents of the document.
   id: System.Xml.Linq.XDocument.#ctor(System.Xml.Linq.XDeclaration,System.Object[])
@@ -244,16 +246,20 @@ items:
     @!:XmlReader.Create(string)-[System.Xml.Linq.XDocument.Parse(System.String)](System.Xml.Linq.XDocument.yml)
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", MessageId = "0#", Justification = "Back-compat with System.Xml.")] public static XDocument Load(string uri)'
+      CSharp: public static XDocument Load(string uri)
     parameters:
     - id: uri
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: A URI string referencing the file to load into a new [System.Xml.Linq.XDocument](System.Xml.Linq.XDocument.yml).
     return:
       id: XDocument
+      type:
+        id: System.Xml.Linq.XDocument
+        name: XDocument
+        href: System.Xml.Linq.XDocument.yml
       description: >-
         An [System.Xml.Linq.XDocument](System.Xml.Linq.XDocument.yml) initialized with the contents of the file referenced
 
@@ -276,12 +282,12 @@ items:
     @!:XmlReader.Create(string)-
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", MessageId = "0#", Justification = "Back-compat with System.Xml.")] public static XDocument Load(string uri, LoadOptions options)'
+      CSharp: public static XDocument Load(string uri, LoadOptions options)
     parameters:
     - id: uri
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: A string representing the URI of the file to be loaded into a new [System.Xml.Linq.XDocument](System.Xml.Linq.XDocument.yml).
     - id: options
@@ -292,6 +298,10 @@ items:
       description: A set of [System.Xml.Linq.LoadOptions](System.Xml.Linq.LoadOptions.yml).
     return:
       id: XDocument
+      type:
+        id: System.Xml.Linq.XDocument
+        name: XDocument
+        href: System.Xml.Linq.XDocument.yml
       description: >-
         An [System.Xml.Linq.XDocument](System.Xml.Linq.XDocument.yml) initialized with the contents of the file referenced
 
@@ -299,10 +309,10 @@ items:
 
         all whitespace will be preserved.
   id: System.Xml.Linq.XDocument.Load(System.String,System.Xml.Linq.LoadOptions)
-- uid: System.Xml.Linq.XDocument.Load(Stream)
+- uid: System.Xml.Linq.XDocument.Load(System.IO.Stream)
   href: System.Xml.Linq.XDocument.yml
   name: Load(Stream)
-  fullName: System.Xml.Linq.XDocument.Load(Stream)
+  fullName: System.Xml.Linq.XDocument.Load(System.IO.Stream)
   type: Method
   source:
     remote: *o0
@@ -311,31 +321,35 @@ items:
   summary: >-
     Create a new [System.Xml.Linq.XDocument](System.Xml.Linq.XDocument.yml) and initialize its underlying XML tree using
 
-    the passed @!:Stream- parameter.
+    the passed [System.IO.Stream]() parameter.
   syntax:
     content:
       CSharp: public static XDocument Load(Stream stream)
     parameters:
     - id: stream
       type:
-        id: Stream
+        id: System.IO.Stream
         name: Stream
         isExternal: true
       description: >-
-        A @!:Stream- containing the raw XML to read into the newly
+        A [System.IO.Stream]() containing the raw XML to read into the newly
 
         created [System.Xml.Linq.XDocument](System.Xml.Linq.XDocument.yml).
     return:
       id: XDocument
+      type:
+        id: System.Xml.Linq.XDocument
+        name: XDocument
+        href: System.Xml.Linq.XDocument.yml
       description: >-
         A new [System.Xml.Linq.XDocument](System.Xml.Linq.XDocument.yml) containing the contents of the passed in
 
-        @!:Stream-.
-  id: System.Xml.Linq.XDocument.Load(Stream)
-- uid: System.Xml.Linq.XDocument.Load(Stream,System.Xml.Linq.LoadOptions)
+        [System.IO.Stream]().
+  id: System.Xml.Linq.XDocument.Load(System.IO.Stream)
+- uid: System.Xml.Linq.XDocument.Load(System.IO.Stream,System.Xml.Linq.LoadOptions)
   href: System.Xml.Linq.XDocument.yml
   name: Load(Stream, LoadOptions)
-  fullName: System.Xml.Linq.XDocument.Load(Stream, System.Xml.Linq.LoadOptions)
+  fullName: System.Xml.Linq.XDocument.Load(System.IO.Stream, System.Xml.Linq.LoadOptions)
   type: Method
   source:
     remote: *o0
@@ -344,7 +358,7 @@ items:
   summary: >-
     Create a new [System.Xml.Linq.XDocument](System.Xml.Linq.XDocument.yml) and initialize its underlying XML tree using
 
-    the passed @!:Stream- parameter.  Optionally whitespace handling
+    the passed [System.IO.Stream]() parameter.  Optionally whitespace handling
 
     can be preserved.
   syntax:
@@ -353,11 +367,11 @@ items:
     parameters:
     - id: stream
       type:
-        id: Stream
+        id: System.IO.Stream
         name: Stream
         isExternal: true
       description: >-
-        A @!:Stream- containing the raw XML to read into the newly
+        A [System.IO.Stream]() containing the raw XML to read into the newly
 
         created [System.Xml.Linq.XDocument](System.Xml.Linq.XDocument.yml).
     - id: options
@@ -368,15 +382,19 @@ items:
       description: A set of [System.Xml.Linq.LoadOptions](System.Xml.Linq.LoadOptions.yml).
     return:
       id: XDocument
+      type:
+        id: System.Xml.Linq.XDocument
+        name: XDocument
+        href: System.Xml.Linq.XDocument.yml
       description: >-
         A new [System.Xml.Linq.XDocument](System.Xml.Linq.XDocument.yml) containing the contents of the passed in
 
-        @!:Stream-.
-  id: System.Xml.Linq.XDocument.Load(Stream,System.Xml.Linq.LoadOptions)
-- uid: System.Xml.Linq.XDocument.Load(TextReader)
+        [System.IO.Stream]().
+  id: System.Xml.Linq.XDocument.Load(System.IO.Stream,System.Xml.Linq.LoadOptions)
+- uid: System.Xml.Linq.XDocument.Load(System.IO.TextReader)
   href: System.Xml.Linq.XDocument.yml
   name: Load(TextReader)
-  fullName: System.Xml.Linq.XDocument.Load(TextReader)
+  fullName: System.Xml.Linq.XDocument.Load(System.IO.TextReader)
   type: Method
   source:
     remote: *o0
@@ -385,31 +403,35 @@ items:
   summary: >-
     Create a new [System.Xml.Linq.XDocument](System.Xml.Linq.XDocument.yml) and initialize its underlying XML tree using
 
-    the passed @!:TextReader- parameter.
+    the passed [System.IO.TextReader]() parameter.
   syntax:
     content:
       CSharp: public static XDocument Load(TextReader textReader)
     parameters:
     - id: textReader
       type:
-        id: TextReader
+        id: System.IO.TextReader
         name: TextReader
         isExternal: true
       description: >-
-        A @!:TextReader- containing the raw XML to read into the newly
+        A [System.IO.TextReader]() containing the raw XML to read into the newly
 
         created [System.Xml.Linq.XDocument](System.Xml.Linq.XDocument.yml).
     return:
       id: XDocument
+      type:
+        id: System.Xml.Linq.XDocument
+        name: XDocument
+        href: System.Xml.Linq.XDocument.yml
       description: >-
         A new [System.Xml.Linq.XDocument](System.Xml.Linq.XDocument.yml) containing the contents of the passed in
 
-        @!:TextReader-.
-  id: System.Xml.Linq.XDocument.Load(TextReader)
-- uid: System.Xml.Linq.XDocument.Load(TextReader,System.Xml.Linq.LoadOptions)
+        [System.IO.TextReader]().
+  id: System.Xml.Linq.XDocument.Load(System.IO.TextReader)
+- uid: System.Xml.Linq.XDocument.Load(System.IO.TextReader,System.Xml.Linq.LoadOptions)
   href: System.Xml.Linq.XDocument.yml
   name: Load(TextReader, LoadOptions)
-  fullName: System.Xml.Linq.XDocument.Load(TextReader, System.Xml.Linq.LoadOptions)
+  fullName: System.Xml.Linq.XDocument.Load(System.IO.TextReader, System.Xml.Linq.LoadOptions)
   type: Method
   source:
     remote: *o0
@@ -418,7 +440,7 @@ items:
   summary: >-
     Create a new [System.Xml.Linq.XDocument](System.Xml.Linq.XDocument.yml) and initialize its underlying XML tree using
 
-    the passed @!:TextReader- parameter.  Optionally whitespace handling
+    the passed [System.IO.TextReader]() parameter.  Optionally whitespace handling
 
     can be preserved.
   syntax:
@@ -427,11 +449,11 @@ items:
     parameters:
     - id: textReader
       type:
-        id: TextReader
+        id: System.IO.TextReader
         name: TextReader
         isExternal: true
       description: >-
-        A @!:TextReader- containing the raw XML to read into the newly
+        A [System.IO.TextReader]() containing the raw XML to read into the newly
 
         created [System.Xml.Linq.XDocument](System.Xml.Linq.XDocument.yml).
     - id: options
@@ -442,11 +464,15 @@ items:
       description: A set of [System.Xml.Linq.LoadOptions](System.Xml.Linq.LoadOptions.yml).
     return:
       id: XDocument
+      type:
+        id: System.Xml.Linq.XDocument
+        name: XDocument
+        href: System.Xml.Linq.XDocument.yml
       description: >-
         A new [System.Xml.Linq.XDocument](System.Xml.Linq.XDocument.yml) containing the contents of the passed in
 
-        @!:TextReader-.
-  id: System.Xml.Linq.XDocument.Load(TextReader,System.Xml.Linq.LoadOptions)
+        [System.IO.TextReader]().
+  id: System.Xml.Linq.XDocument.Load(System.IO.TextReader,System.Xml.Linq.LoadOptions)
 - uid: System.Xml.Linq.XDocument.Load(XmlReader)
   href: System.Xml.Linq.XDocument.yml
   name: Load(XmlReader)
@@ -475,6 +501,10 @@ items:
         [System.Xml.Linq.XDocument](System.Xml.Linq.XDocument.yml).
     return:
       id: XDocument
+      type:
+        id: System.Xml.Linq.XDocument
+        name: XDocument
+        href: System.Xml.Linq.XDocument.yml
       description: >-
         A new [System.Xml.Linq.XDocument](System.Xml.Linq.XDocument.yml) containing the contents of the passed
 
@@ -514,6 +544,10 @@ items:
       description: A set of [System.Xml.Linq.LoadOptions](System.Xml.Linq.LoadOptions.yml).
     return:
       id: XDocument
+      type:
+        id: System.Xml.Linq.XDocument
+        name: XDocument
+        href: System.Xml.Linq.XDocument.yml
       description: >-
         A new [System.Xml.Linq.XDocument](System.Xml.Linq.XDocument.yml) containing the contents of the passed
 
@@ -539,11 +573,15 @@ items:
     - id: text
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: A string containing XML.
     return:
       id: XDocument
+      type:
+        id: System.Xml.Linq.XDocument
+        name: XDocument
+        href: System.Xml.Linq.XDocument.yml
       description: >-
         An [System.Xml.Linq.XDocument](System.Xml.Linq.XDocument.yml) containing an XML tree initialized from the
 
@@ -569,7 +607,7 @@ items:
     - id: text
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: A string containing XML.
     - id: options
@@ -580,52 +618,56 @@ items:
       description: A set of [System.Xml.Linq.LoadOptions](System.Xml.Linq.LoadOptions.yml).
     return:
       id: XDocument
+      type:
+        id: System.Xml.Linq.XDocument
+        name: XDocument
+        href: System.Xml.Linq.XDocument.yml
       description: >-
         An [System.Xml.Linq.XDocument](System.Xml.Linq.XDocument.yml) containing an XML tree initialized from the
 
         passed in XML string.
   id: System.Xml.Linq.XDocument.Parse(System.String,System.Xml.Linq.LoadOptions)
-- uid: System.Xml.Linq.XDocument.Save(Stream)
+- uid: System.Xml.Linq.XDocument.Save(System.IO.Stream)
   href: System.Xml.Linq.XDocument.yml
   name: Save(Stream)
-  fullName: System.Xml.Linq.XDocument.Save(Stream)
+  fullName: System.Xml.Linq.XDocument.Save(System.IO.Stream)
   type: Method
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XDocument.cs
     startLine: 447
-  summary: Output this [System.Xml.Linq.XDocument](System.Xml.Linq.XDocument.yml) to the passed in @!:Stream-.
+  summary: Output this [System.Xml.Linq.XDocument](System.Xml.Linq.XDocument.yml) to the passed in [System.IO.Stream]().
   syntax:
     content:
       CSharp: public void Save(Stream stream)
     parameters:
     - id: stream
       type:
-        id: Stream
+        id: System.IO.Stream
         name: Stream
         isExternal: true
-      description: The @!:Stream- to output this [System.Xml.Linq.XDocument](System.Xml.Linq.XDocument.yml) to.
-  id: System.Xml.Linq.XDocument.Save(Stream)
-- uid: System.Xml.Linq.XDocument.Save(Stream,System.Xml.Linq.SaveOptions)
+      description: The [System.IO.Stream]() to output this [System.Xml.Linq.XDocument](System.Xml.Linq.XDocument.yml) to.
+  id: System.Xml.Linq.XDocument.Save(System.IO.Stream)
+- uid: System.Xml.Linq.XDocument.Save(System.IO.Stream,System.Xml.Linq.SaveOptions)
   href: System.Xml.Linq.XDocument.yml
   name: Save(Stream, SaveOptions)
-  fullName: System.Xml.Linq.XDocument.Save(Stream, System.Xml.Linq.SaveOptions)
+  fullName: System.Xml.Linq.XDocument.Save(System.IO.Stream, System.Xml.Linq.SaveOptions)
   type: Method
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XDocument.cs
     startLine: 462
-  summary: Output this [System.Xml.Linq.XDocument](System.Xml.Linq.XDocument.yml) to a @!:Stream-.
+  summary: Output this [System.Xml.Linq.XDocument](System.Xml.Linq.XDocument.yml) to a [System.IO.Stream]().
   syntax:
     content:
       CSharp: public void Save(Stream stream, SaveOptions options)
     parameters:
     - id: stream
       type:
-        id: Stream
+        id: System.IO.Stream
         name: Stream
         isExternal: true
-      description: The @!:Stream- to output the XML to.
+      description: The [System.IO.Stream]() to output the XML to.
     - id: options
       type:
         id: System.Xml.Linq.SaveOptions
@@ -635,48 +677,48 @@ items:
         If SaveOptions.DisableFormatting is enabled the output is not indented.
 
         If SaveOptions.OmitDuplicateNamespaces is enabled duplicate namespace declarations will be removed.
-  id: System.Xml.Linq.XDocument.Save(Stream,System.Xml.Linq.SaveOptions)
-- uid: System.Xml.Linq.XDocument.Save(TextWriter)
+  id: System.Xml.Linq.XDocument.Save(System.IO.Stream,System.Xml.Linq.SaveOptions)
+- uid: System.Xml.Linq.XDocument.Save(System.IO.TextWriter)
   href: System.Xml.Linq.XDocument.yml
   name: Save(TextWriter)
-  fullName: System.Xml.Linq.XDocument.Save(TextWriter)
+  fullName: System.Xml.Linq.XDocument.Save(System.IO.TextWriter)
   type: Method
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XDocument.cs
     startLine: 495
-  summary: Output this [System.Xml.Linq.XDocument](System.Xml.Linq.XDocument.yml) to the passed in @!:TextWriter-.
+  summary: Output this [System.Xml.Linq.XDocument](System.Xml.Linq.XDocument.yml) to the passed in [System.IO.TextWriter]().
   syntax:
     content:
       CSharp: public void Save(TextWriter textWriter)
     parameters:
     - id: textWriter
       type:
-        id: TextWriter
+        id: System.IO.TextWriter
         name: TextWriter
         isExternal: true
-      description: The @!:TextWriter- to output this [System.Xml.Linq.XDocument](System.Xml.Linq.XDocument.yml) to.
-  id: System.Xml.Linq.XDocument.Save(TextWriter)
-- uid: System.Xml.Linq.XDocument.Save(TextWriter,System.Xml.Linq.SaveOptions)
+      description: The [System.IO.TextWriter]() to output this [System.Xml.Linq.XDocument](System.Xml.Linq.XDocument.yml) to.
+  id: System.Xml.Linq.XDocument.Save(System.IO.TextWriter)
+- uid: System.Xml.Linq.XDocument.Save(System.IO.TextWriter,System.Xml.Linq.SaveOptions)
   href: System.Xml.Linq.XDocument.yml
   name: Save(TextWriter, SaveOptions)
-  fullName: System.Xml.Linq.XDocument.Save(TextWriter, System.Xml.Linq.SaveOptions)
+  fullName: System.Xml.Linq.XDocument.Save(System.IO.TextWriter, System.Xml.Linq.SaveOptions)
   type: Method
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XDocument.cs
     startLine: 510
-  summary: Output this [System.Xml.Linq.XDocument](System.Xml.Linq.XDocument.yml) to a @!:TextWriter-.
+  summary: Output this [System.Xml.Linq.XDocument](System.Xml.Linq.XDocument.yml) to a [System.IO.TextWriter]().
   syntax:
     content:
       CSharp: public void Save(TextWriter textWriter, SaveOptions options)
     parameters:
     - id: textWriter
       type:
-        id: TextWriter
+        id: System.IO.TextWriter
         name: TextWriter
         isExternal: true
-      description: The @!:TextWriter- to output the XML to.
+      description: The [System.IO.TextWriter]() to output the XML to.
     - id: options
       type:
         id: System.Xml.Linq.SaveOptions
@@ -686,7 +728,7 @@ items:
         If SaveOptions.DisableFormatting is enabled the output is not indented.
 
         If SaveOptions.OmitDuplicateNamespaces is enabled duplicate namespace declarations will be removed.
-  id: System.Xml.Linq.XDocument.Save(TextWriter,System.Xml.Linq.SaveOptions)
+  id: System.Xml.Linq.XDocument.Save(System.IO.TextWriter,System.Xml.Linq.SaveOptions)
 - uid: System.Xml.Linq.XDocument.Save(XmlWriter)
   href: System.Xml.Linq.XDocument.yml
   name: Save(XmlWriter)

@@ -6,23 +6,26 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/OrderablePartitioner.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/OrderablePartitioner.cs
     startLine: 60
   summary: Represents a particular manner of splitting an orderable data source into multiple partitions.
   syntax:
     content:
-      CSharp: public abstract class OrderablePartitioner<TSource>
+      CSharp: 'public abstract class OrderablePartitioner<TSource> : Partitioner<TSource>'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Collections.Concurrent.Partitioner{`0}
-    name: Partitioner
+    name: Partitioner<TSource>
     href: System.Collections.Concurrent.Partitioner{`0}
   id: System.Collections.Concurrent.OrderablePartitioner`1
   children:
+  - System.Collections.Concurrent.OrderablePartitioner`1.#ctor(System.Boolean,System.Boolean,System.Boolean)
   - System.Collections.Concurrent.OrderablePartitioner`1.GetOrderablePartitions(System.Int32)
   - System.Collections.Concurrent.OrderablePartitioner`1.GetOrderableDynamicPartitions
   - System.Collections.Concurrent.OrderablePartitioner`1.KeysOrderedInEachPartition
@@ -30,6 +33,57 @@ items:
   - System.Collections.Concurrent.OrderablePartitioner`1.KeysNormalized
   - System.Collections.Concurrent.OrderablePartitioner`1.GetPartitions(System.Int32)
   - System.Collections.Concurrent.OrderablePartitioner`1.GetDynamicPartitions
+- uid: System.Collections.Concurrent.OrderablePartitioner`1.#ctor(System.Boolean,System.Boolean,System.Boolean)
+  href: System.Collections.Concurrent.OrderablePartitioner`1.yml
+  name: OrderablePartitioner(bool, bool, bool)
+  fullName: System.Collections.Concurrent.OrderablePartitioner<TSource>.OrderablePartitioner(bool, bool, bool)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/OrderablePartitioner.cs
+    startLine: 81
+  summary: >-
+    Initializes a new instance of the [System.Collections.Concurrent.OrderablePartitioner`1](System.Collections.Concurrent.OrderablePartitioner`1.yml) class with the
+
+    specified constraints on the index keys.
+  syntax:
+    content:
+      CSharp: protected OrderablePartitioner(bool keysOrderedInEachPartition, bool keysOrderedAcrossPartitions, bool keysNormalized)
+    parameters:
+    - id: keysOrderedInEachPartition
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: >-
+        Indicates whether the elements in each partition are yielded in the order of
+
+        increasing keys.
+    - id: keysOrderedAcrossPartitions
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: >-
+        Indicates whether elements in an earlier partition always come before
+
+        elements in a later partition. If true, each element in partition 0 has a smaller order key than
+
+        any element in partition 1, each element in partition 1 has a smaller order key than any element
+
+        in partition 2, and so on.
+    - id: keysNormalized
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: >-
+        Indicates whether keys are normalized. If true, all order keys are distinct
+
+        integers in the range [0 .. numberOfElements-1]. If false, order keys must still be distinct, but
+
+        only their relative order is considered, not their absolute values.
+  id: System.Collections.Concurrent.OrderablePartitioner`1.#ctor(System.Boolean,System.Boolean,System.Boolean)
 - uid: System.Collections.Concurrent.OrderablePartitioner`1.GetOrderablePartitions(System.Int32)
   href: System.Collections.Concurrent.OrderablePartitioner`1.yml
   name: GetOrderablePartitions(int)
@@ -42,16 +96,20 @@ items:
   summary: Partitions the underlying collection into the specified number of orderable partitions.
   syntax:
     content:
-      CSharp: public abstract IList<IEnumerator<KeyValuePair<long, TSource>>> GetOrderablePartitions(int partitionCount);
+      CSharp: public abstract IList<IEnumerator<KeyValuePair<long, TSource>>> GetOrderablePartitions(int partitionCount)
     parameters:
     - id: partitionCount
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The number of partitions to create.
     return:
       id: IList
+      type:
+        id: System.Collections.Generic.IList{System.Collections.Generic.IEnumerator{System.Collections.Generic.KeyValuePair{System.Int64,`0}}}
+        name: IList<IEnumerator<KeyValuePair<long, TSource>>>
+        isExternal: true
       description: A list containing  enumerators.
   id: System.Collections.Concurrent.OrderablePartitioner`1.GetOrderablePartitions(System.Int32)
 - uid: System.Collections.Concurrent.OrderablePartitioner`1.GetOrderableDynamicPartitions
@@ -73,6 +131,10 @@ items:
     parameters: []
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.Int64,`0}}
+        name: IEnumerable<KeyValuePair<long, TSource>>
+        isExternal: true
       description: An object that can create partitions over the underlying data source.
   id: System.Collections.Concurrent.OrderablePartitioner`1.GetOrderableDynamicPartitions
 - uid: System.Collections.Concurrent.OrderablePartitioner`1.KeysOrderedInEachPartition
@@ -87,12 +149,12 @@ items:
   summary: Gets whether elements in each partition are yielded in the order of increasing keys.
   syntax:
     content:
-      CSharp: public bool KeysOrderedInEachPartition { get; private set; }
+      CSharp: public bool KeysOrderedInEachPartition { get; }
     parameters:
     - id: KeysOrderedInEachPartition
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Collections.Concurrent.OrderablePartitioner`1.KeysOrderedInEachPartition
 - uid: System.Collections.Concurrent.OrderablePartitioner`1.KeysOrderedAcrossPartitions
@@ -107,12 +169,12 @@ items:
   summary: Gets whether elements in an earlier partition always come before elements in a later partition.
   syntax:
     content:
-      CSharp: public bool KeysOrderedAcrossPartitions { get; private set; }
+      CSharp: public bool KeysOrderedAcrossPartitions { get; }
     parameters:
     - id: KeysOrderedAcrossPartitions
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Collections.Concurrent.OrderablePartitioner`1.KeysOrderedAcrossPartitions
 - uid: System.Collections.Concurrent.OrderablePartitioner`1.KeysNormalized
@@ -127,12 +189,12 @@ items:
   summary: Gets whether order keys are normalized.
   syntax:
     content:
-      CSharp: public bool KeysNormalized { get; private set; }
+      CSharp: public bool KeysNormalized { get; }
     parameters:
     - id: KeysNormalized
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Collections.Concurrent.OrderablePartitioner`1.KeysNormalized
 - uid: System.Collections.Concurrent.OrderablePartitioner`1.GetPartitions(System.Int32)
@@ -152,11 +214,15 @@ items:
     - id: partitionCount
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The number of partitions to create.
     return:
       id: IList
+      type:
+        id: System.Collections.Generic.IList{System.Collections.Generic.IEnumerator{`0}}
+        name: IList<IEnumerator<TSource>>
+        isExternal: true
       description: A list containing  enumerators.
   id: System.Collections.Concurrent.OrderablePartitioner`1.GetPartitions(System.Int32)
 - uid: System.Collections.Concurrent.OrderablePartitioner`1.GetDynamicPartitions
@@ -178,5 +244,9 @@ items:
     parameters: []
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{`0}
+        name: IEnumerable<TSource>
+        isExternal: true
       description: An object that can create partitions over the underlying data source.
   id: System.Collections.Concurrent.OrderablePartitioner`1.GetDynamicPartitions

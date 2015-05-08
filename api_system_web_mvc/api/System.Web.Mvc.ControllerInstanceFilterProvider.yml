@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/ControllerInstanceFilterProvider.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/ControllerInstanceFilterProvider.cs
     startLine: 6
   syntax:
     content:
-      CSharp: public class ControllerInstanceFilterProvider
+      CSharp: 'public class ControllerInstanceFilterProvider : IFilterProvider'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.ControllerInstanceFilterProvider
   children:
@@ -46,4 +47,8 @@ items:
         href: System.Web.Mvc.ActionDescriptor.yml
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Web.Mvc.Filter}
+        name: IEnumerable<Filter>
+        isExternal: true
   id: System.Web.Mvc.ControllerInstanceFilterProvider.GetFilters(System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionDescriptor)

@@ -6,8 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.ObjectModel/src/System/Collections/Specialized/NotifyCollectionChangedEventArgs.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.ObjectModel/src/System/Collections/Specialized/NotifyCollectionChangedEventArgs.cs
     startLine: 34
   summary: >-
@@ -20,9 +22,12 @@ items:
     changes dramatically.
   syntax:
     content:
-      CSharp: public class NotifyCollectionChangedEventArgs
+      CSharp: 'public class NotifyCollectionChangedEventArgs : EventArgs'
   inheritance:
-  - id: EventArgs
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.EventArgs
     name: EventArgs
     isExternal: true
   id: System.Collections.Specialized.NotifyCollectionChangedEventArgs
@@ -30,14 +35,14 @@ items:
   - System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction)
   - System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Object)
   - System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Object,System.Int32)
-  - System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,IList)
-  - System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,IList,System.Int32)
+  - System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Collections.IList)
+  - System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Collections.IList,System.Int32)
   - System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Object,System.Object)
   - System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Object,System.Object,System.Int32)
-  - System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,IList,IList)
-  - System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,IList,IList,System.Int32)
+  - System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Collections.IList,System.Collections.IList)
+  - System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Collections.IList,System.Collections.IList,System.Int32)
   - System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Object,System.Int32,System.Int32)
-  - System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,IList,System.Int32,System.Int32)
+  - System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Collections.IList,System.Int32,System.Int32)
   - System.Collections.Specialized.NotifyCollectionChangedEventArgs.Action
   - System.Collections.Specialized.NotifyCollectionChangedEventArgs.NewItems
   - System.Collections.Specialized.NotifyCollectionChangedEventArgs.OldItems
@@ -87,7 +92,7 @@ items:
     - id: changedItem
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: The item affected by the change.
   id: System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Object)
@@ -114,20 +119,20 @@ items:
     - id: changedItem
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: The item affected by the change.
     - id: index
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The index where the change occurred.
   id: System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Object,System.Int32)
-- uid: System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,IList)
+- uid: System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Collections.IList)
   href: System.Collections.Specialized.NotifyCollectionChangedEventArgs.yml
   name: NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction, IList)
-  fullName: System.Collections.Specialized.NotifyCollectionChangedEventArgs.NotifyCollectionChangedEventArgs(System.Collections.Specialized.NotifyCollectionChangedAction, IList)
+  fullName: System.Collections.Specialized.NotifyCollectionChangedEventArgs.NotifyCollectionChangedEventArgs(System.Collections.Specialized.NotifyCollectionChangedAction, System.Collections.IList)
   type: Constructor
   source:
     remote: *o0
@@ -146,15 +151,15 @@ items:
       description: The action that caused the event.
     - id: changedItems
       type:
-        id: IList
+        id: System.Collections.IList
         name: IList
         isExternal: true
       description: The items affected by the change.
-  id: System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,IList)
-- uid: System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,IList,System.Int32)
+  id: System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Collections.IList)
+- uid: System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Collections.IList,System.Int32)
   href: System.Collections.Specialized.NotifyCollectionChangedEventArgs.yml
   name: NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction, IList, int)
-  fullName: System.Collections.Specialized.NotifyCollectionChangedEventArgs.NotifyCollectionChangedEventArgs(System.Collections.Specialized.NotifyCollectionChangedAction, IList, int)
+  fullName: System.Collections.Specialized.NotifyCollectionChangedEventArgs.NotifyCollectionChangedEventArgs(System.Collections.Specialized.NotifyCollectionChangedAction, System.Collections.IList, int)
   type: Constructor
   source:
     remote: *o0
@@ -173,17 +178,17 @@ items:
       description: The action that caused the event.
     - id: changedItems
       type:
-        id: IList
+        id: System.Collections.IList
         name: IList
         isExternal: true
       description: The items affected by the change.
     - id: startingIndex
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The index where the change occurred.
-  id: System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,IList,System.Int32)
+  id: System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Collections.IList,System.Int32)
 - uid: System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Object,System.Object)
   href: System.Collections.Specialized.NotifyCollectionChangedEventArgs.yml
   name: NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction, object, object)
@@ -207,13 +212,13 @@ items:
     - id: newItem
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: The new item replacing the original item.
     - id: oldItem
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: The original item that is replaced.
   id: System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Object,System.Object)
@@ -240,26 +245,26 @@ items:
     - id: newItem
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: The new item replacing the original item.
     - id: oldItem
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: The original item that is replaced.
     - id: index
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The index of the item being replaced.
   id: System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Object,System.Object,System.Int32)
-- uid: System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,IList,IList)
+- uid: System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Collections.IList,System.Collections.IList)
   href: System.Collections.Specialized.NotifyCollectionChangedEventArgs.yml
   name: NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction, IList, IList)
-  fullName: System.Collections.Specialized.NotifyCollectionChangedEventArgs.NotifyCollectionChangedEventArgs(System.Collections.Specialized.NotifyCollectionChangedAction, IList, IList)
+  fullName: System.Collections.Specialized.NotifyCollectionChangedEventArgs.NotifyCollectionChangedEventArgs(System.Collections.Specialized.NotifyCollectionChangedAction, System.Collections.IList, System.Collections.IList)
   type: Constructor
   source:
     remote: *o0
@@ -278,21 +283,21 @@ items:
       description: Can only be a Replace action.
     - id: newItems
       type:
-        id: IList
+        id: System.Collections.IList
         name: IList
         isExternal: true
       description: The new items replacing the original items.
     - id: oldItems
       type:
-        id: IList
+        id: System.Collections.IList
         name: IList
         isExternal: true
       description: The original items that are replaced.
-  id: System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,IList,IList)
-- uid: System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,IList,IList,System.Int32)
+  id: System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Collections.IList,System.Collections.IList)
+- uid: System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Collections.IList,System.Collections.IList,System.Int32)
   href: System.Collections.Specialized.NotifyCollectionChangedEventArgs.yml
   name: NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction, IList, IList, int)
-  fullName: System.Collections.Specialized.NotifyCollectionChangedEventArgs.NotifyCollectionChangedEventArgs(System.Collections.Specialized.NotifyCollectionChangedAction, IList, IList, int)
+  fullName: System.Collections.Specialized.NotifyCollectionChangedEventArgs.NotifyCollectionChangedEventArgs(System.Collections.Specialized.NotifyCollectionChangedAction, System.Collections.IList, System.Collections.IList, int)
   type: Constructor
   source:
     remote: *o0
@@ -311,23 +316,23 @@ items:
       description: Can only be a Replace action.
     - id: newItems
       type:
-        id: IList
+        id: System.Collections.IList
         name: IList
         isExternal: true
       description: The new items replacing the original items.
     - id: oldItems
       type:
-        id: IList
+        id: System.Collections.IList
         name: IList
         isExternal: true
       description: The original items that are replaced.
     - id: startingIndex
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The starting index of the items being replaced.
-  id: System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,IList,IList,System.Int32)
+  id: System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Collections.IList,System.Collections.IList,System.Int32)
 - uid: System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Object,System.Int32,System.Int32)
   href: System.Collections.Specialized.NotifyCollectionChangedEventArgs.yml
   name: NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction, object, int, int)
@@ -351,26 +356,26 @@ items:
     - id: changedItem
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: The item affected by the change.
     - id: index
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The new index for the changed item.
     - id: oldIndex
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The old index for the changed item.
   id: System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Object,System.Int32,System.Int32)
-- uid: System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,IList,System.Int32,System.Int32)
+- uid: System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Collections.IList,System.Int32,System.Int32)
   href: System.Collections.Specialized.NotifyCollectionChangedEventArgs.yml
   name: NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction, IList, int, int)
-  fullName: System.Collections.Specialized.NotifyCollectionChangedEventArgs.NotifyCollectionChangedEventArgs(System.Collections.Specialized.NotifyCollectionChangedAction, IList, int, int)
+  fullName: System.Collections.Specialized.NotifyCollectionChangedEventArgs.NotifyCollectionChangedEventArgs(System.Collections.Specialized.NotifyCollectionChangedAction, System.Collections.IList, int, int)
   type: Constructor
   source:
     remote: *o0
@@ -389,23 +394,23 @@ items:
       description: The action that caused the event.
     - id: changedItems
       type:
-        id: IList
+        id: System.Collections.IList
         name: IList
         isExternal: true
       description: The items affected by the change.
     - id: index
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The new index for the changed items.
     - id: oldIndex
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The old index for the changed items.
-  id: System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,IList,System.Int32,System.Int32)
+  id: System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Collections.IList,System.Int32,System.Int32)
 - uid: System.Collections.Specialized.NotifyCollectionChangedEventArgs.Action
   href: System.Collections.Specialized.NotifyCollectionChangedEventArgs.yml
   name: Action
@@ -442,7 +447,7 @@ items:
     parameters:
     - id: NewItems
       type:
-        id: IList
+        id: System.Collections.IList
         name: IList
         isExternal: true
   id: System.Collections.Specialized.NotifyCollectionChangedEventArgs.NewItems
@@ -462,7 +467,7 @@ items:
     parameters:
     - id: OldItems
       type:
-        id: IList
+        id: System.Collections.IList
         name: IList
         isExternal: true
   id: System.Collections.Specialized.NotifyCollectionChangedEventArgs.OldItems
@@ -483,7 +488,7 @@ items:
     - id: NewStartingIndex
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Collections.Specialized.NotifyCollectionChangedEventArgs.NewStartingIndex
 - uid: System.Collections.Specialized.NotifyCollectionChangedEventArgs.OldStartingIndex
@@ -503,6 +508,6 @@ items:
     - id: OldStartingIndex
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Collections.Specialized.NotifyCollectionChangedEventArgs.OldStartingIndex

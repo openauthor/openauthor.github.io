@@ -6,16 +6,21 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/DirectoryEntry.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/DirectoryEntry.cs
     startLine: 5
   syntax:
     content:
       CSharp: public struct DirectoryEntry
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Reflection.PortableExecutable.DirectoryEntry
   children:
@@ -32,7 +37,7 @@ items:
     startLine: 7
   syntax:
     content:
-      CSharp: RelativeVirtualAddress
+      CSharp: public readonly int RelativeVirtualAddress;
   id: System.Reflection.PortableExecutable.DirectoryEntry.RelativeVirtualAddress
 - uid: System.Reflection.PortableExecutable.DirectoryEntry.Size
   href: System.Reflection.PortableExecutable.DirectoryEntry.yml
@@ -45,5 +50,5 @@ items:
     startLine: 8
   syntax:
     content:
-      CSharp: Size
+      CSharp: public readonly int Size;
   id: System.Reflection.PortableExecutable.DirectoryEntry.Size

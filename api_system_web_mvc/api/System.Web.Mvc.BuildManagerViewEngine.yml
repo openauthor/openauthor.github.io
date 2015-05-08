@@ -5,20 +5,128 @@ items:
   fullName: System.Web.Mvc.BuildManagerViewEngine
   type: Class
   source:
-    remote:
+    remote: &o0
+      path: src/System.Web.Mvc/BuildManagerViewEngine.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/BuildManagerViewEngine.cs
     startLine: 10
   syntax:
     content:
-      CSharp: public abstract class BuildManagerViewEngine
+      CSharp: 'public abstract class BuildManagerViewEngine : VirtualPathProviderViewEngine, IViewEngine'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.Mvc.VirtualPathProviderViewEngine
     name: VirtualPathProviderViewEngine
     href: System.Web.Mvc.VirtualPathProviderViewEngine.yml
   id: System.Web.Mvc.BuildManagerViewEngine
+  children:
+  - System.Web.Mvc.BuildManagerViewEngine.#ctor
+  - System.Web.Mvc.BuildManagerViewEngine.#ctor(System.Web.Mvc.IViewPageActivator)
+  - System.Web.Mvc.BuildManagerViewEngine.ViewPageActivator
+  - System.Web.Mvc.BuildManagerViewEngine.IsPrecompiledNonUpdateableSite
+  - System.Web.Mvc.BuildManagerViewEngine.FileExists(System.Web.Mvc.ControllerContext,System.String)
+- uid: System.Web.Mvc.BuildManagerViewEngine.#ctor
+  href: System.Web.Mvc.BuildManagerViewEngine.yml
+  name: BuildManagerViewEngine()
+  fullName: System.Web.Mvc.BuildManagerViewEngine.BuildManagerViewEngine()
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/BuildManagerViewEngine.cs
+    startLine: 22
+  syntax:
+    content:
+      CSharp: 'protected BuildManagerViewEngine(): this (null, null, null, null)'
+    parameters: []
+  id: System.Web.Mvc.BuildManagerViewEngine.#ctor
+- uid: System.Web.Mvc.BuildManagerViewEngine.#ctor(System.Web.Mvc.IViewPageActivator)
+  href: System.Web.Mvc.BuildManagerViewEngine.yml
+  name: BuildManagerViewEngine(IViewPageActivator)
+  fullName: System.Web.Mvc.BuildManagerViewEngine.BuildManagerViewEngine(System.Web.Mvc.IViewPageActivator)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/BuildManagerViewEngine.cs
+    startLine: 27
+  syntax:
+    content:
+      CSharp: 'protected BuildManagerViewEngine(IViewPageActivator viewPageActivator): this (viewPageActivator, null, null, null)'
+    parameters:
+    - id: viewPageActivator
+      type:
+        id: System.Web.Mvc.IViewPageActivator
+        name: IViewPageActivator
+        href: System.Web.Mvc.IViewPageActivator.yml
+  id: System.Web.Mvc.BuildManagerViewEngine.#ctor(System.Web.Mvc.IViewPageActivator)
+- uid: System.Web.Mvc.BuildManagerViewEngine.ViewPageActivator
+  href: System.Web.Mvc.BuildManagerViewEngine.yml
+  name: ViewPageActivator
+  fullName: System.Web.Mvc.BuildManagerViewEngine.ViewPageActivator
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/BuildManagerViewEngine.cs
+    startLine: 78
+  syntax:
+    content:
+      CSharp: protected IViewPageActivator ViewPageActivator { get; }
+    parameters:
+    - id: ViewPageActivator
+      type:
+        id: System.Web.Mvc.IViewPageActivator
+        name: IViewPageActivator
+        href: System.Web.Mvc.IViewPageActivator.yml
+  id: System.Web.Mvc.BuildManagerViewEngine.ViewPageActivator
+- uid: System.Web.Mvc.BuildManagerViewEngine.IsPrecompiledNonUpdateableSite
+  href: System.Web.Mvc.BuildManagerViewEngine.yml
+  name: IsPrecompiledNonUpdateableSite
+  fullName: System.Web.Mvc.BuildManagerViewEngine.IsPrecompiledNonUpdateableSite
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/BuildManagerViewEngine.cs
+    startLine: 91
+  syntax:
+    content:
+      CSharp: protected virtual bool IsPrecompiledNonUpdateableSite { get; }
+    parameters:
+    - id: IsPrecompiledNonUpdateableSite
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Web.Mvc.BuildManagerViewEngine.IsPrecompiledNonUpdateableSite
+- uid: System.Web.Mvc.BuildManagerViewEngine.FileExists(System.Web.Mvc.ControllerContext,System.String)
+  href: System.Web.Mvc.BuildManagerViewEngine.yml
+  name: FileExists(ControllerContext, string)
+  fullName: System.Web.Mvc.BuildManagerViewEngine.FileExists(System.Web.Mvc.ControllerContext, string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/BuildManagerViewEngine.cs
+    startLine: 102
+  syntax:
+    content:
+      CSharp: protected override bool FileExists(ControllerContext controllerContext, string virtualPath)
+    parameters:
+    - id: controllerContext
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+    - id: virtualPath
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Web.Mvc.BuildManagerViewEngine.FileExists(System.Web.Mvc.ControllerContext,System.String)

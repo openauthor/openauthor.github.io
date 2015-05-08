@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Rename/Renamer.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Rename/Renamer.cs
     startLine: 9
   syntax:
     content:
-      CSharp: public static class Renamer
+      CSharp: public class Renamer
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.Rename.Renamer
   children:
@@ -32,7 +33,7 @@ items:
     startLine: 11
   syntax:
     content:
-      CSharp: public static async Task<Solution> RenameSymbolAsync(Solution solution, ISymbol symbol, string newName, OptionSet optionSet, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public static Task<Solution> RenameSymbolAsync(Solution solution, ISymbol symbol, string newName, OptionSet optionSet, CancellationToken cancellationToken = null)
     parameters:
     - id: solution
       type:
@@ -47,7 +48,7 @@ items:
     - id: newName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: optionSet
       type:
@@ -57,8 +58,12 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.CodeAnalysis.Solution}
+        name: Task<Solution>
+        isExternal: true
   id: Microsoft.CodeAnalysis.Rename.Renamer.RenameSymbolAsync(Microsoft.CodeAnalysis.Solution,Microsoft.CodeAnalysis.ISymbol,System.String,Microsoft.CodeAnalysis.Options.OptionSet,System.Threading.CancellationToken)

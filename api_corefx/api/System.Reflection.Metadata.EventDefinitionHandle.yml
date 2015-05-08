@@ -6,21 +6,28 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 902
+    startLine: 1316
   syntax:
     content:
-      CSharp: public struct EventDefinitionHandle
+      CSharp: 'public struct EventDefinitionHandle : IEquatable<EventDefinitionHandle>'
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Reflection.Metadata.EventDefinitionHandle
   children:
   - System.Reflection.Metadata.EventDefinitionHandle.op_Implicit(System.Reflection.Metadata.EventDefinitionHandle)~System.Reflection.Metadata.Handle
+  - System.Reflection.Metadata.EventDefinitionHandle.op_Implicit(System.Reflection.Metadata.EventDefinitionHandle)~System.Reflection.Metadata.EntityHandle
   - System.Reflection.Metadata.EventDefinitionHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.EventDefinitionHandle
+  - System.Reflection.Metadata.EventDefinitionHandle.op_Explicit(System.Reflection.Metadata.EntityHandle)~System.Reflection.Metadata.EventDefinitionHandle
   - System.Reflection.Metadata.EventDefinitionHandle.IsNil
   - System.Reflection.Metadata.EventDefinitionHandle.op_Equality(System.Reflection.Metadata.EventDefinitionHandle,System.Reflection.Metadata.EventDefinitionHandle)
   - System.Reflection.Metadata.EventDefinitionHandle.Equals(System.Object)
@@ -31,14 +38,14 @@ items:
   href: System.Reflection.Metadata.EventDefinitionHandle.yml
   name: implicit operator Handle(EventDefinitionHandle)
   fullName: System.Reflection.Metadata.EventDefinitionHandle.implicit operator System.Reflection.Metadata.Handle(System.Reflection.Metadata.EventDefinitionHandle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 918
+    startLine: 1333
   syntax:
     content:
-      CSharp: public static implicit operator Handle(EventDefinitionHandle handle) { return new Handle(handle._rowId | tokenType); }
+      CSharp: public static implicit operator Handle(EventDefinitionHandle handle)
     parameters:
     - id: handle
       type:
@@ -47,19 +54,48 @@ items:
         href: System.Reflection.Metadata.EventDefinitionHandle.yml
     return:
       id: Handle
+      type:
+        id: System.Reflection.Metadata.Handle
+        name: Handle
+        href: System.Reflection.Metadata.Handle.yml
   id: System.Reflection.Metadata.EventDefinitionHandle.op_Implicit(System.Reflection.Metadata.EventDefinitionHandle)~System.Reflection.Metadata.Handle
+- uid: System.Reflection.Metadata.EventDefinitionHandle.op_Implicit(System.Reflection.Metadata.EventDefinitionHandle)~System.Reflection.Metadata.EntityHandle
+  href: System.Reflection.Metadata.EventDefinitionHandle.yml
+  name: implicit operator EntityHandle(EventDefinitionHandle)
+  fullName: System.Reflection.Metadata.EventDefinitionHandle.implicit operator System.Reflection.Metadata.EntityHandle(System.Reflection.Metadata.EventDefinitionHandle)
+  type: Operator
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 1338
+  syntax:
+    content:
+      CSharp: public static implicit operator EntityHandle(EventDefinitionHandle handle)
+    parameters:
+    - id: handle
+      type:
+        id: System.Reflection.Metadata.EventDefinitionHandle
+        name: EventDefinitionHandle
+        href: System.Reflection.Metadata.EventDefinitionHandle.yml
+    return:
+      id: EntityHandle
+      type:
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
+  id: System.Reflection.Metadata.EventDefinitionHandle.op_Implicit(System.Reflection.Metadata.EventDefinitionHandle)~System.Reflection.Metadata.EntityHandle
 - uid: System.Reflection.Metadata.EventDefinitionHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.EventDefinitionHandle
   href: System.Reflection.Metadata.EventDefinitionHandle.yml
   name: explicit operator EventDefinitionHandle(Handle)
   fullName: System.Reflection.Metadata.EventDefinitionHandle.explicit operator System.Reflection.Metadata.EventDefinitionHandle(System.Reflection.Metadata.Handle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 923
+    startLine: 1343
   syntax:
     content:
-      CSharp: public static explicit operator EventDefinitionHandle(Handle handle) { if (handle.TokenType != tokenType) { Handle.ThrowInvalidCast(); } return new EventDefinitionHandle(handle.RowId); }
+      CSharp: public static explicit operator EventDefinitionHandle(Handle handle)
     parameters:
     - id: handle
       type:
@@ -68,7 +104,36 @@ items:
         href: System.Reflection.Metadata.Handle.yml
     return:
       id: EventDefinitionHandle
+      type:
+        id: System.Reflection.Metadata.EventDefinitionHandle
+        name: EventDefinitionHandle
+        href: System.Reflection.Metadata.EventDefinitionHandle.yml
   id: System.Reflection.Metadata.EventDefinitionHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.EventDefinitionHandle
+- uid: System.Reflection.Metadata.EventDefinitionHandle.op_Explicit(System.Reflection.Metadata.EntityHandle)~System.Reflection.Metadata.EventDefinitionHandle
+  href: System.Reflection.Metadata.EventDefinitionHandle.yml
+  name: explicit operator EventDefinitionHandle(EntityHandle)
+  fullName: System.Reflection.Metadata.EventDefinitionHandle.explicit operator System.Reflection.Metadata.EventDefinitionHandle(System.Reflection.Metadata.EntityHandle)
+  type: Operator
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 1353
+  syntax:
+    content:
+      CSharp: public static explicit operator EventDefinitionHandle(EntityHandle handle)
+    parameters:
+    - id: handle
+      type:
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
+    return:
+      id: EventDefinitionHandle
+      type:
+        id: System.Reflection.Metadata.EventDefinitionHandle
+        name: EventDefinitionHandle
+        href: System.Reflection.Metadata.EventDefinitionHandle.yml
+  id: System.Reflection.Metadata.EventDefinitionHandle.op_Explicit(System.Reflection.Metadata.EntityHandle)~System.Reflection.Metadata.EventDefinitionHandle
 - uid: System.Reflection.Metadata.EventDefinitionHandle.IsNil
   href: System.Reflection.Metadata.EventDefinitionHandle.yml
   name: IsNil
@@ -77,7 +142,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 933
+    startLine: 1363
   syntax:
     content:
       CSharp: public bool IsNil { get; }
@@ -85,21 +150,21 @@ items:
     - id: IsNil
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Reflection.Metadata.EventDefinitionHandle.IsNil
 - uid: System.Reflection.Metadata.EventDefinitionHandle.op_Equality(System.Reflection.Metadata.EventDefinitionHandle,System.Reflection.Metadata.EventDefinitionHandle)
   href: System.Reflection.Metadata.EventDefinitionHandle.yml
   name: operator ==(EventDefinitionHandle, EventDefinitionHandle)
   fullName: System.Reflection.Metadata.EventDefinitionHandle.operator ==(System.Reflection.Metadata.EventDefinitionHandle, System.Reflection.Metadata.EventDefinitionHandle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 943
+    startLine: 1373
   syntax:
     content:
-      CSharp: public static bool operator ==(EventDefinitionHandle left, EventDefinitionHandle right) { return left._rowId == right._rowId; }
+      CSharp: public static bool operator ==(EventDefinitionHandle left, EventDefinitionHandle right)
     parameters:
     - id: left
       type:
@@ -113,6 +178,10 @@ items:
         href: System.Reflection.Metadata.EventDefinitionHandle.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.EventDefinitionHandle.op_Equality(System.Reflection.Metadata.EventDefinitionHandle,System.Reflection.Metadata.EventDefinitionHandle)
 - uid: System.Reflection.Metadata.EventDefinitionHandle.Equals(System.Object)
   href: System.Reflection.Metadata.EventDefinitionHandle.yml
@@ -122,7 +191,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 948
+    startLine: 1378
   syntax:
     content:
       CSharp: public override bool Equals(object obj)
@@ -130,10 +199,14 @@ items:
     - id: obj
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.EventDefinitionHandle.Equals(System.Object)
 - uid: System.Reflection.Metadata.EventDefinitionHandle.Equals(System.Reflection.Metadata.EventDefinitionHandle)
   href: System.Reflection.Metadata.EventDefinitionHandle.yml
@@ -143,7 +216,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 953
+    startLine: 1383
   syntax:
     content:
       CSharp: public bool Equals(EventDefinitionHandle other)
@@ -155,6 +228,10 @@ items:
         href: System.Reflection.Metadata.EventDefinitionHandle.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.EventDefinitionHandle.Equals(System.Reflection.Metadata.EventDefinitionHandle)
 - uid: System.Reflection.Metadata.EventDefinitionHandle.GetHashCode
   href: System.Reflection.Metadata.EventDefinitionHandle.yml
@@ -164,26 +241,30 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 958
+    startLine: 1388
   syntax:
     content:
       CSharp: public override int GetHashCode()
     parameters: []
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: System.Reflection.Metadata.EventDefinitionHandle.GetHashCode
 - uid: System.Reflection.Metadata.EventDefinitionHandle.op_Inequality(System.Reflection.Metadata.EventDefinitionHandle,System.Reflection.Metadata.EventDefinitionHandle)
   href: System.Reflection.Metadata.EventDefinitionHandle.yml
   name: operator !=(EventDefinitionHandle, EventDefinitionHandle)
   fullName: System.Reflection.Metadata.EventDefinitionHandle.operator !=(System.Reflection.Metadata.EventDefinitionHandle, System.Reflection.Metadata.EventDefinitionHandle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 963
+    startLine: 1393
   syntax:
     content:
-      CSharp: public static bool operator !=(EventDefinitionHandle left, EventDefinitionHandle right) { return left._rowId != right._rowId; }
+      CSharp: public static bool operator !=(EventDefinitionHandle left, EventDefinitionHandle right)
     parameters:
     - id: left
       type:
@@ -197,4 +278,8 @@ items:
         href: System.Reflection.Metadata.EventDefinitionHandle.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.EventDefinitionHandle.op_Inequality(System.Reflection.Metadata.EventDefinitionHandle,System.Reflection.Metadata.EventDefinitionHandle)

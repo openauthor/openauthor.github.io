@@ -6,9 +6,10 @@ items:
   type: Interface
   source:
     remote: &o0
+      path: src/System.Web.Mvc/Routing/IDirectRouteProvider.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/Routing/IDirectRouteProvider.cs
     startLine: 16
   summary: Defines a provider for routes that directly target action descriptors (attribute routes).
@@ -30,7 +31,7 @@ items:
   summary: Gets the direct routes for a controller.
   syntax:
     content:
-      CSharp: IReadOnlyList<RouteEntry> GetDirectRoutes(ControllerDescriptor controllerDescriptor, IReadOnlyList<ActionDescriptor> actionDescriptors, IInlineConstraintResolver constraintResolver);
+      CSharp: public IReadOnlyList<RouteEntry> GetDirectRoutes(ControllerDescriptor controllerDescriptor, IReadOnlyList<ActionDescriptor> actionDescriptors, IInlineConstraintResolver constraintResolver)
     parameters:
     - id: controllerDescriptor
       type:
@@ -41,7 +42,7 @@ items:
     - id: actionDescriptors
       type:
         id: System.Collections.Generic.IReadOnlyList{System.Web.Mvc.ActionDescriptor}
-        name: System.Collections.Generic.IReadOnlyList{System.Web.Mvc.ActionDescriptor}
+        name: IReadOnlyList<ActionDescriptor>
         isExternal: true
       description: The action descriptors.
     - id: constraintResolver
@@ -52,5 +53,9 @@ items:
       description: The inline constraint resolver.
     return:
       id: IReadOnlyList
+      type:
+        id: System.Collections.Generic.IReadOnlyList{System.Web.Mvc.Routing.RouteEntry}
+        name: IReadOnlyList<RouteEntry>
+        isExternal: true
       description: A set of route entries for the controller.
   id: System.Web.Mvc.Routing.IDirectRouteProvider.GetDirectRoutes(System.Web.Mvc.ControllerDescriptor,System.Collections.Generic.IReadOnlyList{System.Web.Mvc.ActionDescriptor},System.Web.Mvc.Routing.IInlineConstraintResolver)

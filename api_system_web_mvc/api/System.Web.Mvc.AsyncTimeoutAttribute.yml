@@ -6,20 +6,21 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/AsyncTimeoutAttribute.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/AsyncTimeoutAttribute.cs
     startLine: 7
   syntax:
     content:
-      CSharp: public class AsyncTimeoutAttribute
+      CSharp: 'public class AsyncTimeoutAttribute : ActionFilterAttribute, _Attribute, IMvcFilter, IActionFilter, IResultFilter'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Attribute
-    name: System.Attribute
+    name: Attribute
     isExternal: true
   - id: System.Web.Mvc.FilterAttribute
     name: FilterAttribute
@@ -48,7 +49,7 @@ items:
     - id: duration
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Web.Mvc.AsyncTimeoutAttribute.#ctor(System.Int32)
 - uid: System.Web.Mvc.AsyncTimeoutAttribute.Duration
@@ -62,12 +63,12 @@ items:
     startLine: 22
   syntax:
     content:
-      CSharp: public int Duration { get; private set; }
+      CSharp: public int Duration { get; }
     parameters:
     - id: Duration
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Web.Mvc.AsyncTimeoutAttribute.Duration
 - uid: System.Web.Mvc.AsyncTimeoutAttribute.OnActionExecuting(System.Web.Mvc.ActionExecutingContext)

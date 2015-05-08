@@ -1,0 +1,227 @@
+items:
+- uid: System.Threading.Semaphore
+  href: System.Threading.Semaphore.yml
+  name: Semaphore
+  fullName: System.Threading.Semaphore
+  type: Class
+  source:
+    remote:
+      path: src/System.Threading/src/System/Threading/Semaphore.Windows.cs
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
+    path: src/System.Threading/src/System/Threading/Semaphore.Windows.cs
+    startLine: 8
+  syntax:
+    content:
+      CSharp: 'public sealed class Semaphore : WaitHandle, IDisposable'
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.MarshalByRefObject
+    name: MarshalByRefObject
+    isExternal: true
+  - id: System.Threading.WaitHandle
+    name: WaitHandle
+    isExternal: true
+  id: System.Threading.Semaphore
+  children:
+  - System.Threading.Semaphore.#ctor(System.Int32,System.Int32)
+  - System.Threading.Semaphore.#ctor(System.Int32,System.Int32,System.String)
+  - System.Threading.Semaphore.#ctor(System.Int32,System.Int32,System.String,System.Boolean@)
+  - System.Threading.Semaphore.OpenExisting(System.String)
+  - System.Threading.Semaphore.TryOpenExisting(System.String,System.Threading.Semaphore@)
+  - System.Threading.Semaphore.Release
+  - System.Threading.Semaphore.Release(System.Int32)
+- uid: System.Threading.Semaphore.#ctor(System.Int32,System.Int32)
+  href: System.Threading.Semaphore.yml
+  name: Semaphore(int, int)
+  fullName: System.Threading.Semaphore.Semaphore(int, int)
+  type: Constructor
+  source:
+    remote: &o0
+      path: src/System.Threading/src/System/Threading/Semaphore.cs
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
+    path: src/System.Threading/src/System/Threading/Semaphore.cs
+    startLine: 21
+  syntax:
+    content:
+      CSharp: '[SecuritySafeCritical] public Semaphore(int initialCount, int maximumCount): this (initialCount, maximumCount, null)'
+    parameters:
+    - id: initialCount
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: maximumCount
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.Threading.Semaphore.#ctor(System.Int32,System.Int32)
+- uid: System.Threading.Semaphore.#ctor(System.Int32,System.Int32,System.String)
+  href: System.Threading.Semaphore.yml
+  name: Semaphore(int, int, string)
+  fullName: System.Threading.Semaphore.Semaphore(int, int, string)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/Semaphore.cs
+    startLine: 24
+  syntax:
+    content:
+      CSharp: '[SecurityCritical] public Semaphore(int initialCount, int maximumCount, string name)'
+    parameters:
+    - id: initialCount
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: maximumCount
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: name
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Threading.Semaphore.#ctor(System.Int32,System.Int32,System.String)
+- uid: System.Threading.Semaphore.#ctor(System.Int32,System.Int32,System.String,System.Boolean@)
+  href: System.Threading.Semaphore.yml
+  name: Semaphore(int, int, string, out bool)
+  fullName: System.Threading.Semaphore.Semaphore(int, int, string, out bool)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/Semaphore.cs
+    startLine: 61
+  syntax:
+    content:
+      CSharp: '[SecurityCritical] public Semaphore(int initialCount, int maximumCount, string name, out bool createdNew)'
+    parameters:
+    - id: initialCount
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: maximumCount
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: name
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    - id: createdNew
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Threading.Semaphore.#ctor(System.Int32,System.Int32,System.String,System.Boolean@)
+- uid: System.Threading.Semaphore.OpenExisting(System.String)
+  href: System.Threading.Semaphore.yml
+  name: OpenExisting(string)
+  fullName: System.Threading.Semaphore.OpenExisting(string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/Semaphore.cs
+    startLine: 104
+  syntax:
+    content:
+      CSharp: public static Semaphore OpenExisting(string name)
+    parameters:
+    - id: name
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      id: Semaphore
+      type:
+        id: System.Threading.Semaphore
+        name: Semaphore
+        href: System.Threading.Semaphore.yml
+  id: System.Threading.Semaphore.OpenExisting(System.String)
+- uid: System.Threading.Semaphore.TryOpenExisting(System.String,System.Threading.Semaphore@)
+  href: System.Threading.Semaphore.yml
+  name: TryOpenExisting(string, out Semaphore)
+  fullName: System.Threading.Semaphore.TryOpenExisting(string, out System.Threading.Semaphore)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/Semaphore.cs
+    startLine: 122
+  syntax:
+    content:
+      CSharp: public static bool TryOpenExisting(string name, out Semaphore result)
+    parameters:
+    - id: name
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    - id: result
+      type:
+        id: System.Threading.Semaphore
+        name: Semaphore
+        href: System.Threading.Semaphore.yml
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Threading.Semaphore.TryOpenExisting(System.String,System.Threading.Semaphore@)
+- uid: System.Threading.Semaphore.Release
+  href: System.Threading.Semaphore.yml
+  name: Release()
+  fullName: System.Threading.Semaphore.Release()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/Semaphore.cs
+    startLine: 174
+  syntax:
+    content:
+      CSharp: public int Release()
+    parameters: []
+    return:
+      id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.Threading.Semaphore.Release
+- uid: System.Threading.Semaphore.Release(System.Int32)
+  href: System.Threading.Semaphore.yml
+  name: Release(int)
+  fullName: System.Threading.Semaphore.Release(int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/Semaphore.cs
+    startLine: 180
+  syntax:
+    content:
+      CSharp: public int Release(int releaseCount)
+    parameters:
+    - id: releaseCount
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    return:
+      id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.Threading.Semaphore.Release(System.Int32)

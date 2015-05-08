@@ -6,20 +6,22 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Threading.Tasks.Dataflow/src/Base/DataflowMessageHeader.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Threading.Tasks.Dataflow/src/Base/DataflowMessageHeader.cs
     startLine: 19
   summary: Provides a container of data attributes for passing between dataflow blocks.
   syntax:
     content:
-      CSharp: public struct DataflowMessageHeader
+      CSharp: 'public struct DataflowMessageHeader : IEquatable<DataflowMessageHeader>'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Threading.Tasks.Dataflow.DataflowMessageHeader
   children:
@@ -48,7 +50,7 @@ items:
     - id: id
       type:
         id: System.Int64
-        name: System.Int64
+        name: long
         isExternal: true
       description: The ID of the message. Must be unique within the originating source block. Need not be globally unique.
   id: System.Threading.Tasks.Dataflow.DataflowMessageHeader.#ctor(System.Int64)
@@ -69,7 +71,7 @@ items:
     - id: IsValid
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Threading.Tasks.Dataflow.DataflowMessageHeader.IsValid
 - uid: System.Threading.Tasks.Dataflow.DataflowMessageHeader.Id
@@ -89,7 +91,7 @@ items:
     - id: Id
       type:
         id: System.Int64
-        name: System.Int64
+        name: long
         isExternal: true
   id: System.Threading.Tasks.Dataflow.DataflowMessageHeader.Id
 - uid: System.Threading.Tasks.Dataflow.DataflowMessageHeader.Equals(System.Threading.Tasks.Dataflow.DataflowMessageHeader)
@@ -114,6 +116,10 @@ items:
       description: Another [System.Threading.Tasks.Dataflow.DataflowMessageHeader](System.Threading.Tasks.Dataflow.DataflowMessageHeader.yml) instance.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: True if the instances are equal. False otherwise.
   id: System.Threading.Tasks.Dataflow.DataflowMessageHeader.Equals(System.Threading.Tasks.Dataflow.DataflowMessageHeader)
 - uid: System.Threading.Tasks.Dataflow.DataflowMessageHeader.Equals(System.Object)
@@ -133,11 +139,15 @@ items:
     - id: obj
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: A boxed [System.Threading.Tasks.Dataflow.DataflowMessageHeader](System.Threading.Tasks.Dataflow.DataflowMessageHeader.yml) instance.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: True if the instances are equal. False otherwise.
   id: System.Threading.Tasks.Dataflow.DataflowMessageHeader.Equals(System.Object)
 - uid: System.Threading.Tasks.Dataflow.DataflowMessageHeader.GetHashCode
@@ -156,13 +166,17 @@ items:
     parameters: []
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: Hash code.
   id: System.Threading.Tasks.Dataflow.DataflowMessageHeader.GetHashCode
 - uid: System.Threading.Tasks.Dataflow.DataflowMessageHeader.op_Equality(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.DataflowMessageHeader)
   href: System.Threading.Tasks.Dataflow.DataflowMessageHeader.yml
   name: operator ==(DataflowMessageHeader, DataflowMessageHeader)
   fullName: System.Threading.Tasks.Dataflow.DataflowMessageHeader.operator ==(System.Threading.Tasks.Dataflow.DataflowMessageHeader, System.Threading.Tasks.Dataflow.DataflowMessageHeader)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Threading.Tasks.Dataflow/src/Base/DataflowMessageHeader.cs
@@ -170,7 +184,7 @@ items:
   summary: Checks two [System.Threading.Tasks.Dataflow.DataflowMessageHeader](System.Threading.Tasks.Dataflow.DataflowMessageHeader.yml) instances for equality by ID.
   syntax:
     content:
-      CSharp: public static bool operator ==(DataflowMessageHeader left, DataflowMessageHeader right) { return left.Id == right.Id; }
+      CSharp: public static bool operator ==(DataflowMessageHeader left, DataflowMessageHeader right)
     parameters:
     - id: left
       type:
@@ -186,13 +200,17 @@ items:
       description: A [System.Threading.Tasks.Dataflow.DataflowMessageHeader](System.Threading.Tasks.Dataflow.DataflowMessageHeader.yml) instance.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: True if the instances are equal. False otherwise.
   id: System.Threading.Tasks.Dataflow.DataflowMessageHeader.op_Equality(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.DataflowMessageHeader)
 - uid: System.Threading.Tasks.Dataflow.DataflowMessageHeader.op_Inequality(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.DataflowMessageHeader)
   href: System.Threading.Tasks.Dataflow.DataflowMessageHeader.yml
   name: operator !=(DataflowMessageHeader, DataflowMessageHeader)
   fullName: System.Threading.Tasks.Dataflow.DataflowMessageHeader.operator !=(System.Threading.Tasks.Dataflow.DataflowMessageHeader, System.Threading.Tasks.Dataflow.DataflowMessageHeader)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Threading.Tasks.Dataflow/src/Base/DataflowMessageHeader.cs
@@ -200,7 +218,7 @@ items:
   summary: Checks two [System.Threading.Tasks.Dataflow.DataflowMessageHeader](System.Threading.Tasks.Dataflow.DataflowMessageHeader.yml) instances for non-equality by ID.
   syntax:
     content:
-      CSharp: public static bool operator !=(DataflowMessageHeader left, DataflowMessageHeader right) { return left.Id != right.Id; }
+      CSharp: public static bool operator !=(DataflowMessageHeader left, DataflowMessageHeader right)
     parameters:
     - id: left
       type:
@@ -216,5 +234,9 @@ items:
       description: A [System.Threading.Tasks.Dataflow.DataflowMessageHeader](System.Threading.Tasks.Dataflow.DataflowMessageHeader.yml) instance.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: True if the instances are not equal. False otherwise.
   id: System.Threading.Tasks.Dataflow.DataflowMessageHeader.op_Inequality(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.DataflowMessageHeader)

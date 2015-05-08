@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/MaxLengthAttributeAdapter.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/MaxLengthAttributeAdapter.cs
     startLine: 7
   syntax:
     content:
-      CSharp: public class MaxLengthAttributeAdapter
+      CSharp: 'public class MaxLengthAttributeAdapter : DataAnnotationsModelValidator<MaxLengthAttribute>'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.Mvc.ModelValidator
     name: ModelValidator
@@ -25,7 +26,7 @@ items:
     name: DataAnnotationsModelValidator
     href: System.Web.Mvc.DataAnnotationsModelValidator.yml
   - id: System.Web.Mvc.DataAnnotationsModelValidator{System.ComponentModel.DataAnnotations.MaxLengthAttribute}
-    name: DataAnnotationsModelValidator
+    name: DataAnnotationsModelValidator<MaxLengthAttribute>
     href: System.Web.Mvc.DataAnnotationsModelValidator{System.ComponentModel.DataAnnotations.MaxLengthAttribute}
   id: System.Web.Mvc.MaxLengthAttributeAdapter
   children:
@@ -57,7 +58,7 @@ items:
     - id: attribute
       type:
         id: System.ComponentModel.DataAnnotations.MaxLengthAttribute
-        name: System.ComponentModel.DataAnnotations.MaxLengthAttribute
+        name: MaxLengthAttribute
         isExternal: true
   id: System.Web.Mvc.MaxLengthAttributeAdapter.#ctor(System.Web.Mvc.ModelMetadata,System.Web.Mvc.ControllerContext,System.ComponentModel.DataAnnotations.MaxLengthAttribute)
 - uid: System.Web.Mvc.MaxLengthAttributeAdapter.GetClientValidationRules
@@ -75,4 +76,8 @@ items:
     parameters: []
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Web.Mvc.ModelClientValidationRule}
+        name: IEnumerable<ModelClientValidationRule>
+        isExternal: true
   id: System.Web.Mvc.MaxLengthAttributeAdapter.GetClientValidationRules

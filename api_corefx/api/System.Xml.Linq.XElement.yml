@@ -6,14 +6,16 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Xml.XDocument/src/System/Xml/Linq/XElement.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XElement.cs
     startLine: 29
   summary: Represents an XML element.
   syntax:
     content:
-      CSharp: public class XElement
+      CSharp: 'public class XElement : XContainer, IXmlSerializable'
   inheritance:
   - id: IXmlLineInfo
     name: IXmlLineInfo
@@ -56,10 +58,10 @@ items:
   - System.Xml.Linq.XElement.GetPrefixOfNamespace(System.Xml.Linq.XNamespace)
   - System.Xml.Linq.XElement.Load(System.String)
   - System.Xml.Linq.XElement.Load(System.String,System.Xml.Linq.LoadOptions)
-  - System.Xml.Linq.XElement.Load(Stream)
-  - System.Xml.Linq.XElement.Load(Stream,System.Xml.Linq.LoadOptions)
-  - System.Xml.Linq.XElement.Load(TextReader)
-  - System.Xml.Linq.XElement.Load(TextReader,System.Xml.Linq.LoadOptions)
+  - System.Xml.Linq.XElement.Load(System.IO.Stream)
+  - System.Xml.Linq.XElement.Load(System.IO.Stream,System.Xml.Linq.LoadOptions)
+  - System.Xml.Linq.XElement.Load(System.IO.TextReader)
+  - System.Xml.Linq.XElement.Load(System.IO.TextReader,System.Xml.Linq.LoadOptions)
   - System.Xml.Linq.XElement.Load(XmlReader)
   - System.Xml.Linq.XElement.Load(XmlReader,System.Xml.Linq.LoadOptions)
   - System.Xml.Linq.XElement.Parse(System.String)
@@ -70,10 +72,10 @@ items:
   - System.Xml.Linq.XElement.ReplaceAll(System.Object[])
   - System.Xml.Linq.XElement.ReplaceAttributes(System.Object)
   - System.Xml.Linq.XElement.ReplaceAttributes(System.Object[])
-  - System.Xml.Linq.XElement.Save(Stream)
-  - System.Xml.Linq.XElement.Save(Stream,System.Xml.Linq.SaveOptions)
-  - System.Xml.Linq.XElement.Save(TextWriter)
-  - System.Xml.Linq.XElement.Save(TextWriter,System.Xml.Linq.SaveOptions)
+  - System.Xml.Linq.XElement.Save(System.IO.Stream)
+  - System.Xml.Linq.XElement.Save(System.IO.Stream,System.Xml.Linq.SaveOptions)
+  - System.Xml.Linq.XElement.Save(System.IO.TextWriter)
+  - System.Xml.Linq.XElement.Save(System.IO.TextWriter,System.Xml.Linq.SaveOptions)
   - System.Xml.Linq.XElement.Save(XmlWriter)
   - System.Xml.Linq.XElement.SetAttributeValue(System.Xml.Linq.XName,System.Object)
   - System.Xml.Linq.XElement.SetElementValue(System.Xml.Linq.XName,System.Object)
@@ -96,14 +98,14 @@ items:
   - System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{System.Double}
   - System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Decimal
   - System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{System.Decimal}
-  - System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~DateTime
-  - System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{DateTime}
-  - System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~DateTimeOffset
-  - System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{DateTimeOffset}
-  - System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~TimeSpan
-  - System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{TimeSpan}
-  - System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~Guid
-  - System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{Guid}
+  - System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.DateTime
+  - System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{System.DateTime}
+  - System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.DateTimeOffset
+  - System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{System.DateTimeOffset}
+  - System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.TimeSpan
+  - System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{System.TimeSpan}
+  - System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Guid
+  - System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{System.Guid}
 - uid: System.Xml.Linq.XElement.EmptySequence
   href: System.Xml.Linq.XElement.yml
   name: EmptySequence
@@ -120,8 +122,8 @@ items:
     parameters:
     - id: EmptySequence
       type:
-        id: IEnumerable{System.Xml.Linq.XElement}
-        name: IEnumerable{System.Xml.Linq.XElement}
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement}
+        name: IEnumerable<XElement>
         isExternal: true
   id: System.Xml.Linq.XElement.EmptySequence
 - uid: System.Xml.Linq.XElement.#ctor(System.Xml.Linq.XName)
@@ -168,7 +170,7 @@ items:
     - id: content
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: The initial contents of the element.
   id: System.Xml.Linq.XElement.#ctor(System.Xml.Linq.XName,System.Object)
@@ -195,7 +197,7 @@ items:
     - id: content
       type:
         id: System.Array
-        name: System.Array
+        name: object[]
         isExternal: true
       description: The initial content of the element.
   id: System.Xml.Linq.XElement.#ctor(System.Xml.Linq.XName,System.Object[])
@@ -281,7 +283,7 @@ items:
     - id: HasAttributes
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Xml.Linq.XElement.HasAttributes
 - uid: System.Xml.Linq.XElement.HasElements
@@ -301,7 +303,7 @@ items:
     - id: HasElements
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Xml.Linq.XElement.HasElements
 - uid: System.Xml.Linq.XElement.IsEmpty
@@ -321,7 +323,7 @@ items:
     - id: IsEmpty
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Xml.Linq.XElement.IsEmpty
 - uid: System.Xml.Linq.XElement.LastAttribute
@@ -401,7 +403,7 @@ items:
     - id: Value
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.Linq.XElement.Value
 - uid: System.Xml.Linq.XElement.AncestorsAndSelf
@@ -425,8 +427,12 @@ items:
     parameters: []
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement}
+        name: IEnumerable<XElement>
+        isExternal: true
       description: >-
-        An @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing all of
+        An [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing all of
 
         this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml)'s ancestors up to the root node (including
 
@@ -448,7 +454,7 @@ items:
 
     matches the [System.Xml.Linq.XName](System.Xml.Linq.XName.yml) passed in then it will be included in the
 
-    resulting @!:System.Collections.IEnumerable- or [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
+    resulting [System.Collections.IEnumerable]() or [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
 
     [System.Xml.Linq.XNode.Ancestors](System.Xml.Linq.XNode.yml)
   syntax:
@@ -463,8 +469,12 @@ items:
       description: The [System.Xml.Linq.XName](System.Xml.Linq.XName.yml) of the target ancestor.
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement}
+        name: IEnumerable<XElement>
+        isExternal: true
       description: >-
-        An @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the
+        An [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the
 
         ancestors of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) with a matching [System.Xml.Linq.XName](System.Xml.Linq.XName.yml).
   id: System.Xml.Linq.XElement.AncestorsAndSelf(System.Xml.Linq.XName)
@@ -493,6 +503,10 @@ items:
       description: The [System.Xml.Linq.XName](System.Xml.Linq.XName.yml) of the [System.Xml.Linq.XAttribute](System.Xml.Linq.XAttribute.yml) to get.
     return:
       id: XAttribute
+      type:
+        id: System.Xml.Linq.XAttribute
+        name: XAttribute
+        href: System.Xml.Linq.XAttribute.yml
       description: >-
         The [System.Xml.Linq.XAttribute](System.Xml.Linq.XAttribute.yml) with the [System.Xml.Linq.XName](System.Xml.Linq.XName.yml) passed in.  If there is no [System.Xml.Linq.XAttribute](System.Xml.Linq.XAttribute.yml)
 
@@ -517,8 +531,12 @@ items:
     parameters: []
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XAttribute}
+        name: IEnumerable<XAttribute>
+        isExternal: true
       description: >-
-        An @!:System.Collections.IEnumerable- of [System.Xml.Linq.XAttribute](System.Xml.Linq.XAttribute.yml) containing all of the [System.Xml.Linq.XAttribute](System.Xml.Linq.XAttribute.yml)s
+        An [System.Collections.IEnumerable]() of [System.Xml.Linq.XAttribute](System.Xml.Linq.XAttribute.yml) containing all of the [System.Xml.Linq.XAttribute](System.Xml.Linq.XAttribute.yml)s
 
         associated with this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
   id: System.Xml.Linq.XElement.Attributes
@@ -549,6 +567,10 @@ items:
       description: The [System.Xml.Linq.XName](System.Xml.Linq.XName.yml) of the targeted [System.Xml.Linq.XAttribute](System.Xml.Linq.XAttribute.yml).
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XAttribute}
+        name: IEnumerable<XAttribute>
+        isExternal: true
       description: The [System.Xml.Linq.XAttribute](System.Xml.Linq.XAttribute.yml)(s) with the matching
   id: System.Xml.Linq.XElement.Attributes(System.Xml.Linq.XName)
 - uid: System.Xml.Linq.XElement.DescendantNodesAndSelf
@@ -567,6 +589,10 @@ items:
     parameters: []
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XNode}
+        name: IEnumerable<XNode>
+        isExternal: true
   id: System.Xml.Linq.XElement.DescendantNodesAndSelf
 - uid: System.Xml.Linq.XElement.DescendantsAndSelf
   href: System.Xml.Linq.XElement.yml
@@ -580,7 +606,7 @@ items:
   summary: >-
     Returns this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) and all of it's descendant [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml)s
 
-    as an @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
+    as an [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
 
     [System.Xml.Linq.XElement.DescendantsAndSelf](System.Xml.Linq.XElement.yml)
   syntax:
@@ -589,8 +615,12 @@ items:
     parameters: []
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement}
+        name: IEnumerable<XElement>
+        isExternal: true
       description: >-
-        An @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml)
+        An [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml)
 
         and all of it's descendants.
   id: System.Xml.Linq.XElement.DescendantsAndSelf
@@ -621,8 +651,12 @@ items:
       description: The [System.Xml.Linq.XName](System.Xml.Linq.XName.yml) of the descendant [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) that is being targeted.
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement}
+        name: IEnumerable<XElement>
+        isExternal: true
       description: >-
-        An @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing all of the descendant
+        An [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing all of the descendant
 
         [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml)s that have this [System.Xml.Linq.XName](System.Xml.Linq.XName.yml).
   id: System.Xml.Linq.XElement.DescendantsAndSelf(System.Xml.Linq.XName)
@@ -642,6 +676,10 @@ items:
     parameters: []
     return:
       id: XNamespace
+      type:
+        id: System.Xml.Linq.XNamespace
+        name: XNamespace
+        href: System.Xml.Linq.XNamespace.yml
   id: System.Xml.Linq.XElement.GetDefaultNamespace
 - uid: System.Xml.Linq.XElement.GetNamespaceOfPrefix(System.String)
   href: System.Xml.Linq.XElement.yml
@@ -663,11 +701,15 @@ items:
     - id: prefix
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The namespace prefix to look up
     return:
       id: XNamespace
+      type:
+        id: System.Xml.Linq.XNamespace
+        name: XNamespace
+        href: System.Xml.Linq.XNamespace.yml
       description: An [System.Xml.Linq.XNamespace](System.Xml.Linq.XNamespace.yml) for the namespace bound to the prefix
   id: System.Xml.Linq.XElement.GetNamespaceOfPrefix(System.String)
 - uid: System.Xml.Linq.XElement.GetPrefixOfNamespace(System.Xml.Linq.XNamespace)
@@ -692,6 +734,10 @@ items:
       description: The [System.Xml.Linq.XNamespace](System.Xml.Linq.XNamespace.yml) for which to get a prefix
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
       description: The namespace prefix string
   id: System.Xml.Linq.XElement.GetPrefixOfNamespace(System.Xml.Linq.XNamespace)
 - uid: System.Xml.Linq.XElement.Load(System.String)
@@ -715,16 +761,20 @@ items:
     @!:XmlReader.Create(string)-[System.Xml.Linq.XElement.Parse(System.String)](System.Xml.Linq.XElement.yml)[System.Xml.Linq.XDocument.Parse(System.String)](System.Xml.Linq.XDocument.yml)
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", Justification = "Back-compat with System.Xml.")] public static XElement Load(string uri)'
+      CSharp: public static XElement Load(string uri)
     parameters:
     - id: uri
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: A URI string referencing the file to load into a new [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
     return:
       id: XElement
+      type:
+        id: System.Xml.Linq.XElement
+        name: XElement
+        href: System.Xml.Linq.XElement.yml
       description: >-
         An [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) initialized with the contents of the file referenced
 
@@ -747,12 +797,12 @@ items:
     @!:XmlReader.Create(string)-[System.Xml.Linq.XDocument.Load(System.String,System.Xml.Linq.LoadOptions)](System.Xml.Linq.XDocument.yml)
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", Justification = "Back-compat with System.Xml.")] public static XElement Load(string uri, LoadOptions options)'
+      CSharp: public static XElement Load(string uri, LoadOptions options)
     parameters:
     - id: uri
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: A string representing the URI of the file to be loaded into a new [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
     - id: options
@@ -763,6 +813,10 @@ items:
       description: A set of [System.Xml.Linq.LoadOptions](System.Xml.Linq.LoadOptions.yml).
     return:
       id: XElement
+      type:
+        id: System.Xml.Linq.XElement
+        name: XElement
+        href: System.Xml.Linq.XElement.yml
       description: >-
         An [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) initialized with the contents of the file referenced
 
@@ -770,10 +824,10 @@ items:
 
         significant whitespace will be preserved.
   id: System.Xml.Linq.XElement.Load(System.String,System.Xml.Linq.LoadOptions)
-- uid: System.Xml.Linq.XElement.Load(Stream)
+- uid: System.Xml.Linq.XElement.Load(System.IO.Stream)
   href: System.Xml.Linq.XElement.yml
   name: Load(Stream)
-  fullName: System.Xml.Linq.XElement.Load(Stream)
+  fullName: System.Xml.Linq.XElement.Load(System.IO.Stream)
   type: Method
   source:
     remote: *o0
@@ -782,31 +836,35 @@ items:
   summary: >-
     Create a new [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) and initialize its underlying XML tree using
 
-    the passed @!:Stream- parameter.
+    the passed [System.IO.Stream]() parameter.
   syntax:
     content:
       CSharp: public static XElement Load(Stream stream)
     parameters:
     - id: stream
       type:
-        id: Stream
+        id: System.IO.Stream
         name: Stream
         isExternal: true
       description: >-
-        A @!:Stream- containing the raw XML to read into the newly
+        A [System.IO.Stream]() containing the raw XML to read into the newly
 
         created [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
     return:
       id: XElement
+      type:
+        id: System.Xml.Linq.XElement
+        name: XElement
+        href: System.Xml.Linq.XElement.yml
       description: >-
         A new [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the contents of the passed in
 
-        @!:Stream-.
-  id: System.Xml.Linq.XElement.Load(Stream)
-- uid: System.Xml.Linq.XElement.Load(Stream,System.Xml.Linq.LoadOptions)
+        [System.IO.Stream]().
+  id: System.Xml.Linq.XElement.Load(System.IO.Stream)
+- uid: System.Xml.Linq.XElement.Load(System.IO.Stream,System.Xml.Linq.LoadOptions)
   href: System.Xml.Linq.XElement.yml
   name: Load(Stream, LoadOptions)
-  fullName: System.Xml.Linq.XElement.Load(Stream, System.Xml.Linq.LoadOptions)
+  fullName: System.Xml.Linq.XElement.Load(System.IO.Stream, System.Xml.Linq.LoadOptions)
   type: Method
   source:
     remote: *o0
@@ -815,7 +873,7 @@ items:
   summary: >-
     Create a new [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) and initialize its underlying XML tree using
 
-    the passed @!:Stream- parameter.  Optionally whitespace handling
+    the passed [System.IO.Stream]() parameter.  Optionally whitespace handling
 
     can be preserved.
   syntax:
@@ -824,11 +882,11 @@ items:
     parameters:
     - id: stream
       type:
-        id: Stream
+        id: System.IO.Stream
         name: Stream
         isExternal: true
       description: >-
-        A @!:Stream- containing the raw XML to read into the newly
+        A [System.IO.Stream]() containing the raw XML to read into the newly
 
         created [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
     - id: options
@@ -839,15 +897,19 @@ items:
       description: A set of [System.Xml.Linq.LoadOptions](System.Xml.Linq.LoadOptions.yml).
     return:
       id: XElement
+      type:
+        id: System.Xml.Linq.XElement
+        name: XElement
+        href: System.Xml.Linq.XElement.yml
       description: >-
         A new [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the contents of the passed in
 
-        @!:Stream-.
-  id: System.Xml.Linq.XElement.Load(Stream,System.Xml.Linq.LoadOptions)
-- uid: System.Xml.Linq.XElement.Load(TextReader)
+        [System.IO.Stream]().
+  id: System.Xml.Linq.XElement.Load(System.IO.Stream,System.Xml.Linq.LoadOptions)
+- uid: System.Xml.Linq.XElement.Load(System.IO.TextReader)
   href: System.Xml.Linq.XElement.yml
   name: Load(TextReader)
-  fullName: System.Xml.Linq.XElement.Load(TextReader)
+  fullName: System.Xml.Linq.XElement.Load(System.IO.TextReader)
   type: Method
   source:
     remote: *o0
@@ -856,31 +918,35 @@ items:
   summary: >-
     Create a new [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) and initialize its underlying XML tree using
 
-    the passed @!:TextReader- parameter.
+    the passed [System.IO.TextReader]() parameter.
   syntax:
     content:
       CSharp: public static XElement Load(TextReader textReader)
     parameters:
     - id: textReader
       type:
-        id: TextReader
+        id: System.IO.TextReader
         name: TextReader
         isExternal: true
       description: >-
-        A @!:TextReader- containing the raw XML to read into the newly
+        A [System.IO.TextReader]() containing the raw XML to read into the newly
 
         created [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
     return:
       id: XElement
+      type:
+        id: System.Xml.Linq.XElement
+        name: XElement
+        href: System.Xml.Linq.XElement.yml
       description: >-
         A new [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the contents of the passed in
 
-        @!:TextReader-.
-  id: System.Xml.Linq.XElement.Load(TextReader)
-- uid: System.Xml.Linq.XElement.Load(TextReader,System.Xml.Linq.LoadOptions)
+        [System.IO.TextReader]().
+  id: System.Xml.Linq.XElement.Load(System.IO.TextReader)
+- uid: System.Xml.Linq.XElement.Load(System.IO.TextReader,System.Xml.Linq.LoadOptions)
   href: System.Xml.Linq.XElement.yml
   name: Load(TextReader, LoadOptions)
-  fullName: System.Xml.Linq.XElement.Load(TextReader, System.Xml.Linq.LoadOptions)
+  fullName: System.Xml.Linq.XElement.Load(System.IO.TextReader, System.Xml.Linq.LoadOptions)
   type: Method
   source:
     remote: *o0
@@ -889,7 +955,7 @@ items:
   summary: >-
     Create a new [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) and initialize its underlying XML tree using
 
-    the passed @!:TextReader- parameter.  Optionally whitespace handling
+    the passed [System.IO.TextReader]() parameter.  Optionally whitespace handling
 
     can be preserved.
   syntax:
@@ -898,11 +964,11 @@ items:
     parameters:
     - id: textReader
       type:
-        id: TextReader
+        id: System.IO.TextReader
         name: TextReader
         isExternal: true
       description: >-
-        A @!:TextReader- containing the raw XML to read into the newly
+        A [System.IO.TextReader]() containing the raw XML to read into the newly
 
         created [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
     - id: options
@@ -913,11 +979,15 @@ items:
       description: A set of [System.Xml.Linq.LoadOptions](System.Xml.Linq.LoadOptions.yml).
     return:
       id: XElement
+      type:
+        id: System.Xml.Linq.XElement
+        name: XElement
+        href: System.Xml.Linq.XElement.yml
       description: >-
         A new [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the contents of the passed in
 
-        @!:TextReader-.
-  id: System.Xml.Linq.XElement.Load(TextReader,System.Xml.Linq.LoadOptions)
+        [System.IO.TextReader]().
+  id: System.Xml.Linq.XElement.Load(System.IO.TextReader,System.Xml.Linq.LoadOptions)
 - uid: System.Xml.Linq.XElement.Load(XmlReader)
   href: System.Xml.Linq.XElement.yml
   name: Load(XmlReader)
@@ -946,6 +1016,10 @@ items:
         [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
     return:
       id: XElement
+      type:
+        id: System.Xml.Linq.XElement
+        name: XElement
+        href: System.Xml.Linq.XElement.yml
       description: >-
         A new [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the contents of the passed
 
@@ -985,6 +1059,10 @@ items:
       description: A set of [System.Xml.Linq.LoadOptions](System.Xml.Linq.LoadOptions.yml).
     return:
       id: XElement
+      type:
+        id: System.Xml.Linq.XElement
+        name: XElement
+        href: System.Xml.Linq.XElement.yml
       description: >-
         A new [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the contents of the passed
 
@@ -1007,11 +1085,15 @@ items:
     - id: text
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: A string containing the XML to parse into an [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
     return:
       id: XElement
+      type:
+        id: System.Xml.Linq.XElement
+        name: XElement
+        href: System.Xml.Linq.XElement.yml
       description: An [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) created from the XML string passed in.
   id: System.Xml.Linq.XElement.Parse(System.String)
 - uid: System.Xml.Linq.XElement.Parse(System.String,System.Xml.Linq.LoadOptions)
@@ -1034,7 +1116,7 @@ items:
     - id: text
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: A string containing the XML to parse into an [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
     - id: options
@@ -1045,6 +1127,10 @@ items:
       description: A set of [System.Xml.Linq.LoadOptions](System.Xml.Linq.LoadOptions.yml).
     return:
       id: XElement
+      type:
+        id: System.Xml.Linq.XElement
+        name: XElement
+        href: System.Xml.Linq.XElement.yml
       description: An [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) created from the XML string passed in.
   id: System.Xml.Linq.XElement.Parse(System.String,System.Xml.Linq.LoadOptions)
 - uid: System.Xml.Linq.XElement.RemoveAll
@@ -1100,7 +1186,7 @@ items:
     - id: content
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: The content that will replace the child nodes and attributes of this element.
   id: System.Xml.Linq.XElement.ReplaceAll(System.Object)
@@ -1121,7 +1207,7 @@ items:
     - id: content
       type:
         id: System.Array
-        name: System.Array
+        name: object[]
         isExternal: true
       description: A parameter list of content objects.
   id: System.Xml.Linq.XElement.ReplaceAll(System.Object[])
@@ -1142,7 +1228,7 @@ items:
     - id: content
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: The content that will replace the attributes of this element.
   id: System.Xml.Linq.XElement.ReplaceAttributes(System.Object)
@@ -1163,51 +1249,51 @@ items:
     - id: content
       type:
         id: System.Array
-        name: System.Array
+        name: object[]
         isExternal: true
       description: A parameter list of content objects.
   id: System.Xml.Linq.XElement.ReplaceAttributes(System.Object[])
-- uid: System.Xml.Linq.XElement.Save(Stream)
+- uid: System.Xml.Linq.XElement.Save(System.IO.Stream)
   href: System.Xml.Linq.XElement.yml
   name: Save(Stream)
-  fullName: System.Xml.Linq.XElement.Save(Stream)
+  fullName: System.Xml.Linq.XElement.Save(System.IO.Stream)
   type: Method
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XElement.cs
     startLine: 869
-  summary: Output this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to the passed in @!:Stream-.
+  summary: Output this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to the passed in [System.IO.Stream]().
   syntax:
     content:
       CSharp: public void Save(Stream stream)
     parameters:
     - id: stream
       type:
-        id: Stream
+        id: System.IO.Stream
         name: Stream
         isExternal: true
-      description: The @!:Stream- to output this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to.
-  id: System.Xml.Linq.XElement.Save(Stream)
-- uid: System.Xml.Linq.XElement.Save(Stream,System.Xml.Linq.SaveOptions)
+      description: The [System.IO.Stream]() to output this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to.
+  id: System.Xml.Linq.XElement.Save(System.IO.Stream)
+- uid: System.Xml.Linq.XElement.Save(System.IO.Stream,System.Xml.Linq.SaveOptions)
   href: System.Xml.Linq.XElement.yml
   name: Save(Stream, SaveOptions)
-  fullName: System.Xml.Linq.XElement.Save(Stream, System.Xml.Linq.SaveOptions)
+  fullName: System.Xml.Linq.XElement.Save(System.IO.Stream, System.Xml.Linq.SaveOptions)
   type: Method
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XElement.cs
     startLine: 884
-  summary: Output this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to a @!:Stream-.
+  summary: Output this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to a [System.IO.Stream]().
   syntax:
     content:
       CSharp: public void Save(Stream stream, SaveOptions options)
     parameters:
     - id: stream
       type:
-        id: Stream
+        id: System.IO.Stream
         name: Stream
         isExternal: true
-      description: The @!:Stream- to output the XML to.
+      description: The [System.IO.Stream]() to output the XML to.
     - id: options
       type:
         id: System.Xml.Linq.SaveOptions
@@ -1217,48 +1303,48 @@ items:
         If SaveOptions.DisableFormatting is enabled the output is not indented.
 
         If SaveOptions.OmitDuplicateNamespaces is enabled duplicate namespace declarations will be removed.
-  id: System.Xml.Linq.XElement.Save(Stream,System.Xml.Linq.SaveOptions)
-- uid: System.Xml.Linq.XElement.Save(TextWriter)
+  id: System.Xml.Linq.XElement.Save(System.IO.Stream,System.Xml.Linq.SaveOptions)
+- uid: System.Xml.Linq.XElement.Save(System.IO.TextWriter)
   href: System.Xml.Linq.XElement.yml
   name: Save(TextWriter)
-  fullName: System.Xml.Linq.XElement.Save(TextWriter)
+  fullName: System.Xml.Linq.XElement.Save(System.IO.TextWriter)
   type: Method
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XElement.cs
     startLine: 907
-  summary: Output this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to the passed in @!:TextWriter-.
+  summary: Output this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to the passed in [System.IO.TextWriter]().
   syntax:
     content:
       CSharp: public void Save(TextWriter textWriter)
     parameters:
     - id: textWriter
       type:
-        id: TextWriter
+        id: System.IO.TextWriter
         name: TextWriter
         isExternal: true
-      description: The @!:TextWriter- to output this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to.
-  id: System.Xml.Linq.XElement.Save(TextWriter)
-- uid: System.Xml.Linq.XElement.Save(TextWriter,System.Xml.Linq.SaveOptions)
+      description: The [System.IO.TextWriter]() to output this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to.
+  id: System.Xml.Linq.XElement.Save(System.IO.TextWriter)
+- uid: System.Xml.Linq.XElement.Save(System.IO.TextWriter,System.Xml.Linq.SaveOptions)
   href: System.Xml.Linq.XElement.yml
   name: Save(TextWriter, SaveOptions)
-  fullName: System.Xml.Linq.XElement.Save(TextWriter, System.Xml.Linq.SaveOptions)
+  fullName: System.Xml.Linq.XElement.Save(System.IO.TextWriter, System.Xml.Linq.SaveOptions)
   type: Method
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XElement.cs
     startLine: 922
-  summary: Output this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to a @!:TextWriter-.
+  summary: Output this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to a [System.IO.TextWriter]().
   syntax:
     content:
       CSharp: public void Save(TextWriter textWriter, SaveOptions options)
     parameters:
     - id: textWriter
       type:
-        id: TextWriter
+        id: System.IO.TextWriter
         name: TextWriter
         isExternal: true
-      description: The @!:TextWriter- to output the XML to.
+      description: The [System.IO.TextWriter]() to output the XML to.
     - id: options
       type:
         id: System.Xml.Linq.SaveOptions
@@ -1268,7 +1354,7 @@ items:
         If SaveOptions.DisableFormatting is enabled the output is not indented.
 
         If SaveOptions.OmitDuplicateNamespaces is enabled duplicate namespace declarations will be removed.
-  id: System.Xml.Linq.XElement.Save(TextWriter,System.Xml.Linq.SaveOptions)
+  id: System.Xml.Linq.XElement.Save(System.IO.TextWriter,System.Xml.Linq.SaveOptions)
 - uid: System.Xml.Linq.XElement.Save(XmlWriter)
   href: System.Xml.Linq.XElement.yml
   name: Save(XmlWriter)
@@ -1320,7 +1406,7 @@ items:
     - id: value
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: >-
         The value to assign to the attribute. The attribute is deleted if the value is null.
@@ -1361,7 +1447,7 @@ items:
     - id: value
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: >-
         The value to assign to the child element. The child element is deleted if the value
@@ -1390,7 +1476,7 @@ items:
     - id: value
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: >-
         The value to assign to this element. The value is converted to its string representation
@@ -1422,15 +1508,15 @@ items:
   href: System.Xml.Linq.XElement.yml
   name: explicit operator string(XElement)
   fullName: System.Xml.Linq.XElement.explicit operator string(System.Xml.Linq.XElement)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XElement.cs
     startLine: 1070
-  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to a @!:System.String-.
+  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to a [System.String]().
   syntax:
     content:
-      CSharp: '[CLSCompliant(false)] [SuppressMessage("Microsoft.Usage", "CA2225:OperatorOverloadsHaveNamedAlternates", Justification = "Operator marked with CLSCompliant(false).")] public static explicit operator string (XElement element) { if (element == null) return null; return element.Value; }'
+      CSharp: public static explicit operator string (XElement element)
     parameters:
     - id: element
       type:
@@ -1440,581 +1526,681 @@ items:
       description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to a string.
     return:
       id: String
-      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a @!:System.String-.
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a [System.String]().
   id: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.String
 - uid: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Boolean
   href: System.Xml.Linq.XElement.yml
   name: explicit operator bool(XElement)
   fullName: System.Xml.Linq.XElement.explicit operator bool(System.Xml.Linq.XElement)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XElement.cs
     startLine: 1093
-  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to a @!:System.Boolean-.
+  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to a [System.Boolean]().
   syntax:
     content:
-      CSharp: '[CLSCompliant(false)] [SuppressMessage("Microsoft.Usage", "CA2225:OperatorOverloadsHaveNamedAlternates", Justification = "Operator marked with CLSCompliant(false).")] public static explicit operator bool (XElement element) { if (element == null) throw new ArgumentNullException("element"); return XmlConvert.ToBoolean(element.Value.ToLowerInvariant()); }'
+      CSharp: public static explicit operator bool (XElement element)
     parameters:
     - id: element
       type:
         id: System.Xml.Linq.XElement
         name: XElement
         href: System.Xml.Linq.XElement.yml
-      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to @!:System.Boolean-.
+      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to [System.Boolean]().
     return:
       id: Boolean
-      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a @!:System.Boolean-.
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a [System.Boolean]().
   id: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Boolean
 - uid: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{System.Boolean}
   href: System.Xml.Linq.XElement.yml
   name: explicit operator bool?(XElement)
   fullName: System.Xml.Linq.XElement.explicit operator bool?(System.Xml.Linq.XElement)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XElement.cs
     startLine: 1113
-  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to a @!:System.Boolean-?.
+  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to a [System.Boolean]()?.
   syntax:
     content:
-      CSharp: '[CLSCompliant(false)] [SuppressMessage("Microsoft.Usage", "CA2225:OperatorOverloadsHaveNamedAlternates", Justification = "Operator marked with CLSCompliant(false).")] public static explicit operator bool ? (XElement element) { if (element == null) return null; return XmlConvert.ToBoolean(element.Value.ToLowerInvariant()); }'
+      CSharp: public static explicit operator bool ? (XElement element)
     parameters:
     - id: element
       type:
         id: System.Xml.Linq.XElement
         name: XElement
         href: System.Xml.Linq.XElement.yml
-      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to @!:System.Boolean-?.
+      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to [System.Boolean]()?.
     return:
       id: Nullable
-      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a @!:System.Boolean-?.
+      type:
+        id: System.Nullable{System.Boolean}
+        name: bool?
+        isExternal: true
+      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a [System.Boolean]()?.
   id: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{System.Boolean}
 - uid: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Int32
   href: System.Xml.Linq.XElement.yml
   name: explicit operator int(XElement)
   fullName: System.Xml.Linq.XElement.explicit operator int(System.Xml.Linq.XElement)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XElement.cs
     startLine: 1136
-  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to an @!:System.Int32-.
+  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to an [System.Int32]().
   syntax:
     content:
-      CSharp: '[CLSCompliant(false)] [SuppressMessage("Microsoft.Usage", "CA2225:OperatorOverloadsHaveNamedAlternates", Justification = "Operator marked with CLSCompliant(false).")] public static explicit operator int (XElement element) { if (element == null) throw new ArgumentNullException("element"); return XmlConvert.ToInt32(element.Value); }'
+      CSharp: public static explicit operator int (XElement element)
     parameters:
     - id: element
       type:
         id: System.Xml.Linq.XElement
         name: XElement
         href: System.Xml.Linq.XElement.yml
-      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to @!:System.Int32-.
+      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to [System.Int32]().
     return:
       id: Int32
-      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a @!:System.Int32-.
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a [System.Int32]().
   id: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Int32
 - uid: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{System.Int32}
   href: System.Xml.Linq.XElement.yml
   name: explicit operator int?(XElement)
   fullName: System.Xml.Linq.XElement.explicit operator int?(System.Xml.Linq.XElement)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XElement.cs
     startLine: 1156
-  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to an @!:System.Int32-?.
+  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to an [System.Int32]()?.
   syntax:
     content:
-      CSharp: '[CLSCompliant(false)] [SuppressMessage("Microsoft.Usage", "CA2225:OperatorOverloadsHaveNamedAlternates", Justification = "Operator marked with CLSCompliant(false).")] public static explicit operator int ? (XElement element) { if (element == null) return null; return XmlConvert.ToInt32(element.Value); }'
+      CSharp: public static explicit operator int ? (XElement element)
     parameters:
     - id: element
       type:
         id: System.Xml.Linq.XElement
         name: XElement
         href: System.Xml.Linq.XElement.yml
-      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to @!:System.Int32-?.
+      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to [System.Int32]()?.
     return:
       id: Nullable
-      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a @!:System.Int32-?.
+      type:
+        id: System.Nullable{System.Int32}
+        name: int?
+        isExternal: true
+      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a [System.Int32]()?.
   id: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{System.Int32}
 - uid: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.UInt32
   href: System.Xml.Linq.XElement.yml
   name: explicit operator uint(XElement)
   fullName: System.Xml.Linq.XElement.explicit operator uint(System.Xml.Linq.XElement)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XElement.cs
     startLine: 1179
-  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to an @!:System.UInt32-.
+  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to an [System.UInt32]().
   syntax:
     content:
-      CSharp: '[CLSCompliant(false)] [SuppressMessage("Microsoft.Usage", "CA2225:OperatorOverloadsHaveNamedAlternates", Justification = "Operator marked with CLSCompliant(false).")] public static explicit operator uint (XElement element) { if (element == null) throw new ArgumentNullException("element"); return XmlConvert.ToUInt32(element.Value); }'
+      CSharp: public static explicit operator uint (XElement element)
     parameters:
     - id: element
       type:
         id: System.Xml.Linq.XElement
         name: XElement
         href: System.Xml.Linq.XElement.yml
-      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to @!:System.UInt32-.
+      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to [System.UInt32]().
     return:
       id: UInt32
-      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a @!:System.UInt32-.
+      type:
+        id: System.UInt32
+        name: uint
+        isExternal: true
+      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a [System.UInt32]().
   id: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.UInt32
 - uid: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{System.UInt32}
   href: System.Xml.Linq.XElement.yml
   name: explicit operator uint?(XElement)
   fullName: System.Xml.Linq.XElement.explicit operator uint?(System.Xml.Linq.XElement)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XElement.cs
     startLine: 1199
-  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to an @!:System.UInt32-?.
+  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to an [System.UInt32]()?.
   syntax:
     content:
-      CSharp: '[CLSCompliant(false)] [SuppressMessage("Microsoft.Usage", "CA2225:OperatorOverloadsHaveNamedAlternates", Justification = "Operator marked with CLSCompliant(false).")] public static explicit operator uint ? (XElement element) { if (element == null) return null; return XmlConvert.ToUInt32(element.Value); }'
+      CSharp: public static explicit operator uint ? (XElement element)
     parameters:
     - id: element
       type:
         id: System.Xml.Linq.XElement
         name: XElement
         href: System.Xml.Linq.XElement.yml
-      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to @!:System.UInt32-?.
+      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to [System.UInt32]()?.
     return:
       id: Nullable
-      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a @!:System.UInt32-?.
+      type:
+        id: System.Nullable{System.UInt32}
+        name: uint?
+        isExternal: true
+      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a [System.UInt32]()?.
   id: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{System.UInt32}
 - uid: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Int64
   href: System.Xml.Linq.XElement.yml
   name: explicit operator long(XElement)
   fullName: System.Xml.Linq.XElement.explicit operator long(System.Xml.Linq.XElement)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XElement.cs
     startLine: 1222
-  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to a @!:System.Int64-.
+  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to a [System.Int64]().
   syntax:
     content:
-      CSharp: '[CLSCompliant(false)] [SuppressMessage("Microsoft.Usage", "CA2225:OperatorOverloadsHaveNamedAlternates", Justification = "Operator marked with CLSCompliant(false).")] public static explicit operator long (XElement element) { if (element == null) throw new ArgumentNullException("element"); return XmlConvert.ToInt64(element.Value); }'
+      CSharp: public static explicit operator long (XElement element)
     parameters:
     - id: element
       type:
         id: System.Xml.Linq.XElement
         name: XElement
         href: System.Xml.Linq.XElement.yml
-      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to @!:System.Int64-.
+      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to [System.Int64]().
     return:
       id: Int64
-      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a @!:System.Int64-.
+      type:
+        id: System.Int64
+        name: long
+        isExternal: true
+      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a [System.Int64]().
   id: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Int64
 - uid: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{System.Int64}
   href: System.Xml.Linq.XElement.yml
   name: explicit operator long?(XElement)
   fullName: System.Xml.Linq.XElement.explicit operator long?(System.Xml.Linq.XElement)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XElement.cs
     startLine: 1242
-  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to a @!:System.Int64-?.
+  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to a [System.Int64]()?.
   syntax:
     content:
-      CSharp: '[CLSCompliant(false)] [SuppressMessage("Microsoft.Usage", "CA2225:OperatorOverloadsHaveNamedAlternates", Justification = "Operator marked with CLSCompliant(false).")] public static explicit operator long ? (XElement element) { if (element == null) return null; return XmlConvert.ToInt64(element.Value); }'
+      CSharp: public static explicit operator long ? (XElement element)
     parameters:
     - id: element
       type:
         id: System.Xml.Linq.XElement
         name: XElement
         href: System.Xml.Linq.XElement.yml
-      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to @!:System.Int64-?.
+      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to [System.Int64]()?.
     return:
       id: Nullable
-      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a @!:System.Int64-?.
+      type:
+        id: System.Nullable{System.Int64}
+        name: long?
+        isExternal: true
+      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a [System.Int64]()?.
   id: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{System.Int64}
 - uid: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.UInt64
   href: System.Xml.Linq.XElement.yml
   name: explicit operator ulong(XElement)
   fullName: System.Xml.Linq.XElement.explicit operator ulong(System.Xml.Linq.XElement)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XElement.cs
     startLine: 1265
-  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to an @!:System.UInt64-.
+  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to an [System.UInt64]().
   syntax:
     content:
-      CSharp: '[CLSCompliant(false)] [SuppressMessage("Microsoft.Usage", "CA2225:OperatorOverloadsHaveNamedAlternates", Justification = "Operator marked with CLSCompliant(false).")] public static explicit operator ulong (XElement element) { if (element == null) throw new ArgumentNullException("element"); return XmlConvert.ToUInt64(element.Value); }'
+      CSharp: public static explicit operator ulong (XElement element)
     parameters:
     - id: element
       type:
         id: System.Xml.Linq.XElement
         name: XElement
         href: System.Xml.Linq.XElement.yml
-      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to @!:System.UInt64-.
+      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to [System.UInt64]().
     return:
       id: UInt64
-      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a @!:System.UInt64-.
+      type:
+        id: System.UInt64
+        name: ulong
+        isExternal: true
+      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a [System.UInt64]().
   id: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.UInt64
 - uid: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{System.UInt64}
   href: System.Xml.Linq.XElement.yml
   name: explicit operator ulong?(XElement)
   fullName: System.Xml.Linq.XElement.explicit operator ulong?(System.Xml.Linq.XElement)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XElement.cs
     startLine: 1285
-  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to an @!:System.UInt64-?.
+  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to an [System.UInt64]()?.
   syntax:
     content:
-      CSharp: '[CLSCompliant(false)] [SuppressMessage("Microsoft.Usage", "CA2225:OperatorOverloadsHaveNamedAlternates", Justification = "Operator marked with CLSCompliant(false).")] public static explicit operator ulong ? (XElement element) { if (element == null) return null; return XmlConvert.ToUInt64(element.Value); }'
+      CSharp: public static explicit operator ulong ? (XElement element)
     parameters:
     - id: element
       type:
         id: System.Xml.Linq.XElement
         name: XElement
         href: System.Xml.Linq.XElement.yml
-      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to @!:System.UInt64-?.
+      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to [System.UInt64]()?.
     return:
       id: Nullable
-      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a @!:System.UInt64-?.
+      type:
+        id: System.Nullable{System.UInt64}
+        name: ulong?
+        isExternal: true
+      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a [System.UInt64]()?.
   id: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{System.UInt64}
 - uid: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Single
   href: System.Xml.Linq.XElement.yml
   name: explicit operator float(XElement)
   fullName: System.Xml.Linq.XElement.explicit operator float(System.Xml.Linq.XElement)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XElement.cs
     startLine: 1308
-  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to a @!:System.Single-.
+  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to a [System.Single]().
   syntax:
     content:
-      CSharp: '[CLSCompliant(false)] [SuppressMessage("Microsoft.Usage", "CA2225:OperatorOverloadsHaveNamedAlternates", Justification = "Operator marked with CLSCompliant(false).")] public static explicit operator float (XElement element) { if (element == null) throw new ArgumentNullException("element"); return XmlConvert.ToSingle(element.Value); }'
+      CSharp: public static explicit operator float (XElement element)
     parameters:
     - id: element
       type:
         id: System.Xml.Linq.XElement
         name: XElement
         href: System.Xml.Linq.XElement.yml
-      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to @!:System.Single-.
+      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to [System.Single]().
     return:
       id: Single
-      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a @!:System.Single-.
+      type:
+        id: System.Single
+        name: float
+        isExternal: true
+      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a [System.Single]().
   id: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Single
 - uid: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{System.Single}
   href: System.Xml.Linq.XElement.yml
   name: explicit operator float?(XElement)
   fullName: System.Xml.Linq.XElement.explicit operator float?(System.Xml.Linq.XElement)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XElement.cs
     startLine: 1328
-  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to an @!:System.Single-?.
+  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to an [System.Single]()?.
   syntax:
     content:
-      CSharp: '[CLSCompliant(false)] [SuppressMessage("Microsoft.Usage", "CA2225:OperatorOverloadsHaveNamedAlternates", Justification = "Operator marked with CLSCompliant(false).")] public static explicit operator float ? (XElement element) { if (element == null) return null; return XmlConvert.ToSingle(element.Value); }'
+      CSharp: public static explicit operator float ? (XElement element)
     parameters:
     - id: element
       type:
         id: System.Xml.Linq.XElement
         name: XElement
         href: System.Xml.Linq.XElement.yml
-      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to @!:System.Single-?.
+      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to [System.Single]()?.
     return:
       id: Nullable
-      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a @!:System.Single-?.
+      type:
+        id: System.Nullable{System.Single}
+        name: float?
+        isExternal: true
+      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a [System.Single]()?.
   id: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{System.Single}
 - uid: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Double
   href: System.Xml.Linq.XElement.yml
   name: explicit operator double(XElement)
   fullName: System.Xml.Linq.XElement.explicit operator double(System.Xml.Linq.XElement)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XElement.cs
     startLine: 1351
-  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to a @!:System.Double-.
+  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to a [System.Double]().
   syntax:
     content:
-      CSharp: '[CLSCompliant(false)] [SuppressMessage("Microsoft.Usage", "CA2225:OperatorOverloadsHaveNamedAlternates", Justification = "Operator marked with CLSCompliant(false).")] public static explicit operator double (XElement element) { if (element == null) throw new ArgumentNullException("element"); return XmlConvert.ToDouble(element.Value); }'
+      CSharp: public static explicit operator double (XElement element)
     parameters:
     - id: element
       type:
         id: System.Xml.Linq.XElement
         name: XElement
         href: System.Xml.Linq.XElement.yml
-      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to @!:System.Double-.
+      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to [System.Double]().
     return:
       id: Double
-      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a @!:System.Double-.
+      type:
+        id: System.Double
+        name: double
+        isExternal: true
+      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a [System.Double]().
   id: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Double
 - uid: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{System.Double}
   href: System.Xml.Linq.XElement.yml
   name: explicit operator double?(XElement)
   fullName: System.Xml.Linq.XElement.explicit operator double?(System.Xml.Linq.XElement)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XElement.cs
     startLine: 1371
-  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to an @!:System.Double-?.
+  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to an [System.Double]()?.
   syntax:
     content:
-      CSharp: '[CLSCompliant(false)] [SuppressMessage("Microsoft.Usage", "CA2225:OperatorOverloadsHaveNamedAlternates", Justification = "Operator marked with CLSCompliant(false).")] public static explicit operator double ? (XElement element) { if (element == null) return null; return XmlConvert.ToDouble(element.Value); }'
+      CSharp: public static explicit operator double ? (XElement element)
     parameters:
     - id: element
       type:
         id: System.Xml.Linq.XElement
         name: XElement
         href: System.Xml.Linq.XElement.yml
-      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to @!:System.Double-?.
+      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to [System.Double]()?.
     return:
       id: Nullable
-      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a @!:System.Double-?.
+      type:
+        id: System.Nullable{System.Double}
+        name: double?
+        isExternal: true
+      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a [System.Double]()?.
   id: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{System.Double}
 - uid: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Decimal
   href: System.Xml.Linq.XElement.yml
   name: explicit operator decimal(XElement)
   fullName: System.Xml.Linq.XElement.explicit operator decimal(System.Xml.Linq.XElement)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XElement.cs
     startLine: 1394
-  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to a @!:System.Decimal-.
+  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to a [System.Decimal]().
   syntax:
     content:
-      CSharp: '[CLSCompliant(false)] [SuppressMessage("Microsoft.Usage", "CA2225:OperatorOverloadsHaveNamedAlternates", Justification = "Operator marked with CLSCompliant(false).")] public static explicit operator decimal (XElement element) { if (element == null) throw new ArgumentNullException("element"); return XmlConvert.ToDecimal(element.Value); }'
+      CSharp: public static explicit operator decimal (XElement element)
     parameters:
     - id: element
       type:
         id: System.Xml.Linq.XElement
         name: XElement
         href: System.Xml.Linq.XElement.yml
-      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to @!:System.Decimal-.
+      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to [System.Decimal]().
     return:
       id: Decimal
-      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a @!:System.Decimal-.
+      type:
+        id: System.Decimal
+        name: decimal
+        isExternal: true
+      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a [System.Decimal]().
   id: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Decimal
 - uid: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{System.Decimal}
   href: System.Xml.Linq.XElement.yml
   name: explicit operator decimal?(XElement)
   fullName: System.Xml.Linq.XElement.explicit operator decimal?(System.Xml.Linq.XElement)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XElement.cs
     startLine: 1414
-  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to an @!:System.Decimal-?.
+  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to an [System.Decimal]()?.
   syntax:
     content:
-      CSharp: '[CLSCompliant(false)] [SuppressMessage("Microsoft.Usage", "CA2225:OperatorOverloadsHaveNamedAlternates", Justification = "Operator marked with CLSCompliant(false).")] public static explicit operator decimal ? (XElement element) { if (element == null) return null; return XmlConvert.ToDecimal(element.Value); }'
+      CSharp: public static explicit operator decimal ? (XElement element)
     parameters:
     - id: element
       type:
         id: System.Xml.Linq.XElement
         name: XElement
         href: System.Xml.Linq.XElement.yml
-      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to @!:System.Decimal-?.
+      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to [System.Decimal]()?.
     return:
       id: Nullable
-      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a @!:System.Decimal-?.
+      type:
+        id: System.Nullable{System.Decimal}
+        name: decimal?
+        isExternal: true
+      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a [System.Decimal]()?.
   id: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{System.Decimal}
-- uid: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~DateTime
+- uid: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.DateTime
   href: System.Xml.Linq.XElement.yml
   name: explicit operator DateTime(XElement)
-  fullName: System.Xml.Linq.XElement.explicit operator DateTime(System.Xml.Linq.XElement)
-  type: Method
+  fullName: System.Xml.Linq.XElement.explicit operator System.DateTime(System.Xml.Linq.XElement)
+  type: Operator
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XElement.cs
     startLine: 1437
-  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to a @!:DateTime-.
+  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to a [System.DateTime]().
   syntax:
     content:
-      CSharp: '[CLSCompliant(false)] [SuppressMessage("Microsoft.Usage", "CA2225:OperatorOverloadsHaveNamedAlternates", Justification = "Operator marked with CLSCompliant(false).")] public static explicit operator DateTime(XElement element) { if (element == null) throw new ArgumentNullException("element"); return DateTime.Parse(element.Value, CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.RoundtripKind); }'
+      CSharp: public static explicit operator DateTime(XElement element)
     parameters:
     - id: element
       type:
         id: System.Xml.Linq.XElement
         name: XElement
         href: System.Xml.Linq.XElement.yml
-      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to @!:DateTime-.
+      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to [System.DateTime]().
     return:
       id: DateTime
-      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a @!:DateTime-.
-  id: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~DateTime
-- uid: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{DateTime}
+      type:
+        id: System.DateTime
+        name: DateTime
+        isExternal: true
+      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a [System.DateTime]().
+  id: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.DateTime
+- uid: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{System.DateTime}
   href: System.Xml.Linq.XElement.yml
   name: explicit operator DateTime?(XElement)
-  fullName: System.Xml.Linq.XElement.explicit operator DateTime?(System.Xml.Linq.XElement)
-  type: Method
+  fullName: System.Xml.Linq.XElement.explicit operator System.DateTime?(System.Xml.Linq.XElement)
+  type: Operator
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XElement.cs
     startLine: 1457
-  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to an @!:DateTime-?.
+  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to an [System.DateTime]()?.
   syntax:
     content:
-      CSharp: '[CLSCompliant(false)] [SuppressMessage("Microsoft.Usage", "CA2225:OperatorOverloadsHaveNamedAlternates", Justification = "Operator marked with CLSCompliant(false).")] public static explicit operator DateTime? (XElement element) { if (element == null) return null; return DateTime.Parse(element.Value, CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.RoundtripKind); }'
+      CSharp: public static explicit operator DateTime? (XElement element)
     parameters:
     - id: element
       type:
         id: System.Xml.Linq.XElement
         name: XElement
         href: System.Xml.Linq.XElement.yml
-      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to @!:DateTime-?.
+      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to [System.DateTime]()?.
     return:
       id: Nullable
-      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a @!:DateTime-?.
-  id: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{DateTime}
-- uid: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~DateTimeOffset
+      type:
+        id: System.Nullable{System.DateTime}
+        name: DateTime?
+        isExternal: true
+      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a [System.DateTime]()?.
+  id: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{System.DateTime}
+- uid: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.DateTimeOffset
   href: System.Xml.Linq.XElement.yml
   name: explicit operator DateTimeOffset(XElement)
-  fullName: System.Xml.Linq.XElement.explicit operator DateTimeOffset(System.Xml.Linq.XElement)
-  type: Method
+  fullName: System.Xml.Linq.XElement.explicit operator System.DateTimeOffset(System.Xml.Linq.XElement)
+  type: Operator
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XElement.cs
     startLine: 1480
-  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to a @!:DateTimeOffset-.
+  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to a [System.DateTimeOffset]().
   syntax:
     content:
-      CSharp: '[CLSCompliant(false)] [SuppressMessage("Microsoft.Usage", "CA2225:OperatorOverloadsHaveNamedAlternates", Justification = "Operator marked with CLSCompliant(false).")] public static explicit operator DateTimeOffset(XElement element) { if (element == null) throw new ArgumentNullException("element"); return XmlConvert.ToDateTimeOffset(element.Value); }'
+      CSharp: public static explicit operator DateTimeOffset(XElement element)
     parameters:
     - id: element
       type:
         id: System.Xml.Linq.XElement
         name: XElement
         href: System.Xml.Linq.XElement.yml
-      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to @!:DateTimeOffset-.
+      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to [System.DateTimeOffset]().
     return:
       id: DateTimeOffset
-      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a @!:DateTimeOffset-.
-  id: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~DateTimeOffset
-- uid: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{DateTimeOffset}
+      type:
+        id: System.DateTimeOffset
+        name: DateTimeOffset
+        isExternal: true
+      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a [System.DateTimeOffset]().
+  id: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.DateTimeOffset
+- uid: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{System.DateTimeOffset}
   href: System.Xml.Linq.XElement.yml
   name: explicit operator DateTimeOffset?(XElement)
-  fullName: System.Xml.Linq.XElement.explicit operator DateTimeOffset?(System.Xml.Linq.XElement)
-  type: Method
+  fullName: System.Xml.Linq.XElement.explicit operator System.DateTimeOffset?(System.Xml.Linq.XElement)
+  type: Operator
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XElement.cs
     startLine: 1500
-  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to an @!:DateTimeOffset-?.
+  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to an [System.DateTimeOffset]()?.
   syntax:
     content:
-      CSharp: '[CLSCompliant(false)] [SuppressMessage("Microsoft.Usage", "CA2225:OperatorOverloadsHaveNamedAlternates", Justification = "Operator marked with CLSCompliant(false).")] public static explicit operator DateTimeOffset? (XElement element) { if (element == null) return null; return XmlConvert.ToDateTimeOffset(element.Value); }'
+      CSharp: public static explicit operator DateTimeOffset? (XElement element)
     parameters:
     - id: element
       type:
         id: System.Xml.Linq.XElement
         name: XElement
         href: System.Xml.Linq.XElement.yml
-      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to @!:DateTimeOffset-?.
+      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to [System.DateTimeOffset]()?.
     return:
       id: Nullable
-      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a @!:DateTimeOffset-?.
-  id: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{DateTimeOffset}
-- uid: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~TimeSpan
+      type:
+        id: System.Nullable{System.DateTimeOffset}
+        name: DateTimeOffset?
+        isExternal: true
+      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a [System.DateTimeOffset]()?.
+  id: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{System.DateTimeOffset}
+- uid: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.TimeSpan
   href: System.Xml.Linq.XElement.yml
   name: explicit operator TimeSpan(XElement)
-  fullName: System.Xml.Linq.XElement.explicit operator TimeSpan(System.Xml.Linq.XElement)
-  type: Method
+  fullName: System.Xml.Linq.XElement.explicit operator System.TimeSpan(System.Xml.Linq.XElement)
+  type: Operator
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XElement.cs
     startLine: 1523
-  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to a @!:TimeSpan-.
+  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to a [System.TimeSpan]().
   syntax:
     content:
-      CSharp: '[CLSCompliant(false)] [SuppressMessage("Microsoft.Usage", "CA2225:OperatorOverloadsHaveNamedAlternates", Justification = "Operator marked with CLSCompliant(false).")] public static explicit operator TimeSpan(XElement element) { if (element == null) throw new ArgumentNullException("element"); return XmlConvert.ToTimeSpan(element.Value); }'
+      CSharp: public static explicit operator TimeSpan(XElement element)
     parameters:
     - id: element
       type:
         id: System.Xml.Linq.XElement
         name: XElement
         href: System.Xml.Linq.XElement.yml
-      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to @!:TimeSpan-.
+      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to [System.TimeSpan]().
     return:
       id: TimeSpan
-      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a @!:TimeSpan-.
-  id: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~TimeSpan
-- uid: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{TimeSpan}
+      type:
+        id: System.TimeSpan
+        name: TimeSpan
+        isExternal: true
+      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a [System.TimeSpan]().
+  id: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.TimeSpan
+- uid: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{System.TimeSpan}
   href: System.Xml.Linq.XElement.yml
   name: explicit operator TimeSpan?(XElement)
-  fullName: System.Xml.Linq.XElement.explicit operator TimeSpan?(System.Xml.Linq.XElement)
-  type: Method
+  fullName: System.Xml.Linq.XElement.explicit operator System.TimeSpan?(System.Xml.Linq.XElement)
+  type: Operator
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XElement.cs
     startLine: 1543
-  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to an @!:TimeSpan-?.
+  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to an [System.TimeSpan]()?.
   syntax:
     content:
-      CSharp: '[CLSCompliant(false)] [SuppressMessage("Microsoft.Usage", "CA2225:OperatorOverloadsHaveNamedAlternates", Justification = "Operator marked with CLSCompliant(false).")] public static explicit operator TimeSpan? (XElement element) { if (element == null) return null; return XmlConvert.ToTimeSpan(element.Value); }'
+      CSharp: public static explicit operator TimeSpan? (XElement element)
     parameters:
     - id: element
       type:
         id: System.Xml.Linq.XElement
         name: XElement
         href: System.Xml.Linq.XElement.yml
-      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to @!:TimeSpan-?.
+      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to [System.TimeSpan]()?.
     return:
       id: Nullable
-      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a @!:TimeSpan-?.
-  id: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{TimeSpan}
-- uid: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~Guid
+      type:
+        id: System.Nullable{System.TimeSpan}
+        name: TimeSpan?
+        isExternal: true
+      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a [System.TimeSpan]()?.
+  id: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{System.TimeSpan}
+- uid: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Guid
   href: System.Xml.Linq.XElement.yml
   name: explicit operator Guid(XElement)
-  fullName: System.Xml.Linq.XElement.explicit operator Guid(System.Xml.Linq.XElement)
-  type: Method
+  fullName: System.Xml.Linq.XElement.explicit operator System.Guid(System.Xml.Linq.XElement)
+  type: Operator
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XElement.cs
     startLine: 1566
-  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to a @!:Guid-.
+  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to a [System.Guid]().
   syntax:
     content:
-      CSharp: '[CLSCompliant(false)] [SuppressMessage("Microsoft.Usage", "CA2225:OperatorOverloadsHaveNamedAlternates", Justification = "Operator marked with CLSCompliant(false).")] public static explicit operator Guid(XElement element) { if (element == null) throw new ArgumentNullException("element"); return XmlConvert.ToGuid(element.Value); }'
+      CSharp: public static explicit operator Guid(XElement element)
     parameters:
     - id: element
       type:
         id: System.Xml.Linq.XElement
         name: XElement
         href: System.Xml.Linq.XElement.yml
-      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to @!:Guid-.
+      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to [System.Guid]().
     return:
       id: Guid
-      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a @!:Guid-.
-  id: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~Guid
-- uid: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{Guid}
+      type:
+        id: System.Guid
+        name: Guid
+        isExternal: true
+      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a [System.Guid]().
+  id: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Guid
+- uid: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{System.Guid}
   href: System.Xml.Linq.XElement.yml
   name: explicit operator Guid?(XElement)
-  fullName: System.Xml.Linq.XElement.explicit operator Guid?(System.Xml.Linq.XElement)
-  type: Method
+  fullName: System.Xml.Linq.XElement.explicit operator System.Guid?(System.Xml.Linq.XElement)
+  type: Operator
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XElement.cs
     startLine: 1586
-  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to an @!:Guid-?.
+  summary: Cast the value of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to an [System.Guid]()?.
   syntax:
     content:
-      CSharp: '[CLSCompliant(false)] [SuppressMessage("Microsoft.Usage", "CA2225:OperatorOverloadsHaveNamedAlternates", Justification = "Operator marked with CLSCompliant(false).")] public static explicit operator Guid? (XElement element) { if (element == null) return null; return XmlConvert.ToGuid(element.Value); }'
+      CSharp: public static explicit operator Guid? (XElement element)
     parameters:
     - id: element
       type:
         id: System.Xml.Linq.XElement
         name: XElement
         href: System.Xml.Linq.XElement.yml
-      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to @!:Guid-?.
+      description: The [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) to cast to [System.Guid]()?.
     return:
       id: Nullable
-      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a @!:Guid-?.
-  id: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{Guid}
+      type:
+        id: System.Nullable{System.Guid}
+        name: Guid?
+        isExternal: true
+      description: The content of this [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) as a [System.Guid]()?.
+  id: System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)~System.Nullable{System.Guid}

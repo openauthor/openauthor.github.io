@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/WebFormViewEngine.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/WebFormViewEngine.cs
     startLine: 4
   syntax:
     content:
-      CSharp: public class WebFormViewEngine
+      CSharp: 'public class WebFormViewEngine : BuildManagerViewEngine, IViewEngine'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.Mvc.VirtualPathProviderViewEngine
     name: VirtualPathProviderViewEngine
@@ -28,6 +29,8 @@ items:
   children:
   - System.Web.Mvc.WebFormViewEngine.#ctor
   - System.Web.Mvc.WebFormViewEngine.#ctor(System.Web.Mvc.IViewPageActivator)
+  - System.Web.Mvc.WebFormViewEngine.CreatePartialView(System.Web.Mvc.ControllerContext,System.String)
+  - System.Web.Mvc.WebFormViewEngine.CreateView(System.Web.Mvc.ControllerContext,System.String,System.String)
 - uid: System.Web.Mvc.WebFormViewEngine.#ctor
   href: System.Web.Mvc.WebFormViewEngine.yml
   name: WebFormViewEngine()
@@ -61,3 +64,68 @@ items:
         name: IViewPageActivator
         href: System.Web.Mvc.IViewPageActivator.yml
   id: System.Web.Mvc.WebFormViewEngine.#ctor(System.Web.Mvc.IViewPageActivator)
+- uid: System.Web.Mvc.WebFormViewEngine.CreatePartialView(System.Web.Mvc.ControllerContext,System.String)
+  href: System.Web.Mvc.WebFormViewEngine.yml
+  name: CreatePartialView(ControllerContext, string)
+  fullName: System.Web.Mvc.WebFormViewEngine.CreatePartialView(System.Web.Mvc.ControllerContext, string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/WebFormViewEngine.cs
+    startLine: 53
+  syntax:
+    content:
+      CSharp: protected override IView CreatePartialView(ControllerContext controllerContext, string partialPath)
+    parameters:
+    - id: controllerContext
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+    - id: partialPath
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      id: IView
+      type:
+        id: System.Web.Mvc.IView
+        name: IView
+        href: System.Web.Mvc.IView.yml
+  id: System.Web.Mvc.WebFormViewEngine.CreatePartialView(System.Web.Mvc.ControllerContext,System.String)
+- uid: System.Web.Mvc.WebFormViewEngine.CreateView(System.Web.Mvc.ControllerContext,System.String,System.String)
+  href: System.Web.Mvc.WebFormViewEngine.yml
+  name: CreateView(ControllerContext, string, string)
+  fullName: System.Web.Mvc.WebFormViewEngine.CreateView(System.Web.Mvc.ControllerContext, string, string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/WebFormViewEngine.cs
+    startLine: 58
+  syntax:
+    content:
+      CSharp: protected override IView CreateView(ControllerContext controllerContext, string viewPath, string masterPath)
+    parameters:
+    - id: controllerContext
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+    - id: viewPath
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    - id: masterPath
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      id: IView
+      type:
+        id: System.Web.Mvc.IView
+        name: IView
+        href: System.Web.Mvc.IView.yml
+  id: System.Web.Mvc.WebFormViewEngine.CreateView(System.Web.Mvc.ControllerContext,System.String,System.String)

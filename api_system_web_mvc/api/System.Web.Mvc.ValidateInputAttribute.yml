@@ -6,20 +6,21 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/ValidateInputAttribute.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/ValidateInputAttribute.cs
     startLine: 6
   syntax:
     content:
-      CSharp: public class ValidateInputAttribute
+      CSharp: 'public class ValidateInputAttribute : FilterAttribute, _Attribute, IMvcFilter, IAuthorizationFilter'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Attribute
-    name: System.Attribute
+    name: Attribute
     isExternal: true
   - id: System.Web.Mvc.FilterAttribute
     name: FilterAttribute
@@ -45,7 +46,7 @@ items:
     - id: enableValidation
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.ValidateInputAttribute.#ctor(System.Boolean)
 - uid: System.Web.Mvc.ValidateInputAttribute.EnableValidation
@@ -59,12 +60,12 @@ items:
     startLine: 15
   syntax:
     content:
-      CSharp: public bool EnableValidation { get; private set; }
+      CSharp: public bool EnableValidation { get; }
     parameters:
     - id: EnableValidation
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.ValidateInputAttribute.EnableValidation
 - uid: System.Web.Mvc.ValidateInputAttribute.OnAuthorization(System.Web.Mvc.AuthorizationContext)

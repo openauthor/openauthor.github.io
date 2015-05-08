@@ -1,0 +1,220 @@
+items:
+- uid: System.Dynamic.GetMemberBinder
+  href: System.Dynamic.GetMemberBinder.yml
+  name: GetMemberBinder
+  fullName: System.Dynamic.GetMemberBinder
+  type: Class
+  source:
+    remote: &o0
+      path: src/System.Dynamic.Runtime/src/System/Dynamic/GetMemberBinder.cs
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/GetMemberBinder.cs
+    startLine: 10
+  summary: Represents the dynamic get member operation at the call site, providing the binding semantic and the details about the operation.
+  syntax:
+    content:
+      CSharp: 'public abstract class GetMemberBinder : DynamicMetaObjectBinder'
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.Runtime.CompilerServices.CallSiteBinder
+    name: CallSiteBinder
+    href: System.Runtime.CompilerServices.CallSiteBinder.yml
+  - id: System.Dynamic.DynamicMetaObjectBinder
+    name: DynamicMetaObjectBinder
+    href: System.Dynamic.DynamicMetaObjectBinder.yml
+  id: System.Dynamic.GetMemberBinder
+  children:
+  - System.Dynamic.GetMemberBinder.#ctor(System.String,System.Boolean)
+  - System.Dynamic.GetMemberBinder.ReturnType
+  - System.Dynamic.GetMemberBinder.Name
+  - System.Dynamic.GetMemberBinder.IgnoreCase
+  - System.Dynamic.GetMemberBinder.FallbackGetMember(System.Dynamic.DynamicMetaObject)
+  - System.Dynamic.GetMemberBinder.FallbackGetMember(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject)
+  - System.Dynamic.GetMemberBinder.Bind(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])
+- uid: System.Dynamic.GetMemberBinder.#ctor(System.String,System.Boolean)
+  href: System.Dynamic.GetMemberBinder.yml
+  name: GetMemberBinder(string, bool)
+  fullName: System.Dynamic.GetMemberBinder.GetMemberBinder(string, bool)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/GetMemberBinder.cs
+    startLine: 20
+  summary: Initializes a new instance of the [System.Dynamic.GetMemberBinder](System.Dynamic.GetMemberBinder.yml).
+  syntax:
+    content:
+      CSharp: protected GetMemberBinder(string name, bool ignoreCase)
+    parameters:
+    - id: name
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: The name of the member to get.
+    - id: ignoreCase
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: true if the name should be matched ignoring case; false otherwise.
+  id: System.Dynamic.GetMemberBinder.#ctor(System.String,System.Boolean)
+- uid: System.Dynamic.GetMemberBinder.ReturnType
+  href: System.Dynamic.GetMemberBinder.yml
+  name: ReturnType
+  fullName: System.Dynamic.GetMemberBinder.ReturnType
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/GetMemberBinder.cs
+    startLine: 31
+  summary: The result type of the operation.
+  syntax:
+    content:
+      CSharp: public override sealed Type ReturnType { get; }
+    parameters:
+    - id: ReturnType
+      type:
+        id: System.Type
+        name: Type
+        isExternal: true
+  id: System.Dynamic.GetMemberBinder.ReturnType
+- uid: System.Dynamic.GetMemberBinder.Name
+  href: System.Dynamic.GetMemberBinder.yml
+  name: Name
+  fullName: System.Dynamic.GetMemberBinder.Name
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/GetMemberBinder.cs
+    startLine: 39
+  summary: Gets the name of the member to get.
+  syntax:
+    content:
+      CSharp: public string Name { get; }
+    parameters:
+    - id: Name
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Dynamic.GetMemberBinder.Name
+- uid: System.Dynamic.GetMemberBinder.IgnoreCase
+  href: System.Dynamic.GetMemberBinder.yml
+  name: IgnoreCase
+  fullName: System.Dynamic.GetMemberBinder.IgnoreCase
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/GetMemberBinder.cs
+    startLine: 50
+  summary: Gets the value indicating if the string comparison should ignore the case of the member name.
+  syntax:
+    content:
+      CSharp: public bool IgnoreCase { get; }
+    parameters:
+    - id: IgnoreCase
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Dynamic.GetMemberBinder.IgnoreCase
+- uid: System.Dynamic.GetMemberBinder.FallbackGetMember(System.Dynamic.DynamicMetaObject)
+  href: System.Dynamic.GetMemberBinder.yml
+  name: FallbackGetMember(DynamicMetaObject)
+  fullName: System.Dynamic.GetMemberBinder.FallbackGetMember(System.Dynamic.DynamicMetaObject)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/GetMemberBinder.cs
+    startLine: 63
+  summary: Performs the binding of the dynamic get member operation if the target dynamic object cannot bind.
+  syntax:
+    content:
+      CSharp: public DynamicMetaObject FallbackGetMember(DynamicMetaObject target)
+    parameters:
+    - id: target
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The target of the dynamic get member operation.
+    return:
+      id: DynamicMetaObject
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The [System.Dynamic.DynamicMetaObject](System.Dynamic.DynamicMetaObject.yml) representing the result of the binding.
+  id: System.Dynamic.GetMemberBinder.FallbackGetMember(System.Dynamic.DynamicMetaObject)
+- uid: System.Dynamic.GetMemberBinder.FallbackGetMember(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject)
+  href: System.Dynamic.GetMemberBinder.yml
+  name: FallbackGetMember(DynamicMetaObject, DynamicMetaObject)
+  fullName: System.Dynamic.GetMemberBinder.FallbackGetMember(System.Dynamic.DynamicMetaObject, System.Dynamic.DynamicMetaObject)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/GetMemberBinder.cs
+    startLine: 74
+  summary: When overridden in the derived class, performs the binding of the dynamic get member operation if the target dynamic object cannot bind.
+  syntax:
+    content:
+      CSharp: public abstract DynamicMetaObject FallbackGetMember(DynamicMetaObject target, DynamicMetaObject errorSuggestion)
+    parameters:
+    - id: target
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The target of the dynamic get member operation.
+    - id: errorSuggestion
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The binding result to use if binding fails, or null.
+    return:
+      id: DynamicMetaObject
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The [System.Dynamic.DynamicMetaObject](System.Dynamic.DynamicMetaObject.yml) representing the result of the binding.
+  id: System.Dynamic.GetMemberBinder.FallbackGetMember(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject)
+- uid: System.Dynamic.GetMemberBinder.Bind(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])
+  href: System.Dynamic.GetMemberBinder.yml
+  name: Bind(DynamicMetaObject, DynamicMetaObject[])
+  fullName: System.Dynamic.GetMemberBinder.Bind(System.Dynamic.DynamicMetaObject, System.Dynamic.DynamicMetaObject[])
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/GetMemberBinder.cs
+    startLine: 82
+  summary: Performs the binding of the dynamic get member operation.
+  syntax:
+    content:
+      CSharp: public override sealed DynamicMetaObject Bind(DynamicMetaObject target, DynamicMetaObject[] args)
+    parameters:
+    - id: target
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The target of the dynamic get member operation.
+    - id: args
+      type:
+        id: System.Array
+        name: DynamicMetaObject[]
+        isExternal: true
+      description: An array of arguments of the dynamic get member operation.
+    return:
+      id: DynamicMetaObject
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The [System.Dynamic.DynamicMetaObject](System.Dynamic.DynamicMetaObject.yml) representing the result of the binding.
+  id: System.Dynamic.GetMemberBinder.Bind(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])

@@ -5,18 +5,19 @@ items:
   fullName: Microsoft.CodeAnalysis.Differencing.Match<TNode>
   type: Class
   source:
-    remote: &o0
+    remote:
+      path: src/Workspaces/Core/Portable/Differencing/Match.LongestCommonSubsequence.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Differencing/Match.LongestCommonSubsequence.cs
     startLine: 8
   syntax:
     content:
-      CSharp: public sealed partial class Match<TNode>
+      CSharp: public sealed class Match<TNode>
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.Differencing.Match`1
   children:
@@ -24,6 +25,7 @@ items:
   - Microsoft.CodeAnalysis.Differencing.Match`1.OldRoot
   - Microsoft.CodeAnalysis.Differencing.Match`1.NewRoot
   - Microsoft.CodeAnalysis.Differencing.Match`1.Matches
+  - Microsoft.CodeAnalysis.Differencing.Match`1.ReverseMatches
   - Microsoft.CodeAnalysis.Differencing.Match`1.TryGetNewNode(`0,`0@)
   - Microsoft.CodeAnalysis.Differencing.Match`1.TryGetOldNode(`0,`0@)
   - Microsoft.CodeAnalysis.Differencing.Match`1.GetTreeEdits
@@ -34,9 +36,13 @@ items:
   fullName: Microsoft.CodeAnalysis.Differencing.Match<TNode>.Comparer
   type: Property
   source:
-    remote: *o0
+    remote: &o0
+      path: src/Workspaces/Core/Portable/Differencing/Match.cs
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Differencing/Match.cs
-    startLine: 316
+    startLine: 315
   syntax:
     content:
       CSharp: public TreeComparer<TNode> Comparer { get; }
@@ -44,7 +50,7 @@ items:
     - id: Comparer
       type:
         id: Microsoft.CodeAnalysis.Differencing.TreeComparer{`0}
-        name: TreeComparer
+        name: TreeComparer<TNode>
         href: Microsoft.CodeAnalysis.Differencing.TreeComparer{`0}
   id: Microsoft.CodeAnalysis.Differencing.Match`1.Comparer
 - uid: Microsoft.CodeAnalysis.Differencing.Match`1.OldRoot
@@ -55,7 +61,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Differencing/Match.cs
-    startLine: 324
+    startLine: 323
   syntax:
     content:
       CSharp: public TNode OldRoot { get; }
@@ -74,7 +80,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Differencing/Match.cs
-    startLine: 332
+    startLine: 331
   syntax:
     content:
       CSharp: public TNode NewRoot { get; }
@@ -93,17 +99,36 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Differencing/Match.cs
-    startLine: 340
+    startLine: 339
   syntax:
     content:
-      CSharp: public IEnumerable<KeyValuePair<TNode, TNode>> Matches { get; }
+      CSharp: public IReadOnlyDictionary<TNode, TNode> Matches { get; }
     parameters:
     - id: Matches
       type:
-        id: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{`0,`0}}
-        name: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{`0,`0}}
+        id: System.Collections.Generic.IReadOnlyDictionary{`0,`0}
+        name: IReadOnlyDictionary<TNode, TNode>
         isExternal: true
   id: Microsoft.CodeAnalysis.Differencing.Match`1.Matches
+- uid: Microsoft.CodeAnalysis.Differencing.Match`1.ReverseMatches
+  href: Microsoft.CodeAnalysis.Differencing.Match`1.yml
+  name: ReverseMatches
+  fullName: Microsoft.CodeAnalysis.Differencing.Match<TNode>.ReverseMatches
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Differencing/Match.cs
+    startLine: 347
+  syntax:
+    content:
+      CSharp: public IReadOnlyDictionary<TNode, TNode> ReverseMatches { get; }
+    parameters:
+    - id: ReverseMatches
+      type:
+        id: System.Collections.Generic.IReadOnlyDictionary{`0,`0}
+        name: IReadOnlyDictionary<TNode, TNode>
+        isExternal: true
+  id: Microsoft.CodeAnalysis.Differencing.Match`1.ReverseMatches
 - uid: Microsoft.CodeAnalysis.Differencing.Match`1.TryGetNewNode(`0,`0@)
   href: Microsoft.CodeAnalysis.Differencing.Match`1.yml
   name: TryGetNewNode(TNode, out TNode)
@@ -112,7 +137,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Differencing/Match.cs
-    startLine: 348
+    startLine: 355
   syntax:
     content:
       CSharp: public bool TryGetNewNode(TNode oldNode, out TNode newNode)
@@ -129,6 +154,10 @@ items:
         href: TNode
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.Differencing.Match`1.TryGetNewNode(`0,`0@)
 - uid: Microsoft.CodeAnalysis.Differencing.Match`1.TryGetOldNode(`0,`0@)
   href: Microsoft.CodeAnalysis.Differencing.Match`1.yml
@@ -138,7 +167,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Differencing/Match.cs
-    startLine: 353
+    startLine: 360
   syntax:
     content:
       CSharp: public bool TryGetOldNode(TNode newNode, out TNode oldNode)
@@ -155,6 +184,10 @@ items:
         href: TNode
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.Differencing.Match`1.TryGetOldNode(`0,`0@)
 - uid: Microsoft.CodeAnalysis.Differencing.Match`1.GetTreeEdits
   href: Microsoft.CodeAnalysis.Differencing.Match`1.yml
@@ -164,7 +197,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Differencing/Match.cs
-    startLine: 362
+    startLine: 369
   summary: >-
     Returns an edit script (a sequence of edits) that transform [Microsoft.CodeAnalysis.Differencing.Match`1.OldRoot](Microsoft.CodeAnalysis.Differencing.Match`1.yml) subtree
 
@@ -175,6 +208,10 @@ items:
     parameters: []
     return:
       id: EditScript
+      type:
+        id: Microsoft.CodeAnalysis.Differencing.EditScript{`0}
+        name: EditScript<TNode>
+        href: Microsoft.CodeAnalysis.Differencing.EditScript{`0}
   id: Microsoft.CodeAnalysis.Differencing.Match`1.GetTreeEdits
 - uid: Microsoft.CodeAnalysis.Differencing.Match`1.GetSequenceEdits(System.Collections.Generic.IEnumerable{`0},System.Collections.Generic.IEnumerable{`0})
   href: Microsoft.CodeAnalysis.Differencing.Match`1.yml
@@ -184,7 +221,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Differencing/Match.cs
-    startLine: 372
+    startLine: 379
   summary: >-
     Returns an edit script (a sequence of edits) that transform a sequence of nodes
 
@@ -196,13 +233,17 @@ items:
     - id: oldNodes
       type:
         id: System.Collections.Generic.IEnumerable{`0}
-        name: System.Collections.Generic.IEnumerable{`0}
+        name: IEnumerable<TNode>
         isExternal: true
     - id: newNodes
       type:
         id: System.Collections.Generic.IEnumerable{`0}
-        name: System.Collections.Generic.IEnumerable{`0}
+        name: IEnumerable<TNode>
         isExternal: true
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Differencing.Edit{`0}}
+        name: IEnumerable<Edit<TNode>>
+        isExternal: true
   id: Microsoft.CodeAnalysis.Differencing.Match`1.GetSequenceEdits(System.Collections.Generic.IEnumerable{`0},System.Collections.Generic.IEnumerable{`0})

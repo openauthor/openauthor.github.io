@@ -6,24 +6,26 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Common/Routing/RouteFactoryAttribute.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/Common/Routing/RouteFactoryAttribute.cs
     startLine: 18
   summary: Represents an attribute route that may contain custom constraints.
   syntax:
     content:
-      CSharp: public abstract class RouteFactoryAttribute
+      CSharp: 'public abstract class RouteFactoryAttribute : Attribute, _Attribute, IDirectRouteFactory'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Attribute
-    name: System.Attribute
+    name: Attribute
     isExternal: true
   id: System.Web.Mvc.Routing.RouteFactoryAttribute
   children:
+  - System.Web.Mvc.Routing.RouteFactoryAttribute.#ctor(System.String)
   - System.Web.Mvc.Routing.RouteFactoryAttribute.Template
   - System.Web.Mvc.Routing.RouteFactoryAttribute.Name
   - System.Web.Mvc.Routing.RouteFactoryAttribute.Order
@@ -31,6 +33,27 @@ items:
   - System.Web.Mvc.Routing.RouteFactoryAttribute.Constraints
   - System.Web.Mvc.Routing.RouteFactoryAttribute.DataTokens
   - System.Web.Mvc.Routing.RouteFactoryAttribute.CreateRoute(System.Web.Mvc.Routing.DirectRouteFactoryContext)
+- uid: System.Web.Mvc.Routing.RouteFactoryAttribute.#ctor(System.String)
+  href: System.Web.Mvc.Routing.RouteFactoryAttribute.yml
+  name: RouteFactoryAttribute(string)
+  fullName: System.Web.Mvc.Routing.RouteFactoryAttribute.RouteFactoryAttribute(string)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/Common/Routing/RouteFactoryAttribute.cs
+    startLine: 25
+  summary: Initializes a new instance of the [System.Web.Mvc.Routing.RouteFactoryAttribute](System.Web.Mvc.Routing.RouteFactoryAttribute.yml) class.
+  syntax:
+    content:
+      CSharp: protected RouteFactoryAttribute(string template)
+    parameters:
+    - id: template
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: The route template.
+  id: System.Web.Mvc.Routing.RouteFactoryAttribute.#ctor(System.String)
 - uid: System.Web.Mvc.Routing.RouteFactoryAttribute.Template
   href: System.Web.Mvc.Routing.RouteFactoryAttribute.yml
   name: Template
@@ -48,7 +71,7 @@ items:
     - id: Template
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.Routing.RouteFactoryAttribute.Template
 - uid: System.Web.Mvc.Routing.RouteFactoryAttribute.Name
@@ -68,7 +91,7 @@ items:
     - id: Name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.Routing.RouteFactoryAttribute.Name
 - uid: System.Web.Mvc.Routing.RouteFactoryAttribute.Order
@@ -88,7 +111,7 @@ items:
     - id: Order
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Web.Mvc.Routing.RouteFactoryAttribute.Order
 - uid: System.Web.Mvc.Routing.RouteFactoryAttribute.Defaults
@@ -108,7 +131,7 @@ items:
     - id: Defaults
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
   id: System.Web.Mvc.Routing.RouteFactoryAttribute.Defaults
 - uid: System.Web.Mvc.Routing.RouteFactoryAttribute.Constraints
@@ -128,7 +151,7 @@ items:
     - id: Constraints
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
   id: System.Web.Mvc.Routing.RouteFactoryAttribute.Constraints
 - uid: System.Web.Mvc.Routing.RouteFactoryAttribute.DataTokens
@@ -148,7 +171,7 @@ items:
     - id: DataTokens
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
   id: System.Web.Mvc.Routing.RouteFactoryAttribute.DataTokens
 - uid: System.Web.Mvc.Routing.RouteFactoryAttribute.CreateRoute(System.Web.Mvc.Routing.DirectRouteFactoryContext)
@@ -171,4 +194,8 @@ items:
         href: System.Web.Mvc.Routing.DirectRouteFactoryContext.yml
     return:
       id: RouteEntry
+      type:
+        id: System.Web.Mvc.Routing.RouteEntry
+        name: RouteEntry
+        href: System.Web.Mvc.Routing.RouteEntry.yml
   id: System.Web.Mvc.Routing.RouteFactoryAttribute.CreateRoute(System.Web.Mvc.Routing.DirectRouteFactoryContext)

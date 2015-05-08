@@ -6,9 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Workspace/AdhocWorkspace.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Workspace/AdhocWorkspace.cs
     startLine: 16
   summary: >-
@@ -17,10 +18,10 @@ items:
     but does not persist changes.
   syntax:
     content:
-      CSharp: public sealed class AdhocWorkspace
+      CSharp: 'public sealed class AdhocWorkspace : Workspace, IDisposable'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: Microsoft.CodeAnalysis.Workspace
     name: Workspace
@@ -63,7 +64,7 @@ items:
     - id: workspaceKind
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: Microsoft.CodeAnalysis.AdhocWorkspace.#ctor(Microsoft.CodeAnalysis.Host.HostServices,System.String)
 - uid: Microsoft.CodeAnalysis.AdhocWorkspace.#ctor
@@ -100,6 +101,10 @@ items:
         href: Microsoft.CodeAnalysis.ApplyChangesKind.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.AdhocWorkspace.CanApplyChange(Microsoft.CodeAnalysis.ApplyChangesKind)
 - uid: Microsoft.CodeAnalysis.AdhocWorkspace.CanOpenDocuments
   href: Microsoft.CodeAnalysis.AdhocWorkspace.yml
@@ -117,7 +122,7 @@ items:
     - id: CanOpenDocuments
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.AdhocWorkspace.CanOpenDocuments
 - uid: Microsoft.CodeAnalysis.AdhocWorkspace.ClearSolution
@@ -132,7 +137,7 @@ items:
   summary: Clears all projects and documents from the workspace.
   syntax:
     content:
-      CSharp: public new void ClearSolution()
+      CSharp: public void ClearSolution()
     parameters: []
   id: Microsoft.CodeAnalysis.AdhocWorkspace.ClearSolution
 - uid: Microsoft.CodeAnalysis.AdhocWorkspace.AddSolution(Microsoft.CodeAnalysis.SolutionInfo)
@@ -156,6 +161,10 @@ items:
         href: Microsoft.CodeAnalysis.SolutionInfo.yml
     return:
       id: Solution
+      type:
+        id: Microsoft.CodeAnalysis.Solution
+        name: Solution
+        href: Microsoft.CodeAnalysis.Solution.yml
   id: Microsoft.CodeAnalysis.AdhocWorkspace.AddSolution(Microsoft.CodeAnalysis.SolutionInfo)
 - uid: Microsoft.CodeAnalysis.AdhocWorkspace.AddProject(System.String,System.String)
   href: Microsoft.CodeAnalysis.AdhocWorkspace.yml
@@ -174,15 +183,19 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: language
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Project
+      type:
+        id: Microsoft.CodeAnalysis.Project
+        name: Project
+        href: Microsoft.CodeAnalysis.Project.yml
   id: Microsoft.CodeAnalysis.AdhocWorkspace.AddProject(System.String,System.String)
 - uid: Microsoft.CodeAnalysis.AdhocWorkspace.AddProject(Microsoft.CodeAnalysis.ProjectInfo)
   href: Microsoft.CodeAnalysis.AdhocWorkspace.yml
@@ -205,6 +218,10 @@ items:
         href: Microsoft.CodeAnalysis.ProjectInfo.yml
     return:
       id: Project
+      type:
+        id: Microsoft.CodeAnalysis.Project
+        name: Project
+        href: Microsoft.CodeAnalysis.Project.yml
   id: Microsoft.CodeAnalysis.AdhocWorkspace.AddProject(Microsoft.CodeAnalysis.ProjectInfo)
 - uid: Microsoft.CodeAnalysis.AdhocWorkspace.AddProjects(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectInfo})
   href: Microsoft.CodeAnalysis.AdhocWorkspace.yml
@@ -223,7 +240,7 @@ items:
     - id: projectInfos
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectInfo}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectInfo}
+        name: IEnumerable<ProjectInfo>
         isExternal: true
   id: Microsoft.CodeAnalysis.AdhocWorkspace.AddProjects(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectInfo})
 - uid: Microsoft.CodeAnalysis.AdhocWorkspace.AddDocument(Microsoft.CodeAnalysis.ProjectId,System.String,Microsoft.CodeAnalysis.Text.SourceText)
@@ -248,7 +265,7 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: text
       type:
@@ -257,6 +274,10 @@ items:
         href: Microsoft.CodeAnalysis.Text.SourceText
     return:
       id: Document
+      type:
+        id: Microsoft.CodeAnalysis.Document
+        name: Document
+        href: Microsoft.CodeAnalysis.Document.yml
   id: Microsoft.CodeAnalysis.AdhocWorkspace.AddDocument(Microsoft.CodeAnalysis.ProjectId,System.String,Microsoft.CodeAnalysis.Text.SourceText)
 - uid: Microsoft.CodeAnalysis.AdhocWorkspace.AddDocument(Microsoft.CodeAnalysis.DocumentInfo)
   href: Microsoft.CodeAnalysis.AdhocWorkspace.yml
@@ -279,6 +300,10 @@ items:
         href: Microsoft.CodeAnalysis.DocumentInfo.yml
     return:
       id: Document
+      type:
+        id: Microsoft.CodeAnalysis.Document
+        name: Document
+        href: Microsoft.CodeAnalysis.Document.yml
   id: Microsoft.CodeAnalysis.AdhocWorkspace.AddDocument(Microsoft.CodeAnalysis.DocumentInfo)
 - uid: Microsoft.CodeAnalysis.AdhocWorkspace.OpenDocument(Microsoft.CodeAnalysis.DocumentId,System.Boolean)
   href: Microsoft.CodeAnalysis.AdhocWorkspace.yml
@@ -302,7 +327,7 @@ items:
     - id: activate
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.AdhocWorkspace.OpenDocument(Microsoft.CodeAnalysis.DocumentId,System.Boolean)
 - uid: Microsoft.CodeAnalysis.AdhocWorkspace.CloseDocument(Microsoft.CodeAnalysis.DocumentId)
@@ -347,7 +372,7 @@ items:
     - id: activate
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.AdhocWorkspace.OpenAdditionalDocument(Microsoft.CodeAnalysis.DocumentId,System.Boolean)
 - uid: Microsoft.CodeAnalysis.AdhocWorkspace.CloseAdditionalDocument(Microsoft.CodeAnalysis.DocumentId)

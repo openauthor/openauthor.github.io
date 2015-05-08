@@ -6,24 +6,25 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Workspace/Host/Mef/ExportLanguageServiceAttribute.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Workspace/Host/Mef/ExportLanguageServiceAttribute.cs
     startLine: 10
   summary: Use this attribute to declare a [Microsoft.CodeAnalysis.Host.ILanguageService](Microsoft.CodeAnalysis.Host.ILanguageService.yml) implementation for inclusion in a MEF-based workspace.
   syntax:
     content:
-      CSharp: public class ExportLanguageServiceAttribute
+      CSharp: 'public class ExportLanguageServiceAttribute : ExportAttribute'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Attribute
-    name: System.Attribute
+    name: Attribute
     isExternal: true
   - id: System.Composition.ExportAttribute
-    name: System.Composition.ExportAttribute
+    name: ExportAttribute
     isExternal: true
   id: Microsoft.CodeAnalysis.Host.Mef.ExportLanguageServiceAttribute
   children:
@@ -43,12 +44,12 @@ items:
   summary: The assembly qualified name of the service's type.
   syntax:
     content:
-      CSharp: public string ServiceType { get; private set; }
+      CSharp: public string ServiceType { get; }
     parameters:
     - id: ServiceType
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: Microsoft.CodeAnalysis.Host.Mef.ExportLanguageServiceAttribute.ServiceType
 - uid: Microsoft.CodeAnalysis.Host.Mef.ExportLanguageServiceAttribute.Language
@@ -63,12 +64,12 @@ items:
   summary: The language that the service is target for; LanguageNames.CSharp, etc.
   syntax:
     content:
-      CSharp: public string Language { get; private set; }
+      CSharp: public string Language { get; }
     parameters:
     - id: Language
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: Microsoft.CodeAnalysis.Host.Mef.ExportLanguageServiceAttribute.Language
 - uid: Microsoft.CodeAnalysis.Host.Mef.ExportLanguageServiceAttribute.Layer
@@ -83,12 +84,12 @@ items:
   summary: The layer that the service is specified for; ServiceLayer.Default, etc.
   syntax:
     content:
-      CSharp: public string Layer { get; private set; }
+      CSharp: public string Layer { get; }
     parameters:
     - id: Layer
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: Microsoft.CodeAnalysis.Host.Mef.ExportLanguageServiceAttribute.Layer
 - uid: Microsoft.CodeAnalysis.Host.Mef.ExportLanguageServiceAttribute.#ctor(System.Type,System.String,System.String)
@@ -108,19 +109,19 @@ items:
     - id: type
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
       description: The type that will be used to retrieve the service from a [Microsoft.CodeAnalysis.Host.HostLanguageServices](Microsoft.CodeAnalysis.Host.HostLanguageServices.yml).
     - id: language
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The language that the service is target for; LanguageNames.CSharp, etc.
     - id: layer
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The layer that the service is specified for; ServiceLayer.Default, etc.
   id: Microsoft.CodeAnalysis.Host.Mef.ExportLanguageServiceAttribute.#ctor(System.Type,System.String,System.String)

@@ -6,18 +6,19 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Desktop/Workspace/Host/Mef/MefV1HostServices.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Desktop/Workspace/Host/Mef/MefV1HostServices.cs
     startLine: 17
   summary: A class that provides host services via classes instances exported via a MEF version 1 composition.
   syntax:
     content:
-      CSharp: public class MefV1HostServices
+      CSharp: 'public class MefV1HostServices : HostServices, IMefHostExportProvider'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: Object
     isExternal: true
   - id: Microsoft.CodeAnalysis.Host.HostServices
     name: HostServices
@@ -26,6 +27,7 @@ items:
   children:
   - Microsoft.CodeAnalysis.Host.Mef.MefV1HostServices.Create(System.ComponentModel.Composition.Hosting.ExportProvider)
   - Microsoft.CodeAnalysis.Host.Mef.MefV1HostServices.Create(System.Collections.Generic.IEnumerable{System.Reflection.Assembly})
+  - Microsoft.CodeAnalysis.Host.Mef.MefV1HostServices.CreateWorkspaceServices(Microsoft.CodeAnalysis.Workspace)
   - Microsoft.CodeAnalysis.Host.Mef.MefV1HostServices.GetExports``2
   - Microsoft.CodeAnalysis.Host.Mef.MefV1HostServices.GetExports``1
 - uid: Microsoft.CodeAnalysis.Host.Mef.MefV1HostServices.Create(System.ComponentModel.Composition.Hosting.ExportProvider)
@@ -44,10 +46,14 @@ items:
     - id: exportProvider
       type:
         id: System.ComponentModel.Composition.Hosting.ExportProvider
-        name: System.ComponentModel.Composition.Hosting.ExportProvider
+        name: ExportProvider
         isExternal: true
     return:
       id: MefV1HostServices
+      type:
+        id: Microsoft.CodeAnalysis.Host.Mef.MefV1HostServices
+        name: MefV1HostServices
+        href: Microsoft.CodeAnalysis.Host.Mef.MefV1HostServices.yml
   id: Microsoft.CodeAnalysis.Host.Mef.MefV1HostServices.Create(System.ComponentModel.Composition.Hosting.ExportProvider)
 - uid: Microsoft.CodeAnalysis.Host.Mef.MefV1HostServices.Create(System.Collections.Generic.IEnumerable{System.Reflection.Assembly})
   href: Microsoft.CodeAnalysis.Host.Mef.MefV1HostServices.yml
@@ -60,16 +66,46 @@ items:
     startLine: 41
   syntax:
     content:
-      CSharp: public static MefV1HostServices Create(IEnumerable<System.Reflection.Assembly> assemblies)
+      CSharp: public static MefV1HostServices Create(IEnumerable<Assembly> assemblies)
     parameters:
     - id: assemblies
       type:
         id: System.Collections.Generic.IEnumerable{System.Reflection.Assembly}
-        name: System.Collections.Generic.IEnumerable{System.Reflection.Assembly}
+        name: IEnumerable<Assembly>
         isExternal: true
     return:
       id: MefV1HostServices
+      type:
+        id: Microsoft.CodeAnalysis.Host.Mef.MefV1HostServices
+        name: MefV1HostServices
+        href: Microsoft.CodeAnalysis.Host.Mef.MefV1HostServices.yml
   id: Microsoft.CodeAnalysis.Host.Mef.MefV1HostServices.Create(System.Collections.Generic.IEnumerable{System.Reflection.Assembly})
+- uid: Microsoft.CodeAnalysis.Host.Mef.MefV1HostServices.CreateWorkspaceServices(Microsoft.CodeAnalysis.Workspace)
+  href: Microsoft.CodeAnalysis.Host.Mef.MefV1HostServices.yml
+  name: CreateWorkspaceServices(Workspace)
+  fullName: Microsoft.CodeAnalysis.Host.Mef.MefV1HostServices.CreateWorkspaceServices(Microsoft.CodeAnalysis.Workspace)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Desktop/Workspace/Host/Mef/MefV1HostServices.cs
+    startLine: 56
+  summary: Creates a new [Microsoft.CodeAnalysis.Host.HostWorkspaceServices](Microsoft.CodeAnalysis.Host.HostWorkspaceServices.yml) associated with the specified workspace.
+  syntax:
+    content:
+      CSharp: protected internal override HostWorkspaceServices CreateWorkspaceServices(Workspace workspace)
+    parameters:
+    - id: workspace
+      type:
+        id: Microsoft.CodeAnalysis.Workspace
+        name: Workspace
+        href: Microsoft.CodeAnalysis.Workspace.yml
+    return:
+      id: HostWorkspaceServices
+      type:
+        id: Microsoft.CodeAnalysis.Host.HostWorkspaceServices
+        name: HostWorkspaceServices
+        href: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.yml
+  id: Microsoft.CodeAnalysis.Host.Mef.MefV1HostServices.CreateWorkspaceServices(Microsoft.CodeAnalysis.Workspace)
 - uid: Microsoft.CodeAnalysis.Host.Mef.MefV1HostServices.GetExports``2
   href: Microsoft.CodeAnalysis.Host.Mef.MefV1HostServices.yml
   name: GetExports<TExtension, TMetadata>()
@@ -86,6 +122,10 @@ items:
     parameters: []
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Lazy{``0,``1}}
+        name: IEnumerable<Lazy<TExtension, TMetadata>>
+        isExternal: true
   id: Microsoft.CodeAnalysis.Host.Mef.MefV1HostServices.GetExports``2
 - uid: Microsoft.CodeAnalysis.Host.Mef.MefV1HostServices.GetExports``1
   href: Microsoft.CodeAnalysis.Host.Mef.MefV1HostServices.yml
@@ -103,4 +143,8 @@ items:
     parameters: []
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Lazy{``0}}
+        name: IEnumerable<Lazy<TExtension>>
+        isExternal: true
   id: Microsoft.CodeAnalysis.Host.Mef.MefV1HostServices.GetExports``1

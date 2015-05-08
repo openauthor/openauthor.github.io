@@ -6,58 +6,60 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Threading.Tasks.Parallel/src/System/Threading/Tasks/Parallel.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Threading.Tasks.Parallel/src/System/Threading/Tasks/Parallel.cs
     startLine: 136
   summary: Provides support for parallel loops and regions.
   syntax:
     content:
-      CSharp: public static class Parallel
+      CSharp: public class Parallel
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Threading.Tasks.Parallel
   children:
-  - System.Threading.Tasks.Parallel.Invoke(Action[])
-  - System.Threading.Tasks.Parallel.Invoke(System.Threading.Tasks.ParallelOptions,Action[])
-  - System.Threading.Tasks.Parallel.For(System.Int32,System.Int32,Action{System.Int32})
-  - System.Threading.Tasks.Parallel.For(System.Int64,System.Int64,Action{System.Int64})
-  - System.Threading.Tasks.Parallel.For(System.Int32,System.Int32,System.Threading.Tasks.ParallelOptions,Action{System.Int32})
-  - System.Threading.Tasks.Parallel.For(System.Int64,System.Int64,System.Threading.Tasks.ParallelOptions,Action{System.Int64})
-  - System.Threading.Tasks.Parallel.For(System.Int32,System.Int32,Action{System.Int32,System.Threading.Tasks.ParallelLoopState})
-  - System.Threading.Tasks.Parallel.For(System.Int64,System.Int64,Action{System.Int64,System.Threading.Tasks.ParallelLoopState})
-  - System.Threading.Tasks.Parallel.For(System.Int32,System.Int32,System.Threading.Tasks.ParallelOptions,Action{System.Int32,System.Threading.Tasks.ParallelLoopState})
-  - System.Threading.Tasks.Parallel.For(System.Int64,System.Int64,System.Threading.Tasks.ParallelOptions,Action{System.Int64,System.Threading.Tasks.ParallelLoopState})
-  - System.Threading.Tasks.Parallel.For``1(System.Int32,System.Int32,Func{``0},Func{System.Int32,System.Threading.Tasks.ParallelLoopState,``0,``0},Action{``0})
-  - System.Threading.Tasks.Parallel.For``1(System.Int64,System.Int64,Func{``0},Func{System.Int64,System.Threading.Tasks.ParallelLoopState,``0,``0},Action{``0})
-  - System.Threading.Tasks.Parallel.For``1(System.Int32,System.Int32,System.Threading.Tasks.ParallelOptions,Func{``0},Func{System.Int32,System.Threading.Tasks.ParallelLoopState,``0,``0},Action{``0})
-  - System.Threading.Tasks.Parallel.For``1(System.Int64,System.Int64,System.Threading.Tasks.ParallelOptions,Func{``0},Func{System.Int64,System.Threading.Tasks.ParallelLoopState,``0,``0},Action{``0})
-  - System.Threading.Tasks.Parallel.ForEach``1(IEnumerable{``0},Action{``0})
-  - System.Threading.Tasks.Parallel.ForEach``1(IEnumerable{``0},System.Threading.Tasks.ParallelOptions,Action{``0})
-  - System.Threading.Tasks.Parallel.ForEach``1(IEnumerable{``0},Action{``0,System.Threading.Tasks.ParallelLoopState})
-  - System.Threading.Tasks.Parallel.ForEach``1(IEnumerable{``0},System.Threading.Tasks.ParallelOptions,Action{``0,System.Threading.Tasks.ParallelLoopState})
-  - System.Threading.Tasks.Parallel.ForEach``1(IEnumerable{``0},Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64})
-  - System.Threading.Tasks.Parallel.ForEach``1(IEnumerable{``0},System.Threading.Tasks.ParallelOptions,Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64})
-  - System.Threading.Tasks.Parallel.ForEach``2(IEnumerable{``0},Func{``1},Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1},Action{``1})
-  - System.Threading.Tasks.Parallel.ForEach``2(IEnumerable{``0},System.Threading.Tasks.ParallelOptions,Func{``1},Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1},Action{``1})
-  - System.Threading.Tasks.Parallel.ForEach``2(IEnumerable{``0},Func{``1},Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1},Action{``1})
-  - System.Threading.Tasks.Parallel.ForEach``2(IEnumerable{``0},System.Threading.Tasks.ParallelOptions,Func{``1},Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1},Action{``1})
-  - System.Threading.Tasks.Parallel.ForEach``1(Partitioner{``0},Action{``0})
-  - System.Threading.Tasks.Parallel.ForEach``1(Partitioner{``0},Action{``0,System.Threading.Tasks.ParallelLoopState})
-  - System.Threading.Tasks.Parallel.ForEach``1(OrderablePartitioner{``0},Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64})
-  - System.Threading.Tasks.Parallel.ForEach``2(Partitioner{``0},Func{``1},Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1},Action{``1})
-  - System.Threading.Tasks.Parallel.ForEach``2(OrderablePartitioner{``0},Func{``1},Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1},Action{``1})
-  - System.Threading.Tasks.Parallel.ForEach``1(Partitioner{``0},System.Threading.Tasks.ParallelOptions,Action{``0})
-  - System.Threading.Tasks.Parallel.ForEach``1(Partitioner{``0},System.Threading.Tasks.ParallelOptions,Action{``0,System.Threading.Tasks.ParallelLoopState})
-  - System.Threading.Tasks.Parallel.ForEach``1(OrderablePartitioner{``0},System.Threading.Tasks.ParallelOptions,Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64})
-  - System.Threading.Tasks.Parallel.ForEach``2(Partitioner{``0},System.Threading.Tasks.ParallelOptions,Func{``1},Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1},Action{``1})
-  - System.Threading.Tasks.Parallel.ForEach``2(OrderablePartitioner{``0},System.Threading.Tasks.ParallelOptions,Func{``1},Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1},Action{``1})
-- uid: System.Threading.Tasks.Parallel.Invoke(Action[])
+  - System.Threading.Tasks.Parallel.Invoke(System.Action[])
+  - System.Threading.Tasks.Parallel.Invoke(System.Threading.Tasks.ParallelOptions,System.Action[])
+  - System.Threading.Tasks.Parallel.For(System.Int32,System.Int32,System.Action{System.Int32})
+  - System.Threading.Tasks.Parallel.For(System.Int64,System.Int64,System.Action{System.Int64})
+  - System.Threading.Tasks.Parallel.For(System.Int32,System.Int32,System.Threading.Tasks.ParallelOptions,System.Action{System.Int32})
+  - System.Threading.Tasks.Parallel.For(System.Int64,System.Int64,System.Threading.Tasks.ParallelOptions,System.Action{System.Int64})
+  - System.Threading.Tasks.Parallel.For(System.Int32,System.Int32,System.Action{System.Int32,System.Threading.Tasks.ParallelLoopState})
+  - System.Threading.Tasks.Parallel.For(System.Int64,System.Int64,System.Action{System.Int64,System.Threading.Tasks.ParallelLoopState})
+  - System.Threading.Tasks.Parallel.For(System.Int32,System.Int32,System.Threading.Tasks.ParallelOptions,System.Action{System.Int32,System.Threading.Tasks.ParallelLoopState})
+  - System.Threading.Tasks.Parallel.For(System.Int64,System.Int64,System.Threading.Tasks.ParallelOptions,System.Action{System.Int64,System.Threading.Tasks.ParallelLoopState})
+  - System.Threading.Tasks.Parallel.For``1(System.Int32,System.Int32,System.Func{``0},System.Func{System.Int32,System.Threading.Tasks.ParallelLoopState,``0,``0},System.Action{``0})
+  - System.Threading.Tasks.Parallel.For``1(System.Int64,System.Int64,System.Func{``0},System.Func{System.Int64,System.Threading.Tasks.ParallelLoopState,``0,``0},System.Action{``0})
+  - System.Threading.Tasks.Parallel.For``1(System.Int32,System.Int32,System.Threading.Tasks.ParallelOptions,System.Func{``0},System.Func{System.Int32,System.Threading.Tasks.ParallelLoopState,``0,``0},System.Action{``0})
+  - System.Threading.Tasks.Parallel.For``1(System.Int64,System.Int64,System.Threading.Tasks.ParallelOptions,System.Func{``0},System.Func{System.Int64,System.Threading.Tasks.ParallelLoopState,``0,``0},System.Action{``0})
+  - System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})
+  - System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Threading.Tasks.ParallelOptions,System.Action{``0})
+  - System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Threading.Tasks.ParallelLoopState})
+  - System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Threading.Tasks.ParallelOptions,System.Action{``0,System.Threading.Tasks.ParallelLoopState})
+  - System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64})
+  - System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Threading.Tasks.ParallelOptions,System.Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64})
+  - System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Generic.IEnumerable{``0},System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1},System.Action{``1})
+  - System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Generic.IEnumerable{``0},System.Threading.Tasks.ParallelOptions,System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1},System.Action{``1})
+  - System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Generic.IEnumerable{``0},System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1},System.Action{``1})
+  - System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Generic.IEnumerable{``0},System.Threading.Tasks.ParallelOptions,System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1},System.Action{``1})
+  - System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Concurrent.Partitioner{``0},System.Action{``0})
+  - System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Concurrent.Partitioner{``0},System.Action{``0,System.Threading.Tasks.ParallelLoopState})
+  - System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Concurrent.OrderablePartitioner{``0},System.Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64})
+  - System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Concurrent.Partitioner{``0},System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1},System.Action{``1})
+  - System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Concurrent.OrderablePartitioner{``0},System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1},System.Action{``1})
+  - System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Concurrent.Partitioner{``0},System.Threading.Tasks.ParallelOptions,System.Action{``0})
+  - System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Concurrent.Partitioner{``0},System.Threading.Tasks.ParallelOptions,System.Action{``0,System.Threading.Tasks.ParallelLoopState})
+  - System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Concurrent.OrderablePartitioner{``0},System.Threading.Tasks.ParallelOptions,System.Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64})
+  - System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Concurrent.Partitioner{``0},System.Threading.Tasks.ParallelOptions,System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1},System.Action{``1})
+  - System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Concurrent.OrderablePartitioner{``0},System.Threading.Tasks.ParallelOptions,System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1},System.Action{``1})
+- uid: System.Threading.Tasks.Parallel.Invoke(System.Action[])
   href: System.Threading.Tasks.Parallel.yml
   name: Invoke(params Action[])
-  fullName: System.Threading.Tasks.Parallel.Invoke(params Action[])
+  fullName: System.Threading.Tasks.Parallel.Invoke(params System.Action[])
   type: Method
   source:
     remote: *o0
@@ -71,14 +73,14 @@ items:
     - id: actions
       type:
         id: System.Array
-        name: System.Array
+        name: Action[]
         isExternal: true
-      description: An array of [System.Action](#) to execute.
-  id: System.Threading.Tasks.Parallel.Invoke(Action[])
-- uid: System.Threading.Tasks.Parallel.Invoke(System.Threading.Tasks.ParallelOptions,Action[])
+      description: An array of [System.Action]() to execute.
+  id: System.Threading.Tasks.Parallel.Invoke(System.Action[])
+- uid: System.Threading.Tasks.Parallel.Invoke(System.Threading.Tasks.ParallelOptions,System.Action[])
   href: System.Threading.Tasks.Parallel.yml
   name: Invoke(ParallelOptions, params Action[])
-  fullName: System.Threading.Tasks.Parallel.Invoke(System.Threading.Tasks.ParallelOptions, params Action[])
+  fullName: System.Threading.Tasks.Parallel.Invoke(System.Threading.Tasks.ParallelOptions, params System.Action[])
   type: Method
   source:
     remote: *o0
@@ -101,14 +103,14 @@ items:
     - id: actions
       type:
         id: System.Array
-        name: System.Array
+        name: Action[]
         isExternal: true
-      description: An array of [System.Action](#) to execute.
-  id: System.Threading.Tasks.Parallel.Invoke(System.Threading.Tasks.ParallelOptions,Action[])
-- uid: System.Threading.Tasks.Parallel.For(System.Int32,System.Int32,Action{System.Int32})
+      description: An array of [System.Action]() to execute.
+  id: System.Threading.Tasks.Parallel.Invoke(System.Threading.Tasks.ParallelOptions,System.Action[])
+- uid: System.Threading.Tasks.Parallel.For(System.Int32,System.Int32,System.Action{System.Int32})
   href: System.Threading.Tasks.Parallel.yml
   name: For(int, int, Action<int>)
-  fullName: System.Threading.Tasks.Parallel.For(int, int, Action<int>)
+  fullName: System.Threading.Tasks.Parallel.For(int, int, System.Action<int>)
   type: Method
   source:
     remote: *o0
@@ -122,32 +124,36 @@ items:
     - id: fromInclusive
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The start index, inclusive.
     - id: toExclusive
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The end index, exclusive.
     - id: body
       type:
-        id: Action{System.Int32}
-        name: Action{System.Int32}
+        id: System.Action{System.Int32}
+        name: Action<int>
         isExternal: true
       description: The delegate that is invoked once per iteration.
     return:
       id: ParallelLoopResult
+      type:
+        id: System.Threading.Tasks.ParallelLoopResult
+        name: ParallelLoopResult
+        href: System.Threading.Tasks.ParallelLoopResult.yml
       description: >-
         A [System.Threading.Tasks.ParallelLoopResult](System.Threading.Tasks.ParallelLoopResult.yml) structure
 
         that contains information on what portion of the loop completed.
-  id: System.Threading.Tasks.Parallel.For(System.Int32,System.Int32,Action{System.Int32})
-- uid: System.Threading.Tasks.Parallel.For(System.Int64,System.Int64,Action{System.Int64})
+  id: System.Threading.Tasks.Parallel.For(System.Int32,System.Int32,System.Action{System.Int32})
+- uid: System.Threading.Tasks.Parallel.For(System.Int64,System.Int64,System.Action{System.Int64})
   href: System.Threading.Tasks.Parallel.yml
   name: For(long, long, Action<long>)
-  fullName: System.Threading.Tasks.Parallel.For(long, long, Action<long>)
+  fullName: System.Threading.Tasks.Parallel.For(long, long, System.Action<long>)
   type: Method
   source:
     remote: *o0
@@ -161,32 +167,36 @@ items:
     - id: fromInclusive
       type:
         id: System.Int64
-        name: System.Int64
+        name: long
         isExternal: true
       description: The start index, inclusive.
     - id: toExclusive
       type:
         id: System.Int64
-        name: System.Int64
+        name: long
         isExternal: true
       description: The end index, exclusive.
     - id: body
       type:
-        id: Action{System.Int64}
-        name: Action{System.Int64}
+        id: System.Action{System.Int64}
+        name: Action<long>
         isExternal: true
       description: The delegate that is invoked once per iteration.
     return:
       id: ParallelLoopResult
+      type:
+        id: System.Threading.Tasks.ParallelLoopResult
+        name: ParallelLoopResult
+        href: System.Threading.Tasks.ParallelLoopResult.yml
       description: >-
         A [System.Threading.Tasks.ParallelLoopResult](System.Threading.Tasks.ParallelLoopResult.yml) structure
 
         that contains information on what portion of the loop completed.
-  id: System.Threading.Tasks.Parallel.For(System.Int64,System.Int64,Action{System.Int64})
-- uid: System.Threading.Tasks.Parallel.For(System.Int32,System.Int32,System.Threading.Tasks.ParallelOptions,Action{System.Int32})
+  id: System.Threading.Tasks.Parallel.For(System.Int64,System.Int64,System.Action{System.Int64})
+- uid: System.Threading.Tasks.Parallel.For(System.Int32,System.Int32,System.Threading.Tasks.ParallelOptions,System.Action{System.Int32})
   href: System.Threading.Tasks.Parallel.yml
   name: For(int, int, ParallelOptions, Action<int>)
-  fullName: System.Threading.Tasks.Parallel.For(int, int, System.Threading.Tasks.ParallelOptions, Action<int>)
+  fullName: System.Threading.Tasks.Parallel.For(int, int, System.Threading.Tasks.ParallelOptions, System.Action<int>)
   type: Method
   source:
     remote: *o0
@@ -200,13 +210,13 @@ items:
     - id: fromInclusive
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The start index, inclusive.
     - id: toExclusive
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The end index, exclusive.
     - id: parallelOptions
@@ -220,21 +230,25 @@ items:
         instance that configures the behavior of this operation.
     - id: body
       type:
-        id: Action{System.Int32}
-        name: Action{System.Int32}
+        id: System.Action{System.Int32}
+        name: Action<int>
         isExternal: true
       description: The delegate that is invoked once per iteration.
     return:
       id: ParallelLoopResult
+      type:
+        id: System.Threading.Tasks.ParallelLoopResult
+        name: ParallelLoopResult
+        href: System.Threading.Tasks.ParallelLoopResult.yml
       description: >-
         A [System.Threading.Tasks.ParallelLoopResult](System.Threading.Tasks.ParallelLoopResult.yml) structure
 
         that contains information on what portion of the loop completed.
-  id: System.Threading.Tasks.Parallel.For(System.Int32,System.Int32,System.Threading.Tasks.ParallelOptions,Action{System.Int32})
-- uid: System.Threading.Tasks.Parallel.For(System.Int64,System.Int64,System.Threading.Tasks.ParallelOptions,Action{System.Int64})
+  id: System.Threading.Tasks.Parallel.For(System.Int32,System.Int32,System.Threading.Tasks.ParallelOptions,System.Action{System.Int32})
+- uid: System.Threading.Tasks.Parallel.For(System.Int64,System.Int64,System.Threading.Tasks.ParallelOptions,System.Action{System.Int64})
   href: System.Threading.Tasks.Parallel.yml
   name: For(long, long, ParallelOptions, Action<long>)
-  fullName: System.Threading.Tasks.Parallel.For(long, long, System.Threading.Tasks.ParallelOptions, Action<long>)
+  fullName: System.Threading.Tasks.Parallel.For(long, long, System.Threading.Tasks.ParallelOptions, System.Action<long>)
   type: Method
   source:
     remote: *o0
@@ -248,13 +262,13 @@ items:
     - id: fromInclusive
       type:
         id: System.Int64
-        name: System.Int64
+        name: long
         isExternal: true
       description: The start index, inclusive.
     - id: toExclusive
       type:
         id: System.Int64
-        name: System.Int64
+        name: long
         isExternal: true
       description: The end index, exclusive.
     - id: parallelOptions
@@ -268,21 +282,25 @@ items:
         instance that configures the behavior of this operation.
     - id: body
       type:
-        id: Action{System.Int64}
-        name: Action{System.Int64}
+        id: System.Action{System.Int64}
+        name: Action<long>
         isExternal: true
       description: The delegate that is invoked once per iteration.
     return:
       id: ParallelLoopResult
+      type:
+        id: System.Threading.Tasks.ParallelLoopResult
+        name: ParallelLoopResult
+        href: System.Threading.Tasks.ParallelLoopResult.yml
       description: >-
         A [System.Threading.Tasks.ParallelLoopResult](System.Threading.Tasks.ParallelLoopResult.yml) structure
 
         that contains information on what portion of the loop completed.
-  id: System.Threading.Tasks.Parallel.For(System.Int64,System.Int64,System.Threading.Tasks.ParallelOptions,Action{System.Int64})
-- uid: System.Threading.Tasks.Parallel.For(System.Int32,System.Int32,Action{System.Int32,System.Threading.Tasks.ParallelLoopState})
+  id: System.Threading.Tasks.Parallel.For(System.Int64,System.Int64,System.Threading.Tasks.ParallelOptions,System.Action{System.Int64})
+- uid: System.Threading.Tasks.Parallel.For(System.Int32,System.Int32,System.Action{System.Int32,System.Threading.Tasks.ParallelLoopState})
   href: System.Threading.Tasks.Parallel.yml
   name: For(int, int, Action<int, ParallelLoopState>)
-  fullName: System.Threading.Tasks.Parallel.For(int, int, Action<int, System.Threading.Tasks.ParallelLoopState>)
+  fullName: System.Threading.Tasks.Parallel.For(int, int, System.Action<int, System.Threading.Tasks.ParallelLoopState>)
   type: Method
   source:
     remote: *o0
@@ -296,32 +314,36 @@ items:
     - id: fromInclusive
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The start index, inclusive.
     - id: toExclusive
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The end index, exclusive.
     - id: body
       type:
-        id: Action{System.Int32,System.Threading.Tasks.ParallelLoopState}
-        name: Action{System.Int32,System.Threading.Tasks.ParallelLoopState}
+        id: System.Action{System.Int32,System.Threading.Tasks.ParallelLoopState}
+        name: Action<int, ParallelLoopState>
         isExternal: true
       description: The delegate that is invoked once per iteration.
     return:
       id: ParallelLoopResult
+      type:
+        id: System.Threading.Tasks.ParallelLoopResult
+        name: ParallelLoopResult
+        href: System.Threading.Tasks.ParallelLoopResult.yml
       description: >-
         A [System.Threading.Tasks.ParallelLoopResult](System.Threading.Tasks.ParallelLoopResult.yml) structure
 
         that contains information on what portion of the loop completed.
-  id: System.Threading.Tasks.Parallel.For(System.Int32,System.Int32,Action{System.Int32,System.Threading.Tasks.ParallelLoopState})
-- uid: System.Threading.Tasks.Parallel.For(System.Int64,System.Int64,Action{System.Int64,System.Threading.Tasks.ParallelLoopState})
+  id: System.Threading.Tasks.Parallel.For(System.Int32,System.Int32,System.Action{System.Int32,System.Threading.Tasks.ParallelLoopState})
+- uid: System.Threading.Tasks.Parallel.For(System.Int64,System.Int64,System.Action{System.Int64,System.Threading.Tasks.ParallelLoopState})
   href: System.Threading.Tasks.Parallel.yml
   name: For(long, long, Action<long, ParallelLoopState>)
-  fullName: System.Threading.Tasks.Parallel.For(long, long, Action<long, System.Threading.Tasks.ParallelLoopState>)
+  fullName: System.Threading.Tasks.Parallel.For(long, long, System.Action<long, System.Threading.Tasks.ParallelLoopState>)
   type: Method
   source:
     remote: *o0
@@ -335,32 +357,36 @@ items:
     - id: fromInclusive
       type:
         id: System.Int64
-        name: System.Int64
+        name: long
         isExternal: true
       description: The start index, inclusive.
     - id: toExclusive
       type:
         id: System.Int64
-        name: System.Int64
+        name: long
         isExternal: true
       description: The end index, exclusive.
     - id: body
       type:
-        id: Action{System.Int64,System.Threading.Tasks.ParallelLoopState}
-        name: Action{System.Int64,System.Threading.Tasks.ParallelLoopState}
+        id: System.Action{System.Int64,System.Threading.Tasks.ParallelLoopState}
+        name: Action<long, ParallelLoopState>
         isExternal: true
       description: The delegate that is invoked once per iteration.
     return:
       id: ParallelLoopResult
+      type:
+        id: System.Threading.Tasks.ParallelLoopResult
+        name: ParallelLoopResult
+        href: System.Threading.Tasks.ParallelLoopResult.yml
       description: >-
         A [System.Threading.Tasks.ParallelLoopResult](System.Threading.Tasks.ParallelLoopResult.yml) structure
 
         that contains information on what portion of the loop completed.
-  id: System.Threading.Tasks.Parallel.For(System.Int64,System.Int64,Action{System.Int64,System.Threading.Tasks.ParallelLoopState})
-- uid: System.Threading.Tasks.Parallel.For(System.Int32,System.Int32,System.Threading.Tasks.ParallelOptions,Action{System.Int32,System.Threading.Tasks.ParallelLoopState})
+  id: System.Threading.Tasks.Parallel.For(System.Int64,System.Int64,System.Action{System.Int64,System.Threading.Tasks.ParallelLoopState})
+- uid: System.Threading.Tasks.Parallel.For(System.Int32,System.Int32,System.Threading.Tasks.ParallelOptions,System.Action{System.Int32,System.Threading.Tasks.ParallelLoopState})
   href: System.Threading.Tasks.Parallel.yml
   name: For(int, int, ParallelOptions, Action<int, ParallelLoopState>)
-  fullName: System.Threading.Tasks.Parallel.For(int, int, System.Threading.Tasks.ParallelOptions, Action<int, System.Threading.Tasks.ParallelLoopState>)
+  fullName: System.Threading.Tasks.Parallel.For(int, int, System.Threading.Tasks.ParallelOptions, System.Action<int, System.Threading.Tasks.ParallelLoopState>)
   type: Method
   source:
     remote: *o0
@@ -374,13 +400,13 @@ items:
     - id: fromInclusive
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The start index, inclusive.
     - id: toExclusive
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The end index, exclusive.
     - id: parallelOptions
@@ -394,21 +420,25 @@ items:
         instance that configures the behavior of this operation.
     - id: body
       type:
-        id: Action{System.Int32,System.Threading.Tasks.ParallelLoopState}
-        name: Action{System.Int32,System.Threading.Tasks.ParallelLoopState}
+        id: System.Action{System.Int32,System.Threading.Tasks.ParallelLoopState}
+        name: Action<int, ParallelLoopState>
         isExternal: true
       description: The delegate that is invoked once per iteration.
     return:
       id: ParallelLoopResult
+      type:
+        id: System.Threading.Tasks.ParallelLoopResult
+        name: ParallelLoopResult
+        href: System.Threading.Tasks.ParallelLoopResult.yml
       description: >-
         A [System.Threading.Tasks.ParallelLoopResult](System.Threading.Tasks.ParallelLoopResult.yml) structure
 
         that contains information on what portion of the loop completed.
-  id: System.Threading.Tasks.Parallel.For(System.Int32,System.Int32,System.Threading.Tasks.ParallelOptions,Action{System.Int32,System.Threading.Tasks.ParallelLoopState})
-- uid: System.Threading.Tasks.Parallel.For(System.Int64,System.Int64,System.Threading.Tasks.ParallelOptions,Action{System.Int64,System.Threading.Tasks.ParallelLoopState})
+  id: System.Threading.Tasks.Parallel.For(System.Int32,System.Int32,System.Threading.Tasks.ParallelOptions,System.Action{System.Int32,System.Threading.Tasks.ParallelLoopState})
+- uid: System.Threading.Tasks.Parallel.For(System.Int64,System.Int64,System.Threading.Tasks.ParallelOptions,System.Action{System.Int64,System.Threading.Tasks.ParallelLoopState})
   href: System.Threading.Tasks.Parallel.yml
   name: For(long, long, ParallelOptions, Action<long, ParallelLoopState>)
-  fullName: System.Threading.Tasks.Parallel.For(long, long, System.Threading.Tasks.ParallelOptions, Action<long, System.Threading.Tasks.ParallelLoopState>)
+  fullName: System.Threading.Tasks.Parallel.For(long, long, System.Threading.Tasks.ParallelOptions, System.Action<long, System.Threading.Tasks.ParallelLoopState>)
   type: Method
   source:
     remote: *o0
@@ -422,13 +452,13 @@ items:
     - id: fromInclusive
       type:
         id: System.Int64
-        name: System.Int64
+        name: long
         isExternal: true
       description: The start index, inclusive.
     - id: toExclusive
       type:
         id: System.Int64
-        name: System.Int64
+        name: long
         isExternal: true
       description: The end index, exclusive.
     - id: parallelOptions
@@ -442,21 +472,25 @@ items:
         instance that configures the behavior of this operation.
     - id: body
       type:
-        id: Action{System.Int64,System.Threading.Tasks.ParallelLoopState}
-        name: Action{System.Int64,System.Threading.Tasks.ParallelLoopState}
+        id: System.Action{System.Int64,System.Threading.Tasks.ParallelLoopState}
+        name: Action<long, ParallelLoopState>
         isExternal: true
       description: The delegate that is invoked once per iteration.
     return:
       id: ParallelLoopResult
+      type:
+        id: System.Threading.Tasks.ParallelLoopResult
+        name: ParallelLoopResult
+        href: System.Threading.Tasks.ParallelLoopResult.yml
       description: >-
         A [System.Threading.Tasks.ParallelLoopResult](System.Threading.Tasks.ParallelLoopResult.yml) structure
 
         that contains information on what portion of the loop completed.
-  id: System.Threading.Tasks.Parallel.For(System.Int64,System.Int64,System.Threading.Tasks.ParallelOptions,Action{System.Int64,System.Threading.Tasks.ParallelLoopState})
-- uid: System.Threading.Tasks.Parallel.For``1(System.Int32,System.Int32,Func{``0},Func{System.Int32,System.Threading.Tasks.ParallelLoopState,``0,``0},Action{``0})
+  id: System.Threading.Tasks.Parallel.For(System.Int64,System.Int64,System.Threading.Tasks.ParallelOptions,System.Action{System.Int64,System.Threading.Tasks.ParallelLoopState})
+- uid: System.Threading.Tasks.Parallel.For``1(System.Int32,System.Int32,System.Func{``0},System.Func{System.Int32,System.Threading.Tasks.ParallelLoopState,``0,``0},System.Action{``0})
   href: System.Threading.Tasks.Parallel.yml
   name: For<TLocal>(int, int, Func<TLocal>, Func<int, ParallelLoopState, TLocal, TLocal>, Action<TLocal>)
-  fullName: System.Threading.Tasks.Parallel.For<TLocal>(int, int, Func<TLocal>, Func<int, System.Threading.Tasks.ParallelLoopState, TLocal, TLocal>, Action<TLocal>)
+  fullName: System.Threading.Tasks.Parallel.For<TLocal>(int, int, System.Func<TLocal>, System.Func<int, System.Threading.Tasks.ParallelLoopState, TLocal, TLocal>, System.Action<TLocal>)
   type: Method
   source:
     remote: *o0
@@ -470,19 +504,19 @@ items:
     - id: fromInclusive
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The start index, inclusive.
     - id: toExclusive
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The end index, exclusive.
     - id: localInit
       type:
-        id: Func{``0}
-        name: Func{``0}
+        id: System.Func{``0}
+        name: Func<TLocal>
         isExternal: true
       description: >-
         The function delegate that returns the initial state of the local data
@@ -490,14 +524,14 @@ items:
         for each thread.
     - id: body
       type:
-        id: Func{System.Int32,System.Threading.Tasks.ParallelLoopState,``0,``0}
-        name: Func{System.Int32,System.Threading.Tasks.ParallelLoopState,``0,``0}
+        id: System.Func{System.Int32,System.Threading.Tasks.ParallelLoopState,``0,``0}
+        name: Func<int, ParallelLoopState, TLocal, TLocal>
         isExternal: true
       description: The delegate that is invoked once per iteration.
     - id: localFinally
       type:
-        id: Action{``0}
-        name: Action{``0}
+        id: System.Action{``0}
+        name: Action<TLocal>
         isExternal: true
       description: >-
         The delegate that performs a final action on the local state of each
@@ -505,15 +539,19 @@ items:
         thread.
     return:
       id: ParallelLoopResult
+      type:
+        id: System.Threading.Tasks.ParallelLoopResult
+        name: ParallelLoopResult
+        href: System.Threading.Tasks.ParallelLoopResult.yml
       description: >-
         A [System.Threading.Tasks.ParallelLoopResult](System.Threading.Tasks.ParallelLoopResult.yml) structure
 
         that contains information on what portion of the loop completed.
-  id: System.Threading.Tasks.Parallel.For``1(System.Int32,System.Int32,Func{``0},Func{System.Int32,System.Threading.Tasks.ParallelLoopState,``0,``0},Action{``0})
-- uid: System.Threading.Tasks.Parallel.For``1(System.Int64,System.Int64,Func{``0},Func{System.Int64,System.Threading.Tasks.ParallelLoopState,``0,``0},Action{``0})
+  id: System.Threading.Tasks.Parallel.For``1(System.Int32,System.Int32,System.Func{``0},System.Func{System.Int32,System.Threading.Tasks.ParallelLoopState,``0,``0},System.Action{``0})
+- uid: System.Threading.Tasks.Parallel.For``1(System.Int64,System.Int64,System.Func{``0},System.Func{System.Int64,System.Threading.Tasks.ParallelLoopState,``0,``0},System.Action{``0})
   href: System.Threading.Tasks.Parallel.yml
   name: For<TLocal>(long, long, Func<TLocal>, Func<long, ParallelLoopState, TLocal, TLocal>, Action<TLocal>)
-  fullName: System.Threading.Tasks.Parallel.For<TLocal>(long, long, Func<TLocal>, Func<long, System.Threading.Tasks.ParallelLoopState, TLocal, TLocal>, Action<TLocal>)
+  fullName: System.Threading.Tasks.Parallel.For<TLocal>(long, long, System.Func<TLocal>, System.Func<long, System.Threading.Tasks.ParallelLoopState, TLocal, TLocal>, System.Action<TLocal>)
   type: Method
   source:
     remote: *o0
@@ -527,19 +565,19 @@ items:
     - id: fromInclusive
       type:
         id: System.Int64
-        name: System.Int64
+        name: long
         isExternal: true
       description: The start index, inclusive.
     - id: toExclusive
       type:
         id: System.Int64
-        name: System.Int64
+        name: long
         isExternal: true
       description: The end index, exclusive.
     - id: localInit
       type:
-        id: Func{``0}
-        name: Func{``0}
+        id: System.Func{``0}
+        name: Func<TLocal>
         isExternal: true
       description: >-
         The function delegate that returns the initial state of the local data
@@ -547,14 +585,14 @@ items:
         for each thread.
     - id: body
       type:
-        id: Func{System.Int64,System.Threading.Tasks.ParallelLoopState,``0,``0}
-        name: Func{System.Int64,System.Threading.Tasks.ParallelLoopState,``0,``0}
+        id: System.Func{System.Int64,System.Threading.Tasks.ParallelLoopState,``0,``0}
+        name: Func<long, ParallelLoopState, TLocal, TLocal>
         isExternal: true
       description: The delegate that is invoked once per iteration.
     - id: localFinally
       type:
-        id: Action{``0}
-        name: Action{``0}
+        id: System.Action{``0}
+        name: Action<TLocal>
         isExternal: true
       description: >-
         The delegate that performs a final action on the local state of each
@@ -562,15 +600,19 @@ items:
         thread.
     return:
       id: ParallelLoopResult
+      type:
+        id: System.Threading.Tasks.ParallelLoopResult
+        name: ParallelLoopResult
+        href: System.Threading.Tasks.ParallelLoopResult.yml
       description: >-
         A [System.Threading.Tasks.ParallelLoopResult](System.Threading.Tasks.ParallelLoopResult.yml) structure
 
         that contains information on what portion of the loop completed.
-  id: System.Threading.Tasks.Parallel.For``1(System.Int64,System.Int64,Func{``0},Func{System.Int64,System.Threading.Tasks.ParallelLoopState,``0,``0},Action{``0})
-- uid: System.Threading.Tasks.Parallel.For``1(System.Int32,System.Int32,System.Threading.Tasks.ParallelOptions,Func{``0},Func{System.Int32,System.Threading.Tasks.ParallelLoopState,``0,``0},Action{``0})
+  id: System.Threading.Tasks.Parallel.For``1(System.Int64,System.Int64,System.Func{``0},System.Func{System.Int64,System.Threading.Tasks.ParallelLoopState,``0,``0},System.Action{``0})
+- uid: System.Threading.Tasks.Parallel.For``1(System.Int32,System.Int32,System.Threading.Tasks.ParallelOptions,System.Func{``0},System.Func{System.Int32,System.Threading.Tasks.ParallelLoopState,``0,``0},System.Action{``0})
   href: System.Threading.Tasks.Parallel.yml
   name: For<TLocal>(int, int, ParallelOptions, Func<TLocal>, Func<int, ParallelLoopState, TLocal, TLocal>, Action<TLocal>)
-  fullName: System.Threading.Tasks.Parallel.For<TLocal>(int, int, System.Threading.Tasks.ParallelOptions, Func<TLocal>, Func<int, System.Threading.Tasks.ParallelLoopState, TLocal, TLocal>, Action<TLocal>)
+  fullName: System.Threading.Tasks.Parallel.For<TLocal>(int, int, System.Threading.Tasks.ParallelOptions, System.Func<TLocal>, System.Func<int, System.Threading.Tasks.ParallelLoopState, TLocal, TLocal>, System.Action<TLocal>)
   type: Method
   source:
     remote: *o0
@@ -584,13 +626,13 @@ items:
     - id: fromInclusive
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The start index, inclusive.
     - id: toExclusive
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The end index, exclusive.
     - id: parallelOptions
@@ -604,8 +646,8 @@ items:
         instance that configures the behavior of this operation.
     - id: localInit
       type:
-        id: Func{``0}
-        name: Func{``0}
+        id: System.Func{``0}
+        name: Func<TLocal>
         isExternal: true
       description: >-
         The function delegate that returns the initial state of the local data
@@ -613,14 +655,14 @@ items:
         for each thread.
     - id: body
       type:
-        id: Func{System.Int32,System.Threading.Tasks.ParallelLoopState,``0,``0}
-        name: Func{System.Int32,System.Threading.Tasks.ParallelLoopState,``0,``0}
+        id: System.Func{System.Int32,System.Threading.Tasks.ParallelLoopState,``0,``0}
+        name: Func<int, ParallelLoopState, TLocal, TLocal>
         isExternal: true
       description: The delegate that is invoked once per iteration.
     - id: localFinally
       type:
-        id: Action{``0}
-        name: Action{``0}
+        id: System.Action{``0}
+        name: Action<TLocal>
         isExternal: true
       description: >-
         The delegate that performs a final action on the local state of each
@@ -628,15 +670,19 @@ items:
         thread.
     return:
       id: ParallelLoopResult
+      type:
+        id: System.Threading.Tasks.ParallelLoopResult
+        name: ParallelLoopResult
+        href: System.Threading.Tasks.ParallelLoopResult.yml
       description: >-
         A [System.Threading.Tasks.ParallelLoopResult](System.Threading.Tasks.ParallelLoopResult.yml) structure
 
         that contains information on what portion of the loop completed.
-  id: System.Threading.Tasks.Parallel.For``1(System.Int32,System.Int32,System.Threading.Tasks.ParallelOptions,Func{``0},Func{System.Int32,System.Threading.Tasks.ParallelLoopState,``0,``0},Action{``0})
-- uid: System.Threading.Tasks.Parallel.For``1(System.Int64,System.Int64,System.Threading.Tasks.ParallelOptions,Func{``0},Func{System.Int64,System.Threading.Tasks.ParallelLoopState,``0,``0},Action{``0})
+  id: System.Threading.Tasks.Parallel.For``1(System.Int32,System.Int32,System.Threading.Tasks.ParallelOptions,System.Func{``0},System.Func{System.Int32,System.Threading.Tasks.ParallelLoopState,``0,``0},System.Action{``0})
+- uid: System.Threading.Tasks.Parallel.For``1(System.Int64,System.Int64,System.Threading.Tasks.ParallelOptions,System.Func{``0},System.Func{System.Int64,System.Threading.Tasks.ParallelLoopState,``0,``0},System.Action{``0})
   href: System.Threading.Tasks.Parallel.yml
   name: For<TLocal>(long, long, ParallelOptions, Func<TLocal>, Func<long, ParallelLoopState, TLocal, TLocal>, Action<TLocal>)
-  fullName: System.Threading.Tasks.Parallel.For<TLocal>(long, long, System.Threading.Tasks.ParallelOptions, Func<TLocal>, Func<long, System.Threading.Tasks.ParallelLoopState, TLocal, TLocal>, Action<TLocal>)
+  fullName: System.Threading.Tasks.Parallel.For<TLocal>(long, long, System.Threading.Tasks.ParallelOptions, System.Func<TLocal>, System.Func<long, System.Threading.Tasks.ParallelLoopState, TLocal, TLocal>, System.Action<TLocal>)
   type: Method
   source:
     remote: *o0
@@ -650,13 +696,13 @@ items:
     - id: fromInclusive
       type:
         id: System.Int64
-        name: System.Int64
+        name: long
         isExternal: true
       description: The start index, inclusive.
     - id: toExclusive
       type:
         id: System.Int64
-        name: System.Int64
+        name: long
         isExternal: true
       description: The end index, exclusive.
     - id: parallelOptions
@@ -670,8 +716,8 @@ items:
         instance that configures the behavior of this operation.
     - id: localInit
       type:
-        id: Func{``0}
-        name: Func{``0}
+        id: System.Func{``0}
+        name: Func<TLocal>
         isExternal: true
       description: >-
         The function delegate that returns the initial state of the local data
@@ -679,14 +725,14 @@ items:
         for each thread.
     - id: body
       type:
-        id: Func{System.Int64,System.Threading.Tasks.ParallelLoopState,``0,``0}
-        name: Func{System.Int64,System.Threading.Tasks.ParallelLoopState,``0,``0}
+        id: System.Func{System.Int64,System.Threading.Tasks.ParallelLoopState,``0,``0}
+        name: Func<long, ParallelLoopState, TLocal, TLocal>
         isExternal: true
       description: The delegate that is invoked once per iteration.
     - id: localFinally
       type:
-        id: Action{``0}
-        name: Action{``0}
+        id: System.Action{``0}
+        name: Action<TLocal>
         isExternal: true
       description: >-
         The delegate that performs a final action on the local state of each
@@ -694,22 +740,26 @@ items:
         thread.
     return:
       id: ParallelLoopResult
+      type:
+        id: System.Threading.Tasks.ParallelLoopResult
+        name: ParallelLoopResult
+        href: System.Threading.Tasks.ParallelLoopResult.yml
       description: >-
         A [System.Threading.Tasks.ParallelLoopResult](System.Threading.Tasks.ParallelLoopResult.yml) structure
 
         that contains information on what portion of the loop completed.
-  id: System.Threading.Tasks.Parallel.For``1(System.Int64,System.Int64,System.Threading.Tasks.ParallelOptions,Func{``0},Func{System.Int64,System.Threading.Tasks.ParallelLoopState,``0,``0},Action{``0})
-- uid: System.Threading.Tasks.Parallel.ForEach``1(IEnumerable{``0},Action{``0})
+  id: System.Threading.Tasks.Parallel.For``1(System.Int64,System.Int64,System.Threading.Tasks.ParallelOptions,System.Func{``0},System.Func{System.Int64,System.Threading.Tasks.ParallelLoopState,``0,``0},System.Action{``0})
+- uid: System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})
   href: System.Threading.Tasks.Parallel.yml
   name: ForEach<TSource>(IEnumerable<TSource>, Action<TSource>)
-  fullName: System.Threading.Tasks.Parallel.ForEach<TSource>(IEnumerable<TSource>, Action<TSource>)
+  fullName: System.Threading.Tasks.Parallel.ForEach<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Action<TSource>)
   type: Method
   source:
     remote: *o0
     path: src/System.Threading.Tasks.Parallel/src/System/Threading/Tasks/Parallel.cs
     startLine: 1531
   summary: >-
-    Executes a for each operation on an [System.Collections.IEnumerable{TSource}](#)
+    Executes a for each operation on an [System.Collections.IEnumerable{TSource}]()
 
     in which iterations may run in parallel.
   syntax:
@@ -718,34 +768,38 @@ items:
     parameters:
     - id: source
       type:
-        id: IEnumerable{``0}
-        name: IEnumerable{``0}
+        id: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<TSource>
         isExternal: true
       description: An enumerable data source.
     - id: body
       type:
-        id: Action{``0}
-        name: Action{``0}
+        id: System.Action{``0}
+        name: Action<TSource>
         isExternal: true
       description: The delegate that is invoked once per iteration.
     return:
       id: ParallelLoopResult
+      type:
+        id: System.Threading.Tasks.ParallelLoopResult
+        name: ParallelLoopResult
+        href: System.Threading.Tasks.ParallelLoopResult.yml
       description: >-
         A [System.Threading.Tasks.ParallelLoopResult](System.Threading.Tasks.ParallelLoopResult.yml) structure
 
         that contains information on what portion of the loop completed.
-  id: System.Threading.Tasks.Parallel.ForEach``1(IEnumerable{``0},Action{``0})
-- uid: System.Threading.Tasks.Parallel.ForEach``1(IEnumerable{``0},System.Threading.Tasks.ParallelOptions,Action{``0})
+  id: System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})
+- uid: System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Threading.Tasks.ParallelOptions,System.Action{``0})
   href: System.Threading.Tasks.Parallel.yml
   name: ForEach<TSource>(IEnumerable<TSource>, ParallelOptions, Action<TSource>)
-  fullName: System.Threading.Tasks.Parallel.ForEach<TSource>(IEnumerable<TSource>, System.Threading.Tasks.ParallelOptions, Action<TSource>)
+  fullName: System.Threading.Tasks.Parallel.ForEach<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Threading.Tasks.ParallelOptions, System.Action<TSource>)
   type: Method
   source:
     remote: *o0
     path: src/System.Threading.Tasks.Parallel/src/System/Threading/Tasks/Parallel.cs
     startLine: 1576
   summary: >-
-    Executes a for each operation on an [System.Collections.IEnumerable{TSource}](#)
+    Executes a for each operation on an [System.Collections.IEnumerable{TSource}]()
 
     in which iterations may run in parallel.
   syntax:
@@ -754,8 +808,8 @@ items:
     parameters:
     - id: source
       type:
-        id: IEnumerable{``0}
-        name: IEnumerable{``0}
+        id: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<TSource>
         isExternal: true
       description: An enumerable data source.
     - id: parallelOptions
@@ -769,28 +823,32 @@ items:
         instance that configures the behavior of this operation.
     - id: body
       type:
-        id: Action{``0}
-        name: Action{``0}
+        id: System.Action{``0}
+        name: Action<TSource>
         isExternal: true
       description: The delegate that is invoked once per iteration.
     return:
       id: ParallelLoopResult
+      type:
+        id: System.Threading.Tasks.ParallelLoopResult
+        name: ParallelLoopResult
+        href: System.Threading.Tasks.ParallelLoopResult.yml
       description: >-
         A [System.Threading.Tasks.ParallelLoopResult](System.Threading.Tasks.ParallelLoopResult.yml) structure
 
         that contains information on what portion of the loop completed.
-  id: System.Threading.Tasks.Parallel.ForEach``1(IEnumerable{``0},System.Threading.Tasks.ParallelOptions,Action{``0})
-- uid: System.Threading.Tasks.Parallel.ForEach``1(IEnumerable{``0},Action{``0,System.Threading.Tasks.ParallelLoopState})
+  id: System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Threading.Tasks.ParallelOptions,System.Action{``0})
+- uid: System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Threading.Tasks.ParallelLoopState})
   href: System.Threading.Tasks.Parallel.yml
   name: ForEach<TSource>(IEnumerable<TSource>, Action<TSource, ParallelLoopState>)
-  fullName: System.Threading.Tasks.Parallel.ForEach<TSource>(IEnumerable<TSource>, Action<TSource, System.Threading.Tasks.ParallelLoopState>)
+  fullName: System.Threading.Tasks.Parallel.ForEach<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Action<TSource, System.Threading.Tasks.ParallelLoopState>)
   type: Method
   source:
     remote: *o0
     path: src/System.Threading.Tasks.Parallel/src/System/Threading/Tasks/Parallel.cs
     startLine: 1616
   summary: >-
-    Executes a for each operation on an [System.Collections.IEnumerable{TSource}](#)
+    Executes a for each operation on an [System.Collections.IEnumerable{TSource}]()
 
     in which iterations may run in parallel.
   syntax:
@@ -799,34 +857,38 @@ items:
     parameters:
     - id: source
       type:
-        id: IEnumerable{``0}
-        name: IEnumerable{``0}
+        id: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<TSource>
         isExternal: true
       description: An enumerable data source.
     - id: body
       type:
-        id: Action{``0,System.Threading.Tasks.ParallelLoopState}
-        name: Action{``0,System.Threading.Tasks.ParallelLoopState}
+        id: System.Action{``0,System.Threading.Tasks.ParallelLoopState}
+        name: Action<TSource, ParallelLoopState>
         isExternal: true
       description: The delegate that is invoked once per iteration.
     return:
       id: ParallelLoopResult
+      type:
+        id: System.Threading.Tasks.ParallelLoopResult
+        name: ParallelLoopResult
+        href: System.Threading.Tasks.ParallelLoopResult.yml
       description: >-
         A [System.Threading.Tasks.ParallelLoopResult](System.Threading.Tasks.ParallelLoopResult.yml) structure
 
         that contains information on what portion of the loop completed.
-  id: System.Threading.Tasks.Parallel.ForEach``1(IEnumerable{``0},Action{``0,System.Threading.Tasks.ParallelLoopState})
-- uid: System.Threading.Tasks.Parallel.ForEach``1(IEnumerable{``0},System.Threading.Tasks.ParallelOptions,Action{``0,System.Threading.Tasks.ParallelLoopState})
+  id: System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Threading.Tasks.ParallelLoopState})
+- uid: System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Threading.Tasks.ParallelOptions,System.Action{``0,System.Threading.Tasks.ParallelLoopState})
   href: System.Threading.Tasks.Parallel.yml
   name: ForEach<TSource>(IEnumerable<TSource>, ParallelOptions, Action<TSource, ParallelLoopState>)
-  fullName: System.Threading.Tasks.Parallel.ForEach<TSource>(IEnumerable<TSource>, System.Threading.Tasks.ParallelOptions, Action<TSource, System.Threading.Tasks.ParallelLoopState>)
+  fullName: System.Threading.Tasks.Parallel.ForEach<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Threading.Tasks.ParallelOptions, System.Action<TSource, System.Threading.Tasks.ParallelLoopState>)
   type: Method
   source:
     remote: *o0
     path: src/System.Threading.Tasks.Parallel/src/System/Threading/Tasks/Parallel.cs
     startLine: 1663
   summary: >-
-    Executes a for each operation on an [System.Collections.IEnumerable{TSource}](#)
+    Executes a for each operation on an [System.Collections.IEnumerable{TSource}]()
 
     in which iterations may run in parallel.
   syntax:
@@ -835,8 +897,8 @@ items:
     parameters:
     - id: source
       type:
-        id: IEnumerable{``0}
-        name: IEnumerable{``0}
+        id: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<TSource>
         isExternal: true
       description: An enumerable data source.
     - id: parallelOptions
@@ -850,28 +912,32 @@ items:
         instance that configures the behavior of this operation.
     - id: body
       type:
-        id: Action{``0,System.Threading.Tasks.ParallelLoopState}
-        name: Action{``0,System.Threading.Tasks.ParallelLoopState}
+        id: System.Action{``0,System.Threading.Tasks.ParallelLoopState}
+        name: Action<TSource, ParallelLoopState>
         isExternal: true
       description: The delegate that is invoked once per iteration.
     return:
       id: ParallelLoopResult
+      type:
+        id: System.Threading.Tasks.ParallelLoopResult
+        name: ParallelLoopResult
+        href: System.Threading.Tasks.ParallelLoopResult.yml
       description: >-
         A [System.Threading.Tasks.ParallelLoopResult](System.Threading.Tasks.ParallelLoopResult.yml) structure
 
         that contains information on what portion of the loop completed.
-  id: System.Threading.Tasks.Parallel.ForEach``1(IEnumerable{``0},System.Threading.Tasks.ParallelOptions,Action{``0,System.Threading.Tasks.ParallelLoopState})
-- uid: System.Threading.Tasks.Parallel.ForEach``1(IEnumerable{``0},Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64})
+  id: System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Threading.Tasks.ParallelOptions,System.Action{``0,System.Threading.Tasks.ParallelLoopState})
+- uid: System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64})
   href: System.Threading.Tasks.Parallel.yml
   name: ForEach<TSource>(IEnumerable<TSource>, Action<TSource, ParallelLoopState, long>)
-  fullName: System.Threading.Tasks.Parallel.ForEach<TSource>(IEnumerable<TSource>, Action<TSource, System.Threading.Tasks.ParallelLoopState, long>)
+  fullName: System.Threading.Tasks.Parallel.ForEach<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Action<TSource, System.Threading.Tasks.ParallelLoopState, long>)
   type: Method
   source:
     remote: *o0
     path: src/System.Threading.Tasks.Parallel/src/System/Threading/Tasks/Parallel.cs
     startLine: 1703
   summary: >-
-    Executes a for each operation on an [System.Collections.IEnumerable{TSource}](#)
+    Executes a for each operation on an [System.Collections.IEnumerable{TSource}]()
 
     in which iterations may run in parallel.
   syntax:
@@ -880,34 +946,38 @@ items:
     parameters:
     - id: source
       type:
-        id: IEnumerable{``0}
-        name: IEnumerable{``0}
+        id: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<TSource>
         isExternal: true
       description: An enumerable data source.
     - id: body
       type:
-        id: Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64}
-        name: Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64}
+        id: System.Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64}
+        name: Action<TSource, ParallelLoopState, long>
         isExternal: true
       description: The delegate that is invoked once per iteration.
     return:
       id: ParallelLoopResult
+      type:
+        id: System.Threading.Tasks.ParallelLoopResult
+        name: ParallelLoopResult
+        href: System.Threading.Tasks.ParallelLoopResult.yml
       description: >-
         A [System.Threading.Tasks.ParallelLoopResult](System.Threading.Tasks.ParallelLoopResult.yml) structure
 
         that contains information on what portion of the loop completed.
-  id: System.Threading.Tasks.Parallel.ForEach``1(IEnumerable{``0},Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64})
-- uid: System.Threading.Tasks.Parallel.ForEach``1(IEnumerable{``0},System.Threading.Tasks.ParallelOptions,Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64})
+  id: System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64})
+- uid: System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Threading.Tasks.ParallelOptions,System.Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64})
   href: System.Threading.Tasks.Parallel.yml
   name: ForEach<TSource>(IEnumerable<TSource>, ParallelOptions, Action<TSource, ParallelLoopState, long>)
-  fullName: System.Threading.Tasks.Parallel.ForEach<TSource>(IEnumerable<TSource>, System.Threading.Tasks.ParallelOptions, Action<TSource, System.Threading.Tasks.ParallelLoopState, long>)
+  fullName: System.Threading.Tasks.Parallel.ForEach<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Threading.Tasks.ParallelOptions, System.Action<TSource, System.Threading.Tasks.ParallelLoopState, long>)
   type: Method
   source:
     remote: *o0
     path: src/System.Threading.Tasks.Parallel/src/System/Threading/Tasks/Parallel.cs
     startLine: 1750
   summary: >-
-    Executes a for each operation on an [System.Collections.IEnumerable{TSource}](#)
+    Executes a for each operation on an [System.Collections.IEnumerable{TSource}]()
 
     in which iterations may run in parallel.
   syntax:
@@ -916,8 +986,8 @@ items:
     parameters:
     - id: source
       type:
-        id: IEnumerable{``0}
-        name: IEnumerable{``0}
+        id: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<TSource>
         isExternal: true
       description: An enumerable data source.
     - id: parallelOptions
@@ -931,28 +1001,32 @@ items:
         instance that configures the behavior of this operation.
     - id: body
       type:
-        id: Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64}
-        name: Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64}
+        id: System.Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64}
+        name: Action<TSource, ParallelLoopState, long>
         isExternal: true
       description: The delegate that is invoked once per iteration.
     return:
       id: ParallelLoopResult
+      type:
+        id: System.Threading.Tasks.ParallelLoopResult
+        name: ParallelLoopResult
+        href: System.Threading.Tasks.ParallelLoopResult.yml
       description: >-
         A [System.Threading.Tasks.ParallelLoopResult](System.Threading.Tasks.ParallelLoopResult.yml) structure
 
         that contains information on what portion of the loop completed.
-  id: System.Threading.Tasks.Parallel.ForEach``1(IEnumerable{``0},System.Threading.Tasks.ParallelOptions,Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64})
-- uid: System.Threading.Tasks.Parallel.ForEach``2(IEnumerable{``0},Func{``1},Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1},Action{``1})
+  id: System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Threading.Tasks.ParallelOptions,System.Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64})
+- uid: System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Generic.IEnumerable{``0},System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1},System.Action{``1})
   href: System.Threading.Tasks.Parallel.yml
   name: ForEach<TSource, TLocal>(IEnumerable<TSource>, Func<TLocal>, Func<TSource, ParallelLoopState, TLocal, TLocal>, Action<TLocal>)
-  fullName: System.Threading.Tasks.Parallel.ForEach<TSource, TLocal>(IEnumerable<TSource>, Func<TLocal>, Func<TSource, System.Threading.Tasks.ParallelLoopState, TLocal, TLocal>, Action<TLocal>)
+  fullName: System.Threading.Tasks.Parallel.ForEach<TSource, TLocal>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TLocal>, System.Func<TSource, System.Threading.Tasks.ParallelLoopState, TLocal, TLocal>, System.Action<TLocal>)
   type: Method
   source:
     remote: *o0
     path: src/System.Threading.Tasks.Parallel/src/System/Threading/Tasks/Parallel.cs
     startLine: 1810
   summary: >-
-    Executes a for each operation on an [System.Collections.IEnumerable{TSource}](#)
+    Executes a for each operation on an [System.Collections.IEnumerable{TSource}]()
 
     in which iterations may run in parallel.
   syntax:
@@ -961,14 +1035,14 @@ items:
     parameters:
     - id: source
       type:
-        id: IEnumerable{``0}
-        name: IEnumerable{``0}
+        id: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<TSource>
         isExternal: true
       description: An enumerable data source.
     - id: localInit
       type:
-        id: Func{``1}
-        name: Func{``1}
+        id: System.Func{``1}
+        name: Func<TLocal>
         isExternal: true
       description: >-
         The function delegate that returns the initial state of the local data
@@ -976,14 +1050,14 @@ items:
         for each thread.
     - id: body
       type:
-        id: Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1}
-        name: Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1}
+        id: System.Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1}
+        name: Func<TSource, ParallelLoopState, TLocal, TLocal>
         isExternal: true
       description: The delegate that is invoked once per iteration.
     - id: localFinally
       type:
-        id: Action{``1}
-        name: Action{``1}
+        id: System.Action{``1}
+        name: Action<TLocal>
         isExternal: true
       description: >-
         The delegate that performs a final action on the local state of each
@@ -991,22 +1065,26 @@ items:
         thread.
     return:
       id: ParallelLoopResult
+      type:
+        id: System.Threading.Tasks.ParallelLoopResult
+        name: ParallelLoopResult
+        href: System.Threading.Tasks.ParallelLoopResult.yml
       description: >-
         A [System.Threading.Tasks.ParallelLoopResult](System.Threading.Tasks.ParallelLoopResult.yml) structure
 
         that contains information on what portion of the loop completed.
-  id: System.Threading.Tasks.Parallel.ForEach``2(IEnumerable{``0},Func{``1},Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1},Action{``1})
-- uid: System.Threading.Tasks.Parallel.ForEach``2(IEnumerable{``0},System.Threading.Tasks.ParallelOptions,Func{``1},Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1},Action{``1})
+  id: System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Generic.IEnumerable{``0},System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1},System.Action{``1})
+- uid: System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Generic.IEnumerable{``0},System.Threading.Tasks.ParallelOptions,System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1},System.Action{``1})
   href: System.Threading.Tasks.Parallel.yml
   name: ForEach<TSource, TLocal>(IEnumerable<TSource>, ParallelOptions, Func<TLocal>, Func<TSource, ParallelLoopState, TLocal, TLocal>, Action<TLocal>)
-  fullName: System.Threading.Tasks.Parallel.ForEach<TSource, TLocal>(IEnumerable<TSource>, System.Threading.Tasks.ParallelOptions, Func<TLocal>, Func<TSource, System.Threading.Tasks.ParallelLoopState, TLocal, TLocal>, Action<TLocal>)
+  fullName: System.Threading.Tasks.Parallel.ForEach<TSource, TLocal>(System.Collections.Generic.IEnumerable<TSource>, System.Threading.Tasks.ParallelOptions, System.Func<TLocal>, System.Func<TSource, System.Threading.Tasks.ParallelLoopState, TLocal, TLocal>, System.Action<TLocal>)
   type: Method
   source:
     remote: *o0
     path: src/System.Threading.Tasks.Parallel/src/System/Threading/Tasks/Parallel.cs
     startLine: 1886
   summary: >-
-    Executes a for each operation on an [System.Collections.IEnumerable{TSource}](#)
+    Executes a for each operation on an [System.Collections.IEnumerable{TSource}]()
 
     in which iterations may run in parallel.
   syntax:
@@ -1015,8 +1093,8 @@ items:
     parameters:
     - id: source
       type:
-        id: IEnumerable{``0}
-        name: IEnumerable{``0}
+        id: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<TSource>
         isExternal: true
       description: An enumerable data source.
     - id: parallelOptions
@@ -1030,8 +1108,8 @@ items:
         instance that configures the behavior of this operation.
     - id: localInit
       type:
-        id: Func{``1}
-        name: Func{``1}
+        id: System.Func{``1}
+        name: Func<TLocal>
         isExternal: true
       description: >-
         The function delegate that returns the initial state of the local data
@@ -1039,14 +1117,14 @@ items:
         for each thread.
     - id: body
       type:
-        id: Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1}
-        name: Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1}
+        id: System.Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1}
+        name: Func<TSource, ParallelLoopState, TLocal, TLocal>
         isExternal: true
       description: The delegate that is invoked once per iteration.
     - id: localFinally
       type:
-        id: Action{``1}
-        name: Action{``1}
+        id: System.Action{``1}
+        name: Action<TLocal>
         isExternal: true
       description: >-
         The delegate that performs a final action on the local state of each
@@ -1054,22 +1132,26 @@ items:
         thread.
     return:
       id: ParallelLoopResult
+      type:
+        id: System.Threading.Tasks.ParallelLoopResult
+        name: ParallelLoopResult
+        href: System.Threading.Tasks.ParallelLoopResult.yml
       description: >-
         A [System.Threading.Tasks.ParallelLoopResult](System.Threading.Tasks.ParallelLoopResult.yml) structure
 
         that contains information on what portion of the loop completed.
-  id: System.Threading.Tasks.Parallel.ForEach``2(IEnumerable{``0},System.Threading.Tasks.ParallelOptions,Func{``1},Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1},Action{``1})
-- uid: System.Threading.Tasks.Parallel.ForEach``2(IEnumerable{``0},Func{``1},Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1},Action{``1})
+  id: System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Generic.IEnumerable{``0},System.Threading.Tasks.ParallelOptions,System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1},System.Action{``1})
+- uid: System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Generic.IEnumerable{``0},System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1},System.Action{``1})
   href: System.Threading.Tasks.Parallel.yml
   name: ForEach<TSource, TLocal>(IEnumerable<TSource>, Func<TLocal>, Func<TSource, ParallelLoopState, long, TLocal, TLocal>, Action<TLocal>)
-  fullName: System.Threading.Tasks.Parallel.ForEach<TSource, TLocal>(IEnumerable<TSource>, Func<TLocal>, Func<TSource, System.Threading.Tasks.ParallelLoopState, long, TLocal, TLocal>, Action<TLocal>)
+  fullName: System.Threading.Tasks.Parallel.ForEach<TSource, TLocal>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TLocal>, System.Func<TSource, System.Threading.Tasks.ParallelLoopState, long, TLocal, TLocal>, System.Action<TLocal>)
   type: Method
   source:
     remote: *o0
     path: src/System.Threading.Tasks.Parallel/src/System/Threading/Tasks/Parallel.cs
     startLine: 1956
   summary: >-
-    Executes a for each operation on an [System.Collections.IEnumerable{TSource}](#)
+    Executes a for each operation on an [System.Collections.IEnumerable{TSource}]()
 
     in which iterations may run in parallel.
   syntax:
@@ -1078,14 +1160,14 @@ items:
     parameters:
     - id: source
       type:
-        id: IEnumerable{``0}
-        name: IEnumerable{``0}
+        id: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<TSource>
         isExternal: true
       description: An enumerable data source.
     - id: localInit
       type:
-        id: Func{``1}
-        name: Func{``1}
+        id: System.Func{``1}
+        name: Func<TLocal>
         isExternal: true
       description: >-
         The function delegate that returns the initial state of the local data
@@ -1093,14 +1175,14 @@ items:
         for each thread.
     - id: body
       type:
-        id: Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1}
-        name: Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1}
+        id: System.Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1}
+        name: Func<TSource, ParallelLoopState, long, TLocal, TLocal>
         isExternal: true
       description: The delegate that is invoked once per iteration.
     - id: localFinally
       type:
-        id: Action{``1}
-        name: Action{``1}
+        id: System.Action{``1}
+        name: Action<TLocal>
         isExternal: true
       description: >-
         The delegate that performs a final action on the local state of each
@@ -1108,22 +1190,26 @@ items:
         thread.
     return:
       id: ParallelLoopResult
+      type:
+        id: System.Threading.Tasks.ParallelLoopResult
+        name: ParallelLoopResult
+        href: System.Threading.Tasks.ParallelLoopResult.yml
       description: >-
         A [System.Threading.Tasks.ParallelLoopResult](System.Threading.Tasks.ParallelLoopResult.yml) structure
 
         that contains information on what portion of the loop completed.
-  id: System.Threading.Tasks.Parallel.ForEach``2(IEnumerable{``0},Func{``1},Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1},Action{``1})
-- uid: System.Threading.Tasks.Parallel.ForEach``2(IEnumerable{``0},System.Threading.Tasks.ParallelOptions,Func{``1},Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1},Action{``1})
+  id: System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Generic.IEnumerable{``0},System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1},System.Action{``1})
+- uid: System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Generic.IEnumerable{``0},System.Threading.Tasks.ParallelOptions,System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1},System.Action{``1})
   href: System.Threading.Tasks.Parallel.yml
   name: ForEach<TSource, TLocal>(IEnumerable<TSource>, ParallelOptions, Func<TLocal>, Func<TSource, ParallelLoopState, long, TLocal, TLocal>, Action<TLocal>)
-  fullName: System.Threading.Tasks.Parallel.ForEach<TSource, TLocal>(IEnumerable<TSource>, System.Threading.Tasks.ParallelOptions, Func<TLocal>, Func<TSource, System.Threading.Tasks.ParallelLoopState, long, TLocal, TLocal>, Action<TLocal>)
+  fullName: System.Threading.Tasks.Parallel.ForEach<TSource, TLocal>(System.Collections.Generic.IEnumerable<TSource>, System.Threading.Tasks.ParallelOptions, System.Func<TLocal>, System.Func<TSource, System.Threading.Tasks.ParallelLoopState, long, TLocal, TLocal>, System.Action<TLocal>)
   type: Method
   source:
     remote: *o0
     path: src/System.Threading.Tasks.Parallel/src/System/Threading/Tasks/Parallel.cs
     startLine: 2032
   summary: >-
-    Executes a for each operation on an [System.Collections.IEnumerable{TSource}](#)
+    Executes a for each operation on an [System.Collections.IEnumerable{TSource}]()
 
     in which iterations may run in parallel.
   syntax:
@@ -1132,8 +1218,8 @@ items:
     parameters:
     - id: source
       type:
-        id: IEnumerable{``0}
-        name: IEnumerable{``0}
+        id: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<TSource>
         isExternal: true
       description: An enumerable data source.
     - id: parallelOptions
@@ -1147,8 +1233,8 @@ items:
         instance that configures the behavior of this operation.
     - id: localInit
       type:
-        id: Func{``1}
-        name: Func{``1}
+        id: System.Func{``1}
+        name: Func<TLocal>
         isExternal: true
       description: >-
         The function delegate that returns the initial state of the local data
@@ -1156,14 +1242,14 @@ items:
         for each thread.
     - id: body
       type:
-        id: Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1}
-        name: Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1}
+        id: System.Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1}
+        name: Func<TSource, ParallelLoopState, long, TLocal, TLocal>
         isExternal: true
       description: The delegate that is invoked once per iteration.
     - id: localFinally
       type:
-        id: Action{``1}
-        name: Action{``1}
+        id: System.Action{``1}
+        name: Action<TLocal>
         isExternal: true
       description: >-
         The delegate that performs a final action on the local state of each
@@ -1171,134 +1257,150 @@ items:
         thread.
     return:
       id: ParallelLoopResult
+      type:
+        id: System.Threading.Tasks.ParallelLoopResult
+        name: ParallelLoopResult
+        href: System.Threading.Tasks.ParallelLoopResult.yml
       description: >-
         A [System.Threading.Tasks.ParallelLoopResult](System.Threading.Tasks.ParallelLoopResult.yml) structure
 
         that contains information on what portion of the loop completed.
-  id: System.Threading.Tasks.Parallel.ForEach``2(IEnumerable{``0},System.Threading.Tasks.ParallelOptions,Func{``1},Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1},Action{``1})
-- uid: System.Threading.Tasks.Parallel.ForEach``1(Partitioner{``0},Action{``0})
+  id: System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Generic.IEnumerable{``0},System.Threading.Tasks.ParallelOptions,System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1},System.Action{``1})
+- uid: System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Concurrent.Partitioner{``0},System.Action{``0})
   href: System.Threading.Tasks.Parallel.yml
   name: ForEach<TSource>(Partitioner<TSource>, Action<TSource>)
-  fullName: System.Threading.Tasks.Parallel.ForEach<TSource>(Partitioner<TSource>, Action<TSource>)
+  fullName: System.Threading.Tasks.Parallel.ForEach<TSource>(System.Collections.Concurrent.Partitioner<TSource>, System.Action<TSource>)
   type: Method
   source:
     remote: *o0
     path: src/System.Threading.Tasks.Parallel/src/System/Threading/Tasks/Parallel.cs
     startLine: 2288
-  summary: Executes a for each operation on a [System.Collections.Concurrent.Partitioner{TSource}](#) in which iterations may run in parallel.
+  summary: Executes a for each operation on a [System.Collections.Concurrent.Partitioner{TSource}]() in which iterations may run in parallel.
   syntax:
     content:
       CSharp: public static ParallelLoopResult ForEach<TSource>(Partitioner<TSource> source, Action<TSource> body)
     parameters:
     - id: source
       type:
-        id: Partitioner{``0}
-        name: Partitioner{``0}
+        id: System.Collections.Concurrent.Partitioner{``0}
+        name: Partitioner<TSource>
         isExternal: true
       description: The Partitioner that contains the original data source.
     - id: body
       type:
-        id: Action{``0}
-        name: Action{``0}
+        id: System.Action{``0}
+        name: Action<TSource>
         isExternal: true
       description: The delegate that is invoked once per iteration.
     return:
       id: ParallelLoopResult
+      type:
+        id: System.Threading.Tasks.ParallelLoopResult
+        name: ParallelLoopResult
+        href: System.Threading.Tasks.ParallelLoopResult.yml
       description: >-
         A [System.Threading.Tasks.ParallelLoopResult](System.Threading.Tasks.ParallelLoopResult.yml) structure
 
         that contains information on what portion of the loop completed.
-  id: System.Threading.Tasks.Parallel.ForEach``1(Partitioner{``0},Action{``0})
-- uid: System.Threading.Tasks.Parallel.ForEach``1(Partitioner{``0},Action{``0,System.Threading.Tasks.ParallelLoopState})
+  id: System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Concurrent.Partitioner{``0},System.Action{``0})
+- uid: System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Concurrent.Partitioner{``0},System.Action{``0,System.Threading.Tasks.ParallelLoopState})
   href: System.Threading.Tasks.Parallel.yml
   name: ForEach<TSource>(Partitioner<TSource>, Action<TSource, ParallelLoopState>)
-  fullName: System.Threading.Tasks.Parallel.ForEach<TSource>(Partitioner<TSource>, Action<TSource, System.Threading.Tasks.ParallelLoopState>)
+  fullName: System.Threading.Tasks.Parallel.ForEach<TSource>(System.Collections.Concurrent.Partitioner<TSource>, System.Action<TSource, System.Threading.Tasks.ParallelLoopState>)
   type: Method
   source:
     remote: *o0
     path: src/System.Threading.Tasks.Parallel/src/System/Threading/Tasks/Parallel.cs
     startLine: 2347
-  summary: Executes a for each operation on a [System.Collections.Concurrent.Partitioner{TSource}](#) in which iterations may run in parallel.
+  summary: Executes a for each operation on a [System.Collections.Concurrent.Partitioner{TSource}]() in which iterations may run in parallel.
   syntax:
     content:
       CSharp: public static ParallelLoopResult ForEach<TSource>(Partitioner<TSource> source, Action<TSource, ParallelLoopState> body)
     parameters:
     - id: source
       type:
-        id: Partitioner{``0}
-        name: Partitioner{``0}
+        id: System.Collections.Concurrent.Partitioner{``0}
+        name: Partitioner<TSource>
         isExternal: true
       description: The Partitioner that contains the original data source.
     - id: body
       type:
-        id: Action{``0,System.Threading.Tasks.ParallelLoopState}
-        name: Action{``0,System.Threading.Tasks.ParallelLoopState}
+        id: System.Action{``0,System.Threading.Tasks.ParallelLoopState}
+        name: Action<TSource, ParallelLoopState>
         isExternal: true
       description: The delegate that is invoked once per iteration.
     return:
       id: ParallelLoopResult
+      type:
+        id: System.Threading.Tasks.ParallelLoopResult
+        name: ParallelLoopResult
+        href: System.Threading.Tasks.ParallelLoopResult.yml
       description: >-
         A [System.Threading.Tasks.ParallelLoopResult](System.Threading.Tasks.ParallelLoopResult.yml) structure
 
         that contains information on what portion of the loop completed.
-  id: System.Threading.Tasks.Parallel.ForEach``1(Partitioner{``0},Action{``0,System.Threading.Tasks.ParallelLoopState})
-- uid: System.Threading.Tasks.Parallel.ForEach``1(OrderablePartitioner{``0},Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64})
+  id: System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Concurrent.Partitioner{``0},System.Action{``0,System.Threading.Tasks.ParallelLoopState})
+- uid: System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Concurrent.OrderablePartitioner{``0},System.Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64})
   href: System.Threading.Tasks.Parallel.yml
   name: ForEach<TSource>(OrderablePartitioner<TSource>, Action<TSource, ParallelLoopState, long>)
-  fullName: System.Threading.Tasks.Parallel.ForEach<TSource>(OrderablePartitioner<TSource>, Action<TSource, System.Threading.Tasks.ParallelLoopState, long>)
+  fullName: System.Threading.Tasks.Parallel.ForEach<TSource>(System.Collections.Concurrent.OrderablePartitioner<TSource>, System.Action<TSource, System.Threading.Tasks.ParallelLoopState, long>)
   type: Method
   source:
     remote: *o0
     path: src/System.Threading.Tasks.Parallel/src/System/Threading/Tasks/Parallel.cs
     startLine: 2409
-  summary: Executes a for each operation on a [System.Collections.Concurrent.OrderablePartitioner{TSource}](#) in which iterations may run in parallel.
+  summary: Executes a for each operation on a [System.Collections.Concurrent.OrderablePartitioner{TSource}]() in which iterations may run in parallel.
   syntax:
     content:
       CSharp: public static ParallelLoopResult ForEach<TSource>(OrderablePartitioner<TSource> source, Action<TSource, ParallelLoopState, long> body)
     parameters:
     - id: source
       type:
-        id: OrderablePartitioner{``0}
-        name: OrderablePartitioner{``0}
+        id: System.Collections.Concurrent.OrderablePartitioner{``0}
+        name: OrderablePartitioner<TSource>
         isExternal: true
       description: The OrderablePartitioner that contains the original data source.
     - id: body
       type:
-        id: Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64}
-        name: Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64}
+        id: System.Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64}
+        name: Action<TSource, ParallelLoopState, long>
         isExternal: true
       description: The delegate that is invoked once per iteration.
     return:
       id: ParallelLoopResult
+      type:
+        id: System.Threading.Tasks.ParallelLoopResult
+        name: ParallelLoopResult
+        href: System.Threading.Tasks.ParallelLoopResult.yml
       description: >-
         A [System.Threading.Tasks.ParallelLoopResult](System.Threading.Tasks.ParallelLoopResult.yml) structure
 
         that contains information on what portion of the loop completed.
-  id: System.Threading.Tasks.Parallel.ForEach``1(OrderablePartitioner{``0},Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64})
-- uid: System.Threading.Tasks.Parallel.ForEach``2(Partitioner{``0},Func{``1},Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1},Action{``1})
+  id: System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Concurrent.OrderablePartitioner{``0},System.Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64})
+- uid: System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Concurrent.Partitioner{``0},System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1},System.Action{``1})
   href: System.Threading.Tasks.Parallel.yml
   name: ForEach<TSource, TLocal>(Partitioner<TSource>, Func<TLocal>, Func<TSource, ParallelLoopState, TLocal, TLocal>, Action<TLocal>)
-  fullName: System.Threading.Tasks.Parallel.ForEach<TSource, TLocal>(Partitioner<TSource>, Func<TLocal>, Func<TSource, System.Threading.Tasks.ParallelLoopState, TLocal, TLocal>, Action<TLocal>)
+  fullName: System.Threading.Tasks.Parallel.ForEach<TSource, TLocal>(System.Collections.Concurrent.Partitioner<TSource>, System.Func<TLocal>, System.Func<TSource, System.Threading.Tasks.ParallelLoopState, TLocal, TLocal>, System.Action<TLocal>)
   type: Method
   source:
     remote: *o0
     path: src/System.Threading.Tasks.Parallel/src/System/Threading/Tasks/Parallel.cs
     startLine: 2491
-  summary: Executes a for each operation on a [System.Collections.Concurrent.Partitioner{TSource}](#) in which iterations may run in parallel.
+  summary: Executes a for each operation on a [System.Collections.Concurrent.Partitioner{TSource}]() in which iterations may run in parallel.
   syntax:
     content:
       CSharp: public static ParallelLoopResult ForEach<TSource, TLocal>(Partitioner<TSource> source, Func<TLocal> localInit, Func<TSource, ParallelLoopState, TLocal, TLocal> body, Action<TLocal> localFinally)
     parameters:
     - id: source
       type:
-        id: Partitioner{``0}
-        name: Partitioner{``0}
+        id: System.Collections.Concurrent.Partitioner{``0}
+        name: Partitioner<TSource>
         isExternal: true
       description: The Partitioner that contains the original data source.
     - id: localInit
       type:
-        id: Func{``1}
-        name: Func{``1}
+        id: System.Func{``1}
+        name: Func<TLocal>
         isExternal: true
       description: >-
         The function delegate that returns the initial state of the local data
@@ -1306,14 +1408,14 @@ items:
         for each thread.
     - id: body
       type:
-        id: Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1}
-        name: Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1}
+        id: System.Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1}
+        name: Func<TSource, ParallelLoopState, TLocal, TLocal>
         isExternal: true
       description: The delegate that is invoked once per iteration.
     - id: localFinally
       type:
-        id: Action{``1}
-        name: Action{``1}
+        id: System.Action{``1}
+        name: Action<TLocal>
         isExternal: true
       description: >-
         The delegate that performs a final action on the local state of each
@@ -1321,35 +1423,39 @@ items:
         thread.
     return:
       id: ParallelLoopResult
+      type:
+        id: System.Threading.Tasks.ParallelLoopResult
+        name: ParallelLoopResult
+        href: System.Threading.Tasks.ParallelLoopResult.yml
       description: >-
         A [System.Threading.Tasks.ParallelLoopResult](System.Threading.Tasks.ParallelLoopResult.yml) structure
 
         that contains information on what portion of the loop completed.
-  id: System.Threading.Tasks.Parallel.ForEach``2(Partitioner{``0},Func{``1},Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1},Action{``1})
-- uid: System.Threading.Tasks.Parallel.ForEach``2(OrderablePartitioner{``0},Func{``1},Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1},Action{``1})
+  id: System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Concurrent.Partitioner{``0},System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1},System.Action{``1})
+- uid: System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Concurrent.OrderablePartitioner{``0},System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1},System.Action{``1})
   href: System.Threading.Tasks.Parallel.yml
   name: ForEach<TSource, TLocal>(OrderablePartitioner<TSource>, Func<TLocal>, Func<TSource, ParallelLoopState, long, TLocal, TLocal>, Action<TLocal>)
-  fullName: System.Threading.Tasks.Parallel.ForEach<TSource, TLocal>(OrderablePartitioner<TSource>, Func<TLocal>, Func<TSource, System.Threading.Tasks.ParallelLoopState, long, TLocal, TLocal>, Action<TLocal>)
+  fullName: System.Threading.Tasks.Parallel.ForEach<TSource, TLocal>(System.Collections.Concurrent.OrderablePartitioner<TSource>, System.Func<TLocal>, System.Func<TSource, System.Threading.Tasks.ParallelLoopState, long, TLocal, TLocal>, System.Action<TLocal>)
   type: Method
   source:
     remote: *o0
     path: src/System.Threading.Tasks.Parallel/src/System/Threading/Tasks/Parallel.cs
     startLine: 2581
-  summary: Executes a for each operation on a [System.Collections.Concurrent.OrderablePartitioner{TSource}](#) in which iterations may run in parallel.
+  summary: Executes a for each operation on a [System.Collections.Concurrent.OrderablePartitioner{TSource}]() in which iterations may run in parallel.
   syntax:
     content:
       CSharp: public static ParallelLoopResult ForEach<TSource, TLocal>(OrderablePartitioner<TSource> source, Func<TLocal> localInit, Func<TSource, ParallelLoopState, long, TLocal, TLocal> body, Action<TLocal> localFinally)
     parameters:
     - id: source
       type:
-        id: OrderablePartitioner{``0}
-        name: OrderablePartitioner{``0}
+        id: System.Collections.Concurrent.OrderablePartitioner{``0}
+        name: OrderablePartitioner<TSource>
         isExternal: true
       description: The OrderablePartitioner that contains the original data source.
     - id: localInit
       type:
-        id: Func{``1}
-        name: Func{``1}
+        id: System.Func{``1}
+        name: Func<TLocal>
         isExternal: true
       description: >-
         The function delegate that returns the initial state of the local data
@@ -1357,14 +1463,14 @@ items:
         for each thread.
     - id: body
       type:
-        id: Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1}
-        name: Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1}
+        id: System.Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1}
+        name: Func<TSource, ParallelLoopState, long, TLocal, TLocal>
         isExternal: true
       description: The delegate that is invoked once per iteration.
     - id: localFinally
       type:
-        id: Action{``1}
-        name: Action{``1}
+        id: System.Action{``1}
+        name: Action<TLocal>
         isExternal: true
       description: >-
         The delegate that performs a final action on the local state of each
@@ -1372,29 +1478,33 @@ items:
         thread.
     return:
       id: ParallelLoopResult
+      type:
+        id: System.Threading.Tasks.ParallelLoopResult
+        name: ParallelLoopResult
+        href: System.Threading.Tasks.ParallelLoopResult.yml
       description: >-
         A [System.Threading.Tasks.ParallelLoopResult](System.Threading.Tasks.ParallelLoopResult.yml) structure
 
         that contains information on what portion of the loop completed.
-  id: System.Threading.Tasks.Parallel.ForEach``2(OrderablePartitioner{``0},Func{``1},Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1},Action{``1})
-- uid: System.Threading.Tasks.Parallel.ForEach``1(Partitioner{``0},System.Threading.Tasks.ParallelOptions,Action{``0})
+  id: System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Concurrent.OrderablePartitioner{``0},System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1},System.Action{``1})
+- uid: System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Concurrent.Partitioner{``0},System.Threading.Tasks.ParallelOptions,System.Action{``0})
   href: System.Threading.Tasks.Parallel.yml
   name: ForEach<TSource>(Partitioner<TSource>, ParallelOptions, Action<TSource>)
-  fullName: System.Threading.Tasks.Parallel.ForEach<TSource>(Partitioner<TSource>, System.Threading.Tasks.ParallelOptions, Action<TSource>)
+  fullName: System.Threading.Tasks.Parallel.ForEach<TSource>(System.Collections.Concurrent.Partitioner<TSource>, System.Threading.Tasks.ParallelOptions, System.Action<TSource>)
   type: Method
   source:
     remote: *o0
     path: src/System.Threading.Tasks.Parallel/src/System/Threading/Tasks/Parallel.cs
     startLine: 2664
-  summary: Executes a for each operation on a [System.Collections.Concurrent.Partitioner{TSource}](#) in which iterations may run in parallel.
+  summary: Executes a for each operation on a [System.Collections.Concurrent.Partitioner{TSource}]() in which iterations may run in parallel.
   syntax:
     content:
       CSharp: public static ParallelLoopResult ForEach<TSource>(Partitioner<TSource> source, ParallelOptions parallelOptions, Action<TSource> body)
     parameters:
     - id: source
       type:
-        id: Partitioner{``0}
-        name: Partitioner{``0}
+        id: System.Collections.Concurrent.Partitioner{``0}
+        name: Partitioner<TSource>
         isExternal: true
       description: The Partitioner that contains the original data source.
     - id: parallelOptions
@@ -1408,35 +1518,39 @@ items:
         instance that configures the behavior of this operation.
     - id: body
       type:
-        id: Action{``0}
-        name: Action{``0}
+        id: System.Action{``0}
+        name: Action<TSource>
         isExternal: true
       description: The delegate that is invoked once per iteration.
     return:
       id: ParallelLoopResult
+      type:
+        id: System.Threading.Tasks.ParallelLoopResult
+        name: ParallelLoopResult
+        href: System.Threading.Tasks.ParallelLoopResult.yml
       description: >-
         A [System.Threading.Tasks.ParallelLoopResult](System.Threading.Tasks.ParallelLoopResult.yml) structure
 
         that contains information on what portion of the loop completed.
-  id: System.Threading.Tasks.Parallel.ForEach``1(Partitioner{``0},System.Threading.Tasks.ParallelOptions,Action{``0})
-- uid: System.Threading.Tasks.Parallel.ForEach``1(Partitioner{``0},System.Threading.Tasks.ParallelOptions,Action{``0,System.Threading.Tasks.ParallelLoopState})
+  id: System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Concurrent.Partitioner{``0},System.Threading.Tasks.ParallelOptions,System.Action{``0})
+- uid: System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Concurrent.Partitioner{``0},System.Threading.Tasks.ParallelOptions,System.Action{``0,System.Threading.Tasks.ParallelLoopState})
   href: System.Threading.Tasks.Parallel.yml
   name: ForEach<TSource>(Partitioner<TSource>, ParallelOptions, Action<TSource, ParallelLoopState>)
-  fullName: System.Threading.Tasks.Parallel.ForEach<TSource>(Partitioner<TSource>, System.Threading.Tasks.ParallelOptions, Action<TSource, System.Threading.Tasks.ParallelLoopState>)
+  fullName: System.Threading.Tasks.Parallel.ForEach<TSource>(System.Collections.Concurrent.Partitioner<TSource>, System.Threading.Tasks.ParallelOptions, System.Action<TSource, System.Threading.Tasks.ParallelLoopState>)
   type: Method
   source:
     remote: *o0
     path: src/System.Threading.Tasks.Parallel/src/System/Threading/Tasks/Parallel.cs
     startLine: 2739
-  summary: Executes a for each operation on a [System.Collections.Concurrent.Partitioner{TSource}](#) in which iterations may run in parallel.
+  summary: Executes a for each operation on a [System.Collections.Concurrent.Partitioner{TSource}]() in which iterations may run in parallel.
   syntax:
     content:
       CSharp: public static ParallelLoopResult ForEach<TSource>(Partitioner<TSource> source, ParallelOptions parallelOptions, Action<TSource, ParallelLoopState> body)
     parameters:
     - id: source
       type:
-        id: Partitioner{``0}
-        name: Partitioner{``0}
+        id: System.Collections.Concurrent.Partitioner{``0}
+        name: Partitioner<TSource>
         isExternal: true
       description: The Partitioner that contains the original data source.
     - id: parallelOptions
@@ -1450,35 +1564,39 @@ items:
         instance that configures the behavior of this operation.
     - id: body
       type:
-        id: Action{``0,System.Threading.Tasks.ParallelLoopState}
-        name: Action{``0,System.Threading.Tasks.ParallelLoopState}
+        id: System.Action{``0,System.Threading.Tasks.ParallelLoopState}
+        name: Action<TSource, ParallelLoopState>
         isExternal: true
       description: The delegate that is invoked once per iteration.
     return:
       id: ParallelLoopResult
+      type:
+        id: System.Threading.Tasks.ParallelLoopResult
+        name: ParallelLoopResult
+        href: System.Threading.Tasks.ParallelLoopResult.yml
       description: >-
         A [System.Threading.Tasks.ParallelLoopResult](System.Threading.Tasks.ParallelLoopResult.yml) structure
 
         that contains information on what portion of the loop completed.
-  id: System.Threading.Tasks.Parallel.ForEach``1(Partitioner{``0},System.Threading.Tasks.ParallelOptions,Action{``0,System.Threading.Tasks.ParallelLoopState})
-- uid: System.Threading.Tasks.Parallel.ForEach``1(OrderablePartitioner{``0},System.Threading.Tasks.ParallelOptions,Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64})
+  id: System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Concurrent.Partitioner{``0},System.Threading.Tasks.ParallelOptions,System.Action{``0,System.Threading.Tasks.ParallelLoopState})
+- uid: System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Concurrent.OrderablePartitioner{``0},System.Threading.Tasks.ParallelOptions,System.Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64})
   href: System.Threading.Tasks.Parallel.yml
   name: ForEach<TSource>(OrderablePartitioner<TSource>, ParallelOptions, Action<TSource, ParallelLoopState, long>)
-  fullName: System.Threading.Tasks.Parallel.ForEach<TSource>(OrderablePartitioner<TSource>, System.Threading.Tasks.ParallelOptions, Action<TSource, System.Threading.Tasks.ParallelLoopState, long>)
+  fullName: System.Threading.Tasks.Parallel.ForEach<TSource>(System.Collections.Concurrent.OrderablePartitioner<TSource>, System.Threading.Tasks.ParallelOptions, System.Action<TSource, System.Threading.Tasks.ParallelLoopState, long>)
   type: Method
   source:
     remote: *o0
     path: src/System.Threading.Tasks.Parallel/src/System/Threading/Tasks/Parallel.cs
     startLine: 2817
-  summary: Executes a for each operation on a [System.Collections.Concurrent.OrderablePartitioner{TSource}](#) in which iterations may run in parallel.
+  summary: Executes a for each operation on a [System.Collections.Concurrent.OrderablePartitioner{TSource}]() in which iterations may run in parallel.
   syntax:
     content:
       CSharp: public static ParallelLoopResult ForEach<TSource>(OrderablePartitioner<TSource> source, ParallelOptions parallelOptions, Action<TSource, ParallelLoopState, long> body)
     parameters:
     - id: source
       type:
-        id: OrderablePartitioner{``0}
-        name: OrderablePartitioner{``0}
+        id: System.Collections.Concurrent.OrderablePartitioner{``0}
+        name: OrderablePartitioner<TSource>
         isExternal: true
       description: The OrderablePartitioner that contains the original data source.
     - id: parallelOptions
@@ -1492,35 +1610,39 @@ items:
         instance that configures the behavior of this operation.
     - id: body
       type:
-        id: Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64}
-        name: Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64}
+        id: System.Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64}
+        name: Action<TSource, ParallelLoopState, long>
         isExternal: true
       description: The delegate that is invoked once per iteration.
     return:
       id: ParallelLoopResult
+      type:
+        id: System.Threading.Tasks.ParallelLoopResult
+        name: ParallelLoopResult
+        href: System.Threading.Tasks.ParallelLoopResult.yml
       description: >-
         A [System.Threading.Tasks.ParallelLoopResult](System.Threading.Tasks.ParallelLoopResult.yml) structure
 
         that contains information on what portion of the loop completed.
-  id: System.Threading.Tasks.Parallel.ForEach``1(OrderablePartitioner{``0},System.Threading.Tasks.ParallelOptions,Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64})
-- uid: System.Threading.Tasks.Parallel.ForEach``2(Partitioner{``0},System.Threading.Tasks.ParallelOptions,Func{``1},Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1},Action{``1})
+  id: System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Concurrent.OrderablePartitioner{``0},System.Threading.Tasks.ParallelOptions,System.Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64})
+- uid: System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Concurrent.Partitioner{``0},System.Threading.Tasks.ParallelOptions,System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1},System.Action{``1})
   href: System.Threading.Tasks.Parallel.yml
   name: ForEach<TSource, TLocal>(Partitioner<TSource>, ParallelOptions, Func<TLocal>, Func<TSource, ParallelLoopState, TLocal, TLocal>, Action<TLocal>)
-  fullName: System.Threading.Tasks.Parallel.ForEach<TSource, TLocal>(Partitioner<TSource>, System.Threading.Tasks.ParallelOptions, Func<TLocal>, Func<TSource, System.Threading.Tasks.ParallelLoopState, TLocal, TLocal>, Action<TLocal>)
+  fullName: System.Threading.Tasks.Parallel.ForEach<TSource, TLocal>(System.Collections.Concurrent.Partitioner<TSource>, System.Threading.Tasks.ParallelOptions, System.Func<TLocal>, System.Func<TSource, System.Threading.Tasks.ParallelLoopState, TLocal, TLocal>, System.Action<TLocal>)
   type: Method
   source:
     remote: *o0
     path: src/System.Threading.Tasks.Parallel/src/System/Threading/Tasks/Parallel.cs
     startLine: 2915
-  summary: Executes a for each operation on a [System.Collections.Concurrent.Partitioner{TSource}](#) in which iterations may run in parallel.
+  summary: Executes a for each operation on a [System.Collections.Concurrent.Partitioner{TSource}]() in which iterations may run in parallel.
   syntax:
     content:
       CSharp: public static ParallelLoopResult ForEach<TSource, TLocal>(Partitioner<TSource> source, ParallelOptions parallelOptions, Func<TLocal> localInit, Func<TSource, ParallelLoopState, TLocal, TLocal> body, Action<TLocal> localFinally)
     parameters:
     - id: source
       type:
-        id: Partitioner{``0}
-        name: Partitioner{``0}
+        id: System.Collections.Concurrent.Partitioner{``0}
+        name: Partitioner<TSource>
         isExternal: true
       description: The Partitioner that contains the original data source.
     - id: parallelOptions
@@ -1534,8 +1656,8 @@ items:
         instance that configures the behavior of this operation.
     - id: localInit
       type:
-        id: Func{``1}
-        name: Func{``1}
+        id: System.Func{``1}
+        name: Func<TLocal>
         isExternal: true
       description: >-
         The function delegate that returns the initial state of the local data
@@ -1543,14 +1665,14 @@ items:
         for each thread.
     - id: body
       type:
-        id: Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1}
-        name: Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1}
+        id: System.Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1}
+        name: Func<TSource, ParallelLoopState, TLocal, TLocal>
         isExternal: true
       description: The delegate that is invoked once per iteration.
     - id: localFinally
       type:
-        id: Action{``1}
-        name: Action{``1}
+        id: System.Action{``1}
+        name: Action<TLocal>
         isExternal: true
       description: >-
         The delegate that performs a final action on the local state of each
@@ -1558,29 +1680,33 @@ items:
         thread.
     return:
       id: ParallelLoopResult
+      type:
+        id: System.Threading.Tasks.ParallelLoopResult
+        name: ParallelLoopResult
+        href: System.Threading.Tasks.ParallelLoopResult.yml
       description: >-
         A [System.Threading.Tasks.ParallelLoopResult](System.Threading.Tasks.ParallelLoopResult.yml) structure
 
         that contains information on what portion of the loop completed.
-  id: System.Threading.Tasks.Parallel.ForEach``2(Partitioner{``0},System.Threading.Tasks.ParallelOptions,Func{``1},Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1},Action{``1})
-- uid: System.Threading.Tasks.Parallel.ForEach``2(OrderablePartitioner{``0},System.Threading.Tasks.ParallelOptions,Func{``1},Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1},Action{``1})
+  id: System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Concurrent.Partitioner{``0},System.Threading.Tasks.ParallelOptions,System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1},System.Action{``1})
+- uid: System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Concurrent.OrderablePartitioner{``0},System.Threading.Tasks.ParallelOptions,System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1},System.Action{``1})
   href: System.Threading.Tasks.Parallel.yml
   name: ForEach<TSource, TLocal>(OrderablePartitioner<TSource>, ParallelOptions, Func<TLocal>, Func<TSource, ParallelLoopState, long, TLocal, TLocal>, Action<TLocal>)
-  fullName: System.Threading.Tasks.Parallel.ForEach<TSource, TLocal>(OrderablePartitioner<TSource>, System.Threading.Tasks.ParallelOptions, Func<TLocal>, Func<TSource, System.Threading.Tasks.ParallelLoopState, long, TLocal, TLocal>, Action<TLocal>)
+  fullName: System.Threading.Tasks.Parallel.ForEach<TSource, TLocal>(System.Collections.Concurrent.OrderablePartitioner<TSource>, System.Threading.Tasks.ParallelOptions, System.Func<TLocal>, System.Func<TSource, System.Threading.Tasks.ParallelLoopState, long, TLocal, TLocal>, System.Action<TLocal>)
   type: Method
   source:
     remote: *o0
     path: src/System.Threading.Tasks.Parallel/src/System/Threading/Tasks/Parallel.cs
     startLine: 3021
-  summary: Executes a for each operation on a [System.Collections.Concurrent.OrderablePartitioner{TSource}](#) in which iterations may run in parallel.
+  summary: Executes a for each operation on a [System.Collections.Concurrent.OrderablePartitioner{TSource}]() in which iterations may run in parallel.
   syntax:
     content:
       CSharp: public static ParallelLoopResult ForEach<TSource, TLocal>(OrderablePartitioner<TSource> source, ParallelOptions parallelOptions, Func<TLocal> localInit, Func<TSource, ParallelLoopState, long, TLocal, TLocal> body, Action<TLocal> localFinally)
     parameters:
     - id: source
       type:
-        id: OrderablePartitioner{``0}
-        name: OrderablePartitioner{``0}
+        id: System.Collections.Concurrent.OrderablePartitioner{``0}
+        name: OrderablePartitioner<TSource>
         isExternal: true
       description: The OrderablePartitioner that contains the original data source.
     - id: parallelOptions
@@ -1594,8 +1720,8 @@ items:
         instance that configures the behavior of this operation.
     - id: localInit
       type:
-        id: Func{``1}
-        name: Func{``1}
+        id: System.Func{``1}
+        name: Func<TLocal>
         isExternal: true
       description: >-
         The function delegate that returns the initial state of the local data
@@ -1603,14 +1729,14 @@ items:
         for each thread.
     - id: body
       type:
-        id: Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1}
-        name: Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1}
+        id: System.Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1}
+        name: Func<TSource, ParallelLoopState, long, TLocal, TLocal>
         isExternal: true
       description: The delegate that is invoked once per iteration.
     - id: localFinally
       type:
-        id: Action{``1}
-        name: Action{``1}
+        id: System.Action{``1}
+        name: Action<TLocal>
         isExternal: true
       description: >-
         The delegate that performs a final action on the local state of each
@@ -1618,8 +1744,12 @@ items:
         thread.
     return:
       id: ParallelLoopResult
+      type:
+        id: System.Threading.Tasks.ParallelLoopResult
+        name: ParallelLoopResult
+        href: System.Threading.Tasks.ParallelLoopResult.yml
       description: >-
         A [System.Threading.Tasks.ParallelLoopResult](System.Threading.Tasks.ParallelLoopResult.yml) structure
 
         that contains information on what portion of the loop completed.
-  id: System.Threading.Tasks.Parallel.ForEach``2(OrderablePartitioner{``0},System.Threading.Tasks.ParallelOptions,Func{``1},Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1},Action{``1})
+  id: System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Concurrent.OrderablePartitioner{``0},System.Threading.Tasks.ParallelOptions,System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1},System.Action{``1})

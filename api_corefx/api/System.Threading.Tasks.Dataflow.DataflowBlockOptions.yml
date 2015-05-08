@@ -6,8 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Threading.Tasks.Dataflow/src/Base/DataflowBlockOptions.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Threading.Tasks.Dataflow/src/Base/DataflowBlockOptions.cs
     startLine: 54
   summary: Provides options used to configure the processing performed by dataflow blocks.
@@ -16,7 +18,7 @@ items:
       CSharp: public class DataflowBlockOptions
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Threading.Tasks.Dataflow.DataflowBlockOptions
   children:
@@ -42,7 +44,7 @@ items:
     that provide an upper bound. This field is constant.
   syntax:
     content:
-      CSharp: Unbounded
+      CSharp: public const Int32 Unbounded;
   id: System.Threading.Tasks.Dataflow.DataflowBlockOptions.Unbounded
 - uid: System.Threading.Tasks.Dataflow.DataflowBlockOptions.#ctor
   href: System.Threading.Tasks.Dataflow.DataflowBlockOptions.yml
@@ -68,7 +70,7 @@ items:
     remote: *o0
     path: src/System.Threading.Tasks.Dataflow/src/Base/DataflowBlockOptions.cs
     startLine: 100
-  summary: Gets or sets the [System.Threading.Tasks.TaskScheduler](#) to use for scheduling tasks.
+  summary: Gets or sets the [System.Threading.Tasks.TaskScheduler]() to use for scheduling tasks.
   syntax:
     content:
       CSharp: public TaskScheduler TaskScheduler { get; set; }
@@ -76,7 +78,7 @@ items:
     - id: TaskScheduler
       type:
         id: System.Threading.Tasks.TaskScheduler
-        name: System.Threading.Tasks.TaskScheduler
+        name: TaskScheduler
         isExternal: true
   id: System.Threading.Tasks.Dataflow.DataflowBlockOptions.TaskScheduler
 - uid: System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken
@@ -88,7 +90,7 @@ items:
     remote: *o0
     path: src/System.Threading.Tasks.Dataflow/src/Base/DataflowBlockOptions.cs
     startLine: 112
-  summary: Gets or sets the [System.Threading.CancellationToken](#) to monitor for cancellation requests.
+  summary: Gets or sets the [System.Threading.CancellationToken]() to monitor for cancellation requests.
   syntax:
     content:
       CSharp: public CancellationToken CancellationToken { get; set; }
@@ -96,7 +98,7 @@ items:
     - id: CancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
   id: System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken
 - uid: System.Threading.Tasks.Dataflow.DataflowBlockOptions.MaxMessagesPerTask
@@ -116,7 +118,7 @@ items:
     - id: MaxMessagesPerTask
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Threading.Tasks.Dataflow.DataflowBlockOptions.MaxMessagesPerTask
 - uid: System.Threading.Tasks.Dataflow.DataflowBlockOptions.BoundedCapacity
@@ -136,7 +138,7 @@ items:
     - id: BoundedCapacity
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Threading.Tasks.Dataflow.DataflowBlockOptions.BoundedCapacity
 - uid: System.Threading.Tasks.Dataflow.DataflowBlockOptions.NameFormat
@@ -156,6 +158,6 @@ items:
     - id: NameFormat
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Threading.Tasks.Dataflow.DataflowBlockOptions.NameFormat

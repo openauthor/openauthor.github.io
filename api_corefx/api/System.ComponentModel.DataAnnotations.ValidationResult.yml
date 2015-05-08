@@ -6,8 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/ValidationResult.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/ValidationResult.cs
     startLine: 14
   summary: >-
@@ -21,13 +23,14 @@ items:
       CSharp: public class ValidationResult
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.ComponentModel.DataAnnotations.ValidationResult
   children:
   - System.ComponentModel.DataAnnotations.ValidationResult.Success
   - System.ComponentModel.DataAnnotations.ValidationResult.#ctor(System.String)
-  - System.ComponentModel.DataAnnotations.ValidationResult.#ctor(System.String,IEnumerable{System.String})
+  - System.ComponentModel.DataAnnotations.ValidationResult.#ctor(System.String,System.Collections.Generic.IEnumerable{System.String})
+  - System.ComponentModel.DataAnnotations.ValidationResult.#ctor(System.ComponentModel.DataAnnotations.ValidationResult)
   - System.ComponentModel.DataAnnotations.ValidationResult.MemberNames
   - System.ComponentModel.DataAnnotations.ValidationResult.ErrorMessage
   - System.ComponentModel.DataAnnotations.ValidationResult.ToString
@@ -43,7 +46,7 @@ items:
   summary: Gets a [System.ComponentModel.DataAnnotations.ValidationResult](System.ComponentModel.DataAnnotations.ValidationResult.yml) that indicates Success.
   syntax:
     content:
-      CSharp: Success
+      CSharp: public static readonly ValidationResult Success;
   id: System.ComponentModel.DataAnnotations.ValidationResult.Success
 - uid: System.ComponentModel.DataAnnotations.ValidationResult.#ctor(System.String)
   href: System.ComponentModel.DataAnnotations.ValidationResult.yml
@@ -65,17 +68,17 @@ items:
     - id: errorMessage
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: >-
         The user-visible error message.  If null, [System.ComponentModel.DataAnnotations.ValidationAttribute.GetValidationResult(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)](System.ComponentModel.DataAnnotations.ValidationAttribute.yml)
 
         will use [System.ComponentModel.DataAnnotations.ValidationAttribute.FormatErrorMessage(System.String)](System.ComponentModel.DataAnnotations.ValidationAttribute.yml) for its error message.
   id: System.ComponentModel.DataAnnotations.ValidationResult.#ctor(System.String)
-- uid: System.ComponentModel.DataAnnotations.ValidationResult.#ctor(System.String,IEnumerable{System.String})
+- uid: System.ComponentModel.DataAnnotations.ValidationResult.#ctor(System.String,System.Collections.Generic.IEnumerable{System.String})
   href: System.ComponentModel.DataAnnotations.ValidationResult.yml
   name: ValidationResult(string, IEnumerable<string>)
-  fullName: System.ComponentModel.DataAnnotations.ValidationResult.ValidationResult(string, IEnumerable<string>)
+  fullName: System.ComponentModel.DataAnnotations.ValidationResult.ValidationResult(string, System.Collections.Generic.IEnumerable<string>)
   type: Constructor
   source:
     remote: *o0
@@ -92,7 +95,7 @@ items:
     - id: errorMessage
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: >-
         The user-visible error message.  If null, [System.ComponentModel.DataAnnotations.ValidationAttribute.GetValidationResult(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)](System.ComponentModel.DataAnnotations.ValidationAttribute.yml)
@@ -100,14 +103,35 @@ items:
         will use [System.ComponentModel.DataAnnotations.ValidationAttribute.FormatErrorMessage(System.String)](System.ComponentModel.DataAnnotations.ValidationAttribute.yml) for its error message.
     - id: memberNames
       type:
-        id: IEnumerable{System.String}
-        name: IEnumerable{System.String}
+        id: System.Collections.Generic.IEnumerable{System.String}
+        name: IEnumerable<string>
         isExternal: true
       description: >-
         The list of member names affected by this result.
 
         This list of member names is meant to be used by presentation layers to indicate which fields are in error.
-  id: System.ComponentModel.DataAnnotations.ValidationResult.#ctor(System.String,IEnumerable{System.String})
+  id: System.ComponentModel.DataAnnotations.ValidationResult.#ctor(System.String,System.Collections.Generic.IEnumerable{System.String})
+- uid: System.ComponentModel.DataAnnotations.ValidationResult.#ctor(System.ComponentModel.DataAnnotations.ValidationResult)
+  href: System.ComponentModel.DataAnnotations.ValidationResult.yml
+  name: ValidationResult(ValidationResult)
+  fullName: System.ComponentModel.DataAnnotations.ValidationResult.ValidationResult(System.ComponentModel.DataAnnotations.ValidationResult)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/ValidationResult.cs
+    startLine: 70
+  summary: Constructor that creates a copy of an existing ValidationResult.
+  syntax:
+    content:
+      CSharp: protected ValidationResult(ValidationResult validationResult)
+    parameters:
+    - id: validationResult
+      type:
+        id: System.ComponentModel.DataAnnotations.ValidationResult
+        name: ValidationResult
+        href: System.ComponentModel.DataAnnotations.ValidationResult.yml
+      description: The validation result.
+  id: System.ComponentModel.DataAnnotations.ValidationResult.#ctor(System.ComponentModel.DataAnnotations.ValidationResult)
 - uid: System.ComponentModel.DataAnnotations.ValidationResult.MemberNames
   href: System.ComponentModel.DataAnnotations.ValidationResult.yml
   name: MemberNames
@@ -124,8 +148,8 @@ items:
     parameters:
     - id: MemberNames
       type:
-        id: IEnumerable{System.String}
-        name: IEnumerable{System.String}
+        id: System.Collections.Generic.IEnumerable{System.String}
+        name: IEnumerable<string>
         isExternal: true
   id: System.ComponentModel.DataAnnotations.ValidationResult.MemberNames
 - uid: System.ComponentModel.DataAnnotations.ValidationResult.ErrorMessage
@@ -145,7 +169,7 @@ items:
     - id: ErrorMessage
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.ComponentModel.DataAnnotations.ValidationResult.ErrorMessage
 - uid: System.ComponentModel.DataAnnotations.ValidationResult.ToString
@@ -162,15 +186,19 @@ items:
 
     the [System.ComponentModel.DataAnnotations.ValidationResult.ErrorMessage](System.ComponentModel.DataAnnotations.ValidationResult.yml) if not null, otherwise
 
-    the base @!:Object.ToString- result.
+    the base [System.Object.ToString]() result.
   syntax:
     content:
       CSharp: public override string ToString()
     parameters: []
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
       description: >-
         The [System.ComponentModel.DataAnnotations.ValidationResult.ErrorMessage](System.ComponentModel.DataAnnotations.ValidationResult.yml) property value if specified,
 
-        otherwise, the base @!:Object.ToString- result.
+        otherwise, the base [System.Object.ToString]() result.
   id: System.ComponentModel.DataAnnotations.ValidationResult.ToString

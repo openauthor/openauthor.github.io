@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/ActionExecutedContext.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/ActionExecutedContext.cs
     startLine: 6
   syntax:
     content:
-      CSharp: public class ActionExecutedContext
+      CSharp: 'public class ActionExecutedContext : ControllerContext'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.Mvc.ControllerContext
     name: ControllerContext
@@ -70,12 +71,12 @@ items:
     - id: canceled
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     - id: exception
       type:
         id: System.Exception
-        name: System.Exception
+        name: Exception
         isExternal: true
   id: System.Web.Mvc.ActionExecutedContext.#ctor(System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionDescriptor,System.Boolean,System.Exception)
 - uid: System.Web.Mvc.ActionExecutedContext.ActionDescriptor
@@ -113,7 +114,7 @@ items:
     - id: Canceled
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.ActionExecutedContext.Canceled
 - uid: System.Web.Mvc.ActionExecutedContext.Exception
@@ -132,7 +133,7 @@ items:
     - id: Exception
       type:
         id: System.Exception
-        name: System.Exception
+        name: Exception
         isExternal: true
   id: System.Web.Mvc.ActionExecutedContext.Exception
 - uid: System.Web.Mvc.ActionExecutedContext.ExceptionHandled
@@ -151,7 +152,7 @@ items:
     - id: ExceptionHandled
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.ActionExecutedContext.ExceptionHandled
 - uid: System.Web.Mvc.ActionExecutedContext.Result

@@ -6,17 +6,19 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/MetadataReaderExtensions.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Ecma335/MetadataReaderExtensions.cs
     startLine: 12
   summary: Provides extension methods for working with certain raw elements of the Ecma 335 metadata tables and heaps.
   syntax:
     content:
-      CSharp: public static class MetadataReaderExtensions
+      CSharp: public class MetadataReaderExtensions
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Reflection.Metadata.Ecma335.MetadataReaderExtensions
   children:
@@ -44,7 +46,7 @@ items:
   summary: Returns the number of rows in the specified table.
   syntax:
     content:
-      CSharp: public static int GetTableRowCount(this MetadataReader reader, TableIndex tableIndex)
+      CSharp: public static int GetTableRowCount(MetadataReader reader, TableIndex tableIndex)
     parameters:
     - id: reader
       type:
@@ -58,6 +60,10 @@ items:
         href: System.Reflection.Metadata.Ecma335.TableIndex.yml
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: System.Reflection.Metadata.Ecma335.MetadataReaderExtensions.GetTableRowCount(System.Reflection.Metadata.MetadataReader,System.Reflection.Metadata.Ecma335.TableIndex)
 - uid: System.Reflection.Metadata.Ecma335.MetadataReaderExtensions.GetTableRowSize(System.Reflection.Metadata.MetadataReader,System.Reflection.Metadata.Ecma335.TableIndex)
   href: System.Reflection.Metadata.Ecma335.MetadataReaderExtensions.yml
@@ -71,7 +77,7 @@ items:
   summary: Returns the size of a row in the specified table.
   syntax:
     content:
-      CSharp: public static int GetTableRowSize(this MetadataReader reader, TableIndex tableIndex)
+      CSharp: public static int GetTableRowSize(MetadataReader reader, TableIndex tableIndex)
     parameters:
     - id: reader
       type:
@@ -85,6 +91,10 @@ items:
         href: System.Reflection.Metadata.Ecma335.TableIndex.yml
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: System.Reflection.Metadata.Ecma335.MetadataReaderExtensions.GetTableRowSize(System.Reflection.Metadata.MetadataReader,System.Reflection.Metadata.Ecma335.TableIndex)
 - uid: System.Reflection.Metadata.Ecma335.MetadataReaderExtensions.GetTableMetadataOffset(System.Reflection.Metadata.MetadataReader,System.Reflection.Metadata.Ecma335.TableIndex)
   href: System.Reflection.Metadata.Ecma335.MetadataReaderExtensions.yml
@@ -98,7 +108,7 @@ items:
   summary: Returns the offset from the start of metadata to the specified table.
   syntax:
     content:
-      CSharp: public static unsafe int GetTableMetadataOffset(this MetadataReader reader, TableIndex tableIndex)
+      CSharp: public static int GetTableMetadataOffset(MetadataReader reader, TableIndex tableIndex)
     parameters:
     - id: reader
       type:
@@ -112,6 +122,10 @@ items:
         href: System.Reflection.Metadata.Ecma335.TableIndex.yml
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: System.Reflection.Metadata.Ecma335.MetadataReaderExtensions.GetTableMetadataOffset(System.Reflection.Metadata.MetadataReader,System.Reflection.Metadata.Ecma335.TableIndex)
 - uid: System.Reflection.Metadata.Ecma335.MetadataReaderExtensions.GetHeapSize(System.Reflection.Metadata.MetadataReader,System.Reflection.Metadata.Ecma335.HeapIndex)
   href: System.Reflection.Metadata.Ecma335.MetadataReaderExtensions.yml
@@ -125,7 +139,7 @@ items:
   summary: Returns the size of the specified heap.
   syntax:
     content:
-      CSharp: public static int GetHeapSize(this MetadataReader reader, HeapIndex heapIndex)
+      CSharp: public static int GetHeapSize(MetadataReader reader, HeapIndex heapIndex)
     parameters:
     - id: reader
       type:
@@ -139,6 +153,10 @@ items:
         href: System.Reflection.Metadata.Ecma335.HeapIndex.yml
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: System.Reflection.Metadata.Ecma335.MetadataReaderExtensions.GetHeapSize(System.Reflection.Metadata.MetadataReader,System.Reflection.Metadata.Ecma335.HeapIndex)
 - uid: System.Reflection.Metadata.Ecma335.MetadataReaderExtensions.GetHeapMetadataOffset(System.Reflection.Metadata.MetadataReader,System.Reflection.Metadata.Ecma335.HeapIndex)
   href: System.Reflection.Metadata.Ecma335.MetadataReaderExtensions.yml
@@ -152,7 +170,7 @@ items:
   summary: Returns the offset from the start of metadata to the specified heap.
   syntax:
     content:
-      CSharp: public static unsafe int GetHeapMetadataOffset(this MetadataReader reader, HeapIndex heapIndex)
+      CSharp: public static int GetHeapMetadataOffset(MetadataReader reader, HeapIndex heapIndex)
     parameters:
     - id: reader
       type:
@@ -166,6 +184,10 @@ items:
         href: System.Reflection.Metadata.Ecma335.HeapIndex.yml
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: System.Reflection.Metadata.Ecma335.MetadataReaderExtensions.GetHeapMetadataOffset(System.Reflection.Metadata.MetadataReader,System.Reflection.Metadata.Ecma335.HeapIndex)
 - uid: System.Reflection.Metadata.Ecma335.MetadataReaderExtensions.GetNextHandle(System.Reflection.Metadata.MetadataReader,System.Reflection.Metadata.UserStringHandle)
   href: System.Reflection.Metadata.Ecma335.MetadataReaderExtensions.yml
@@ -179,7 +201,7 @@ items:
   summary: Returns the a handle to the UserString that follows the given one in the UserString heap or a nil handle if it is the last one.
   syntax:
     content:
-      CSharp: public static UserStringHandle GetNextHandle(this MetadataReader reader, UserStringHandle handle)
+      CSharp: public static UserStringHandle GetNextHandle(MetadataReader reader, UserStringHandle handle)
     parameters:
     - id: reader
       type:
@@ -193,6 +215,10 @@ items:
         href: System.Reflection.Metadata.UserStringHandle.yml
     return:
       id: UserStringHandle
+      type:
+        id: System.Reflection.Metadata.UserStringHandle
+        name: UserStringHandle
+        href: System.Reflection.Metadata.UserStringHandle.yml
   id: System.Reflection.Metadata.Ecma335.MetadataReaderExtensions.GetNextHandle(System.Reflection.Metadata.MetadataReader,System.Reflection.Metadata.UserStringHandle)
 - uid: System.Reflection.Metadata.Ecma335.MetadataReaderExtensions.GetNextHandle(System.Reflection.Metadata.MetadataReader,System.Reflection.Metadata.BlobHandle)
   href: System.Reflection.Metadata.Ecma335.MetadataReaderExtensions.yml
@@ -206,7 +232,7 @@ items:
   summary: Returns the a handle to the Blob that follows the given one in the Blob heap or a nil handle if it is the last one.
   syntax:
     content:
-      CSharp: public static BlobHandle GetNextHandle(this MetadataReader reader, BlobHandle handle)
+      CSharp: public static BlobHandle GetNextHandle(MetadataReader reader, BlobHandle handle)
     parameters:
     - id: reader
       type:
@@ -220,6 +246,10 @@ items:
         href: System.Reflection.Metadata.BlobHandle.yml
     return:
       id: BlobHandle
+      type:
+        id: System.Reflection.Metadata.BlobHandle
+        name: BlobHandle
+        href: System.Reflection.Metadata.BlobHandle.yml
   id: System.Reflection.Metadata.Ecma335.MetadataReaderExtensions.GetNextHandle(System.Reflection.Metadata.MetadataReader,System.Reflection.Metadata.BlobHandle)
 - uid: System.Reflection.Metadata.Ecma335.MetadataReaderExtensions.GetNextHandle(System.Reflection.Metadata.MetadataReader,System.Reflection.Metadata.StringHandle)
   href: System.Reflection.Metadata.Ecma335.MetadataReaderExtensions.yml
@@ -233,7 +263,7 @@ items:
   summary: Returns the a handle to the String that follows the given one in the String heap or a nil handle if it is the last one.
   syntax:
     content:
-      CSharp: public static StringHandle GetNextHandle(this MetadataReader reader, StringHandle handle)
+      CSharp: public static StringHandle GetNextHandle(MetadataReader reader, StringHandle handle)
     parameters:
     - id: reader
       type:
@@ -247,6 +277,10 @@ items:
         href: System.Reflection.Metadata.StringHandle.yml
     return:
       id: StringHandle
+      type:
+        id: System.Reflection.Metadata.StringHandle
+        name: StringHandle
+        href: System.Reflection.Metadata.StringHandle.yml
   id: System.Reflection.Metadata.Ecma335.MetadataReaderExtensions.GetNextHandle(System.Reflection.Metadata.MetadataReader,System.Reflection.Metadata.StringHandle)
 - uid: System.Reflection.Metadata.Ecma335.MetadataReaderExtensions.GetEditAndContinueLogEntries(System.Reflection.Metadata.MetadataReader)
   href: System.Reflection.Metadata.Ecma335.MetadataReaderExtensions.yml
@@ -260,7 +294,7 @@ items:
   summary: Enumerates entries of EnC log.
   syntax:
     content:
-      CSharp: public static IEnumerable<EditAndContinueLogEntry> GetEditAndContinueLogEntries(this MetadataReader reader)
+      CSharp: public static IEnumerable<EditAndContinueLogEntry> GetEditAndContinueLogEntries(MetadataReader reader)
     parameters:
     - id: reader
       type:
@@ -269,6 +303,10 @@ items:
         href: System.Reflection.Metadata.MetadataReader.yml
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Reflection.Metadata.Ecma335.EditAndContinueLogEntry}
+        name: IEnumerable<EditAndContinueLogEntry>
+        isExternal: true
   id: System.Reflection.Metadata.Ecma335.MetadataReaderExtensions.GetEditAndContinueLogEntries(System.Reflection.Metadata.MetadataReader)
 - uid: System.Reflection.Metadata.Ecma335.MetadataReaderExtensions.GetEditAndContinueMapEntries(System.Reflection.Metadata.MetadataReader)
   href: System.Reflection.Metadata.Ecma335.MetadataReaderExtensions.yml
@@ -282,7 +320,7 @@ items:
   summary: Enumerates entries of EnC map.
   syntax:
     content:
-      CSharp: public static IEnumerable<Handle> GetEditAndContinueMapEntries(this MetadataReader reader)
+      CSharp: public static IEnumerable<EntityHandle> GetEditAndContinueMapEntries(MetadataReader reader)
     parameters:
     - id: reader
       type:
@@ -291,6 +329,10 @@ items:
         href: System.Reflection.Metadata.MetadataReader.yml
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Reflection.Metadata.EntityHandle}
+        name: IEnumerable<EntityHandle>
+        isExternal: true
   id: System.Reflection.Metadata.Ecma335.MetadataReaderExtensions.GetEditAndContinueMapEntries(System.Reflection.Metadata.MetadataReader)
 - uid: System.Reflection.Metadata.Ecma335.MetadataReaderExtensions.GetTypesWithProperties(System.Reflection.Metadata.MetadataReader)
   href: System.Reflection.Metadata.Ecma335.MetadataReaderExtensions.yml
@@ -304,7 +346,7 @@ items:
   summary: Enumerate types that define one or more properties.
   syntax:
     content:
-      CSharp: public static IEnumerable<TypeDefinitionHandle> GetTypesWithProperties(this MetadataReader reader)
+      CSharp: public static IEnumerable<TypeDefinitionHandle> GetTypesWithProperties(MetadataReader reader)
     parameters:
     - id: reader
       type:
@@ -313,6 +355,10 @@ items:
         href: System.Reflection.Metadata.MetadataReader.yml
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Reflection.Metadata.TypeDefinitionHandle}
+        name: IEnumerable<TypeDefinitionHandle>
+        isExternal: true
       description: >-
         The resulting sequence corresponds exactly to entries in PropertyMap table,
 
@@ -330,7 +376,7 @@ items:
   summary: Enumerate types that define one or more events.
   syntax:
     content:
-      CSharp: public static IEnumerable<TypeDefinitionHandle> GetTypesWithEvents(this MetadataReader reader)
+      CSharp: public static IEnumerable<TypeDefinitionHandle> GetTypesWithEvents(MetadataReader reader)
     parameters:
     - id: reader
       type:
@@ -339,6 +385,10 @@ items:
         href: System.Reflection.Metadata.MetadataReader.yml
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Reflection.Metadata.TypeDefinitionHandle}
+        name: IEnumerable<TypeDefinitionHandle>
+        isExternal: true
       description: >-
         The resulting sequence corresponds exactly to entries in EventMap table,
 

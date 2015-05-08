@@ -1,0 +1,91 @@
+items:
+- uid: System.Threading.Tasks.TaskExtensions
+  href: System.Threading.Tasks.TaskExtensions.yml
+  name: TaskExtensions
+  fullName: System.Threading.Tasks.TaskExtensions
+  type: Class
+  source:
+    remote: &o0
+      path: src/System.Threading.Tasks/src/System/Threading/Tasks/TaskExtensions.CoreCLR.cs
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
+    path: src/System.Threading.Tasks/src/System/Threading/Tasks/TaskExtensions.CoreCLR.cs
+    startLine: 12
+  summary: >-
+    Provides a set of static (Shared in Visual Basic) methods for working with specific kinds of
+
+    [System.Threading.Tasks.Task]() instances.
+  syntax:
+    content:
+      CSharp: public class TaskExtensions
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  id: System.Threading.Tasks.TaskExtensions
+  children:
+  - System.Threading.Tasks.TaskExtensions.Unwrap(System.Threading.Tasks.Task{System.Threading.Tasks.Task})
+  - System.Threading.Tasks.TaskExtensions.Unwrap``1(System.Threading.Tasks.Task{System.Threading.Tasks.Task{``0}})
+- uid: System.Threading.Tasks.TaskExtensions.Unwrap(System.Threading.Tasks.Task{System.Threading.Tasks.Task})
+  href: System.Threading.Tasks.TaskExtensions.yml
+  name: Unwrap(Task<Task>)
+  fullName: System.Threading.Tasks.TaskExtensions.Unwrap(System.Threading.Tasks.Task<System.Threading.Tasks.Task>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks/src/System/Threading/Tasks/TaskExtensions.CoreCLR.cs
+    startLine: 28
+  summary: >-
+    Creates a proxy [System.Threading.Tasks.Task]() that represents the
+
+    asynchronous operation of a Task{Task}.
+  syntax:
+    content:
+      CSharp: public static Task Unwrap(Task<Task> task)
+    parameters:
+    - id: task
+      type:
+        id: System.Threading.Tasks.Task{System.Threading.Tasks.Task}
+        name: Task<Task>
+        isExternal: true
+      description: The Task{Task} to unwrap.
+    return:
+      id: Task
+      type:
+        id: System.Threading.Tasks.Task
+        name: Task
+        isExternal: true
+      description: A Task that represents the asynchronous operation of the provided Task{Task}.
+  id: System.Threading.Tasks.TaskExtensions.Unwrap(System.Threading.Tasks.Task{System.Threading.Tasks.Task})
+- uid: System.Threading.Tasks.TaskExtensions.Unwrap``1(System.Threading.Tasks.Task{System.Threading.Tasks.Task{``0}})
+  href: System.Threading.Tasks.TaskExtensions.yml
+  name: Unwrap<TResult>(Task<Task<TResult>>)
+  fullName: System.Threading.Tasks.TaskExtensions.Unwrap<TResult>(System.Threading.Tasks.Task<System.Threading.Tasks.Task<TResult>>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks/src/System/Threading/Tasks/TaskExtensions.CoreCLR.cs
+    startLine: 97
+  summary: >-
+    Creates a proxy [System.Threading.Tasks.Task`1]() that represents the
+
+    asynchronous operation of a Task{Task{TResult}}.
+  syntax:
+    content:
+      CSharp: public static Task<TResult> Unwrap<TResult>(Task<Task<TResult>> task)
+    parameters:
+    - id: task
+      type:
+        id: System.Threading.Tasks.Task{System.Threading.Tasks.Task{``0}}
+        name: Task<Task<TResult>>
+        isExternal: true
+      description: The Task{Task{TResult}} to unwrap.
+    return:
+      id: Task
+      type:
+        id: System.Threading.Tasks.Task{``0}
+        name: Task<TResult>
+        isExternal: true
+      description: A Task{TResult} that represents the asynchronous operation of the provided Task{Task{TResult}}.
+  id: System.Threading.Tasks.TaskExtensions.Unwrap``1(System.Threading.Tasks.Task{System.Threading.Tasks.Task{``0}})

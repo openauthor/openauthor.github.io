@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/ViewDataDictionary.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/ViewDataDictionary.cs
     startLine: 13
   syntax:
     content:
-      CSharp: public class ViewDataDictionary
+      CSharp: 'public class ViewDataDictionary : IDictionary<string, object>, ICollection<KeyValuePair<string, object>>, IEnumerable<KeyValuePair<string, object>>, IEnumerable'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.ViewDataDictionary
   children:
@@ -44,7 +45,9 @@ items:
   - System.Web.Mvc.ViewDataDictionary.GetViewDataInfo(System.String)
   - System.Web.Mvc.ViewDataDictionary.Remove(System.Collections.Generic.KeyValuePair{System.String,System.Object})
   - System.Web.Mvc.ViewDataDictionary.Remove(System.String)
+  - System.Web.Mvc.ViewDataDictionary.SetModel(System.Object)
   - System.Web.Mvc.ViewDataDictionary.TryGetValue(System.String,System.Object@)
+  - System.Web.Mvc.ViewDataDictionary.System#Collections#IEnumerable#GetEnumerator
 - uid: System.Web.Mvc.ViewDataDictionary.#ctor
   href: System.Web.Mvc.ViewDataDictionary.yml
   name: ViewDataDictionary()
@@ -75,7 +78,7 @@ items:
     - id: model
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.Web.Mvc.ViewDataDictionary.#ctor(System.Object)
 - uid: System.Web.Mvc.ViewDataDictionary.#ctor(System.Web.Mvc.ViewDataDictionary)
@@ -113,7 +116,7 @@ items:
     - id: Count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Web.Mvc.ViewDataDictionary.Count
 - uid: System.Web.Mvc.ViewDataDictionary.IsReadOnly
@@ -132,7 +135,7 @@ items:
     - id: IsReadOnly
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.ViewDataDictionary.IsReadOnly
 - uid: System.Web.Mvc.ViewDataDictionary.Keys
@@ -151,7 +154,7 @@ items:
     - id: Keys
       type:
         id: System.Collections.Generic.ICollection{System.String}
-        name: System.Collections.Generic.ICollection{System.String}
+        name: ICollection<string>
         isExternal: true
   id: System.Web.Mvc.ViewDataDictionary.Keys
 - uid: System.Web.Mvc.ViewDataDictionary.Model
@@ -170,7 +173,7 @@ items:
     - id: Model
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.Web.Mvc.ViewDataDictionary.Model
 - uid: System.Web.Mvc.ViewDataDictionary.ModelMetadata
@@ -246,7 +249,7 @@ items:
     - id: Values
       type:
         id: System.Collections.Generic.ICollection{System.Object}
-        name: System.Collections.Generic.ICollection{System.Object}
+        name: ICollection<object>
         isExternal: true
   id: System.Web.Mvc.ViewDataDictionary.Values
 - uid: System.Web.Mvc.ViewDataDictionary.Item(System.String)
@@ -265,7 +268,7 @@ items:
     - id: this[]
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.Web.Mvc.ViewDataDictionary.Item(System.String)
 - uid: System.Web.Mvc.ViewDataDictionary.Add(System.Collections.Generic.KeyValuePair{System.String,System.Object})
@@ -284,7 +287,7 @@ items:
     - id: item
       type:
         id: System.Collections.Generic.KeyValuePair{System.String,System.Object}
-        name: System.Collections.Generic.KeyValuePair{System.String,System.Object}
+        name: KeyValuePair<string, object>
         isExternal: true
   id: System.Web.Mvc.ViewDataDictionary.Add(System.Collections.Generic.KeyValuePair{System.String,System.Object})
 - uid: System.Web.Mvc.ViewDataDictionary.Add(System.String,System.Object)
@@ -303,12 +306,12 @@ items:
     - id: key
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: value
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.Web.Mvc.ViewDataDictionary.Add(System.String,System.Object)
 - uid: System.Web.Mvc.ViewDataDictionary.Clear
@@ -341,10 +344,14 @@ items:
     - id: item
       type:
         id: System.Collections.Generic.KeyValuePair{System.String,System.Object}
-        name: System.Collections.Generic.KeyValuePair{System.String,System.Object}
+        name: KeyValuePair<string, object>
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Web.Mvc.ViewDataDictionary.Contains(System.Collections.Generic.KeyValuePair{System.String,System.Object})
 - uid: System.Web.Mvc.ViewDataDictionary.ContainsKey(System.String)
   href: System.Web.Mvc.ViewDataDictionary.yml
@@ -362,10 +369,14 @@ items:
     - id: key
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Web.Mvc.ViewDataDictionary.ContainsKey(System.String)
 - uid: System.Web.Mvc.ViewDataDictionary.CopyTo(System.Collections.Generic.KeyValuePair{System.String,System.Object}[],System.Int32)
   href: System.Web.Mvc.ViewDataDictionary.yml
@@ -383,12 +394,12 @@ items:
     - id: array
       type:
         id: System.Array
-        name: System.Array
+        name: KeyValuePair<string, object>[]
         isExternal: true
     - id: arrayIndex
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Web.Mvc.ViewDataDictionary.CopyTo(System.Collections.Generic.KeyValuePair{System.String,System.Object}[],System.Int32)
 - uid: System.Web.Mvc.ViewDataDictionary.Eval(System.String)
@@ -407,10 +418,14 @@ items:
     - id: expression
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Object
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
   id: System.Web.Mvc.ViewDataDictionary.Eval(System.String)
 - uid: System.Web.Mvc.ViewDataDictionary.Eval(System.String,System.String)
   href: System.Web.Mvc.ViewDataDictionary.yml
@@ -428,15 +443,19 @@ items:
     - id: expression
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: format
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.ViewDataDictionary.Eval(System.String,System.String)
 - uid: System.Web.Mvc.ViewDataDictionary.GetEnumerator
   href: System.Web.Mvc.ViewDataDictionary.yml
@@ -453,6 +472,10 @@ items:
     parameters: []
     return:
       id: IEnumerator
+      type:
+        id: System.Collections.Generic.IEnumerator{System.Collections.Generic.KeyValuePair{System.String,System.Object}}
+        name: IEnumerator<KeyValuePair<string, object>>
+        isExternal: true
   id: System.Web.Mvc.ViewDataDictionary.GetEnumerator
 - uid: System.Web.Mvc.ViewDataDictionary.GetViewDataInfo(System.String)
   href: System.Web.Mvc.ViewDataDictionary.yml
@@ -470,10 +493,14 @@ items:
     - id: expression
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: ViewDataInfo
+      type:
+        id: System.Web.Mvc.ViewDataInfo
+        name: ViewDataInfo
+        href: System.Web.Mvc.ViewDataInfo.yml
   id: System.Web.Mvc.ViewDataDictionary.GetViewDataInfo(System.String)
 - uid: System.Web.Mvc.ViewDataDictionary.Remove(System.Collections.Generic.KeyValuePair{System.String,System.Object})
   href: System.Web.Mvc.ViewDataDictionary.yml
@@ -491,10 +518,14 @@ items:
     - id: item
       type:
         id: System.Collections.Generic.KeyValuePair{System.String,System.Object}
-        name: System.Collections.Generic.KeyValuePair{System.String,System.Object}
+        name: KeyValuePair<string, object>
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Web.Mvc.ViewDataDictionary.Remove(System.Collections.Generic.KeyValuePair{System.String,System.Object})
 - uid: System.Web.Mvc.ViewDataDictionary.Remove(System.String)
   href: System.Web.Mvc.ViewDataDictionary.yml
@@ -512,11 +543,34 @@ items:
     - id: key
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Web.Mvc.ViewDataDictionary.Remove(System.String)
+- uid: System.Web.Mvc.ViewDataDictionary.SetModel(System.Object)
+  href: System.Web.Mvc.ViewDataDictionary.yml
+  name: SetModel(object)
+  fullName: System.Web.Mvc.ViewDataDictionary.SetModel(object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ViewDataDictionary.cs
+    startLine: 217
+  syntax:
+    content:
+      CSharp: protected virtual void SetModel(object value)
+    parameters:
+    - id: value
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+  id: System.Web.Mvc.ViewDataDictionary.SetModel(System.Object)
 - uid: System.Web.Mvc.ViewDataDictionary.TryGetValue(System.String,System.Object@)
   href: System.Web.Mvc.ViewDataDictionary.yml
   name: TryGetValue(string, out object)
@@ -533,13 +587,37 @@ items:
     - id: key
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: value
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Web.Mvc.ViewDataDictionary.TryGetValue(System.String,System.Object@)
+- uid: System.Web.Mvc.ViewDataDictionary.System#Collections#IEnumerable#GetEnumerator
+  href: System.Web.Mvc.ViewDataDictionary.yml
+  name: IEnumerable.GetEnumerator()
+  fullName: System.Web.Mvc.ViewDataDictionary.System.Collections.IEnumerable.GetEnumerator()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ViewDataDictionary.cs
+    startLine: 383
+  syntax:
+    content:
+      CSharp: IEnumerator IEnumerable.GetEnumerator()
+    parameters: []
+    return:
+      id: IEnumerator
+      type:
+        id: System.Collections.IEnumerator
+        name: IEnumerator
+        isExternal: true
+  id: System.Web.Mvc.ViewDataDictionary.System#Collections#IEnumerable#GetEnumerator

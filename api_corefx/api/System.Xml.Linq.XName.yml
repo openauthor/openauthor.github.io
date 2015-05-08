@@ -6,17 +6,19 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Xml.XDocument/src/System/Xml/Linq/XName.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XName.cs
     startLine: 10
   summary: Represents a name of an XML element or attribute. This class cannot be inherited.
   syntax:
     content:
-      CSharp: public sealed class XName
+      CSharp: 'public sealed class XName : IEquatable<XName>'
   inheritance:
-  - id: IEquatable{System.Xml.Linq.XName}
-    name: IEquatable{System.Xml.Linq.XName}
+  - id: System.Object
+    name: object
     isExternal: true
   id: System.Xml.Linq.XName
   children:
@@ -31,6 +33,7 @@ items:
   - System.Xml.Linq.XName.GetHashCode
   - System.Xml.Linq.XName.op_Equality(System.Xml.Linq.XName,System.Xml.Linq.XName)
   - System.Xml.Linq.XName.op_Inequality(System.Xml.Linq.XName,System.Xml.Linq.XName)
+  - System.Xml.Linq.XName.System#IEquatable{System#Xml#Linq#XName}#Equals(System.Xml.Linq.XName)
 - uid: System.Xml.Linq.XName.LocalName
   href: System.Xml.Linq.XName.yml
   name: LocalName
@@ -48,7 +51,7 @@ items:
     - id: LocalName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.Linq.XName.LocalName
 - uid: System.Xml.Linq.XName.Namespace
@@ -88,7 +91,7 @@ items:
     - id: NamespaceName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.Linq.XName.NamespaceName
 - uid: System.Xml.Linq.XName.ToString
@@ -107,6 +110,10 @@ items:
     parameters: []
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Xml.Linq.XName.ToString
 - uid: System.Xml.Linq.XName.Get(System.String)
   href: System.Xml.Linq.XName.yml
@@ -125,11 +132,15 @@ items:
     - id: expandedName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: 'A string containing an expanded XML name in the format: {namespace}localname.'
     return:
       id: XName
+      type:
+        id: System.Xml.Linq.XName
+        name: XName
+        href: System.Xml.Linq.XName.yml
       description: An [System.Xml.Linq.XName](System.Xml.Linq.XName.yml) object constructed from the specified expanded name.
   id: System.Xml.Linq.XName.Get(System.String)
 - uid: System.Xml.Linq.XName.Get(System.String,System.String)
@@ -149,24 +160,28 @@ items:
     - id: localName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: A local (unqualified) name.
     - id: namespaceName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: An XML namespace.
     return:
       id: XName
+      type:
+        id: System.Xml.Linq.XName
+        name: XName
+        href: System.Xml.Linq.XName.yml
       description: An XName object created from the specified local name and namespace.
   id: System.Xml.Linq.XName.Get(System.String,System.String)
 - uid: System.Xml.Linq.XName.op_Implicit(System.String)~System.Xml.Linq.XName
   href: System.Xml.Linq.XName.yml
   name: implicit operator XName(string)
   fullName: System.Xml.Linq.XName.implicit operator System.Xml.Linq.XName(string)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XName.cs
@@ -174,16 +189,20 @@ items:
   summary: Converts a string formatted as an expanded XML name ({namespace}localname) to an XName object.
   syntax:
     content:
-      CSharp: '[CLSCompliant(false)] public static implicit operator XName(string expandedName) { return expandedName != null ? Get(expandedName) : null; }'
+      CSharp: public static implicit operator XName(string expandedName)
     parameters:
     - id: expandedName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: 'A string containing an expanded XML name in the format: {namespace}localname.'
     return:
       id: XName
+      type:
+        id: System.Xml.Linq.XName
+        name: XName
+        href: System.Xml.Linq.XName.yml
       description: An XName object constructed from the expanded name.
   id: System.Xml.Linq.XName.op_Implicit(System.String)~System.Xml.Linq.XName
 - uid: System.Xml.Linq.XName.Equals(System.Object)
@@ -203,11 +222,15 @@ items:
     - id: obj
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: The XName to compare to the current XName.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: true if the specified [System.Xml.Linq.XName](System.Xml.Linq.XName.yml) is equal to the current XName; otherwise false.
   id: System.Xml.Linq.XName.Equals(System.Object)
 - uid: System.Xml.Linq.XName.GetHashCode
@@ -229,12 +252,16 @@ items:
     parameters: []
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: System.Xml.Linq.XName.GetHashCode
 - uid: System.Xml.Linq.XName.op_Equality(System.Xml.Linq.XName,System.Xml.Linq.XName)
   href: System.Xml.Linq.XName.yml
   name: operator ==(XName, XName)
   fullName: System.Xml.Linq.XName.operator ==(System.Xml.Linq.XName, System.Xml.Linq.XName)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XName.cs
@@ -242,7 +269,7 @@ items:
   summary: Returns a value indicating whether two instances of [System.Xml.Linq.XName](System.Xml.Linq.XName.yml) are equal.
   syntax:
     content:
-      CSharp: public static bool operator ==(XName left, XName right) { return (object)left == (object)right; }
+      CSharp: public static bool operator ==(XName left, XName right)
     parameters:
     - id: left
       type:
@@ -258,13 +285,17 @@ items:
       description: The second XName to compare.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: true if left and right are equal; otherwise false.
   id: System.Xml.Linq.XName.op_Equality(System.Xml.Linq.XName,System.Xml.Linq.XName)
 - uid: System.Xml.Linq.XName.op_Inequality(System.Xml.Linq.XName,System.Xml.Linq.XName)
   href: System.Xml.Linq.XName.yml
   name: operator !=(XName, XName)
   fullName: System.Xml.Linq.XName.operator !=(System.Xml.Linq.XName, System.Xml.Linq.XName)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XName.cs
@@ -272,7 +303,7 @@ items:
   summary: Returns a value indicating whether two instances of [System.Xml.Linq.XName](System.Xml.Linq.XName.yml) are not equal.
   syntax:
     content:
-      CSharp: public static bool operator !=(XName left, XName right) { return (object)left != (object)right; }
+      CSharp: public static bool operator !=(XName left, XName right)
     parameters:
     - id: left
       type:
@@ -288,5 +319,46 @@ items:
       description: The second XName to compare.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: true if left and right are not equal; otherwise false.
   id: System.Xml.Linq.XName.op_Inequality(System.Xml.Linq.XName,System.Xml.Linq.XName)
+- uid: System.Xml.Linq.XName.System#IEquatable{System#Xml#Linq#XName}#Equals(System.Xml.Linq.XName)
+  href: System.Xml.Linq.XName.yml
+  name: IEquatable<XName>.Equals(XName)
+  fullName: System.Xml.Linq.XName.System.IEquatable<System.Xml.Linq.XName>.Equals(System.Xml.Linq.XName)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XDocument/src/System/Xml/Linq/XName.cs
+    startLine: 178
+  summary: >-
+    Indicates whether the current [System.Xml.Linq.XName](System.Xml.Linq.XName.yml) is equal to
+
+    the specified [System.Xml.Linq.XName](System.Xml.Linq.XName.yml)
+  syntax:
+    content:
+      CSharp: bool IEquatable<XName>.Equals(XName other)
+    parameters:
+    - id: other
+      type:
+        id: System.Xml.Linq.XName
+        name: XName
+        href: System.Xml.Linq.XName.yml
+      description: >-
+        The [System.Xml.Linq.XName](System.Xml.Linq.XName.yml) to compare with the
+
+        current [System.Xml.Linq.XName](System.Xml.Linq.XName.yml)
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: >-
+        Returns true if the current [System.Xml.Linq.XName](System.Xml.Linq.XName.yml) is equal to
+
+        the specified [System.Xml.Linq.XName](System.Xml.Linq.XName.yml). Returns false otherwise.
+  id: System.Xml.Linq.XName.System#IEquatable{System#Xml#Linq#XName}#Equals(System.Xml.Linq.XName)

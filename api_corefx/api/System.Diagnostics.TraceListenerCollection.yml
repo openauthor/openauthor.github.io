@@ -6,16 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/TraceListeners.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/TraceListeners.cs
     startLine: 12
   syntax:
     content:
-      CSharp: public class TraceListenerCollection
+      CSharp: 'public class TraceListenerCollection : IList, ICollection, IEnumerable'
   inheritance:
-  - id: IList
-    name: IList
+  - id: System.Object
+    name: object
     isExternal: true
   id: System.Diagnostics.TraceListenerCollection
   children:
@@ -34,6 +36,17 @@ items:
   - System.Diagnostics.TraceListenerCollection.Remove(System.Diagnostics.TraceListener)
   - System.Diagnostics.TraceListenerCollection.Remove(System.String)
   - System.Diagnostics.TraceListenerCollection.RemoveAt(System.Int32)
+  - System.Diagnostics.TraceListenerCollection.System#Collections#IList#Item(System.Int32)
+  - System.Diagnostics.TraceListenerCollection.System#Collections#IList#IsReadOnly
+  - System.Diagnostics.TraceListenerCollection.System#Collections#IList#IsFixedSize
+  - System.Diagnostics.TraceListenerCollection.System#Collections#IList#Add(System.Object)
+  - System.Diagnostics.TraceListenerCollection.System#Collections#IList#Contains(System.Object)
+  - System.Diagnostics.TraceListenerCollection.System#Collections#IList#IndexOf(System.Object)
+  - System.Diagnostics.TraceListenerCollection.System#Collections#IList#Insert(System.Int32,System.Object)
+  - System.Diagnostics.TraceListenerCollection.System#Collections#IList#Remove(System.Object)
+  - System.Diagnostics.TraceListenerCollection.System#Collections#ICollection#SyncRoot
+  - System.Diagnostics.TraceListenerCollection.System#Collections#ICollection#IsSynchronized
+  - System.Diagnostics.TraceListenerCollection.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
 - uid: System.Diagnostics.TraceListenerCollection.Item(System.Int32)
   href: System.Diagnostics.TraceListenerCollection.yml
   name: this[int]
@@ -88,7 +101,7 @@ items:
     - id: Count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Diagnostics.TraceListenerCollection.Count
 - uid: System.Diagnostics.TraceListenerCollection.Add(System.Diagnostics.TraceListener)
@@ -111,6 +124,10 @@ items:
         href: System.Diagnostics.TraceListener.yml
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: System.Diagnostics.TraceListenerCollection.Add(System.Diagnostics.TraceListener)
 - uid: System.Diagnostics.TraceListenerCollection.AddRange(System.Diagnostics.TraceListener[])
   href: System.Diagnostics.TraceListenerCollection.yml
@@ -128,7 +145,7 @@ items:
     - id: value
       type:
         id: System.Array
-        name: System.Array
+        name: TraceListener[]
         isExternal: true
   id: System.Diagnostics.TraceListenerCollection.AddRange(System.Diagnostics.TraceListener[])
 - uid: System.Diagnostics.TraceListenerCollection.AddRange(System.Diagnostics.TraceListenerCollection)
@@ -184,6 +201,10 @@ items:
         href: System.Diagnostics.TraceListener.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Diagnostics.TraceListenerCollection.Contains(System.Diagnostics.TraceListener)
 - uid: System.Diagnostics.TraceListenerCollection.CopyTo(System.Diagnostics.TraceListener[],System.Int32)
   href: System.Diagnostics.TraceListenerCollection.yml
@@ -201,12 +222,12 @@ items:
     - id: listeners
       type:
         id: System.Array
-        name: System.Array
+        name: TraceListener[]
         isExternal: true
     - id: index
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Diagnostics.TraceListenerCollection.CopyTo(System.Diagnostics.TraceListener[],System.Int32)
 - uid: System.Diagnostics.TraceListenerCollection.GetEnumerator
@@ -224,6 +245,10 @@ items:
     parameters: []
     return:
       id: IEnumerator
+      type:
+        id: System.Collections.IEnumerator
+        name: IEnumerator
+        isExternal: true
   id: System.Diagnostics.TraceListenerCollection.GetEnumerator
 - uid: System.Diagnostics.TraceListenerCollection.IndexOf(System.Diagnostics.TraceListener)
   href: System.Diagnostics.TraceListenerCollection.yml
@@ -245,6 +270,10 @@ items:
         href: System.Diagnostics.TraceListener.yml
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: System.Diagnostics.TraceListenerCollection.IndexOf(System.Diagnostics.TraceListener)
 - uid: System.Diagnostics.TraceListenerCollection.Insert(System.Int32,System.Diagnostics.TraceListener)
   href: System.Diagnostics.TraceListenerCollection.yml
@@ -262,7 +291,7 @@ items:
     - id: index
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: listener
       type:
@@ -305,7 +334,7 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.TraceListenerCollection.Remove(System.String)
 - uid: System.Diagnostics.TraceListenerCollection.RemoveAt(System.Int32)
@@ -324,6 +353,243 @@ items:
     - id: index
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Diagnostics.TraceListenerCollection.RemoveAt(System.Int32)
+- uid: System.Diagnostics.TraceListenerCollection.System#Collections#IList#Item(System.Int32)
+  href: System.Diagnostics.TraceListenerCollection.yml
+  name: IList.this[int]
+  fullName: System.Diagnostics.TraceListenerCollection.System.Collections.IList.this[int]
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/TraceListeners.cs
+    startLine: 213
+  syntax:
+    content:
+      CSharp: object IList.this[int index] { get; set; }
+    parameters:
+    - id: System.Collections.IList.this[]
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+  id: System.Diagnostics.TraceListenerCollection.System#Collections#IList#Item(System.Int32)
+- uid: System.Diagnostics.TraceListenerCollection.System#Collections#IList#IsReadOnly
+  href: System.Diagnostics.TraceListenerCollection.yml
+  name: IList.IsReadOnly
+  fullName: System.Diagnostics.TraceListenerCollection.System.Collections.IList.IsReadOnly
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/TraceListeners.cs
+    startLine: 231
+  syntax:
+    content:
+      CSharp: bool IList.IsReadOnly { get; }
+    parameters:
+    - id: System.Collections.IList.IsReadOnly
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Diagnostics.TraceListenerCollection.System#Collections#IList#IsReadOnly
+- uid: System.Diagnostics.TraceListenerCollection.System#Collections#IList#IsFixedSize
+  href: System.Diagnostics.TraceListenerCollection.yml
+  name: IList.IsFixedSize
+  fullName: System.Diagnostics.TraceListenerCollection.System.Collections.IList.IsFixedSize
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/TraceListeners.cs
+    startLine: 240
+  syntax:
+    content:
+      CSharp: bool IList.IsFixedSize { get; }
+    parameters:
+    - id: System.Collections.IList.IsFixedSize
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Diagnostics.TraceListenerCollection.System#Collections#IList#IsFixedSize
+- uid: System.Diagnostics.TraceListenerCollection.System#Collections#IList#Add(System.Object)
+  href: System.Diagnostics.TraceListenerCollection.yml
+  name: IList.Add(object)
+  fullName: System.Diagnostics.TraceListenerCollection.System.Collections.IList.Add(object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/TraceListeners.cs
+    startLine: 249
+  syntax:
+    content:
+      CSharp: int IList.Add(object value)
+    parameters:
+    - id: value
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+    return:
+      id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.Diagnostics.TraceListenerCollection.System#Collections#IList#Add(System.Object)
+- uid: System.Diagnostics.TraceListenerCollection.System#Collections#IList#Contains(System.Object)
+  href: System.Diagnostics.TraceListenerCollection.yml
+  name: IList.Contains(object)
+  fullName: System.Diagnostics.TraceListenerCollection.System.Collections.IList.Contains(object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/TraceListeners.cs
+    startLine: 264
+  syntax:
+    content:
+      CSharp: bool IList.Contains(object value)
+    parameters:
+    - id: value
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Diagnostics.TraceListenerCollection.System#Collections#IList#Contains(System.Object)
+- uid: System.Diagnostics.TraceListenerCollection.System#Collections#IList#IndexOf(System.Object)
+  href: System.Diagnostics.TraceListenerCollection.yml
+  name: IList.IndexOf(object)
+  fullName: System.Diagnostics.TraceListenerCollection.System.Collections.IList.IndexOf(object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/TraceListeners.cs
+    startLine: 270
+  syntax:
+    content:
+      CSharp: int IList.IndexOf(object value)
+    parameters:
+    - id: value
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+    return:
+      id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.Diagnostics.TraceListenerCollection.System#Collections#IList#IndexOf(System.Object)
+- uid: System.Diagnostics.TraceListenerCollection.System#Collections#IList#Insert(System.Int32,System.Object)
+  href: System.Diagnostics.TraceListenerCollection.yml
+  name: IList.Insert(int, object)
+  fullName: System.Diagnostics.TraceListenerCollection.System.Collections.IList.Insert(int, object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/TraceListeners.cs
+    startLine: 276
+  syntax:
+    content:
+      CSharp: void IList.Insert(int index, object value)
+    parameters:
+    - id: index
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: value
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+  id: System.Diagnostics.TraceListenerCollection.System#Collections#IList#Insert(System.Int32,System.Object)
+- uid: System.Diagnostics.TraceListenerCollection.System#Collections#IList#Remove(System.Object)
+  href: System.Diagnostics.TraceListenerCollection.yml
+  name: IList.Remove(object)
+  fullName: System.Diagnostics.TraceListenerCollection.System.Collections.IList.Remove(object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/TraceListeners.cs
+    startLine: 291
+  syntax:
+    content:
+      CSharp: void IList.Remove(object value)
+    parameters:
+    - id: value
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+  id: System.Diagnostics.TraceListenerCollection.System#Collections#IList#Remove(System.Object)
+- uid: System.Diagnostics.TraceListenerCollection.System#Collections#ICollection#SyncRoot
+  href: System.Diagnostics.TraceListenerCollection.yml
+  name: ICollection.SyncRoot
+  fullName: System.Diagnostics.TraceListenerCollection.System.Collections.ICollection.SyncRoot
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/TraceListeners.cs
+    startLine: 300
+  syntax:
+    content:
+      CSharp: object ICollection.SyncRoot { get; }
+    parameters:
+    - id: System.Collections.ICollection.SyncRoot
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+  id: System.Diagnostics.TraceListenerCollection.System#Collections#ICollection#SyncRoot
+- uid: System.Diagnostics.TraceListenerCollection.System#Collections#ICollection#IsSynchronized
+  href: System.Diagnostics.TraceListenerCollection.yml
+  name: ICollection.IsSynchronized
+  fullName: System.Diagnostics.TraceListenerCollection.System.Collections.ICollection.IsSynchronized
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/TraceListeners.cs
+    startLine: 309
+  syntax:
+    content:
+      CSharp: bool ICollection.IsSynchronized { get; }
+    parameters:
+    - id: System.Collections.ICollection.IsSynchronized
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Diagnostics.TraceListenerCollection.System#Collections#ICollection#IsSynchronized
+- uid: System.Diagnostics.TraceListenerCollection.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+  href: System.Diagnostics.TraceListenerCollection.yml
+  name: ICollection.CopyTo(Array, int)
+  fullName: System.Diagnostics.TraceListenerCollection.System.Collections.ICollection.CopyTo(System.Array, int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/TraceListeners.cs
+    startLine: 318
+  syntax:
+    content:
+      CSharp: void ICollection.CopyTo(Array array, int index)
+    parameters:
+    - id: array
+      type:
+        id: System.Array
+        name: Array
+        isExternal: true
+    - id: index
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.Diagnostics.TraceListenerCollection.System#Collections#ICollection#CopyTo(System.Array,System.Int32)

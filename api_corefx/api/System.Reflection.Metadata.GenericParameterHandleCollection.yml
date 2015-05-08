@@ -6,23 +6,30 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
     startLine: 14
   summary: Represents generic type parameters of a method or type.
   syntax:
     content:
-      CSharp: public struct GenericParameterHandleCollection
+      CSharp: 'public struct GenericParameterHandleCollection : IReadOnlyList<GenericParameterHandle>, IReadOnlyCollection<GenericParameterHandle>, IEnumerable<GenericParameterHandle>, IEnumerable'
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Reflection.Metadata.GenericParameterHandleCollection
   children:
   - System.Reflection.Metadata.GenericParameterHandleCollection.Count
   - System.Reflection.Metadata.GenericParameterHandleCollection.Item(System.Int32)
   - System.Reflection.Metadata.GenericParameterHandleCollection.GetEnumerator
+  - System.Reflection.Metadata.GenericParameterHandleCollection.System#Collections#Generic#IEnumerable{System#Reflection#Metadata#GenericParameterHandle}#GetEnumerator
+  - System.Reflection.Metadata.GenericParameterHandleCollection.System#Collections#IEnumerable#GetEnumerator
 - uid: System.Reflection.Metadata.GenericParameterHandleCollection.Count
   href: System.Reflection.Metadata.GenericParameterHandleCollection.yml
   name: Count
@@ -39,7 +46,7 @@ items:
     - id: Count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Reflection.Metadata.GenericParameterHandleCollection.Count
 - uid: System.Reflection.Metadata.GenericParameterHandleCollection.Item(System.Int32)
@@ -76,4 +83,48 @@ items:
     parameters: []
     return:
       id: Enumerator
+      type:
+        id: System.Reflection.Metadata.GenericParameterHandleCollection.Enumerator
+        name: Enumerator
+        href: System.Reflection.Metadata.GenericParameterHandleCollection.Enumerator.yml
   id: System.Reflection.Metadata.GenericParameterHandleCollection.GetEnumerator
+- uid: System.Reflection.Metadata.GenericParameterHandleCollection.System#Collections#Generic#IEnumerable{System#Reflection#Metadata#GenericParameterHandle}#GetEnumerator
+  href: System.Reflection.Metadata.GenericParameterHandleCollection.yml
+  name: IEnumerable<GenericParameterHandle>.GetEnumerator()
+  fullName: System.Reflection.Metadata.GenericParameterHandleCollection.System.Collections.Generic.IEnumerable<System.Reflection.Metadata.GenericParameterHandle>.GetEnumerator()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
+    startLine: 57
+  syntax:
+    content:
+      CSharp: IEnumerator<GenericParameterHandle> IEnumerable<GenericParameterHandle>.GetEnumerator()
+    parameters: []
+    return:
+      id: IEnumerator
+      type:
+        id: System.Collections.Generic.IEnumerator{System.Reflection.Metadata.GenericParameterHandle}
+        name: IEnumerator<GenericParameterHandle>
+        isExternal: true
+  id: System.Reflection.Metadata.GenericParameterHandleCollection.System#Collections#Generic#IEnumerable{System#Reflection#Metadata#GenericParameterHandle}#GetEnumerator
+- uid: System.Reflection.Metadata.GenericParameterHandleCollection.System#Collections#IEnumerable#GetEnumerator
+  href: System.Reflection.Metadata.GenericParameterHandleCollection.yml
+  name: IEnumerable.GetEnumerator()
+  fullName: System.Reflection.Metadata.GenericParameterHandleCollection.System.Collections.IEnumerable.GetEnumerator()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
+    startLine: 62
+  syntax:
+    content:
+      CSharp: IEnumerator IEnumerable.GetEnumerator()
+    parameters: []
+    return:
+      id: IEnumerator
+      type:
+        id: System.Collections.IEnumerator
+        name: IEnumerator
+        isExternal: true
+  id: System.Reflection.Metadata.GenericParameterHandleCollection.System#Collections#IEnumerable#GetEnumerator

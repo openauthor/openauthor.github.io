@@ -1,0 +1,205 @@
+items:
+- uid: System.Dynamic.BinaryOperationBinder
+  href: System.Dynamic.BinaryOperationBinder.yml
+  name: BinaryOperationBinder
+  fullName: System.Dynamic.BinaryOperationBinder
+  type: Class
+  source:
+    remote: &o0
+      path: src/System.Dynamic.Runtime/src/System/Dynamic/BinaryOperationBinder.cs
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/BinaryOperationBinder.cs
+    startLine: 11
+  summary: Represents the binary dynamic operation at the call site, providing the binding semantic and the details about the operation.
+  syntax:
+    content:
+      CSharp: 'public abstract class BinaryOperationBinder : DynamicMetaObjectBinder'
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.Runtime.CompilerServices.CallSiteBinder
+    name: CallSiteBinder
+    href: System.Runtime.CompilerServices.CallSiteBinder.yml
+  - id: System.Dynamic.DynamicMetaObjectBinder
+    name: DynamicMetaObjectBinder
+    href: System.Dynamic.DynamicMetaObjectBinder.yml
+  id: System.Dynamic.BinaryOperationBinder
+  children:
+  - System.Dynamic.BinaryOperationBinder.#ctor(ExpressionType)
+  - System.Dynamic.BinaryOperationBinder.ReturnType
+  - System.Dynamic.BinaryOperationBinder.Operation
+  - System.Dynamic.BinaryOperationBinder.FallbackBinaryOperation(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject)
+  - System.Dynamic.BinaryOperationBinder.FallbackBinaryOperation(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject)
+  - System.Dynamic.BinaryOperationBinder.Bind(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])
+- uid: System.Dynamic.BinaryOperationBinder.#ctor(ExpressionType)
+  href: System.Dynamic.BinaryOperationBinder.yml
+  name: BinaryOperationBinder(ExpressionType)
+  fullName: System.Dynamic.BinaryOperationBinder.BinaryOperationBinder(ExpressionType)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/BinaryOperationBinder.cs
+    startLine: 19
+  summary: Initializes a new instance of the [System.Dynamic.BinaryOperationBinder](System.Dynamic.BinaryOperationBinder.yml) class.
+  syntax:
+    content:
+      CSharp: protected BinaryOperationBinder(ExpressionType operation)
+    parameters:
+    - id: operation
+      type:
+        id: ExpressionType
+        name: ExpressionType
+        isExternal: true
+      description: The binary operation kind.
+  id: System.Dynamic.BinaryOperationBinder.#ctor(ExpressionType)
+- uid: System.Dynamic.BinaryOperationBinder.ReturnType
+  href: System.Dynamic.BinaryOperationBinder.yml
+  name: ReturnType
+  fullName: System.Dynamic.BinaryOperationBinder.ReturnType
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/BinaryOperationBinder.cs
+    startLine: 28
+  summary: The result type of the operation.
+  syntax:
+    content:
+      CSharp: public override sealed Type ReturnType { get; }
+    parameters:
+    - id: ReturnType
+      type:
+        id: System.Type
+        name: Type
+        isExternal: true
+  id: System.Dynamic.BinaryOperationBinder.ReturnType
+- uid: System.Dynamic.BinaryOperationBinder.Operation
+  href: System.Dynamic.BinaryOperationBinder.yml
+  name: Operation
+  fullName: System.Dynamic.BinaryOperationBinder.Operation
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/BinaryOperationBinder.cs
+    startLine: 36
+  summary: The binary operation kind.
+  syntax:
+    content:
+      CSharp: public ExpressionType Operation { get; }
+    parameters:
+    - id: Operation
+      type:
+        id: ExpressionType
+        name: ExpressionType
+        isExternal: true
+  id: System.Dynamic.BinaryOperationBinder.Operation
+- uid: System.Dynamic.BinaryOperationBinder.FallbackBinaryOperation(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject)
+  href: System.Dynamic.BinaryOperationBinder.yml
+  name: FallbackBinaryOperation(DynamicMetaObject, DynamicMetaObject)
+  fullName: System.Dynamic.BinaryOperationBinder.FallbackBinaryOperation(System.Dynamic.DynamicMetaObject, System.Dynamic.DynamicMetaObject)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/BinaryOperationBinder.cs
+    startLine: 50
+  summary: Performs the binding of the binary dynamic operation if the target dynamic object cannot bind.
+  syntax:
+    content:
+      CSharp: public DynamicMetaObject FallbackBinaryOperation(DynamicMetaObject target, DynamicMetaObject arg)
+    parameters:
+    - id: target
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The target of the dynamic binary operation.
+    - id: arg
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The right hand side operand of the dynamic binary operation.
+    return:
+      id: DynamicMetaObject
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The [System.Dynamic.DynamicMetaObject](System.Dynamic.DynamicMetaObject.yml) representing the result of the binding.
+  id: System.Dynamic.BinaryOperationBinder.FallbackBinaryOperation(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject)
+- uid: System.Dynamic.BinaryOperationBinder.FallbackBinaryOperation(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject)
+  href: System.Dynamic.BinaryOperationBinder.yml
+  name: FallbackBinaryOperation(DynamicMetaObject, DynamicMetaObject, DynamicMetaObject)
+  fullName: System.Dynamic.BinaryOperationBinder.FallbackBinaryOperation(System.Dynamic.DynamicMetaObject, System.Dynamic.DynamicMetaObject, System.Dynamic.DynamicMetaObject)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/BinaryOperationBinder.cs
+    startLine: 62
+  summary: When overridden in the derived class, performs the binding of the binary dynamic operation if the target dynamic object cannot bind.
+  syntax:
+    content:
+      CSharp: public abstract DynamicMetaObject FallbackBinaryOperation(DynamicMetaObject target, DynamicMetaObject arg, DynamicMetaObject errorSuggestion)
+    parameters:
+    - id: target
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The target of the dynamic binary operation.
+    - id: arg
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The right hand side operand of the dynamic binary operation.
+    - id: errorSuggestion
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The binding result in case the binding fails, or null.
+    return:
+      id: DynamicMetaObject
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The [System.Dynamic.DynamicMetaObject](System.Dynamic.DynamicMetaObject.yml) representing the result of the binding.
+  id: System.Dynamic.BinaryOperationBinder.FallbackBinaryOperation(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject)
+- uid: System.Dynamic.BinaryOperationBinder.Bind(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])
+  href: System.Dynamic.BinaryOperationBinder.yml
+  name: Bind(DynamicMetaObject, DynamicMetaObject[])
+  fullName: System.Dynamic.BinaryOperationBinder.Bind(System.Dynamic.DynamicMetaObject, System.Dynamic.DynamicMetaObject[])
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/BinaryOperationBinder.cs
+    startLine: 70
+  summary: Performs the binding of the dynamic binary operation.
+  syntax:
+    content:
+      CSharp: public override sealed DynamicMetaObject Bind(DynamicMetaObject target, DynamicMetaObject[] args)
+    parameters:
+    - id: target
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The target of the dynamic operation.
+    - id: args
+      type:
+        id: System.Array
+        name: DynamicMetaObject[]
+        isExternal: true
+      description: An array of arguments of the dynamic operation.
+    return:
+      id: DynamicMetaObject
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The [System.Dynamic.DynamicMetaObject](System.Dynamic.DynamicMetaObject.yml) representing the result of the binding.
+  id: System.Dynamic.BinaryOperationBinder.Bind(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])

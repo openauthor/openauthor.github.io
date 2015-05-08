@@ -6,9 +6,10 @@ items:
   type: Interface
   source:
     remote: &o0
+      path: src/EditorFeatures/Core/Extensibility/Peek/IPeekableItemFactory.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/EditorFeatures/Core/Extensibility/Peek/IPeekableItemFactory.cs
     startLine: 9
   syntax:
@@ -28,7 +29,7 @@ items:
     startLine: 11
   syntax:
     content:
-      CSharp: Task<IEnumerable<IPeekableItem>> GetPeekableItemsAsync(ISymbol symbol, Project project, IPeekResultFactory peekResultFactory, CancellationToken cancellationToken);
+      CSharp: public Task<IEnumerable<IPeekableItem>> GetPeekableItemsAsync(ISymbol symbol, Project project, IPeekResultFactory peekResultFactory, CancellationToken cancellationToken)
     parameters:
     - id: symbol
       type:
@@ -43,13 +44,17 @@ items:
     - id: peekResultFactory
       type:
         id: Microsoft.VisualStudio.Language.Intellisense.IPeekResultFactory
-        name: Microsoft.VisualStudio.Language.Intellisense.IPeekResultFactory
+        name: IPeekResultFactory
         isExternal: true
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{Microsoft.VisualStudio.Language.Intellisense.IPeekableItem}}
+        name: Task<IEnumerable<IPeekableItem>>
+        isExternal: true
   id: Microsoft.CodeAnalysis.Editor.Peek.IPeekableItemFactory.GetPeekableItemsAsync(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Project,Microsoft.VisualStudio.Language.Intellisense.IPeekResultFactory,System.Threading.CancellationToken)

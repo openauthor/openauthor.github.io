@@ -6,8 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Linq.Expressions/src/System/Runtime/CompilerServices/Closure.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Linq.Expressions/src/System/Runtime/CompilerServices/Closure.cs
     startLine: 12
   summary: >-
@@ -19,7 +21,7 @@ items:
       CSharp: public sealed class Closure
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Runtime.CompilerServices.Closure
   children:
@@ -38,7 +40,7 @@ items:
   summary: Represents the non-trivial constants and locally executable expressions that are referenced by a dynamically generated method.
   syntax:
     content:
-      CSharp: Constants
+      CSharp: '[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2105:ArrayFieldsShouldNotBeReadOnly")] [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")] public readonly object[] Constants;'
   id: System.Runtime.CompilerServices.Closure.Constants
 - uid: System.Runtime.CompilerServices.Closure.Locals
   href: System.Runtime.CompilerServices.Closure.yml
@@ -52,7 +54,7 @@ items:
   summary: Represents the hoisted local variables from the parent context.
   syntax:
     content:
-      CSharp: Locals
+      CSharp: '[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2105:ArrayFieldsShouldNotBeReadOnly")] [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")] public readonly object[] Locals;'
   id: System.Runtime.CompilerServices.Closure.Locals
 - uid: System.Runtime.CompilerServices.Closure.#ctor(System.Object[],System.Object[])
   href: System.Runtime.CompilerServices.Closure.yml
@@ -71,13 +73,13 @@ items:
     - id: constants
       type:
         id: System.Array
-        name: System.Array
+        name: object[]
         isExternal: true
       description: The constant values used by the method.
     - id: locals
       type:
         id: System.Array
-        name: System.Array
+        name: object[]
         isExternal: true
       description: The hoisted local variables from the parent context.
   id: System.Runtime.CompilerServices.Closure.#ctor(System.Object[],System.Object[])

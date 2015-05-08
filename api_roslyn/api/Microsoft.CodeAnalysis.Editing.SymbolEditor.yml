@@ -6,9 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Editing/SymbolEditor.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Editing/SymbolEditor.cs
     startLine: 16
   summary: An editor for making changes to symbol source declarations.
@@ -17,7 +18,7 @@ items:
       CSharp: public sealed class SymbolEditor
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.Editing.SymbolEditor
   children:
@@ -57,6 +58,10 @@ items:
         href: Microsoft.CodeAnalysis.Solution.yml
     return:
       id: SymbolEditor
+      type:
+        id: Microsoft.CodeAnalysis.Editing.SymbolEditor
+        name: SymbolEditor
+        href: Microsoft.CodeAnalysis.Editing.SymbolEditor.yml
   id: Microsoft.CodeAnalysis.Editing.SymbolEditor.Create(Microsoft.CodeAnalysis.Solution)
 - uid: Microsoft.CodeAnalysis.Editing.SymbolEditor.Create(Microsoft.CodeAnalysis.Document)
   href: Microsoft.CodeAnalysis.Editing.SymbolEditor.yml
@@ -79,6 +84,10 @@ items:
         href: Microsoft.CodeAnalysis.Document.yml
     return:
       id: SymbolEditor
+      type:
+        id: Microsoft.CodeAnalysis.Editing.SymbolEditor
+        name: SymbolEditor
+        href: Microsoft.CodeAnalysis.Editing.SymbolEditor.yml
   id: Microsoft.CodeAnalysis.Editing.SymbolEditor.Create(Microsoft.CodeAnalysis.Document)
 - uid: Microsoft.CodeAnalysis.Editing.SymbolEditor.OriginalSolution
   href: Microsoft.CodeAnalysis.Editing.SymbolEditor.yml
@@ -136,6 +145,10 @@ items:
     parameters: []
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Document}
+        name: IEnumerable<Document>
+        isExternal: true
   id: Microsoft.CodeAnalysis.Editing.SymbolEditor.GetChangedDocuments
 - uid: Microsoft.CodeAnalysis.Editing.SymbolEditor.GetCurrentSymbolAsync(Microsoft.CodeAnalysis.ISymbol,System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.Editing.SymbolEditor.yml
@@ -149,7 +162,7 @@ items:
   summary: Gets the current symbol for a source symbol.
   syntax:
     content:
-      CSharp: public async Task<ISymbol> GetCurrentSymbolAsync(ISymbol symbol, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public Task<ISymbol> GetCurrentSymbolAsync(ISymbol symbol, CancellationToken cancellationToken = null)
     parameters:
     - id: symbol
       type:
@@ -159,10 +172,14 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.CodeAnalysis.ISymbol}
+        name: Task<ISymbol>
+        isExternal: true
   id: Microsoft.CodeAnalysis.Editing.SymbolEditor.GetCurrentSymbolAsync(Microsoft.CodeAnalysis.ISymbol,System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.Editing.SymbolEditor.GetCurrentDeclarationsAsync(Microsoft.CodeAnalysis.ISymbol,System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.Editing.SymbolEditor.yml
@@ -176,7 +193,7 @@ items:
   summary: Gets the current declarations for the specified symbol.
   syntax:
     content:
-      CSharp: public async Task<IReadOnlyList<SyntaxNode>> GetCurrentDeclarationsAsync(ISymbol symbol, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public Task<IReadOnlyList<SyntaxNode>> GetCurrentDeclarationsAsync(ISymbol symbol, CancellationToken cancellationToken = null)
     parameters:
     - id: symbol
       type:
@@ -186,10 +203,14 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{Microsoft.CodeAnalysis.SyntaxNode}}
+        name: Task<IReadOnlyList<SyntaxNode>>
+        isExternal: true
   id: Microsoft.CodeAnalysis.Editing.SymbolEditor.GetCurrentDeclarationsAsync(Microsoft.CodeAnalysis.ISymbol,System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.Editing.SymbolEditor.EditOneDeclarationAsync(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Editing.SymbolEditor.AsyncDeclarationEditAction,System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.Editing.SymbolEditor.yml
@@ -206,7 +227,7 @@ items:
     Partial types and methods may have more than one declaration.
   syntax:
     content:
-      CSharp: public async Task<ISymbol> EditOneDeclarationAsync(ISymbol symbol, AsyncDeclarationEditAction editAction, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public Task<ISymbol> EditOneDeclarationAsync(ISymbol symbol, AsyncDeclarationEditAction editAction, CancellationToken cancellationToken = null)
     parameters:
     - id: symbol
       type:
@@ -223,11 +244,15 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
-      description: An optional [System.Threading.CancellationToken](#).
+      description: An optional [System.Threading.CancellationToken]().
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.CodeAnalysis.ISymbol}
+        name: Task<ISymbol>
+        isExternal: true
       description: The new symbol including the changes.
   id: Microsoft.CodeAnalysis.Editing.SymbolEditor.EditOneDeclarationAsync(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Editing.SymbolEditor.AsyncDeclarationEditAction,System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.Editing.SymbolEditor.EditOneDeclarationAsync(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Editing.SymbolEditor.DeclarationEditAction,System.Threading.CancellationToken)
@@ -245,7 +270,7 @@ items:
     Partial types and methods may have more than one declaration.
   syntax:
     content:
-      CSharp: public Task<ISymbol> EditOneDeclarationAsync(ISymbol symbol, DeclarationEditAction editAction, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public Task<ISymbol> EditOneDeclarationAsync(ISymbol symbol, DeclarationEditAction editAction, CancellationToken cancellationToken = null)
     parameters:
     - id: symbol
       type:
@@ -262,11 +287,15 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
-      description: An optional [System.Threading.CancellationToken](#).
+      description: An optional [System.Threading.CancellationToken]().
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.CodeAnalysis.ISymbol}
+        name: Task<ISymbol>
+        isExternal: true
       description: The new symbol including the changes.
   id: Microsoft.CodeAnalysis.Editing.SymbolEditor.EditOneDeclarationAsync(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Editing.SymbolEditor.DeclarationEditAction,System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.Editing.SymbolEditor.EditOneDeclarationAsync(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Location,Microsoft.CodeAnalysis.Editing.SymbolEditor.AsyncDeclarationEditAction,System.Threading.CancellationToken)
@@ -284,7 +313,7 @@ items:
     Partial types and methods may have more than one declaration.
   syntax:
     content:
-      CSharp: public async Task<ISymbol> EditOneDeclarationAsync(ISymbol symbol, Location location, AsyncDeclarationEditAction editAction, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public Task<ISymbol> EditOneDeclarationAsync(ISymbol symbol, Location location, AsyncDeclarationEditAction editAction, CancellationToken cancellationToken = null)
     parameters:
     - id: symbol
       type:
@@ -307,11 +336,15 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
-      description: An optional [System.Threading.CancellationToken](#).
+      description: An optional [System.Threading.CancellationToken]().
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.CodeAnalysis.ISymbol}
+        name: Task<ISymbol>
+        isExternal: true
       description: The new symbol including the changes.
   id: Microsoft.CodeAnalysis.Editing.SymbolEditor.EditOneDeclarationAsync(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Location,Microsoft.CodeAnalysis.Editing.SymbolEditor.AsyncDeclarationEditAction,System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.Editing.SymbolEditor.EditOneDeclarationAsync(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Location,Microsoft.CodeAnalysis.Editing.SymbolEditor.DeclarationEditAction,System.Threading.CancellationToken)
@@ -329,7 +362,7 @@ items:
     Partial types and methods may have more than one declaration.
   syntax:
     content:
-      CSharp: public Task<ISymbol> EditOneDeclarationAsync(ISymbol symbol, Location location, DeclarationEditAction editAction, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public Task<ISymbol> EditOneDeclarationAsync(ISymbol symbol, Location location, DeclarationEditAction editAction, CancellationToken cancellationToken = null)
     parameters:
     - id: symbol
       type:
@@ -352,11 +385,15 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
-      description: An optional [System.Threading.CancellationToken](#).
+      description: An optional [System.Threading.CancellationToken]().
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.CodeAnalysis.ISymbol}
+        name: Task<ISymbol>
+        isExternal: true
       description: The new symbol including the changes.
   id: Microsoft.CodeAnalysis.Editing.SymbolEditor.EditOneDeclarationAsync(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Location,Microsoft.CodeAnalysis.Editing.SymbolEditor.DeclarationEditAction,System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.Editing.SymbolEditor.EditOneDeclarationAsync(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Editing.SymbolEditor.AsyncDeclarationEditAction,System.Threading.CancellationToken)
@@ -374,7 +411,7 @@ items:
     Partial types and methods may have more than one declaration.
   syntax:
     content:
-      CSharp: public async Task<ISymbol> EditOneDeclarationAsync(ISymbol symbol, ISymbol member, AsyncDeclarationEditAction editAction, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public Task<ISymbol> EditOneDeclarationAsync(ISymbol symbol, ISymbol member, AsyncDeclarationEditAction editAction, CancellationToken cancellationToken = null)
     parameters:
     - id: symbol
       type:
@@ -397,11 +434,15 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
-      description: An optional [System.Threading.CancellationToken](#).
+      description: An optional [System.Threading.CancellationToken]().
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.CodeAnalysis.ISymbol}
+        name: Task<ISymbol>
+        isExternal: true
       description: The new symbol including the changes.
   id: Microsoft.CodeAnalysis.Editing.SymbolEditor.EditOneDeclarationAsync(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Editing.SymbolEditor.AsyncDeclarationEditAction,System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.Editing.SymbolEditor.EditOneDeclarationAsync(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Editing.SymbolEditor.DeclarationEditAction,System.Threading.CancellationToken)
@@ -419,7 +460,7 @@ items:
     Partial types and methods may have more than one declaration.
   syntax:
     content:
-      CSharp: public Task<ISymbol> EditOneDeclarationAsync(ISymbol symbol, ISymbol member, DeclarationEditAction editAction, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public Task<ISymbol> EditOneDeclarationAsync(ISymbol symbol, ISymbol member, DeclarationEditAction editAction, CancellationToken cancellationToken = null)
     parameters:
     - id: symbol
       type:
@@ -442,11 +483,15 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
-      description: An optional [System.Threading.CancellationToken](#).
+      description: An optional [System.Threading.CancellationToken]().
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.CodeAnalysis.ISymbol}
+        name: Task<ISymbol>
+        isExternal: true
       description: The new symbol including the changes.
   id: Microsoft.CodeAnalysis.Editing.SymbolEditor.EditOneDeclarationAsync(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Editing.SymbolEditor.DeclarationEditAction,System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.Editing.SymbolEditor.EditAllDeclarationsAsync(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Editing.SymbolEditor.AsyncDeclarationEditAction,System.Threading.CancellationToken)
@@ -464,7 +509,7 @@ items:
     Partial types and methods may have more than one declaration.
   syntax:
     content:
-      CSharp: public async Task<ISymbol> EditAllDeclarationsAsync(ISymbol symbol, AsyncDeclarationEditAction editAction, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public Task<ISymbol> EditAllDeclarationsAsync(ISymbol symbol, AsyncDeclarationEditAction editAction, CancellationToken cancellationToken = null)
     parameters:
     - id: symbol
       type:
@@ -481,11 +526,15 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
-      description: An optional [System.Threading.CancellationToken](#).
+      description: An optional [System.Threading.CancellationToken]().
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.CodeAnalysis.ISymbol}
+        name: Task<ISymbol>
+        isExternal: true
       description: The new symbol including the changes.
   id: Microsoft.CodeAnalysis.Editing.SymbolEditor.EditAllDeclarationsAsync(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Editing.SymbolEditor.AsyncDeclarationEditAction,System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.Editing.SymbolEditor.EditAllDeclarationsAsync(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Editing.SymbolEditor.DeclarationEditAction,System.Threading.CancellationToken)
@@ -503,7 +552,7 @@ items:
     Partial types and methods may have more than one declaration.
   syntax:
     content:
-      CSharp: public Task<ISymbol> EditAllDeclarationsAsync(ISymbol symbol, DeclarationEditAction editAction, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public Task<ISymbol> EditAllDeclarationsAsync(ISymbol symbol, DeclarationEditAction editAction, CancellationToken cancellationToken = null)
     parameters:
     - id: symbol
       type:
@@ -520,10 +569,14 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
-      description: An optional [System.Threading.CancellationToken](#).
+      description: An optional [System.Threading.CancellationToken]().
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.CodeAnalysis.ISymbol}
+        name: Task<ISymbol>
+        isExternal: true
       description: The new symbol including the changes.
   id: Microsoft.CodeAnalysis.Editing.SymbolEditor.EditAllDeclarationsAsync(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Editing.SymbolEditor.DeclarationEditAction,System.Threading.CancellationToken)

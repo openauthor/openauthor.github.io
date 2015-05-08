@@ -6,9 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Workspace/Solution/Document.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Workspace/Solution/Document.cs
     startLine: 20
   summary: >-
@@ -17,10 +18,10 @@ items:
     It provides access to the source text, parsed syntax tree and the corresponding semantic model.
   syntax:
     content:
-      CSharp: public partial class Document
+      CSharp: 'public class Document : TextDocument'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: Microsoft.CodeAnalysis.TextDocument
     name: TextDocument
@@ -87,6 +88,10 @@ items:
         href: Microsoft.CodeAnalysis.SyntaxTree
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.Document.TryGetSyntaxTree(Microsoft.CodeAnalysis.SyntaxTree@)
 - uid: Microsoft.CodeAnalysis.Document.TryGetSyntaxVersion(Microsoft.CodeAnalysis.VersionStamp@)
   href: Microsoft.CodeAnalysis.Document.yml
@@ -112,6 +117,10 @@ items:
         href: Microsoft.CodeAnalysis.VersionStamp.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.Document.TryGetSyntaxVersion(Microsoft.CodeAnalysis.VersionStamp@)
 - uid: Microsoft.CodeAnalysis.Document.GetSyntaxVersionAsync(System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.Document.yml
@@ -125,15 +134,19 @@ items:
   summary: Gets the version of the syntax tree. This is generally the newer of the text version and the project's version.
   syntax:
     content:
-      CSharp: public async Task<VersionStamp> GetSyntaxVersionAsync(CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public Task<VersionStamp> GetSyntaxVersionAsync(CancellationToken cancellationToken = null)
     parameters:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.CodeAnalysis.VersionStamp}
+        name: Task<VersionStamp>
+        isExternal: true
   id: Microsoft.CodeAnalysis.Document.GetSyntaxVersionAsync(System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.Document.SupportsSyntaxTree
   href: Microsoft.CodeAnalysis.Document.yml
@@ -159,7 +172,7 @@ items:
     - id: SupportsSyntaxTree
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.Document.SupportsSyntaxTree
 - uid: Microsoft.CodeAnalysis.Document.SupportsSemanticModel
@@ -186,7 +199,7 @@ items:
     - id: SupportsSemanticModel
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.Document.SupportsSemanticModel
 - uid: Microsoft.CodeAnalysis.Document.GetSyntaxTreeAsync(System.Threading.CancellationToken)
@@ -198,18 +211,22 @@ items:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/Document.cs
     startLine: 157
-  summary: Gets the [Microsoft.CodeAnalysis.SyntaxTree](#) for this document asynchronously.
+  summary: Gets the [Microsoft.CodeAnalysis.SyntaxTree]() for this document asynchronously.
   syntax:
     content:
-      CSharp: public Task<SyntaxTree> GetSyntaxTreeAsync(CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public Task<SyntaxTree> GetSyntaxTreeAsync(CancellationToken cancellationToken = null)
     parameters:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.CodeAnalysis.SyntaxTree}
+        name: Task<SyntaxTree>
+        isExternal: true
   id: Microsoft.CodeAnalysis.Document.GetSyntaxTreeAsync(System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.Document.TryGetSyntaxRoot(Microsoft.CodeAnalysis.SyntaxNode@)
   href: Microsoft.CodeAnalysis.Document.yml
@@ -232,6 +249,10 @@ items:
         href: Microsoft.CodeAnalysis.SyntaxNode
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.Document.TryGetSyntaxRoot(Microsoft.CodeAnalysis.SyntaxNode@)
 - uid: Microsoft.CodeAnalysis.Document.GetSyntaxRootAsync(System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.Document.yml
@@ -245,15 +266,19 @@ items:
   summary: Gets the root node of the syntax tree asynchronously.
   syntax:
     content:
-      CSharp: public async Task<SyntaxNode> GetSyntaxRootAsync(CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public Task<SyntaxNode> GetSyntaxRootAsync(CancellationToken cancellationToken = null)
     parameters:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.CodeAnalysis.SyntaxNode}
+        name: Task<SyntaxNode>
+        isExternal: true
   id: Microsoft.CodeAnalysis.Document.GetSyntaxRootAsync(System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.Document.TryGetSemanticModel(Microsoft.CodeAnalysis.SemanticModel@)
   href: Microsoft.CodeAnalysis.Document.yml
@@ -276,6 +301,10 @@ items:
         href: Microsoft.CodeAnalysis.SemanticModel
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.Document.TryGetSemanticModel(Microsoft.CodeAnalysis.SemanticModel@)
 - uid: Microsoft.CodeAnalysis.Document.GetSemanticModelAsync(System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.Document.yml
@@ -289,15 +318,19 @@ items:
   summary: Gets the semantic model for this document asynchronously.
   syntax:
     content:
-      CSharp: public async Task<SemanticModel> GetSemanticModelAsync(CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public Task<SemanticModel> GetSemanticModelAsync(CancellationToken cancellationToken = null)
     parameters:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.CodeAnalysis.SemanticModel}
+        name: Task<SemanticModel>
+        isExternal: true
   id: Microsoft.CodeAnalysis.Document.GetSemanticModelAsync(System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.Document.WithSourceCodeKind(Microsoft.CodeAnalysis.SourceCodeKind)
   href: Microsoft.CodeAnalysis.Document.yml
@@ -320,6 +353,10 @@ items:
         href: Microsoft.CodeAnalysis.SourceCodeKind
     return:
       id: Document
+      type:
+        id: Microsoft.CodeAnalysis.Document
+        name: Document
+        href: Microsoft.CodeAnalysis.Document.yml
   id: Microsoft.CodeAnalysis.Document.WithSourceCodeKind(Microsoft.CodeAnalysis.SourceCodeKind)
 - uid: Microsoft.CodeAnalysis.Document.WithText(Microsoft.CodeAnalysis.Text.SourceText)
   href: Microsoft.CodeAnalysis.Document.yml
@@ -342,6 +379,10 @@ items:
         href: Microsoft.CodeAnalysis.Text.SourceText
     return:
       id: Document
+      type:
+        id: Microsoft.CodeAnalysis.Document
+        name: Document
+        href: Microsoft.CodeAnalysis.Document.yml
   id: Microsoft.CodeAnalysis.Document.WithText(Microsoft.CodeAnalysis.Text.SourceText)
 - uid: Microsoft.CodeAnalysis.Document.WithSyntaxRoot(Microsoft.CodeAnalysis.SyntaxNode)
   href: Microsoft.CodeAnalysis.Document.yml
@@ -364,6 +405,10 @@ items:
         href: Microsoft.CodeAnalysis.SyntaxNode
     return:
       id: Document
+      type:
+        id: Microsoft.CodeAnalysis.Document
+        name: Document
+        href: Microsoft.CodeAnalysis.Document.yml
   id: Microsoft.CodeAnalysis.Document.WithSyntaxRoot(Microsoft.CodeAnalysis.SyntaxNode)
 - uid: Microsoft.CodeAnalysis.Document.GetTextChangesAsync(Microsoft.CodeAnalysis.Document,System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.Document.yml
@@ -380,7 +425,7 @@ items:
     The changes, when applied to the text of the old document, will produce the text of the current document.
   syntax:
     content:
-      CSharp: public async Task<IEnumerable<TextChange>> GetTextChangesAsync(Document oldDocument, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public Task<IEnumerable<TextChange>> GetTextChangesAsync(Document oldDocument, CancellationToken cancellationToken = null)
     parameters:
     - id: oldDocument
       type:
@@ -390,10 +435,14 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Text.TextChange}}
+        name: Task<IEnumerable<TextChange>>
+        isExternal: true
   id: Microsoft.CodeAnalysis.Document.GetTextChangesAsync(Microsoft.CodeAnalysis.Document,System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.Document.GetLinkedDocumentIds
   href: Microsoft.CodeAnalysis.Document.yml
@@ -418,4 +467,8 @@ items:
     parameters: []
     return:
       id: ImmutableArray
+      type:
+        id: System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.DocumentId}
+        name: ImmutableArray<DocumentId>
+        isExternal: true
   id: Microsoft.CodeAnalysis.Document.GetLinkedDocumentIds

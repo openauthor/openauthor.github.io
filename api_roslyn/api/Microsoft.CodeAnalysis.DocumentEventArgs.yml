@@ -6,20 +6,21 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Workspace/DocumentEventArgs.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Workspace/DocumentEventArgs.cs
     startLine: 6
   syntax:
     content:
-      CSharp: public class DocumentEventArgs
+      CSharp: 'public class DocumentEventArgs : EventArgs'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.EventArgs
-    name: System.EventArgs
+    name: EventArgs
     isExternal: true
   id: Microsoft.CodeAnalysis.DocumentEventArgs
   children:
@@ -36,7 +37,7 @@ items:
     startLine: 8
   syntax:
     content:
-      CSharp: public Document Document { get; private set; }
+      CSharp: public Document Document { get; }
     parameters:
     - id: Document
       type:

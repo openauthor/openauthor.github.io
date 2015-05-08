@@ -6,16 +6,21 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlEnumAttribute.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlEnumAttribute.cs
     startLine: 15
   syntax:
     content:
-      CSharp: public class XmlEnumAttribute
+      CSharp: 'public class XmlEnumAttribute : Attribute, _Attribute'
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.Attribute
-    name: System.Attribute
+    name: Attribute
     isExternal: true
   id: System.Xml.Serialization.XmlEnumAttribute
   children:
@@ -52,7 +57,7 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.Serialization.XmlEnumAttribute.#ctor(System.String)
 - uid: System.Xml.Serialization.XmlEnumAttribute.Name
@@ -71,6 +76,6 @@ items:
     - id: Name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.Serialization.XmlEnumAttribute.Name

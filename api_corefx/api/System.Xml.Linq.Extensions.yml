@@ -6,42 +6,44 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Xml.XDocument/src/System/Xml/Linq/Extensions.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Xml.XDocument/src/System/Xml/Linq/Extensions.cs
     startLine: 13
   summary: Defines the LINQ to XML extension methods.
   syntax:
     content:
-      CSharp: public static class Extensions
+      CSharp: public class Extensions
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Xml.Linq.Extensions
   children:
-  - System.Xml.Linq.Extensions.Attributes(IEnumerable{System.Xml.Linq.XElement})
-  - System.Xml.Linq.Extensions.Attributes(IEnumerable{System.Xml.Linq.XElement},System.Xml.Linq.XName)
-  - System.Xml.Linq.Extensions.Ancestors``1(IEnumerable{``0})
-  - System.Xml.Linq.Extensions.Ancestors``1(IEnumerable{``0},System.Xml.Linq.XName)
-  - System.Xml.Linq.Extensions.AncestorsAndSelf(IEnumerable{System.Xml.Linq.XElement})
-  - System.Xml.Linq.Extensions.AncestorsAndSelf(IEnumerable{System.Xml.Linq.XElement},System.Xml.Linq.XName)
-  - System.Xml.Linq.Extensions.Nodes``1(IEnumerable{``0})
-  - System.Xml.Linq.Extensions.DescendantNodes``1(IEnumerable{``0})
-  - System.Xml.Linq.Extensions.Descendants``1(IEnumerable{``0})
-  - System.Xml.Linq.Extensions.Descendants``1(IEnumerable{``0},System.Xml.Linq.XName)
-  - System.Xml.Linq.Extensions.DescendantNodesAndSelf(IEnumerable{System.Xml.Linq.XElement})
-  - System.Xml.Linq.Extensions.DescendantsAndSelf(IEnumerable{System.Xml.Linq.XElement})
-  - System.Xml.Linq.Extensions.DescendantsAndSelf(IEnumerable{System.Xml.Linq.XElement},System.Xml.Linq.XName)
-  - System.Xml.Linq.Extensions.Elements``1(IEnumerable{``0})
-  - System.Xml.Linq.Extensions.Elements``1(IEnumerable{``0},System.Xml.Linq.XName)
-  - System.Xml.Linq.Extensions.InDocumentOrder``1(IEnumerable{``0})
-  - System.Xml.Linq.Extensions.Remove(IEnumerable{System.Xml.Linq.XAttribute})
-  - System.Xml.Linq.Extensions.Remove``1(IEnumerable{``0})
-- uid: System.Xml.Linq.Extensions.Attributes(IEnumerable{System.Xml.Linq.XElement})
+  - System.Xml.Linq.Extensions.Attributes(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement})
+  - System.Xml.Linq.Extensions.Attributes(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},System.Xml.Linq.XName)
+  - System.Xml.Linq.Extensions.Ancestors``1(System.Collections.Generic.IEnumerable{``0})
+  - System.Xml.Linq.Extensions.Ancestors``1(System.Collections.Generic.IEnumerable{``0},System.Xml.Linq.XName)
+  - System.Xml.Linq.Extensions.AncestorsAndSelf(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement})
+  - System.Xml.Linq.Extensions.AncestorsAndSelf(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},System.Xml.Linq.XName)
+  - System.Xml.Linq.Extensions.Nodes``1(System.Collections.Generic.IEnumerable{``0})
+  - System.Xml.Linq.Extensions.DescendantNodes``1(System.Collections.Generic.IEnumerable{``0})
+  - System.Xml.Linq.Extensions.Descendants``1(System.Collections.Generic.IEnumerable{``0})
+  - System.Xml.Linq.Extensions.Descendants``1(System.Collections.Generic.IEnumerable{``0},System.Xml.Linq.XName)
+  - System.Xml.Linq.Extensions.DescendantNodesAndSelf(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement})
+  - System.Xml.Linq.Extensions.DescendantsAndSelf(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement})
+  - System.Xml.Linq.Extensions.DescendantsAndSelf(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},System.Xml.Linq.XName)
+  - System.Xml.Linq.Extensions.Elements``1(System.Collections.Generic.IEnumerable{``0})
+  - System.Xml.Linq.Extensions.Elements``1(System.Collections.Generic.IEnumerable{``0},System.Xml.Linq.XName)
+  - System.Xml.Linq.Extensions.InDocumentOrder``1(System.Collections.Generic.IEnumerable{``0})
+  - System.Xml.Linq.Extensions.Remove(System.Collections.Generic.IEnumerable{System.Xml.Linq.XAttribute})
+  - System.Xml.Linq.Extensions.Remove``1(System.Collections.Generic.IEnumerable{``0})
+- uid: System.Xml.Linq.Extensions.Attributes(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement})
   href: System.Xml.Linq.Extensions.yml
   name: Attributes(IEnumerable<XElement>)
-  fullName: System.Xml.Linq.Extensions.Attributes(IEnumerable<System.Xml.Linq.XElement>)
+  fullName: System.Xml.Linq.Extensions.Attributes(System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>)
   type: Method
   source:
     remote: *o0
@@ -50,29 +52,33 @@ items:
   summary: >-
     Returns all of the [System.Xml.Linq.XAttribute](System.Xml.Linq.XAttribute.yml)s for each [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) of
 
-    this @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
+    this [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
   syntax:
     content:
-      CSharp: public static IEnumerable<XAttribute> Attributes(this IEnumerable<XElement> source)
+      CSharp: public static IEnumerable<XAttribute> Attributes(IEnumerable<XElement> source)
     parameters:
     - id: source
       type:
-        id: IEnumerable{System.Xml.Linq.XElement}
-        name: IEnumerable{System.Xml.Linq.XElement}
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement}
+        name: IEnumerable<XElement>
         isExternal: true
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XAttribute}
+        name: IEnumerable<XAttribute>
+        isExternal: true
       description: >-
-        An @!:System.Collections.IEnumerable- of [System.Xml.Linq.XAttribute](System.Xml.Linq.XAttribute.yml) containing the XML
+        An [System.Collections.IEnumerable]() of [System.Xml.Linq.XAttribute](System.Xml.Linq.XAttribute.yml) containing the XML
 
-        Attributes for every [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in the target @!:System.Collections.IEnumerable-
+        Attributes for every [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in the target [System.Collections.IEnumerable]()
 
         of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
-  id: System.Xml.Linq.Extensions.Attributes(IEnumerable{System.Xml.Linq.XElement})
-- uid: System.Xml.Linq.Extensions.Attributes(IEnumerable{System.Xml.Linq.XElement},System.Xml.Linq.XName)
+  id: System.Xml.Linq.Extensions.Attributes(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement})
+- uid: System.Xml.Linq.Extensions.Attributes(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},System.Xml.Linq.XName)
   href: System.Xml.Linq.Extensions.yml
   name: Attributes(IEnumerable<XElement>, XName)
-  fullName: System.Xml.Linq.Extensions.Attributes(IEnumerable<System.Xml.Linq.XElement>, System.Xml.Linq.XName)
+  fullName: System.Xml.Linq.Extensions.Attributes(System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>, System.Xml.Linq.XName)
   type: Method
   source:
     remote: *o0
@@ -81,17 +87,17 @@ items:
   summary: >-
     Returns the [System.Xml.Linq.XAttribute](System.Xml.Linq.XAttribute.yml)s that have a matching [System.Xml.Linq.XName](System.Xml.Linq.XName.yml).  Each
 
-    [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml)'s [System.Xml.Linq.XAttribute](System.Xml.Linq.XAttribute.yml)s in the target @!:System.Collections.IEnumerable-
+    [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml)'s [System.Xml.Linq.XAttribute](System.Xml.Linq.XAttribute.yml)s in the target [System.Collections.IEnumerable]()
 
     of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) are scanned for a matching [System.Xml.Linq.XName](System.Xml.Linq.XName.yml).
   syntax:
     content:
-      CSharp: public static IEnumerable<XAttribute> Attributes(this IEnumerable<XElement> source, XName name)
+      CSharp: public static IEnumerable<XAttribute> Attributes(IEnumerable<XElement> source, XName name)
     parameters:
     - id: source
       type:
-        id: IEnumerable{System.Xml.Linq.XElement}
-        name: IEnumerable{System.Xml.Linq.XElement}
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement}
+        name: IEnumerable<XElement>
         isExternal: true
     - id: name
       type:
@@ -100,69 +106,77 @@ items:
         href: System.Xml.Linq.XName.yml
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XAttribute}
+        name: IEnumerable<XAttribute>
+        isExternal: true
       description: >-
-        An @!:System.Collections.IEnumerable- of [System.Xml.Linq.XAttribute](System.Xml.Linq.XAttribute.yml) containing the XML
+        An [System.Collections.IEnumerable]() of [System.Xml.Linq.XAttribute](System.Xml.Linq.XAttribute.yml) containing the XML
 
         Attributes with a matching [System.Xml.Linq.XName](System.Xml.Linq.XName.yml) for every [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in
 
-        the target @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
-  id: System.Xml.Linq.Extensions.Attributes(IEnumerable{System.Xml.Linq.XElement},System.Xml.Linq.XName)
-- uid: System.Xml.Linq.Extensions.Ancestors``1(IEnumerable{``0})
+        the target [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
+  id: System.Xml.Linq.Extensions.Attributes(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},System.Xml.Linq.XName)
+- uid: System.Xml.Linq.Extensions.Ancestors``1(System.Collections.Generic.IEnumerable{``0})
   href: System.Xml.Linq.Extensions.yml
   name: Ancestors<T>(IEnumerable<T>)
-  fullName: System.Xml.Linq.Extensions.Ancestors<T>(IEnumerable<T>)
+  fullName: System.Xml.Linq.Extensions.Ancestors<T>(System.Collections.Generic.IEnumerable<T>)
   type: Method
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/Extensions.cs
     startLine: 56
   summary: >-
-    Returns an @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the ancestors (parent
+    Returns an [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the ancestors (parent
 
     and it's parent up to the root) of each of the [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml)s in this
 
-    @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
+    [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
   syntax:
     content:
-      CSharp: 'public static IEnumerable<XElement> Ancestors<T>(this IEnumerable<T> source)where T : XNode'
+      CSharp: 'public static IEnumerable<XElement> Ancestors<T>(IEnumerable<T> source)where T : XNode'
     parameters:
     - id: source
       type:
-        id: IEnumerable{``0}
-        name: IEnumerable{``0}
+        id: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<T>
         isExternal: true
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement}
+        name: IEnumerable<XElement>
+        isExternal: true
       description: >-
-        An @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the ancestors (parent
+        An [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the ancestors (parent
 
         and it's parent up to the root) of each of the [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml)s in this
 
-        @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
-  id: System.Xml.Linq.Extensions.Ancestors``1(IEnumerable{``0})
-- uid: System.Xml.Linq.Extensions.Ancestors``1(IEnumerable{``0},System.Xml.Linq.XName)
+        [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
+  id: System.Xml.Linq.Extensions.Ancestors``1(System.Collections.Generic.IEnumerable{``0})
+- uid: System.Xml.Linq.Extensions.Ancestors``1(System.Collections.Generic.IEnumerable{``0},System.Xml.Linq.XName)
   href: System.Xml.Linq.Extensions.yml
   name: Ancestors<T>(IEnumerable<T>, XName)
-  fullName: System.Xml.Linq.Extensions.Ancestors<T>(IEnumerable<T>, System.Xml.Linq.XName)
+  fullName: System.Xml.Linq.Extensions.Ancestors<T>(System.Collections.Generic.IEnumerable<T>, System.Xml.Linq.XName)
   type: Method
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/Extensions.cs
     startLine: 72
   summary: >-
-    Returns an @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the ancestors (parent
+    Returns an [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the ancestors (parent
 
     and it's parent up to the root) that have a matching [System.Xml.Linq.XName](System.Xml.Linq.XName.yml).  This is done for each
 
-    [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in this @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
+    [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in this [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
   syntax:
     content:
-      CSharp: 'public static IEnumerable<XElement> Ancestors<T>(this IEnumerable<T> source, XName name)where T : XNode'
+      CSharp: 'public static IEnumerable<XElement> Ancestors<T>(IEnumerable<T> source, XName name)where T : XNode'
     parameters:
     - id: source
       type:
-        id: IEnumerable{``0}
-        name: IEnumerable{``0}
+        id: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<T>
         isExternal: true
     - id: name
       type:
@@ -171,75 +185,83 @@ items:
         href: System.Xml.Linq.XName.yml
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement}
+        name: IEnumerable<XElement>
+        isExternal: true
       description: >-
-        An @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the ancestors (parent
+        An [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the ancestors (parent
 
         and it's parent up to the root) that have a matching [System.Xml.Linq.XName](System.Xml.Linq.XName.yml).  This is done for each
 
-        [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in this @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
-  id: System.Xml.Linq.Extensions.Ancestors``1(IEnumerable{``0},System.Xml.Linq.XName)
-- uid: System.Xml.Linq.Extensions.AncestorsAndSelf(IEnumerable{System.Xml.Linq.XElement})
+        [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in this [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
+  id: System.Xml.Linq.Extensions.Ancestors``1(System.Collections.Generic.IEnumerable{``0},System.Xml.Linq.XName)
+- uid: System.Xml.Linq.Extensions.AncestorsAndSelf(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement})
   href: System.Xml.Linq.Extensions.yml
   name: AncestorsAndSelf(IEnumerable<XElement>)
-  fullName: System.Xml.Linq.Extensions.AncestorsAndSelf(IEnumerable<System.Xml.Linq.XElement>)
+  fullName: System.Xml.Linq.Extensions.AncestorsAndSelf(System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>)
   type: Method
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/Extensions.cs
     startLine: 90
   summary: >-
-    Returns an @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the
+    Returns an [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the
 
     [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) and it's ancestors (parent and it's parent up to the root).
 
-    This is done for each [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in this @!:System.Collections.IEnumerable- of
+    This is done for each [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in this [System.Collections.IEnumerable]() of
 
     [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
   syntax:
     content:
-      CSharp: public static IEnumerable<XElement> AncestorsAndSelf(this IEnumerable<XElement> source)
+      CSharp: public static IEnumerable<XElement> AncestorsAndSelf(IEnumerable<XElement> source)
     parameters:
     - id: source
       type:
-        id: IEnumerable{System.Xml.Linq.XElement}
-        name: IEnumerable{System.Xml.Linq.XElement}
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement}
+        name: IEnumerable<XElement>
         isExternal: true
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement}
+        name: IEnumerable<XElement>
+        isExternal: true
       description: >-
-        An @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the
+        An [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the
 
         [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) and it's ancestors (parent and it's parent up to the root).
 
-        This is done for each [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in this @!:System.Collections.IEnumerable- of
+        This is done for each [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in this [System.Collections.IEnumerable]() of
 
         [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
-  id: System.Xml.Linq.Extensions.AncestorsAndSelf(IEnumerable{System.Xml.Linq.XElement})
-- uid: System.Xml.Linq.Extensions.AncestorsAndSelf(IEnumerable{System.Xml.Linq.XElement},System.Xml.Linq.XName)
+  id: System.Xml.Linq.Extensions.AncestorsAndSelf(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement})
+- uid: System.Xml.Linq.Extensions.AncestorsAndSelf(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},System.Xml.Linq.XName)
   href: System.Xml.Linq.Extensions.yml
   name: AncestorsAndSelf(IEnumerable<XElement>, XName)
-  fullName: System.Xml.Linq.Extensions.AncestorsAndSelf(IEnumerable<System.Xml.Linq.XElement>, System.Xml.Linq.XName)
+  fullName: System.Xml.Linq.Extensions.AncestorsAndSelf(System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>, System.Xml.Linq.XName)
   type: Method
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/Extensions.cs
     startLine: 108
   summary: >-
-    Returns an @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the
+    Returns an [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the
 
     [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) and it's ancestors (parent and it's parent up to the root)
 
     that match the passed in [System.Xml.Linq.XName](System.Xml.Linq.XName.yml).  This is done for each
 
-    [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in this @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
+    [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in this [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
   syntax:
     content:
-      CSharp: public static IEnumerable<XElement> AncestorsAndSelf(this IEnumerable<XElement> source, XName name)
+      CSharp: public static IEnumerable<XElement> AncestorsAndSelf(IEnumerable<XElement> source, XName name)
     parameters:
     - id: source
       type:
-        id: IEnumerable{System.Xml.Linq.XElement}
-        name: IEnumerable{System.Xml.Linq.XElement}
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement}
+        name: IEnumerable<XElement>
         isExternal: true
     - id: name
       type:
@@ -248,115 +270,131 @@ items:
         href: System.Xml.Linq.XName.yml
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement}
+        name: IEnumerable<XElement>
+        isExternal: true
       description: >-
-        An @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the
+        An [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the
 
         [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) and it's ancestors (parent and it's parent up to the root)
 
         that match the passed in [System.Xml.Linq.XName](System.Xml.Linq.XName.yml).  This is done for each
 
-        [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in this @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
-  id: System.Xml.Linq.Extensions.AncestorsAndSelf(IEnumerable{System.Xml.Linq.XElement},System.Xml.Linq.XName)
-- uid: System.Xml.Linq.Extensions.Nodes``1(IEnumerable{``0})
+        [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in this [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
+  id: System.Xml.Linq.Extensions.AncestorsAndSelf(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},System.Xml.Linq.XName)
+- uid: System.Xml.Linq.Extensions.Nodes``1(System.Collections.Generic.IEnumerable{``0})
   href: System.Xml.Linq.Extensions.yml
   name: Nodes<T>(IEnumerable<T>)
-  fullName: System.Xml.Linq.Extensions.Nodes<T>(IEnumerable<T>)
+  fullName: System.Xml.Linq.Extensions.Nodes<T>(System.Collections.Generic.IEnumerable<T>)
   type: Method
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/Extensions.cs
     startLine: 117
-  summary: Returns an @!:System.Collections.IEnumerable- of [System.Xml.Linq.XNode](System.Xml.Linq.XNode.yml) over the content of a set of nodes
+  summary: Returns an [System.Collections.IEnumerable]() of [System.Xml.Linq.XNode](System.Xml.Linq.XNode.yml) over the content of a set of nodes
   syntax:
     content:
-      CSharp: 'public static IEnumerable<XNode> Nodes<T>(this IEnumerable<T> source)where T : XContainer'
+      CSharp: 'public static IEnumerable<XNode> Nodes<T>(IEnumerable<T> source)where T : XContainer'
     parameters:
     - id: source
       type:
-        id: IEnumerable{``0}
-        name: IEnumerable{``0}
+        id: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<T>
         isExternal: true
     return:
       id: IEnumerable
-  id: System.Xml.Linq.Extensions.Nodes``1(IEnumerable{``0})
-- uid: System.Xml.Linq.Extensions.DescendantNodes``1(IEnumerable{``0})
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XNode}
+        name: IEnumerable<XNode>
+        isExternal: true
+  id: System.Xml.Linq.Extensions.Nodes``1(System.Collections.Generic.IEnumerable{``0})
+- uid: System.Xml.Linq.Extensions.DescendantNodes``1(System.Collections.Generic.IEnumerable{``0})
   href: System.Xml.Linq.Extensions.yml
   name: DescendantNodes<T>(IEnumerable<T>)
-  fullName: System.Xml.Linq.Extensions.DescendantNodes<T>(IEnumerable<T>)
+  fullName: System.Xml.Linq.Extensions.DescendantNodes<T>(System.Collections.Generic.IEnumerable<T>)
   type: Method
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/Extensions.cs
     startLine: 140
-  summary: Returns an @!:System.Collections.IEnumerable- of [System.Xml.Linq.XNode](System.Xml.Linq.XNode.yml) over the descendants of a set of nodes
+  summary: Returns an [System.Collections.IEnumerable]() of [System.Xml.Linq.XNode](System.Xml.Linq.XNode.yml) over the descendants of a set of nodes
   syntax:
     content:
-      CSharp: 'public static IEnumerable<XNode> DescendantNodes<T>(this IEnumerable<T> source)where T : XContainer'
+      CSharp: 'public static IEnumerable<XNode> DescendantNodes<T>(IEnumerable<T> source)where T : XContainer'
     parameters:
     - id: source
       type:
-        id: IEnumerable{``0}
-        name: IEnumerable{``0}
+        id: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<T>
         isExternal: true
     return:
       id: IEnumerable
-  id: System.Xml.Linq.Extensions.DescendantNodes``1(IEnumerable{``0})
-- uid: System.Xml.Linq.Extensions.Descendants``1(IEnumerable{``0})
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XNode}
+        name: IEnumerable<XNode>
+        isExternal: true
+  id: System.Xml.Linq.Extensions.DescendantNodes``1(System.Collections.Generic.IEnumerable{``0})
+- uid: System.Xml.Linq.Extensions.Descendants``1(System.Collections.Generic.IEnumerable{``0})
   href: System.Xml.Linq.Extensions.yml
   name: Descendants<T>(IEnumerable<T>)
-  fullName: System.Xml.Linq.Extensions.Descendants<T>(IEnumerable<T>)
+  fullName: System.Xml.Linq.Extensions.Descendants<T>(System.Collections.Generic.IEnumerable<T>)
   type: Method
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/Extensions.cs
     startLine: 156
   summary: >-
-    Returns an @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the descendants (children
+    Returns an [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the descendants (children
 
     and their children down to the leaf level).  This is done for each [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in
 
-    this @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
+    this [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
   syntax:
     content:
-      CSharp: 'public static IEnumerable<XElement> Descendants<T>(this IEnumerable<T> source)where T : XContainer'
+      CSharp: 'public static IEnumerable<XElement> Descendants<T>(IEnumerable<T> source)where T : XContainer'
     parameters:
     - id: source
       type:
-        id: IEnumerable{``0}
-        name: IEnumerable{``0}
+        id: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<T>
         isExternal: true
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement}
+        name: IEnumerable<XElement>
+        isExternal: true
       description: >-
-        An @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the descendants (children
+        An [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the descendants (children
 
         and their children down to the leaf level).  This is done for each [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in
 
-        this @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
-  id: System.Xml.Linq.Extensions.Descendants``1(IEnumerable{``0})
-- uid: System.Xml.Linq.Extensions.Descendants``1(IEnumerable{``0},System.Xml.Linq.XName)
+        this [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
+  id: System.Xml.Linq.Extensions.Descendants``1(System.Collections.Generic.IEnumerable{``0})
+- uid: System.Xml.Linq.Extensions.Descendants``1(System.Collections.Generic.IEnumerable{``0},System.Xml.Linq.XName)
   href: System.Xml.Linq.Extensions.yml
   name: Descendants<T>(IEnumerable<T>, XName)
-  fullName: System.Xml.Linq.Extensions.Descendants<T>(IEnumerable<T>, System.Xml.Linq.XName)
+  fullName: System.Xml.Linq.Extensions.Descendants<T>(System.Collections.Generic.IEnumerable<T>, System.Xml.Linq.XName)
   type: Method
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/Extensions.cs
     startLine: 172
   summary: >-
-    Returns an @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the descendants (children
+    Returns an [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the descendants (children
 
     and their children down to the leaf level) that have a matching [System.Xml.Linq.XName](System.Xml.Linq.XName.yml).  This is done
 
-    for each [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in the target @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
+    for each [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in the target [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
   syntax:
     content:
-      CSharp: 'public static IEnumerable<XElement> Descendants<T>(this IEnumerable<T> source, XName name)where T : XContainer'
+      CSharp: 'public static IEnumerable<XElement> Descendants<T>(IEnumerable<T> source, XName name)where T : XContainer'
     parameters:
     - id: source
       type:
-        id: IEnumerable{``0}
-        name: IEnumerable{``0}
+        id: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<T>
         isExternal: true
     - id: name
       type:
@@ -365,112 +403,124 @@ items:
         href: System.Xml.Linq.XName.yml
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement}
+        name: IEnumerable<XElement>
+        isExternal: true
       description: >-
-        An @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the descendants (children
+        An [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the descendants (children
 
         and their children down to the leaf level) that have a matching [System.Xml.Linq.XName](System.Xml.Linq.XName.yml).  This is done
 
-        for each [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in this @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
-  id: System.Xml.Linq.Extensions.Descendants``1(IEnumerable{``0},System.Xml.Linq.XName)
-- uid: System.Xml.Linq.Extensions.DescendantNodesAndSelf(IEnumerable{System.Xml.Linq.XElement})
+        for each [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in this [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
+  id: System.Xml.Linq.Extensions.Descendants``1(System.Collections.Generic.IEnumerable{``0},System.Xml.Linq.XName)
+- uid: System.Xml.Linq.Extensions.DescendantNodesAndSelf(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement})
   href: System.Xml.Linq.Extensions.yml
   name: DescendantNodesAndSelf(IEnumerable<XElement>)
-  fullName: System.Xml.Linq.Extensions.DescendantNodesAndSelf(IEnumerable<System.Xml.Linq.XElement>)
+  fullName: System.Xml.Linq.Extensions.DescendantNodesAndSelf(System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>)
   type: Method
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/Extensions.cs
     startLine: 190
   summary: >-
-    Returns an @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the
+    Returns an [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the
 
     [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) and it's descendants
 
     that match the passed in [System.Xml.Linq.XName](System.Xml.Linq.XName.yml).  This is done for each
 
-    [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in this @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
+    [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in this [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
   syntax:
     content:
-      CSharp: public static IEnumerable<XNode> DescendantNodesAndSelf(this IEnumerable<XElement> source)
+      CSharp: public static IEnumerable<XNode> DescendantNodesAndSelf(IEnumerable<XElement> source)
     parameters:
     - id: source
       type:
-        id: IEnumerable{System.Xml.Linq.XElement}
-        name: IEnumerable{System.Xml.Linq.XElement}
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement}
+        name: IEnumerable<XElement>
         isExternal: true
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XNode}
+        name: IEnumerable<XNode>
+        isExternal: true
       description: >-
-        An @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the
+        An [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the
 
         [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) and descendants.
 
         This is done for each
 
-        [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in this @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
-  id: System.Xml.Linq.Extensions.DescendantNodesAndSelf(IEnumerable{System.Xml.Linq.XElement})
-- uid: System.Xml.Linq.Extensions.DescendantsAndSelf(IEnumerable{System.Xml.Linq.XElement})
+        [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in this [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
+  id: System.Xml.Linq.Extensions.DescendantNodesAndSelf(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement})
+- uid: System.Xml.Linq.Extensions.DescendantsAndSelf(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement})
   href: System.Xml.Linq.Extensions.yml
   name: DescendantsAndSelf(IEnumerable<XElement>)
-  fullName: System.Xml.Linq.Extensions.DescendantsAndSelf(IEnumerable<System.Xml.Linq.XElement>)
+  fullName: System.Xml.Linq.Extensions.DescendantsAndSelf(System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>)
   type: Method
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/Extensions.cs
     startLine: 208
   summary: >-
-    Returns an @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the
+    Returns an [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the
 
     [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) and it's descendants (children and children's children down
 
-    to the leaf nodes).  This is done for each [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in this @!:System.Collections.IEnumerable-
+    to the leaf nodes).  This is done for each [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in this [System.Collections.IEnumerable]()
 
     of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
   syntax:
     content:
-      CSharp: public static IEnumerable<XElement> DescendantsAndSelf(this IEnumerable<XElement> source)
+      CSharp: public static IEnumerable<XElement> DescendantsAndSelf(IEnumerable<XElement> source)
     parameters:
     - id: source
       type:
-        id: IEnumerable{System.Xml.Linq.XElement}
-        name: IEnumerable{System.Xml.Linq.XElement}
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement}
+        name: IEnumerable<XElement>
         isExternal: true
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement}
+        name: IEnumerable<XElement>
+        isExternal: true
       description: >-
-        An @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the
+        An [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the
 
         [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) and it's descendants (children and children's children down
 
-        to the leaf nodes).  This is done for each [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in this @!:System.Collections.IEnumerable-
+        to the leaf nodes).  This is done for each [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in this [System.Collections.IEnumerable]()
 
         of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
-  id: System.Xml.Linq.Extensions.DescendantsAndSelf(IEnumerable{System.Xml.Linq.XElement})
-- uid: System.Xml.Linq.Extensions.DescendantsAndSelf(IEnumerable{System.Xml.Linq.XElement},System.Xml.Linq.XName)
+  id: System.Xml.Linq.Extensions.DescendantsAndSelf(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement})
+- uid: System.Xml.Linq.Extensions.DescendantsAndSelf(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},System.Xml.Linq.XName)
   href: System.Xml.Linq.Extensions.yml
   name: DescendantsAndSelf(IEnumerable<XElement>, XName)
-  fullName: System.Xml.Linq.Extensions.DescendantsAndSelf(IEnumerable<System.Xml.Linq.XElement>, System.Xml.Linq.XName)
+  fullName: System.Xml.Linq.Extensions.DescendantsAndSelf(System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>, System.Xml.Linq.XName)
   type: Method
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/Extensions.cs
     startLine: 226
   summary: >-
-    Returns an @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the
+    Returns an [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the
 
     [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) and it's descendants (children and children's children down
 
     to the leaf nodes) that match the passed in [System.Xml.Linq.XName](System.Xml.Linq.XName.yml).  This is done for
 
-    each [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in this @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
+    each [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in this [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
   syntax:
     content:
-      CSharp: public static IEnumerable<XElement> DescendantsAndSelf(this IEnumerable<XElement> source, XName name)
+      CSharp: public static IEnumerable<XElement> DescendantsAndSelf(IEnumerable<XElement> source, XName name)
     parameters:
     - id: source
       type:
-        id: IEnumerable{System.Xml.Linq.XElement}
-        name: IEnumerable{System.Xml.Linq.XElement}
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement}
+        name: IEnumerable<XElement>
         isExternal: true
     - id: name
       type:
@@ -479,65 +529,73 @@ items:
         href: System.Xml.Linq.XName.yml
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement}
+        name: IEnumerable<XElement>
+        isExternal: true
       description: >-
-        An @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the
+        An [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the
 
         [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) and it's descendants (children and children's children down
 
         to the leaf nodes) that match the passed in [System.Xml.Linq.XName](System.Xml.Linq.XName.yml).  This is done for
 
-        each [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in this @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
-  id: System.Xml.Linq.Extensions.DescendantsAndSelf(IEnumerable{System.Xml.Linq.XElement},System.Xml.Linq.XName)
-- uid: System.Xml.Linq.Extensions.Elements``1(IEnumerable{``0})
+        each [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in this [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
+  id: System.Xml.Linq.Extensions.DescendantsAndSelf(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},System.Xml.Linq.XName)
+- uid: System.Xml.Linq.Extensions.Elements``1(System.Collections.Generic.IEnumerable{``0})
   href: System.Xml.Linq.Extensions.yml
   name: Elements<T>(IEnumerable<T>)
-  fullName: System.Xml.Linq.Extensions.Elements<T>(IEnumerable<T>)
+  fullName: System.Xml.Linq.Extensions.Elements<T>(System.Collections.Generic.IEnumerable<T>)
   type: Method
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/Extensions.cs
     startLine: 240
   summary: >-
-    Returns an @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the child elements
+    Returns an [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the child elements
 
-    for each [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in this @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
+    for each [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in this [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
   syntax:
     content:
-      CSharp: 'public static IEnumerable<XElement> Elements<T>(this IEnumerable<T> source)where T : XContainer'
+      CSharp: 'public static IEnumerable<XElement> Elements<T>(IEnumerable<T> source)where T : XContainer'
     parameters:
     - id: source
       type:
-        id: IEnumerable{``0}
-        name: IEnumerable{``0}
+        id: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<T>
         isExternal: true
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement}
+        name: IEnumerable<XElement>
+        isExternal: true
       description: >-
-        An @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the child elements
+        An [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the child elements
 
-        for each [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in this @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
-  id: System.Xml.Linq.Extensions.Elements``1(IEnumerable{``0})
-- uid: System.Xml.Linq.Extensions.Elements``1(IEnumerable{``0},System.Xml.Linq.XName)
+        for each [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in this [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
+  id: System.Xml.Linq.Extensions.Elements``1(System.Collections.Generic.IEnumerable{``0})
+- uid: System.Xml.Linq.Extensions.Elements``1(System.Collections.Generic.IEnumerable{``0},System.Xml.Linq.XName)
   href: System.Xml.Linq.Extensions.yml
   name: Elements<T>(IEnumerable<T>, XName)
-  fullName: System.Xml.Linq.Extensions.Elements<T>(IEnumerable<T>, System.Xml.Linq.XName)
+  fullName: System.Xml.Linq.Extensions.Elements<T>(System.Collections.Generic.IEnumerable<T>, System.Xml.Linq.XName)
   type: Method
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/Extensions.cs
     startLine: 254
   summary: >-
-    Returns an @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the child elements
+    Returns an [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the child elements
 
-    with a matching for each [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in this @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
+    with a matching for each [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in this [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
   syntax:
     content:
-      CSharp: 'public static IEnumerable<XElement> Elements<T>(this IEnumerable<T> source, XName name)where T : XContainer'
+      CSharp: 'public static IEnumerable<XElement> Elements<T>(IEnumerable<T> source, XName name)where T : XContainer'
     parameters:
     - id: source
       type:
-        id: IEnumerable{``0}
-        name: IEnumerable{``0}
+        id: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<T>
         isExternal: true
     - id: name
       type:
@@ -546,89 +604,97 @@ items:
         href: System.Xml.Linq.XName.yml
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement}
+        name: IEnumerable<XElement>
+        isExternal: true
       description: >-
-        An @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the child elements
+        An [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the child elements
 
-        for each [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in this @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
-  id: System.Xml.Linq.Extensions.Elements``1(IEnumerable{``0},System.Xml.Linq.XName)
-- uid: System.Xml.Linq.Extensions.InDocumentOrder``1(IEnumerable{``0})
+        for each [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in this [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
+  id: System.Xml.Linq.Extensions.Elements``1(System.Collections.Generic.IEnumerable{``0},System.Xml.Linq.XName)
+- uid: System.Xml.Linq.Extensions.InDocumentOrder``1(System.Collections.Generic.IEnumerable{``0})
   href: System.Xml.Linq.Extensions.yml
   name: InDocumentOrder<T>(IEnumerable<T>)
-  fullName: System.Xml.Linq.Extensions.InDocumentOrder<T>(IEnumerable<T>)
+  fullName: System.Xml.Linq.Extensions.InDocumentOrder<T>(System.Collections.Generic.IEnumerable<T>)
   type: Method
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/Extensions.cs
     startLine: 269
   summary: >-
-    Returns an @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the child elements
+    Returns an [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the child elements
 
-    with a matching for each [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in this @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
+    with a matching for each [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in this [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
   syntax:
     content:
-      CSharp: 'public static IEnumerable<T> InDocumentOrder<T>(this IEnumerable<T> source)where T : XNode'
+      CSharp: 'public static IEnumerable<T> InDocumentOrder<T>(IEnumerable<T> source)where T : XNode'
     parameters:
     - id: source
       type:
-        id: IEnumerable{``0}
-        name: IEnumerable{``0}
+        id: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<T>
         isExternal: true
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<T>
+        isExternal: true
       description: >-
-        An @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the child elements
+        An [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) containing the child elements
 
-        for each [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in this @!:System.Collections.IEnumerable- of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
+        for each [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml) in this [System.Collections.IEnumerable]() of [System.Xml.Linq.XElement](System.Xml.Linq.XElement.yml).
 
         in document order
-  id: System.Xml.Linq.Extensions.InDocumentOrder``1(IEnumerable{``0})
-- uid: System.Xml.Linq.Extensions.Remove(IEnumerable{System.Xml.Linq.XAttribute})
+  id: System.Xml.Linq.Extensions.InDocumentOrder``1(System.Collections.Generic.IEnumerable{``0})
+- uid: System.Xml.Linq.Extensions.Remove(System.Collections.Generic.IEnumerable{System.Xml.Linq.XAttribute})
   href: System.Xml.Linq.Extensions.yml
   name: Remove(IEnumerable<XAttribute>)
-  fullName: System.Xml.Linq.Extensions.Remove(IEnumerable<System.Xml.Linq.XAttribute>)
+  fullName: System.Xml.Linq.Extensions.Remove(System.Collections.Generic.IEnumerable<System.Xml.Linq.XAttribute>)
   type: Method
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/Extensions.cs
     startLine: 279
   summary: >-
-    Removes each  represented in this  of
+    Removes each [System.Xml.Linq.XAttribute](System.Xml.Linq.XAttribute.yml) represented in this [System.Collections.IEnumerable]() of
 
-    .  Note that this method uses snapshot semantics (copies the
+    [System.Xml.Linq.XAttribute](System.Xml.Linq.XAttribute.yml).  Note that this method uses snapshot semantics (copies the
 
-    attributes to a  before deleting each).
+    attributes to a [System.Collections.Generic.List`1]() before deleting each).
   syntax:
     content:
-      CSharp: public static void Remove(this IEnumerable<XAttribute> source)
+      CSharp: public static void Remove(IEnumerable<XAttribute> source)
     parameters:
     - id: source
       type:
-        id: IEnumerable{System.Xml.Linq.XAttribute}
-        name: IEnumerable{System.Xml.Linq.XAttribute}
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XAttribute}
+        name: IEnumerable<XAttribute>
         isExternal: true
-  id: System.Xml.Linq.Extensions.Remove(IEnumerable{System.Xml.Linq.XAttribute})
-- uid: System.Xml.Linq.Extensions.Remove``1(IEnumerable{``0})
+  id: System.Xml.Linq.Extensions.Remove(System.Collections.Generic.IEnumerable{System.Xml.Linq.XAttribute})
+- uid: System.Xml.Linq.Extensions.Remove``1(System.Collections.Generic.IEnumerable{``0})
   href: System.Xml.Linq.Extensions.yml
   name: Remove<T>(IEnumerable<T>)
-  fullName: System.Xml.Linq.Extensions.Remove<T>(IEnumerable<T>)
+  fullName: System.Xml.Linq.Extensions.Remove<T>(System.Collections.Generic.IEnumerable<T>)
   type: Method
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/Extensions.cs
     startLine: 291
   summary: >-
-    Removes each [System.Xml.Linq.XNode](System.Xml.Linq.XNode.yml) represented in this @!:System.Collections.IEnumerable-
+    Removes each [System.Xml.Linq.XNode](System.Xml.Linq.XNode.yml) represented in this [System.Collections.IEnumerable]()
 
     T which must be a derived from [System.Xml.Linq.XNode](System.Xml.Linq.XNode.yml).  Note that this method uses snapshot semantics
 
     (copies the [System.Xml.Linq.XNode](System.Xml.Linq.XNode.yml)s to a List before deleting each).
   syntax:
     content:
-      CSharp: 'public static void Remove<T>(this IEnumerable<T> source)where T : XNode'
+      CSharp: 'public static void Remove<T>(IEnumerable<T> source)where T : XNode'
     parameters:
     - id: source
       type:
-        id: IEnumerable{``0}
-        name: IEnumerable{``0}
+        id: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<T>
         isExternal: true
-  id: System.Xml.Linq.Extensions.Remove``1(IEnumerable{``0})
+  id: System.Xml.Linq.Extensions.Remove``1(System.Collections.Generic.IEnumerable{``0})

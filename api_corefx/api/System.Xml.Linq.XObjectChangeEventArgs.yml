@@ -6,16 +6,21 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Xml.XDocument/src/System/Xml/Linq/XObjectChangeEventArgs.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XObjectChangeEventArgs.cs
     startLine: 10
   summary: Provides data for the [System.Xml.Linq.XObject.Changing](System.Xml.Linq.XObject.yml) and [System.Xml.Linq.XObject.Changed](System.Xml.Linq.XObject.yml) events.
   syntax:
     content:
-      CSharp: public class XObjectChangeEventArgs
+      CSharp: 'public class XObjectChangeEventArgs : EventArgs'
   inheritance:
-  - id: EventArgs
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.EventArgs
     name: EventArgs
     isExternal: true
   id: System.Xml.Linq.XObjectChangeEventArgs
@@ -38,7 +43,7 @@ items:
   summary: Event argument for a [System.Xml.Linq.XObjectChange.Add](System.Xml.Linq.XObjectChange.yml) change event.
   syntax:
     content:
-      CSharp: Add
+      CSharp: '[SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = "XObjectChangeEventArgs is in fact immutable.")] public static readonly XObjectChangeEventArgs Add;'
   id: System.Xml.Linq.XObjectChangeEventArgs.Add
 - uid: System.Xml.Linq.XObjectChangeEventArgs.Remove
   href: System.Xml.Linq.XObjectChangeEventArgs.yml
@@ -52,7 +57,7 @@ items:
   summary: Event argument for a [System.Xml.Linq.XObjectChange.Remove](System.Xml.Linq.XObjectChange.yml) change event.
   syntax:
     content:
-      CSharp: Remove
+      CSharp: '[SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = "XObjectChangeEventArgs is in fact immutable.")] public static readonly XObjectChangeEventArgs Remove;'
   id: System.Xml.Linq.XObjectChangeEventArgs.Remove
 - uid: System.Xml.Linq.XObjectChangeEventArgs.Name
   href: System.Xml.Linq.XObjectChangeEventArgs.yml
@@ -66,7 +71,7 @@ items:
   summary: Event argument for a [System.Xml.Linq.XObjectChange.Name](System.Xml.Linq.XObjectChange.yml) change event.
   syntax:
     content:
-      CSharp: Name
+      CSharp: '[SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = "XObjectChangeEventArgs is in fact immutable.")] public static readonly XObjectChangeEventArgs Name;'
   id: System.Xml.Linq.XObjectChangeEventArgs.Name
 - uid: System.Xml.Linq.XObjectChangeEventArgs.Value
   href: System.Xml.Linq.XObjectChangeEventArgs.yml
@@ -80,7 +85,7 @@ items:
   summary: Event argument for a [System.Xml.Linq.XObjectChange.Value](System.Xml.Linq.XObjectChange.yml) change event.
   syntax:
     content:
-      CSharp: Value
+      CSharp: '[SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = "XObjectChangeEventArgs is in fact immutable.")] public static readonly XObjectChangeEventArgs Value;'
   id: System.Xml.Linq.XObjectChangeEventArgs.Value
 - uid: System.Xml.Linq.XObjectChangeEventArgs.#ctor(System.Xml.Linq.XObjectChange)
   href: System.Xml.Linq.XObjectChangeEventArgs.yml

@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/ModelStateDictionary.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/ModelStateDictionary.cs
     startLine: 8
   syntax:
     content:
-      CSharp: public class ModelStateDictionary
+      CSharp: 'public class ModelStateDictionary : IDictionary<string, ModelState>, ICollection<KeyValuePair<string, ModelState>>, IEnumerable<KeyValuePair<string, ModelState>>, IEnumerable'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.ModelStateDictionary
   children:
@@ -43,6 +44,7 @@ items:
   - System.Web.Mvc.ModelStateDictionary.Remove(System.String)
   - System.Web.Mvc.ModelStateDictionary.SetModelValue(System.String,System.Web.Mvc.ValueProviderResult)
   - System.Web.Mvc.ModelStateDictionary.TryGetValue(System.String,System.Web.Mvc.ModelState@)
+  - System.Web.Mvc.ModelStateDictionary.System#Collections#IEnumerable#GetEnumerator
 - uid: System.Web.Mvc.ModelStateDictionary.#ctor
   href: System.Web.Mvc.ModelStateDictionary.yml
   name: ModelStateDictionary()
@@ -92,7 +94,7 @@ items:
     - id: Count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Web.Mvc.ModelStateDictionary.Count
 - uid: System.Web.Mvc.ModelStateDictionary.IsReadOnly
@@ -111,7 +113,7 @@ items:
     - id: IsReadOnly
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.ModelStateDictionary.IsReadOnly
 - uid: System.Web.Mvc.ModelStateDictionary.IsValid
@@ -130,7 +132,7 @@ items:
     - id: IsValid
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.ModelStateDictionary.IsValid
 - uid: System.Web.Mvc.ModelStateDictionary.Keys
@@ -149,7 +151,7 @@ items:
     - id: Keys
       type:
         id: System.Collections.Generic.ICollection{System.String}
-        name: System.Collections.Generic.ICollection{System.String}
+        name: ICollection<string>
         isExternal: true
   id: System.Web.Mvc.ModelStateDictionary.Keys
 - uid: System.Web.Mvc.ModelStateDictionary.Values
@@ -168,7 +170,7 @@ items:
     - id: Values
       type:
         id: System.Collections.Generic.ICollection{System.Web.Mvc.ModelState}
-        name: System.Collections.Generic.ICollection{System.Web.Mvc.ModelState}
+        name: ICollection<ModelState>
         isExternal: true
   id: System.Web.Mvc.ModelStateDictionary.Values
 - uid: System.Web.Mvc.ModelStateDictionary.Item(System.String)
@@ -206,7 +208,7 @@ items:
     - id: item
       type:
         id: System.Collections.Generic.KeyValuePair{System.String,System.Web.Mvc.ModelState}
-        name: System.Collections.Generic.KeyValuePair{System.String,System.Web.Mvc.ModelState}
+        name: KeyValuePair<string, ModelState>
         isExternal: true
   id: System.Web.Mvc.ModelStateDictionary.Add(System.Collections.Generic.KeyValuePair{System.String,System.Web.Mvc.ModelState})
 - uid: System.Web.Mvc.ModelStateDictionary.Add(System.String,System.Web.Mvc.ModelState)
@@ -225,7 +227,7 @@ items:
     - id: key
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: value
       type:
@@ -249,12 +251,12 @@ items:
     - id: key
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: exception
       type:
         id: System.Exception
-        name: System.Exception
+        name: Exception
         isExternal: true
   id: System.Web.Mvc.ModelStateDictionary.AddModelError(System.String,System.Exception)
 - uid: System.Web.Mvc.ModelStateDictionary.AddModelError(System.String,System.String)
@@ -273,12 +275,12 @@ items:
     - id: key
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: errorMessage
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.ModelStateDictionary.AddModelError(System.String,System.String)
 - uid: System.Web.Mvc.ModelStateDictionary.Clear
@@ -311,10 +313,14 @@ items:
     - id: item
       type:
         id: System.Collections.Generic.KeyValuePair{System.String,System.Web.Mvc.ModelState}
-        name: System.Collections.Generic.KeyValuePair{System.String,System.Web.Mvc.ModelState}
+        name: KeyValuePair<string, ModelState>
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Web.Mvc.ModelStateDictionary.Contains(System.Collections.Generic.KeyValuePair{System.String,System.Web.Mvc.ModelState})
 - uid: System.Web.Mvc.ModelStateDictionary.ContainsKey(System.String)
   href: System.Web.Mvc.ModelStateDictionary.yml
@@ -332,10 +338,14 @@ items:
     - id: key
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Web.Mvc.ModelStateDictionary.ContainsKey(System.String)
 - uid: System.Web.Mvc.ModelStateDictionary.CopyTo(System.Collections.Generic.KeyValuePair{System.String,System.Web.Mvc.ModelState}[],System.Int32)
   href: System.Web.Mvc.ModelStateDictionary.yml
@@ -353,12 +363,12 @@ items:
     - id: array
       type:
         id: System.Array
-        name: System.Array
+        name: KeyValuePair<string, ModelState>[]
         isExternal: true
     - id: arrayIndex
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Web.Mvc.ModelStateDictionary.CopyTo(System.Collections.Generic.KeyValuePair{System.String,System.Web.Mvc.ModelState}[],System.Int32)
 - uid: System.Web.Mvc.ModelStateDictionary.GetEnumerator
@@ -376,6 +386,10 @@ items:
     parameters: []
     return:
       id: IEnumerator
+      type:
+        id: System.Collections.Generic.IEnumerator{System.Collections.Generic.KeyValuePair{System.String,System.Web.Mvc.ModelState}}
+        name: IEnumerator<KeyValuePair<string, ModelState>>
+        isExternal: true
   id: System.Web.Mvc.ModelStateDictionary.GetEnumerator
 - uid: System.Web.Mvc.ModelStateDictionary.IsValidField(System.String)
   href: System.Web.Mvc.ModelStateDictionary.yml
@@ -393,10 +407,14 @@ items:
     - id: key
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Web.Mvc.ModelStateDictionary.IsValidField(System.String)
 - uid: System.Web.Mvc.ModelStateDictionary.Merge(System.Web.Mvc.ModelStateDictionary)
   href: System.Web.Mvc.ModelStateDictionary.yml
@@ -433,10 +451,14 @@ items:
     - id: item
       type:
         id: System.Collections.Generic.KeyValuePair{System.String,System.Web.Mvc.ModelState}
-        name: System.Collections.Generic.KeyValuePair{System.String,System.Web.Mvc.ModelState}
+        name: KeyValuePair<string, ModelState>
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Web.Mvc.ModelStateDictionary.Remove(System.Collections.Generic.KeyValuePair{System.String,System.Web.Mvc.ModelState})
 - uid: System.Web.Mvc.ModelStateDictionary.Remove(System.String)
   href: System.Web.Mvc.ModelStateDictionary.yml
@@ -454,10 +476,14 @@ items:
     - id: key
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Web.Mvc.ModelStateDictionary.Remove(System.String)
 - uid: System.Web.Mvc.ModelStateDictionary.SetModelValue(System.String,System.Web.Mvc.ValueProviderResult)
   href: System.Web.Mvc.ModelStateDictionary.yml
@@ -475,7 +501,7 @@ items:
     - id: key
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: value
       type:
@@ -499,7 +525,7 @@ items:
     - id: key
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: value
       type:
@@ -508,4 +534,28 @@ items:
         href: System.Web.Mvc.ModelState.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Web.Mvc.ModelStateDictionary.TryGetValue(System.String,System.Web.Mvc.ModelState@)
+- uid: System.Web.Mvc.ModelStateDictionary.System#Collections#IEnumerable#GetEnumerator
+  href: System.Web.Mvc.ModelStateDictionary.yml
+  name: IEnumerable.GetEnumerator()
+  fullName: System.Web.Mvc.ModelStateDictionary.System.Collections.IEnumerable.GetEnumerator()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ModelStateDictionary.cs
+    startLine: 179
+  syntax:
+    content:
+      CSharp: IEnumerator IEnumerable.GetEnumerator()
+    parameters: []
+    return:
+      id: IEnumerator
+      type:
+        id: System.Collections.IEnumerator
+        name: IEnumerator
+        isExternal: true
+  id: System.Web.Mvc.ModelStateDictionary.System#Collections#IEnumerable#GetEnumerator

@@ -1,0 +1,95 @@
+items:
+- uid: Microsoft.Win32.SafeHandles.SafeFileHandle
+  href: Microsoft.Win32.SafeHandles.SafeFileHandle.yml
+  name: SafeFileHandle
+  fullName: Microsoft.Win32.SafeHandles.SafeFileHandle
+  type: Class
+  source:
+    remote: &o0
+      path: src/System.IO.FileSystem/src/Microsoft/Win32/SafeHandles/SafeFileHandle.Windows.cs
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
+    path: src/System.IO.FileSystem/src/Microsoft/Win32/SafeHandles/SafeFileHandle.Windows.cs
+    startLine: 10
+  syntax:
+    content:
+      CSharp: 'public sealed class SafeFileHandle : SafeHandle, IDisposable'
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.Runtime.ConstrainedExecution.CriticalFinalizerObject
+    name: CriticalFinalizerObject
+    isExternal: true
+  - id: System.Runtime.InteropServices.SafeHandle
+    name: SafeHandle
+    isExternal: true
+  id: Microsoft.Win32.SafeHandles.SafeFileHandle
+  children:
+  - Microsoft.Win32.SafeHandles.SafeFileHandle.#ctor(System.IntPtr,System.Boolean)
+  - Microsoft.Win32.SafeHandles.SafeFileHandle.ReleaseHandle
+  - Microsoft.Win32.SafeHandles.SafeFileHandle.IsInvalid
+- uid: Microsoft.Win32.SafeHandles.SafeFileHandle.#ctor(System.IntPtr,System.Boolean)
+  href: Microsoft.Win32.SafeHandles.SafeFileHandle.yml
+  name: SafeFileHandle(IntPtr, bool)
+  fullName: Microsoft.Win32.SafeHandles.SafeFileHandle.SafeFileHandle(System.IntPtr, bool)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.IO.FileSystem/src/Microsoft/Win32/SafeHandles/SafeFileHandle.Windows.cs
+    startLine: 20
+  syntax:
+    content:
+      CSharp: 'public SafeFileHandle(IntPtr preexistingHandle, bool ownsHandle): base (IntPtr.Zero, ownsHandle)'
+    parameters:
+    - id: preexistingHandle
+      type:
+        id: System.IntPtr
+        name: IntPtr
+        isExternal: true
+    - id: ownsHandle
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: Microsoft.Win32.SafeHandles.SafeFileHandle.#ctor(System.IntPtr,System.Boolean)
+- uid: Microsoft.Win32.SafeHandles.SafeFileHandle.ReleaseHandle
+  href: Microsoft.Win32.SafeHandles.SafeFileHandle.yml
+  name: ReleaseHandle()
+  fullName: Microsoft.Win32.SafeHandles.SafeFileHandle.ReleaseHandle()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.FileSystem/src/Microsoft/Win32/SafeHandles/SafeFileHandle.Windows.cs
+    startLine: 40
+  syntax:
+    content:
+      CSharp: protected override bool ReleaseHandle()
+    parameters: []
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: Microsoft.Win32.SafeHandles.SafeFileHandle.ReleaseHandle
+- uid: Microsoft.Win32.SafeHandles.SafeFileHandle.IsInvalid
+  href: Microsoft.Win32.SafeHandles.SafeFileHandle.yml
+  name: IsInvalid
+  fullName: Microsoft.Win32.SafeHandles.SafeFileHandle.IsInvalid
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.IO.FileSystem/src/Microsoft/Win32/SafeHandles/SafeFileHandle.Windows.cs
+    startLine: 46
+  syntax:
+    content:
+      CSharp: public override bool IsInvalid { [System.Security.SecurityCritical] get; }
+    parameters:
+    - id: IsInvalid
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: Microsoft.Win32.SafeHandles.SafeFileHandle.IsInvalid

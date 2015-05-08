@@ -6,8 +6,10 @@ items:
   type: Interface
   source:
     remote: &o0
+      path: src/System.Threading.Tasks.Dataflow/src/Base/IDataflowBlock.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Threading.Tasks.Dataflow/src/Base/IDataflowBlock.cs
     startLine: 15
   summary: Represents a dataflow block.
@@ -35,7 +37,7 @@ items:
     - id: Completion
       type:
         id: System.Threading.Tasks.Task
-        name: System.Threading.Tasks.Task
+        name: Task
         isExternal: true
   id: System.Threading.Tasks.Dataflow.IDataflowBlock.Completion
 - uid: System.Threading.Tasks.Dataflow.IDataflowBlock.Complete
@@ -49,7 +51,7 @@ items:
     startLine: 23
   syntax:
     content:
-      CSharp: void Complete();
+      CSharp: public void Complete()
     parameters: []
   id: System.Threading.Tasks.Dataflow.IDataflowBlock.Complete
 - uid: System.Threading.Tasks.Dataflow.IDataflowBlock.Fault(System.Exception)
@@ -63,11 +65,11 @@ items:
     startLine: 28
   syntax:
     content:
-      CSharp: void Fault(Exception exception);
+      CSharp: public void Fault(Exception exception)
     parameters:
     - id: exception
       type:
         id: System.Exception
-        name: System.Exception
+        name: Exception
         isExternal: true
   id: System.Threading.Tasks.Dataflow.IDataflowBlock.Fault(System.Exception)

@@ -6,8 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Xml.XDocument/src/System/Xml/Linq/XNodeEqualityComparer.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XNodeEqualityComparer.cs
     startLine: 13
   summary: >-
@@ -16,15 +18,17 @@ items:
     This class cannot be inherited.
   syntax:
     content:
-      CSharp: public sealed class XNodeEqualityComparer
+      CSharp: 'public sealed class XNodeEqualityComparer : IEqualityComparer, IEqualityComparer<XNode>'
   inheritance:
-  - id: System.Collections.IEqualityComparer
-    name: System.Collections.IEqualityComparer
+  - id: System.Object
+    name: object
     isExternal: true
   id: System.Xml.Linq.XNodeEqualityComparer
   children:
   - System.Xml.Linq.XNodeEqualityComparer.Equals(System.Xml.Linq.XNode,System.Xml.Linq.XNode)
   - System.Xml.Linq.XNodeEqualityComparer.GetHashCode(System.Xml.Linq.XNode)
+  - System.Xml.Linq.XNodeEqualityComparer.System#Collections#IEqualityComparer#Equals(System.Object,System.Object)
+  - System.Xml.Linq.XNodeEqualityComparer.System#Collections#IEqualityComparer#GetHashCode(System.Object)
 - uid: System.Xml.Linq.XNodeEqualityComparer.Equals(System.Xml.Linq.XNode,System.Xml.Linq.XNode)
   href: System.Xml.Linq.XNodeEqualityComparer.yml
   name: Equals(XNode, XNode)
@@ -53,6 +57,10 @@ items:
       description: The second node to compare.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: true if the nodes are equal, false otherwise.
   id: System.Xml.Linq.XNodeEqualityComparer.Equals(System.Xml.Linq.XNode,System.Xml.Linq.XNode)
 - uid: System.Xml.Linq.XNodeEqualityComparer.GetHashCode(System.Xml.Linq.XNode)
@@ -77,5 +85,71 @@ items:
       description: The node to hash.
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: A value-based hash code for the node.
   id: System.Xml.Linq.XNodeEqualityComparer.GetHashCode(System.Xml.Linq.XNode)
+- uid: System.Xml.Linq.XNodeEqualityComparer.System#Collections#IEqualityComparer#Equals(System.Object,System.Object)
+  href: System.Xml.Linq.XNodeEqualityComparer.yml
+  name: IEqualityComparer.Equals(object, object)
+  fullName: System.Xml.Linq.XNodeEqualityComparer.System.Collections.IEqualityComparer.Equals(object, object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XDocument/src/System/Xml/Linq/XNodeEqualityComparer.cs
+    startLine: 75
+  summary: Compares the values of two nodes.
+  syntax:
+    content:
+      CSharp: bool IEqualityComparer.Equals(object x, object y)
+    parameters:
+    - id: x
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+      description: The first node to compare.
+    - id: y
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+      description: The second node to compare.
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: true if the nodes are equal, false otherwise.
+  id: System.Xml.Linq.XNodeEqualityComparer.System#Collections#IEqualityComparer#Equals(System.Object,System.Object)
+- uid: System.Xml.Linq.XNodeEqualityComparer.System#Collections#IEqualityComparer#GetHashCode(System.Object)
+  href: System.Xml.Linq.XNodeEqualityComparer.yml
+  name: IEqualityComparer.GetHashCode(object)
+  fullName: System.Xml.Linq.XNodeEqualityComparer.System.Collections.IEqualityComparer.GetHashCode(object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XDocument/src/System/Xml/Linq/XNodeEqualityComparer.cs
+    startLine: 94
+  summary: Returns a hash code based on a node's value.
+  syntax:
+    content:
+      CSharp: int IEqualityComparer.GetHashCode(object obj)
+    parameters:
+    - id: obj
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+      description: The node to hash.
+    return:
+      id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: A value-based hash code for the node.
+  id: System.Xml.Linq.XNodeEqualityComparer.System#Collections#IEqualityComparer#GetHashCode(System.Object)

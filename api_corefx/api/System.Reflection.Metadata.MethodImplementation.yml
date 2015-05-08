@@ -6,16 +6,21 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MethodImplementation.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MethodImplementation.cs
     startLine: 7
   syntax:
     content:
       CSharp: public struct MethodImplementation
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Reflection.Metadata.MethodImplementation
   children:
@@ -53,13 +58,13 @@ items:
     startLine: 36
   syntax:
     content:
-      CSharp: public Handle MethodBody { get; }
+      CSharp: public EntityHandle MethodBody { get; }
     parameters:
     - id: MethodBody
       type:
-        id: System.Reflection.Metadata.Handle
-        name: Handle
-        href: System.Reflection.Metadata.Handle.yml
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
   id: System.Reflection.Metadata.MethodImplementation.MethodBody
 - uid: System.Reflection.Metadata.MethodImplementation.MethodDeclaration
   href: System.Reflection.Metadata.MethodImplementation.yml
@@ -72,13 +77,13 @@ items:
     startLine: 44
   syntax:
     content:
-      CSharp: public Handle MethodDeclaration { get; }
+      CSharp: public EntityHandle MethodDeclaration { get; }
     parameters:
     - id: MethodDeclaration
       type:
-        id: System.Reflection.Metadata.Handle
-        name: Handle
-        href: System.Reflection.Metadata.Handle.yml
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
   id: System.Reflection.Metadata.MethodImplementation.MethodDeclaration
 - uid: System.Reflection.Metadata.MethodImplementation.GetCustomAttributes
   href: System.Reflection.Metadata.MethodImplementation.yml
@@ -95,4 +100,8 @@ items:
     parameters: []
     return:
       id: CustomAttributeHandleCollection
+      type:
+        id: System.Reflection.Metadata.CustomAttributeHandleCollection
+        name: CustomAttributeHandleCollection
+        href: System.Reflection.Metadata.CustomAttributeHandleCollection.yml
   id: System.Reflection.Metadata.MethodImplementation.GetCustomAttributes

@@ -6,23 +6,24 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/Razor/MvcVBRazorCodeParser.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/Razor/MvcVBRazorCodeParser.cs
     startLine: 13
   syntax:
     content:
-      CSharp: public class MvcVBRazorCodeParser
+      CSharp: 'public class MvcVBRazorCodeParser : VBCodeParser'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.Razor.Parser.ParserBase
     name: ParserBase
     href: System.Web.Razor.Parser.ParserBase
   - id: System.Web.Razor.Parser.TokenizerBackedParser{System.Web.Razor.Tokenizer.VBTokenizer,System.Web.Razor.Tokenizer.Symbols.VBSymbol,System.Web.Razor.Tokenizer.Symbols.VBSymbolType}
-    name: TokenizerBackedParser
+    name: TokenizerBackedParser<VBTokenizer, VBSymbol, VBSymbolType>
     href: System.Web.Razor.Parser.TokenizerBackedParser{System.Web.Razor.Tokenizer.VBTokenizer,System.Web.Razor.Tokenizer.Symbols.VBSymbol,System.Web.Razor.Tokenizer.Symbols.VBSymbolType}
   - id: System.Web.Razor.Parser.VBCodeParser
     name: VBCodeParser
@@ -30,6 +31,8 @@ items:
   id: System.Web.Mvc.Razor.MvcVBRazorCodeParser
   children:
   - System.Web.Mvc.Razor.MvcVBRazorCodeParser.#ctor
+  - System.Web.Mvc.Razor.MvcVBRazorCodeParser.InheritsStatement
+  - System.Web.Mvc.Razor.MvcVBRazorCodeParser.ModelTypeDirective
 - uid: System.Web.Mvc.Razor.MvcVBRazorCodeParser.#ctor
   href: System.Web.Mvc.Razor.MvcVBRazorCodeParser.yml
   name: MvcVBRazorCodeParser()
@@ -44,3 +47,43 @@ items:
       CSharp: public MvcVBRazorCodeParser()
     parameters: []
   id: System.Web.Mvc.Razor.MvcVBRazorCodeParser.#ctor
+- uid: System.Web.Mvc.Razor.MvcVBRazorCodeParser.InheritsStatement
+  href: System.Web.Mvc.Razor.MvcVBRazorCodeParser.yml
+  name: InheritsStatement()
+  fullName: System.Web.Mvc.Razor.MvcVBRazorCodeParser.InheritsStatement()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/Razor/MvcVBRazorCodeParser.cs
+    startLine: 25
+  syntax:
+    content:
+      CSharp: protected override bool InheritsStatement()
+    parameters: []
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Web.Mvc.Razor.MvcVBRazorCodeParser.InheritsStatement
+- uid: System.Web.Mvc.Razor.MvcVBRazorCodeParser.ModelTypeDirective
+  href: System.Web.Mvc.Razor.MvcVBRazorCodeParser.yml
+  name: ModelTypeDirective()
+  fullName: System.Web.Mvc.Razor.MvcVBRazorCodeParser.ModelTypeDirective()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/Razor/MvcVBRazorCodeParser.cs
+    startLine: 49
+  syntax:
+    content:
+      CSharp: protected virtual bool ModelTypeDirective()
+    parameters: []
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Web.Mvc.Razor.MvcVBRazorCodeParser.ModelTypeDirective

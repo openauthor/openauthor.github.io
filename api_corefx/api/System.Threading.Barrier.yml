@@ -1,0 +1,494 @@
+items:
+- uid: System.Threading.Barrier
+  href: System.Threading.Barrier.yml
+  name: Barrier
+  fullName: System.Threading.Barrier
+  type: Class
+  source:
+    remote: &o0
+      path: src/System.Threading/src/System/Threading/Barrier.cs
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
+    path: src/System.Threading/src/System/Threading/Barrier.cs
+    startLine: 80
+  summary: Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.
+  syntax:
+    content:
+      CSharp: 'public class Barrier : IDisposable'
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  id: System.Threading.Barrier
+  children:
+  - System.Threading.Barrier.ParticipantsRemaining
+  - System.Threading.Barrier.ParticipantCount
+  - System.Threading.Barrier.CurrentPhaseNumber
+  - System.Threading.Barrier.#ctor(System.Int32)
+  - System.Threading.Barrier.#ctor(System.Int32,System.Action{System.Threading.Barrier})
+  - System.Threading.Barrier.AddParticipant
+  - System.Threading.Barrier.AddParticipants(System.Int32)
+  - System.Threading.Barrier.RemoveParticipant
+  - System.Threading.Barrier.RemoveParticipants(System.Int32)
+  - System.Threading.Barrier.SignalAndWait
+  - System.Threading.Barrier.SignalAndWait(System.Threading.CancellationToken)
+  - System.Threading.Barrier.SignalAndWait(System.TimeSpan)
+  - System.Threading.Barrier.SignalAndWait(System.TimeSpan,System.Threading.CancellationToken)
+  - System.Threading.Barrier.SignalAndWait(System.Int32)
+  - System.Threading.Barrier.SignalAndWait(System.Int32,System.Threading.CancellationToken)
+  - System.Threading.Barrier.Dispose
+  - System.Threading.Barrier.Dispose(System.Boolean)
+- uid: System.Threading.Barrier.ParticipantsRemaining
+  href: System.Threading.Barrier.yml
+  name: ParticipantsRemaining
+  fullName: System.Threading.Barrier.ParticipantsRemaining
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/Barrier.cs
+    startLine: 150
+  summary: "Gets the number of participants in the barrier that haven’t yet signaled\r\nin the current phase."
+  syntax:
+    content:
+      CSharp: public int ParticipantsRemaining { get; }
+    parameters:
+    - id: ParticipantsRemaining
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.Threading.Barrier.ParticipantsRemaining
+- uid: System.Threading.Barrier.ParticipantCount
+  href: System.Threading.Barrier.yml
+  name: ParticipantCount
+  fullName: System.Threading.Barrier.ParticipantCount
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/Barrier.cs
+    startLine: 164
+  summary: Gets the total number of participants in the barrier.
+  syntax:
+    content:
+      CSharp: public int ParticipantCount { get; }
+    parameters:
+    - id: ParticipantCount
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.Threading.Barrier.ParticipantCount
+- uid: System.Threading.Barrier.CurrentPhaseNumber
+  href: System.Threading.Barrier.yml
+  name: CurrentPhaseNumber
+  fullName: System.Threading.Barrier.CurrentPhaseNumber
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/Barrier.cs
+    startLine: 172
+  summary: Gets the number of the barrier's current phase.
+  syntax:
+    content:
+      CSharp: public long CurrentPhaseNumber { // use the new Volatile.Read/Write method because it is cheaper than Interlocked.Read on AMD64 architecture get; }
+    parameters:
+    - id: CurrentPhaseNumber
+      type:
+        id: System.Int64
+        name: long
+        isExternal: true
+  id: System.Threading.Barrier.CurrentPhaseNumber
+- uid: System.Threading.Barrier.#ctor(System.Int32)
+  href: System.Threading.Barrier.yml
+  name: Barrier(int)
+  fullName: System.Threading.Barrier.Barrier(int)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/Barrier.cs
+    startLine: 188
+  summary: Initializes a new instance of the [System.Threading.Barrier](System.Threading.Barrier.yml) class.
+  syntax:
+    content:
+      CSharp: 'public Barrier(int participantCount): this (participantCount, null)'
+    parameters:
+    - id: participantCount
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The number of participating threads.
+  id: System.Threading.Barrier.#ctor(System.Int32)
+- uid: System.Threading.Barrier.#ctor(System.Int32,System.Action{System.Threading.Barrier})
+  href: System.Threading.Barrier.yml
+  name: Barrier(int, Action<Barrier>)
+  fullName: System.Threading.Barrier.Barrier(int, System.Action<System.Threading.Barrier>)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/Barrier.cs
+    startLine: 207
+  summary: Initializes a new instance of the [System.Threading.Barrier](System.Threading.Barrier.yml) class.
+  syntax:
+    content:
+      CSharp: public Barrier(int participantCount, Action<Barrier> postPhaseAction)
+    parameters:
+    - id: participantCount
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The number of participating threads.
+    - id: postPhaseAction
+      type:
+        id: System.Action{System.Threading.Barrier}
+        name: Action<Barrier>
+        isExternal: true
+      description: >-
+        The [System.Action`1]() to be executed after each
+
+        phase.
+  id: System.Threading.Barrier.#ctor(System.Int32,System.Action{System.Threading.Barrier})
+- uid: System.Threading.Barrier.AddParticipant
+  href: System.Threading.Barrier.yml
+  name: AddParticipant()
+  fullName: System.Threading.Barrier.AddParticipant()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/Barrier.cs
+    startLine: 280
+  summary: Notifies the [System.Threading.Barrier](System.Threading.Barrier.yml) that there will be an additional participant.
+  syntax:
+    content:
+      CSharp: public long AddParticipant()
+    parameters: []
+    return:
+      id: Int64
+      type:
+        id: System.Int64
+        name: long
+        isExternal: true
+      description: >-
+        The phase number of the barrier in which the new participants will first
+
+        participate.
+  id: System.Threading.Barrier.AddParticipant
+- uid: System.Threading.Barrier.AddParticipants(System.Int32)
+  href: System.Threading.Barrier.yml
+  name: AddParticipants(int)
+  fullName: System.Threading.Barrier.AddParticipants(int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/Barrier.cs
+    startLine: 308
+  summary: Notifies the [System.Threading.Barrier](System.Threading.Barrier.yml) that there will be additional participants.
+  syntax:
+    content:
+      CSharp: public long AddParticipants(int participantCount)
+    parameters:
+    - id: participantCount
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: >-
+        The number of additional participants to add to the
+
+        barrier.
+    return:
+      id: Int64
+      type:
+        id: System.Int64
+        name: long
+        isExternal: true
+      description: >-
+        The phase number of the barrier in which the new participants will first
+
+        participate.
+  id: System.Threading.Barrier.AddParticipants(System.Int32)
+- uid: System.Threading.Barrier.RemoveParticipant
+  href: System.Threading.Barrier.yml
+  name: RemoveParticipant()
+  fullName: System.Threading.Barrier.RemoveParticipant()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/Barrier.cs
+    startLine: 396
+  summary: Notifies the [System.Threading.Barrier](System.Threading.Barrier.yml) that there will be one less participant.
+  syntax:
+    content:
+      CSharp: public void RemoveParticipant()
+    parameters: []
+  id: System.Threading.Barrier.RemoveParticipant
+- uid: System.Threading.Barrier.RemoveParticipants(System.Int32)
+  href: System.Threading.Barrier.yml
+  name: RemoveParticipants(int)
+  fullName: System.Threading.Barrier.RemoveParticipants(int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/Barrier.cs
+    startLine: 413
+  summary: Notifies the [System.Threading.Barrier](System.Threading.Barrier.yml) that there will be fewer participants.
+  syntax:
+    content:
+      CSharp: public void RemoveParticipants(int participantCount)
+    parameters:
+    - id: participantCount
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The number of additional participants to remove from the barrier.
+  id: System.Threading.Barrier.RemoveParticipants(System.Int32)
+- uid: System.Threading.Barrier.SignalAndWait
+  href: System.Threading.Barrier.yml
+  name: SignalAndWait()
+  fullName: System.Threading.Barrier.SignalAndWait()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/Barrier.cs
+    startLine: 480
+  summary: >-
+    Signals that a participant has reached the [System.Threading.Barrier](System.Threading.Barrier.yml) and waits for all other
+
+    participants to reach the barrier as well.
+  syntax:
+    content:
+      CSharp: public void SignalAndWait()
+    parameters: []
+  id: System.Threading.Barrier.SignalAndWait
+- uid: System.Threading.Barrier.SignalAndWait(System.Threading.CancellationToken)
+  href: System.Threading.Barrier.yml
+  name: SignalAndWait(CancellationToken)
+  fullName: System.Threading.Barrier.SignalAndWait(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/Barrier.cs
+    startLine: 500
+  summary: >-
+    Signals that a participant has reached the [System.Threading.Barrier](System.Threading.Barrier.yml) and waits for all other
+
+    participants to reach the barrier, while observing a [System.Threading.CancellationToken]().
+  syntax:
+    content:
+      CSharp: public void SignalAndWait(CancellationToken cancellationToken)
+    parameters:
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: CancellationToken
+        isExternal: true
+      description: >-
+        The [System.Threading.CancellationToken]() to
+
+        observe.
+  id: System.Threading.Barrier.SignalAndWait(System.Threading.CancellationToken)
+- uid: System.Threading.Barrier.SignalAndWait(System.TimeSpan)
+  href: System.Threading.Barrier.yml
+  name: SignalAndWait(TimeSpan)
+  fullName: System.Threading.Barrier.SignalAndWait(System.TimeSpan)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/Barrier.cs
+    startLine: 529
+  summary: >-
+    Signals that a participant has reached the [System.Threading.Barrier](System.Threading.Barrier.yml) and waits for all other
+
+    participants to reach the barrier as well, using a
+
+    [System.TimeSpan]() to measure the time interval.
+  syntax:
+    content:
+      CSharp: public bool SignalAndWait(TimeSpan timeout)
+    parameters:
+    - id: timeout
+      type:
+        id: System.TimeSpan
+        name: TimeSpan
+        isExternal: true
+      description: >-
+        A [System.TimeSpan]() that represents the number of
+
+        milliseconds to wait, or a [System.TimeSpan]() that represents -1 milliseconds to
+
+        wait indefinitely.
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: true if all other participants reached the barrier; otherwise, false.
+  id: System.Threading.Barrier.SignalAndWait(System.TimeSpan)
+- uid: System.Threading.Barrier.SignalAndWait(System.TimeSpan,System.Threading.CancellationToken)
+  href: System.Threading.Barrier.yml
+  name: SignalAndWait(TimeSpan, CancellationToken)
+  fullName: System.Threading.Barrier.SignalAndWait(System.TimeSpan, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/Barrier.cs
+    startLine: 556
+  summary: >-
+    Signals that a participant has reached the [System.Threading.Barrier](System.Threading.Barrier.yml) and waits for all other
+
+    participants to reach the barrier as well, using a
+
+    [System.TimeSpan]() to measure the time interval, while observing a [System.Threading.CancellationToken]().
+  syntax:
+    content:
+      CSharp: public bool SignalAndWait(TimeSpan timeout, CancellationToken cancellationToken)
+    parameters:
+    - id: timeout
+      type:
+        id: System.TimeSpan
+        name: TimeSpan
+        isExternal: true
+      description: >-
+        A [System.TimeSpan]() that represents the number of
+
+        milliseconds to wait, or a [System.TimeSpan]() that represents -1 milliseconds to
+
+        wait indefinitely.
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: CancellationToken
+        isExternal: true
+      description: >-
+        The [System.Threading.CancellationToken]() to
+
+        observe.
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: true if all other participants reached the barrier; otherwise, false.
+  id: System.Threading.Barrier.SignalAndWait(System.TimeSpan,System.Threading.CancellationToken)
+- uid: System.Threading.Barrier.SignalAndWait(System.Int32)
+  href: System.Threading.Barrier.yml
+  name: SignalAndWait(int)
+  fullName: System.Threading.Barrier.SignalAndWait(int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/Barrier.cs
+    startLine: 583
+  summary: >-
+    Signals that a participant has reached the [System.Threading.Barrier](System.Threading.Barrier.yml) and waits for all other
+
+    participants to reach the barrier as well, using a
+
+    32-bit signed integer to measure the time interval.
+  syntax:
+    content:
+      CSharp: public bool SignalAndWait(int millisecondsTimeout)
+    parameters:
+    - id: millisecondsTimeout
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The number of milliseconds to wait, or [System.Threading.Timeout.Infinite]()(-1) to wait indefinitely.
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: true if all other participants reached the barrier; otherwise, false.
+  id: System.Threading.Barrier.SignalAndWait(System.Int32)
+- uid: System.Threading.Barrier.SignalAndWait(System.Int32,System.Threading.CancellationToken)
+  href: System.Threading.Barrier.yml
+  name: SignalAndWait(int, CancellationToken)
+  fullName: System.Threading.Barrier.SignalAndWait(int, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/Barrier.cs
+    startLine: 609
+  summary: >-
+    Signals that a participant has reached the barrier and waits for all other participants to reach
+
+    the barrier as well, using a
+
+    32-bit signed integer to measure the time interval, while observing a [System.Threading.CancellationToken]().
+  syntax:
+    content:
+      CSharp: public bool SignalAndWait(int millisecondsTimeout, CancellationToken cancellationToken)
+    parameters:
+    - id: millisecondsTimeout
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+      description: The number of milliseconds to wait, or [System.Threading.Timeout.Infinite]()(-1) to wait indefinitely.
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: CancellationToken
+        isExternal: true
+      description: >-
+        The [System.Threading.CancellationToken]() to
+
+        observe.
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: true if all other participants reached the barrier; otherwise, false.
+  id: System.Threading.Barrier.SignalAndWait(System.Int32,System.Threading.CancellationToken)
+- uid: System.Threading.Barrier.Dispose
+  href: System.Threading.Barrier.yml
+  name: Dispose()
+  fullName: System.Threading.Barrier.Dispose()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/Barrier.cs
+    startLine: 897
+  summary: Releases all resources used by the current instance of [System.Threading.Barrier](System.Threading.Barrier.yml).
+  syntax:
+    content:
+      CSharp: public void Dispose()
+    parameters: []
+  id: System.Threading.Barrier.Dispose
+- uid: System.Threading.Barrier.Dispose(System.Boolean)
+  href: System.Threading.Barrier.yml
+  name: Dispose(bool)
+  fullName: System.Threading.Barrier.Dispose(bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/Barrier.cs
+    startLine: 918
+  summary: >-
+    When overridden in a derived class, releases the unmanaged resources used by the
+
+    [System.Threading.Barrier](System.Threading.Barrier.yml), and optionally releases the managed resources.
+  syntax:
+    content:
+      CSharp: protected virtual void Dispose(bool disposing)
+    parameters:
+    - id: disposing
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: >-
+        true to release both managed and unmanaged resources; false to release
+
+        only unmanaged resources.
+  id: System.Threading.Barrier.Dispose(System.Boolean)

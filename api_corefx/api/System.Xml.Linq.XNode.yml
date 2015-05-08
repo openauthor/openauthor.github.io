@@ -6,8 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Xml.XDocument/src/System/Xml/Linq/XNode.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XNode.cs
     startLine: 26
   summary: >-
@@ -16,7 +18,7 @@ items:
     and text nodes) in the XML tree.
   syntax:
     content:
-      CSharp: public abstract class XNode
+      CSharp: 'public abstract class XNode : XObject'
   inheritance:
   - id: IXmlLineInfo
     name: IXmlLineInfo
@@ -152,7 +154,7 @@ items:
     - id: content
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: >-
         A content object containing simple content or a collection of content objects
@@ -176,7 +178,7 @@ items:
     - id: content
       type:
         id: System.Array
-        name: System.Array
+        name: object[]
         isExternal: true
       description: A parameter list of content objects.
   id: System.Xml.Linq.XNode.AddAfterSelf(System.Object[])
@@ -197,7 +199,7 @@ items:
     - id: content
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: >-
         A content object containing simple content or a collection of content objects
@@ -221,7 +223,7 @@ items:
     - id: content
       type:
         id: System.Array
-        name: System.Array
+        name: object[]
         isExternal: true
       description: A parameter list of content objects.
   id: System.Xml.Linq.XNode.AddBeforeSelf(System.Object[])
@@ -241,6 +243,10 @@ items:
     parameters: []
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement}
+        name: IEnumerable<XElement>
+        isExternal: true
       description: The ancestor elements of this node.
   id: System.Xml.Linq.XNode.Ancestors
 - uid: System.Xml.Linq.XNode.Ancestors(System.Xml.Linq.XName)
@@ -265,6 +271,10 @@ items:
       description: The name of the ancestor elements to find.
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement}
+        name: IEnumerable<XElement>
+        isExternal: true
       description: A collection of the ancestor elements of this node with the specified name.
   id: System.Xml.Linq.XNode.Ancestors(System.Xml.Linq.XName)
 - uid: System.Xml.Linq.XNode.CompareDocumentOrder(System.Xml.Linq.XNode,System.Xml.Linq.XNode)
@@ -279,7 +289,7 @@ items:
   summary: Compares two nodes to determine their relative XML document order.
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", Justification = "Reviewed.")] public static int CompareDocumentOrder(XNode n1, XNode n2)'
+      CSharp: public static int CompareDocumentOrder(XNode n1, XNode n2)
     parameters:
     - id: n1
       type:
@@ -295,6 +305,10 @@ items:
       description: Second node to compare.
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: 0 if the nodes are equal; -1 if n1 is before n2; 1 if n1 is after n2.
   id: System.Xml.Linq.XNode.CompareDocumentOrder(System.Xml.Linq.XNode,System.Xml.Linq.XNode)
 - uid: System.Xml.Linq.XNode.CreateReader
@@ -313,6 +327,10 @@ items:
     parameters: []
     return:
       id: XmlReader
+      type:
+        id: XmlReader
+        name: XmlReader
+        isExternal: true
       description: An @!:XmlReader- that can be used to read the node and its descendants.
   id: System.Xml.Linq.XNode.CreateReader
 - uid: System.Xml.Linq.XNode.CreateReader(System.Xml.Linq.ReaderOptions)
@@ -337,6 +355,10 @@ items:
       description: Options to be used for the returned reader. These override the default usage of annotations from the tree.
     return:
       id: XmlReader
+      type:
+        id: XmlReader
+        name: XmlReader
+        isExternal: true
       description: An @!:XmlReader- that can be used to read the node and its descendants.
   id: System.Xml.Linq.XNode.CreateReader(System.Xml.Linq.ReaderOptions)
 - uid: System.Xml.Linq.XNode.NodesAfterSelf
@@ -355,6 +377,10 @@ items:
     parameters: []
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XNode}
+        name: IEnumerable<XNode>
+        isExternal: true
       description: The nodes after this node.
   id: System.Xml.Linq.XNode.NodesAfterSelf
 - uid: System.Xml.Linq.XNode.NodesBeforeSelf
@@ -373,6 +399,10 @@ items:
     parameters: []
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XNode}
+        name: IEnumerable<XNode>
+        isExternal: true
       description: The nodes after this node.
   id: System.Xml.Linq.XNode.NodesBeforeSelf
 - uid: System.Xml.Linq.XNode.ElementsAfterSelf
@@ -391,6 +421,10 @@ items:
     parameters: []
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement}
+        name: IEnumerable<XElement>
+        isExternal: true
       description: The element nodes after this node.
   id: System.Xml.Linq.XNode.ElementsAfterSelf
 - uid: System.Xml.Linq.XNode.ElementsAfterSelf(System.Xml.Linq.XName)
@@ -418,6 +452,10 @@ items:
       description: The name of elements to enumerate.
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement}
+        name: IEnumerable<XElement>
+        isExternal: true
       description: The element nodes after this node with the specified name.
   id: System.Xml.Linq.XNode.ElementsAfterSelf(System.Xml.Linq.XName)
 - uid: System.Xml.Linq.XNode.ElementsBeforeSelf
@@ -436,6 +474,10 @@ items:
     parameters: []
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement}
+        name: IEnumerable<XElement>
+        isExternal: true
       description: The element nodes before this node.
   id: System.Xml.Linq.XNode.ElementsBeforeSelf
 - uid: System.Xml.Linq.XNode.ElementsBeforeSelf(System.Xml.Linq.XName)
@@ -463,6 +505,10 @@ items:
       description: The name of elements to enumerate.
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement}
+        name: IEnumerable<XElement>
+        isExternal: true
       description: The element nodes before this node with the specified name.
   id: System.Xml.Linq.XNode.ElementsBeforeSelf(System.Xml.Linq.XName)
 - uid: System.Xml.Linq.XNode.IsAfter(System.Xml.Linq.XNode)
@@ -490,6 +536,10 @@ items:
       description: The node to compare for document order.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: True if this node appears after the specified node; false if not.
   id: System.Xml.Linq.XNode.IsAfter(System.Xml.Linq.XNode)
 - uid: System.Xml.Linq.XNode.IsBefore(System.Xml.Linq.XNode)
@@ -517,6 +567,10 @@ items:
       description: The node to compare for document order.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: True if this node appears before the specified node; false if not.
   id: System.Xml.Linq.XNode.IsBefore(System.Xml.Linq.XNode)
 - uid: System.Xml.Linq.XNode.ReadFrom(XmlReader)
@@ -548,6 +602,10 @@ items:
       description: An @!:XmlReader- positioned at the node to read into this [System.Xml.Linq.XNode](System.Xml.Linq.XNode.yml).
     return:
       id: XNode
+      type:
+        id: System.Xml.Linq.XNode
+        name: XNode
+        href: System.Xml.Linq.XNode.yml
       description: An [System.Xml.Linq.XNode](System.Xml.Linq.XNode.yml) that contains the nodes read from the reader.
   id: System.Xml.Linq.XNode.ReadFrom(XmlReader)
 - uid: System.Xml.Linq.XNode.Remove
@@ -582,7 +640,7 @@ items:
     - id: content
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: Content that replaces this node.
   id: System.Xml.Linq.XNode.ReplaceWith(System.Object)
@@ -603,7 +661,7 @@ items:
     - id: content
       type:
         id: System.Array
-        name: System.Array
+        name: object[]
         isExternal: true
       description: Content that replaces this node.
   id: System.Xml.Linq.XNode.ReplaceWith(System.Object[])
@@ -626,6 +684,10 @@ items:
     parameters: []
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
       description: A formatted XML string.
   id: System.Xml.Linq.XNode.ToString
 - uid: System.Xml.Linq.XNode.ToString(System.Xml.Linq.SaveOptions)
@@ -653,6 +715,10 @@ items:
         If SaveOptions.OmitDuplicateNamespaces is enabled duplicate namespace declarations will be removed.
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
       description: An XML string.
   id: System.Xml.Linq.XNode.ToString(System.Xml.Linq.SaveOptions)
 - uid: System.Xml.Linq.XNode.DeepEquals(System.Xml.Linq.XNode,System.Xml.Linq.XNode)
@@ -667,7 +733,7 @@ items:
   summary: Compares the values of two nodes, including the values of all descendant nodes.
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", Justification = "Reviewed.")] public static bool DeepEquals(XNode n1, XNode n2)'
+      CSharp: public static bool DeepEquals(XNode n1, XNode n2)
     parameters:
     - id: n1
       type:
@@ -683,6 +749,10 @@ items:
       description: The second node to compare.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: true if the nodes are equal, false otherwise.
   id: System.Xml.Linq.XNode.DeepEquals(System.Xml.Linq.XNode,System.Xml.Linq.XNode)
 - uid: System.Xml.Linq.XNode.WriteTo(XmlWriter)
@@ -697,7 +767,7 @@ items:
   summary: Write the current node to an @!:XmlWriter-.
   syntax:
     content:
-      CSharp: public abstract void WriteTo(XmlWriter writer);
+      CSharp: public abstract void WriteTo(XmlWriter writer)
     parameters:
     - id: writer
       type:

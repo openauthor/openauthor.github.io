@@ -6,26 +6,27 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/ViewUserControl.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/ViewUserControl.cs
     startLine: 11
   syntax:
     content:
-      CSharp: public class ViewUserControl
+      CSharp: 'public class ViewUserControl : UserControl, IComponent, IDisposable, IParserAccessor, IUrlResolutionService, IDataBindingsAccessor, IControlBuilderAccessor, IControlDesignerAccessor, IExpressionsAccessor, IFilterResolutionService, IAttributeAccessor, INonBindingContainer, INamingContainer, IUserControlDesignerAccessor, IViewDataContainer'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.UI.Control
-    name: System.Web.UI.Control
+    name: Control
     isExternal: true
   - id: System.Web.UI.TemplateControl
-    name: System.Web.UI.TemplateControl
+    name: TemplateControl
     isExternal: true
   - id: System.Web.UI.UserControl
-    name: System.Web.UI.UserControl
+    name: UserControl
     isExternal: true
   id: System.Web.Mvc.ViewUserControl
   children:
@@ -39,6 +40,8 @@ items:
   - System.Web.Mvc.ViewUserControl.ViewData
   - System.Web.Mvc.ViewUserControl.ViewDataKey
   - System.Web.Mvc.ViewUserControl.Writer
+  - System.Web.Mvc.ViewUserControl.SetViewData(System.Web.Mvc.ViewDataDictionary)
+  - System.Web.Mvc.ViewUserControl.EnsureViewData
   - System.Web.Mvc.ViewUserControl.RenderView(System.Web.Mvc.ViewContext)
   - System.Web.Mvc.ViewUserControl.SetTextWriter(System.IO.TextWriter)
 - uid: System.Web.Mvc.ViewUserControl.Ajax
@@ -57,7 +60,7 @@ items:
     - id: Ajax
       type:
         id: System.Web.Mvc.AjaxHelper{System.Object}
-        name: AjaxHelper
+        name: AjaxHelper<object>
         href: System.Web.Mvc.AjaxHelper{System.Object}
   id: System.Web.Mvc.ViewUserControl.Ajax
 - uid: System.Web.Mvc.ViewUserControl.Html
@@ -76,7 +79,7 @@ items:
     - id: Html
       type:
         id: System.Web.Mvc.HtmlHelper{System.Object}
-        name: HtmlHelper
+        name: HtmlHelper<object>
         href: System.Web.Mvc.HtmlHelper{System.Object}
   id: System.Web.Mvc.ViewUserControl.Html
 - uid: System.Web.Mvc.ViewUserControl.Model
@@ -95,7 +98,7 @@ items:
     - id: Model
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.Web.Mvc.ViewUserControl.Model
 - uid: System.Web.Mvc.ViewUserControl.TempData
@@ -151,6 +154,7 @@ items:
     parameters:
     - id: ViewBag
       type:
+        name: dynamic
         isExternal: true
   id: System.Web.Mvc.ViewUserControl.ViewBag
 - uid: System.Web.Mvc.ViewUserControl.ViewContext
@@ -207,7 +211,7 @@ items:
     - id: ViewDataKey
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.ViewUserControl.ViewDataKey
 - uid: System.Web.Mvc.ViewUserControl.Writer
@@ -226,9 +230,42 @@ items:
     - id: Writer
       type:
         id: System.Web.UI.HtmlTextWriter
-        name: System.Web.UI.HtmlTextWriter
+        name: HtmlTextWriter
         isExternal: true
   id: System.Web.Mvc.ViewUserControl.Writer
+- uid: System.Web.Mvc.ViewUserControl.SetViewData(System.Web.Mvc.ViewDataDictionary)
+  href: System.Web.Mvc.ViewUserControl.yml
+  name: SetViewData(ViewDataDictionary)
+  fullName: System.Web.Mvc.ViewUserControl.SetViewData(System.Web.Mvc.ViewDataDictionary)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ViewUserControl.cs
+    startLine: 118
+  syntax:
+    content:
+      CSharp: protected virtual void SetViewData(ViewDataDictionary viewData)
+    parameters:
+    - id: viewData
+      type:
+        id: System.Web.Mvc.ViewDataDictionary
+        name: ViewDataDictionary
+        href: System.Web.Mvc.ViewDataDictionary.yml
+  id: System.Web.Mvc.ViewUserControl.SetViewData(System.Web.Mvc.ViewDataDictionary)
+- uid: System.Web.Mvc.ViewUserControl.EnsureViewData
+  href: System.Web.Mvc.ViewUserControl.yml
+  name: EnsureViewData()
+  fullName: System.Web.Mvc.ViewUserControl.EnsureViewData()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ViewUserControl.cs
+    startLine: 123
+  syntax:
+    content:
+      CSharp: protected void EnsureViewData()
+    parameters: []
+  id: System.Web.Mvc.ViewUserControl.EnsureViewData
 - uid: System.Web.Mvc.ViewUserControl.RenderView(System.Web.Mvc.ViewContext)
   href: System.Web.Mvc.ViewUserControl.yml
   name: RenderView(ViewContext)
@@ -259,11 +296,11 @@ items:
     startLine: 188
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId = "textWriter", Justification = "This method existed in MVC 1.0 and has been deprecated.")] [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Justification = "This method existed in MVC 1.0 and has been deprecated.")] [Obsolete("The TextWriter is now provided by the ViewContext object passed to the RenderView method.", true /* error */)] public void SetTextWriter(TextWriter textWriter)'
+      CSharp: public void SetTextWriter(TextWriter textWriter)
     parameters:
     - id: textWriter
       type:
         id: System.IO.TextWriter
-        name: System.IO.TextWriter
+        name: TextWriter
         isExternal: true
   id: System.Web.Mvc.ViewUserControl.SetTextWriter(System.IO.TextWriter)

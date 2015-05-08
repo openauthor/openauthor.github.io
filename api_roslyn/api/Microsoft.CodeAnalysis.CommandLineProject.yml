@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Desktop/Workspace/CommandLineProject.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Desktop/Workspace/CommandLineProject.cs
-    startLine: 17
+    startLine: 16
   syntax:
     content:
-      CSharp: public static class CommandLineProject
+      CSharp: public class CommandLineProject
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.CommandLineProject
   children:
@@ -30,7 +31,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Desktop/Workspace/CommandLineProject.cs
-    startLine: 22
+    startLine: 21
   summary: Create a [Microsoft.CodeAnalysis.ProjectInfo](Microsoft.CodeAnalysis.ProjectInfo.yml) structure initialized from a compilers command line arguments.
   syntax:
     content:
@@ -39,22 +40,22 @@ items:
     - id: projectName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: language
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: commandLineArgs
       type:
         id: System.Collections.Generic.IEnumerable{System.String}
-        name: System.Collections.Generic.IEnumerable{System.String}
+        name: IEnumerable<string>
         isExternal: true
     - id: projectDirectory
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: workspace
       type:
@@ -63,6 +64,10 @@ items:
         href: Microsoft.CodeAnalysis.Workspace.yml
     return:
       id: ProjectInfo
+      type:
+        id: Microsoft.CodeAnalysis.ProjectInfo
+        name: ProjectInfo
+        href: Microsoft.CodeAnalysis.ProjectInfo.yml
   id: Microsoft.CodeAnalysis.CommandLineProject.CreateProjectInfo(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.String,Microsoft.CodeAnalysis.Workspace)
 - uid: Microsoft.CodeAnalysis.CommandLineProject.CreateProjectInfo(System.String,System.String,System.String,System.String,Microsoft.CodeAnalysis.Workspace)
   href: Microsoft.CodeAnalysis.CommandLineProject.yml
@@ -72,7 +77,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Desktop/Workspace/CommandLineProject.cs
-    startLine: 165
+    startLine: 169
   summary: Create a [Microsoft.CodeAnalysis.ProjectInfo](Microsoft.CodeAnalysis.ProjectInfo.yml) structure initialized with data from a compiler command line.
   syntax:
     content:
@@ -81,22 +86,22 @@ items:
     - id: projectName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: language
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: commandLine
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: baseDirectory
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: workspace
       type:
@@ -105,4 +110,8 @@ items:
         href: Microsoft.CodeAnalysis.Workspace.yml
     return:
       id: ProjectInfo
+      type:
+        id: Microsoft.CodeAnalysis.ProjectInfo
+        name: ProjectInfo
+        href: Microsoft.CodeAnalysis.ProjectInfo.yml
   id: Microsoft.CodeAnalysis.CommandLineProject.CreateProjectInfo(System.String,System.String,System.String,System.String,Microsoft.CodeAnalysis.Workspace)

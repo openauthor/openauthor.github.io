@@ -6,17 +6,19 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableStack.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableStack.cs
     startLine: 13
   summary: A set of initialization methods for instances of [System.Collections.Immutable.ImmutableStack`1](System.Collections.Immutable.ImmutableStack`1.yml).
   syntax:
     content:
-      CSharp: public static class ImmutableStack
+      CSharp: public class ImmutableStack
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Collections.Immutable.ImmutableStack
   children:
@@ -37,10 +39,14 @@ items:
   summary: Returns an empty collection.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableStack<T> Create<T>()'
+      CSharp: public static ImmutableStack<T> Create<T>()
     parameters: []
     return:
       id: ImmutableStack
+      type:
+        id: System.Collections.Immutable.ImmutableStack{``0}
+        name: ImmutableStack<T>
+        href: System.Collections.Immutable.ImmutableStack{``0}
       description: The immutable collection.
   id: System.Collections.Immutable.ImmutableStack.Create``1
 - uid: System.Collections.Immutable.ImmutableStack.Create``1(``0)
@@ -55,7 +61,7 @@ items:
   summary: Creates a new immutable collection prefilled with the specified item.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableStack<T> Create<T>(T item)'
+      CSharp: public static ImmutableStack<T> Create<T>(T item)
     parameters:
     - id: item
       type:
@@ -65,6 +71,10 @@ items:
       description: The item to prepopulate.
     return:
       id: ImmutableStack
+      type:
+        id: System.Collections.Immutable.ImmutableStack{``0}
+        name: ImmutableStack<T>
+        href: System.Collections.Immutable.ImmutableStack{``0}
       description: The new immutable collection.
   id: System.Collections.Immutable.ImmutableStack.Create``1(``0)
 - uid: System.Collections.Immutable.ImmutableStack.CreateRange``1(System.Collections.Generic.IEnumerable{``0})
@@ -79,16 +89,20 @@ items:
   summary: Creates a new immutable collection prefilled with the specified items.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableStack<T> CreateRange<T>(IEnumerable<T> items)'
+      CSharp: public static ImmutableStack<T> CreateRange<T>(IEnumerable<T> items)
     parameters:
     - id: items
       type:
         id: System.Collections.Generic.IEnumerable{``0}
-        name: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<T>
         isExternal: true
       description: The items to prepopulate.
     return:
       id: ImmutableStack
+      type:
+        id: System.Collections.Immutable.ImmutableStack{``0}
+        name: ImmutableStack<T>
+        href: System.Collections.Immutable.ImmutableStack{``0}
       description: The new immutable collection.
   id: System.Collections.Immutable.ImmutableStack.CreateRange``1(System.Collections.Generic.IEnumerable{``0})
 - uid: System.Collections.Immutable.ImmutableStack.Create``1(``0[])
@@ -103,16 +117,20 @@ items:
   summary: Creates a new immutable collection prefilled with the specified items.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableStack<T> Create<T>(params T[] items)'
+      CSharp: public static ImmutableStack<T> Create<T>(params T[] items)
     parameters:
     - id: items
       type:
         id: System.Array
-        name: System.Array
+        name: T[]
         isExternal: true
       description: The items to prepopulate.
     return:
       id: ImmutableStack
+      type:
+        id: System.Collections.Immutable.ImmutableStack{``0}
+        name: ImmutableStack<T>
+        href: System.Collections.Immutable.ImmutableStack{``0}
       description: The new immutable collection.
   id: System.Collections.Immutable.ImmutableStack.Create``1(``0[])
 - uid: System.Collections.Immutable.ImmutableStack.Pop``1(System.Collections.Immutable.IImmutableStack{``0},``0@)
@@ -127,12 +145,12 @@ items:
   summary: Pops the top element off the stack.
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1021:AvoidOutParameters", MessageId = "1#")] [Pure] public static IImmutableStack<T> Pop<T>(this IImmutableStack<T> stack, out T value)'
+      CSharp: public static IImmutableStack<T> Pop<T>(IImmutableStack<T> stack, out T value)
     parameters:
     - id: stack
       type:
         id: System.Collections.Immutable.IImmutableStack{``0}
-        name: IImmutableStack
+        name: IImmutableStack<T>
         href: System.Collections.Immutable.IImmutableStack{``0}
       description: The stack to modify.
     - id: value
@@ -143,5 +161,9 @@ items:
       description: The value that was removed from the stack.
     return:
       id: IImmutableStack
+      type:
+        id: System.Collections.Immutable.IImmutableStack{``0}
+        name: IImmutableStack<T>
+        href: System.Collections.Immutable.IImmutableStack{``0}
       description: A stack; never null
   id: System.Collections.Immutable.ImmutableStack.Pop``1(System.Collections.Immutable.IImmutableStack{``0},``0@)

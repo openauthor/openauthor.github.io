@@ -1,0 +1,247 @@
+items:
+- uid: System.Linq.Expressions.TryExpression
+  href: System.Linq.Expressions.TryExpression.yml
+  name: TryExpression
+  fullName: System.Linq.Expressions.TryExpression
+  type: Class
+  source:
+    remote: &o0
+      path: src/System.Linq.Expressions/src/System/Linq/Expressions/TryExpression.cs
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
+    path: src/System.Linq.Expressions/src/System/Linq/Expressions/TryExpression.cs
+    startLine: 21
+  summary: >-
+    Represents a try/catch/finally/fault block.
+
+
+
+    The body is protected by the try block.
+
+    The handlers consist of a set of [System.Linq.Expressions.CatchBlock](System.Linq.Expressions.CatchBlock.yml)s that can either be catch or filters.
+
+    The fault runs if an exception is thrown.
+
+    The finally runs regardless of how control exits the body.
+
+    Only one of fault or finally can be supplied.
+
+    The return type of the try block must match the return type of any associated catch statements.
+  syntax:
+    content:
+      CSharp: 'public sealed class TryExpression : Expression'
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.Linq.Expressions.Expression
+    name: Expression
+    href: System.Linq.Expressions.Expression.yml
+  id: System.Linq.Expressions.TryExpression
+  children:
+  - System.Linq.Expressions.TryExpression.Type
+  - System.Linq.Expressions.TryExpression.NodeType
+  - System.Linq.Expressions.TryExpression.Body
+  - System.Linq.Expressions.TryExpression.Handlers
+  - System.Linq.Expressions.TryExpression.Finally
+  - System.Linq.Expressions.TryExpression.Fault
+  - System.Linq.Expressions.TryExpression.Accept(System.Linq.Expressions.ExpressionVisitor)
+  - System.Linq.Expressions.TryExpression.Update(System.Linq.Expressions.Expression,System.Collections.Generic.IEnumerable{System.Linq.Expressions.CatchBlock},System.Linq.Expressions.Expression,System.Linq.Expressions.Expression)
+- uid: System.Linq.Expressions.TryExpression.Type
+  href: System.Linq.Expressions.TryExpression.yml
+  name: Type
+  fullName: System.Linq.Expressions.TryExpression.Type
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Linq.Expressions/src/System/Linq/Expressions/TryExpression.cs
+    startLine: 43
+  summary: Gets the static type of the expression that this [System.Linq.Expressions.Expression](System.Linq.Expressions.Expression.yml) represents. (Inherited from [System.Linq.Expressions.Expression](System.Linq.Expressions.Expression.yml).)
+  syntax:
+    content:
+      CSharp: public sealed override Type Type { get; }
+    parameters:
+    - id: Type
+      type:
+        id: System.Type
+        name: Type
+        isExternal: true
+  id: System.Linq.Expressions.TryExpression.Type
+- uid: System.Linq.Expressions.TryExpression.NodeType
+  href: System.Linq.Expressions.TryExpression.yml
+  name: NodeType
+  fullName: System.Linq.Expressions.TryExpression.NodeType
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Linq.Expressions/src/System/Linq/Expressions/TryExpression.cs
+    startLine: 52
+  summary: Returns the node type of this [System.Linq.Expressions.Expression](System.Linq.Expressions.Expression.yml). (Inherited from [System.Linq.Expressions.Expression](System.Linq.Expressions.Expression.yml).)
+  syntax:
+    content:
+      CSharp: public sealed override ExpressionType NodeType { get; }
+    parameters:
+    - id: NodeType
+      type:
+        id: System.Linq.Expressions.ExpressionType
+        name: ExpressionType
+        href: System.Linq.Expressions.ExpressionType.yml
+  id: System.Linq.Expressions.TryExpression.NodeType
+- uid: System.Linq.Expressions.TryExpression.Body
+  href: System.Linq.Expressions.TryExpression.yml
+  name: Body
+  fullName: System.Linq.Expressions.TryExpression.Body
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Linq.Expressions/src/System/Linq/Expressions/TryExpression.cs
+    startLine: 60
+  summary: Gets the [System.Linq.Expressions.Expression](System.Linq.Expressions.Expression.yml) representing the body of the try block.
+  syntax:
+    content:
+      CSharp: public Expression Body { get; }
+    parameters:
+    - id: Body
+      type:
+        id: System.Linq.Expressions.Expression
+        name: Expression
+        href: System.Linq.Expressions.Expression.yml
+  id: System.Linq.Expressions.TryExpression.Body
+- uid: System.Linq.Expressions.TryExpression.Handlers
+  href: System.Linq.Expressions.TryExpression.yml
+  name: Handlers
+  fullName: System.Linq.Expressions.TryExpression.Handlers
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Linq.Expressions/src/System/Linq/Expressions/TryExpression.cs
+    startLine: 68
+  summary: Gets the collection of [System.Linq.Expressions.CatchBlock](System.Linq.Expressions.CatchBlock.yml)s associated with the try block.
+  syntax:
+    content:
+      CSharp: public ReadOnlyCollection<CatchBlock> Handlers { get; }
+    parameters:
+    - id: Handlers
+      type:
+        id: System.Collections.ObjectModel.ReadOnlyCollection{System.Linq.Expressions.CatchBlock}
+        name: ReadOnlyCollection<CatchBlock>
+        isExternal: true
+  id: System.Linq.Expressions.TryExpression.Handlers
+- uid: System.Linq.Expressions.TryExpression.Finally
+  href: System.Linq.Expressions.TryExpression.yml
+  name: Finally
+  fullName: System.Linq.Expressions.TryExpression.Finally
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Linq.Expressions/src/System/Linq/Expressions/TryExpression.cs
+    startLine: 76
+  summary: Gets the [System.Linq.Expressions.Expression](System.Linq.Expressions.Expression.yml) representing the finally block.
+  syntax:
+    content:
+      CSharp: public Expression Finally { get; }
+    parameters:
+    - id: Finally
+      type:
+        id: System.Linq.Expressions.Expression
+        name: Expression
+        href: System.Linq.Expressions.Expression.yml
+  id: System.Linq.Expressions.TryExpression.Finally
+- uid: System.Linq.Expressions.TryExpression.Fault
+  href: System.Linq.Expressions.TryExpression.yml
+  name: Fault
+  fullName: System.Linq.Expressions.TryExpression.Fault
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Linq.Expressions/src/System/Linq/Expressions/TryExpression.cs
+    startLine: 84
+  summary: Gets the [System.Linq.Expressions.Expression](System.Linq.Expressions.Expression.yml) representing the fault block.
+  syntax:
+    content:
+      CSharp: public Expression Fault { get; }
+    parameters:
+    - id: Fault
+      type:
+        id: System.Linq.Expressions.Expression
+        name: Expression
+        href: System.Linq.Expressions.Expression.yml
+  id: System.Linq.Expressions.TryExpression.Fault
+- uid: System.Linq.Expressions.TryExpression.Accept(System.Linq.Expressions.ExpressionVisitor)
+  href: System.Linq.Expressions.TryExpression.yml
+  name: Accept(ExpressionVisitor)
+  fullName: System.Linq.Expressions.TryExpression.Accept(System.Linq.Expressions.ExpressionVisitor)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Linq.Expressions/src/System/Linq/Expressions/TryExpression.cs
+    startLine: 92
+  summary: Dispatches to the specific visit method for this node type.
+  syntax:
+    content:
+      CSharp: protected internal override Expression Accept(ExpressionVisitor visitor)
+    parameters:
+    - id: visitor
+      type:
+        id: System.Linq.Expressions.ExpressionVisitor
+        name: ExpressionVisitor
+        href: System.Linq.Expressions.ExpressionVisitor.yml
+    return:
+      id: Expression
+      type:
+        id: System.Linq.Expressions.Expression
+        name: Expression
+        href: System.Linq.Expressions.Expression.yml
+  id: System.Linq.Expressions.TryExpression.Accept(System.Linq.Expressions.ExpressionVisitor)
+- uid: System.Linq.Expressions.TryExpression.Update(System.Linq.Expressions.Expression,System.Collections.Generic.IEnumerable{System.Linq.Expressions.CatchBlock},System.Linq.Expressions.Expression,System.Linq.Expressions.Expression)
+  href: System.Linq.Expressions.TryExpression.yml
+  name: Update(Expression, IEnumerable<CatchBlock>, Expression, Expression)
+  fullName: System.Linq.Expressions.TryExpression.Update(System.Linq.Expressions.Expression, System.Collections.Generic.IEnumerable<System.Linq.Expressions.CatchBlock>, System.Linq.Expressions.Expression, System.Linq.Expressions.Expression)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Linq.Expressions/src/System/Linq/Expressions/TryExpression.cs
+    startLine: 107
+  summary: >-
+    Creates a new expression that is like this one, but using the
+
+    supplied children. If all of the children are the same, it will
+
+    return this expression.
+  syntax:
+    content:
+      CSharp: public TryExpression Update(Expression body, IEnumerable<CatchBlock> handlers, Expression finally, Expression fault)
+    parameters:
+    - id: body
+      type:
+        id: System.Linq.Expressions.Expression
+        name: Expression
+        href: System.Linq.Expressions.Expression.yml
+      description: The [System.Linq.Expressions.TryExpression.Body](System.Linq.Expressions.TryExpression.yml) property of the result.
+    - id: handlers
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Linq.Expressions.CatchBlock}
+        name: IEnumerable<CatchBlock>
+        isExternal: true
+      description: The [System.Linq.Expressions.TryExpression.Handlers](System.Linq.Expressions.TryExpression.yml) property of the result.
+    - id: finally
+      type:
+        id: System.Linq.Expressions.Expression
+        name: Expression
+        href: System.Linq.Expressions.Expression.yml
+      description: The [System.Linq.Expressions.TryExpression.Finally](System.Linq.Expressions.TryExpression.yml) property of the result.
+    - id: fault
+      type:
+        id: System.Linq.Expressions.Expression
+        name: Expression
+        href: System.Linq.Expressions.Expression.yml
+      description: The [System.Linq.Expressions.TryExpression.Fault](System.Linq.Expressions.TryExpression.yml) property of the result.
+    return:
+      id: TryExpression
+      type:
+        id: System.Linq.Expressions.TryExpression
+        name: TryExpression
+        href: System.Linq.Expressions.TryExpression.yml
+      description: This expression if no children changed, or an expression with the updated children.
+  id: System.Linq.Expressions.TryExpression.Update(System.Linq.Expressions.Expression,System.Collections.Generic.IEnumerable{System.Linq.Expressions.CatchBlock},System.Linq.Expressions.Expression,System.Linq.Expressions.Expression)

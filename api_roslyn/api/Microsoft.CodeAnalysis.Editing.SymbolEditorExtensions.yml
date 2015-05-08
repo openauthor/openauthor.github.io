@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Editing/SymbolEditorExtensions.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Editing/SymbolEditorExtensions.cs
     startLine: 12
   syntax:
     content:
-      CSharp: public static class SymbolEditorExtensions
+      CSharp: public class SymbolEditorExtensions
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.Editing.SymbolEditorExtensions
   children:
@@ -35,7 +36,7 @@ items:
   summary: Gets the reference to the declaration of the base or interface type as part of the symbol's declaration.
   syntax:
     content:
-      CSharp: public static async Task<SyntaxNode> GetBaseOrInterfaceDeclarationReferenceAsync(this SymbolEditor editor, ISymbol symbol, ITypeSymbol baseOrInterfaceType, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public static Task<SyntaxNode> GetBaseOrInterfaceDeclarationReferenceAsync(SymbolEditor editor, ISymbol symbol, ITypeSymbol baseOrInterfaceType, CancellationToken cancellationToken = null)
     parameters:
     - id: editor
       type:
@@ -55,10 +56,14 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.CodeAnalysis.SyntaxNode}
+        name: Task<SyntaxNode>
+        isExternal: true
   id: Microsoft.CodeAnalysis.Editing.SymbolEditorExtensions.GetBaseOrInterfaceDeclarationReferenceAsync(Microsoft.CodeAnalysis.Editing.SymbolEditor,Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.ITypeSymbol,System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.Editing.SymbolEditorExtensions.SetBaseTypeAsync(Microsoft.CodeAnalysis.Editing.SymbolEditor,Microsoft.CodeAnalysis.INamedTypeSymbol,System.Func{Microsoft.CodeAnalysis.Editing.SyntaxGenerator,Microsoft.CodeAnalysis.SyntaxNode},System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.Editing.SymbolEditorExtensions.yml
@@ -72,7 +77,7 @@ items:
   summary: Changes the base type of the symbol.
   syntax:
     content:
-      CSharp: public static async Task<ISymbol> SetBaseTypeAsync(this SymbolEditor editor, INamedTypeSymbol symbol, Func<SyntaxGenerator, SyntaxNode> getNewBaseType, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public static Task<ISymbol> SetBaseTypeAsync(SymbolEditor editor, INamedTypeSymbol symbol, Func<SyntaxGenerator, SyntaxNode> getNewBaseType, CancellationToken cancellationToken = null)
     parameters:
     - id: editor
       type:
@@ -87,15 +92,19 @@ items:
     - id: getNewBaseType
       type:
         id: System.Func{Microsoft.CodeAnalysis.Editing.SyntaxGenerator,Microsoft.CodeAnalysis.SyntaxNode}
-        name: System.Func{Microsoft.CodeAnalysis.Editing.SyntaxGenerator,Microsoft.CodeAnalysis.SyntaxNode}
+        name: Func<SyntaxGenerator, SyntaxNode>
         isExternal: true
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.CodeAnalysis.ISymbol}
+        name: Task<ISymbol>
+        isExternal: true
   id: Microsoft.CodeAnalysis.Editing.SymbolEditorExtensions.SetBaseTypeAsync(Microsoft.CodeAnalysis.Editing.SymbolEditor,Microsoft.CodeAnalysis.INamedTypeSymbol,System.Func{Microsoft.CodeAnalysis.Editing.SyntaxGenerator,Microsoft.CodeAnalysis.SyntaxNode},System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.Editing.SymbolEditorExtensions.SetBaseTypeAsync(Microsoft.CodeAnalysis.Editing.SymbolEditor,Microsoft.CodeAnalysis.INamedTypeSymbol,Microsoft.CodeAnalysis.ITypeSymbol,System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.Editing.SymbolEditorExtensions.yml
@@ -109,7 +118,7 @@ items:
   summary: Changes the base type of the symbol.
   syntax:
     content:
-      CSharp: public static Task<ISymbol> SetBaseTypeAsync(this SymbolEditor editor, INamedTypeSymbol symbol, ITypeSymbol newBaseType, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public static Task<ISymbol> SetBaseTypeAsync(SymbolEditor editor, INamedTypeSymbol symbol, ITypeSymbol newBaseType, CancellationToken cancellationToken = null)
     parameters:
     - id: editor
       type:
@@ -129,8 +138,12 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.CodeAnalysis.ISymbol}
+        name: Task<ISymbol>
+        isExternal: true
   id: Microsoft.CodeAnalysis.Editing.SymbolEditorExtensions.SetBaseTypeAsync(Microsoft.CodeAnalysis.Editing.SymbolEditor,Microsoft.CodeAnalysis.INamedTypeSymbol,Microsoft.CodeAnalysis.ITypeSymbol,System.Threading.CancellationToken)

@@ -6,9 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/Async/AsyncManager.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/Async/AsyncManager.cs
     startLine: 7
   syntax:
@@ -16,7 +17,7 @@ items:
       CSharp: public class AsyncManager
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.Async.AsyncManager
   children:
@@ -58,7 +59,7 @@ items:
     - id: syncContext
       type:
         id: System.Threading.SynchronizationContext
-        name: System.Threading.SynchronizationContext
+        name: SynchronizationContext
         isExternal: true
   id: System.Web.Mvc.Async.AsyncManager.#ctor(System.Threading.SynchronizationContext)
 - uid: System.Web.Mvc.Async.AsyncManager.Finished
@@ -72,7 +73,7 @@ items:
     startLine: 37
   syntax:
     content:
-      CSharp: Finished
+      CSharp: public event EventHandler Finished;
   id: System.Web.Mvc.Async.AsyncManager.Finished
 - uid: System.Web.Mvc.Async.AsyncManager.OutstandingOperations
   href: System.Web.Mvc.Async.AsyncManager.yml
@@ -85,7 +86,7 @@ items:
     startLine: 39
   syntax:
     content:
-      CSharp: public OperationCounter OutstandingOperations { get; private set; }
+      CSharp: public OperationCounter OutstandingOperations { get; }
     parameters:
     - id: OutstandingOperations
       type:
@@ -104,12 +105,12 @@ items:
     startLine: 41
   syntax:
     content:
-      CSharp: public IDictionary<string, object> Parameters { get; private set; }
+      CSharp: public IDictionary<string, object> Parameters { get; }
     parameters:
     - id: Parameters
       type:
         id: System.Collections.Generic.IDictionary{System.String,System.Object}
-        name: System.Collections.Generic.IDictionary{System.String,System.Object}
+        name: IDictionary<string, object>
         isExternal: true
   id: System.Web.Mvc.Async.AsyncManager.Parameters
 - uid: System.Web.Mvc.Async.AsyncManager.Timeout
@@ -129,7 +130,7 @@ items:
     - id: Timeout
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Web.Mvc.Async.AsyncManager.Timeout
 - uid: System.Web.Mvc.Async.AsyncManager.Finish
@@ -167,6 +168,6 @@ items:
     - id: action
       type:
         id: System.Action
-        name: System.Action
+        name: Action
         isExternal: true
   id: System.Web.Mvc.Async.AsyncManager.Sync(System.Action)

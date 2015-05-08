@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Formatting/FormattingOptions.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Formatting/FormattingOptions.cs
     startLine: 6
   syntax:
     content:
-      CSharp: public static class FormattingOptions
+      CSharp: public class FormattingOptions
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.Formatting.FormattingOptions
   children:
@@ -24,7 +25,6 @@ items:
   - Microsoft.CodeAnalysis.Formatting.FormattingOptions.TabSize
   - Microsoft.CodeAnalysis.Formatting.FormattingOptions.IndentationSize
   - Microsoft.CodeAnalysis.Formatting.FormattingOptions.SmartIndent
-  - Microsoft.CodeAnalysis.Formatting.FormattingOptions.UseTabOnlyForIndentation
   - Microsoft.CodeAnalysis.Formatting.FormattingOptions.NewLine
 - uid: Microsoft.CodeAnalysis.Formatting.FormattingOptions.UseTabs
   href: Microsoft.CodeAnalysis.Formatting.FormattingOptions.yml
@@ -37,7 +37,7 @@ items:
     startLine: 12
   syntax:
     content:
-      CSharp: UseTabs
+      CSharp: public static readonly PerLanguageOption<bool> UseTabs;
   id: Microsoft.CodeAnalysis.Formatting.FormattingOptions.UseTabs
 - uid: Microsoft.CodeAnalysis.Formatting.FormattingOptions.TabSize
   href: Microsoft.CodeAnalysis.Formatting.FormattingOptions.yml
@@ -50,7 +50,7 @@ items:
     startLine: 14
   syntax:
     content:
-      CSharp: TabSize
+      CSharp: public static readonly PerLanguageOption<int> TabSize;
   id: Microsoft.CodeAnalysis.Formatting.FormattingOptions.TabSize
 - uid: Microsoft.CodeAnalysis.Formatting.FormattingOptions.IndentationSize
   href: Microsoft.CodeAnalysis.Formatting.FormattingOptions.yml
@@ -63,7 +63,7 @@ items:
     startLine: 16
   syntax:
     content:
-      CSharp: IndentationSize
+      CSharp: public static readonly PerLanguageOption<int> IndentationSize;
   id: Microsoft.CodeAnalysis.Formatting.FormattingOptions.IndentationSize
 - uid: Microsoft.CodeAnalysis.Formatting.FormattingOptions.SmartIndent
   href: Microsoft.CodeAnalysis.Formatting.FormattingOptions.yml
@@ -76,21 +76,8 @@ items:
     startLine: 18
   syntax:
     content:
-      CSharp: SmartIndent
+      CSharp: public static readonly PerLanguageOption<IndentStyle> SmartIndent;
   id: Microsoft.CodeAnalysis.Formatting.FormattingOptions.SmartIndent
-- uid: Microsoft.CodeAnalysis.Formatting.FormattingOptions.UseTabOnlyForIndentation
-  href: Microsoft.CodeAnalysis.Formatting.FormattingOptions.yml
-  name: UseTabOnlyForIndentation
-  fullName: Microsoft.CodeAnalysis.Formatting.FormattingOptions.UseTabOnlyForIndentation
-  type: Field
-  source:
-    remote: *o0
-    path: src/Workspaces/Core/Portable/Formatting/FormattingOptions.cs
-    startLine: 20
-  syntax:
-    content:
-      CSharp: UseTabOnlyForIndentation
-  id: Microsoft.CodeAnalysis.Formatting.FormattingOptions.UseTabOnlyForIndentation
 - uid: Microsoft.CodeAnalysis.Formatting.FormattingOptions.NewLine
   href: Microsoft.CodeAnalysis.Formatting.FormattingOptions.yml
   name: NewLine
@@ -99,8 +86,8 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Formatting/FormattingOptions.cs
-    startLine: 22
+    startLine: 20
   syntax:
     content:
-      CSharp: NewLine
+      CSharp: public static readonly PerLanguageOption<string> NewLine;
   id: Microsoft.CodeAnalysis.Formatting.FormattingOptions.NewLine

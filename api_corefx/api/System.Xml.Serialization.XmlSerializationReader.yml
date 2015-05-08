@@ -5,19 +5,1441 @@ items:
   fullName: System.Xml.Serialization.XmlSerializationReader
   type: Class
   source:
-    remote:
+    remote: &o0
+      path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
     startLine: 32
   syntax:
     content:
-      CSharp: public abstract class XmlSerializationReader
+      CSharp: 'public abstract class XmlSerializationReader : XmlSerializationGeneratedCode'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Xml.Serialization.XmlSerializationGeneratedCode
     name: XmlSerializationGeneratedCode
     href: System.Xml.Serialization.XmlSerializationGeneratedCode.yml
   id: System.Xml.Serialization.XmlSerializationReader
+  children:
+  - System.Xml.Serialization.XmlSerializationReader.InitIDs
+  - System.Xml.Serialization.XmlSerializationReader.DecodeName
+  - System.Xml.Serialization.XmlSerializationReader.Reader
+  - System.Xml.Serialization.XmlSerializationReader.Document
+  - System.Xml.Serialization.XmlSerializationReader.ReaderCount
+  - System.Xml.Serialization.XmlSerializationReader.GetXsiType
+  - System.Xml.Serialization.XmlSerializationReader.ReadTypedPrimitive(XmlQualifiedName)
+  - System.Xml.Serialization.XmlSerializationReader.ReadTypedNull(XmlQualifiedName)
+  - System.Xml.Serialization.XmlSerializationReader.IsXmlnsAttribute(System.String)
+  - System.Xml.Serialization.XmlSerializationReader.ParseWsdlArrayType(XmlAttribute)
+  - System.Xml.Serialization.XmlSerializationReader.IsReturnValue
+  - System.Xml.Serialization.XmlSerializationReader.ReadNull
+  - System.Xml.Serialization.XmlSerializationReader.GetNullAttr
+  - System.Xml.Serialization.XmlSerializationReader.ReadNullableString
+  - System.Xml.Serialization.XmlSerializationReader.ReadNullableQualifiedName
+  - System.Xml.Serialization.XmlSerializationReader.ReadElementQualifiedName
+  - System.Xml.Serialization.XmlSerializationReader.ReadXmlDocument(System.Boolean)
+  - System.Xml.Serialization.XmlSerializationReader.CollapseWhitespace(System.String)
+  - System.Xml.Serialization.XmlSerializationReader.ReadXmlNode(System.Boolean)
+  - System.Xml.Serialization.XmlSerializationReader.ToByteArrayBase64(System.String)
+  - System.Xml.Serialization.XmlSerializationReader.ToByteArrayBase64(System.Boolean)
+  - System.Xml.Serialization.XmlSerializationReader.ToByteArrayHex(System.String)
+  - System.Xml.Serialization.XmlSerializationReader.ToByteArrayHex(System.Boolean)
+  - System.Xml.Serialization.XmlSerializationReader.ToDateTime(System.String)
+  - System.Xml.Serialization.XmlSerializationReader.ToDate(System.String)
+  - System.Xml.Serialization.XmlSerializationReader.ToTime(System.String)
+  - System.Xml.Serialization.XmlSerializationReader.ToChar(System.String)
+  - System.Xml.Serialization.XmlSerializationReader.ToEnum(System.String,System.Collections.IDictionary,System.String)
+  - System.Xml.Serialization.XmlSerializationReader.ToXmlName(System.String)
+  - System.Xml.Serialization.XmlSerializationReader.ToXmlNCName(System.String)
+  - System.Xml.Serialization.XmlSerializationReader.ToXmlNmToken(System.String)
+  - System.Xml.Serialization.XmlSerializationReader.ToXmlNmTokens(System.String)
+  - System.Xml.Serialization.XmlSerializationReader.ToXmlQualifiedName(System.String)
+  - System.Xml.Serialization.XmlSerializationReader.UnknownNode(System.Object)
+  - System.Xml.Serialization.XmlSerializationReader.UnknownNode(System.Object,System.String)
+  - System.Xml.Serialization.XmlSerializationReader.CreateUnknownTypeException(XmlQualifiedName)
+  - System.Xml.Serialization.XmlSerializationReader.CreateReadOnlyCollectionException(System.String)
+  - System.Xml.Serialization.XmlSerializationReader.CreateAbstractTypeException(System.String,System.String)
+  - System.Xml.Serialization.XmlSerializationReader.CreateInaccessibleConstructorException(System.String)
+  - System.Xml.Serialization.XmlSerializationReader.CreateCtorHasSecurityException(System.String)
+  - System.Xml.Serialization.XmlSerializationReader.CreateUnknownNodeException
+  - System.Xml.Serialization.XmlSerializationReader.CreateUnknownConstantException(System.String,System.Type)
+  - System.Xml.Serialization.XmlSerializationReader.CreateInvalidCastException(System.Type,System.Object)
+  - System.Xml.Serialization.XmlSerializationReader.CreateInvalidCastException(System.Type,System.Object,System.String)
+  - System.Xml.Serialization.XmlSerializationReader.CreateBadDerivationException(System.String,System.String,System.String,System.String,System.String,System.String)
+  - System.Xml.Serialization.XmlSerializationReader.CreateMissingIXmlSerializableType(System.String,System.String,System.String)
+  - System.Xml.Serialization.XmlSerializationReader.EnsureArrayIndex(System.Array,System.Int32,System.Type)
+  - System.Xml.Serialization.XmlSerializationReader.ShrinkArray(System.Array,System.Int32,System.Type,System.Boolean)
+  - System.Xml.Serialization.XmlSerializationReader.ReadString(System.String)
+  - System.Xml.Serialization.XmlSerializationReader.ReadString(System.String,System.Boolean)
+  - System.Xml.Serialization.XmlSerializationReader.ReadSerializable(IXmlSerializable)
+  - System.Xml.Serialization.XmlSerializationReader.ReadSerializable(IXmlSerializable,System.Boolean)
+  - System.Xml.Serialization.XmlSerializationReader.InitCallbacks
+  - System.Xml.Serialization.XmlSerializationReader.ReadEndElement
+  - System.Xml.Serialization.XmlSerializationReader.CheckReaderCount(System.Int32@,System.Int32@)
+- uid: System.Xml.Serialization.XmlSerializationReader.InitIDs
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: InitIDs()
+  fullName: System.Xml.Serialization.XmlSerializationReader.InitIDs()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 116
+  syntax:
+    content:
+      CSharp: protected abstract void InitIDs()
+    parameters: []
+  id: System.Xml.Serialization.XmlSerializationReader.InitIDs
+- uid: System.Xml.Serialization.XmlSerializationReader.DecodeName
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: DecodeName
+  fullName: System.Xml.Serialization.XmlSerializationReader.DecodeName
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 150
+  syntax:
+    content:
+      CSharp: protected bool DecodeName { get; set; }
+    parameters:
+    - id: DecodeName
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.DecodeName
+- uid: System.Xml.Serialization.XmlSerializationReader.Reader
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: Reader
+  fullName: System.Xml.Serialization.XmlSerializationReader.Reader
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 163
+  syntax:
+    content:
+      CSharp: protected XmlReader Reader { get; }
+    parameters:
+    - id: Reader
+      type:
+        id: XmlReader
+        name: XmlReader
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.Reader
+- uid: System.Xml.Serialization.XmlSerializationReader.Document
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: Document
+  fullName: System.Xml.Serialization.XmlSerializationReader.Document
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 172
+  syntax:
+    content:
+      CSharp: protected XmlDocument Document { get; }
+    parameters:
+    - id: Document
+      type:
+        id: XmlDocument
+        name: XmlDocument
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.Document
+- uid: System.Xml.Serialization.XmlSerializationReader.ReaderCount
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: ReaderCount
+  fullName: System.Xml.Serialization.XmlSerializationReader.ReaderCount
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 185
+  syntax:
+    content:
+      CSharp: protected int ReaderCount { get; }
+    parameters:
+    - id: ReaderCount
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.ReaderCount
+- uid: System.Xml.Serialization.XmlSerializationReader.GetXsiType
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: GetXsiType()
+  fullName: System.Xml.Serialization.XmlSerializationReader.GetXsiType()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 255
+  syntax:
+    content:
+      CSharp: protected XmlQualifiedName GetXsiType()
+    parameters: []
+    return:
+      id: XmlQualifiedName
+      type:
+        id: XmlQualifiedName
+        name: XmlQualifiedName
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.GetXsiType
+- uid: System.Xml.Serialization.XmlSerializationReader.ReadTypedPrimitive(XmlQualifiedName)
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: ReadTypedPrimitive(XmlQualifiedName)
+  fullName: System.Xml.Serialization.XmlSerializationReader.ReadTypedPrimitive(XmlQualifiedName)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 366
+  syntax:
+    content:
+      CSharp: protected object ReadTypedPrimitive(XmlQualifiedName type)
+    parameters:
+    - id: type
+      type:
+        id: XmlQualifiedName
+        name: XmlQualifiedName
+        isExternal: true
+    return:
+      id: Object
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.ReadTypedPrimitive(XmlQualifiedName)
+- uid: System.Xml.Serialization.XmlSerializationReader.ReadTypedNull(XmlQualifiedName)
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: ReadTypedNull(XmlQualifiedName)
+  fullName: System.Xml.Serialization.XmlSerializationReader.ReadTypedNull(XmlQualifiedName)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 530
+  syntax:
+    content:
+      CSharp: protected object ReadTypedNull(XmlQualifiedName type)
+    parameters:
+    - id: type
+      type:
+        id: XmlQualifiedName
+        name: XmlQualifiedName
+        isExternal: true
+    return:
+      id: Object
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.ReadTypedNull(XmlQualifiedName)
+- uid: System.Xml.Serialization.XmlSerializationReader.IsXmlnsAttribute(System.String)
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: IsXmlnsAttribute(string)
+  fullName: System.Xml.Serialization.XmlSerializationReader.IsXmlnsAttribute(string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 626
+  syntax:
+    content:
+      CSharp: protected bool IsXmlnsAttribute(string name)
+    parameters:
+    - id: name
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.IsXmlnsAttribute(System.String)
+- uid: System.Xml.Serialization.XmlSerializationReader.ParseWsdlArrayType(XmlAttribute)
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: ParseWsdlArrayType(XmlAttribute)
+  fullName: System.Xml.Serialization.XmlSerializationReader.ParseWsdlArrayType(XmlAttribute)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 634
+  syntax:
+    content:
+      CSharp: protected void ParseWsdlArrayType(XmlAttribute attr)
+    parameters:
+    - id: attr
+      type:
+        id: XmlAttribute
+        name: XmlAttribute
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.ParseWsdlArrayType(XmlAttribute)
+- uid: System.Xml.Serialization.XmlSerializationReader.IsReturnValue
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: IsReturnValue
+  fullName: System.Xml.Serialization.XmlSerializationReader.IsReturnValue
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 653
+  syntax:
+    content:
+      CSharp: protected bool IsReturnValue { // value only valid for soap 1.1 get; set; }
+    parameters:
+    - id: IsReturnValue
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.IsReturnValue
+- uid: System.Xml.Serialization.XmlSerializationReader.ReadNull
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: ReadNull()
+  fullName: System.Xml.Serialization.XmlSerializationReader.ReadNull()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 661
+  syntax:
+    content:
+      CSharp: protected bool ReadNull()
+    parameters: []
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.ReadNull
+- uid: System.Xml.Serialization.XmlSerializationReader.GetNullAttr
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: GetNullAttr()
+  fullName: System.Xml.Serialization.XmlSerializationReader.GetNullAttr()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 682
+  syntax:
+    content:
+      CSharp: protected bool GetNullAttr()
+    parameters: []
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.GetNullAttr
+- uid: System.Xml.Serialization.XmlSerializationReader.ReadNullableString
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: ReadNullableString()
+  fullName: System.Xml.Serialization.XmlSerializationReader.ReadNullableString()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 698
+  syntax:
+    content:
+      CSharp: protected string ReadNullableString()
+    parameters: []
+    return:
+      id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.ReadNullableString
+- uid: System.Xml.Serialization.XmlSerializationReader.ReadNullableQualifiedName
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: ReadNullableQualifiedName()
+  fullName: System.Xml.Serialization.XmlSerializationReader.ReadNullableQualifiedName()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 708
+  syntax:
+    content:
+      CSharp: protected XmlQualifiedName ReadNullableQualifiedName()
+    parameters: []
+    return:
+      id: XmlQualifiedName
+      type:
+        id: XmlQualifiedName
+        name: XmlQualifiedName
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.ReadNullableQualifiedName
+- uid: System.Xml.Serialization.XmlSerializationReader.ReadElementQualifiedName
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: ReadElementQualifiedName()
+  fullName: System.Xml.Serialization.XmlSerializationReader.ReadElementQualifiedName()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 718
+  syntax:
+    content:
+      CSharp: protected XmlQualifiedName ReadElementQualifiedName()
+    parameters: []
+    return:
+      id: XmlQualifiedName
+      type:
+        id: XmlQualifiedName
+        name: XmlQualifiedName
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.ReadElementQualifiedName
+- uid: System.Xml.Serialization.XmlSerializationReader.ReadXmlDocument(System.Boolean)
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: ReadXmlDocument(bool)
+  fullName: System.Xml.Serialization.XmlSerializationReader.ReadXmlDocument(bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 732
+  syntax:
+    content:
+      CSharp: protected XmlDocument ReadXmlDocument(bool wrapped)
+    parameters:
+    - id: wrapped
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+    return:
+      id: XmlDocument
+      type:
+        id: XmlDocument
+        name: XmlDocument
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.ReadXmlDocument(System.Boolean)
+- uid: System.Xml.Serialization.XmlSerializationReader.CollapseWhitespace(System.String)
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: CollapseWhitespace(string)
+  fullName: System.Xml.Serialization.XmlSerializationReader.CollapseWhitespace(string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 743
+  syntax:
+    content:
+      CSharp: protected string CollapseWhitespace(string value)
+    parameters:
+    - id: value
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.CollapseWhitespace(System.String)
+- uid: System.Xml.Serialization.XmlSerializationReader.ReadXmlNode(System.Boolean)
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: ReadXmlNode(bool)
+  fullName: System.Xml.Serialization.XmlSerializationReader.ReadXmlNode(bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 750
+  syntax:
+    content:
+      CSharp: protected XmlNode ReadXmlNode(bool wrapped)
+    parameters:
+    - id: wrapped
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+    return:
+      id: XmlNode
+      type:
+        id: XmlNode
+        name: XmlNode
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.ReadXmlNode(System.Boolean)
+- uid: System.Xml.Serialization.XmlSerializationReader.ToByteArrayBase64(System.String)
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: ToByteArrayBase64(string)
+  fullName: System.Xml.Serialization.XmlSerializationReader.ToByteArrayBase64(string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 777
+  syntax:
+    content:
+      CSharp: protected static byte[] ToByteArrayBase64(string value)
+    parameters:
+    - id: value
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      type:
+        id: System.Array
+        name: byte[]
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.ToByteArrayBase64(System.String)
+- uid: System.Xml.Serialization.XmlSerializationReader.ToByteArrayBase64(System.Boolean)
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: ToByteArrayBase64(bool)
+  fullName: System.Xml.Serialization.XmlSerializationReader.ToByteArrayBase64(bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 783
+  syntax:
+    content:
+      CSharp: protected byte[] ToByteArrayBase64(bool isNull)
+    parameters:
+    - id: isNull
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+    return:
+      type:
+        id: System.Array
+        name: byte[]
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.ToByteArrayBase64(System.Boolean)
+- uid: System.Xml.Serialization.XmlSerializationReader.ToByteArrayHex(System.String)
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: ToByteArrayHex(string)
+  fullName: System.Xml.Serialization.XmlSerializationReader.ToByteArrayHex(string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 793
+  syntax:
+    content:
+      CSharp: protected static byte[] ToByteArrayHex(string value)
+    parameters:
+    - id: value
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      type:
+        id: System.Array
+        name: byte[]
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.ToByteArrayHex(System.String)
+- uid: System.Xml.Serialization.XmlSerializationReader.ToByteArrayHex(System.Boolean)
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: ToByteArrayHex(bool)
+  fullName: System.Xml.Serialization.XmlSerializationReader.ToByteArrayHex(bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 799
+  syntax:
+    content:
+      CSharp: protected byte[] ToByteArrayHex(bool isNull)
+    parameters:
+    - id: isNull
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+    return:
+      type:
+        id: System.Array
+        name: byte[]
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.ToByteArrayHex(System.Boolean)
+- uid: System.Xml.Serialization.XmlSerializationReader.ToDateTime(System.String)
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: ToDateTime(string)
+  fullName: System.Xml.Serialization.XmlSerializationReader.ToDateTime(string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 813
+  syntax:
+    content:
+      CSharp: protected static DateTime ToDateTime(string value)
+    parameters:
+    - id: value
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      id: DateTime
+      type:
+        id: System.DateTime
+        name: DateTime
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.ToDateTime(System.String)
+- uid: System.Xml.Serialization.XmlSerializationReader.ToDate(System.String)
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: ToDate(string)
+  fullName: System.Xml.Serialization.XmlSerializationReader.ToDate(string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 819
+  syntax:
+    content:
+      CSharp: protected static DateTime ToDate(string value)
+    parameters:
+    - id: value
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      id: DateTime
+      type:
+        id: System.DateTime
+        name: DateTime
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.ToDate(System.String)
+- uid: System.Xml.Serialization.XmlSerializationReader.ToTime(System.String)
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: ToTime(string)
+  fullName: System.Xml.Serialization.XmlSerializationReader.ToTime(string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 825
+  syntax:
+    content:
+      CSharp: protected static DateTime ToTime(string value)
+    parameters:
+    - id: value
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      id: DateTime
+      type:
+        id: System.DateTime
+        name: DateTime
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.ToTime(System.String)
+- uid: System.Xml.Serialization.XmlSerializationReader.ToChar(System.String)
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: ToChar(string)
+  fullName: System.Xml.Serialization.XmlSerializationReader.ToChar(string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 831
+  syntax:
+    content:
+      CSharp: protected static char ToChar(string value)
+    parameters:
+    - id: value
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      id: Char
+      type:
+        id: System.Char
+        name: char
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.ToChar(System.String)
+- uid: System.Xml.Serialization.XmlSerializationReader.ToEnum(System.String,System.Collections.IDictionary,System.String)
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: ToEnum(string, IDictionary, string)
+  fullName: System.Xml.Serialization.XmlSerializationReader.ToEnum(string, System.Collections.IDictionary, string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 837
+  syntax:
+    content:
+      CSharp: protected static long ToEnum(string value, IDictionary h, string typeName)
+    parameters:
+    - id: value
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    - id: h
+      type:
+        id: System.Collections.IDictionary
+        name: IDictionary
+        isExternal: true
+    - id: typeName
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      id: Int64
+      type:
+        id: System.Int64
+        name: long
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.ToEnum(System.String,System.Collections.IDictionary,System.String)
+- uid: System.Xml.Serialization.XmlSerializationReader.ToXmlName(System.String)
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: ToXmlName(string)
+  fullName: System.Xml.Serialization.XmlSerializationReader.ToXmlName(string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 843
+  syntax:
+    content:
+      CSharp: protected static string ToXmlName(string value)
+    parameters:
+    - id: value
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.ToXmlName(System.String)
+- uid: System.Xml.Serialization.XmlSerializationReader.ToXmlNCName(System.String)
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: ToXmlNCName(string)
+  fullName: System.Xml.Serialization.XmlSerializationReader.ToXmlNCName(string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 849
+  syntax:
+    content:
+      CSharp: protected static string ToXmlNCName(string value)
+    parameters:
+    - id: value
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.ToXmlNCName(System.String)
+- uid: System.Xml.Serialization.XmlSerializationReader.ToXmlNmToken(System.String)
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: ToXmlNmToken(string)
+  fullName: System.Xml.Serialization.XmlSerializationReader.ToXmlNmToken(string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 855
+  syntax:
+    content:
+      CSharp: protected static string ToXmlNmToken(string value)
+    parameters:
+    - id: value
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.ToXmlNmToken(System.String)
+- uid: System.Xml.Serialization.XmlSerializationReader.ToXmlNmTokens(System.String)
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: ToXmlNmTokens(string)
+  fullName: System.Xml.Serialization.XmlSerializationReader.ToXmlNmTokens(string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 861
+  syntax:
+    content:
+      CSharp: protected static string ToXmlNmTokens(string value)
+    parameters:
+    - id: value
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.ToXmlNmTokens(System.String)
+- uid: System.Xml.Serialization.XmlSerializationReader.ToXmlQualifiedName(System.String)
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: ToXmlQualifiedName(string)
+  fullName: System.Xml.Serialization.XmlSerializationReader.ToXmlQualifiedName(string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 867
+  syntax:
+    content:
+      CSharp: protected XmlQualifiedName ToXmlQualifiedName(string value)
+    parameters:
+    - id: value
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      id: XmlQualifiedName
+      type:
+        id: XmlQualifiedName
+        name: XmlQualifiedName
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.ToXmlQualifiedName(System.String)
+- uid: System.Xml.Serialization.XmlSerializationReader.UnknownNode(System.Object)
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: UnknownNode(object)
+  fullName: System.Xml.Serialization.XmlSerializationReader.UnknownNode(object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 900
+  syntax:
+    content:
+      CSharp: protected void UnknownNode(object o)
+    parameters:
+    - id: o
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.UnknownNode(System.Object)
+- uid: System.Xml.Serialization.XmlSerializationReader.UnknownNode(System.Object,System.String)
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: UnknownNode(object, string)
+  fullName: System.Xml.Serialization.XmlSerializationReader.UnknownNode(object, string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 906
+  syntax:
+    content:
+      CSharp: protected void UnknownNode(object o, string qnames)
+    parameters:
+    - id: o
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+    - id: qnames
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.UnknownNode(System.Object,System.String)
+- uid: System.Xml.Serialization.XmlSerializationReader.CreateUnknownTypeException(XmlQualifiedName)
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: CreateUnknownTypeException(XmlQualifiedName)
+  fullName: System.Xml.Serialization.XmlSerializationReader.CreateUnknownTypeException(XmlQualifiedName)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 967
+  syntax:
+    content:
+      CSharp: protected Exception CreateUnknownTypeException(XmlQualifiedName type)
+    parameters:
+    - id: type
+      type:
+        id: XmlQualifiedName
+        name: XmlQualifiedName
+        isExternal: true
+    return:
+      id: Exception
+      type:
+        id: System.Exception
+        name: Exception
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.CreateUnknownTypeException(XmlQualifiedName)
+- uid: System.Xml.Serialization.XmlSerializationReader.CreateReadOnlyCollectionException(System.String)
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: CreateReadOnlyCollectionException(string)
+  fullName: System.Xml.Serialization.XmlSerializationReader.CreateReadOnlyCollectionException(string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 973
+  syntax:
+    content:
+      CSharp: protected Exception CreateReadOnlyCollectionException(string name)
+    parameters:
+    - id: name
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      id: Exception
+      type:
+        id: System.Exception
+        name: Exception
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.CreateReadOnlyCollectionException(System.String)
+- uid: System.Xml.Serialization.XmlSerializationReader.CreateAbstractTypeException(System.String,System.String)
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: CreateAbstractTypeException(string, string)
+  fullName: System.Xml.Serialization.XmlSerializationReader.CreateAbstractTypeException(string, string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 979
+  syntax:
+    content:
+      CSharp: protected Exception CreateAbstractTypeException(string name, string ns)
+    parameters:
+    - id: name
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    - id: ns
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      id: Exception
+      type:
+        id: System.Exception
+        name: Exception
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.CreateAbstractTypeException(System.String,System.String)
+- uid: System.Xml.Serialization.XmlSerializationReader.CreateInaccessibleConstructorException(System.String)
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: CreateInaccessibleConstructorException(string)
+  fullName: System.Xml.Serialization.XmlSerializationReader.CreateInaccessibleConstructorException(string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 985
+  syntax:
+    content:
+      CSharp: protected Exception CreateInaccessibleConstructorException(string typeName)
+    parameters:
+    - id: typeName
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      id: Exception
+      type:
+        id: System.Exception
+        name: Exception
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.CreateInaccessibleConstructorException(System.String)
+- uid: System.Xml.Serialization.XmlSerializationReader.CreateCtorHasSecurityException(System.String)
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: CreateCtorHasSecurityException(string)
+  fullName: System.Xml.Serialization.XmlSerializationReader.CreateCtorHasSecurityException(string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 991
+  syntax:
+    content:
+      CSharp: protected Exception CreateCtorHasSecurityException(string typeName)
+    parameters:
+    - id: typeName
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      id: Exception
+      type:
+        id: System.Exception
+        name: Exception
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.CreateCtorHasSecurityException(System.String)
+- uid: System.Xml.Serialization.XmlSerializationReader.CreateUnknownNodeException
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: CreateUnknownNodeException()
+  fullName: System.Xml.Serialization.XmlSerializationReader.CreateUnknownNodeException()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 997
+  syntax:
+    content:
+      CSharp: protected Exception CreateUnknownNodeException()
+    parameters: []
+    return:
+      id: Exception
+      type:
+        id: System.Exception
+        name: Exception
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.CreateUnknownNodeException
+- uid: System.Xml.Serialization.XmlSerializationReader.CreateUnknownConstantException(System.String,System.Type)
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: CreateUnknownConstantException(string, Type)
+  fullName: System.Xml.Serialization.XmlSerializationReader.CreateUnknownConstantException(string, System.Type)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 1003
+  syntax:
+    content:
+      CSharp: protected Exception CreateUnknownConstantException(string value, Type enumType)
+    parameters:
+    - id: value
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    - id: enumType
+      type:
+        id: System.Type
+        name: Type
+        isExternal: true
+    return:
+      id: Exception
+      type:
+        id: System.Exception
+        name: Exception
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.CreateUnknownConstantException(System.String,System.Type)
+- uid: System.Xml.Serialization.XmlSerializationReader.CreateInvalidCastException(System.Type,System.Object)
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: CreateInvalidCastException(Type, object)
+  fullName: System.Xml.Serialization.XmlSerializationReader.CreateInvalidCastException(System.Type, object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 1009
+  syntax:
+    content:
+      CSharp: protected Exception CreateInvalidCastException(Type type, object value)
+    parameters:
+    - id: type
+      type:
+        id: System.Type
+        name: Type
+        isExternal: true
+    - id: value
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+    return:
+      id: Exception
+      type:
+        id: System.Exception
+        name: Exception
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.CreateInvalidCastException(System.Type,System.Object)
+- uid: System.Xml.Serialization.XmlSerializationReader.CreateInvalidCastException(System.Type,System.Object,System.String)
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: CreateInvalidCastException(Type, object, string)
+  fullName: System.Xml.Serialization.XmlSerializationReader.CreateInvalidCastException(System.Type, object, string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 1015
+  syntax:
+    content:
+      CSharp: protected Exception CreateInvalidCastException(Type type, object value, string id)
+    parameters:
+    - id: type
+      type:
+        id: System.Type
+        name: Type
+        isExternal: true
+    - id: value
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+    - id: id
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      id: Exception
+      type:
+        id: System.Exception
+        name: Exception
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.CreateInvalidCastException(System.Type,System.Object,System.String)
+- uid: System.Xml.Serialization.XmlSerializationReader.CreateBadDerivationException(System.String,System.String,System.String,System.String,System.String,System.String)
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: CreateBadDerivationException(string, string, string, string, string, string)
+  fullName: System.Xml.Serialization.XmlSerializationReader.CreateBadDerivationException(string, string, string, string, string, string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 1026
+  syntax:
+    content:
+      CSharp: protected Exception CreateBadDerivationException(string xsdDerived, string nsDerived, string xsdBase, string nsBase, string clrDerived, string clrBase)
+    parameters:
+    - id: xsdDerived
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    - id: nsDerived
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    - id: xsdBase
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    - id: nsBase
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    - id: clrDerived
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    - id: clrBase
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      id: Exception
+      type:
+        id: System.Exception
+        name: Exception
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.CreateBadDerivationException(System.String,System.String,System.String,System.String,System.String,System.String)
+- uid: System.Xml.Serialization.XmlSerializationReader.CreateMissingIXmlSerializableType(System.String,System.String,System.String)
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: CreateMissingIXmlSerializableType(string, string, string)
+  fullName: System.Xml.Serialization.XmlSerializationReader.CreateMissingIXmlSerializableType(string, string, string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 1032
+  syntax:
+    content:
+      CSharp: protected Exception CreateMissingIXmlSerializableType(string name, string ns, string clrType)
+    parameters:
+    - id: name
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    - id: ns
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    - id: clrType
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      id: Exception
+      type:
+        id: System.Exception
+        name: Exception
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.CreateMissingIXmlSerializableType(System.String,System.String,System.String)
+- uid: System.Xml.Serialization.XmlSerializationReader.EnsureArrayIndex(System.Array,System.Int32,System.Type)
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: EnsureArrayIndex(Array, int, Type)
+  fullName: System.Xml.Serialization.XmlSerializationReader.EnsureArrayIndex(System.Array, int, System.Type)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 1039
+  syntax:
+    content:
+      CSharp: protected Array EnsureArrayIndex(Array a, int index, Type elementType)
+    parameters:
+    - id: a
+      type:
+        id: System.Array
+        name: Array
+        isExternal: true
+    - id: index
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: elementType
+      type:
+        id: System.Type
+        name: Type
+        isExternal: true
+    return:
+      id: Array
+      type:
+        id: System.Array
+        name: Array
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.EnsureArrayIndex(System.Array,System.Int32,System.Type)
+- uid: System.Xml.Serialization.XmlSerializationReader.ShrinkArray(System.Array,System.Int32,System.Type,System.Boolean)
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: ShrinkArray(Array, int, Type, bool)
+  fullName: System.Xml.Serialization.XmlSerializationReader.ShrinkArray(System.Array, int, System.Type, bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 1049
+  syntax:
+    content:
+      CSharp: protected Array ShrinkArray(Array a, int length, Type elementType, bool isNullable)
+    parameters:
+    - id: a
+      type:
+        id: System.Array
+        name: Array
+        isExternal: true
+    - id: length
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: elementType
+      type:
+        id: System.Type
+        name: Type
+        isExternal: true
+    - id: isNullable
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+    return:
+      id: Array
+      type:
+        id: System.Array
+        name: Array
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.ShrinkArray(System.Array,System.Int32,System.Type,System.Boolean)
+- uid: System.Xml.Serialization.XmlSerializationReader.ReadString(System.String)
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: ReadString(string)
+  fullName: System.Xml.Serialization.XmlSerializationReader.ReadString(string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 1063
+  syntax:
+    content:
+      CSharp: protected string ReadString(string value)
+    parameters:
+    - id: value
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.ReadString(System.String)
+- uid: System.Xml.Serialization.XmlSerializationReader.ReadString(System.String,System.Boolean)
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: ReadString(string, bool)
+  fullName: System.Xml.Serialization.XmlSerializationReader.ReadString(string, bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 1069
+  syntax:
+    content:
+      CSharp: protected string ReadString(string value, bool trim)
+    parameters:
+    - id: value
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    - id: trim
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+    return:
+      id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.ReadString(System.String,System.Boolean)
+- uid: System.Xml.Serialization.XmlSerializationReader.ReadSerializable(IXmlSerializable)
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: ReadSerializable(IXmlSerializable)
+  fullName: System.Xml.Serialization.XmlSerializationReader.ReadSerializable(IXmlSerializable)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 1080
+  syntax:
+    content:
+      CSharp: protected IXmlSerializable ReadSerializable(IXmlSerializable serializable)
+    parameters:
+    - id: serializable
+      type:
+        id: IXmlSerializable
+        name: IXmlSerializable
+        isExternal: true
+    return:
+      id: IXmlSerializable
+      type:
+        id: IXmlSerializable
+        name: IXmlSerializable
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.ReadSerializable(IXmlSerializable)
+- uid: System.Xml.Serialization.XmlSerializationReader.ReadSerializable(IXmlSerializable,System.Boolean)
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: ReadSerializable(IXmlSerializable, bool)
+  fullName: System.Xml.Serialization.XmlSerializationReader.ReadSerializable(IXmlSerializable, bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 1086
+  syntax:
+    content:
+      CSharp: protected IXmlSerializable ReadSerializable(IXmlSerializable serializable, bool wrappedAny)
+    parameters:
+    - id: serializable
+      type:
+        id: IXmlSerializable
+        name: IXmlSerializable
+        isExternal: true
+    - id: wrappedAny
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+    return:
+      id: IXmlSerializable
+      type:
+        id: IXmlSerializable
+        name: IXmlSerializable
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.ReadSerializable(IXmlSerializable,System.Boolean)
+- uid: System.Xml.Serialization.XmlSerializationReader.InitCallbacks
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: InitCallbacks()
+  fullName: System.Xml.Serialization.XmlSerializationReader.InitCallbacks()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 1125
+  syntax:
+    content:
+      CSharp: protected abstract void InitCallbacks()
+    parameters: []
+  id: System.Xml.Serialization.XmlSerializationReader.InitCallbacks
+- uid: System.Xml.Serialization.XmlSerializationReader.ReadEndElement
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: ReadEndElement()
+  fullName: System.Xml.Serialization.XmlSerializationReader.ReadEndElement()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 1135
+  syntax:
+    content:
+      CSharp: protected void ReadEndElement()
+    parameters: []
+  id: System.Xml.Serialization.XmlSerializationReader.ReadEndElement
+- uid: System.Xml.Serialization.XmlSerializationReader.CheckReaderCount(System.Int32@,System.Int32@)
+  href: System.Xml.Serialization.XmlSerializationReader.yml
+  name: CheckReaderCount(ref int, ref int)
+  fullName: System.Xml.Serialization.XmlSerializationReader.CheckReaderCount(ref int, ref int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializationReader.cs
+    startLine: 1238
+  syntax:
+    content:
+      CSharp: protected void CheckReaderCount(ref int whileIterations, ref int readerCount)
+    parameters:
+    - id: whileIterations
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: readerCount
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.Xml.Serialization.XmlSerializationReader.CheckReaderCount(System.Int32@,System.Int32@)

@@ -1,0 +1,219 @@
+items:
+- uid: System.Dynamic.BindingRestrictions
+  href: System.Dynamic.BindingRestrictions.yml
+  name: BindingRestrictions
+  fullName: System.Dynamic.BindingRestrictions
+  type: Class
+  source:
+    remote: &o0
+      path: src/System.Dynamic.Runtime/src/System/Dynamic/BindingRestrictions.cs
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/BindingRestrictions.cs
+    startLine: 14
+  summary: Represents a set of binding restrictions on the [System.Dynamic.DynamicMetaObject](System.Dynamic.DynamicMetaObject.yml)under which the dynamic binding is valid.
+  syntax:
+    content:
+      CSharp: public abstract class BindingRestrictions
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  id: System.Dynamic.BindingRestrictions
+  children:
+  - System.Dynamic.BindingRestrictions.Empty
+  - System.Dynamic.BindingRestrictions.Merge(System.Dynamic.BindingRestrictions)
+  - System.Dynamic.BindingRestrictions.GetTypeRestriction(Expression,System.Type)
+  - System.Dynamic.BindingRestrictions.GetInstanceRestriction(Expression,System.Object)
+  - System.Dynamic.BindingRestrictions.GetExpressionRestriction(Expression)
+  - System.Dynamic.BindingRestrictions.Combine(System.Collections.Generic.IList{System.Dynamic.DynamicMetaObject})
+  - System.Dynamic.BindingRestrictions.ToExpression
+- uid: System.Dynamic.BindingRestrictions.Empty
+  href: System.Dynamic.BindingRestrictions.yml
+  name: Empty
+  fullName: System.Dynamic.BindingRestrictions.Empty
+  type: Field
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/BindingRestrictions.cs
+    startLine: 21
+  summary: Represents an empty set of binding restrictions. This field is read only.
+  syntax:
+    content:
+      CSharp: '[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")] public static readonly BindingRestrictions Empty;'
+  id: System.Dynamic.BindingRestrictions.Empty
+- uid: System.Dynamic.BindingRestrictions.Merge(System.Dynamic.BindingRestrictions)
+  href: System.Dynamic.BindingRestrictions.yml
+  name: Merge(BindingRestrictions)
+  fullName: System.Dynamic.BindingRestrictions.Merge(System.Dynamic.BindingRestrictions)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/BindingRestrictions.cs
+    startLine: 39
+  summary: Merges the set of binding restrictions with the current binding restrictions.
+  syntax:
+    content:
+      CSharp: public BindingRestrictions Merge(BindingRestrictions restrictions)
+    parameters:
+    - id: restrictions
+      type:
+        id: System.Dynamic.BindingRestrictions
+        name: BindingRestrictions
+        href: System.Dynamic.BindingRestrictions.yml
+      description: The set of restrictions with which to merge the current binding restrictions.
+    return:
+      id: BindingRestrictions
+      type:
+        id: System.Dynamic.BindingRestrictions
+        name: BindingRestrictions
+        href: System.Dynamic.BindingRestrictions.yml
+      description: The new set of binding restrictions.
+  id: System.Dynamic.BindingRestrictions.Merge(System.Dynamic.BindingRestrictions)
+- uid: System.Dynamic.BindingRestrictions.GetTypeRestriction(Expression,System.Type)
+  href: System.Dynamic.BindingRestrictions.yml
+  name: GetTypeRestriction(Expression, Type)
+  fullName: System.Dynamic.BindingRestrictions.GetTypeRestriction(Expression, System.Type)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/BindingRestrictions.cs
+    startLine: 59
+  summary: Creates the binding restriction that check the expression for runtime type identity.
+  syntax:
+    content:
+      CSharp: public static BindingRestrictions GetTypeRestriction(Expression expression, Type type)
+    parameters:
+    - id: expression
+      type:
+        id: Expression
+        name: Expression
+        isExternal: true
+      description: The expression to test.
+    - id: type
+      type:
+        id: System.Type
+        name: Type
+        isExternal: true
+      description: The exact type to test.
+    return:
+      id: BindingRestrictions
+      type:
+        id: System.Dynamic.BindingRestrictions
+        name: BindingRestrictions
+        href: System.Dynamic.BindingRestrictions.yml
+      description: The new binding restrictions.
+  id: System.Dynamic.BindingRestrictions.GetTypeRestriction(Expression,System.Type)
+- uid: System.Dynamic.BindingRestrictions.GetInstanceRestriction(Expression,System.Object)
+  href: System.Dynamic.BindingRestrictions.yml
+  name: GetInstanceRestriction(Expression, object)
+  fullName: System.Dynamic.BindingRestrictions.GetInstanceRestriction(Expression, object)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/BindingRestrictions.cs
+    startLine: 89
+  summary: Creates the binding restriction that checks the expression for object instance identity.
+  syntax:
+    content:
+      CSharp: public static BindingRestrictions GetInstanceRestriction(Expression expression, object instance)
+    parameters:
+    - id: expression
+      type:
+        id: Expression
+        name: Expression
+        isExternal: true
+      description: The expression to test.
+    - id: instance
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+      description: The exact object instance to test.
+    return:
+      id: BindingRestrictions
+      type:
+        id: System.Dynamic.BindingRestrictions
+        name: BindingRestrictions
+        href: System.Dynamic.BindingRestrictions.yml
+      description: The new binding restrictions.
+  id: System.Dynamic.BindingRestrictions.GetInstanceRestriction(Expression,System.Object)
+- uid: System.Dynamic.BindingRestrictions.GetExpressionRestriction(Expression)
+  href: System.Dynamic.BindingRestrictions.yml
+  name: GetExpressionRestriction(Expression)
+  fullName: System.Dynamic.BindingRestrictions.GetExpressionRestriction(Expression)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/BindingRestrictions.cs
+    startLine: 105
+  summary: Creates the binding restriction that checks the expression for arbitrary immutable properties.
+  syntax:
+    content:
+      CSharp: public static BindingRestrictions GetExpressionRestriction(Expression expression)
+    parameters:
+    - id: expression
+      type:
+        id: Expression
+        name: Expression
+        isExternal: true
+      description: The expression expression the restrictions.
+    return:
+      id: BindingRestrictions
+      type:
+        id: System.Dynamic.BindingRestrictions
+        name: BindingRestrictions
+        href: System.Dynamic.BindingRestrictions.yml
+      description: The new binding restrictions.
+  id: System.Dynamic.BindingRestrictions.GetExpressionRestriction(Expression)
+- uid: System.Dynamic.BindingRestrictions.Combine(System.Collections.Generic.IList{System.Dynamic.DynamicMetaObject})
+  href: System.Dynamic.BindingRestrictions.yml
+  name: Combine(IList<DynamicMetaObject>)
+  fullName: System.Dynamic.BindingRestrictions.Combine(System.Collections.Generic.IList<System.Dynamic.DynamicMetaObject>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/BindingRestrictions.cs
+    startLine: 117
+  summary: Combines binding restrictions from the list of [System.Dynamic.DynamicMetaObject](System.Dynamic.DynamicMetaObject.yml) instances into one set of restrictions.
+  syntax:
+    content:
+      CSharp: public static BindingRestrictions Combine(IList<DynamicMetaObject> contributingObjects)
+    parameters:
+    - id: contributingObjects
+      type:
+        id: System.Collections.Generic.IList{System.Dynamic.DynamicMetaObject}
+        name: IList<DynamicMetaObject>
+        isExternal: true
+      description: The list of [System.Dynamic.DynamicMetaObject](System.Dynamic.DynamicMetaObject.yml) instances from which to combine restrictions.
+    return:
+      id: BindingRestrictions
+      type:
+        id: System.Dynamic.BindingRestrictions
+        name: BindingRestrictions
+        href: System.Dynamic.BindingRestrictions.yml
+      description: The new set of binding restrictions.
+  id: System.Dynamic.BindingRestrictions.Combine(System.Collections.Generic.IList{System.Dynamic.DynamicMetaObject})
+- uid: System.Dynamic.BindingRestrictions.ToExpression
+  href: System.Dynamic.BindingRestrictions.yml
+  name: ToExpression()
+  fullName: System.Dynamic.BindingRestrictions.ToExpression()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/BindingRestrictions.cs
+    startLine: 185
+  summary: Creates the @!:Expression- representing the binding restrictions.
+  syntax:
+    content:
+      CSharp: public Expression ToExpression()
+    parameters: []
+    return:
+      id: Expression
+      type:
+        id: Expression
+        name: Expression
+        isExternal: true
+      description: The expression tree representing the restrictions.
+  id: System.Dynamic.BindingRestrictions.ToExpression

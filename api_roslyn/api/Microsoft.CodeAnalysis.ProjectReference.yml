@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectReference.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectReference.cs
     startLine: 11
   syntax:
     content:
-      CSharp: public sealed class ProjectReference
+      CSharp: 'public sealed class ProjectReference : IEquatable<ProjectReference>'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.ProjectReference
   children:
@@ -50,12 +51,12 @@ items:
     - id: aliases
       type:
         id: System.Collections.Immutable.ImmutableArray{System.String}
-        name: System.Collections.Immutable.ImmutableArray{System.String}
+        name: ImmutableArray<string>
         isExternal: true
     - id: embedInteropTypes
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.ProjectReference.#ctor(Microsoft.CodeAnalysis.ProjectId,System.Collections.Immutable.ImmutableArray{System.String},System.Boolean)
 - uid: Microsoft.CodeAnalysis.ProjectReference.ProjectId
@@ -94,7 +95,7 @@ items:
     - id: Aliases
       type:
         id: System.Collections.Immutable.ImmutableArray{System.String}
-        name: System.Collections.Immutable.ImmutableArray{System.String}
+        name: ImmutableArray<string>
         isExternal: true
   id: Microsoft.CodeAnalysis.ProjectReference.Aliases
 - uid: Microsoft.CodeAnalysis.ProjectReference.EmbedInteropTypes
@@ -114,7 +115,7 @@ items:
     - id: EmbedInteropTypes
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.ProjectReference.EmbedInteropTypes
 - uid: Microsoft.CodeAnalysis.ProjectReference.Equals(System.Object)
@@ -133,10 +134,14 @@ items:
     - id: obj
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.ProjectReference.Equals(System.Object)
 - uid: Microsoft.CodeAnalysis.ProjectReference.Equals(Microsoft.CodeAnalysis.ProjectReference)
   href: Microsoft.CodeAnalysis.ProjectReference.yml
@@ -158,19 +163,23 @@ items:
         href: Microsoft.CodeAnalysis.ProjectReference.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.ProjectReference.Equals(Microsoft.CodeAnalysis.ProjectReference)
 - uid: Microsoft.CodeAnalysis.ProjectReference.op_Equality(Microsoft.CodeAnalysis.ProjectReference,Microsoft.CodeAnalysis.ProjectReference)
   href: Microsoft.CodeAnalysis.ProjectReference.yml
   name: operator ==(ProjectReference, ProjectReference)
   fullName: Microsoft.CodeAnalysis.ProjectReference.operator ==(Microsoft.CodeAnalysis.ProjectReference, Microsoft.CodeAnalysis.ProjectReference)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectReference.cs
     startLine: 57
   syntax:
     content:
-      CSharp: public static bool operator ==(ProjectReference left, ProjectReference right) { return EqualityComparer<ProjectReference>.Default.Equals(left, right); }
+      CSharp: public static bool operator ==(ProjectReference left, ProjectReference right)
     parameters:
     - id: left
       type:
@@ -184,19 +193,23 @@ items:
         href: Microsoft.CodeAnalysis.ProjectReference.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.ProjectReference.op_Equality(Microsoft.CodeAnalysis.ProjectReference,Microsoft.CodeAnalysis.ProjectReference)
 - uid: Microsoft.CodeAnalysis.ProjectReference.op_Inequality(Microsoft.CodeAnalysis.ProjectReference,Microsoft.CodeAnalysis.ProjectReference)
   href: Microsoft.CodeAnalysis.ProjectReference.yml
   name: operator !=(ProjectReference, ProjectReference)
   fullName: Microsoft.CodeAnalysis.ProjectReference.operator !=(Microsoft.CodeAnalysis.ProjectReference, Microsoft.CodeAnalysis.ProjectReference)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/ProjectReference.cs
     startLine: 62
   syntax:
     content:
-      CSharp: public static bool operator !=(ProjectReference left, ProjectReference right) { return !(left == right); }
+      CSharp: public static bool operator !=(ProjectReference left, ProjectReference right)
     parameters:
     - id: left
       type:
@@ -210,6 +223,10 @@ items:
         href: Microsoft.CodeAnalysis.ProjectReference.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.ProjectReference.op_Inequality(Microsoft.CodeAnalysis.ProjectReference,Microsoft.CodeAnalysis.ProjectReference)
 - uid: Microsoft.CodeAnalysis.ProjectReference.GetHashCode
   href: Microsoft.CodeAnalysis.ProjectReference.yml
@@ -226,4 +243,8 @@ items:
     parameters: []
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: Microsoft.CodeAnalysis.ProjectReference.GetHashCode

@@ -6,22 +6,91 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.ObjectModel/src/System/Collections/ObjectModel/ReadOnlyDictionary.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.ObjectModel/src/System/Collections/ObjectModel/ReadOnlyDictionary.cs
     startLine: 415
   syntax:
     content:
-      CSharp: public sealed class KeyCollection
+      CSharp: 'public sealed class KeyCollection : ICollection<TKey>, ICollection, IReadOnlyCollection<TKey>, IEnumerable<TKey>, IEnumerable'
   inheritance:
-  - id: ICollection{`0}
-    name: ICollection{`0}
+  - id: System.Object
+    name: object
     isExternal: true
   id: System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection
   children:
+  - System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.System#Collections#Generic#ICollection{TKey}#Add(`0)
+  - System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.System#Collections#Generic#ICollection{TKey}#Clear
+  - System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.System#Collections#Generic#ICollection{TKey}#Contains(`0)
   - System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.CopyTo(`0[],System.Int32)
   - System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.Count
+  - System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.System#Collections#Generic#ICollection{TKey}#IsReadOnly
+  - System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.System#Collections#Generic#ICollection{TKey}#Remove(`0)
   - System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.GetEnumerator
+  - System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.System#Collections#IEnumerable#GetEnumerator
+  - System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+  - System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.System#Collections#ICollection#IsSynchronized
+  - System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.System#Collections#ICollection#SyncRoot
+- uid: System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.System#Collections#Generic#ICollection{TKey}#Add(`0)
+  href: System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.yml
+  name: ICollection<TKey>.Add(TKey)
+  fullName: System.Collections.ObjectModel.ReadOnlyDictionary<TKey, TValue>.KeyCollection.System.Collections.Generic.ICollection<TKey>.Add(TKey)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.ObjectModel/src/System/Collections/ObjectModel/ReadOnlyDictionary.cs
+    startLine: 433
+  syntax:
+    content:
+      CSharp: void ICollection<TKey>.Add(TKey item)
+    parameters:
+    - id: item
+      type:
+        id: TKey
+        name: TKey
+        href: TKey
+  id: System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.System#Collections#Generic#ICollection{TKey}#Add(`0)
+- uid: System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.System#Collections#Generic#ICollection{TKey}#Clear
+  href: System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.yml
+  name: ICollection<TKey>.Clear()
+  fullName: System.Collections.ObjectModel.ReadOnlyDictionary<TKey, TValue>.KeyCollection.System.Collections.Generic.ICollection<TKey>.Clear()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.ObjectModel/src/System/Collections/ObjectModel/ReadOnlyDictionary.cs
+    startLine: 438
+  syntax:
+    content:
+      CSharp: void ICollection<TKey>.Clear()
+    parameters: []
+  id: System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.System#Collections#Generic#ICollection{TKey}#Clear
+- uid: System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.System#Collections#Generic#ICollection{TKey}#Contains(`0)
+  href: System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.yml
+  name: ICollection<TKey>.Contains(TKey)
+  fullName: System.Collections.ObjectModel.ReadOnlyDictionary<TKey, TValue>.KeyCollection.System.Collections.Generic.ICollection<TKey>.Contains(TKey)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.ObjectModel/src/System/Collections/ObjectModel/ReadOnlyDictionary.cs
+    startLine: 443
+  syntax:
+    content:
+      CSharp: bool ICollection<TKey>.Contains(TKey item)
+    parameters:
+    - id: item
+      type:
+        id: TKey
+        name: TKey
+        href: TKey
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.System#Collections#Generic#ICollection{TKey}#Contains(`0)
 - uid: System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.CopyTo(`0[],System.Int32)
   href: System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.yml
   name: CopyTo(TKey[], int)
@@ -38,12 +107,12 @@ items:
     - id: array
       type:
         id: System.Array
-        name: System.Array
+        name: TKey[]
         isExternal: true
     - id: arrayIndex
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.CopyTo(`0[],System.Int32)
 - uid: System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.Count
@@ -62,9 +131,53 @@ items:
     - id: Count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.Count
+- uid: System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.System#Collections#Generic#ICollection{TKey}#IsReadOnly
+  href: System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.yml
+  name: ICollection<TKey>.IsReadOnly
+  fullName: System.Collections.ObjectModel.ReadOnlyDictionary<TKey, TValue>.KeyCollection.System.Collections.Generic.ICollection<TKey>.IsReadOnly
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.ObjectModel/src/System/Collections/ObjectModel/ReadOnlyDictionary.cs
+    startLine: 458
+  syntax:
+    content:
+      CSharp: bool ICollection<TKey>.IsReadOnly { get; }
+    parameters:
+    - id: System.Collections.Generic.ICollection<TKey>.IsReadOnly
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.System#Collections#Generic#ICollection{TKey}#IsReadOnly
+- uid: System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.System#Collections#Generic#ICollection{TKey}#Remove(`0)
+  href: System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.yml
+  name: ICollection<TKey>.Remove(TKey)
+  fullName: System.Collections.ObjectModel.ReadOnlyDictionary<TKey, TValue>.KeyCollection.System.Collections.Generic.ICollection<TKey>.Remove(TKey)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.ObjectModel/src/System/Collections/ObjectModel/ReadOnlyDictionary.cs
+    startLine: 463
+  syntax:
+    content:
+      CSharp: bool ICollection<TKey>.Remove(TKey item)
+    parameters:
+    - id: item
+      type:
+        id: TKey
+        name: TKey
+        href: TKey
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.System#Collections#Generic#ICollection{TKey}#Remove(`0)
 - uid: System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.GetEnumerator
   href: System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.yml
   name: GetEnumerator()
@@ -80,4 +193,90 @@ items:
     parameters: []
     return:
       id: IEnumerator
+      type:
+        id: System.Collections.Generic.IEnumerator{`0}
+        name: IEnumerator<TKey>
+        isExternal: true
   id: System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.GetEnumerator
+- uid: System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.System#Collections#IEnumerable#GetEnumerator
+  href: System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.yml
+  name: IEnumerable.GetEnumerator()
+  fullName: System.Collections.ObjectModel.ReadOnlyDictionary<TKey, TValue>.KeyCollection.System.Collections.IEnumerable.GetEnumerator()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.ObjectModel/src/System/Collections/ObjectModel/ReadOnlyDictionary.cs
+    startLine: 481
+  syntax:
+    content:
+      CSharp: IEnumerator IEnumerable.GetEnumerator()
+    parameters: []
+    return:
+      id: IEnumerator
+      type:
+        id: System.Collections.IEnumerator
+        name: IEnumerator
+        isExternal: true
+  id: System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.System#Collections#IEnumerable#GetEnumerator
+- uid: System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+  href: System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.yml
+  name: ICollection.CopyTo(Array, int)
+  fullName: System.Collections.ObjectModel.ReadOnlyDictionary<TKey, TValue>.KeyCollection.System.Collections.ICollection.CopyTo(System.Array, int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.ObjectModel/src/System/Collections/ObjectModel/ReadOnlyDictionary.cs
+    startLine: 490
+  syntax:
+    content:
+      CSharp: void ICollection.CopyTo(Array array, int index)
+    parameters:
+    - id: array
+      type:
+        id: System.Array
+        name: Array
+        isExternal: true
+    - id: index
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+- uid: System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.System#Collections#ICollection#IsSynchronized
+  href: System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.yml
+  name: ICollection.IsSynchronized
+  fullName: System.Collections.ObjectModel.ReadOnlyDictionary<TKey, TValue>.KeyCollection.System.Collections.ICollection.IsSynchronized
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.ObjectModel/src/System/Collections/ObjectModel/ReadOnlyDictionary.cs
+    startLine: 495
+  syntax:
+    content:
+      CSharp: bool ICollection.IsSynchronized { get; }
+    parameters:
+    - id: System.Collections.ICollection.IsSynchronized
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.System#Collections#ICollection#IsSynchronized
+- uid: System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.System#Collections#ICollection#SyncRoot
+  href: System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.yml
+  name: ICollection.SyncRoot
+  fullName: System.Collections.ObjectModel.ReadOnlyDictionary<TKey, TValue>.KeyCollection.System.Collections.ICollection.SyncRoot
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.ObjectModel/src/System/Collections/ObjectModel/ReadOnlyDictionary.cs
+    startLine: 500
+  syntax:
+    content:
+      CSharp: object ICollection.SyncRoot { get; }
+    parameters:
+    - id: System.Collections.ICollection.SyncRoot
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+  id: System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.System#Collections#ICollection#SyncRoot

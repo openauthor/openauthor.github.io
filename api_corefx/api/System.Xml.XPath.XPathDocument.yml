@@ -6,8 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Xml.XPath/src/System/Xml/XPath/XPathDocument.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathDocument.cs
     startLine: 15
   summary: >-
@@ -18,17 +20,17 @@ items:
     in an Element --> In-Scope-Namespaces map.
   syntax:
     content:
-      CSharp: public class XPathDocument
+      CSharp: 'public class XPathDocument : IXPathNavigable'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Xml.XPath.XPathDocument
   children:
   - System.Xml.XPath.XPathDocument.#ctor(XmlReader)
   - System.Xml.XPath.XPathDocument.#ctor(XmlReader,XmlSpace)
-  - System.Xml.XPath.XPathDocument.#ctor(TextReader)
-  - System.Xml.XPath.XPathDocument.#ctor(Stream)
+  - System.Xml.XPath.XPathDocument.#ctor(System.IO.TextReader)
+  - System.Xml.XPath.XPathDocument.#ctor(System.IO.Stream)
   - System.Xml.XPath.XPathDocument.#ctor(System.String)
   - System.Xml.XPath.XPathDocument.#ctor(System.String,XmlSpace)
   - System.Xml.XPath.XPathDocument.CreateNavigator
@@ -77,10 +79,10 @@ items:
         name: XmlSpace
         isExternal: true
   id: System.Xml.XPath.XPathDocument.#ctor(XmlReader,XmlSpace)
-- uid: System.Xml.XPath.XPathDocument.#ctor(TextReader)
+- uid: System.Xml.XPath.XPathDocument.#ctor(System.IO.TextReader)
   href: System.Xml.XPath.XPathDocument.yml
   name: XPathDocument(TextReader)
-  fullName: System.Xml.XPath.XPathDocument.XPathDocument(TextReader)
+  fullName: System.Xml.XPath.XPathDocument.XPathDocument(System.IO.TextReader)
   type: Constructor
   source:
     remote: *o0
@@ -93,14 +95,14 @@ items:
     parameters:
     - id: textReader
       type:
-        id: TextReader
+        id: System.IO.TextReader
         name: TextReader
         isExternal: true
-  id: System.Xml.XPath.XPathDocument.#ctor(TextReader)
-- uid: System.Xml.XPath.XPathDocument.#ctor(Stream)
+  id: System.Xml.XPath.XPathDocument.#ctor(System.IO.TextReader)
+- uid: System.Xml.XPath.XPathDocument.#ctor(System.IO.Stream)
   href: System.Xml.XPath.XPathDocument.yml
   name: XPathDocument(Stream)
-  fullName: System.Xml.XPath.XPathDocument.XPathDocument(Stream)
+  fullName: System.Xml.XPath.XPathDocument.XPathDocument(System.IO.Stream)
   type: Constructor
   source:
     remote: *o0
@@ -113,10 +115,10 @@ items:
     parameters:
     - id: stream
       type:
-        id: Stream
+        id: System.IO.Stream
         name: Stream
         isExternal: true
-  id: System.Xml.XPath.XPathDocument.#ctor(Stream)
+  id: System.Xml.XPath.XPathDocument.#ctor(System.IO.Stream)
 - uid: System.Xml.XPath.XPathDocument.#ctor(System.String)
   href: System.Xml.XPath.XPathDocument.yml
   name: XPathDocument(string)
@@ -134,7 +136,7 @@ items:
     - id: uri
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.XPath.XPathDocument.#ctor(System.String)
 - uid: System.Xml.XPath.XPathDocument.#ctor(System.String,XmlSpace)
@@ -154,7 +156,7 @@ items:
     - id: uri
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: space
       type:
@@ -178,4 +180,8 @@ items:
     parameters: []
     return:
       id: XPathNavigator
+      type:
+        id: System.Xml.XPath.XPathNavigator
+        name: XPathNavigator
+        href: System.Xml.XPath.XPathNavigator.yml
   id: System.Xml.XPath.XPathDocument.CreateNavigator

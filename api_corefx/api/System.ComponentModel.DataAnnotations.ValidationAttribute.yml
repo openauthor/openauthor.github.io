@@ -6,8 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/ValidationAttribute.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/ValidationAttribute.cs
     startLine: 20
   summary: >-
@@ -16,22 +18,115 @@ items:
     Override  to implement validation logic.
   syntax:
     content:
-      CSharp: public abstract class ValidationAttribute
+      CSharp: 'public abstract class ValidationAttribute : Attribute, _Attribute'
   inheritance:
-  - id: Attribute
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.Attribute
     name: Attribute
     isExternal: true
   id: System.ComponentModel.DataAnnotations.ValidationAttribute
   children:
+  - System.ComponentModel.DataAnnotations.ValidationAttribute.#ctor
+  - System.ComponentModel.DataAnnotations.ValidationAttribute.#ctor(System.String)
+  - System.ComponentModel.DataAnnotations.ValidationAttribute.#ctor(System.Func{System.String})
+  - System.ComponentModel.DataAnnotations.ValidationAttribute.ErrorMessageString
   - System.ComponentModel.DataAnnotations.ValidationAttribute.RequiresValidationContext
   - System.ComponentModel.DataAnnotations.ValidationAttribute.ErrorMessage
   - System.ComponentModel.DataAnnotations.ValidationAttribute.ErrorMessageResourceName
   - System.ComponentModel.DataAnnotations.ValidationAttribute.ErrorMessageResourceType
   - System.ComponentModel.DataAnnotations.ValidationAttribute.FormatErrorMessage(System.String)
   - System.ComponentModel.DataAnnotations.ValidationAttribute.IsValid(System.Object)
+  - System.ComponentModel.DataAnnotations.ValidationAttribute.IsValid(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)
   - System.ComponentModel.DataAnnotations.ValidationAttribute.GetValidationResult(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)
   - System.ComponentModel.DataAnnotations.ValidationAttribute.Validate(System.Object,System.String)
   - System.ComponentModel.DataAnnotations.ValidationAttribute.Validate(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)
+- uid: System.ComponentModel.DataAnnotations.ValidationAttribute.#ctor
+  href: System.ComponentModel.DataAnnotations.ValidationAttribute.yml
+  name: ValidationAttribute()
+  fullName: System.ComponentModel.DataAnnotations.ValidationAttribute.ValidationAttribute()
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/ValidationAttribute.cs
+    startLine: 42
+  summary: Default constructor for any validation attribute.
+  syntax:
+    content:
+      CSharp: 'protected ValidationAttribute(): this (() => SR.ValidationAttribute_ValidationError)'
+    parameters: []
+  id: System.ComponentModel.DataAnnotations.ValidationAttribute.#ctor
+- uid: System.ComponentModel.DataAnnotations.ValidationAttribute.#ctor(System.String)
+  href: System.ComponentModel.DataAnnotations.ValidationAttribute.yml
+  name: ValidationAttribute(string)
+  fullName: System.ComponentModel.DataAnnotations.ValidationAttribute.ValidationAttribute(string)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/ValidationAttribute.cs
+    startLine: 51
+  summary: Constructor that accepts a fixed validation error message.
+  syntax:
+    content:
+      CSharp: 'protected ValidationAttribute(string errorMessage): this (() => errorMessage)'
+    parameters:
+    - id: errorMessage
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: A non-localized error message to use in [System.ComponentModel.DataAnnotations.ValidationAttribute.ErrorMessageString](System.ComponentModel.DataAnnotations.ValidationAttribute.yml).
+  id: System.ComponentModel.DataAnnotations.ValidationAttribute.#ctor(System.String)
+- uid: System.ComponentModel.DataAnnotations.ValidationAttribute.#ctor(System.Func{System.String})
+  href: System.ComponentModel.DataAnnotations.ValidationAttribute.yml
+  name: ValidationAttribute(Func<string>)
+  fullName: System.ComponentModel.DataAnnotations.ValidationAttribute.ValidationAttribute(System.Func<string>)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/ValidationAttribute.cs
+    startLine: 62
+  summary: >-
+    Allows for providing a resource accessor function that will be used by the [System.ComponentModel.DataAnnotations.ValidationAttribute.ErrorMessageString](System.ComponentModel.DataAnnotations.ValidationAttribute.yml)
+
+    property to retrieve the error message.  An example would be to have something like
+
+    CustomAttribute() : base( () => MyResources.MyErrorMessage ) {}.
+  syntax:
+    content:
+      CSharp: protected ValidationAttribute(Func<string> errorMessageAccessor)
+    parameters:
+    - id: errorMessageAccessor
+      type:
+        id: System.Func{System.String}
+        name: Func<string>
+        isExternal: true
+      description: The [System.Func`1]() that will return an error message.
+  id: System.ComponentModel.DataAnnotations.ValidationAttribute.#ctor(System.Func{System.String})
+- uid: System.ComponentModel.DataAnnotations.ValidationAttribute.ErrorMessageString
+  href: System.ComponentModel.DataAnnotations.ValidationAttribute.yml
+  name: ErrorMessageString
+  fullName: System.ComponentModel.DataAnnotations.ValidationAttribute.ErrorMessageString
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/ValidationAttribute.cs
+    startLine: 100
+  summary: >-
+    Gets the localized error message string, coming either from [System.ComponentModel.DataAnnotations.ValidationAttribute.ErrorMessage](System.ComponentModel.DataAnnotations.ValidationAttribute.yml), or from evaluating the
+
+    [System.ComponentModel.DataAnnotations.ValidationAttribute.ErrorMessageResourceType](System.ComponentModel.DataAnnotations.ValidationAttribute.yml) and [System.ComponentModel.DataAnnotations.ValidationAttribute.ErrorMessageResourceName](System.ComponentModel.DataAnnotations.ValidationAttribute.yml) pair.
+  syntax:
+    content:
+      CSharp: protected string ErrorMessageString { get; }
+    parameters:
+    - id: ErrorMessageString
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.ComponentModel.DataAnnotations.ValidationAttribute.ErrorMessageString
 - uid: System.ComponentModel.DataAnnotations.ValidationAttribute.RequiresValidationContext
   href: System.ComponentModel.DataAnnotations.ValidationAttribute.yml
   name: RequiresValidationContext
@@ -48,7 +143,7 @@ items:
     - id: RequiresValidationContext
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.ComponentModel.DataAnnotations.ValidationAttribute.RequiresValidationContext
 - uid: System.ComponentModel.DataAnnotations.ValidationAttribute.ErrorMessage
@@ -68,7 +163,7 @@ items:
     - id: ErrorMessage
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.ComponentModel.DataAnnotations.ValidationAttribute.ErrorMessage
 - uid: System.ComponentModel.DataAnnotations.ValidationAttribute.ErrorMessageResourceName
@@ -88,7 +183,7 @@ items:
     - id: ErrorMessageResourceName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.ComponentModel.DataAnnotations.ValidationAttribute.ErrorMessageResourceName
 - uid: System.ComponentModel.DataAnnotations.ValidationAttribute.ErrorMessageResourceType
@@ -107,7 +202,7 @@ items:
     parameters:
     - id: ErrorMessageResourceType
       type:
-        id: Type
+        id: System.Type
         name: Type
         isExternal: true
   id: System.ComponentModel.DataAnnotations.ValidationAttribute.ErrorMessageResourceType
@@ -128,11 +223,15 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The user-visible name to include in the formatted message.
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
       description: The localized string describing the validation error
   id: System.ComponentModel.DataAnnotations.ValidationAttribute.FormatErrorMessage(System.String)
 - uid: System.ComponentModel.DataAnnotations.ValidationAttribute.IsValid(System.Object)
@@ -161,13 +260,64 @@ items:
     - id: value
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: The value to validate
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: true if the  is acceptable, false if it is not acceptable
   id: System.ComponentModel.DataAnnotations.ValidationAttribute.IsValid(System.Object)
+- uid: System.ComponentModel.DataAnnotations.ValidationAttribute.IsValid(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)
+  href: System.ComponentModel.DataAnnotations.ValidationAttribute.yml
+  name: IsValid(object, ValidationContext)
+  fullName: System.ComponentModel.DataAnnotations.ValidationAttribute.IsValid(object, System.ComponentModel.DataAnnotations.ValidationContext)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/ValidationAttribute.cs
+    startLine: 384
+  summary: >-
+    Protected virtual method to override and implement validation logic.
+
+
+
+    Derived classes should override this method instead of , which is deprecated.
+  syntax:
+    content:
+      CSharp: protected virtual ValidationResult IsValid(object value, ValidationContext validationContext)
+    parameters:
+    - id: value
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+      description: The value to validate.
+    - id: validationContext
+      type:
+        id: System.ComponentModel.DataAnnotations.ValidationContext
+        name: ValidationContext
+        href: System.ComponentModel.DataAnnotations.ValidationContext.yml
+      description: >-
+        A [System.ComponentModel.DataAnnotations.ValidationContext](System.ComponentModel.DataAnnotations.ValidationContext.yml) instance that provides
+
+        context about the validation operation, such as the object and member being validated.
+    return:
+      id: ValidationResult
+      type:
+        id: System.ComponentModel.DataAnnotations.ValidationResult
+        name: ValidationResult
+        href: System.ComponentModel.DataAnnotations.ValidationResult.yml
+      description: >-
+        When validation is valid, [System.ComponentModel.DataAnnotations.ValidationResult.Success](System.ComponentModel.DataAnnotations.ValidationResult.yml).
+
+
+
+        When validation is invalid, an instance of .
+  id: System.ComponentModel.DataAnnotations.ValidationAttribute.IsValid(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)
 - uid: System.ComponentModel.DataAnnotations.ValidationAttribute.GetValidationResult(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)
   href: System.ComponentModel.DataAnnotations.ValidationAttribute.yml
   name: GetValidationResult(object, ValidationContext)
@@ -188,7 +338,7 @@ items:
     - id: value
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: The value to validate
     - id: validationContext
@@ -202,6 +352,10 @@ items:
         context about the validation operation, such as the object and member being validated.
     return:
       id: ValidationResult
+      type:
+        id: System.ComponentModel.DataAnnotations.ValidationResult
+        name: ValidationResult
+        href: System.ComponentModel.DataAnnotations.ValidationResult.yml
       description: >-
         When validation is valid, [System.ComponentModel.DataAnnotations.ValidationResult.Success](System.ComponentModel.DataAnnotations.ValidationResult.yml).
 
@@ -233,13 +387,13 @@ items:
     - id: value
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: The value to validate
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The string to be included in the validation error message if  is not valid
   id: System.ComponentModel.DataAnnotations.ValidationAttribute.Validate(System.Object,System.String)
@@ -260,7 +414,7 @@ items:
     - id: value
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: The value to validate
     - id: validationContext

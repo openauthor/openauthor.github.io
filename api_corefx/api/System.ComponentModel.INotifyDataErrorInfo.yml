@@ -6,8 +6,10 @@ items:
   type: Interface
   source:
     remote: &o0
+      path: src/System.ObjectModel/src/System/ComponentModel/INotifyDataErrorInfo.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.ObjectModel/src/System/ComponentModel/INotifyDataErrorInfo.cs
     startLine: 8
   syntax:
@@ -34,7 +36,7 @@ items:
     - id: HasErrors
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.ComponentModel.INotifyDataErrorInfo.HasErrors
 - uid: System.ComponentModel.INotifyDataErrorInfo.GetErrors(System.String)
@@ -48,15 +50,19 @@ items:
     startLine: 12
   syntax:
     content:
-      CSharp: IEnumerable GetErrors(string propertyName);
+      CSharp: public IEnumerable GetErrors(string propertyName)
     parameters:
     - id: propertyName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.IEnumerable
+        name: IEnumerable
+        isExternal: true
   id: System.ComponentModel.INotifyDataErrorInfo.GetErrors(System.String)
 - uid: System.ComponentModel.INotifyDataErrorInfo.ErrorsChanged
   href: System.ComponentModel.INotifyDataErrorInfo.yml
@@ -69,5 +75,5 @@ items:
     startLine: 14
   syntax:
     content:
-      CSharp: ErrorsChanged
+      CSharp: event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
   id: System.ComponentModel.INotifyDataErrorInfo.ErrorsChanged

@@ -6,16 +6,21 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/RangeAttribute.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/RangeAttribute.cs
     startLine: 11
   summary: Used for specifying a range constraint
   syntax:
     content:
-      CSharp: public class RangeAttribute
+      CSharp: 'public class RangeAttribute : ValidationAttribute, _Attribute'
   inheritance:
-  - id: Attribute
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.Attribute
     name: Attribute
     isExternal: true
   - id: System.ComponentModel.DataAnnotations.ValidationAttribute
@@ -25,7 +30,7 @@ items:
   children:
   - System.ComponentModel.DataAnnotations.RangeAttribute.#ctor(System.Int32,System.Int32)
   - System.ComponentModel.DataAnnotations.RangeAttribute.#ctor(System.Double,System.Double)
-  - System.ComponentModel.DataAnnotations.RangeAttribute.#ctor(Type,System.String,System.String)
+  - System.ComponentModel.DataAnnotations.RangeAttribute.#ctor(System.Type,System.String,System.String)
   - System.ComponentModel.DataAnnotations.RangeAttribute.Minimum
   - System.ComponentModel.DataAnnotations.RangeAttribute.Maximum
   - System.ComponentModel.DataAnnotations.RangeAttribute.OperandType
@@ -48,13 +53,13 @@ items:
     - id: minimum
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The minimum value, inclusive
     - id: maximum
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The maximum value, inclusive
   id: System.ComponentModel.DataAnnotations.RangeAttribute.#ctor(System.Int32,System.Int32)
@@ -75,20 +80,20 @@ items:
     - id: minimum
       type:
         id: System.Double
-        name: System.Double
+        name: double
         isExternal: true
       description: The minimum value, inclusive
     - id: maximum
       type:
         id: System.Double
-        name: System.Double
+        name: double
         isExternal: true
       description: The maximum value, inclusive
   id: System.ComponentModel.DataAnnotations.RangeAttribute.#ctor(System.Double,System.Double)
-- uid: System.ComponentModel.DataAnnotations.RangeAttribute.#ctor(Type,System.String,System.String)
+- uid: System.ComponentModel.DataAnnotations.RangeAttribute.#ctor(System.Type,System.String,System.String)
   href: System.ComponentModel.DataAnnotations.RangeAttribute.yml
   name: RangeAttribute(Type, string, string)
-  fullName: System.ComponentModel.DataAnnotations.RangeAttribute.RangeAttribute(Type, string, string)
+  fullName: System.ComponentModel.DataAnnotations.RangeAttribute.RangeAttribute(System.Type, string, string)
   type: Constructor
   source:
     remote: *o0
@@ -104,23 +109,23 @@ items:
     parameters:
     - id: type
       type:
-        id: Type
+        id: System.Type
         name: Type
         isExternal: true
       description: The type of the range parameters. Must implement IComparable.
     - id: minimum
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The minimum allowable value.
     - id: maximum
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The maximum allowable value.
-  id: System.ComponentModel.DataAnnotations.RangeAttribute.#ctor(Type,System.String,System.String)
+  id: System.ComponentModel.DataAnnotations.RangeAttribute.#ctor(System.Type,System.String,System.String)
 - uid: System.ComponentModel.DataAnnotations.RangeAttribute.Minimum
   href: System.ComponentModel.DataAnnotations.RangeAttribute.yml
   name: Minimum
@@ -133,12 +138,12 @@ items:
   summary: Gets the minimum value for the range
   syntax:
     content:
-      CSharp: public object Minimum { get; private set; }
+      CSharp: public object Minimum { get; }
     parameters:
     - id: Minimum
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.ComponentModel.DataAnnotations.RangeAttribute.Minimum
 - uid: System.ComponentModel.DataAnnotations.RangeAttribute.Maximum
@@ -153,12 +158,12 @@ items:
   summary: Gets the maximum value for the range
   syntax:
     content:
-      CSharp: public object Maximum { get; private set; }
+      CSharp: public object Maximum { get; }
     parameters:
     - id: Maximum
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.ComponentModel.DataAnnotations.RangeAttribute.Maximum
 - uid: System.ComponentModel.DataAnnotations.RangeAttribute.OperandType
@@ -176,11 +181,11 @@ items:
     type)
   syntax:
     content:
-      CSharp: public Type OperandType { get; private set; }
+      CSharp: public Type OperandType { get; }
     parameters:
     - id: OperandType
       type:
-        id: Type
+        id: System.Type
         name: Type
         isExternal: true
   id: System.ComponentModel.DataAnnotations.RangeAttribute.OperandType
@@ -201,11 +206,15 @@ items:
     - id: value
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: The value to test for validity.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: true means the  is valid
   id: System.ComponentModel.DataAnnotations.RangeAttribute.IsValid(System.Object)
 - uid: System.ComponentModel.DataAnnotations.RangeAttribute.FormatErrorMessage(System.String)
@@ -225,10 +234,14 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The user-visible name to include in the formatted message.
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
       description: A localized string describing the minimum and maximum values
   id: System.ComponentModel.DataAnnotations.RangeAttribute.FormatErrorMessage(System.String)

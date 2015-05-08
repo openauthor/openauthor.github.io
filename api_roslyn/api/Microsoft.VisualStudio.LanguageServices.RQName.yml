@@ -1,0 +1,59 @@
+items:
+- uid: Microsoft.VisualStudio.LanguageServices.RQName
+  href: Microsoft.VisualStudio.LanguageServices.RQName.yml
+  name: RQName
+  fullName: Microsoft.VisualStudio.LanguageServices.RQName
+  type: Class
+  source:
+    remote: &o0
+      path: src/VisualStudio/Core/Def/Implementation/RQName/RQName.cs
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      key: e7db1294
+    path: src/VisualStudio/Core/Def/Implementation/RQName/RQName.cs
+    startLine: 12
+  summary: >-
+    Helpers related to [Microsoft.VisualStudio.LanguageServices.RQName](Microsoft.VisualStudio.LanguageServices.RQName.yml)s. The resulting strings are suitable to pass as the pszRQName
+
+    arguments to methods in [Microsoft.VisualStudio.Shell.Interop.IVsRefactorNotify]() and [Microsoft.VisualStudio.Shell.Interop.IVsSymbolicNavigationNotify]().
+  syntax:
+    content:
+      CSharp: public class RQName
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  id: Microsoft.VisualStudio.LanguageServices.RQName
+  children:
+  - Microsoft.VisualStudio.LanguageServices.RQName.From(Microsoft.CodeAnalysis.ISymbol)
+- uid: Microsoft.VisualStudio.LanguageServices.RQName.From(Microsoft.CodeAnalysis.ISymbol)
+  href: Microsoft.VisualStudio.LanguageServices.RQName.yml
+  name: From(ISymbol)
+  fullName: Microsoft.VisualStudio.LanguageServices.RQName.From(Microsoft.CodeAnalysis.ISymbol)
+  type: Method
+  source:
+    remote: *o0
+    path: src/VisualStudio/Core/Def/Implementation/RQName/RQName.cs
+    startLine: 20
+  summary: Returns an RQName for the given symbol, or nullif the symbol cannot be represented by an RQName.
+  syntax:
+    content:
+      CSharp: public static string From(ISymbol symbol)
+    parameters:
+    - id: symbol
+      type:
+        id: Microsoft.CodeAnalysis.ISymbol
+        name: ISymbol
+        href: Microsoft.CodeAnalysis.ISymbol
+      description: The symbol to build an RQName for.
+    return:
+      id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: >-
+        A string suitable to pass as the pszRQName argument to methods in [Microsoft.VisualStudio.Shell.Interop.IVsRefactorNotify]()
+
+        and [Microsoft.VisualStudio.Shell.Interop.IVsSymbolicNavigationNotify]().
+  id: Microsoft.VisualStudio.LanguageServices.RQName.From(Microsoft.CodeAnalysis.ISymbol)

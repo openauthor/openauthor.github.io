@@ -5,18 +5,19 @@ items:
   fullName: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder
   type: Class
   source:
-    remote: &o0
+    remote: &o3
+      path: src/Workspaces/Core/Portable/FindSymbols/SymbolFinder_References.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/FindSymbols/SymbolFinder_References.cs
     startLine: 12
   syntax:
     content:
-      CSharp: public static partial class SymbolFinder
+      CSharp: public class SymbolFinder
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder
   children:
@@ -48,13 +49,17 @@ items:
   fullName: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindSymbolAtPosition(Microsoft.CodeAnalysis.SemanticModel, int, Microsoft.CodeAnalysis.Workspace, System.Threading.CancellationToken)
   type: Method
   source:
-    remote: *o0
+    remote: &o0
+      path: src/Workspaces/Core/Portable/FindSymbols/SymbolFinder.cs
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      key: e7db1294
     path: src/Workspaces/Core/Portable/FindSymbols/SymbolFinder.cs
     startLine: 23
   summary: Finds the symbol that is associated with a position in the text of a document.
   syntax:
     content:
-      CSharp: public static ISymbol FindSymbolAtPosition(SemanticModel semanticModel, int position, Workspace workspace, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public static ISymbol FindSymbolAtPosition(SemanticModel semanticModel, int position, Workspace workspace, CancellationToken cancellationToken = null)
     parameters:
     - id: semanticModel
       type:
@@ -65,7 +70,7 @@ items:
     - id: position
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The character position within the document.
     - id: workspace
@@ -77,11 +82,15 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
       description: A CancellationToken.
     return:
       id: ISymbol
+      type:
+        id: Microsoft.CodeAnalysis.ISymbol
+        name: ISymbol
+        href: Microsoft.CodeAnalysis.ISymbol
   id: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindSymbolAtPosition(Microsoft.CodeAnalysis.SemanticModel,System.Int32,Microsoft.CodeAnalysis.Workspace,System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindSymbolAtPositionAsync(Microsoft.CodeAnalysis.Document,System.Int32,System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.yml
@@ -94,7 +103,7 @@ items:
     startLine: 54
   syntax:
     content:
-      CSharp: public static async Task<ISymbol> FindSymbolAtPositionAsync(Document document, int position, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public static Task<ISymbol> FindSymbolAtPositionAsync(Document document, int position, CancellationToken cancellationToken = null)
     parameters:
     - id: document
       type:
@@ -104,15 +113,19 @@ items:
     - id: position
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.CodeAnalysis.ISymbol}
+        name: Task<ISymbol>
+        isExternal: true
   id: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindSymbolAtPositionAsync(Microsoft.CodeAnalysis.Document,System.Int32,System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindSourceDefinitionAsync(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Solution,System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.yml
@@ -129,7 +142,7 @@ items:
     Returns null if no such symbol can be found in the specified solution.
   syntax:
     content:
-      CSharp: public static Task<ISymbol> FindSourceDefinitionAsync(ISymbol symbol, Solution solution, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public static Task<ISymbol> FindSourceDefinitionAsync(ISymbol symbol, Solution solution, CancellationToken cancellationToken = null)
     parameters:
     - id: symbol
       type:
@@ -144,10 +157,14 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.CodeAnalysis.ISymbol}
+        name: Task<ISymbol>
+        isExternal: true
   id: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindSourceDefinitionAsync(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Solution,System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindSimilarSymbols``1(``0,Microsoft.CodeAnalysis.Compilation,System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.yml
@@ -174,7 +191,7 @@ items:
     No symbols may be returned if the compilation does not define or have access to a similar symbol.
   syntax:
     content:
-      CSharp: 'public static IEnumerable<TSymbol> FindSimilarSymbols<TSymbol>(TSymbol symbol, Compilation compilation, CancellationToken cancellationToken = default (CancellationToken))where TSymbol : ISymbol'
+      CSharp: 'public static IEnumerable<TSymbol> FindSimilarSymbols<TSymbol>(TSymbol symbol, Compilation compilation, CancellationToken cancellationToken = null)where TSymbol : ISymbol'
     parameters:
     - id: symbol
       type:
@@ -191,11 +208,15 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
       description: A CancellationToken.
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<TSymbol>
+        isExternal: true
   id: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindSimilarSymbols``1(``0,Microsoft.CodeAnalysis.Compilation,System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindDeclarationsAsync(Microsoft.CodeAnalysis.Project,System.String,System.Boolean,System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.yml
@@ -203,13 +224,17 @@ items:
   fullName: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindDeclarationsAsync(Microsoft.CodeAnalysis.Project, string, bool, System.Threading.CancellationToken)
   type: Method
   source:
-    remote: *o0
+    remote: &o1
+      path: src/Workspaces/Core/Portable/FindSymbols/SymbolFinder_Declarations.cs
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      key: e7db1294
     path: src/Workspaces/Core/Portable/FindSymbols/SymbolFinder_Declarations.cs
     startLine: 18
   summary: Find the declared symbols from either source, referenced projects or metadata assemblies with the specified name.
   syntax:
     content:
-      CSharp: public static Task<IEnumerable<ISymbol>> FindDeclarationsAsync(Project project, string name, bool ignoreCase, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public static Task<IEnumerable<ISymbol>> FindDeclarationsAsync(Project project, string name, bool ignoreCase, CancellationToken cancellationToken = null)
     parameters:
     - id: project
       type:
@@ -219,20 +244,24 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: ignoreCase
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ISymbol}}
+        name: Task<IEnumerable<ISymbol>>
+        isExternal: true
   id: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindDeclarationsAsync(Microsoft.CodeAnalysis.Project,System.String,System.Boolean,System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindDeclarationsAsync(Microsoft.CodeAnalysis.Project,System.String,System.Boolean,Microsoft.CodeAnalysis.SymbolFilter,System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.yml
@@ -240,13 +269,13 @@ items:
   fullName: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindDeclarationsAsync(Microsoft.CodeAnalysis.Project, string, bool, Microsoft.CodeAnalysis.SymbolFilter, System.Threading.CancellationToken)
   type: Method
   source:
-    remote: *o0
+    remote: *o1
     path: src/Workspaces/Core/Portable/FindSymbols/SymbolFinder_Declarations.cs
     startLine: 26
   summary: Find the declared symbols from either source, referenced projects or metadata assemblies with the specified name.
   syntax:
     content:
-      CSharp: public static Task<IEnumerable<ISymbol>> FindDeclarationsAsync(Project project, string name, bool ignoreCase, SymbolFilter filter, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public static Task<IEnumerable<ISymbol>> FindDeclarationsAsync(Project project, string name, bool ignoreCase, SymbolFilter filter, CancellationToken cancellationToken = null)
     parameters:
     - id: project
       type:
@@ -256,12 +285,12 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: ignoreCase
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     - id: filter
       type:
@@ -271,10 +300,14 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ISymbol}}
+        name: Task<IEnumerable<ISymbol>>
+        isExternal: true
   id: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindDeclarationsAsync(Microsoft.CodeAnalysis.Project,System.String,System.Boolean,Microsoft.CodeAnalysis.SymbolFilter,System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindSourceDeclarationsAsync(Microsoft.CodeAnalysis.Solution,System.String,System.Boolean,System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.yml
@@ -282,13 +315,13 @@ items:
   fullName: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindSourceDeclarationsAsync(Microsoft.CodeAnalysis.Solution, string, bool, System.Threading.CancellationToken)
   type: Method
   source:
-    remote: *o0
+    remote: *o1
     path: src/Workspaces/Core/Portable/FindSymbols/SymbolFinder_Declarations.cs
     startLine: 168
   summary: Find the symbols for declarations made in source with the specified name.
   syntax:
     content:
-      CSharp: public static Task<IEnumerable<ISymbol>> FindSourceDeclarationsAsync(Solution solution, string name, bool ignoreCase, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public static Task<IEnumerable<ISymbol>> FindSourceDeclarationsAsync(Solution solution, string name, bool ignoreCase, CancellationToken cancellationToken = null)
     parameters:
     - id: solution
       type:
@@ -298,20 +331,24 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: ignoreCase
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ISymbol}}
+        name: Task<IEnumerable<ISymbol>>
+        isExternal: true
   id: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindSourceDeclarationsAsync(Microsoft.CodeAnalysis.Solution,System.String,System.Boolean,System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindSourceDeclarationsAsync(Microsoft.CodeAnalysis.Solution,System.String,System.Boolean,Microsoft.CodeAnalysis.SymbolFilter,System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.yml
@@ -319,13 +356,13 @@ items:
   fullName: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindSourceDeclarationsAsync(Microsoft.CodeAnalysis.Solution, string, bool, Microsoft.CodeAnalysis.SymbolFilter, System.Threading.CancellationToken)
   type: Method
   source:
-    remote: *o0
+    remote: *o1
     path: src/Workspaces/Core/Portable/FindSymbols/SymbolFinder_Declarations.cs
     startLine: 176
   summary: Find the symbols for declarations made in source with the specified name.
   syntax:
     content:
-      CSharp: public static Task<IEnumerable<ISymbol>> FindSourceDeclarationsAsync(Solution solution, string name, bool ignoreCase, SymbolFilter filter, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public static Task<IEnumerable<ISymbol>> FindSourceDeclarationsAsync(Solution solution, string name, bool ignoreCase, SymbolFilter filter, CancellationToken cancellationToken = null)
     parameters:
     - id: solution
       type:
@@ -335,12 +372,12 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: ignoreCase
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     - id: filter
       type:
@@ -350,10 +387,14 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ISymbol}}
+        name: Task<IEnumerable<ISymbol>>
+        isExternal: true
   id: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindSourceDeclarationsAsync(Microsoft.CodeAnalysis.Solution,System.String,System.Boolean,Microsoft.CodeAnalysis.SymbolFilter,System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindSourceDeclarationsAsync(Microsoft.CodeAnalysis.Project,System.String,System.Boolean,System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.yml
@@ -361,13 +402,13 @@ items:
   fullName: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindSourceDeclarationsAsync(Microsoft.CodeAnalysis.Project, string, bool, System.Threading.CancellationToken)
   type: Method
   source:
-    remote: *o0
+    remote: *o1
     path: src/Workspaces/Core/Portable/FindSymbols/SymbolFinder_Declarations.cs
     startLine: 216
   summary: Find the symbols for declarations made in source with the specified name.
   syntax:
     content:
-      CSharp: public static Task<IEnumerable<ISymbol>> FindSourceDeclarationsAsync(Project project, string name, bool ignoreCase, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public static Task<IEnumerable<ISymbol>> FindSourceDeclarationsAsync(Project project, string name, bool ignoreCase, CancellationToken cancellationToken = null)
     parameters:
     - id: project
       type:
@@ -377,20 +418,24 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: ignoreCase
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ISymbol}}
+        name: Task<IEnumerable<ISymbol>>
+        isExternal: true
   id: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindSourceDeclarationsAsync(Microsoft.CodeAnalysis.Project,System.String,System.Boolean,System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindSourceDeclarationsAsync(Microsoft.CodeAnalysis.Project,System.String,System.Boolean,Microsoft.CodeAnalysis.SymbolFilter,System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.yml
@@ -398,13 +443,13 @@ items:
   fullName: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindSourceDeclarationsAsync(Microsoft.CodeAnalysis.Project, string, bool, Microsoft.CodeAnalysis.SymbolFilter, System.Threading.CancellationToken)
   type: Method
   source:
-    remote: *o0
+    remote: *o1
     path: src/Workspaces/Core/Portable/FindSymbols/SymbolFinder_Declarations.cs
     startLine: 224
   summary: Find the symbols for declarations made in source with the specified name.
   syntax:
     content:
-      CSharp: public static Task<IEnumerable<ISymbol>> FindSourceDeclarationsAsync(Project project, string name, bool ignoreCase, SymbolFilter filter, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public static Task<IEnumerable<ISymbol>> FindSourceDeclarationsAsync(Project project, string name, bool ignoreCase, SymbolFilter filter, CancellationToken cancellationToken = null)
     parameters:
     - id: project
       type:
@@ -414,12 +459,12 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: ignoreCase
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     - id: filter
       type:
@@ -429,10 +474,14 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ISymbol}}
+        name: Task<IEnumerable<ISymbol>>
+        isExternal: true
   id: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindSourceDeclarationsAsync(Microsoft.CodeAnalysis.Project,System.String,System.Boolean,Microsoft.CodeAnalysis.SymbolFilter,System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindSourceDeclarationsAsync(Microsoft.CodeAnalysis.Solution,System.Func{System.String,System.Boolean},System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.yml
@@ -440,13 +489,13 @@ items:
   fullName: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindSourceDeclarationsAsync(Microsoft.CodeAnalysis.Solution, System.Func<string, bool>, System.Threading.CancellationToken)
   type: Method
   source:
-    remote: *o0
+    remote: *o1
     path: src/Workspaces/Core/Portable/FindSymbols/SymbolFinder_Declarations.cs
     startLine: 259
   summary: Find the symbols for declarations made in source with a matching name.
   syntax:
     content:
-      CSharp: public static Task<IEnumerable<ISymbol>> FindSourceDeclarationsAsync(Solution solution, Func<string, bool> predicate, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public static Task<IEnumerable<ISymbol>> FindSourceDeclarationsAsync(Solution solution, Func<string, bool> predicate, CancellationToken cancellationToken = null)
     parameters:
     - id: solution
       type:
@@ -456,15 +505,19 @@ items:
     - id: predicate
       type:
         id: System.Func{System.String,System.Boolean}
-        name: System.Func{System.String,System.Boolean}
+        name: Func<string, bool>
         isExternal: true
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ISymbol}}
+        name: Task<IEnumerable<ISymbol>>
+        isExternal: true
   id: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindSourceDeclarationsAsync(Microsoft.CodeAnalysis.Solution,System.Func{System.String,System.Boolean},System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindSourceDeclarationsAsync(Microsoft.CodeAnalysis.Solution,System.Func{System.String,System.Boolean},Microsoft.CodeAnalysis.SymbolFilter,System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.yml
@@ -472,13 +525,13 @@ items:
   fullName: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindSourceDeclarationsAsync(Microsoft.CodeAnalysis.Solution, System.Func<string, bool>, Microsoft.CodeAnalysis.SymbolFilter, System.Threading.CancellationToken)
   type: Method
   source:
-    remote: *o0
+    remote: *o1
     path: src/Workspaces/Core/Portable/FindSymbols/SymbolFinder_Declarations.cs
     startLine: 267
   summary: Find the symbols for declarations made in source with a matching name.
   syntax:
     content:
-      CSharp: public static async Task<IEnumerable<ISymbol>> FindSourceDeclarationsAsync(Solution solution, Func<string, bool> predicate, SymbolFilter filter, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public static Task<IEnumerable<ISymbol>> FindSourceDeclarationsAsync(Solution solution, Func<string, bool> predicate, SymbolFilter filter, CancellationToken cancellationToken = null)
     parameters:
     - id: solution
       type:
@@ -488,7 +541,7 @@ items:
     - id: predicate
       type:
         id: System.Func{System.String,System.Boolean}
-        name: System.Func{System.String,System.Boolean}
+        name: Func<string, bool>
         isExternal: true
     - id: filter
       type:
@@ -498,10 +551,14 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ISymbol}}
+        name: Task<IEnumerable<ISymbol>>
+        isExternal: true
   id: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindSourceDeclarationsAsync(Microsoft.CodeAnalysis.Solution,System.Func{System.String,System.Boolean},Microsoft.CodeAnalysis.SymbolFilter,System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindSourceDeclarationsAsync(Microsoft.CodeAnalysis.Project,System.Func{System.String,System.Boolean},System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.yml
@@ -509,13 +566,13 @@ items:
   fullName: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindSourceDeclarationsAsync(Microsoft.CodeAnalysis.Project, System.Func<string, bool>, System.Threading.CancellationToken)
   type: Method
   source:
-    remote: *o0
+    remote: *o1
     path: src/Workspaces/Core/Portable/FindSymbols/SymbolFinder_Declarations.cs
     startLine: 296
   summary: Find the symbols for declarations made in source with a matching name.
   syntax:
     content:
-      CSharp: public static Task<IEnumerable<ISymbol>> FindSourceDeclarationsAsync(Project project, Func<string, bool> predicate, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public static Task<IEnumerable<ISymbol>> FindSourceDeclarationsAsync(Project project, Func<string, bool> predicate, CancellationToken cancellationToken = null)
     parameters:
     - id: project
       type:
@@ -525,15 +582,19 @@ items:
     - id: predicate
       type:
         id: System.Func{System.String,System.Boolean}
-        name: System.Func{System.String,System.Boolean}
+        name: Func<string, bool>
         isExternal: true
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ISymbol}}
+        name: Task<IEnumerable<ISymbol>>
+        isExternal: true
   id: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindSourceDeclarationsAsync(Microsoft.CodeAnalysis.Project,System.Func{System.String,System.Boolean},System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindSourceDeclarationsAsync(Microsoft.CodeAnalysis.Project,System.Func{System.String,System.Boolean},Microsoft.CodeAnalysis.SymbolFilter,System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.yml
@@ -541,13 +602,13 @@ items:
   fullName: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindSourceDeclarationsAsync(Microsoft.CodeAnalysis.Project, System.Func<string, bool>, Microsoft.CodeAnalysis.SymbolFilter, System.Threading.CancellationToken)
   type: Method
   source:
-    remote: *o0
+    remote: *o1
     path: src/Workspaces/Core/Portable/FindSymbols/SymbolFinder_Declarations.cs
     startLine: 304
   summary: Find the symbols for declarations made in source with a matching name.
   syntax:
     content:
-      CSharp: public static async Task<IEnumerable<ISymbol>> FindSourceDeclarationsAsync(Project project, Func<string, bool> predicate, SymbolFilter filter, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public static Task<IEnumerable<ISymbol>> FindSourceDeclarationsAsync(Project project, Func<string, bool> predicate, SymbolFilter filter, CancellationToken cancellationToken = null)
     parameters:
     - id: project
       type:
@@ -557,7 +618,7 @@ items:
     - id: predicate
       type:
         id: System.Func{System.String,System.Boolean}
-        name: System.Func{System.String,System.Boolean}
+        name: Func<string, bool>
         isExternal: true
     - id: filter
       type:
@@ -567,10 +628,14 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ISymbol}}
+        name: Task<IEnumerable<ISymbol>>
+        isExternal: true
   id: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindSourceDeclarationsAsync(Microsoft.CodeAnalysis.Project,System.Func{System.String,System.Boolean},Microsoft.CodeAnalysis.SymbolFilter,System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindOverridesAsync(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Solution,System.Collections.Immutable.IImmutableSet{Microsoft.CodeAnalysis.Project},System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.yml
@@ -578,13 +643,17 @@ items:
   fullName: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindOverridesAsync(Microsoft.CodeAnalysis.ISymbol, Microsoft.CodeAnalysis.Solution, System.Collections.Immutable.IImmutableSet<Microsoft.CodeAnalysis.Project>, System.Threading.CancellationToken)
   type: Method
   source:
-    remote: *o0
+    remote: &o2
+      path: src/Workspaces/Core/Portable/FindSymbols/SymbolFinder_Hierarchy.cs
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      key: e7db1294
     path: src/Workspaces/Core/Portable/FindSymbols/SymbolFinder_Hierarchy.cs
     startLine: 21
   summary: Find symbols for members that override the specified member symbol.
   syntax:
     content:
-      CSharp: public static async Task<IEnumerable<ISymbol>> FindOverridesAsync(ISymbol symbol, Solution solution, IImmutableSet<Project> projects = null, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public static Task<IEnumerable<ISymbol>> FindOverridesAsync(ISymbol symbol, Solution solution, IImmutableSet<Project> projects = null, CancellationToken cancellationToken = null)
     parameters:
     - id: symbol
       type:
@@ -599,15 +668,19 @@ items:
     - id: projects
       type:
         id: System.Collections.Immutable.IImmutableSet{Microsoft.CodeAnalysis.Project}
-        name: System.Collections.Immutable.IImmutableSet{Microsoft.CodeAnalysis.Project}
+        name: IImmutableSet<Project>
         isExternal: true
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ISymbol}}
+        name: Task<IEnumerable<ISymbol>>
+        isExternal: true
   id: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindOverridesAsync(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Solution,System.Collections.Immutable.IImmutableSet{Microsoft.CodeAnalysis.Project},System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindImplementedInterfaceMembersAsync(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Solution,System.Collections.Immutable.IImmutableSet{Microsoft.CodeAnalysis.Project},System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.yml
@@ -615,13 +688,13 @@ items:
   fullName: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindImplementedInterfaceMembersAsync(Microsoft.CodeAnalysis.ISymbol, Microsoft.CodeAnalysis.Solution, System.Collections.Immutable.IImmutableSet<Microsoft.CodeAnalysis.Project>, System.Threading.CancellationToken)
   type: Method
   source:
-    remote: *o0
+    remote: *o2
     path: src/Workspaces/Core/Portable/FindSymbols/SymbolFinder_Hierarchy.cs
     startLine: 64
   summary: Find symbols for declarations that implement members of the specified interface symbol
   syntax:
     content:
-      CSharp: public static async Task<IEnumerable<ISymbol>> FindImplementedInterfaceMembersAsync(ISymbol symbol, Solution solution, IImmutableSet<Project> projects = null, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public static Task<IEnumerable<ISymbol>> FindImplementedInterfaceMembersAsync(ISymbol symbol, Solution solution, IImmutableSet<Project> projects = null, CancellationToken cancellationToken = null)
     parameters:
     - id: symbol
       type:
@@ -636,15 +709,19 @@ items:
     - id: projects
       type:
         id: System.Collections.Immutable.IImmutableSet{Microsoft.CodeAnalysis.Project}
-        name: System.Collections.Immutable.IImmutableSet{Microsoft.CodeAnalysis.Project}
+        name: IImmutableSet<Project>
         isExternal: true
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ISymbol}}
+        name: Task<IEnumerable<ISymbol>>
+        isExternal: true
   id: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindImplementedInterfaceMembersAsync(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Solution,System.Collections.Immutable.IImmutableSet{Microsoft.CodeAnalysis.Project},System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindImplementationsAsync(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Solution,System.Collections.Immutable.IImmutableSet{Microsoft.CodeAnalysis.Project},System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.yml
@@ -652,13 +729,13 @@ items:
   fullName: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindImplementationsAsync(Microsoft.CodeAnalysis.ISymbol, Microsoft.CodeAnalysis.Solution, System.Collections.Immutable.IImmutableSet<Microsoft.CodeAnalysis.Project>, System.Threading.CancellationToken)
   type: Method
   source:
-    remote: *o0
+    remote: *o2
     path: src/Workspaces/Core/Portable/FindSymbols/SymbolFinder_Hierarchy.cs
     startLine: 134
   summary: Finds the symbols that implement an interface or interface member.
   syntax:
     content:
-      CSharp: public static async Task<IEnumerable<ISymbol>> FindImplementationsAsync(ISymbol symbol, Solution solution, IImmutableSet<Project> projects = null, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public static Task<IEnumerable<ISymbol>> FindImplementationsAsync(ISymbol symbol, Solution solution, IImmutableSet<Project> projects = null, CancellationToken cancellationToken = null)
     parameters:
     - id: symbol
       type:
@@ -673,15 +750,19 @@ items:
     - id: projects
       type:
         id: System.Collections.Immutable.IImmutableSet{Microsoft.CodeAnalysis.Project}
-        name: System.Collections.Immutable.IImmutableSet{Microsoft.CodeAnalysis.Project}
+        name: IImmutableSet<Project>
         isExternal: true
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ISymbol}}
+        name: Task<IEnumerable<ISymbol>>
+        isExternal: true
   id: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindImplementationsAsync(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Solution,System.Collections.Immutable.IImmutableSet{Microsoft.CodeAnalysis.Project},System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindCallersAsync(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Solution,System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.yml
@@ -689,13 +770,13 @@ items:
   fullName: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindCallersAsync(Microsoft.CodeAnalysis.ISymbol, Microsoft.CodeAnalysis.Solution, System.Threading.CancellationToken)
   type: Method
   source:
-    remote: *o0
+    remote: *o2
     path: src/Workspaces/Core/Portable/FindSymbols/SymbolFinder_Hierarchy.cs
     startLine: 190
   summary: Finds all the callers of a specified symbol.
   syntax:
     content:
-      CSharp: public static Task<IEnumerable<SymbolCallerInfo>> FindCallersAsync(ISymbol symbol, Solution solution, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public static Task<IEnumerable<SymbolCallerInfo>> FindCallersAsync(ISymbol symbol, Solution solution, CancellationToken cancellationToken = null)
     parameters:
     - id: symbol
       type:
@@ -710,10 +791,14 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.FindSymbols.SymbolCallerInfo}}
+        name: Task<IEnumerable<SymbolCallerInfo>>
+        isExternal: true
   id: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindCallersAsync(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Solution,System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindCallersAsync(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Solution,System.Collections.Immutable.IImmutableSet{Microsoft.CodeAnalysis.Document},System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.yml
@@ -721,13 +806,13 @@ items:
   fullName: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindCallersAsync(Microsoft.CodeAnalysis.ISymbol, Microsoft.CodeAnalysis.Solution, System.Collections.Immutable.IImmutableSet<Microsoft.CodeAnalysis.Document>, System.Threading.CancellationToken)
   type: Method
   source:
-    remote: *o0
+    remote: *o2
     path: src/Workspaces/Core/Portable/FindSymbols/SymbolFinder_Hierarchy.cs
     startLine: 198
   summary: Finds all the callers of a specified symbol.
   syntax:
     content:
-      CSharp: public static async Task<IEnumerable<SymbolCallerInfo>> FindCallersAsync(ISymbol symbol, Solution solution, IImmutableSet<Document> documents, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public static Task<IEnumerable<SymbolCallerInfo>> FindCallersAsync(ISymbol symbol, Solution solution, IImmutableSet<Document> documents, CancellationToken cancellationToken = null)
     parameters:
     - id: symbol
       type:
@@ -742,15 +827,19 @@ items:
     - id: documents
       type:
         id: System.Collections.Immutable.IImmutableSet{Microsoft.CodeAnalysis.Document}
-        name: System.Collections.Immutable.IImmutableSet{Microsoft.CodeAnalysis.Document}
+        name: IImmutableSet<Document>
         isExternal: true
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.FindSymbols.SymbolCallerInfo}}
+        name: Task<IEnumerable<SymbolCallerInfo>>
+        isExternal: true
   id: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindCallersAsync(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Solution,System.Collections.Immutable.IImmutableSet{Microsoft.CodeAnalysis.Document},System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindReferencesAsync(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Solution,System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.yml
@@ -758,13 +847,13 @@ items:
   fullName: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindReferencesAsync(Microsoft.CodeAnalysis.ISymbol, Microsoft.CodeAnalysis.Solution, System.Threading.CancellationToken)
   type: Method
   source:
-    remote: *o0
+    remote: *o3
     path: src/Workspaces/Core/Portable/FindSymbols/SymbolFinder_References.cs
     startLine: 20
   summary: Finds all references to a symbol throughout a solution
   syntax:
     content:
-      CSharp: public static Task<IEnumerable<ReferencedSymbol>> FindReferencesAsync(ISymbol symbol, Solution solution, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public static Task<IEnumerable<ReferencedSymbol>> FindReferencesAsync(ISymbol symbol, Solution solution, CancellationToken cancellationToken = null)
     parameters:
     - id: symbol
       type:
@@ -781,11 +870,15 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
       description: A cancellation token.
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.FindSymbols.ReferencedSymbol}}
+        name: Task<IEnumerable<ReferencedSymbol>>
+        isExternal: true
   id: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindReferencesAsync(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Solution,System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindReferencesAsync(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Solution,System.Collections.Immutable.IImmutableSet{Microsoft.CodeAnalysis.Document},System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.yml
@@ -793,13 +886,13 @@ items:
   fullName: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindReferencesAsync(Microsoft.CodeAnalysis.ISymbol, Microsoft.CodeAnalysis.Solution, System.Collections.Immutable.IImmutableSet<Microsoft.CodeAnalysis.Document>, System.Threading.CancellationToken)
   type: Method
   source:
-    remote: *o0
+    remote: *o3
     path: src/Workspaces/Core/Portable/FindSymbols/SymbolFinder_References.cs
     startLine: 35
   summary: Finds all references to a symbol throughout a solution
   syntax:
     content:
-      CSharp: public static Task<IEnumerable<ReferencedSymbol>> FindReferencesAsync(ISymbol symbol, Solution solution, IImmutableSet<Document> documents, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public static Task<IEnumerable<ReferencedSymbol>> FindReferencesAsync(ISymbol symbol, Solution solution, IImmutableSet<Document> documents, CancellationToken cancellationToken = null)
     parameters:
     - id: symbol
       type:
@@ -816,17 +909,21 @@ items:
     - id: documents
       type:
         id: System.Collections.Immutable.IImmutableSet{Microsoft.CodeAnalysis.Document}
-        name: System.Collections.Immutable.IImmutableSet{Microsoft.CodeAnalysis.Document}
+        name: IImmutableSet<Document>
         isExternal: true
       description: A set of documents to be searched. If documents is null, then that means "all documents".
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
       description: A cancellation token.
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.FindSymbols.ReferencedSymbol}}
+        name: Task<IEnumerable<ReferencedSymbol>>
+        isExternal: true
   id: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindReferencesAsync(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Solution,System.Collections.Immutable.IImmutableSet{Microsoft.CodeAnalysis.Document},System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindReferencesAsync(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Solution,Microsoft.CodeAnalysis.FindSymbols.IFindReferencesProgress,System.Collections.Immutable.IImmutableSet{Microsoft.CodeAnalysis.Document},System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.yml
@@ -834,13 +931,13 @@ items:
   fullName: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindReferencesAsync(Microsoft.CodeAnalysis.ISymbol, Microsoft.CodeAnalysis.Solution, Microsoft.CodeAnalysis.FindSymbols.IFindReferencesProgress, System.Collections.Immutable.IImmutableSet<Microsoft.CodeAnalysis.Document>, System.Threading.CancellationToken)
   type: Method
   source:
-    remote: *o0
+    remote: *o3
     path: src/Workspaces/Core/Portable/FindSymbols/SymbolFinder_References.cs
     startLine: 53
   summary: Finds all references to a symbol throughout a solution
   syntax:
     content:
-      CSharp: public static async Task<IEnumerable<ReferencedSymbol>> FindReferencesAsync(ISymbol symbol, Solution solution, IFindReferencesProgress progress, IImmutableSet<Document> documents, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public static Task<IEnumerable<ReferencedSymbol>> FindReferencesAsync(ISymbol symbol, Solution solution, IFindReferencesProgress progress, IImmutableSet<Document> documents, CancellationToken cancellationToken = null)
     parameters:
     - id: symbol
       type:
@@ -866,15 +963,19 @@ items:
     - id: documents
       type:
         id: System.Collections.Immutable.IImmutableSet{Microsoft.CodeAnalysis.Document}
-        name: System.Collections.Immutable.IImmutableSet{Microsoft.CodeAnalysis.Document}
+        name: IImmutableSet<Document>
         isExternal: true
       description: An optional set of documents to be searched. If documents is null, then that means "all documents".
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
       description: An optional cancellation token.
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.FindSymbols.ReferencedSymbol}}
+        name: Task<IEnumerable<ReferencedSymbol>>
+        isExternal: true
   id: Microsoft.CodeAnalysis.FindSymbols.SymbolFinder.FindReferencesAsync(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Solution,Microsoft.CodeAnalysis.FindSymbols.IFindReferencesProgress,System.Collections.Immutable.IImmutableSet{Microsoft.CodeAnalysis.Document},System.Threading.CancellationToken)

@@ -6,9 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/CodeRefactorings/CodeRefactoringProvider.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/CodeRefactorings/CodeRefactoringProvider.cs
     startLine: 10
   summary: >-
@@ -20,7 +21,7 @@ items:
       CSharp: public abstract class CodeRefactoringProvider
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider
   children:
@@ -37,7 +38,7 @@ items:
   summary: Computes one or more refactorings for the specified [Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext](Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext.yml).
   syntax:
     content:
-      CSharp: public abstract Task ComputeRefactoringsAsync(CodeRefactoringContext context);
+      CSharp: public abstract Task ComputeRefactoringsAsync(CodeRefactoringContext context)
     parameters:
     - id: context
       type:
@@ -46,4 +47,8 @@ items:
         href: Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext.yml
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task
+        name: Task
+        isExternal: true
   id: Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider.ComputeRefactoringsAsync(Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext)

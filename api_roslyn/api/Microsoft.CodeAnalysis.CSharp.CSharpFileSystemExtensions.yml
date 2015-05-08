@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Compilers/CSharp/Desktop/CSharpFileSystemExtensions.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Compilers/CSharp/Desktop/CSharpFileSystemExtensions.cs
     startLine: 10
   syntax:
     content:
-      CSharp: public static class CSharpFileSystemExtensions
+      CSharp: public class CSharpFileSystemExtensions
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.CSharpFileSystemExtensions
   children:
@@ -33,7 +34,7 @@ items:
   summary: Emit the IL for the compilation into the specified stream.
   syntax:
     content:
-      CSharp: public static EmitResult Emit(this CSharpCompilation compilation, string outputPath, string pdbPath = null, string xmlDocumentationPath = null, string win32ResourcesPath = null, IEnumerable<ResourceDescription> manifestResources = null, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public static EmitResult Emit(CSharpCompilation compilation, string outputPath, string pdbPath = null, string xmlDocumentationPath = null, string win32ResourcesPath = null, IEnumerable<ResourceDescription> manifestResources = null, CancellationToken cancellationToken = null)
     parameters:
     - id: compilation
       type:
@@ -44,13 +45,13 @@ items:
     - id: outputPath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: Path of the file to which the PE image will be written.
     - id: pdbPath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: >-
         Path of the file to which the compilation's debug info will be written.
@@ -59,13 +60,13 @@ items:
     - id: xmlDocumentationPath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: Path of the file to which the compilation's XML documentation will be written.  Null to forego XML generation.
     - id: win32ResourcesPath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: >-
         Path of the file from which the compilation's Win32 resources will be read (in RES format).
@@ -74,15 +75,19 @@ items:
     - id: manifestResources
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ResourceDescription}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ResourceDescription}
+        name: IEnumerable<ResourceDescription>
         isExternal: true
       description: List of the compilation's managed resources.  Null to indicate that there are none.
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
       description: To cancel the emit process.
     return:
       id: EmitResult
+      type:
+        id: Microsoft.CodeAnalysis.Emit.EmitResult
+        name: EmitResult
+        href: Microsoft.CodeAnalysis.Emit.EmitResult
   id: Microsoft.CodeAnalysis.CSharp.CSharpFileSystemExtensions.Emit(Microsoft.CodeAnalysis.CSharp.CSharpCompilation,System.String,System.String,System.String,System.String,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ResourceDescription},System.Threading.CancellationToken)

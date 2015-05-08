@@ -6,9 +6,10 @@ items:
   type: Interface
   source:
     remote: &o0
+      path: src/System.Web.Mvc/IControllerActivator.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/IControllerActivator.cs
     startLine: 6
   syntax:
@@ -28,18 +29,22 @@ items:
     startLine: 8
   syntax:
     content:
-      CSharp: IController Create(RequestContext requestContext, Type controllerType);
+      CSharp: public IController Create(RequestContext requestContext, Type controllerType)
     parameters:
     - id: requestContext
       type:
         id: System.Web.Routing.RequestContext
-        name: System.Web.Routing.RequestContext
+        name: RequestContext
         isExternal: true
     - id: controllerType
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
     return:
       id: IController
+      type:
+        id: System.Web.Mvc.IController
+        name: IController
+        href: System.Web.Mvc.IController.yml
   id: System.Web.Mvc.IControllerActivator.Create(System.Web.Routing.RequestContext,System.Type)

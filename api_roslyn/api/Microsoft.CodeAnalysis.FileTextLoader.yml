@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Desktop/Workspace/FileTextLoader.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Desktop/Workspace/FileTextLoader.cs
     startLine: 13
   syntax:
     content:
-      CSharp: public class FileTextLoader
+      CSharp: 'public class FileTextLoader : TextLoader'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: Object
     isExternal: true
   - id: Microsoft.CodeAnalysis.TextLoader
     name: TextLoader
@@ -26,6 +27,7 @@ items:
   - Microsoft.CodeAnalysis.FileTextLoader.#ctor(System.String,System.Text.Encoding)
   - Microsoft.CodeAnalysis.FileTextLoader.Path
   - Microsoft.CodeAnalysis.FileTextLoader.DefaultEncoding
+  - Microsoft.CodeAnalysis.FileTextLoader.CreateText(System.IO.Stream,Microsoft.CodeAnalysis.Workspace)
   - Microsoft.CodeAnalysis.FileTextLoader.LoadTextAndVersionAsync(Microsoft.CodeAnalysis.Workspace,Microsoft.CodeAnalysis.DocumentId,System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.FileTextLoader.#ctor(System.String,System.Text.Encoding)
   href: Microsoft.CodeAnalysis.FileTextLoader.yml
@@ -44,18 +46,18 @@ items:
     - id: path
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: An absolute file path.
     - id: defaultEncoding
       type:
         id: System.Text.Encoding
-        name: System.Text.Encoding
+        name: Encoding
         isExternal: true
       description: >-
         Specifies an encoding to be used if the actual encoding can't be determined from the stream content (the stream doesn't start with Byte Order Mark).
 
-        If not specified auto-detect heuristics are used to determine the encoding. If these heuristics fail the decoding is assumed to be [System.Text.Encoding.Default](#).
+        If not specified auto-detect heuristics are used to determine the encoding. If these heuristics fail the decoding is assumed to be [System.Text.Encoding.Default]().
 
         Note that if the stream starts with Byte Order Mark the value of  is ignored.
   id: Microsoft.CodeAnalysis.FileTextLoader.#ctor(System.String,System.Text.Encoding)
@@ -76,7 +78,7 @@ items:
     - id: Path
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: Microsoft.CodeAnalysis.FileTextLoader.Path
 - uid: Microsoft.CodeAnalysis.FileTextLoader.DefaultEncoding
@@ -95,7 +97,7 @@ items:
 
     If null auto-detect heristics are used to determine the encoding.
 
-    If these heuristics fail the decoding is assumed to be [System.Text.Encoding.Default](#).
+    If these heuristics fail the decoding is assumed to be [System.Text.Encoding.Default]().
 
     Note that if the stream starts with Byte Order Mark the value of [Microsoft.CodeAnalysis.FileTextLoader.DefaultEncoding](Microsoft.CodeAnalysis.FileTextLoader.yml) is ignored.
   syntax:
@@ -105,9 +107,39 @@ items:
     - id: DefaultEncoding
       type:
         id: System.Text.Encoding
-        name: System.Text.Encoding
+        name: Encoding
         isExternal: true
   id: Microsoft.CodeAnalysis.FileTextLoader.DefaultEncoding
+- uid: Microsoft.CodeAnalysis.FileTextLoader.CreateText(System.IO.Stream,Microsoft.CodeAnalysis.Workspace)
+  href: Microsoft.CodeAnalysis.FileTextLoader.yml
+  name: CreateText(Stream, Workspace)
+  fullName: Microsoft.CodeAnalysis.FileTextLoader.CreateText(System.IO.Stream, Microsoft.CodeAnalysis.Workspace)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Desktop/Workspace/FileTextLoader.cs
+    startLine: 57
+  syntax:
+    content:
+      CSharp: protected virtual SourceText CreateText(Stream stream, Workspace workspace)
+    parameters:
+    - id: stream
+      type:
+        id: System.IO.Stream
+        name: Stream
+        isExternal: true
+    - id: workspace
+      type:
+        id: Microsoft.CodeAnalysis.Workspace
+        name: Workspace
+        href: Microsoft.CodeAnalysis.Workspace.yml
+    return:
+      id: SourceText
+      type:
+        id: Microsoft.CodeAnalysis.Text.SourceText
+        name: SourceText
+        href: Microsoft.CodeAnalysis.Text.SourceText
+  id: Microsoft.CodeAnalysis.FileTextLoader.CreateText(System.IO.Stream,Microsoft.CodeAnalysis.Workspace)
 - uid: Microsoft.CodeAnalysis.FileTextLoader.LoadTextAndVersionAsync(Microsoft.CodeAnalysis.Workspace,Microsoft.CodeAnalysis.DocumentId,System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.FileTextLoader.yml
   name: LoadTextAndVersionAsync(Workspace, DocumentId, CancellationToken)
@@ -120,7 +152,7 @@ items:
   summary: Load a text and a version of the document in the workspace.
   syntax:
     content:
-      CSharp: public override async Task<TextAndVersion> LoadTextAndVersionAsync(Workspace workspace, DocumentId documentId, CancellationToken cancellationToken)
+      CSharp: public override Task<TextAndVersion> LoadTextAndVersionAsync(Workspace workspace, DocumentId documentId, CancellationToken cancellationToken)
     parameters:
     - id: workspace
       type:
@@ -135,8 +167,12 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.CodeAnalysis.TextAndVersion}
+        name: Task<TextAndVersion>
+        isExternal: true
   id: Microsoft.CodeAnalysis.FileTextLoader.LoadTextAndVersionAsync(Microsoft.CodeAnalysis.Workspace,Microsoft.CodeAnalysis.DocumentId,System.Threading.CancellationToken)

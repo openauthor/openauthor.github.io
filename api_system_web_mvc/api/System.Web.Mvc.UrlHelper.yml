@@ -6,9 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/UrlHelper.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/UrlHelper.cs
     startLine: 10
   syntax:
@@ -16,7 +17,7 @@ items:
       CSharp: public class UrlHelper
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.UrlHelper
   children:
@@ -81,7 +82,7 @@ items:
     - id: requestContext
       type:
         id: System.Web.Routing.RequestContext
-        name: System.Web.Routing.RequestContext
+        name: RequestContext
         isExternal: true
   id: System.Web.Mvc.UrlHelper.#ctor(System.Web.Routing.RequestContext)
 - uid: System.Web.Mvc.UrlHelper.#ctor(System.Web.Routing.RequestContext,System.Web.Routing.RouteCollection)
@@ -100,12 +101,12 @@ items:
     - id: requestContext
       type:
         id: System.Web.Routing.RequestContext
-        name: System.Web.Routing.RequestContext
+        name: RequestContext
         isExternal: true
     - id: routeCollection
       type:
         id: System.Web.Routing.RouteCollection
-        name: System.Web.Routing.RouteCollection
+        name: RouteCollection
         isExternal: true
   id: System.Web.Mvc.UrlHelper.#ctor(System.Web.Routing.RequestContext,System.Web.Routing.RouteCollection)
 - uid: System.Web.Mvc.UrlHelper.RequestContext
@@ -119,12 +120,12 @@ items:
     startLine: 45
   syntax:
     content:
-      CSharp: public RequestContext RequestContext { get; private set; }
+      CSharp: public RequestContext RequestContext { get; }
     parameters:
     - id: RequestContext
       type:
         id: System.Web.Routing.RequestContext
-        name: System.Web.Routing.RequestContext
+        name: RequestContext
         isExternal: true
   id: System.Web.Mvc.UrlHelper.RequestContext
 - uid: System.Web.Mvc.UrlHelper.RouteCollection
@@ -138,12 +139,12 @@ items:
     startLine: 47
   syntax:
     content:
-      CSharp: public RouteCollection RouteCollection { get; private set; }
+      CSharp: public RouteCollection RouteCollection { get; }
     parameters:
     - id: RouteCollection
       type:
         id: System.Web.Routing.RouteCollection
-        name: System.Web.Routing.RouteCollection
+        name: RouteCollection
         isExternal: true
   id: System.Web.Mvc.UrlHelper.RouteCollection
 - uid: System.Web.Mvc.UrlHelper.Action
@@ -161,6 +162,10 @@ items:
     parameters: []
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.UrlHelper.Action
 - uid: System.Web.Mvc.UrlHelper.Action(System.String)
   href: System.Web.Mvc.UrlHelper.yml
@@ -178,10 +183,14 @@ items:
     - id: actionName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.UrlHelper.Action(System.String)
 - uid: System.Web.Mvc.UrlHelper.Action(System.String,System.Object)
   href: System.Web.Mvc.UrlHelper.yml
@@ -199,15 +208,19 @@ items:
     - id: actionName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: routeValues
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.UrlHelper.Action(System.String,System.Object)
 - uid: System.Web.Mvc.UrlHelper.Action(System.String,System.Web.Routing.RouteValueDictionary)
   href: System.Web.Mvc.UrlHelper.yml
@@ -225,15 +238,19 @@ items:
     - id: actionName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: routeValues
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.UrlHelper.Action(System.String,System.Web.Routing.RouteValueDictionary)
 - uid: System.Web.Mvc.UrlHelper.Action(System.String,System.String)
   href: System.Web.Mvc.UrlHelper.yml
@@ -251,15 +268,19 @@ items:
     - id: actionName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: controllerName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.UrlHelper.Action(System.String,System.String)
 - uid: System.Web.Mvc.UrlHelper.Action(System.String,System.String,System.Object)
   href: System.Web.Mvc.UrlHelper.yml
@@ -277,20 +298,24 @@ items:
     - id: actionName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: controllerName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: routeValues
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.UrlHelper.Action(System.String,System.String,System.Object)
 - uid: System.Web.Mvc.UrlHelper.Action(System.String,System.String,System.Web.Routing.RouteValueDictionary)
   href: System.Web.Mvc.UrlHelper.yml
@@ -308,20 +333,24 @@ items:
     - id: actionName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: controllerName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: routeValues
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.UrlHelper.Action(System.String,System.String,System.Web.Routing.RouteValueDictionary)
 - uid: System.Web.Mvc.UrlHelper.Action(System.String,System.String,System.Web.Routing.RouteValueDictionary,System.String)
   href: System.Web.Mvc.UrlHelper.yml
@@ -339,25 +368,29 @@ items:
     - id: actionName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: controllerName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: routeValues
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
     - id: protocol
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.UrlHelper.Action(System.String,System.String,System.Web.Routing.RouteValueDictionary,System.String)
 - uid: System.Web.Mvc.UrlHelper.Action(System.String,System.String,System.Object,System.String)
   href: System.Web.Mvc.UrlHelper.yml
@@ -375,25 +408,29 @@ items:
     - id: actionName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: controllerName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: routeValues
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     - id: protocol
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.UrlHelper.Action(System.String,System.String,System.Object,System.String)
 - uid: System.Web.Mvc.UrlHelper.Action(System.String,System.String,System.Web.Routing.RouteValueDictionary,System.String,System.String)
   href: System.Web.Mvc.UrlHelper.yml
@@ -411,30 +448,34 @@ items:
     - id: actionName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: controllerName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: routeValues
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
     - id: protocol
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: hostName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.UrlHelper.Action(System.String,System.String,System.Web.Routing.RouteValueDictionary,System.String,System.String)
 - uid: System.Web.Mvc.UrlHelper.Content(System.String)
   href: System.Web.Mvc.UrlHelper.yml
@@ -452,10 +493,14 @@ items:
     - id: contentPath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.UrlHelper.Content(System.String)
 - uid: System.Web.Mvc.UrlHelper.GenerateContentUrl(System.String,System.Web.HttpContextBase)
   href: System.Web.Mvc.UrlHelper.yml
@@ -468,20 +513,24 @@ items:
     startLine: 104
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Justification = "As the return value will used only for rendering, string return value is more appropriate.")] public static string GenerateContentUrl(string contentPath, HttpContextBase httpContext)'
+      CSharp: public static string GenerateContentUrl(string contentPath, HttpContextBase httpContext)
     parameters:
     - id: contentPath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: httpContext
       type:
         id: System.Web.HttpContextBase
-        name: System.Web.HttpContextBase
+        name: HttpContextBase
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.UrlHelper.GenerateContentUrl(System.String,System.Web.HttpContextBase)
 - uid: System.Web.Mvc.UrlHelper.Encode(System.String)
   href: System.Web.Mvc.UrlHelper.yml
@@ -494,15 +543,19 @@ items:
     startLine: 128
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", Justification = "Needs to take same parameters as HttpUtility.UrlEncode()")] [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Justification = "For consistency, all helpers are instance methods.")] public virtual string Encode(string url)'
+      CSharp: public virtual string Encode(string url)
     parameters:
     - id: url
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.UrlHelper.Encode(System.String)
 - uid: System.Web.Mvc.UrlHelper.GenerateUrl(System.String,System.String,System.String,System.String,System.String,System.String,System.Web.Routing.RouteValueDictionary,System.Web.Routing.RouteCollection,System.Web.Routing.RequestContext,System.Boolean)
   href: System.Web.Mvc.UrlHelper.yml
@@ -515,60 +568,64 @@ items:
     startLine: 140
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Justification = "As the return value will used only for rendering, string return value is more appropriate.")] public static string GenerateUrl(string routeName, string actionName, string controllerName, string protocol, string hostName, string fragment, RouteValueDictionary routeValues, RouteCollection routeCollection, RequestContext requestContext, bool includeImplicitMvcValues)'
+      CSharp: public static string GenerateUrl(string routeName, string actionName, string controllerName, string protocol, string hostName, string fragment, RouteValueDictionary routeValues, RouteCollection routeCollection, RequestContext requestContext, bool includeImplicitMvcValues)
     parameters:
     - id: routeName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: actionName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: controllerName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: protocol
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: hostName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: fragment
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: routeValues
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
     - id: routeCollection
       type:
         id: System.Web.Routing.RouteCollection
-        name: System.Web.Routing.RouteCollection
+        name: RouteCollection
         isExternal: true
     - id: requestContext
       type:
         id: System.Web.Routing.RequestContext
-        name: System.Web.Routing.RequestContext
+        name: RequestContext
         isExternal: true
     - id: includeImplicitMvcValues
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.UrlHelper.GenerateUrl(System.String,System.String,System.String,System.String,System.String,System.String,System.Web.Routing.RouteValueDictionary,System.Web.Routing.RouteCollection,System.Web.Routing.RequestContext,System.Boolean)
 - uid: System.Web.Mvc.UrlHelper.GenerateUrl(System.String,System.String,System.String,System.Web.Routing.RouteValueDictionary,System.Web.Routing.RouteCollection,System.Web.Routing.RequestContext,System.Boolean)
   href: System.Web.Mvc.UrlHelper.yml
@@ -581,45 +638,49 @@ items:
     startLine: 173
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Justification = "As the return value will used only for rendering, string return value is more appropriate.")] public static string GenerateUrl(string routeName, string actionName, string controllerName, RouteValueDictionary routeValues, RouteCollection routeCollection, RequestContext requestContext, bool includeImplicitMvcValues)'
+      CSharp: public static string GenerateUrl(string routeName, string actionName, string controllerName, RouteValueDictionary routeValues, RouteCollection routeCollection, RequestContext requestContext, bool includeImplicitMvcValues)
     parameters:
     - id: routeName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: actionName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: controllerName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: routeValues
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
     - id: routeCollection
       type:
         id: System.Web.Routing.RouteCollection
-        name: System.Web.Routing.RouteCollection
+        name: RouteCollection
         isExternal: true
     - id: requestContext
       type:
         id: System.Web.Routing.RequestContext
-        name: System.Web.Routing.RequestContext
+        name: RequestContext
         isExternal: true
     - id: includeImplicitMvcValues
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.UrlHelper.GenerateUrl(System.String,System.String,System.String,System.Web.Routing.RouteValueDictionary,System.Web.Routing.RouteCollection,System.Web.Routing.RequestContext,System.Boolean)
 - uid: System.Web.Mvc.UrlHelper.IsLocalUrl(System.String)
   href: System.Web.Mvc.UrlHelper.yml
@@ -632,15 +693,19 @@ items:
     startLine: 198
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", MessageId = "0#", Justification = "Response.Redirect() takes its URI as a string parameter.")] public virtual bool IsLocalUrl(string url)'
+      CSharp: public virtual bool IsLocalUrl(string url)
     parameters:
     - id: url
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Web.Mvc.UrlHelper.IsLocalUrl(System.String)
 - uid: System.Web.Mvc.UrlHelper.RouteUrl(System.Object)
   href: System.Web.Mvc.UrlHelper.yml
@@ -653,15 +718,19 @@ items:
     startLine: 205
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Justification = "As the return value will used only for rendering, string return value is more appropriate.")] public virtual string RouteUrl(object routeValues)'
+      CSharp: public virtual string RouteUrl(object routeValues)
     parameters:
     - id: routeValues
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.UrlHelper.RouteUrl(System.Object)
 - uid: System.Web.Mvc.UrlHelper.RouteUrl(System.Web.Routing.RouteValueDictionary)
   href: System.Web.Mvc.UrlHelper.yml
@@ -674,15 +743,19 @@ items:
     startLine: 211
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Justification = "As the return value will used only for rendering, string return value is more appropriate.")] public virtual string RouteUrl(RouteValueDictionary routeValues)'
+      CSharp: public virtual string RouteUrl(RouteValueDictionary routeValues)
     parameters:
     - id: routeValues
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.UrlHelper.RouteUrl(System.Web.Routing.RouteValueDictionary)
 - uid: System.Web.Mvc.UrlHelper.RouteUrl(System.String)
   href: System.Web.Mvc.UrlHelper.yml
@@ -695,15 +768,19 @@ items:
     startLine: 217
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Justification = "As the return value will used only for rendering, string return value is more appropriate.")] public virtual string RouteUrl(string routeName)'
+      CSharp: public virtual string RouteUrl(string routeName)
     parameters:
     - id: routeName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.UrlHelper.RouteUrl(System.String)
 - uid: System.Web.Mvc.UrlHelper.RouteUrl(System.String,System.Object)
   href: System.Web.Mvc.UrlHelper.yml
@@ -716,20 +793,24 @@ items:
     startLine: 223
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Justification = "As the return value will used only for rendering, string return value is more appropriate.")] public virtual string RouteUrl(string routeName, object routeValues)'
+      CSharp: public virtual string RouteUrl(string routeName, object routeValues)
     parameters:
     - id: routeName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: routeValues
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.UrlHelper.RouteUrl(System.String,System.Object)
 - uid: System.Web.Mvc.UrlHelper.RouteUrl(System.String,System.Web.Routing.RouteValueDictionary)
   href: System.Web.Mvc.UrlHelper.yml
@@ -742,20 +823,24 @@ items:
     startLine: 229
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Justification = "As the return value will used only for rendering, string return value is more appropriate.")] public virtual string RouteUrl(string routeName, RouteValueDictionary routeValues)'
+      CSharp: public virtual string RouteUrl(string routeName, RouteValueDictionary routeValues)
     parameters:
     - id: routeName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: routeValues
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.UrlHelper.RouteUrl(System.String,System.Web.Routing.RouteValueDictionary)
 - uid: System.Web.Mvc.UrlHelper.RouteUrl(System.String,System.Object,System.String)
   href: System.Web.Mvc.UrlHelper.yml
@@ -768,25 +853,29 @@ items:
     startLine: 235
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Justification = "As the return value will used only for rendering, string return value is more appropriate.")] public virtual string RouteUrl(string routeName, object routeValues, string protocol)'
+      CSharp: public virtual string RouteUrl(string routeName, object routeValues, string protocol)
     parameters:
     - id: routeName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: routeValues
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     - id: protocol
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.UrlHelper.RouteUrl(System.String,System.Object,System.String)
 - uid: System.Web.Mvc.UrlHelper.RouteUrl(System.String,System.Web.Routing.RouteValueDictionary,System.String,System.String)
   href: System.Web.Mvc.UrlHelper.yml
@@ -799,30 +888,34 @@ items:
     startLine: 241
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Justification = "As the return value will used only for rendering, string return value is more appropriate.")] public virtual string RouteUrl(string routeName, RouteValueDictionary routeValues, string protocol, string hostName)'
+      CSharp: public virtual string RouteUrl(string routeName, RouteValueDictionary routeValues, string protocol, string hostName)
     parameters:
     - id: routeName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: routeValues
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
     - id: protocol
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: hostName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.UrlHelper.RouteUrl(System.String,System.Web.Routing.RouteValueDictionary,System.String,System.String)
 - uid: System.Web.Mvc.UrlHelper.HttpRouteUrl(System.String,System.Object)
   href: System.Web.Mvc.UrlHelper.yml
@@ -835,20 +928,24 @@ items:
     startLine: 247
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Justification = "As the return value will used only for rendering, string return value is more appropriate.")] public virtual string HttpRouteUrl(string routeName, object routeValues)'
+      CSharp: public virtual string HttpRouteUrl(string routeName, object routeValues)
     parameters:
     - id: routeName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: routeValues
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.UrlHelper.HttpRouteUrl(System.String,System.Object)
 - uid: System.Web.Mvc.UrlHelper.HttpRouteUrl(System.String,System.Web.Routing.RouteValueDictionary)
   href: System.Web.Mvc.UrlHelper.yml
@@ -861,18 +958,22 @@ items:
     startLine: 253
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Justification = "As the return value will used only for rendering, string return value is more appropriate.")] public virtual string HttpRouteUrl(string routeName, RouteValueDictionary routeValues)'
+      CSharp: public virtual string HttpRouteUrl(string routeName, RouteValueDictionary routeValues)
     parameters:
     - id: routeName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: routeValues
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.UrlHelper.HttpRouteUrl(System.String,System.Web.Routing.RouteValueDictionary)

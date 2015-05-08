@@ -6,14 +6,16 @@ items:
   type: Interface
   source:
     remote: &o0
+      path: src/System.Collections.Immutable/src/System/Collections/Immutable/IImmutableQueue.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Collections.Immutable/src/System/Collections/Immutable/IImmutableQueue.cs
     startLine: 13
   summary: An immutable queue.
   syntax:
     content:
-      CSharp: public interface IImmutableQueue<T>
+      CSharp: 'public interface IImmutableQueue<T> : IEnumerable<T>, IEnumerable'
   id: System.Collections.Immutable.IImmutableQueue`1
   children:
   - System.Collections.Immutable.IImmutableQueue`1.IsEmpty
@@ -38,7 +40,7 @@ items:
     - id: IsEmpty
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Collections.Immutable.IImmutableQueue`1.IsEmpty
 - uid: System.Collections.Immutable.IImmutableQueue`1.Clear
@@ -53,10 +55,14 @@ items:
   summary: Gets an empty queue.
   syntax:
     content:
-      CSharp: '[Pure] IImmutableQueue<T> Clear();'
+      CSharp: public IImmutableQueue<T> Clear()
     parameters: []
     return:
       id: IImmutableQueue
+      type:
+        id: System.Collections.Immutable.IImmutableQueue`1
+        name: IImmutableQueue<T>
+        href: System.Collections.Immutable.IImmutableQueue`1.yml
   id: System.Collections.Immutable.IImmutableQueue`1.Clear
 - uid: System.Collections.Immutable.IImmutableQueue`1.Peek
   href: System.Collections.Immutable.IImmutableQueue`1.yml
@@ -70,10 +76,14 @@ items:
   summary: Gets the element at the front of the queue.
   syntax:
     content:
-      CSharp: '[Pure] T Peek();'
+      CSharp: public T Peek()
     parameters: []
     return:
       id: T
+      type:
+        id: T
+        name: T
+        href: T
       description: The element on the top of the stack.
   id: System.Collections.Immutable.IImmutableQueue`1.Peek
 - uid: System.Collections.Immutable.IImmutableQueue`1.Enqueue(`0)
@@ -88,7 +98,7 @@ items:
   summary: Adds an element to the back of the queue.
   syntax:
     content:
-      CSharp: '[Pure] IImmutableQueue<T> Enqueue(T value);'
+      CSharp: public IImmutableQueue<T> Enqueue(T value)
     parameters:
     - id: value
       type:
@@ -98,6 +108,10 @@ items:
       description: The value.
     return:
       id: IImmutableQueue
+      type:
+        id: System.Collections.Immutable.IImmutableQueue`1
+        name: IImmutableQueue<T>
+        href: System.Collections.Immutable.IImmutableQueue`1.yml
       description: The new queue.
   id: System.Collections.Immutable.IImmutableQueue`1.Enqueue(`0)
 - uid: System.Collections.Immutable.IImmutableQueue`1.Dequeue
@@ -112,9 +126,13 @@ items:
   summary: Returns a queue that is missing the front element.
   syntax:
     content:
-      CSharp: '[Pure] IImmutableQueue<T> Dequeue();'
+      CSharp: public IImmutableQueue<T> Dequeue()
     parameters: []
     return:
       id: IImmutableQueue
+      type:
+        id: System.Collections.Immutable.IImmutableQueue`1
+        name: IImmutableQueue<T>
+        href: System.Collections.Immutable.IImmutableQueue`1.yml
       description: A queue; never null.
   id: System.Collections.Immutable.IImmutableQueue`1.Dequeue

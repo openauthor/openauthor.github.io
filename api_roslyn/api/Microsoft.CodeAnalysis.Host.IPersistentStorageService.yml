@@ -6,15 +6,16 @@ items:
   type: Interface
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Workspace/Host/PersistentStorage/IPersistentStorageService.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Workspace/Host/PersistentStorage/IPersistentStorageService.cs
     startLine: 7
   summary: This service allows you to persist information relative to solution, projects and documents.
   syntax:
     content:
-      CSharp: public interface IPersistentStorageService
+      CSharp: 'public interface IPersistentStorageService : IWorkspaceService'
   id: Microsoft.CodeAnalysis.Host.IPersistentStorageService
   children:
   - Microsoft.CodeAnalysis.Host.IPersistentStorageService.GetStorage(Microsoft.CodeAnalysis.Solution)
@@ -29,7 +30,7 @@ items:
     startLine: 9
   syntax:
     content:
-      CSharp: IPersistentStorage GetStorage(Solution solution);
+      CSharp: public IPersistentStorage GetStorage(Solution solution)
     parameters:
     - id: solution
       type:
@@ -38,4 +39,8 @@ items:
         href: Microsoft.CodeAnalysis.Solution.yml
     return:
       id: IPersistentStorage
+      type:
+        id: Microsoft.CodeAnalysis.Host.IPersistentStorage
+        name: IPersistentStorage
+        href: Microsoft.CodeAnalysis.Host.IPersistentStorage.yml
   id: Microsoft.CodeAnalysis.Host.IPersistentStorageService.GetStorage(Microsoft.CodeAnalysis.Solution)

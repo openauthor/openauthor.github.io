@@ -6,26 +6,27 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/ViewUserControlOfTModel.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/ViewUserControlOfTModel.cs
     startLine: 6
   syntax:
     content:
-      CSharp: public class ViewUserControl<TModel>
+      CSharp: 'public class ViewUserControl<TModel> : ViewUserControl, IComponent, IDisposable, IParserAccessor, IUrlResolutionService, IDataBindingsAccessor, IControlBuilderAccessor, IControlDesignerAccessor, IExpressionsAccessor, IFilterResolutionService, IAttributeAccessor, INonBindingContainer, INamingContainer, IUserControlDesignerAccessor, IViewDataContainer'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.UI.Control
-    name: System.Web.UI.Control
+    name: Control
     isExternal: true
   - id: System.Web.UI.TemplateControl
-    name: System.Web.UI.TemplateControl
+    name: TemplateControl
     isExternal: true
   - id: System.Web.UI.UserControl
-    name: System.Web.UI.UserControl
+    name: UserControl
     isExternal: true
   - id: System.Web.Mvc.ViewUserControl
     name: ViewUserControl
@@ -36,6 +37,7 @@ items:
   - System.Web.Mvc.ViewUserControl`1.Html
   - System.Web.Mvc.ViewUserControl`1.Model
   - System.Web.Mvc.ViewUserControl`1.ViewData
+  - System.Web.Mvc.ViewUserControl`1.SetViewData(System.Web.Mvc.ViewDataDictionary)
 - uid: System.Web.Mvc.ViewUserControl`1.Ajax
   href: System.Web.Mvc.ViewUserControl`1.yml
   name: Ajax
@@ -52,7 +54,7 @@ items:
     - id: Ajax
       type:
         id: System.Web.Mvc.AjaxHelper{`0}
-        name: AjaxHelper
+        name: AjaxHelper<TModel>
         href: System.Web.Mvc.AjaxHelper{`0}
   id: System.Web.Mvc.ViewUserControl`1.Ajax
 - uid: System.Web.Mvc.ViewUserControl`1.Html
@@ -71,7 +73,7 @@ items:
     - id: Html
       type:
         id: System.Web.Mvc.HtmlHelper{`0}
-        name: HtmlHelper
+        name: HtmlHelper<TModel>
         href: System.Web.Mvc.HtmlHelper{`0}
   id: System.Web.Mvc.ViewUserControl`1.Html
 - uid: System.Web.Mvc.ViewUserControl`1.Model
@@ -109,6 +111,25 @@ items:
     - id: ViewData
       type:
         id: System.Web.Mvc.ViewDataDictionary{`0}
-        name: ViewDataDictionary
+        name: ViewDataDictionary<TModel>
         href: System.Web.Mvc.ViewDataDictionary{`0}
   id: System.Web.Mvc.ViewUserControl`1.ViewData
+- uid: System.Web.Mvc.ViewUserControl`1.SetViewData(System.Web.Mvc.ViewDataDictionary)
+  href: System.Web.Mvc.ViewUserControl`1.yml
+  name: SetViewData(ViewDataDictionary)
+  fullName: System.Web.Mvc.ViewUserControl<TModel>.SetViewData(System.Web.Mvc.ViewDataDictionary)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ViewUserControlOfTModel.cs
+    startLine: 52
+  syntax:
+    content:
+      CSharp: protected override void SetViewData(ViewDataDictionary viewData)
+    parameters:
+    - id: viewData
+      type:
+        id: System.Web.Mvc.ViewDataDictionary
+        name: ViewDataDictionary
+        href: System.Web.Mvc.ViewDataDictionary.yml
+  id: System.Web.Mvc.ViewUserControl`1.SetViewData(System.Web.Mvc.ViewDataDictionary)

@@ -6,25 +6,30 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/ModelBinderProviderCollection.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/ModelBinderProviderCollection.cs
     startLine: 8
   syntax:
     content:
-      CSharp: public class ModelBinderProviderCollection
+      CSharp: 'public class ModelBinderProviderCollection : Collection<IModelBinderProvider>, IList<IModelBinderProvider>, ICollection<IModelBinderProvider>, IList, ICollection, IReadOnlyList<IModelBinderProvider>, IReadOnlyCollection<IModelBinderProvider>, IEnumerable<IModelBinderProvider>, IEnumerable'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Collections.ObjectModel.Collection{System.Web.Mvc.IModelBinderProvider}
-    name: System.Collections.ObjectModel.Collection{System.Web.Mvc.IModelBinderProvider}
+    name: Collection<IModelBinderProvider>
     isExternal: true
   id: System.Web.Mvc.ModelBinderProviderCollection
   children:
   - System.Web.Mvc.ModelBinderProviderCollection.#ctor
   - System.Web.Mvc.ModelBinderProviderCollection.#ctor(System.Collections.Generic.IList{System.Web.Mvc.IModelBinderProvider})
+  - System.Web.Mvc.ModelBinderProviderCollection.ClearItems
+  - System.Web.Mvc.ModelBinderProviderCollection.InsertItem(System.Int32,System.Web.Mvc.IModelBinderProvider)
+  - System.Web.Mvc.ModelBinderProviderCollection.RemoveItem(System.Int32)
+  - System.Web.Mvc.ModelBinderProviderCollection.SetItem(System.Int32,System.Web.Mvc.IModelBinderProvider)
   - System.Web.Mvc.ModelBinderProviderCollection.GetBinder(System.Type)
 - uid: System.Web.Mvc.ModelBinderProviderCollection.#ctor
   href: System.Web.Mvc.ModelBinderProviderCollection.yml
@@ -56,9 +61,90 @@ items:
     - id: list
       type:
         id: System.Collections.Generic.IList{System.Web.Mvc.IModelBinderProvider}
-        name: System.Collections.Generic.IList{System.Web.Mvc.IModelBinderProvider}
+        name: IList<IModelBinderProvider>
         isExternal: true
   id: System.Web.Mvc.ModelBinderProviderCollection.#ctor(System.Collections.Generic.IList{System.Web.Mvc.IModelBinderProvider})
+- uid: System.Web.Mvc.ModelBinderProviderCollection.ClearItems
+  href: System.Web.Mvc.ModelBinderProviderCollection.yml
+  name: ClearItems()
+  fullName: System.Web.Mvc.ModelBinderProviderCollection.ClearItems()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ModelBinderProviderCollection.cs
+    startLine: 42
+  syntax:
+    content:
+      CSharp: protected override void ClearItems()
+    parameters: []
+  id: System.Web.Mvc.ModelBinderProviderCollection.ClearItems
+- uid: System.Web.Mvc.ModelBinderProviderCollection.InsertItem(System.Int32,System.Web.Mvc.IModelBinderProvider)
+  href: System.Web.Mvc.ModelBinderProviderCollection.yml
+  name: InsertItem(int, IModelBinderProvider)
+  fullName: System.Web.Mvc.ModelBinderProviderCollection.InsertItem(int, System.Web.Mvc.IModelBinderProvider)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ModelBinderProviderCollection.cs
+    startLine: 48
+  syntax:
+    content:
+      CSharp: protected override void InsertItem(int index, IModelBinderProvider item)
+    parameters:
+    - id: index
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: item
+      type:
+        id: System.Web.Mvc.IModelBinderProvider
+        name: IModelBinderProvider
+        href: System.Web.Mvc.IModelBinderProvider.yml
+  id: System.Web.Mvc.ModelBinderProviderCollection.InsertItem(System.Int32,System.Web.Mvc.IModelBinderProvider)
+- uid: System.Web.Mvc.ModelBinderProviderCollection.RemoveItem(System.Int32)
+  href: System.Web.Mvc.ModelBinderProviderCollection.yml
+  name: RemoveItem(int)
+  fullName: System.Web.Mvc.ModelBinderProviderCollection.RemoveItem(int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ModelBinderProviderCollection.cs
+    startLine: 58
+  syntax:
+    content:
+      CSharp: protected override void RemoveItem(int index)
+    parameters:
+    - id: index
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.Web.Mvc.ModelBinderProviderCollection.RemoveItem(System.Int32)
+- uid: System.Web.Mvc.ModelBinderProviderCollection.SetItem(System.Int32,System.Web.Mvc.IModelBinderProvider)
+  href: System.Web.Mvc.ModelBinderProviderCollection.yml
+  name: SetItem(int, IModelBinderProvider)
+  fullName: System.Web.Mvc.ModelBinderProviderCollection.SetItem(int, System.Web.Mvc.IModelBinderProvider)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ModelBinderProviderCollection.cs
+    startLine: 64
+  syntax:
+    content:
+      CSharp: protected override void SetItem(int index, IModelBinderProvider item)
+    parameters:
+    - id: index
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: item
+      type:
+        id: System.Web.Mvc.IModelBinderProvider
+        name: IModelBinderProvider
+        href: System.Web.Mvc.IModelBinderProvider.yml
+  id: System.Web.Mvc.ModelBinderProviderCollection.SetItem(System.Int32,System.Web.Mvc.IModelBinderProvider)
 - uid: System.Web.Mvc.ModelBinderProviderCollection.GetBinder(System.Type)
   href: System.Web.Mvc.ModelBinderProviderCollection.yml
   name: GetBinder(Type)
@@ -75,8 +161,12 @@ items:
     - id: modelType
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
     return:
       id: IModelBinder
+      type:
+        id: System.Web.Mvc.IModelBinder
+        name: IModelBinder
+        href: System.Web.Mvc.IModelBinder.yml
   id: System.Web.Mvc.ModelBinderProviderCollection.GetBinder(System.Type)

@@ -6,21 +6,28 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1669
+    startLine: 2264
   syntax:
     content:
-      CSharp: public struct ManifestResourceHandle
+      CSharp: 'public struct ManifestResourceHandle : IEquatable<ManifestResourceHandle>'
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Reflection.Metadata.ManifestResourceHandle
   children:
   - System.Reflection.Metadata.ManifestResourceHandle.op_Implicit(System.Reflection.Metadata.ManifestResourceHandle)~System.Reflection.Metadata.Handle
+  - System.Reflection.Metadata.ManifestResourceHandle.op_Implicit(System.Reflection.Metadata.ManifestResourceHandle)~System.Reflection.Metadata.EntityHandle
   - System.Reflection.Metadata.ManifestResourceHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.ManifestResourceHandle
+  - System.Reflection.Metadata.ManifestResourceHandle.op_Explicit(System.Reflection.Metadata.EntityHandle)~System.Reflection.Metadata.ManifestResourceHandle
   - System.Reflection.Metadata.ManifestResourceHandle.IsNil
   - System.Reflection.Metadata.ManifestResourceHandle.op_Equality(System.Reflection.Metadata.ManifestResourceHandle,System.Reflection.Metadata.ManifestResourceHandle)
   - System.Reflection.Metadata.ManifestResourceHandle.Equals(System.Object)
@@ -31,14 +38,14 @@ items:
   href: System.Reflection.Metadata.ManifestResourceHandle.yml
   name: implicit operator Handle(ManifestResourceHandle)
   fullName: System.Reflection.Metadata.ManifestResourceHandle.implicit operator System.Reflection.Metadata.Handle(System.Reflection.Metadata.ManifestResourceHandle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1685
+    startLine: 2281
   syntax:
     content:
-      CSharp: public static implicit operator Handle(ManifestResourceHandle handle) { return new Handle(handle._rowId | tokenType); }
+      CSharp: public static implicit operator Handle(ManifestResourceHandle handle)
     parameters:
     - id: handle
       type:
@@ -47,19 +54,48 @@ items:
         href: System.Reflection.Metadata.ManifestResourceHandle.yml
     return:
       id: Handle
+      type:
+        id: System.Reflection.Metadata.Handle
+        name: Handle
+        href: System.Reflection.Metadata.Handle.yml
   id: System.Reflection.Metadata.ManifestResourceHandle.op_Implicit(System.Reflection.Metadata.ManifestResourceHandle)~System.Reflection.Metadata.Handle
+- uid: System.Reflection.Metadata.ManifestResourceHandle.op_Implicit(System.Reflection.Metadata.ManifestResourceHandle)~System.Reflection.Metadata.EntityHandle
+  href: System.Reflection.Metadata.ManifestResourceHandle.yml
+  name: implicit operator EntityHandle(ManifestResourceHandle)
+  fullName: System.Reflection.Metadata.ManifestResourceHandle.implicit operator System.Reflection.Metadata.EntityHandle(System.Reflection.Metadata.ManifestResourceHandle)
+  type: Operator
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 2286
+  syntax:
+    content:
+      CSharp: public static implicit operator EntityHandle(ManifestResourceHandle handle)
+    parameters:
+    - id: handle
+      type:
+        id: System.Reflection.Metadata.ManifestResourceHandle
+        name: ManifestResourceHandle
+        href: System.Reflection.Metadata.ManifestResourceHandle.yml
+    return:
+      id: EntityHandle
+      type:
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
+  id: System.Reflection.Metadata.ManifestResourceHandle.op_Implicit(System.Reflection.Metadata.ManifestResourceHandle)~System.Reflection.Metadata.EntityHandle
 - uid: System.Reflection.Metadata.ManifestResourceHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.ManifestResourceHandle
   href: System.Reflection.Metadata.ManifestResourceHandle.yml
   name: explicit operator ManifestResourceHandle(Handle)
   fullName: System.Reflection.Metadata.ManifestResourceHandle.explicit operator System.Reflection.Metadata.ManifestResourceHandle(System.Reflection.Metadata.Handle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1690
+    startLine: 2291
   syntax:
     content:
-      CSharp: public static explicit operator ManifestResourceHandle(Handle handle) { if (handle.TokenType != tokenType) { Handle.ThrowInvalidCast(); } return new ManifestResourceHandle(handle.RowId); }
+      CSharp: public static explicit operator ManifestResourceHandle(Handle handle)
     parameters:
     - id: handle
       type:
@@ -68,7 +104,36 @@ items:
         href: System.Reflection.Metadata.Handle.yml
     return:
       id: ManifestResourceHandle
+      type:
+        id: System.Reflection.Metadata.ManifestResourceHandle
+        name: ManifestResourceHandle
+        href: System.Reflection.Metadata.ManifestResourceHandle.yml
   id: System.Reflection.Metadata.ManifestResourceHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.ManifestResourceHandle
+- uid: System.Reflection.Metadata.ManifestResourceHandle.op_Explicit(System.Reflection.Metadata.EntityHandle)~System.Reflection.Metadata.ManifestResourceHandle
+  href: System.Reflection.Metadata.ManifestResourceHandle.yml
+  name: explicit operator ManifestResourceHandle(EntityHandle)
+  fullName: System.Reflection.Metadata.ManifestResourceHandle.explicit operator System.Reflection.Metadata.ManifestResourceHandle(System.Reflection.Metadata.EntityHandle)
+  type: Operator
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 2301
+  syntax:
+    content:
+      CSharp: public static explicit operator ManifestResourceHandle(EntityHandle handle)
+    parameters:
+    - id: handle
+      type:
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
+    return:
+      id: ManifestResourceHandle
+      type:
+        id: System.Reflection.Metadata.ManifestResourceHandle
+        name: ManifestResourceHandle
+        href: System.Reflection.Metadata.ManifestResourceHandle.yml
+  id: System.Reflection.Metadata.ManifestResourceHandle.op_Explicit(System.Reflection.Metadata.EntityHandle)~System.Reflection.Metadata.ManifestResourceHandle
 - uid: System.Reflection.Metadata.ManifestResourceHandle.IsNil
   href: System.Reflection.Metadata.ManifestResourceHandle.yml
   name: IsNil
@@ -77,7 +142,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1700
+    startLine: 2311
   syntax:
     content:
       CSharp: public bool IsNil { get; }
@@ -85,21 +150,21 @@ items:
     - id: IsNil
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Reflection.Metadata.ManifestResourceHandle.IsNil
 - uid: System.Reflection.Metadata.ManifestResourceHandle.op_Equality(System.Reflection.Metadata.ManifestResourceHandle,System.Reflection.Metadata.ManifestResourceHandle)
   href: System.Reflection.Metadata.ManifestResourceHandle.yml
   name: operator ==(ManifestResourceHandle, ManifestResourceHandle)
   fullName: System.Reflection.Metadata.ManifestResourceHandle.operator ==(System.Reflection.Metadata.ManifestResourceHandle, System.Reflection.Metadata.ManifestResourceHandle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1710
+    startLine: 2321
   syntax:
     content:
-      CSharp: public static bool operator ==(ManifestResourceHandle left, ManifestResourceHandle right) { return left._rowId == right._rowId; }
+      CSharp: public static bool operator ==(ManifestResourceHandle left, ManifestResourceHandle right)
     parameters:
     - id: left
       type:
@@ -113,6 +178,10 @@ items:
         href: System.Reflection.Metadata.ManifestResourceHandle.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.ManifestResourceHandle.op_Equality(System.Reflection.Metadata.ManifestResourceHandle,System.Reflection.Metadata.ManifestResourceHandle)
 - uid: System.Reflection.Metadata.ManifestResourceHandle.Equals(System.Object)
   href: System.Reflection.Metadata.ManifestResourceHandle.yml
@@ -122,7 +191,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1715
+    startLine: 2326
   syntax:
     content:
       CSharp: public override bool Equals(object obj)
@@ -130,10 +199,14 @@ items:
     - id: obj
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.ManifestResourceHandle.Equals(System.Object)
 - uid: System.Reflection.Metadata.ManifestResourceHandle.Equals(System.Reflection.Metadata.ManifestResourceHandle)
   href: System.Reflection.Metadata.ManifestResourceHandle.yml
@@ -143,7 +216,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1720
+    startLine: 2331
   syntax:
     content:
       CSharp: public bool Equals(ManifestResourceHandle other)
@@ -155,6 +228,10 @@ items:
         href: System.Reflection.Metadata.ManifestResourceHandle.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.ManifestResourceHandle.Equals(System.Reflection.Metadata.ManifestResourceHandle)
 - uid: System.Reflection.Metadata.ManifestResourceHandle.GetHashCode
   href: System.Reflection.Metadata.ManifestResourceHandle.yml
@@ -164,26 +241,30 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1725
+    startLine: 2336
   syntax:
     content:
       CSharp: public override int GetHashCode()
     parameters: []
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: System.Reflection.Metadata.ManifestResourceHandle.GetHashCode
 - uid: System.Reflection.Metadata.ManifestResourceHandle.op_Inequality(System.Reflection.Metadata.ManifestResourceHandle,System.Reflection.Metadata.ManifestResourceHandle)
   href: System.Reflection.Metadata.ManifestResourceHandle.yml
   name: operator !=(ManifestResourceHandle, ManifestResourceHandle)
   fullName: System.Reflection.Metadata.ManifestResourceHandle.operator !=(System.Reflection.Metadata.ManifestResourceHandle, System.Reflection.Metadata.ManifestResourceHandle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1730
+    startLine: 2341
   syntax:
     content:
-      CSharp: public static bool operator !=(ManifestResourceHandle left, ManifestResourceHandle right) { return left._rowId != right._rowId; }
+      CSharp: public static bool operator !=(ManifestResourceHandle left, ManifestResourceHandle right)
     parameters:
     - id: left
       type:
@@ -197,4 +278,8 @@ items:
         href: System.Reflection.Metadata.ManifestResourceHandle.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.ManifestResourceHandle.op_Inequality(System.Reflection.Metadata.ManifestResourceHandle,System.Reflection.Metadata.ManifestResourceHandle)

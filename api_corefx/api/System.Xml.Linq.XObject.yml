@@ -6,14 +6,16 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Xml.XDocument/src/System/Xml/Linq/XObject.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XObject.cs
     startLine: 13
   summary: Represents a node or an attribute in an XML tree.
   syntax:
     content:
-      CSharp: public abstract class XObject
+      CSharp: 'public abstract class XObject : IXmlLineInfo'
   inheritance:
   - id: IXmlLineInfo
     name: IXmlLineInfo
@@ -25,18 +27,14 @@ items:
   - System.Xml.Linq.XObject.NodeType
   - System.Xml.Linq.XObject.Parent
   - System.Xml.Linq.XObject.AddAnnotation(System.Object)
-  - System.Xml.Linq.XObject.Annotation(Type)
+  - System.Xml.Linq.XObject.Annotation(System.Type)
   - System.Xml.Linq.XObject.Annotation``1
-  - System.Xml.Linq.XObject.Annotations(Type)
+  - System.Xml.Linq.XObject.Annotations(System.Type)
   - System.Xml.Linq.XObject.Annotations``1
-  - System.Xml.Linq.XObject.RemoveAnnotations(Type)
+  - System.Xml.Linq.XObject.RemoveAnnotations(System.Type)
   - System.Xml.Linq.XObject.RemoveAnnotations``1
   - System.Xml.Linq.XObject.Changed
-  - System.Xml.Linq.XObject.add_Changed(EventHandler{System.Xml.Linq.XObjectChangeEventArgs})
-  - System.Xml.Linq.XObject.remove_Changed(EventHandler{System.Xml.Linq.XObjectChangeEventArgs})
   - System.Xml.Linq.XObject.Changing
-  - System.Xml.Linq.XObject.add_Changing(EventHandler{System.Xml.Linq.XObjectChangeEventArgs})
-  - System.Xml.Linq.XObject.remove_Changing(EventHandler{System.Xml.Linq.XObjectChangeEventArgs})
 - uid: System.Xml.Linq.XObject.BaseUri
   href: System.Xml.Linq.XObject.yml
   name: BaseUri
@@ -54,7 +52,7 @@ items:
     - id: BaseUri
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.Linq.XObject.BaseUri
 - uid: System.Xml.Linq.XObject.Document
@@ -134,14 +132,14 @@ items:
     - id: annotation
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: The annotation to add.
   id: System.Xml.Linq.XObject.AddAnnotation(System.Object)
-- uid: System.Xml.Linq.XObject.Annotation(Type)
+- uid: System.Xml.Linq.XObject.Annotation(System.Type)
   href: System.Xml.Linq.XObject.yml
   name: Annotation(Type)
-  fullName: System.Xml.Linq.XObject.Annotation(Type)
+  fullName: System.Xml.Linq.XObject.Annotation(System.Type)
   type: Method
   source:
     remote: *o0
@@ -157,17 +155,21 @@ items:
     parameters:
     - id: type
       type:
-        id: Type
+        id: System.Type
         name: Type
         isExternal: true
       description: The type of the annotation to retrieve.
     return:
       id: Object
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
       description: >-
         The first matching annotation object, or null
 
         if no annotation is the specified type.
-  id: System.Xml.Linq.XObject.Annotation(Type)
+  id: System.Xml.Linq.XObject.Annotation(System.Type)
 - uid: System.Xml.Linq.XObject.Annotation``1
   href: System.Xml.Linq.XObject.yml
   name: Annotation<T>()
@@ -187,15 +189,19 @@ items:
     parameters: []
     return:
       id: T
+      type:
+        id: T
+        name: T
+        href: T
       description: >-
         The first matching annotation object, or null if no annotation
 
         is the specified type.
   id: System.Xml.Linq.XObject.Annotation``1
-- uid: System.Xml.Linq.XObject.Annotations(Type)
+- uid: System.Xml.Linq.XObject.Annotations(System.Type)
   href: System.Xml.Linq.XObject.yml
   name: Annotations(Type)
-  fullName: System.Xml.Linq.XObject.Annotations(Type)
+  fullName: System.Xml.Linq.XObject.Annotations(System.Type)
   type: Method
   source:
     remote: *o0
@@ -211,14 +217,18 @@ items:
     parameters:
     - id: type
       type:
-        id: Type
+        id: System.Type
         name: Type
         isExternal: true
       description: The type of the annotations to retrieve.
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Object}
+        name: IEnumerable<object>
+        isExternal: true
       description: An enumerable collection of annotations for this XObject.
-  id: System.Xml.Linq.XObject.Annotations(Type)
+  id: System.Xml.Linq.XObject.Annotations(System.Type)
 - uid: System.Xml.Linq.XObject.Annotations``1
   href: System.Xml.Linq.XObject.yml
   name: Annotations<T>()
@@ -238,12 +248,16 @@ items:
     parameters: []
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<T>
+        isExternal: true
       description: An enumerable collection of annotations for this XObject.
   id: System.Xml.Linq.XObject.Annotations``1
-- uid: System.Xml.Linq.XObject.RemoveAnnotations(Type)
+- uid: System.Xml.Linq.XObject.RemoveAnnotations(System.Type)
   href: System.Xml.Linq.XObject.yml
   name: RemoveAnnotations(Type)
-  fullName: System.Xml.Linq.XObject.RemoveAnnotations(Type)
+  fullName: System.Xml.Linq.XObject.RemoveAnnotations(System.Type)
   type: Method
   source:
     remote: *o0
@@ -256,11 +270,11 @@ items:
     parameters:
     - id: type
       type:
-        id: Type
+        id: System.Type
         name: Type
         isExternal: true
       description: The type of annotations to remove.
-  id: System.Xml.Linq.XObject.RemoveAnnotations(Type)
+  id: System.Xml.Linq.XObject.RemoveAnnotations(System.Type)
 - uid: System.Xml.Linq.XObject.RemoveAnnotations``1
   href: System.Xml.Linq.XObject.yml
   name: RemoveAnnotations<T>()
@@ -288,46 +302,8 @@ items:
   summary: Occurs when this [System.Xml.Linq.XObject](System.Xml.Linq.XObject.yml) or any of its descendants have changed.
   syntax:
     content:
-      CSharp: public event EventHandler<XObjectChangeEventArgs> Changed;
+      CSharp: public event EventHandler<XObjectChangeEventArgs> Changed
   id: System.Xml.Linq.XObject.Changed
-- uid: System.Xml.Linq.XObject.add_Changed(EventHandler{System.Xml.Linq.XObjectChangeEventArgs})
-  href: System.Xml.Linq.XObject.yml
-  name: Changed.add
-  fullName: System.Xml.Linq.XObject.Changed.add
-  type: Method
-  source:
-    remote: *o0
-    path: src/System.Xml.XDocument/src/System/Xml/Linq/XObject.cs
-    startLine: 325
-  syntax:
-    content:
-      CSharp: add { if (value == null) return; XObjectChangeAnnotation a = Annotation<XObjectChangeAnnotation>(); if (a == null) { a = new XObjectChangeAnnotation(); AddAnnotation(a); } a.changed += value; }
-    parameters:
-    - id: value
-      type:
-        id: EventHandler{System.Xml.Linq.XObjectChangeEventArgs}
-        name: EventHandler{System.Xml.Linq.XObjectChangeEventArgs}
-        isExternal: true
-  id: System.Xml.Linq.XObject.add_Changed(EventHandler{System.Xml.Linq.XObjectChangeEventArgs})
-- uid: System.Xml.Linq.XObject.remove_Changed(EventHandler{System.Xml.Linq.XObjectChangeEventArgs})
-  href: System.Xml.Linq.XObject.yml
-  name: Changed.remove
-  fullName: System.Xml.Linq.XObject.Changed.remove
-  type: Method
-  source:
-    remote: *o0
-    path: src/System.Xml.XDocument/src/System/Xml/Linq/XObject.cs
-    startLine: 336
-  syntax:
-    content:
-      CSharp: remove { if (value == null) return; XObjectChangeAnnotation a = Annotation<XObjectChangeAnnotation>(); if (a == null) return; a.changed -= value; if (a.changing == null && a.changed == null) { RemoveAnnotations<XObjectChangeAnnotation>(); } }
-    parameters:
-    - id: value
-      type:
-        id: EventHandler{System.Xml.Linq.XObjectChangeEventArgs}
-        name: EventHandler{System.Xml.Linq.XObjectChangeEventArgs}
-        isExternal: true
-  id: System.Xml.Linq.XObject.remove_Changed(EventHandler{System.Xml.Linq.XObjectChangeEventArgs})
 - uid: System.Xml.Linq.XObject.Changing
   href: System.Xml.Linq.XObject.yml
   name: Changing
@@ -340,43 +316,5 @@ items:
   summary: Occurs when this [System.Xml.Linq.XObject](System.Xml.Linq.XObject.yml) or any of its descendants are about to change.
   syntax:
     content:
-      CSharp: public event EventHandler<XObjectChangeEventArgs> Changing;
+      CSharp: public event EventHandler<XObjectChangeEventArgs> Changing
   id: System.Xml.Linq.XObject.Changing
-- uid: System.Xml.Linq.XObject.add_Changing(EventHandler{System.Xml.Linq.XObjectChangeEventArgs})
-  href: System.Xml.Linq.XObject.yml
-  name: Changing.add
-  fullName: System.Xml.Linq.XObject.Changing.add
-  type: Method
-  source:
-    remote: *o0
-    path: src/System.Xml.XDocument/src/System/Xml/Linq/XObject.cs
-    startLine: 354
-  syntax:
-    content:
-      CSharp: add { if (value == null) return; XObjectChangeAnnotation a = Annotation<XObjectChangeAnnotation>(); if (a == null) { a = new XObjectChangeAnnotation(); AddAnnotation(a); } a.changing += value; }
-    parameters:
-    - id: value
-      type:
-        id: EventHandler{System.Xml.Linq.XObjectChangeEventArgs}
-        name: EventHandler{System.Xml.Linq.XObjectChangeEventArgs}
-        isExternal: true
-  id: System.Xml.Linq.XObject.add_Changing(EventHandler{System.Xml.Linq.XObjectChangeEventArgs})
-- uid: System.Xml.Linq.XObject.remove_Changing(EventHandler{System.Xml.Linq.XObjectChangeEventArgs})
-  href: System.Xml.Linq.XObject.yml
-  name: Changing.remove
-  fullName: System.Xml.Linq.XObject.Changing.remove
-  type: Method
-  source:
-    remote: *o0
-    path: src/System.Xml.XDocument/src/System/Xml/Linq/XObject.cs
-    startLine: 365
-  syntax:
-    content:
-      CSharp: remove { if (value == null) return; XObjectChangeAnnotation a = Annotation<XObjectChangeAnnotation>(); if (a == null) return; a.changing -= value; if (a.changing == null && a.changed == null) { RemoveAnnotations<XObjectChangeAnnotation>(); } }
-    parameters:
-    - id: value
-      type:
-        id: EventHandler{System.Xml.Linq.XObjectChangeEventArgs}
-        name: EventHandler{System.Xml.Linq.XObjectChangeEventArgs}
-        isExternal: true
-  id: System.Xml.Linq.XObject.remove_Changing(EventHandler{System.Xml.Linq.XObjectChangeEventArgs})

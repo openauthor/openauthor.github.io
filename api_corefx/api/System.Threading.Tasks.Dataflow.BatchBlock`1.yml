@@ -6,23 +6,26 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Threading.Tasks.Dataflow/src/Blocks/BatchBlock.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Threading.Tasks.Dataflow/src/Blocks/BatchBlock.cs
     startLine: 24
   summary: Provides a dataflow block that batches inputs into arrays.
   syntax:
     content:
-      CSharp: public sealed class BatchBlock<T>
+      CSharp: 'public sealed class BatchBlock<T> : IPropagatorBlock<T, T[]>, ITargetBlock<T>, IReceivableSourceBlock<T[]>, ISourceBlock<T[]>, IDataflowBlock, IDebuggerDisplay'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Threading.Tasks.Dataflow.BatchBlock`1
   children:
   - System.Threading.Tasks.Dataflow.BatchBlock`1.#ctor(System.Int32)
   - System.Threading.Tasks.Dataflow.BatchBlock`1.#ctor(System.Int32,System.Threading.Tasks.Dataflow.GroupingDataflowBlockOptions)
   - System.Threading.Tasks.Dataflow.BatchBlock`1.Complete
+  - System.Threading.Tasks.Dataflow.BatchBlock`1.System#Threading#Tasks#Dataflow#IDataflowBlock#Fault(System.Exception)
   - System.Threading.Tasks.Dataflow.BatchBlock`1.TriggerBatch
   - System.Threading.Tasks.Dataflow.BatchBlock`1.LinkTo(System.Threading.Tasks.Dataflow.ITargetBlock{`0[]},System.Threading.Tasks.Dataflow.DataflowLinkOptions)
   - System.Threading.Tasks.Dataflow.BatchBlock`1.TryReceive(System.Predicate{`0[]},`0[]@)
@@ -30,6 +33,10 @@ items:
   - System.Threading.Tasks.Dataflow.BatchBlock`1.OutputCount
   - System.Threading.Tasks.Dataflow.BatchBlock`1.Completion
   - System.Threading.Tasks.Dataflow.BatchBlock`1.BatchSize
+  - System.Threading.Tasks.Dataflow.BatchBlock`1.System#Threading#Tasks#Dataflow#ITargetBlock{T}#OfferMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,`0,System.Threading.Tasks.Dataflow.ISourceBlock{`0},System.Boolean)
+  - System.Threading.Tasks.Dataflow.BatchBlock`1.System#Threading#Tasks#Dataflow#ISourceBlock{T[]}#ConsumeMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{`0[]},System.Boolean@)
+  - System.Threading.Tasks.Dataflow.BatchBlock`1.System#Threading#Tasks#Dataflow#ISourceBlock{T[]}#ReserveMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{`0[]})
+  - System.Threading.Tasks.Dataflow.BatchBlock`1.System#Threading#Tasks#Dataflow#ISourceBlock{T[]}#ReleaseReservation(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{`0[]})
   - System.Threading.Tasks.Dataflow.BatchBlock`1.ToString
 - uid: System.Threading.Tasks.Dataflow.BatchBlock`1.#ctor(System.Int32)
   href: System.Threading.Tasks.Dataflow.BatchBlock`1.yml
@@ -48,7 +55,7 @@ items:
     - id: batchSize
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The number of items to group into a batch.
   id: System.Threading.Tasks.Dataflow.BatchBlock`1.#ctor(System.Int32)
@@ -69,7 +76,7 @@ items:
     - id: batchSize
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The number of items to group into a batch.
     - id: dataflowBlockOptions
@@ -93,6 +100,25 @@ items:
       CSharp: public void Complete()
     parameters: []
   id: System.Threading.Tasks.Dataflow.BatchBlock`1.Complete
+- uid: System.Threading.Tasks.Dataflow.BatchBlock`1.System#Threading#Tasks#Dataflow#IDataflowBlock#Fault(System.Exception)
+  href: System.Threading.Tasks.Dataflow.BatchBlock`1.yml
+  name: IDataflowBlock.Fault(Exception)
+  fullName: System.Threading.Tasks.Dataflow.BatchBlock<T>.System.Threading.Tasks.Dataflow.IDataflowBlock.Fault(System.Exception)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/BatchBlock.cs
+    startLine: 106
+  syntax:
+    content:
+      CSharp: void IDataflowBlock.Fault(Exception exception)
+    parameters:
+    - id: exception
+      type:
+        id: System.Exception
+        name: Exception
+        isExternal: true
+  id: System.Threading.Tasks.Dataflow.BatchBlock`1.System#Threading#Tasks#Dataflow#IDataflowBlock#Fault(System.Exception)
 - uid: System.Threading.Tasks.Dataflow.BatchBlock`1.TriggerBatch
   href: System.Threading.Tasks.Dataflow.BatchBlock`1.yml
   name: TriggerBatch()
@@ -127,7 +153,7 @@ items:
     - id: target
       type:
         id: System.Threading.Tasks.Dataflow.ITargetBlock{`0[]}
-        name: ITargetBlock
+        name: ITargetBlock<T[]>
         href: System.Threading.Tasks.Dataflow.ITargetBlock{`0[]}
     - id: linkOptions
       type:
@@ -136,6 +162,10 @@ items:
         href: System.Threading.Tasks.Dataflow.DataflowLinkOptions.yml
     return:
       id: IDisposable
+      type:
+        id: System.IDisposable
+        name: IDisposable
+        isExternal: true
   id: System.Threading.Tasks.Dataflow.BatchBlock`1.LinkTo(System.Threading.Tasks.Dataflow.ITargetBlock{`0[]},System.Threading.Tasks.Dataflow.DataflowLinkOptions)
 - uid: System.Threading.Tasks.Dataflow.BatchBlock`1.TryReceive(System.Predicate{`0[]},`0[]@)
   href: System.Threading.Tasks.Dataflow.BatchBlock`1.yml
@@ -148,20 +178,24 @@ items:
     startLine: 132
   syntax:
     content:
-      CSharp: public Boolean TryReceive(Predicate<T[]> filter, out T[] item)
+      CSharp: public bool TryReceive(Predicate<T[]> filter, out T[] item)
     parameters:
     - id: filter
       type:
         id: System.Predicate{`0[]}
-        name: System.Predicate{`0[]}
+        name: Predicate<T[]>
         isExternal: true
     - id: item
       type:
         id: System.Array
-        name: System.Array
+        name: T[]
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Threading.Tasks.Dataflow.BatchBlock`1.TryReceive(System.Predicate{`0[]},`0[]@)
 - uid: System.Threading.Tasks.Dataflow.BatchBlock`1.TryReceiveAll(System.Collections.Generic.IList{`0[]}@)
   href: System.Threading.Tasks.Dataflow.BatchBlock`1.yml
@@ -179,10 +213,14 @@ items:
     - id: items
       type:
         id: System.Collections.Generic.IList{`0[]}
-        name: System.Collections.Generic.IList{`0[]}
+        name: IList<T[]>
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Threading.Tasks.Dataflow.BatchBlock`1.TryReceiveAll(System.Collections.Generic.IList{`0[]}@)
 - uid: System.Threading.Tasks.Dataflow.BatchBlock`1.OutputCount
   href: System.Threading.Tasks.Dataflow.BatchBlock`1.yml
@@ -200,7 +238,7 @@ items:
     - id: OutputCount
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Threading.Tasks.Dataflow.BatchBlock`1.OutputCount
 - uid: System.Threading.Tasks.Dataflow.BatchBlock`1.Completion
@@ -219,7 +257,7 @@ items:
     - id: Completion
       type:
         id: System.Threading.Tasks.Task
-        name: System.Threading.Tasks.Task
+        name: Task
         isExternal: true
   id: System.Threading.Tasks.Dataflow.BatchBlock`1.Completion
 - uid: System.Threading.Tasks.Dataflow.BatchBlock`1.BatchSize
@@ -239,9 +277,137 @@ items:
     - id: BatchSize
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Threading.Tasks.Dataflow.BatchBlock`1.BatchSize
+- uid: System.Threading.Tasks.Dataflow.BatchBlock`1.System#Threading#Tasks#Dataflow#ITargetBlock{T}#OfferMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,`0,System.Threading.Tasks.Dataflow.ISourceBlock{`0},System.Boolean)
+  href: System.Threading.Tasks.Dataflow.BatchBlock`1.yml
+  name: ITargetBlock<T>.OfferMessage(DataflowMessageHeader, T, ISourceBlock<T>, bool)
+  fullName: System.Threading.Tasks.Dataflow.BatchBlock<T>.System.Threading.Tasks.Dataflow.ITargetBlock<T>.OfferMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader, T, System.Threading.Tasks.Dataflow.ISourceBlock<T>, bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/BatchBlock.cs
+    startLine: 154
+  syntax:
+    content:
+      CSharp: DataflowMessageStatus ITargetBlock<T>.OfferMessage(DataflowMessageHeader messageHeader, T messageValue, ISourceBlock<T> source, bool consumeToAccept)
+    parameters:
+    - id: messageHeader
+      type:
+        id: System.Threading.Tasks.Dataflow.DataflowMessageHeader
+        name: DataflowMessageHeader
+        href: System.Threading.Tasks.Dataflow.DataflowMessageHeader.yml
+    - id: messageValue
+      type:
+        id: T
+        name: T
+        href: T
+    - id: source
+      type:
+        id: System.Threading.Tasks.Dataflow.ISourceBlock{`0}
+        name: ISourceBlock<T>
+        href: System.Threading.Tasks.Dataflow.ISourceBlock{`0}
+    - id: consumeToAccept
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+    return:
+      id: DataflowMessageStatus
+      type:
+        id: System.Threading.Tasks.Dataflow.DataflowMessageStatus
+        name: DataflowMessageStatus
+        href: System.Threading.Tasks.Dataflow.DataflowMessageStatus.yml
+  id: System.Threading.Tasks.Dataflow.BatchBlock`1.System#Threading#Tasks#Dataflow#ITargetBlock{T}#OfferMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,`0,System.Threading.Tasks.Dataflow.ISourceBlock{`0},System.Boolean)
+- uid: System.Threading.Tasks.Dataflow.BatchBlock`1.System#Threading#Tasks#Dataflow#ISourceBlock{T[]}#ConsumeMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{`0[]},System.Boolean@)
+  href: System.Threading.Tasks.Dataflow.BatchBlock`1.yml
+  name: ISourceBlock<T[]>.ConsumeMessage(DataflowMessageHeader, ITargetBlock<T[]>, out bool)
+  fullName: System.Threading.Tasks.Dataflow.BatchBlock<T>.System.Threading.Tasks.Dataflow.ISourceBlock<T[]>.ConsumeMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader, System.Threading.Tasks.Dataflow.ITargetBlock<T[]>, out bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/BatchBlock.cs
+    startLine: 160
+  syntax:
+    content:
+      CSharp: T[] ISourceBlock<T[]>.ConsumeMessage(DataflowMessageHeader messageHeader, ITargetBlock<T[]> target, out bool messageConsumed)
+    parameters:
+    - id: messageHeader
+      type:
+        id: System.Threading.Tasks.Dataflow.DataflowMessageHeader
+        name: DataflowMessageHeader
+        href: System.Threading.Tasks.Dataflow.DataflowMessageHeader.yml
+    - id: target
+      type:
+        id: System.Threading.Tasks.Dataflow.ITargetBlock{`0[]}
+        name: ITargetBlock<T[]>
+        href: System.Threading.Tasks.Dataflow.ITargetBlock{`0[]}
+    - id: messageConsumed
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+    return:
+      type:
+        id: System.Array
+        name: T[]
+        isExternal: true
+  id: System.Threading.Tasks.Dataflow.BatchBlock`1.System#Threading#Tasks#Dataflow#ISourceBlock{T[]}#ConsumeMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{`0[]},System.Boolean@)
+- uid: System.Threading.Tasks.Dataflow.BatchBlock`1.System#Threading#Tasks#Dataflow#ISourceBlock{T[]}#ReserveMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{`0[]})
+  href: System.Threading.Tasks.Dataflow.BatchBlock`1.yml
+  name: ISourceBlock<T[]>.ReserveMessage(DataflowMessageHeader, ITargetBlock<T[]>)
+  fullName: System.Threading.Tasks.Dataflow.BatchBlock<T>.System.Threading.Tasks.Dataflow.ISourceBlock<T[]>.ReserveMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader, System.Threading.Tasks.Dataflow.ITargetBlock<T[]>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/BatchBlock.cs
+    startLine: 166
+  syntax:
+    content:
+      CSharp: bool ISourceBlock<T[]>.ReserveMessage(DataflowMessageHeader messageHeader, ITargetBlock<T[]> target)
+    parameters:
+    - id: messageHeader
+      type:
+        id: System.Threading.Tasks.Dataflow.DataflowMessageHeader
+        name: DataflowMessageHeader
+        href: System.Threading.Tasks.Dataflow.DataflowMessageHeader.yml
+    - id: target
+      type:
+        id: System.Threading.Tasks.Dataflow.ITargetBlock{`0[]}
+        name: ITargetBlock<T[]>
+        href: System.Threading.Tasks.Dataflow.ITargetBlock{`0[]}
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Threading.Tasks.Dataflow.BatchBlock`1.System#Threading#Tasks#Dataflow#ISourceBlock{T[]}#ReserveMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{`0[]})
+- uid: System.Threading.Tasks.Dataflow.BatchBlock`1.System#Threading#Tasks#Dataflow#ISourceBlock{T[]}#ReleaseReservation(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{`0[]})
+  href: System.Threading.Tasks.Dataflow.BatchBlock`1.yml
+  name: ISourceBlock<T[]>.ReleaseReservation(DataflowMessageHeader, ITargetBlock<T[]>)
+  fullName: System.Threading.Tasks.Dataflow.BatchBlock<T>.System.Threading.Tasks.Dataflow.ISourceBlock<T[]>.ReleaseReservation(System.Threading.Tasks.Dataflow.DataflowMessageHeader, System.Threading.Tasks.Dataflow.ITargetBlock<T[]>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/BatchBlock.cs
+    startLine: 172
+  syntax:
+    content:
+      CSharp: void ISourceBlock<T[]>.ReleaseReservation(DataflowMessageHeader messageHeader, ITargetBlock<T[]> target)
+    parameters:
+    - id: messageHeader
+      type:
+        id: System.Threading.Tasks.Dataflow.DataflowMessageHeader
+        name: DataflowMessageHeader
+        href: System.Threading.Tasks.Dataflow.DataflowMessageHeader.yml
+    - id: target
+      type:
+        id: System.Threading.Tasks.Dataflow.ITargetBlock{`0[]}
+        name: ITargetBlock<T[]>
+        href: System.Threading.Tasks.Dataflow.ITargetBlock{`0[]}
+  id: System.Threading.Tasks.Dataflow.BatchBlock`1.System#Threading#Tasks#Dataflow#ISourceBlock{T[]}#ReleaseReservation(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{`0[]})
 - uid: System.Threading.Tasks.Dataflow.BatchBlock`1.ToString
   href: System.Threading.Tasks.Dataflow.BatchBlock`1.yml
   name: ToString()
@@ -257,4 +423,8 @@ items:
     parameters: []
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Threading.Tasks.Dataflow.BatchBlock`1.ToString

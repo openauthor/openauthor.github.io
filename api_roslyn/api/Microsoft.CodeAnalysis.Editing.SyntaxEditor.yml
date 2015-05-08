@@ -6,9 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Editing/SyntaxEditor.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Editing/SyntaxEditor.cs
     startLine: 14
   summary: An editor for making changes to a syntax tree.
@@ -17,7 +18,7 @@ items:
       CSharp: public class SyntaxEditor
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.Editing.SyntaxEditor
   children:
@@ -67,7 +68,7 @@ items:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/SyntaxEditor.cs
     startLine: 43
-  summary: The [Microsoft.CodeAnalysis.SyntaxNode](#) that was specified when the [Microsoft.CodeAnalysis.Editing.SyntaxEditor](Microsoft.CodeAnalysis.Editing.SyntaxEditor.yml) was constructed.
+  summary: The [Microsoft.CodeAnalysis.SyntaxNode]() that was specified when the [Microsoft.CodeAnalysis.Editing.SyntaxEditor](Microsoft.CodeAnalysis.Editing.SyntaxEditor.yml) was constructed.
   syntax:
     content:
       CSharp: public SyntaxNode OriginalRoot { get; }
@@ -87,7 +88,7 @@ items:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/SyntaxEditor.cs
     startLine: 51
-  summary: A [Microsoft.CodeAnalysis.Editing.SyntaxGenerator](Microsoft.CodeAnalysis.Editing.SyntaxGenerator.yml) to use to create and change [Microsoft.CodeAnalysis.SyntaxNode](#)'s.
+  summary: A [Microsoft.CodeAnalysis.Editing.SyntaxGenerator](Microsoft.CodeAnalysis.Editing.SyntaxGenerator.yml) to use to create and change [Microsoft.CodeAnalysis.SyntaxNode]()'s.
   syntax:
     content:
       CSharp: public SyntaxGenerator Generator { get; }
@@ -114,6 +115,10 @@ items:
     parameters: []
     return:
       id: SyntaxNode
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxNode
+        name: SyntaxNode
+        href: Microsoft.CodeAnalysis.SyntaxNode
   id: Microsoft.CodeAnalysis.Editing.SyntaxEditor.GetChangedRoot
 - uid: Microsoft.CodeAnalysis.Editing.SyntaxEditor.TrackNode(Microsoft.CodeAnalysis.SyntaxNode)
   href: Microsoft.CodeAnalysis.Editing.SyntaxEditor.yml
@@ -179,7 +184,7 @@ items:
     - id: computeReplacement
       type:
         id: System.Func{Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.Editing.SyntaxGenerator,Microsoft.CodeAnalysis.SyntaxNode}
-        name: System.Func{Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.Editing.SyntaxGenerator,Microsoft.CodeAnalysis.SyntaxNode}
+        name: Func<SyntaxNode, SyntaxGenerator, SyntaxNode>
         isExternal: true
       description: >-
         A function that computes a replacement node.
@@ -236,7 +241,7 @@ items:
     - id: newNodes
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxNode}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxNode}
+        name: IEnumerable<SyntaxNode>
         isExternal: true
       description: The nodes to place before the existing node. These nodes must be of a compatible type to be placed in the same list containing the existing node.
   id: Microsoft.CodeAnalysis.Editing.SyntaxEditor.InsertBefore(Microsoft.CodeAnalysis.SyntaxNode,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxNode})
@@ -290,7 +295,7 @@ items:
     - id: newNodes
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxNode}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxNode}
+        name: IEnumerable<SyntaxNode>
         isExternal: true
       description: The nodes to place after the existing node. These nodes must be of a compatible type to be placed in the same list containing the existing node.
   id: Microsoft.CodeAnalysis.Editing.SyntaxEditor.InsertAfter(Microsoft.CodeAnalysis.SyntaxNode,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxNode})

@@ -6,9 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/CodeFixes/FixAllOccurrences/FixAllProvider.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/CodeFixes/FixAllOccurrences/FixAllProvider.cs
     startLine: 13
   summary: >-
@@ -20,7 +21,7 @@ items:
       CSharp: public abstract class FixAllProvider
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.CodeFixes.FixAllProvider
   children:
@@ -52,6 +53,10 @@ items:
     parameters: []
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.CodeFixes.FixAllScope}
+        name: IEnumerable<FixAllScope>
+        isExternal: true
   id: Microsoft.CodeAnalysis.CodeFixes.FixAllProvider.GetSupportedFixAllScopes
 - uid: Microsoft.CodeAnalysis.CodeFixes.FixAllProvider.GetSupportedFixAllDiagnosticIds(Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider)
   href: Microsoft.CodeAnalysis.CodeFixes.FixAllProvider.yml
@@ -78,6 +83,10 @@ items:
       description: Original code fix provider that returned this fix all provider from [Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider.GetFixAllProvider](Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider.yml) method.
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.String}
+        name: IEnumerable<string>
+        isExternal: true
   id: Microsoft.CodeAnalysis.CodeFixes.FixAllProvider.GetSupportedFixAllDiagnosticIds(Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider)
 - uid: Microsoft.CodeAnalysis.CodeFixes.FixAllProvider.GetFixAsync(Microsoft.CodeAnalysis.CodeFixes.FixAllContext)
   href: Microsoft.CodeAnalysis.CodeFixes.FixAllProvider.yml
@@ -91,7 +100,7 @@ items:
   summary: Gets fix all occurrences fix for the given fixAllContext.
   syntax:
     content:
-      CSharp: public abstract Task<CodeAction> GetFixAsync(FixAllContext fixAllContext);
+      CSharp: public abstract Task<CodeAction> GetFixAsync(FixAllContext fixAllContext)
     parameters:
     - id: fixAllContext
       type:
@@ -100,4 +109,8 @@ items:
         href: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.yml
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.CodeAnalysis.CodeActions.CodeAction}
+        name: Task<CodeAction>
+        isExternal: true
   id: Microsoft.CodeAnalysis.CodeFixes.FixAllProvider.GetFixAsync(Microsoft.CodeAnalysis.CodeFixes.FixAllContext)

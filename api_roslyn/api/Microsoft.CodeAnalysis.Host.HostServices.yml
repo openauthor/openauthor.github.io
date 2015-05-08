@@ -5,10 +5,11 @@ items:
   fullName: Microsoft.CodeAnalysis.Host.HostServices
   type: Class
   source:
-    remote:
+    remote: &o0
+      path: src/Workspaces/Core/Portable/Workspace/Host/HostServices.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Workspace/Host/HostServices.cs
     startLine: 7
   summary: Services provided by the host environment.
@@ -17,6 +18,34 @@ items:
       CSharp: public abstract class HostServices
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.Host.HostServices
+  children:
+  - Microsoft.CodeAnalysis.Host.HostServices.CreateWorkspaceServices(Microsoft.CodeAnalysis.Workspace)
+- uid: Microsoft.CodeAnalysis.Host.HostServices.CreateWorkspaceServices(Microsoft.CodeAnalysis.Workspace)
+  href: Microsoft.CodeAnalysis.Host.HostServices.yml
+  name: CreateWorkspaceServices(Workspace)
+  fullName: Microsoft.CodeAnalysis.Host.HostServices.CreateWorkspaceServices(Microsoft.CodeAnalysis.Workspace)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Workspace/Host/HostServices.cs
+    startLine: 12
+  summary: Creates a new workspace service.
+  syntax:
+    content:
+      CSharp: protected internal abstract HostWorkspaceServices CreateWorkspaceServices(Workspace workspace)
+    parameters:
+    - id: workspace
+      type:
+        id: Microsoft.CodeAnalysis.Workspace
+        name: Workspace
+        href: Microsoft.CodeAnalysis.Workspace.yml
+    return:
+      id: HostWorkspaceServices
+      type:
+        id: Microsoft.CodeAnalysis.Host.HostWorkspaceServices
+        name: HostWorkspaceServices
+        href: Microsoft.CodeAnalysis.Host.HostWorkspaceServices.yml
+  id: Microsoft.CodeAnalysis.Host.HostServices.CreateWorkspaceServices(Microsoft.CodeAnalysis.Workspace)

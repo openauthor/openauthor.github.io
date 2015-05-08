@@ -6,16 +6,21 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/MinLengthAttribute.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/MinLengthAttribute.cs
     startLine: 10
   summary: Specifies the minimum length of array/string data allowed in a property.
   syntax:
     content:
-      CSharp: public class MinLengthAttribute
+      CSharp: 'public class MinLengthAttribute : ValidationAttribute, _Attribute'
   inheritance:
-  - id: Attribute
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.Attribute
     name: Attribute
     isExternal: true
   - id: System.ComponentModel.DataAnnotations.ValidationAttribute
@@ -44,7 +49,7 @@ items:
     - id: length
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: >-
         The minimum allowable length of array/string data.
@@ -63,12 +68,12 @@ items:
   summary: Gets the minimum allowable length of the array/string data.
   syntax:
     content:
-      CSharp: public int Length { get; private set; }
+      CSharp: public int Length { get; }
     parameters:
     - id: Length
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.ComponentModel.DataAnnotations.MinLengthAttribute.Length
 - uid: System.ComponentModel.DataAnnotations.MinLengthAttribute.IsValid(System.Object)
@@ -88,11 +93,15 @@ items:
     - id: value
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: The object to validate.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: >-
         true if the value is null or greater than or equal to the specified minimum length, otherwise
 
@@ -115,10 +124,14 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The name to include in the formatted string.
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
       description: A localized string to describe the minimum acceptable length.
   id: System.ComponentModel.DataAnnotations.MinLengthAttribute.FormatErrorMessage(System.String)

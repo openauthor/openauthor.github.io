@@ -6,8 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializerNamespaces.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlSerializerNamespaces.cs
     startLine: 22
   syntax:
@@ -15,7 +17,7 @@ items:
       CSharp: public class XmlSerializerNamespaces
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Xml.Serialization.XmlSerializerNamespaces
   children:
@@ -74,7 +76,7 @@ items:
     - id: namespaces
       type:
         id: System.Array
-        name: System.Array
+        name: XmlQualifiedName[]
         isExternal: true
   id: System.Xml.Serialization.XmlSerializerNamespaces.#ctor(XmlQualifiedName[])
 - uid: System.Xml.Serialization.XmlSerializerNamespaces.Add(System.String,System.String)
@@ -93,12 +95,12 @@ items:
     - id: prefix
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: ns
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.Serialization.XmlSerializerNamespaces.Add(System.String,System.String)
 - uid: System.Xml.Serialization.XmlSerializerNamespaces.ToArray
@@ -114,7 +116,11 @@ items:
     content:
       CSharp: public XmlQualifiedName[] ToArray()
     parameters: []
-    return: {}
+    return:
+      type:
+        id: System.Array
+        name: XmlQualifiedName[]
+        isExternal: true
   id: System.Xml.Serialization.XmlSerializerNamespaces.ToArray
 - uid: System.Xml.Serialization.XmlSerializerNamespaces.Count
   href: System.Xml.Serialization.XmlSerializerNamespaces.yml
@@ -132,6 +138,6 @@ items:
     - id: Count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Xml.Serialization.XmlSerializerNamespaces.Count

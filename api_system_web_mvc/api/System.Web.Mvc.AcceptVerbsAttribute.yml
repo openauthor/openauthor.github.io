@@ -6,20 +6,21 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/AcceptVerbsAttribute.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/AcceptVerbsAttribute.cs
     startLine: 11
   syntax:
     content:
-      CSharp: public sealed class AcceptVerbsAttribute
+      CSharp: 'public sealed class AcceptVerbsAttribute : ActionMethodSelectorAttribute, _Attribute'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Attribute
-    name: System.Attribute
+    name: Attribute
     isExternal: true
   - id: System.Web.Mvc.ActionMethodSelectorAttribute
     name: ActionMethodSelectorAttribute
@@ -65,7 +66,7 @@ items:
     - id: verbs
       type:
         id: System.Array
-        name: System.Array
+        name: string[]
         isExternal: true
   id: System.Web.Mvc.AcceptVerbsAttribute.#ctor(System.String[])
 - uid: System.Web.Mvc.AcceptVerbsAttribute.Verbs
@@ -79,12 +80,12 @@ items:
     startLine: 30
   syntax:
     content:
-      CSharp: public ICollection<string> Verbs { get; private set; }
+      CSharp: public ICollection<string> Verbs { get; }
     parameters:
     - id: Verbs
       type:
         id: System.Collections.Generic.ICollection{System.String}
-        name: System.Collections.Generic.ICollection{System.String}
+        name: ICollection<string>
         isExternal: true
   id: System.Web.Mvc.AcceptVerbsAttribute.Verbs
 - uid: System.Web.Mvc.AcceptVerbsAttribute.IsValidForRequest(System.Web.Mvc.ControllerContext,System.Reflection.MethodInfo)
@@ -108,8 +109,12 @@ items:
     - id: methodInfo
       type:
         id: System.Reflection.MethodInfo
-        name: System.Reflection.MethodInfo
+        name: MethodInfo
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Web.Mvc.AcceptVerbsAttribute.IsValidForRequest(System.Web.Mvc.ControllerContext,System.Reflection.MethodInfo)

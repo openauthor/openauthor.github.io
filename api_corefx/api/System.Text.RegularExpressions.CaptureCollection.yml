@@ -6,8 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Text.RegularExpressions/src/System/Text/RegularExpressions/RegexCaptureCollection.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Text.RegularExpressions/src/System/Text/RegularExpressions/RegexCaptureCollection.cs
     startLine: 20
   summary: >-
@@ -16,16 +18,19 @@ items:
     to return the set of captures done by a single capturing group.
   syntax:
     content:
-      CSharp: public class CaptureCollection
+      CSharp: 'public class CaptureCollection : ICollection, IEnumerable'
   inheritance:
-  - id: ICollection
-    name: ICollection
+  - id: System.Object
+    name: object
     isExternal: true
   id: System.Text.RegularExpressions.CaptureCollection
   children:
   - System.Text.RegularExpressions.CaptureCollection.Count
   - System.Text.RegularExpressions.CaptureCollection.Item(System.Int32)
   - System.Text.RegularExpressions.CaptureCollection.GetEnumerator
+  - System.Text.RegularExpressions.CaptureCollection.System#Collections#ICollection#IsSynchronized
+  - System.Text.RegularExpressions.CaptureCollection.System#Collections#ICollection#SyncRoot
+  - System.Text.RegularExpressions.CaptureCollection.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
 - uid: System.Text.RegularExpressions.CaptureCollection.Count
   href: System.Text.RegularExpressions.CaptureCollection.yml
   name: Count
@@ -43,7 +48,7 @@ items:
     - id: Count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Text.RegularExpressions.CaptureCollection.Count
 - uid: System.Text.RegularExpressions.CaptureCollection.Item(System.Int32)
@@ -82,4 +87,70 @@ items:
     parameters: []
     return:
       id: IEnumerator
+      type:
+        id: System.Collections.IEnumerator
+        name: IEnumerator
+        isExternal: true
   id: System.Text.RegularExpressions.CaptureCollection.GetEnumerator
+- uid: System.Text.RegularExpressions.CaptureCollection.System#Collections#ICollection#IsSynchronized
+  href: System.Text.RegularExpressions.CaptureCollection.yml
+  name: ICollection.IsSynchronized
+  fullName: System.Text.RegularExpressions.CaptureCollection.System.Collections.ICollection.IsSynchronized
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Text.RegularExpressions/src/System/Text/RegularExpressions/RegexCaptureCollection.cs
+    startLine: 80
+  syntax:
+    content:
+      CSharp: bool ICollection.IsSynchronized { get; }
+    parameters:
+    - id: System.Collections.ICollection.IsSynchronized
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Text.RegularExpressions.CaptureCollection.System#Collections#ICollection#IsSynchronized
+- uid: System.Text.RegularExpressions.CaptureCollection.System#Collections#ICollection#SyncRoot
+  href: System.Text.RegularExpressions.CaptureCollection.yml
+  name: ICollection.SyncRoot
+  fullName: System.Text.RegularExpressions.CaptureCollection.System.Collections.ICollection.SyncRoot
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Text.RegularExpressions/src/System/Text/RegularExpressions/RegexCaptureCollection.cs
+    startLine: 85
+  syntax:
+    content:
+      CSharp: object ICollection.SyncRoot { get; }
+    parameters:
+    - id: System.Collections.ICollection.SyncRoot
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+  id: System.Text.RegularExpressions.CaptureCollection.System#Collections#ICollection#SyncRoot
+- uid: System.Text.RegularExpressions.CaptureCollection.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+  href: System.Text.RegularExpressions.CaptureCollection.yml
+  name: ICollection.CopyTo(Array, int)
+  fullName: System.Text.RegularExpressions.CaptureCollection.System.Collections.ICollection.CopyTo(System.Array, int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Text.RegularExpressions/src/System/Text/RegularExpressions/RegexCaptureCollection.cs
+    startLine: 90
+  syntax:
+    content:
+      CSharp: void ICollection.CopyTo(Array array, int arrayIndex)
+    parameters:
+    - id: array
+      type:
+        id: System.Array
+        name: Array
+        isExternal: true
+    - id: arrayIndex
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.Text.RegularExpressions.CaptureCollection.System#Collections#ICollection#CopyTo(System.Array,System.Int32)

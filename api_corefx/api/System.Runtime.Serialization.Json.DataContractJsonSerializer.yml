@@ -6,8 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Private.DataContractSerialization/src/System/Runtime/Serialization/Json/DataContractJsonSerializer.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Private.DataContractSerialization/src/System/Runtime/Serialization/Json/DataContractJsonSerializer.cs
     startLine: 20
   syntax:
@@ -15,25 +17,25 @@ items:
       CSharp: public sealed class DataContractJsonSerializer
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Runtime.Serialization.Json.DataContractJsonSerializer
   children:
-  - System.Runtime.Serialization.Json.DataContractJsonSerializer.#ctor(Type)
-  - System.Runtime.Serialization.Json.DataContractJsonSerializer.#ctor(Type,IEnumerable{Type})
-  - System.Runtime.Serialization.Json.DataContractJsonSerializer.#ctor(Type,System.Runtime.Serialization.Json.DataContractJsonSerializerSettings)
+  - System.Runtime.Serialization.Json.DataContractJsonSerializer.#ctor(System.Type)
+  - System.Runtime.Serialization.Json.DataContractJsonSerializer.#ctor(System.Type,System.Collections.Generic.IEnumerable{System.Type})
+  - System.Runtime.Serialization.Json.DataContractJsonSerializer.#ctor(System.Type,System.Runtime.Serialization.Json.DataContractJsonSerializerSettings)
   - System.Runtime.Serialization.Json.DataContractJsonSerializer.KnownTypes
   - System.Runtime.Serialization.Json.DataContractJsonSerializer.MaxItemsInObjectGraph
   - System.Runtime.Serialization.Json.DataContractJsonSerializer.DateTimeFormat
   - System.Runtime.Serialization.Json.DataContractJsonSerializer.EmitTypeInformation
   - System.Runtime.Serialization.Json.DataContractJsonSerializer.SerializeReadOnlyTypes
   - System.Runtime.Serialization.Json.DataContractJsonSerializer.UseSimpleDictionaryFormat
-  - System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject(Stream,System.Object)
-  - System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(Stream)
-- uid: System.Runtime.Serialization.Json.DataContractJsonSerializer.#ctor(Type)
+  - System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject(System.IO.Stream,System.Object)
+  - System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(System.IO.Stream)
+- uid: System.Runtime.Serialization.Json.DataContractJsonSerializer.#ctor(System.Type)
   href: System.Runtime.Serialization.Json.DataContractJsonSerializer.yml
   name: DataContractJsonSerializer(Type)
-  fullName: System.Runtime.Serialization.Json.DataContractJsonSerializer.DataContractJsonSerializer(Type)
+  fullName: System.Runtime.Serialization.Json.DataContractJsonSerializer.DataContractJsonSerializer(System.Type)
   type: Constructor
   source:
     remote: *o0
@@ -45,14 +47,14 @@ items:
     parameters:
     - id: type
       type:
-        id: Type
+        id: System.Type
         name: Type
         isExternal: true
-  id: System.Runtime.Serialization.Json.DataContractJsonSerializer.#ctor(Type)
-- uid: System.Runtime.Serialization.Json.DataContractJsonSerializer.#ctor(Type,IEnumerable{Type})
+  id: System.Runtime.Serialization.Json.DataContractJsonSerializer.#ctor(System.Type)
+- uid: System.Runtime.Serialization.Json.DataContractJsonSerializer.#ctor(System.Type,System.Collections.Generic.IEnumerable{System.Type})
   href: System.Runtime.Serialization.Json.DataContractJsonSerializer.yml
   name: DataContractJsonSerializer(Type, IEnumerable<Type>)
-  fullName: System.Runtime.Serialization.Json.DataContractJsonSerializer.DataContractJsonSerializer(Type, IEnumerable<Type>)
+  fullName: System.Runtime.Serialization.Json.DataContractJsonSerializer.DataContractJsonSerializer(System.Type, System.Collections.Generic.IEnumerable<System.Type>)
   type: Constructor
   source:
     remote: *o0
@@ -64,19 +66,19 @@ items:
     parameters:
     - id: type
       type:
-        id: Type
+        id: System.Type
         name: Type
         isExternal: true
     - id: knownTypes
       type:
-        id: IEnumerable{Type}
-        name: IEnumerable{Type}
+        id: System.Collections.Generic.IEnumerable{System.Type}
+        name: IEnumerable<Type>
         isExternal: true
-  id: System.Runtime.Serialization.Json.DataContractJsonSerializer.#ctor(Type,IEnumerable{Type})
-- uid: System.Runtime.Serialization.Json.DataContractJsonSerializer.#ctor(Type,System.Runtime.Serialization.Json.DataContractJsonSerializerSettings)
+  id: System.Runtime.Serialization.Json.DataContractJsonSerializer.#ctor(System.Type,System.Collections.Generic.IEnumerable{System.Type})
+- uid: System.Runtime.Serialization.Json.DataContractJsonSerializer.#ctor(System.Type,System.Runtime.Serialization.Json.DataContractJsonSerializerSettings)
   href: System.Runtime.Serialization.Json.DataContractJsonSerializer.yml
   name: DataContractJsonSerializer(Type, DataContractJsonSerializerSettings)
-  fullName: System.Runtime.Serialization.Json.DataContractJsonSerializer.DataContractJsonSerializer(Type, System.Runtime.Serialization.Json.DataContractJsonSerializerSettings)
+  fullName: System.Runtime.Serialization.Json.DataContractJsonSerializer.DataContractJsonSerializer(System.Type, System.Runtime.Serialization.Json.DataContractJsonSerializerSettings)
   type: Constructor
   source:
     remote: *o0
@@ -88,7 +90,7 @@ items:
     parameters:
     - id: type
       type:
-        id: Type
+        id: System.Type
         name: Type
         isExternal: true
     - id: settings
@@ -96,7 +98,7 @@ items:
         id: System.Runtime.Serialization.Json.DataContractJsonSerializerSettings
         name: DataContractJsonSerializerSettings
         href: System.Runtime.Serialization.Json.DataContractJsonSerializerSettings.yml
-  id: System.Runtime.Serialization.Json.DataContractJsonSerializer.#ctor(Type,System.Runtime.Serialization.Json.DataContractJsonSerializerSettings)
+  id: System.Runtime.Serialization.Json.DataContractJsonSerializer.#ctor(System.Type,System.Runtime.Serialization.Json.DataContractJsonSerializerSettings)
 - uid: System.Runtime.Serialization.Json.DataContractJsonSerializer.KnownTypes
   href: System.Runtime.Serialization.Json.DataContractJsonSerializer.yml
   name: KnownTypes
@@ -112,8 +114,8 @@ items:
     parameters:
     - id: KnownTypes
       type:
-        id: ReadOnlyCollection{Type}
-        name: ReadOnlyCollection{Type}
+        id: System.Collections.ObjectModel.ReadOnlyCollection{System.Type}
+        name: ReadOnlyCollection<Type>
         isExternal: true
   id: System.Runtime.Serialization.Json.DataContractJsonSerializer.KnownTypes
 - uid: System.Runtime.Serialization.Json.DataContractJsonSerializer.MaxItemsInObjectGraph
@@ -132,7 +134,7 @@ items:
     - id: MaxItemsInObjectGraph
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Runtime.Serialization.Json.DataContractJsonSerializer.MaxItemsInObjectGraph
 - uid: System.Runtime.Serialization.Json.DataContractJsonSerializer.DateTimeFormat
@@ -152,7 +154,7 @@ items:
       type:
         id: System.Runtime.Serialization.DateTimeFormat
         name: DateTimeFormat
-        href: System.Runtime.Serialization.DateTimeFormat
+        href: System.Runtime.Serialization.DateTimeFormat.yml
   id: System.Runtime.Serialization.Json.DataContractJsonSerializer.DateTimeFormat
 - uid: System.Runtime.Serialization.Json.DataContractJsonSerializer.EmitTypeInformation
   href: System.Runtime.Serialization.Json.DataContractJsonSerializer.yml
@@ -171,7 +173,7 @@ items:
       type:
         id: System.Runtime.Serialization.EmitTypeInformation
         name: EmitTypeInformation
-        href: System.Runtime.Serialization.EmitTypeInformation
+        href: System.Runtime.Serialization.EmitTypeInformation.yml
   id: System.Runtime.Serialization.Json.DataContractJsonSerializer.EmitTypeInformation
 - uid: System.Runtime.Serialization.Json.DataContractJsonSerializer.SerializeReadOnlyTypes
   href: System.Runtime.Serialization.Json.DataContractJsonSerializer.yml
@@ -189,7 +191,7 @@ items:
     - id: SerializeReadOnlyTypes
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Runtime.Serialization.Json.DataContractJsonSerializer.SerializeReadOnlyTypes
 - uid: System.Runtime.Serialization.Json.DataContractJsonSerializer.UseSimpleDictionaryFormat
@@ -208,13 +210,13 @@ items:
     - id: UseSimpleDictionaryFormat
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Runtime.Serialization.Json.DataContractJsonSerializer.UseSimpleDictionaryFormat
-- uid: System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject(Stream,System.Object)
+- uid: System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject(System.IO.Stream,System.Object)
   href: System.Runtime.Serialization.Json.DataContractJsonSerializer.yml
   name: WriteObject(Stream, object)
-  fullName: System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject(Stream, object)
+  fullName: System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject(System.IO.Stream, object)
   type: Method
   source:
     remote: *o0
@@ -226,19 +228,19 @@ items:
     parameters:
     - id: stream
       type:
-        id: Stream
+        id: System.IO.Stream
         name: Stream
         isExternal: true
     - id: graph
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
-  id: System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject(Stream,System.Object)
-- uid: System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(Stream)
+  id: System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject(System.IO.Stream,System.Object)
+- uid: System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(System.IO.Stream)
   href: System.Runtime.Serialization.Json.DataContractJsonSerializer.yml
   name: ReadObject(Stream)
-  fullName: System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(Stream)
+  fullName: System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(System.IO.Stream)
   type: Method
   source:
     remote: *o0
@@ -250,9 +252,13 @@ items:
     parameters:
     - id: stream
       type:
-        id: Stream
+        id: System.IO.Stream
         name: Stream
         isExternal: true
     return:
       id: Object
-  id: System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(Stream)
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+  id: System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(System.IO.Stream)

@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/Html/NameExtensions.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/Html/NameExtensions.cs
     startLine: 7
   syntax:
     content:
-      CSharp: public static class NameExtensions
+      CSharp: public class NameExtensions
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.Html.NameExtensions
   children:
@@ -37,7 +38,7 @@ items:
     startLine: 9
   syntax:
     content:
-      CSharp: public static MvcHtmlString Id(this HtmlHelper html, string name)
+      CSharp: public static MvcHtmlString Id(HtmlHelper html, string name)
     parameters:
     - id: html
       type:
@@ -47,10 +48,14 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
   id: System.Web.Mvc.Html.NameExtensions.Id(System.Web.Mvc.HtmlHelper,System.String)
 - uid: System.Web.Mvc.Html.NameExtensions.IdFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})
   href: System.Web.Mvc.Html.NameExtensions.yml
@@ -63,20 +68,24 @@ items:
     startLine: 14
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Justification = "This is an appropriate nesting of generic types")] [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Users cannot use anonymous methods with the LambdaExpression type")] public static MvcHtmlString IdFor<TModel, TProperty>(this HtmlHelper<TModel> html, Expression<Func<TModel, TProperty>> expression)'
+      CSharp: public static MvcHtmlString IdFor<TModel, TProperty>(HtmlHelper<TModel> html, Expression<Func<TModel, TProperty>> expression)
     parameters:
     - id: html
       type:
         id: System.Web.Mvc.HtmlHelper{``0}
-        name: HtmlHelper
+        name: HtmlHelper<TModel>
         href: System.Web.Mvc.HtmlHelper{``0}
     - id: expression
       type:
         id: System.Linq.Expressions.Expression{System.Func{``0,``1}}
-        name: System.Linq.Expressions.Expression{System.Func{``0,``1}}
+        name: Expression<Func<TModel, TProperty>>
         isExternal: true
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
   id: System.Web.Mvc.Html.NameExtensions.IdFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})
 - uid: System.Web.Mvc.Html.NameExtensions.IdForModel(System.Web.Mvc.HtmlHelper)
   href: System.Web.Mvc.Html.NameExtensions.yml
@@ -89,7 +98,7 @@ items:
     startLine: 21
   syntax:
     content:
-      CSharp: public static MvcHtmlString IdForModel(this HtmlHelper html)
+      CSharp: public static MvcHtmlString IdForModel(HtmlHelper html)
     parameters:
     - id: html
       type:
@@ -98,6 +107,10 @@ items:
         href: System.Web.Mvc.HtmlHelper.yml
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
   id: System.Web.Mvc.Html.NameExtensions.IdForModel(System.Web.Mvc.HtmlHelper)
 - uid: System.Web.Mvc.Html.NameExtensions.Name(System.Web.Mvc.HtmlHelper,System.String)
   href: System.Web.Mvc.Html.NameExtensions.yml
@@ -110,7 +123,7 @@ items:
     startLine: 26
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames", MessageId = "1#", Justification = "This is a shipped API.")] public static MvcHtmlString Name(this HtmlHelper html, string name)'
+      CSharp: public static MvcHtmlString Name(HtmlHelper html, string name)
     parameters:
     - id: html
       type:
@@ -120,10 +133,14 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
   id: System.Web.Mvc.Html.NameExtensions.Name(System.Web.Mvc.HtmlHelper,System.String)
 - uid: System.Web.Mvc.Html.NameExtensions.NameFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})
   href: System.Web.Mvc.Html.NameExtensions.yml
@@ -136,20 +153,24 @@ items:
     startLine: 32
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Justification = "This is an appropriate nesting of generic types")] [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Users cannot use anonymous methods with the LambdaExpression type")] public static MvcHtmlString NameFor<TModel, TProperty>(this HtmlHelper<TModel> html, Expression<Func<TModel, TProperty>> expression)'
+      CSharp: public static MvcHtmlString NameFor<TModel, TProperty>(HtmlHelper<TModel> html, Expression<Func<TModel, TProperty>> expression)
     parameters:
     - id: html
       type:
         id: System.Web.Mvc.HtmlHelper{``0}
-        name: HtmlHelper
+        name: HtmlHelper<TModel>
         href: System.Web.Mvc.HtmlHelper{``0}
     - id: expression
       type:
         id: System.Linq.Expressions.Expression{System.Func{``0,``1}}
-        name: System.Linq.Expressions.Expression{System.Func{``0,``1}}
+        name: Expression<Func<TModel, TProperty>>
         isExternal: true
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
   id: System.Web.Mvc.Html.NameExtensions.NameFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})
 - uid: System.Web.Mvc.Html.NameExtensions.NameForModel(System.Web.Mvc.HtmlHelper)
   href: System.Web.Mvc.Html.NameExtensions.yml
@@ -162,7 +183,7 @@ items:
     startLine: 39
   syntax:
     content:
-      CSharp: public static MvcHtmlString NameForModel(this HtmlHelper html)
+      CSharp: public static MvcHtmlString NameForModel(HtmlHelper html)
     parameters:
     - id: html
       type:
@@ -171,4 +192,8 @@ items:
         href: System.Web.Mvc.HtmlHelper.yml
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
   id: System.Web.Mvc.Html.NameExtensions.NameForModel(System.Web.Mvc.HtmlHelper)

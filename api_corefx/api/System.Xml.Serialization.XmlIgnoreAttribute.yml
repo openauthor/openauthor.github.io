@@ -6,16 +6,21 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlIgnoreAttribute.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlIgnoreAttribute.cs
     startLine: 15
   syntax:
     content:
-      CSharp: public class XmlIgnoreAttribute
+      CSharp: 'public class XmlIgnoreAttribute : Attribute, _Attribute'
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.Attribute
-    name: System.Attribute
+    name: Attribute
     isExternal: true
   id: System.Xml.Serialization.XmlIgnoreAttribute
   children:

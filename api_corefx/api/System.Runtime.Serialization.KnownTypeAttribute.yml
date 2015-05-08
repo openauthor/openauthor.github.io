@@ -6,27 +6,32 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Runtime.Serialization.Primitives/src/System/Runtime/Serialization/KnownTypeAttribute.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Runtime.Serialization.Primitives/src/System/Runtime/Serialization/KnownTypeAttribute.cs
     startLine: 5
   syntax:
     content:
-      CSharp: public sealed class KnownTypeAttribute
+      CSharp: 'public sealed class KnownTypeAttribute : Attribute, _Attribute'
   inheritance:
-  - id: Attribute
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.Attribute
     name: Attribute
     isExternal: true
   id: System.Runtime.Serialization.KnownTypeAttribute
   children:
-  - System.Runtime.Serialization.KnownTypeAttribute.#ctor(Type)
+  - System.Runtime.Serialization.KnownTypeAttribute.#ctor(System.Type)
   - System.Runtime.Serialization.KnownTypeAttribute.#ctor(System.String)
   - System.Runtime.Serialization.KnownTypeAttribute.MethodName
   - System.Runtime.Serialization.KnownTypeAttribute.Type
-- uid: System.Runtime.Serialization.KnownTypeAttribute.#ctor(Type)
+- uid: System.Runtime.Serialization.KnownTypeAttribute.#ctor(System.Type)
   href: System.Runtime.Serialization.KnownTypeAttribute.yml
   name: KnownTypeAttribute(Type)
-  fullName: System.Runtime.Serialization.KnownTypeAttribute.KnownTypeAttribute(Type)
+  fullName: System.Runtime.Serialization.KnownTypeAttribute.KnownTypeAttribute(System.Type)
   type: Constructor
   source:
     remote: *o0
@@ -38,10 +43,10 @@ items:
     parameters:
     - id: type
       type:
-        id: Type
+        id: System.Type
         name: Type
         isExternal: true
-  id: System.Runtime.Serialization.KnownTypeAttribute.#ctor(Type)
+  id: System.Runtime.Serialization.KnownTypeAttribute.#ctor(System.Type)
 - uid: System.Runtime.Serialization.KnownTypeAttribute.#ctor(System.String)
   href: System.Runtime.Serialization.KnownTypeAttribute.yml
   name: KnownTypeAttribute(string)
@@ -58,7 +63,7 @@ items:
     - id: methodName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Runtime.Serialization.KnownTypeAttribute.#ctor(System.String)
 - uid: System.Runtime.Serialization.KnownTypeAttribute.MethodName
@@ -77,7 +82,7 @@ items:
     - id: MethodName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Runtime.Serialization.KnownTypeAttribute.MethodName
 - uid: System.Runtime.Serialization.KnownTypeAttribute.Type
@@ -95,7 +100,7 @@ items:
     parameters:
     - id: Type
       type:
-        id: Type
+        id: System.Type
         name: Type
         isExternal: true
   id: System.Runtime.Serialization.KnownTypeAttribute.Type

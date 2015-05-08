@@ -6,21 +6,22 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/FindSymbols/ReferenceLocation.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/FindSymbols/ReferenceLocation.cs
     startLine: 12
   summary: Information about a reference to a symbol.
   syntax:
     content:
-      CSharp: public struct ReferenceLocation
+      CSharp: 'public struct ReferenceLocation : IComparable<ReferenceLocation>, IEquatable<ReferenceLocation>'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation
   children:
@@ -48,7 +49,7 @@ items:
   summary: The document that the reference was found in.
   syntax:
     content:
-      CSharp: public Document Document { get; private set; }
+      CSharp: public Document Document { get; }
     parameters:
     - id: Document
       type:
@@ -68,7 +69,7 @@ items:
   summary: If the symbol was bound through an alias, then this is the alias that was used.
   syntax:
     content:
-      CSharp: public IAliasSymbol Alias { get; private set; }
+      CSharp: public IAliasSymbol Alias { get; }
     parameters:
     - id: Alias
       type:
@@ -88,7 +89,7 @@ items:
   summary: The actual source location for a given symbol.
   syntax:
     content:
-      CSharp: public Location Location { get; private set; }
+      CSharp: public Location Location { get; }
     parameters:
     - id: Location
       type:
@@ -115,12 +116,12 @@ items:
     implicitly by a 'for each' statement.
   syntax:
     content:
-      CSharp: public bool IsImplicit { get; private set; }
+      CSharp: public bool IsImplicit { get; }
     parameters:
     - id: IsImplicit
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation.IsImplicit
 - uid: Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation.CandidateReason
@@ -131,10 +132,10 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/FindSymbols/ReferenceLocation.cs
-    startLine: 38
+    startLine: 43
   syntax:
     content:
-      CSharp: public CandidateReason CandidateReason { get; private set; }
+      CSharp: public CandidateReason CandidateReason { get; }
     parameters:
     - id: CandidateReason
       type:
@@ -150,7 +151,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/FindSymbols/ReferenceLocation.cs
-    startLine: 56
+    startLine: 62
   summary: >-
     Indicates if this was not an exact reference to a location, but was instead a possible
 
@@ -166,21 +167,21 @@ items:
     - id: IsCandidateLocation
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation.IsCandidateLocation
 - uid: Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation.op_Equality(Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation,Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation)
   href: Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation.yml
   name: operator ==(ReferenceLocation, ReferenceLocation)
   fullName: Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation.operator ==(Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation, Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/FindSymbols/ReferenceLocation.cs
-    startLine: 64
+    startLine: 70
   syntax:
     content:
-      CSharp: public static bool operator ==(ReferenceLocation left, ReferenceLocation right) { return left.Equals(right); }
+      CSharp: public static bool operator ==(ReferenceLocation left, ReferenceLocation right)
     parameters:
     - id: left
       type:
@@ -194,19 +195,23 @@ items:
         href: Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation.op_Equality(Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation,Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation)
 - uid: Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation.op_Inequality(Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation,Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation)
   href: Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation.yml
   name: operator !=(ReferenceLocation, ReferenceLocation)
   fullName: Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation.operator !=(Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation, Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/FindSymbols/ReferenceLocation.cs
-    startLine: 69
+    startLine: 75
   syntax:
     content:
-      CSharp: public static bool operator !=(ReferenceLocation left, ReferenceLocation right) { return !(left == right); }
+      CSharp: public static bool operator !=(ReferenceLocation left, ReferenceLocation right)
     parameters:
     - id: left
       type:
@@ -220,6 +225,10 @@ items:
         href: Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation.op_Inequality(Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation,Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation)
 - uid: Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation.Equals(System.Object)
   href: Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation.yml
@@ -229,7 +238,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/FindSymbols/ReferenceLocation.cs
-    startLine: 74
+    startLine: 80
   syntax:
     content:
       CSharp: public override bool Equals(object obj)
@@ -237,10 +246,14 @@ items:
     - id: obj
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation.Equals(System.Object)
 - uid: Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation.Equals(Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation)
   href: Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation.yml
@@ -250,7 +263,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/FindSymbols/ReferenceLocation.cs
-    startLine: 80
+    startLine: 86
   syntax:
     content:
       CSharp: public bool Equals(ReferenceLocation other)
@@ -262,6 +275,10 @@ items:
         href: Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation.Equals(Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation)
 - uid: Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation.GetHashCode
   href: Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation.yml
@@ -271,13 +288,17 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/FindSymbols/ReferenceLocation.cs
-    startLine: 90
+    startLine: 96
   syntax:
     content:
       CSharp: public override int GetHashCode()
     parameters: []
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation.GetHashCode
 - uid: Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation.CompareTo(Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation)
   href: Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation.yml
@@ -287,7 +308,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/FindSymbols/ReferenceLocation.cs
-    startLine: 99
+    startLine: 105
   syntax:
     content:
       CSharp: public int CompareTo(ReferenceLocation other)
@@ -299,4 +320,8 @@ items:
         href: Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation.yml
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation.CompareTo(Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation)

@@ -1,0 +1,68 @@
+items:
+- uid: System.Linq.ParallelExecutionMode
+  href: System.Linq.ParallelExecutionMode.yml
+  name: ParallelExecutionMode
+  fullName: System.Linq.ParallelExecutionMode
+  type: Enum
+  source:
+    remote: &o0
+      path: src/System.Linq.Parallel/src/System/Linq/ParallelExecutionMode.cs
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
+    path: src/System.Linq.Parallel/src/System/Linq/ParallelExecutionMode.cs
+    startLine: 19
+  summary: >-
+    The query execution mode is a hint that specifies how the system should handle
+
+    performance trade-offs when parallelizing queries.
+  syntax:
+    content:
+      CSharp: public enum ParallelExecutionMode
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.ValueType
+    name: ValueType
+    isExternal: true
+  - id: System.Enum
+    name: Enum
+    isExternal: true
+  id: System.Linq.ParallelExecutionMode
+  children:
+  - System.Linq.ParallelExecutionMode.Default
+  - System.Linq.ParallelExecutionMode.ForceParallelism
+- uid: System.Linq.ParallelExecutionMode.Default
+  href: System.Linq.ParallelExecutionMode.yml
+  name: Default
+  fullName: System.Linq.ParallelExecutionMode.Default
+  type: Field
+  source:
+    remote: *o0
+    path: src/System.Linq.Parallel/src/System/Linq/ParallelExecutionMode.cs
+    startLine: 26
+  summary: >-
+    By default, the system will use algorithms for queries
+
+    that are ripe for parallelism and will avoid algorithms with high
+
+    overheads that will likely result in slow downs for parallel execution.
+  syntax:
+    content:
+      CSharp: Default = 0
+  id: System.Linq.ParallelExecutionMode.Default
+- uid: System.Linq.ParallelExecutionMode.ForceParallelism
+  href: System.Linq.ParallelExecutionMode.yml
+  name: ForceParallelism
+  fullName: System.Linq.ParallelExecutionMode.ForceParallelism
+  type: Field
+  source:
+    remote: *o0
+    path: src/System.Linq.Parallel/src/System/Linq/ParallelExecutionMode.cs
+    startLine: 31
+  summary: Parallelize the entire query, even if that means using high-overhead algorithms.
+  syntax:
+    content:
+      CSharp: ForceParallelism = 1
+  id: System.Linq.ParallelExecutionMode.ForceParallelism

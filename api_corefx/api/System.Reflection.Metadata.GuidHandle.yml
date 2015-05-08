@@ -6,39 +6,44 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 2347
+    startLine: 2966
   syntax:
     content:
-      CSharp: public struct GuidHandle
+      CSharp: 'public struct GuidHandle : IEquatable<GuidHandle>'
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Reflection.Metadata.GuidHandle
   children:
   - System.Reflection.Metadata.GuidHandle.op_Implicit(System.Reflection.Metadata.GuidHandle)~System.Reflection.Metadata.Handle
   - System.Reflection.Metadata.GuidHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.GuidHandle
   - System.Reflection.Metadata.GuidHandle.IsNil
-  - System.Reflection.Metadata.GuidHandle.op_Equality(System.Reflection.Metadata.GuidHandle,System.Reflection.Metadata.GuidHandle)
   - System.Reflection.Metadata.GuidHandle.Equals(System.Object)
   - System.Reflection.Metadata.GuidHandle.Equals(System.Reflection.Metadata.GuidHandle)
   - System.Reflection.Metadata.GuidHandle.GetHashCode
+  - System.Reflection.Metadata.GuidHandle.op_Equality(System.Reflection.Metadata.GuidHandle,System.Reflection.Metadata.GuidHandle)
   - System.Reflection.Metadata.GuidHandle.op_Inequality(System.Reflection.Metadata.GuidHandle,System.Reflection.Metadata.GuidHandle)
 - uid: System.Reflection.Metadata.GuidHandle.op_Implicit(System.Reflection.Metadata.GuidHandle)~System.Reflection.Metadata.Handle
   href: System.Reflection.Metadata.GuidHandle.yml
   name: implicit operator Handle(GuidHandle)
   fullName: System.Reflection.Metadata.GuidHandle.implicit operator System.Reflection.Metadata.Handle(System.Reflection.Metadata.GuidHandle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 2363
+    startLine: 2982
   syntax:
     content:
-      CSharp: public static implicit operator Handle(GuidHandle handle) { return new Handle(handle._token); }
+      CSharp: public static implicit operator Handle(GuidHandle handle)
     parameters:
     - id: handle
       type:
@@ -47,19 +52,23 @@ items:
         href: System.Reflection.Metadata.GuidHandle.yml
     return:
       id: Handle
+      type:
+        id: System.Reflection.Metadata.Handle
+        name: Handle
+        href: System.Reflection.Metadata.Handle.yml
   id: System.Reflection.Metadata.GuidHandle.op_Implicit(System.Reflection.Metadata.GuidHandle)~System.Reflection.Metadata.Handle
 - uid: System.Reflection.Metadata.GuidHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.GuidHandle
   href: System.Reflection.Metadata.GuidHandle.yml
   name: explicit operator GuidHandle(Handle)
   fullName: System.Reflection.Metadata.GuidHandle.explicit operator System.Reflection.Metadata.GuidHandle(System.Reflection.Metadata.Handle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 2368
+    startLine: 2987
   syntax:
     content:
-      CSharp: public static explicit operator GuidHandle(Handle handle) { if (handle.TokenType != tokenType) { Handle.ThrowInvalidCast(); } return new GuidHandle(handle.value); }
+      CSharp: public static explicit operator GuidHandle(Handle handle)
     parameters:
     - id: handle
       type:
@@ -68,6 +77,10 @@ items:
         href: System.Reflection.Metadata.Handle.yml
     return:
       id: GuidHandle
+      type:
+        id: System.Reflection.Metadata.GuidHandle
+        name: GuidHandle
+        href: System.Reflection.Metadata.GuidHandle.yml
   id: System.Reflection.Metadata.GuidHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.GuidHandle
 - uid: System.Reflection.Metadata.GuidHandle.IsNil
   href: System.Reflection.Metadata.GuidHandle.yml
@@ -77,7 +90,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 2378
+    startLine: 2997
   syntax:
     content:
       CSharp: public bool IsNil { get; }
@@ -85,35 +98,9 @@ items:
     - id: IsNil
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Reflection.Metadata.GuidHandle.IsNil
-- uid: System.Reflection.Metadata.GuidHandle.op_Equality(System.Reflection.Metadata.GuidHandle,System.Reflection.Metadata.GuidHandle)
-  href: System.Reflection.Metadata.GuidHandle.yml
-  name: operator ==(GuidHandle, GuidHandle)
-  fullName: System.Reflection.Metadata.GuidHandle.operator ==(System.Reflection.Metadata.GuidHandle, System.Reflection.Metadata.GuidHandle)
-  type: Method
-  source:
-    remote: *o0
-    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 2394
-  syntax:
-    content:
-      CSharp: public static bool operator ==(GuidHandle left, GuidHandle right) { return left._token == right._token; }
-    parameters:
-    - id: left
-      type:
-        id: System.Reflection.Metadata.GuidHandle
-        name: GuidHandle
-        href: System.Reflection.Metadata.GuidHandle.yml
-    - id: right
-      type:
-        id: System.Reflection.Metadata.GuidHandle
-        name: GuidHandle
-        href: System.Reflection.Metadata.GuidHandle.yml
-    return:
-      id: Boolean
-  id: System.Reflection.Metadata.GuidHandle.op_Equality(System.Reflection.Metadata.GuidHandle,System.Reflection.Metadata.GuidHandle)
 - uid: System.Reflection.Metadata.GuidHandle.Equals(System.Object)
   href: System.Reflection.Metadata.GuidHandle.yml
   name: Equals(object)
@@ -122,7 +109,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 2399
+    startLine: 3007
   syntax:
     content:
       CSharp: public override bool Equals(object obj)
@@ -130,10 +117,14 @@ items:
     - id: obj
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.GuidHandle.Equals(System.Object)
 - uid: System.Reflection.Metadata.GuidHandle.Equals(System.Reflection.Metadata.GuidHandle)
   href: System.Reflection.Metadata.GuidHandle.yml
@@ -143,7 +134,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 2404
+    startLine: 3012
   syntax:
     content:
       CSharp: public bool Equals(GuidHandle other)
@@ -155,6 +146,10 @@ items:
         href: System.Reflection.Metadata.GuidHandle.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.GuidHandle.Equals(System.Reflection.Metadata.GuidHandle)
 - uid: System.Reflection.Metadata.GuidHandle.GetHashCode
   href: System.Reflection.Metadata.GuidHandle.yml
@@ -164,26 +159,30 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 2409
+    startLine: 3017
   syntax:
     content:
       CSharp: public override int GetHashCode()
     parameters: []
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: System.Reflection.Metadata.GuidHandle.GetHashCode
-- uid: System.Reflection.Metadata.GuidHandle.op_Inequality(System.Reflection.Metadata.GuidHandle,System.Reflection.Metadata.GuidHandle)
+- uid: System.Reflection.Metadata.GuidHandle.op_Equality(System.Reflection.Metadata.GuidHandle,System.Reflection.Metadata.GuidHandle)
   href: System.Reflection.Metadata.GuidHandle.yml
-  name: operator !=(GuidHandle, GuidHandle)
-  fullName: System.Reflection.Metadata.GuidHandle.operator !=(System.Reflection.Metadata.GuidHandle, System.Reflection.Metadata.GuidHandle)
-  type: Method
+  name: operator ==(GuidHandle, GuidHandle)
+  fullName: System.Reflection.Metadata.GuidHandle.operator ==(System.Reflection.Metadata.GuidHandle, System.Reflection.Metadata.GuidHandle)
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 2414
+    startLine: 3022
   syntax:
     content:
-      CSharp: public static bool operator !=(GuidHandle left, GuidHandle right) { return left._token != right._token; }
+      CSharp: public static bool operator ==(GuidHandle left, GuidHandle right)
     parameters:
     - id: left
       type:
@@ -197,4 +196,38 @@ items:
         href: System.Reflection.Metadata.GuidHandle.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Reflection.Metadata.GuidHandle.op_Equality(System.Reflection.Metadata.GuidHandle,System.Reflection.Metadata.GuidHandle)
+- uid: System.Reflection.Metadata.GuidHandle.op_Inequality(System.Reflection.Metadata.GuidHandle,System.Reflection.Metadata.GuidHandle)
+  href: System.Reflection.Metadata.GuidHandle.yml
+  name: operator !=(GuidHandle, GuidHandle)
+  fullName: System.Reflection.Metadata.GuidHandle.operator !=(System.Reflection.Metadata.GuidHandle, System.Reflection.Metadata.GuidHandle)
+  type: Operator
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 3027
+  syntax:
+    content:
+      CSharp: public static bool operator !=(GuidHandle left, GuidHandle right)
+    parameters:
+    - id: left
+      type:
+        id: System.Reflection.Metadata.GuidHandle
+        name: GuidHandle
+        href: System.Reflection.Metadata.GuidHandle.yml
+    - id: right
+      type:
+        id: System.Reflection.Metadata.GuidHandle
+        name: GuidHandle
+        href: System.Reflection.Metadata.GuidHandle.yml
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.GuidHandle.op_Inequality(System.Reflection.Metadata.GuidHandle,System.Reflection.Metadata.GuidHandle)

@@ -6,13 +6,15 @@ items:
   type: Namespace
   source:
     remote:
+      path: src/Features/Core/Workspace/Kernel32File.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Features/Core/Workspace/Kernel32File.cs
     startLine: 7
   id: Microsoft.CodeAnalysis.Host
   children:
+  - Microsoft.CodeAnalysis.Host.IAnalyzerService
   - Microsoft.CodeAnalysis.Host.ICompilationFactoryService
   - Microsoft.CodeAnalysis.Host.ILanguageService
   - Microsoft.CodeAnalysis.Host.HostLanguageServices
@@ -26,6 +28,10 @@ items:
   - Microsoft.CodeAnalysis.Host.HostWorkspaceServices.MetadataFilter
   - Microsoft.CodeAnalysis.Host.IWorkspaceService
 references:
+- uid: Microsoft.CodeAnalysis.Host.IAnalyzerService
+  href: Microsoft.CodeAnalysis.Host.IAnalyzerService.yml
+  name: IAnalyzerService
+  type: Interface
 - uid: Microsoft.CodeAnalysis.Host.ICompilationFactoryService
   href: Microsoft.CodeAnalysis.Host.ICompilationFactoryService.yml
   name: ICompilationFactoryService

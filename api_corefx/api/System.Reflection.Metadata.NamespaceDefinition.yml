@@ -6,16 +6,21 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/NamespaceDefinition.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/NamespaceDefinition.cs
     startLine: 9
   syntax:
     content:
       CSharp: public struct NamespaceDefinition
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Reflection.Metadata.NamespaceDefinition
   children:
@@ -92,7 +97,7 @@ items:
     - id: NamespaceDefinitions
       type:
         id: ImmutableArray{System.Reflection.Metadata.NamespaceDefinitionHandle}
-        name: ImmutableArray{System.Reflection.Metadata.NamespaceDefinitionHandle}
+        name: ImmutableArray<NamespaceDefinitionHandle>
         isExternal: true
   id: System.Reflection.Metadata.NamespaceDefinition.NamespaceDefinitions
 - uid: System.Reflection.Metadata.NamespaceDefinition.TypeDefinitions
@@ -112,7 +117,7 @@ items:
     - id: TypeDefinitions
       type:
         id: ImmutableArray{System.Reflection.Metadata.TypeDefinitionHandle}
-        name: ImmutableArray{System.Reflection.Metadata.TypeDefinitionHandle}
+        name: ImmutableArray<TypeDefinitionHandle>
         isExternal: true
   id: System.Reflection.Metadata.NamespaceDefinition.TypeDefinitions
 - uid: System.Reflection.Metadata.NamespaceDefinition.ExportedTypes
@@ -132,6 +137,6 @@ items:
     - id: ExportedTypes
       type:
         id: ImmutableArray{System.Reflection.Metadata.ExportedTypeHandle}
-        name: ImmutableArray{System.Reflection.Metadata.ExportedTypeHandle}
+        name: ImmutableArray<ExportedTypeHandle>
         isExternal: true
   id: System.Reflection.Metadata.NamespaceDefinition.ExportedTypes

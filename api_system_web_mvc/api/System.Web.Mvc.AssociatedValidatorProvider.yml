@@ -6,24 +6,52 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/AssociatedValidatorProvider.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/AssociatedValidatorProvider.cs
     startLine: 10
   syntax:
     content:
-      CSharp: public abstract class AssociatedValidatorProvider
+      CSharp: 'public abstract class AssociatedValidatorProvider : ModelValidatorProvider'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.Mvc.ModelValidatorProvider
     name: ModelValidatorProvider
     href: System.Web.Mvc.ModelValidatorProvider.yml
   id: System.Web.Mvc.AssociatedValidatorProvider
   children:
+  - System.Web.Mvc.AssociatedValidatorProvider.GetTypeDescriptor(System.Type)
   - System.Web.Mvc.AssociatedValidatorProvider.GetValidators(System.Web.Mvc.ModelMetadata,System.Web.Mvc.ControllerContext)
+  - System.Web.Mvc.AssociatedValidatorProvider.GetValidators(System.Web.Mvc.ModelMetadata,System.Web.Mvc.ControllerContext,System.Collections.Generic.IEnumerable{System.Attribute})
+- uid: System.Web.Mvc.AssociatedValidatorProvider.GetTypeDescriptor(System.Type)
+  href: System.Web.Mvc.AssociatedValidatorProvider.yml
+  name: GetTypeDescriptor(Type)
+  fullName: System.Web.Mvc.AssociatedValidatorProvider.GetTypeDescriptor(System.Type)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/AssociatedValidatorProvider.cs
+    startLine: 12
+  syntax:
+    content:
+      CSharp: protected virtual ICustomTypeDescriptor GetTypeDescriptor(Type type)
+    parameters:
+    - id: type
+      type:
+        id: System.Type
+        name: Type
+        isExternal: true
+    return:
+      id: ICustomTypeDescriptor
+      type:
+        id: System.ComponentModel.ICustomTypeDescriptor
+        name: ICustomTypeDescriptor
+        isExternal: true
+  id: System.Web.Mvc.AssociatedValidatorProvider.GetTypeDescriptor(System.Type)
 - uid: System.Web.Mvc.AssociatedValidatorProvider.GetValidators(System.Web.Mvc.ModelMetadata,System.Web.Mvc.ControllerContext)
   href: System.Web.Mvc.AssociatedValidatorProvider.yml
   name: GetValidators(ModelMetadata, ControllerContext)
@@ -35,7 +63,7 @@ items:
     startLine: 17
   syntax:
     content:
-      CSharp: public sealed override IEnumerable<ModelValidator> GetValidators(ModelMetadata metadata, ControllerContext context)
+      CSharp: public override sealed IEnumerable<ModelValidator> GetValidators(ModelMetadata metadata, ControllerContext context)
     parameters:
     - id: metadata
       type:
@@ -49,4 +77,43 @@ items:
         href: System.Web.Mvc.ControllerContext.yml
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Web.Mvc.ModelValidator}
+        name: IEnumerable<ModelValidator>
+        isExternal: true
   id: System.Web.Mvc.AssociatedValidatorProvider.GetValidators(System.Web.Mvc.ModelMetadata,System.Web.Mvc.ControllerContext)
+- uid: System.Web.Mvc.AssociatedValidatorProvider.GetValidators(System.Web.Mvc.ModelMetadata,System.Web.Mvc.ControllerContext,System.Collections.Generic.IEnumerable{System.Attribute})
+  href: System.Web.Mvc.AssociatedValidatorProvider.yml
+  name: GetValidators(ModelMetadata, ControllerContext, IEnumerable<Attribute>)
+  fullName: System.Web.Mvc.AssociatedValidatorProvider.GetValidators(System.Web.Mvc.ModelMetadata, System.Web.Mvc.ControllerContext, System.Collections.Generic.IEnumerable<System.Attribute>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/AssociatedValidatorProvider.cs
+    startLine: 36
+  syntax:
+    content:
+      CSharp: protected abstract IEnumerable<ModelValidator> GetValidators(ModelMetadata metadata, ControllerContext context, IEnumerable<Attribute> attributes)
+    parameters:
+    - id: metadata
+      type:
+        id: System.Web.Mvc.ModelMetadata
+        name: ModelMetadata
+        href: System.Web.Mvc.ModelMetadata.yml
+    - id: context
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+    - id: attributes
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Attribute}
+        name: IEnumerable<Attribute>
+        isExternal: true
+    return:
+      id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Web.Mvc.ModelValidator}
+        name: IEnumerable<ModelValidator>
+        isExternal: true
+  id: System.Web.Mvc.AssociatedValidatorProvider.GetValidators(System.Web.Mvc.ModelMetadata,System.Web.Mvc.ControllerContext,System.Collections.Generic.IEnumerable{System.Attribute})

@@ -6,16 +6,21 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/ExportedType.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/ExportedType.cs
     startLine: 7
   syntax:
     content:
       CSharp: public struct ExportedType
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Reflection.Metadata.ExportedType
   children:
@@ -23,6 +28,7 @@ items:
   - System.Reflection.Metadata.ExportedType.IsForwarder
   - System.Reflection.Metadata.ExportedType.Name
   - System.Reflection.Metadata.ExportedType.Namespace
+  - System.Reflection.Metadata.ExportedType.NamespaceDefinition
   - System.Reflection.Metadata.ExportedType.Implementation
   - System.Reflection.Metadata.ExportedType.GetCustomAttributes
 - uid: System.Reflection.Metadata.ExportedType.Attributes
@@ -40,7 +46,7 @@ items:
     parameters:
     - id: Attributes
       type:
-        id: TypeAttributes
+        id: System.Reflection.TypeAttributes
         name: TypeAttributes
         isExternal: true
   id: System.Reflection.Metadata.ExportedType.Attributes
@@ -60,7 +66,7 @@ items:
     - id: IsForwarder
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Reflection.Metadata.ExportedType.IsForwarder
 - uid: System.Reflection.Metadata.ExportedType.Name
@@ -71,7 +77,8 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/ExportedType.cs
-    startLine: 38
+    startLine: 41
+  summary: Name of the target type, or nil if the type is nested or defined in a root namespace.
   syntax:
     content:
       CSharp: public StringHandle Name { get; }
@@ -90,17 +97,38 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/ExportedType.cs
-    startLine: 43
+    startLine: 49
+  summary: Full name of the namespace where the target type, or nil if the type is nested or defined in a root namespace.
   syntax:
     content:
-      CSharp: public NamespaceDefinitionHandle Namespace { get; }
+      CSharp: public StringHandle Namespace { get; }
     parameters:
     - id: Namespace
+      type:
+        id: System.Reflection.Metadata.StringHandle
+        name: StringHandle
+        href: System.Reflection.Metadata.StringHandle.yml
+  id: System.Reflection.Metadata.ExportedType.Namespace
+- uid: System.Reflection.Metadata.ExportedType.NamespaceDefinition
+  href: System.Reflection.Metadata.ExportedType.yml
+  name: NamespaceDefinition
+  fullName: System.Reflection.Metadata.ExportedType.NamespaceDefinition
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/ExportedType.cs
+    startLine: 60
+  summary: The definition handle of the namespace where the target type is defined, or nil if the type is nested or defined in a root namespace.
+  syntax:
+    content:
+      CSharp: public NamespaceDefinitionHandle NamespaceDefinition { get; }
+    parameters:
+    - id: NamespaceDefinition
       type:
         id: System.Reflection.Metadata.NamespaceDefinitionHandle
         name: NamespaceDefinitionHandle
         href: System.Reflection.Metadata.NamespaceDefinitionHandle.yml
-  id: System.Reflection.Metadata.ExportedType.Namespace
+  id: System.Reflection.Metadata.ExportedType.NamespaceDefinition
 - uid: System.Reflection.Metadata.ExportedType.Implementation
   href: System.Reflection.Metadata.ExportedType.yml
   name: Implementation
@@ -109,17 +137,17 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/ExportedType.cs
-    startLine: 63
+    startLine: 80
   summary: Handle to resolve the implementation of the target type.
   syntax:
     content:
-      CSharp: public Handle Implementation { get; }
+      CSharp: public EntityHandle Implementation { get; }
     parameters:
     - id: Implementation
       type:
-        id: System.Reflection.Metadata.Handle
-        name: Handle
-        href: System.Reflection.Metadata.Handle.yml
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
   id: System.Reflection.Metadata.ExportedType.Implementation
 - uid: System.Reflection.Metadata.ExportedType.GetCustomAttributes
   href: System.Reflection.Metadata.ExportedType.yml
@@ -129,11 +157,15 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/ExportedType.cs
-    startLine: 71
+    startLine: 88
   syntax:
     content:
       CSharp: public CustomAttributeHandleCollection GetCustomAttributes()
     parameters: []
     return:
       id: CustomAttributeHandleCollection
+      type:
+        id: System.Reflection.Metadata.CustomAttributeHandleCollection
+        name: CustomAttributeHandleCollection
+        href: System.Reflection.Metadata.CustomAttributeHandleCollection.yml
   id: System.Reflection.Metadata.ExportedType.GetCustomAttributes

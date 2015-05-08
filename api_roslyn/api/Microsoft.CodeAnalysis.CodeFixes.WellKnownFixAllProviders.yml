@@ -6,18 +6,19 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/CodeFixes/FixAllOccurrences/WellKnownFixAllProviders.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/CodeFixes/FixAllOccurrences/WellKnownFixAllProviders.cs
     startLine: 9
   summary: Contains well known implementations of [Microsoft.CodeAnalysis.CodeFixes.FixAllProvider](Microsoft.CodeAnalysis.CodeFixes.FixAllProvider.yml).
   syntax:
     content:
-      CSharp: public static class WellKnownFixAllProviders
+      CSharp: public class WellKnownFixAllProviders
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.CodeFixes.WellKnownFixAllProviders
   children:
@@ -43,5 +44,5 @@ items:
     [Microsoft.CodeAnalysis.CodeFixes.FixAllScope.Document](Microsoft.CodeAnalysis.CodeFixes.FixAllScope.yml), [Microsoft.CodeAnalysis.CodeFixes.FixAllScope.Project](Microsoft.CodeAnalysis.CodeFixes.FixAllScope.yml) and [Microsoft.CodeAnalysis.CodeFixes.FixAllScope.Solution](Microsoft.CodeAnalysis.CodeFixes.FixAllScope.yml).
   syntax:
     content:
-      CSharp: BatchFixer
+      CSharp: public static readonly FixAllProvider BatchFixer;
   id: Microsoft.CodeAnalysis.CodeFixes.WellKnownFixAllProviders.BatchFixer

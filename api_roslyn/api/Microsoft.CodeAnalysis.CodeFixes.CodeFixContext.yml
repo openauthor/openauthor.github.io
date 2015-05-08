@@ -6,9 +6,10 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/CodeFixes/CodeFixContext.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/CodeFixes/CodeFixContext.cs
     startLine: 16
   summary: Context for code fixes provided by an [Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider](Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider.yml).
@@ -17,10 +18,10 @@ items:
       CSharp: public struct CodeFixContext
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: Microsoft.CodeAnalysis.CodeFixes.CodeFixContext
   children:
@@ -93,7 +94,7 @@ items:
     - id: Diagnostics
       type:
         id: System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.Diagnostic}
-        name: System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.Diagnostic}
+        name: ImmutableArray<Diagnostic>
         isExternal: true
   id: Microsoft.CodeAnalysis.CodeFixes.CodeFixContext.Diagnostics
 - uid: Microsoft.CodeAnalysis.CodeFixes.CodeFixContext.CancellationToken
@@ -113,7 +114,7 @@ items:
     - id: CancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
   id: Microsoft.CodeAnalysis.CodeFixes.CodeFixContext.CancellationToken
 - uid: Microsoft.CodeAnalysis.CodeFixes.CodeFixContext.#ctor(Microsoft.CodeAnalysis.Document,Microsoft.CodeAnalysis.Text.TextSpan,System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.Diagnostic},System.Action{Microsoft.CodeAnalysis.CodeActions.CodeAction,System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.Diagnostic}},System.Threading.CancellationToken)
@@ -145,19 +146,19 @@ items:
     - id: diagnostics
       type:
         id: System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.Diagnostic}
-        name: System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.Diagnostic}
+        name: ImmutableArray<Diagnostic>
         isExternal: true
       description: Diagnostics to fix. All the diagnostics should have the same span .
     - id: registerCodeFix
       type:
         id: System.Action{Microsoft.CodeAnalysis.CodeActions.CodeAction,System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.Diagnostic}}
-        name: System.Action{Microsoft.CodeAnalysis.CodeActions.CodeAction,System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.Diagnostic}}
+        name: Action<CodeAction, ImmutableArray<Diagnostic>>
         isExternal: true
       description: Delegate to register a [Microsoft.CodeAnalysis.CodeActions.CodeAction](Microsoft.CodeAnalysis.CodeActions.CodeAction.yml) fixing a subset of diagnostics.
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
       description: Cancellation token.
   id: Microsoft.CodeAnalysis.CodeFixes.CodeFixContext.#ctor(Microsoft.CodeAnalysis.Document,Microsoft.CodeAnalysis.Text.TextSpan,System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.Diagnostic},System.Action{Microsoft.CodeAnalysis.CodeActions.CodeAction,System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.Diagnostic}},System.Threading.CancellationToken)
@@ -190,13 +191,13 @@ items:
     - id: registerCodeFix
       type:
         id: System.Action{Microsoft.CodeAnalysis.CodeActions.CodeAction,System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.Diagnostic}}
-        name: System.Action{Microsoft.CodeAnalysis.CodeActions.CodeAction,System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.Diagnostic}}
+        name: Action<CodeAction, ImmutableArray<Diagnostic>>
         isExternal: true
       description: Delegate to register a [Microsoft.CodeAnalysis.CodeActions.CodeAction](Microsoft.CodeAnalysis.CodeActions.CodeAction.yml) fixing a subset of diagnostics.
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
       description: Cancellation token.
   id: Microsoft.CodeAnalysis.CodeFixes.CodeFixContext.#ctor(Microsoft.CodeAnalysis.Document,Microsoft.CodeAnalysis.Diagnostic,System.Action{Microsoft.CodeAnalysis.CodeActions.CodeAction,System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.Diagnostic}},System.Threading.CancellationToken)
@@ -250,7 +251,7 @@ items:
     - id: diagnostics
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Diagnostic}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Diagnostic}
+        name: IEnumerable<Diagnostic>
         isExternal: true
       description: The subset of [Microsoft.CodeAnalysis.CodeFixes.CodeFixContext.Diagnostics](Microsoft.CodeAnalysis.CodeFixes.CodeFixContext.yml) being addressed / fixed by the .
   id: Microsoft.CodeAnalysis.CodeFixes.CodeFixContext.RegisterCodeFix(Microsoft.CodeAnalysis.CodeActions.CodeAction,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Diagnostic})
@@ -277,7 +278,7 @@ items:
     - id: diagnostics
       type:
         id: System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.Diagnostic}
-        name: System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.Diagnostic}
+        name: ImmutableArray<Diagnostic>
         isExternal: true
       description: The subset of [Microsoft.CodeAnalysis.CodeFixes.CodeFixContext.Diagnostics](Microsoft.CodeAnalysis.CodeFixes.CodeFixContext.yml) being addressed / fixed by the .
   id: Microsoft.CodeAnalysis.CodeFixes.CodeFixContext.RegisterCodeFix(Microsoft.CodeAnalysis.CodeActions.CodeAction,System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.Diagnostic})

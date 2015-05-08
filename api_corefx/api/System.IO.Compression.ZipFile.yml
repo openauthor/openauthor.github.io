@@ -1,0 +1,438 @@
+items:
+- uid: System.IO.Compression.ZipFile
+  href: System.IO.Compression.ZipFile.yml
+  name: ZipFile
+  fullName: System.IO.Compression.ZipFile
+  type: Class
+  source:
+    remote: &o0
+      path: src/System.IO.Compression.ZipFile/src/System/IO/Compression/ZipFile.cs
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
+    path: src/System.IO.Compression.ZipFile/src/System/IO/Compression/ZipFile.cs
+    startLine: 8
+  syntax:
+    content:
+      CSharp: public class ZipFile
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  id: System.IO.Compression.ZipFile
+  children:
+  - System.IO.Compression.ZipFile.OpenRead(System.String)
+  - System.IO.Compression.ZipFile.Open(System.String,ZipArchiveMode)
+  - System.IO.Compression.ZipFile.Open(System.String,ZipArchiveMode,System.Text.Encoding)
+  - System.IO.Compression.ZipFile.CreateFromDirectory(System.String,System.String)
+  - System.IO.Compression.ZipFile.CreateFromDirectory(System.String,System.String,CompressionLevel,System.Boolean)
+  - System.IO.Compression.ZipFile.CreateFromDirectory(System.String,System.String,CompressionLevel,System.Boolean,System.Text.Encoding)
+  - System.IO.Compression.ZipFile.ExtractToDirectory(System.String,System.String)
+  - System.IO.Compression.ZipFile.ExtractToDirectory(System.String,System.String,System.Text.Encoding)
+- uid: System.IO.Compression.ZipFile.OpenRead(System.String)
+  href: System.IO.Compression.ZipFile.yml
+  name: OpenRead(string)
+  fullName: System.IO.Compression.ZipFile.OpenRead(string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.Compression.ZipFile/src/System/IO/Compression/ZipFile.cs
+    startLine: 30
+  summary: Opens a ZipArchive on the specified path for reading. The specified file is opened with FileMode.Open.
+  syntax:
+    content:
+      CSharp: public static ZipArchive OpenRead(string archiveFileName)
+    parameters:
+    - id: archiveFileName
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: >-
+        A string specifying the path on the filesystem to open the archive on. The path is permitted
+
+        to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory.
+    return:
+      id: ZipArchive
+      type:
+        id: ZipArchive
+        name: ZipArchive
+        isExternal: true
+  id: System.IO.Compression.ZipFile.OpenRead(System.String)
+- uid: System.IO.Compression.ZipFile.Open(System.String,ZipArchiveMode)
+  href: System.IO.Compression.ZipFile.yml
+  name: Open(string, ZipArchiveMode)
+  fullName: System.IO.Compression.ZipFile.Open(string, ZipArchiveMode)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.Compression.ZipFile/src/System/IO/Compression/ZipFile.cs
+    startLine: 71
+  summary: Opens a ZipArchive on the specified archiveFileName in the specified ZipArchiveMode mode.
+  syntax:
+    content:
+      CSharp: public static ZipArchive Open(string archiveFileName, ZipArchiveMode mode)
+    parameters:
+    - id: archiveFileName
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: >-
+        A string specifying the path on the filesystem to open the archive on.
+
+        The path is permitted to specify relative or absolute path information.
+
+        Relative path information is interpreted as relative to the current working directory.
+    - id: mode
+      type:
+        id: ZipArchiveMode
+        name: ZipArchiveMode
+        isExternal: true
+      description: >-
+        See the description of the ZipArchiveMode enum.
+
+        If Read is specified, the file is opened with System.IO.FileMode.Open, and will throw
+
+        a FileNotFoundException if the file does not exist.
+
+        If Create is specified, the file is opened with System.IO.FileMode.CreateNew, and will throw
+
+        a System.IO.IOException if the file already exists.
+
+        If Update is specified, the file is opened with System.IO.FileMode.OpenOrCreate.
+
+        If the file exists and is a Zip file, its entries will become accessible, and may be modified, and new entries may be created.
+
+        If the file exists and is not a Zip file, a ZipArchiveException will be thrown.
+
+        If the file exists and is empty or does not exist, a new Zip file will be created.
+
+        Note that creating a Zip file with the ZipArchiveMode.Create mode is more efficient when creating a new Zip file.
+    return:
+      id: ZipArchive
+      type:
+        id: ZipArchive
+        name: ZipArchive
+        isExternal: true
+  id: System.IO.Compression.ZipFile.Open(System.String,ZipArchiveMode)
+- uid: System.IO.Compression.ZipFile.Open(System.String,ZipArchiveMode,System.Text.Encoding)
+  href: System.IO.Compression.ZipFile.yml
+  name: Open(string, ZipArchiveMode, Encoding)
+  fullName: System.IO.Compression.ZipFile.Open(string, ZipArchiveMode, System.Text.Encoding)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.Compression.ZipFile/src/System/IO/Compression/ZipFile.cs
+    startLine: 152
+  summary: Opens a ZipArchive on the specified archiveFileName in the specified ZipArchiveMode mode.
+  syntax:
+    content:
+      CSharp: public static ZipArchive Open(string archiveFileName, ZipArchiveMode mode, Encoding entryNameEncoding)
+    parameters:
+    - id: archiveFileName
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: >-
+        A string specifying the path on the filesystem to open the archive on.
+
+        The path is permitted to specify relative or absolute path information.
+
+        Relative path information is interpreted as relative to the current working directory.
+    - id: mode
+      type:
+        id: ZipArchiveMode
+        name: ZipArchiveMode
+        isExternal: true
+      description: >-
+        See the description of the ZipArchiveMode enum.
+
+        If Read is specified, the file is opened with System.IO.FileMode.Open, and will throw
+
+        a FileNotFoundException if the file does not exist.
+
+        If Create is specified, the file is opened with System.IO.FileMode.CreateNew, and will throw
+
+        a System.IO.IOException if the file already exists.
+
+        If Update is specified, the file is opened with System.IO.FileMode.OpenOrCreate.
+
+        If the file exists and is a Zip file, its entries will become accessible, and may be modified, and new entries may be created.
+
+        If the file exists and is not a Zip file, a ZipArchiveException will be thrown.
+
+        If the file exists and is empty or does not exist, a new Zip file will be created.
+
+        Note that creating a Zip file with the ZipArchiveMode.Create mode is more efficient when creating a new Zip file.
+    - id: entryNameEncoding
+      type:
+        id: System.Text.Encoding
+        name: Encoding
+        isExternal: true
+      description: >-
+        The encoding to use when reading or writing entry names in this ZipArchive.
+
+        ///     NOTE: Specifying this parameter to values other than null is discouraged.
+
+        However, this may be necessary for interoperability with ZIP archive tools and libraries that do not correctly support
+
+        UTF-8 encoding for entry names.
+
+        This value is used as follows:Reading (opening) ZIP archive files:If entryNameEncoding is not specified (== null):For entries where the language encoding flag (EFS) in the general purpose bit flag of the local file header is not set,
+
+        use the current system default code page (Encoding.Default) in order to decode the entry name.For entries where the language encoding flag (EFS) in the general purpose bit flag of the local file header is set,
+
+        use UTF-8 (Encoding.UTF8) in order to decode the entry name.If entryNameEncoding is specified (!= null):For entries where the language encoding flag (EFS) in the general purpose bit flag of the local file header is not set,
+
+        use the specified entryNameEncoding in order to decode the entry name.For entries where the language encoding flag (EFS) in the general purpose bit flag of the local file header is set,
+
+        use UTF-8 (Encoding.UTF8) in order to decode the entry name.Writing (saving) ZIP archive files:If entryNameEncoding is not specified (== null):For entry names that contain characters outside the ASCII range,
+
+        the language encoding flag (EFS) will be set in the general purpose bit flag of the local file header,
+
+        and UTF-8 (Encoding.UTF8) will be used in order to encode the entry name into bytes.For entry names that do not contain characters outside the ASCII range,
+
+        the language encoding flag (EFS) will not be set in the general purpose bit flag of the local file header,
+
+        and the current system default code page (Encoding.Default) will be used to encode the entry names into bytes.If entryNameEncoding is specified (!= null):The specified entryNameEncoding will always be used to encode the entry names into bytes.
+
+        The language encoding flag (EFS) in the general purpose bit flag of the local file header will be set if and only
+
+        if the specified entryNameEncoding is a UTF-8 encoding.Note that Unicode encodings other than UTF-8 may not be currently used for the entryNameEncoding,
+
+        otherwise an  is thrown.
+    return:
+      id: ZipArchive
+      type:
+        id: ZipArchive
+        name: ZipArchive
+        isExternal: true
+  id: System.IO.Compression.ZipFile.Open(System.String,ZipArchiveMode,System.Text.Encoding)
+- uid: System.IO.Compression.ZipFile.CreateFromDirectory(System.String,System.String)
+  href: System.IO.Compression.ZipFile.yml
+  name: CreateFromDirectory(string, string)
+  fullName: System.IO.Compression.ZipFile.CreateFromDirectory(string, string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.Compression.ZipFile/src/System/IO/Compression/ZipFile.cs
+    startLine: 243
+  summary: >-
+    Creates a Zip archive at the path destinationArchiveFileName that contains the files and directories from
+
+    the directory specified by sourceDirectoryName. The directory structure is preserved in the archive, and a
+
+    recursive search is done for files to be archived. The archive must not exist. If the directory is empty, an empty
+
+    archive will be created. If a file in the directory cannot be added to the archive, the archive will be left incomplete
+
+    and invalid and the method will throw an exception. This method does not include the base directory into the archive.
+
+    If an error is encountered while adding files to the archive, this method will stop adding files and leave the archive
+
+    in an invalid state. The paths are permitted to specify relative or absolute path information. Relative path information
+
+    is interpreted as relative to the current working directory. If a file in the archive has data in the last write time
+
+    field that is not a valid Zip timestamp, an indicator value of 1980 January 1 at midnight will be used for the file's
+
+    last modified time.If an entry with the specified name already exists in the archive, a second entry will be created that has an identical name.Since no CompressionLevel is specified, the default provided by the implementation of the underlying compression
+
+    algorithm will be used; the ZipArchive will not impose its own default.
+
+    (Currently, the underlying compression algorithm is provided by the System.IO.Compression.DeflateStream class.)
+  syntax:
+    content:
+      CSharp: public static void CreateFromDirectory(string sourceDirectoryName, string destinationArchiveFileName)
+    parameters:
+    - id: sourceDirectoryName
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: The path to the directory on the file system to be archived.
+    - id: destinationArchiveFileName
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: The name of the archive to be created.
+  id: System.IO.Compression.ZipFile.CreateFromDirectory(System.String,System.String)
+- uid: System.IO.Compression.ZipFile.CreateFromDirectory(System.String,System.String,CompressionLevel,System.Boolean)
+  href: System.IO.Compression.ZipFile.yml
+  name: CreateFromDirectory(string, string, CompressionLevel, bool)
+  fullName: System.IO.Compression.ZipFile.CreateFromDirectory(string, string, CompressionLevel, bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.Compression.ZipFile/src/System/IO/Compression/ZipFile.cs
+    startLine: 293
+  syntax:
+    content:
+      CSharp: public static void CreateFromDirectory(string sourceDirectoryName, string destinationArchiveFileName, CompressionLevel compressionLevel, bool includeBaseDirectory)
+    parameters:
+    - id: sourceDirectoryName
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    - id: destinationArchiveFileName
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    - id: compressionLevel
+      type:
+        id: CompressionLevel
+        name: CompressionLevel
+        isExternal: true
+    - id: includeBaseDirectory
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.IO.Compression.ZipFile.CreateFromDirectory(System.String,System.String,CompressionLevel,System.Boolean)
+- uid: System.IO.Compression.ZipFile.CreateFromDirectory(System.String,System.String,CompressionLevel,System.Boolean,System.Text.Encoding)
+  href: System.IO.Compression.ZipFile.yml
+  name: CreateFromDirectory(string, string, CompressionLevel, bool, Encoding)
+  fullName: System.IO.Compression.ZipFile.CreateFromDirectory(string, string, CompressionLevel, bool, System.Text.Encoding)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.Compression.ZipFile/src/System/IO/Compression/ZipFile.cs
+    startLine: 366
+  syntax:
+    content:
+      CSharp: public static void CreateFromDirectory(string sourceDirectoryName, string destinationArchiveFileName, CompressionLevel compressionLevel, bool includeBaseDirectory, Encoding entryNameEncoding)
+    parameters:
+    - id: sourceDirectoryName
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    - id: destinationArchiveFileName
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    - id: compressionLevel
+      type:
+        id: CompressionLevel
+        name: CompressionLevel
+        isExternal: true
+    - id: includeBaseDirectory
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+    - id: entryNameEncoding
+      type:
+        id: System.Text.Encoding
+        name: Encoding
+        isExternal: true
+  id: System.IO.Compression.ZipFile.CreateFromDirectory(System.String,System.String,CompressionLevel,System.Boolean,System.Text.Encoding)
+- uid: System.IO.Compression.ZipFile.ExtractToDirectory(System.String,System.String)
+  href: System.IO.Compression.ZipFile.yml
+  name: ExtractToDirectory(string, string)
+  fullName: System.IO.Compression.ZipFile.ExtractToDirectory(string, string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.Compression.ZipFile/src/System/IO/Compression/ZipFile.cs
+    startLine: 404
+  summary: >-
+    Extracts all of the files in the specified archive to a directory on the file system.
+
+    The specified directory must not exist. This method will create all subdirectories and the specified directory.
+
+    If there is an error while extracting the archive, the archive will remain partially extracted. Each entry will
+
+    be extracted such that the extracted file has the same relative path to the destinationDirectoryName as the entry
+
+    has to the archive. The path is permitted to specify relative or absolute path information. Relative path information
+
+    is interpreted as relative to the current working directory. If a file to be archived has an invalid last modified
+
+    time, the first datetime representable in the Zip timestamp format (midnight on January 1, 1980) will be used.
+  syntax:
+    content:
+      CSharp: public static void ExtractToDirectory(string sourceArchiveFileName, string destinationDirectoryName)
+    parameters:
+    - id: sourceArchiveFileName
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    - id: destinationDirectoryName
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: The path to the directory on the file system. The directory specified must not exist, but the directory that it is contained in must exist.
+  id: System.IO.Compression.ZipFile.ExtractToDirectory(System.String,System.String)
+- uid: System.IO.Compression.ZipFile.ExtractToDirectory(System.String,System.String,System.Text.Encoding)
+  href: System.IO.Compression.ZipFile.yml
+  name: ExtractToDirectory(string, string, Encoding)
+  fullName: System.IO.Compression.ZipFile.ExtractToDirectory(string, string, System.Text.Encoding)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.Compression.ZipFile/src/System/IO/Compression/ZipFile.cs
+    startLine: 462
+  summary: >-
+    Extracts all of the files in the specified archive to a directory on the file system.
+
+    The specified directory must not exist. This method will create all subdirectories and the specified directory.
+
+    If there is an error while extracting the archive, the archive will remain partially extracted. Each entry will
+
+    be extracted such that the extracted file has the same relative path to the destinationDirectoryName as the entry
+
+    has to the archive. The path is permitted to specify relative or absolute path information. Relative path information
+
+    is interpreted as relative to the current working directory. If a file to be archived has an invalid last modified
+
+    time, the first datetime representable in the Zip timestamp format (midnight on January 1, 1980) will be used.
+  syntax:
+    content:
+      CSharp: public static void ExtractToDirectory(string sourceArchiveFileName, string destinationDirectoryName, Encoding entryNameEncoding)
+    parameters:
+    - id: sourceArchiveFileName
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    - id: destinationDirectoryName
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: The path to the directory on the file system. The directory specified must not exist, but the directory that it is contained in must exist.
+    - id: entryNameEncoding
+      type:
+        id: System.Text.Encoding
+        name: Encoding
+        isExternal: true
+      description: >-
+        The encoding to use when reading or writing entry names in this ZipArchive.
+
+        ///     NOTE: Specifying this parameter to values other than null is discouraged.
+
+        However, this may be necessary for interoperability with ZIP archive tools and libraries that do not correctly support
+
+        UTF-8 encoding for entry names.
+
+        This value is used as follows:If entryNameEncoding is not specified (== null):For entries where the language encoding flag (EFS) in the general purpose bit flag of the local file header is not set,
+
+        use the current system default code page (Encoding.Default) in order to decode the entry name.For entries where the language encoding flag (EFS) in the general purpose bit flag of the local file header is set,
+
+        use UTF-8 (Encoding.UTF8) in order to decode the entry name.If entryNameEncoding is specified (!= null):For entries where the language encoding flag (EFS) in the general purpose bit flag of the local file header is not set,
+
+        use the specified entryNameEncoding in order to decode the entry name.For entries where the language encoding flag (EFS) in the general purpose bit flag of the local file header is set,
+
+        use UTF-8 (Encoding.UTF8) in order to decode the entry name.Note that Unicode encodings other than UTF-8 may not be currently used for the entryNameEncoding,
+
+        otherwise an  is thrown.
+  id: System.IO.Compression.ZipFile.ExtractToDirectory(System.String,System.String,System.Text.Encoding)

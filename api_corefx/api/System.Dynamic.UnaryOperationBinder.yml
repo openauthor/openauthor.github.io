@@ -1,0 +1,193 @@
+items:
+- uid: System.Dynamic.UnaryOperationBinder
+  href: System.Dynamic.UnaryOperationBinder.yml
+  name: UnaryOperationBinder
+  fullName: System.Dynamic.UnaryOperationBinder
+  type: Class
+  source:
+    remote: &o0
+      path: src/System.Dynamic.Runtime/src/System/Dynamic/UnaryOperationBinder.cs
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/UnaryOperationBinder.cs
+    startLine: 11
+  summary: Represents the unary dynamic operation at the call site, providing the binding semantic and the details about the operation.
+  syntax:
+    content:
+      CSharp: 'public abstract class UnaryOperationBinder : DynamicMetaObjectBinder'
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.Runtime.CompilerServices.CallSiteBinder
+    name: CallSiteBinder
+    href: System.Runtime.CompilerServices.CallSiteBinder.yml
+  - id: System.Dynamic.DynamicMetaObjectBinder
+    name: DynamicMetaObjectBinder
+    href: System.Dynamic.DynamicMetaObjectBinder.yml
+  id: System.Dynamic.UnaryOperationBinder
+  children:
+  - System.Dynamic.UnaryOperationBinder.#ctor(ExpressionType)
+  - System.Dynamic.UnaryOperationBinder.ReturnType
+  - System.Dynamic.UnaryOperationBinder.Operation
+  - System.Dynamic.UnaryOperationBinder.FallbackUnaryOperation(System.Dynamic.DynamicMetaObject)
+  - System.Dynamic.UnaryOperationBinder.FallbackUnaryOperation(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject)
+  - System.Dynamic.UnaryOperationBinder.Bind(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])
+- uid: System.Dynamic.UnaryOperationBinder.#ctor(ExpressionType)
+  href: System.Dynamic.UnaryOperationBinder.yml
+  name: UnaryOperationBinder(ExpressionType)
+  fullName: System.Dynamic.UnaryOperationBinder.UnaryOperationBinder(ExpressionType)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/UnaryOperationBinder.cs
+    startLine: 19
+  summary: Initializes a new instance of the [System.Dynamic.BinaryOperationBinder](System.Dynamic.BinaryOperationBinder.yml) class.
+  syntax:
+    content:
+      CSharp: protected UnaryOperationBinder(ExpressionType operation)
+    parameters:
+    - id: operation
+      type:
+        id: ExpressionType
+        name: ExpressionType
+        isExternal: true
+      description: The unary operation kind.
+  id: System.Dynamic.UnaryOperationBinder.#ctor(ExpressionType)
+- uid: System.Dynamic.UnaryOperationBinder.ReturnType
+  href: System.Dynamic.UnaryOperationBinder.yml
+  name: ReturnType
+  fullName: System.Dynamic.UnaryOperationBinder.ReturnType
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/UnaryOperationBinder.cs
+    startLine: 28
+  summary: The result type of the operation.
+  syntax:
+    content:
+      CSharp: public override sealed Type ReturnType { get; }
+    parameters:
+    - id: ReturnType
+      type:
+        id: System.Type
+        name: Type
+        isExternal: true
+  id: System.Dynamic.UnaryOperationBinder.ReturnType
+- uid: System.Dynamic.UnaryOperationBinder.Operation
+  href: System.Dynamic.UnaryOperationBinder.yml
+  name: Operation
+  fullName: System.Dynamic.UnaryOperationBinder.Operation
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/UnaryOperationBinder.cs
+    startLine: 46
+  summary: The unary operation kind.
+  syntax:
+    content:
+      CSharp: public ExpressionType Operation { get; }
+    parameters:
+    - id: Operation
+      type:
+        id: ExpressionType
+        name: ExpressionType
+        isExternal: true
+  id: System.Dynamic.UnaryOperationBinder.Operation
+- uid: System.Dynamic.UnaryOperationBinder.FallbackUnaryOperation(System.Dynamic.DynamicMetaObject)
+  href: System.Dynamic.UnaryOperationBinder.yml
+  name: FallbackUnaryOperation(DynamicMetaObject)
+  fullName: System.Dynamic.UnaryOperationBinder.FallbackUnaryOperation(System.Dynamic.DynamicMetaObject)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/UnaryOperationBinder.cs
+    startLine: 59
+  summary: Performs the binding of the unary dynamic operation if the target dynamic object cannot bind.
+  syntax:
+    content:
+      CSharp: public DynamicMetaObject FallbackUnaryOperation(DynamicMetaObject target)
+    parameters:
+    - id: target
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The target of the dynamic unary operation.
+    return:
+      id: DynamicMetaObject
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The [System.Dynamic.DynamicMetaObject](System.Dynamic.DynamicMetaObject.yml) representing the result of the binding.
+  id: System.Dynamic.UnaryOperationBinder.FallbackUnaryOperation(System.Dynamic.DynamicMetaObject)
+- uid: System.Dynamic.UnaryOperationBinder.FallbackUnaryOperation(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject)
+  href: System.Dynamic.UnaryOperationBinder.yml
+  name: FallbackUnaryOperation(DynamicMetaObject, DynamicMetaObject)
+  fullName: System.Dynamic.UnaryOperationBinder.FallbackUnaryOperation(System.Dynamic.DynamicMetaObject, System.Dynamic.DynamicMetaObject)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/UnaryOperationBinder.cs
+    startLine: 70
+  summary: Performs the binding of the unary dynamic operation if the target dynamic object cannot bind.
+  syntax:
+    content:
+      CSharp: public abstract DynamicMetaObject FallbackUnaryOperation(DynamicMetaObject target, DynamicMetaObject errorSuggestion)
+    parameters:
+    - id: target
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The target of the dynamic unary operation.
+    - id: errorSuggestion
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The binding result in case the binding fails, or null.
+    return:
+      id: DynamicMetaObject
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The [System.Dynamic.DynamicMetaObject](System.Dynamic.DynamicMetaObject.yml) representing the result of the binding.
+  id: System.Dynamic.UnaryOperationBinder.FallbackUnaryOperation(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject)
+- uid: System.Dynamic.UnaryOperationBinder.Bind(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])
+  href: System.Dynamic.UnaryOperationBinder.yml
+  name: Bind(DynamicMetaObject, DynamicMetaObject[])
+  fullName: System.Dynamic.UnaryOperationBinder.Bind(System.Dynamic.DynamicMetaObject, System.Dynamic.DynamicMetaObject[])
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/UnaryOperationBinder.cs
+    startLine: 78
+  summary: Performs the binding of the dynamic unary operation.
+  syntax:
+    content:
+      CSharp: public override sealed DynamicMetaObject Bind(DynamicMetaObject target, DynamicMetaObject[] args)
+    parameters:
+    - id: target
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The target of the dynamic operation.
+    - id: args
+      type:
+        id: System.Array
+        name: DynamicMetaObject[]
+        isExternal: true
+      description: An array of arguments of the dynamic operation.
+    return:
+      id: DynamicMetaObject
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The [System.Dynamic.DynamicMetaObject](System.Dynamic.DynamicMetaObject.yml) representing the result of the binding.
+  id: System.Dynamic.UnaryOperationBinder.Bind(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])

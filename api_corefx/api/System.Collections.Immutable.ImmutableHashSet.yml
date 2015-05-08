@@ -6,17 +6,19 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableHashSet.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableHashSet.cs
     startLine: 11
   summary: A set of initialization methods for instances of [System.Collections.Immutable.ImmutableHashSet`1](System.Collections.Immutable.ImmutableHashSet`1.yml).
   syntax:
     content:
-      CSharp: public static class ImmutableHashSet
+      CSharp: public class ImmutableHashSet
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Collections.Immutable.ImmutableHashSet
   children:
@@ -44,10 +46,14 @@ items:
   summary: Returns an empty collection.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableHashSet<T> Create<T>()'
+      CSharp: public static ImmutableHashSet<T> Create<T>()
     parameters: []
     return:
       id: ImmutableHashSet
+      type:
+        id: System.Collections.Immutable.ImmutableHashSet{``0}
+        name: ImmutableHashSet<T>
+        href: System.Collections.Immutable.ImmutableHashSet{``0}
       description: The immutable collection.
   id: System.Collections.Immutable.ImmutableHashSet.Create``1
 - uid: System.Collections.Immutable.ImmutableHashSet.Create``1(System.Collections.Generic.IEqualityComparer{``0})
@@ -62,16 +68,20 @@ items:
   summary: Returns an empty collection.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableHashSet<T> Create<T>(IEqualityComparer<T> equalityComparer)'
+      CSharp: public static ImmutableHashSet<T> Create<T>(IEqualityComparer<T> equalityComparer)
     parameters:
     - id: equalityComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{``0}
-        name: System.Collections.Generic.IEqualityComparer{``0}
+        name: IEqualityComparer<T>
         isExternal: true
       description: The equality comparer.
     return:
       id: ImmutableHashSet
+      type:
+        id: System.Collections.Immutable.ImmutableHashSet{``0}
+        name: ImmutableHashSet<T>
+        href: System.Collections.Immutable.ImmutableHashSet{``0}
       description: The immutable collection.
   id: System.Collections.Immutable.ImmutableHashSet.Create``1(System.Collections.Generic.IEqualityComparer{``0})
 - uid: System.Collections.Immutable.ImmutableHashSet.Create``1(``0)
@@ -86,7 +96,7 @@ items:
   summary: Creates a new immutable collection prefilled with the specified item.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableHashSet<T> Create<T>(T item)'
+      CSharp: public static ImmutableHashSet<T> Create<T>(T item)
     parameters:
     - id: item
       type:
@@ -96,6 +106,10 @@ items:
       description: The item to prepopulate.
     return:
       id: ImmutableHashSet
+      type:
+        id: System.Collections.Immutable.ImmutableHashSet{``0}
+        name: ImmutableHashSet<T>
+        href: System.Collections.Immutable.ImmutableHashSet{``0}
       description: The new immutable collection.
   id: System.Collections.Immutable.ImmutableHashSet.Create``1(``0)
 - uid: System.Collections.Immutable.ImmutableHashSet.Create``1(System.Collections.Generic.IEqualityComparer{``0},``0)
@@ -110,12 +124,12 @@ items:
   summary: Creates a new immutable collection prefilled with the specified item.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableHashSet<T> Create<T>(IEqualityComparer<T> equalityComparer, T item)'
+      CSharp: public static ImmutableHashSet<T> Create<T>(IEqualityComparer<T> equalityComparer, T item)
     parameters:
     - id: equalityComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{``0}
-        name: System.Collections.Generic.IEqualityComparer{``0}
+        name: IEqualityComparer<T>
         isExternal: true
       description: The equality comparer.
     - id: item
@@ -126,6 +140,10 @@ items:
       description: The item to prepopulate.
     return:
       id: ImmutableHashSet
+      type:
+        id: System.Collections.Immutable.ImmutableHashSet{``0}
+        name: ImmutableHashSet<T>
+        href: System.Collections.Immutable.ImmutableHashSet{``0}
       description: The new immutable collection.
   id: System.Collections.Immutable.ImmutableHashSet.Create``1(System.Collections.Generic.IEqualityComparer{``0},``0)
 - uid: System.Collections.Immutable.ImmutableHashSet.CreateRange``1(System.Collections.Generic.IEnumerable{``0})
@@ -140,16 +158,20 @@ items:
   summary: Creates a new immutable collection prefilled with the specified items.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableHashSet<T> CreateRange<T>(IEnumerable<T> items)'
+      CSharp: public static ImmutableHashSet<T> CreateRange<T>(IEnumerable<T> items)
     parameters:
     - id: items
       type:
         id: System.Collections.Generic.IEnumerable{``0}
-        name: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<T>
         isExternal: true
       description: The items to prepopulate.
     return:
       id: ImmutableHashSet
+      type:
+        id: System.Collections.Immutable.ImmutableHashSet{``0}
+        name: ImmutableHashSet<T>
+        href: System.Collections.Immutable.ImmutableHashSet{``0}
       description: The new immutable collection.
   id: System.Collections.Immutable.ImmutableHashSet.CreateRange``1(System.Collections.Generic.IEnumerable{``0})
 - uid: System.Collections.Immutable.ImmutableHashSet.CreateRange``1(System.Collections.Generic.IEqualityComparer{``0},System.Collections.Generic.IEnumerable{``0})
@@ -164,22 +186,26 @@ items:
   summary: Creates a new immutable collection prefilled with the specified items.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableHashSet<T> CreateRange<T>(IEqualityComparer<T> equalityComparer, IEnumerable<T> items)'
+      CSharp: public static ImmutableHashSet<T> CreateRange<T>(IEqualityComparer<T> equalityComparer, IEnumerable<T> items)
     parameters:
     - id: equalityComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{``0}
-        name: System.Collections.Generic.IEqualityComparer{``0}
+        name: IEqualityComparer<T>
         isExternal: true
       description: The equality comparer.
     - id: items
       type:
         id: System.Collections.Generic.IEnumerable{``0}
-        name: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<T>
         isExternal: true
       description: The items to prepopulate.
     return:
       id: ImmutableHashSet
+      type:
+        id: System.Collections.Immutable.ImmutableHashSet{``0}
+        name: ImmutableHashSet<T>
+        href: System.Collections.Immutable.ImmutableHashSet{``0}
       description: The new immutable collection.
   id: System.Collections.Immutable.ImmutableHashSet.CreateRange``1(System.Collections.Generic.IEqualityComparer{``0},System.Collections.Generic.IEnumerable{``0})
 - uid: System.Collections.Immutable.ImmutableHashSet.Create``1(``0[])
@@ -194,16 +220,20 @@ items:
   summary: Creates a new immutable collection prefilled with the specified items.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableHashSet<T> Create<T>(params T[] items)'
+      CSharp: public static ImmutableHashSet<T> Create<T>(params T[] items)
     parameters:
     - id: items
       type:
         id: System.Array
-        name: System.Array
+        name: T[]
         isExternal: true
       description: The items to prepopulate.
     return:
       id: ImmutableHashSet
+      type:
+        id: System.Collections.Immutable.ImmutableHashSet{``0}
+        name: ImmutableHashSet<T>
+        href: System.Collections.Immutable.ImmutableHashSet{``0}
       description: The new immutable collection.
   id: System.Collections.Immutable.ImmutableHashSet.Create``1(``0[])
 - uid: System.Collections.Immutable.ImmutableHashSet.Create``1(System.Collections.Generic.IEqualityComparer{``0},``0[])
@@ -218,22 +248,26 @@ items:
   summary: Creates a new immutable collection prefilled with the specified items.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableHashSet<T> Create<T>(IEqualityComparer<T> equalityComparer, params T[] items)'
+      CSharp: public static ImmutableHashSet<T> Create<T>(IEqualityComparer<T> equalityComparer, params T[] items)
     parameters:
     - id: equalityComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{``0}
-        name: System.Collections.Generic.IEqualityComparer{``0}
+        name: IEqualityComparer<T>
         isExternal: true
       description: The equality comparer.
     - id: items
       type:
         id: System.Array
-        name: System.Array
+        name: T[]
         isExternal: true
       description: The items to prepopulate.
     return:
       id: ImmutableHashSet
+      type:
+        id: System.Collections.Immutable.ImmutableHashSet{``0}
+        name: ImmutableHashSet<T>
+        href: System.Collections.Immutable.ImmutableHashSet{``0}
       description: The new immutable collection.
   id: System.Collections.Immutable.ImmutableHashSet.Create``1(System.Collections.Generic.IEqualityComparer{``0},``0[])
 - uid: System.Collections.Immutable.ImmutableHashSet.CreateBuilder``1
@@ -248,10 +282,14 @@ items:
   summary: Creates a new immutable hash set builder.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableHashSet<T>.Builder CreateBuilder<T>()'
+      CSharp: public static Builder CreateBuilder<T>()
     parameters: []
     return:
       id: Builder
+      type:
+        id: System.Collections.Immutable.ImmutableHashSet{``0}.Builder
+        name: Builder
+        href: System.Collections.Immutable.ImmutableHashSet{``0}.Builder
       description: The immutable collection.
   id: System.Collections.Immutable.ImmutableHashSet.CreateBuilder``1
 - uid: System.Collections.Immutable.ImmutableHashSet.CreateBuilder``1(System.Collections.Generic.IEqualityComparer{``0})
@@ -266,16 +304,20 @@ items:
   summary: Creates a new immutable hash set builder.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableHashSet<T>.Builder CreateBuilder<T>(IEqualityComparer<T> equalityComparer)'
+      CSharp: public static Builder CreateBuilder<T>(IEqualityComparer<T> equalityComparer)
     parameters:
     - id: equalityComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{``0}
-        name: System.Collections.Generic.IEqualityComparer{``0}
+        name: IEqualityComparer<T>
         isExternal: true
       description: The equality comparer.
     return:
       id: Builder
+      type:
+        id: System.Collections.Immutable.ImmutableHashSet{``0}.Builder
+        name: Builder
+        href: System.Collections.Immutable.ImmutableHashSet{``0}.Builder
       description: The immutable collection.
   id: System.Collections.Immutable.ImmutableHashSet.CreateBuilder``1(System.Collections.Generic.IEqualityComparer{``0})
 - uid: System.Collections.Immutable.ImmutableHashSet.ToImmutableHashSet``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``0})
@@ -290,22 +332,26 @@ items:
   summary: Enumerates a sequence exactly once and produces an immutable set of its contents.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableHashSet<TSource> ToImmutableHashSet<TSource>(this IEnumerable<TSource> source, IEqualityComparer<TSource> equalityComparer)'
+      CSharp: public static ImmutableHashSet<TSource> ToImmutableHashSet<TSource>(IEnumerable<TSource> source, IEqualityComparer<TSource> equalityComparer)
     parameters:
     - id: source
       type:
         id: System.Collections.Generic.IEnumerable{``0}
-        name: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<TSource>
         isExternal: true
       description: The sequence to enumerate.
     - id: equalityComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{``0}
-        name: System.Collections.Generic.IEqualityComparer{``0}
+        name: IEqualityComparer<TSource>
         isExternal: true
       description: The equality comparer to use for initializing and adding members to the hash set.
     return:
       id: ImmutableHashSet
+      type:
+        id: System.Collections.Immutable.ImmutableHashSet{``0}
+        name: ImmutableHashSet<TSource>
+        href: System.Collections.Immutable.ImmutableHashSet{``0}
       description: An immutable set.
   id: System.Collections.Immutable.ImmutableHashSet.ToImmutableHashSet``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``0})
 - uid: System.Collections.Immutable.ImmutableHashSet.ToImmutableHashSet``1(System.Collections.Generic.IEnumerable{``0})
@@ -320,15 +366,19 @@ items:
   summary: Enumerates a sequence exactly once and produces an immutable set of its contents.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableHashSet<TSource> ToImmutableHashSet<TSource>(this IEnumerable<TSource> source)'
+      CSharp: public static ImmutableHashSet<TSource> ToImmutableHashSet<TSource>(IEnumerable<TSource> source)
     parameters:
     - id: source
       type:
         id: System.Collections.Generic.IEnumerable{``0}
-        name: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<TSource>
         isExternal: true
       description: The sequence to enumerate.
     return:
       id: ImmutableHashSet
+      type:
+        id: System.Collections.Immutable.ImmutableHashSet{``0}
+        name: ImmutableHashSet<TSource>
+        href: System.Collections.Immutable.ImmutableHashSet{``0}
       description: An immutable set.
   id: System.Collections.Immutable.ImmutableHashSet.ToImmutableHashSet``1(System.Collections.Generic.IEnumerable{``0})

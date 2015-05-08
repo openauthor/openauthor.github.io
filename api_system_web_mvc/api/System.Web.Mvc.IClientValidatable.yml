@@ -6,9 +6,10 @@ items:
   type: Interface
   source:
     remote: &o0
+      path: src/System.Web.Mvc/IClientValidatable.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/IClientValidatable.cs
     startLine: 16
   syntax:
@@ -28,7 +29,7 @@ items:
     startLine: 18
   syntax:
     content:
-      CSharp: IEnumerable<ModelClientValidationRule> GetClientValidationRules(ModelMetadata metadata, ControllerContext context);
+      CSharp: public IEnumerable<ModelClientValidationRule> GetClientValidationRules(ModelMetadata metadata, ControllerContext context)
     parameters:
     - id: metadata
       type:
@@ -42,4 +43,8 @@ items:
         href: System.Web.Mvc.ControllerContext.yml
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Web.Mvc.ModelClientValidationRule}
+        name: IEnumerable<ModelClientValidationRule>
+        isExternal: true
   id: System.Web.Mvc.IClientValidatable.GetClientValidationRules(System.Web.Mvc.ModelMetadata,System.Web.Mvc.ControllerContext)

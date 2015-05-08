@@ -6,8 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataStringDecoder.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MetadataStringDecoder.cs
     startLine: 23
   summary: >-
@@ -19,12 +21,12 @@ items:
       CSharp: public class MetadataStringDecoder
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Reflection.Metadata.MetadataStringDecoder
   children:
   - System.Reflection.Metadata.MetadataStringDecoder.DefaultUTF8
-  - System.Reflection.Metadata.MetadataStringDecoder.#ctor(Encoding)
+  - System.Reflection.Metadata.MetadataStringDecoder.#ctor(System.Text.Encoding)
   - System.Reflection.Metadata.MetadataStringDecoder.Encoding
   - System.Reflection.Metadata.MetadataStringDecoder.GetString(System.Byte*,System.Int32)
 - uid: System.Reflection.Metadata.MetadataStringDecoder.DefaultUTF8
@@ -50,10 +52,10 @@ items:
         name: MetadataStringDecoder
         href: System.Reflection.Metadata.MetadataStringDecoder.yml
   id: System.Reflection.Metadata.MetadataStringDecoder.DefaultUTF8
-- uid: System.Reflection.Metadata.MetadataStringDecoder.#ctor(Encoding)
+- uid: System.Reflection.Metadata.MetadataStringDecoder.#ctor(System.Text.Encoding)
   href: System.Reflection.Metadata.MetadataStringDecoder.yml
   name: MetadataStringDecoder(Encoding)
-  fullName: System.Reflection.Metadata.MetadataStringDecoder.MetadataStringDecoder(Encoding)
+  fullName: System.Reflection.Metadata.MetadataStringDecoder.MetadataStringDecoder(System.Text.Encoding)
   type: Constructor
   source:
     remote: *o0
@@ -66,11 +68,11 @@ items:
     parameters:
     - id: encoding
       type:
-        id: Encoding
+        id: System.Text.Encoding
         name: Encoding
         isExternal: true
       description: The encoding to use.
-  id: System.Reflection.Metadata.MetadataStringDecoder.#ctor(Encoding)
+  id: System.Reflection.Metadata.MetadataStringDecoder.#ctor(System.Text.Encoding)
 - uid: System.Reflection.Metadata.MetadataStringDecoder.Encoding
   href: System.Reflection.Metadata.MetadataStringDecoder.yml
   name: Encoding
@@ -87,7 +89,7 @@ items:
     parameters:
     - id: Encoding
       type:
-        id: Encoding
+        id: System.Text.Encoding
         name: Encoding
         isExternal: true
   id: System.Reflection.Metadata.MetadataStringDecoder.Encoding
@@ -110,19 +112,24 @@ items:
     and every call will allocate a new string.
   syntax:
     content:
-      CSharp: public unsafe virtual String GetString(byte *bytes, int byteCount)
+      CSharp: public virtual string GetString(byte *bytes, int byteCount)
     parameters:
     - id: bytes
       type:
+        name: byte*
         isExternal: true
       description: Pointer to bytes to decode.
     - id: byteCount
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: Number of bytes to decode.
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
       description: The decoded string.
   id: System.Reflection.Metadata.MetadataStringDecoder.GetString(System.Byte*,System.Int32)

@@ -6,21 +6,28 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 835
+    startLine: 1233
   syntax:
     content:
-      CSharp: public struct FieldDefinitionHandle
+      CSharp: 'public struct FieldDefinitionHandle : IEquatable<FieldDefinitionHandle>'
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Reflection.Metadata.FieldDefinitionHandle
   children:
   - System.Reflection.Metadata.FieldDefinitionHandle.op_Implicit(System.Reflection.Metadata.FieldDefinitionHandle)~System.Reflection.Metadata.Handle
+  - System.Reflection.Metadata.FieldDefinitionHandle.op_Implicit(System.Reflection.Metadata.FieldDefinitionHandle)~System.Reflection.Metadata.EntityHandle
   - System.Reflection.Metadata.FieldDefinitionHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.FieldDefinitionHandle
+  - System.Reflection.Metadata.FieldDefinitionHandle.op_Explicit(System.Reflection.Metadata.EntityHandle)~System.Reflection.Metadata.FieldDefinitionHandle
   - System.Reflection.Metadata.FieldDefinitionHandle.IsNil
   - System.Reflection.Metadata.FieldDefinitionHandle.op_Equality(System.Reflection.Metadata.FieldDefinitionHandle,System.Reflection.Metadata.FieldDefinitionHandle)
   - System.Reflection.Metadata.FieldDefinitionHandle.Equals(System.Object)
@@ -31,14 +38,14 @@ items:
   href: System.Reflection.Metadata.FieldDefinitionHandle.yml
   name: implicit operator Handle(FieldDefinitionHandle)
   fullName: System.Reflection.Metadata.FieldDefinitionHandle.implicit operator System.Reflection.Metadata.Handle(System.Reflection.Metadata.FieldDefinitionHandle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 851
+    startLine: 1250
   syntax:
     content:
-      CSharp: public static implicit operator Handle(FieldDefinitionHandle handle) { return new Handle(handle._rowId | tokenType); }
+      CSharp: public static implicit operator Handle(FieldDefinitionHandle handle)
     parameters:
     - id: handle
       type:
@@ -47,19 +54,48 @@ items:
         href: System.Reflection.Metadata.FieldDefinitionHandle.yml
     return:
       id: Handle
+      type:
+        id: System.Reflection.Metadata.Handle
+        name: Handle
+        href: System.Reflection.Metadata.Handle.yml
   id: System.Reflection.Metadata.FieldDefinitionHandle.op_Implicit(System.Reflection.Metadata.FieldDefinitionHandle)~System.Reflection.Metadata.Handle
+- uid: System.Reflection.Metadata.FieldDefinitionHandle.op_Implicit(System.Reflection.Metadata.FieldDefinitionHandle)~System.Reflection.Metadata.EntityHandle
+  href: System.Reflection.Metadata.FieldDefinitionHandle.yml
+  name: implicit operator EntityHandle(FieldDefinitionHandle)
+  fullName: System.Reflection.Metadata.FieldDefinitionHandle.implicit operator System.Reflection.Metadata.EntityHandle(System.Reflection.Metadata.FieldDefinitionHandle)
+  type: Operator
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 1255
+  syntax:
+    content:
+      CSharp: public static implicit operator EntityHandle(FieldDefinitionHandle handle)
+    parameters:
+    - id: handle
+      type:
+        id: System.Reflection.Metadata.FieldDefinitionHandle
+        name: FieldDefinitionHandle
+        href: System.Reflection.Metadata.FieldDefinitionHandle.yml
+    return:
+      id: EntityHandle
+      type:
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
+  id: System.Reflection.Metadata.FieldDefinitionHandle.op_Implicit(System.Reflection.Metadata.FieldDefinitionHandle)~System.Reflection.Metadata.EntityHandle
 - uid: System.Reflection.Metadata.FieldDefinitionHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.FieldDefinitionHandle
   href: System.Reflection.Metadata.FieldDefinitionHandle.yml
   name: explicit operator FieldDefinitionHandle(Handle)
   fullName: System.Reflection.Metadata.FieldDefinitionHandle.explicit operator System.Reflection.Metadata.FieldDefinitionHandle(System.Reflection.Metadata.Handle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 856
+    startLine: 1260
   syntax:
     content:
-      CSharp: public static explicit operator FieldDefinitionHandle(Handle handle) { if (handle.TokenType != tokenType) { Handle.ThrowInvalidCast(); } return new FieldDefinitionHandle(handle.RowId); }
+      CSharp: public static explicit operator FieldDefinitionHandle(Handle handle)
     parameters:
     - id: handle
       type:
@@ -68,7 +104,36 @@ items:
         href: System.Reflection.Metadata.Handle.yml
     return:
       id: FieldDefinitionHandle
+      type:
+        id: System.Reflection.Metadata.FieldDefinitionHandle
+        name: FieldDefinitionHandle
+        href: System.Reflection.Metadata.FieldDefinitionHandle.yml
   id: System.Reflection.Metadata.FieldDefinitionHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.FieldDefinitionHandle
+- uid: System.Reflection.Metadata.FieldDefinitionHandle.op_Explicit(System.Reflection.Metadata.EntityHandle)~System.Reflection.Metadata.FieldDefinitionHandle
+  href: System.Reflection.Metadata.FieldDefinitionHandle.yml
+  name: explicit operator FieldDefinitionHandle(EntityHandle)
+  fullName: System.Reflection.Metadata.FieldDefinitionHandle.explicit operator System.Reflection.Metadata.FieldDefinitionHandle(System.Reflection.Metadata.EntityHandle)
+  type: Operator
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 1270
+  syntax:
+    content:
+      CSharp: public static explicit operator FieldDefinitionHandle(EntityHandle handle)
+    parameters:
+    - id: handle
+      type:
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
+    return:
+      id: FieldDefinitionHandle
+      type:
+        id: System.Reflection.Metadata.FieldDefinitionHandle
+        name: FieldDefinitionHandle
+        href: System.Reflection.Metadata.FieldDefinitionHandle.yml
+  id: System.Reflection.Metadata.FieldDefinitionHandle.op_Explicit(System.Reflection.Metadata.EntityHandle)~System.Reflection.Metadata.FieldDefinitionHandle
 - uid: System.Reflection.Metadata.FieldDefinitionHandle.IsNil
   href: System.Reflection.Metadata.FieldDefinitionHandle.yml
   name: IsNil
@@ -77,7 +142,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 866
+    startLine: 1280
   syntax:
     content:
       CSharp: public bool IsNil { get; }
@@ -85,21 +150,21 @@ items:
     - id: IsNil
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Reflection.Metadata.FieldDefinitionHandle.IsNil
 - uid: System.Reflection.Metadata.FieldDefinitionHandle.op_Equality(System.Reflection.Metadata.FieldDefinitionHandle,System.Reflection.Metadata.FieldDefinitionHandle)
   href: System.Reflection.Metadata.FieldDefinitionHandle.yml
   name: operator ==(FieldDefinitionHandle, FieldDefinitionHandle)
   fullName: System.Reflection.Metadata.FieldDefinitionHandle.operator ==(System.Reflection.Metadata.FieldDefinitionHandle, System.Reflection.Metadata.FieldDefinitionHandle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 876
+    startLine: 1290
   syntax:
     content:
-      CSharp: public static bool operator ==(FieldDefinitionHandle left, FieldDefinitionHandle right) { return left._rowId == right._rowId; }
+      CSharp: public static bool operator ==(FieldDefinitionHandle left, FieldDefinitionHandle right)
     parameters:
     - id: left
       type:
@@ -113,6 +178,10 @@ items:
         href: System.Reflection.Metadata.FieldDefinitionHandle.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.FieldDefinitionHandle.op_Equality(System.Reflection.Metadata.FieldDefinitionHandle,System.Reflection.Metadata.FieldDefinitionHandle)
 - uid: System.Reflection.Metadata.FieldDefinitionHandle.Equals(System.Object)
   href: System.Reflection.Metadata.FieldDefinitionHandle.yml
@@ -122,7 +191,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 881
+    startLine: 1295
   syntax:
     content:
       CSharp: public override bool Equals(object obj)
@@ -130,10 +199,14 @@ items:
     - id: obj
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.FieldDefinitionHandle.Equals(System.Object)
 - uid: System.Reflection.Metadata.FieldDefinitionHandle.Equals(System.Reflection.Metadata.FieldDefinitionHandle)
   href: System.Reflection.Metadata.FieldDefinitionHandle.yml
@@ -143,7 +216,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 886
+    startLine: 1300
   syntax:
     content:
       CSharp: public bool Equals(FieldDefinitionHandle other)
@@ -155,6 +228,10 @@ items:
         href: System.Reflection.Metadata.FieldDefinitionHandle.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.FieldDefinitionHandle.Equals(System.Reflection.Metadata.FieldDefinitionHandle)
 - uid: System.Reflection.Metadata.FieldDefinitionHandle.GetHashCode
   href: System.Reflection.Metadata.FieldDefinitionHandle.yml
@@ -164,26 +241,30 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 891
+    startLine: 1305
   syntax:
     content:
       CSharp: public override int GetHashCode()
     parameters: []
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: System.Reflection.Metadata.FieldDefinitionHandle.GetHashCode
 - uid: System.Reflection.Metadata.FieldDefinitionHandle.op_Inequality(System.Reflection.Metadata.FieldDefinitionHandle,System.Reflection.Metadata.FieldDefinitionHandle)
   href: System.Reflection.Metadata.FieldDefinitionHandle.yml
   name: operator !=(FieldDefinitionHandle, FieldDefinitionHandle)
   fullName: System.Reflection.Metadata.FieldDefinitionHandle.operator !=(System.Reflection.Metadata.FieldDefinitionHandle, System.Reflection.Metadata.FieldDefinitionHandle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 896
+    startLine: 1310
   syntax:
     content:
-      CSharp: public static bool operator !=(FieldDefinitionHandle left, FieldDefinitionHandle right) { return left._rowId != right._rowId; }
+      CSharp: public static bool operator !=(FieldDefinitionHandle left, FieldDefinitionHandle right)
     parameters:
     - id: left
       type:
@@ -197,4 +278,8 @@ items:
         href: System.Reflection.Metadata.FieldDefinitionHandle.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.FieldDefinitionHandle.op_Inequality(System.Reflection.Metadata.FieldDefinitionHandle,System.Reflection.Metadata.FieldDefinitionHandle)

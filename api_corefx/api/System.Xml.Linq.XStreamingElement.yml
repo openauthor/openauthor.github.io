@@ -6,8 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Xml.XDocument/src/System/Xml/Linq/XStreamingElement.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XStreamingElement.cs
     startLine: 14
   summary: >-
@@ -19,7 +21,7 @@ items:
       CSharp: public class XStreamingElement
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Xml.Linq.XStreamingElement
   children:
@@ -29,10 +31,10 @@ items:
   - System.Xml.Linq.XStreamingElement.Name
   - System.Xml.Linq.XStreamingElement.Add(System.Object)
   - System.Xml.Linq.XStreamingElement.Add(System.Object[])
-  - System.Xml.Linq.XStreamingElement.Save(Stream)
-  - System.Xml.Linq.XStreamingElement.Save(Stream,System.Xml.Linq.SaveOptions)
-  - System.Xml.Linq.XStreamingElement.Save(TextWriter)
-  - System.Xml.Linq.XStreamingElement.Save(TextWriter,System.Xml.Linq.SaveOptions)
+  - System.Xml.Linq.XStreamingElement.Save(System.IO.Stream)
+  - System.Xml.Linq.XStreamingElement.Save(System.IO.Stream,System.Xml.Linq.SaveOptions)
+  - System.Xml.Linq.XStreamingElement.Save(System.IO.TextWriter)
+  - System.Xml.Linq.XStreamingElement.Save(System.IO.TextWriter,System.Xml.Linq.SaveOptions)
   - System.Xml.Linq.XStreamingElement.Save(XmlWriter)
   - System.Xml.Linq.XStreamingElement.ToString
   - System.Xml.Linq.XStreamingElement.ToString(System.Xml.Linq.SaveOptions)
@@ -81,7 +83,7 @@ items:
     - id: content
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: The content to assign to the new [System.Xml.Linq.XStreamingElement](System.Xml.Linq.XStreamingElement.yml) node
   id: System.Xml.Linq.XStreamingElement.#ctor(System.Xml.Linq.XName,System.Object)
@@ -108,7 +110,7 @@ items:
     - id: content
       type:
         id: System.Array
-        name: System.Array
+        name: object[]
         isExternal: true
       description: An array containing content to assign to the new [System.Xml.Linq.XStreamingElement](System.Xml.Linq.XStreamingElement.yml) node
   id: System.Xml.Linq.XStreamingElement.#ctor(System.Xml.Linq.XName,System.Object[])
@@ -149,7 +151,7 @@ items:
     - id: content
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: Object containing content to add
   id: System.Xml.Linq.XStreamingElement.Add(System.Object)
@@ -170,21 +172,21 @@ items:
     - id: content
       type:
         id: System.Array
-        name: System.Array
+        name: object[]
         isExternal: true
       description: array of objects containing content to add
   id: System.Xml.Linq.XStreamingElement.Add(System.Object[])
-- uid: System.Xml.Linq.XStreamingElement.Save(Stream)
+- uid: System.Xml.Linq.XStreamingElement.Save(System.IO.Stream)
   href: System.Xml.Linq.XStreamingElement.yml
   name: Save(Stream)
-  fullName: System.Xml.Linq.XStreamingElement.Save(Stream)
+  fullName: System.Xml.Linq.XStreamingElement.Save(System.IO.Stream)
   type: Method
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XStreamingElement.cs
     startLine: 100
   summary: >-
-    Save the contents of an [System.Xml.Linq.XStreamingElement](System.Xml.Linq.XStreamingElement.yml) to a @!:Stream-
+    Save the contents of an [System.Xml.Linq.XStreamingElement](System.Xml.Linq.XStreamingElement.yml) to a [System.IO.Stream]()
 
     with formatting.
   syntax:
@@ -193,22 +195,22 @@ items:
     parameters:
     - id: stream
       type:
-        id: Stream
+        id: System.IO.Stream
         name: Stream
         isExternal: true
-      description: '@!:Stream- to write to'
-  id: System.Xml.Linq.XStreamingElement.Save(Stream)
-- uid: System.Xml.Linq.XStreamingElement.Save(Stream,System.Xml.Linq.SaveOptions)
+      description: '[System.IO.Stream]() to write to'
+  id: System.Xml.Linq.XStreamingElement.Save(System.IO.Stream)
+- uid: System.Xml.Linq.XStreamingElement.Save(System.IO.Stream,System.Xml.Linq.SaveOptions)
   href: System.Xml.Linq.XStreamingElement.yml
   name: Save(Stream, SaveOptions)
-  fullName: System.Xml.Linq.XStreamingElement.Save(Stream, System.Xml.Linq.SaveOptions)
+  fullName: System.Xml.Linq.XStreamingElement.Save(System.IO.Stream, System.Xml.Linq.SaveOptions)
   type: Method
   source:
     remote: *o0
     path: src/System.Xml.XDocument/src/System/Xml/Linq/XStreamingElement.cs
     startLine: 114
   summary: >-
-    Save the contents of an [System.Xml.Linq.XStreamingElement](System.Xml.Linq.XStreamingElement.yml) to a @!:Stream-,
+    Save the contents of an [System.Xml.Linq.XStreamingElement](System.Xml.Linq.XStreamingElement.yml) to a [System.IO.Stream](),
 
     optionally formatting.
   syntax:
@@ -217,10 +219,10 @@ items:
     parameters:
     - id: stream
       type:
-        id: Stream
+        id: System.IO.Stream
         name: Stream
         isExternal: true
-      description: '@!:Stream- to write to'
+      description: '[System.IO.Stream]() to write to'
     - id: options
       type:
         id: System.Xml.Linq.SaveOptions
@@ -230,11 +232,11 @@ items:
         If SaveOptions.DisableFormatting is enabled the output is not indented.
 
         If SaveOptions.OmitDuplicateNamespaces is enabled duplicate namespace declarations will be removed.
-  id: System.Xml.Linq.XStreamingElement.Save(Stream,System.Xml.Linq.SaveOptions)
-- uid: System.Xml.Linq.XStreamingElement.Save(TextWriter)
+  id: System.Xml.Linq.XStreamingElement.Save(System.IO.Stream,System.Xml.Linq.SaveOptions)
+- uid: System.Xml.Linq.XStreamingElement.Save(System.IO.TextWriter)
   href: System.Xml.Linq.XStreamingElement.yml
   name: Save(TextWriter)
-  fullName: System.Xml.Linq.XStreamingElement.Save(TextWriter)
+  fullName: System.Xml.Linq.XStreamingElement.Save(System.IO.TextWriter)
   type: Method
   source:
     remote: *o0
@@ -250,15 +252,15 @@ items:
     parameters:
     - id: textWriter
       type:
-        id: TextWriter
+        id: System.IO.TextWriter
         name: TextWriter
         isExternal: true
-      description: '@!:TextWriter- to write to'
-  id: System.Xml.Linq.XStreamingElement.Save(TextWriter)
-- uid: System.Xml.Linq.XStreamingElement.Save(TextWriter,System.Xml.Linq.SaveOptions)
+      description: '[System.IO.TextWriter]() to write to'
+  id: System.Xml.Linq.XStreamingElement.Save(System.IO.TextWriter)
+- uid: System.Xml.Linq.XStreamingElement.Save(System.IO.TextWriter,System.Xml.Linq.SaveOptions)
   href: System.Xml.Linq.XStreamingElement.yml
   name: Save(TextWriter, SaveOptions)
-  fullName: System.Xml.Linq.XStreamingElement.Save(TextWriter, System.Xml.Linq.SaveOptions)
+  fullName: System.Xml.Linq.XStreamingElement.Save(System.IO.TextWriter, System.Xml.Linq.SaveOptions)
   type: Method
   source:
     remote: *o0
@@ -274,10 +276,10 @@ items:
     parameters:
     - id: textWriter
       type:
-        id: TextWriter
+        id: System.IO.TextWriter
         name: TextWriter
         isExternal: true
-      description: '@!:TextWriter- to write to'
+      description: '[System.IO.TextWriter]() to write to'
     - id: options
       type:
         id: System.Xml.Linq.SaveOptions
@@ -287,7 +289,7 @@ items:
         If SaveOptions.DisableFormatting is enabled the output is not indented.
 
         If SaveOptions.OmitDuplicateNamespaces is enabled duplicate namespace declarations will be removed.
-  id: System.Xml.Linq.XStreamingElement.Save(TextWriter,System.Xml.Linq.SaveOptions)
+  id: System.Xml.Linq.XStreamingElement.Save(System.IO.TextWriter,System.Xml.Linq.SaveOptions)
 - uid: System.Xml.Linq.XStreamingElement.Save(XmlWriter)
   href: System.Xml.Linq.XStreamingElement.yml
   name: Save(XmlWriter)
@@ -328,6 +330,10 @@ items:
     parameters: []
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
       description: The XML text as a formatted string
   id: System.Xml.Linq.XStreamingElement.ToString
 - uid: System.Xml.Linq.XStreamingElement.ToString(System.Xml.Linq.SaveOptions)
@@ -355,6 +361,10 @@ items:
         If SaveOptions.OmitDuplicateNamespaces is enabled duplicate namespace declarations will be removed.
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
       description: An XML string
   id: System.Xml.Linq.XStreamingElement.ToString(System.Xml.Linq.SaveOptions)
 - uid: System.Xml.Linq.XStreamingElement.WriteTo(XmlWriter)

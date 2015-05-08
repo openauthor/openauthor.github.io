@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/StringLengthAttributeAdapter.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/StringLengthAttributeAdapter.cs
     startLine: 7
   syntax:
     content:
-      CSharp: public class StringLengthAttributeAdapter
+      CSharp: 'public class StringLengthAttributeAdapter : DataAnnotationsModelValidator<StringLengthAttribute>'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.Mvc.ModelValidator
     name: ModelValidator
@@ -25,7 +26,7 @@ items:
     name: DataAnnotationsModelValidator
     href: System.Web.Mvc.DataAnnotationsModelValidator.yml
   - id: System.Web.Mvc.DataAnnotationsModelValidator{System.ComponentModel.DataAnnotations.StringLengthAttribute}
-    name: DataAnnotationsModelValidator
+    name: DataAnnotationsModelValidator<StringLengthAttribute>
     href: System.Web.Mvc.DataAnnotationsModelValidator{System.ComponentModel.DataAnnotations.StringLengthAttribute}
   id: System.Web.Mvc.StringLengthAttributeAdapter
   children:
@@ -57,7 +58,7 @@ items:
     - id: attribute
       type:
         id: System.ComponentModel.DataAnnotations.StringLengthAttribute
-        name: System.ComponentModel.DataAnnotations.StringLengthAttribute
+        name: StringLengthAttribute
         isExternal: true
   id: System.Web.Mvc.StringLengthAttributeAdapter.#ctor(System.Web.Mvc.ModelMetadata,System.Web.Mvc.ControllerContext,System.ComponentModel.DataAnnotations.StringLengthAttribute)
 - uid: System.Web.Mvc.StringLengthAttributeAdapter.GetClientValidationRules
@@ -75,4 +76,8 @@ items:
     parameters: []
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Web.Mvc.ModelClientValidationRule}
+        name: IEnumerable<ModelClientValidationRule>
+        isExternal: true
   id: System.Web.Mvc.StringLengthAttributeAdapter.GetClientValidationRules

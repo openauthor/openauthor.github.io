@@ -6,40 +6,50 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.IO.Compression/src/System/IO/Compression/GZipStream.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.IO.Compression/src/System/IO/Compression/GZipStream.cs
     startLine: 9
   syntax:
     content:
-      CSharp: public class GZipStream
+      CSharp: 'public class GZipStream : Stream, IDisposable'
   inheritance:
-  - id: Stream
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.MarshalByRefObject
+    name: MarshalByRefObject
+    isExternal: true
+  - id: System.IO.Stream
     name: Stream
     isExternal: true
   id: System.IO.Compression.GZipStream
   children:
-  - System.IO.Compression.GZipStream.#ctor(Stream,System.IO.Compression.CompressionMode)
-  - System.IO.Compression.GZipStream.#ctor(Stream,System.IO.Compression.CompressionMode,System.Boolean)
-  - System.IO.Compression.GZipStream.#ctor(Stream,System.IO.Compression.CompressionLevel)
-  - System.IO.Compression.GZipStream.#ctor(Stream,System.IO.Compression.CompressionLevel,System.Boolean)
+  - System.IO.Compression.GZipStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionMode)
+  - System.IO.Compression.GZipStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionMode,System.Boolean)
+  - System.IO.Compression.GZipStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionLevel)
+  - System.IO.Compression.GZipStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionLevel,System.Boolean)
   - System.IO.Compression.GZipStream.CanRead
   - System.IO.Compression.GZipStream.CanWrite
   - System.IO.Compression.GZipStream.CanSeek
   - System.IO.Compression.GZipStream.Length
   - System.IO.Compression.GZipStream.Position
   - System.IO.Compression.GZipStream.Flush
-  - System.IO.Compression.GZipStream.Seek(System.Int64,SeekOrigin)
+  - System.IO.Compression.GZipStream.Seek(System.Int64,System.IO.SeekOrigin)
   - System.IO.Compression.GZipStream.SetLength(System.Int64)
   - System.IO.Compression.GZipStream.Read(System.Byte[],System.Int32,System.Int32)
   - System.IO.Compression.GZipStream.Write(System.Byte[],System.Int32,System.Int32)
+  - System.IO.Compression.GZipStream.Dispose(System.Boolean)
   - System.IO.Compression.GZipStream.BaseStream
-  - System.IO.Compression.GZipStream.ReadAsync(Byte[],System.Int32,System.Int32,CancellationToken)
-  - System.IO.Compression.GZipStream.WriteAsync(Byte[],System.Int32,System.Int32,CancellationToken)
-- uid: System.IO.Compression.GZipStream.#ctor(Stream,System.IO.Compression.CompressionMode)
+  - System.IO.Compression.GZipStream.ReadAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)
+  - System.IO.Compression.GZipStream.WriteAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)
+  - System.IO.Compression.GZipStream.FlushAsync(System.Threading.CancellationToken)
+- uid: System.IO.Compression.GZipStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionMode)
   href: System.IO.Compression.GZipStream.yml
   name: GZipStream(Stream, CompressionMode)
-  fullName: System.IO.Compression.GZipStream.GZipStream(Stream, System.IO.Compression.CompressionMode)
+  fullName: System.IO.Compression.GZipStream.GZipStream(System.IO.Stream, System.IO.Compression.CompressionMode)
   type: Constructor
   source:
     remote: *o0
@@ -51,7 +61,7 @@ items:
     parameters:
     - id: stream
       type:
-        id: Stream
+        id: System.IO.Stream
         name: Stream
         isExternal: true
     - id: mode
@@ -59,11 +69,11 @@ items:
         id: System.IO.Compression.CompressionMode
         name: CompressionMode
         href: System.IO.Compression.CompressionMode.yml
-  id: System.IO.Compression.GZipStream.#ctor(Stream,System.IO.Compression.CompressionMode)
-- uid: System.IO.Compression.GZipStream.#ctor(Stream,System.IO.Compression.CompressionMode,System.Boolean)
+  id: System.IO.Compression.GZipStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionMode)
+- uid: System.IO.Compression.GZipStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionMode,System.Boolean)
   href: System.IO.Compression.GZipStream.yml
   name: GZipStream(Stream, CompressionMode, bool)
-  fullName: System.IO.Compression.GZipStream.GZipStream(Stream, System.IO.Compression.CompressionMode, bool)
+  fullName: System.IO.Compression.GZipStream.GZipStream(System.IO.Stream, System.IO.Compression.CompressionMode, bool)
   type: Constructor
   source:
     remote: *o0
@@ -75,7 +85,7 @@ items:
     parameters:
     - id: stream
       type:
-        id: Stream
+        id: System.IO.Stream
         name: Stream
         isExternal: true
     - id: mode
@@ -86,13 +96,13 @@ items:
     - id: leaveOpen
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
-  id: System.IO.Compression.GZipStream.#ctor(Stream,System.IO.Compression.CompressionMode,System.Boolean)
-- uid: System.IO.Compression.GZipStream.#ctor(Stream,System.IO.Compression.CompressionLevel)
+  id: System.IO.Compression.GZipStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionMode,System.Boolean)
+- uid: System.IO.Compression.GZipStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionLevel)
   href: System.IO.Compression.GZipStream.yml
   name: GZipStream(Stream, CompressionLevel)
-  fullName: System.IO.Compression.GZipStream.GZipStream(Stream, System.IO.Compression.CompressionLevel)
+  fullName: System.IO.Compression.GZipStream.GZipStream(System.IO.Stream, System.IO.Compression.CompressionLevel)
   type: Constructor
   source:
     remote: *o0
@@ -104,7 +114,7 @@ items:
     parameters:
     - id: stream
       type:
-        id: Stream
+        id: System.IO.Stream
         name: Stream
         isExternal: true
     - id: compressionLevel
@@ -112,11 +122,11 @@ items:
         id: System.IO.Compression.CompressionLevel
         name: CompressionLevel
         href: System.IO.Compression.CompressionLevel.yml
-  id: System.IO.Compression.GZipStream.#ctor(Stream,System.IO.Compression.CompressionLevel)
-- uid: System.IO.Compression.GZipStream.#ctor(Stream,System.IO.Compression.CompressionLevel,System.Boolean)
+  id: System.IO.Compression.GZipStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionLevel)
+- uid: System.IO.Compression.GZipStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionLevel,System.Boolean)
   href: System.IO.Compression.GZipStream.yml
   name: GZipStream(Stream, CompressionLevel, bool)
-  fullName: System.IO.Compression.GZipStream.GZipStream(Stream, System.IO.Compression.CompressionLevel, bool)
+  fullName: System.IO.Compression.GZipStream.GZipStream(System.IO.Stream, System.IO.Compression.CompressionLevel, bool)
   type: Constructor
   source:
     remote: *o0
@@ -128,7 +138,7 @@ items:
     parameters:
     - id: stream
       type:
-        id: Stream
+        id: System.IO.Stream
         name: Stream
         isExternal: true
     - id: compressionLevel
@@ -139,9 +149,9 @@ items:
     - id: leaveOpen
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
-  id: System.IO.Compression.GZipStream.#ctor(Stream,System.IO.Compression.CompressionLevel,System.Boolean)
+  id: System.IO.Compression.GZipStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionLevel,System.Boolean)
 - uid: System.IO.Compression.GZipStream.CanRead
   href: System.IO.Compression.GZipStream.yml
   name: CanRead
@@ -158,7 +168,7 @@ items:
     - id: CanRead
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.IO.Compression.GZipStream.CanRead
 - uid: System.IO.Compression.GZipStream.CanWrite
@@ -177,7 +187,7 @@ items:
     - id: CanWrite
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.IO.Compression.GZipStream.CanWrite
 - uid: System.IO.Compression.GZipStream.CanSeek
@@ -196,7 +206,7 @@ items:
     - id: CanSeek
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.IO.Compression.GZipStream.CanSeek
 - uid: System.IO.Compression.GZipStream.Length
@@ -215,7 +225,7 @@ items:
     - id: Length
       type:
         id: System.Int64
-        name: System.Int64
+        name: long
         isExternal: true
   id: System.IO.Compression.GZipStream.Length
 - uid: System.IO.Compression.GZipStream.Position
@@ -234,7 +244,7 @@ items:
     - id: Position
       type:
         id: System.Int64
-        name: System.Int64
+        name: long
         isExternal: true
   id: System.IO.Compression.GZipStream.Position
 - uid: System.IO.Compression.GZipStream.Flush
@@ -251,10 +261,10 @@ items:
       CSharp: public override void Flush()
     parameters: []
   id: System.IO.Compression.GZipStream.Flush
-- uid: System.IO.Compression.GZipStream.Seek(System.Int64,SeekOrigin)
+- uid: System.IO.Compression.GZipStream.Seek(System.Int64,System.IO.SeekOrigin)
   href: System.IO.Compression.GZipStream.yml
   name: Seek(long, SeekOrigin)
-  fullName: System.IO.Compression.GZipStream.Seek(long, SeekOrigin)
+  fullName: System.IO.Compression.GZipStream.Seek(long, System.IO.SeekOrigin)
   type: Method
   source:
     remote: *o0
@@ -267,16 +277,20 @@ items:
     - id: offset
       type:
         id: System.Int64
-        name: System.Int64
+        name: long
         isExternal: true
     - id: origin
       type:
-        id: SeekOrigin
+        id: System.IO.SeekOrigin
         name: SeekOrigin
         isExternal: true
     return:
       id: Int64
-  id: System.IO.Compression.GZipStream.Seek(System.Int64,SeekOrigin)
+      type:
+        id: System.Int64
+        name: long
+        isExternal: true
+  id: System.IO.Compression.GZipStream.Seek(System.Int64,System.IO.SeekOrigin)
 - uid: System.IO.Compression.GZipStream.SetLength(System.Int64)
   href: System.IO.Compression.GZipStream.yml
   name: SetLength(long)
@@ -293,7 +307,7 @@ items:
     - id: value
       type:
         id: System.Int64
-        name: System.Int64
+        name: long
         isExternal: true
   id: System.IO.Compression.GZipStream.SetLength(System.Int64)
 - uid: System.IO.Compression.GZipStream.Read(System.Byte[],System.Int32,System.Int32)
@@ -312,20 +326,24 @@ items:
     - id: array
       type:
         id: System.Array
-        name: System.Array
+        name: byte[]
         isExternal: true
     - id: offset
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: System.IO.Compression.GZipStream.Read(System.Byte[],System.Int32,System.Int32)
 - uid: System.IO.Compression.GZipStream.Write(System.Byte[],System.Int32,System.Int32)
   href: System.IO.Compression.GZipStream.yml
@@ -343,19 +361,38 @@ items:
     - id: array
       type:
         id: System.Array
-        name: System.Array
+        name: byte[]
         isExternal: true
     - id: offset
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.IO.Compression.GZipStream.Write(System.Byte[],System.Int32,System.Int32)
+- uid: System.IO.Compression.GZipStream.Dispose(System.Boolean)
+  href: System.IO.Compression.GZipStream.yml
+  name: Dispose(bool)
+  fullName: System.IO.Compression.GZipStream.Dispose(bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.Compression/src/System/IO/Compression/GZipStream.cs
+    startLine: 148
+  syntax:
+    content:
+      CSharp: protected override void Dispose(bool disposing)
+    parameters:
+    - id: disposing
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.IO.Compression.GZipStream.Dispose(System.Boolean)
 - uid: System.IO.Compression.GZipStream.BaseStream
   href: System.IO.Compression.GZipStream.yml
   name: BaseStream
@@ -371,14 +408,14 @@ items:
     parameters:
     - id: BaseStream
       type:
-        id: Stream
+        id: System.IO.Stream
         name: Stream
         isExternal: true
   id: System.IO.Compression.GZipStream.BaseStream
-- uid: System.IO.Compression.GZipStream.ReadAsync(Byte[],System.Int32,System.Int32,CancellationToken)
+- uid: System.IO.Compression.GZipStream.ReadAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)
   href: System.IO.Compression.GZipStream.yml
-  name: ReadAsync(Byte[], int, int, CancellationToken)
-  fullName: System.IO.Compression.GZipStream.ReadAsync(Byte[], int, int, CancellationToken)
+  name: ReadAsync(byte[], int, int, CancellationToken)
+  fullName: System.IO.Compression.GZipStream.ReadAsync(byte[], int, int, System.Threading.CancellationToken)
   type: Method
   source:
     remote: *o0
@@ -386,35 +423,39 @@ items:
     startLine: 179
   syntax:
     content:
-      CSharp: public override Task<int> ReadAsync(Byte[] array, int offset, int count, CancellationToken cancellationToken)
+      CSharp: public override Task<int> ReadAsync(byte[] array, int offset, int count, CancellationToken cancellationToken)
     parameters:
     - id: array
       type:
         id: System.Array
-        name: System.Array
+        name: byte[]
         isExternal: true
     - id: offset
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: cancellationToken
       type:
-        id: CancellationToken
+        id: System.Threading.CancellationToken
         name: CancellationToken
         isExternal: true
     return:
       id: Task
-  id: System.IO.Compression.GZipStream.ReadAsync(Byte[],System.Int32,System.Int32,CancellationToken)
-- uid: System.IO.Compression.GZipStream.WriteAsync(Byte[],System.Int32,System.Int32,CancellationToken)
+      type:
+        id: System.Threading.Tasks.Task{System.Int32}
+        name: Task<int>
+        isExternal: true
+  id: System.IO.Compression.GZipStream.ReadAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)
+- uid: System.IO.Compression.GZipStream.WriteAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)
   href: System.IO.Compression.GZipStream.yml
-  name: WriteAsync(Byte[], int, int, CancellationToken)
-  fullName: System.IO.Compression.GZipStream.WriteAsync(Byte[], int, int, CancellationToken)
+  name: WriteAsync(byte[], int, int, CancellationToken)
+  fullName: System.IO.Compression.GZipStream.WriteAsync(byte[], int, int, System.Threading.CancellationToken)
   type: Method
   source:
     remote: *o0
@@ -422,28 +463,57 @@ items:
     startLine: 185
   syntax:
     content:
-      CSharp: public override Task WriteAsync(Byte[] array, int offset, int count, CancellationToken cancellationToken)
+      CSharp: public override Task WriteAsync(byte[] array, int offset, int count, CancellationToken cancellationToken)
     parameters:
     - id: array
       type:
         id: System.Array
-        name: System.Array
+        name: byte[]
         isExternal: true
     - id: offset
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: cancellationToken
       type:
-        id: CancellationToken
+        id: System.Threading.CancellationToken
         name: CancellationToken
         isExternal: true
     return:
       id: Task
-  id: System.IO.Compression.GZipStream.WriteAsync(Byte[],System.Int32,System.Int32,CancellationToken)
+      type:
+        id: System.Threading.Tasks.Task
+        name: Task
+        isExternal: true
+  id: System.IO.Compression.GZipStream.WriteAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)
+- uid: System.IO.Compression.GZipStream.FlushAsync(System.Threading.CancellationToken)
+  href: System.IO.Compression.GZipStream.yml
+  name: FlushAsync(CancellationToken)
+  fullName: System.IO.Compression.GZipStream.FlushAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.Compression/src/System/IO/Compression/GZipStream.cs
+    startLine: 191
+  syntax:
+    content:
+      CSharp: public override Task FlushAsync(CancellationToken cancellationToken)
+    parameters:
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: CancellationToken
+        isExternal: true
+    return:
+      id: Task
+      type:
+        id: System.Threading.Tasks.Task
+        name: Task
+        isExternal: true
+  id: System.IO.Compression.GZipStream.FlushAsync(System.Threading.CancellationToken)

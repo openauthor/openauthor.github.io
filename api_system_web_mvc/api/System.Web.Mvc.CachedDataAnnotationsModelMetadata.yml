@@ -6,28 +6,48 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/CachedDataAnnotationsModelMetadata.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/CachedDataAnnotationsModelMetadata.cs
     startLine: 11
   syntax:
     content:
-      CSharp: public class CachedDataAnnotationsModelMetadata
+      CSharp: 'public class CachedDataAnnotationsModelMetadata : CachedModelMetadata<CachedDataAnnotationsMetadataAttributes>'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.Mvc.ModelMetadata
     name: ModelMetadata
     href: System.Web.Mvc.ModelMetadata.yml
   - id: System.Web.Mvc.CachedModelMetadata{System.Web.Mvc.CachedDataAnnotationsMetadataAttributes}
-    name: CachedModelMetadata
+    name: CachedModelMetadata<CachedDataAnnotationsMetadataAttributes>
     href: System.Web.Mvc.CachedModelMetadata{System.Web.Mvc.CachedDataAnnotationsMetadataAttributes}
   id: System.Web.Mvc.CachedDataAnnotationsModelMetadata
   children:
   - System.Web.Mvc.CachedDataAnnotationsModelMetadata.#ctor(System.Web.Mvc.CachedDataAnnotationsModelMetadata,System.Func{System.Object})
   - System.Web.Mvc.CachedDataAnnotationsModelMetadata.#ctor(System.Web.Mvc.CachedDataAnnotationsModelMetadataProvider,System.Type,System.Type,System.String,System.Collections.Generic.IEnumerable{System.Attribute})
+  - System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeConvertEmptyStringToNull
+  - System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeDataTypeName
+  - System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeDescription
+  - System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeDisplayFormatString
+  - System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeDisplayName
+  - System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeEditFormatString
+  - System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeHasNonDefaultEditFormat
+  - System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeHideSurroundingHtml
+  - System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeHtmlEncode
+  - System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeIsReadOnly
+  - System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeIsRequired
+  - System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeNullDisplayText
+  - System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeOrder
+  - System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeShortDisplayName
+  - System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeShowForDisplay
+  - System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeShowForEdit
+  - System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeSimpleDisplayText
+  - System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeTemplateHint
+  - System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeWatermark
 - uid: System.Web.Mvc.CachedDataAnnotationsModelMetadata.#ctor(System.Web.Mvc.CachedDataAnnotationsModelMetadata,System.Func{System.Object})
   href: System.Web.Mvc.CachedDataAnnotationsModelMetadata.yml
   name: CachedDataAnnotationsModelMetadata(CachedDataAnnotationsModelMetadata, Func<object>)
@@ -49,7 +69,7 @@ items:
     - id: modelAccessor
       type:
         id: System.Func{System.Object}
-        name: System.Func{System.Object}
+        name: Func<object>
         isExternal: true
   id: System.Web.Mvc.CachedDataAnnotationsModelMetadata.#ctor(System.Web.Mvc.CachedDataAnnotationsModelMetadata,System.Func{System.Object})
 - uid: System.Web.Mvc.CachedDataAnnotationsModelMetadata.#ctor(System.Web.Mvc.CachedDataAnnotationsModelMetadataProvider,System.Type,System.Type,System.String,System.Collections.Generic.IEnumerable{System.Attribute})
@@ -73,21 +93,401 @@ items:
     - id: containerType
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
     - id: modelType
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
     - id: propertyName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: attributes
       type:
         id: System.Collections.Generic.IEnumerable{System.Attribute}
-        name: System.Collections.Generic.IEnumerable{System.Attribute}
+        name: IEnumerable<Attribute>
         isExternal: true
   id: System.Web.Mvc.CachedDataAnnotationsModelMetadata.#ctor(System.Web.Mvc.CachedDataAnnotationsModelMetadataProvider,System.Type,System.Type,System.String,System.Collections.Generic.IEnumerable{System.Attribute})
+- uid: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeConvertEmptyStringToNull
+  href: System.Web.Mvc.CachedDataAnnotationsModelMetadata.yml
+  name: ComputeConvertEmptyStringToNull()
+  fullName: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeConvertEmptyStringToNull()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedDataAnnotationsModelMetadata.cs
+    startLine: 25
+  syntax:
+    content:
+      CSharp: protected override bool ComputeConvertEmptyStringToNull()
+    parameters: []
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeConvertEmptyStringToNull
+- uid: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeDataTypeName
+  href: System.Web.Mvc.CachedDataAnnotationsModelMetadata.yml
+  name: ComputeDataTypeName()
+  fullName: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeDataTypeName()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedDataAnnotationsModelMetadata.cs
+    startLine: 32
+  syntax:
+    content:
+      CSharp: protected override string ComputeDataTypeName()
+    parameters: []
+    return:
+      id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeDataTypeName
+- uid: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeDescription
+  href: System.Web.Mvc.CachedDataAnnotationsModelMetadata.yml
+  name: ComputeDescription()
+  fullName: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeDescription()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedDataAnnotationsModelMetadata.cs
+    startLine: 47
+  syntax:
+    content:
+      CSharp: protected override string ComputeDescription()
+    parameters: []
+    return:
+      id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeDescription
+- uid: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeDisplayFormatString
+  href: System.Web.Mvc.CachedDataAnnotationsModelMetadata.yml
+  name: ComputeDisplayFormatString()
+  fullName: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeDisplayFormatString()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedDataAnnotationsModelMetadata.cs
+    startLine: 54
+  syntax:
+    content:
+      CSharp: protected override string ComputeDisplayFormatString()
+    parameters: []
+    return:
+      id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeDisplayFormatString
+- uid: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeDisplayName
+  href: System.Web.Mvc.CachedDataAnnotationsModelMetadata.yml
+  name: ComputeDisplayName()
+  fullName: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeDisplayName()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedDataAnnotationsModelMetadata.cs
+    startLine: 61
+  syntax:
+    content:
+      CSharp: protected override string ComputeDisplayName()
+    parameters: []
+    return:
+      id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeDisplayName
+- uid: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeEditFormatString
+  href: System.Web.Mvc.CachedDataAnnotationsModelMetadata.yml
+  name: ComputeEditFormatString()
+  fullName: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeEditFormatString()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedDataAnnotationsModelMetadata.cs
+    startLine: 78
+  syntax:
+    content:
+      CSharp: protected override string ComputeEditFormatString()
+    parameters: []
+    return:
+      id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeEditFormatString
+- uid: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeHasNonDefaultEditFormat
+  href: System.Web.Mvc.CachedDataAnnotationsModelMetadata.yml
+  name: ComputeHasNonDefaultEditFormat()
+  fullName: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeHasNonDefaultEditFormat()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedDataAnnotationsModelMetadata.cs
+    startLine: 89
+  syntax:
+    content:
+      CSharp: protected override bool ComputeHasNonDefaultEditFormat()
+    parameters: []
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeHasNonDefaultEditFormat
+- uid: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeHideSurroundingHtml
+  href: System.Web.Mvc.CachedDataAnnotationsModelMetadata.yml
+  name: ComputeHideSurroundingHtml()
+  fullName: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeHideSurroundingHtml()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedDataAnnotationsModelMetadata.cs
+    startLine: 118
+  syntax:
+    content:
+      CSharp: protected override bool ComputeHideSurroundingHtml()
+    parameters: []
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeHideSurroundingHtml
+- uid: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeHtmlEncode
+  href: System.Web.Mvc.CachedDataAnnotationsModelMetadata.yml
+  name: ComputeHtmlEncode()
+  fullName: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeHtmlEncode()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedDataAnnotationsModelMetadata.cs
+    startLine: 125
+  syntax:
+    content:
+      CSharp: protected override bool ComputeHtmlEncode()
+    parameters: []
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeHtmlEncode
+- uid: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeIsReadOnly
+  href: System.Web.Mvc.CachedDataAnnotationsModelMetadata.yml
+  name: ComputeIsReadOnly()
+  fullName: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeIsReadOnly()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedDataAnnotationsModelMetadata.cs
+    startLine: 132
+  syntax:
+    content:
+      CSharp: protected override bool ComputeIsReadOnly()
+    parameters: []
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeIsReadOnly
+- uid: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeIsRequired
+  href: System.Web.Mvc.CachedDataAnnotationsModelMetadata.yml
+  name: ComputeIsRequired()
+  fullName: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeIsRequired()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedDataAnnotationsModelMetadata.cs
+    startLine: 147
+  syntax:
+    content:
+      CSharp: protected override bool ComputeIsRequired()
+    parameters: []
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeIsRequired
+- uid: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeNullDisplayText
+  href: System.Web.Mvc.CachedDataAnnotationsModelMetadata.yml
+  name: ComputeNullDisplayText()
+  fullName: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeNullDisplayText()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedDataAnnotationsModelMetadata.cs
+    startLine: 154
+  syntax:
+    content:
+      CSharp: protected override string ComputeNullDisplayText()
+    parameters: []
+    return:
+      id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeNullDisplayText
+- uid: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeOrder
+  href: System.Web.Mvc.CachedDataAnnotationsModelMetadata.yml
+  name: ComputeOrder()
+  fullName: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeOrder()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedDataAnnotationsModelMetadata.cs
+    startLine: 161
+  syntax:
+    content:
+      CSharp: protected override int ComputeOrder()
+    parameters: []
+    return:
+      id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeOrder
+- uid: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeShortDisplayName
+  href: System.Web.Mvc.CachedDataAnnotationsModelMetadata.yml
+  name: ComputeShortDisplayName()
+  fullName: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeShortDisplayName()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedDataAnnotationsModelMetadata.cs
+    startLine: 173
+  syntax:
+    content:
+      CSharp: protected override string ComputeShortDisplayName()
+    parameters: []
+    return:
+      id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeShortDisplayName
+- uid: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeShowForDisplay
+  href: System.Web.Mvc.CachedDataAnnotationsModelMetadata.yml
+  name: ComputeShowForDisplay()
+  fullName: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeShowForDisplay()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedDataAnnotationsModelMetadata.cs
+    startLine: 180
+  syntax:
+    content:
+      CSharp: protected override bool ComputeShowForDisplay()
+    parameters: []
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeShowForDisplay
+- uid: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeShowForEdit
+  href: System.Web.Mvc.CachedDataAnnotationsModelMetadata.yml
+  name: ComputeShowForEdit()
+  fullName: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeShowForEdit()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedDataAnnotationsModelMetadata.cs
+    startLine: 187
+  syntax:
+    content:
+      CSharp: protected override bool ComputeShowForEdit()
+    parameters: []
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeShowForEdit
+- uid: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeSimpleDisplayText
+  href: System.Web.Mvc.CachedDataAnnotationsModelMetadata.yml
+  name: ComputeSimpleDisplayText()
+  fullName: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeSimpleDisplayText()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedDataAnnotationsModelMetadata.cs
+    startLine: 194
+  syntax:
+    content:
+      CSharp: protected override string ComputeSimpleDisplayText()
+    parameters: []
+    return:
+      id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeSimpleDisplayText
+- uid: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeTemplateHint
+  href: System.Web.Mvc.CachedDataAnnotationsModelMetadata.yml
+  name: ComputeTemplateHint()
+  fullName: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeTemplateHint()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedDataAnnotationsModelMetadata.cs
+    startLine: 214
+  syntax:
+    content:
+      CSharp: protected override string ComputeTemplateHint()
+    parameters: []
+    return:
+      id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeTemplateHint
+- uid: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeWatermark
+  href: System.Web.Mvc.CachedDataAnnotationsModelMetadata.yml
+  name: ComputeWatermark()
+  fullName: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeWatermark()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedDataAnnotationsModelMetadata.cs
+    startLine: 229
+  syntax:
+    content:
+      CSharp: protected override string ComputeWatermark()
+    parameters: []
+    return:
+      id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Web.Mvc.CachedDataAnnotationsModelMetadata.ComputeWatermark

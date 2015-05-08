@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/LinqBinaryModelBinder.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/LinqBinaryModelBinder.cs
     startLine: 6
   syntax:
     content:
-      CSharp: public class LinqBinaryModelBinder
+      CSharp: 'public class LinqBinaryModelBinder : ByteArrayModelBinder, IModelBinder'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.Mvc.ByteArrayModelBinder
     name: ByteArrayModelBinder
@@ -49,4 +50,8 @@ items:
         href: System.Web.Mvc.ModelBindingContext.yml
     return:
       id: Object
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
   id: System.Web.Mvc.LinqBinaryModelBinder.BindModel(System.Web.Mvc.ControllerContext,System.Web.Mvc.ModelBindingContext)

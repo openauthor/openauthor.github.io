@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/SelectList.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/SelectList.cs
     startLine: 7
   syntax:
     content:
-      CSharp: public class SelectList
+      CSharp: 'public class SelectList : MultiSelectList, IEnumerable<SelectListItem>, IEnumerable'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.Mvc.MultiSelectList
     name: MultiSelectList
@@ -49,7 +50,7 @@ items:
     - id: items
       type:
         id: System.Collections.IEnumerable
-        name: System.Collections.IEnumerable
+        name: IEnumerable
         isExternal: true
   id: System.Web.Mvc.SelectList.#ctor(System.Collections.IEnumerable)
 - uid: System.Web.Mvc.SelectList.#ctor(System.Collections.IEnumerable,System.Object)
@@ -68,12 +69,12 @@ items:
     - id: items
       type:
         id: System.Collections.IEnumerable
-        name: System.Collections.IEnumerable
+        name: IEnumerable
         isExternal: true
     - id: selectedValue
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.Web.Mvc.SelectList.#ctor(System.Collections.IEnumerable,System.Object)
 - uid: System.Web.Mvc.SelectList.#ctor(System.Collections.IEnumerable,System.Object,System.Collections.IEnumerable)
@@ -96,13 +97,13 @@ items:
     - id: items
       type:
         id: System.Collections.IEnumerable
-        name: System.Collections.IEnumerable
+        name: IEnumerable
         isExternal: true
       description: The items used to build each [System.Web.Mvc.SelectListItem](System.Web.Mvc.SelectListItem.yml) of the list.
     - id: selectedValue
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: >-
         The selected value. Used to match the Selected property of the corresponding
@@ -111,7 +112,7 @@ items:
     - id: disabledValues
       type:
         id: System.Collections.IEnumerable
-        name: System.Collections.IEnumerable
+        name: IEnumerable
         isExternal: true
       description: >-
         The disabled values. Used to match the Disabled property of the corresponding
@@ -134,17 +135,17 @@ items:
     - id: items
       type:
         id: System.Collections.IEnumerable
-        name: System.Collections.IEnumerable
+        name: IEnumerable
         isExternal: true
     - id: dataValueField
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: dataTextField
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.SelectList.#ctor(System.Collections.IEnumerable,System.String,System.String)
 - uid: System.Web.Mvc.SelectList.#ctor(System.Collections.IEnumerable,System.String,System.String,System.Object)
@@ -163,22 +164,22 @@ items:
     - id: items
       type:
         id: System.Collections.IEnumerable
-        name: System.Collections.IEnumerable
+        name: IEnumerable
         isExternal: true
     - id: dataValueField
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: dataTextField
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: selectedValue
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.Web.Mvc.SelectList.#ctor(System.Collections.IEnumerable,System.String,System.String,System.Object)
 - uid: System.Web.Mvc.SelectList.#ctor(System.Collections.IEnumerable,System.String,System.String,System.String,System.Object)
@@ -201,13 +202,13 @@ items:
     - id: items
       type:
         id: System.Collections.IEnumerable
-        name: System.Collections.IEnumerable
+        name: IEnumerable
         isExternal: true
       description: The items used to build each [System.Web.Mvc.SelectListItem](System.Web.Mvc.SelectListItem.yml) of the list.
     - id: dataValueField
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: >-
         The data value field. Used to match the Value property of the corresponding
@@ -216,7 +217,7 @@ items:
     - id: dataTextField
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: >-
         The data text field. Used to match the Text property of the corresponding
@@ -225,7 +226,7 @@ items:
     - id: dataGroupField
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: >-
         The data group field. Used to match the Group property of the corresponding
@@ -234,7 +235,7 @@ items:
     - id: selectedValue
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: >-
         The selected value. Used to match the Selected property of the corresponding
@@ -261,13 +262,13 @@ items:
     - id: items
       type:
         id: System.Collections.IEnumerable
-        name: System.Collections.IEnumerable
+        name: IEnumerable
         isExternal: true
       description: The items used to build each [System.Web.Mvc.SelectListItem](System.Web.Mvc.SelectListItem.yml) of the list.
     - id: dataValueField
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: >-
         The data value field. Used to match the Value property of the corresponding
@@ -276,7 +277,7 @@ items:
     - id: dataTextField
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: >-
         The data text field. Used to match the Text property of the corresponding
@@ -285,7 +286,7 @@ items:
     - id: selectedValue
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: >-
         The selected value. Used to match the Selected property of the corresponding
@@ -294,7 +295,7 @@ items:
     - id: disabledValues
       type:
         id: System.Collections.IEnumerable
-        name: System.Collections.IEnumerable
+        name: IEnumerable
         isExternal: true
       description: >-
         The disabled values. Used to match the Disabled property of the corresponding
@@ -323,13 +324,13 @@ items:
     - id: items
       type:
         id: System.Collections.IEnumerable
-        name: System.Collections.IEnumerable
+        name: IEnumerable
         isExternal: true
       description: The items used to build each [System.Web.Mvc.SelectListItem](System.Web.Mvc.SelectListItem.yml) of the list.
     - id: dataValueField
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: >-
         The data value field. Used to match the Value property of the corresponding
@@ -338,7 +339,7 @@ items:
     - id: dataTextField
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: >-
         The data text field. Used to match the Text property of the corresponding
@@ -347,7 +348,7 @@ items:
     - id: dataGroupField
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: >-
         The data group field. Used to match the Group property of the corresponding
@@ -356,7 +357,7 @@ items:
     - id: selectedValue
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: >-
         The selected value. Used to match the Selected property of the corresponding
@@ -365,7 +366,7 @@ items:
     - id: disabledValues
       type:
         id: System.Collections.IEnumerable
-        name: System.Collections.IEnumerable
+        name: IEnumerable
         isExternal: true
       description: >-
         The disabled values. Used to match the Disabled property of the corresponding
@@ -394,13 +395,13 @@ items:
     - id: items
       type:
         id: System.Collections.IEnumerable
-        name: System.Collections.IEnumerable
+        name: IEnumerable
         isExternal: true
       description: The items used to build each [System.Web.Mvc.SelectListItem](System.Web.Mvc.SelectListItem.yml) of the list.
     - id: dataValueField
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: >-
         The data value field. Used to match the Value property of the corresponding
@@ -409,7 +410,7 @@ items:
     - id: dataTextField
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: >-
         The data text field. Used to match the Text property of the corresponding
@@ -418,7 +419,7 @@ items:
     - id: dataGroupField
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: >-
         The data group field. Used to match the Group property of the corresponding
@@ -427,7 +428,7 @@ items:
     - id: selectedValue
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: >-
         The selected value. Used to match the Selected property of the corresponding
@@ -436,7 +437,7 @@ items:
     - id: disabledValues
       type:
         id: System.Collections.IEnumerable
-        name: System.Collections.IEnumerable
+        name: IEnumerable
         isExternal: true
       description: >-
         The disabled values. Used to match the Disabled property of the corresponding
@@ -445,7 +446,7 @@ items:
     - id: disabledGroups
       type:
         id: System.Collections.IEnumerable
-        name: System.Collections.IEnumerable
+        name: IEnumerable
         isExternal: true
       description: >-
         The disabled groups. Used to match the Disabled property of the corresponding
@@ -463,11 +464,11 @@ items:
     startLine: 158
   syntax:
     content:
-      CSharp: public object SelectedValue { get; private set; }
+      CSharp: public object SelectedValue { get; }
     parameters:
     - id: SelectedValue
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.Web.Mvc.SelectList.SelectedValue

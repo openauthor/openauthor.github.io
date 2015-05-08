@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Recommendations/Recommender.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Recommendations/Recommender.cs
     startLine: 10
   syntax:
     content:
-      CSharp: public static class Recommender
+      CSharp: public class Recommender
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.Recommendations.Recommender
   children:
@@ -32,7 +33,7 @@ items:
     startLine: 12
   syntax:
     content:
-      CSharp: public static IEnumerable<ISymbol> GetRecommendedSymbolsAtPosition(SemanticModel semanticModel, int position, Workspace workspace, OptionSet options = null, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public static IEnumerable<ISymbol> GetRecommendedSymbolsAtPosition(SemanticModel semanticModel, int position, Workspace workspace, OptionSet options = null, CancellationToken cancellationToken = null)
     parameters:
     - id: semanticModel
       type:
@@ -42,7 +43,7 @@ items:
     - id: position
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: workspace
       type:
@@ -57,8 +58,12 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ISymbol}
+        name: IEnumerable<ISymbol>
+        isExternal: true
   id: Microsoft.CodeAnalysis.Recommendations.Recommender.GetRecommendedSymbolsAtPosition(Microsoft.CodeAnalysis.SemanticModel,System.Int32,Microsoft.CodeAnalysis.Workspace,Microsoft.CodeAnalysis.Options.OptionSet,System.Threading.CancellationToken)

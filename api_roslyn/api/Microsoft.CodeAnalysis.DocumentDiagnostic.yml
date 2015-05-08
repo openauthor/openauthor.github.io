@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Workspace/Solution/DocumentDiagnostic.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Workspace/Solution/DocumentDiagnostic.cs
     startLine: 4
   syntax:
     content:
-      CSharp: public class DocumentDiagnostic
+      CSharp: 'public class DocumentDiagnostic : WorkspaceDiagnostic'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: Microsoft.CodeAnalysis.WorkspaceDiagnostic
     name: WorkspaceDiagnostic
@@ -36,7 +37,7 @@ items:
     startLine: 6
   syntax:
     content:
-      CSharp: public DocumentId DocumentId { get; private set; }
+      CSharp: public DocumentId DocumentId { get; }
     parameters:
     - id: DocumentId
       type:
@@ -65,7 +66,7 @@ items:
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: documentId
       type:

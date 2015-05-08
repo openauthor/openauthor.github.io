@@ -1,0 +1,181 @@
+items:
+- uid: System.Runtime.CompilerServices.CallSiteBinder
+  href: System.Runtime.CompilerServices.CallSiteBinder.yml
+  name: CallSiteBinder
+  fullName: System.Runtime.CompilerServices.CallSiteBinder
+  type: Class
+  source:
+    remote: &o0
+      path: src/System.Dynamic.Runtime/src/System/Runtime/CompilerServices/CallSiteBinder.cs
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
+    path: src/System.Dynamic.Runtime/src/System/Runtime/CompilerServices/CallSiteBinder.cs
+    startLine: 17
+  summary: Class responsible for runtime binding of the dynamic operations on the dynamic call site.
+  syntax:
+    content:
+      CSharp: public abstract class CallSiteBinder
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  id: System.Runtime.CompilerServices.CallSiteBinder
+  children:
+  - System.Runtime.CompilerServices.CallSiteBinder.#ctor
+  - System.Runtime.CompilerServices.CallSiteBinder.UpdateLabel
+  - System.Runtime.CompilerServices.CallSiteBinder.Bind(System.Object[],System.Collections.ObjectModel.ReadOnlyCollection{ParameterExpression},LabelTarget)
+  - System.Runtime.CompilerServices.CallSiteBinder.BindDelegate``1(System.Runtime.CompilerServices.CallSite{``0},System.Object[])
+  - System.Runtime.CompilerServices.CallSiteBinder.CacheTarget``1(``0)
+- uid: System.Runtime.CompilerServices.CallSiteBinder.#ctor
+  href: System.Runtime.CompilerServices.CallSiteBinder.yml
+  name: CallSiteBinder()
+  fullName: System.Runtime.CompilerServices.CallSiteBinder.CallSiteBinder()
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Runtime/CompilerServices/CallSiteBinder.cs
+    startLine: 29
+  summary: Initializes a new instance of the [System.Runtime.CompilerServices.CallSiteBinder](System.Runtime.CompilerServices.CallSiteBinder.yml) class.
+  syntax:
+    content:
+      CSharp: protected CallSiteBinder()
+    parameters: []
+  id: System.Runtime.CompilerServices.CallSiteBinder.#ctor
+- uid: System.Runtime.CompilerServices.CallSiteBinder.UpdateLabel
+  href: System.Runtime.CompilerServices.CallSiteBinder.yml
+  name: UpdateLabel
+  fullName: System.Runtime.CompilerServices.CallSiteBinder.UpdateLabel
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Runtime/CompilerServices/CallSiteBinder.cs
+    startLine: 39
+  summary: >-
+    Gets a label that can be used to cause the binding to be updated. It
+
+    indicates that the expression's binding is no longer valid.
+
+    This is typically used when the "version" of a dynamic object has
+
+    changed.
+  syntax:
+    content:
+      CSharp: public static LabelTarget UpdateLabel { get; }
+    parameters:
+    - id: UpdateLabel
+      type:
+        id: LabelTarget
+        name: LabelTarget
+        isExternal: true
+  id: System.Runtime.CompilerServices.CallSiteBinder.UpdateLabel
+- uid: System.Runtime.CompilerServices.CallSiteBinder.Bind(System.Object[],System.Collections.ObjectModel.ReadOnlyCollection{ParameterExpression},LabelTarget)
+  href: System.Runtime.CompilerServices.CallSiteBinder.yml
+  name: Bind(object[], ReadOnlyCollection<ParameterExpression>, LabelTarget)
+  fullName: System.Runtime.CompilerServices.CallSiteBinder.Bind(object[], System.Collections.ObjectModel.ReadOnlyCollection<ParameterExpression>, LabelTarget)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Runtime/CompilerServices/CallSiteBinder.cs
+    startLine: 100
+  summary: Performs the runtime binding of the dynamic operation on a set of arguments.
+  syntax:
+    content:
+      CSharp: public abstract Expression Bind(object[] args, ReadOnlyCollection<ParameterExpression> parameters, LabelTarget returnLabel)
+    parameters:
+    - id: args
+      type:
+        id: System.Array
+        name: object[]
+        isExternal: true
+      description: An array of arguments to the dynamic operation.
+    - id: parameters
+      type:
+        id: System.Collections.ObjectModel.ReadOnlyCollection{ParameterExpression}
+        name: ReadOnlyCollection<ParameterExpression>
+        isExternal: true
+      description: The array of @!:ParameterExpression- instances that represent the parameters of the call site in the binding process.
+    - id: returnLabel
+      type:
+        id: LabelTarget
+        name: LabelTarget
+        isExternal: true
+      description: A LabelTarget used to return the result of the dynamic binding.
+    return:
+      id: Expression
+      type:
+        id: Expression
+        name: Expression
+        isExternal: true
+      description: >-
+        An Expression that performs tests on the dynamic operation arguments, and
+
+        performs the dynamic operation if hte tests are valid. If the tests fail on
+
+        subsequent occurrences of the dynamic operation, Bind will be called again
+
+        to produce a new @!:Expression- for the new argument types.
+  id: System.Runtime.CompilerServices.CallSiteBinder.Bind(System.Object[],System.Collections.ObjectModel.ReadOnlyCollection{ParameterExpression},LabelTarget)
+- uid: System.Runtime.CompilerServices.CallSiteBinder.BindDelegate``1(System.Runtime.CompilerServices.CallSite{``0},System.Object[])
+  href: System.Runtime.CompilerServices.CallSiteBinder.yml
+  name: BindDelegate<T>(CallSite<T>, object[])
+  fullName: System.Runtime.CompilerServices.CallSiteBinder.BindDelegate<T>(System.Runtime.CompilerServices.CallSite<T>, object[])
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Runtime/CompilerServices/CallSiteBinder.cs
+    startLine: 111
+  summary: >-
+    Provides low-level runtime binding support.  Classes can override this and provide a direct
+
+    delegate for the implementation of rule.  This can enable saving rules to disk, having
+
+    specialized rules available at runtime, or providing a different caching policy.
+  syntax:
+    content:
+      CSharp: 'public virtual T BindDelegate<T>(CallSite<T> site, object[] args)where T : class'
+    parameters:
+    - id: site
+      type:
+        id: System.Runtime.CompilerServices.CallSite{``0}
+        name: CallSite<T>
+        href: System.Runtime.CompilerServices.CallSite{``0}
+      description: The CallSite the bind is being performed for.
+    - id: args
+      type:
+        id: System.Array
+        name: object[]
+        isExternal: true
+      description: The arguments for the binder.
+    return:
+      id: T
+      type:
+        id: T
+        name: T
+        href: T
+      description: A new delegate which replaces the CallSite Target.
+  id: System.Runtime.CompilerServices.CallSiteBinder.BindDelegate``1(System.Runtime.CompilerServices.CallSite{``0},System.Object[])
+- uid: System.Runtime.CompilerServices.CallSiteBinder.CacheTarget``1(``0)
+  href: System.Runtime.CompilerServices.CallSiteBinder.yml
+  name: CacheTarget<T>(T)
+  fullName: System.Runtime.CompilerServices.CallSiteBinder.CacheTarget<T>(T)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Runtime/CompilerServices/CallSiteBinder.cs
+    startLine: 159
+  summary: >-
+    Adds a target to the cache of known targets.  The cached targets will
+
+    be scanned before calling BindDelegate to produce the new rule.
+  syntax:
+    content:
+      CSharp: 'protected void CacheTarget<T>(T target)where T : class'
+    parameters:
+    - id: target
+      type:
+        id: T
+        name: T
+        href: T
+      description: The target delegate to be added to the cache.
+  id: System.Runtime.CompilerServices.CallSiteBinder.CacheTarget``1(``0)

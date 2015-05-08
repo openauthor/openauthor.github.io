@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/Html/FormExtensions.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/Html/FormExtensions.cs
     startLine: 9
   syntax:
     content:
-      CSharp: public static class FormExtensions
+      CSharp: public class FormExtensions
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.Html.FormExtensions
   children:
@@ -57,7 +58,7 @@ items:
     startLine: 11
   syntax:
     content:
-      CSharp: public static MvcForm BeginForm(this HtmlHelper htmlHelper)
+      CSharp: public static MvcForm BeginForm(HtmlHelper htmlHelper)
     parameters:
     - id: htmlHelper
       type:
@@ -66,6 +67,10 @@ items:
         href: System.Web.Mvc.HtmlHelper.yml
     return:
       id: MvcForm
+      type:
+        id: System.Web.Mvc.Html.MvcForm
+        name: MvcForm
+        href: System.Web.Mvc.Html.MvcForm.yml
   id: System.Web.Mvc.Html.FormExtensions.BeginForm(System.Web.Mvc.HtmlHelper)
 - uid: System.Web.Mvc.Html.FormExtensions.BeginForm(System.Web.Mvc.HtmlHelper,System.Object)
   href: System.Web.Mvc.Html.FormExtensions.yml
@@ -78,7 +83,7 @@ items:
     startLine: 18
   syntax:
     content:
-      CSharp: public static MvcForm BeginForm(this HtmlHelper htmlHelper, object routeValues)
+      CSharp: public static MvcForm BeginForm(HtmlHelper htmlHelper, object routeValues)
     parameters:
     - id: htmlHelper
       type:
@@ -88,10 +93,14 @@ items:
     - id: routeValues
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: MvcForm
+      type:
+        id: System.Web.Mvc.Html.MvcForm
+        name: MvcForm
+        href: System.Web.Mvc.Html.MvcForm.yml
   id: System.Web.Mvc.Html.FormExtensions.BeginForm(System.Web.Mvc.HtmlHelper,System.Object)
 - uid: System.Web.Mvc.Html.FormExtensions.BeginForm(System.Web.Mvc.HtmlHelper,System.Web.Routing.RouteValueDictionary)
   href: System.Web.Mvc.Html.FormExtensions.yml
@@ -104,7 +113,7 @@ items:
     startLine: 23
   syntax:
     content:
-      CSharp: public static MvcForm BeginForm(this HtmlHelper htmlHelper, RouteValueDictionary routeValues)
+      CSharp: public static MvcForm BeginForm(HtmlHelper htmlHelper, RouteValueDictionary routeValues)
     parameters:
     - id: htmlHelper
       type:
@@ -114,10 +123,14 @@ items:
     - id: routeValues
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
     return:
       id: MvcForm
+      type:
+        id: System.Web.Mvc.Html.MvcForm
+        name: MvcForm
+        href: System.Web.Mvc.Html.MvcForm.yml
   id: System.Web.Mvc.Html.FormExtensions.BeginForm(System.Web.Mvc.HtmlHelper,System.Web.Routing.RouteValueDictionary)
 - uid: System.Web.Mvc.Html.FormExtensions.BeginForm(System.Web.Mvc.HtmlHelper,System.String,System.String)
   href: System.Web.Mvc.Html.FormExtensions.yml
@@ -130,7 +143,7 @@ items:
     startLine: 28
   syntax:
     content:
-      CSharp: public static MvcForm BeginForm(this HtmlHelper htmlHelper, string actionName, string controllerName)
+      CSharp: public static MvcForm BeginForm(HtmlHelper htmlHelper, string actionName, string controllerName)
     parameters:
     - id: htmlHelper
       type:
@@ -140,15 +153,19 @@ items:
     - id: actionName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: controllerName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: MvcForm
+      type:
+        id: System.Web.Mvc.Html.MvcForm
+        name: MvcForm
+        href: System.Web.Mvc.Html.MvcForm.yml
   id: System.Web.Mvc.Html.FormExtensions.BeginForm(System.Web.Mvc.HtmlHelper,System.String,System.String)
 - uid: System.Web.Mvc.Html.FormExtensions.BeginForm(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Object)
   href: System.Web.Mvc.Html.FormExtensions.yml
@@ -161,7 +178,7 @@ items:
     startLine: 33
   syntax:
     content:
-      CSharp: public static MvcForm BeginForm(this HtmlHelper htmlHelper, string actionName, string controllerName, object routeValues)
+      CSharp: public static MvcForm BeginForm(HtmlHelper htmlHelper, string actionName, string controllerName, object routeValues)
     parameters:
     - id: htmlHelper
       type:
@@ -171,20 +188,24 @@ items:
     - id: actionName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: controllerName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: routeValues
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: MvcForm
+      type:
+        id: System.Web.Mvc.Html.MvcForm
+        name: MvcForm
+        href: System.Web.Mvc.Html.MvcForm.yml
   id: System.Web.Mvc.Html.FormExtensions.BeginForm(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Object)
 - uid: System.Web.Mvc.Html.FormExtensions.BeginForm(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Web.Routing.RouteValueDictionary)
   href: System.Web.Mvc.Html.FormExtensions.yml
@@ -197,7 +218,7 @@ items:
     startLine: 38
   syntax:
     content:
-      CSharp: public static MvcForm BeginForm(this HtmlHelper htmlHelper, string actionName, string controllerName, RouteValueDictionary routeValues)
+      CSharp: public static MvcForm BeginForm(HtmlHelper htmlHelper, string actionName, string controllerName, RouteValueDictionary routeValues)
     parameters:
     - id: htmlHelper
       type:
@@ -207,20 +228,24 @@ items:
     - id: actionName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: controllerName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: routeValues
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
     return:
       id: MvcForm
+      type:
+        id: System.Web.Mvc.Html.MvcForm
+        name: MvcForm
+        href: System.Web.Mvc.Html.MvcForm.yml
   id: System.Web.Mvc.Html.FormExtensions.BeginForm(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Web.Routing.RouteValueDictionary)
 - uid: System.Web.Mvc.Html.FormExtensions.BeginForm(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Web.Mvc.FormMethod)
   href: System.Web.Mvc.Html.FormExtensions.yml
@@ -233,7 +258,7 @@ items:
     startLine: 43
   syntax:
     content:
-      CSharp: public static MvcForm BeginForm(this HtmlHelper htmlHelper, string actionName, string controllerName, FormMethod method)
+      CSharp: public static MvcForm BeginForm(HtmlHelper htmlHelper, string actionName, string controllerName, FormMethod method)
     parameters:
     - id: htmlHelper
       type:
@@ -243,12 +268,12 @@ items:
     - id: actionName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: controllerName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: method
       type:
@@ -257,6 +282,10 @@ items:
         href: System.Web.Mvc.FormMethod.yml
     return:
       id: MvcForm
+      type:
+        id: System.Web.Mvc.Html.MvcForm
+        name: MvcForm
+        href: System.Web.Mvc.Html.MvcForm.yml
   id: System.Web.Mvc.Html.FormExtensions.BeginForm(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Web.Mvc.FormMethod)
 - uid: System.Web.Mvc.Html.FormExtensions.BeginForm(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Object,System.Web.Mvc.FormMethod)
   href: System.Web.Mvc.Html.FormExtensions.yml
@@ -269,7 +298,7 @@ items:
     startLine: 48
   syntax:
     content:
-      CSharp: public static MvcForm BeginForm(this HtmlHelper htmlHelper, string actionName, string controllerName, object routeValues, FormMethod method)
+      CSharp: public static MvcForm BeginForm(HtmlHelper htmlHelper, string actionName, string controllerName, object routeValues, FormMethod method)
     parameters:
     - id: htmlHelper
       type:
@@ -279,17 +308,17 @@ items:
     - id: actionName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: controllerName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: routeValues
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     - id: method
       type:
@@ -298,6 +327,10 @@ items:
         href: System.Web.Mvc.FormMethod.yml
     return:
       id: MvcForm
+      type:
+        id: System.Web.Mvc.Html.MvcForm
+        name: MvcForm
+        href: System.Web.Mvc.Html.MvcForm.yml
   id: System.Web.Mvc.Html.FormExtensions.BeginForm(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Object,System.Web.Mvc.FormMethod)
 - uid: System.Web.Mvc.Html.FormExtensions.BeginForm(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Web.Routing.RouteValueDictionary,System.Web.Mvc.FormMethod)
   href: System.Web.Mvc.Html.FormExtensions.yml
@@ -310,7 +343,7 @@ items:
     startLine: 53
   syntax:
     content:
-      CSharp: public static MvcForm BeginForm(this HtmlHelper htmlHelper, string actionName, string controllerName, RouteValueDictionary routeValues, FormMethod method)
+      CSharp: public static MvcForm BeginForm(HtmlHelper htmlHelper, string actionName, string controllerName, RouteValueDictionary routeValues, FormMethod method)
     parameters:
     - id: htmlHelper
       type:
@@ -320,17 +353,17 @@ items:
     - id: actionName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: controllerName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: routeValues
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
     - id: method
       type:
@@ -339,6 +372,10 @@ items:
         href: System.Web.Mvc.FormMethod.yml
     return:
       id: MvcForm
+      type:
+        id: System.Web.Mvc.Html.MvcForm
+        name: MvcForm
+        href: System.Web.Mvc.Html.MvcForm.yml
   id: System.Web.Mvc.Html.FormExtensions.BeginForm(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Web.Routing.RouteValueDictionary,System.Web.Mvc.FormMethod)
 - uid: System.Web.Mvc.Html.FormExtensions.BeginForm(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Web.Mvc.FormMethod,System.Object)
   href: System.Web.Mvc.Html.FormExtensions.yml
@@ -351,7 +388,7 @@ items:
     startLine: 58
   syntax:
     content:
-      CSharp: public static MvcForm BeginForm(this HtmlHelper htmlHelper, string actionName, string controllerName, FormMethod method, object htmlAttributes)
+      CSharp: public static MvcForm BeginForm(HtmlHelper htmlHelper, string actionName, string controllerName, FormMethod method, object htmlAttributes)
     parameters:
     - id: htmlHelper
       type:
@@ -361,12 +398,12 @@ items:
     - id: actionName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: controllerName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: method
       type:
@@ -376,10 +413,14 @@ items:
     - id: htmlAttributes
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: MvcForm
+      type:
+        id: System.Web.Mvc.Html.MvcForm
+        name: MvcForm
+        href: System.Web.Mvc.Html.MvcForm.yml
   id: System.Web.Mvc.Html.FormExtensions.BeginForm(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Web.Mvc.FormMethod,System.Object)
 - uid: System.Web.Mvc.Html.FormExtensions.BeginForm(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Web.Mvc.FormMethod,System.Collections.Generic.IDictionary{System.String,System.Object})
   href: System.Web.Mvc.Html.FormExtensions.yml
@@ -392,7 +433,7 @@ items:
     startLine: 63
   syntax:
     content:
-      CSharp: public static MvcForm BeginForm(this HtmlHelper htmlHelper, string actionName, string controllerName, FormMethod method, IDictionary<string, object> htmlAttributes)
+      CSharp: public static MvcForm BeginForm(HtmlHelper htmlHelper, string actionName, string controllerName, FormMethod method, IDictionary<string, object> htmlAttributes)
     parameters:
     - id: htmlHelper
       type:
@@ -402,12 +443,12 @@ items:
     - id: actionName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: controllerName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: method
       type:
@@ -417,10 +458,14 @@ items:
     - id: htmlAttributes
       type:
         id: System.Collections.Generic.IDictionary{System.String,System.Object}
-        name: System.Collections.Generic.IDictionary{System.String,System.Object}
+        name: IDictionary<string, object>
         isExternal: true
     return:
       id: MvcForm
+      type:
+        id: System.Web.Mvc.Html.MvcForm
+        name: MvcForm
+        href: System.Web.Mvc.Html.MvcForm.yml
   id: System.Web.Mvc.Html.FormExtensions.BeginForm(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Web.Mvc.FormMethod,System.Collections.Generic.IDictionary{System.String,System.Object})
 - uid: System.Web.Mvc.Html.FormExtensions.BeginForm(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Object,System.Web.Mvc.FormMethod,System.Object)
   href: System.Web.Mvc.Html.FormExtensions.yml
@@ -433,7 +478,7 @@ items:
     startLine: 68
   syntax:
     content:
-      CSharp: public static MvcForm BeginForm(this HtmlHelper htmlHelper, string actionName, string controllerName, object routeValues, FormMethod method, object htmlAttributes)
+      CSharp: public static MvcForm BeginForm(HtmlHelper htmlHelper, string actionName, string controllerName, object routeValues, FormMethod method, object htmlAttributes)
     parameters:
     - id: htmlHelper
       type:
@@ -443,17 +488,17 @@ items:
     - id: actionName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: controllerName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: routeValues
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     - id: method
       type:
@@ -463,10 +508,14 @@ items:
     - id: htmlAttributes
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: MvcForm
+      type:
+        id: System.Web.Mvc.Html.MvcForm
+        name: MvcForm
+        href: System.Web.Mvc.Html.MvcForm.yml
   id: System.Web.Mvc.Html.FormExtensions.BeginForm(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Object,System.Web.Mvc.FormMethod,System.Object)
 - uid: System.Web.Mvc.Html.FormExtensions.BeginForm(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Web.Routing.RouteValueDictionary,System.Web.Mvc.FormMethod,System.Collections.Generic.IDictionary{System.String,System.Object})
   href: System.Web.Mvc.Html.FormExtensions.yml
@@ -479,7 +528,7 @@ items:
     startLine: 73
   syntax:
     content:
-      CSharp: public static MvcForm BeginForm(this HtmlHelper htmlHelper, string actionName, string controllerName, RouteValueDictionary routeValues, FormMethod method, IDictionary<string, object> htmlAttributes)
+      CSharp: public static MvcForm BeginForm(HtmlHelper htmlHelper, string actionName, string controllerName, RouteValueDictionary routeValues, FormMethod method, IDictionary<string, object> htmlAttributes)
     parameters:
     - id: htmlHelper
       type:
@@ -489,17 +538,17 @@ items:
     - id: actionName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: controllerName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: routeValues
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
     - id: method
       type:
@@ -509,10 +558,14 @@ items:
     - id: htmlAttributes
       type:
         id: System.Collections.Generic.IDictionary{System.String,System.Object}
-        name: System.Collections.Generic.IDictionary{System.String,System.Object}
+        name: IDictionary<string, object>
         isExternal: true
     return:
       id: MvcForm
+      type:
+        id: System.Web.Mvc.Html.MvcForm
+        name: MvcForm
+        href: System.Web.Mvc.Html.MvcForm.yml
   id: System.Web.Mvc.Html.FormExtensions.BeginForm(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Web.Routing.RouteValueDictionary,System.Web.Mvc.FormMethod,System.Collections.Generic.IDictionary{System.String,System.Object})
 - uid: System.Web.Mvc.Html.FormExtensions.BeginRouteForm(System.Web.Mvc.HtmlHelper,System.Object)
   href: System.Web.Mvc.Html.FormExtensions.yml
@@ -525,7 +578,7 @@ items:
     startLine: 79
   syntax:
     content:
-      CSharp: public static MvcForm BeginRouteForm(this HtmlHelper htmlHelper, object routeValues)
+      CSharp: public static MvcForm BeginRouteForm(HtmlHelper htmlHelper, object routeValues)
     parameters:
     - id: htmlHelper
       type:
@@ -535,10 +588,14 @@ items:
     - id: routeValues
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: MvcForm
+      type:
+        id: System.Web.Mvc.Html.MvcForm
+        name: MvcForm
+        href: System.Web.Mvc.Html.MvcForm.yml
   id: System.Web.Mvc.Html.FormExtensions.BeginRouteForm(System.Web.Mvc.HtmlHelper,System.Object)
 - uid: System.Web.Mvc.Html.FormExtensions.BeginRouteForm(System.Web.Mvc.HtmlHelper,System.Web.Routing.RouteValueDictionary)
   href: System.Web.Mvc.Html.FormExtensions.yml
@@ -551,7 +608,7 @@ items:
     startLine: 84
   syntax:
     content:
-      CSharp: public static MvcForm BeginRouteForm(this HtmlHelper htmlHelper, RouteValueDictionary routeValues)
+      CSharp: public static MvcForm BeginRouteForm(HtmlHelper htmlHelper, RouteValueDictionary routeValues)
     parameters:
     - id: htmlHelper
       type:
@@ -561,10 +618,14 @@ items:
     - id: routeValues
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
     return:
       id: MvcForm
+      type:
+        id: System.Web.Mvc.Html.MvcForm
+        name: MvcForm
+        href: System.Web.Mvc.Html.MvcForm.yml
   id: System.Web.Mvc.Html.FormExtensions.BeginRouteForm(System.Web.Mvc.HtmlHelper,System.Web.Routing.RouteValueDictionary)
 - uid: System.Web.Mvc.Html.FormExtensions.BeginRouteForm(System.Web.Mvc.HtmlHelper,System.String)
   href: System.Web.Mvc.Html.FormExtensions.yml
@@ -577,7 +638,7 @@ items:
     startLine: 89
   syntax:
     content:
-      CSharp: public static MvcForm BeginRouteForm(this HtmlHelper htmlHelper, string routeName)
+      CSharp: public static MvcForm BeginRouteForm(HtmlHelper htmlHelper, string routeName)
     parameters:
     - id: htmlHelper
       type:
@@ -587,10 +648,14 @@ items:
     - id: routeName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: MvcForm
+      type:
+        id: System.Web.Mvc.Html.MvcForm
+        name: MvcForm
+        href: System.Web.Mvc.Html.MvcForm.yml
   id: System.Web.Mvc.Html.FormExtensions.BeginRouteForm(System.Web.Mvc.HtmlHelper,System.String)
 - uid: System.Web.Mvc.Html.FormExtensions.BeginRouteForm(System.Web.Mvc.HtmlHelper,System.String,System.Object)
   href: System.Web.Mvc.Html.FormExtensions.yml
@@ -603,7 +668,7 @@ items:
     startLine: 94
   syntax:
     content:
-      CSharp: public static MvcForm BeginRouteForm(this HtmlHelper htmlHelper, string routeName, object routeValues)
+      CSharp: public static MvcForm BeginRouteForm(HtmlHelper htmlHelper, string routeName, object routeValues)
     parameters:
     - id: htmlHelper
       type:
@@ -613,15 +678,19 @@ items:
     - id: routeName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: routeValues
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: MvcForm
+      type:
+        id: System.Web.Mvc.Html.MvcForm
+        name: MvcForm
+        href: System.Web.Mvc.Html.MvcForm.yml
   id: System.Web.Mvc.Html.FormExtensions.BeginRouteForm(System.Web.Mvc.HtmlHelper,System.String,System.Object)
 - uid: System.Web.Mvc.Html.FormExtensions.BeginRouteForm(System.Web.Mvc.HtmlHelper,System.String,System.Web.Routing.RouteValueDictionary)
   href: System.Web.Mvc.Html.FormExtensions.yml
@@ -634,7 +703,7 @@ items:
     startLine: 99
   syntax:
     content:
-      CSharp: public static MvcForm BeginRouteForm(this HtmlHelper htmlHelper, string routeName, RouteValueDictionary routeValues)
+      CSharp: public static MvcForm BeginRouteForm(HtmlHelper htmlHelper, string routeName, RouteValueDictionary routeValues)
     parameters:
     - id: htmlHelper
       type:
@@ -644,15 +713,19 @@ items:
     - id: routeName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: routeValues
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
     return:
       id: MvcForm
+      type:
+        id: System.Web.Mvc.Html.MvcForm
+        name: MvcForm
+        href: System.Web.Mvc.Html.MvcForm.yml
   id: System.Web.Mvc.Html.FormExtensions.BeginRouteForm(System.Web.Mvc.HtmlHelper,System.String,System.Web.Routing.RouteValueDictionary)
 - uid: System.Web.Mvc.Html.FormExtensions.BeginRouteForm(System.Web.Mvc.HtmlHelper,System.String,System.Web.Mvc.FormMethod)
   href: System.Web.Mvc.Html.FormExtensions.yml
@@ -665,7 +738,7 @@ items:
     startLine: 104
   syntax:
     content:
-      CSharp: public static MvcForm BeginRouteForm(this HtmlHelper htmlHelper, string routeName, FormMethod method)
+      CSharp: public static MvcForm BeginRouteForm(HtmlHelper htmlHelper, string routeName, FormMethod method)
     parameters:
     - id: htmlHelper
       type:
@@ -675,7 +748,7 @@ items:
     - id: routeName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: method
       type:
@@ -684,6 +757,10 @@ items:
         href: System.Web.Mvc.FormMethod.yml
     return:
       id: MvcForm
+      type:
+        id: System.Web.Mvc.Html.MvcForm
+        name: MvcForm
+        href: System.Web.Mvc.Html.MvcForm.yml
   id: System.Web.Mvc.Html.FormExtensions.BeginRouteForm(System.Web.Mvc.HtmlHelper,System.String,System.Web.Mvc.FormMethod)
 - uid: System.Web.Mvc.Html.FormExtensions.BeginRouteForm(System.Web.Mvc.HtmlHelper,System.String,System.Object,System.Web.Mvc.FormMethod)
   href: System.Web.Mvc.Html.FormExtensions.yml
@@ -696,7 +773,7 @@ items:
     startLine: 109
   syntax:
     content:
-      CSharp: public static MvcForm BeginRouteForm(this HtmlHelper htmlHelper, string routeName, object routeValues, FormMethod method)
+      CSharp: public static MvcForm BeginRouteForm(HtmlHelper htmlHelper, string routeName, object routeValues, FormMethod method)
     parameters:
     - id: htmlHelper
       type:
@@ -706,12 +783,12 @@ items:
     - id: routeName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: routeValues
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     - id: method
       type:
@@ -720,6 +797,10 @@ items:
         href: System.Web.Mvc.FormMethod.yml
     return:
       id: MvcForm
+      type:
+        id: System.Web.Mvc.Html.MvcForm
+        name: MvcForm
+        href: System.Web.Mvc.Html.MvcForm.yml
   id: System.Web.Mvc.Html.FormExtensions.BeginRouteForm(System.Web.Mvc.HtmlHelper,System.String,System.Object,System.Web.Mvc.FormMethod)
 - uid: System.Web.Mvc.Html.FormExtensions.BeginRouteForm(System.Web.Mvc.HtmlHelper,System.String,System.Web.Routing.RouteValueDictionary,System.Web.Mvc.FormMethod)
   href: System.Web.Mvc.Html.FormExtensions.yml
@@ -732,7 +813,7 @@ items:
     startLine: 114
   syntax:
     content:
-      CSharp: public static MvcForm BeginRouteForm(this HtmlHelper htmlHelper, string routeName, RouteValueDictionary routeValues, FormMethod method)
+      CSharp: public static MvcForm BeginRouteForm(HtmlHelper htmlHelper, string routeName, RouteValueDictionary routeValues, FormMethod method)
     parameters:
     - id: htmlHelper
       type:
@@ -742,12 +823,12 @@ items:
     - id: routeName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: routeValues
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
     - id: method
       type:
@@ -756,6 +837,10 @@ items:
         href: System.Web.Mvc.FormMethod.yml
     return:
       id: MvcForm
+      type:
+        id: System.Web.Mvc.Html.MvcForm
+        name: MvcForm
+        href: System.Web.Mvc.Html.MvcForm.yml
   id: System.Web.Mvc.Html.FormExtensions.BeginRouteForm(System.Web.Mvc.HtmlHelper,System.String,System.Web.Routing.RouteValueDictionary,System.Web.Mvc.FormMethod)
 - uid: System.Web.Mvc.Html.FormExtensions.BeginRouteForm(System.Web.Mvc.HtmlHelper,System.String,System.Web.Mvc.FormMethod,System.Object)
   href: System.Web.Mvc.Html.FormExtensions.yml
@@ -768,7 +853,7 @@ items:
     startLine: 119
   syntax:
     content:
-      CSharp: public static MvcForm BeginRouteForm(this HtmlHelper htmlHelper, string routeName, FormMethod method, object htmlAttributes)
+      CSharp: public static MvcForm BeginRouteForm(HtmlHelper htmlHelper, string routeName, FormMethod method, object htmlAttributes)
     parameters:
     - id: htmlHelper
       type:
@@ -778,7 +863,7 @@ items:
     - id: routeName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: method
       type:
@@ -788,10 +873,14 @@ items:
     - id: htmlAttributes
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: MvcForm
+      type:
+        id: System.Web.Mvc.Html.MvcForm
+        name: MvcForm
+        href: System.Web.Mvc.Html.MvcForm.yml
   id: System.Web.Mvc.Html.FormExtensions.BeginRouteForm(System.Web.Mvc.HtmlHelper,System.String,System.Web.Mvc.FormMethod,System.Object)
 - uid: System.Web.Mvc.Html.FormExtensions.BeginRouteForm(System.Web.Mvc.HtmlHelper,System.String,System.Web.Mvc.FormMethod,System.Collections.Generic.IDictionary{System.String,System.Object})
   href: System.Web.Mvc.Html.FormExtensions.yml
@@ -804,7 +893,7 @@ items:
     startLine: 124
   syntax:
     content:
-      CSharp: public static MvcForm BeginRouteForm(this HtmlHelper htmlHelper, string routeName, FormMethod method, IDictionary<string, object> htmlAttributes)
+      CSharp: public static MvcForm BeginRouteForm(HtmlHelper htmlHelper, string routeName, FormMethod method, IDictionary<string, object> htmlAttributes)
     parameters:
     - id: htmlHelper
       type:
@@ -814,7 +903,7 @@ items:
     - id: routeName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: method
       type:
@@ -824,10 +913,14 @@ items:
     - id: htmlAttributes
       type:
         id: System.Collections.Generic.IDictionary{System.String,System.Object}
-        name: System.Collections.Generic.IDictionary{System.String,System.Object}
+        name: IDictionary<string, object>
         isExternal: true
     return:
       id: MvcForm
+      type:
+        id: System.Web.Mvc.Html.MvcForm
+        name: MvcForm
+        href: System.Web.Mvc.Html.MvcForm.yml
   id: System.Web.Mvc.Html.FormExtensions.BeginRouteForm(System.Web.Mvc.HtmlHelper,System.String,System.Web.Mvc.FormMethod,System.Collections.Generic.IDictionary{System.String,System.Object})
 - uid: System.Web.Mvc.Html.FormExtensions.BeginRouteForm(System.Web.Mvc.HtmlHelper,System.String,System.Object,System.Web.Mvc.FormMethod,System.Object)
   href: System.Web.Mvc.Html.FormExtensions.yml
@@ -840,7 +933,7 @@ items:
     startLine: 129
   syntax:
     content:
-      CSharp: public static MvcForm BeginRouteForm(this HtmlHelper htmlHelper, string routeName, object routeValues, FormMethod method, object htmlAttributes)
+      CSharp: public static MvcForm BeginRouteForm(HtmlHelper htmlHelper, string routeName, object routeValues, FormMethod method, object htmlAttributes)
     parameters:
     - id: htmlHelper
       type:
@@ -850,12 +943,12 @@ items:
     - id: routeName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: routeValues
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     - id: method
       type:
@@ -865,10 +958,14 @@ items:
     - id: htmlAttributes
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: MvcForm
+      type:
+        id: System.Web.Mvc.Html.MvcForm
+        name: MvcForm
+        href: System.Web.Mvc.Html.MvcForm.yml
   id: System.Web.Mvc.Html.FormExtensions.BeginRouteForm(System.Web.Mvc.HtmlHelper,System.String,System.Object,System.Web.Mvc.FormMethod,System.Object)
 - uid: System.Web.Mvc.Html.FormExtensions.BeginRouteForm(System.Web.Mvc.HtmlHelper,System.String,System.Web.Routing.RouteValueDictionary,System.Web.Mvc.FormMethod,System.Collections.Generic.IDictionary{System.String,System.Object})
   href: System.Web.Mvc.Html.FormExtensions.yml
@@ -881,7 +978,7 @@ items:
     startLine: 134
   syntax:
     content:
-      CSharp: public static MvcForm BeginRouteForm(this HtmlHelper htmlHelper, string routeName, RouteValueDictionary routeValues, FormMethod method, IDictionary<string, object> htmlAttributes)
+      CSharp: public static MvcForm BeginRouteForm(HtmlHelper htmlHelper, string routeName, RouteValueDictionary routeValues, FormMethod method, IDictionary<string, object> htmlAttributes)
     parameters:
     - id: htmlHelper
       type:
@@ -891,12 +988,12 @@ items:
     - id: routeName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: routeValues
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
     - id: method
       type:
@@ -906,10 +1003,14 @@ items:
     - id: htmlAttributes
       type:
         id: System.Collections.Generic.IDictionary{System.String,System.Object}
-        name: System.Collections.Generic.IDictionary{System.String,System.Object}
+        name: IDictionary<string, object>
         isExternal: true
     return:
       id: MvcForm
+      type:
+        id: System.Web.Mvc.Html.MvcForm
+        name: MvcForm
+        href: System.Web.Mvc.Html.MvcForm.yml
   id: System.Web.Mvc.Html.FormExtensions.BeginRouteForm(System.Web.Mvc.HtmlHelper,System.String,System.Web.Routing.RouteValueDictionary,System.Web.Mvc.FormMethod,System.Collections.Generic.IDictionary{System.String,System.Object})
 - uid: System.Web.Mvc.Html.FormExtensions.EndForm(System.Web.Mvc.HtmlHelper)
   href: System.Web.Mvc.Html.FormExtensions.yml
@@ -922,7 +1023,7 @@ items:
     startLine: 140
   syntax:
     content:
-      CSharp: public static void EndForm(this HtmlHelper htmlHelper)
+      CSharp: public static void EndForm(HtmlHelper htmlHelper)
     parameters:
     - id: htmlHelper
       type:

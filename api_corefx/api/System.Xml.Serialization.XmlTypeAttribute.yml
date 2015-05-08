@@ -6,16 +6,21 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlTypeAttribute.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlTypeAttribute.cs
     startLine: 15
   syntax:
     content:
-      CSharp: public class XmlTypeAttribute
+      CSharp: 'public class XmlTypeAttribute : Attribute, _Attribute'
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.Attribute
-    name: System.Attribute
+    name: Attribute
     isExternal: true
   id: System.Xml.Serialization.XmlTypeAttribute
   children:
@@ -55,7 +60,7 @@ items:
     - id: typeName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.Serialization.XmlTypeAttribute.#ctor(System.String)
 - uid: System.Xml.Serialization.XmlTypeAttribute.AnonymousType
@@ -74,7 +79,7 @@ items:
     - id: AnonymousType
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Xml.Serialization.XmlTypeAttribute.AnonymousType
 - uid: System.Xml.Serialization.XmlTypeAttribute.IncludeInSchema
@@ -93,7 +98,7 @@ items:
     - id: IncludeInSchema
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Xml.Serialization.XmlTypeAttribute.IncludeInSchema
 - uid: System.Xml.Serialization.XmlTypeAttribute.TypeName
@@ -112,7 +117,7 @@ items:
     - id: TypeName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.Serialization.XmlTypeAttribute.TypeName
 - uid: System.Xml.Serialization.XmlTypeAttribute.Namespace
@@ -131,6 +136,6 @@ items:
     - id: Namespace
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.Serialization.XmlTypeAttribute.Namespace

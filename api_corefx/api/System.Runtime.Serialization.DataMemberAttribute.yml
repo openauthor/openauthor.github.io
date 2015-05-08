@@ -6,15 +6,20 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Runtime.Serialization.Primitives/src/System/Runtime/Serialization/DataMemberAttribute.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Runtime.Serialization.Primitives/src/System/Runtime/Serialization/DataMemberAttribute.cs
     startLine: 5
   syntax:
     content:
-      CSharp: public sealed class DataMemberAttribute
+      CSharp: 'public sealed class DataMemberAttribute : Attribute, _Attribute'
   inheritance:
-  - id: Attribute
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.Attribute
     name: Attribute
     isExternal: true
   id: System.Runtime.Serialization.DataMemberAttribute
@@ -55,7 +60,7 @@ items:
     - id: Name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Runtime.Serialization.DataMemberAttribute.Name
 - uid: System.Runtime.Serialization.DataMemberAttribute.IsNameSetExplicitly
@@ -74,7 +79,7 @@ items:
     - id: IsNameSetExplicitly
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Runtime.Serialization.DataMemberAttribute.IsNameSetExplicitly
 - uid: System.Runtime.Serialization.DataMemberAttribute.Order
@@ -93,7 +98,7 @@ items:
     - id: Order
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Runtime.Serialization.DataMemberAttribute.Order
 - uid: System.Runtime.Serialization.DataMemberAttribute.IsRequired
@@ -112,7 +117,7 @@ items:
     - id: IsRequired
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Runtime.Serialization.DataMemberAttribute.IsRequired
 - uid: System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue
@@ -131,6 +136,6 @@ items:
     - id: EmitDefaultValue
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue

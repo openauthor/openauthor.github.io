@@ -6,39 +6,44 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 2210
+    startLine: 2837
   syntax:
     content:
-      CSharp: public struct BlobHandle
+      CSharp: 'public struct BlobHandle : IEquatable<BlobHandle>'
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Reflection.Metadata.BlobHandle
   children:
   - System.Reflection.Metadata.BlobHandle.op_Implicit(System.Reflection.Metadata.BlobHandle)~System.Reflection.Metadata.Handle
   - System.Reflection.Metadata.BlobHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.BlobHandle
   - System.Reflection.Metadata.BlobHandle.IsNil
-  - System.Reflection.Metadata.BlobHandle.op_Equality(System.Reflection.Metadata.BlobHandle,System.Reflection.Metadata.BlobHandle)
   - System.Reflection.Metadata.BlobHandle.Equals(System.Object)
   - System.Reflection.Metadata.BlobHandle.Equals(System.Reflection.Metadata.BlobHandle)
   - System.Reflection.Metadata.BlobHandle.GetHashCode
+  - System.Reflection.Metadata.BlobHandle.op_Equality(System.Reflection.Metadata.BlobHandle,System.Reflection.Metadata.BlobHandle)
   - System.Reflection.Metadata.BlobHandle.op_Inequality(System.Reflection.Metadata.BlobHandle,System.Reflection.Metadata.BlobHandle)
 - uid: System.Reflection.Metadata.BlobHandle.op_Implicit(System.Reflection.Metadata.BlobHandle)~System.Reflection.Metadata.Handle
   href: System.Reflection.Metadata.BlobHandle.yml
   name: implicit operator Handle(BlobHandle)
   fullName: System.Reflection.Metadata.BlobHandle.implicit operator System.Reflection.Metadata.Handle(System.Reflection.Metadata.BlobHandle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 2269
+    startLine: 2892
   syntax:
     content:
-      CSharp: public static implicit operator Handle(BlobHandle handle) { return new Handle(handle._token); }
+      CSharp: public static implicit operator Handle(BlobHandle handle)
     parameters:
     - id: handle
       type:
@@ -47,19 +52,23 @@ items:
         href: System.Reflection.Metadata.BlobHandle.yml
     return:
       id: Handle
+      type:
+        id: System.Reflection.Metadata.Handle
+        name: Handle
+        href: System.Reflection.Metadata.Handle.yml
   id: System.Reflection.Metadata.BlobHandle.op_Implicit(System.Reflection.Metadata.BlobHandle)~System.Reflection.Metadata.Handle
 - uid: System.Reflection.Metadata.BlobHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.BlobHandle
   href: System.Reflection.Metadata.BlobHandle.yml
   name: explicit operator BlobHandle(Handle)
   fullName: System.Reflection.Metadata.BlobHandle.explicit operator System.Reflection.Metadata.BlobHandle(System.Reflection.Metadata.Handle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 2274
+    startLine: 2900
   syntax:
     content:
-      CSharp: public static explicit operator BlobHandle(Handle handle) { if (handle.TokenType != tokenType) { Handle.ThrowInvalidCast(); } return new BlobHandle(handle.value); }
+      CSharp: public static explicit operator BlobHandle(Handle handle)
     parameters:
     - id: handle
       type:
@@ -68,6 +77,10 @@ items:
         href: System.Reflection.Metadata.Handle.yml
     return:
       id: BlobHandle
+      type:
+        id: System.Reflection.Metadata.BlobHandle
+        name: BlobHandle
+        href: System.Reflection.Metadata.BlobHandle.yml
   id: System.Reflection.Metadata.BlobHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.BlobHandle
 - uid: System.Reflection.Metadata.BlobHandle.IsNil
   href: System.Reflection.Metadata.BlobHandle.yml
@@ -77,7 +90,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 2284
+    startLine: 2912
   syntax:
     content:
       CSharp: public bool IsNil { get; }
@@ -85,35 +98,9 @@ items:
     - id: IsNil
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Reflection.Metadata.BlobHandle.IsNil
-- uid: System.Reflection.Metadata.BlobHandle.op_Equality(System.Reflection.Metadata.BlobHandle,System.Reflection.Metadata.BlobHandle)
-  href: System.Reflection.Metadata.BlobHandle.yml
-  name: operator ==(BlobHandle, BlobHandle)
-  fullName: System.Reflection.Metadata.BlobHandle.operator ==(System.Reflection.Metadata.BlobHandle, System.Reflection.Metadata.BlobHandle)
-  type: Method
-  source:
-    remote: *o0
-    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 2320
-  syntax:
-    content:
-      CSharp: public static bool operator ==(BlobHandle left, BlobHandle right) { return left._token == right._token; }
-    parameters:
-    - id: left
-      type:
-        id: System.Reflection.Metadata.BlobHandle
-        name: BlobHandle
-        href: System.Reflection.Metadata.BlobHandle.yml
-    - id: right
-      type:
-        id: System.Reflection.Metadata.BlobHandle
-        name: BlobHandle
-        href: System.Reflection.Metadata.BlobHandle.yml
-    return:
-      id: Boolean
-  id: System.Reflection.Metadata.BlobHandle.op_Equality(System.Reflection.Metadata.BlobHandle,System.Reflection.Metadata.BlobHandle)
 - uid: System.Reflection.Metadata.BlobHandle.Equals(System.Object)
   href: System.Reflection.Metadata.BlobHandle.yml
   name: Equals(object)
@@ -122,7 +109,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 2325
+    startLine: 2939
   syntax:
     content:
       CSharp: public override bool Equals(object obj)
@@ -130,10 +117,14 @@ items:
     - id: obj
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.BlobHandle.Equals(System.Object)
 - uid: System.Reflection.Metadata.BlobHandle.Equals(System.Reflection.Metadata.BlobHandle)
   href: System.Reflection.Metadata.BlobHandle.yml
@@ -143,7 +134,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 2330
+    startLine: 2944
   syntax:
     content:
       CSharp: public bool Equals(BlobHandle other)
@@ -155,6 +146,10 @@ items:
         href: System.Reflection.Metadata.BlobHandle.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.BlobHandle.Equals(System.Reflection.Metadata.BlobHandle)
 - uid: System.Reflection.Metadata.BlobHandle.GetHashCode
   href: System.Reflection.Metadata.BlobHandle.yml
@@ -164,26 +159,30 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 2335
+    startLine: 2949
   syntax:
     content:
       CSharp: public override int GetHashCode()
     parameters: []
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: System.Reflection.Metadata.BlobHandle.GetHashCode
-- uid: System.Reflection.Metadata.BlobHandle.op_Inequality(System.Reflection.Metadata.BlobHandle,System.Reflection.Metadata.BlobHandle)
+- uid: System.Reflection.Metadata.BlobHandle.op_Equality(System.Reflection.Metadata.BlobHandle,System.Reflection.Metadata.BlobHandle)
   href: System.Reflection.Metadata.BlobHandle.yml
-  name: operator !=(BlobHandle, BlobHandle)
-  fullName: System.Reflection.Metadata.BlobHandle.operator !=(System.Reflection.Metadata.BlobHandle, System.Reflection.Metadata.BlobHandle)
-  type: Method
+  name: operator ==(BlobHandle, BlobHandle)
+  fullName: System.Reflection.Metadata.BlobHandle.operator ==(System.Reflection.Metadata.BlobHandle, System.Reflection.Metadata.BlobHandle)
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 2340
+    startLine: 2954
   syntax:
     content:
-      CSharp: public static bool operator !=(BlobHandle left, BlobHandle right) { return left._token != right._token; }
+      CSharp: public static bool operator ==(BlobHandle left, BlobHandle right)
     parameters:
     - id: left
       type:
@@ -197,4 +196,38 @@ items:
         href: System.Reflection.Metadata.BlobHandle.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Reflection.Metadata.BlobHandle.op_Equality(System.Reflection.Metadata.BlobHandle,System.Reflection.Metadata.BlobHandle)
+- uid: System.Reflection.Metadata.BlobHandle.op_Inequality(System.Reflection.Metadata.BlobHandle,System.Reflection.Metadata.BlobHandle)
+  href: System.Reflection.Metadata.BlobHandle.yml
+  name: operator !=(BlobHandle, BlobHandle)
+  fullName: System.Reflection.Metadata.BlobHandle.operator !=(System.Reflection.Metadata.BlobHandle, System.Reflection.Metadata.BlobHandle)
+  type: Operator
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 2959
+  syntax:
+    content:
+      CSharp: public static bool operator !=(BlobHandle left, BlobHandle right)
+    parameters:
+    - id: left
+      type:
+        id: System.Reflection.Metadata.BlobHandle
+        name: BlobHandle
+        href: System.Reflection.Metadata.BlobHandle.yml
+    - id: right
+      type:
+        id: System.Reflection.Metadata.BlobHandle
+        name: BlobHandle
+        href: System.Reflection.Metadata.BlobHandle.yml
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.BlobHandle.op_Inequality(System.Reflection.Metadata.BlobHandle,System.Reflection.Metadata.BlobHandle)

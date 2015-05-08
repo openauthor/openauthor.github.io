@@ -6,16 +6,21 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/AssemblyReference.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/AssemblyReference.cs
     startLine: 8
   syntax:
     content:
       CSharp: public struct AssemblyReference
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Reflection.Metadata.AssemblyReference
   children:
@@ -41,7 +46,7 @@ items:
     parameters:
     - id: Version
       type:
-        id: Version
+        id: System.Version
         name: Version
         isExternal: true
   id: System.Reflection.Metadata.AssemblyReference.Version
@@ -155,4 +160,8 @@ items:
     parameters: []
     return:
       id: CustomAttributeHandleCollection
+      type:
+        id: System.Reflection.Metadata.CustomAttributeHandleCollection
+        name: CustomAttributeHandleCollection
+        href: System.Reflection.Metadata.CustomAttributeHandleCollection.yml
   id: System.Reflection.Metadata.AssemblyReference.GetCustomAttributes

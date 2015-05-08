@@ -6,17 +6,19 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Threading.Tasks.Dataflow/src/Blocks/JoinBlock.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Threading.Tasks.Dataflow/src/Blocks/JoinBlock.cs
     startLine: 261
   summary: "Provides a dataflow block that joins across multiple dataflow sources, not necessarily of the same type,\r\nwaiting for one item to arrive for each type before they’re all released together as a tuple of one item per type."
   syntax:
     content:
-      CSharp: public sealed class JoinBlock<T1, T2, T3>
+      CSharp: 'public sealed class JoinBlock<T1, T2, T3> : IReceivableSourceBlock<Tuple<T1, T2, T3>>, ISourceBlock<Tuple<T1, T2, T3>>, IDataflowBlock, IDebuggerDisplay'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Threading.Tasks.Dataflow.JoinBlock`3
   children:
@@ -28,9 +30,13 @@ items:
   - System.Threading.Tasks.Dataflow.JoinBlock`3.OutputCount
   - System.Threading.Tasks.Dataflow.JoinBlock`3.Completion
   - System.Threading.Tasks.Dataflow.JoinBlock`3.Complete
+  - System.Threading.Tasks.Dataflow.JoinBlock`3.System#Threading#Tasks#Dataflow#IDataflowBlock#Fault(System.Exception)
   - System.Threading.Tasks.Dataflow.JoinBlock`3.Target1
   - System.Threading.Tasks.Dataflow.JoinBlock`3.Target2
   - System.Threading.Tasks.Dataflow.JoinBlock`3.Target3
+  - System.Threading.Tasks.Dataflow.JoinBlock`3.System#Threading#Tasks#Dataflow#ISourceBlock{System#Tuple{T1,T2,T3}}#ConsumeMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{System.Tuple{`0,`1,`2}},System.Boolean@)
+  - System.Threading.Tasks.Dataflow.JoinBlock`3.System#Threading#Tasks#Dataflow#ISourceBlock{System#Tuple{T1,T2,T3}}#ReserveMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{System.Tuple{`0,`1,`2}})
+  - System.Threading.Tasks.Dataflow.JoinBlock`3.System#Threading#Tasks#Dataflow#ISourceBlock{System#Tuple{T1,T2,T3}}#ReleaseReservation(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{System.Tuple{`0,`1,`2}})
   - System.Threading.Tasks.Dataflow.JoinBlock`3.ToString
 - uid: System.Threading.Tasks.Dataflow.JoinBlock`3.#ctor
   href: System.Threading.Tasks.Dataflow.JoinBlock`3.yml
@@ -84,7 +90,7 @@ items:
     - id: target
       type:
         id: System.Threading.Tasks.Dataflow.ITargetBlock{System.Tuple{`0,`1,`2}}
-        name: ITargetBlock
+        name: ITargetBlock<Tuple<T1, T2, T3>>
         href: System.Threading.Tasks.Dataflow.ITargetBlock{System.Tuple{`0,`1,`2}}
     - id: linkOptions
       type:
@@ -93,6 +99,10 @@ items:
         href: System.Threading.Tasks.Dataflow.DataflowLinkOptions.yml
     return:
       id: IDisposable
+      type:
+        id: System.IDisposable
+        name: IDisposable
+        isExternal: true
   id: System.Threading.Tasks.Dataflow.JoinBlock`3.LinkTo(System.Threading.Tasks.Dataflow.ITargetBlock{System.Tuple{`0,`1,`2}},System.Threading.Tasks.Dataflow.DataflowLinkOptions)
 - uid: System.Threading.Tasks.Dataflow.JoinBlock`3.TryReceive(System.Predicate{System.Tuple{`0,`1,`2}},System.Tuple{`0,`1,`2}@)
   href: System.Threading.Tasks.Dataflow.JoinBlock`3.yml
@@ -105,20 +115,24 @@ items:
     startLine: 353
   syntax:
     content:
-      CSharp: public Boolean TryReceive(Predicate<Tuple<T1, T2, T3>> filter, out Tuple<T1, T2, T3> item)
+      CSharp: public bool TryReceive(Predicate<Tuple<T1, T2, T3>> filter, out Tuple<T1, T2, T3> item)
     parameters:
     - id: filter
       type:
         id: System.Predicate{System.Tuple{`0,`1,`2}}
-        name: System.Predicate{System.Tuple{`0,`1,`2}}
+        name: Predicate<Tuple<T1, T2, T3>>
         isExternal: true
     - id: item
       type:
         id: System.Tuple{`0,`1,`2}
-        name: System.Tuple{`0,`1,`2}
+        name: Tuple<T1, T2, T3>
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Threading.Tasks.Dataflow.JoinBlock`3.TryReceive(System.Predicate{System.Tuple{`0,`1,`2}},System.Tuple{`0,`1,`2}@)
 - uid: System.Threading.Tasks.Dataflow.JoinBlock`3.TryReceiveAll(System.Collections.Generic.IList{System.Tuple{`0,`1,`2}}@)
   href: System.Threading.Tasks.Dataflow.JoinBlock`3.yml
@@ -131,15 +145,19 @@ items:
     startLine: 359
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures")] public bool TryReceiveAll(out IList<Tuple<T1, T2, T3>> items)'
+      CSharp: public bool TryReceiveAll(out IList<Tuple<T1, T2, T3>> items)
     parameters:
     - id: items
       type:
         id: System.Collections.Generic.IList{System.Tuple{`0,`1,`2}}
-        name: System.Collections.Generic.IList{System.Tuple{`0,`1,`2}}
+        name: IList<Tuple<T1, T2, T3>>
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Threading.Tasks.Dataflow.JoinBlock`3.TryReceiveAll(System.Collections.Generic.IList{System.Tuple{`0,`1,`2}}@)
 - uid: System.Threading.Tasks.Dataflow.JoinBlock`3.OutputCount
   href: System.Threading.Tasks.Dataflow.JoinBlock`3.yml
@@ -157,7 +175,7 @@ items:
     - id: OutputCount
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Threading.Tasks.Dataflow.JoinBlock`3.OutputCount
 - uid: System.Threading.Tasks.Dataflow.JoinBlock`3.Completion
@@ -176,7 +194,7 @@ items:
     - id: Completion
       type:
         id: System.Threading.Tasks.Task
-        name: System.Threading.Tasks.Task
+        name: Task
         isExternal: true
   id: System.Threading.Tasks.Dataflow.JoinBlock`3.Completion
 - uid: System.Threading.Tasks.Dataflow.JoinBlock`3.Complete
@@ -193,6 +211,25 @@ items:
       CSharp: public void Complete()
     parameters: []
   id: System.Threading.Tasks.Dataflow.JoinBlock`3.Complete
+- uid: System.Threading.Tasks.Dataflow.JoinBlock`3.System#Threading#Tasks#Dataflow#IDataflowBlock#Fault(System.Exception)
+  href: System.Threading.Tasks.Dataflow.JoinBlock`3.yml
+  name: IDataflowBlock.Fault(Exception)
+  fullName: System.Threading.Tasks.Dataflow.JoinBlock<T1, T2, T3>.System.Threading.Tasks.Dataflow.IDataflowBlock.Fault(System.Exception)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/JoinBlock.cs
+    startLine: 381
+  syntax:
+    content:
+      CSharp: void IDataflowBlock.Fault(Exception exception)
+    parameters:
+    - id: exception
+      type:
+        id: System.Exception
+        name: Exception
+        isExternal: true
+  id: System.Threading.Tasks.Dataflow.JoinBlock`3.System#Threading#Tasks#Dataflow#IDataflowBlock#Fault(System.Exception)
 - uid: System.Threading.Tasks.Dataflow.JoinBlock`3.Target1
   href: System.Threading.Tasks.Dataflow.JoinBlock`3.yml
   name: Target1
@@ -210,7 +247,7 @@ items:
     - id: Target1
       type:
         id: System.Threading.Tasks.Dataflow.ITargetBlock{`0}
-        name: ITargetBlock
+        name: ITargetBlock<T1>
         href: System.Threading.Tasks.Dataflow.ITargetBlock{`0}
   id: System.Threading.Tasks.Dataflow.JoinBlock`3.Target1
 - uid: System.Threading.Tasks.Dataflow.JoinBlock`3.Target2
@@ -230,7 +267,7 @@ items:
     - id: Target2
       type:
         id: System.Threading.Tasks.Dataflow.ITargetBlock{`1}
-        name: ITargetBlock
+        name: ITargetBlock<T2>
         href: System.Threading.Tasks.Dataflow.ITargetBlock{`1}
   id: System.Threading.Tasks.Dataflow.JoinBlock`3.Target2
 - uid: System.Threading.Tasks.Dataflow.JoinBlock`3.Target3
@@ -250,9 +287,98 @@ items:
     - id: Target3
       type:
         id: System.Threading.Tasks.Dataflow.ITargetBlock{`2}
-        name: ITargetBlock
+        name: ITargetBlock<T3>
         href: System.Threading.Tasks.Dataflow.ITargetBlock{`2}
   id: System.Threading.Tasks.Dataflow.JoinBlock`3.Target3
+- uid: System.Threading.Tasks.Dataflow.JoinBlock`3.System#Threading#Tasks#Dataflow#ISourceBlock{System#Tuple{T1,T2,T3}}#ConsumeMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{System.Tuple{`0,`1,`2}},System.Boolean@)
+  href: System.Threading.Tasks.Dataflow.JoinBlock`3.yml
+  name: ISourceBlock<Tuple<T1, T2, T3>>.ConsumeMessage(DataflowMessageHeader, ITargetBlock<Tuple<T1, T2, T3>>, out bool)
+  fullName: System.Threading.Tasks.Dataflow.JoinBlock<T1, T2, T3>.System.Threading.Tasks.Dataflow.ISourceBlock<System.Tuple<T1, T2, T3>>.ConsumeMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader, System.Threading.Tasks.Dataflow.ITargetBlock<System.Tuple<T1, T2, T3>>, out bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/JoinBlock.cs
+    startLine: 407
+  syntax:
+    content:
+      CSharp: Tuple<T1, T2, T3> ISourceBlock<Tuple<T1, T2, T3>>.ConsumeMessage(DataflowMessageHeader messageHeader, ITargetBlock<Tuple<T1, T2, T3>> target, out bool messageConsumed)
+    parameters:
+    - id: messageHeader
+      type:
+        id: System.Threading.Tasks.Dataflow.DataflowMessageHeader
+        name: DataflowMessageHeader
+        href: System.Threading.Tasks.Dataflow.DataflowMessageHeader.yml
+    - id: target
+      type:
+        id: System.Threading.Tasks.Dataflow.ITargetBlock{System.Tuple{`0,`1,`2}}
+        name: ITargetBlock<Tuple<T1, T2, T3>>
+        href: System.Threading.Tasks.Dataflow.ITargetBlock{System.Tuple{`0,`1,`2}}
+    - id: messageConsumed
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+    return:
+      id: Tuple
+      type:
+        id: System.Tuple{`0,`1,`2}
+        name: Tuple<T1, T2, T3>
+        isExternal: true
+  id: System.Threading.Tasks.Dataflow.JoinBlock`3.System#Threading#Tasks#Dataflow#ISourceBlock{System#Tuple{T1,T2,T3}}#ConsumeMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{System.Tuple{`0,`1,`2}},System.Boolean@)
+- uid: System.Threading.Tasks.Dataflow.JoinBlock`3.System#Threading#Tasks#Dataflow#ISourceBlock{System#Tuple{T1,T2,T3}}#ReserveMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{System.Tuple{`0,`1,`2}})
+  href: System.Threading.Tasks.Dataflow.JoinBlock`3.yml
+  name: ISourceBlock<Tuple<T1, T2, T3>>.ReserveMessage(DataflowMessageHeader, ITargetBlock<Tuple<T1, T2, T3>>)
+  fullName: System.Threading.Tasks.Dataflow.JoinBlock<T1, T2, T3>.System.Threading.Tasks.Dataflow.ISourceBlock<System.Tuple<T1, T2, T3>>.ReserveMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader, System.Threading.Tasks.Dataflow.ITargetBlock<System.Tuple<T1, T2, T3>>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/JoinBlock.cs
+    startLine: 413
+  syntax:
+    content:
+      CSharp: bool ISourceBlock<Tuple<T1, T2, T3>>.ReserveMessage(DataflowMessageHeader messageHeader, ITargetBlock<Tuple<T1, T2, T3>> target)
+    parameters:
+    - id: messageHeader
+      type:
+        id: System.Threading.Tasks.Dataflow.DataflowMessageHeader
+        name: DataflowMessageHeader
+        href: System.Threading.Tasks.Dataflow.DataflowMessageHeader.yml
+    - id: target
+      type:
+        id: System.Threading.Tasks.Dataflow.ITargetBlock{System.Tuple{`0,`1,`2}}
+        name: ITargetBlock<Tuple<T1, T2, T3>>
+        href: System.Threading.Tasks.Dataflow.ITargetBlock{System.Tuple{`0,`1,`2}}
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Threading.Tasks.Dataflow.JoinBlock`3.System#Threading#Tasks#Dataflow#ISourceBlock{System#Tuple{T1,T2,T3}}#ReserveMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{System.Tuple{`0,`1,`2}})
+- uid: System.Threading.Tasks.Dataflow.JoinBlock`3.System#Threading#Tasks#Dataflow#ISourceBlock{System#Tuple{T1,T2,T3}}#ReleaseReservation(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{System.Tuple{`0,`1,`2}})
+  href: System.Threading.Tasks.Dataflow.JoinBlock`3.yml
+  name: ISourceBlock<Tuple<T1, T2, T3>>.ReleaseReservation(DataflowMessageHeader, ITargetBlock<Tuple<T1, T2, T3>>)
+  fullName: System.Threading.Tasks.Dataflow.JoinBlock<T1, T2, T3>.System.Threading.Tasks.Dataflow.ISourceBlock<System.Tuple<T1, T2, T3>>.ReleaseReservation(System.Threading.Tasks.Dataflow.DataflowMessageHeader, System.Threading.Tasks.Dataflow.ITargetBlock<System.Tuple<T1, T2, T3>>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/JoinBlock.cs
+    startLine: 419
+  syntax:
+    content:
+      CSharp: void ISourceBlock<Tuple<T1, T2, T3>>.ReleaseReservation(DataflowMessageHeader messageHeader, ITargetBlock<Tuple<T1, T2, T3>> target)
+    parameters:
+    - id: messageHeader
+      type:
+        id: System.Threading.Tasks.Dataflow.DataflowMessageHeader
+        name: DataflowMessageHeader
+        href: System.Threading.Tasks.Dataflow.DataflowMessageHeader.yml
+    - id: target
+      type:
+        id: System.Threading.Tasks.Dataflow.ITargetBlock{System.Tuple{`0,`1,`2}}
+        name: ITargetBlock<Tuple<T1, T2, T3>>
+        href: System.Threading.Tasks.Dataflow.ITargetBlock{System.Tuple{`0,`1,`2}}
+  id: System.Threading.Tasks.Dataflow.JoinBlock`3.System#Threading#Tasks#Dataflow#ISourceBlock{System#Tuple{T1,T2,T3}}#ReleaseReservation(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{System.Tuple{`0,`1,`2}})
 - uid: System.Threading.Tasks.Dataflow.JoinBlock`3.ToString
   href: System.Threading.Tasks.Dataflow.JoinBlock`3.yml
   name: ToString()
@@ -268,4 +394,8 @@ items:
     parameters: []
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Threading.Tasks.Dataflow.JoinBlock`3.ToString

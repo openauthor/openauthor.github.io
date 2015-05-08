@@ -6,22 +6,28 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/TypeDefinition.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/TypeDefinition.cs
     startLine: 9
   syntax:
     content:
       CSharp: public struct TypeDefinition
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Reflection.Metadata.TypeDefinition
   children:
   - System.Reflection.Metadata.TypeDefinition.Attributes
   - System.Reflection.Metadata.TypeDefinition.Name
   - System.Reflection.Metadata.TypeDefinition.Namespace
+  - System.Reflection.Metadata.TypeDefinition.NamespaceDefinition
   - System.Reflection.Metadata.TypeDefinition.BaseType
   - System.Reflection.Metadata.TypeDefinition.GetLayout
   - System.Reflection.Metadata.TypeDefinition.GetDeclaringType
@@ -50,7 +56,7 @@ items:
     parameters:
     - id: Attributes
       type:
-        id: TypeAttributes
+        id: System.Reflection.TypeAttributes
         name: TypeAttributes
         isExternal: true
   id: System.Reflection.Metadata.TypeDefinition.Attributes
@@ -83,17 +89,37 @@ items:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/TypeDefinition.cs
     startLine: 72
-  summary: Namespace of the type, or nil if the type is nested or defined in a root namespace.
+  summary: Full name of the namespace where the type is defined, or nil if the type is nested or defined in a root namespace.
   syntax:
     content:
-      CSharp: public NamespaceDefinitionHandle Namespace { get; }
+      CSharp: public StringHandle Namespace { get; }
     parameters:
     - id: Namespace
+      type:
+        id: System.Reflection.Metadata.StringHandle
+        name: StringHandle
+        href: System.Reflection.Metadata.StringHandle.yml
+  id: System.Reflection.Metadata.TypeDefinition.Namespace
+- uid: System.Reflection.Metadata.TypeDefinition.NamespaceDefinition
+  href: System.Reflection.Metadata.TypeDefinition.yml
+  name: NamespaceDefinition
+  fullName: System.Reflection.Metadata.TypeDefinition.NamespaceDefinition
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/TypeDefinition.cs
+    startLine: 88
+  summary: The definition handle of the namespace where the type is defined, or nil if the type is nested or defined in a root namespace.
+  syntax:
+    content:
+      CSharp: public NamespaceDefinitionHandle NamespaceDefinition { get; }
+    parameters:
+    - id: NamespaceDefinition
       type:
         id: System.Reflection.Metadata.NamespaceDefinitionHandle
         name: NamespaceDefinitionHandle
         href: System.Reflection.Metadata.NamespaceDefinitionHandle.yml
-  id: System.Reflection.Metadata.TypeDefinition.Namespace
+  id: System.Reflection.Metadata.TypeDefinition.NamespaceDefinition
 - uid: System.Reflection.Metadata.TypeDefinition.BaseType
   href: System.Reflection.Metadata.TypeDefinition.yml
   name: BaseType
@@ -102,20 +128,20 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/TypeDefinition.cs
-    startLine: 89
+    startLine: 105
   summary: >-
     The base type of the type definition: either
 
     [System.Reflection.Metadata.TypeSpecificationHandle](System.Reflection.Metadata.TypeSpecificationHandle.yml), [System.Reflection.Metadata.TypeReferenceHandle](System.Reflection.Metadata.TypeReferenceHandle.yml) or [System.Reflection.Metadata.TypeDefinitionHandle](System.Reflection.Metadata.TypeDefinitionHandle.yml).
   syntax:
     content:
-      CSharp: public Handle BaseType { get; }
+      CSharp: public EntityHandle BaseType { get; }
     parameters:
     - id: BaseType
       type:
-        id: System.Reflection.Metadata.Handle
-        name: Handle
-        href: System.Reflection.Metadata.Handle.yml
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
   id: System.Reflection.Metadata.TypeDefinition.BaseType
 - uid: System.Reflection.Metadata.TypeDefinition.GetLayout
   href: System.Reflection.Metadata.TypeDefinition.yml
@@ -125,13 +151,17 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/TypeDefinition.cs
-    startLine: 102
+    startLine: 118
   syntax:
     content:
       CSharp: public TypeLayout GetLayout()
     parameters: []
     return:
       id: TypeLayout
+      type:
+        id: System.Reflection.Metadata.TypeLayout
+        name: TypeLayout
+        href: System.Reflection.Metadata.TypeLayout.yml
   id: System.Reflection.Metadata.TypeDefinition.GetLayout
 - uid: System.Reflection.Metadata.TypeDefinition.GetDeclaringType
   href: System.Reflection.Metadata.TypeDefinition.yml
@@ -141,7 +171,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/TypeDefinition.cs
-    startLine: 129
+    startLine: 154
   summary: Returns the enclosing type of a specified nested type or nil handle if the type is not nested.
   syntax:
     content:
@@ -149,6 +179,10 @@ items:
     parameters: []
     return:
       id: TypeDefinitionHandle
+      type:
+        id: System.Reflection.Metadata.TypeDefinitionHandle
+        name: TypeDefinitionHandle
+        href: System.Reflection.Metadata.TypeDefinitionHandle.yml
   id: System.Reflection.Metadata.TypeDefinition.GetDeclaringType
 - uid: System.Reflection.Metadata.TypeDefinition.GetGenericParameters
   href: System.Reflection.Metadata.TypeDefinition.yml
@@ -158,13 +192,17 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/TypeDefinition.cs
-    startLine: 134
+    startLine: 159
   syntax:
     content:
       CSharp: public GenericParameterHandleCollection GetGenericParameters()
     parameters: []
     return:
       id: GenericParameterHandleCollection
+      type:
+        id: System.Reflection.Metadata.GenericParameterHandleCollection
+        name: GenericParameterHandleCollection
+        href: System.Reflection.Metadata.GenericParameterHandleCollection.yml
   id: System.Reflection.Metadata.TypeDefinition.GetGenericParameters
 - uid: System.Reflection.Metadata.TypeDefinition.GetMethods
   href: System.Reflection.Metadata.TypeDefinition.yml
@@ -174,13 +212,17 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/TypeDefinition.cs
-    startLine: 139
+    startLine: 164
   syntax:
     content:
       CSharp: public MethodDefinitionHandleCollection GetMethods()
     parameters: []
     return:
       id: MethodDefinitionHandleCollection
+      type:
+        id: System.Reflection.Metadata.MethodDefinitionHandleCollection
+        name: MethodDefinitionHandleCollection
+        href: System.Reflection.Metadata.MethodDefinitionHandleCollection.yml
   id: System.Reflection.Metadata.TypeDefinition.GetMethods
 - uid: System.Reflection.Metadata.TypeDefinition.GetFields
   href: System.Reflection.Metadata.TypeDefinition.yml
@@ -190,13 +232,17 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/TypeDefinition.cs
-    startLine: 144
+    startLine: 169
   syntax:
     content:
       CSharp: public FieldDefinitionHandleCollection GetFields()
     parameters: []
     return:
       id: FieldDefinitionHandleCollection
+      type:
+        id: System.Reflection.Metadata.FieldDefinitionHandleCollection
+        name: FieldDefinitionHandleCollection
+        href: System.Reflection.Metadata.FieldDefinitionHandleCollection.yml
   id: System.Reflection.Metadata.TypeDefinition.GetFields
 - uid: System.Reflection.Metadata.TypeDefinition.GetProperties
   href: System.Reflection.Metadata.TypeDefinition.yml
@@ -206,13 +252,17 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/TypeDefinition.cs
-    startLine: 149
+    startLine: 174
   syntax:
     content:
       CSharp: public PropertyDefinitionHandleCollection GetProperties()
     parameters: []
     return:
       id: PropertyDefinitionHandleCollection
+      type:
+        id: System.Reflection.Metadata.PropertyDefinitionHandleCollection
+        name: PropertyDefinitionHandleCollection
+        href: System.Reflection.Metadata.PropertyDefinitionHandleCollection.yml
   id: System.Reflection.Metadata.TypeDefinition.GetProperties
 - uid: System.Reflection.Metadata.TypeDefinition.GetEvents
   href: System.Reflection.Metadata.TypeDefinition.yml
@@ -222,13 +272,17 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/TypeDefinition.cs
-    startLine: 154
+    startLine: 179
   syntax:
     content:
       CSharp: public EventDefinitionHandleCollection GetEvents()
     parameters: []
     return:
       id: EventDefinitionHandleCollection
+      type:
+        id: System.Reflection.Metadata.EventDefinitionHandleCollection
+        name: EventDefinitionHandleCollection
+        href: System.Reflection.Metadata.EventDefinitionHandleCollection.yml
   id: System.Reflection.Metadata.TypeDefinition.GetEvents
 - uid: System.Reflection.Metadata.TypeDefinition.GetNestedTypes
   href: System.Reflection.Metadata.TypeDefinition.yml
@@ -238,7 +292,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/TypeDefinition.cs
-    startLine: 162
+    startLine: 187
   summary: Returns an array of types nested in the specified type.
   syntax:
     content:
@@ -246,6 +300,10 @@ items:
     parameters: []
     return:
       id: ImmutableArray
+      type:
+        id: ImmutableArray{System.Reflection.Metadata.TypeDefinitionHandle}
+        name: ImmutableArray<TypeDefinitionHandle>
+        isExternal: true
   id: System.Reflection.Metadata.TypeDefinition.GetNestedTypes
 - uid: System.Reflection.Metadata.TypeDefinition.GetMethodImplementations
   href: System.Reflection.Metadata.TypeDefinition.yml
@@ -255,13 +313,17 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/TypeDefinition.cs
-    startLine: 167
+    startLine: 192
   syntax:
     content:
       CSharp: public MethodImplementationHandleCollection GetMethodImplementations()
     parameters: []
     return:
       id: MethodImplementationHandleCollection
+      type:
+        id: System.Reflection.Metadata.MethodImplementationHandleCollection
+        name: MethodImplementationHandleCollection
+        href: System.Reflection.Metadata.MethodImplementationHandleCollection.yml
   id: System.Reflection.Metadata.TypeDefinition.GetMethodImplementations
 - uid: System.Reflection.Metadata.TypeDefinition.GetInterfaceImplementations
   href: System.Reflection.Metadata.TypeDefinition.yml
@@ -271,13 +333,17 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/TypeDefinition.cs
-    startLine: 172
+    startLine: 197
   syntax:
     content:
       CSharp: public InterfaceImplementationHandleCollection GetInterfaceImplementations()
     parameters: []
     return:
       id: InterfaceImplementationHandleCollection
+      type:
+        id: System.Reflection.Metadata.InterfaceImplementationHandleCollection
+        name: InterfaceImplementationHandleCollection
+        href: System.Reflection.Metadata.InterfaceImplementationHandleCollection.yml
   id: System.Reflection.Metadata.TypeDefinition.GetInterfaceImplementations
 - uid: System.Reflection.Metadata.TypeDefinition.GetCustomAttributes
   href: System.Reflection.Metadata.TypeDefinition.yml
@@ -287,13 +353,17 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/TypeDefinition.cs
-    startLine: 177
+    startLine: 202
   syntax:
     content:
       CSharp: public CustomAttributeHandleCollection GetCustomAttributes()
     parameters: []
     return:
       id: CustomAttributeHandleCollection
+      type:
+        id: System.Reflection.Metadata.CustomAttributeHandleCollection
+        name: CustomAttributeHandleCollection
+        href: System.Reflection.Metadata.CustomAttributeHandleCollection.yml
   id: System.Reflection.Metadata.TypeDefinition.GetCustomAttributes
 - uid: System.Reflection.Metadata.TypeDefinition.GetDeclarativeSecurityAttributes
   href: System.Reflection.Metadata.TypeDefinition.yml
@@ -303,11 +373,15 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/TypeDefinition.cs
-    startLine: 182
+    startLine: 207
   syntax:
     content:
       CSharp: public DeclarativeSecurityAttributeHandleCollection GetDeclarativeSecurityAttributes()
     parameters: []
     return:
       id: DeclarativeSecurityAttributeHandleCollection
+      type:
+        id: System.Reflection.Metadata.DeclarativeSecurityAttributeHandleCollection
+        name: DeclarativeSecurityAttributeHandleCollection
+        href: System.Reflection.Metadata.DeclarativeSecurityAttributeHandleCollection.yml
   id: System.Reflection.Metadata.TypeDefinition.GetDeclarativeSecurityAttributes

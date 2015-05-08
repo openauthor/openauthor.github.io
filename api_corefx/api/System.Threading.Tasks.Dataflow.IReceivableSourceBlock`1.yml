@@ -6,14 +6,16 @@ items:
   type: Interface
   source:
     remote: &o0
+      path: src/System.Threading.Tasks.Dataflow/src/Base/IReceivableSourceBlock.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Threading.Tasks.Dataflow/src/Base/IReceivableSourceBlock.cs
     startLine: 18
   summary: Represents a dataflow block that supports receiving of messages without linking.
   syntax:
     content:
-      CSharp: public interface IReceivableSourceBlock<TOutput>
+      CSharp: 'public interface IReceivableSourceBlock<TOutput> : ISourceBlock<TOutput>, IDataflowBlock'
   id: System.Threading.Tasks.Dataflow.IReceivableSourceBlock`1
   children:
   - System.Threading.Tasks.Dataflow.IReceivableSourceBlock`1.TryReceive(System.Predicate{`0},`0@)
@@ -29,12 +31,12 @@ items:
     startLine: 23
   syntax:
     content:
-      CSharp: bool TryReceive(Predicate<TOutput> filter, out TOutput item);
+      CSharp: public bool TryReceive(Predicate<TOutput> filter, out TOutput item)
     parameters:
     - id: filter
       type:
         id: System.Predicate{`0}
-        name: System.Predicate{`0}
+        name: Predicate<TOutput>
         isExternal: true
     - id: item
       type:
@@ -43,6 +45,10 @@ items:
         href: TOutput
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Threading.Tasks.Dataflow.IReceivableSourceBlock`1.TryReceive(System.Predicate{`0},`0@)
 - uid: System.Threading.Tasks.Dataflow.IReceivableSourceBlock`1.TryReceiveAll(System.Collections.Generic.IList{`0}@)
   href: System.Threading.Tasks.Dataflow.IReceivableSourceBlock`1.yml
@@ -55,13 +61,17 @@ items:
     startLine: 28
   syntax:
     content:
-      CSharp: bool TryReceiveAll(out IList<TOutput> items);
+      CSharp: public bool TryReceiveAll(out IList<TOutput> items)
     parameters:
     - id: items
       type:
         id: System.Collections.Generic.IList{`0}
-        name: System.Collections.Generic.IList{`0}
+        name: IList<TOutput>
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Threading.Tasks.Dataflow.IReceivableSourceBlock`1.TryReceiveAll(System.Collections.Generic.IList{`0}@)

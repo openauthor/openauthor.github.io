@@ -6,21 +6,28 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
     startLine: 239
   syntax:
     content:
-      CSharp: public struct CustomAttributeHandleCollection
+      CSharp: 'public struct CustomAttributeHandleCollection : IReadOnlyCollection<CustomAttributeHandle>, IEnumerable<CustomAttributeHandle>, IEnumerable'
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Reflection.Metadata.CustomAttributeHandleCollection
   children:
   - System.Reflection.Metadata.CustomAttributeHandleCollection.Count
   - System.Reflection.Metadata.CustomAttributeHandleCollection.GetEnumerator
+  - System.Reflection.Metadata.CustomAttributeHandleCollection.System#Collections#Generic#IEnumerable{System#Reflection#Metadata#CustomAttributeHandle}#GetEnumerator
+  - System.Reflection.Metadata.CustomAttributeHandleCollection.System#Collections#IEnumerable#GetEnumerator
 - uid: System.Reflection.Metadata.CustomAttributeHandleCollection.Count
   href: System.Reflection.Metadata.CustomAttributeHandleCollection.yml
   name: Count
@@ -37,7 +44,7 @@ items:
     - id: Count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Reflection.Metadata.CustomAttributeHandleCollection.Count
 - uid: System.Reflection.Metadata.CustomAttributeHandleCollection.GetEnumerator
@@ -55,4 +62,48 @@ items:
     parameters: []
     return:
       id: Enumerator
+      type:
+        id: System.Reflection.Metadata.CustomAttributeHandleCollection.Enumerator
+        name: Enumerator
+        href: System.Reflection.Metadata.CustomAttributeHandleCollection.Enumerator.yml
   id: System.Reflection.Metadata.CustomAttributeHandleCollection.GetEnumerator
+- uid: System.Reflection.Metadata.CustomAttributeHandleCollection.System#Collections#Generic#IEnumerable{System#Reflection#Metadata#CustomAttributeHandle}#GetEnumerator
+  href: System.Reflection.Metadata.CustomAttributeHandleCollection.yml
+  name: IEnumerable<CustomAttributeHandle>.GetEnumerator()
+  fullName: System.Reflection.Metadata.CustomAttributeHandleCollection.System.Collections.Generic.IEnumerable<System.Reflection.Metadata.CustomAttributeHandle>.GetEnumerator()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
+    startLine: 276
+  syntax:
+    content:
+      CSharp: IEnumerator<CustomAttributeHandle> IEnumerable<CustomAttributeHandle>.GetEnumerator()
+    parameters: []
+    return:
+      id: IEnumerator
+      type:
+        id: System.Collections.Generic.IEnumerator{System.Reflection.Metadata.CustomAttributeHandle}
+        name: IEnumerator<CustomAttributeHandle>
+        isExternal: true
+  id: System.Reflection.Metadata.CustomAttributeHandleCollection.System#Collections#Generic#IEnumerable{System#Reflection#Metadata#CustomAttributeHandle}#GetEnumerator
+- uid: System.Reflection.Metadata.CustomAttributeHandleCollection.System#Collections#IEnumerable#GetEnumerator
+  href: System.Reflection.Metadata.CustomAttributeHandleCollection.yml
+  name: IEnumerable.GetEnumerator()
+  fullName: System.Reflection.Metadata.CustomAttributeHandleCollection.System.Collections.IEnumerable.GetEnumerator()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
+    startLine: 281
+  syntax:
+    content:
+      CSharp: IEnumerator IEnumerable.GetEnumerator()
+    parameters: []
+    return:
+      id: IEnumerator
+      type:
+        id: System.Collections.IEnumerator
+        name: IEnumerator
+        isExternal: true
+  id: System.Reflection.Metadata.CustomAttributeHandleCollection.System#Collections#IEnumerable#GetEnumerator

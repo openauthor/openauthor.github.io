@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/ControllerBase.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/ControllerBase.cs
     startLine: 11
   syntax:
     content:
-      CSharp: public abstract class ControllerBase
+      CSharp: 'public abstract class ControllerBase : IController'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.ControllerBase
   children:
@@ -26,6 +27,10 @@ items:
   - System.Web.Mvc.ControllerBase.ValueProvider
   - System.Web.Mvc.ControllerBase.ViewBag
   - System.Web.Mvc.ControllerBase.ViewData
+  - System.Web.Mvc.ControllerBase.Execute(System.Web.Routing.RequestContext)
+  - System.Web.Mvc.ControllerBase.ExecuteCore
+  - System.Web.Mvc.ControllerBase.Initialize(System.Web.Routing.RequestContext)
+  - System.Web.Mvc.ControllerBase.System#Web#Mvc#IController#Execute(System.Web.Routing.RequestContext)
 - uid: System.Web.Mvc.ControllerBase.ControllerContext
   href: System.Web.Mvc.ControllerBase.yml
   name: ControllerContext
@@ -80,7 +85,7 @@ items:
     - id: ValidateRequest
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.ControllerBase.ValidateRequest
 - uid: System.Web.Mvc.ControllerBase.ValueProvider
@@ -117,6 +122,7 @@ items:
     parameters:
     - id: ViewBag
       type:
+        name: dynamic
         isExternal: true
   id: System.Web.Mvc.ControllerBase.ViewBag
 - uid: System.Web.Mvc.ControllerBase.ViewData
@@ -138,3 +144,74 @@ items:
         name: ViewDataDictionary
         href: System.Web.Mvc.ViewDataDictionary.yml
   id: System.Web.Mvc.ControllerBase.ViewData
+- uid: System.Web.Mvc.ControllerBase.Execute(System.Web.Routing.RequestContext)
+  href: System.Web.Mvc.ControllerBase.yml
+  name: Execute(RequestContext)
+  fullName: System.Web.Mvc.ControllerBase.Execute(System.Web.Routing.RequestContext)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ControllerBase.cs
+    startLine: 86
+  syntax:
+    content:
+      CSharp: protected virtual void Execute(RequestContext requestContext)
+    parameters:
+    - id: requestContext
+      type:
+        id: System.Web.Routing.RequestContext
+        name: RequestContext
+        isExternal: true
+  id: System.Web.Mvc.ControllerBase.Execute(System.Web.Routing.RequestContext)
+- uid: System.Web.Mvc.ControllerBase.ExecuteCore
+  href: System.Web.Mvc.ControllerBase.yml
+  name: ExecuteCore()
+  fullName: System.Web.Mvc.ControllerBase.ExecuteCore()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ControllerBase.cs
+    startLine: 106
+  syntax:
+    content:
+      CSharp: protected abstract void ExecuteCore()
+    parameters: []
+  id: System.Web.Mvc.ControllerBase.ExecuteCore
+- uid: System.Web.Mvc.ControllerBase.Initialize(System.Web.Routing.RequestContext)
+  href: System.Web.Mvc.ControllerBase.yml
+  name: Initialize(RequestContext)
+  fullName: System.Web.Mvc.ControllerBase.Initialize(System.Web.Routing.RequestContext)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ControllerBase.cs
+    startLine: 108
+  syntax:
+    content:
+      CSharp: protected virtual void Initialize(RequestContext requestContext)
+    parameters:
+    - id: requestContext
+      type:
+        id: System.Web.Routing.RequestContext
+        name: RequestContext
+        isExternal: true
+  id: System.Web.Mvc.ControllerBase.Initialize(System.Web.Routing.RequestContext)
+- uid: System.Web.Mvc.ControllerBase.System#Web#Mvc#IController#Execute(System.Web.Routing.RequestContext)
+  href: System.Web.Mvc.ControllerBase.yml
+  name: IController.Execute(RequestContext)
+  fullName: System.Web.Mvc.ControllerBase.System.Web.Mvc.IController.Execute(System.Web.Routing.RequestContext)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ControllerBase.cs
+    startLine: 124
+  syntax:
+    content:
+      CSharp: void IController.Execute(RequestContext requestContext)
+    parameters:
+    - id: requestContext
+      type:
+        id: System.Web.Routing.RequestContext
+        name: RequestContext
+        isExternal: true
+  id: System.Web.Mvc.ControllerBase.System#Web#Mvc#IController#Execute(System.Web.Routing.RequestContext)

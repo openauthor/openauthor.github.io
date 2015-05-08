@@ -6,20 +6,21 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/HandleErrorAttribute.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/HandleErrorAttribute.cs
     startLine: 8
   syntax:
     content:
-      CSharp: public class HandleErrorAttribute
+      CSharp: 'public class HandleErrorAttribute : FilterAttribute, _Attribute, IMvcFilter, IExceptionFilter'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Attribute
-    name: System.Attribute
+    name: Attribute
     isExternal: true
   - id: System.Web.Mvc.FilterAttribute
     name: FilterAttribute
@@ -47,7 +48,7 @@ items:
     - id: ExceptionType
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
   id: System.Web.Mvc.HandleErrorAttribute.ExceptionType
 - uid: System.Web.Mvc.HandleErrorAttribute.Master
@@ -66,7 +67,7 @@ items:
     - id: Master
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.HandleErrorAttribute.Master
 - uid: System.Web.Mvc.HandleErrorAttribute.TypeId
@@ -85,7 +86,7 @@ items:
     - id: TypeId
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.Web.Mvc.HandleErrorAttribute.TypeId
 - uid: System.Web.Mvc.HandleErrorAttribute.View
@@ -104,7 +105,7 @@ items:
     - id: View
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.HandleErrorAttribute.View
 - uid: System.Web.Mvc.HandleErrorAttribute.OnException(System.Web.Mvc.ExceptionContext)

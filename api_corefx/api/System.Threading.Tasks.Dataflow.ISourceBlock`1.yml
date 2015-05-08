@@ -6,14 +6,16 @@ items:
   type: Interface
   source:
     remote: &o0
+      path: src/System.Threading.Tasks.Dataflow/src/Base/ISourceBlock.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Threading.Tasks.Dataflow/src/Base/ISourceBlock.cs
     startLine: 19
   summary: Represents a dataflow block that is a source of data.
   syntax:
     content:
-      CSharp: public interface ISourceBlock<out TOutput>
+      CSharp: 'public interface ISourceBlock<out TOutput> : IDataflowBlock'
   id: System.Threading.Tasks.Dataflow.ISourceBlock`1
   children:
   - System.Threading.Tasks.Dataflow.ISourceBlock`1.LinkTo(System.Threading.Tasks.Dataflow.ITargetBlock{`0},System.Threading.Tasks.Dataflow.DataflowLinkOptions)
@@ -31,12 +33,12 @@ items:
     startLine: 24
   syntax:
     content:
-      CSharp: IDisposable LinkTo(ITargetBlock<TOutput> target, DataflowLinkOptions linkOptions);
+      CSharp: public IDisposable LinkTo(ITargetBlock<TOutput> target, DataflowLinkOptions linkOptions)
     parameters:
     - id: target
       type:
         id: System.Threading.Tasks.Dataflow.ITargetBlock{`0}
-        name: ITargetBlock
+        name: ITargetBlock<TOutput>
         href: System.Threading.Tasks.Dataflow.ITargetBlock{`0}
     - id: linkOptions
       type:
@@ -45,6 +47,10 @@ items:
         href: System.Threading.Tasks.Dataflow.DataflowLinkOptions.yml
     return:
       id: IDisposable
+      type:
+        id: System.IDisposable
+        name: IDisposable
+        isExternal: true
   id: System.Threading.Tasks.Dataflow.ISourceBlock`1.LinkTo(System.Threading.Tasks.Dataflow.ITargetBlock{`0},System.Threading.Tasks.Dataflow.DataflowLinkOptions)
 - uid: System.Threading.Tasks.Dataflow.ISourceBlock`1.ConsumeMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{`0},System.Boolean@)
   href: System.Threading.Tasks.Dataflow.ISourceBlock`1.yml
@@ -57,7 +63,7 @@ items:
     startLine: 29
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1021:AvoidOutParameters", MessageId = "2#")] TOutput ConsumeMessage(DataflowMessageHeader messageHeader, ITargetBlock<TOutput> target, out Boolean messageConsumed);'
+      CSharp: public TOutput ConsumeMessage(DataflowMessageHeader messageHeader, ITargetBlock<TOutput> target, out bool messageConsumed)
     parameters:
     - id: messageHeader
       type:
@@ -67,15 +73,19 @@ items:
     - id: target
       type:
         id: System.Threading.Tasks.Dataflow.ITargetBlock{`0}
-        name: ITargetBlock
+        name: ITargetBlock<TOutput>
         href: System.Threading.Tasks.Dataflow.ITargetBlock{`0}
     - id: messageConsumed
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     return:
       id: TOutput
+      type:
+        id: TOutput
+        name: TOutput
+        href: TOutput
   id: System.Threading.Tasks.Dataflow.ISourceBlock`1.ConsumeMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{`0},System.Boolean@)
 - uid: System.Threading.Tasks.Dataflow.ISourceBlock`1.ReserveMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{`0})
   href: System.Threading.Tasks.Dataflow.ISourceBlock`1.yml
@@ -88,7 +98,7 @@ items:
     startLine: 33
   syntax:
     content:
-      CSharp: Boolean ReserveMessage(DataflowMessageHeader messageHeader, ITargetBlock<TOutput> target);
+      CSharp: public bool ReserveMessage(DataflowMessageHeader messageHeader, ITargetBlock<TOutput> target)
     parameters:
     - id: messageHeader
       type:
@@ -98,10 +108,14 @@ items:
     - id: target
       type:
         id: System.Threading.Tasks.Dataflow.ITargetBlock{`0}
-        name: ITargetBlock
+        name: ITargetBlock<TOutput>
         href: System.Threading.Tasks.Dataflow.ITargetBlock{`0}
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Threading.Tasks.Dataflow.ISourceBlock`1.ReserveMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{`0})
 - uid: System.Threading.Tasks.Dataflow.ISourceBlock`1.ReleaseReservation(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{`0})
   href: System.Threading.Tasks.Dataflow.ISourceBlock`1.yml
@@ -114,7 +128,7 @@ items:
     startLine: 36
   syntax:
     content:
-      CSharp: void ReleaseReservation(DataflowMessageHeader messageHeader, ITargetBlock<TOutput> target);
+      CSharp: public void ReleaseReservation(DataflowMessageHeader messageHeader, ITargetBlock<TOutput> target)
     parameters:
     - id: messageHeader
       type:
@@ -124,6 +138,6 @@ items:
     - id: target
       type:
         id: System.Threading.Tasks.Dataflow.ITargetBlock{`0}
-        name: ITargetBlock
+        name: ITargetBlock<TOutput>
         href: System.Threading.Tasks.Dataflow.ITargetBlock{`0}
   id: System.Threading.Tasks.Dataflow.ISourceBlock`1.ReleaseReservation(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{`0})

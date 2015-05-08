@@ -1,0 +1,106 @@
+items:
+- uid: System.Reflection.DispatchProxy
+  href: System.Reflection.DispatchProxy.yml
+  name: DispatchProxy
+  fullName: System.Reflection.DispatchProxy
+  type: Class
+  source:
+    remote: &o0
+      path: src/System.Reflection.DispatchProxy/src/System/Reflection/DispatchProxy.cs
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
+    path: src/System.Reflection.DispatchProxy/src/System/Reflection/DispatchProxy.cs
+    startLine: 12
+  summary: >-
+    DispatchProxy provides a mechanism for the instantiation of proxy objects and handling of
+
+    their method dispatch.
+  syntax:
+    content:
+      CSharp: public abstract class DispatchProxy
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  id: System.Reflection.DispatchProxy
+  children:
+  - System.Reflection.DispatchProxy.#ctor
+  - System.Reflection.DispatchProxy.Invoke(System.Reflection.MethodInfo,System.Object[])
+  - System.Reflection.DispatchProxy.Create``2
+- uid: System.Reflection.DispatchProxy.#ctor
+  href: System.Reflection.DispatchProxy.yml
+  name: DispatchProxy()
+  fullName: System.Reflection.DispatchProxy.DispatchProxy()
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Reflection.DispatchProxy/src/System/Reflection/DispatchProxy.cs
+    startLine: 14
+  syntax:
+    content:
+      CSharp: protected DispatchProxy()
+    parameters: []
+  id: System.Reflection.DispatchProxy.#ctor
+- uid: System.Reflection.DispatchProxy.Invoke(System.Reflection.MethodInfo,System.Object[])
+  href: System.Reflection.DispatchProxy.yml
+  name: Invoke(MethodInfo, object[])
+  fullName: System.Reflection.DispatchProxy.Invoke(System.Reflection.MethodInfo, object[])
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.DispatchProxy/src/System/Reflection/DispatchProxy.cs
+    startLine: 25
+  summary: >-
+    Whenever any method on the generated proxy type is called, this method
+
+    will be invoked to dispatch control.
+  syntax:
+    content:
+      CSharp: protected abstract object Invoke(MethodInfo targetMethod, object[] args)
+    parameters:
+    - id: targetMethod
+      type:
+        id: System.Reflection.MethodInfo
+        name: MethodInfo
+        isExternal: true
+      description: The method the caller invoked
+    - id: args
+      type:
+        id: System.Array
+        name: object[]
+        isExternal: true
+      description: The arguments the caller passed to the method
+    return:
+      id: Object
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+      description: The object to return to the caller, or null for void methods
+  id: System.Reflection.DispatchProxy.Invoke(System.Reflection.MethodInfo,System.Object[])
+- uid: System.Reflection.DispatchProxy.Create``2
+  href: System.Reflection.DispatchProxy.yml
+  name: Create<T, TProxy>()
+  fullName: System.Reflection.DispatchProxy.Create<T, TProxy>()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.DispatchProxy/src/System/Reflection/DispatchProxy.cs
+    startLine: 36
+  summary: >-
+    Creates an object instance that derives from class
+
+    and implements interface .
+  syntax:
+    content:
+      CSharp: 'public static T Create<T, TProxy>()where TProxy : DispatchProxy'
+    parameters: []
+    return:
+      id: T
+      type:
+        id: T
+        name: T
+        href: T
+      description: An object instance that implements .
+  id: System.Reflection.DispatchProxy.Create``2

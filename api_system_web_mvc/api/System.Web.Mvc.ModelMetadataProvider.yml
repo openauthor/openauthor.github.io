@@ -6,9 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/ModelMetadataProvider.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/ModelMetadataProvider.cs
     startLine: 6
   syntax:
@@ -16,7 +17,7 @@ items:
       CSharp: public abstract class ModelMetadataProvider
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.ModelMetadataProvider
   children:
@@ -34,20 +35,24 @@ items:
     startLine: 8
   syntax:
     content:
-      CSharp: public abstract IEnumerable<ModelMetadata> GetMetadataForProperties(object container, Type containerType);
+      CSharp: public abstract IEnumerable<ModelMetadata> GetMetadataForProperties(object container, Type containerType)
     parameters:
     - id: container
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     - id: containerType
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Web.Mvc.ModelMetadata}
+        name: IEnumerable<ModelMetadata>
+        isExternal: true
   id: System.Web.Mvc.ModelMetadataProvider.GetMetadataForProperties(System.Object,System.Type)
 - uid: System.Web.Mvc.ModelMetadataProvider.GetMetadataForProperty(System.Func{System.Object},System.Type,System.String)
   href: System.Web.Mvc.ModelMetadataProvider.yml
@@ -60,25 +65,29 @@ items:
     startLine: 10
   syntax:
     content:
-      CSharp: public abstract ModelMetadata GetMetadataForProperty(Func<object> modelAccessor, Type containerType, string propertyName);
+      CSharp: public abstract ModelMetadata GetMetadataForProperty(Func<object> modelAccessor, Type containerType, string propertyName)
     parameters:
     - id: modelAccessor
       type:
         id: System.Func{System.Object}
-        name: System.Func{System.Object}
+        name: Func<object>
         isExternal: true
     - id: containerType
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
     - id: propertyName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: ModelMetadata
+      type:
+        id: System.Web.Mvc.ModelMetadata
+        name: ModelMetadata
+        href: System.Web.Mvc.ModelMetadata.yml
   id: System.Web.Mvc.ModelMetadataProvider.GetMetadataForProperty(System.Func{System.Object},System.Type,System.String)
 - uid: System.Web.Mvc.ModelMetadataProvider.GetMetadataForType(System.Func{System.Object},System.Type)
   href: System.Web.Mvc.ModelMetadataProvider.yml
@@ -91,18 +100,22 @@ items:
     startLine: 12
   syntax:
     content:
-      CSharp: public abstract ModelMetadata GetMetadataForType(Func<object> modelAccessor, Type modelType);
+      CSharp: public abstract ModelMetadata GetMetadataForType(Func<object> modelAccessor, Type modelType)
     parameters:
     - id: modelAccessor
       type:
         id: System.Func{System.Object}
-        name: System.Func{System.Object}
+        name: Func<object>
         isExternal: true
     - id: modelType
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
     return:
       id: ModelMetadata
+      type:
+        id: System.Web.Mvc.ModelMetadata
+        name: ModelMetadata
+        href: System.Web.Mvc.ModelMetadata.yml
   id: System.Web.Mvc.ModelMetadataProvider.GetMetadataForType(System.Func{System.Object},System.Type)

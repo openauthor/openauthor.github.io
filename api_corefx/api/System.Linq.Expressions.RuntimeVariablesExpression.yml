@@ -1,0 +1,159 @@
+items:
+- uid: System.Linq.Expressions.RuntimeVariablesExpression
+  href: System.Linq.Expressions.RuntimeVariablesExpression.yml
+  name: RuntimeVariablesExpression
+  fullName: System.Linq.Expressions.RuntimeVariablesExpression
+  type: Class
+  source:
+    remote: &o0
+      path: src/System.Linq.Expressions/src/System/Linq/Expressions/RuntimeVariablesExpression.cs
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
+    path: src/System.Linq.Expressions/src/System/Linq/Expressions/RuntimeVariablesExpression.cs
+    startLine: 17
+  summary: >-
+    An expression that provides runtime read/write access to variables.
+
+    Needed to implement "eval" in some dynamic languages.
+
+    Evaluates to an instance of [System.Collections.Generic.IList`1]() when executed.
+  syntax:
+    content:
+      CSharp: 'public sealed class RuntimeVariablesExpression : Expression'
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.Linq.Expressions.Expression
+    name: Expression
+    href: System.Linq.Expressions.Expression.yml
+  id: System.Linq.Expressions.RuntimeVariablesExpression
+  children:
+  - System.Linq.Expressions.RuntimeVariablesExpression.Type
+  - System.Linq.Expressions.RuntimeVariablesExpression.NodeType
+  - System.Linq.Expressions.RuntimeVariablesExpression.Variables
+  - System.Linq.Expressions.RuntimeVariablesExpression.Accept(System.Linq.Expressions.ExpressionVisitor)
+  - System.Linq.Expressions.RuntimeVariablesExpression.Update(System.Collections.Generic.IEnumerable{System.Linq.Expressions.ParameterExpression})
+- uid: System.Linq.Expressions.RuntimeVariablesExpression.Type
+  href: System.Linq.Expressions.RuntimeVariablesExpression.yml
+  name: Type
+  fullName: System.Linq.Expressions.RuntimeVariablesExpression.Type
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Linq.Expressions/src/System/Linq/Expressions/RuntimeVariablesExpression.cs
+    startLine: 31
+  summary: Gets the static type of the expression that this [System.Linq.Expressions.Expression](System.Linq.Expressions.Expression.yml) represents.
+  syntax:
+    content:
+      CSharp: public sealed override Type Type { get; }
+    parameters:
+    - id: Type
+      type:
+        id: System.Type
+        name: Type
+        isExternal: true
+  id: System.Linq.Expressions.RuntimeVariablesExpression.Type
+- uid: System.Linq.Expressions.RuntimeVariablesExpression.NodeType
+  href: System.Linq.Expressions.RuntimeVariablesExpression.yml
+  name: NodeType
+  fullName: System.Linq.Expressions.RuntimeVariablesExpression.NodeType
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Linq.Expressions/src/System/Linq/Expressions/RuntimeVariablesExpression.cs
+    startLine: 41
+  summary: >-
+    Returns the node type of this Expression. Extension nodes should return
+
+    ExpressionType.Extension when overriding this method.
+  syntax:
+    content:
+      CSharp: public sealed override ExpressionType NodeType { get; }
+    parameters:
+    - id: NodeType
+      type:
+        id: System.Linq.Expressions.ExpressionType
+        name: ExpressionType
+        href: System.Linq.Expressions.ExpressionType.yml
+  id: System.Linq.Expressions.RuntimeVariablesExpression.NodeType
+- uid: System.Linq.Expressions.RuntimeVariablesExpression.Variables
+  href: System.Linq.Expressions.RuntimeVariablesExpression.yml
+  name: Variables
+  fullName: System.Linq.Expressions.RuntimeVariablesExpression.Variables
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Linq.Expressions/src/System/Linq/Expressions/RuntimeVariablesExpression.cs
+    startLine: 49
+  summary: The variables or parameters to which to provide runtime access.
+  syntax:
+    content:
+      CSharp: public ReadOnlyCollection<ParameterExpression> Variables { get; }
+    parameters:
+    - id: Variables
+      type:
+        id: System.Collections.ObjectModel.ReadOnlyCollection{System.Linq.Expressions.ParameterExpression}
+        name: ReadOnlyCollection<ParameterExpression>
+        isExternal: true
+  id: System.Linq.Expressions.RuntimeVariablesExpression.Variables
+- uid: System.Linq.Expressions.RuntimeVariablesExpression.Accept(System.Linq.Expressions.ExpressionVisitor)
+  href: System.Linq.Expressions.RuntimeVariablesExpression.yml
+  name: Accept(ExpressionVisitor)
+  fullName: System.Linq.Expressions.RuntimeVariablesExpression.Accept(System.Linq.Expressions.ExpressionVisitor)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Linq.Expressions/src/System/Linq/Expressions/RuntimeVariablesExpression.cs
+    startLine: 57
+  summary: Dispatches to the specific visit method for this node type.
+  syntax:
+    content:
+      CSharp: protected internal override Expression Accept(ExpressionVisitor visitor)
+    parameters:
+    - id: visitor
+      type:
+        id: System.Linq.Expressions.ExpressionVisitor
+        name: ExpressionVisitor
+        href: System.Linq.Expressions.ExpressionVisitor.yml
+    return:
+      id: Expression
+      type:
+        id: System.Linq.Expressions.Expression
+        name: Expression
+        href: System.Linq.Expressions.Expression.yml
+  id: System.Linq.Expressions.RuntimeVariablesExpression.Accept(System.Linq.Expressions.ExpressionVisitor)
+- uid: System.Linq.Expressions.RuntimeVariablesExpression.Update(System.Collections.Generic.IEnumerable{System.Linq.Expressions.ParameterExpression})
+  href: System.Linq.Expressions.RuntimeVariablesExpression.yml
+  name: Update(IEnumerable<ParameterExpression>)
+  fullName: System.Linq.Expressions.RuntimeVariablesExpression.Update(System.Collections.Generic.IEnumerable<System.Linq.Expressions.ParameterExpression>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Linq.Expressions/src/System/Linq/Expressions/RuntimeVariablesExpression.cs
+    startLine: 69
+  summary: >-
+    Creates a new expression that is like this one, but using the
+
+    supplied children. If all of the children are the same, it will
+
+    return this expression.
+  syntax:
+    content:
+      CSharp: public RuntimeVariablesExpression Update(IEnumerable<ParameterExpression> variables)
+    parameters:
+    - id: variables
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Linq.Expressions.ParameterExpression}
+        name: IEnumerable<ParameterExpression>
+        isExternal: true
+      description: The [System.Linq.Expressions.RuntimeVariablesExpression.Variables](System.Linq.Expressions.RuntimeVariablesExpression.yml) property of the result.
+    return:
+      id: RuntimeVariablesExpression
+      type:
+        id: System.Linq.Expressions.RuntimeVariablesExpression
+        name: RuntimeVariablesExpression
+        href: System.Linq.Expressions.RuntimeVariablesExpression.yml
+      description: This expression if no children changed, or an expression with the updated children.
+  id: System.Linq.Expressions.RuntimeVariablesExpression.Update(System.Collections.Generic.IEnumerable{System.Linq.Expressions.ParameterExpression})

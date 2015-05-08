@@ -6,24 +6,25 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/CodeRefactorings/ExportCodeRefactoringProviderAttribute.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/CodeRefactorings/ExportCodeRefactoringProviderAttribute.cs
     startLine: 10
   summary: Use this attribute to declare a [Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider](Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider.yml) implementation so that it can be discovered by the host.
   syntax:
     content:
-      CSharp: public sealed class ExportCodeRefactoringProviderAttribute
+      CSharp: 'public sealed class ExportCodeRefactoringProviderAttribute : ExportAttribute'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Attribute
-    name: System.Attribute
+    name: Attribute
     isExternal: true
   - id: System.Composition.ExportAttribute
-    name: System.Composition.ExportAttribute
+    name: ExportAttribute
     isExternal: true
   id: Microsoft.CodeAnalysis.CodeRefactorings.ExportCodeRefactoringProviderAttribute
   children:
@@ -47,7 +48,7 @@ items:
     - id: Name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: Microsoft.CodeAnalysis.CodeRefactorings.ExportCodeRefactoringProviderAttribute.Name
 - uid: Microsoft.CodeAnalysis.CodeRefactorings.ExportCodeRefactoringProviderAttribute.Languages
@@ -59,15 +60,15 @@ items:
     remote: *o0
     path: src/Workspaces/Core/Portable/CodeRefactorings/ExportCodeRefactoringProviderAttribute.cs
     startLine: 22
-  summary: The source languages for which this provider can provide refactorings. See [Microsoft.CodeAnalysis.LanguageNames](#).
+  summary: The source languages for which this provider can provide refactorings. See [Microsoft.CodeAnalysis.LanguageNames]().
   syntax:
     content:
-      CSharp: public string[] Languages { get; private set; }
+      CSharp: public string[] Languages { get; }
     parameters:
     - id: Languages
       type:
         id: System.Array
-        name: System.Array
+        name: string[]
         isExternal: true
   id: Microsoft.CodeAnalysis.CodeRefactorings.ExportCodeRefactoringProviderAttribute.Languages
 - uid: Microsoft.CodeAnalysis.CodeRefactorings.ExportCodeRefactoringProviderAttribute.#ctor(System.String,System.String[])
@@ -87,13 +88,13 @@ items:
     - id: firstLanguage
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: One language to which the code refactoring provider applies.
     - id: additionalLanguages
       type:
         id: System.Array
-        name: System.Array
+        name: string[]
         isExternal: true
-      description: Additional languages to which the code refactoring provider applies. See [Microsoft.CodeAnalysis.LanguageNames](#).
+      description: Additional languages to which the code refactoring provider applies. See [Microsoft.CodeAnalysis.LanguageNames]().
   id: Microsoft.CodeAnalysis.CodeRefactorings.ExportCodeRefactoringProviderAttribute.#ctor(System.String,System.String[])

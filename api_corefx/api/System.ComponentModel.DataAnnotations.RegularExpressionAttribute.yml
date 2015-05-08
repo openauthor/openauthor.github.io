@@ -6,16 +6,21 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/RegularExpressionAttribute.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/RegularExpressionAttribute.cs
     startLine: 11
   summary: Regular expression validation attribute
   syntax:
     content:
-      CSharp: public class RegularExpressionAttribute
+      CSharp: 'public class RegularExpressionAttribute : ValidationAttribute, _Attribute'
   inheritance:
-  - id: Attribute
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.Attribute
     name: Attribute
     isExternal: true
   - id: System.ComponentModel.DataAnnotations.ValidationAttribute
@@ -44,7 +49,7 @@ items:
     - id: pattern
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The regular expression to use.  It cannot be null.
   id: System.ComponentModel.DataAnnotations.RegularExpressionAttribute.#ctor(System.String)
@@ -60,12 +65,12 @@ items:
   summary: Gets the regular expression pattern to use
   syntax:
     content:
-      CSharp: public string Pattern { get; private set; }
+      CSharp: public string Pattern { get; }
     parameters:
     - id: Pattern
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.ComponentModel.DataAnnotations.RegularExpressionAttribute.Pattern
 - uid: System.ComponentModel.DataAnnotations.RegularExpressionAttribute.IsValid(System.Object)
@@ -85,11 +90,15 @@ items:
     - id: value
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: The value to test for validity.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: true if the given value matches the current regular expression pattern
   id: System.ComponentModel.DataAnnotations.RegularExpressionAttribute.IsValid(System.Object)
 - uid: System.ComponentModel.DataAnnotations.RegularExpressionAttribute.FormatErrorMessage(System.String)
@@ -109,10 +118,14 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The user-visible name to include in the formatted message.
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
       description: The localized message to present to the user
   id: System.ComponentModel.DataAnnotations.RegularExpressionAttribute.FormatErrorMessage(System.String)

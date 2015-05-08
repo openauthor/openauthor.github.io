@@ -6,9 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/DependencyResolver.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/DependencyResolver.cs
     startLine: 12
   syntax:
@@ -16,7 +17,7 @@ items:
       CSharp: public class DependencyResolver
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.DependencyResolver
   children:
@@ -116,7 +117,7 @@ items:
     - id: commonServiceLocator
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.Web.Mvc.DependencyResolver.SetResolver(System.Object)
 - uid: System.Web.Mvc.DependencyResolver.SetResolver(System.Func{System.Type,System.Object},System.Func{System.Type,System.Collections.Generic.IEnumerable{System.Object}})
@@ -130,17 +131,17 @@ items:
     startLine: 61
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Justification = "This is an appropriate nesting of generic types.")] public static void SetResolver(Func<Type, object> getService, Func<Type, IEnumerable<object>> getServices)'
+      CSharp: public static void SetResolver(Func<Type, object> getService, Func<Type, IEnumerable<object>> getServices)
     parameters:
     - id: getService
       type:
         id: System.Func{System.Type,System.Object}
-        name: System.Func{System.Type,System.Object}
+        name: Func<Type, object>
         isExternal: true
     - id: getServices
       type:
         id: System.Func{System.Type,System.Collections.Generic.IEnumerable{System.Object}}
-        name: System.Func{System.Type,System.Collections.Generic.IEnumerable{System.Object}}
+        name: Func<Type, IEnumerable<object>>
         isExternal: true
   id: System.Web.Mvc.DependencyResolver.SetResolver(System.Func{System.Type,System.Object},System.Func{System.Type,System.Collections.Generic.IEnumerable{System.Object}})
 - uid: System.Web.Mvc.DependencyResolver.InnerSetResolver(System.Web.Mvc.IDependencyResolver)
@@ -178,7 +179,7 @@ items:
     - id: commonServiceLocator
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.Web.Mvc.DependencyResolver.InnerSetResolver(System.Object)
 - uid: System.Web.Mvc.DependencyResolver.InnerSetResolver(System.Func{System.Type,System.Object},System.Func{System.Type,System.Collections.Generic.IEnumerable{System.Object}})
@@ -192,16 +193,16 @@ items:
     startLine: 108
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Justification = "This is an appropriate nesting of generic types.")] public void InnerSetResolver(Func<Type, object> getService, Func<Type, IEnumerable<object>> getServices)'
+      CSharp: public void InnerSetResolver(Func<Type, object> getService, Func<Type, IEnumerable<object>> getServices)
     parameters:
     - id: getService
       type:
         id: System.Func{System.Type,System.Object}
-        name: System.Func{System.Type,System.Object}
+        name: Func<Type, object>
         isExternal: true
     - id: getServices
       type:
         id: System.Func{System.Type,System.Collections.Generic.IEnumerable{System.Object}}
-        name: System.Func{System.Type,System.Collections.Generic.IEnumerable{System.Object}}
+        name: Func<Type, IEnumerable<object>>
         isExternal: true
   id: System.Web.Mvc.DependencyResolver.InnerSetResolver(System.Func{System.Type,System.Object},System.Func{System.Type,System.Collections.Generic.IEnumerable{System.Object}})

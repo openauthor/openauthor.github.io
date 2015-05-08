@@ -6,8 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Threading.Tasks.Dataflow/src/Base/DataflowBlockOptions.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Threading.Tasks.Dataflow/src/Base/DataflowBlockOptions.cs
     startLine: 220
   summary: >-
@@ -18,10 +20,10 @@ items:
     as [System.Threading.Tasks.Dataflow.ActionBlock`1](System.Threading.Tasks.Dataflow.ActionBlock`1.yml) and [System.Threading.Tasks.Dataflow.TransformBlock`2](System.Threading.Tasks.Dataflow.TransformBlock`2.yml).
   syntax:
     content:
-      CSharp: public class ExecutionDataflowBlockOptions
+      CSharp: 'public class ExecutionDataflowBlockOptions : DataflowBlockOptions'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Threading.Tasks.Dataflow.DataflowBlockOptions
     name: DataflowBlockOptions
@@ -63,7 +65,7 @@ items:
     - id: MaxDegreeOfParallelism
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions.MaxDegreeOfParallelism
 - uid: System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions.SingleProducerConstrained
@@ -83,6 +85,6 @@ items:
     - id: SingleProducerConstrained
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions.SingleProducerConstrained

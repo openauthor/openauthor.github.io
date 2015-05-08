@@ -6,17 +6,19 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Text.RegularExpressions/src/System/Text/RegularExpressions/RegexMatch.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Text.RegularExpressions/src/System/Text/RegularExpressions/RegexMatch.cs
     startLine: 35
   summary: Represents the results from a single regular expression match.
   syntax:
     content:
-      CSharp: public class Match
+      CSharp: 'public class Match : Group'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Text.RegularExpressions.Capture
     name: Capture
@@ -29,7 +31,7 @@ items:
   - System.Text.RegularExpressions.Match.Empty
   - System.Text.RegularExpressions.Match.Groups
   - System.Text.RegularExpressions.Match.NextMatch
-  - System.Text.RegularExpressions.Match.Result(String)
+  - System.Text.RegularExpressions.Match.Result(System.String)
 - uid: System.Text.RegularExpressions.Match.Empty
   href: System.Text.RegularExpressions.Match.yml
   name: Empty
@@ -90,11 +92,15 @@ items:
     parameters: []
     return:
       id: Match
+      type:
+        id: System.Text.RegularExpressions.Match
+        name: Match
+        href: System.Text.RegularExpressions.Match.yml
   id: System.Text.RegularExpressions.Match.NextMatch
-- uid: System.Text.RegularExpressions.Match.Result(String)
+- uid: System.Text.RegularExpressions.Match.Result(System.String)
   href: System.Text.RegularExpressions.Match.yml
-  name: Result(String)
-  fullName: System.Text.RegularExpressions.Match.Result(String)
+  name: Result(string)
+  fullName: System.Text.RegularExpressions.Match.Result(string)
   type: Method
   source:
     remote: *o0
@@ -108,13 +114,17 @@ items:
     of Group(1).ToString() and Group(2).ToString().
   syntax:
     content:
-      CSharp: public virtual String Result(String replacement)
+      CSharp: public virtual string Result(string replacement)
     parameters:
     - id: replacement
       type:
-        id: String
-        name: String
+        id: System.String
+        name: string
         isExternal: true
     return:
       id: String
-  id: System.Text.RegularExpressions.Match.Result(String)
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Text.RegularExpressions.Match.Result(System.String)

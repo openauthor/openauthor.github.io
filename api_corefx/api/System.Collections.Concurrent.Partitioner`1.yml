@@ -6,8 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/Partitioner.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/Partitioner.cs
     startLine: 44
   summary: Represents a particular manner of splitting a data source into multiple partitions.
@@ -16,7 +18,7 @@ items:
       CSharp: public abstract class Partitioner<TSource>
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Collections.Concurrent.Partitioner`1
   children:
@@ -35,16 +37,20 @@ items:
   summary: Partitions the underlying collection into the given number of partitions.
   syntax:
     content:
-      CSharp: public abstract IList<IEnumerator<TSource>> GetPartitions(int partitionCount);
+      CSharp: public abstract IList<IEnumerator<TSource>> GetPartitions(int partitionCount)
     parameters:
     - id: partitionCount
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The number of partitions to create.
     return:
       id: IList
+      type:
+        id: System.Collections.Generic.IList{System.Collections.Generic.IEnumerator{`0}}
+        name: IList<IEnumerator<TSource>>
+        isExternal: true
       description: A list containing  enumerators.
   id: System.Collections.Concurrent.Partitioner`1.GetPartitions(System.Int32)
 - uid: System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions
@@ -64,7 +70,7 @@ items:
     - id: SupportsDynamicPartitions
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions
 - uid: System.Collections.Concurrent.Partitioner`1.GetDynamicPartitions
@@ -86,5 +92,9 @@ items:
     parameters: []
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{`0}
+        name: IEnumerable<TSource>
+        isExternal: true
       description: An object that can create partitions over the underlying data source.
   id: System.Collections.Concurrent.Partitioner`1.GetDynamicPartitions

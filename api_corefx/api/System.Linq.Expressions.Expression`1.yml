@@ -1,0 +1,158 @@
+items:
+- uid: System.Linq.Expressions.Expression`1
+  href: System.Linq.Expressions.Expression`1.yml
+  name: Expression<TDelegate>
+  fullName: System.Linq.Expressions.Expression<TDelegate>
+  type: Class
+  source:
+    remote: &o0
+      path: src/System.Linq.Expressions/src/System/Linq/Expressions/LambdaExpression.cs
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
+    path: src/System.Linq.Expressions/src/System/Linq/Expressions/LambdaExpression.cs
+    startLine: 151
+  summary: >-
+    Defines a [System.Linq.Expressions.Expression`1](System.Linq.Expressions.Expression`1.yml) node.
+
+    This captures a block of code that is similar to a .NET method body.
+  syntax:
+    content:
+      CSharp: 'public sealed class Expression<TDelegate> : LambdaExpression'
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.Linq.Expressions.Expression
+    name: Expression
+    href: System.Linq.Expressions.Expression.yml
+  - id: System.Linq.Expressions.LambdaExpression
+    name: LambdaExpression
+    href: System.Linq.Expressions.LambdaExpression.yml
+  id: System.Linq.Expressions.Expression`1
+  children:
+  - System.Linq.Expressions.Expression`1.#ctor(System.Linq.Expressions.Expression,System.String,System.Boolean,System.Collections.ObjectModel.ReadOnlyCollection{System.Linq.Expressions.ParameterExpression})
+  - System.Linq.Expressions.Expression`1.Compile
+  - System.Linq.Expressions.Expression`1.Update(System.Linq.Expressions.Expression,System.Collections.Generic.IEnumerable{System.Linq.Expressions.ParameterExpression})
+  - System.Linq.Expressions.Expression`1.Accept(System.Linq.Expressions.ExpressionVisitor)
+- uid: System.Linq.Expressions.Expression`1.#ctor(System.Linq.Expressions.Expression,System.String,System.Boolean,System.Collections.ObjectModel.ReadOnlyCollection{System.Linq.Expressions.ParameterExpression})
+  href: System.Linq.Expressions.Expression`1.yml
+  name: Expression(Expression, string, bool, ReadOnlyCollection<ParameterExpression>)
+  fullName: System.Linq.Expressions.Expression<TDelegate>.Expression(System.Linq.Expressions.Expression, string, bool, System.Collections.ObjectModel.ReadOnlyCollection<System.Linq.Expressions.ParameterExpression>)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Linq.Expressions/src/System/Linq/Expressions/LambdaExpression.cs
+    startLine: 153
+  syntax:
+    content:
+      CSharp: 'public Expression(Expression body, string name, bool tailCall, ReadOnlyCollection<ParameterExpression> parameters): base (typeof (TDelegate), name, body, tailCall, parameters)'
+    parameters:
+    - id: body
+      type:
+        id: System.Linq.Expressions.Expression
+        name: Expression
+        href: System.Linq.Expressions.Expression.yml
+    - id: name
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    - id: tailCall
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+    - id: parameters
+      type:
+        id: System.Collections.ObjectModel.ReadOnlyCollection{System.Linq.Expressions.ParameterExpression}
+        name: ReadOnlyCollection<ParameterExpression>
+        isExternal: true
+  id: System.Linq.Expressions.Expression`1.#ctor(System.Linq.Expressions.Expression,System.String,System.Boolean,System.Collections.ObjectModel.ReadOnlyCollection{System.Linq.Expressions.ParameterExpression})
+- uid: System.Linq.Expressions.Expression`1.Compile
+  href: System.Linq.Expressions.Expression`1.yml
+  name: Compile()
+  fullName: System.Linq.Expressions.Expression<TDelegate>.Compile()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Linq.Expressions/src/System/Linq/Expressions/LambdaExpression.cs
+    startLine: 162
+  summary: Produces a delegate that represents the lambda expression.
+  syntax:
+    content:
+      CSharp: public TDelegate Compile()
+    parameters: []
+    return:
+      id: TDelegate
+      type:
+        id: TDelegate
+        name: TDelegate
+        href: TDelegate
+      description: A delegate containing the compiled version of the lambda.
+  id: System.Linq.Expressions.Expression`1.Compile
+- uid: System.Linq.Expressions.Expression`1.Update(System.Linq.Expressions.Expression,System.Collections.Generic.IEnumerable{System.Linq.Expressions.ParameterExpression})
+  href: System.Linq.Expressions.Expression`1.yml
+  name: Update(Expression, IEnumerable<ParameterExpression>)
+  fullName: System.Linq.Expressions.Expression<TDelegate>.Update(System.Linq.Expressions.Expression, System.Collections.Generic.IEnumerable<System.Linq.Expressions.ParameterExpression>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Linq.Expressions/src/System/Linq/Expressions/LambdaExpression.cs
+    startLine: 179
+  summary: >-
+    Creates a new expression that is like this one, but using the
+
+    supplied children. If all of the children are the same, it will
+
+    return this expression.
+  syntax:
+    content:
+      CSharp: public override LambdaExpression Update(Expression body, IEnumerable<ParameterExpression> parameters)
+    parameters:
+    - id: body
+      type:
+        id: System.Linq.Expressions.Expression
+        name: Expression
+        href: System.Linq.Expressions.Expression.yml
+      description: The [System.Linq.Expressions.LambdaExpression.Body](System.Linq.Expressions.LambdaExpression.yml) property of the result.
+    - id: parameters
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Linq.Expressions.ParameterExpression}
+        name: IEnumerable<ParameterExpression>
+        isExternal: true
+      description: The [System.Linq.Expressions.LambdaExpression.Parameters](System.Linq.Expressions.LambdaExpression.yml) property of the result.
+    return:
+      id: LambdaExpression
+      type:
+        id: System.Linq.Expressions.LambdaExpression
+        name: LambdaExpression
+        href: System.Linq.Expressions.LambdaExpression.yml
+      description: This expression if no children changed, or an expression with the updated children.
+  id: System.Linq.Expressions.Expression`1.Update(System.Linq.Expressions.Expression,System.Collections.Generic.IEnumerable{System.Linq.Expressions.ParameterExpression})
+- uid: System.Linq.Expressions.Expression`1.Accept(System.Linq.Expressions.ExpressionVisitor)
+  href: System.Linq.Expressions.Expression`1.yml
+  name: Accept(ExpressionVisitor)
+  fullName: System.Linq.Expressions.Expression<TDelegate>.Accept(System.Linq.Expressions.ExpressionVisitor)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Linq.Expressions/src/System/Linq/Expressions/LambdaExpression.cs
+    startLine: 191
+  summary: Dispatches to the specific visit method for this node type.
+  syntax:
+    content:
+      CSharp: protected internal override Expression Accept(ExpressionVisitor visitor)
+    parameters:
+    - id: visitor
+      type:
+        id: System.Linq.Expressions.ExpressionVisitor
+        name: ExpressionVisitor
+        href: System.Linq.Expressions.ExpressionVisitor.yml
+    return:
+      id: Expression
+      type:
+        id: System.Linq.Expressions.Expression
+        name: Expression
+        href: System.Linq.Expressions.Expression.yml
+  id: System.Linq.Expressions.Expression`1.Accept(System.Linq.Expressions.ExpressionVisitor)

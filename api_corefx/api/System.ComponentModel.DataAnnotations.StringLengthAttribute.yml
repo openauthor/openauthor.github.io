@@ -6,16 +6,21 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/StringLengthAttribute.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/StringLengthAttribute.cs
     startLine: 10
   summary: Validation attribute to assert a string property, field or parameter does not exceed a maximum length
   syntax:
     content:
-      CSharp: public class StringLengthAttribute
+      CSharp: 'public class StringLengthAttribute : ValidationAttribute, _Attribute'
   inheritance:
-  - id: Attribute
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.Attribute
     name: Attribute
     isExternal: true
   - id: System.ComponentModel.DataAnnotations.ValidationAttribute
@@ -45,7 +50,7 @@ items:
     - id: maximumLength
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The maximum length, inclusive.  It may not be negative.
   id: System.ComponentModel.DataAnnotations.StringLengthAttribute.#ctor(System.Int32)
@@ -61,12 +66,12 @@ items:
   summary: Gets the maximum acceptable length of the string
   syntax:
     content:
-      CSharp: public int MaximumLength { get; private set; }
+      CSharp: public int MaximumLength { get; }
     parameters:
     - id: MaximumLength
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.ComponentModel.DataAnnotations.StringLengthAttribute.MaximumLength
 - uid: System.ComponentModel.DataAnnotations.StringLengthAttribute.MinimumLength
@@ -86,7 +91,7 @@ items:
     - id: MinimumLength
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.ComponentModel.DataAnnotations.StringLengthAttribute.MinimumLength
 - uid: System.ComponentModel.DataAnnotations.StringLengthAttribute.IsValid(System.Object)
@@ -106,11 +111,15 @@ items:
     - id: value
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: The value to test.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: true if the value is null or less than or equal to the set maximum length
   id: System.ComponentModel.DataAnnotations.StringLengthAttribute.IsValid(System.Object)
 - uid: System.ComponentModel.DataAnnotations.StringLengthAttribute.FormatErrorMessage(System.String)
@@ -130,10 +139,14 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The name to include in the formatted string
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
       description: A localized string to describe the maximum acceptable length
   id: System.ComponentModel.DataAnnotations.StringLengthAttribute.FormatErrorMessage(System.String)

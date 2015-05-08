@@ -6,31 +6,42 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Text.RegularExpressions/src/System/Text/RegularExpressions/RegexMatchTimeoutException.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Text.RegularExpressions/src/System/Text/RegularExpressions/RegexMatchTimeoutException.cs
     startLine: 11
   summary: This is the exception that is thrown when a RegEx matching timeout occurs.
   syntax:
     content:
-      CSharp: public class RegexMatchTimeoutException
+      CSharp: 'public class RegexMatchTimeoutException : TimeoutException, ISerializable, _Exception'
   inheritance:
-  - id: TimeoutException
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.Exception
+    name: Exception
+    isExternal: true
+  - id: System.SystemException
+    name: SystemException
+    isExternal: true
+  - id: System.TimeoutException
     name: TimeoutException
     isExternal: true
   id: System.Text.RegularExpressions.RegexMatchTimeoutException
   children:
-  - System.Text.RegularExpressions.RegexMatchTimeoutException.#ctor(System.String,System.String,TimeSpan)
+  - System.Text.RegularExpressions.RegexMatchTimeoutException.#ctor(System.String,System.String,System.TimeSpan)
   - System.Text.RegularExpressions.RegexMatchTimeoutException.#ctor
   - System.Text.RegularExpressions.RegexMatchTimeoutException.#ctor(System.String)
-  - System.Text.RegularExpressions.RegexMatchTimeoutException.#ctor(System.String,Exception)
+  - System.Text.RegularExpressions.RegexMatchTimeoutException.#ctor(System.String,System.Exception)
   - System.Text.RegularExpressions.RegexMatchTimeoutException.Pattern
   - System.Text.RegularExpressions.RegexMatchTimeoutException.Input
   - System.Text.RegularExpressions.RegexMatchTimeoutException.MatchTimeout
-- uid: System.Text.RegularExpressions.RegexMatchTimeoutException.#ctor(System.String,System.String,TimeSpan)
+- uid: System.Text.RegularExpressions.RegexMatchTimeoutException.#ctor(System.String,System.String,System.TimeSpan)
   href: System.Text.RegularExpressions.RegexMatchTimeoutException.yml
   name: RegexMatchTimeoutException(string, string, TimeSpan)
-  fullName: System.Text.RegularExpressions.RegexMatchTimeoutException.RegexMatchTimeoutException(string, string, TimeSpan)
+  fullName: System.Text.RegularExpressions.RegexMatchTimeoutException.RegexMatchTimeoutException(string, string, System.TimeSpan)
   type: Constructor
   source:
     remote: *o0
@@ -44,22 +55,22 @@ items:
     - id: regexInput
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: Matching timeout occurred during matching within the specified input.
     - id: regexPattern
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: Matching timeout occurred during matching to the specified pattern.
     - id: matchTimeout
       type:
-        id: TimeSpan
+        id: System.TimeSpan
         name: TimeSpan
         isExternal: true
       description: Matching timeout occurred because matching took longer than the specified timeout.
-  id: System.Text.RegularExpressions.RegexMatchTimeoutException.#ctor(System.String,System.String,TimeSpan)
+  id: System.Text.RegularExpressions.RegexMatchTimeoutException.#ctor(System.String,System.String,System.TimeSpan)
 - uid: System.Text.RegularExpressions.RegexMatchTimeoutException.#ctor
   href: System.Text.RegularExpressions.RegexMatchTimeoutException.yml
   name: RegexMatchTimeoutException()
@@ -102,14 +113,14 @@ items:
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The error message that explains the reason for the exception.
   id: System.Text.RegularExpressions.RegexMatchTimeoutException.#ctor(System.String)
-- uid: System.Text.RegularExpressions.RegexMatchTimeoutException.#ctor(System.String,Exception)
+- uid: System.Text.RegularExpressions.RegexMatchTimeoutException.#ctor(System.String,System.Exception)
   href: System.Text.RegularExpressions.RegexMatchTimeoutException.yml
   name: RegexMatchTimeoutException(string, Exception)
-  fullName: System.Text.RegularExpressions.RegexMatchTimeoutException.RegexMatchTimeoutException(string, Exception)
+  fullName: System.Text.RegularExpressions.RegexMatchTimeoutException.RegexMatchTimeoutException(string, System.Exception)
   type: Constructor
   source:
     remote: *o0
@@ -128,16 +139,16 @@ items:
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The error message that explains the reason for the exception.
     - id: inner
       type:
-        id: Exception
+        id: System.Exception
         name: Exception
         isExternal: true
       description: The exception that is the cause of the current exception, or a null.
-  id: System.Text.RegularExpressions.RegexMatchTimeoutException.#ctor(System.String,Exception)
+  id: System.Text.RegularExpressions.RegexMatchTimeoutException.#ctor(System.String,System.Exception)
 - uid: System.Text.RegularExpressions.RegexMatchTimeoutException.Pattern
   href: System.Text.RegularExpressions.RegexMatchTimeoutException.yml
   name: Pattern
@@ -154,7 +165,7 @@ items:
     - id: Pattern
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Text.RegularExpressions.RegexMatchTimeoutException.Pattern
 - uid: System.Text.RegularExpressions.RegexMatchTimeoutException.Input
@@ -173,7 +184,7 @@ items:
     - id: Input
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Text.RegularExpressions.RegexMatchTimeoutException.Input
 - uid: System.Text.RegularExpressions.RegexMatchTimeoutException.MatchTimeout
@@ -191,7 +202,7 @@ items:
     parameters:
     - id: MatchTimeout
       type:
-        id: TimeSpan
+        id: System.TimeSpan
         name: TimeSpan
         isExternal: true
   id: System.Text.RegularExpressions.RegexMatchTimeoutException.MatchTimeout

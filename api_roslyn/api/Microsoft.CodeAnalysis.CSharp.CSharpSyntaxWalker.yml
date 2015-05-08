@@ -6,32 +6,67 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxWalker.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxWalker.cs
     startLine: 13
   summary: >-
     Represents a [Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor](Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor.yml) that descends an entire [Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode](Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode.yml) graph
 
-    visiting each CSharpSyntaxNode and its child SyntaxNodes and [Microsoft.CodeAnalysis.SyntaxToken](#)s in depth-first order.
+    visiting each CSharpSyntaxNode and its child SyntaxNodes and [Microsoft.CodeAnalysis.SyntaxToken]()s in depth-first order.
   syntax:
     content:
-      CSharp: public abstract class CSharpSyntaxWalker
+      CSharp: 'public abstract class CSharpSyntaxWalker : CSharpSyntaxVisitor'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor
     name: CSharpSyntaxVisitor
     href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor.yml
   id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker
   children:
+  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker.Depth
+  - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker.#ctor(Microsoft.CodeAnalysis.SyntaxWalkerDepth)
   - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker.DefaultVisit(Microsoft.CodeAnalysis.SyntaxNode)
   - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker.VisitToken(Microsoft.CodeAnalysis.SyntaxToken)
   - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker.VisitLeadingTrivia(Microsoft.CodeAnalysis.SyntaxToken)
   - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker.VisitTrailingTrivia(Microsoft.CodeAnalysis.SyntaxToken)
   - Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker.VisitTrivia(Microsoft.CodeAnalysis.SyntaxTrivia)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker.Depth
+  href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker.yml
+  name: Depth
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker.Depth
+  type: Field
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxWalker.cs
+    startLine: 15
+  syntax:
+    content:
+      CSharp: protected readonly SyntaxWalkerDepth Depth;
+  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker.Depth
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker.#ctor(Microsoft.CodeAnalysis.SyntaxWalkerDepth)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker.yml
+  name: CSharpSyntaxWalker(SyntaxWalkerDepth)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker.CSharpSyntaxWalker(Microsoft.CodeAnalysis.SyntaxWalkerDepth)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/Syntax/CSharpSyntaxWalker.cs
+    startLine: 17
+  syntax:
+    content:
+      CSharp: protected CSharpSyntaxWalker(SyntaxWalkerDepth depth = SyntaxWalkerDepth.Node)
+    parameters:
+    - id: depth
+      type:
+        id: Microsoft.CodeAnalysis.SyntaxWalkerDepth
+        name: SyntaxWalkerDepth
+        href: Microsoft.CodeAnalysis.SyntaxWalkerDepth
+  id: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker.#ctor(Microsoft.CodeAnalysis.SyntaxWalkerDepth)
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker.DefaultVisit(Microsoft.CodeAnalysis.SyntaxNode)
   href: Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker.yml
   name: DefaultVisit(SyntaxNode)

@@ -6,21 +6,28 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1736
+    startLine: 2347
   syntax:
     content:
-      CSharp: public struct AssemblyFileHandle
+      CSharp: 'public struct AssemblyFileHandle : IEquatable<AssemblyFileHandle>'
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Reflection.Metadata.AssemblyFileHandle
   children:
   - System.Reflection.Metadata.AssemblyFileHandle.op_Implicit(System.Reflection.Metadata.AssemblyFileHandle)~System.Reflection.Metadata.Handle
+  - System.Reflection.Metadata.AssemblyFileHandle.op_Implicit(System.Reflection.Metadata.AssemblyFileHandle)~System.Reflection.Metadata.EntityHandle
   - System.Reflection.Metadata.AssemblyFileHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.AssemblyFileHandle
+  - System.Reflection.Metadata.AssemblyFileHandle.op_Explicit(System.Reflection.Metadata.EntityHandle)~System.Reflection.Metadata.AssemblyFileHandle
   - System.Reflection.Metadata.AssemblyFileHandle.IsNil
   - System.Reflection.Metadata.AssemblyFileHandle.op_Equality(System.Reflection.Metadata.AssemblyFileHandle,System.Reflection.Metadata.AssemblyFileHandle)
   - System.Reflection.Metadata.AssemblyFileHandle.Equals(System.Object)
@@ -31,14 +38,14 @@ items:
   href: System.Reflection.Metadata.AssemblyFileHandle.yml
   name: implicit operator Handle(AssemblyFileHandle)
   fullName: System.Reflection.Metadata.AssemblyFileHandle.implicit operator System.Reflection.Metadata.Handle(System.Reflection.Metadata.AssemblyFileHandle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1752
+    startLine: 2364
   syntax:
     content:
-      CSharp: public static implicit operator Handle(AssemblyFileHandle handle) { return new Handle(handle._rowId | tokenType); }
+      CSharp: public static implicit operator Handle(AssemblyFileHandle handle)
     parameters:
     - id: handle
       type:
@@ -47,19 +54,48 @@ items:
         href: System.Reflection.Metadata.AssemblyFileHandle.yml
     return:
       id: Handle
+      type:
+        id: System.Reflection.Metadata.Handle
+        name: Handle
+        href: System.Reflection.Metadata.Handle.yml
   id: System.Reflection.Metadata.AssemblyFileHandle.op_Implicit(System.Reflection.Metadata.AssemblyFileHandle)~System.Reflection.Metadata.Handle
+- uid: System.Reflection.Metadata.AssemblyFileHandle.op_Implicit(System.Reflection.Metadata.AssemblyFileHandle)~System.Reflection.Metadata.EntityHandle
+  href: System.Reflection.Metadata.AssemblyFileHandle.yml
+  name: implicit operator EntityHandle(AssemblyFileHandle)
+  fullName: System.Reflection.Metadata.AssemblyFileHandle.implicit operator System.Reflection.Metadata.EntityHandle(System.Reflection.Metadata.AssemblyFileHandle)
+  type: Operator
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 2369
+  syntax:
+    content:
+      CSharp: public static implicit operator EntityHandle(AssemblyFileHandle handle)
+    parameters:
+    - id: handle
+      type:
+        id: System.Reflection.Metadata.AssemblyFileHandle
+        name: AssemblyFileHandle
+        href: System.Reflection.Metadata.AssemblyFileHandle.yml
+    return:
+      id: EntityHandle
+      type:
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
+  id: System.Reflection.Metadata.AssemblyFileHandle.op_Implicit(System.Reflection.Metadata.AssemblyFileHandle)~System.Reflection.Metadata.EntityHandle
 - uid: System.Reflection.Metadata.AssemblyFileHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.AssemblyFileHandle
   href: System.Reflection.Metadata.AssemblyFileHandle.yml
   name: explicit operator AssemblyFileHandle(Handle)
   fullName: System.Reflection.Metadata.AssemblyFileHandle.explicit operator System.Reflection.Metadata.AssemblyFileHandle(System.Reflection.Metadata.Handle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1757
+    startLine: 2374
   syntax:
     content:
-      CSharp: public static explicit operator AssemblyFileHandle(Handle handle) { if (handle.TokenType != tokenType) { Handle.ThrowInvalidCast(); } return new AssemblyFileHandle(handle.RowId); }
+      CSharp: public static explicit operator AssemblyFileHandle(Handle handle)
     parameters:
     - id: handle
       type:
@@ -68,7 +104,36 @@ items:
         href: System.Reflection.Metadata.Handle.yml
     return:
       id: AssemblyFileHandle
+      type:
+        id: System.Reflection.Metadata.AssemblyFileHandle
+        name: AssemblyFileHandle
+        href: System.Reflection.Metadata.AssemblyFileHandle.yml
   id: System.Reflection.Metadata.AssemblyFileHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.AssemblyFileHandle
+- uid: System.Reflection.Metadata.AssemblyFileHandle.op_Explicit(System.Reflection.Metadata.EntityHandle)~System.Reflection.Metadata.AssemblyFileHandle
+  href: System.Reflection.Metadata.AssemblyFileHandle.yml
+  name: explicit operator AssemblyFileHandle(EntityHandle)
+  fullName: System.Reflection.Metadata.AssemblyFileHandle.explicit operator System.Reflection.Metadata.AssemblyFileHandle(System.Reflection.Metadata.EntityHandle)
+  type: Operator
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 2384
+  syntax:
+    content:
+      CSharp: public static explicit operator AssemblyFileHandle(EntityHandle handle)
+    parameters:
+    - id: handle
+      type:
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
+    return:
+      id: AssemblyFileHandle
+      type:
+        id: System.Reflection.Metadata.AssemblyFileHandle
+        name: AssemblyFileHandle
+        href: System.Reflection.Metadata.AssemblyFileHandle.yml
+  id: System.Reflection.Metadata.AssemblyFileHandle.op_Explicit(System.Reflection.Metadata.EntityHandle)~System.Reflection.Metadata.AssemblyFileHandle
 - uid: System.Reflection.Metadata.AssemblyFileHandle.IsNil
   href: System.Reflection.Metadata.AssemblyFileHandle.yml
   name: IsNil
@@ -77,7 +142,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1767
+    startLine: 2394
   syntax:
     content:
       CSharp: public bool IsNil { get; }
@@ -85,21 +150,21 @@ items:
     - id: IsNil
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Reflection.Metadata.AssemblyFileHandle.IsNil
 - uid: System.Reflection.Metadata.AssemblyFileHandle.op_Equality(System.Reflection.Metadata.AssemblyFileHandle,System.Reflection.Metadata.AssemblyFileHandle)
   href: System.Reflection.Metadata.AssemblyFileHandle.yml
   name: operator ==(AssemblyFileHandle, AssemblyFileHandle)
   fullName: System.Reflection.Metadata.AssemblyFileHandle.operator ==(System.Reflection.Metadata.AssemblyFileHandle, System.Reflection.Metadata.AssemblyFileHandle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1777
+    startLine: 2404
   syntax:
     content:
-      CSharp: public static bool operator ==(AssemblyFileHandle left, AssemblyFileHandle right) { return left._rowId == right._rowId; }
+      CSharp: public static bool operator ==(AssemblyFileHandle left, AssemblyFileHandle right)
     parameters:
     - id: left
       type:
@@ -113,6 +178,10 @@ items:
         href: System.Reflection.Metadata.AssemblyFileHandle.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.AssemblyFileHandle.op_Equality(System.Reflection.Metadata.AssemblyFileHandle,System.Reflection.Metadata.AssemblyFileHandle)
 - uid: System.Reflection.Metadata.AssemblyFileHandle.Equals(System.Object)
   href: System.Reflection.Metadata.AssemblyFileHandle.yml
@@ -122,7 +191,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1782
+    startLine: 2409
   syntax:
     content:
       CSharp: public override bool Equals(object obj)
@@ -130,10 +199,14 @@ items:
     - id: obj
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.AssemblyFileHandle.Equals(System.Object)
 - uid: System.Reflection.Metadata.AssemblyFileHandle.Equals(System.Reflection.Metadata.AssemblyFileHandle)
   href: System.Reflection.Metadata.AssemblyFileHandle.yml
@@ -143,7 +216,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1787
+    startLine: 2414
   syntax:
     content:
       CSharp: public bool Equals(AssemblyFileHandle other)
@@ -155,6 +228,10 @@ items:
         href: System.Reflection.Metadata.AssemblyFileHandle.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.AssemblyFileHandle.Equals(System.Reflection.Metadata.AssemblyFileHandle)
 - uid: System.Reflection.Metadata.AssemblyFileHandle.GetHashCode
   href: System.Reflection.Metadata.AssemblyFileHandle.yml
@@ -164,26 +241,30 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1792
+    startLine: 2419
   syntax:
     content:
       CSharp: public override int GetHashCode()
     parameters: []
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: System.Reflection.Metadata.AssemblyFileHandle.GetHashCode
 - uid: System.Reflection.Metadata.AssemblyFileHandle.op_Inequality(System.Reflection.Metadata.AssemblyFileHandle,System.Reflection.Metadata.AssemblyFileHandle)
   href: System.Reflection.Metadata.AssemblyFileHandle.yml
   name: operator !=(AssemblyFileHandle, AssemblyFileHandle)
   fullName: System.Reflection.Metadata.AssemblyFileHandle.operator !=(System.Reflection.Metadata.AssemblyFileHandle, System.Reflection.Metadata.AssemblyFileHandle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1797
+    startLine: 2424
   syntax:
     content:
-      CSharp: public static bool operator !=(AssemblyFileHandle left, AssemblyFileHandle right) { return left._rowId != right._rowId; }
+      CSharp: public static bool operator !=(AssemblyFileHandle left, AssemblyFileHandle right)
     parameters:
     - id: left
       type:
@@ -197,4 +278,8 @@ items:
         href: System.Reflection.Metadata.AssemblyFileHandle.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.AssemblyFileHandle.op_Inequality(System.Reflection.Metadata.AssemblyFileHandle,System.Reflection.Metadata.AssemblyFileHandle)

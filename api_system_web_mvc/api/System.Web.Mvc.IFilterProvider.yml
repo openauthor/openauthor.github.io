@@ -6,9 +6,10 @@ items:
   type: Interface
   source:
     remote: &o0
+      path: src/System.Web.Mvc/IFilterProvider.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/IFilterProvider.cs
     startLine: 6
   syntax:
@@ -28,7 +29,7 @@ items:
     startLine: 8
   syntax:
     content:
-      CSharp: IEnumerable<Filter> GetFilters(ControllerContext controllerContext, ActionDescriptor actionDescriptor);
+      CSharp: public IEnumerable<Filter> GetFilters(ControllerContext controllerContext, ActionDescriptor actionDescriptor)
     parameters:
     - id: controllerContext
       type:
@@ -42,4 +43,8 @@ items:
         href: System.Web.Mvc.ActionDescriptor.yml
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Web.Mvc.Filter}
+        name: IEnumerable<Filter>
+        isExternal: true
   id: System.Web.Mvc.IFilterProvider.GetFilters(System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionDescriptor)

@@ -6,16 +6,24 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.IO.Pipes/src/System/IO/Pipes/AnonymousPipeClientStream.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.IO.Pipes/src/System/IO/Pipes/AnonymousPipeClientStream.cs
     startLine: 13
   summary: Anonymous pipe client. Use this to open the client end of an anonymous pipes created with AnonymousPipeServerStream.
   syntax:
     content:
-      CSharp: public sealed partial class AnonymousPipeClientStream
+      CSharp: 'public sealed class AnonymousPipeClientStream : PipeStream, IDisposable'
   inheritance:
-  - id: Stream
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.MarshalByRefObject
+    name: MarshalByRefObject
+    isExternal: true
+  - id: System.IO.Stream
     name: Stream
     isExternal: true
   - id: System.IO.Pipes.PipeStream
@@ -23,15 +31,16 @@ items:
     href: System.IO.Pipes.PipeStream.yml
   id: System.IO.Pipes.AnonymousPipeClientStream
   children:
-  - System.IO.Pipes.AnonymousPipeClientStream.#ctor(String)
-  - System.IO.Pipes.AnonymousPipeClientStream.#ctor(System.IO.Pipes.PipeDirection,String)
+  - System.IO.Pipes.AnonymousPipeClientStream.#ctor(System.String)
+  - System.IO.Pipes.AnonymousPipeClientStream.#ctor(System.IO.Pipes.PipeDirection,System.String)
   - System.IO.Pipes.AnonymousPipeClientStream.#ctor(System.IO.Pipes.PipeDirection,Microsoft.Win32.SafeHandles.SafePipeHandle)
+  - System.IO.Pipes.AnonymousPipeClientStream.Finalize
   - System.IO.Pipes.AnonymousPipeClientStream.TransmissionMode
   - System.IO.Pipes.AnonymousPipeClientStream.ReadMode
-- uid: System.IO.Pipes.AnonymousPipeClientStream.#ctor(String)
+- uid: System.IO.Pipes.AnonymousPipeClientStream.#ctor(System.String)
   href: System.IO.Pipes.AnonymousPipeClientStream.yml
-  name: AnonymousPipeClientStream(String)
-  fullName: System.IO.Pipes.AnonymousPipeClientStream.AnonymousPipeClientStream(String)
+  name: AnonymousPipeClientStream(string)
+  fullName: System.IO.Pipes.AnonymousPipeClientStream.AnonymousPipeClientStream(string)
   type: Constructor
   source:
     remote: *o0
@@ -43,14 +52,14 @@ items:
     parameters:
     - id: pipeHandleAsString
       type:
-        id: String
-        name: String
+        id: System.String
+        name: string
         isExternal: true
-  id: System.IO.Pipes.AnonymousPipeClientStream.#ctor(String)
-- uid: System.IO.Pipes.AnonymousPipeClientStream.#ctor(System.IO.Pipes.PipeDirection,String)
+  id: System.IO.Pipes.AnonymousPipeClientStream.#ctor(System.String)
+- uid: System.IO.Pipes.AnonymousPipeClientStream.#ctor(System.IO.Pipes.PipeDirection,System.String)
   href: System.IO.Pipes.AnonymousPipeClientStream.yml
-  name: AnonymousPipeClientStream(PipeDirection, String)
-  fullName: System.IO.Pipes.AnonymousPipeClientStream.AnonymousPipeClientStream(System.IO.Pipes.PipeDirection, String)
+  name: AnonymousPipeClientStream(PipeDirection, string)
+  fullName: System.IO.Pipes.AnonymousPipeClientStream.AnonymousPipeClientStream(System.IO.Pipes.PipeDirection, string)
   type: Constructor
   source:
     remote: *o0
@@ -67,10 +76,10 @@ items:
         href: System.IO.Pipes.PipeDirection.yml
     - id: pipeHandleAsString
       type:
-        id: String
-        name: String
+        id: System.String
+        name: string
         isExternal: true
-  id: System.IO.Pipes.AnonymousPipeClientStream.#ctor(System.IO.Pipes.PipeDirection,String)
+  id: System.IO.Pipes.AnonymousPipeClientStream.#ctor(System.IO.Pipes.PipeDirection,System.String)
 - uid: System.IO.Pipes.AnonymousPipeClientStream.#ctor(System.IO.Pipes.PipeDirection,Microsoft.Win32.SafeHandles.SafePipeHandle)
   href: System.IO.Pipes.AnonymousPipeClientStream.yml
   name: AnonymousPipeClientStream(PipeDirection, SafePipeHandle)
@@ -93,8 +102,22 @@ items:
       type:
         id: Microsoft.Win32.SafeHandles.SafePipeHandle
         name: SafePipeHandle
-        href: Microsoft.Win32.SafeHandles.SafePipeHandle
+        href: Microsoft.Win32.SafeHandles.SafePipeHandle.yml
   id: System.IO.Pipes.AnonymousPipeClientStream.#ctor(System.IO.Pipes.PipeDirection,Microsoft.Win32.SafeHandles.SafePipeHandle)
+- uid: System.IO.Pipes.AnonymousPipeClientStream.Finalize
+  href: System.IO.Pipes.AnonymousPipeClientStream.yml
+  name: ~AnonymousPipeClientStream()
+  fullName: System.IO.Pipes.AnonymousPipeClientStream.~AnonymousPipeClientStream()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.Pipes/src/System/IO/Pipes/AnonymousPipeClientStream.cs
+    startLine: 85
+  syntax:
+    content:
+      CSharp: protected void Finalize()
+    parameters: []
+  id: System.IO.Pipes.AnonymousPipeClientStream.Finalize
 - uid: System.IO.Pipes.AnonymousPipeClientStream.TransmissionMode
   href: System.IO.Pipes.AnonymousPipeClientStream.yml
   name: TransmissionMode

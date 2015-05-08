@@ -6,16 +6,21 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MethodSpecification.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MethodSpecification.cs
     startLine: 7
   syntax:
     content:
       CSharp: public struct MethodSpecification
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Reflection.Metadata.MethodSpecification
   children:
@@ -37,13 +42,13 @@ items:
     that is which generic method is it an instantiation of.
   syntax:
     content:
-      CSharp: public Handle Method { get; }
+      CSharp: public EntityHandle Method { get; }
     parameters:
     - id: Method
       type:
-        id: System.Reflection.Metadata.Handle
-        name: Handle
-        href: System.Reflection.Metadata.Handle.yml
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
   id: System.Reflection.Metadata.MethodSpecification.Method
 - uid: System.Reflection.Metadata.MethodSpecification.Signature
   href: System.Reflection.Metadata.MethodSpecification.yml
@@ -80,4 +85,8 @@ items:
     parameters: []
     return:
       id: CustomAttributeHandleCollection
+      type:
+        id: System.Reflection.Metadata.CustomAttributeHandleCollection
+        name: CustomAttributeHandleCollection
+        href: System.Reflection.Metadata.CustomAttributeHandleCollection.yml
   id: System.Reflection.Metadata.MethodSpecification.GetCustomAttributes

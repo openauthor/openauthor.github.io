@@ -6,30 +6,32 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/ValidationContext.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/ValidationContext.cs
     startLine: 23
   summary: Describes the context in which a validation is being performed.
   syntax:
     content:
-      CSharp: public sealed class ValidationContext
+      CSharp: 'public sealed class ValidationContext : IServiceProvider'
   inheritance:
-  - id: IServiceProvider
-    name: IServiceProvider
+  - id: System.Object
+    name: object
     isExternal: true
   id: System.ComponentModel.DataAnnotations.ValidationContext
   children:
   - System.ComponentModel.DataAnnotations.ValidationContext.#ctor(System.Object)
-  - System.ComponentModel.DataAnnotations.ValidationContext.#ctor(System.Object,IDictionary{System.Object,System.Object})
-  - System.ComponentModel.DataAnnotations.ValidationContext.#ctor(System.Object,IServiceProvider,IDictionary{System.Object,System.Object})
+  - System.ComponentModel.DataAnnotations.ValidationContext.#ctor(System.Object,System.Collections.Generic.IDictionary{System.Object,System.Object})
+  - System.ComponentModel.DataAnnotations.ValidationContext.#ctor(System.Object,System.IServiceProvider,System.Collections.Generic.IDictionary{System.Object,System.Object})
   - System.ComponentModel.DataAnnotations.ValidationContext.ObjectInstance
   - System.ComponentModel.DataAnnotations.ValidationContext.ObjectType
   - System.ComponentModel.DataAnnotations.ValidationContext.DisplayName
   - System.ComponentModel.DataAnnotations.ValidationContext.MemberName
   - System.ComponentModel.DataAnnotations.ValidationContext.Items
-  - System.ComponentModel.DataAnnotations.ValidationContext.InitializeServiceProvider(Func{Type,System.Object})
-  - System.ComponentModel.DataAnnotations.ValidationContext.GetService(Type)
+  - System.ComponentModel.DataAnnotations.ValidationContext.InitializeServiceProvider(System.Func{System.Type,System.Object})
+  - System.ComponentModel.DataAnnotations.ValidationContext.GetService(System.Type)
 - uid: System.ComponentModel.DataAnnotations.ValidationContext.#ctor(System.Object)
   href: System.ComponentModel.DataAnnotations.ValidationContext.yml
   name: ValidationContext(object)
@@ -47,14 +49,14 @@ items:
     - id: instance
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: The object instance being validated.  It cannot be null.
   id: System.ComponentModel.DataAnnotations.ValidationContext.#ctor(System.Object)
-- uid: System.ComponentModel.DataAnnotations.ValidationContext.#ctor(System.Object,IDictionary{System.Object,System.Object})
+- uid: System.ComponentModel.DataAnnotations.ValidationContext.#ctor(System.Object,System.Collections.Generic.IDictionary{System.Object,System.Object})
   href: System.ComponentModel.DataAnnotations.ValidationContext.yml
   name: ValidationContext(object, IDictionary<object, object>)
-  fullName: System.ComponentModel.DataAnnotations.ValidationContext.ValidationContext(object, IDictionary<object, object>)
+  fullName: System.ComponentModel.DataAnnotations.ValidationContext.ValidationContext(object, System.Collections.Generic.IDictionary<object, object>)
   type: Constructor
   source:
     remote: *o0
@@ -71,13 +73,13 @@ items:
     - id: instance
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: The object instance being validated.  It cannot be null.
     - id: items
       type:
-        id: IDictionary{System.Object,System.Object}
-        name: IDictionary{System.Object,System.Object}
+        id: System.Collections.Generic.IDictionary{System.Object,System.Object}
+        name: IDictionary<object, object>
         isExternal: true
       description: >-
         Optional set of key/value pairs to make available to consumers via [System.ComponentModel.DataAnnotations.ValidationContext.Items](System.ComponentModel.DataAnnotations.ValidationContext.yml).
@@ -85,11 +87,11 @@ items:
         If null, an empty dictionary will be created.  If not null, the set of key/value pairs will be copied into a
 
         new dictionary, preventing consumers from modifying the original dictionary.
-  id: System.ComponentModel.DataAnnotations.ValidationContext.#ctor(System.Object,IDictionary{System.Object,System.Object})
-- uid: System.ComponentModel.DataAnnotations.ValidationContext.#ctor(System.Object,IServiceProvider,IDictionary{System.Object,System.Object})
+  id: System.ComponentModel.DataAnnotations.ValidationContext.#ctor(System.Object,System.Collections.Generic.IDictionary{System.Object,System.Object})
+- uid: System.ComponentModel.DataAnnotations.ValidationContext.#ctor(System.Object,System.IServiceProvider,System.Collections.Generic.IDictionary{System.Object,System.Object})
   href: System.ComponentModel.DataAnnotations.ValidationContext.yml
   name: ValidationContext(object, IServiceProvider, IDictionary<object, object>)
-  fullName: System.ComponentModel.DataAnnotations.ValidationContext.ValidationContext(object, IServiceProvider, IDictionary<object, object>)
+  fullName: System.ComponentModel.DataAnnotations.ValidationContext.ValidationContext(object, System.IServiceProvider, System.Collections.Generic.IDictionary<object, object>)
   type: Constructor
   source:
     remote: *o0
@@ -108,22 +110,22 @@ items:
     - id: instance
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: The object instance being validated.  It cannot be null.
     - id: serviceProvider
       type:
-        id: IServiceProvider
+        id: System.IServiceProvider
         name: IServiceProvider
         isExternal: true
       description: >-
-        Optional @!:IServiceProvider- to use when [System.ComponentModel.DataAnnotations.ValidationContext.GetService(Type)](System.ComponentModel.DataAnnotations.ValidationContext.yml) is called.
+        Optional [System.IServiceProvider](System.IServiceProvider.yml) to use when [System.ComponentModel.DataAnnotations.ValidationContext.GetService(System.Type)](System.ComponentModel.DataAnnotations.ValidationContext.yml) is called.
 
-        If it is null, [System.ComponentModel.DataAnnotations.ValidationContext.GetService(Type)](System.ComponentModel.DataAnnotations.ValidationContext.yml) will always return null.
+        If it is null, [System.ComponentModel.DataAnnotations.ValidationContext.GetService(System.Type)](System.ComponentModel.DataAnnotations.ValidationContext.yml) will always return null.
     - id: items
       type:
-        id: IDictionary{System.Object,System.Object}
-        name: IDictionary{System.Object,System.Object}
+        id: System.Collections.Generic.IDictionary{System.Object,System.Object}
+        name: IDictionary<object, object>
         isExternal: true
       description: >-
         Optional set of key/value pairs to make available to consumers via [System.ComponentModel.DataAnnotations.ValidationContext.Items](System.ComponentModel.DataAnnotations.ValidationContext.yml).
@@ -131,7 +133,7 @@ items:
         If null, an empty dictionary will be created.  If not null, the set of key/value pairs will be copied into a
 
         new dictionary, preventing consumers from modifying the original dictionary.
-  id: System.ComponentModel.DataAnnotations.ValidationContext.#ctor(System.Object,IServiceProvider,IDictionary{System.Object,System.Object})
+  id: System.ComponentModel.DataAnnotations.ValidationContext.#ctor(System.Object,System.IServiceProvider,System.Collections.Generic.IDictionary{System.Object,System.Object})
 - uid: System.ComponentModel.DataAnnotations.ValidationContext.ObjectInstance
   href: System.ComponentModel.DataAnnotations.ValidationContext.yml
   name: ObjectInstance
@@ -154,7 +156,7 @@ items:
     - id: ObjectInstance
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.ComponentModel.DataAnnotations.ValidationContext.ObjectInstance
 - uid: System.ComponentModel.DataAnnotations.ValidationContext.ObjectType
@@ -173,7 +175,7 @@ items:
     parameters:
     - id: ObjectType
       type:
-        id: Type
+        id: System.Type
         name: Type
         isExternal: true
   id: System.ComponentModel.DataAnnotations.ValidationContext.ObjectType
@@ -194,7 +196,7 @@ items:
     - id: DisplayName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.ComponentModel.DataAnnotations.ValidationContext.DisplayName
 - uid: System.ComponentModel.DataAnnotations.ValidationContext.MemberName
@@ -214,7 +216,7 @@ items:
     - id: MemberName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.ComponentModel.DataAnnotations.ValidationContext.MemberName
 - uid: System.ComponentModel.DataAnnotations.ValidationContext.Items
@@ -233,14 +235,14 @@ items:
     parameters:
     - id: Items
       type:
-        id: IDictionary{System.Object,System.Object}
-        name: IDictionary{System.Object,System.Object}
+        id: System.Collections.Generic.IDictionary{System.Object,System.Object}
+        name: IDictionary<object, object>
         isExternal: true
   id: System.ComponentModel.DataAnnotations.ValidationContext.Items
-- uid: System.ComponentModel.DataAnnotations.ValidationContext.InitializeServiceProvider(Func{Type,System.Object})
+- uid: System.ComponentModel.DataAnnotations.ValidationContext.InitializeServiceProvider(System.Func{System.Type,System.Object})
   href: System.ComponentModel.DataAnnotations.ValidationContext.yml
   name: InitializeServiceProvider(Func<Type, object>)
-  fullName: System.ComponentModel.DataAnnotations.ValidationContext.InitializeServiceProvider(Func<Type, object>)
+  fullName: System.ComponentModel.DataAnnotations.ValidationContext.InitializeServiceProvider(System.Func<System.Type, object>)
   type: Method
   source:
     remote: *o0
@@ -249,44 +251,48 @@ items:
   summary: >-
     Initializes the [System.ComponentModel.DataAnnotations.ValidationContext](System.ComponentModel.DataAnnotations.ValidationContext.yml) with a service provider that can return
 
-    service instances by @!:Type- when [System.ComponentModel.DataAnnotations.ValidationContext.GetService(Type)](System.ComponentModel.DataAnnotations.ValidationContext.yml) is called.
+    service instances by [System.Type]() when [System.ComponentModel.DataAnnotations.ValidationContext.GetService(System.Type)](System.ComponentModel.DataAnnotations.ValidationContext.yml) is called.
   syntax:
     content:
       CSharp: public void InitializeServiceProvider(Func<Type, object> serviceProvider)
     parameters:
     - id: serviceProvider
       type:
-        id: Func{Type,System.Object}
-        name: Func{Type,System.Object}
+        id: System.Func{System.Type,System.Object}
+        name: Func<Type, object>
         isExternal: true
       description: >-
-        A  that can return service instances given the
+        A [System.Func`2]() that can return service instances given the
 
-        desired  when  is called.
+        desired [System.Type]() when [System.ComponentModel.DataAnnotations.ValidationContext.GetService(System.Type)](System.ComponentModel.DataAnnotations.ValidationContext.yml) is called.
 
-        If it is null,  will always return null.
-  id: System.ComponentModel.DataAnnotations.ValidationContext.InitializeServiceProvider(Func{Type,System.Object})
-- uid: System.ComponentModel.DataAnnotations.ValidationContext.GetService(Type)
+        If it is null, [System.ComponentModel.DataAnnotations.ValidationContext.GetService(System.Type)](System.ComponentModel.DataAnnotations.ValidationContext.yml) will always return null.
+  id: System.ComponentModel.DataAnnotations.ValidationContext.InitializeServiceProvider(System.Func{System.Type,System.Object})
+- uid: System.ComponentModel.DataAnnotations.ValidationContext.GetService(System.Type)
   href: System.ComponentModel.DataAnnotations.ValidationContext.yml
   name: GetService(Type)
-  fullName: System.ComponentModel.DataAnnotations.ValidationContext.GetService(Type)
+  fullName: System.ComponentModel.DataAnnotations.ValidationContext.GetService(System.Type)
   type: Method
   source:
     remote: *o0
     path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/ValidationContext.cs
     startLine: 245
-  summary: See @!:IServiceProvider.GetService(Type)-.
+  summary: See [System.IServiceProvider.GetService(System.Type)](System.IServiceProvider.yml).
   syntax:
     content:
       CSharp: public object GetService(Type serviceType)
     parameters:
     - id: serviceType
       type:
-        id: Type
+        id: System.Type
         name: Type
         isExternal: true
       description: The type of the service needed.
     return:
       id: Object
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
       description: An instance of that service or null if it is not available.
-  id: System.ComponentModel.DataAnnotations.ValidationContext.GetService(Type)
+  id: System.ComponentModel.DataAnnotations.ValidationContext.GetService(System.Type)

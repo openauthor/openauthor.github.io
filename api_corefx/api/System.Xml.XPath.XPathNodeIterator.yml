@@ -6,16 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNodeIterator.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNodeIterator.cs
     startLine: 9
   syntax:
     content:
-      CSharp: public abstract class XPathNodeIterator
+      CSharp: 'public abstract class XPathNodeIterator : IEnumerable'
   inheritance:
-  - id: IEnumerable
-    name: IEnumerable
+  - id: System.Object
+    name: object
     isExternal: true
   id: System.Xml.XPath.XPathNodeIterator
   children:
@@ -36,10 +38,14 @@ items:
     startLine: 14
   syntax:
     content:
-      CSharp: public abstract XPathNodeIterator Clone();
+      CSharp: public abstract XPathNodeIterator Clone()
     parameters: []
     return:
       id: XPathNodeIterator
+      type:
+        id: System.Xml.XPath.XPathNodeIterator
+        name: XPathNodeIterator
+        href: System.Xml.XPath.XPathNodeIterator.yml
   id: System.Xml.XPath.XPathNodeIterator.Clone
 - uid: System.Xml.XPath.XPathNodeIterator.MoveNext
   href: System.Xml.XPath.XPathNodeIterator.yml
@@ -52,10 +58,14 @@ items:
     startLine: 15
   syntax:
     content:
-      CSharp: public abstract bool MoveNext();
+      CSharp: public abstract bool MoveNext()
     parameters: []
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Xml.XPath.XPathNodeIterator.MoveNext
 - uid: System.Xml.XPath.XPathNodeIterator.Current
   href: System.Xml.XPath.XPathNodeIterator.yml
@@ -92,7 +102,7 @@ items:
     - id: CurrentPosition
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Xml.XPath.XPathNodeIterator.CurrentPosition
 - uid: System.Xml.XPath.XPathNodeIterator.Count
@@ -111,7 +121,7 @@ items:
     - id: Count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Xml.XPath.XPathNodeIterator.Count
 - uid: System.Xml.XPath.XPathNodeIterator.GetEnumerator
@@ -129,4 +139,8 @@ items:
     parameters: []
     return:
       id: IEnumerator
+      type:
+        id: System.Collections.IEnumerator
+        name: IEnumerator
+        isExternal: true
   id: System.Xml.XPath.XPathNodeIterator.GetEnumerator

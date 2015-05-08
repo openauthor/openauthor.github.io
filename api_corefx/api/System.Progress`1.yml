@@ -1,0 +1,130 @@
+items:
+- uid: System.Progress`1
+  href: System.Progress`1.yml
+  name: Progress<T>
+  fullName: System.Progress<T>
+  type: Class
+  source:
+    remote: &o0
+      path: src/System.Threading/src/System/Progress.cs
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
+    path: src/System.Threading/src/System/Progress.cs
+    startLine: 20
+  summary: Provides an IProgress{T} that invokes callbacks for each reported progress value.
+  syntax:
+    content:
+      CSharp: 'public class Progress<T> : IProgress<T>'
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  id: System.Progress`1
+  children:
+  - System.Progress`1.#ctor
+  - System.Progress`1.#ctor(System.Action{`0})
+  - System.Progress`1.ProgressChanged
+  - System.Progress`1.OnReport(`0)
+  - System.Progress`1.System#IProgress{T}#Report(`0)
+- uid: System.Progress`1.#ctor
+  href: System.Progress`1.yml
+  name: Progress()
+  fullName: System.Progress<T>.Progress()
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Progress.cs
+    startLine: 30
+  summary: Initializes the [System.Progress`1](System.Progress`1.yml).
+  syntax:
+    content:
+      CSharp: public Progress()
+    parameters: []
+  id: System.Progress`1.#ctor
+- uid: System.Progress`1.#ctor(System.Action{`0})
+  href: System.Progress`1.yml
+  name: Progress(Action<T>)
+  fullName: System.Progress<T>.Progress(System.Action<T>)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Progress.cs
+    startLine: 48
+  summary: Initializes the [System.Progress`1](System.Progress`1.yml) with the specified callback.
+  syntax:
+    content:
+      CSharp: 'public Progress(Action<T> handler): this ()'
+    parameters:
+    - id: handler
+      type:
+        id: System.Action{`0}
+        name: Action<T>
+        isExternal: true
+      description: >-
+        A handler to invoke for each reported progress value.  This handler will be invoked
+
+        in addition to any delegates registered with the [System.Progress`1.ProgressChanged](System.Progress`1.yml) event.
+
+        Depending on the [System.Threading.SynchronizationContext]() instance captured by
+
+        the @!:Progress- at construction, it's possible that this handler instance
+
+        could be invoked concurrently with itself.
+  id: System.Progress`1.#ctor(System.Action{`0})
+- uid: System.Progress`1.ProgressChanged
+  href: System.Progress`1.yml
+  name: ProgressChanged
+  fullName: System.Progress<T>.ProgressChanged
+  type: Event
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Progress.cs
+    startLine: 59
+  summary: Raised for each reported progress value.
+  syntax:
+    content:
+      CSharp: public event EventHandler<T> ProgressChanged;
+  id: System.Progress`1.ProgressChanged
+- uid: System.Progress`1.OnReport(`0)
+  href: System.Progress`1.yml
+  name: OnReport(T)
+  fullName: System.Progress<T>.OnReport(T)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Progress.cs
+    startLine: 63
+  summary: Reports a progress change.
+  syntax:
+    content:
+      CSharp: protected virtual void OnReport(T value)
+    parameters:
+    - id: value
+      type:
+        id: T
+        name: T
+        href: T
+      description: The value of the updated progress.
+  id: System.Progress`1.OnReport(`0)
+- uid: System.Progress`1.System#IProgress{T}#Report(`0)
+  href: System.Progress`1.yml
+  name: IProgress<T>.Report(T)
+  fullName: System.Progress<T>.System.IProgress<T>.Report(T)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Progress.cs
+    startLine: 80
+  summary: Reports a progress change.
+  syntax:
+    content:
+      CSharp: void IProgress<T>.Report(T value)
+    parameters:
+    - id: value
+      type:
+        id: T
+        name: T
+        href: T
+      description: The value of the updated progress.
+  id: System.Progress`1.System#IProgress{T}#Report(`0)

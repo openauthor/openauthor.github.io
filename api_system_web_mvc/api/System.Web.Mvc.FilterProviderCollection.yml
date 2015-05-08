@@ -6,26 +6,31 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/FilterProviderCollection.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/FilterProviderCollection.cs
     startLine: 8
   syntax:
     content:
-      CSharp: public class FilterProviderCollection
+      CSharp: 'public class FilterProviderCollection : Collection<IFilterProvider>, IList<IFilterProvider>, ICollection<IFilterProvider>, IList, ICollection, IReadOnlyList<IFilterProvider>, IReadOnlyCollection<IFilterProvider>, IEnumerable<IFilterProvider>, IEnumerable'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Collections.ObjectModel.Collection{System.Web.Mvc.IFilterProvider}
-    name: System.Collections.ObjectModel.Collection{System.Web.Mvc.IFilterProvider}
+    name: Collection<IFilterProvider>
     isExternal: true
   id: System.Web.Mvc.FilterProviderCollection
   children:
   - System.Web.Mvc.FilterProviderCollection.#ctor
   - System.Web.Mvc.FilterProviderCollection.#ctor(System.Collections.Generic.IList{System.Web.Mvc.IFilterProvider})
   - System.Web.Mvc.FilterProviderCollection.GetFilters(System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionDescriptor)
+  - System.Web.Mvc.FilterProviderCollection.ClearItems
+  - System.Web.Mvc.FilterProviderCollection.InsertItem(System.Int32,System.Web.Mvc.IFilterProvider)
+  - System.Web.Mvc.FilterProviderCollection.RemoveItem(System.Int32)
+  - System.Web.Mvc.FilterProviderCollection.SetItem(System.Int32,System.Web.Mvc.IFilterProvider)
 - uid: System.Web.Mvc.FilterProviderCollection.#ctor
   href: System.Web.Mvc.FilterProviderCollection.yml
   name: FilterProviderCollection()
@@ -56,7 +61,7 @@ items:
     - id: providers
       type:
         id: System.Collections.Generic.IList{System.Web.Mvc.IFilterProvider}
-        name: System.Collections.Generic.IList{System.Web.Mvc.IFilterProvider}
+        name: IList<IFilterProvider>
         isExternal: true
   id: System.Web.Mvc.FilterProviderCollection.#ctor(System.Collections.Generic.IList{System.Web.Mvc.IFilterProvider})
 - uid: System.Web.Mvc.FilterProviderCollection.GetFilters(System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionDescriptor)
@@ -84,4 +89,89 @@ items:
         href: System.Web.Mvc.ActionDescriptor.yml
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Web.Mvc.Filter}
+        name: IEnumerable<Filter>
+        isExternal: true
   id: System.Web.Mvc.FilterProviderCollection.GetFilters(System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionDescriptor)
+- uid: System.Web.Mvc.FilterProviderCollection.ClearItems
+  href: System.Web.Mvc.FilterProviderCollection.yml
+  name: ClearItems()
+  fullName: System.Web.Mvc.FilterProviderCollection.ClearItems()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/FilterProviderCollection.cs
+    startLine: 107
+  syntax:
+    content:
+      CSharp: protected override void ClearItems()
+    parameters: []
+  id: System.Web.Mvc.FilterProviderCollection.ClearItems
+- uid: System.Web.Mvc.FilterProviderCollection.InsertItem(System.Int32,System.Web.Mvc.IFilterProvider)
+  href: System.Web.Mvc.FilterProviderCollection.yml
+  name: InsertItem(int, IFilterProvider)
+  fullName: System.Web.Mvc.FilterProviderCollection.InsertItem(int, System.Web.Mvc.IFilterProvider)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/FilterProviderCollection.cs
+    startLine: 113
+  syntax:
+    content:
+      CSharp: protected override void InsertItem(int index, IFilterProvider item)
+    parameters:
+    - id: index
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: item
+      type:
+        id: System.Web.Mvc.IFilterProvider
+        name: IFilterProvider
+        href: System.Web.Mvc.IFilterProvider.yml
+  id: System.Web.Mvc.FilterProviderCollection.InsertItem(System.Int32,System.Web.Mvc.IFilterProvider)
+- uid: System.Web.Mvc.FilterProviderCollection.RemoveItem(System.Int32)
+  href: System.Web.Mvc.FilterProviderCollection.yml
+  name: RemoveItem(int)
+  fullName: System.Web.Mvc.FilterProviderCollection.RemoveItem(int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/FilterProviderCollection.cs
+    startLine: 119
+  syntax:
+    content:
+      CSharp: protected override void RemoveItem(int index)
+    parameters:
+    - id: index
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.Web.Mvc.FilterProviderCollection.RemoveItem(System.Int32)
+- uid: System.Web.Mvc.FilterProviderCollection.SetItem(System.Int32,System.Web.Mvc.IFilterProvider)
+  href: System.Web.Mvc.FilterProviderCollection.yml
+  name: SetItem(int, IFilterProvider)
+  fullName: System.Web.Mvc.FilterProviderCollection.SetItem(int, System.Web.Mvc.IFilterProvider)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/FilterProviderCollection.cs
+    startLine: 125
+  syntax:
+    content:
+      CSharp: protected override void SetItem(int index, IFilterProvider item)
+    parameters:
+    - id: index
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: item
+      type:
+        id: System.Web.Mvc.IFilterProvider
+        name: IFilterProvider
+        href: System.Web.Mvc.IFilterProvider.yml
+  id: System.Web.Mvc.FilterProviderCollection.SetItem(System.Int32,System.Web.Mvc.IFilterProvider)

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="docsApp" ng-strict-di ng-controller="DocsController">
 <!--
-   This is docascode v0.0.0
+   This is <docascode> v<0.0.0>
 -->
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +12,28 @@
   <meta name="fragment" content="!">
   <title ng-bind-template="Docascode: {{ currentArea.name }} {{ partialModel.title || currentPage || 'Generating Documentations For You'}}">Docascode</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
-
+<!--  <script type="text/javascript" src="app/bower_components/highlightjs/highlight.pack.js"></script>
+  <script type="text/javascript" src="app/bower_components/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="app/bower_components/angular/angular.js"></script>
+    
+  <script type="text/javascript" src="app/src/services/contentService.js"></script>
+  <script type="text/javascript" src="app/src/services/csplayService.js"></script>
+  <script type="text/javascript" src="app/src/services/urlService.js"></script>
+  <script type="text/javascript" src="app/src/services/markdownService.js"></script>
+  <script type="text/javascript" src="app/src/content/yamlContentDirective.js"></script>
+  <script type="text/javascript" src="app/src/content/markdownContentDirective.js"></script>
+  <script type="text/javascript" src="app/src/container/container.js"></script>
+  <script type="text/javascript" src="app/src/navbar/navbar.js"></script>
+  <script type="text/javascript" src="app/src/util/bootstrap.js"></script>
+  <script type="text/javascript" src="app/src/util/constants.js"></script>
+  <script type="text/javascript" src="app/src/util/pages-data.js"></script>
+  <script type="text/javascript" src="app/src/util/directives.js"></script>
+  <script type="text/javascript" src="app/src/util/util.js"></script>
+  <script type="text/javascript" src="app/src/util/versions-data.js"></script>
+  <script type="text/javascript" src="app/src/util/versions.js"></script>
+    
+  <script type="text/javascript" src="app/src/controller.js"></script>
+  <script type="text/javascript" src="app/src/app.js"></script>-->
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css"></link>
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.2/custom/bootstrap.min.css" type="text/css"></link>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
@@ -35,109 +56,24 @@
 
 </head>
 <body>
-
   <div id="console">
     <div id="player"></div>
-      <button id="run" class="btn">Run</button>
-      <button id="close" class="btn">Close</button>
-    </div>
+    <button id="run" class="btn">Run</button>
+    <button id="close" class="btn">Close</button>
+  </div>
   </div>
   <div id="wrapper">
-    <header scroll-y-offset-element>
-      <div class="topnav navbar navbar-inverse navbar-default">
-        <div class="container">
-          <div ng-repeat="model in [navbar]"  ng-include="'template/navbar.tmpl'"></div>
-          <!-- comment out search box as it is not currently supported
-          <form ng-class="{focus:focus}" class="navbar-search col-md-3 docs-search" ng-submit="submit()">
-            <span class="glyphicon glyphicon-search search-icon"></span>
-            <input type="text"
-                   name="as_q"
-                   class="search-query"
-                   placeholder="Click or press / to search"
-                   ng-focus="focus=true"
-                   ng-blur="focus=false"
-                   ng-change="search(q)"
-                   ng-model="q"
-                   docs-search-input
-                   autocomplete="off" />
-          </form> -->
-        </div>
-      </div>
-      <div class="subnav navbar navbar-default">
-        <div class="container">
-            <ul class="breadcrumb">
-              <li ng-repeat="crumb in breadcrumb">
-                <a ng-href="{{::getBreadCrumbHref(crumb.url)}}">{{::crumb.name}}</a>
-              </li>
-            </ul>
-        </div>
-      </div>
-      <div class="grad-top"></div>
-      <!--<div class="search-results-container" ng-show="hasResults">
-        <div class="container">
-          <div class="search-results-frame">
-            <div ng-repeat="(key, value) in results" class="search-results-group" ng-class="colClassName + ' col-group-' + key">
-              <h4 class="search-results-group-heading">{{ key }}</h4>
-              <div class="search-results">
-                <div ng-repeat="item in value" class="search-result">
-                  - <a ng-click="hideResults()" ng-href="#{{ item.path }}">{{ item.name }}</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <a href="" ng-click="hideResults()" class="search-close">
-            <span class="glyphicon glyphicon-remove search-close-icon"></span> Close
-          </a>
-        </div>
-      </div>-->
-      <!-- Temp disable it: what to show for conceptual?
-      <div class="sup-header">
-        <div class="container main-grid main-header-grid">
-          <div class="grid-left">
-            <div ng-controller="DocsVersionsCtrl" class="picker version-picker">
-              <select ng-options="v as ('v' + v.version + (v.isSnapshot ? ' (snapshot)' : '')) group by getGroupName(v) for v in docs_versions"
-                      ng-model="docs_version"
-                      ng-change="jumpToDocsVersion(docs_version)"
-                      class="docs-version-jump">
-              </select>
-            </div>
-          </div>
-          <div class="grid-right">
-            <ul class="nav-breadcrumb">
-              <li ng-repeat="crumb in breadcrumb" class="nav-breadcrumb-entry naked-list">
-                <span class="divider"> /</span>
-                <a ng-href="#{{crumb.url}}">{{crumb.name}}</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>-->
-    </header>
-
-    <div role="main" class="container">
-      <div ng-if="toc" class="grid-left sidenav">
-        <div id="tocLoading" ng-show="tocLoading">Loading...</div>
-        <div ng-hide="tocLoading" ng-cloak ng-repeat="model in [toc.content]" ng-include="'template/toc.tmpl'"></div>
-      </div>
-      <div ng-class="{grid: !toc, 'grid-right': toc}" class="article">
-        <div id="loading" ng-show="loading">Loading...</div>
-        <div markdown ng-cloak ng-if="partialModel.contentType === 'md'" ng-hide="loading" ng-repeat="model in [partialModel.model]" ng-include="partialModel.path" autoscroll></div>
-          <div ng-cloak ng-if="partialModel.contentType !== 'md'" ng-hide="loading" ng-repeat="model in [partialModel.model]" ng-include="partialModel.path" autoscroll></div>
-      </div>
-    </div>
+    <header scroll-y-offset-element ng-controller="NavbarController" ng-include="'template/navbar.html'"></header>
+    <div role="main" class="container body-content" ng-controller="ContainerController" ng-include="'template/container.html'"></div>
     <footer>
       <div class="grad-bottom"></div>
       <div class="footer">
         <div class="container">
           <span class="pull-right"><a back-to-top>Back to top</a></span>
-          <span>
-            Super-powered by Microsoft Visual Studio China  ©2014-2015<br />
-            Code licensed under the MIT License
-          </span>
+          <span>Copyright © 2015 Microsoft<br />Powered by Doc-as-Code</span>
         </div>
       </div>
     </footer>
   </div>
-
 </body>
 </html>

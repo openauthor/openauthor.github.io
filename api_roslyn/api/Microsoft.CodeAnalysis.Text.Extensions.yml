@@ -5,18 +5,19 @@ items:
   fullName: Microsoft.CodeAnalysis.Text.Extensions
   type: Class
   source:
-    remote: &o0
+    remote:
+      path: src/EditorFeatures/Text/Extensions.TextBufferMapper.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/EditorFeatures/Text/Extensions.TextBufferMapper.cs
     startLine: 11
   syntax:
     content:
-      CSharp: public static partial class Extensions
+      CSharp: public class Extensions
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.Text.Extensions
   children:
@@ -35,20 +36,28 @@ items:
   fullName: Microsoft.CodeAnalysis.Text.Extensions.AsTextContainer(Microsoft.VisualStudio.Text.ITextBuffer)
   type: Method
   source:
-    remote: *o0
+    remote: &o0
+      path: src/EditorFeatures/Text/Extensions.cs
+      branch: master
+      repo: https://github.com/chenkennt/roslyn.git
+      key: e7db1294
     path: src/EditorFeatures/Text/Extensions.cs
     startLine: 17
   syntax:
     content:
-      CSharp: public static SourceTextContainer AsTextContainer(this ITextBuffer buffer)
+      CSharp: public static SourceTextContainer AsTextContainer(ITextBuffer buffer)
     parameters:
     - id: buffer
       type:
         id: Microsoft.VisualStudio.Text.ITextBuffer
-        name: Microsoft.VisualStudio.Text.ITextBuffer
+        name: ITextBuffer
         isExternal: true
     return:
       id: SourceTextContainer
+      type:
+        id: Microsoft.CodeAnalysis.Text.SourceTextContainer
+        name: SourceTextContainer
+        href: Microsoft.CodeAnalysis.Text.SourceTextContainer
   id: Microsoft.CodeAnalysis.Text.Extensions.AsTextContainer(Microsoft.VisualStudio.Text.ITextBuffer)
 - uid: Microsoft.CodeAnalysis.Text.Extensions.GetTextBuffer(Microsoft.CodeAnalysis.Text.SourceTextContainer)
   href: Microsoft.CodeAnalysis.Text.Extensions.yml
@@ -61,7 +70,7 @@ items:
     startLine: 22
   syntax:
     content:
-      CSharp: public static ITextBuffer GetTextBuffer(this SourceTextContainer textContainer)
+      CSharp: public static ITextBuffer GetTextBuffer(SourceTextContainer textContainer)
     parameters:
     - id: textContainer
       type:
@@ -70,6 +79,10 @@ items:
         href: Microsoft.CodeAnalysis.Text.SourceTextContainer
     return:
       id: ITextBuffer
+      type:
+        id: Microsoft.VisualStudio.Text.ITextBuffer
+        name: ITextBuffer
+        isExternal: true
   id: Microsoft.CodeAnalysis.Text.Extensions.GetTextBuffer(Microsoft.CodeAnalysis.Text.SourceTextContainer)
 - uid: Microsoft.CodeAnalysis.Text.Extensions.TryGetTextBuffer(Microsoft.CodeAnalysis.Text.SourceTextContainer)
   href: Microsoft.CodeAnalysis.Text.Extensions.yml
@@ -82,7 +95,7 @@ items:
     startLine: 33
   syntax:
     content:
-      CSharp: public static ITextBuffer TryGetTextBuffer(this SourceTextContainer textContainer)
+      CSharp: public static ITextBuffer TryGetTextBuffer(SourceTextContainer textContainer)
     parameters:
     - id: textContainer
       type:
@@ -91,6 +104,10 @@ items:
         href: Microsoft.CodeAnalysis.Text.SourceTextContainer
     return:
       id: ITextBuffer
+      type:
+        id: Microsoft.VisualStudio.Text.ITextBuffer
+        name: ITextBuffer
+        isExternal: true
   id: Microsoft.CodeAnalysis.Text.Extensions.TryGetTextBuffer(Microsoft.CodeAnalysis.Text.SourceTextContainer)
 - uid: Microsoft.CodeAnalysis.Text.Extensions.FindCorrespondingEditorTextSnapshot(Microsoft.CodeAnalysis.Text.SourceText)
   href: Microsoft.CodeAnalysis.Text.Extensions.yml
@@ -111,7 +128,7 @@ items:
     ITextSnapshot.Version.ReiteratedVersionNumber doesn't change.
   syntax:
     content:
-      CSharp: public static ITextSnapshot FindCorrespondingEditorTextSnapshot(this SourceText text)
+      CSharp: public static ITextSnapshot FindCorrespondingEditorTextSnapshot(SourceText text)
     parameters:
     - id: text
       type:
@@ -120,6 +137,10 @@ items:
         href: Microsoft.CodeAnalysis.Text.SourceText
     return:
       id: ITextSnapshot
+      type:
+        id: Microsoft.VisualStudio.Text.ITextSnapshot
+        name: ITextSnapshot
+        isExternal: true
       description: The underlying ITextSnapshot.
   id: Microsoft.CodeAnalysis.Text.Extensions.FindCorrespondingEditorTextSnapshot(Microsoft.CodeAnalysis.Text.SourceText)
 - uid: Microsoft.CodeAnalysis.Text.Extensions.AsText(Microsoft.VisualStudio.Text.ITextSnapshot)
@@ -133,15 +154,19 @@ items:
     startLine: 52
   syntax:
     content:
-      CSharp: public static SourceText AsText(this ITextSnapshot textSnapshot)
+      CSharp: public static SourceText AsText(ITextSnapshot textSnapshot)
     parameters:
     - id: textSnapshot
       type:
         id: Microsoft.VisualStudio.Text.ITextSnapshot
-        name: Microsoft.VisualStudio.Text.ITextSnapshot
+        name: ITextSnapshot
         isExternal: true
     return:
       id: SourceText
+      type:
+        id: Microsoft.CodeAnalysis.Text.SourceText
+        name: SourceText
+        href: Microsoft.CodeAnalysis.Text.SourceText
   id: Microsoft.CodeAnalysis.Text.Extensions.AsText(Microsoft.VisualStudio.Text.ITextSnapshot)
 - uid: Microsoft.CodeAnalysis.Text.Extensions.GetWorkspace(Microsoft.VisualStudio.Text.ITextBuffer)
   href: Microsoft.CodeAnalysis.Text.Extensions.yml
@@ -155,15 +180,19 @@ items:
   summary: Gets the workspace corresponding to the text buffer.
   syntax:
     content:
-      CSharp: public static Workspace GetWorkspace(this ITextBuffer buffer)
+      CSharp: public static Workspace GetWorkspace(ITextBuffer buffer)
     parameters:
     - id: buffer
       type:
         id: Microsoft.VisualStudio.Text.ITextBuffer
-        name: Microsoft.VisualStudio.Text.ITextBuffer
+        name: ITextBuffer
         isExternal: true
     return:
       id: Workspace
+      type:
+        id: Microsoft.CodeAnalysis.Workspace
+        name: Workspace
+        href: Microsoft.CodeAnalysis.Workspace.yml
   id: Microsoft.CodeAnalysis.Text.Extensions.GetWorkspace(Microsoft.VisualStudio.Text.ITextBuffer)
 - uid: Microsoft.CodeAnalysis.Text.Extensions.GetRelatedDocumentsWithChanges(Microsoft.VisualStudio.Text.ITextSnapshot)
   href: Microsoft.CodeAnalysis.Text.Extensions.yml
@@ -175,22 +204,26 @@ items:
     path: src/EditorFeatures/Text/Extensions.cs
     startLine: 83
   summary: >-
-    Gets the [Microsoft.CodeAnalysis.Document](Microsoft.CodeAnalysis.Document.yml)s from the corresponding [Microsoft.CodeAnalysis.Workspace.CurrentSolution](Microsoft.CodeAnalysis.Workspace.yml) that are associated with the [Microsoft.VisualStudio.Text.ITextSnapshot](#)'s buffer,
+    Gets the [Microsoft.CodeAnalysis.Document](Microsoft.CodeAnalysis.Document.yml)s from the corresponding [Microsoft.CodeAnalysis.Workspace.CurrentSolution](Microsoft.CodeAnalysis.Workspace.yml) that are associated with the [Microsoft.VisualStudio.Text.ITextSnapshot]()'s buffer,
 
     updated to contain the same text as the snapshot if necessary. There may be multiple [Microsoft.CodeAnalysis.Document](Microsoft.CodeAnalysis.Document.yml)s associated with the buffer
 
     if the file is linked into multiple projects or is part of a Shared Project.
   syntax:
     content:
-      CSharp: public static IEnumerable<Document> GetRelatedDocumentsWithChanges(this ITextSnapshot text)
+      CSharp: public static IEnumerable<Document> GetRelatedDocumentsWithChanges(ITextSnapshot text)
     parameters:
     - id: text
       type:
         id: Microsoft.VisualStudio.Text.ITextSnapshot
-        name: Microsoft.VisualStudio.Text.ITextSnapshot
+        name: ITextSnapshot
         isExternal: true
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Document}
+        name: IEnumerable<Document>
+        isExternal: true
   id: Microsoft.CodeAnalysis.Text.Extensions.GetRelatedDocumentsWithChanges(Microsoft.VisualStudio.Text.ITextSnapshot)
 - uid: Microsoft.CodeAnalysis.Text.Extensions.GetOpenDocumentInCurrentContextWithChanges(Microsoft.VisualStudio.Text.ITextSnapshot)
   href: Microsoft.CodeAnalysis.Text.Extensions.yml
@@ -202,7 +235,7 @@ items:
     path: src/EditorFeatures/Text/Extensions.cs
     startLine: 94
   summary: >-
-    Gets the [Microsoft.CodeAnalysis.Document](Microsoft.CodeAnalysis.Document.yml) from the corresponding [Microsoft.CodeAnalysis.Workspace.CurrentSolution](Microsoft.CodeAnalysis.Workspace.yml) that is associated with the [Microsoft.VisualStudio.Text.ITextSnapshot](#)'s buffer
+    Gets the [Microsoft.CodeAnalysis.Document](Microsoft.CodeAnalysis.Document.yml) from the corresponding [Microsoft.CodeAnalysis.Workspace.CurrentSolution](Microsoft.CodeAnalysis.Workspace.yml) that is associated with the [Microsoft.VisualStudio.Text.ITextSnapshot]()'s buffer
 
     in its current project context, updated to contain the same text as the snapshot if necessary. There may be multiple [Microsoft.CodeAnalysis.Document](Microsoft.CodeAnalysis.Document.yml)s
 
@@ -211,15 +244,19 @@ items:
     is responsible for keeping track of which of these [Microsoft.CodeAnalysis.Document](Microsoft.CodeAnalysis.Document.yml)s is in the current project context.
   syntax:
     content:
-      CSharp: public static Document GetOpenDocumentInCurrentContextWithChanges(this ITextSnapshot text)
+      CSharp: public static Document GetOpenDocumentInCurrentContextWithChanges(ITextSnapshot text)
     parameters:
     - id: text
       type:
         id: Microsoft.VisualStudio.Text.ITextSnapshot
-        name: Microsoft.VisualStudio.Text.ITextSnapshot
+        name: ITextSnapshot
         isExternal: true
     return:
       id: Document
+      type:
+        id: Microsoft.CodeAnalysis.Document
+        name: Document
+        href: Microsoft.CodeAnalysis.Document.yml
   id: Microsoft.CodeAnalysis.Text.Extensions.GetOpenDocumentInCurrentContextWithChanges(Microsoft.VisualStudio.Text.ITextSnapshot)
 - uid: Microsoft.CodeAnalysis.Text.Extensions.GetRelatedDocuments(Microsoft.VisualStudio.Text.ITextBuffer)
   href: Microsoft.CodeAnalysis.Text.Extensions.yml
@@ -231,18 +268,22 @@ items:
     path: src/EditorFeatures/Text/Extensions.cs
     startLine: 103
   summary: >-
-    Gets the [Microsoft.CodeAnalysis.Document](Microsoft.CodeAnalysis.Document.yml)s from the corresponding [Microsoft.CodeAnalysis.Workspace.CurrentSolution](Microsoft.CodeAnalysis.Workspace.yml) that are associated with the [Microsoft.VisualStudio.Text.ITextBuffer](#).
+    Gets the [Microsoft.CodeAnalysis.Document](Microsoft.CodeAnalysis.Document.yml)s from the corresponding [Microsoft.CodeAnalysis.Workspace.CurrentSolution](Microsoft.CodeAnalysis.Workspace.yml) that are associated with the [Microsoft.VisualStudio.Text.ITextBuffer]().
 
     There may be multiple [Microsoft.CodeAnalysis.Document](Microsoft.CodeAnalysis.Document.yml)s associated with the buffer if it is linked into multiple projects or is part of a Shared Project.
   syntax:
     content:
-      CSharp: public static IEnumerable<Document> GetRelatedDocuments(this ITextBuffer buffer)
+      CSharp: public static IEnumerable<Document> GetRelatedDocuments(ITextBuffer buffer)
     parameters:
     - id: buffer
       type:
         id: Microsoft.VisualStudio.Text.ITextBuffer
-        name: Microsoft.VisualStudio.Text.ITextBuffer
+        name: ITextBuffer
         isExternal: true
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Document}
+        name: IEnumerable<Document>
+        isExternal: true
   id: Microsoft.CodeAnalysis.Text.Extensions.GetRelatedDocuments(Microsoft.VisualStudio.Text.ITextBuffer)

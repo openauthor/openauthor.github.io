@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/ViewResult.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/ViewResult.cs
     startLine: 8
   syntax:
     content:
-      CSharp: public class ViewResult
+      CSharp: 'public class ViewResult : ViewResultBase'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.Mvc.ActionResult
     name: ActionResult
@@ -27,6 +28,7 @@ items:
   id: System.Web.Mvc.ViewResult
   children:
   - System.Web.Mvc.ViewResult.MasterName
+  - System.Web.Mvc.ViewResult.FindView(System.Web.Mvc.ControllerContext)
 - uid: System.Web.Mvc.ViewResult.MasterName
   href: System.Web.Mvc.ViewResult.yml
   name: MasterName
@@ -43,6 +45,31 @@ items:
     - id: MasterName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.ViewResult.MasterName
+- uid: System.Web.Mvc.ViewResult.FindView(System.Web.Mvc.ControllerContext)
+  href: System.Web.Mvc.ViewResult.yml
+  name: FindView(ControllerContext)
+  fullName: System.Web.Mvc.ViewResult.FindView(System.Web.Mvc.ControllerContext)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ViewResult.cs
+    startLine: 18
+  syntax:
+    content:
+      CSharp: protected override ViewEngineResult FindView(ControllerContext context)
+    parameters:
+    - id: context
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+    return:
+      id: ViewEngineResult
+      type:
+        id: System.Web.Mvc.ViewEngineResult
+        name: ViewEngineResult
+        href: System.Web.Mvc.ViewEngineResult.yml
+  id: System.Web.Mvc.ViewResult.FindView(System.Web.Mvc.ControllerContext)

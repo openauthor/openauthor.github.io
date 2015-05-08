@@ -6,17 +6,19 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Threading.Tasks.Dataflow/src/Blocks/ActionBlock.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Threading.Tasks.Dataflow/src/Blocks/ActionBlock.cs
     startLine: 23
-  summary: Provides a dataflow block that invokes a provided [System.Action`1](#) delegate for every data element received.
+  summary: Provides a dataflow block that invokes a provided [System.Action`1]() delegate for every data element received.
   syntax:
     content:
-      CSharp: public sealed class ActionBlock<TInput>
+      CSharp: 'public sealed class ActionBlock<TInput> : ITargetBlock<TInput>, IDataflowBlock, IDebuggerDisplay'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Threading.Tasks.Dataflow.ActionBlock`1
   children:
@@ -25,8 +27,10 @@ items:
   - System.Threading.Tasks.Dataflow.ActionBlock`1.#ctor(System.Func{`0,System.Threading.Tasks.Task})
   - System.Threading.Tasks.Dataflow.ActionBlock`1.#ctor(System.Func{`0,System.Threading.Tasks.Task},System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions)
   - System.Threading.Tasks.Dataflow.ActionBlock`1.Complete
+  - System.Threading.Tasks.Dataflow.ActionBlock`1.System#Threading#Tasks#Dataflow#IDataflowBlock#Fault(System.Exception)
   - System.Threading.Tasks.Dataflow.ActionBlock`1.Completion
   - System.Threading.Tasks.Dataflow.ActionBlock`1.Post(`0)
+  - System.Threading.Tasks.Dataflow.ActionBlock`1.System#Threading#Tasks#Dataflow#ITargetBlock{TInput}#OfferMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,`0,System.Threading.Tasks.Dataflow.ISourceBlock{`0},System.Boolean)
   - System.Threading.Tasks.Dataflow.ActionBlock`1.InputCount
   - System.Threading.Tasks.Dataflow.ActionBlock`1.ToString
 - uid: System.Threading.Tasks.Dataflow.ActionBlock`1.#ctor(System.Action{`0})
@@ -38,7 +42,7 @@ items:
     remote: *o0
     path: src/System.Threading.Tasks.Dataflow/src/Blocks/ActionBlock.cs
     startLine: 35
-  summary: Initializes the [System.Threading.Tasks.Dataflow.ActionBlock`1](System.Threading.Tasks.Dataflow.ActionBlock`1.yml) with the specified [System.Action`1](#).
+  summary: Initializes the [System.Threading.Tasks.Dataflow.ActionBlock`1](System.Threading.Tasks.Dataflow.ActionBlock`1.yml) with the specified [System.Action`1]().
   syntax:
     content:
       CSharp: 'public ActionBlock(Action<TInput> action): this ((Delegate)action, ExecutionDataflowBlockOptions.Default)'
@@ -46,7 +50,7 @@ items:
     - id: action
       type:
         id: System.Action{`0}
-        name: System.Action{`0}
+        name: Action<TInput>
         isExternal: true
       description: The action to invoke with each data element received.
   id: System.Threading.Tasks.Dataflow.ActionBlock`1.#ctor(System.Action{`0})
@@ -59,7 +63,7 @@ items:
     remote: *o0
     path: src/System.Threading.Tasks.Dataflow/src/Blocks/ActionBlock.cs
     startLine: 44
-  summary: Initializes the [System.Threading.Tasks.Dataflow.ActionBlock`1](System.Threading.Tasks.Dataflow.ActionBlock`1.yml) with the specified [System.Action`1](#) and [System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions](System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions.yml).
+  summary: Initializes the [System.Threading.Tasks.Dataflow.ActionBlock`1](System.Threading.Tasks.Dataflow.ActionBlock`1.yml) with the specified [System.Action`1]() and [System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions](System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions.yml).
   syntax:
     content:
       CSharp: 'public ActionBlock(Action<TInput> action, ExecutionDataflowBlockOptions dataflowBlockOptions): this ((Delegate)action, dataflowBlockOptions)'
@@ -67,7 +71,7 @@ items:
     - id: action
       type:
         id: System.Action{`0}
-        name: System.Action{`0}
+        name: Action<TInput>
         isExternal: true
       description: The action to invoke with each data element received.
     - id: dataflowBlockOptions
@@ -86,7 +90,7 @@ items:
     remote: *o0
     path: src/System.Threading.Tasks.Dataflow/src/Blocks/ActionBlock.cs
     startLine: 51
-  summary: Initializes the [System.Threading.Tasks.Dataflow.ActionBlock`1](System.Threading.Tasks.Dataflow.ActionBlock`1.yml) with the specified [System.Func`2](#).
+  summary: Initializes the [System.Threading.Tasks.Dataflow.ActionBlock`1](System.Threading.Tasks.Dataflow.ActionBlock`1.yml) with the specified [System.Func`2]().
   syntax:
     content:
       CSharp: 'public ActionBlock(Func<TInput, Task> action): this ((Delegate)action, ExecutionDataflowBlockOptions.Default)'
@@ -94,7 +98,7 @@ items:
     - id: action
       type:
         id: System.Func{`0,System.Threading.Tasks.Task}
-        name: System.Func{`0,System.Threading.Tasks.Task}
+        name: Func<TInput, Task>
         isExternal: true
       description: The action to invoke with each data element received.
   id: System.Threading.Tasks.Dataflow.ActionBlock`1.#ctor(System.Func{`0,System.Threading.Tasks.Task})
@@ -107,7 +111,7 @@ items:
     remote: *o0
     path: src/System.Threading.Tasks.Dataflow/src/Blocks/ActionBlock.cs
     startLine: 60
-  summary: Initializes the [System.Threading.Tasks.Dataflow.ActionBlock`1](System.Threading.Tasks.Dataflow.ActionBlock`1.yml) with the specified [System.Func`2](#) and [System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions](System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions.yml).
+  summary: Initializes the [System.Threading.Tasks.Dataflow.ActionBlock`1](System.Threading.Tasks.Dataflow.ActionBlock`1.yml) with the specified [System.Func`2]() and [System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions](System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions.yml).
   syntax:
     content:
       CSharp: 'public ActionBlock(Func<TInput, Task> action, ExecutionDataflowBlockOptions dataflowBlockOptions): this ((Delegate)action, dataflowBlockOptions)'
@@ -115,7 +119,7 @@ items:
     - id: action
       type:
         id: System.Func{`0,System.Threading.Tasks.Task}
-        name: System.Func{`0,System.Threading.Tasks.Task}
+        name: Func<TInput, Task>
         isExternal: true
       description: The action to invoke with each data element received.
     - id: dataflowBlockOptions
@@ -139,6 +143,25 @@ items:
       CSharp: public void Complete()
     parameters: []
   id: System.Threading.Tasks.Dataflow.ActionBlock`1.Complete
+- uid: System.Threading.Tasks.Dataflow.ActionBlock`1.System#Threading#Tasks#Dataflow#IDataflowBlock#Fault(System.Exception)
+  href: System.Threading.Tasks.Dataflow.ActionBlock`1.yml
+  name: IDataflowBlock.Fault(Exception)
+  fullName: System.Threading.Tasks.Dataflow.ActionBlock<TInput>.System.Threading.Tasks.Dataflow.IDataflowBlock.Fault(System.Exception)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/ActionBlock.cs
+    startLine: 232
+  syntax:
+    content:
+      CSharp: void IDataflowBlock.Fault(Exception exception)
+    parameters:
+    - id: exception
+      type:
+        id: System.Exception
+        name: Exception
+        isExternal: true
+  id: System.Threading.Tasks.Dataflow.ActionBlock`1.System#Threading#Tasks#Dataflow#IDataflowBlock#Fault(System.Exception)
 - uid: System.Threading.Tasks.Dataflow.ActionBlock`1.Completion
   href: System.Threading.Tasks.Dataflow.ActionBlock`1.yml
   name: Completion
@@ -155,7 +178,7 @@ items:
     - id: Completion
       type:
         id: System.Threading.Tasks.Task
-        name: System.Threading.Tasks.Task
+        name: Task
         isExternal: true
   id: System.Threading.Tasks.Dataflow.ActionBlock`1.Completion
 - uid: System.Threading.Tasks.Dataflow.ActionBlock`1.Post(`0)
@@ -170,7 +193,7 @@ items:
   summary: Posts an item to the [System.Threading.Tasks.Dataflow.ITargetBlock`1](System.Threading.Tasks.Dataflow.ITargetBlock`1.yml).
   syntax:
     content:
-      CSharp: '[MethodImpl(MethodImplOptions.AggressiveInlining)] public bool Post(TInput item)'
+      CSharp: public bool Post(TInput item)
     parameters:
     - id: item
       type:
@@ -180,8 +203,52 @@ items:
       description: The item being offered to the target.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: true if the item was accepted by the target block; otherwise, false.
   id: System.Threading.Tasks.Dataflow.ActionBlock`1.Post(`0)
+- uid: System.Threading.Tasks.Dataflow.ActionBlock`1.System#Threading#Tasks#Dataflow#ITargetBlock{TInput}#OfferMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,`0,System.Threading.Tasks.Dataflow.ISourceBlock{`0},System.Boolean)
+  href: System.Threading.Tasks.Dataflow.ActionBlock`1.yml
+  name: ITargetBlock<TInput>.OfferMessage(DataflowMessageHeader, TInput, ISourceBlock<TInput>, bool)
+  fullName: System.Threading.Tasks.Dataflow.ActionBlock<TInput>.System.Threading.Tasks.Dataflow.ITargetBlock<TInput>.OfferMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader, TInput, System.Threading.Tasks.Dataflow.ISourceBlock<TInput>, bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/ActionBlock.cs
+    startLine: 281
+  syntax:
+    content:
+      CSharp: DataflowMessageStatus ITargetBlock<TInput>.OfferMessage(DataflowMessageHeader messageHeader, TInput messageValue, ISourceBlock<TInput> source, bool consumeToAccept)
+    parameters:
+    - id: messageHeader
+      type:
+        id: System.Threading.Tasks.Dataflow.DataflowMessageHeader
+        name: DataflowMessageHeader
+        href: System.Threading.Tasks.Dataflow.DataflowMessageHeader.yml
+    - id: messageValue
+      type:
+        id: TInput
+        name: TInput
+        href: TInput
+    - id: source
+      type:
+        id: System.Threading.Tasks.Dataflow.ISourceBlock{`0}
+        name: ISourceBlock<TInput>
+        href: System.Threading.Tasks.Dataflow.ISourceBlock{`0}
+    - id: consumeToAccept
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+    return:
+      id: DataflowMessageStatus
+      type:
+        id: System.Threading.Tasks.Dataflow.DataflowMessageStatus
+        name: DataflowMessageStatus
+        href: System.Threading.Tasks.Dataflow.DataflowMessageStatus.yml
+  id: System.Threading.Tasks.Dataflow.ActionBlock`1.System#Threading#Tasks#Dataflow#ITargetBlock{TInput}#OfferMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,`0,System.Threading.Tasks.Dataflow.ISourceBlock{`0},System.Boolean)
 - uid: System.Threading.Tasks.Dataflow.ActionBlock`1.InputCount
   href: System.Threading.Tasks.Dataflow.ActionBlock`1.yml
   name: InputCount
@@ -198,7 +265,7 @@ items:
     - id: InputCount
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Threading.Tasks.Dataflow.ActionBlock`1.InputCount
 - uid: System.Threading.Tasks.Dataflow.ActionBlock`1.ToString
@@ -216,4 +283,8 @@ items:
     parameters: []
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Threading.Tasks.Dataflow.ActionBlock`1.ToString

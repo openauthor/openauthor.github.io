@@ -6,24 +6,26 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEReader.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/PEReader.cs
     startLine: 19
   summary: Portable Executable format reader.
   syntax:
     content:
-      CSharp: public sealed class PEReader
+      CSharp: 'public sealed class PEReader : IDisposable'
   inheritance:
-  - id: IDisposable
-    name: IDisposable
+  - id: System.Object
+    name: object
     isExternal: true
   id: System.Reflection.PortableExecutable.PEReader
   children:
   - System.Reflection.PortableExecutable.PEReader.#ctor(System.Byte*,System.Int32)
-  - System.Reflection.PortableExecutable.PEReader.#ctor(Stream)
-  - System.Reflection.PortableExecutable.PEReader.#ctor(Stream,System.Reflection.PortableExecutable.PEStreamOptions)
-  - System.Reflection.PortableExecutable.PEReader.#ctor(Stream,System.Reflection.PortableExecutable.PEStreamOptions,System.Int32)
+  - System.Reflection.PortableExecutable.PEReader.#ctor(System.IO.Stream)
+  - System.Reflection.PortableExecutable.PEReader.#ctor(System.IO.Stream,System.Reflection.PortableExecutable.PEStreamOptions)
+  - System.Reflection.PortableExecutable.PEReader.#ctor(System.IO.Stream,System.Reflection.PortableExecutable.PEStreamOptions,System.Int32)
   - System.Reflection.PortableExecutable.PEReader.#ctor(ImmutableArray{System.Byte})
   - System.Reflection.PortableExecutable.PEReader.Dispose
   - System.Reflection.PortableExecutable.PEReader.PEHeaders
@@ -48,19 +50,20 @@ items:
     parameters:
     - id: peImage
       type:
+        name: byte*
         isExternal: true
       description: Pointer to the start of the PE image.
     - id: size
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The size of the PE image.
   id: System.Reflection.PortableExecutable.PEReader.#ctor(System.Byte*,System.Int32)
-- uid: System.Reflection.PortableExecutable.PEReader.#ctor(Stream)
+- uid: System.Reflection.PortableExecutable.PEReader.#ctor(System.IO.Stream)
   href: System.Reflection.PortableExecutable.PEReader.yml
   name: PEReader(Stream)
-  fullName: System.Reflection.PortableExecutable.PEReader.PEReader(Stream)
+  fullName: System.Reflection.PortableExecutable.PEReader.PEReader(System.IO.Stream)
   type: Constructor
   source:
     remote: *o0
@@ -73,15 +76,15 @@ items:
     parameters:
     - id: peStream
       type:
-        id: Stream
+        id: System.IO.Stream
         name: Stream
         isExternal: true
       description: PE image stream.
-  id: System.Reflection.PortableExecutable.PEReader.#ctor(Stream)
-- uid: System.Reflection.PortableExecutable.PEReader.#ctor(Stream,System.Reflection.PortableExecutable.PEStreamOptions)
+  id: System.Reflection.PortableExecutable.PEReader.#ctor(System.IO.Stream)
+- uid: System.Reflection.PortableExecutable.PEReader.#ctor(System.IO.Stream,System.Reflection.PortableExecutable.PEStreamOptions)
   href: System.Reflection.PortableExecutable.PEReader.yml
   name: PEReader(Stream, PEStreamOptions)
-  fullName: System.Reflection.PortableExecutable.PEReader.PEReader(Stream, System.Reflection.PortableExecutable.PEStreamOptions)
+  fullName: System.Reflection.PortableExecutable.PEReader.PEReader(System.IO.Stream, System.Reflection.PortableExecutable.PEStreamOptions)
   type: Constructor
   source:
     remote: *o0
@@ -94,7 +97,7 @@ items:
     parameters:
     - id: peStream
       type:
-        id: Stream
+        id: System.IO.Stream
         name: Stream
         isExternal: true
       description: PE image stream.
@@ -129,11 +132,11 @@ items:
         specified, the caller retains full ownership of the stream and is assured that it will not be manipulated by the [System.Reflection.PortableExecutable.PEReader](System.Reflection.PortableExecutable.PEReader.yml)
 
         after construction.
-  id: System.Reflection.PortableExecutable.PEReader.#ctor(Stream,System.Reflection.PortableExecutable.PEStreamOptions)
-- uid: System.Reflection.PortableExecutable.PEReader.#ctor(Stream,System.Reflection.PortableExecutable.PEStreamOptions,System.Int32)
+  id: System.Reflection.PortableExecutable.PEReader.#ctor(System.IO.Stream,System.Reflection.PortableExecutable.PEStreamOptions)
+- uid: System.Reflection.PortableExecutable.PEReader.#ctor(System.IO.Stream,System.Reflection.PortableExecutable.PEStreamOptions,System.Int32)
   href: System.Reflection.PortableExecutable.PEReader.yml
   name: PEReader(Stream, PEStreamOptions, int)
-  fullName: System.Reflection.PortableExecutable.PEReader.PEReader(Stream, System.Reflection.PortableExecutable.PEStreamOptions, int)
+  fullName: System.Reflection.PortableExecutable.PEReader.PEReader(System.IO.Stream, System.Reflection.PortableExecutable.PEStreamOptions, int)
   type: Constructor
   source:
     remote: *o0
@@ -146,7 +149,7 @@ items:
     parameters:
     - id: peStream
       type:
-        id: Stream
+        id: System.IO.Stream
         name: Stream
         isExternal: true
       description: PE image stream.
@@ -184,10 +187,10 @@ items:
     - id: size
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: PE image size.
-  id: System.Reflection.PortableExecutable.PEReader.#ctor(Stream,System.Reflection.PortableExecutable.PEStreamOptions,System.Int32)
+  id: System.Reflection.PortableExecutable.PEReader.#ctor(System.IO.Stream,System.Reflection.PortableExecutable.PEStreamOptions,System.Int32)
 - uid: System.Reflection.PortableExecutable.PEReader.#ctor(ImmutableArray{System.Byte})
   href: System.Reflection.PortableExecutable.PEReader.yml
   name: PEReader(ImmutableArray<byte>)
@@ -205,7 +208,7 @@ items:
     - id: peImage
       type:
         id: ImmutableArray{System.Byte}
-        name: ImmutableArray{System.Byte}
+        name: ImmutableArray<byte>
         isExternal: true
       description: PE image.
   id: System.Reflection.PortableExecutable.PEReader.#ctor(ImmutableArray{System.Byte})
@@ -261,7 +264,7 @@ items:
     - id: IsEntireImageAvailable
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Reflection.PortableExecutable.PEReader.IsEntireImageAvailable
 - uid: System.Reflection.PortableExecutable.PEReader.GetEntireImage
@@ -280,6 +283,10 @@ items:
     parameters: []
     return:
       id: PEMemoryBlock
+      type:
+        id: System.Reflection.PortableExecutable.PEMemoryBlock
+        name: PEMemoryBlock
+        href: System.Reflection.PortableExecutable.PEMemoryBlock.yml
   id: System.Reflection.PortableExecutable.PEReader.GetEntireImage
 - uid: System.Reflection.PortableExecutable.PEReader.HasMetadata
   href: System.Reflection.PortableExecutable.PEReader.yml
@@ -298,7 +305,7 @@ items:
     - id: HasMetadata
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Reflection.PortableExecutable.PEReader.HasMetadata
 - uid: System.Reflection.PortableExecutable.PEReader.GetMetadata
@@ -317,6 +324,10 @@ items:
     parameters: []
     return:
       id: PEMemoryBlock
+      type:
+        id: System.Reflection.PortableExecutable.PEMemoryBlock
+        name: PEMemoryBlock
+        href: System.Reflection.PortableExecutable.PEMemoryBlock.yml
   id: System.Reflection.PortableExecutable.PEReader.GetMetadata
 - uid: System.Reflection.PortableExecutable.PEReader.GetSectionData(System.Int32)
   href: System.Reflection.PortableExecutable.PEReader.yml
@@ -338,10 +349,14 @@ items:
     - id: relativeVirtualAddress
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: Relative Virtual Address of the data to read.
     return:
       id: PEMemoryBlock
+      type:
+        id: System.Reflection.PortableExecutable.PEMemoryBlock
+        name: PEMemoryBlock
+        href: System.Reflection.PortableExecutable.PEMemoryBlock.yml
       description: An empty block if  doesn't represent a location in any of the PE sections of this PE image.
   id: System.Reflection.PortableExecutable.PEReader.GetSectionData(System.Int32)

@@ -6,23 +6,28 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlElementAttribute.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlElementAttribute.cs
     startLine: 16
   syntax:
     content:
-      CSharp: public class XmlElementAttribute
+      CSharp: 'public class XmlElementAttribute : Attribute, _Attribute'
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.Attribute
-    name: System.Attribute
+    name: Attribute
     isExternal: true
   id: System.Xml.Serialization.XmlElementAttribute
   children:
   - System.Xml.Serialization.XmlElementAttribute.#ctor
   - System.Xml.Serialization.XmlElementAttribute.#ctor(System.String)
-  - System.Xml.Serialization.XmlElementAttribute.#ctor(Type)
-  - System.Xml.Serialization.XmlElementAttribute.#ctor(System.String,Type)
+  - System.Xml.Serialization.XmlElementAttribute.#ctor(System.Type)
+  - System.Xml.Serialization.XmlElementAttribute.#ctor(System.String,System.Type)
   - System.Xml.Serialization.XmlElementAttribute.Type
   - System.Xml.Serialization.XmlElementAttribute.ElementName
   - System.Xml.Serialization.XmlElementAttribute.Namespace
@@ -60,13 +65,13 @@ items:
     - id: elementName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.Serialization.XmlElementAttribute.#ctor(System.String)
-- uid: System.Xml.Serialization.XmlElementAttribute.#ctor(Type)
+- uid: System.Xml.Serialization.XmlElementAttribute.#ctor(System.Type)
   href: System.Xml.Serialization.XmlElementAttribute.yml
   name: XmlElementAttribute(Type)
-  fullName: System.Xml.Serialization.XmlElementAttribute.XmlElementAttribute(Type)
+  fullName: System.Xml.Serialization.XmlElementAttribute.XmlElementAttribute(System.Type)
   type: Constructor
   source:
     remote: *o0
@@ -78,14 +83,14 @@ items:
     parameters:
     - id: type
       type:
-        id: Type
+        id: System.Type
         name: Type
         isExternal: true
-  id: System.Xml.Serialization.XmlElementAttribute.#ctor(Type)
-- uid: System.Xml.Serialization.XmlElementAttribute.#ctor(System.String,Type)
+  id: System.Xml.Serialization.XmlElementAttribute.#ctor(System.Type)
+- uid: System.Xml.Serialization.XmlElementAttribute.#ctor(System.String,System.Type)
   href: System.Xml.Serialization.XmlElementAttribute.yml
   name: XmlElementAttribute(string, Type)
-  fullName: System.Xml.Serialization.XmlElementAttribute.XmlElementAttribute(string, Type)
+  fullName: System.Xml.Serialization.XmlElementAttribute.XmlElementAttribute(string, System.Type)
   type: Constructor
   source:
     remote: *o0
@@ -98,14 +103,14 @@ items:
     - id: elementName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: type
       type:
-        id: Type
+        id: System.Type
         name: Type
         isExternal: true
-  id: System.Xml.Serialization.XmlElementAttribute.#ctor(System.String,Type)
+  id: System.Xml.Serialization.XmlElementAttribute.#ctor(System.String,System.Type)
 - uid: System.Xml.Serialization.XmlElementAttribute.Type
   href: System.Xml.Serialization.XmlElementAttribute.yml
   name: Type
@@ -121,7 +126,7 @@ items:
     parameters:
     - id: Type
       type:
-        id: Type
+        id: System.Type
         name: Type
         isExternal: true
   id: System.Xml.Serialization.XmlElementAttribute.Type
@@ -141,7 +146,7 @@ items:
     - id: ElementName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.Serialization.XmlElementAttribute.ElementName
 - uid: System.Xml.Serialization.XmlElementAttribute.Namespace
@@ -160,7 +165,7 @@ items:
     - id: Namespace
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.Serialization.XmlElementAttribute.Namespace
 - uid: System.Xml.Serialization.XmlElementAttribute.DataType
@@ -179,7 +184,7 @@ items:
     - id: DataType
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.Serialization.XmlElementAttribute.DataType
 - uid: System.Xml.Serialization.XmlElementAttribute.IsNullable
@@ -198,7 +203,7 @@ items:
     - id: IsNullable
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Xml.Serialization.XmlElementAttribute.IsNullable
 - uid: System.Xml.Serialization.XmlElementAttribute.Form
@@ -236,6 +241,6 @@ items:
     - id: Order
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Xml.Serialization.XmlElementAttribute.Order

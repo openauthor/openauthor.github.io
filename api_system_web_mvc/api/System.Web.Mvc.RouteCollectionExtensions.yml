@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/RouteCollectionExtensions.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/RouteCollectionExtensions.cs
     startLine: 12
   syntax:
     content:
-      CSharp: public static class RouteCollectionExtensions
+      CSharp: public class RouteCollectionExtensions
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.RouteCollectionExtensions
   children:
@@ -41,25 +42,29 @@ items:
     startLine: 51
   syntax:
     content:
-      CSharp: public static VirtualPathData GetVirtualPathForArea(this RouteCollection routes, RequestContext requestContext, RouteValueDictionary values)
+      CSharp: public static VirtualPathData GetVirtualPathForArea(RouteCollection routes, RequestContext requestContext, RouteValueDictionary values)
     parameters:
     - id: routes
       type:
         id: System.Web.Routing.RouteCollection
-        name: System.Web.Routing.RouteCollection
+        name: RouteCollection
         isExternal: true
     - id: requestContext
       type:
         id: System.Web.Routing.RequestContext
-        name: System.Web.Routing.RequestContext
+        name: RequestContext
         isExternal: true
     - id: values
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
     return:
       id: VirtualPathData
+      type:
+        id: System.Web.Routing.VirtualPathData
+        name: VirtualPathData
+        isExternal: true
   id: System.Web.Mvc.RouteCollectionExtensions.GetVirtualPathForArea(System.Web.Routing.RouteCollection,System.Web.Routing.RequestContext,System.Web.Routing.RouteValueDictionary)
 - uid: System.Web.Mvc.RouteCollectionExtensions.GetVirtualPathForArea(System.Web.Routing.RouteCollection,System.Web.Routing.RequestContext,System.String,System.Web.Routing.RouteValueDictionary)
   href: System.Web.Mvc.RouteCollectionExtensions.yml
@@ -72,30 +77,34 @@ items:
     startLine: 56
   syntax:
     content:
-      CSharp: public static VirtualPathData GetVirtualPathForArea(this RouteCollection routes, RequestContext requestContext, string name, RouteValueDictionary values)
+      CSharp: public static VirtualPathData GetVirtualPathForArea(RouteCollection routes, RequestContext requestContext, string name, RouteValueDictionary values)
     parameters:
     - id: routes
       type:
         id: System.Web.Routing.RouteCollection
-        name: System.Web.Routing.RouteCollection
+        name: RouteCollection
         isExternal: true
     - id: requestContext
       type:
         id: System.Web.Routing.RequestContext
-        name: System.Web.Routing.RequestContext
+        name: RequestContext
         isExternal: true
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: values
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
     return:
       id: VirtualPathData
+      type:
+        id: System.Web.Routing.VirtualPathData
+        name: VirtualPathData
+        isExternal: true
   id: System.Web.Mvc.RouteCollectionExtensions.GetVirtualPathForArea(System.Web.Routing.RouteCollection,System.Web.Routing.RequestContext,System.String,System.Web.Routing.RouteValueDictionary)
 - uid: System.Web.Mvc.RouteCollectionExtensions.IgnoreRoute(System.Web.Routing.RouteCollection,System.String)
   href: System.Web.Mvc.RouteCollectionExtensions.yml
@@ -108,17 +117,17 @@ items:
     startLine: 107
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", MessageId = "1#", Justification = "This is not a regular URL as it may contain special routing characters.")] public static void IgnoreRoute(this RouteCollection routes, string url)'
+      CSharp: public static void IgnoreRoute(RouteCollection routes, string url)
     parameters:
     - id: routes
       type:
         id: System.Web.Routing.RouteCollection
-        name: System.Web.Routing.RouteCollection
+        name: RouteCollection
         isExternal: true
     - id: url
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.RouteCollectionExtensions.IgnoreRoute(System.Web.Routing.RouteCollection,System.String)
 - uid: System.Web.Mvc.RouteCollectionExtensions.IgnoreRoute(System.Web.Routing.RouteCollection,System.String,System.Object)
@@ -132,22 +141,22 @@ items:
     startLine: 113
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", MessageId = "1#", Justification = "This is not a regular URL as it may contain special routing characters.")] public static void IgnoreRoute(this RouteCollection routes, string url, object constraints)'
+      CSharp: public static void IgnoreRoute(RouteCollection routes, string url, object constraints)
     parameters:
     - id: routes
       type:
         id: System.Web.Routing.RouteCollection
-        name: System.Web.Routing.RouteCollection
+        name: RouteCollection
         isExternal: true
     - id: url
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: constraints
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.Web.Mvc.RouteCollectionExtensions.IgnoreRoute(System.Web.Routing.RouteCollection,System.String,System.Object)
 - uid: System.Web.Mvc.RouteCollectionExtensions.MapRoute(System.Web.Routing.RouteCollection,System.String,System.String)
@@ -161,25 +170,29 @@ items:
     startLine: 135
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", MessageId = "2#", Justification = "This is not a regular URL as it may contain special routing characters.")] public static Route MapRoute(this RouteCollection routes, string name, string url)'
+      CSharp: public static Route MapRoute(RouteCollection routes, string name, string url)
     parameters:
     - id: routes
       type:
         id: System.Web.Routing.RouteCollection
-        name: System.Web.Routing.RouteCollection
+        name: RouteCollection
         isExternal: true
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: url
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Route
+      type:
+        id: System.Web.Routing.Route
+        name: Route
+        isExternal: true
   id: System.Web.Mvc.RouteCollectionExtensions.MapRoute(System.Web.Routing.RouteCollection,System.String,System.String)
 - uid: System.Web.Mvc.RouteCollectionExtensions.MapRoute(System.Web.Routing.RouteCollection,System.String,System.String,System.Object)
   href: System.Web.Mvc.RouteCollectionExtensions.yml
@@ -192,30 +205,34 @@ items:
     startLine: 141
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", MessageId = "2#", Justification = "This is not a regular URL as it may contain special routing characters.")] public static Route MapRoute(this RouteCollection routes, string name, string url, object defaults)'
+      CSharp: public static Route MapRoute(RouteCollection routes, string name, string url, object defaults)
     parameters:
     - id: routes
       type:
         id: System.Web.Routing.RouteCollection
-        name: System.Web.Routing.RouteCollection
+        name: RouteCollection
         isExternal: true
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: url
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: defaults
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: Route
+      type:
+        id: System.Web.Routing.Route
+        name: Route
+        isExternal: true
   id: System.Web.Mvc.RouteCollectionExtensions.MapRoute(System.Web.Routing.RouteCollection,System.String,System.String,System.Object)
 - uid: System.Web.Mvc.RouteCollectionExtensions.MapRoute(System.Web.Routing.RouteCollection,System.String,System.String,System.Object,System.Object)
   href: System.Web.Mvc.RouteCollectionExtensions.yml
@@ -228,35 +245,39 @@ items:
     startLine: 147
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", MessageId = "2#", Justification = "This is not a regular URL as it may contain special routing characters.")] public static Route MapRoute(this RouteCollection routes, string name, string url, object defaults, object constraints)'
+      CSharp: public static Route MapRoute(RouteCollection routes, string name, string url, object defaults, object constraints)
     parameters:
     - id: routes
       type:
         id: System.Web.Routing.RouteCollection
-        name: System.Web.Routing.RouteCollection
+        name: RouteCollection
         isExternal: true
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: url
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: defaults
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     - id: constraints
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: Route
+      type:
+        id: System.Web.Routing.Route
+        name: Route
+        isExternal: true
   id: System.Web.Mvc.RouteCollectionExtensions.MapRoute(System.Web.Routing.RouteCollection,System.String,System.String,System.Object,System.Object)
 - uid: System.Web.Mvc.RouteCollectionExtensions.MapRoute(System.Web.Routing.RouteCollection,System.String,System.String,System.String[])
   href: System.Web.Mvc.RouteCollectionExtensions.yml
@@ -269,30 +290,34 @@ items:
     startLine: 153
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", MessageId = "2#", Justification = "This is not a regular URL as it may contain special routing characters.")] public static Route MapRoute(this RouteCollection routes, string name, string url, string[] namespaces)'
+      CSharp: public static Route MapRoute(RouteCollection routes, string name, string url, string[] namespaces)
     parameters:
     - id: routes
       type:
         id: System.Web.Routing.RouteCollection
-        name: System.Web.Routing.RouteCollection
+        name: RouteCollection
         isExternal: true
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: url
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: namespaces
       type:
         id: System.Array
-        name: System.Array
+        name: string[]
         isExternal: true
     return:
       id: Route
+      type:
+        id: System.Web.Routing.Route
+        name: Route
+        isExternal: true
   id: System.Web.Mvc.RouteCollectionExtensions.MapRoute(System.Web.Routing.RouteCollection,System.String,System.String,System.String[])
 - uid: System.Web.Mvc.RouteCollectionExtensions.MapRoute(System.Web.Routing.RouteCollection,System.String,System.String,System.Object,System.String[])
   href: System.Web.Mvc.RouteCollectionExtensions.yml
@@ -305,35 +330,39 @@ items:
     startLine: 159
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", MessageId = "2#", Justification = "This is not a regular URL as it may contain special routing characters.")] public static Route MapRoute(this RouteCollection routes, string name, string url, object defaults, string[] namespaces)'
+      CSharp: public static Route MapRoute(RouteCollection routes, string name, string url, object defaults, string[] namespaces)
     parameters:
     - id: routes
       type:
         id: System.Web.Routing.RouteCollection
-        name: System.Web.Routing.RouteCollection
+        name: RouteCollection
         isExternal: true
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: url
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: defaults
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     - id: namespaces
       type:
         id: System.Array
-        name: System.Array
+        name: string[]
         isExternal: true
     return:
       id: Route
+      type:
+        id: System.Web.Routing.Route
+        name: Route
+        isExternal: true
   id: System.Web.Mvc.RouteCollectionExtensions.MapRoute(System.Web.Routing.RouteCollection,System.String,System.String,System.Object,System.String[])
 - uid: System.Web.Mvc.RouteCollectionExtensions.MapRoute(System.Web.Routing.RouteCollection,System.String,System.String,System.Object,System.Object,System.String[])
   href: System.Web.Mvc.RouteCollectionExtensions.yml
@@ -346,38 +375,42 @@ items:
     startLine: 165
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", MessageId = "2#", Justification = "This is not a regular URL as it may contain special routing characters.")] public static Route MapRoute(this RouteCollection routes, string name, string url, object defaults, object constraints, string[] namespaces)'
+      CSharp: public static Route MapRoute(RouteCollection routes, string name, string url, object defaults, object constraints, string[] namespaces)
     parameters:
     - id: routes
       type:
         id: System.Web.Routing.RouteCollection
-        name: System.Web.Routing.RouteCollection
+        name: RouteCollection
         isExternal: true
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: url
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: defaults
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     - id: constraints
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     - id: namespaces
       type:
         id: System.Array
-        name: System.Array
+        name: string[]
         isExternal: true
     return:
       id: Route
+      type:
+        id: System.Web.Routing.Route
+        name: Route
+        isExternal: true
   id: System.Web.Mvc.RouteCollectionExtensions.MapRoute(System.Web.Routing.RouteCollection,System.String,System.String,System.Object,System.Object,System.String[])

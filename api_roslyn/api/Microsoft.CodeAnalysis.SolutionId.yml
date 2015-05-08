@@ -6,18 +6,19 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Workspace/Solution/SolutionId.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Workspace/Solution/SolutionId.cs
     startLine: 13
   summary: An identifier that can be used to refer to the same Solution across versions.
   syntax:
     content:
-      CSharp: public class SolutionId
+      CSharp: 'public sealed class SolutionId : IEquatable<SolutionId>'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.SolutionId
   children:
@@ -40,12 +41,12 @@ items:
   summary: The unique id of the solution.
   syntax:
     content:
-      CSharp: public Guid Id { get; private set; }
+      CSharp: public Guid Id { get; }
     parameters:
     - id: Id
       type:
         id: System.Guid
-        name: System.Guid
+        name: Guid
         isExternal: true
   id: Microsoft.CodeAnalysis.SolutionId.Id
 - uid: Microsoft.CodeAnalysis.SolutionId.CreateNewId(System.String)
@@ -65,11 +66,15 @@ items:
     - id: debugName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: An optional name to make this id easier to recognize while debugging.
     return:
       id: SolutionId
+      type:
+        id: Microsoft.CodeAnalysis.SolutionId
+        name: SolutionId
+        href: Microsoft.CodeAnalysis.SolutionId.yml
   id: Microsoft.CodeAnalysis.SolutionId.CreateNewId(System.String)
 - uid: Microsoft.CodeAnalysis.SolutionId.Equals(System.Object)
   href: Microsoft.CodeAnalysis.SolutionId.yml
@@ -87,10 +92,14 @@ items:
     - id: obj
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.SolutionId.Equals(System.Object)
 - uid: Microsoft.CodeAnalysis.SolutionId.Equals(Microsoft.CodeAnalysis.SolutionId)
   href: Microsoft.CodeAnalysis.SolutionId.yml
@@ -112,19 +121,23 @@ items:
         href: Microsoft.CodeAnalysis.SolutionId.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.SolutionId.Equals(Microsoft.CodeAnalysis.SolutionId)
 - uid: Microsoft.CodeAnalysis.SolutionId.op_Equality(Microsoft.CodeAnalysis.SolutionId,Microsoft.CodeAnalysis.SolutionId)
   href: Microsoft.CodeAnalysis.SolutionId.yml
   name: operator ==(SolutionId, SolutionId)
   fullName: Microsoft.CodeAnalysis.SolutionId.operator ==(Microsoft.CodeAnalysis.SolutionId, Microsoft.CodeAnalysis.SolutionId)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/SolutionId.cs
     startLine: 57
   syntax:
     content:
-      CSharp: public static bool operator ==(SolutionId left, SolutionId right) { return EqualityComparer<SolutionId>.Default.Equals(left, right); }
+      CSharp: public static bool operator ==(SolutionId left, SolutionId right)
     parameters:
     - id: left
       type:
@@ -138,19 +151,23 @@ items:
         href: Microsoft.CodeAnalysis.SolutionId.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.SolutionId.op_Equality(Microsoft.CodeAnalysis.SolutionId,Microsoft.CodeAnalysis.SolutionId)
 - uid: Microsoft.CodeAnalysis.SolutionId.op_Inequality(Microsoft.CodeAnalysis.SolutionId,Microsoft.CodeAnalysis.SolutionId)
   href: Microsoft.CodeAnalysis.SolutionId.yml
   name: operator !=(SolutionId, SolutionId)
   fullName: Microsoft.CodeAnalysis.SolutionId.operator !=(Microsoft.CodeAnalysis.SolutionId, Microsoft.CodeAnalysis.SolutionId)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/Workspace/Solution/SolutionId.cs
     startLine: 62
   syntax:
     content:
-      CSharp: public static bool operator !=(SolutionId left, SolutionId right) { return !(left == right); }
+      CSharp: public static bool operator !=(SolutionId left, SolutionId right)
     parameters:
     - id: left
       type:
@@ -164,6 +181,10 @@ items:
         href: Microsoft.CodeAnalysis.SolutionId.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.SolutionId.op_Inequality(Microsoft.CodeAnalysis.SolutionId,Microsoft.CodeAnalysis.SolutionId)
 - uid: Microsoft.CodeAnalysis.SolutionId.GetHashCode
   href: Microsoft.CodeAnalysis.SolutionId.yml
@@ -180,4 +201,8 @@ items:
     parameters: []
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: Microsoft.CodeAnalysis.SolutionId.GetHashCode

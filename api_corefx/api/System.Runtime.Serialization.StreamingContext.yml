@@ -6,25 +6,30 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Runtime.Serialization.Primitives/src/System/Runtime/Serialization/StreamingContext.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Runtime.Serialization.Primitives/src/System/Runtime/Serialization/StreamingContext.cs
     startLine: 17
   syntax:
     content:
       CSharp: public struct StreamingContext
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Runtime.Serialization.StreamingContext
   children:
-  - System.Runtime.Serialization.StreamingContext.Equals(Object)
+  - System.Runtime.Serialization.StreamingContext.Equals(System.Object)
   - System.Runtime.Serialization.StreamingContext.GetHashCode
-- uid: System.Runtime.Serialization.StreamingContext.Equals(Object)
+- uid: System.Runtime.Serialization.StreamingContext.Equals(System.Object)
   href: System.Runtime.Serialization.StreamingContext.yml
-  name: Equals(Object)
-  fullName: System.Runtime.Serialization.StreamingContext.Equals(Object)
+  name: Equals(object)
+  fullName: System.Runtime.Serialization.StreamingContext.Equals(object)
   type: Method
   source:
     remote: *o0
@@ -32,16 +37,20 @@ items:
     startLine: 38
   syntax:
     content:
-      CSharp: public override bool Equals(Object obj)
+      CSharp: public override bool Equals(object obj)
     parameters:
     - id: obj
       type:
-        id: Object
-        name: Object
+        id: System.Object
+        name: object
         isExternal: true
     return:
       id: Boolean
-  id: System.Runtime.Serialization.StreamingContext.Equals(Object)
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Runtime.Serialization.StreamingContext.Equals(System.Object)
 - uid: System.Runtime.Serialization.StreamingContext.GetHashCode
   href: System.Runtime.Serialization.StreamingContext.yml
   name: GetHashCode()
@@ -57,4 +66,8 @@ items:
     parameters: []
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: System.Runtime.Serialization.StreamingContext.GetHashCode

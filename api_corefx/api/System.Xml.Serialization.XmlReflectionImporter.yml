@@ -6,8 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlReflectionImporter.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlReflectionImporter.cs
     startLine: 28
   syntax:
@@ -15,7 +17,7 @@ items:
       CSharp: public class XmlReflectionImporter
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Xml.Serialization.XmlReflectionImporter
   children:
@@ -23,12 +25,12 @@ items:
   - System.Xml.Serialization.XmlReflectionImporter.#ctor(System.String)
   - System.Xml.Serialization.XmlReflectionImporter.#ctor(System.Xml.Serialization.XmlAttributeOverrides)
   - System.Xml.Serialization.XmlReflectionImporter.#ctor(System.Xml.Serialization.XmlAttributeOverrides,System.String)
-  - System.Xml.Serialization.XmlReflectionImporter.IncludeTypes(MemberInfo)
-  - System.Xml.Serialization.XmlReflectionImporter.IncludeType(Type)
-  - System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(Type)
-  - System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(Type,System.String)
-  - System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(Type,System.Xml.Serialization.XmlRootAttribute)
-  - System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(Type,System.Xml.Serialization.XmlRootAttribute,System.String)
+  - System.Xml.Serialization.XmlReflectionImporter.IncludeTypes(System.Reflection.MemberInfo)
+  - System.Xml.Serialization.XmlReflectionImporter.IncludeType(System.Type)
+  - System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(System.Type)
+  - System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(System.Type,System.String)
+  - System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(System.Type,System.Xml.Serialization.XmlRootAttribute)
+  - System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(System.Type,System.Xml.Serialization.XmlRootAttribute,System.String)
   - System.Xml.Serialization.XmlReflectionImporter.ImportMembersMapping(System.String,System.String,System.Xml.Serialization.XmlReflectionMember[],System.Boolean)
   - System.Xml.Serialization.XmlReflectionImporter.ImportMembersMapping(System.String,System.String,System.Xml.Serialization.XmlReflectionMember[],System.Boolean,System.Boolean)
   - System.Xml.Serialization.XmlReflectionImporter.ImportMembersMapping(System.String,System.String,System.Xml.Serialization.XmlReflectionMember[],System.Boolean,System.Boolean,System.Boolean)
@@ -63,7 +65,7 @@ items:
     - id: defaultNamespace
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.Serialization.XmlReflectionImporter.#ctor(System.String)
 - uid: System.Xml.Serialization.XmlReflectionImporter.#ctor(System.Xml.Serialization.XmlAttributeOverrides)
@@ -106,13 +108,13 @@ items:
     - id: defaultNamespace
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.Serialization.XmlReflectionImporter.#ctor(System.Xml.Serialization.XmlAttributeOverrides,System.String)
-- uid: System.Xml.Serialization.XmlReflectionImporter.IncludeTypes(MemberInfo)
+- uid: System.Xml.Serialization.XmlReflectionImporter.IncludeTypes(System.Reflection.MemberInfo)
   href: System.Xml.Serialization.XmlReflectionImporter.yml
   name: IncludeTypes(MemberInfo)
-  fullName: System.Xml.Serialization.XmlReflectionImporter.IncludeTypes(MemberInfo)
+  fullName: System.Xml.Serialization.XmlReflectionImporter.IncludeTypes(System.Reflection.MemberInfo)
   type: Method
   source:
     remote: *o0
@@ -124,14 +126,14 @@ items:
     parameters:
     - id: memberInfo
       type:
-        id: MemberInfo
+        id: System.Reflection.MemberInfo
         name: MemberInfo
         isExternal: true
-  id: System.Xml.Serialization.XmlReflectionImporter.IncludeTypes(MemberInfo)
-- uid: System.Xml.Serialization.XmlReflectionImporter.IncludeType(Type)
+  id: System.Xml.Serialization.XmlReflectionImporter.IncludeTypes(System.Reflection.MemberInfo)
+- uid: System.Xml.Serialization.XmlReflectionImporter.IncludeType(System.Type)
   href: System.Xml.Serialization.XmlReflectionImporter.yml
   name: IncludeType(Type)
-  fullName: System.Xml.Serialization.XmlReflectionImporter.IncludeType(Type)
+  fullName: System.Xml.Serialization.XmlReflectionImporter.IncludeType(System.Type)
   type: Method
   source:
     remote: *o0
@@ -143,14 +145,14 @@ items:
     parameters:
     - id: type
       type:
-        id: Type
+        id: System.Type
         name: Type
         isExternal: true
-  id: System.Xml.Serialization.XmlReflectionImporter.IncludeType(Type)
-- uid: System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(Type)
+  id: System.Xml.Serialization.XmlReflectionImporter.IncludeType(System.Type)
+- uid: System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(System.Type)
   href: System.Xml.Serialization.XmlReflectionImporter.yml
   name: ImportTypeMapping(Type)
-  fullName: System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(Type)
+  fullName: System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(System.Type)
   type: Method
   source:
     remote: *o0
@@ -162,16 +164,20 @@ items:
     parameters:
     - id: type
       type:
-        id: Type
+        id: System.Type
         name: Type
         isExternal: true
     return:
       id: XmlTypeMapping
-  id: System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(Type)
-- uid: System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(Type,System.String)
+      type:
+        id: System.Xml.Serialization.XmlTypeMapping
+        name: XmlTypeMapping
+        href: System.Xml.Serialization.XmlTypeMapping.yml
+  id: System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(System.Type)
+- uid: System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(System.Type,System.String)
   href: System.Xml.Serialization.XmlReflectionImporter.yml
   name: ImportTypeMapping(Type, string)
-  fullName: System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(Type, string)
+  fullName: System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(System.Type, string)
   type: Method
   source:
     remote: *o0
@@ -183,21 +189,25 @@ items:
     parameters:
     - id: type
       type:
-        id: Type
+        id: System.Type
         name: Type
         isExternal: true
     - id: defaultNamespace
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: XmlTypeMapping
-  id: System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(Type,System.String)
-- uid: System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(Type,System.Xml.Serialization.XmlRootAttribute)
+      type:
+        id: System.Xml.Serialization.XmlTypeMapping
+        name: XmlTypeMapping
+        href: System.Xml.Serialization.XmlTypeMapping.yml
+  id: System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(System.Type,System.String)
+- uid: System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(System.Type,System.Xml.Serialization.XmlRootAttribute)
   href: System.Xml.Serialization.XmlReflectionImporter.yml
   name: ImportTypeMapping(Type, XmlRootAttribute)
-  fullName: System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(Type, System.Xml.Serialization.XmlRootAttribute)
+  fullName: System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(System.Type, System.Xml.Serialization.XmlRootAttribute)
   type: Method
   source:
     remote: *o0
@@ -209,7 +219,7 @@ items:
     parameters:
     - id: type
       type:
-        id: Type
+        id: System.Type
         name: Type
         isExternal: true
     - id: root
@@ -219,11 +229,15 @@ items:
         href: System.Xml.Serialization.XmlRootAttribute.yml
     return:
       id: XmlTypeMapping
-  id: System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(Type,System.Xml.Serialization.XmlRootAttribute)
-- uid: System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(Type,System.Xml.Serialization.XmlRootAttribute,System.String)
+      type:
+        id: System.Xml.Serialization.XmlTypeMapping
+        name: XmlTypeMapping
+        href: System.Xml.Serialization.XmlTypeMapping.yml
+  id: System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(System.Type,System.Xml.Serialization.XmlRootAttribute)
+- uid: System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(System.Type,System.Xml.Serialization.XmlRootAttribute,System.String)
   href: System.Xml.Serialization.XmlReflectionImporter.yml
   name: ImportTypeMapping(Type, XmlRootAttribute, string)
-  fullName: System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(Type, System.Xml.Serialization.XmlRootAttribute, string)
+  fullName: System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(System.Type, System.Xml.Serialization.XmlRootAttribute, string)
   type: Method
   source:
     remote: *o0
@@ -235,7 +249,7 @@ items:
     parameters:
     - id: type
       type:
-        id: Type
+        id: System.Type
         name: Type
         isExternal: true
     - id: root
@@ -246,11 +260,15 @@ items:
     - id: defaultNamespace
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: XmlTypeMapping
-  id: System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(Type,System.Xml.Serialization.XmlRootAttribute,System.String)
+      type:
+        id: System.Xml.Serialization.XmlTypeMapping
+        name: XmlTypeMapping
+        href: System.Xml.Serialization.XmlTypeMapping.yml
+  id: System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(System.Type,System.Xml.Serialization.XmlRootAttribute,System.String)
 - uid: System.Xml.Serialization.XmlReflectionImporter.ImportMembersMapping(System.String,System.String,System.Xml.Serialization.XmlReflectionMember[],System.Boolean)
   href: System.Xml.Serialization.XmlReflectionImporter.yml
   name: ImportMembersMapping(string, string, XmlReflectionMember[], bool)
@@ -267,25 +285,29 @@ items:
     - id: elementName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: ns
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: members
       type:
         id: System.Array
-        name: System.Array
+        name: XmlReflectionMember[]
         isExternal: true
     - id: hasWrapperElement
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     return:
       id: XmlMembersMapping
+      type:
+        id: System.Xml.Serialization.XmlMembersMapping
+        name: XmlMembersMapping
+        href: System.Xml.Serialization.XmlMembersMapping.yml
   id: System.Xml.Serialization.XmlReflectionImporter.ImportMembersMapping(System.String,System.String,System.Xml.Serialization.XmlReflectionMember[],System.Boolean)
 - uid: System.Xml.Serialization.XmlReflectionImporter.ImportMembersMapping(System.String,System.String,System.Xml.Serialization.XmlReflectionMember[],System.Boolean,System.Boolean)
   href: System.Xml.Serialization.XmlReflectionImporter.yml
@@ -303,30 +325,34 @@ items:
     - id: elementName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: ns
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: members
       type:
         id: System.Array
-        name: System.Array
+        name: XmlReflectionMember[]
         isExternal: true
     - id: hasWrapperElement
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     - id: rpc
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     return:
       id: XmlMembersMapping
+      type:
+        id: System.Xml.Serialization.XmlMembersMapping
+        name: XmlMembersMapping
+        href: System.Xml.Serialization.XmlMembersMapping.yml
   id: System.Xml.Serialization.XmlReflectionImporter.ImportMembersMapping(System.String,System.String,System.Xml.Serialization.XmlReflectionMember[],System.Boolean,System.Boolean)
 - uid: System.Xml.Serialization.XmlReflectionImporter.ImportMembersMapping(System.String,System.String,System.Xml.Serialization.XmlReflectionMember[],System.Boolean,System.Boolean,System.Boolean)
   href: System.Xml.Serialization.XmlReflectionImporter.yml
@@ -344,35 +370,39 @@ items:
     - id: elementName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: ns
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: members
       type:
         id: System.Array
-        name: System.Array
+        name: XmlReflectionMember[]
         isExternal: true
     - id: hasWrapperElement
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     - id: rpc
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     - id: openModel
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     return:
       id: XmlMembersMapping
+      type:
+        id: System.Xml.Serialization.XmlMembersMapping
+        name: XmlMembersMapping
+        href: System.Xml.Serialization.XmlMembersMapping.yml
   id: System.Xml.Serialization.XmlReflectionImporter.ImportMembersMapping(System.String,System.String,System.Xml.Serialization.XmlReflectionMember[],System.Boolean,System.Boolean,System.Boolean)
 - uid: System.Xml.Serialization.XmlReflectionImporter.ImportMembersMapping(System.String,System.String,System.Xml.Serialization.XmlReflectionMember[],System.Boolean,System.Boolean,System.Boolean,System.Xml.Serialization.XmlMappingAccess)
   href: System.Xml.Serialization.XmlReflectionImporter.yml
@@ -390,32 +420,32 @@ items:
     - id: elementName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: ns
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: members
       type:
         id: System.Array
-        name: System.Array
+        name: XmlReflectionMember[]
         isExternal: true
     - id: hasWrapperElement
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     - id: rpc
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     - id: openModel
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     - id: access
       type:
@@ -424,4 +454,8 @@ items:
         href: System.Xml.Serialization.XmlMappingAccess.yml
     return:
       id: XmlMembersMapping
+      type:
+        id: System.Xml.Serialization.XmlMembersMapping
+        name: XmlMembersMapping
+        href: System.Xml.Serialization.XmlMembersMapping.yml
   id: System.Xml.Serialization.XmlReflectionImporter.ImportMembersMapping(System.String,System.String,System.Xml.Serialization.XmlReflectionMember[],System.Boolean,System.Boolean,System.Boolean,System.Xml.Serialization.XmlMappingAccess)

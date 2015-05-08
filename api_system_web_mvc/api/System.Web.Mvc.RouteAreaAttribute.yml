@@ -6,21 +6,22 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/RouteAreaAttribute.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/RouteAreaAttribute.cs
     startLine: 9
   summary: Defines the area to set for all the routes defined in this controller.
   syntax:
     content:
-      CSharp: public sealed class RouteAreaAttribute
+      CSharp: 'public sealed class RouteAreaAttribute : Attribute, _Attribute'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Attribute
-    name: System.Attribute
+    name: Attribute
     isExternal: true
   id: System.Web.Mvc.RouteAreaAttribute
   children:
@@ -60,7 +61,7 @@ items:
     - id: areaName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: >-
         The name of the area.
@@ -82,12 +83,12 @@ items:
     If the value is null, an attempt will be made to infer the area name from the target controller's namespace.
   syntax:
     content:
-      CSharp: public string AreaName { get; private set; }
+      CSharp: public string AreaName { get; }
     parameters:
     - id: AreaName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.RouteAreaAttribute.AreaName
 - uid: System.Web.Mvc.RouteAreaAttribute.AreaPrefix
@@ -107,6 +108,6 @@ items:
     - id: AreaPrefix
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.RouteAreaAttribute.AreaPrefix

@@ -6,39 +6,41 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/PartitionerStatic.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/PartitionerStatic.cs
     startLine: 66
   summary: Provides common partitioning strategies for arrays, lists, and enumerables.
   syntax:
     content:
-      CSharp: public static class Partitioner
+      CSharp: public class Partitioner
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Collections.Concurrent.Partitioner
   children:
-  - System.Collections.Concurrent.Partitioner.Create``1(IList{``0},System.Boolean)
+  - System.Collections.Concurrent.Partitioner.Create``1(System.Collections.Generic.IList{``0},System.Boolean)
   - System.Collections.Concurrent.Partitioner.Create``1(``0[],System.Boolean)
-  - System.Collections.Concurrent.Partitioner.Create``1(IEnumerable{``0})
-  - System.Collections.Concurrent.Partitioner.Create``1(IEnumerable{``0},System.Collections.Concurrent.EnumerablePartitionerOptions)
+  - System.Collections.Concurrent.Partitioner.Create``1(System.Collections.Generic.IEnumerable{``0})
+  - System.Collections.Concurrent.Partitioner.Create``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Concurrent.EnumerablePartitionerOptions)
   - System.Collections.Concurrent.Partitioner.Create(System.Int64,System.Int64)
   - System.Collections.Concurrent.Partitioner.Create(System.Int64,System.Int64,System.Int64)
   - System.Collections.Concurrent.Partitioner.Create(System.Int32,System.Int32)
   - System.Collections.Concurrent.Partitioner.Create(System.Int32,System.Int32,System.Int32)
-- uid: System.Collections.Concurrent.Partitioner.Create``1(IList{``0},System.Boolean)
+- uid: System.Collections.Concurrent.Partitioner.Create``1(System.Collections.Generic.IList{``0},System.Boolean)
   href: System.Collections.Concurrent.Partitioner.yml
   name: Create<TSource>(IList<TSource>, bool)
-  fullName: System.Collections.Concurrent.Partitioner.Create<TSource>(IList<TSource>, bool)
+  fullName: System.Collections.Concurrent.Partitioner.Create<TSource>(System.Collections.Generic.IList<TSource>, bool)
   type: Method
   source:
     remote: *o0
     path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/PartitionerStatic.cs
     startLine: 81
   summary: >-
-    Creates an orderable partitioner from an
+    Creates an orderable partitioner from an [System.Collections.Generic.IList`1]()
 
     instance.
   syntax:
@@ -47,14 +49,14 @@ items:
     parameters:
     - id: list
       type:
-        id: IList{``0}
-        name: IList{``0}
+        id: System.Collections.Generic.IList{``0}
+        name: IList<TSource>
         isExternal: true
       description: The list to be partitioned.
     - id: loadBalance
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
       description: >-
         A Boolean value that indicates whether the created partitioner should dynamically
@@ -62,8 +64,12 @@ items:
         load balance between partitions rather than statically partition.
     return:
       id: OrderablePartitioner
+      type:
+        id: System.Collections.Concurrent.OrderablePartitioner{``0}
+        name: OrderablePartitioner<TSource>
+        href: System.Collections.Concurrent.OrderablePartitioner{``0}
       description: An orderable partitioner based on the input list.
-  id: System.Collections.Concurrent.Partitioner.Create``1(IList{``0},System.Boolean)
+  id: System.Collections.Concurrent.Partitioner.Create``1(System.Collections.Generic.IList{``0},System.Boolean)
 - uid: System.Collections.Concurrent.Partitioner.Create``1(``0[],System.Boolean)
   href: System.Collections.Concurrent.Partitioner.yml
   name: Create<TSource>(TSource[], bool)
@@ -73,7 +79,7 @@ items:
     remote: *o0
     path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/PartitionerStatic.cs
     startLine: 109
-  summary: Creates an orderable partitioner from a @!:System.Array- instance.
+  summary: Creates an orderable partitioner from a [System.Array]() instance.
   syntax:
     content:
       CSharp: public static OrderablePartitioner<TSource> Create<TSource>(TSource[] array, bool loadBalance)
@@ -81,13 +87,13 @@ items:
     - id: array
       type:
         id: System.Array
-        name: System.Array
+        name: TSource[]
         isExternal: true
       description: The array to be partitioned.
     - id: loadBalance
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
       description: >-
         A Boolean value that indicates whether the created partitioner should dynamically load balance
@@ -95,50 +101,58 @@ items:
         between partitions rather than statically partition.
     return:
       id: OrderablePartitioner
+      type:
+        id: System.Collections.Concurrent.OrderablePartitioner{``0}
+        name: OrderablePartitioner<TSource>
+        href: System.Collections.Concurrent.OrderablePartitioner{``0}
       description: An orderable partitioner based on the input array.
   id: System.Collections.Concurrent.Partitioner.Create``1(``0[],System.Boolean)
-- uid: System.Collections.Concurrent.Partitioner.Create``1(IEnumerable{``0})
+- uid: System.Collections.Concurrent.Partitioner.Create``1(System.Collections.Generic.IEnumerable{``0})
   href: System.Collections.Concurrent.Partitioner.yml
   name: Create<TSource>(IEnumerable<TSource>)
-  fullName: System.Collections.Concurrent.Partitioner.Create<TSource>(IEnumerable<TSource>)
+  fullName: System.Collections.Concurrent.Partitioner.Create<TSource>(System.Collections.Generic.IEnumerable<TSource>)
   type: Method
   source:
     remote: *o0
     path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/PartitionerStatic.cs
     startLine: 140
-  summary: Creates an orderable partitioner from a  instance.
+  summary: Creates an orderable partitioner from a [System.Collections.Generic.IEnumerable`1]() instance.
   syntax:
     content:
       CSharp: public static OrderablePartitioner<TSource> Create<TSource>(IEnumerable<TSource> source)
     parameters:
     - id: source
       type:
-        id: IEnumerable{``0}
-        name: IEnumerable{``0}
+        id: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<TSource>
         isExternal: true
       description: The enumerable to be partitioned.
     return:
       id: OrderablePartitioner
+      type:
+        id: System.Collections.Concurrent.OrderablePartitioner{``0}
+        name: OrderablePartitioner<TSource>
+        href: System.Collections.Concurrent.OrderablePartitioner{``0}
       description: An orderable partitioner based on the input array.
-  id: System.Collections.Concurrent.Partitioner.Create``1(IEnumerable{``0})
-- uid: System.Collections.Concurrent.Partitioner.Create``1(IEnumerable{``0},System.Collections.Concurrent.EnumerablePartitionerOptions)
+  id: System.Collections.Concurrent.Partitioner.Create``1(System.Collections.Generic.IEnumerable{``0})
+- uid: System.Collections.Concurrent.Partitioner.Create``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Concurrent.EnumerablePartitionerOptions)
   href: System.Collections.Concurrent.Partitioner.yml
   name: Create<TSource>(IEnumerable<TSource>, EnumerablePartitionerOptions)
-  fullName: System.Collections.Concurrent.Partitioner.Create<TSource>(IEnumerable<TSource>, System.Collections.Concurrent.EnumerablePartitionerOptions)
+  fullName: System.Collections.Concurrent.Partitioner.Create<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Collections.Concurrent.EnumerablePartitionerOptions)
   type: Method
   source:
     remote: *o0
     path: src/System.Collections.Concurrent/src/System/Collections/Concurrent/PartitionerStatic.cs
     startLine: 162
-  summary: Creates an orderable partitioner from a  instance.
+  summary: Creates an orderable partitioner from a [System.Collections.Generic.IEnumerable`1]() instance.
   syntax:
     content:
       CSharp: public static OrderablePartitioner<TSource> Create<TSource>(IEnumerable<TSource> source, EnumerablePartitionerOptions partitionerOptions)
     parameters:
     - id: source
       type:
-        id: IEnumerable{``0}
-        name: IEnumerable{``0}
+        id: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<TSource>
         isExternal: true
       description: The enumerable to be partitioned.
     - id: partitionerOptions
@@ -149,8 +163,12 @@ items:
       description: Options to control the buffering behavior of the partitioner.
     return:
       id: OrderablePartitioner
+      type:
+        id: System.Collections.Concurrent.OrderablePartitioner{``0}
+        name: OrderablePartitioner<TSource>
+        href: System.Collections.Concurrent.OrderablePartitioner{``0}
       description: An orderable partitioner based on the input array.
-  id: System.Collections.Concurrent.Partitioner.Create``1(IEnumerable{``0},System.Collections.Concurrent.EnumerablePartitionerOptions)
+  id: System.Collections.Concurrent.Partitioner.Create``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Concurrent.EnumerablePartitionerOptions)
 - uid: System.Collections.Concurrent.Partitioner.Create(System.Int64,System.Int64)
   href: System.Collections.Concurrent.Partitioner.yml
   name: Create(long, long)
@@ -168,17 +186,21 @@ items:
     - id: fromInclusive
       type:
         id: System.Int64
-        name: System.Int64
+        name: long
         isExternal: true
       description: The lower, inclusive bound of the range.
     - id: toExclusive
       type:
         id: System.Int64
-        name: System.Int64
+        name: long
         isExternal: true
       description: The upper, exclusive bound of the range.
     return:
       id: OrderablePartitioner
+      type:
+        id: System.Collections.Concurrent.OrderablePartitioner{System.Tuple{System.Int64,System.Int64}}
+        name: OrderablePartitioner<Tuple<long, long>>
+        href: System.Collections.Concurrent.OrderablePartitioner{System.Tuple{System.Int64,System.Int64}}
       description: A partitioner.
   id: System.Collections.Concurrent.Partitioner.Create(System.Int64,System.Int64)
 - uid: System.Collections.Concurrent.Partitioner.Create(System.Int64,System.Int64,System.Int64)
@@ -198,23 +220,27 @@ items:
     - id: fromInclusive
       type:
         id: System.Int64
-        name: System.Int64
+        name: long
         isExternal: true
       description: The lower, inclusive bound of the range.
     - id: toExclusive
       type:
         id: System.Int64
-        name: System.Int64
+        name: long
         isExternal: true
       description: The upper, exclusive bound of the range.
     - id: rangeSize
       type:
         id: System.Int64
-        name: System.Int64
+        name: long
         isExternal: true
       description: The size of each subrange.
     return:
       id: OrderablePartitioner
+      type:
+        id: System.Collections.Concurrent.OrderablePartitioner{System.Tuple{System.Int64,System.Int64}}
+        name: OrderablePartitioner<Tuple<long, long>>
+        href: System.Collections.Concurrent.OrderablePartitioner{System.Tuple{System.Int64,System.Int64}}
       description: A partitioner.
   id: System.Collections.Concurrent.Partitioner.Create(System.Int64,System.Int64,System.Int64)
 - uid: System.Collections.Concurrent.Partitioner.Create(System.Int32,System.Int32)
@@ -234,17 +260,21 @@ items:
     - id: fromInclusive
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The lower, inclusive bound of the range.
     - id: toExclusive
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The upper, exclusive bound of the range.
     return:
       id: OrderablePartitioner
+      type:
+        id: System.Collections.Concurrent.OrderablePartitioner{System.Tuple{System.Int32,System.Int32}}
+        name: OrderablePartitioner<Tuple<int, int>>
+        href: System.Collections.Concurrent.OrderablePartitioner{System.Tuple{System.Int32,System.Int32}}
       description: A partitioner.
   id: System.Collections.Concurrent.Partitioner.Create(System.Int32,System.Int32)
 - uid: System.Collections.Concurrent.Partitioner.Create(System.Int32,System.Int32,System.Int32)
@@ -264,22 +294,26 @@ items:
     - id: fromInclusive
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The lower, inclusive bound of the range.
     - id: toExclusive
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The upper, exclusive bound of the range.
     - id: rangeSize
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The size of each subrange.
     return:
       id: OrderablePartitioner
+      type:
+        id: System.Collections.Concurrent.OrderablePartitioner{System.Tuple{System.Int32,System.Int32}}
+        name: OrderablePartitioner<Tuple<int, int>>
+        href: System.Collections.Concurrent.OrderablePartitioner{System.Tuple{System.Int32,System.Int32}}
       description: A partitioner.
   id: System.Collections.Concurrent.Partitioner.Create(System.Int32,System.Int32,System.Int32)

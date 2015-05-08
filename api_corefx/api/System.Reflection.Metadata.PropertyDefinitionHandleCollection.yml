@@ -6,21 +6,28 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
     startLine: 707
   syntax:
     content:
-      CSharp: public struct PropertyDefinitionHandleCollection
+      CSharp: 'public struct PropertyDefinitionHandleCollection : IReadOnlyCollection<PropertyDefinitionHandle>, IEnumerable<PropertyDefinitionHandle>, IEnumerable'
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Reflection.Metadata.PropertyDefinitionHandleCollection
   children:
   - System.Reflection.Metadata.PropertyDefinitionHandleCollection.Count
   - System.Reflection.Metadata.PropertyDefinitionHandleCollection.GetEnumerator
+  - System.Reflection.Metadata.PropertyDefinitionHandleCollection.System#Collections#Generic#IEnumerable{System#Reflection#Metadata#PropertyDefinitionHandle}#GetEnumerator
+  - System.Reflection.Metadata.PropertyDefinitionHandleCollection.System#Collections#IEnumerable#GetEnumerator
 - uid: System.Reflection.Metadata.PropertyDefinitionHandleCollection.Count
   href: System.Reflection.Metadata.PropertyDefinitionHandleCollection.yml
   name: Count
@@ -37,7 +44,7 @@ items:
     - id: Count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Reflection.Metadata.PropertyDefinitionHandleCollection.Count
 - uid: System.Reflection.Metadata.PropertyDefinitionHandleCollection.GetEnumerator
@@ -55,4 +62,48 @@ items:
     parameters: []
     return:
       id: Enumerator
+      type:
+        id: System.Reflection.Metadata.PropertyDefinitionHandleCollection.Enumerator
+        name: Enumerator
+        href: System.Reflection.Metadata.PropertyDefinitionHandleCollection.Enumerator.yml
   id: System.Reflection.Metadata.PropertyDefinitionHandleCollection.GetEnumerator
+- uid: System.Reflection.Metadata.PropertyDefinitionHandleCollection.System#Collections#Generic#IEnumerable{System#Reflection#Metadata#PropertyDefinitionHandle}#GetEnumerator
+  href: System.Reflection.Metadata.PropertyDefinitionHandleCollection.yml
+  name: IEnumerable<PropertyDefinitionHandle>.GetEnumerator()
+  fullName: System.Reflection.Metadata.PropertyDefinitionHandleCollection.System.Collections.Generic.IEnumerable<System.Reflection.Metadata.PropertyDefinitionHandle>.GetEnumerator()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
+    startLine: 744
+  syntax:
+    content:
+      CSharp: IEnumerator<PropertyDefinitionHandle> IEnumerable<PropertyDefinitionHandle>.GetEnumerator()
+    parameters: []
+    return:
+      id: IEnumerator
+      type:
+        id: System.Collections.Generic.IEnumerator{System.Reflection.Metadata.PropertyDefinitionHandle}
+        name: IEnumerator<PropertyDefinitionHandle>
+        isExternal: true
+  id: System.Reflection.Metadata.PropertyDefinitionHandleCollection.System#Collections#Generic#IEnumerable{System#Reflection#Metadata#PropertyDefinitionHandle}#GetEnumerator
+- uid: System.Reflection.Metadata.PropertyDefinitionHandleCollection.System#Collections#IEnumerable#GetEnumerator
+  href: System.Reflection.Metadata.PropertyDefinitionHandleCollection.yml
+  name: IEnumerable.GetEnumerator()
+  fullName: System.Reflection.Metadata.PropertyDefinitionHandleCollection.System.Collections.IEnumerable.GetEnumerator()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
+    startLine: 749
+  syntax:
+    content:
+      CSharp: IEnumerator IEnumerable.GetEnumerator()
+    parameters: []
+    return:
+      id: IEnumerator
+      type:
+        id: System.Collections.IEnumerator
+        name: IEnumerator
+        isExternal: true
+  id: System.Reflection.Metadata.PropertyDefinitionHandleCollection.System#Collections#IEnumerable#GetEnumerator

@@ -6,18 +6,34 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/CodeActions/Operations/ApplyChangesOperation.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/CodeActions/Operations/ApplyChangesOperation.cs
-    startLine: 11
-  summary: A [Microsoft.CodeAnalysis.CodeActions.CodeActionOperation](Microsoft.CodeAnalysis.CodeActions.CodeActionOperation.yml) for applying solution changes to a workspace.
+    startLine: 24
+  summary: >-
+    A [Microsoft.CodeAnalysis.CodeActions.CodeActionOperation](Microsoft.CodeAnalysis.CodeActions.CodeActionOperation.yml) for applying solution changes to a workspace.
+
+    [Microsoft.CodeAnalysis.CodeActions.CodeAction.GetOperationsAsync(System.Threading.CancellationToken)](Microsoft.CodeAnalysis.CodeActions.CodeAction.yml) may return at most one
+
+    [Microsoft.CodeAnalysis.CodeActions.ApplyChangesOperation](Microsoft.CodeAnalysis.CodeActions.ApplyChangesOperation.yml). Hosts may provide custom handling for
+
+    [Microsoft.CodeAnalysis.CodeActions.ApplyChangesOperation](Microsoft.CodeAnalysis.CodeActions.ApplyChangesOperation.yml)s, but if a [Microsoft.CodeAnalysis.CodeActions.CodeAction](Microsoft.CodeAnalysis.CodeActions.CodeAction.yml) requires custom
+
+    host behavior not supported by a single [Microsoft.CodeAnalysis.CodeActions.ApplyChangesOperation](Microsoft.CodeAnalysis.CodeActions.ApplyChangesOperation.yml), then instead:
+
+    Implement a custom  and sDo not return any  from Directly apply any workspace editsHandle any custom host behaviorProduce a preview for
+
+    by creating a custom  or returning a single
+
+    to use the built-in preview mechanism
   syntax:
     content:
-      CSharp: public sealed class ApplyChangesOperation
+      CSharp: 'public sealed class ApplyChangesOperation : CodeActionOperation'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: Microsoft.CodeAnalysis.CodeActions.CodeActionOperation
     name: CodeActionOperation
@@ -35,7 +51,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/CodeActions/Operations/ApplyChangesOperation.cs
-    startLine: 15
+    startLine: 28
   syntax:
     content:
       CSharp: public ApplyChangesOperation(Solution changedSolution)
@@ -54,7 +70,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/CodeActions/Operations/ApplyChangesOperation.cs
-    startLine: 25
+    startLine: 38
   syntax:
     content:
       CSharp: public Solution ChangedSolution { get; }
@@ -73,7 +89,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Portable/CodeActions/Operations/ApplyChangesOperation.cs
-    startLine: 30
+    startLine: 43
   syntax:
     content:
       CSharp: public override void Apply(Workspace workspace, CancellationToken cancellationToken)
@@ -86,6 +102,6 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
   id: Microsoft.CodeAnalysis.CodeActions.ApplyChangesOperation.Apply(Microsoft.CodeAnalysis.Workspace,System.Threading.CancellationToken)

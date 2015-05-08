@@ -6,8 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/CorHeader.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/CorHeader.cs
     startLine: 5
   syntax:
@@ -15,7 +17,7 @@ items:
       CSharp: public sealed class CorHeader
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Reflection.PortableExecutable.CorHeader
   children:
@@ -41,12 +43,12 @@ items:
     startLine: 7
   syntax:
     content:
-      CSharp: public ushort MajorRuntimeVersion { get; private set; }
+      CSharp: public ushort MajorRuntimeVersion { get; }
     parameters:
     - id: MajorRuntimeVersion
       type:
         id: System.UInt16
-        name: System.UInt16
+        name: ushort
         isExternal: true
   id: System.Reflection.PortableExecutable.CorHeader.MajorRuntimeVersion
 - uid: System.Reflection.PortableExecutable.CorHeader.MinorRuntimeVersion
@@ -60,12 +62,12 @@ items:
     startLine: 8
   syntax:
     content:
-      CSharp: public ushort MinorRuntimeVersion { get; private set; }
+      CSharp: public ushort MinorRuntimeVersion { get; }
     parameters:
     - id: MinorRuntimeVersion
       type:
         id: System.UInt16
-        name: System.UInt16
+        name: ushort
         isExternal: true
   id: System.Reflection.PortableExecutable.CorHeader.MinorRuntimeVersion
 - uid: System.Reflection.PortableExecutable.CorHeader.MetadataDirectory
@@ -79,7 +81,7 @@ items:
     startLine: 9
   syntax:
     content:
-      CSharp: public DirectoryEntry MetadataDirectory { get; private set; }
+      CSharp: public DirectoryEntry MetadataDirectory { get; }
     parameters:
     - id: MetadataDirectory
       type:
@@ -98,7 +100,7 @@ items:
     startLine: 10
   syntax:
     content:
-      CSharp: public CorFlags Flags { get; private set; }
+      CSharp: public CorFlags Flags { get; }
     parameters:
     - id: Flags
       type:
@@ -117,12 +119,12 @@ items:
     startLine: 11
   syntax:
     content:
-      CSharp: public int EntryPointTokenOrRelativeVirtualAddress { get; private set; }
+      CSharp: public int EntryPointTokenOrRelativeVirtualAddress { get; }
     parameters:
     - id: EntryPointTokenOrRelativeVirtualAddress
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Reflection.PortableExecutable.CorHeader.EntryPointTokenOrRelativeVirtualAddress
 - uid: System.Reflection.PortableExecutable.CorHeader.ResourcesDirectory
@@ -136,7 +138,7 @@ items:
     startLine: 12
   syntax:
     content:
-      CSharp: public DirectoryEntry ResourcesDirectory { get; private set; }
+      CSharp: public DirectoryEntry ResourcesDirectory { get; }
     parameters:
     - id: ResourcesDirectory
       type:
@@ -155,7 +157,7 @@ items:
     startLine: 13
   syntax:
     content:
-      CSharp: public DirectoryEntry StrongNameSignatureDirectory { get; private set; }
+      CSharp: public DirectoryEntry StrongNameSignatureDirectory { get; }
     parameters:
     - id: StrongNameSignatureDirectory
       type:
@@ -174,7 +176,7 @@ items:
     startLine: 14
   syntax:
     content:
-      CSharp: public DirectoryEntry CodeManagerTableDirectory { get; private set; }
+      CSharp: public DirectoryEntry CodeManagerTableDirectory { get; }
     parameters:
     - id: CodeManagerTableDirectory
       type:
@@ -193,7 +195,7 @@ items:
     startLine: 15
   syntax:
     content:
-      CSharp: public DirectoryEntry VtableFixupsDirectory { get; private set; }
+      CSharp: public DirectoryEntry VtableFixupsDirectory { get; }
     parameters:
     - id: VtableFixupsDirectory
       type:
@@ -212,7 +214,7 @@ items:
     startLine: 16
   syntax:
     content:
-      CSharp: public DirectoryEntry ExportAddressTableJumpsDirectory { get; private set; }
+      CSharp: public DirectoryEntry ExportAddressTableJumpsDirectory { get; }
     parameters:
     - id: ExportAddressTableJumpsDirectory
       type:
@@ -231,7 +233,7 @@ items:
     startLine: 17
   syntax:
     content:
-      CSharp: public DirectoryEntry ManagedNativeHeaderDirectory { get; private set; }
+      CSharp: public DirectoryEntry ManagedNativeHeaderDirectory { get; }
     parameters:
     - id: ManagedNativeHeaderDirectory
       type:

@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/FileContentResult.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/FileContentResult.cs
     startLine: 6
   syntax:
     content:
-      CSharp: public class FileContentResult
+      CSharp: 'public class FileContentResult : FileResult'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.Mvc.ActionResult
     name: ActionResult
@@ -28,6 +29,7 @@ items:
   children:
   - System.Web.Mvc.FileContentResult.#ctor(System.Byte[],System.String)
   - System.Web.Mvc.FileContentResult.FileContents
+  - System.Web.Mvc.FileContentResult.WriteFile(System.Web.HttpResponseBase)
 - uid: System.Web.Mvc.FileContentResult.#ctor(System.Byte[],System.String)
   href: System.Web.Mvc.FileContentResult.yml
   name: FileContentResult(byte[], string)
@@ -44,12 +46,12 @@ items:
     - id: fileContents
       type:
         id: System.Array
-        name: System.Array
+        name: byte[]
         isExternal: true
     - id: contentType
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.FileContentResult.#ctor(System.Byte[],System.String)
 - uid: System.Web.Mvc.FileContentResult.FileContents
@@ -63,11 +65,30 @@ items:
     startLine: 19
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays", Justification = "There''s no reason to tamper-proof this array since it''s supplied to the type''s constructor.")] public byte[] FileContents { get; private set; }'
+      CSharp: '[SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays", Justification = "There''s no reason to tamper-proof this array since it''s supplied to the type''s constructor.")] public byte[] FileContents { get; }'
     parameters:
     - id: FileContents
       type:
         id: System.Array
-        name: System.Array
+        name: byte[]
         isExternal: true
   id: System.Web.Mvc.FileContentResult.FileContents
+- uid: System.Web.Mvc.FileContentResult.WriteFile(System.Web.HttpResponseBase)
+  href: System.Web.Mvc.FileContentResult.yml
+  name: WriteFile(HttpResponseBase)
+  fullName: System.Web.Mvc.FileContentResult.WriteFile(System.Web.HttpResponseBase)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/FileContentResult.cs
+    startLine: 22
+  syntax:
+    content:
+      CSharp: protected override void WriteFile(HttpResponseBase response)
+    parameters:
+    - id: response
+      type:
+        id: System.Web.HttpResponseBase
+        name: HttpResponseBase
+        isExternal: true
+  id: System.Web.Mvc.FileContentResult.WriteFile(System.Web.HttpResponseBase)

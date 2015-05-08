@@ -6,21 +6,19 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/Compilers/CSharp/Portable/Compilation/ForEachStatementInfo.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Compilers/CSharp/Portable/Compilation/ForEachStatementInfo.cs
     startLine: 11
   summary: Structure containing all semantic information about a for each statement.
   syntax:
     content:
-      CSharp: public struct ForEachStatementInfo
+      CSharp: 'public struct ForEachStatementInfo : IEquatable<ForEachStatementInfo>'
   inheritance:
-  - id: System.Object
-    name: System.Object
-    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo
   children:
@@ -46,7 +44,7 @@ items:
   summary: Gets the "GetEnumerator" method.
   syntax:
     content:
-      CSharp: GetEnumeratorMethod
+      CSharp: public readonly IMethodSymbol GetEnumeratorMethod;
   id: Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.GetEnumeratorMethod
 - uid: Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.MoveNextMethod
   href: Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.yml
@@ -60,7 +58,7 @@ items:
   summary: Gets the "MoveNext" method.
   syntax:
     content:
-      CSharp: MoveNextMethod
+      CSharp: public readonly IMethodSymbol MoveNextMethod;
   id: Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.MoveNextMethod
 - uid: Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.CurrentProperty
   href: Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.yml
@@ -74,7 +72,7 @@ items:
   summary: Gets the "Current" property.
   syntax:
     content:
-      CSharp: CurrentProperty
+      CSharp: public readonly IPropertySymbol CurrentProperty;
   id: Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.CurrentProperty
 - uid: Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.DisposeMethod
   href: Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.yml
@@ -88,7 +86,7 @@ items:
   summary: Gets the "Dispose" method.
   syntax:
     content:
-      CSharp: DisposeMethod
+      CSharp: public readonly IMethodSymbol DisposeMethod;
   id: Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.DisposeMethod
 - uid: Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.ElementType
   href: Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.yml
@@ -105,7 +103,7 @@ items:
     before being converted to the iteration variable type.
   syntax:
     content:
-      CSharp: ElementType
+      CSharp: public readonly ITypeSymbol ElementType;
   id: Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.ElementType
 - uid: Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.ElementConversion
   href: Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.yml
@@ -119,7 +117,7 @@ items:
   summary: The conversion from the [Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.ElementType](Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.yml) to the iteration variable type.
   syntax:
     content:
-      CSharp: ElementConversion
+      CSharp: public readonly Conversion ElementConversion;
   id: Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.ElementConversion
 - uid: Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.CurrentConversion
   href: Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.yml
@@ -133,7 +131,7 @@ items:
   summary: The conversion from the type of the [Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.CurrentProperty](Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.yml) to the [Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.ElementType](Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.yml).
   syntax:
     content:
-      CSharp: CurrentConversion
+      CSharp: public readonly Conversion CurrentConversion;
   id: Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.CurrentConversion
 - uid: Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.Equals(System.Object)
   href: Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.yml
@@ -151,10 +149,14 @@ items:
     - id: obj
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.Equals(System.Object)
 - uid: Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.Equals(Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo)
   href: Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.yml
@@ -176,6 +178,10 @@ items:
         href: Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.Equals(Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo)
 - uid: Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.GetHashCode
   href: Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.yml
@@ -192,4 +198,8 @@ items:
     parameters: []
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.ForEachStatementInfo.GetHashCode

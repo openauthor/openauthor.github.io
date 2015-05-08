@@ -6,16 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
     startLine: 15
   syntax:
     content:
-      CSharp: public abstract class XPathNavigator
+      CSharp: 'public abstract class XPathNavigator : XPathItem, IXPathNavigable, IXmlNamespaceResolver'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Xml.XPath.XPathItem
     name: XPathItem
@@ -33,7 +35,7 @@ items:
   - System.Xml.XPath.XPathNavigator.ValueAsDouble
   - System.Xml.XPath.XPathNavigator.ValueAsInt
   - System.Xml.XPath.XPathNavigator.ValueAsLong
-  - System.Xml.XPath.XPathNavigator.ValueAs(Type,IXmlNamespaceResolver)
+  - System.Xml.XPath.XPathNavigator.ValueAs(System.Type,IXmlNamespaceResolver)
   - System.Xml.XPath.XPathNavigator.CreateNavigator
   - System.Xml.XPath.XPathNavigator.NameTable
   - System.Xml.XPath.XPathNavigator.LookupNamespace(System.String)
@@ -148,6 +150,10 @@ items:
     parameters: []
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.ToString
 - uid: System.Xml.XPath.XPathNavigator.IsNode
   href: System.Xml.XPath.XPathNavigator.yml
@@ -165,7 +171,7 @@ items:
     - id: IsNode
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Xml.XPath.XPathNavigator.IsNode
 - uid: System.Xml.XPath.XPathNavigator.SetValue(System.String)
@@ -184,7 +190,7 @@ items:
     - id: value
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.XPath.XPathNavigator.SetValue(System.String)
 - uid: System.Xml.XPath.XPathNavigator.TypedValue
@@ -203,7 +209,7 @@ items:
     - id: TypedValue
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.Xml.XPath.XPathNavigator.TypedValue
 - uid: System.Xml.XPath.XPathNavigator.SetTypedValue(System.Object)
@@ -222,7 +228,7 @@ items:
     - id: typedValue
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.Xml.XPath.XPathNavigator.SetTypedValue(System.Object)
 - uid: System.Xml.XPath.XPathNavigator.ValueType
@@ -240,7 +246,7 @@ items:
     parameters:
     - id: ValueType
       type:
-        id: Type
+        id: System.Type
         name: Type
         isExternal: true
   id: System.Xml.XPath.XPathNavigator.ValueType
@@ -260,7 +266,7 @@ items:
     - id: ValueAsBoolean
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Xml.XPath.XPathNavigator.ValueAsBoolean
 - uid: System.Xml.XPath.XPathNavigator.ValueAsDateTime
@@ -278,7 +284,7 @@ items:
     parameters:
     - id: ValueAsDateTime
       type:
-        id: DateTime
+        id: System.DateTime
         name: DateTime
         isExternal: true
   id: System.Xml.XPath.XPathNavigator.ValueAsDateTime
@@ -298,7 +304,7 @@ items:
     - id: ValueAsDouble
       type:
         id: System.Double
-        name: System.Double
+        name: double
         isExternal: true
   id: System.Xml.XPath.XPathNavigator.ValueAsDouble
 - uid: System.Xml.XPath.XPathNavigator.ValueAsInt
@@ -317,7 +323,7 @@ items:
     - id: ValueAsInt
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Xml.XPath.XPathNavigator.ValueAsInt
 - uid: System.Xml.XPath.XPathNavigator.ValueAsLong
@@ -336,13 +342,13 @@ items:
     - id: ValueAsLong
       type:
         id: System.Int64
-        name: System.Int64
+        name: long
         isExternal: true
   id: System.Xml.XPath.XPathNavigator.ValueAsLong
-- uid: System.Xml.XPath.XPathNavigator.ValueAs(Type,IXmlNamespaceResolver)
+- uid: System.Xml.XPath.XPathNavigator.ValueAs(System.Type,IXmlNamespaceResolver)
   href: System.Xml.XPath.XPathNavigator.yml
   name: ValueAs(Type, IXmlNamespaceResolver)
-  fullName: System.Xml.XPath.XPathNavigator.ValueAs(Type, IXmlNamespaceResolver)
+  fullName: System.Xml.XPath.XPathNavigator.ValueAs(System.Type, IXmlNamespaceResolver)
   type: Method
   source:
     remote: *o0
@@ -354,7 +360,7 @@ items:
     parameters:
     - id: returnType
       type:
-        id: Type
+        id: System.Type
         name: Type
         isExternal: true
     - id: nsResolver
@@ -364,7 +370,11 @@ items:
         isExternal: true
     return:
       id: Object
-  id: System.Xml.XPath.XPathNavigator.ValueAs(Type,IXmlNamespaceResolver)
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+  id: System.Xml.XPath.XPathNavigator.ValueAs(System.Type,IXmlNamespaceResolver)
 - uid: System.Xml.XPath.XPathNavigator.CreateNavigator
   href: System.Xml.XPath.XPathNavigator.yml
   name: CreateNavigator()
@@ -380,6 +390,10 @@ items:
     parameters: []
     return:
       id: XPathNavigator
+      type:
+        id: System.Xml.XPath.XPathNavigator
+        name: XPathNavigator
+        href: System.Xml.XPath.XPathNavigator.yml
   id: System.Xml.XPath.XPathNavigator.CreateNavigator
 - uid: System.Xml.XPath.XPathNavigator.NameTable
   href: System.Xml.XPath.XPathNavigator.yml
@@ -416,10 +430,14 @@ items:
     - id: prefix
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.LookupNamespace(System.String)
 - uid: System.Xml.XPath.XPathNavigator.LookupPrefix(System.String)
   href: System.Xml.XPath.XPathNavigator.yml
@@ -437,10 +455,14 @@ items:
     - id: namespaceURI
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.LookupPrefix(System.String)
 - uid: System.Xml.XPath.XPathNavigator.GetNamespacesInScope(XmlNamespaceScope)
   href: System.Xml.XPath.XPathNavigator.yml
@@ -462,6 +484,10 @@ items:
         isExternal: true
     return:
       id: IDictionary
+      type:
+        id: System.Collections.Generic.IDictionary{System.String,System.String}
+        name: IDictionary<string, string>
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.GetNamespacesInScope(XmlNamespaceScope)
 - uid: System.Xml.XPath.XPathNavigator.NavigatorComparer
   href: System.Xml.XPath.XPathNavigator.yml
@@ -478,7 +504,7 @@ items:
     parameters:
     - id: NavigatorComparer
       type:
-        id: IEqualityComparer
+        id: System.Collections.IEqualityComparer
         name: IEqualityComparer
         isExternal: true
   id: System.Xml.XPath.XPathNavigator.NavigatorComparer
@@ -493,10 +519,14 @@ items:
     startLine: 259
   syntax:
     content:
-      CSharp: public abstract XPathNavigator Clone();
+      CSharp: public abstract XPathNavigator Clone()
     parameters: []
     return:
       id: XPathNavigator
+      type:
+        id: System.Xml.XPath.XPathNavigator
+        name: XPathNavigator
+        href: System.Xml.XPath.XPathNavigator.yml
   id: System.Xml.XPath.XPathNavigator.Clone
 - uid: System.Xml.XPath.XPathNavigator.NodeType
   href: System.Xml.XPath.XPathNavigator.yml
@@ -533,7 +563,7 @@ items:
     - id: LocalName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.XPath.XPathNavigator.LocalName
 - uid: System.Xml.XPath.XPathNavigator.Name
@@ -552,7 +582,7 @@ items:
     - id: Name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.XPath.XPathNavigator.Name
 - uid: System.Xml.XPath.XPathNavigator.NamespaceURI
@@ -571,7 +601,7 @@ items:
     - id: NamespaceURI
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.XPath.XPathNavigator.NamespaceURI
 - uid: System.Xml.XPath.XPathNavigator.Prefix
@@ -590,7 +620,7 @@ items:
     - id: Prefix
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.XPath.XPathNavigator.Prefix
 - uid: System.Xml.XPath.XPathNavigator.BaseURI
@@ -609,7 +639,7 @@ items:
     - id: BaseURI
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.XPath.XPathNavigator.BaseURI
 - uid: System.Xml.XPath.XPathNavigator.IsEmptyElement
@@ -628,7 +658,7 @@ items:
     - id: IsEmptyElement
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Xml.XPath.XPathNavigator.IsEmptyElement
 - uid: System.Xml.XPath.XPathNavigator.XmlLang
@@ -647,7 +677,7 @@ items:
     - id: XmlLang
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.XPath.XPathNavigator.XmlLang
 - uid: System.Xml.XPath.XPathNavigator.ReadSubtree
@@ -665,6 +695,10 @@ items:
     parameters: []
     return:
       id: XmlReader
+      type:
+        id: XmlReader
+        name: XmlReader
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.ReadSubtree
 - uid: System.Xml.XPath.XPathNavigator.WriteSubtree(XmlWriter)
   href: System.Xml.XPath.XPathNavigator.yml
@@ -701,7 +735,7 @@ items:
     - id: UnderlyingObject
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.Xml.XPath.XPathNavigator.UnderlyingObject
 - uid: System.Xml.XPath.XPathNavigator.HasAttributes
@@ -720,7 +754,7 @@ items:
     - id: HasAttributes
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Xml.XPath.XPathNavigator.HasAttributes
 - uid: System.Xml.XPath.XPathNavigator.GetAttribute(System.String,System.String)
@@ -739,15 +773,19 @@ items:
     - id: localName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: namespaceURI
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.GetAttribute(System.String,System.String)
 - uid: System.Xml.XPath.XPathNavigator.MoveToAttribute(System.String,System.String)
   href: System.Xml.XPath.XPathNavigator.yml
@@ -765,15 +803,19 @@ items:
     - id: localName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: namespaceURI
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.MoveToAttribute(System.String,System.String)
 - uid: System.Xml.XPath.XPathNavigator.MoveToFirstAttribute
   href: System.Xml.XPath.XPathNavigator.yml
@@ -786,10 +828,14 @@ items:
     startLine: 358
   syntax:
     content:
-      CSharp: public abstract bool MoveToFirstAttribute();
+      CSharp: public abstract bool MoveToFirstAttribute()
     parameters: []
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.MoveToFirstAttribute
 - uid: System.Xml.XPath.XPathNavigator.MoveToNextAttribute
   href: System.Xml.XPath.XPathNavigator.yml
@@ -802,10 +848,14 @@ items:
     startLine: 360
   syntax:
     content:
-      CSharp: public abstract bool MoveToNextAttribute();
+      CSharp: public abstract bool MoveToNextAttribute()
     parameters: []
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.MoveToNextAttribute
 - uid: System.Xml.XPath.XPathNavigator.GetNamespace(System.String)
   href: System.Xml.XPath.XPathNavigator.yml
@@ -823,10 +873,14 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.GetNamespace(System.String)
 - uid: System.Xml.XPath.XPathNavigator.MoveToNamespace(System.String)
   href: System.Xml.XPath.XPathNavigator.yml
@@ -844,10 +898,14 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.MoveToNamespace(System.String)
 - uid: System.Xml.XPath.XPathNavigator.MoveToFirstNamespace(System.Xml.XPath.XPathNamespaceScope)
   href: System.Xml.XPath.XPathNavigator.yml
@@ -860,7 +918,7 @@ items:
     startLine: 398
   syntax:
     content:
-      CSharp: public abstract bool MoveToFirstNamespace(XPathNamespaceScope namespaceScope);
+      CSharp: public abstract bool MoveToFirstNamespace(XPathNamespaceScope namespaceScope)
     parameters:
     - id: namespaceScope
       type:
@@ -869,6 +927,10 @@ items:
         href: System.Xml.XPath.XPathNamespaceScope.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.MoveToFirstNamespace(System.Xml.XPath.XPathNamespaceScope)
 - uid: System.Xml.XPath.XPathNavigator.MoveToNextNamespace(System.Xml.XPath.XPathNamespaceScope)
   href: System.Xml.XPath.XPathNavigator.yml
@@ -881,7 +943,7 @@ items:
     startLine: 400
   syntax:
     content:
-      CSharp: public abstract bool MoveToNextNamespace(XPathNamespaceScope namespaceScope);
+      CSharp: public abstract bool MoveToNextNamespace(XPathNamespaceScope namespaceScope)
     parameters:
     - id: namespaceScope
       type:
@@ -890,6 +952,10 @@ items:
         href: System.Xml.XPath.XPathNamespaceScope.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.MoveToNextNamespace(System.Xml.XPath.XPathNamespaceScope)
 - uid: System.Xml.XPath.XPathNavigator.MoveToFirstNamespace
   href: System.Xml.XPath.XPathNavigator.yml
@@ -906,6 +972,10 @@ items:
     parameters: []
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.MoveToFirstNamespace
 - uid: System.Xml.XPath.XPathNavigator.MoveToNextNamespace
   href: System.Xml.XPath.XPathNavigator.yml
@@ -922,6 +992,10 @@ items:
     parameters: []
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.MoveToNextNamespace
 - uid: System.Xml.XPath.XPathNavigator.MoveToNext
   href: System.Xml.XPath.XPathNavigator.yml
@@ -934,10 +1008,14 @@ items:
     startLine: 406
   syntax:
     content:
-      CSharp: public abstract bool MoveToNext();
+      CSharp: public abstract bool MoveToNext()
     parameters: []
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.MoveToNext
 - uid: System.Xml.XPath.XPathNavigator.MoveToPrevious
   href: System.Xml.XPath.XPathNavigator.yml
@@ -950,10 +1028,14 @@ items:
     startLine: 408
   syntax:
     content:
-      CSharp: public abstract bool MoveToPrevious();
+      CSharp: public abstract bool MoveToPrevious()
     parameters: []
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.MoveToPrevious
 - uid: System.Xml.XPath.XPathNavigator.MoveToFirst
   href: System.Xml.XPath.XPathNavigator.yml
@@ -970,6 +1052,10 @@ items:
     parameters: []
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.MoveToFirst
 - uid: System.Xml.XPath.XPathNavigator.MoveToFirstChild
   href: System.Xml.XPath.XPathNavigator.yml
@@ -982,10 +1068,14 @@ items:
     startLine: 426
   syntax:
     content:
-      CSharp: public abstract bool MoveToFirstChild();
+      CSharp: public abstract bool MoveToFirstChild()
     parameters: []
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.MoveToFirstChild
 - uid: System.Xml.XPath.XPathNavigator.MoveToParent
   href: System.Xml.XPath.XPathNavigator.yml
@@ -998,10 +1088,14 @@ items:
     startLine: 428
   syntax:
     content:
-      CSharp: public abstract bool MoveToParent();
+      CSharp: public abstract bool MoveToParent()
     parameters: []
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.MoveToParent
 - uid: System.Xml.XPath.XPathNavigator.MoveToRoot
   href: System.Xml.XPath.XPathNavigator.yml
@@ -1028,7 +1122,7 @@ items:
     startLine: 436
   syntax:
     content:
-      CSharp: public abstract bool MoveTo(XPathNavigator other);
+      CSharp: public abstract bool MoveTo(XPathNavigator other)
     parameters:
     - id: other
       type:
@@ -1037,6 +1131,10 @@ items:
         href: System.Xml.XPath.XPathNavigator.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.MoveTo(System.Xml.XPath.XPathNavigator)
 - uid: System.Xml.XPath.XPathNavigator.MoveToId(System.String)
   href: System.Xml.XPath.XPathNavigator.yml
@@ -1049,15 +1147,19 @@ items:
     startLine: 438
   syntax:
     content:
-      CSharp: public abstract bool MoveToId(string id);
+      CSharp: public abstract bool MoveToId(string id)
     parameters:
     - id: id
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.MoveToId(System.String)
 - uid: System.Xml.XPath.XPathNavigator.MoveToChild(System.String,System.String)
   href: System.Xml.XPath.XPathNavigator.yml
@@ -1075,15 +1177,19 @@ items:
     - id: localName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: namespaceURI
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.MoveToChild(System.String,System.String)
 - uid: System.Xml.XPath.XPathNavigator.MoveToChild(System.Xml.XPath.XPathNodeType)
   href: System.Xml.XPath.XPathNavigator.yml
@@ -1105,6 +1211,10 @@ items:
         href: System.Xml.XPath.XPathNodeType.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.MoveToChild(System.Xml.XPath.XPathNodeType)
 - uid: System.Xml.XPath.XPathNavigator.MoveToFollowing(System.String,System.String)
   href: System.Xml.XPath.XPathNavigator.yml
@@ -1122,15 +1232,19 @@ items:
     - id: localName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: namespaceURI
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.MoveToFollowing(System.String,System.String)
 - uid: System.Xml.XPath.XPathNavigator.MoveToFollowing(System.String,System.String,System.Xml.XPath.XPathNavigator)
   href: System.Xml.XPath.XPathNavigator.yml
@@ -1148,12 +1262,12 @@ items:
     - id: localName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: namespaceURI
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: end
       type:
@@ -1162,6 +1276,10 @@ items:
         href: System.Xml.XPath.XPathNavigator.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.MoveToFollowing(System.String,System.String,System.Xml.XPath.XPathNavigator)
 - uid: System.Xml.XPath.XPathNavigator.MoveToFollowing(System.Xml.XPath.XPathNodeType)
   href: System.Xml.XPath.XPathNavigator.yml
@@ -1183,6 +1301,10 @@ items:
         href: System.Xml.XPath.XPathNodeType.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.MoveToFollowing(System.Xml.XPath.XPathNodeType)
 - uid: System.Xml.XPath.XPathNavigator.MoveToFollowing(System.Xml.XPath.XPathNodeType,System.Xml.XPath.XPathNavigator)
   href: System.Xml.XPath.XPathNavigator.yml
@@ -1209,6 +1331,10 @@ items:
         href: System.Xml.XPath.XPathNavigator.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.MoveToFollowing(System.Xml.XPath.XPathNodeType,System.Xml.XPath.XPathNavigator)
 - uid: System.Xml.XPath.XPathNavigator.MoveToNext(System.String,System.String)
   href: System.Xml.XPath.XPathNavigator.yml
@@ -1226,15 +1352,19 @@ items:
     - id: localName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: namespaceURI
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.MoveToNext(System.String,System.String)
 - uid: System.Xml.XPath.XPathNavigator.MoveToNext(System.Xml.XPath.XPathNodeType)
   href: System.Xml.XPath.XPathNavigator.yml
@@ -1256,6 +1386,10 @@ items:
         href: System.Xml.XPath.XPathNodeType.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.MoveToNext(System.Xml.XPath.XPathNodeType)
 - uid: System.Xml.XPath.XPathNavigator.HasChildren
   href: System.Xml.XPath.XPathNavigator.yml
@@ -1273,7 +1407,7 @@ items:
     - id: HasChildren
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Xml.XPath.XPathNavigator.HasChildren
 - uid: System.Xml.XPath.XPathNavigator.IsSamePosition(System.Xml.XPath.XPathNavigator)
@@ -1287,7 +1421,7 @@ items:
     startLine: 646
   syntax:
     content:
-      CSharp: public abstract bool IsSamePosition(XPathNavigator other);
+      CSharp: public abstract bool IsSamePosition(XPathNavigator other)
     parameters:
     - id: other
       type:
@@ -1296,6 +1430,10 @@ items:
         href: System.Xml.XPath.XPathNavigator.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.IsSamePosition(System.Xml.XPath.XPathNavigator)
 - uid: System.Xml.XPath.XPathNavigator.IsDescendant(System.Xml.XPath.XPathNavigator)
   href: System.Xml.XPath.XPathNavigator.yml
@@ -1317,6 +1455,10 @@ items:
         href: System.Xml.XPath.XPathNavigator.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.IsDescendant(System.Xml.XPath.XPathNavigator)
 - uid: System.Xml.XPath.XPathNavigator.ComparePosition(System.Xml.XPath.XPathNavigator)
   href: System.Xml.XPath.XPathNavigator.yml
@@ -1338,6 +1480,10 @@ items:
         href: System.Xml.XPath.XPathNavigator.yml
     return:
       id: XmlNodeOrder
+      type:
+        id: System.Xml.XmlNodeOrder
+        name: XmlNodeOrder
+        href: System.Xml.XmlNodeOrder.yml
   id: System.Xml.XPath.XPathNavigator.ComparePosition(System.Xml.XPath.XPathNavigator)
 - uid: System.Xml.XPath.XPathNavigator.Compile(System.String)
   href: System.Xml.XPath.XPathNavigator.yml
@@ -1347,7 +1493,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 720
+    startLine: 716
   syntax:
     content:
       CSharp: public virtual XPathExpression Compile(string xpath)
@@ -1355,10 +1501,14 @@ items:
     - id: xpath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: XPathExpression
+      type:
+        id: System.Xml.XPath.XPathExpression
+        name: XPathExpression
+        href: System.Xml.XPath.XPathExpression.yml
   id: System.Xml.XPath.XPathNavigator.Compile(System.String)
 - uid: System.Xml.XPath.XPathNavigator.SelectSingleNode(System.String)
   href: System.Xml.XPath.XPathNavigator.yml
@@ -1368,7 +1518,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 725
+    startLine: 721
   syntax:
     content:
       CSharp: public virtual XPathNavigator SelectSingleNode(string xpath)
@@ -1376,10 +1526,14 @@ items:
     - id: xpath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: XPathNavigator
+      type:
+        id: System.Xml.XPath.XPathNavigator
+        name: XPathNavigator
+        href: System.Xml.XPath.XPathNavigator.yml
   id: System.Xml.XPath.XPathNavigator.SelectSingleNode(System.String)
 - uid: System.Xml.XPath.XPathNavigator.SelectSingleNode(System.String,IXmlNamespaceResolver)
   href: System.Xml.XPath.XPathNavigator.yml
@@ -1389,7 +1543,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 730
+    startLine: 726
   syntax:
     content:
       CSharp: public virtual XPathNavigator SelectSingleNode(string xpath, IXmlNamespaceResolver resolver)
@@ -1397,7 +1551,7 @@ items:
     - id: xpath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: resolver
       type:
@@ -1406,6 +1560,10 @@ items:
         isExternal: true
     return:
       id: XPathNavigator
+      type:
+        id: System.Xml.XPath.XPathNavigator
+        name: XPathNavigator
+        href: System.Xml.XPath.XPathNavigator.yml
   id: System.Xml.XPath.XPathNavigator.SelectSingleNode(System.String,IXmlNamespaceResolver)
 - uid: System.Xml.XPath.XPathNavigator.SelectSingleNode(System.Xml.XPath.XPathExpression)
   href: System.Xml.XPath.XPathNavigator.yml
@@ -1415,7 +1573,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 735
+    startLine: 731
   syntax:
     content:
       CSharp: public virtual XPathNavigator SelectSingleNode(XPathExpression expression)
@@ -1427,6 +1585,10 @@ items:
         href: System.Xml.XPath.XPathExpression.yml
     return:
       id: XPathNavigator
+      type:
+        id: System.Xml.XPath.XPathNavigator
+        name: XPathNavigator
+        href: System.Xml.XPath.XPathNavigator.yml
   id: System.Xml.XPath.XPathNavigator.SelectSingleNode(System.Xml.XPath.XPathExpression)
 - uid: System.Xml.XPath.XPathNavigator.Select(System.String)
   href: System.Xml.XPath.XPathNavigator.yml
@@ -1436,7 +1598,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 745
+    startLine: 741
   syntax:
     content:
       CSharp: public virtual XPathNodeIterator Select(string xpath)
@@ -1444,10 +1606,14 @@ items:
     - id: xpath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: XPathNodeIterator
+      type:
+        id: System.Xml.XPath.XPathNodeIterator
+        name: XPathNodeIterator
+        href: System.Xml.XPath.XPathNodeIterator.yml
   id: System.Xml.XPath.XPathNavigator.Select(System.String)
 - uid: System.Xml.XPath.XPathNavigator.Select(System.String,IXmlNamespaceResolver)
   href: System.Xml.XPath.XPathNavigator.yml
@@ -1457,7 +1623,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 752
+    startLine: 748
   syntax:
     content:
       CSharp: public virtual XPathNodeIterator Select(string xpath, IXmlNamespaceResolver resolver)
@@ -1465,7 +1631,7 @@ items:
     - id: xpath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: resolver
       type:
@@ -1474,6 +1640,10 @@ items:
         isExternal: true
     return:
       id: XPathNodeIterator
+      type:
+        id: System.Xml.XPath.XPathNodeIterator
+        name: XPathNodeIterator
+        href: System.Xml.XPath.XPathNodeIterator.yml
   id: System.Xml.XPath.XPathNavigator.Select(System.String,IXmlNamespaceResolver)
 - uid: System.Xml.XPath.XPathNavigator.Select(System.Xml.XPath.XPathExpression)
   href: System.Xml.XPath.XPathNavigator.yml
@@ -1483,7 +1653,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 759
+    startLine: 755
   syntax:
     content:
       CSharp: public virtual XPathNodeIterator Select(XPathExpression expr)
@@ -1495,6 +1665,10 @@ items:
         href: System.Xml.XPath.XPathExpression.yml
     return:
       id: XPathNodeIterator
+      type:
+        id: System.Xml.XPath.XPathNodeIterator
+        name: XPathNodeIterator
+        href: System.Xml.XPath.XPathNodeIterator.yml
   id: System.Xml.XPath.XPathNavigator.Select(System.Xml.XPath.XPathExpression)
 - uid: System.Xml.XPath.XPathNavigator.Evaluate(System.String)
   href: System.Xml.XPath.XPathNavigator.yml
@@ -1504,7 +1678,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 771
+    startLine: 767
   syntax:
     content:
       CSharp: public virtual object Evaluate(string xpath)
@@ -1512,10 +1686,14 @@ items:
     - id: xpath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Object
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.Evaluate(System.String)
 - uid: System.Xml.XPath.XPathNavigator.Evaluate(System.String,IXmlNamespaceResolver)
   href: System.Xml.XPath.XPathNavigator.yml
@@ -1525,7 +1703,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 776
+    startLine: 772
   syntax:
     content:
       CSharp: public virtual object Evaluate(string xpath, IXmlNamespaceResolver resolver)
@@ -1533,7 +1711,7 @@ items:
     - id: xpath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: resolver
       type:
@@ -1542,6 +1720,10 @@ items:
         isExternal: true
     return:
       id: Object
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.Evaluate(System.String,IXmlNamespaceResolver)
 - uid: System.Xml.XPath.XPathNavigator.Evaluate(System.Xml.XPath.XPathExpression)
   href: System.Xml.XPath.XPathNavigator.yml
@@ -1551,7 +1733,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 781
+    startLine: 777
   syntax:
     content:
       CSharp: public virtual object Evaluate(XPathExpression expr)
@@ -1563,6 +1745,10 @@ items:
         href: System.Xml.XPath.XPathExpression.yml
     return:
       id: Object
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.Evaluate(System.Xml.XPath.XPathExpression)
 - uid: System.Xml.XPath.XPathNavigator.Evaluate(System.Xml.XPath.XPathExpression,System.Xml.XPath.XPathNodeIterator)
   href: System.Xml.XPath.XPathNavigator.yml
@@ -1572,7 +1758,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 786
+    startLine: 782
   syntax:
     content:
       CSharp: public virtual object Evaluate(XPathExpression expr, XPathNodeIterator context)
@@ -1589,6 +1775,10 @@ items:
         href: System.Xml.XPath.XPathNodeIterator.yml
     return:
       id: Object
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.Evaluate(System.Xml.XPath.XPathExpression,System.Xml.XPath.XPathNodeIterator)
 - uid: System.Xml.XPath.XPathNavigator.Matches(System.Xml.XPath.XPathExpression)
   href: System.Xml.XPath.XPathNavigator.yml
@@ -1598,7 +1788,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 811
+    startLine: 807
   syntax:
     content:
       CSharp: public virtual bool Matches(XPathExpression expr)
@@ -1610,6 +1800,10 @@ items:
         href: System.Xml.XPath.XPathExpression.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.Matches(System.Xml.XPath.XPathExpression)
 - uid: System.Xml.XPath.XPathNavigator.Matches(System.String)
   href: System.Xml.XPath.XPathNavigator.yml
@@ -1619,7 +1813,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 832
+    startLine: 828
   syntax:
     content:
       CSharp: public virtual bool Matches(string xpath)
@@ -1627,10 +1821,14 @@ items:
     - id: xpath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.Matches(System.String)
 - uid: System.Xml.XPath.XPathNavigator.SelectChildren(System.Xml.XPath.XPathNodeType)
   href: System.Xml.XPath.XPathNavigator.yml
@@ -1640,7 +1838,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 837
+    startLine: 833
   syntax:
     content:
       CSharp: public virtual XPathNodeIterator SelectChildren(XPathNodeType type)
@@ -1652,6 +1850,10 @@ items:
         href: System.Xml.XPath.XPathNodeType.yml
     return:
       id: XPathNodeIterator
+      type:
+        id: System.Xml.XPath.XPathNodeIterator
+        name: XPathNodeIterator
+        href: System.Xml.XPath.XPathNodeIterator.yml
   id: System.Xml.XPath.XPathNavigator.SelectChildren(System.Xml.XPath.XPathNodeType)
 - uid: System.Xml.XPath.XPathNavigator.SelectChildren(System.String,System.String)
   href: System.Xml.XPath.XPathNavigator.yml
@@ -1661,7 +1863,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 842
+    startLine: 838
   syntax:
     content:
       CSharp: public virtual XPathNodeIterator SelectChildren(string name, string namespaceURI)
@@ -1669,15 +1871,19 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: namespaceURI
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: XPathNodeIterator
+      type:
+        id: System.Xml.XPath.XPathNodeIterator
+        name: XPathNodeIterator
+        href: System.Xml.XPath.XPathNodeIterator.yml
   id: System.Xml.XPath.XPathNavigator.SelectChildren(System.String,System.String)
 - uid: System.Xml.XPath.XPathNavigator.SelectAncestors(System.Xml.XPath.XPathNodeType,System.Boolean)
   href: System.Xml.XPath.XPathNavigator.yml
@@ -1687,7 +1893,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 847
+    startLine: 843
   syntax:
     content:
       CSharp: public virtual XPathNodeIterator SelectAncestors(XPathNodeType type, bool matchSelf)
@@ -1700,10 +1906,14 @@ items:
     - id: matchSelf
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     return:
       id: XPathNodeIterator
+      type:
+        id: System.Xml.XPath.XPathNodeIterator
+        name: XPathNodeIterator
+        href: System.Xml.XPath.XPathNodeIterator.yml
   id: System.Xml.XPath.XPathNavigator.SelectAncestors(System.Xml.XPath.XPathNodeType,System.Boolean)
 - uid: System.Xml.XPath.XPathNavigator.SelectAncestors(System.String,System.String,System.Boolean)
   href: System.Xml.XPath.XPathNavigator.yml
@@ -1713,7 +1923,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 852
+    startLine: 848
   syntax:
     content:
       CSharp: public virtual XPathNodeIterator SelectAncestors(string name, string namespaceURI, bool matchSelf)
@@ -1721,20 +1931,24 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: namespaceURI
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: matchSelf
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     return:
       id: XPathNodeIterator
+      type:
+        id: System.Xml.XPath.XPathNodeIterator
+        name: XPathNodeIterator
+        href: System.Xml.XPath.XPathNodeIterator.yml
   id: System.Xml.XPath.XPathNavigator.SelectAncestors(System.String,System.String,System.Boolean)
 - uid: System.Xml.XPath.XPathNavigator.SelectDescendants(System.Xml.XPath.XPathNodeType,System.Boolean)
   href: System.Xml.XPath.XPathNavigator.yml
@@ -1744,7 +1958,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 857
+    startLine: 853
   syntax:
     content:
       CSharp: public virtual XPathNodeIterator SelectDescendants(XPathNodeType type, bool matchSelf)
@@ -1757,10 +1971,14 @@ items:
     - id: matchSelf
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     return:
       id: XPathNodeIterator
+      type:
+        id: System.Xml.XPath.XPathNodeIterator
+        name: XPathNodeIterator
+        href: System.Xml.XPath.XPathNodeIterator.yml
   id: System.Xml.XPath.XPathNavigator.SelectDescendants(System.Xml.XPath.XPathNodeType,System.Boolean)
 - uid: System.Xml.XPath.XPathNavigator.SelectDescendants(System.String,System.String,System.Boolean)
   href: System.Xml.XPath.XPathNavigator.yml
@@ -1770,7 +1988,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 862
+    startLine: 858
   syntax:
     content:
       CSharp: public virtual XPathNodeIterator SelectDescendants(string name, string namespaceURI, bool matchSelf)
@@ -1778,20 +1996,24 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: namespaceURI
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: matchSelf
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     return:
       id: XPathNodeIterator
+      type:
+        id: System.Xml.XPath.XPathNodeIterator
+        name: XPathNodeIterator
+        href: System.Xml.XPath.XPathNodeIterator.yml
   id: System.Xml.XPath.XPathNavigator.SelectDescendants(System.String,System.String,System.Boolean)
 - uid: System.Xml.XPath.XPathNavigator.CanEdit
   href: System.Xml.XPath.XPathNavigator.yml
@@ -1801,7 +2023,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 867
+    startLine: 863
   syntax:
     content:
       CSharp: public virtual bool CanEdit { get; }
@@ -1809,7 +2031,7 @@ items:
     - id: CanEdit
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Xml.XPath.XPathNavigator.CanEdit
 - uid: System.Xml.XPath.XPathNavigator.PrependChild
@@ -1820,13 +2042,17 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 875
+    startLine: 871
   syntax:
     content:
       CSharp: public virtual XmlWriter PrependChild()
     parameters: []
     return:
       id: XmlWriter
+      type:
+        id: XmlWriter
+        name: XmlWriter
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.PrependChild
 - uid: System.Xml.XPath.XPathNavigator.AppendChild
   href: System.Xml.XPath.XPathNavigator.yml
@@ -1836,13 +2062,17 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 880
+    startLine: 876
   syntax:
     content:
       CSharp: public virtual XmlWriter AppendChild()
     parameters: []
     return:
       id: XmlWriter
+      type:
+        id: XmlWriter
+        name: XmlWriter
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.AppendChild
 - uid: System.Xml.XPath.XPathNavigator.InsertAfter
   href: System.Xml.XPath.XPathNavigator.yml
@@ -1852,13 +2082,17 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 885
+    startLine: 881
   syntax:
     content:
       CSharp: public virtual XmlWriter InsertAfter()
     parameters: []
     return:
       id: XmlWriter
+      type:
+        id: XmlWriter
+        name: XmlWriter
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.InsertAfter
 - uid: System.Xml.XPath.XPathNavigator.InsertBefore
   href: System.Xml.XPath.XPathNavigator.yml
@@ -1868,13 +2102,17 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 890
+    startLine: 886
   syntax:
     content:
       CSharp: public virtual XmlWriter InsertBefore()
     parameters: []
     return:
       id: XmlWriter
+      type:
+        id: XmlWriter
+        name: XmlWriter
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.InsertBefore
 - uid: System.Xml.XPath.XPathNavigator.CreateAttributes
   href: System.Xml.XPath.XPathNavigator.yml
@@ -1884,13 +2122,17 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 895
+    startLine: 891
   syntax:
     content:
       CSharp: public virtual XmlWriter CreateAttributes()
     parameters: []
     return:
       id: XmlWriter
+      type:
+        id: XmlWriter
+        name: XmlWriter
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.CreateAttributes
 - uid: System.Xml.XPath.XPathNavigator.ReplaceRange(System.Xml.XPath.XPathNavigator)
   href: System.Xml.XPath.XPathNavigator.yml
@@ -1900,7 +2142,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 900
+    startLine: 896
   syntax:
     content:
       CSharp: public virtual XmlWriter ReplaceRange(XPathNavigator lastSiblingToReplace)
@@ -1912,6 +2154,10 @@ items:
         href: System.Xml.XPath.XPathNavigator.yml
     return:
       id: XmlWriter
+      type:
+        id: XmlWriter
+        name: XmlWriter
+        isExternal: true
   id: System.Xml.XPath.XPathNavigator.ReplaceRange(System.Xml.XPath.XPathNavigator)
 - uid: System.Xml.XPath.XPathNavigator.ReplaceSelf(System.String)
   href: System.Xml.XPath.XPathNavigator.yml
@@ -1921,7 +2167,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 905
+    startLine: 901
   syntax:
     content:
       CSharp: public virtual void ReplaceSelf(string newNode)
@@ -1929,7 +2175,7 @@ items:
     - id: newNode
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.XPath.XPathNavigator.ReplaceSelf(System.String)
 - uid: System.Xml.XPath.XPathNavigator.ReplaceSelf(XmlReader)
@@ -1940,7 +2186,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 911
+    startLine: 907
   syntax:
     content:
       CSharp: public virtual void ReplaceSelf(XmlReader newNode)
@@ -1959,7 +2205,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 929
+    startLine: 925
   syntax:
     content:
       CSharp: public virtual void ReplaceSelf(XPathNavigator newNode)
@@ -1978,7 +2224,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 940
+    startLine: 936
   syntax:
     content:
       CSharp: public virtual string OuterXml { get; set; }
@@ -1986,7 +2232,7 @@ items:
     - id: OuterXml
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.XPath.XPathNavigator.OuterXml
 - uid: System.Xml.XPath.XPathNavigator.InnerXml
@@ -1997,7 +2243,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 982
+    startLine: 978
   syntax:
     content:
       CSharp: public virtual string InnerXml { get; set; }
@@ -2005,7 +2251,7 @@ items:
     - id: InnerXml
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.XPath.XPathNavigator.InnerXml
 - uid: System.Xml.XPath.XPathNavigator.AppendChild(System.String)
@@ -2016,7 +2262,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 1059
+    startLine: 1055
   syntax:
     content:
       CSharp: public virtual void AppendChild(string newChild)
@@ -2024,7 +2270,7 @@ items:
     - id: newChild
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.XPath.XPathNavigator.AppendChild(System.String)
 - uid: System.Xml.XPath.XPathNavigator.AppendChild(XmlReader)
@@ -2035,7 +2281,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 1065
+    startLine: 1061
   syntax:
     content:
       CSharp: public virtual void AppendChild(XmlReader newChild)
@@ -2054,7 +2300,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 1076
+    startLine: 1072
   syntax:
     content:
       CSharp: public virtual void AppendChild(XPathNavigator newChild)
@@ -2073,7 +2319,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 1090
+    startLine: 1086
   syntax:
     content:
       CSharp: public virtual void PrependChild(string newChild)
@@ -2081,7 +2327,7 @@ items:
     - id: newChild
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.XPath.XPathNavigator.PrependChild(System.String)
 - uid: System.Xml.XPath.XPathNavigator.PrependChild(XmlReader)
@@ -2092,7 +2338,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 1096
+    startLine: 1092
   syntax:
     content:
       CSharp: public virtual void PrependChild(XmlReader newChild)
@@ -2111,7 +2357,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 1107
+    startLine: 1103
   syntax:
     content:
       CSharp: public virtual void PrependChild(XPathNavigator newChild)
@@ -2130,7 +2376,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 1121
+    startLine: 1117
   syntax:
     content:
       CSharp: public virtual void InsertBefore(string newSibling)
@@ -2138,7 +2384,7 @@ items:
     - id: newSibling
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.XPath.XPathNavigator.InsertBefore(System.String)
 - uid: System.Xml.XPath.XPathNavigator.InsertBefore(XmlReader)
@@ -2149,7 +2395,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 1127
+    startLine: 1123
   syntax:
     content:
       CSharp: public virtual void InsertBefore(XmlReader newSibling)
@@ -2168,7 +2414,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 1138
+    startLine: 1134
   syntax:
     content:
       CSharp: public virtual void InsertBefore(XPathNavigator newSibling)
@@ -2187,7 +2433,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 1152
+    startLine: 1148
   syntax:
     content:
       CSharp: public virtual void InsertAfter(string newSibling)
@@ -2195,7 +2441,7 @@ items:
     - id: newSibling
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.XPath.XPathNavigator.InsertAfter(System.String)
 - uid: System.Xml.XPath.XPathNavigator.InsertAfter(XmlReader)
@@ -2206,7 +2452,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 1158
+    startLine: 1154
   syntax:
     content:
       CSharp: public virtual void InsertAfter(XmlReader newSibling)
@@ -2225,7 +2471,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 1169
+    startLine: 1165
   syntax:
     content:
       CSharp: public virtual void InsertAfter(XPathNavigator newSibling)
@@ -2244,7 +2490,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 1183
+    startLine: 1179
   syntax:
     content:
       CSharp: public virtual void DeleteRange(XPathNavigator lastSiblingToDelete)
@@ -2263,7 +2509,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 1188
+    startLine: 1184
   syntax:
     content:
       CSharp: public virtual void DeleteSelf()
@@ -2277,7 +2523,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 1205
+    startLine: 1201
   syntax:
     content:
       CSharp: public virtual void PrependChildElement(string prefix, string localName, string namespaceURI, string value)
@@ -2285,22 +2531,22 @@ items:
     - id: prefix
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: localName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: namespaceURI
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: value
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.XPath.XPathNavigator.PrependChildElement(System.String,System.String,System.String,System.String)
 - uid: System.Xml.XPath.XPathNavigator.AppendChildElement(System.String,System.String,System.String,System.String)
@@ -2311,7 +2557,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 1210
+    startLine: 1206
   syntax:
     content:
       CSharp: public virtual void AppendChildElement(string prefix, string localName, string namespaceURI, string value)
@@ -2319,22 +2565,22 @@ items:
     - id: prefix
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: localName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: namespaceURI
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: value
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.XPath.XPathNavigator.AppendChildElement(System.String,System.String,System.String,System.String)
 - uid: System.Xml.XPath.XPathNavigator.InsertElementBefore(System.String,System.String,System.String,System.String)
@@ -2345,7 +2591,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 1215
+    startLine: 1211
   syntax:
     content:
       CSharp: public virtual void InsertElementBefore(string prefix, string localName, string namespaceURI, string value)
@@ -2353,22 +2599,22 @@ items:
     - id: prefix
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: localName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: namespaceURI
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: value
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.XPath.XPathNavigator.InsertElementBefore(System.String,System.String,System.String,System.String)
 - uid: System.Xml.XPath.XPathNavigator.InsertElementAfter(System.String,System.String,System.String,System.String)
@@ -2379,7 +2625,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 1220
+    startLine: 1216
   syntax:
     content:
       CSharp: public virtual void InsertElementAfter(string prefix, string localName, string namespaceURI, string value)
@@ -2387,22 +2633,22 @@ items:
     - id: prefix
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: localName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: namespaceURI
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: value
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.XPath.XPathNavigator.InsertElementAfter(System.String,System.String,System.String,System.String)
 - uid: System.Xml.XPath.XPathNavigator.CreateAttribute(System.String,System.String,System.String,System.String)
@@ -2413,7 +2659,7 @@ items:
   source:
     remote: *o0
     path: src/System.Xml.XPath/src/System/Xml/XPath/XPathNavigator.cs
-    startLine: 1225
+    startLine: 1221
   syntax:
     content:
       CSharp: public virtual void CreateAttribute(string prefix, string localName, string namespaceURI, string value)
@@ -2421,21 +2667,21 @@ items:
     - id: prefix
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: localName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: namespaceURI
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: value
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Xml.XPath.XPathNavigator.CreateAttribute(System.String,System.String,System.String,System.String)

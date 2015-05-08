@@ -6,33 +6,36 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.IO.Compression/src/System/IO/Compression/ZipArchive.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.IO.Compression/src/System/IO/Compression/ZipArchive.cs
     startLine: 14
   syntax:
     content:
-      CSharp: public class ZipArchive
+      CSharp: 'public class ZipArchive : IDisposable'
   inheritance:
-  - id: IDisposable
-    name: IDisposable
+  - id: System.Object
+    name: object
     isExternal: true
   id: System.IO.Compression.ZipArchive
   children:
-  - System.IO.Compression.ZipArchive.#ctor(Stream)
-  - System.IO.Compression.ZipArchive.#ctor(Stream,System.IO.Compression.ZipArchiveMode)
-  - System.IO.Compression.ZipArchive.#ctor(Stream,System.IO.Compression.ZipArchiveMode,Boolean)
-  - System.IO.Compression.ZipArchive.#ctor(Stream,System.IO.Compression.ZipArchiveMode,Boolean,Encoding)
+  - System.IO.Compression.ZipArchive.#ctor(System.IO.Stream)
+  - System.IO.Compression.ZipArchive.#ctor(System.IO.Stream,System.IO.Compression.ZipArchiveMode)
+  - System.IO.Compression.ZipArchive.#ctor(System.IO.Stream,System.IO.Compression.ZipArchiveMode,System.Boolean)
+  - System.IO.Compression.ZipArchive.#ctor(System.IO.Stream,System.IO.Compression.ZipArchiveMode,System.Boolean,System.Text.Encoding)
   - System.IO.Compression.ZipArchive.Entries
   - System.IO.Compression.ZipArchive.Mode
-  - System.IO.Compression.ZipArchive.CreateEntry(String)
-  - System.IO.Compression.ZipArchive.CreateEntry(String,System.IO.Compression.CompressionLevel)
+  - System.IO.Compression.ZipArchive.CreateEntry(System.String)
+  - System.IO.Compression.ZipArchive.CreateEntry(System.String,System.IO.Compression.CompressionLevel)
+  - System.IO.Compression.ZipArchive.Dispose(System.Boolean)
   - System.IO.Compression.ZipArchive.Dispose
-  - System.IO.Compression.ZipArchive.GetEntry(String)
-- uid: System.IO.Compression.ZipArchive.#ctor(Stream)
+  - System.IO.Compression.ZipArchive.GetEntry(System.String)
+- uid: System.IO.Compression.ZipArchive.#ctor(System.IO.Stream)
   href: System.IO.Compression.ZipArchive.yml
   name: ZipArchive(Stream)
-  fullName: System.IO.Compression.ZipArchive.ZipArchive(Stream)
+  fullName: System.IO.Compression.ZipArchive.ZipArchive(System.IO.Stream)
   type: Constructor
   source:
     remote: *o0
@@ -45,15 +48,15 @@ items:
     parameters:
     - id: stream
       type:
-        id: Stream
+        id: System.IO.Stream
         name: Stream
         isExternal: true
       description: The stream containing the archive to be read.
-  id: System.IO.Compression.ZipArchive.#ctor(Stream)
-- uid: System.IO.Compression.ZipArchive.#ctor(Stream,System.IO.Compression.ZipArchiveMode)
+  id: System.IO.Compression.ZipArchive.#ctor(System.IO.Stream)
+- uid: System.IO.Compression.ZipArchive.#ctor(System.IO.Stream,System.IO.Compression.ZipArchiveMode)
   href: System.IO.Compression.ZipArchive.yml
   name: ZipArchive(Stream, ZipArchiveMode)
-  fullName: System.IO.Compression.ZipArchive.ZipArchive(Stream, System.IO.Compression.ZipArchiveMode)
+  fullName: System.IO.Compression.ZipArchive.ZipArchive(System.IO.Stream, System.IO.Compression.ZipArchiveMode)
   type: Constructor
   source:
     remote: *o0
@@ -66,7 +69,7 @@ items:
     parameters:
     - id: stream
       type:
-        id: Stream
+        id: System.IO.Stream
         name: Stream
         isExternal: true
       description: The input or output stream.
@@ -76,11 +79,11 @@ items:
         name: ZipArchiveMode
         href: System.IO.Compression.ZipArchiveMode.yml
       description: See the description of the ZipArchiveMode enum. Read requires the stream to support reading, Create requires the stream to support writing, and Update requires the stream to support reading, writing, and seeking.
-  id: System.IO.Compression.ZipArchive.#ctor(Stream,System.IO.Compression.ZipArchiveMode)
-- uid: System.IO.Compression.ZipArchive.#ctor(Stream,System.IO.Compression.ZipArchiveMode,Boolean)
+  id: System.IO.Compression.ZipArchive.#ctor(System.IO.Stream,System.IO.Compression.ZipArchiveMode)
+- uid: System.IO.Compression.ZipArchive.#ctor(System.IO.Stream,System.IO.Compression.ZipArchiveMode,System.Boolean)
   href: System.IO.Compression.ZipArchive.yml
-  name: ZipArchive(Stream, ZipArchiveMode, Boolean)
-  fullName: System.IO.Compression.ZipArchive.ZipArchive(Stream, System.IO.Compression.ZipArchiveMode, Boolean)
+  name: ZipArchive(Stream, ZipArchiveMode, bool)
+  fullName: System.IO.Compression.ZipArchive.ZipArchive(System.IO.Stream, System.IO.Compression.ZipArchiveMode, bool)
   type: Constructor
   source:
     remote: *o0
@@ -93,7 +96,7 @@ items:
     parameters:
     - id: stream
       type:
-        id: Stream
+        id: System.IO.Stream
         name: Stream
         isExternal: true
       description: The input or output stream.
@@ -105,15 +108,15 @@ items:
       description: See the description of the ZipArchiveMode enum. Read requires the stream to support reading, Create requires the stream to support writing, and Update requires the stream to support reading, writing, and seeking.
     - id: leaveOpen
       type:
-        id: Boolean
-        name: Boolean
+        id: System.Boolean
+        name: bool
         isExternal: true
       description: true to leave the stream open upon disposing the ZipArchive, otherwise false.
-  id: System.IO.Compression.ZipArchive.#ctor(Stream,System.IO.Compression.ZipArchiveMode,Boolean)
-- uid: System.IO.Compression.ZipArchive.#ctor(Stream,System.IO.Compression.ZipArchiveMode,Boolean,Encoding)
+  id: System.IO.Compression.ZipArchive.#ctor(System.IO.Stream,System.IO.Compression.ZipArchiveMode,System.Boolean)
+- uid: System.IO.Compression.ZipArchive.#ctor(System.IO.Stream,System.IO.Compression.ZipArchiveMode,System.Boolean,System.Text.Encoding)
   href: System.IO.Compression.ZipArchive.yml
-  name: ZipArchive(Stream, ZipArchiveMode, Boolean, Encoding)
-  fullName: System.IO.Compression.ZipArchive.ZipArchive(Stream, System.IO.Compression.ZipArchiveMode, Boolean, Encoding)
+  name: ZipArchive(Stream, ZipArchiveMode, bool, Encoding)
+  fullName: System.IO.Compression.ZipArchive.ZipArchive(System.IO.Stream, System.IO.Compression.ZipArchiveMode, bool, System.Text.Encoding)
   type: Constructor
   source:
     remote: *o0
@@ -126,7 +129,7 @@ items:
     parameters:
     - id: stream
       type:
-        id: Stream
+        id: System.IO.Stream
         name: Stream
         isExternal: true
       description: The input or output stream.
@@ -138,13 +141,13 @@ items:
       description: See the description of the ZipArchiveMode enum. Read requires the stream to support reading, Create requires the stream to support writing, and Update requires the stream to support reading, writing, and seeking.
     - id: leaveOpen
       type:
-        id: Boolean
-        name: Boolean
+        id: System.Boolean
+        name: bool
         isExternal: true
       description: true to leave the stream open upon disposing the ZipArchive, otherwise false.
     - id: entryNameEncoding
       type:
-        id: Encoding
+        id: System.Text.Encoding
         name: Encoding
         isExternal: true
       description: >-
@@ -179,7 +182,7 @@ items:
         if the specified entryNameEncoding is a UTF-8 encoding.Note that Unicode encodings other than UTF-8 may not be currently used for the entryNameEncoding,
 
         otherwise an  is thrown.
-  id: System.IO.Compression.ZipArchive.#ctor(Stream,System.IO.Compression.ZipArchiveMode,Boolean,Encoding)
+  id: System.IO.Compression.ZipArchive.#ctor(System.IO.Stream,System.IO.Compression.ZipArchiveMode,System.Boolean,System.Text.Encoding)
 - uid: System.IO.Compression.ZipArchive.Entries
   href: System.IO.Compression.ZipArchive.yml
   name: Entries
@@ -196,8 +199,8 @@ items:
     parameters:
     - id: Entries
       type:
-        id: ReadOnlyCollection{System.IO.Compression.ZipArchiveEntry}
-        name: ReadOnlyCollection{System.IO.Compression.ZipArchiveEntry}
+        id: System.Collections.ObjectModel.ReadOnlyCollection{System.IO.Compression.ZipArchiveEntry}
+        name: ReadOnlyCollection<ZipArchiveEntry>
         isExternal: true
   id: System.IO.Compression.ZipArchive.Entries
 - uid: System.IO.Compression.ZipArchive.Mode
@@ -220,10 +223,10 @@ items:
         name: ZipArchiveMode
         href: System.IO.Compression.ZipArchiveMode.yml
   id: System.IO.Compression.ZipArchive.Mode
-- uid: System.IO.Compression.ZipArchive.CreateEntry(String)
+- uid: System.IO.Compression.ZipArchive.CreateEntry(System.String)
   href: System.IO.Compression.ZipArchive.yml
-  name: CreateEntry(String)
-  fullName: System.IO.Compression.ZipArchive.CreateEntry(String)
+  name: CreateEntry(string)
+  fullName: System.IO.Compression.ZipArchive.CreateEntry(string)
   type: Method
   source:
     remote: *o0
@@ -245,22 +248,26 @@ items:
     (Currently, the underlying compression algorithm is provided by the System.IO.Compression.DeflateStream class.)
   syntax:
     content:
-      CSharp: public ZipArchiveEntry CreateEntry(String entryName)
+      CSharp: public ZipArchiveEntry CreateEntry(string entryName)
     parameters:
     - id: entryName
       type:
-        id: String
-        name: String
+        id: System.String
+        name: string
         isExternal: true
       description: A path relative to the root of the archive, indicating the name of the entry to be created.
     return:
       id: ZipArchiveEntry
+      type:
+        id: System.IO.Compression.ZipArchiveEntry
+        name: ZipArchiveEntry
+        href: System.IO.Compression.ZipArchiveEntry.yml
       description: A wrapper for the newly created file entry in the archive.
-  id: System.IO.Compression.ZipArchive.CreateEntry(String)
-- uid: System.IO.Compression.ZipArchive.CreateEntry(String,System.IO.Compression.CompressionLevel)
+  id: System.IO.Compression.ZipArchive.CreateEntry(System.String)
+- uid: System.IO.Compression.ZipArchive.CreateEntry(System.String,System.IO.Compression.CompressionLevel)
   href: System.IO.Compression.ZipArchive.yml
-  name: CreateEntry(String, CompressionLevel)
-  fullName: System.IO.Compression.ZipArchive.CreateEntry(String, System.IO.Compression.CompressionLevel)
+  name: CreateEntry(string, CompressionLevel)
+  fullName: System.IO.Compression.ZipArchive.CreateEntry(string, System.IO.Compression.CompressionLevel)
   type: Method
   source:
     remote: *o0
@@ -269,12 +276,12 @@ items:
   summary: Creates an empty entry in the Zip archive with the specified entry name. There are no restrictions on the names of entries. The last write time of the entry is set to the current time. If an entry with the specified name already exists in the archive, a second entry will be created that has an identical name.
   syntax:
     content:
-      CSharp: public ZipArchiveEntry CreateEntry(String entryName, CompressionLevel compressionLevel)
+      CSharp: public ZipArchiveEntry CreateEntry(string entryName, CompressionLevel compressionLevel)
     parameters:
     - id: entryName
       type:
-        id: String
-        name: String
+        id: System.String
+        name: string
         isExternal: true
       description: A path relative to the root of the archive, indicating the name of the entry to be created.
     - id: compressionLevel
@@ -285,8 +292,33 @@ items:
       description: The level of the compression (speed/memory vs. compressed size trade-off).
     return:
       id: ZipArchiveEntry
+      type:
+        id: System.IO.Compression.ZipArchiveEntry
+        name: ZipArchiveEntry
+        href: System.IO.Compression.ZipArchiveEntry.yml
       description: A wrapper for the newly created file entry in the archive.
-  id: System.IO.Compression.ZipArchive.CreateEntry(String,System.IO.Compression.CompressionLevel)
+  id: System.IO.Compression.ZipArchive.CreateEntry(System.String,System.IO.Compression.CompressionLevel)
+- uid: System.IO.Compression.ZipArchive.Dispose(System.Boolean)
+  href: System.IO.Compression.ZipArchive.yml
+  name: Dispose(bool)
+  fullName: System.IO.Compression.ZipArchive.Dispose(bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.Compression/src/System/IO/Compression/ZipArchive.cs
+    startLine: 230
+  summary: Releases the unmanaged resources used by ZipArchive and optionally finishes writing the archive and releases the managed resources.
+  syntax:
+    content:
+      CSharp: protected virtual void Dispose(bool disposing)
+    parameters:
+    - id: disposing
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: true to finish writing the archive and release unmanaged and managed resources, false to release only unmanaged resources.
+  id: System.IO.Compression.ZipArchive.Dispose(System.Boolean)
 - uid: System.IO.Compression.ZipArchive.Dispose
   href: System.IO.Compression.ZipArchive.yml
   name: Dispose()
@@ -302,10 +334,10 @@ items:
       CSharp: public void Dispose()
     parameters: []
   id: System.IO.Compression.ZipArchive.Dispose
-- uid: System.IO.Compression.ZipArchive.GetEntry(String)
+- uid: System.IO.Compression.ZipArchive.GetEntry(System.String)
   href: System.IO.Compression.ZipArchive.yml
-  name: GetEntry(String)
-  fullName: System.IO.Compression.ZipArchive.GetEntry(String)
+  name: GetEntry(string)
+  fullName: System.IO.Compression.ZipArchive.GetEntry(string)
   type: Method
   source:
     remote: *o0
@@ -314,15 +346,19 @@ items:
   summary: Retrieves a wrapper for the file entry in the archive with the specified name. Names are compared using ordinal comparison. If there are multiple entries in the archive with the specified name, the first one found will be returned.
   syntax:
     content:
-      CSharp: public ZipArchiveEntry GetEntry(String entryName)
+      CSharp: public ZipArchiveEntry GetEntry(string entryName)
     parameters:
     - id: entryName
       type:
-        id: String
-        name: String
+        id: System.String
+        name: string
         isExternal: true
       description: A path relative to the root of the archive, identifying the desired entry.
     return:
       id: ZipArchiveEntry
+      type:
+        id: System.IO.Compression.ZipArchiveEntry
+        name: ZipArchiveEntry
+        href: System.IO.Compression.ZipArchiveEntry.yml
       description: A wrapper for the file entry in the archive. If no entry in the archive exists with the specified name, null will be returned.
-  id: System.IO.Compression.ZipArchive.GetEntry(String)
+  id: System.IO.Compression.ZipArchive.GetEntry(System.String)

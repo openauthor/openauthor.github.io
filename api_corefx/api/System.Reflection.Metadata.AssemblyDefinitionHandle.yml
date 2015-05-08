@@ -6,21 +6,28 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 165
+    startLine: 403
   syntax:
     content:
-      CSharp: public struct AssemblyDefinitionHandle
+      CSharp: 'public struct AssemblyDefinitionHandle : IEquatable<AssemblyDefinitionHandle>'
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Reflection.Metadata.AssemblyDefinitionHandle
   children:
   - System.Reflection.Metadata.AssemblyDefinitionHandle.op_Implicit(System.Reflection.Metadata.AssemblyDefinitionHandle)~System.Reflection.Metadata.Handle
+  - System.Reflection.Metadata.AssemblyDefinitionHandle.op_Implicit(System.Reflection.Metadata.AssemblyDefinitionHandle)~System.Reflection.Metadata.EntityHandle
   - System.Reflection.Metadata.AssemblyDefinitionHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.AssemblyDefinitionHandle
+  - System.Reflection.Metadata.AssemblyDefinitionHandle.op_Explicit(System.Reflection.Metadata.EntityHandle)~System.Reflection.Metadata.AssemblyDefinitionHandle
   - System.Reflection.Metadata.AssemblyDefinitionHandle.IsNil
   - System.Reflection.Metadata.AssemblyDefinitionHandle.op_Equality(System.Reflection.Metadata.AssemblyDefinitionHandle,System.Reflection.Metadata.AssemblyDefinitionHandle)
   - System.Reflection.Metadata.AssemblyDefinitionHandle.Equals(System.Object)
@@ -31,14 +38,14 @@ items:
   href: System.Reflection.Metadata.AssemblyDefinitionHandle.yml
   name: implicit operator Handle(AssemblyDefinitionHandle)
   fullName: System.Reflection.Metadata.AssemblyDefinitionHandle.implicit operator System.Reflection.Metadata.Handle(System.Reflection.Metadata.AssemblyDefinitionHandle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 181
+    startLine: 420
   syntax:
     content:
-      CSharp: public static implicit operator Handle(AssemblyDefinitionHandle handle) { return new Handle(handle._rowId | tokenType); }
+      CSharp: public static implicit operator Handle(AssemblyDefinitionHandle handle)
     parameters:
     - id: handle
       type:
@@ -47,19 +54,48 @@ items:
         href: System.Reflection.Metadata.AssemblyDefinitionHandle.yml
     return:
       id: Handle
+      type:
+        id: System.Reflection.Metadata.Handle
+        name: Handle
+        href: System.Reflection.Metadata.Handle.yml
   id: System.Reflection.Metadata.AssemblyDefinitionHandle.op_Implicit(System.Reflection.Metadata.AssemblyDefinitionHandle)~System.Reflection.Metadata.Handle
+- uid: System.Reflection.Metadata.AssemblyDefinitionHandle.op_Implicit(System.Reflection.Metadata.AssemblyDefinitionHandle)~System.Reflection.Metadata.EntityHandle
+  href: System.Reflection.Metadata.AssemblyDefinitionHandle.yml
+  name: implicit operator EntityHandle(AssemblyDefinitionHandle)
+  fullName: System.Reflection.Metadata.AssemblyDefinitionHandle.implicit operator System.Reflection.Metadata.EntityHandle(System.Reflection.Metadata.AssemblyDefinitionHandle)
+  type: Operator
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 425
+  syntax:
+    content:
+      CSharp: public static implicit operator EntityHandle(AssemblyDefinitionHandle handle)
+    parameters:
+    - id: handle
+      type:
+        id: System.Reflection.Metadata.AssemblyDefinitionHandle
+        name: AssemblyDefinitionHandle
+        href: System.Reflection.Metadata.AssemblyDefinitionHandle.yml
+    return:
+      id: EntityHandle
+      type:
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
+  id: System.Reflection.Metadata.AssemblyDefinitionHandle.op_Implicit(System.Reflection.Metadata.AssemblyDefinitionHandle)~System.Reflection.Metadata.EntityHandle
 - uid: System.Reflection.Metadata.AssemblyDefinitionHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.AssemblyDefinitionHandle
   href: System.Reflection.Metadata.AssemblyDefinitionHandle.yml
   name: explicit operator AssemblyDefinitionHandle(Handle)
   fullName: System.Reflection.Metadata.AssemblyDefinitionHandle.explicit operator System.Reflection.Metadata.AssemblyDefinitionHandle(System.Reflection.Metadata.Handle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 186
+    startLine: 430
   syntax:
     content:
-      CSharp: public static explicit operator AssemblyDefinitionHandle(Handle handle) { if (handle.TokenType != tokenType) { Handle.ThrowInvalidCast(); } return new AssemblyDefinitionHandle(handle.RowId); }
+      CSharp: public static explicit operator AssemblyDefinitionHandle(Handle handle)
     parameters:
     - id: handle
       type:
@@ -68,7 +104,36 @@ items:
         href: System.Reflection.Metadata.Handle.yml
     return:
       id: AssemblyDefinitionHandle
+      type:
+        id: System.Reflection.Metadata.AssemblyDefinitionHandle
+        name: AssemblyDefinitionHandle
+        href: System.Reflection.Metadata.AssemblyDefinitionHandle.yml
   id: System.Reflection.Metadata.AssemblyDefinitionHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.AssemblyDefinitionHandle
+- uid: System.Reflection.Metadata.AssemblyDefinitionHandle.op_Explicit(System.Reflection.Metadata.EntityHandle)~System.Reflection.Metadata.AssemblyDefinitionHandle
+  href: System.Reflection.Metadata.AssemblyDefinitionHandle.yml
+  name: explicit operator AssemblyDefinitionHandle(EntityHandle)
+  fullName: System.Reflection.Metadata.AssemblyDefinitionHandle.explicit operator System.Reflection.Metadata.AssemblyDefinitionHandle(System.Reflection.Metadata.EntityHandle)
+  type: Operator
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 440
+  syntax:
+    content:
+      CSharp: public static explicit operator AssemblyDefinitionHandle(EntityHandle handle)
+    parameters:
+    - id: handle
+      type:
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
+    return:
+      id: AssemblyDefinitionHandle
+      type:
+        id: System.Reflection.Metadata.AssemblyDefinitionHandle
+        name: AssemblyDefinitionHandle
+        href: System.Reflection.Metadata.AssemblyDefinitionHandle.yml
+  id: System.Reflection.Metadata.AssemblyDefinitionHandle.op_Explicit(System.Reflection.Metadata.EntityHandle)~System.Reflection.Metadata.AssemblyDefinitionHandle
 - uid: System.Reflection.Metadata.AssemblyDefinitionHandle.IsNil
   href: System.Reflection.Metadata.AssemblyDefinitionHandle.yml
   name: IsNil
@@ -77,7 +142,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 196
+    startLine: 450
   syntax:
     content:
       CSharp: public bool IsNil { get; }
@@ -85,21 +150,21 @@ items:
     - id: IsNil
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Reflection.Metadata.AssemblyDefinitionHandle.IsNil
 - uid: System.Reflection.Metadata.AssemblyDefinitionHandle.op_Equality(System.Reflection.Metadata.AssemblyDefinitionHandle,System.Reflection.Metadata.AssemblyDefinitionHandle)
   href: System.Reflection.Metadata.AssemblyDefinitionHandle.yml
   name: operator ==(AssemblyDefinitionHandle, AssemblyDefinitionHandle)
   fullName: System.Reflection.Metadata.AssemblyDefinitionHandle.operator ==(System.Reflection.Metadata.AssemblyDefinitionHandle, System.Reflection.Metadata.AssemblyDefinitionHandle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 206
+    startLine: 460
   syntax:
     content:
-      CSharp: public static bool operator ==(AssemblyDefinitionHandle left, AssemblyDefinitionHandle right) { return left._rowId == right._rowId; }
+      CSharp: public static bool operator ==(AssemblyDefinitionHandle left, AssemblyDefinitionHandle right)
     parameters:
     - id: left
       type:
@@ -113,6 +178,10 @@ items:
         href: System.Reflection.Metadata.AssemblyDefinitionHandle.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.AssemblyDefinitionHandle.op_Equality(System.Reflection.Metadata.AssemblyDefinitionHandle,System.Reflection.Metadata.AssemblyDefinitionHandle)
 - uid: System.Reflection.Metadata.AssemblyDefinitionHandle.Equals(System.Object)
   href: System.Reflection.Metadata.AssemblyDefinitionHandle.yml
@@ -122,7 +191,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 211
+    startLine: 465
   syntax:
     content:
       CSharp: public override bool Equals(object obj)
@@ -130,10 +199,14 @@ items:
     - id: obj
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.AssemblyDefinitionHandle.Equals(System.Object)
 - uid: System.Reflection.Metadata.AssemblyDefinitionHandle.Equals(System.Reflection.Metadata.AssemblyDefinitionHandle)
   href: System.Reflection.Metadata.AssemblyDefinitionHandle.yml
@@ -143,7 +216,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 216
+    startLine: 470
   syntax:
     content:
       CSharp: public bool Equals(AssemblyDefinitionHandle other)
@@ -155,6 +228,10 @@ items:
         href: System.Reflection.Metadata.AssemblyDefinitionHandle.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.AssemblyDefinitionHandle.Equals(System.Reflection.Metadata.AssemblyDefinitionHandle)
 - uid: System.Reflection.Metadata.AssemblyDefinitionHandle.GetHashCode
   href: System.Reflection.Metadata.AssemblyDefinitionHandle.yml
@@ -164,26 +241,30 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 221
+    startLine: 475
   syntax:
     content:
       CSharp: public override int GetHashCode()
     parameters: []
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: System.Reflection.Metadata.AssemblyDefinitionHandle.GetHashCode
 - uid: System.Reflection.Metadata.AssemblyDefinitionHandle.op_Inequality(System.Reflection.Metadata.AssemblyDefinitionHandle,System.Reflection.Metadata.AssemblyDefinitionHandle)
   href: System.Reflection.Metadata.AssemblyDefinitionHandle.yml
   name: operator !=(AssemblyDefinitionHandle, AssemblyDefinitionHandle)
   fullName: System.Reflection.Metadata.AssemblyDefinitionHandle.operator !=(System.Reflection.Metadata.AssemblyDefinitionHandle, System.Reflection.Metadata.AssemblyDefinitionHandle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 226
+    startLine: 480
   syntax:
     content:
-      CSharp: public static bool operator !=(AssemblyDefinitionHandle left, AssemblyDefinitionHandle right) { return left._rowId != right._rowId; }
+      CSharp: public static bool operator !=(AssemblyDefinitionHandle left, AssemblyDefinitionHandle right)
     parameters:
     - id: left
       type:
@@ -197,4 +278,8 @@ items:
         href: System.Reflection.Metadata.AssemblyDefinitionHandle.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.AssemblyDefinitionHandle.op_Inequality(System.Reflection.Metadata.AssemblyDefinitionHandle,System.Reflection.Metadata.AssemblyDefinitionHandle)

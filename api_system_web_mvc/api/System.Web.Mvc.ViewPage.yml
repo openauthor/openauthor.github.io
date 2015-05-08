@@ -6,26 +6,27 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/ViewPage.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/ViewPage.cs
     startLine: 10
   syntax:
     content:
-      CSharp: public class ViewPage
+      CSharp: 'public class ViewPage : Page, IComponent, IDisposable, IParserAccessor, IUrlResolutionService, IDataBindingsAccessor, IControlBuilderAccessor, IControlDesignerAccessor, IExpressionsAccessor, INamingContainer, IFilterResolutionService, IHttpHandler, IViewDataContainer'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.UI.Control
-    name: System.Web.UI.Control
+    name: Control
     isExternal: true
   - id: System.Web.UI.TemplateControl
-    name: System.Web.UI.TemplateControl
+    name: TemplateControl
     isExternal: true
   - id: System.Web.UI.Page
-    name: System.Web.UI.Page
+    name: Page
     isExternal: true
   id: System.Web.Mvc.ViewPage
   children:
@@ -40,9 +41,12 @@ items:
   - System.Web.Mvc.ViewPage.ViewData
   - System.Web.Mvc.ViewPage.Writer
   - System.Web.Mvc.ViewPage.InitHelpers
+  - System.Web.Mvc.ViewPage.OnPreInit(System.EventArgs)
   - System.Web.Mvc.ViewPage.ProcessRequest(System.Web.HttpContext)
+  - System.Web.Mvc.ViewPage.Render(System.Web.UI.HtmlTextWriter)
   - System.Web.Mvc.ViewPage.RenderView(System.Web.Mvc.ViewContext)
   - System.Web.Mvc.ViewPage.SetTextWriter(System.IO.TextWriter)
+  - System.Web.Mvc.ViewPage.SetViewData(System.Web.Mvc.ViewDataDictionary)
 - uid: System.Web.Mvc.ViewPage.Ajax
   href: System.Web.Mvc.ViewPage.yml
   name: Ajax
@@ -59,7 +63,7 @@ items:
     - id: Ajax
       type:
         id: System.Web.Mvc.AjaxHelper{System.Object}
-        name: AjaxHelper
+        name: AjaxHelper<object>
         href: System.Web.Mvc.AjaxHelper{System.Object}
   id: System.Web.Mvc.ViewPage.Ajax
 - uid: System.Web.Mvc.ViewPage.Html
@@ -78,7 +82,7 @@ items:
     - id: Html
       type:
         id: System.Web.Mvc.HtmlHelper{System.Object}
-        name: HtmlHelper
+        name: HtmlHelper<object>
         href: System.Web.Mvc.HtmlHelper{System.Object}
   id: System.Web.Mvc.ViewPage.Html
 - uid: System.Web.Mvc.ViewPage.MasterLocation
@@ -97,7 +101,7 @@ items:
     - id: MasterLocation
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.ViewPage.MasterLocation
 - uid: System.Web.Mvc.ViewPage.Model
@@ -116,7 +120,7 @@ items:
     - id: Model
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.Web.Mvc.ViewPage.Model
 - uid: System.Web.Mvc.ViewPage.TempData
@@ -172,6 +176,7 @@ items:
     parameters:
     - id: ViewBag
       type:
+        name: dynamic
         isExternal: true
   id: System.Web.Mvc.ViewPage.ViewBag
 - uid: System.Web.Mvc.ViewPage.ViewContext
@@ -223,12 +228,12 @@ items:
     startLine: 71
   syntax:
     content:
-      CSharp: public HtmlTextWriter Writer { get; private set; }
+      CSharp: public HtmlTextWriter Writer { get; }
     parameters:
     - id: Writer
       type:
         id: System.Web.UI.HtmlTextWriter
-        name: System.Web.UI.HtmlTextWriter
+        name: HtmlTextWriter
         isExternal: true
   id: System.Web.Mvc.ViewPage.Writer
 - uid: System.Web.Mvc.ViewPage.InitHelpers
@@ -245,6 +250,25 @@ items:
       CSharp: public virtual void InitHelpers()
     parameters: []
   id: System.Web.Mvc.ViewPage.InitHelpers
+- uid: System.Web.Mvc.ViewPage.OnPreInit(System.EventArgs)
+  href: System.Web.Mvc.ViewPage.yml
+  name: OnPreInit(EventArgs)
+  fullName: System.Web.Mvc.ViewPage.OnPreInit(System.EventArgs)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ViewPage.cs
+    startLine: 85
+  syntax:
+    content:
+      CSharp: protected override void OnPreInit(EventArgs e)
+    parameters:
+    - id: e
+      type:
+        id: System.EventArgs
+        name: EventArgs
+        isExternal: true
+  id: System.Web.Mvc.ViewPage.OnPreInit(System.EventArgs)
 - uid: System.Web.Mvc.ViewPage.ProcessRequest(System.Web.HttpContext)
   href: System.Web.Mvc.ViewPage.yml
   name: ProcessRequest(HttpContext)
@@ -261,9 +285,28 @@ items:
     - id: context
       type:
         id: System.Web.HttpContext
-        name: System.Web.HttpContext
+        name: HttpContext
         isExternal: true
   id: System.Web.Mvc.ViewPage.ProcessRequest(System.Web.HttpContext)
+- uid: System.Web.Mvc.ViewPage.Render(System.Web.UI.HtmlTextWriter)
+  href: System.Web.Mvc.ViewPage.yml
+  name: Render(HtmlTextWriter)
+  fullName: System.Web.Mvc.ViewPage.Render(System.Web.UI.HtmlTextWriter)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ViewPage.cs
+    startLine: 103
+  syntax:
+    content:
+      CSharp: protected override void Render(HtmlTextWriter writer)
+    parameters:
+    - id: writer
+      type:
+        id: System.Web.UI.HtmlTextWriter
+        name: HtmlTextWriter
+        isExternal: true
+  id: System.Web.Mvc.ViewPage.Render(System.Web.UI.HtmlTextWriter)
 - uid: System.Web.Mvc.ViewPage.RenderView(System.Web.Mvc.ViewContext)
   href: System.Web.Mvc.ViewPage.yml
   name: RenderView(ViewContext)
@@ -275,7 +318,7 @@ items:
     startLine: 116
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope", Justification = "The object is disposed in the finally block of the method")] public virtual void RenderView(ViewContext viewContext)'
+      CSharp: public virtual void RenderView(ViewContext viewContext)
     parameters:
     - id: viewContext
       type:
@@ -294,11 +337,30 @@ items:
     startLine: 167
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId = "textWriter", Justification = "This method existed in MVC 1.0 and has been deprecated.")] [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Justification = "This method existed in MVC 1.0 and has been deprecated.")] [Obsolete("The TextWriter is now provided by the ViewContext object passed to the RenderView method.", true /* error */)] public void SetTextWriter(TextWriter textWriter)'
+      CSharp: public void SetTextWriter(TextWriter textWriter)
     parameters:
     - id: textWriter
       type:
         id: System.IO.TextWriter
-        name: System.IO.TextWriter
+        name: TextWriter
         isExternal: true
   id: System.Web.Mvc.ViewPage.SetTextWriter(System.IO.TextWriter)
+- uid: System.Web.Mvc.ViewPage.SetViewData(System.Web.Mvc.ViewDataDictionary)
+  href: System.Web.Mvc.ViewPage.yml
+  name: SetViewData(ViewDataDictionary)
+  fullName: System.Web.Mvc.ViewPage.SetViewData(System.Web.Mvc.ViewDataDictionary)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ViewPage.cs
+    startLine: 175
+  syntax:
+    content:
+      CSharp: protected virtual void SetViewData(ViewDataDictionary viewData)
+    parameters:
+    - id: viewData
+      type:
+        id: System.Web.Mvc.ViewDataDictionary
+        name: ViewDataDictionary
+        href: System.Web.Mvc.ViewDataDictionary.yml
+  id: System.Web.Mvc.ViewPage.SetViewData(System.Web.Mvc.ViewDataDictionary)

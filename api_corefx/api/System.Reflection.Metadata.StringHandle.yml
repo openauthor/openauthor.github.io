@@ -6,39 +6,44 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 1878
+    startLine: 2503
   syntax:
     content:
-      CSharp: public struct StringHandle
+      CSharp: 'public struct StringHandle : IEquatable<StringHandle>'
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Reflection.Metadata.StringHandle
   children:
   - System.Reflection.Metadata.StringHandle.op_Implicit(System.Reflection.Metadata.StringHandle)~System.Reflection.Metadata.Handle
   - System.Reflection.Metadata.StringHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.StringHandle
   - System.Reflection.Metadata.StringHandle.IsNil
-  - System.Reflection.Metadata.StringHandle.op_Equality(System.Reflection.Metadata.StringHandle,System.Reflection.Metadata.StringHandle)
   - System.Reflection.Metadata.StringHandle.Equals(System.Object)
   - System.Reflection.Metadata.StringHandle.Equals(System.Reflection.Metadata.StringHandle)
   - System.Reflection.Metadata.StringHandle.GetHashCode
+  - System.Reflection.Metadata.StringHandle.op_Equality(System.Reflection.Metadata.StringHandle,System.Reflection.Metadata.StringHandle)
   - System.Reflection.Metadata.StringHandle.op_Inequality(System.Reflection.Metadata.StringHandle,System.Reflection.Metadata.StringHandle)
 - uid: System.Reflection.Metadata.StringHandle.op_Implicit(System.Reflection.Metadata.StringHandle)~System.Reflection.Metadata.Handle
   href: System.Reflection.Metadata.StringHandle.yml
   name: implicit operator Handle(StringHandle)
   fullName: System.Reflection.Metadata.StringHandle.implicit operator System.Reflection.Metadata.Handle(System.Reflection.Metadata.StringHandle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 2003
+    startLine: 2630
   syntax:
     content:
-      CSharp: public static implicit operator Handle(StringHandle handle) { return new Handle(handle._token); }
+      CSharp: public static implicit operator Handle(StringHandle handle)
     parameters:
     - id: handle
       type:
@@ -47,19 +52,23 @@ items:
         href: System.Reflection.Metadata.StringHandle.yml
     return:
       id: Handle
+      type:
+        id: System.Reflection.Metadata.Handle
+        name: Handle
+        href: System.Reflection.Metadata.Handle.yml
   id: System.Reflection.Metadata.StringHandle.op_Implicit(System.Reflection.Metadata.StringHandle)~System.Reflection.Metadata.Handle
 - uid: System.Reflection.Metadata.StringHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.StringHandle
   href: System.Reflection.Metadata.StringHandle.yml
   name: explicit operator StringHandle(Handle)
   fullName: System.Reflection.Metadata.StringHandle.explicit operator System.Reflection.Metadata.StringHandle(System.Reflection.Metadata.Handle)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 2008
+    startLine: 2638
   syntax:
     content:
-      CSharp: public static explicit operator StringHandle(Handle handle) { if (handle.TokenType < TokenTypeIds.String || handle.TokenType > TokenTypeIds.MaxString) { Handle.ThrowInvalidCast(); } return new StringHandle(handle.value); }
+      CSharp: public static explicit operator StringHandle(Handle handle)
     parameters:
     - id: handle
       type:
@@ -68,6 +77,10 @@ items:
         href: System.Reflection.Metadata.Handle.yml
     return:
       id: StringHandle
+      type:
+        id: System.Reflection.Metadata.StringHandle
+        name: StringHandle
+        href: System.Reflection.Metadata.StringHandle.yml
   id: System.Reflection.Metadata.StringHandle.op_Explicit(System.Reflection.Metadata.Handle)~System.Reflection.Metadata.StringHandle
 - uid: System.Reflection.Metadata.StringHandle.IsNil
   href: System.Reflection.Metadata.StringHandle.yml
@@ -77,7 +90,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 2018
+    startLine: 2657
   syntax:
     content:
       CSharp: public bool IsNil { get; }
@@ -85,35 +98,9 @@ items:
     - id: IsNil
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Reflection.Metadata.StringHandle.IsNil
-- uid: System.Reflection.Metadata.StringHandle.op_Equality(System.Reflection.Metadata.StringHandle,System.Reflection.Metadata.StringHandle)
-  href: System.Reflection.Metadata.StringHandle.yml
-  name: operator ==(StringHandle, StringHandle)
-  fullName: System.Reflection.Metadata.StringHandle.operator ==(System.Reflection.Metadata.StringHandle, System.Reflection.Metadata.StringHandle)
-  type: Method
-  source:
-    remote: *o0
-    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 2047
-  syntax:
-    content:
-      CSharp: public static bool operator ==(StringHandle left, StringHandle right) { return left._token == right._token; }
-    parameters:
-    - id: left
-      type:
-        id: System.Reflection.Metadata.StringHandle
-        name: StringHandle
-        href: System.Reflection.Metadata.StringHandle.yml
-    - id: right
-      type:
-        id: System.Reflection.Metadata.StringHandle
-        name: StringHandle
-        href: System.Reflection.Metadata.StringHandle.yml
-    return:
-      id: Boolean
-  id: System.Reflection.Metadata.StringHandle.op_Equality(System.Reflection.Metadata.StringHandle,System.Reflection.Metadata.StringHandle)
 - uid: System.Reflection.Metadata.StringHandle.Equals(System.Object)
   href: System.Reflection.Metadata.StringHandle.yml
   name: Equals(object)
@@ -122,7 +109,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 2052
+    startLine: 2684
   syntax:
     content:
       CSharp: public override bool Equals(object obj)
@@ -130,10 +117,14 @@ items:
     - id: obj
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.StringHandle.Equals(System.Object)
 - uid: System.Reflection.Metadata.StringHandle.Equals(System.Reflection.Metadata.StringHandle)
   href: System.Reflection.Metadata.StringHandle.yml
@@ -143,7 +134,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 2057
+    startLine: 2689
   syntax:
     content:
       CSharp: public bool Equals(StringHandle other)
@@ -155,6 +146,10 @@ items:
         href: System.Reflection.Metadata.StringHandle.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.StringHandle.Equals(System.Reflection.Metadata.StringHandle)
 - uid: System.Reflection.Metadata.StringHandle.GetHashCode
   href: System.Reflection.Metadata.StringHandle.yml
@@ -164,26 +159,30 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 2062
+    startLine: 2694
   syntax:
     content:
       CSharp: public override int GetHashCode()
     parameters: []
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: System.Reflection.Metadata.StringHandle.GetHashCode
-- uid: System.Reflection.Metadata.StringHandle.op_Inequality(System.Reflection.Metadata.StringHandle,System.Reflection.Metadata.StringHandle)
+- uid: System.Reflection.Metadata.StringHandle.op_Equality(System.Reflection.Metadata.StringHandle,System.Reflection.Metadata.StringHandle)
   href: System.Reflection.Metadata.StringHandle.yml
-  name: operator !=(StringHandle, StringHandle)
-  fullName: System.Reflection.Metadata.StringHandle.operator !=(System.Reflection.Metadata.StringHandle, System.Reflection.Metadata.StringHandle)
-  type: Method
+  name: operator ==(StringHandle, StringHandle)
+  fullName: System.Reflection.Metadata.StringHandle.operator ==(System.Reflection.Metadata.StringHandle, System.Reflection.Metadata.StringHandle)
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
-    startLine: 2067
+    startLine: 2699
   syntax:
     content:
-      CSharp: public static bool operator !=(StringHandle left, StringHandle right) { return left._token != right._token; }
+      CSharp: public static bool operator ==(StringHandle left, StringHandle right)
     parameters:
     - id: left
       type:
@@ -197,4 +196,38 @@ items:
         href: System.Reflection.Metadata.StringHandle.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Reflection.Metadata.StringHandle.op_Equality(System.Reflection.Metadata.StringHandle,System.Reflection.Metadata.StringHandle)
+- uid: System.Reflection.Metadata.StringHandle.op_Inequality(System.Reflection.Metadata.StringHandle,System.Reflection.Metadata.StringHandle)
+  href: System.Reflection.Metadata.StringHandle.yml
+  name: operator !=(StringHandle, StringHandle)
+  fullName: System.Reflection.Metadata.StringHandle.operator !=(System.Reflection.Metadata.StringHandle, System.Reflection.Metadata.StringHandle)
+  type: Operator
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/Handles.cs
+    startLine: 2704
+  syntax:
+    content:
+      CSharp: public static bool operator !=(StringHandle left, StringHandle right)
+    parameters:
+    - id: left
+      type:
+        id: System.Reflection.Metadata.StringHandle
+        name: StringHandle
+        href: System.Reflection.Metadata.StringHandle.yml
+    - id: right
+      type:
+        id: System.Reflection.Metadata.StringHandle
+        name: StringHandle
+        href: System.Reflection.Metadata.StringHandle.yml
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.StringHandle.op_Inequality(System.Reflection.Metadata.StringHandle,System.Reflection.Metadata.StringHandle)

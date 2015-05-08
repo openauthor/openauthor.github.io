@@ -6,16 +6,21 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/AssociationAttribute.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/AssociationAttribute.cs
     startLine: 10
   summary: Used to mark an Entity member as an association
   syntax:
     content:
-      CSharp: public sealed class AssociationAttribute
+      CSharp: 'public sealed class AssociationAttribute : Attribute, _Attribute'
   inheritance:
-  - id: Attribute
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.Attribute
     name: Attribute
     isExternal: true
   id: System.ComponentModel.DataAnnotations.AssociationAttribute
@@ -44,7 +49,7 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: >-
         The name of the association. For bi-directional associations,
@@ -53,7 +58,7 @@ items:
     - id: thisKey
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: >-
         Comma separated list of the property names of the key values
@@ -62,7 +67,7 @@ items:
     - id: otherKey
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: >-
         Comma separated list of the property names of the key values
@@ -89,7 +94,7 @@ items:
     - id: Name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.ComponentModel.DataAnnotations.AssociationAttribute.Name
 - uid: System.ComponentModel.DataAnnotations.AssociationAttribute.ThisKey
@@ -112,7 +117,7 @@ items:
     - id: ThisKey
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.ComponentModel.DataAnnotations.AssociationAttribute.ThisKey
 - uid: System.ComponentModel.DataAnnotations.AssociationAttribute.OtherKey
@@ -135,7 +140,7 @@ items:
     - id: OtherKey
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.ComponentModel.DataAnnotations.AssociationAttribute.OtherKey
 - uid: System.ComponentModel.DataAnnotations.AssociationAttribute.IsForeignKey
@@ -158,7 +163,7 @@ items:
     - id: IsForeignKey
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.ComponentModel.DataAnnotations.AssociationAttribute.IsForeignKey
 - uid: System.ComponentModel.DataAnnotations.AssociationAttribute.ThisKeyMembers
@@ -177,8 +182,8 @@ items:
     parameters:
     - id: ThisKeyMembers
       type:
-        id: IEnumerable{System.String}
-        name: IEnumerable{System.String}
+        id: System.Collections.Generic.IEnumerable{System.String}
+        name: IEnumerable<string>
         isExternal: true
   id: System.ComponentModel.DataAnnotations.AssociationAttribute.ThisKeyMembers
 - uid: System.ComponentModel.DataAnnotations.AssociationAttribute.OtherKeyMembers
@@ -197,7 +202,7 @@ items:
     parameters:
     - id: OtherKeyMembers
       type:
-        id: IEnumerable{System.String}
-        name: IEnumerable{System.String}
+        id: System.Collections.Generic.IEnumerable{System.String}
+        name: IEnumerable<string>
         isExternal: true
   id: System.ComponentModel.DataAnnotations.AssociationAttribute.OtherKeyMembers

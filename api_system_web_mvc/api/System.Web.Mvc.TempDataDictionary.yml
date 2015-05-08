@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/TempDataDictionary.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/TempDataDictionary.cs
     startLine: 8
   syntax:
     content:
-      CSharp: public class TempDataDictionary
+      CSharp: 'public class TempDataDictionary : IDictionary<string, object>, ICollection<KeyValuePair<string, object>>, IEnumerable<KeyValuePair<string, object>>, IEnumerable'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.TempDataDictionary
   children:
@@ -24,6 +25,7 @@ items:
   - System.Web.Mvc.TempDataDictionary.Count
   - System.Web.Mvc.TempDataDictionary.Keys
   - System.Web.Mvc.TempDataDictionary.Values
+  - System.Web.Mvc.TempDataDictionary.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#String,System#Object}}#IsReadOnly
   - System.Web.Mvc.TempDataDictionary.Item(System.String)
   - System.Web.Mvc.TempDataDictionary.Keep
   - System.Web.Mvc.TempDataDictionary.Keep(System.String)
@@ -37,6 +39,11 @@ items:
   - System.Web.Mvc.TempDataDictionary.GetEnumerator
   - System.Web.Mvc.TempDataDictionary.Remove(System.String)
   - System.Web.Mvc.TempDataDictionary.TryGetValue(System.String,System.Object@)
+  - System.Web.Mvc.TempDataDictionary.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#String,System#Object}}#CopyTo(System.Collections.Generic.KeyValuePair{System.String,System.Object}[],System.Int32)
+  - System.Web.Mvc.TempDataDictionary.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#String,System#Object}}#Add(System.Collections.Generic.KeyValuePair{System.String,System.Object})
+  - System.Web.Mvc.TempDataDictionary.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#String,System#Object}}#Contains(System.Collections.Generic.KeyValuePair{System.String,System.Object})
+  - System.Web.Mvc.TempDataDictionary.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#String,System#Object}}#Remove(System.Collections.Generic.KeyValuePair{System.String,System.Object})
+  - System.Web.Mvc.TempDataDictionary.System#Collections#IEnumerable#GetEnumerator
 - uid: System.Web.Mvc.TempDataDictionary.#ctor
   href: System.Web.Mvc.TempDataDictionary.yml
   name: TempDataDictionary()
@@ -67,7 +74,7 @@ items:
     - id: Count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Web.Mvc.TempDataDictionary.Count
 - uid: System.Web.Mvc.TempDataDictionary.Keys
@@ -86,7 +93,7 @@ items:
     - id: Keys
       type:
         id: System.Collections.Generic.ICollection{System.String}
-        name: System.Collections.Generic.ICollection{System.String}
+        name: ICollection<string>
         isExternal: true
   id: System.Web.Mvc.TempDataDictionary.Keys
 - uid: System.Web.Mvc.TempDataDictionary.Values
@@ -105,9 +112,28 @@ items:
     - id: Values
       type:
         id: System.Collections.Generic.ICollection{System.Object}
-        name: System.Collections.Generic.ICollection{System.Object}
+        name: ICollection<object>
         isExternal: true
   id: System.Web.Mvc.TempDataDictionary.Values
+- uid: System.Web.Mvc.TempDataDictionary.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#String,System#Object}}#IsReadOnly
+  href: System.Web.Mvc.TempDataDictionary.yml
+  name: ICollection<KeyValuePair<string, object>>.IsReadOnly
+  fullName: System.Web.Mvc.TempDataDictionary.System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string, object>>.IsReadOnly
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/TempDataDictionary.cs
+    startLine: 36
+  syntax:
+    content:
+      CSharp: bool ICollection<KeyValuePair<string, object>>.IsReadOnly { get; }
+    parameters:
+    - id: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<System.String,System.Object>>.IsReadOnly
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Web.Mvc.TempDataDictionary.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#String,System#Object}}#IsReadOnly
 - uid: System.Web.Mvc.TempDataDictionary.Item(System.String)
   href: System.Web.Mvc.TempDataDictionary.yml
   name: this[string]
@@ -124,7 +150,7 @@ items:
     - id: this[]
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.Web.Mvc.TempDataDictionary.Item(System.String)
 - uid: System.Web.Mvc.TempDataDictionary.Keep
@@ -157,7 +183,7 @@ items:
     - id: key
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.TempDataDictionary.Keep(System.String)
 - uid: System.Web.Mvc.TempDataDictionary.Load(System.Web.Mvc.ControllerContext,System.Web.Mvc.ITempDataProvider)
@@ -200,10 +226,14 @@ items:
     - id: key
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Object
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
   id: System.Web.Mvc.TempDataDictionary.Peek(System.String)
 - uid: System.Web.Mvc.TempDataDictionary.Save(System.Web.Mvc.ControllerContext,System.Web.Mvc.ITempDataProvider)
   href: System.Web.Mvc.TempDataDictionary.yml
@@ -245,12 +275,12 @@ items:
     - id: key
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: value
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.Web.Mvc.TempDataDictionary.Add(System.String,System.Object)
 - uid: System.Web.Mvc.TempDataDictionary.Clear
@@ -283,10 +313,14 @@ items:
     - id: key
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Web.Mvc.TempDataDictionary.ContainsKey(System.String)
 - uid: System.Web.Mvc.TempDataDictionary.ContainsValue(System.Object)
   href: System.Web.Mvc.TempDataDictionary.yml
@@ -304,10 +338,14 @@ items:
     - id: value
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Web.Mvc.TempDataDictionary.ContainsValue(System.Object)
 - uid: System.Web.Mvc.TempDataDictionary.GetEnumerator
   href: System.Web.Mvc.TempDataDictionary.yml
@@ -324,6 +362,10 @@ items:
     parameters: []
     return:
       id: IEnumerator
+      type:
+        id: System.Collections.Generic.IEnumerator{System.Collections.Generic.KeyValuePair{System.String,System.Object}}
+        name: IEnumerator<KeyValuePair<string, object>>
+        isExternal: true
   id: System.Web.Mvc.TempDataDictionary.GetEnumerator
 - uid: System.Web.Mvc.TempDataDictionary.Remove(System.String)
   href: System.Web.Mvc.TempDataDictionary.yml
@@ -341,10 +383,14 @@ items:
     - id: key
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Web.Mvc.TempDataDictionary.Remove(System.String)
 - uid: System.Web.Mvc.TempDataDictionary.TryGetValue(System.String,System.Object@)
   href: System.Web.Mvc.TempDataDictionary.yml
@@ -362,13 +408,130 @@ items:
     - id: key
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: value
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Web.Mvc.TempDataDictionary.TryGetValue(System.String,System.Object@)
+- uid: System.Web.Mvc.TempDataDictionary.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#String,System#Object}}#CopyTo(System.Collections.Generic.KeyValuePair{System.String,System.Object}[],System.Int32)
+  href: System.Web.Mvc.TempDataDictionary.yml
+  name: ICollection<KeyValuePair<string, object>>.CopyTo(KeyValuePair<string, object>[], int)
+  fullName: System.Web.Mvc.TempDataDictionary.System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string, object>>.CopyTo(System.Collections.Generic.KeyValuePair<string, object>[], int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/TempDataDictionary.cs
+    startLine: 142
+  syntax:
+    content:
+      CSharp: void ICollection<KeyValuePair<string, object>>.CopyTo(KeyValuePair<string, object>[] array, int index)
+    parameters:
+    - id: array
+      type:
+        id: System.Array
+        name: KeyValuePair<string, object>[]
+        isExternal: true
+    - id: index
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.Web.Mvc.TempDataDictionary.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#String,System#Object}}#CopyTo(System.Collections.Generic.KeyValuePair{System.String,System.Object}[],System.Int32)
+- uid: System.Web.Mvc.TempDataDictionary.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#String,System#Object}}#Add(System.Collections.Generic.KeyValuePair{System.String,System.Object})
+  href: System.Web.Mvc.TempDataDictionary.yml
+  name: ICollection<KeyValuePair<string, object>>.Add(KeyValuePair<string, object>)
+  fullName: System.Web.Mvc.TempDataDictionary.System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string, object>>.Add(System.Collections.Generic.KeyValuePair<string, object>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/TempDataDictionary.cs
+    startLine: 147
+  syntax:
+    content:
+      CSharp: void ICollection<KeyValuePair<string, object>>.Add(KeyValuePair<string, object> keyValuePair)
+    parameters:
+    - id: keyValuePair
+      type:
+        id: System.Collections.Generic.KeyValuePair{System.String,System.Object}
+        name: KeyValuePair<string, object>
+        isExternal: true
+  id: System.Web.Mvc.TempDataDictionary.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#String,System#Object}}#Add(System.Collections.Generic.KeyValuePair{System.String,System.Object})
+- uid: System.Web.Mvc.TempDataDictionary.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#String,System#Object}}#Contains(System.Collections.Generic.KeyValuePair{System.String,System.Object})
+  href: System.Web.Mvc.TempDataDictionary.yml
+  name: ICollection<KeyValuePair<string, object>>.Contains(KeyValuePair<string, object>)
+  fullName: System.Web.Mvc.TempDataDictionary.System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string, object>>.Contains(System.Collections.Generic.KeyValuePair<string, object>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/TempDataDictionary.cs
+    startLine: 153
+  syntax:
+    content:
+      CSharp: bool ICollection<KeyValuePair<string, object>>.Contains(KeyValuePair<string, object> keyValuePair)
+    parameters:
+    - id: keyValuePair
+      type:
+        id: System.Collections.Generic.KeyValuePair{System.String,System.Object}
+        name: KeyValuePair<string, object>
+        isExternal: true
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Web.Mvc.TempDataDictionary.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#String,System#Object}}#Contains(System.Collections.Generic.KeyValuePair{System.String,System.Object})
+- uid: System.Web.Mvc.TempDataDictionary.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#String,System#Object}}#Remove(System.Collections.Generic.KeyValuePair{System.String,System.Object})
+  href: System.Web.Mvc.TempDataDictionary.yml
+  name: ICollection<KeyValuePair<string, object>>.Remove(KeyValuePair<string, object>)
+  fullName: System.Web.Mvc.TempDataDictionary.System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string, object>>.Remove(System.Collections.Generic.KeyValuePair<string, object>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/TempDataDictionary.cs
+    startLine: 158
+  syntax:
+    content:
+      CSharp: bool ICollection<KeyValuePair<string, object>>.Remove(KeyValuePair<string, object> keyValuePair)
+    parameters:
+    - id: keyValuePair
+      type:
+        id: System.Collections.Generic.KeyValuePair{System.String,System.Object}
+        name: KeyValuePair<string, object>
+        isExternal: true
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Web.Mvc.TempDataDictionary.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#String,System#Object}}#Remove(System.Collections.Generic.KeyValuePair{System.String,System.Object})
+- uid: System.Web.Mvc.TempDataDictionary.System#Collections#IEnumerable#GetEnumerator
+  href: System.Web.Mvc.TempDataDictionary.yml
+  name: IEnumerable.GetEnumerator()
+  fullName: System.Web.Mvc.TempDataDictionary.System.Collections.IEnumerable.GetEnumerator()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/TempDataDictionary.cs
+    startLine: 164
+  syntax:
+    content:
+      CSharp: IEnumerator IEnumerable.GetEnumerator()
+    parameters: []
+    return:
+      id: IEnumerator
+      type:
+        id: System.Collections.IEnumerator
+        name: IEnumerator
+        isExternal: true
+  id: System.Web.Mvc.TempDataDictionary.System#Collections#IEnumerable#GetEnumerator

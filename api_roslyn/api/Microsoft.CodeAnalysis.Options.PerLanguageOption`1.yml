@@ -6,18 +6,19 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Options/PerLanguageOption.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Options/PerLanguageOption.cs
     startLine: 10
   summary: An option that can be specified once per language.
   syntax:
     content:
-      CSharp: public class PerLanguageOption<T>
+      CSharp: 'public class PerLanguageOption<T> : IOption'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.Options.PerLanguageOption`1
   children:
@@ -26,6 +27,9 @@ items:
   - Microsoft.CodeAnalysis.Options.PerLanguageOption`1.Type
   - Microsoft.CodeAnalysis.Options.PerLanguageOption`1.DefaultValue
   - Microsoft.CodeAnalysis.Options.PerLanguageOption`1.#ctor(System.String,System.String,`0)
+  - Microsoft.CodeAnalysis.Options.PerLanguageOption`1.Microsoft#CodeAnalysis#Options#IOption#Type
+  - Microsoft.CodeAnalysis.Options.PerLanguageOption`1.Microsoft#CodeAnalysis#Options#IOption#DefaultValue
+  - Microsoft.CodeAnalysis.Options.PerLanguageOption`1.Microsoft#CodeAnalysis#Options#IOption#IsPerLanguage
   - Microsoft.CodeAnalysis.Options.PerLanguageOption`1.ToString
 - uid: Microsoft.CodeAnalysis.Options.PerLanguageOption`1.Feature
   href: Microsoft.CodeAnalysis.Options.PerLanguageOption`1.yml
@@ -39,12 +43,12 @@ items:
   summary: Feature this option is associated with.
   syntax:
     content:
-      CSharp: public string Feature { get; private set; }
+      CSharp: public string Feature { get; }
     parameters:
     - id: Feature
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: Microsoft.CodeAnalysis.Options.PerLanguageOption`1.Feature
 - uid: Microsoft.CodeAnalysis.Options.PerLanguageOption`1.Name
@@ -59,12 +63,12 @@ items:
   summary: The name of the option.
   syntax:
     content:
-      CSharp: public string Name { get; private set; }
+      CSharp: public string Name { get; }
     parameters:
     - id: Name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: Microsoft.CodeAnalysis.Options.PerLanguageOption`1.Name
 - uid: Microsoft.CodeAnalysis.Options.PerLanguageOption`1.Type
@@ -84,7 +88,7 @@ items:
     - id: Type
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
   id: Microsoft.CodeAnalysis.Options.PerLanguageOption`1.Type
 - uid: Microsoft.CodeAnalysis.Options.PerLanguageOption`1.DefaultValue
@@ -99,7 +103,7 @@ items:
   summary: The default option value.
   syntax:
     content:
-      CSharp: public T DefaultValue { get; private set; }
+      CSharp: public T DefaultValue { get; }
     parameters:
     - id: DefaultValue
       type:
@@ -123,12 +127,12 @@ items:
     - id: feature
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: defaultValue
       type:
@@ -136,6 +140,63 @@ items:
         name: T
         href: T
   id: Microsoft.CodeAnalysis.Options.PerLanguageOption`1.#ctor(System.String,System.String,`0)
+- uid: Microsoft.CodeAnalysis.Options.PerLanguageOption`1.Microsoft#CodeAnalysis#Options#IOption#Type
+  href: Microsoft.CodeAnalysis.Options.PerLanguageOption`1.yml
+  name: IOption.Type
+  fullName: Microsoft.CodeAnalysis.Options.PerLanguageOption<T>.Microsoft.CodeAnalysis.Options.IOption.Type
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Options/PerLanguageOption.cs
+    startLine: 52
+  syntax:
+    content:
+      CSharp: Type IOption.Type { get; }
+    parameters:
+    - id: Microsoft.CodeAnalysis.Options.IOption.Type
+      type:
+        id: System.Type
+        name: Type
+        isExternal: true
+  id: Microsoft.CodeAnalysis.Options.PerLanguageOption`1.Microsoft#CodeAnalysis#Options#IOption#Type
+- uid: Microsoft.CodeAnalysis.Options.PerLanguageOption`1.Microsoft#CodeAnalysis#Options#IOption#DefaultValue
+  href: Microsoft.CodeAnalysis.Options.PerLanguageOption`1.yml
+  name: IOption.DefaultValue
+  fullName: Microsoft.CodeAnalysis.Options.PerLanguageOption<T>.Microsoft.CodeAnalysis.Options.IOption.DefaultValue
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Options/PerLanguageOption.cs
+    startLine: 57
+  syntax:
+    content:
+      CSharp: object IOption.DefaultValue { get; }
+    parameters:
+    - id: Microsoft.CodeAnalysis.Options.IOption.DefaultValue
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+  id: Microsoft.CodeAnalysis.Options.PerLanguageOption`1.Microsoft#CodeAnalysis#Options#IOption#DefaultValue
+- uid: Microsoft.CodeAnalysis.Options.PerLanguageOption`1.Microsoft#CodeAnalysis#Options#IOption#IsPerLanguage
+  href: Microsoft.CodeAnalysis.Options.PerLanguageOption`1.yml
+  name: IOption.IsPerLanguage
+  fullName: Microsoft.CodeAnalysis.Options.PerLanguageOption<T>.Microsoft.CodeAnalysis.Options.IOption.IsPerLanguage
+  type: Property
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Portable/Options/PerLanguageOption.cs
+    startLine: 62
+  syntax:
+    content:
+      CSharp: bool IOption.IsPerLanguage { get; }
+    parameters:
+    - id: Microsoft.CodeAnalysis.Options.IOption.IsPerLanguage
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: Microsoft.CodeAnalysis.Options.PerLanguageOption`1.Microsoft#CodeAnalysis#Options#IOption#IsPerLanguage
 - uid: Microsoft.CodeAnalysis.Options.PerLanguageOption`1.ToString
   href: Microsoft.CodeAnalysis.Options.PerLanguageOption`1.yml
   name: ToString()
@@ -151,4 +212,8 @@ items:
     parameters: []
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: Microsoft.CodeAnalysis.Options.PerLanguageOption`1.ToString

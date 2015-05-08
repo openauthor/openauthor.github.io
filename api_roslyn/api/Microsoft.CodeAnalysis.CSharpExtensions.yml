@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Compilers/CSharp/Portable/CSharpExtensions.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Compilers/CSharp/Portable/CSharpExtensions.cs
     startLine: 14
   syntax:
     content:
-      CSharp: public static class CSharpExtensions
+      CSharp: 'public class CSharpExtensions : object'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.CSharpExtensions
   children:
@@ -43,7 +44,7 @@ items:
     startLine: 16
   syntax:
     content:
-      CSharp: public static bool IsKind(this SyntaxToken token, SyntaxKind kind)
+      CSharp: public static bool IsKind(SyntaxToken token, SyntaxKind kind)
     parameters:
     - id: token
       type:
@@ -57,6 +58,10 @@ items:
         href: Microsoft.CodeAnalysis.CSharp.SyntaxKind.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.CSharpExtensions.IsKind(Microsoft.CodeAnalysis.SyntaxToken,Microsoft.CodeAnalysis.CSharp.SyntaxKind)
 - uid: Microsoft.CodeAnalysis.CSharpExtensions.IsKind(Microsoft.CodeAnalysis.SyntaxTrivia,Microsoft.CodeAnalysis.CSharp.SyntaxKind)
   href: Microsoft.CodeAnalysis.CSharpExtensions.yml
@@ -69,7 +74,7 @@ items:
     startLine: 21
   syntax:
     content:
-      CSharp: public static bool IsKind(this SyntaxTrivia trivia, SyntaxKind kind)
+      CSharp: public static bool IsKind(SyntaxTrivia trivia, SyntaxKind kind)
     parameters:
     - id: trivia
       type:
@@ -83,6 +88,10 @@ items:
         href: Microsoft.CodeAnalysis.CSharp.SyntaxKind.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.CSharpExtensions.IsKind(Microsoft.CodeAnalysis.SyntaxTrivia,Microsoft.CodeAnalysis.CSharp.SyntaxKind)
 - uid: Microsoft.CodeAnalysis.CSharpExtensions.IsKind(Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.CSharp.SyntaxKind)
   href: Microsoft.CodeAnalysis.CSharpExtensions.yml
@@ -95,7 +104,7 @@ items:
     startLine: 26
   syntax:
     content:
-      CSharp: public static bool IsKind(this SyntaxNode node, SyntaxKind kind)
+      CSharp: public static bool IsKind(SyntaxNode node, SyntaxKind kind)
     parameters:
     - id: node
       type:
@@ -109,6 +118,10 @@ items:
         href: Microsoft.CodeAnalysis.CSharp.SyntaxKind.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.CSharpExtensions.IsKind(Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.CSharp.SyntaxKind)
 - uid: Microsoft.CodeAnalysis.CSharpExtensions.IsKind(Microsoft.CodeAnalysis.SyntaxNodeOrToken,Microsoft.CodeAnalysis.CSharp.SyntaxKind)
   href: Microsoft.CodeAnalysis.CSharpExtensions.yml
@@ -121,7 +134,7 @@ items:
     startLine: 31
   syntax:
     content:
-      CSharp: public static bool IsKind(this SyntaxNodeOrToken nodeOrToken, SyntaxKind kind)
+      CSharp: public static bool IsKind(SyntaxNodeOrToken nodeOrToken, SyntaxKind kind)
     parameters:
     - id: nodeOrToken
       type:
@@ -135,6 +148,10 @@ items:
         href: Microsoft.CodeAnalysis.CSharp.SyntaxKind.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.CSharpExtensions.IsKind(Microsoft.CodeAnalysis.SyntaxNodeOrToken,Microsoft.CodeAnalysis.CSharp.SyntaxKind)
 - uid: Microsoft.CodeAnalysis.CSharpExtensions.IndexOf``1(Microsoft.CodeAnalysis.SyntaxList{``0},Microsoft.CodeAnalysis.CSharp.SyntaxKind)
   href: Microsoft.CodeAnalysis.CSharpExtensions.yml
@@ -148,12 +165,12 @@ items:
   summary: Returns the index of the first node of a specified kind in the node list.
   syntax:
     content:
-      CSharp: 'public static int IndexOf<TNode>(this SyntaxList<TNode> list, SyntaxKind kind)where TNode : SyntaxNode'
+      CSharp: 'public static int IndexOf<TNode>(SyntaxList<TNode> list, SyntaxKind kind)where TNode : SyntaxNode'
     parameters:
     - id: list
       type:
         id: Microsoft.CodeAnalysis.SyntaxList{``0}
-        name: SyntaxList
+        name: SyntaxList<TNode>
         href: Microsoft.CodeAnalysis.SyntaxList{``0}
       description: Node list.
     - id: kind
@@ -164,6 +181,10 @@ items:
       description: The [Microsoft.CodeAnalysis.CSharp.SyntaxKind](Microsoft.CodeAnalysis.CSharp.SyntaxKind.yml) to find.
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: Returns non-negative index if the list contains a node which matches , -1 otherwise.
   id: Microsoft.CodeAnalysis.CSharpExtensions.IndexOf``1(Microsoft.CodeAnalysis.SyntaxList{``0},Microsoft.CodeAnalysis.CSharp.SyntaxKind)
 - uid: Microsoft.CodeAnalysis.CSharpExtensions.Any``1(Microsoft.CodeAnalysis.SyntaxList{``0},Microsoft.CodeAnalysis.CSharp.SyntaxKind)
@@ -178,12 +199,12 @@ items:
   summary: True if the list has at least one node of the specified kind.
   syntax:
     content:
-      CSharp: 'public static bool Any<TNode>(this SyntaxList<TNode> list, SyntaxKind kind)where TNode : SyntaxNode'
+      CSharp: 'public static bool Any<TNode>(SyntaxList<TNode> list, SyntaxKind kind)where TNode : SyntaxNode'
     parameters:
     - id: list
       type:
         id: Microsoft.CodeAnalysis.SyntaxList{``0}
-        name: SyntaxList
+        name: SyntaxList<TNode>
         href: Microsoft.CodeAnalysis.SyntaxList{``0}
     - id: kind
       type:
@@ -192,6 +213,10 @@ items:
         href: Microsoft.CodeAnalysis.CSharp.SyntaxKind.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.CSharpExtensions.Any``1(Microsoft.CodeAnalysis.SyntaxList{``0},Microsoft.CodeAnalysis.CSharp.SyntaxKind)
 - uid: Microsoft.CodeAnalysis.CSharpExtensions.IndexOf``1(Microsoft.CodeAnalysis.SeparatedSyntaxList{``0},Microsoft.CodeAnalysis.CSharp.SyntaxKind)
   href: Microsoft.CodeAnalysis.CSharpExtensions.yml
@@ -205,12 +230,12 @@ items:
   summary: Returns the index of the first node of a specified kind in the node list.
   syntax:
     content:
-      CSharp: 'public static int IndexOf<TNode>(this SeparatedSyntaxList<TNode> list, SyntaxKind kind)where TNode : SyntaxNode'
+      CSharp: 'public static int IndexOf<TNode>(SeparatedSyntaxList<TNode> list, SyntaxKind kind)where TNode : SyntaxNode'
     parameters:
     - id: list
       type:
         id: Microsoft.CodeAnalysis.SeparatedSyntaxList{``0}
-        name: SeparatedSyntaxList
+        name: SeparatedSyntaxList<TNode>
         href: Microsoft.CodeAnalysis.SeparatedSyntaxList{``0}
       description: Node list.
     - id: kind
@@ -221,6 +246,10 @@ items:
       description: The [Microsoft.CodeAnalysis.CSharp.SyntaxKind](Microsoft.CodeAnalysis.CSharp.SyntaxKind.yml) to find.
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: Returns non-negative index if the list contains a node which matches , -1 otherwise.
   id: Microsoft.CodeAnalysis.CSharpExtensions.IndexOf``1(Microsoft.CodeAnalysis.SeparatedSyntaxList{``0},Microsoft.CodeAnalysis.CSharp.SyntaxKind)
 - uid: Microsoft.CodeAnalysis.CSharpExtensions.Any``1(Microsoft.CodeAnalysis.SeparatedSyntaxList{``0},Microsoft.CodeAnalysis.CSharp.SyntaxKind)
@@ -235,12 +264,12 @@ items:
   summary: True if the list has at least one node of the specified kind.
   syntax:
     content:
-      CSharp: 'public static bool Any<TNode>(this SeparatedSyntaxList<TNode> list, SyntaxKind kind)where TNode : SyntaxNode'
+      CSharp: 'public static bool Any<TNode>(SeparatedSyntaxList<TNode> list, SyntaxKind kind)where TNode : SyntaxNode'
     parameters:
     - id: list
       type:
         id: Microsoft.CodeAnalysis.SeparatedSyntaxList{``0}
-        name: SeparatedSyntaxList
+        name: SeparatedSyntaxList<TNode>
         href: Microsoft.CodeAnalysis.SeparatedSyntaxList{``0}
     - id: kind
       type:
@@ -249,6 +278,10 @@ items:
         href: Microsoft.CodeAnalysis.CSharp.SyntaxKind.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.CSharpExtensions.Any``1(Microsoft.CodeAnalysis.SeparatedSyntaxList{``0},Microsoft.CodeAnalysis.CSharp.SyntaxKind)
 - uid: Microsoft.CodeAnalysis.CSharpExtensions.IndexOf(Microsoft.CodeAnalysis.SyntaxTriviaList,Microsoft.CodeAnalysis.CSharp.SyntaxKind)
   href: Microsoft.CodeAnalysis.CSharpExtensions.yml
@@ -262,7 +295,7 @@ items:
   summary: Returns the index of the first trivia of a specified kind in the trivia list.
   syntax:
     content:
-      CSharp: public static int IndexOf(this SyntaxTriviaList list, SyntaxKind kind)
+      CSharp: public static int IndexOf(SyntaxTriviaList list, SyntaxKind kind)
     parameters:
     - id: list
       type:
@@ -278,6 +311,10 @@ items:
       description: The [Microsoft.CodeAnalysis.CSharp.SyntaxKind](Microsoft.CodeAnalysis.CSharp.SyntaxKind.yml) to find.
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: Returns non-negative index if the list contains a trivia which matches , -1 otherwise.
   id: Microsoft.CodeAnalysis.CSharpExtensions.IndexOf(Microsoft.CodeAnalysis.SyntaxTriviaList,Microsoft.CodeAnalysis.CSharp.SyntaxKind)
 - uid: Microsoft.CodeAnalysis.CSharpExtensions.Any(Microsoft.CodeAnalysis.SyntaxTriviaList,Microsoft.CodeAnalysis.CSharp.SyntaxKind)
@@ -292,7 +329,7 @@ items:
   summary: True if the list has at least one trivia of the specified kind.
   syntax:
     content:
-      CSharp: public static bool Any(this SyntaxTriviaList list, SyntaxKind kind)
+      CSharp: public static bool Any(SyntaxTriviaList list, SyntaxKind kind)
     parameters:
     - id: list
       type:
@@ -306,6 +343,10 @@ items:
         href: Microsoft.CodeAnalysis.CSharp.SyntaxKind.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.CSharpExtensions.Any(Microsoft.CodeAnalysis.SyntaxTriviaList,Microsoft.CodeAnalysis.CSharp.SyntaxKind)
 - uid: Microsoft.CodeAnalysis.CSharpExtensions.IndexOf(Microsoft.CodeAnalysis.SyntaxTokenList,Microsoft.CodeAnalysis.CSharp.SyntaxKind)
   href: Microsoft.CodeAnalysis.CSharpExtensions.yml
@@ -319,7 +360,7 @@ items:
   summary: Returns the index of the first token of a specified kind in the token list.
   syntax:
     content:
-      CSharp: public static int IndexOf(this SyntaxTokenList list, SyntaxKind kind)
+      CSharp: public static int IndexOf(SyntaxTokenList list, SyntaxKind kind)
     parameters:
     - id: list
       type:
@@ -335,6 +376,10 @@ items:
       description: The [Microsoft.CodeAnalysis.CSharp.SyntaxKind](Microsoft.CodeAnalysis.CSharp.SyntaxKind.yml) to find.
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: Returns non-negative index if the list contains a token which matches , -1 otherwise.
   id: Microsoft.CodeAnalysis.CSharpExtensions.IndexOf(Microsoft.CodeAnalysis.SyntaxTokenList,Microsoft.CodeAnalysis.CSharp.SyntaxKind)
 - uid: Microsoft.CodeAnalysis.CSharpExtensions.Any(Microsoft.CodeAnalysis.SyntaxTokenList,Microsoft.CodeAnalysis.CSharp.SyntaxKind)
@@ -349,7 +394,7 @@ items:
   summary: Tests whether a list contains a token of a particular kind.
   syntax:
     content:
-      CSharp: public static bool Any(this SyntaxTokenList list, SyntaxKind kind)
+      CSharp: public static bool Any(SyntaxTokenList list, SyntaxKind kind)
     parameters:
     - id: list
       type:
@@ -364,5 +409,9 @@ items:
       description: The [Microsoft.CodeAnalysis.CSharp.SyntaxKind](Microsoft.CodeAnalysis.CSharp.SyntaxKind.yml) to test for.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: Returns true if the list contains a token which matches
   id: Microsoft.CodeAnalysis.CSharpExtensions.Any(Microsoft.CodeAnalysis.SyntaxTokenList,Microsoft.CodeAnalysis.CSharp.SyntaxKind)

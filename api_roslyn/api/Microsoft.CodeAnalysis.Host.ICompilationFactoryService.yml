@@ -6,14 +6,15 @@ items:
   type: Interface
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Workspace/Host/CompilationFactory/ICompilationFactoryService.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Workspace/Host/CompilationFactory/ICompilationFactoryService.cs
     startLine: 6
   syntax:
     content:
-      CSharp: public interface ICompilationFactoryService
+      CSharp: 'public interface ICompilationFactoryService : ILanguageService'
   id: Microsoft.CodeAnalysis.Host.ICompilationFactoryService
   children:
   - Microsoft.CodeAnalysis.Host.ICompilationFactoryService.CreateCompilation(System.String,Microsoft.CodeAnalysis.CompilationOptions)
@@ -32,12 +33,12 @@ items:
     startLine: 8
   syntax:
     content:
-      CSharp: Compilation CreateCompilation(string assemblyName, CompilationOptions options);
+      CSharp: public Compilation CreateCompilation(string assemblyName, CompilationOptions options)
     parameters:
     - id: assemblyName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: options
       type:
@@ -46,6 +47,10 @@ items:
         href: Microsoft.CodeAnalysis.CompilationOptions
     return:
       id: Compilation
+      type:
+        id: Microsoft.CodeAnalysis.Compilation
+        name: Compilation
+        href: Microsoft.CodeAnalysis.Compilation
   id: Microsoft.CodeAnalysis.Host.ICompilationFactoryService.CreateCompilation(System.String,Microsoft.CodeAnalysis.CompilationOptions)
 - uid: Microsoft.CodeAnalysis.Host.ICompilationFactoryService.CreateSubmissionCompilation(System.String,Microsoft.CodeAnalysis.CompilationOptions,System.Type)
   href: Microsoft.CodeAnalysis.Host.ICompilationFactoryService.yml
@@ -58,12 +63,12 @@ items:
     startLine: 9
   syntax:
     content:
-      CSharp: Compilation CreateSubmissionCompilation(string assemblyName, CompilationOptions options, Type hostObjectType);
+      CSharp: public Compilation CreateSubmissionCompilation(string assemblyName, CompilationOptions options, Type hostObjectType)
     parameters:
     - id: assemblyName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: options
       type:
@@ -73,10 +78,14 @@ items:
     - id: hostObjectType
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
     return:
       id: Compilation
+      type:
+        id: Microsoft.CodeAnalysis.Compilation
+        name: Compilation
+        href: Microsoft.CodeAnalysis.Compilation
   id: Microsoft.CodeAnalysis.Host.ICompilationFactoryService.CreateSubmissionCompilation(System.String,Microsoft.CodeAnalysis.CompilationOptions,System.Type)
 - uid: Microsoft.CodeAnalysis.Host.ICompilationFactoryService.GetCompilationFromCompilationReference(Microsoft.CodeAnalysis.MetadataReference)
   href: Microsoft.CodeAnalysis.Host.ICompilationFactoryService.yml
@@ -89,7 +98,7 @@ items:
     startLine: 10
   syntax:
     content:
-      CSharp: Compilation GetCompilationFromCompilationReference(MetadataReference reference);
+      CSharp: public Compilation GetCompilationFromCompilationReference(MetadataReference reference)
     parameters:
     - id: reference
       type:
@@ -98,6 +107,10 @@ items:
         href: Microsoft.CodeAnalysis.MetadataReference
     return:
       id: Compilation
+      type:
+        id: Microsoft.CodeAnalysis.Compilation
+        name: Compilation
+        href: Microsoft.CodeAnalysis.Compilation
   id: Microsoft.CodeAnalysis.Host.ICompilationFactoryService.GetCompilationFromCompilationReference(Microsoft.CodeAnalysis.MetadataReference)
 - uid: Microsoft.CodeAnalysis.Host.ICompilationFactoryService.IsCompilationReference(Microsoft.CodeAnalysis.MetadataReference)
   href: Microsoft.CodeAnalysis.Host.ICompilationFactoryService.yml
@@ -110,7 +123,7 @@ items:
     startLine: 11
   syntax:
     content:
-      CSharp: bool IsCompilationReference(MetadataReference reference);
+      CSharp: public bool IsCompilationReference(MetadataReference reference)
     parameters:
     - id: reference
       type:
@@ -119,6 +132,10 @@ items:
         href: Microsoft.CodeAnalysis.MetadataReference
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.Host.ICompilationFactoryService.IsCompilationReference(Microsoft.CodeAnalysis.MetadataReference)
 - uid: Microsoft.CodeAnalysis.Host.ICompilationFactoryService.GetDefaultCompilationOptions
   href: Microsoft.CodeAnalysis.Host.ICompilationFactoryService.yml
@@ -131,8 +148,12 @@ items:
     startLine: 12
   syntax:
     content:
-      CSharp: CompilationOptions GetDefaultCompilationOptions();
+      CSharp: public CompilationOptions GetDefaultCompilationOptions()
     parameters: []
     return:
       id: CompilationOptions
+      type:
+        id: Microsoft.CodeAnalysis.CompilationOptions
+        name: CompilationOptions
+        href: Microsoft.CodeAnalysis.CompilationOptions
   id: Microsoft.CodeAnalysis.Host.ICompilationFactoryService.GetDefaultCompilationOptions

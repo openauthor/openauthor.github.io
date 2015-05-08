@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/ActionExecutingContext.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/ActionExecutingContext.cs
     startLine: 7
   syntax:
     content:
-      CSharp: public class ActionExecutingContext
+      CSharp: 'public class ActionExecutingContext : ControllerContext'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.Mvc.ControllerContext
     name: ControllerContext
@@ -68,7 +69,7 @@ items:
     - id: actionParameters
       type:
         id: System.Collections.Generic.IDictionary{System.String,System.Object}
-        name: System.Collections.Generic.IDictionary{System.String,System.Object}
+        name: IDictionary<string, object>
         isExternal: true
   id: System.Web.Mvc.ActionExecutingContext.#ctor(System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionDescriptor,System.Collections.Generic.IDictionary{System.String,System.Object})
 - uid: System.Web.Mvc.ActionExecutingContext.ActionDescriptor
@@ -106,7 +107,7 @@ items:
     - id: ActionParameters
       type:
         id: System.Collections.Generic.IDictionary{System.String,System.Object}
-        name: System.Collections.Generic.IDictionary{System.String,System.Object}
+        name: IDictionary<string, object>
         isExternal: true
   id: System.Web.Mvc.ActionExecutingContext.ActionParameters
 - uid: System.Web.Mvc.ActionExecutingContext.Result

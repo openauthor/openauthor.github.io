@@ -6,9 +6,10 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Workspace/Solution/SolutionChanges.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Workspace/Solution/SolutionChanges.cs
     startLine: 8
   syntax:
@@ -16,10 +17,10 @@ items:
       CSharp: public struct SolutionChanges
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: Microsoft.CodeAnalysis.SolutionChanges
   children:
@@ -41,6 +42,10 @@ items:
     parameters: []
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Project}
+        name: IEnumerable<Project>
+        isExternal: true
   id: Microsoft.CodeAnalysis.SolutionChanges.GetAddedProjects
 - uid: Microsoft.CodeAnalysis.SolutionChanges.GetProjectChanges
   href: Microsoft.CodeAnalysis.SolutionChanges.yml
@@ -57,6 +62,10 @@ items:
     parameters: []
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ProjectChanges}
+        name: IEnumerable<ProjectChanges>
+        isExternal: true
   id: Microsoft.CodeAnalysis.SolutionChanges.GetProjectChanges
 - uid: Microsoft.CodeAnalysis.SolutionChanges.GetRemovedProjects
   href: Microsoft.CodeAnalysis.SolutionChanges.yml
@@ -73,4 +82,8 @@ items:
     parameters: []
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Project}
+        name: IEnumerable<Project>
+        isExternal: true
   id: Microsoft.CodeAnalysis.SolutionChanges.GetRemovedProjects

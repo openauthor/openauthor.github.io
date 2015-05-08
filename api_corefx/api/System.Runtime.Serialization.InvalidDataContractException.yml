@@ -6,22 +6,27 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Runtime.Serialization.Primitives/src/System/Runtime/Serialization/InvalidDataContractException.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Runtime.Serialization.Primitives/src/System/Runtime/Serialization/InvalidDataContractException.cs
     startLine: 10
   syntax:
     content:
-      CSharp: public class InvalidDataContractException
+      CSharp: 'public class InvalidDataContractException : Exception, ISerializable, _Exception'
   inheritance:
-  - id: Exception
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.Exception
     name: Exception
     isExternal: true
   id: System.Runtime.Serialization.InvalidDataContractException
   children:
   - System.Runtime.Serialization.InvalidDataContractException.#ctor
-  - System.Runtime.Serialization.InvalidDataContractException.#ctor(String)
-  - System.Runtime.Serialization.InvalidDataContractException.#ctor(String,Exception)
+  - System.Runtime.Serialization.InvalidDataContractException.#ctor(System.String)
+  - System.Runtime.Serialization.InvalidDataContractException.#ctor(System.String,System.Exception)
 - uid: System.Runtime.Serialization.InvalidDataContractException.#ctor
   href: System.Runtime.Serialization.InvalidDataContractException.yml
   name: InvalidDataContractException()
@@ -36,10 +41,10 @@ items:
       CSharp: 'public InvalidDataContractException(): base ()'
     parameters: []
   id: System.Runtime.Serialization.InvalidDataContractException.#ctor
-- uid: System.Runtime.Serialization.InvalidDataContractException.#ctor(String)
+- uid: System.Runtime.Serialization.InvalidDataContractException.#ctor(System.String)
   href: System.Runtime.Serialization.InvalidDataContractException.yml
-  name: InvalidDataContractException(String)
-  fullName: System.Runtime.Serialization.InvalidDataContractException.InvalidDataContractException(String)
+  name: InvalidDataContractException(string)
+  fullName: System.Runtime.Serialization.InvalidDataContractException.InvalidDataContractException(string)
   type: Constructor
   source:
     remote: *o0
@@ -51,14 +56,14 @@ items:
     parameters:
     - id: message
       type:
-        id: String
-        name: String
+        id: System.String
+        name: string
         isExternal: true
-  id: System.Runtime.Serialization.InvalidDataContractException.#ctor(String)
-- uid: System.Runtime.Serialization.InvalidDataContractException.#ctor(String,Exception)
+  id: System.Runtime.Serialization.InvalidDataContractException.#ctor(System.String)
+- uid: System.Runtime.Serialization.InvalidDataContractException.#ctor(System.String,System.Exception)
   href: System.Runtime.Serialization.InvalidDataContractException.yml
-  name: InvalidDataContractException(String, Exception)
-  fullName: System.Runtime.Serialization.InvalidDataContractException.InvalidDataContractException(String, Exception)
+  name: InvalidDataContractException(string, Exception)
+  fullName: System.Runtime.Serialization.InvalidDataContractException.InvalidDataContractException(string, System.Exception)
   type: Constructor
   source:
     remote: *o0
@@ -70,12 +75,12 @@ items:
     parameters:
     - id: message
       type:
-        id: String
-        name: String
+        id: System.String
+        name: string
         isExternal: true
     - id: innerException
       type:
-        id: Exception
+        id: System.Exception
         name: Exception
         isExternal: true
-  id: System.Runtime.Serialization.InvalidDataContractException.#ctor(String,Exception)
+  id: System.Runtime.Serialization.InvalidDataContractException.#ctor(System.String,System.Exception)

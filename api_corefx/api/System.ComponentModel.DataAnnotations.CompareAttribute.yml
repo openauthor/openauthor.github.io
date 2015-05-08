@@ -6,15 +6,20 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/CompareAttribute.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/CompareAttribute.cs
     startLine: 9
   syntax:
     content:
-      CSharp: public class CompareAttribute
+      CSharp: 'public class CompareAttribute : ValidationAttribute, _Attribute'
   inheritance:
-  - id: Attribute
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.Attribute
     name: Attribute
     isExternal: true
   - id: System.ComponentModel.DataAnnotations.ValidationAttribute
@@ -27,6 +32,7 @@ items:
   - System.ComponentModel.DataAnnotations.CompareAttribute.OtherPropertyDisplayName
   - System.ComponentModel.DataAnnotations.CompareAttribute.RequiresValidationContext
   - System.ComponentModel.DataAnnotations.CompareAttribute.FormatErrorMessage(System.String)
+  - System.ComponentModel.DataAnnotations.CompareAttribute.IsValid(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)
 - uid: System.ComponentModel.DataAnnotations.CompareAttribute.#ctor(System.String)
   href: System.ComponentModel.DataAnnotations.CompareAttribute.yml
   name: CompareAttribute(string)
@@ -43,7 +49,7 @@ items:
     - id: otherProperty
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.ComponentModel.DataAnnotations.CompareAttribute.#ctor(System.String)
 - uid: System.ComponentModel.DataAnnotations.CompareAttribute.OtherProperty
@@ -57,12 +63,12 @@ items:
     startLine: 22
   syntax:
     content:
-      CSharp: public string OtherProperty { get; private set; }
+      CSharp: public string OtherProperty { get; }
     parameters:
     - id: OtherProperty
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.ComponentModel.DataAnnotations.CompareAttribute.OtherProperty
 - uid: System.ComponentModel.DataAnnotations.CompareAttribute.OtherPropertyDisplayName
@@ -76,12 +82,12 @@ items:
     startLine: 24
   syntax:
     content:
-      CSharp: public string OtherPropertyDisplayName { get; internal set; }
+      CSharp: public string OtherPropertyDisplayName { get; }
     parameters:
     - id: OtherPropertyDisplayName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.ComponentModel.DataAnnotations.CompareAttribute.OtherPropertyDisplayName
 - uid: System.ComponentModel.DataAnnotations.CompareAttribute.RequiresValidationContext
@@ -100,7 +106,7 @@ items:
     - id: RequiresValidationContext
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.ComponentModel.DataAnnotations.CompareAttribute.RequiresValidationContext
 - uid: System.ComponentModel.DataAnnotations.CompareAttribute.FormatErrorMessage(System.String)
@@ -119,8 +125,42 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.ComponentModel.DataAnnotations.CompareAttribute.FormatErrorMessage(System.String)
+- uid: System.ComponentModel.DataAnnotations.CompareAttribute.IsValid(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)
+  href: System.ComponentModel.DataAnnotations.CompareAttribute.yml
+  name: IsValid(object, ValidationContext)
+  fullName: System.ComponentModel.DataAnnotations.CompareAttribute.IsValid(object, System.ComponentModel.DataAnnotations.ValidationContext)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/CompareAttribute.cs
+    startLine: 37
+  syntax:
+    content:
+      CSharp: protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+    parameters:
+    - id: value
+      type:
+        id: System.Object
+        name: object
+        isExternal: true
+    - id: validationContext
+      type:
+        id: System.ComponentModel.DataAnnotations.ValidationContext
+        name: ValidationContext
+        href: System.ComponentModel.DataAnnotations.ValidationContext.yml
+    return:
+      id: ValidationResult
+      type:
+        id: System.ComponentModel.DataAnnotations.ValidationResult
+        name: ValidationResult
+        href: System.ComponentModel.DataAnnotations.ValidationResult.yml
+  id: System.ComponentModel.DataAnnotations.CompareAttribute.IsValid(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)

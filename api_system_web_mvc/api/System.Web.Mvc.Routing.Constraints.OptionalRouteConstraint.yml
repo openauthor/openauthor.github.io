@@ -6,18 +6,19 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Common/Routing/Constraints/OptionalRouteConstraint.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/Common/Routing/Constraints/OptionalRouteConstraint.cs
     startLine: 21
   summary: Constrains a route by an inner constraint that doesn't fail when an optional parameter is set to its default value.
   syntax:
     content:
-      CSharp: 'public class OptionalRouteConstraint #endif'
+      CSharp: 'public class OptionalRouteConstraint : IRouteConstraint'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.Routing.Constraints.OptionalRouteConstraint
   children:
@@ -41,7 +42,7 @@ items:
     - id: innerConstraint
       type:
         id: System.Web.Routing.IRouteConstraint
-        name: System.Web.Routing.IRouteConstraint
+        name: IRouteConstraint
         isExternal: true
       description: The inner constraint to match if the parameter is not an optional parameter without a value
   id: System.Web.Mvc.Routing.Constraints.OptionalRouteConstraint.#ctor(System.Web.Routing.IRouteConstraint)
@@ -57,12 +58,12 @@ items:
   summary: Gets the inner constraint to match if the parameter is not an optional parameter without a value.
   syntax:
     content:
-      CSharp: public IRouteConstraint InnerConstraint { get; private set; }
+      CSharp: public IRouteConstraint InnerConstraint { get; }
     parameters:
     - id: InnerConstraint
       type:
         id: System.Web.Routing.IRouteConstraint
-        name: System.Web.Routing.IRouteConstraint
+        name: IRouteConstraint
         isExternal: true
   id: System.Web.Mvc.Routing.Constraints.OptionalRouteConstraint.InnerConstraint
 - uid: System.Web.Mvc.Routing.Constraints.OptionalRouteConstraint.Match(System.Web.HttpContextBase,System.Web.Routing.Route,System.String,System.Web.Routing.RouteValueDictionary,System.Web.Routing.RouteDirection)
@@ -81,28 +82,32 @@ items:
     - id: httpContext
       type:
         id: System.Web.HttpContextBase
-        name: System.Web.HttpContextBase
+        name: HttpContextBase
         isExternal: true
     - id: route
       type:
         id: System.Web.Routing.Route
-        name: System.Web.Routing.Route
+        name: Route
         isExternal: true
     - id: parameterName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: values
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
     - id: routeDirection
       type:
         id: System.Web.Routing.RouteDirection
-        name: System.Web.Routing.RouteDirection
+        name: RouteDirection
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Web.Mvc.Routing.Constraints.OptionalRouteConstraint.Match(System.Web.HttpContextBase,System.Web.Routing.Route,System.String,System.Web.Routing.RouteValueDictionary,System.Web.Routing.RouteDirection)

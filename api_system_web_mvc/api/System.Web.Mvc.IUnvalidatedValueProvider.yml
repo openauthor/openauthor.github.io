@@ -6,14 +6,15 @@ items:
   type: Interface
   source:
     remote: &o0
+      path: src/System.Web.Mvc/IUnvalidatedValueProvider.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/IUnvalidatedValueProvider.cs
     startLine: 5
   syntax:
     content:
-      CSharp: public interface IUnvalidatedValueProvider
+      CSharp: 'public interface IUnvalidatedValueProvider : IValueProvider'
   id: System.Web.Mvc.IUnvalidatedValueProvider
   children:
   - System.Web.Mvc.IUnvalidatedValueProvider.GetValue(System.String,System.Boolean)
@@ -28,18 +29,22 @@ items:
     startLine: 7
   syntax:
     content:
-      CSharp: ValueProviderResult GetValue(string key, bool skipValidation);
+      CSharp: public ValueProviderResult GetValue(string key, bool skipValidation)
     parameters:
     - id: key
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: skipValidation
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     return:
       id: ValueProviderResult
+      type:
+        id: System.Web.Mvc.ValueProviderResult
+        name: ValueProviderResult
+        href: System.Web.Mvc.ValueProviderResult.yml
   id: System.Web.Mvc.IUnvalidatedValueProvider.GetValue(System.String,System.Boolean)

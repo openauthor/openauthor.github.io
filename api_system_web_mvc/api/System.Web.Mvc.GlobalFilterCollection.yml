@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/GlobalFilterCollection.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/GlobalFilterCollection.cs
     startLine: 10
   syntax:
     content:
-      CSharp: public sealed class GlobalFilterCollection
+      CSharp: 'public sealed class GlobalFilterCollection : IEnumerable<Filter>, IEnumerable, IFilterProvider'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.GlobalFilterCollection
   children:
@@ -26,6 +27,8 @@ items:
   - System.Web.Mvc.GlobalFilterCollection.Clear
   - System.Web.Mvc.GlobalFilterCollection.Contains(System.Object)
   - System.Web.Mvc.GlobalFilterCollection.GetEnumerator
+  - System.Web.Mvc.GlobalFilterCollection.System#Collections#IEnumerable#GetEnumerator
+  - System.Web.Mvc.GlobalFilterCollection.System#Web#Mvc#IFilterProvider#GetFilters(System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionDescriptor)
   - System.Web.Mvc.GlobalFilterCollection.Remove(System.Object)
 - uid: System.Web.Mvc.GlobalFilterCollection.Count
   href: System.Web.Mvc.GlobalFilterCollection.yml
@@ -43,7 +46,7 @@ items:
     - id: Count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Web.Mvc.GlobalFilterCollection.Count
 - uid: System.Web.Mvc.GlobalFilterCollection.Add(System.Object)
@@ -62,7 +65,7 @@ items:
     - id: filter
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.Web.Mvc.GlobalFilterCollection.Add(System.Object)
 - uid: System.Web.Mvc.GlobalFilterCollection.Add(System.Object,System.Int32)
@@ -81,12 +84,12 @@ items:
     - id: filter
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     - id: order
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Web.Mvc.GlobalFilterCollection.Add(System.Object,System.Int32)
 - uid: System.Web.Mvc.GlobalFilterCollection.Clear
@@ -119,10 +122,14 @@ items:
     - id: filter
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Web.Mvc.GlobalFilterCollection.Contains(System.Object)
 - uid: System.Web.Mvc.GlobalFilterCollection.GetEnumerator
   href: System.Web.Mvc.GlobalFilterCollection.yml
@@ -139,7 +146,61 @@ items:
     parameters: []
     return:
       id: IEnumerator
+      type:
+        id: System.Collections.Generic.IEnumerator{System.Web.Mvc.Filter}
+        name: IEnumerator<Filter>
+        isExternal: true
   id: System.Web.Mvc.GlobalFilterCollection.GetEnumerator
+- uid: System.Web.Mvc.GlobalFilterCollection.System#Collections#IEnumerable#GetEnumerator
+  href: System.Web.Mvc.GlobalFilterCollection.yml
+  name: IEnumerable.GetEnumerator()
+  fullName: System.Web.Mvc.GlobalFilterCollection.System.Collections.IEnumerable.GetEnumerator()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/GlobalFilterCollection.cs
+    startLine: 50
+  syntax:
+    content:
+      CSharp: IEnumerator IEnumerable.GetEnumerator()
+    parameters: []
+    return:
+      id: IEnumerator
+      type:
+        id: System.Collections.IEnumerator
+        name: IEnumerator
+        isExternal: true
+  id: System.Web.Mvc.GlobalFilterCollection.System#Collections#IEnumerable#GetEnumerator
+- uid: System.Web.Mvc.GlobalFilterCollection.System#Web#Mvc#IFilterProvider#GetFilters(System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionDescriptor)
+  href: System.Web.Mvc.GlobalFilterCollection.yml
+  name: IFilterProvider.GetFilters(ControllerContext, ActionDescriptor)
+  fullName: System.Web.Mvc.GlobalFilterCollection.System.Web.Mvc.IFilterProvider.GetFilters(System.Web.Mvc.ControllerContext, System.Web.Mvc.ActionDescriptor)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/GlobalFilterCollection.cs
+    startLine: 55
+  syntax:
+    content:
+      CSharp: IEnumerable<Filter> IFilterProvider.GetFilters(ControllerContext controllerContext, ActionDescriptor actionDescriptor)
+    parameters:
+    - id: controllerContext
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+    - id: actionDescriptor
+      type:
+        id: System.Web.Mvc.ActionDescriptor
+        name: ActionDescriptor
+        href: System.Web.Mvc.ActionDescriptor.yml
+    return:
+      id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Web.Mvc.Filter}
+        name: IEnumerable<Filter>
+        isExternal: true
+  id: System.Web.Mvc.GlobalFilterCollection.System#Web#Mvc#IFilterProvider#GetFilters(System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionDescriptor)
 - uid: System.Web.Mvc.GlobalFilterCollection.Remove(System.Object)
   href: System.Web.Mvc.GlobalFilterCollection.yml
   name: Remove(object)
@@ -156,6 +217,6 @@ items:
     - id: filter
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.Web.Mvc.GlobalFilterCollection.Remove(System.Object)

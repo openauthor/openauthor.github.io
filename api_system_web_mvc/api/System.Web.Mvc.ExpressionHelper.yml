@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/ExpressionHelper.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/ExpressionHelper.cs
     startLine: 12
   syntax:
     content:
-      CSharp: public static class ExpressionHelper
+      CSharp: public class ExpressionHelper
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.ExpressionHelper
   children:
@@ -38,10 +39,14 @@ items:
     - id: expression
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.ExpressionHelper.GetExpressionText(System.String)
 - uid: System.Web.Mvc.ExpressionHelper.GetExpressionText(System.Linq.Expressions.LambdaExpression)
   href: System.Web.Mvc.ExpressionHelper.yml
@@ -59,8 +64,12 @@ items:
     - id: expression
       type:
         id: System.Linq.Expressions.LambdaExpression
-        name: System.Linq.Expressions.LambdaExpression
+        name: LambdaExpression
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.ExpressionHelper.GetExpressionText(System.Linq.Expressions.LambdaExpression)

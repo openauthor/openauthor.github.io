@@ -6,15 +6,20 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/EnumDataTypeAttribute.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/EnumDataTypeAttribute.cs
     startLine: 10
   syntax:
     content:
-      CSharp: public sealed class EnumDataTypeAttribute
+      CSharp: 'public sealed class EnumDataTypeAttribute : DataTypeAttribute, _Attribute'
   inheritance:
-  - id: Attribute
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.Attribute
     name: Attribute
     isExternal: true
   - id: System.ComponentModel.DataAnnotations.ValidationAttribute
@@ -25,13 +30,13 @@ items:
     href: System.ComponentModel.DataAnnotations.DataTypeAttribute.yml
   id: System.ComponentModel.DataAnnotations.EnumDataTypeAttribute
   children:
-  - System.ComponentModel.DataAnnotations.EnumDataTypeAttribute.#ctor(Type)
+  - System.ComponentModel.DataAnnotations.EnumDataTypeAttribute.#ctor(System.Type)
   - System.ComponentModel.DataAnnotations.EnumDataTypeAttribute.EnumType
   - System.ComponentModel.DataAnnotations.EnumDataTypeAttribute.IsValid(System.Object)
-- uid: System.ComponentModel.DataAnnotations.EnumDataTypeAttribute.#ctor(Type)
+- uid: System.ComponentModel.DataAnnotations.EnumDataTypeAttribute.#ctor(System.Type)
   href: System.ComponentModel.DataAnnotations.EnumDataTypeAttribute.yml
   name: EnumDataTypeAttribute(Type)
-  fullName: System.ComponentModel.DataAnnotations.EnumDataTypeAttribute.EnumDataTypeAttribute(Type)
+  fullName: System.ComponentModel.DataAnnotations.EnumDataTypeAttribute.EnumDataTypeAttribute(System.Type)
   type: Constructor
   source:
     remote: *o0
@@ -43,10 +48,10 @@ items:
     parameters:
     - id: enumType
       type:
-        id: Type
+        id: System.Type
         name: Type
         isExternal: true
-  id: System.ComponentModel.DataAnnotations.EnumDataTypeAttribute.#ctor(Type)
+  id: System.ComponentModel.DataAnnotations.EnumDataTypeAttribute.#ctor(System.Type)
 - uid: System.ComponentModel.DataAnnotations.EnumDataTypeAttribute.EnumType
   href: System.ComponentModel.DataAnnotations.EnumDataTypeAttribute.yml
   name: EnumType
@@ -58,11 +63,11 @@ items:
     startLine: 21
   syntax:
     content:
-      CSharp: public Type EnumType { get; private set; }
+      CSharp: public Type EnumType { get; }
     parameters:
     - id: EnumType
       type:
-        id: Type
+        id: System.Type
         name: Type
         isExternal: true
   id: System.ComponentModel.DataAnnotations.EnumDataTypeAttribute.EnumType
@@ -82,8 +87,12 @@ items:
     - id: value
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.ComponentModel.DataAnnotations.EnumDataTypeAttribute.IsValid(System.Object)

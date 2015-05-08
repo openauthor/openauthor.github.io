@@ -6,8 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableArray`1+Builder.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableArray`1+Builder.cs
     startLine: 17
   summary: >-
@@ -16,16 +18,17 @@ items:
     instance without allocating memory.
   syntax:
     content:
-      CSharp: public sealed class Builder
+      CSharp: 'public sealed class Builder : IList<T>, ICollection<T>, IReadOnlyList<T>, IReadOnlyCollection<T>, IEnumerable<T>, IEnumerable'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Collections.Immutable.ImmutableArray`1.Builder
   children:
   - System.Collections.Immutable.ImmutableArray`1.Builder.Capacity
   - System.Collections.Immutable.ImmutableArray`1.Builder.Count
   - System.Collections.Immutable.ImmutableArray`1.Builder.Item(System.Int32)
+  - System.Collections.Immutable.ImmutableArray`1.Builder.System#Collections#Generic#ICollection{T}#IsReadOnly
   - System.Collections.Immutable.ImmutableArray`1.Builder.ToImmutable
   - System.Collections.Immutable.ImmutableArray`1.Builder.MoveToImmutable
   - System.Collections.Immutable.ImmutableArray`1.Builder.Clear
@@ -58,6 +61,8 @@ items:
   - System.Collections.Immutable.ImmutableArray`1.Builder.Sort(System.Collections.Generic.IComparer{`0})
   - System.Collections.Immutable.ImmutableArray`1.Builder.Sort(System.Int32,System.Int32,System.Collections.Generic.IComparer{`0})
   - System.Collections.Immutable.ImmutableArray`1.Builder.GetEnumerator
+  - System.Collections.Immutable.ImmutableArray`1.Builder.System#Collections#Generic#IEnumerable{T}#GetEnumerator
+  - System.Collections.Immutable.ImmutableArray`1.Builder.System#Collections#IEnumerable#GetEnumerator
 - uid: System.Collections.Immutable.ImmutableArray`1.Builder.Capacity
   href: System.Collections.Immutable.ImmutableArray`1.Builder.yml
   name: Capacity
@@ -78,7 +83,7 @@ items:
     - id: Capacity
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Collections.Immutable.ImmutableArray`1.Builder.Capacity
 - uid: System.Collections.Immutable.ImmutableArray`1.Builder.Count
@@ -98,7 +103,7 @@ items:
     - id: Count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Collections.Immutable.ImmutableArray`1.Builder.Count
 - uid: System.Collections.Immutable.ImmutableArray`1.Builder.Item(System.Int32)
@@ -121,6 +126,26 @@ items:
         name: T
         href: T
   id: System.Collections.Immutable.ImmutableArray`1.Builder.Item(System.Int32)
+- uid: System.Collections.Immutable.ImmutableArray`1.Builder.System#Collections#Generic#ICollection{T}#IsReadOnly
+  href: System.Collections.Immutable.ImmutableArray`1.Builder.yml
+  name: ICollection<T>.IsReadOnly
+  fullName: System.Collections.Immutable.ImmutableArray<T>.Builder.System.Collections.Generic.ICollection<T>.IsReadOnly
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableArray`1+Builder.cs
+    startLine: 165
+  summary: Gets a value indicating whether the [System.Collections.Generic.ICollection`1]() is read-only.
+  syntax:
+    content:
+      CSharp: bool ICollection<T>.IsReadOnly { get; }
+    parameters:
+    - id: System.Collections.Generic.ICollection<T>.IsReadOnly
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Collections.Immutable.ImmutableArray`1.Builder.System#Collections#Generic#ICollection{T}#IsReadOnly
 - uid: System.Collections.Immutable.ImmutableArray`1.Builder.ToImmutable
   href: System.Collections.Immutable.ImmutableArray`1.Builder.yml
   name: ToImmutable()
@@ -137,6 +162,10 @@ items:
     parameters: []
     return:
       id: ImmutableArray
+      type:
+        id: System.Collections.Immutable.ImmutableArray`1
+        name: ImmutableArray<T>
+        href: System.Collections.Immutable.ImmutableArray`1.yml
       description: An immutable array.
   id: System.Collections.Immutable.ImmutableArray`1.Builder.ToImmutable
 - uid: System.Collections.Immutable.ImmutableArray`1.Builder.MoveToImmutable
@@ -158,6 +187,10 @@ items:
     parameters: []
     return:
       id: ImmutableArray
+      type:
+        id: System.Collections.Immutable.ImmutableArray`1
+        name: ImmutableArray<T>
+        href: System.Collections.Immutable.ImmutableArray`1.yml
   id: System.Collections.Immutable.ImmutableArray`1.Builder.MoveToImmutable
 - uid: System.Collections.Immutable.ImmutableArray`1.Builder.Clear
   href: System.Collections.Immutable.ImmutableArray`1.Builder.yml
@@ -168,7 +201,7 @@ items:
     remote: *o0
     path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableArray`1+Builder.cs
     startLine: 206
-  summary: Removes all items from the [System.Collections.Generic.ICollection`1](#).
+  summary: Removes all items from the [System.Collections.Generic.ICollection`1]().
   syntax:
     content:
       CSharp: public void Clear()
@@ -183,7 +216,7 @@ items:
     remote: *o0
     path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableArray`1+Builder.cs
     startLine: 216
-  summary: Inserts an item to the [System.Collections.Generic.IList`1](#) at the specified index.
+  summary: Inserts an item to the [System.Collections.Generic.IList`1]() at the specified index.
   syntax:
     content:
       CSharp: public void Insert(int index, T item)
@@ -191,7 +224,7 @@ items:
     - id: index
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The zero-based index at which  should be inserted.
     - id: item
@@ -199,7 +232,7 @@ items:
         id: T
         name: T
         href: T
-      description: The object to insert into the [System.Collections.Generic.IList`1](#).
+      description: The object to insert into the [System.Collections.Generic.IList`1]().
   id: System.Collections.Immutable.ImmutableArray`1.Builder.Insert(System.Int32,`0)
 - uid: System.Collections.Immutable.ImmutableArray`1.Builder.Add(`0)
   href: System.Collections.Immutable.ImmutableArray`1.Builder.yml
@@ -210,7 +243,7 @@ items:
     remote: *o0
     path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableArray`1+Builder.cs
     startLine: 234
-  summary: Adds an item to the [System.Collections.Generic.ICollection`1](#).
+  summary: Adds an item to the [System.Collections.Generic.ICollection`1]().
   syntax:
     content:
       CSharp: public void Add(T item)
@@ -220,7 +253,7 @@ items:
         id: T
         name: T
         href: T
-      description: The object to add to the [System.Collections.Generic.ICollection`1](#).
+      description: The object to add to the [System.Collections.Generic.ICollection`1]().
   id: System.Collections.Immutable.ImmutableArray`1.Builder.Add(`0)
 - uid: System.Collections.Immutable.ImmutableArray`1.Builder.AddRange(System.Collections.Generic.IEnumerable{`0})
   href: System.Collections.Immutable.ImmutableArray`1.Builder.yml
@@ -239,7 +272,7 @@ items:
     - id: items
       type:
         id: System.Collections.Generic.IEnumerable{`0}
-        name: System.Collections.Generic.IEnumerable{`0}
+        name: IEnumerable<T>
         isExternal: true
       description: The items.
   id: System.Collections.Immutable.ImmutableArray`1.Builder.AddRange(System.Collections.Generic.IEnumerable{`0})
@@ -260,7 +293,7 @@ items:
     - id: items
       type:
         id: System.Array
-        name: System.Array
+        name: T[]
         isExternal: true
       description: The items.
   id: System.Collections.Immutable.ImmutableArray`1.Builder.AddRange(`0[])
@@ -281,7 +314,7 @@ items:
     - id: items
       type:
         id: System.Array
-        name: System.Array
+        name: TDerived[]
         isExternal: true
       description: The items.
   id: System.Collections.Immutable.ImmutableArray`1.Builder.AddRange``1(``0[])
@@ -302,13 +335,13 @@ items:
     - id: items
       type:
         id: System.Array
-        name: System.Array
+        name: T[]
         isExternal: true
       description: The items.
     - id: length
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The number of elements from the source array to add.
   id: System.Collections.Immutable.ImmutableArray`1.Builder.AddRange(`0[],System.Int32)
@@ -329,7 +362,7 @@ items:
     - id: items
       type:
         id: System.Collections.Immutable.ImmutableArray`1
-        name: ImmutableArray
+        name: ImmutableArray<T>
         href: System.Collections.Immutable.ImmutableArray`1.yml
       description: The items.
   id: System.Collections.Immutable.ImmutableArray`1.Builder.AddRange(System.Collections.Immutable.ImmutableArray{`0})
@@ -350,13 +383,13 @@ items:
     - id: items
       type:
         id: System.Collections.Immutable.ImmutableArray`1
-        name: ImmutableArray
+        name: ImmutableArray<T>
         href: System.Collections.Immutable.ImmutableArray`1.yml
       description: The items.
     - id: length
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The number of elements from the source array to add.
   id: System.Collections.Immutable.ImmutableArray`1.Builder.AddRange(System.Collections.Immutable.ImmutableArray{`0},System.Int32)
@@ -377,7 +410,7 @@ items:
     - id: items
       type:
         id: System.Collections.Immutable.ImmutableArray{``0}
-        name: ImmutableArray
+        name: ImmutableArray<TDerived>
         href: System.Collections.Immutable.ImmutableArray{``0}
       description: The items.
   id: System.Collections.Immutable.ImmutableArray`1.Builder.AddRange``1(System.Collections.Immutable.ImmutableArray{``0})
@@ -414,7 +447,7 @@ items:
   summary: Adds the specified items to the end of the array.
   syntax:
     content:
-      CSharp: 'public void AddRange<TDerived>(ImmutableArray<TDerived>.Builder items)where TDerived : T'
+      CSharp: 'public void AddRange<TDerived>(Builder items)where TDerived : T'
     parameters:
     - id: items
       type:
@@ -445,6 +478,10 @@ items:
       description: The element.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: A value indicating whether the specified element was found and removed from the collection.
   id: System.Collections.Immutable.ImmutableArray`1.Builder.Remove(`0)
 - uid: System.Collections.Immutable.ImmutableArray`1.Builder.RemoveAt(System.Int32)
@@ -456,7 +493,7 @@ items:
     remote: *o0
     path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableArray`1+Builder.cs
     startLine: 393
-  summary: Removes the [System.Collections.Generic.IList`1](#) item at the specified index.
+  summary: Removes the [System.Collections.Generic.IList`1]() item at the specified index.
   syntax:
     content:
       CSharp: public void RemoveAt(int index)
@@ -464,7 +501,7 @@ items:
     - id: index
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The zero-based index of the item to remove.
   id: System.Collections.Immutable.ImmutableArray`1.Builder.RemoveAt(System.Int32)
@@ -477,7 +514,7 @@ items:
     remote: *o0
     path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableArray`1+Builder.cs
     startLine: 412
-  summary: Determines whether the [System.Collections.Generic.ICollection`1](#) contains a specific value.
+  summary: Determines whether the [System.Collections.Generic.ICollection`1]() contains a specific value.
   syntax:
     content:
       CSharp: public bool Contains(T item)
@@ -487,10 +524,14 @@ items:
         id: T
         name: T
         href: T
-      description: The object to locate in the [System.Collections.Generic.ICollection`1](#).
+      description: The object to locate in the [System.Collections.Generic.ICollection`1]().
     return:
       id: Boolean
-      description: true if  is found in the [System.Collections.Generic.ICollection`1](#); otherwise, false.
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+      description: true if  is found in the [System.Collections.Generic.ICollection`1](); otherwise, false.
   id: System.Collections.Immutable.ImmutableArray`1.Builder.Contains(`0)
 - uid: System.Collections.Immutable.ImmutableArray`1.Builder.ToArray
   href: System.Collections.Immutable.ImmutableArray`1.Builder.yml
@@ -506,7 +547,11 @@ items:
     content:
       CSharp: public T[] ToArray()
     parameters: []
-    return: {}
+    return:
+      type:
+        id: System.Array
+        name: T[]
+        isExternal: true
   id: System.Collections.Immutable.ImmutableArray`1.Builder.ToArray
 - uid: System.Collections.Immutable.ImmutableArray`1.Builder.CopyTo(`0[],System.Int32)
   href: System.Collections.Immutable.ImmutableArray`1.Builder.yml
@@ -525,13 +570,13 @@ items:
     - id: array
       type:
         id: System.Array
-        name: System.Array
+        name: T[]
         isExternal: true
       description: The array to copy to.
     - id: index
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The starting index of the target array.
   id: System.Collections.Immutable.ImmutableArray`1.Builder.CopyTo(`0[],System.Int32)
@@ -544,19 +589,23 @@ items:
     remote: *o0
     path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableArray`1+Builder.cs
     startLine: 464
-  summary: Determines the index of a specific item in the [System.Collections.Generic.IList`1](#).
+  summary: Determines the index of a specific item in the [System.Collections.Generic.IList`1]().
   syntax:
     content:
-      CSharp: '[Pure] public int IndexOf(T item)'
+      CSharp: public int IndexOf(T item)
     parameters:
     - id: item
       type:
         id: T
         name: T
         href: T
-      description: The object to locate in the [System.Collections.Generic.IList`1](#).
+      description: The object to locate in the [System.Collections.Generic.IList`1]().
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: The index of  if found in the list; otherwise, -1.
   id: System.Collections.Immutable.ImmutableArray`1.Builder.IndexOf(`0)
 - uid: System.Collections.Immutable.ImmutableArray`1.Builder.IndexOf(`0,System.Int32)
@@ -571,7 +620,7 @@ items:
   summary: Searches the array for the specified item.
   syntax:
     content:
-      CSharp: '[Pure] public int IndexOf(T item, int startIndex)'
+      CSharp: public int IndexOf(T item, int startIndex)
     parameters:
     - id: item
       type:
@@ -582,11 +631,15 @@ items:
     - id: startIndex
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The index at which to begin the search.
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: The 0-based index into the array where the item was found; or -1 if it could not be found.
   id: System.Collections.Immutable.ImmutableArray`1.Builder.IndexOf(`0,System.Int32)
 - uid: System.Collections.Immutable.ImmutableArray`1.Builder.IndexOf(`0,System.Int32,System.Int32)
@@ -601,7 +654,7 @@ items:
   summary: Searches the array for the specified item.
   syntax:
     content:
-      CSharp: '[Pure] public int IndexOf(T item, int startIndex, int count)'
+      CSharp: public int IndexOf(T item, int startIndex, int count)
     parameters:
     - id: item
       type:
@@ -612,17 +665,21 @@ items:
     - id: startIndex
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The index at which to begin the search.
     - id: count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The number of elements to search.
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: The 0-based index into the array where the item was found; or -1 if it could not be found.
   id: System.Collections.Immutable.ImmutableArray`1.Builder.IndexOf(`0,System.Int32,System.Int32)
 - uid: System.Collections.Immutable.ImmutableArray`1.Builder.IndexOf(`0,System.Int32,System.Int32,System.Collections.Generic.IEqualityComparer{`0})
@@ -637,7 +694,7 @@ items:
   summary: Searches the array for the specified item.
   syntax:
     content:
-      CSharp: '[Pure] public int IndexOf(T item, int startIndex, int count, IEqualityComparer<T> equalityComparer)'
+      CSharp: public int IndexOf(T item, int startIndex, int count, IEqualityComparer<T> equalityComparer)
     parameters:
     - id: item
       type:
@@ -648,23 +705,27 @@ items:
     - id: startIndex
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The index at which to begin the search.
     - id: count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The number of elements to search.
     - id: equalityComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{`0}
-        name: System.Collections.Generic.IEqualityComparer{`0}
+        name: IEqualityComparer<T>
         isExternal: true
       description: The equality comparer to use in the search.
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: The 0-based index into the array where the item was found; or -1 if it could not be found.
   id: System.Collections.Immutable.ImmutableArray`1.Builder.IndexOf(`0,System.Int32,System.Int32,System.Collections.Generic.IEqualityComparer{`0})
 - uid: System.Collections.Immutable.ImmutableArray`1.Builder.LastIndexOf(`0)
@@ -679,7 +740,7 @@ items:
   summary: Searches the array for the specified item in reverse.
   syntax:
     content:
-      CSharp: '[Pure] public int LastIndexOf(T item)'
+      CSharp: public int LastIndexOf(T item)
     parameters:
     - id: item
       type:
@@ -689,6 +750,10 @@ items:
       description: The item to search for.
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: The 0-based index into the array where the item was found; or -1 if it could not be found.
   id: System.Collections.Immutable.ImmutableArray`1.Builder.LastIndexOf(`0)
 - uid: System.Collections.Immutable.ImmutableArray`1.Builder.LastIndexOf(`0,System.Int32)
@@ -703,7 +768,7 @@ items:
   summary: Searches the array for the specified item in reverse.
   syntax:
     content:
-      CSharp: '[Pure] public int LastIndexOf(T item, int startIndex)'
+      CSharp: public int LastIndexOf(T item, int startIndex)
     parameters:
     - id: item
       type:
@@ -714,11 +779,15 @@ items:
     - id: startIndex
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The index at which to begin the search.
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: The 0-based index into the array where the item was found; or -1 if it could not be found.
   id: System.Collections.Immutable.ImmutableArray`1.Builder.LastIndexOf(`0,System.Int32)
 - uid: System.Collections.Immutable.ImmutableArray`1.Builder.LastIndexOf(`0,System.Int32,System.Int32)
@@ -733,7 +802,7 @@ items:
   summary: Searches the array for the specified item in reverse.
   syntax:
     content:
-      CSharp: '[Pure] public int LastIndexOf(T item, int startIndex, int count)'
+      CSharp: public int LastIndexOf(T item, int startIndex, int count)
     parameters:
     - id: item
       type:
@@ -744,17 +813,21 @@ items:
     - id: startIndex
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The index at which to begin the search.
     - id: count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The number of elements to search.
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: The 0-based index into the array where the item was found; or -1 if it could not be found.
   id: System.Collections.Immutable.ImmutableArray`1.Builder.LastIndexOf(`0,System.Int32,System.Int32)
 - uid: System.Collections.Immutable.ImmutableArray`1.Builder.LastIndexOf(`0,System.Int32,System.Int32,System.Collections.Generic.IEqualityComparer{`0})
@@ -769,7 +842,7 @@ items:
   summary: Searches the array for the specified item in reverse.
   syntax:
     content:
-      CSharp: '[Pure] public int LastIndexOf(T item, int startIndex, int count, IEqualityComparer<T> equalityComparer)'
+      CSharp: public int LastIndexOf(T item, int startIndex, int count, IEqualityComparer<T> equalityComparer)
     parameters:
     - id: item
       type:
@@ -780,23 +853,27 @@ items:
     - id: startIndex
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The index at which to begin the search.
     - id: count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The number of elements to search.
     - id: equalityComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{`0}
-        name: System.Collections.Generic.IEqualityComparer{`0}
+        name: IEqualityComparer<T>
         isExternal: true
       description: The equality comparer to use in the search.
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: The 0-based index into the array where the item was found; or -1 if it could not be found.
   id: System.Collections.Immutable.ImmutableArray`1.Builder.LastIndexOf(`0,System.Int32,System.Int32,System.Collections.Generic.IEqualityComparer{`0})
 - uid: System.Collections.Immutable.ImmutableArray`1.Builder.Reverse
@@ -846,7 +923,7 @@ items:
     - id: comparer
       type:
         id: System.Collections.Generic.IComparer{`0}
-        name: System.Collections.Generic.IComparer{`0}
+        name: IComparer<T>
         isExternal: true
       description: The comparer to use in sorting. If null, the default comparer is used.
   id: System.Collections.Immutable.ImmutableArray`1.Builder.Sort(System.Collections.Generic.IComparer{`0})
@@ -867,19 +944,19 @@ items:
     - id: index
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The index of the first element to consider in the sort.
     - id: count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The number of elements to include in the sort.
     - id: comparer
       type:
         id: System.Collections.Generic.IComparer{`0}
-        name: System.Collections.Generic.IComparer{`0}
+        name: IComparer<T>
         isExternal: true
       description: The comparer to use in sorting. If null, the default comparer is used.
   id: System.Collections.Immutable.ImmutableArray`1.Builder.Sort(System.Int32,System.Int32,System.Collections.Generic.IComparer{`0})
@@ -899,5 +976,53 @@ items:
     parameters: []
     return:
       id: IEnumerator
+      type:
+        id: System.Collections.Generic.IEnumerator{`0}
+        name: IEnumerator<T>
+        isExternal: true
       description: An enumerator.
   id: System.Collections.Immutable.ImmutableArray`1.Builder.GetEnumerator
+- uid: System.Collections.Immutable.ImmutableArray`1.Builder.System#Collections#Generic#IEnumerable{T}#GetEnumerator
+  href: System.Collections.Immutable.ImmutableArray`1.Builder.yml
+  name: IEnumerable<T>.GetEnumerator()
+  fullName: System.Collections.Immutable.ImmutableArray<T>.Builder.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableArray`1+Builder.cs
+    startLine: 687
+  summary: Returns an enumerator for the contents of the array.
+  syntax:
+    content:
+      CSharp: IEnumerator<T> IEnumerable<T>.GetEnumerator()
+    parameters: []
+    return:
+      id: IEnumerator
+      type:
+        id: System.Collections.Generic.IEnumerator{`0}
+        name: IEnumerator<T>
+        isExternal: true
+      description: An enumerator.
+  id: System.Collections.Immutable.ImmutableArray`1.Builder.System#Collections#Generic#IEnumerable{T}#GetEnumerator
+- uid: System.Collections.Immutable.ImmutableArray`1.Builder.System#Collections#IEnumerable#GetEnumerator
+  href: System.Collections.Immutable.ImmutableArray`1.Builder.yml
+  name: IEnumerable.GetEnumerator()
+  fullName: System.Collections.Immutable.ImmutableArray<T>.Builder.System.Collections.IEnumerable.GetEnumerator()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableArray`1+Builder.cs
+    startLine: 696
+  summary: Returns an enumerator for the contents of the array.
+  syntax:
+    content:
+      CSharp: IEnumerator IEnumerable.GetEnumerator()
+    parameters: []
+    return:
+      id: IEnumerator
+      type:
+        id: System.Collections.IEnumerator
+        name: IEnumerator
+        isExternal: true
+      description: An enumerator.
+  id: System.Collections.Immutable.ImmutableArray`1.Builder.System#Collections#IEnumerable#GetEnumerator

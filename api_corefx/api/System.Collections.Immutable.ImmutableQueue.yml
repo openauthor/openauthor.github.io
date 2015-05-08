@@ -6,17 +6,19 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableQueue.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableQueue.cs
     startLine: 13
   summary: A set of initialization methods for instances of [System.Collections.Immutable.ImmutableQueue`1](System.Collections.Immutable.ImmutableQueue`1.yml).
   syntax:
     content:
-      CSharp: public static class ImmutableQueue
+      CSharp: public class ImmutableQueue
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Collections.Immutable.ImmutableQueue
   children:
@@ -37,10 +39,14 @@ items:
   summary: Returns an empty collection.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableQueue<T> Create<T>()'
+      CSharp: public static ImmutableQueue<T> Create<T>()
     parameters: []
     return:
       id: ImmutableQueue
+      type:
+        id: System.Collections.Immutable.ImmutableQueue{``0}
+        name: ImmutableQueue<T>
+        href: System.Collections.Immutable.ImmutableQueue{``0}
       description: The immutable collection.
   id: System.Collections.Immutable.ImmutableQueue.Create``1
 - uid: System.Collections.Immutable.ImmutableQueue.Create``1(``0)
@@ -55,7 +61,7 @@ items:
   summary: Creates a new immutable collection prefilled with the specified item.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableQueue<T> Create<T>(T item)'
+      CSharp: public static ImmutableQueue<T> Create<T>(T item)
     parameters:
     - id: item
       type:
@@ -65,6 +71,10 @@ items:
       description: The item to prepopulate.
     return:
       id: ImmutableQueue
+      type:
+        id: System.Collections.Immutable.ImmutableQueue{``0}
+        name: ImmutableQueue<T>
+        href: System.Collections.Immutable.ImmutableQueue{``0}
       description: The new immutable collection.
   id: System.Collections.Immutable.ImmutableQueue.Create``1(``0)
 - uid: System.Collections.Immutable.ImmutableQueue.CreateRange``1(System.Collections.Generic.IEnumerable{``0})
@@ -79,16 +89,20 @@ items:
   summary: Creates a new immutable collection prefilled with the specified items.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableQueue<T> CreateRange<T>(IEnumerable<T> items)'
+      CSharp: public static ImmutableQueue<T> CreateRange<T>(IEnumerable<T> items)
     parameters:
     - id: items
       type:
         id: System.Collections.Generic.IEnumerable{``0}
-        name: System.Collections.Generic.IEnumerable{``0}
+        name: IEnumerable<T>
         isExternal: true
       description: The items to prepopulate.
     return:
       id: ImmutableQueue
+      type:
+        id: System.Collections.Immutable.ImmutableQueue{``0}
+        name: ImmutableQueue<T>
+        href: System.Collections.Immutable.ImmutableQueue{``0}
       description: The new immutable collection.
   id: System.Collections.Immutable.ImmutableQueue.CreateRange``1(System.Collections.Generic.IEnumerable{``0})
 - uid: System.Collections.Immutable.ImmutableQueue.Create``1(``0[])
@@ -103,16 +117,20 @@ items:
   summary: Creates a new immutable collection prefilled with the specified items.
   syntax:
     content:
-      CSharp: '[Pure] public static ImmutableQueue<T> Create<T>(params T[] items)'
+      CSharp: public static ImmutableQueue<T> Create<T>(params T[] items)
     parameters:
     - id: items
       type:
         id: System.Array
-        name: System.Array
+        name: T[]
         isExternal: true
       description: The items to prepopulate.
     return:
       id: ImmutableQueue
+      type:
+        id: System.Collections.Immutable.ImmutableQueue{``0}
+        name: ImmutableQueue<T>
+        href: System.Collections.Immutable.ImmutableQueue{``0}
       description: The new immutable collection.
   id: System.Collections.Immutable.ImmutableQueue.Create``1(``0[])
 - uid: System.Collections.Immutable.ImmutableQueue.Dequeue``1(System.Collections.Immutable.IImmutableQueue{``0},``0@)
@@ -127,12 +145,12 @@ items:
   summary: Retrieves the item at the head of the queue, and returns a queue with the head element removed.
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1021:AvoidOutParameters", MessageId = "1#")] [Pure] public static IImmutableQueue<T> Dequeue<T>(this IImmutableQueue<T> queue, out T value)'
+      CSharp: public static IImmutableQueue<T> Dequeue<T>(IImmutableQueue<T> queue, out T value)
     parameters:
     - id: queue
       type:
         id: System.Collections.Immutable.IImmutableQueue{``0}
-        name: IImmutableQueue
+        name: IImmutableQueue<T>
         href: System.Collections.Immutable.IImmutableQueue{``0}
       description: The queue to dequeue from.
     - id: value
@@ -143,5 +161,9 @@ items:
       description: Receives the value from the head of the queue.
     return:
       id: IImmutableQueue
+      type:
+        id: System.Collections.Immutable.IImmutableQueue{``0}
+        name: IImmutableQueue<T>
+        href: System.Collections.Immutable.IImmutableQueue{``0}
       description: The new queue with the head element removed.
   id: System.Collections.Immutable.ImmutableQueue.Dequeue``1(System.Collections.Immutable.IImmutableQueue{``0},``0@)

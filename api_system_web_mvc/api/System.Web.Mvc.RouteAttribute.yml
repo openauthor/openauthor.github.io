@@ -6,9 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/RouteAttribute.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/RouteAttribute.cs
     startLine: 12
   summary: >-
@@ -17,13 +18,13 @@ items:
     When placed on a controller, it applies to actions that do not have any [System.Web.Mvc.RouteAttribute](System.Web.Mvc.RouteAttribute.yml)s on them.
   syntax:
     content:
-      CSharp: public sealed class RouteAttribute
+      CSharp: 'public sealed class RouteAttribute : Attribute, _Attribute, IDirectRouteFactory, IRouteInfoProvider'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Attribute
-    name: System.Attribute
+    name: Attribute
     isExternal: true
   id: System.Web.Mvc.RouteAttribute
   children:
@@ -32,6 +33,7 @@ items:
   - System.Web.Mvc.RouteAttribute.Name
   - System.Web.Mvc.RouteAttribute.Order
   - System.Web.Mvc.RouteAttribute.Template
+  - System.Web.Mvc.RouteAttribute.System#Web#Mvc#Routing#IDirectRouteFactory#CreateRoute(System.Web.Mvc.Routing.DirectRouteFactoryContext)
 - uid: System.Web.Mvc.RouteAttribute.#ctor
   href: System.Web.Mvc.RouteAttribute.yml
   name: RouteAttribute()
@@ -64,7 +66,7 @@ items:
     - id: template
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The route template describing the URI pattern to match against.
   id: System.Web.Mvc.RouteAttribute.#ctor(System.String)
@@ -84,7 +86,7 @@ items:
     - id: Name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.RouteAttribute.Name
 - uid: System.Web.Mvc.RouteAttribute.Order
@@ -103,7 +105,7 @@ items:
     - id: Order
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Web.Mvc.RouteAttribute.Order
 - uid: System.Web.Mvc.RouteAttribute.Template
@@ -117,11 +119,36 @@ items:
     startLine: 42
   syntax:
     content:
-      CSharp: public string Template { get; private set; }
+      CSharp: public string Template { get; }
     parameters:
     - id: Template
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.RouteAttribute.Template
+- uid: System.Web.Mvc.RouteAttribute.System#Web#Mvc#Routing#IDirectRouteFactory#CreateRoute(System.Web.Mvc.Routing.DirectRouteFactoryContext)
+  href: System.Web.Mvc.RouteAttribute.yml
+  name: IDirectRouteFactory.CreateRoute(DirectRouteFactoryContext)
+  fullName: System.Web.Mvc.RouteAttribute.System.Web.Mvc.Routing.IDirectRouteFactory.CreateRoute(System.Web.Mvc.Routing.DirectRouteFactoryContext)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/RouteAttribute.cs
+    startLine: 44
+  syntax:
+    content:
+      CSharp: RouteEntry IDirectRouteFactory.CreateRoute(DirectRouteFactoryContext context)
+    parameters:
+    - id: context
+      type:
+        id: System.Web.Mvc.Routing.DirectRouteFactoryContext
+        name: DirectRouteFactoryContext
+        href: System.Web.Mvc.Routing.DirectRouteFactoryContext.yml
+    return:
+      id: RouteEntry
+      type:
+        id: System.Web.Mvc.Routing.RouteEntry
+        name: RouteEntry
+        href: System.Web.Mvc.Routing.RouteEntry.yml
+  id: System.Web.Mvc.RouteAttribute.System#Web#Mvc#Routing#IDirectRouteFactory#CreateRoute(System.Web.Mvc.Routing.DirectRouteFactoryContext)

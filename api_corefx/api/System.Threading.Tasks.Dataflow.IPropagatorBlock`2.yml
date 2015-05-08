@@ -6,12 +6,14 @@ items:
   type: Interface
   source:
     remote:
+      path: src/System.Threading.Tasks.Dataflow/src/Base/IPropagatorBlock.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Threading.Tasks.Dataflow/src/Base/IPropagatorBlock.cs
     startLine: 17
   summary: Represents a dataflow block that is both a target for data and a source of data.
   syntax:
     content:
-      CSharp: public interface IPropagatorBlock<in TInput, out TOutput>
+      CSharp: 'public interface IPropagatorBlock<in TInput, out TOutput> : ITargetBlock<TInput>, ISourceBlock<TOutput>, IDataflowBlock'
   id: System.Threading.Tasks.Dataflow.IPropagatorBlock`2

@@ -6,23 +6,26 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/CachedModelMetadata.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/CachedModelMetadata.cs
     startLine: 12
   syntax:
     content:
-      CSharp: public abstract class CachedModelMetadata<TPrototypeCache>
+      CSharp: 'public abstract class CachedModelMetadata<TPrototypeCache> : ModelMetadata'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.Mvc.ModelMetadata
     name: ModelMetadata
     href: System.Web.Mvc.ModelMetadata.yml
   id: System.Web.Mvc.CachedModelMetadata`1
   children:
+  - System.Web.Mvc.CachedModelMetadata`1.#ctor(System.Web.Mvc.CachedModelMetadata{`0},System.Func{System.Object})
+  - System.Web.Mvc.CachedModelMetadata`1.#ctor(System.Web.Mvc.CachedDataAnnotationsModelMetadataProvider,System.Type,System.Type,System.String,`0)
   - System.Web.Mvc.CachedModelMetadata`1.ConvertEmptyStringToNull
   - System.Web.Mvc.CachedModelMetadata`1.DataTypeName
   - System.Web.Mvc.CachedModelMetadata`1.Description
@@ -35,12 +38,96 @@ items:
   - System.Web.Mvc.CachedModelMetadata`1.IsRequired
   - System.Web.Mvc.CachedModelMetadata`1.NullDisplayText
   - System.Web.Mvc.CachedModelMetadata`1.Order
+  - System.Web.Mvc.CachedModelMetadata`1.PrototypeCache
   - System.Web.Mvc.CachedModelMetadata`1.ShortDisplayName
   - System.Web.Mvc.CachedModelMetadata`1.ShowForDisplay
   - System.Web.Mvc.CachedModelMetadata`1.ShowForEdit
   - System.Web.Mvc.CachedModelMetadata`1.SimpleDisplayText
   - System.Web.Mvc.CachedModelMetadata`1.TemplateHint
   - System.Web.Mvc.CachedModelMetadata`1.Watermark
+  - System.Web.Mvc.CachedModelMetadata`1.ComputeConvertEmptyStringToNull
+  - System.Web.Mvc.CachedModelMetadata`1.ComputeDataTypeName
+  - System.Web.Mvc.CachedModelMetadata`1.ComputeDescription
+  - System.Web.Mvc.CachedModelMetadata`1.ComputeDisplayFormatString
+  - System.Web.Mvc.CachedModelMetadata`1.ComputeDisplayName
+  - System.Web.Mvc.CachedModelMetadata`1.ComputeEditFormatString
+  - System.Web.Mvc.CachedModelMetadata`1.ComputeHasNonDefaultEditFormat
+  - System.Web.Mvc.CachedModelMetadata`1.ComputeHideSurroundingHtml
+  - System.Web.Mvc.CachedModelMetadata`1.ComputeHtmlEncode
+  - System.Web.Mvc.CachedModelMetadata`1.ComputeIsReadOnly
+  - System.Web.Mvc.CachedModelMetadata`1.ComputeIsRequired
+  - System.Web.Mvc.CachedModelMetadata`1.ComputeNullDisplayText
+  - System.Web.Mvc.CachedModelMetadata`1.ComputeOrder
+  - System.Web.Mvc.CachedModelMetadata`1.ComputeShortDisplayName
+  - System.Web.Mvc.CachedModelMetadata`1.ComputeShowForDisplay
+  - System.Web.Mvc.CachedModelMetadata`1.ComputeShowForEdit
+  - System.Web.Mvc.CachedModelMetadata`1.ComputeSimpleDisplayText
+  - System.Web.Mvc.CachedModelMetadata`1.ComputeTemplateHint
+  - System.Web.Mvc.CachedModelMetadata`1.ComputeWatermark
+  - System.Web.Mvc.CachedModelMetadata`1.GetSimpleDisplayText
+- uid: System.Web.Mvc.CachedModelMetadata`1.#ctor(System.Web.Mvc.CachedModelMetadata{`0},System.Func{System.Object})
+  href: System.Web.Mvc.CachedModelMetadata`1.yml
+  name: CachedModelMetadata(CachedModelMetadata<TPrototypeCache>, Func<object>)
+  fullName: System.Web.Mvc.CachedModelMetadata<TPrototypeCache>.CachedModelMetadata(System.Web.Mvc.CachedModelMetadata<TPrototypeCache>, System.Func<object>)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedModelMetadata.cs
+    startLine: 53
+  syntax:
+    content:
+      CSharp: 'protected CachedModelMetadata(CachedModelMetadata<TPrototypeCache> prototype, Func<object> modelAccessor): base (prototype.Provider, prototype.ContainerType, modelAccessor, prototype.ModelType, prototype.PropertyName)'
+    parameters:
+    - id: prototype
+      type:
+        id: System.Web.Mvc.CachedModelMetadata`1
+        name: CachedModelMetadata<TPrototypeCache>
+        href: System.Web.Mvc.CachedModelMetadata`1.yml
+    - id: modelAccessor
+      type:
+        id: System.Func{System.Object}
+        name: Func<object>
+        isExternal: true
+  id: System.Web.Mvc.CachedModelMetadata`1.#ctor(System.Web.Mvc.CachedModelMetadata{`0},System.Func{System.Object})
+- uid: System.Web.Mvc.CachedModelMetadata`1.#ctor(System.Web.Mvc.CachedDataAnnotationsModelMetadataProvider,System.Type,System.Type,System.String,`0)
+  href: System.Web.Mvc.CachedModelMetadata`1.yml
+  name: CachedModelMetadata(CachedDataAnnotationsModelMetadataProvider, Type, Type, string, TPrototypeCache)
+  fullName: System.Web.Mvc.CachedModelMetadata<TPrototypeCache>.CachedModelMetadata(System.Web.Mvc.CachedDataAnnotationsModelMetadataProvider, System.Type, System.Type, string, TPrototypeCache)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedModelMetadata.cs
+    startLine: 60
+  syntax:
+    content:
+      CSharp: 'protected CachedModelMetadata(CachedDataAnnotationsModelMetadataProvider provider, Type containerType, Type modelType, string propertyName, TPrototypeCache prototypeCache): base (provider, containerType, null /* modelAccessor */, modelType, propertyName)'
+    parameters:
+    - id: provider
+      type:
+        id: System.Web.Mvc.CachedDataAnnotationsModelMetadataProvider
+        name: CachedDataAnnotationsModelMetadataProvider
+        href: System.Web.Mvc.CachedDataAnnotationsModelMetadataProvider.yml
+    - id: containerType
+      type:
+        id: System.Type
+        name: Type
+        isExternal: true
+    - id: modelType
+      type:
+        id: System.Type
+        name: Type
+        isExternal: true
+    - id: propertyName
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    - id: prototypeCache
+      type:
+        id: TPrototypeCache
+        name: TPrototypeCache
+        href: TPrototypeCache
+  id: System.Web.Mvc.CachedModelMetadata`1.#ctor(System.Web.Mvc.CachedDataAnnotationsModelMetadataProvider,System.Type,System.Type,System.String,`0)
 - uid: System.Web.Mvc.CachedModelMetadata`1.ConvertEmptyStringToNull
   href: System.Web.Mvc.CachedModelMetadata`1.yml
   name: ConvertEmptyStringToNull
@@ -57,7 +144,7 @@ items:
     - id: ConvertEmptyStringToNull
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.CachedModelMetadata`1.ConvertEmptyStringToNull
 - uid: System.Web.Mvc.CachedModelMetadata`1.DataTypeName
@@ -76,7 +163,7 @@ items:
     - id: DataTypeName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.CachedModelMetadata`1.DataTypeName
 - uid: System.Web.Mvc.CachedModelMetadata`1.Description
@@ -95,7 +182,7 @@ items:
     - id: Description
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.CachedModelMetadata`1.Description
 - uid: System.Web.Mvc.CachedModelMetadata`1.DisplayFormatString
@@ -114,7 +201,7 @@ items:
     - id: DisplayFormatString
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.CachedModelMetadata`1.DisplayFormatString
 - uid: System.Web.Mvc.CachedModelMetadata`1.DisplayName
@@ -133,7 +220,7 @@ items:
     - id: DisplayName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.CachedModelMetadata`1.DisplayName
 - uid: System.Web.Mvc.CachedModelMetadata`1.EditFormatString
@@ -152,7 +239,7 @@ items:
     - id: EditFormatString
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.CachedModelMetadata`1.EditFormatString
 - uid: System.Web.Mvc.CachedModelMetadata`1.HideSurroundingHtml
@@ -171,7 +258,7 @@ items:
     - id: HideSurroundingHtml
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.CachedModelMetadata`1.HideSurroundingHtml
 - uid: System.Web.Mvc.CachedModelMetadata`1.HtmlEncode
@@ -190,7 +277,7 @@ items:
     - id: HtmlEncode
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.CachedModelMetadata`1.HtmlEncode
 - uid: System.Web.Mvc.CachedModelMetadata`1.IsReadOnly
@@ -209,7 +296,7 @@ items:
     - id: IsReadOnly
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.CachedModelMetadata`1.IsReadOnly
 - uid: System.Web.Mvc.CachedModelMetadata`1.IsRequired
@@ -228,7 +315,7 @@ items:
     - id: IsRequired
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.CachedModelMetadata`1.IsRequired
 - uid: System.Web.Mvc.CachedModelMetadata`1.NullDisplayText
@@ -247,7 +334,7 @@ items:
     - id: NullDisplayText
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.CachedModelMetadata`1.NullDisplayText
 - uid: System.Web.Mvc.CachedModelMetadata`1.Order
@@ -266,9 +353,28 @@ items:
     - id: Order
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Web.Mvc.CachedModelMetadata`1.Order
+- uid: System.Web.Mvc.CachedModelMetadata`1.PrototypeCache
+  href: System.Web.Mvc.CachedModelMetadata`1.yml
+  name: PrototypeCache
+  fullName: System.Web.Mvc.CachedModelMetadata<TPrototypeCache>.PrototypeCache
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedModelMetadata.cs
+    startLine: 301
+  syntax:
+    content:
+      CSharp: protected TPrototypeCache PrototypeCache { get; set; }
+    parameters:
+    - id: PrototypeCache
+      type:
+        id: TPrototypeCache
+        name: TPrototypeCache
+        href: TPrototypeCache
+  id: System.Web.Mvc.CachedModelMetadata`1.PrototypeCache
 - uid: System.Web.Mvc.CachedModelMetadata`1.ShortDisplayName
   href: System.Web.Mvc.CachedModelMetadata`1.yml
   name: ShortDisplayName
@@ -285,7 +391,7 @@ items:
     - id: ShortDisplayName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.CachedModelMetadata`1.ShortDisplayName
 - uid: System.Web.Mvc.CachedModelMetadata`1.ShowForDisplay
@@ -304,7 +410,7 @@ items:
     - id: ShowForDisplay
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.CachedModelMetadata`1.ShowForDisplay
 - uid: System.Web.Mvc.CachedModelMetadata`1.ShowForEdit
@@ -323,7 +429,7 @@ items:
     - id: ShowForEdit
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.CachedModelMetadata`1.ShowForEdit
 - uid: System.Web.Mvc.CachedModelMetadata`1.SimpleDisplayText
@@ -342,7 +448,7 @@ items:
     - id: SimpleDisplayText
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.CachedModelMetadata`1.SimpleDisplayText
 - uid: System.Web.Mvc.CachedModelMetadata`1.TemplateHint
@@ -361,7 +467,7 @@ items:
     - id: TemplateHint
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.CachedModelMetadata`1.TemplateHint
 - uid: System.Web.Mvc.CachedModelMetadata`1.Watermark
@@ -380,6 +486,406 @@ items:
     - id: Watermark
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.CachedModelMetadata`1.Watermark
+- uid: System.Web.Mvc.CachedModelMetadata`1.ComputeConvertEmptyStringToNull
+  href: System.Web.Mvc.CachedModelMetadata`1.yml
+  name: ComputeConvertEmptyStringToNull()
+  fullName: System.Web.Mvc.CachedModelMetadata<TPrototypeCache>.ComputeConvertEmptyStringToNull()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedModelMetadata.cs
+    startLine: 403
+  syntax:
+    content:
+      CSharp: protected virtual bool ComputeConvertEmptyStringToNull()
+    parameters: []
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Web.Mvc.CachedModelMetadata`1.ComputeConvertEmptyStringToNull
+- uid: System.Web.Mvc.CachedModelMetadata`1.ComputeDataTypeName
+  href: System.Web.Mvc.CachedModelMetadata`1.yml
+  name: ComputeDataTypeName()
+  fullName: System.Web.Mvc.CachedModelMetadata<TPrototypeCache>.ComputeDataTypeName()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedModelMetadata.cs
+    startLine: 408
+  syntax:
+    content:
+      CSharp: protected virtual string ComputeDataTypeName()
+    parameters: []
+    return:
+      id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Web.Mvc.CachedModelMetadata`1.ComputeDataTypeName
+- uid: System.Web.Mvc.CachedModelMetadata`1.ComputeDescription
+  href: System.Web.Mvc.CachedModelMetadata`1.yml
+  name: ComputeDescription()
+  fullName: System.Web.Mvc.CachedModelMetadata<TPrototypeCache>.ComputeDescription()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedModelMetadata.cs
+    startLine: 413
+  syntax:
+    content:
+      CSharp: protected virtual string ComputeDescription()
+    parameters: []
+    return:
+      id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Web.Mvc.CachedModelMetadata`1.ComputeDescription
+- uid: System.Web.Mvc.CachedModelMetadata`1.ComputeDisplayFormatString
+  href: System.Web.Mvc.CachedModelMetadata`1.yml
+  name: ComputeDisplayFormatString()
+  fullName: System.Web.Mvc.CachedModelMetadata<TPrototypeCache>.ComputeDisplayFormatString()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedModelMetadata.cs
+    startLine: 418
+  syntax:
+    content:
+      CSharp: protected virtual string ComputeDisplayFormatString()
+    parameters: []
+    return:
+      id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Web.Mvc.CachedModelMetadata`1.ComputeDisplayFormatString
+- uid: System.Web.Mvc.CachedModelMetadata`1.ComputeDisplayName
+  href: System.Web.Mvc.CachedModelMetadata`1.yml
+  name: ComputeDisplayName()
+  fullName: System.Web.Mvc.CachedModelMetadata<TPrototypeCache>.ComputeDisplayName()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedModelMetadata.cs
+    startLine: 423
+  syntax:
+    content:
+      CSharp: protected virtual string ComputeDisplayName()
+    parameters: []
+    return:
+      id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Web.Mvc.CachedModelMetadata`1.ComputeDisplayName
+- uid: System.Web.Mvc.CachedModelMetadata`1.ComputeEditFormatString
+  href: System.Web.Mvc.CachedModelMetadata`1.yml
+  name: ComputeEditFormatString()
+  fullName: System.Web.Mvc.CachedModelMetadata<TPrototypeCache>.ComputeEditFormatString()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedModelMetadata.cs
+    startLine: 428
+  syntax:
+    content:
+      CSharp: protected virtual string ComputeEditFormatString()
+    parameters: []
+    return:
+      id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Web.Mvc.CachedModelMetadata`1.ComputeEditFormatString
+- uid: System.Web.Mvc.CachedModelMetadata`1.ComputeHasNonDefaultEditFormat
+  href: System.Web.Mvc.CachedModelMetadata`1.yml
+  name: ComputeHasNonDefaultEditFormat()
+  fullName: System.Web.Mvc.CachedModelMetadata<TPrototypeCache>.ComputeHasNonDefaultEditFormat()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedModelMetadata.cs
+    startLine: 433
+  syntax:
+    content:
+      CSharp: protected virtual bool ComputeHasNonDefaultEditFormat()
+    parameters: []
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Web.Mvc.CachedModelMetadata`1.ComputeHasNonDefaultEditFormat
+- uid: System.Web.Mvc.CachedModelMetadata`1.ComputeHideSurroundingHtml
+  href: System.Web.Mvc.CachedModelMetadata`1.yml
+  name: ComputeHideSurroundingHtml()
+  fullName: System.Web.Mvc.CachedModelMetadata<TPrototypeCache>.ComputeHideSurroundingHtml()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedModelMetadata.cs
+    startLine: 438
+  syntax:
+    content:
+      CSharp: protected virtual bool ComputeHideSurroundingHtml()
+    parameters: []
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Web.Mvc.CachedModelMetadata`1.ComputeHideSurroundingHtml
+- uid: System.Web.Mvc.CachedModelMetadata`1.ComputeHtmlEncode
+  href: System.Web.Mvc.CachedModelMetadata`1.yml
+  name: ComputeHtmlEncode()
+  fullName: System.Web.Mvc.CachedModelMetadata<TPrototypeCache>.ComputeHtmlEncode()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedModelMetadata.cs
+    startLine: 443
+  syntax:
+    content:
+      CSharp: protected virtual bool ComputeHtmlEncode()
+    parameters: []
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Web.Mvc.CachedModelMetadata`1.ComputeHtmlEncode
+- uid: System.Web.Mvc.CachedModelMetadata`1.ComputeIsReadOnly
+  href: System.Web.Mvc.CachedModelMetadata`1.yml
+  name: ComputeIsReadOnly()
+  fullName: System.Web.Mvc.CachedModelMetadata<TPrototypeCache>.ComputeIsReadOnly()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedModelMetadata.cs
+    startLine: 448
+  syntax:
+    content:
+      CSharp: protected virtual bool ComputeIsReadOnly()
+    parameters: []
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Web.Mvc.CachedModelMetadata`1.ComputeIsReadOnly
+- uid: System.Web.Mvc.CachedModelMetadata`1.ComputeIsRequired
+  href: System.Web.Mvc.CachedModelMetadata`1.yml
+  name: ComputeIsRequired()
+  fullName: System.Web.Mvc.CachedModelMetadata<TPrototypeCache>.ComputeIsRequired()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedModelMetadata.cs
+    startLine: 453
+  syntax:
+    content:
+      CSharp: protected virtual bool ComputeIsRequired()
+    parameters: []
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Web.Mvc.CachedModelMetadata`1.ComputeIsRequired
+- uid: System.Web.Mvc.CachedModelMetadata`1.ComputeNullDisplayText
+  href: System.Web.Mvc.CachedModelMetadata`1.yml
+  name: ComputeNullDisplayText()
+  fullName: System.Web.Mvc.CachedModelMetadata<TPrototypeCache>.ComputeNullDisplayText()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedModelMetadata.cs
+    startLine: 458
+  syntax:
+    content:
+      CSharp: protected virtual string ComputeNullDisplayText()
+    parameters: []
+    return:
+      id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Web.Mvc.CachedModelMetadata`1.ComputeNullDisplayText
+- uid: System.Web.Mvc.CachedModelMetadata`1.ComputeOrder
+  href: System.Web.Mvc.CachedModelMetadata`1.yml
+  name: ComputeOrder()
+  fullName: System.Web.Mvc.CachedModelMetadata<TPrototypeCache>.ComputeOrder()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedModelMetadata.cs
+    startLine: 463
+  syntax:
+    content:
+      CSharp: protected virtual int ComputeOrder()
+    parameters: []
+    return:
+      id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.Web.Mvc.CachedModelMetadata`1.ComputeOrder
+- uid: System.Web.Mvc.CachedModelMetadata`1.ComputeShortDisplayName
+  href: System.Web.Mvc.CachedModelMetadata`1.yml
+  name: ComputeShortDisplayName()
+  fullName: System.Web.Mvc.CachedModelMetadata<TPrototypeCache>.ComputeShortDisplayName()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedModelMetadata.cs
+    startLine: 468
+  syntax:
+    content:
+      CSharp: protected virtual string ComputeShortDisplayName()
+    parameters: []
+    return:
+      id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Web.Mvc.CachedModelMetadata`1.ComputeShortDisplayName
+- uid: System.Web.Mvc.CachedModelMetadata`1.ComputeShowForDisplay
+  href: System.Web.Mvc.CachedModelMetadata`1.yml
+  name: ComputeShowForDisplay()
+  fullName: System.Web.Mvc.CachedModelMetadata<TPrototypeCache>.ComputeShowForDisplay()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedModelMetadata.cs
+    startLine: 473
+  syntax:
+    content:
+      CSharp: protected virtual bool ComputeShowForDisplay()
+    parameters: []
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Web.Mvc.CachedModelMetadata`1.ComputeShowForDisplay
+- uid: System.Web.Mvc.CachedModelMetadata`1.ComputeShowForEdit
+  href: System.Web.Mvc.CachedModelMetadata`1.yml
+  name: ComputeShowForEdit()
+  fullName: System.Web.Mvc.CachedModelMetadata<TPrototypeCache>.ComputeShowForEdit()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedModelMetadata.cs
+    startLine: 478
+  syntax:
+    content:
+      CSharp: protected virtual bool ComputeShowForEdit()
+    parameters: []
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Web.Mvc.CachedModelMetadata`1.ComputeShowForEdit
+- uid: System.Web.Mvc.CachedModelMetadata`1.ComputeSimpleDisplayText
+  href: System.Web.Mvc.CachedModelMetadata`1.yml
+  name: ComputeSimpleDisplayText()
+  fullName: System.Web.Mvc.CachedModelMetadata<TPrototypeCache>.ComputeSimpleDisplayText()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedModelMetadata.cs
+    startLine: 483
+  syntax:
+    content:
+      CSharp: protected virtual string ComputeSimpleDisplayText()
+    parameters: []
+    return:
+      id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Web.Mvc.CachedModelMetadata`1.ComputeSimpleDisplayText
+- uid: System.Web.Mvc.CachedModelMetadata`1.ComputeTemplateHint
+  href: System.Web.Mvc.CachedModelMetadata`1.yml
+  name: ComputeTemplateHint()
+  fullName: System.Web.Mvc.CachedModelMetadata<TPrototypeCache>.ComputeTemplateHint()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedModelMetadata.cs
+    startLine: 488
+  syntax:
+    content:
+      CSharp: protected virtual string ComputeTemplateHint()
+    parameters: []
+    return:
+      id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Web.Mvc.CachedModelMetadata`1.ComputeTemplateHint
+- uid: System.Web.Mvc.CachedModelMetadata`1.ComputeWatermark
+  href: System.Web.Mvc.CachedModelMetadata`1.yml
+  name: ComputeWatermark()
+  fullName: System.Web.Mvc.CachedModelMetadata<TPrototypeCache>.ComputeWatermark()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedModelMetadata.cs
+    startLine: 493
+  syntax:
+    content:
+      CSharp: protected virtual string ComputeWatermark()
+    parameters: []
+    return:
+      id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Web.Mvc.CachedModelMetadata`1.ComputeWatermark
+- uid: System.Web.Mvc.CachedModelMetadata`1.GetSimpleDisplayText
+  href: System.Web.Mvc.CachedModelMetadata`1.yml
+  name: GetSimpleDisplayText()
+  fullName: System.Web.Mvc.CachedModelMetadata<TPrototypeCache>.GetSimpleDisplayText()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/CachedModelMetadata.cs
+    startLine: 498
+  syntax:
+    content:
+      CSharp: protected override sealed string GetSimpleDisplayText()
+    parameters: []
+    return:
+      id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Web.Mvc.CachedModelMetadata`1.GetSimpleDisplayText

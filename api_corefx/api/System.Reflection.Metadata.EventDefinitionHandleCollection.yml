@@ -6,21 +6,28 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
     startLine: 827
   syntax:
     content:
-      CSharp: public struct EventDefinitionHandleCollection
+      CSharp: 'public struct EventDefinitionHandleCollection : IReadOnlyCollection<EventDefinitionHandle>, IEnumerable<EventDefinitionHandle>, IEnumerable'
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Reflection.Metadata.EventDefinitionHandleCollection
   children:
   - System.Reflection.Metadata.EventDefinitionHandleCollection.Count
   - System.Reflection.Metadata.EventDefinitionHandleCollection.GetEnumerator
+  - System.Reflection.Metadata.EventDefinitionHandleCollection.System#Collections#Generic#IEnumerable{System#Reflection#Metadata#EventDefinitionHandle}#GetEnumerator
+  - System.Reflection.Metadata.EventDefinitionHandleCollection.System#Collections#IEnumerable#GetEnumerator
 - uid: System.Reflection.Metadata.EventDefinitionHandleCollection.Count
   href: System.Reflection.Metadata.EventDefinitionHandleCollection.yml
   name: Count
@@ -37,7 +44,7 @@ items:
     - id: Count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Reflection.Metadata.EventDefinitionHandleCollection.Count
 - uid: System.Reflection.Metadata.EventDefinitionHandleCollection.GetEnumerator
@@ -55,4 +62,48 @@ items:
     parameters: []
     return:
       id: Enumerator
+      type:
+        id: System.Reflection.Metadata.EventDefinitionHandleCollection.Enumerator
+        name: Enumerator
+        href: System.Reflection.Metadata.EventDefinitionHandleCollection.Enumerator.yml
   id: System.Reflection.Metadata.EventDefinitionHandleCollection.GetEnumerator
+- uid: System.Reflection.Metadata.EventDefinitionHandleCollection.System#Collections#Generic#IEnumerable{System#Reflection#Metadata#EventDefinitionHandle}#GetEnumerator
+  href: System.Reflection.Metadata.EventDefinitionHandleCollection.yml
+  name: IEnumerable<EventDefinitionHandle>.GetEnumerator()
+  fullName: System.Reflection.Metadata.EventDefinitionHandleCollection.System.Collections.Generic.IEnumerable<System.Reflection.Metadata.EventDefinitionHandle>.GetEnumerator()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
+    startLine: 864
+  syntax:
+    content:
+      CSharp: IEnumerator<EventDefinitionHandle> IEnumerable<EventDefinitionHandle>.GetEnumerator()
+    parameters: []
+    return:
+      id: IEnumerator
+      type:
+        id: System.Collections.Generic.IEnumerator{System.Reflection.Metadata.EventDefinitionHandle}
+        name: IEnumerator<EventDefinitionHandle>
+        isExternal: true
+  id: System.Reflection.Metadata.EventDefinitionHandleCollection.System#Collections#Generic#IEnumerable{System#Reflection#Metadata#EventDefinitionHandle}#GetEnumerator
+- uid: System.Reflection.Metadata.EventDefinitionHandleCollection.System#Collections#IEnumerable#GetEnumerator
+  href: System.Reflection.Metadata.EventDefinitionHandleCollection.yml
+  name: IEnumerable.GetEnumerator()
+  fullName: System.Reflection.Metadata.EventDefinitionHandleCollection.System.Collections.IEnumerable.GetEnumerator()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
+    startLine: 869
+  syntax:
+    content:
+      CSharp: IEnumerator IEnumerable.GetEnumerator()
+    parameters: []
+    return:
+      id: IEnumerator
+      type:
+        id: System.Collections.IEnumerator
+        name: IEnumerator
+        isExternal: true
+  id: System.Reflection.Metadata.EventDefinitionHandleCollection.System#Collections#IEnumerable#GetEnumerator

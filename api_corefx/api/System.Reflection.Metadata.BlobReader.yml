@@ -6,16 +6,21 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/BlobReader.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/BlobReader.cs
     startLine: 10
   syntax:
     content:
-      CSharp: public unsafe struct BlobReader
+      CSharp: public struct BlobReader
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Reflection.Metadata.BlobReader
   children:
@@ -63,11 +68,12 @@ items:
     parameters:
     - id: buffer
       type:
+        name: byte*
         isExternal: true
     - id: length
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Reflection.Metadata.BlobReader.#ctor(System.Byte*,System.Int32)
 - uid: System.Reflection.Metadata.BlobReader.Length
@@ -86,7 +92,7 @@ items:
     - id: Length
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Reflection.Metadata.BlobReader.Length
 - uid: System.Reflection.Metadata.BlobReader.Offset
@@ -105,7 +111,7 @@ items:
     - id: Offset
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Reflection.Metadata.BlobReader.Offset
 - uid: System.Reflection.Metadata.BlobReader.RemainingBytes
@@ -124,7 +130,7 @@ items:
     - id: RemainingBytes
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Reflection.Metadata.BlobReader.RemainingBytes
 - uid: System.Reflection.Metadata.BlobReader.Reset
@@ -156,6 +162,10 @@ items:
     parameters: []
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.BlobReader.ReadBoolean
 - uid: System.Reflection.Metadata.BlobReader.ReadSByte
   href: System.Reflection.Metadata.BlobReader.yml
@@ -168,10 +178,14 @@ items:
     startLine: 223
   syntax:
     content:
-      CSharp: public SByte ReadSByte()
+      CSharp: public sbyte ReadSByte()
     parameters: []
     return:
       id: SByte
+      type:
+        id: System.SByte
+        name: sbyte
+        isExternal: true
   id: System.Reflection.Metadata.BlobReader.ReadSByte
 - uid: System.Reflection.Metadata.BlobReader.ReadByte
   href: System.Reflection.Metadata.BlobReader.yml
@@ -184,10 +198,14 @@ items:
     startLine: 228
   syntax:
     content:
-      CSharp: public Byte ReadByte()
+      CSharp: public byte ReadByte()
     parameters: []
     return:
       id: Byte
+      type:
+        id: System.Byte
+        name: byte
+        isExternal: true
   id: System.Reflection.Metadata.BlobReader.ReadByte
 - uid: System.Reflection.Metadata.BlobReader.ReadChar
   href: System.Reflection.Metadata.BlobReader.yml
@@ -200,10 +218,14 @@ items:
     startLine: 233
   syntax:
     content:
-      CSharp: public Char ReadChar()
+      CSharp: public char ReadChar()
     parameters: []
     return:
       id: Char
+      type:
+        id: System.Char
+        name: char
+        isExternal: true
   id: System.Reflection.Metadata.BlobReader.ReadChar
 - uid: System.Reflection.Metadata.BlobReader.ReadInt16
   href: System.Reflection.Metadata.BlobReader.yml
@@ -216,10 +238,14 @@ items:
     startLine: 238
   syntax:
     content:
-      CSharp: public Int16 ReadInt16()
+      CSharp: public short ReadInt16()
     parameters: []
     return:
       id: Int16
+      type:
+        id: System.Int16
+        name: short
+        isExternal: true
   id: System.Reflection.Metadata.BlobReader.ReadInt16
 - uid: System.Reflection.Metadata.BlobReader.ReadUInt16
   href: System.Reflection.Metadata.BlobReader.yml
@@ -232,10 +258,14 @@ items:
     startLine: 243
   syntax:
     content:
-      CSharp: public UInt16 ReadUInt16()
+      CSharp: public ushort ReadUInt16()
     parameters: []
     return:
       id: UInt16
+      type:
+        id: System.UInt16
+        name: ushort
+        isExternal: true
   id: System.Reflection.Metadata.BlobReader.ReadUInt16
 - uid: System.Reflection.Metadata.BlobReader.ReadInt32
   href: System.Reflection.Metadata.BlobReader.yml
@@ -248,10 +278,14 @@ items:
     startLine: 248
   syntax:
     content:
-      CSharp: public Int32 ReadInt32()
+      CSharp: public int ReadInt32()
     parameters: []
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: System.Reflection.Metadata.BlobReader.ReadInt32
 - uid: System.Reflection.Metadata.BlobReader.ReadUInt32
   href: System.Reflection.Metadata.BlobReader.yml
@@ -264,10 +298,14 @@ items:
     startLine: 253
   syntax:
     content:
-      CSharp: public UInt32 ReadUInt32()
+      CSharp: public uint ReadUInt32()
     parameters: []
     return:
       id: UInt32
+      type:
+        id: System.UInt32
+        name: uint
+        isExternal: true
   id: System.Reflection.Metadata.BlobReader.ReadUInt32
 - uid: System.Reflection.Metadata.BlobReader.ReadInt64
   href: System.Reflection.Metadata.BlobReader.yml
@@ -280,10 +318,14 @@ items:
     startLine: 258
   syntax:
     content:
-      CSharp: public Int64 ReadInt64()
+      CSharp: public long ReadInt64()
     parameters: []
     return:
       id: Int64
+      type:
+        id: System.Int64
+        name: long
+        isExternal: true
   id: System.Reflection.Metadata.BlobReader.ReadInt64
 - uid: System.Reflection.Metadata.BlobReader.ReadUInt64
   href: System.Reflection.Metadata.BlobReader.yml
@@ -296,10 +338,14 @@ items:
     startLine: 263
   syntax:
     content:
-      CSharp: public UInt64 ReadUInt64()
+      CSharp: public ulong ReadUInt64()
     parameters: []
     return:
       id: UInt64
+      type:
+        id: System.UInt64
+        name: ulong
+        isExternal: true
   id: System.Reflection.Metadata.BlobReader.ReadUInt64
 - uid: System.Reflection.Metadata.BlobReader.ReadSingle
   href: System.Reflection.Metadata.BlobReader.yml
@@ -312,10 +358,14 @@ items:
     startLine: 268
   syntax:
     content:
-      CSharp: public Single ReadSingle()
+      CSharp: public float ReadSingle()
     parameters: []
     return:
       id: Single
+      type:
+        id: System.Single
+        name: float
+        isExternal: true
   id: System.Reflection.Metadata.BlobReader.ReadSingle
 - uid: System.Reflection.Metadata.BlobReader.ReadDouble
   href: System.Reflection.Metadata.BlobReader.yml
@@ -328,10 +378,14 @@ items:
     startLine: 273
   syntax:
     content:
-      CSharp: public Double ReadDouble()
+      CSharp: public double ReadDouble()
     parameters: []
     return:
       id: Double
+      type:
+        id: System.Double
+        name: double
+        isExternal: true
   id: System.Reflection.Metadata.BlobReader.ReadDouble
 - uid: System.Reflection.Metadata.BlobReader.ReadSignatureHeader
   href: System.Reflection.Metadata.BlobReader.yml
@@ -348,6 +402,10 @@ items:
     parameters: []
     return:
       id: SignatureHeader
+      type:
+        id: System.Reflection.Metadata.SignatureHeader
+        name: SignatureHeader
+        href: System.Reflection.Metadata.SignatureHeader.yml
   id: System.Reflection.Metadata.BlobReader.ReadSignatureHeader
 - uid: System.Reflection.Metadata.BlobReader.ReadUTF8(System.Int32)
   href: System.Reflection.Metadata.BlobReader.yml
@@ -366,11 +424,15 @@ items:
     - id: byteCount
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The number of bytes to read.
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
       description: The string.
   id: System.Reflection.Metadata.BlobReader.ReadUTF8(System.Int32)
 - uid: System.Reflection.Metadata.BlobReader.ReadUTF16(System.Int32)
@@ -390,11 +452,15 @@ items:
     - id: byteCount
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The number of bytes to read.
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
       description: The string.
   id: System.Reflection.Metadata.BlobReader.ReadUTF16(System.Int32)
 - uid: System.Reflection.Metadata.BlobReader.ReadBytes(System.Int32)
@@ -414,10 +480,14 @@ items:
     - id: byteCount
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The number of bytes to read.
     return:
+      type:
+        id: System.Array
+        name: byte[]
+        isExternal: true
       description: The byte array.
   id: System.Reflection.Metadata.BlobReader.ReadBytes(System.Int32)
 - uid: System.Reflection.Metadata.BlobReader.TryReadCompressedInteger(System.Int32@)
@@ -440,11 +510,15 @@ items:
     - id: value
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The value of the compressed integer that was read.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: true if the value was read successfully. false if the data at the current position was not a valid compressed integer.
   id: System.Reflection.Metadata.BlobReader.TryReadCompressedInteger(System.Int32@)
 - uid: System.Reflection.Metadata.BlobReader.ReadCompressedInteger
@@ -466,6 +540,10 @@ items:
     parameters: []
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: The value of the compressed integer that was read.
   id: System.Reflection.Metadata.BlobReader.ReadCompressedInteger
 - uid: System.Reflection.Metadata.BlobReader.TryReadCompressedSignedInteger(System.Int32@)
@@ -488,11 +566,15 @@ items:
     - id: value
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The value of the compressed integer that was read.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: true if the value was read successfully. false if the data at the current position was not a valid compressed integer.
   id: System.Reflection.Metadata.BlobReader.TryReadCompressedSignedInteger(System.Int32@)
 - uid: System.Reflection.Metadata.BlobReader.ReadCompressedSignedInteger
@@ -514,6 +596,10 @@ items:
     parameters: []
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: The value of the compressed integer that was read.
   id: System.Reflection.Metadata.BlobReader.ReadCompressedSignedInteger
 - uid: System.Reflection.Metadata.BlobReader.ReadSerializationTypeCode
@@ -524,7 +610,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/BlobReader.cs
-    startLine: 437
+    startLine: 438
   summary: Reads type code encoded in a serialized custom attribute value.
   syntax:
     content:
@@ -532,6 +618,11 @@ items:
     parameters: []
     return:
       id: SerializationTypeCode
+      type:
+        id: System.Reflection.Metadata.SerializationTypeCode
+        name: SerializationTypeCode
+        href: System.Reflection.Metadata.SerializationTypeCode.yml
+      description: '[System.Reflection.Metadata.SerializationTypeCode.Invalid](System.Reflection.Metadata.SerializationTypeCode.yml) if the encoding is invalid.'
   id: System.Reflection.Metadata.BlobReader.ReadSerializationTypeCode
 - uid: System.Reflection.Metadata.BlobReader.ReadSignatureTypeCode
   href: System.Reflection.Metadata.BlobReader.yml
@@ -541,7 +632,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/BlobReader.cs
-    startLine: 451
+    startLine: 453
   summary: Reads type code encoded in a signature.
   syntax:
     content:
@@ -549,6 +640,11 @@ items:
     parameters: []
     return:
       id: SignatureTypeCode
+      type:
+        id: System.Reflection.Metadata.SignatureTypeCode
+        name: SignatureTypeCode
+        href: System.Reflection.Metadata.SignatureTypeCode.yml
+      description: '[System.Reflection.Metadata.SignatureTypeCode.Invalid](System.Reflection.Metadata.SignatureTypeCode.yml) if the encoding is invalid.'
   id: System.Reflection.Metadata.BlobReader.ReadSignatureTypeCode
 - uid: System.Reflection.Metadata.BlobReader.ReadSerializedString
   href: System.Reflection.Metadata.BlobReader.yml
@@ -558,7 +654,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/BlobReader.cs
-    startLine: 477
+    startLine: 480
   summary: >-
     Reads a string encoded as a compressed integer containing its length followed by
 
@@ -569,6 +665,10 @@ items:
     parameters: []
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
       description: String value or null.
   id: System.Reflection.Metadata.BlobReader.ReadSerializedString
 - uid: System.Reflection.Metadata.BlobReader.ReadTypeHandle
@@ -579,13 +679,17 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/BlobReader.cs
-    startLine: 499
-  summary: Reads a type handle encoded in a signature as (CLASS | VALUETYPE) TypeDefOrRefOrSpecEncoded.
+    startLine: 502
+  summary: Reads a type handle encoded in a signature as TypeDefOrRefOrSpecEncoded (see ECMA-335 II.23.2.8).
   syntax:
     content:
-      CSharp: public Handle ReadTypeHandle()
+      CSharp: public EntityHandle ReadTypeHandle()
     parameters: []
     return:
-      id: Handle
+      id: EntityHandle
+      type:
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
       description: The handle or nil if the encoding is invalid.
   id: System.Reflection.Metadata.BlobReader.ReadTypeHandle

@@ -6,21 +6,22 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Differencing/Edit.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Differencing/Edit.cs
     startLine: 12
   summary: Represents an edit operation on a tree or a sequence of nodes.
   syntax:
     content:
-      CSharp: public struct Edit<TNode>
+      CSharp: 'public struct Edit<TNode> : IEquatable<Edit<TNode>>'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: Microsoft.CodeAnalysis.Differencing.Edit`1
   children:
@@ -135,10 +136,14 @@ items:
     - id: obj
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.Differencing.Edit`1.Equals(System.Object)
 - uid: Microsoft.CodeAnalysis.Differencing.Edit`1.Equals(Microsoft.CodeAnalysis.Differencing.Edit{`0})
   href: Microsoft.CodeAnalysis.Differencing.Edit`1.yml
@@ -156,10 +161,14 @@ items:
     - id: other
       type:
         id: Microsoft.CodeAnalysis.Differencing.Edit`1
-        name: Edit
+        name: Edit<TNode>
         href: Microsoft.CodeAnalysis.Differencing.Edit`1.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.Differencing.Edit`1.Equals(Microsoft.CodeAnalysis.Differencing.Edit{`0})
 - uid: Microsoft.CodeAnalysis.Differencing.Edit`1.GetHashCode
   href: Microsoft.CodeAnalysis.Differencing.Edit`1.yml
@@ -176,4 +185,8 @@ items:
     parameters: []
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: Microsoft.CodeAnalysis.Differencing.Edit`1.GetHashCode

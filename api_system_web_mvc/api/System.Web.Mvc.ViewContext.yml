@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/ViewContext.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/ViewContext.cs
     startLine: 12
   syntax:
     content:
-      CSharp: public class ViewContext
+      CSharp: 'public class ViewContext : ControllerContext'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.Mvc.ControllerContext
     name: ControllerContext
@@ -86,7 +87,7 @@ items:
     - id: writer
       type:
         id: System.IO.TextWriter
-        name: System.IO.TextWriter
+        name: TextWriter
         isExternal: true
   id: System.Web.Mvc.ViewContext.#ctor(System.Web.Mvc.ControllerContext,System.Web.Mvc.IView,System.Web.Mvc.ViewDataDictionary,System.Web.Mvc.TempDataDictionary,System.IO.TextWriter)
 - uid: System.Web.Mvc.ViewContext.ClientValidationEnabled
@@ -105,7 +106,7 @@ items:
     - id: ClientValidationEnabled
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.ViewContext.ClientValidationEnabled
 - uid: System.Web.Mvc.ViewContext.FormContext
@@ -162,7 +163,7 @@ items:
     - id: UnobtrusiveJavaScriptEnabled
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.ViewContext.UnobtrusiveJavaScriptEnabled
 - uid: System.Web.Mvc.ViewContext.ValidationSummaryMessageElement
@@ -185,7 +186,7 @@ items:
     - id: ValidationSummaryMessageElement
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.ViewContext.ValidationSummaryMessageElement
 - uid: System.Web.Mvc.ViewContext.ValidationMessageElement
@@ -208,7 +209,7 @@ items:
     - id: ValidationMessageElement
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.ViewContext.ValidationMessageElement
 - uid: System.Web.Mvc.ViewContext.View
@@ -245,6 +246,7 @@ items:
     parameters:
     - id: ViewBag
       type:
+        name: dynamic
         isExternal: true
   id: System.Web.Mvc.ViewContext.ViewBag
 - uid: System.Web.Mvc.ViewContext.ViewData
@@ -282,7 +284,7 @@ items:
     - id: Writer
       type:
         id: System.IO.TextWriter
-        name: System.IO.TextWriter
+        name: TextWriter
         isExternal: true
   id: System.Web.Mvc.ViewContext.Writer
 - uid: System.Web.Mvc.ViewContext.OutputClientValidation

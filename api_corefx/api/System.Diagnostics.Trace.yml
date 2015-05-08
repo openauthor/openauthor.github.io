@@ -6,8 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/Trace.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Diagnostics.TraceSource/src/System/Diagnostics/Trace.cs
     startLine: 12
   syntax:
@@ -15,7 +17,7 @@ items:
       CSharp: public sealed class Trace
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Diagnostics.Trace
   children:
@@ -91,7 +93,7 @@ items:
     - id: AutoFlush
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Diagnostics.Trace.AutoFlush
 - uid: System.Diagnostics.Trace.UseGlobalLock
@@ -110,7 +112,7 @@ items:
     - id: UseGlobalLock
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Diagnostics.Trace.UseGlobalLock
 - uid: System.Diagnostics.Trace.IndentLevel
@@ -129,7 +131,7 @@ items:
     - id: IndentLevel
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Diagnostics.Trace.IndentLevel
 - uid: System.Diagnostics.Trace.IndentSize
@@ -148,7 +150,7 @@ items:
     - id: IndentSize
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Diagnostics.Trace.IndentSize
 - uid: System.Diagnostics.Trace.Flush
@@ -162,7 +164,7 @@ items:
     startLine: 87
   syntax:
     content:
-      CSharp: '[System.Diagnostics.Conditional("TRACE")] public static void Flush()'
+      CSharp: public static void Flush()
     parameters: []
   id: System.Diagnostics.Trace.Flush
 - uid: System.Diagnostics.Trace.Close
@@ -176,7 +178,7 @@ items:
     startLine: 97
   syntax:
     content:
-      CSharp: '[System.Diagnostics.Conditional("TRACE")] public static void Close()'
+      CSharp: public static void Close()
     parameters: []
   id: System.Diagnostics.Trace.Close
 - uid: System.Diagnostics.Trace.Assert(System.Boolean)
@@ -190,12 +192,12 @@ items:
     startLine: 108
   syntax:
     content:
-      CSharp: '[System.Diagnostics.Conditional("TRACE")] public static void Assert(bool condition)'
+      CSharp: public static void Assert(bool condition)
     parameters:
     - id: condition
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Diagnostics.Trace.Assert(System.Boolean)
 - uid: System.Diagnostics.Trace.Assert(System.Boolean,System.String)
@@ -209,17 +211,17 @@ items:
     startLine: 118
   syntax:
     content:
-      CSharp: '[System.Diagnostics.Conditional("TRACE")] public static void Assert(bool condition, string message)'
+      CSharp: public static void Assert(bool condition, string message)
     parameters:
     - id: condition
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.Trace.Assert(System.Boolean,System.String)
 - uid: System.Diagnostics.Trace.Assert(System.Boolean,System.String,System.String)
@@ -233,22 +235,22 @@ items:
     startLine: 128
   syntax:
     content:
-      CSharp: '[System.Diagnostics.Conditional("TRACE")] public static void Assert(bool condition, string message, string detailMessage)'
+      CSharp: public static void Assert(bool condition, string message, string detailMessage)
     parameters:
     - id: condition
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: detailMessage
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.Trace.Assert(System.Boolean,System.String,System.String)
 - uid: System.Diagnostics.Trace.Fail(System.String)
@@ -262,12 +264,12 @@ items:
     startLine: 137
   syntax:
     content:
-      CSharp: '[System.Diagnostics.Conditional("TRACE")] public static void Fail(string message)'
+      CSharp: public static void Fail(string message)
     parameters:
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.Trace.Fail(System.String)
 - uid: System.Diagnostics.Trace.Fail(System.String,System.String)
@@ -281,17 +283,17 @@ items:
     startLine: 146
   syntax:
     content:
-      CSharp: '[System.Diagnostics.Conditional("TRACE")] public static void Fail(string message, string detailMessage)'
+      CSharp: public static void Fail(string message, string detailMessage)
     parameters:
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: detailMessage
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.Trace.Fail(System.String,System.String)
 - uid: System.Diagnostics.Trace.Refresh
@@ -319,12 +321,12 @@ items:
     startLine: 159
   syntax:
     content:
-      CSharp: '[System.Diagnostics.Conditional("TRACE")] public static void TraceInformation(string message)'
+      CSharp: public static void TraceInformation(string message)
     parameters:
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.Trace.TraceInformation(System.String)
 - uid: System.Diagnostics.Trace.TraceInformation(System.String,System.Object[])
@@ -338,17 +340,17 @@ items:
     startLine: 165
   syntax:
     content:
-      CSharp: '[System.Diagnostics.Conditional("TRACE")] public static void TraceInformation(string format, params object[] args)'
+      CSharp: public static void TraceInformation(string format, params object[] args)
     parameters:
     - id: format
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: args
       type:
         id: System.Array
-        name: System.Array
+        name: object[]
         isExternal: true
   id: System.Diagnostics.Trace.TraceInformation(System.String,System.Object[])
 - uid: System.Diagnostics.Trace.TraceWarning(System.String)
@@ -362,12 +364,12 @@ items:
     startLine: 171
   syntax:
     content:
-      CSharp: '[System.Diagnostics.Conditional("TRACE")] public static void TraceWarning(string message)'
+      CSharp: public static void TraceWarning(string message)
     parameters:
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.Trace.TraceWarning(System.String)
 - uid: System.Diagnostics.Trace.TraceWarning(System.String,System.Object[])
@@ -381,17 +383,17 @@ items:
     startLine: 177
   syntax:
     content:
-      CSharp: '[System.Diagnostics.Conditional("TRACE")] public static void TraceWarning(string format, params object[] args)'
+      CSharp: public static void TraceWarning(string format, params object[] args)
     parameters:
     - id: format
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: args
       type:
         id: System.Array
-        name: System.Array
+        name: object[]
         isExternal: true
   id: System.Diagnostics.Trace.TraceWarning(System.String,System.Object[])
 - uid: System.Diagnostics.Trace.TraceError(System.String)
@@ -405,12 +407,12 @@ items:
     startLine: 183
   syntax:
     content:
-      CSharp: '[System.Diagnostics.Conditional("TRACE")] public static void TraceError(string message)'
+      CSharp: public static void TraceError(string message)
     parameters:
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.Trace.TraceError(System.String)
 - uid: System.Diagnostics.Trace.TraceError(System.String,System.Object[])
@@ -424,17 +426,17 @@ items:
     startLine: 189
   syntax:
     content:
-      CSharp: '[System.Diagnostics.Conditional("TRACE")] public static void TraceError(string format, params object[] args)'
+      CSharp: public static void TraceError(string format, params object[] args)
     parameters:
     - id: format
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: args
       type:
         id: System.Array
-        name: System.Array
+        name: object[]
         isExternal: true
   id: System.Diagnostics.Trace.TraceError(System.String,System.Object[])
 - uid: System.Diagnostics.Trace.Write(System.String)
@@ -448,12 +450,12 @@ items:
     startLine: 199
   syntax:
     content:
-      CSharp: '[System.Diagnostics.Conditional("TRACE")] public static void Write(string message)'
+      CSharp: public static void Write(string message)
     parameters:
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.Trace.Write(System.String)
 - uid: System.Diagnostics.Trace.Write(System.Object)
@@ -467,12 +469,12 @@ items:
     startLine: 209
   syntax:
     content:
-      CSharp: '[System.Diagnostics.Conditional("TRACE")] public static void Write(object value)'
+      CSharp: public static void Write(object value)
     parameters:
     - id: value
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.Diagnostics.Trace.Write(System.Object)
 - uid: System.Diagnostics.Trace.Write(System.String,System.String)
@@ -486,17 +488,17 @@ items:
     startLine: 219
   syntax:
     content:
-      CSharp: '[System.Diagnostics.Conditional("TRACE")] public static void Write(string message, string category)'
+      CSharp: public static void Write(string message, string category)
     parameters:
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: category
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.Trace.Write(System.String,System.String)
 - uid: System.Diagnostics.Trace.Write(System.Object,System.String)
@@ -510,17 +512,17 @@ items:
     startLine: 229
   syntax:
     content:
-      CSharp: '[System.Diagnostics.Conditional("TRACE")] public static void Write(object value, string category)'
+      CSharp: public static void Write(object value, string category)
     parameters:
     - id: value
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     - id: category
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.Trace.Write(System.Object,System.String)
 - uid: System.Diagnostics.Trace.WriteLine(System.String)
@@ -534,12 +536,12 @@ items:
     startLine: 240
   syntax:
     content:
-      CSharp: '[System.Diagnostics.Conditional("TRACE")] public static void WriteLine(string message)'
+      CSharp: public static void WriteLine(string message)
     parameters:
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.Trace.WriteLine(System.String)
 - uid: System.Diagnostics.Trace.WriteLine(System.Object)
@@ -553,12 +555,12 @@ items:
     startLine: 250
   syntax:
     content:
-      CSharp: '[System.Diagnostics.Conditional("TRACE")] public static void WriteLine(object value)'
+      CSharp: public static void WriteLine(object value)
     parameters:
     - id: value
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.Diagnostics.Trace.WriteLine(System.Object)
 - uid: System.Diagnostics.Trace.WriteLine(System.String,System.String)
@@ -572,17 +574,17 @@ items:
     startLine: 262
   syntax:
     content:
-      CSharp: '[System.Diagnostics.Conditional("TRACE")] public static void WriteLine(string message, string category)'
+      CSharp: public static void WriteLine(string message, string category)
     parameters:
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: category
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.Trace.WriteLine(System.String,System.String)
 - uid: System.Diagnostics.Trace.WriteLine(System.Object,System.String)
@@ -596,17 +598,17 @@ items:
     startLine: 273
   syntax:
     content:
-      CSharp: '[System.Diagnostics.Conditional("TRACE")] public static void WriteLine(object value, string category)'
+      CSharp: public static void WriteLine(object value, string category)
     parameters:
     - id: value
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     - id: category
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.Trace.WriteLine(System.Object,System.String)
 - uid: System.Diagnostics.Trace.WriteIf(System.Boolean,System.String)
@@ -620,17 +622,17 @@ items:
     startLine: 283
   syntax:
     content:
-      CSharp: '[System.Diagnostics.Conditional("TRACE")] public static void WriteIf(bool condition, string message)'
+      CSharp: public static void WriteIf(bool condition, string message)
     parameters:
     - id: condition
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.Trace.WriteIf(System.Boolean,System.String)
 - uid: System.Diagnostics.Trace.WriteIf(System.Boolean,System.Object)
@@ -644,17 +646,17 @@ items:
     startLine: 294
   syntax:
     content:
-      CSharp: '[System.Diagnostics.Conditional("TRACE")] public static void WriteIf(bool condition, object value)'
+      CSharp: public static void WriteIf(bool condition, object value)
     parameters:
     - id: condition
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     - id: value
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.Diagnostics.Trace.WriteIf(System.Boolean,System.Object)
 - uid: System.Diagnostics.Trace.WriteIf(System.Boolean,System.String,System.String)
@@ -668,22 +670,22 @@ items:
     startLine: 304
   syntax:
     content:
-      CSharp: '[System.Diagnostics.Conditional("TRACE")] public static void WriteIf(bool condition, string message, string category)'
+      CSharp: public static void WriteIf(bool condition, string message, string category)
     parameters:
     - id: condition
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: category
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.Trace.WriteIf(System.Boolean,System.String,System.String)
 - uid: System.Diagnostics.Trace.WriteIf(System.Boolean,System.Object,System.String)
@@ -697,22 +699,22 @@ items:
     startLine: 315
   syntax:
     content:
-      CSharp: '[System.Diagnostics.Conditional("TRACE")] public static void WriteIf(bool condition, object value, string category)'
+      CSharp: public static void WriteIf(bool condition, object value, string category)
     parameters:
     - id: condition
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     - id: value
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     - id: category
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.Trace.WriteIf(System.Boolean,System.Object,System.String)
 - uid: System.Diagnostics.Trace.WriteLineIf(System.Boolean,System.String)
@@ -726,17 +728,17 @@ items:
     startLine: 327
   syntax:
     content:
-      CSharp: '[System.Diagnostics.Conditional("TRACE")] public static void WriteLineIf(bool condition, string message)'
+      CSharp: public static void WriteLineIf(bool condition, string message)
     parameters:
     - id: condition
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.Trace.WriteLineIf(System.Boolean,System.String)
 - uid: System.Diagnostics.Trace.WriteLineIf(System.Boolean,System.Object)
@@ -750,17 +752,17 @@ items:
     startLine: 340
   syntax:
     content:
-      CSharp: '[System.Diagnostics.Conditional("TRACE")] public static void WriteLineIf(bool condition, object value)'
+      CSharp: public static void WriteLineIf(bool condition, object value)
     parameters:
     - id: condition
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     - id: value
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.Diagnostics.Trace.WriteLineIf(System.Boolean,System.Object)
 - uid: System.Diagnostics.Trace.WriteLineIf(System.Boolean,System.String,System.String)
@@ -774,22 +776,22 @@ items:
     startLine: 351
   syntax:
     content:
-      CSharp: '[System.Diagnostics.Conditional("TRACE")] public static void WriteLineIf(bool condition, string message, string category)'
+      CSharp: public static void WriteLineIf(bool condition, string message, string category)
     parameters:
     - id: condition
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     - id: message
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: category
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.Trace.WriteLineIf(System.Boolean,System.String,System.String)
 - uid: System.Diagnostics.Trace.WriteLineIf(System.Boolean,System.Object,System.String)
@@ -803,22 +805,22 @@ items:
     startLine: 363
   syntax:
     content:
-      CSharp: '[System.Diagnostics.Conditional("TRACE")] public static void WriteLineIf(bool condition, object value, string category)'
+      CSharp: public static void WriteLineIf(bool condition, object value, string category)
     parameters:
     - id: condition
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     - id: value
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     - id: category
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Diagnostics.Trace.WriteLineIf(System.Boolean,System.Object,System.String)
 - uid: System.Diagnostics.Trace.Indent
@@ -832,7 +834,7 @@ items:
     startLine: 372
   syntax:
     content:
-      CSharp: '[System.Diagnostics.Conditional("TRACE")] public static void Indent()'
+      CSharp: public static void Indent()
     parameters: []
   id: System.Diagnostics.Trace.Indent
 - uid: System.Diagnostics.Trace.Unindent
@@ -846,6 +848,6 @@ items:
     startLine: 381
   syntax:
     content:
-      CSharp: '[System.Diagnostics.Conditional("TRACE")] public static void Unindent()'
+      CSharp: public static void Unindent()
     parameters: []
   id: System.Diagnostics.Trace.Unindent

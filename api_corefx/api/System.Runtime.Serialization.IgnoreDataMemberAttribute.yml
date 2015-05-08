@@ -6,15 +6,20 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Runtime.Serialization.Primitives/src/System/Runtime/Serialization/IgnoreDataMemberAttribute.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Runtime.Serialization.Primitives/src/System/Runtime/Serialization/IgnoreDataMemberAttribute.cs
     startLine: 8
   syntax:
     content:
-      CSharp: public sealed class IgnoreDataMemberAttribute
+      CSharp: 'public sealed class IgnoreDataMemberAttribute : Attribute, _Attribute'
   inheritance:
-  - id: Attribute
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.Attribute
     name: Attribute
     isExternal: true
   id: System.Runtime.Serialization.IgnoreDataMemberAttribute

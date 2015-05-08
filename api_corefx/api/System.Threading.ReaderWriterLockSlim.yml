@@ -1,0 +1,549 @@
+items:
+- uid: System.Threading.ReaderWriterLockSlim
+  href: System.Threading.ReaderWriterLockSlim.yml
+  name: ReaderWriterLockSlim
+  fullName: System.Threading.ReaderWriterLockSlim
+  type: Class
+  source:
+    remote: &o0
+      path: src/System.Threading/src/System/Threading/ReaderWriterLockSlim.cs
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
+    path: src/System.Threading/src/System/Threading/ReaderWriterLockSlim.cs
+    startLine: 52
+  summary: >-
+    A reader-writer lock implementation that is intended to be simple, yet very
+
+    efficient.  In particular only 1 interlocked operation is taken for any lock
+
+    operation (we use spin locks to achieve this).  The spin lock is never held
+
+    for more than a few instructions (in particular, we never call event APIs
+
+    or in fact any non-trivial API while holding the spin lock).
+  syntax:
+    content:
+      CSharp: 'public class ReaderWriterLockSlim : IDisposable'
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  id: System.Threading.ReaderWriterLockSlim
+  children:
+  - System.Threading.ReaderWriterLockSlim.#ctor
+  - System.Threading.ReaderWriterLockSlim.#ctor(System.Threading.LockRecursionPolicy)
+  - System.Threading.ReaderWriterLockSlim.EnterReadLock
+  - System.Threading.ReaderWriterLockSlim.TryEnterReadLock(System.TimeSpan)
+  - System.Threading.ReaderWriterLockSlim.TryEnterReadLock(System.Int32)
+  - System.Threading.ReaderWriterLockSlim.EnterWriteLock
+  - System.Threading.ReaderWriterLockSlim.TryEnterWriteLock(System.TimeSpan)
+  - System.Threading.ReaderWriterLockSlim.TryEnterWriteLock(System.Int32)
+  - System.Threading.ReaderWriterLockSlim.EnterUpgradeableReadLock
+  - System.Threading.ReaderWriterLockSlim.TryEnterUpgradeableReadLock(System.TimeSpan)
+  - System.Threading.ReaderWriterLockSlim.TryEnterUpgradeableReadLock(System.Int32)
+  - System.Threading.ReaderWriterLockSlim.ExitReadLock
+  - System.Threading.ReaderWriterLockSlim.ExitWriteLock
+  - System.Threading.ReaderWriterLockSlim.ExitUpgradeableReadLock
+  - System.Threading.ReaderWriterLockSlim.Dispose
+  - System.Threading.ReaderWriterLockSlim.IsReadLockHeld
+  - System.Threading.ReaderWriterLockSlim.IsUpgradeableReadLockHeld
+  - System.Threading.ReaderWriterLockSlim.IsWriteLockHeld
+  - System.Threading.ReaderWriterLockSlim.RecursionPolicy
+  - System.Threading.ReaderWriterLockSlim.CurrentReadCount
+  - System.Threading.ReaderWriterLockSlim.RecursiveReadCount
+  - System.Threading.ReaderWriterLockSlim.RecursiveUpgradeCount
+  - System.Threading.ReaderWriterLockSlim.RecursiveWriteCount
+  - System.Threading.ReaderWriterLockSlim.WaitingReadCount
+  - System.Threading.ReaderWriterLockSlim.WaitingUpgradeCount
+  - System.Threading.ReaderWriterLockSlim.WaitingWriteCount
+- uid: System.Threading.ReaderWriterLockSlim.#ctor
+  href: System.Threading.ReaderWriterLockSlim.yml
+  name: ReaderWriterLockSlim()
+  fullName: System.Threading.ReaderWriterLockSlim.ReaderWriterLockSlim()
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/ReaderWriterLockSlim.cs
+    startLine: 134
+  syntax:
+    content:
+      CSharp: 'public ReaderWriterLockSlim(): this (LockRecursionPolicy.NoRecursion)'
+    parameters: []
+  id: System.Threading.ReaderWriterLockSlim.#ctor
+- uid: System.Threading.ReaderWriterLockSlim.#ctor(System.Threading.LockRecursionPolicy)
+  href: System.Threading.ReaderWriterLockSlim.yml
+  name: ReaderWriterLockSlim(LockRecursionPolicy)
+  fullName: System.Threading.ReaderWriterLockSlim.ReaderWriterLockSlim(System.Threading.LockRecursionPolicy)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/ReaderWriterLockSlim.cs
+    startLine: 139
+  syntax:
+    content:
+      CSharp: public ReaderWriterLockSlim(LockRecursionPolicy recursionPolicy)
+    parameters:
+    - id: recursionPolicy
+      type:
+        id: System.Threading.LockRecursionPolicy
+        name: LockRecursionPolicy
+        href: System.Threading.LockRecursionPolicy.yml
+  id: System.Threading.ReaderWriterLockSlim.#ctor(System.Threading.LockRecursionPolicy)
+- uid: System.Threading.ReaderWriterLockSlim.EnterReadLock
+  href: System.Threading.ReaderWriterLockSlim.yml
+  name: EnterReadLock()
+  fullName: System.Threading.ReaderWriterLockSlim.EnterReadLock()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/ReaderWriterLockSlim.cs
+    startLine: 204
+  syntax:
+    content:
+      CSharp: public void EnterReadLock()
+    parameters: []
+  id: System.Threading.ReaderWriterLockSlim.EnterReadLock
+- uid: System.Threading.ReaderWriterLockSlim.TryEnterReadLock(System.TimeSpan)
+  href: System.Threading.ReaderWriterLockSlim.yml
+  name: TryEnterReadLock(TimeSpan)
+  fullName: System.Threading.ReaderWriterLockSlim.TryEnterReadLock(System.TimeSpan)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/ReaderWriterLockSlim.cs
+    startLine: 265
+  syntax:
+    content:
+      CSharp: public bool TryEnterReadLock(TimeSpan timeout)
+    parameters:
+    - id: timeout
+      type:
+        id: System.TimeSpan
+        name: TimeSpan
+        isExternal: true
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Threading.ReaderWriterLockSlim.TryEnterReadLock(System.TimeSpan)
+- uid: System.Threading.ReaderWriterLockSlim.TryEnterReadLock(System.Int32)
+  href: System.Threading.ReaderWriterLockSlim.yml
+  name: TryEnterReadLock(int)
+  fullName: System.Threading.ReaderWriterLockSlim.TryEnterReadLock(int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/ReaderWriterLockSlim.cs
+    startLine: 270
+  syntax:
+    content:
+      CSharp: public bool TryEnterReadLock(int millisecondsTimeout)
+    parameters:
+    - id: millisecondsTimeout
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Threading.ReaderWriterLockSlim.TryEnterReadLock(System.Int32)
+- uid: System.Threading.ReaderWriterLockSlim.EnterWriteLock
+  href: System.Threading.ReaderWriterLockSlim.yml
+  name: EnterWriteLock()
+  fullName: System.Threading.ReaderWriterLockSlim.EnterWriteLock()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/ReaderWriterLockSlim.cs
+    startLine: 404
+  syntax:
+    content:
+      CSharp: public void EnterWriteLock()
+    parameters: []
+  id: System.Threading.ReaderWriterLockSlim.EnterWriteLock
+- uid: System.Threading.ReaderWriterLockSlim.TryEnterWriteLock(System.TimeSpan)
+  href: System.Threading.ReaderWriterLockSlim.yml
+  name: TryEnterWriteLock(TimeSpan)
+  fullName: System.Threading.ReaderWriterLockSlim.TryEnterWriteLock(System.TimeSpan)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/ReaderWriterLockSlim.cs
+    startLine: 409
+  syntax:
+    content:
+      CSharp: public bool TryEnterWriteLock(TimeSpan timeout)
+    parameters:
+    - id: timeout
+      type:
+        id: System.TimeSpan
+        name: TimeSpan
+        isExternal: true
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Threading.ReaderWriterLockSlim.TryEnterWriteLock(System.TimeSpan)
+- uid: System.Threading.ReaderWriterLockSlim.TryEnterWriteLock(System.Int32)
+  href: System.Threading.ReaderWriterLockSlim.yml
+  name: TryEnterWriteLock(int)
+  fullName: System.Threading.ReaderWriterLockSlim.TryEnterWriteLock(int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/ReaderWriterLockSlim.cs
+    startLine: 414
+  syntax:
+    content:
+      CSharp: public bool TryEnterWriteLock(int millisecondsTimeout)
+    parameters:
+    - id: millisecondsTimeout
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Threading.ReaderWriterLockSlim.TryEnterWriteLock(System.Int32)
+- uid: System.Threading.ReaderWriterLockSlim.EnterUpgradeableReadLock
+  href: System.Threading.ReaderWriterLockSlim.yml
+  name: EnterUpgradeableReadLock()
+  fullName: System.Threading.ReaderWriterLockSlim.EnterUpgradeableReadLock()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/ReaderWriterLockSlim.cs
+    startLine: 587
+  syntax:
+    content:
+      CSharp: public void EnterUpgradeableReadLock()
+    parameters: []
+  id: System.Threading.ReaderWriterLockSlim.EnterUpgradeableReadLock
+- uid: System.Threading.ReaderWriterLockSlim.TryEnterUpgradeableReadLock(System.TimeSpan)
+  href: System.Threading.ReaderWriterLockSlim.yml
+  name: TryEnterUpgradeableReadLock(TimeSpan)
+  fullName: System.Threading.ReaderWriterLockSlim.TryEnterUpgradeableReadLock(System.TimeSpan)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/ReaderWriterLockSlim.cs
+    startLine: 592
+  syntax:
+    content:
+      CSharp: public bool TryEnterUpgradeableReadLock(TimeSpan timeout)
+    parameters:
+    - id: timeout
+      type:
+        id: System.TimeSpan
+        name: TimeSpan
+        isExternal: true
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Threading.ReaderWriterLockSlim.TryEnterUpgradeableReadLock(System.TimeSpan)
+- uid: System.Threading.ReaderWriterLockSlim.TryEnterUpgradeableReadLock(System.Int32)
+  href: System.Threading.ReaderWriterLockSlim.yml
+  name: TryEnterUpgradeableReadLock(int)
+  fullName: System.Threading.ReaderWriterLockSlim.TryEnterUpgradeableReadLock(int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/ReaderWriterLockSlim.cs
+    startLine: 597
+  syntax:
+    content:
+      CSharp: public bool TryEnterUpgradeableReadLock(int millisecondsTimeout)
+    parameters:
+    - id: millisecondsTimeout
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Threading.ReaderWriterLockSlim.TryEnterUpgradeableReadLock(System.Int32)
+- uid: System.Threading.ReaderWriterLockSlim.ExitReadLock
+  href: System.Threading.ReaderWriterLockSlim.yml
+  name: ExitReadLock()
+  fullName: System.Threading.ReaderWriterLockSlim.ExitReadLock()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/ReaderWriterLockSlim.cs
+    startLine: 724
+  syntax:
+    content:
+      CSharp: public void ExitReadLock()
+    parameters: []
+  id: System.Threading.ReaderWriterLockSlim.ExitReadLock
+- uid: System.Threading.ReaderWriterLockSlim.ExitWriteLock
+  href: System.Threading.ReaderWriterLockSlim.yml
+  name: ExitWriteLock()
+  fullName: System.Threading.ReaderWriterLockSlim.ExitWriteLock()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/ReaderWriterLockSlim.cs
+    startLine: 764
+  syntax:
+    content:
+      CSharp: public void ExitWriteLock()
+    parameters: []
+  id: System.Threading.ReaderWriterLockSlim.ExitWriteLock
+- uid: System.Threading.ReaderWriterLockSlim.ExitUpgradeableReadLock
+  href: System.Threading.ReaderWriterLockSlim.yml
+  name: ExitUpgradeableReadLock()
+  fullName: System.Threading.ReaderWriterLockSlim.ExitUpgradeableReadLock()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/ReaderWriterLockSlim.cs
+    startLine: 811
+  syntax:
+    content:
+      CSharp: public void ExitUpgradeableReadLock()
+    parameters: []
+  id: System.Threading.ReaderWriterLockSlim.ExitUpgradeableReadLock
+- uid: System.Threading.ReaderWriterLockSlim.Dispose
+  href: System.Threading.ReaderWriterLockSlim.yml
+  name: Dispose()
+  fullName: System.Threading.ReaderWriterLockSlim.Dispose()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/ReaderWriterLockSlim.cs
+    startLine: 1100
+  syntax:
+    content:
+      CSharp: public void Dispose()
+    parameters: []
+  id: System.Threading.ReaderWriterLockSlim.Dispose
+- uid: System.Threading.ReaderWriterLockSlim.IsReadLockHeld
+  href: System.Threading.ReaderWriterLockSlim.yml
+  name: IsReadLockHeld
+  fullName: System.Threading.ReaderWriterLockSlim.IsReadLockHeld
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/ReaderWriterLockSlim.cs
+    startLine: 1146
+  syntax:
+    content:
+      CSharp: public bool IsReadLockHeld { get; }
+    parameters:
+    - id: IsReadLockHeld
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Threading.ReaderWriterLockSlim.IsReadLockHeld
+- uid: System.Threading.ReaderWriterLockSlim.IsUpgradeableReadLockHeld
+  href: System.Threading.ReaderWriterLockSlim.yml
+  name: IsUpgradeableReadLockHeld
+  fullName: System.Threading.ReaderWriterLockSlim.IsUpgradeableReadLockHeld
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/ReaderWriterLockSlim.cs
+    startLine: 1157
+  syntax:
+    content:
+      CSharp: public bool IsUpgradeableReadLockHeld { get; }
+    parameters:
+    - id: IsUpgradeableReadLockHeld
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Threading.ReaderWriterLockSlim.IsUpgradeableReadLockHeld
+- uid: System.Threading.ReaderWriterLockSlim.IsWriteLockHeld
+  href: System.Threading.ReaderWriterLockSlim.yml
+  name: IsWriteLockHeld
+  fullName: System.Threading.ReaderWriterLockSlim.IsWriteLockHeld
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/ReaderWriterLockSlim.cs
+    startLine: 1168
+  syntax:
+    content:
+      CSharp: public bool IsWriteLockHeld { get; }
+    parameters:
+    - id: IsWriteLockHeld
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Threading.ReaderWriterLockSlim.IsWriteLockHeld
+- uid: System.Threading.ReaderWriterLockSlim.RecursionPolicy
+  href: System.Threading.ReaderWriterLockSlim.yml
+  name: RecursionPolicy
+  fullName: System.Threading.ReaderWriterLockSlim.RecursionPolicy
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/ReaderWriterLockSlim.cs
+    startLine: 1179
+  syntax:
+    content:
+      CSharp: public LockRecursionPolicy RecursionPolicy { get; }
+    parameters:
+    - id: RecursionPolicy
+      type:
+        id: System.Threading.LockRecursionPolicy
+        name: LockRecursionPolicy
+        href: System.Threading.LockRecursionPolicy.yml
+  id: System.Threading.ReaderWriterLockSlim.RecursionPolicy
+- uid: System.Threading.ReaderWriterLockSlim.CurrentReadCount
+  href: System.Threading.ReaderWriterLockSlim.yml
+  name: CurrentReadCount
+  fullName: System.Threading.ReaderWriterLockSlim.CurrentReadCount
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/ReaderWriterLockSlim.cs
+    startLine: 1194
+  syntax:
+    content:
+      CSharp: public int CurrentReadCount { get; }
+    parameters:
+    - id: CurrentReadCount
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.Threading.ReaderWriterLockSlim.CurrentReadCount
+- uid: System.Threading.ReaderWriterLockSlim.RecursiveReadCount
+  href: System.Threading.ReaderWriterLockSlim.yml
+  name: RecursiveReadCount
+  fullName: System.Threading.ReaderWriterLockSlim.RecursiveReadCount
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/ReaderWriterLockSlim.cs
+    startLine: 1208
+  syntax:
+    content:
+      CSharp: public int RecursiveReadCount { get; }
+    parameters:
+    - id: RecursiveReadCount
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.Threading.ReaderWriterLockSlim.RecursiveReadCount
+- uid: System.Threading.ReaderWriterLockSlim.RecursiveUpgradeCount
+  href: System.Threading.ReaderWriterLockSlim.yml
+  name: RecursiveUpgradeCount
+  fullName: System.Threading.ReaderWriterLockSlim.RecursiveUpgradeCount
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/ReaderWriterLockSlim.cs
+    startLine: 1221
+  syntax:
+    content:
+      CSharp: public int RecursiveUpgradeCount { get; }
+    parameters:
+    - id: RecursiveUpgradeCount
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.Threading.ReaderWriterLockSlim.RecursiveUpgradeCount
+- uid: System.Threading.ReaderWriterLockSlim.RecursiveWriteCount
+  href: System.Threading.ReaderWriterLockSlim.yml
+  name: RecursiveWriteCount
+  fullName: System.Threading.ReaderWriterLockSlim.RecursiveWriteCount
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/ReaderWriterLockSlim.cs
+    startLine: 1245
+  syntax:
+    content:
+      CSharp: public int RecursiveWriteCount { get; }
+    parameters:
+    - id: RecursiveWriteCount
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.Threading.ReaderWriterLockSlim.RecursiveWriteCount
+- uid: System.Threading.ReaderWriterLockSlim.WaitingReadCount
+  href: System.Threading.ReaderWriterLockSlim.yml
+  name: WaitingReadCount
+  fullName: System.Threading.ReaderWriterLockSlim.WaitingReadCount
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/ReaderWriterLockSlim.cs
+    startLine: 1269
+  syntax:
+    content:
+      CSharp: public int WaitingReadCount { get; }
+    parameters:
+    - id: WaitingReadCount
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.Threading.ReaderWriterLockSlim.WaitingReadCount
+- uid: System.Threading.ReaderWriterLockSlim.WaitingUpgradeCount
+  href: System.Threading.ReaderWriterLockSlim.yml
+  name: WaitingUpgradeCount
+  fullName: System.Threading.ReaderWriterLockSlim.WaitingUpgradeCount
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/ReaderWriterLockSlim.cs
+    startLine: 1277
+  syntax:
+    content:
+      CSharp: public int WaitingUpgradeCount { get; }
+    parameters:
+    - id: WaitingUpgradeCount
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.Threading.ReaderWriterLockSlim.WaitingUpgradeCount
+- uid: System.Threading.ReaderWriterLockSlim.WaitingWriteCount
+  href: System.Threading.ReaderWriterLockSlim.yml
+  name: WaitingWriteCount
+  fullName: System.Threading.ReaderWriterLockSlim.WaitingWriteCount
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Threading/src/System/Threading/ReaderWriterLockSlim.cs
+    startLine: 1285
+  syntax:
+    content:
+      CSharp: public int WaitingWriteCount { get; }
+    parameters:
+    - id: WaitingWriteCount
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.Threading.ReaderWriterLockSlim.WaitingWriteCount

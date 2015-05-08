@@ -6,15 +6,16 @@ items:
   type: Interface
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Workspace/Host/TemporaryStorage/ITemporaryStorage.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Workspace/Host/TemporaryStorage/ITemporaryStorage.cs
     startLine: 13
   summary: TemporaryStorage can be used to read and write text to a temporary storage location.
   syntax:
     content:
-      CSharp: public interface ITemporaryTextStorage
+      CSharp: 'public interface ITemporaryTextStorage : IDisposable'
   id: Microsoft.CodeAnalysis.Host.ITemporaryTextStorage
   children:
   - Microsoft.CodeAnalysis.Host.ITemporaryTextStorage.ReadText(System.Threading.CancellationToken)
@@ -32,15 +33,19 @@ items:
     startLine: 15
   syntax:
     content:
-      CSharp: SourceText ReadText(CancellationToken cancellationToken = default (CancellationToken));
+      CSharp: public SourceText ReadText(CancellationToken cancellationToken = null)
     parameters:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: SourceText
+      type:
+        id: Microsoft.CodeAnalysis.Text.SourceText
+        name: SourceText
+        href: Microsoft.CodeAnalysis.Text.SourceText
   id: Microsoft.CodeAnalysis.Host.ITemporaryTextStorage.ReadText(System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.Host.ITemporaryTextStorage.ReadTextAsync(System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.Host.ITemporaryTextStorage.yml
@@ -53,15 +58,19 @@ items:
     startLine: 16
   syntax:
     content:
-      CSharp: Task<SourceText> ReadTextAsync(CancellationToken cancellationToken = default (CancellationToken));
+      CSharp: public Task<SourceText> ReadTextAsync(CancellationToken cancellationToken = null)
     parameters:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.CodeAnalysis.Text.SourceText}
+        name: Task<SourceText>
+        isExternal: true
   id: Microsoft.CodeAnalysis.Host.ITemporaryTextStorage.ReadTextAsync(System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.Host.ITemporaryTextStorage.WriteText(Microsoft.CodeAnalysis.Text.SourceText,System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.Host.ITemporaryTextStorage.yml
@@ -74,7 +83,7 @@ items:
     startLine: 17
   syntax:
     content:
-      CSharp: void WriteText(SourceText text, CancellationToken cancellationToken = default (CancellationToken));
+      CSharp: public void WriteText(SourceText text, CancellationToken cancellationToken = null)
     parameters:
     - id: text
       type:
@@ -84,7 +93,7 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
   id: Microsoft.CodeAnalysis.Host.ITemporaryTextStorage.WriteText(Microsoft.CodeAnalysis.Text.SourceText,System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.Host.ITemporaryTextStorage.WriteTextAsync(Microsoft.CodeAnalysis.Text.SourceText,System.Threading.CancellationToken)
@@ -98,7 +107,7 @@ items:
     startLine: 18
   syntax:
     content:
-      CSharp: Task WriteTextAsync(SourceText text, CancellationToken cancellationToken = default (CancellationToken));
+      CSharp: public Task WriteTextAsync(SourceText text, CancellationToken cancellationToken = null)
     parameters:
     - id: text
       type:
@@ -108,8 +117,12 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task
+        name: Task
+        isExternal: true
   id: Microsoft.CodeAnalysis.Host.ITemporaryTextStorage.WriteTextAsync(Microsoft.CodeAnalysis.Text.SourceText,System.Threading.CancellationToken)

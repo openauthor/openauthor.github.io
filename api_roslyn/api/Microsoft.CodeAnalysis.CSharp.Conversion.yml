@@ -6,9 +6,10 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/Compilers/CSharp/Portable/Binder/Semantics/Conversions/Conversion.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Compilers/CSharp/Portable/Binder/Semantics/Conversions/Conversion.cs
     startLine: 16
   summary: >-
@@ -17,13 +18,10 @@ items:
     associated symbol).
   syntax:
     content:
-      CSharp: public struct Conversion
+      CSharp: 'public struct Conversion : IEquatable<Conversion>'
   inheritance:
-  - id: System.Object
-    name: System.Object
-    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.Conversion
   children:
@@ -70,7 +68,7 @@ items:
     - id: Exists
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.Conversion.Exists
 - uid: Microsoft.CodeAnalysis.CSharp.Conversion.IsImplicit
@@ -90,7 +88,7 @@ items:
     - id: IsImplicit
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.Conversion.IsImplicit
 - uid: Microsoft.CodeAnalysis.CSharp.Conversion.IsExplicit
@@ -110,7 +108,7 @@ items:
     - id: IsExplicit
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.Conversion.IsExplicit
 - uid: Microsoft.CodeAnalysis.CSharp.Conversion.IsIdentity
@@ -130,7 +128,7 @@ items:
     - id: IsIdentity
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.Conversion.IsIdentity
 - uid: Microsoft.CodeAnalysis.CSharp.Conversion.IsNumeric
@@ -150,7 +148,7 @@ items:
     - id: IsNumeric
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.Conversion.IsNumeric
 - uid: Microsoft.CodeAnalysis.CSharp.Conversion.IsEnumeration
@@ -170,7 +168,7 @@ items:
     - id: IsEnumeration
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.Conversion.IsEnumeration
 - uid: Microsoft.CodeAnalysis.CSharp.Conversion.IsInterpolatedString
@@ -190,7 +188,7 @@ items:
     - id: IsInterpolatedString
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.Conversion.IsInterpolatedString
 - uid: Microsoft.CodeAnalysis.CSharp.Conversion.IsNullable
@@ -210,7 +208,7 @@ items:
     - id: IsNullable
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.Conversion.IsNullable
 - uid: Microsoft.CodeAnalysis.CSharp.Conversion.IsReference
@@ -230,7 +228,7 @@ items:
     - id: IsReference
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.Conversion.IsReference
 - uid: Microsoft.CodeAnalysis.CSharp.Conversion.IsUserDefined
@@ -250,7 +248,7 @@ items:
     - id: IsUserDefined
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.Conversion.IsUserDefined
 - uid: Microsoft.CodeAnalysis.CSharp.Conversion.IsBoxing
@@ -270,7 +268,7 @@ items:
     - id: IsBoxing
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.Conversion.IsBoxing
 - uid: Microsoft.CodeAnalysis.CSharp.Conversion.IsUnboxing
@@ -290,7 +288,7 @@ items:
     - id: IsUnboxing
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.Conversion.IsUnboxing
 - uid: Microsoft.CodeAnalysis.CSharp.Conversion.IsNullLiteral
@@ -310,7 +308,7 @@ items:
     - id: IsNullLiteral
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.Conversion.IsNullLiteral
 - uid: Microsoft.CodeAnalysis.CSharp.Conversion.IsDynamic
@@ -330,7 +328,7 @@ items:
     - id: IsDynamic
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.Conversion.IsDynamic
 - uid: Microsoft.CodeAnalysis.CSharp.Conversion.IsConstantExpression
@@ -350,7 +348,7 @@ items:
     - id: IsConstantExpression
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.Conversion.IsConstantExpression
 - uid: Microsoft.CodeAnalysis.CSharp.Conversion.IsAnonymousFunction
@@ -370,7 +368,7 @@ items:
     - id: IsAnonymousFunction
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.Conversion.IsAnonymousFunction
 - uid: Microsoft.CodeAnalysis.CSharp.Conversion.IsMethodGroup
@@ -390,7 +388,7 @@ items:
     - id: IsMethodGroup
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.Conversion.IsMethodGroup
 - uid: Microsoft.CodeAnalysis.CSharp.Conversion.IsPointer
@@ -410,7 +408,7 @@ items:
     - id: IsPointer
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.Conversion.IsPointer
 - uid: Microsoft.CodeAnalysis.CSharp.Conversion.IsIntPtr
@@ -430,7 +428,7 @@ items:
     - id: IsIntPtr
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.Conversion.IsIntPtr
 - uid: Microsoft.CodeAnalysis.CSharp.Conversion.MethodSymbol
@@ -467,14 +465,18 @@ items:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Binder/Semantics/Conversions/Conversion.cs
     startLine: 549
-  summary: Returns a string that represents the [Microsoft.CodeAnalysis.CSharp.Conversion.Kind](#) of the conversion.
+  summary: Returns a string that represents the [Microsoft.CodeAnalysis.CSharp.Conversion.Kind]() of the conversion.
   syntax:
     content:
       CSharp: public override string ToString()
     parameters: []
     return:
       id: String
-      description: A string that represents the [Microsoft.CodeAnalysis.CSharp.Conversion.Kind](#) of the conversion.
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+      description: A string that represents the [Microsoft.CodeAnalysis.CSharp.Conversion.Kind]() of the conversion.
   id: Microsoft.CodeAnalysis.CSharp.Conversion.ToString
 - uid: Microsoft.CodeAnalysis.CSharp.Conversion.Equals(System.Object)
   href: Microsoft.CodeAnalysis.CSharp.Conversion.yml
@@ -493,11 +495,15 @@ items:
     - id: obj
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: The [Microsoft.CodeAnalysis.CSharp.Conversion](Microsoft.CodeAnalysis.CSharp.Conversion.yml) object to compare with the current [Microsoft.CodeAnalysis.CSharp.Conversion](Microsoft.CodeAnalysis.CSharp.Conversion.yml) object.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: true if the specified [Microsoft.CodeAnalysis.CSharp.Conversion](Microsoft.CodeAnalysis.CSharp.Conversion.yml) object is equal to the current [Microsoft.CodeAnalysis.CSharp.Conversion](Microsoft.CodeAnalysis.CSharp.Conversion.yml) object; otherwise, false.
   id: Microsoft.CodeAnalysis.CSharp.Conversion.Equals(System.Object)
 - uid: Microsoft.CodeAnalysis.CSharp.Conversion.Equals(Microsoft.CodeAnalysis.CSharp.Conversion)
@@ -522,6 +528,10 @@ items:
       description: The [Microsoft.CodeAnalysis.CSharp.Conversion](Microsoft.CodeAnalysis.CSharp.Conversion.yml) object to compare with the current [Microsoft.CodeAnalysis.CSharp.Conversion](Microsoft.CodeAnalysis.CSharp.Conversion.yml) object.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: true if the specified [Microsoft.CodeAnalysis.CSharp.Conversion](Microsoft.CodeAnalysis.CSharp.Conversion.yml) object is equal to the current [Microsoft.CodeAnalysis.CSharp.Conversion](Microsoft.CodeAnalysis.CSharp.Conversion.yml) object; otherwise, false.
   id: Microsoft.CodeAnalysis.CSharp.Conversion.Equals(Microsoft.CodeAnalysis.CSharp.Conversion)
 - uid: Microsoft.CodeAnalysis.CSharp.Conversion.GetHashCode
@@ -540,13 +550,17 @@ items:
     parameters: []
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: A hash code for the current [Microsoft.CodeAnalysis.CSharp.Conversion](Microsoft.CodeAnalysis.CSharp.Conversion.yml) object.
   id: Microsoft.CodeAnalysis.CSharp.Conversion.GetHashCode
 - uid: Microsoft.CodeAnalysis.CSharp.Conversion.op_Equality(Microsoft.CodeAnalysis.CSharp.Conversion,Microsoft.CodeAnalysis.CSharp.Conversion)
   href: Microsoft.CodeAnalysis.CSharp.Conversion.yml
   name: operator ==(Conversion, Conversion)
   fullName: Microsoft.CodeAnalysis.CSharp.Conversion.operator ==(Microsoft.CodeAnalysis.CSharp.Conversion, Microsoft.CodeAnalysis.CSharp.Conversion)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Binder/Semantics/Conversions/Conversion.cs
@@ -554,7 +568,7 @@ items:
   summary: Returns true if the specified [Microsoft.CodeAnalysis.CSharp.Conversion](Microsoft.CodeAnalysis.CSharp.Conversion.yml) objects are equal and false otherwise.
   syntax:
     content:
-      CSharp: public static bool operator ==(Conversion left, Conversion right) { return left.Equals(right); }
+      CSharp: public static bool operator ==(Conversion left, Conversion right)
     parameters:
     - id: left
       type:
@@ -570,12 +584,16 @@ items:
       description: The second [Microsoft.CodeAnalysis.CSharp.Conversion](Microsoft.CodeAnalysis.CSharp.Conversion.yml) object.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.Conversion.op_Equality(Microsoft.CodeAnalysis.CSharp.Conversion,Microsoft.CodeAnalysis.CSharp.Conversion)
 - uid: Microsoft.CodeAnalysis.CSharp.Conversion.op_Inequality(Microsoft.CodeAnalysis.CSharp.Conversion,Microsoft.CodeAnalysis.CSharp.Conversion)
   href: Microsoft.CodeAnalysis.CSharp.Conversion.yml
   name: operator !=(Conversion, Conversion)
   fullName: Microsoft.CodeAnalysis.CSharp.Conversion.operator !=(Microsoft.CodeAnalysis.CSharp.Conversion, Microsoft.CodeAnalysis.CSharp.Conversion)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/Compilers/CSharp/Portable/Binder/Semantics/Conversions/Conversion.cs
@@ -583,7 +601,7 @@ items:
   summary: Returns false if the specified [Microsoft.CodeAnalysis.CSharp.Conversion](Microsoft.CodeAnalysis.CSharp.Conversion.yml) objects are equal and true otherwise.
   syntax:
     content:
-      CSharp: public static bool operator !=(Conversion left, Conversion right) { return !(left == right); }
+      CSharp: public static bool operator !=(Conversion left, Conversion right)
     parameters:
     - id: left
       type:
@@ -599,4 +617,8 @@ items:
       description: The second [Microsoft.CodeAnalysis.CSharp.Conversion](Microsoft.CodeAnalysis.CSharp.Conversion.yml) object.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.Conversion.op_Inequality(Microsoft.CodeAnalysis.CSharp.Conversion,Microsoft.CodeAnalysis.CSharp.Conversion)

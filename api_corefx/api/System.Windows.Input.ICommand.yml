@@ -6,8 +6,10 @@ items:
   type: Interface
   source:
     remote: &o0
+      path: src/System.ObjectModel/src/System/Windows/Input/ICommand.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.ObjectModel/src/System/Windows/Input/ICommand.cs
     startLine: 12
   summary: An interface that allows an application author to define a method to be invoked.
@@ -31,7 +33,7 @@ items:
   summary: Raised when the ability of the command to execute has changed.
   syntax:
     content:
-      CSharp: CanExecuteChanged
+      CSharp: event EventHandler CanExecuteChanged;
   id: System.Windows.Input.ICommand.CanExecuteChanged
 - uid: System.Windows.Input.ICommand.CanExecute(System.Object)
   href: System.Windows.Input.ICommand.yml
@@ -45,16 +47,20 @@ items:
   summary: Returns whether the command can be executed.
   syntax:
     content:
-      CSharp: bool CanExecute(object parameter);
+      CSharp: public bool CanExecute(object parameter)
     parameters:
     - id: parameter
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: A parameter that may be used in executing the command. This parameter may be ignored by some implementations.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: true if the command can be executed with the given parameter and current state. false otherwise.
   id: System.Windows.Input.ICommand.CanExecute(System.Object)
 - uid: System.Windows.Input.ICommand.Execute(System.Object)
@@ -69,12 +75,12 @@ items:
   summary: Defines the method that should be executed when the command is executed.
   syntax:
     content:
-      CSharp: void Execute(object parameter);
+      CSharp: public void Execute(object parameter)
     parameters:
     - id: parameter
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: A parameter that may be used in executing the command. This parameter may be ignored by some implementations.
   id: System.Windows.Input.ICommand.Execute(System.Object)

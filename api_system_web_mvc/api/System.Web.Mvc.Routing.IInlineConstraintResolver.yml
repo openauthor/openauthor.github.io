@@ -6,12 +6,13 @@ items:
   type: Interface
   source:
     remote: &o0
+      path: src/Common/Routing/IInlineConstraintResolver.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/Common/Routing/IInlineConstraintResolver.cs
     startLine: 17
-  summary: Defines an abstraction for resolving inline constraints as instances of [System.Web.Routing.IRouteConstraint](#).
+  summary: Defines an abstraction for resolving inline constraints as instances of [System.Web.Routing.IRouteConstraint]().
   syntax:
     content:
       CSharp: public interface IInlineConstraintResolver
@@ -30,15 +31,19 @@ items:
   summary: Resolves the inline constraint.
   syntax:
     content:
-      CSharp: TConstraint ResolveConstraint(string inlineConstraint);
+      CSharp: public IRouteConstraint ResolveConstraint(string inlineConstraint)
     parameters:
     - id: inlineConstraint
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The inline constraint to resolve.
     return:
       id: IRouteConstraint
-      description: The [System.Web.Routing.IRouteConstraint](#) the inline constraint was resolved to.
+      type:
+        id: System.Web.Routing.IRouteConstraint
+        name: IRouteConstraint
+        isExternal: true
+      description: The [System.Web.Routing.IRouteConstraint]() the inline constraint was resolved to.
   id: System.Web.Mvc.Routing.IInlineConstraintResolver.ResolveConstraint(System.String)

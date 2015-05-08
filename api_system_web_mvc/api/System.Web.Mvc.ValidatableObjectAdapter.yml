@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/ValidatableObjectAdapter.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/ValidatableObjectAdapter.cs
     startLine: 10
   syntax:
     content:
-      CSharp: public class ValidatableObjectAdapter
+      CSharp: 'public class ValidatableObjectAdapter : ModelValidator'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.Mvc.ModelValidator
     name: ModelValidator
@@ -65,8 +66,12 @@ items:
     - id: container
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Web.Mvc.ModelValidationResult}
+        name: IEnumerable<ModelValidationResult>
+        isExternal: true
   id: System.Web.Mvc.ValidatableObjectAdapter.Validate(System.Object)

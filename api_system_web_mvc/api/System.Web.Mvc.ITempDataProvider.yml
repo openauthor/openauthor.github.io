@@ -6,9 +6,10 @@ items:
   type: Interface
   source:
     remote: &o0
+      path: src/System.Web.Mvc/ITempDataProvider.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/ITempDataProvider.cs
     startLine: 6
   syntax:
@@ -29,7 +30,7 @@ items:
     startLine: 8
   syntax:
     content:
-      CSharp: IDictionary<string, object> LoadTempData(ControllerContext controllerContext);
+      CSharp: public IDictionary<string, object> LoadTempData(ControllerContext controllerContext)
     parameters:
     - id: controllerContext
       type:
@@ -38,6 +39,10 @@ items:
         href: System.Web.Mvc.ControllerContext.yml
     return:
       id: IDictionary
+      type:
+        id: System.Collections.Generic.IDictionary{System.String,System.Object}
+        name: IDictionary<string, object>
+        isExternal: true
   id: System.Web.Mvc.ITempDataProvider.LoadTempData(System.Web.Mvc.ControllerContext)
 - uid: System.Web.Mvc.ITempDataProvider.SaveTempData(System.Web.Mvc.ControllerContext,System.Collections.Generic.IDictionary{System.String,System.Object})
   href: System.Web.Mvc.ITempDataProvider.yml
@@ -50,7 +55,7 @@ items:
     startLine: 9
   syntax:
     content:
-      CSharp: void SaveTempData(ControllerContext controllerContext, IDictionary<string, object> values);
+      CSharp: public void SaveTempData(ControllerContext controllerContext, IDictionary<string, object> values)
     parameters:
     - id: controllerContext
       type:
@@ -60,6 +65,6 @@ items:
     - id: values
       type:
         id: System.Collections.Generic.IDictionary{System.String,System.Object}
-        name: System.Collections.Generic.IDictionary{System.String,System.Object}
+        name: IDictionary<string, object>
         isExternal: true
   id: System.Web.Mvc.ITempDataProvider.SaveTempData(System.Web.Mvc.ControllerContext,System.Collections.Generic.IDictionary{System.String,System.Object})

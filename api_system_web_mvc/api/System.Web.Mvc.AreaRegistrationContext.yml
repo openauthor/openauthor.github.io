@@ -6,9 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/AreaRegistrationContext.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/AreaRegistrationContext.cs
     startLine: 10
   syntax:
@@ -16,7 +17,7 @@ items:
       CSharp: public class AreaRegistrationContext
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.AreaRegistrationContext
   children:
@@ -48,12 +49,12 @@ items:
     - id: areaName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: routes
       type:
         id: System.Web.Routing.RouteCollection
-        name: System.Web.Routing.RouteCollection
+        name: RouteCollection
         isExternal: true
   id: System.Web.Mvc.AreaRegistrationContext.#ctor(System.String,System.Web.Routing.RouteCollection)
 - uid: System.Web.Mvc.AreaRegistrationContext.#ctor(System.String,System.Web.Routing.RouteCollection,System.Object)
@@ -72,17 +73,17 @@ items:
     - id: areaName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: routes
       type:
         id: System.Web.Routing.RouteCollection
-        name: System.Web.Routing.RouteCollection
+        name: RouteCollection
         isExternal: true
     - id: state
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.Web.Mvc.AreaRegistrationContext.#ctor(System.String,System.Web.Routing.RouteCollection,System.Object)
 - uid: System.Web.Mvc.AreaRegistrationContext.AreaName
@@ -96,12 +97,12 @@ items:
     startLine: 35
   syntax:
     content:
-      CSharp: public string AreaName { get; private set; }
+      CSharp: public string AreaName { get; }
     parameters:
     - id: AreaName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.AreaRegistrationContext.AreaName
 - uid: System.Web.Mvc.AreaRegistrationContext.Namespaces
@@ -120,7 +121,7 @@ items:
     - id: Namespaces
       type:
         id: System.Collections.Generic.ICollection{System.String}
-        name: System.Collections.Generic.ICollection{System.String}
+        name: ICollection<string>
         isExternal: true
   id: System.Web.Mvc.AreaRegistrationContext.Namespaces
 - uid: System.Web.Mvc.AreaRegistrationContext.Routes
@@ -134,12 +135,12 @@ items:
     startLine: 42
   syntax:
     content:
-      CSharp: public RouteCollection Routes { get; private set; }
+      CSharp: public RouteCollection Routes { get; }
     parameters:
     - id: Routes
       type:
         id: System.Web.Routing.RouteCollection
-        name: System.Web.Routing.RouteCollection
+        name: RouteCollection
         isExternal: true
   id: System.Web.Mvc.AreaRegistrationContext.Routes
 - uid: System.Web.Mvc.AreaRegistrationContext.State
@@ -153,12 +154,12 @@ items:
     startLine: 44
   syntax:
     content:
-      CSharp: public object State { get; private set; }
+      CSharp: public object State { get; }
     parameters:
     - id: State
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
   id: System.Web.Mvc.AreaRegistrationContext.State
 - uid: System.Web.Mvc.AreaRegistrationContext.MapRoute(System.String,System.String)
@@ -172,20 +173,24 @@ items:
     startLine: 46
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", MessageId = "1#", Justification = "This is not a regular URL as it may contain special routing characters.")] public Route MapRoute(string name, string url)'
+      CSharp: public Route MapRoute(string name, string url)
     parameters:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: url
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Route
+      type:
+        id: System.Web.Routing.Route
+        name: Route
+        isExternal: true
   id: System.Web.Mvc.AreaRegistrationContext.MapRoute(System.String,System.String)
 - uid: System.Web.Mvc.AreaRegistrationContext.MapRoute(System.String,System.String,System.Object)
   href: System.Web.Mvc.AreaRegistrationContext.yml
@@ -198,25 +203,29 @@ items:
     startLine: 52
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", MessageId = "1#", Justification = "This is not a regular URL as it may contain special routing characters.")] public Route MapRoute(string name, string url, object defaults)'
+      CSharp: public Route MapRoute(string name, string url, object defaults)
     parameters:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: url
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: defaults
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: Route
+      type:
+        id: System.Web.Routing.Route
+        name: Route
+        isExternal: true
   id: System.Web.Mvc.AreaRegistrationContext.MapRoute(System.String,System.String,System.Object)
 - uid: System.Web.Mvc.AreaRegistrationContext.MapRoute(System.String,System.String,System.Object,System.Object)
   href: System.Web.Mvc.AreaRegistrationContext.yml
@@ -229,30 +238,34 @@ items:
     startLine: 58
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", MessageId = "1#", Justification = "This is not a regular URL as it may contain special routing characters.")] public Route MapRoute(string name, string url, object defaults, object constraints)'
+      CSharp: public Route MapRoute(string name, string url, object defaults, object constraints)
     parameters:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: url
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: defaults
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     - id: constraints
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: Route
+      type:
+        id: System.Web.Routing.Route
+        name: Route
+        isExternal: true
   id: System.Web.Mvc.AreaRegistrationContext.MapRoute(System.String,System.String,System.Object,System.Object)
 - uid: System.Web.Mvc.AreaRegistrationContext.MapRoute(System.String,System.String,System.String[])
   href: System.Web.Mvc.AreaRegistrationContext.yml
@@ -265,25 +278,29 @@ items:
     startLine: 64
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", MessageId = "1#", Justification = "This is not a regular URL as it may contain special routing characters.")] public Route MapRoute(string name, string url, string[] namespaces)'
+      CSharp: public Route MapRoute(string name, string url, string[] namespaces)
     parameters:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: url
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: namespaces
       type:
         id: System.Array
-        name: System.Array
+        name: string[]
         isExternal: true
     return:
       id: Route
+      type:
+        id: System.Web.Routing.Route
+        name: Route
+        isExternal: true
   id: System.Web.Mvc.AreaRegistrationContext.MapRoute(System.String,System.String,System.String[])
 - uid: System.Web.Mvc.AreaRegistrationContext.MapRoute(System.String,System.String,System.Object,System.String[])
   href: System.Web.Mvc.AreaRegistrationContext.yml
@@ -296,30 +313,34 @@ items:
     startLine: 70
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", MessageId = "1#", Justification = "This is not a regular URL as it may contain special routing characters.")] public Route MapRoute(string name, string url, object defaults, string[] namespaces)'
+      CSharp: public Route MapRoute(string name, string url, object defaults, string[] namespaces)
     parameters:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: url
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: defaults
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     - id: namespaces
       type:
         id: System.Array
-        name: System.Array
+        name: string[]
         isExternal: true
     return:
       id: Route
+      type:
+        id: System.Web.Routing.Route
+        name: Route
+        isExternal: true
   id: System.Web.Mvc.AreaRegistrationContext.MapRoute(System.String,System.String,System.Object,System.String[])
 - uid: System.Web.Mvc.AreaRegistrationContext.MapRoute(System.String,System.String,System.Object,System.Object,System.String[])
   href: System.Web.Mvc.AreaRegistrationContext.yml
@@ -332,33 +353,37 @@ items:
     startLine: 76
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", MessageId = "1#", Justification = "This is not a regular URL as it may contain special routing characters.")] public Route MapRoute(string name, string url, object defaults, object constraints, string[] namespaces)'
+      CSharp: public Route MapRoute(string name, string url, object defaults, object constraints, string[] namespaces)
     parameters:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: url
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: defaults
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     - id: constraints
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     - id: namespaces
       type:
         id: System.Array
-        name: System.Array
+        name: string[]
         isExternal: true
     return:
       id: Route
+      type:
+        id: System.Web.Routing.Route
+        name: Route
+        isExternal: true
   id: System.Web.Mvc.AreaRegistrationContext.MapRoute(System.String,System.String,System.Object,System.Object,System.String[])

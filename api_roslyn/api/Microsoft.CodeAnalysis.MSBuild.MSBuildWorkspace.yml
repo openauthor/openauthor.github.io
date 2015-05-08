@@ -6,18 +6,19 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Desktop/Workspace/MSBuild/MSBuildWorkspace.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Desktop/Workspace/MSBuild/MSBuildWorkspace.cs
     startLine: 28
   summary: A workspace that can be populated by opening MSBuild solution and project files.
   syntax:
     content:
-      CSharp: public sealed class MSBuildWorkspace
+      CSharp: 'public sealed class MSBuildWorkspace : Workspace, IDisposable'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: Object
     isExternal: true
   - id: Microsoft.CodeAnalysis.Workspace
     name: Workspace
@@ -32,10 +33,21 @@ items:
   - Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.SkipUnrecognizedProjects
   - Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.AssociateFileExtensionWithLanguage(System.String,System.String)
   - Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.CloseSolution
+  - Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ClearSolutionData
   - Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.OpenSolutionAsync(System.String,System.Threading.CancellationToken)
   - Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.OpenProjectAsync(System.String,System.Threading.CancellationToken)
   - Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.CanApplyChange(Microsoft.CodeAnalysis.ApplyChangesKind)
   - Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.TryApplyChanges(Microsoft.CodeAnalysis.Solution)
+  - Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ApplyProjectChanges(Microsoft.CodeAnalysis.ProjectChanges)
+  - Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ApplyDocumentTextChanged(Microsoft.CodeAnalysis.DocumentId,Microsoft.CodeAnalysis.Text.SourceText)
+  - Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ApplyDocumentAdded(Microsoft.CodeAnalysis.DocumentInfo,Microsoft.CodeAnalysis.Text.SourceText)
+  - Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ApplyDocumentRemoved(Microsoft.CodeAnalysis.DocumentId)
+  - Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ApplyMetadataReferenceAdded(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.MetadataReference)
+  - Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ApplyMetadataReferenceRemoved(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.MetadataReference)
+  - Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ApplyProjectReferenceAdded(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.ProjectReference)
+  - Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ApplyProjectReferenceRemoved(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.ProjectReference)
+  - Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ApplyAnalyzerReferenceAdded(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference)
+  - Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ApplyAnalyzerReferenceRemoved(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference)
 - uid: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.Create
   href: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.yml
   name: Create()
@@ -52,6 +64,10 @@ items:
     parameters: []
     return:
       id: MSBuildWorkspace
+      type:
+        id: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace
+        name: MSBuildWorkspace
+        href: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.yml
   id: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.Create
 - uid: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.Create(System.Collections.Generic.IDictionary{System.String,System.String})
   href: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.yml
@@ -70,7 +86,7 @@ items:
     - id: properties
       type:
         id: System.Collections.Generic.IDictionary{System.String,System.String}
-        name: System.Collections.Generic.IDictionary{System.String,System.String}
+        name: IDictionary<string, string>
         isExternal: true
       description: >-
         An optional set of MSBuild properties used when interpreting project files.
@@ -78,6 +94,10 @@ items:
         These are the same properties that are passed to msbuild via the /property:<n>=<v> command line argument.
     return:
       id: MSBuildWorkspace
+      type:
+        id: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace
+        name: MSBuildWorkspace
+        href: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.yml
   id: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.Create(System.Collections.Generic.IDictionary{System.String,System.String})
 - uid: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.Create(System.Collections.Generic.IDictionary{System.String,System.String},Microsoft.CodeAnalysis.Host.HostServices)
   href: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.yml
@@ -96,7 +116,7 @@ items:
     - id: properties
       type:
         id: System.Collections.Generic.IDictionary{System.String,System.String}
-        name: System.Collections.Generic.IDictionary{System.String,System.String}
+        name: IDictionary<string, string>
         isExternal: true
       description: >-
         The MSBuild properties used when interpreting project files.
@@ -110,6 +130,10 @@ items:
       description: The [Microsoft.CodeAnalysis.Host.HostServices](Microsoft.CodeAnalysis.Host.HostServices.yml) used to configure this workspace.
     return:
       id: MSBuildWorkspace
+      type:
+        id: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace
+        name: MSBuildWorkspace
+        href: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.yml
   id: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.Create(System.Collections.Generic.IDictionary{System.String,System.String},Microsoft.CodeAnalysis.Host.HostServices)
 - uid: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.Properties
   href: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.yml
@@ -131,7 +155,7 @@ items:
     - id: Properties
       type:
         id: System.Collections.Immutable.ImmutableDictionary{System.String,System.String}
-        name: System.Collections.Immutable.ImmutableDictionary{System.String,System.String}
+        name: ImmutableDictionary<string, string>
         isExternal: true
   id: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.Properties
 - uid: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.LoadMetadataForReferencedProjects
@@ -156,7 +180,7 @@ items:
     - id: LoadMetadataForReferencedProjects
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.LoadMetadataForReferencedProjects
 - uid: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.SkipUnrecognizedProjects
@@ -193,7 +217,7 @@ items:
     - id: SkipUnrecognizedProjects
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.SkipUnrecognizedProjects
 - uid: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.AssociateFileExtensionWithLanguage(System.String,System.String)
@@ -213,12 +237,12 @@ items:
     - id: projectFileExtension
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: language
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.AssociateFileExtensionWithLanguage(System.String,System.String)
 - uid: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.CloseSolution
@@ -236,6 +260,20 @@ items:
       CSharp: public void CloseSolution()
     parameters: []
   id: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.CloseSolution
+- uid: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ClearSolutionData
+  href: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.yml
+  name: ClearSolutionData()
+  fullName: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ClearSolutionData()
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Desktop/Workspace/MSBuild/MSBuildWorkspace.cs
+    startLine: 155
+  syntax:
+    content:
+      CSharp: protected override void ClearSolutionData()
+    parameters: []
+  id: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ClearSolutionData
 - uid: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.OpenSolutionAsync(System.String,System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.yml
   name: OpenSolutionAsync(string, CancellationToken)
@@ -248,20 +286,24 @@ items:
   summary: Open a solution file and all referenced projects.
   syntax:
     content:
-      CSharp: public async Task<Solution> OpenSolutionAsync(string solutionFilePath, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public Task<Solution> OpenSolutionAsync(string solutionFilePath, CancellationToken cancellationToken = null)
     parameters:
     - id: solutionFilePath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.CodeAnalysis.Solution}
+        name: Task<Solution>
+        isExternal: true
   id: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.OpenSolutionAsync(System.String,System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.OpenProjectAsync(System.String,System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.yml
@@ -275,20 +317,24 @@ items:
   summary: Open a project file and all referenced projects.
   syntax:
     content:
-      CSharp: public async Task<Project> OpenProjectAsync(string projectFilePath, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public Task<Project> OpenProjectAsync(string projectFilePath, CancellationToken cancellationToken = null)
     parameters:
     - id: projectFilePath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.CodeAnalysis.Project}
+        name: Task<Project>
+        isExternal: true
   id: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.OpenProjectAsync(System.String,System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.CanApplyChange(Microsoft.CodeAnalysis.ApplyChangesKind)
   href: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.yml
@@ -298,7 +344,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Desktop/Workspace/MSBuild/MSBuildWorkspace.cs
-    startLine: 875
+    startLine: 884
   syntax:
     content:
       CSharp: public override bool CanApplyChange(ApplyChangesKind feature)
@@ -310,6 +356,10 @@ items:
         href: Microsoft.CodeAnalysis.ApplyChangesKind.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.CanApplyChange(Microsoft.CodeAnalysis.ApplyChangesKind)
 - uid: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.TryApplyChanges(Microsoft.CodeAnalysis.Solution)
   href: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.yml
@@ -319,7 +369,7 @@ items:
   source:
     remote: *o0
     path: src/Workspaces/Core/Desktop/Workspace/MSBuild/MSBuildWorkspace.cs
-    startLine: 908
+    startLine: 917
   syntax:
     content:
       CSharp: public override bool TryApplyChanges(Solution newSolution)
@@ -331,4 +381,238 @@ items:
         href: Microsoft.CodeAnalysis.Solution.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.TryApplyChanges(Microsoft.CodeAnalysis.Solution)
+- uid: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ApplyProjectChanges(Microsoft.CodeAnalysis.ProjectChanges)
+  href: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.yml
+  name: ApplyProjectChanges(ProjectChanges)
+  fullName: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ApplyProjectChanges(Microsoft.CodeAnalysis.ProjectChanges)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Desktop/Workspace/MSBuild/MSBuildWorkspace.cs
+    startLine: 925
+  syntax:
+    content:
+      CSharp: protected override void ApplyProjectChanges(ProjectChanges projectChanges)
+    parameters:
+    - id: projectChanges
+      type:
+        id: Microsoft.CodeAnalysis.ProjectChanges
+        name: ProjectChanges
+        href: Microsoft.CodeAnalysis.ProjectChanges.yml
+  id: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ApplyProjectChanges(Microsoft.CodeAnalysis.ProjectChanges)
+- uid: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ApplyDocumentTextChanged(Microsoft.CodeAnalysis.DocumentId,Microsoft.CodeAnalysis.Text.SourceText)
+  href: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.yml
+  name: ApplyDocumentTextChanged(DocumentId, SourceText)
+  fullName: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ApplyDocumentTextChanged(Microsoft.CodeAnalysis.DocumentId, Microsoft.CodeAnalysis.Text.SourceText)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Desktop/Workspace/MSBuild/MSBuildWorkspace.cs
+    startLine: 973
+  syntax:
+    content:
+      CSharp: protected override void ApplyDocumentTextChanged(DocumentId documentId, SourceText text)
+    parameters:
+    - id: documentId
+      type:
+        id: Microsoft.CodeAnalysis.DocumentId
+        name: DocumentId
+        href: Microsoft.CodeAnalysis.DocumentId.yml
+    - id: text
+      type:
+        id: Microsoft.CodeAnalysis.Text.SourceText
+        name: SourceText
+        href: Microsoft.CodeAnalysis.Text.SourceText
+  id: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ApplyDocumentTextChanged(Microsoft.CodeAnalysis.DocumentId,Microsoft.CodeAnalysis.Text.SourceText)
+- uid: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ApplyDocumentAdded(Microsoft.CodeAnalysis.DocumentInfo,Microsoft.CodeAnalysis.Text.SourceText)
+  href: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.yml
+  name: ApplyDocumentAdded(DocumentInfo, SourceText)
+  fullName: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ApplyDocumentAdded(Microsoft.CodeAnalysis.DocumentInfo, Microsoft.CodeAnalysis.Text.SourceText)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Desktop/Workspace/MSBuild/MSBuildWorkspace.cs
+    startLine: 1013
+  syntax:
+    content:
+      CSharp: protected override void ApplyDocumentAdded(DocumentInfo info, SourceText text)
+    parameters:
+    - id: info
+      type:
+        id: Microsoft.CodeAnalysis.DocumentInfo
+        name: DocumentInfo
+        href: Microsoft.CodeAnalysis.DocumentInfo.yml
+    - id: text
+      type:
+        id: Microsoft.CodeAnalysis.Text.SourceText
+        name: SourceText
+        href: Microsoft.CodeAnalysis.Text.SourceText
+  id: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ApplyDocumentAdded(Microsoft.CodeAnalysis.DocumentInfo,Microsoft.CodeAnalysis.Text.SourceText)
+- uid: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ApplyDocumentRemoved(Microsoft.CodeAnalysis.DocumentId)
+  href: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.yml
+  name: ApplyDocumentRemoved(DocumentId)
+  fullName: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ApplyDocumentRemoved(Microsoft.CodeAnalysis.DocumentId)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Desktop/Workspace/MSBuild/MSBuildWorkspace.cs
+    startLine: 1074
+  syntax:
+    content:
+      CSharp: protected override void ApplyDocumentRemoved(DocumentId documentId)
+    parameters:
+    - id: documentId
+      type:
+        id: Microsoft.CodeAnalysis.DocumentId
+        name: DocumentId
+        href: Microsoft.CodeAnalysis.DocumentId.yml
+  id: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ApplyDocumentRemoved(Microsoft.CodeAnalysis.DocumentId)
+- uid: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ApplyMetadataReferenceAdded(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.MetadataReference)
+  href: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.yml
+  name: ApplyMetadataReferenceAdded(ProjectId, MetadataReference)
+  fullName: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ApplyMetadataReferenceAdded(Microsoft.CodeAnalysis.ProjectId, Microsoft.CodeAnalysis.MetadataReference)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Desktop/Workspace/MSBuild/MSBuildWorkspace.cs
+    startLine: 1110
+  syntax:
+    content:
+      CSharp: protected override void ApplyMetadataReferenceAdded(ProjectId projectId, MetadataReference metadataReference)
+    parameters:
+    - id: projectId
+      type:
+        id: Microsoft.CodeAnalysis.ProjectId
+        name: ProjectId
+        href: Microsoft.CodeAnalysis.ProjectId.yml
+    - id: metadataReference
+      type:
+        id: Microsoft.CodeAnalysis.MetadataReference
+        name: MetadataReference
+        href: Microsoft.CodeAnalysis.MetadataReference
+  id: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ApplyMetadataReferenceAdded(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.MetadataReference)
+- uid: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ApplyMetadataReferenceRemoved(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.MetadataReference)
+  href: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.yml
+  name: ApplyMetadataReferenceRemoved(ProjectId, MetadataReference)
+  fullName: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ApplyMetadataReferenceRemoved(Microsoft.CodeAnalysis.ProjectId, Microsoft.CodeAnalysis.MetadataReference)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Desktop/Workspace/MSBuild/MSBuildWorkspace.cs
+    startLine: 1118
+  syntax:
+    content:
+      CSharp: protected override void ApplyMetadataReferenceRemoved(ProjectId projectId, MetadataReference metadataReference)
+    parameters:
+    - id: projectId
+      type:
+        id: Microsoft.CodeAnalysis.ProjectId
+        name: ProjectId
+        href: Microsoft.CodeAnalysis.ProjectId.yml
+    - id: metadataReference
+      type:
+        id: Microsoft.CodeAnalysis.MetadataReference
+        name: MetadataReference
+        href: Microsoft.CodeAnalysis.MetadataReference
+  id: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ApplyMetadataReferenceRemoved(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.MetadataReference)
+- uid: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ApplyProjectReferenceAdded(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.ProjectReference)
+  href: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.yml
+  name: ApplyProjectReferenceAdded(ProjectId, ProjectReference)
+  fullName: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ApplyProjectReferenceAdded(Microsoft.CodeAnalysis.ProjectId, Microsoft.CodeAnalysis.ProjectReference)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Desktop/Workspace/MSBuild/MSBuildWorkspace.cs
+    startLine: 1139
+  syntax:
+    content:
+      CSharp: protected override void ApplyProjectReferenceAdded(ProjectId projectId, ProjectReference projectReference)
+    parameters:
+    - id: projectId
+      type:
+        id: Microsoft.CodeAnalysis.ProjectId
+        name: ProjectId
+        href: Microsoft.CodeAnalysis.ProjectId.yml
+    - id: projectReference
+      type:
+        id: Microsoft.CodeAnalysis.ProjectReference
+        name: ProjectReference
+        href: Microsoft.CodeAnalysis.ProjectReference.yml
+  id: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ApplyProjectReferenceAdded(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.ProjectReference)
+- uid: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ApplyProjectReferenceRemoved(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.ProjectReference)
+  href: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.yml
+  name: ApplyProjectReferenceRemoved(ProjectId, ProjectReference)
+  fullName: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ApplyProjectReferenceRemoved(Microsoft.CodeAnalysis.ProjectId, Microsoft.CodeAnalysis.ProjectReference)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Desktop/Workspace/MSBuild/MSBuildWorkspace.cs
+    startLine: 1152
+  syntax:
+    content:
+      CSharp: protected override void ApplyProjectReferenceRemoved(ProjectId projectId, ProjectReference projectReference)
+    parameters:
+    - id: projectId
+      type:
+        id: Microsoft.CodeAnalysis.ProjectId
+        name: ProjectId
+        href: Microsoft.CodeAnalysis.ProjectId.yml
+    - id: projectReference
+      type:
+        id: Microsoft.CodeAnalysis.ProjectReference
+        name: ProjectReference
+        href: Microsoft.CodeAnalysis.ProjectReference.yml
+  id: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ApplyProjectReferenceRemoved(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.ProjectReference)
+- uid: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ApplyAnalyzerReferenceAdded(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference)
+  href: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.yml
+  name: ApplyAnalyzerReferenceAdded(ProjectId, AnalyzerReference)
+  fullName: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ApplyAnalyzerReferenceAdded(Microsoft.CodeAnalysis.ProjectId, Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Desktop/Workspace/MSBuild/MSBuildWorkspace.cs
+    startLine: 1165
+  syntax:
+    content:
+      CSharp: protected override void ApplyAnalyzerReferenceAdded(ProjectId projectId, AnalyzerReference analyzerReference)
+    parameters:
+    - id: projectId
+      type:
+        id: Microsoft.CodeAnalysis.ProjectId
+        name: ProjectId
+        href: Microsoft.CodeAnalysis.ProjectId.yml
+    - id: analyzerReference
+      type:
+        id: Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference
+        name: AnalyzerReference
+        href: Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference
+  id: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ApplyAnalyzerReferenceAdded(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference)
+- uid: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ApplyAnalyzerReferenceRemoved(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference)
+  href: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.yml
+  name: ApplyAnalyzerReferenceRemoved(ProjectId, AnalyzerReference)
+  fullName: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ApplyAnalyzerReferenceRemoved(Microsoft.CodeAnalysis.ProjectId, Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Workspaces/Core/Desktop/Workspace/MSBuild/MSBuildWorkspace.cs
+    startLine: 1172
+  syntax:
+    content:
+      CSharp: protected override void ApplyAnalyzerReferenceRemoved(ProjectId projectId, AnalyzerReference analyzerReference)
+    parameters:
+    - id: projectId
+      type:
+        id: Microsoft.CodeAnalysis.ProjectId
+        name: ProjectId
+        href: Microsoft.CodeAnalysis.ProjectId.yml
+    - id: analyzerReference
+      type:
+        id: Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference
+        name: AnalyzerReference
+        href: Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference
+  id: Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.ApplyAnalyzerReferenceRemoved(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference)

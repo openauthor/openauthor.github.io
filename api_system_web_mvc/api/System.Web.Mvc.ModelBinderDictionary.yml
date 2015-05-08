@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/ModelBinderDictionary.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/ModelBinderDictionary.cs
     startLine: 9
   syntax:
     content:
-      CSharp: public class ModelBinderDictionary
+      CSharp: 'public class ModelBinderDictionary : IDictionary<Type, IModelBinder>, ICollection<KeyValuePair<Type, IModelBinder>>, IEnumerable<KeyValuePair<Type, IModelBinder>>, IEnumerable'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.ModelBinderDictionary
   children:
@@ -39,6 +40,7 @@ items:
   - System.Web.Mvc.ModelBinderDictionary.Remove(System.Collections.Generic.KeyValuePair{System.Type,System.Web.Mvc.IModelBinder})
   - System.Web.Mvc.ModelBinderDictionary.Remove(System.Type)
   - System.Web.Mvc.ModelBinderDictionary.TryGetValue(System.Type,System.Web.Mvc.IModelBinder@)
+  - System.Web.Mvc.ModelBinderDictionary.System#Collections#IEnumerable#GetEnumerator
 - uid: System.Web.Mvc.ModelBinderDictionary.#ctor
   href: System.Web.Mvc.ModelBinderDictionary.yml
   name: ModelBinderDictionary()
@@ -69,7 +71,7 @@ items:
     - id: Count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Web.Mvc.ModelBinderDictionary.Count
 - uid: System.Web.Mvc.ModelBinderDictionary.DefaultBinder
@@ -107,7 +109,7 @@ items:
     - id: IsReadOnly
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.ModelBinderDictionary.IsReadOnly
 - uid: System.Web.Mvc.ModelBinderDictionary.Keys
@@ -126,7 +128,7 @@ items:
     - id: Keys
       type:
         id: System.Collections.Generic.ICollection{System.Type}
-        name: System.Collections.Generic.ICollection{System.Type}
+        name: ICollection<Type>
         isExternal: true
   id: System.Web.Mvc.ModelBinderDictionary.Keys
 - uid: System.Web.Mvc.ModelBinderDictionary.Values
@@ -145,7 +147,7 @@ items:
     - id: Values
       type:
         id: System.Collections.Generic.ICollection{System.Web.Mvc.IModelBinder}
-        name: System.Collections.Generic.ICollection{System.Web.Mvc.IModelBinder}
+        name: ICollection<IModelBinder>
         isExternal: true
   id: System.Web.Mvc.ModelBinderDictionary.Values
 - uid: System.Web.Mvc.ModelBinderDictionary.Item(System.Type)
@@ -183,7 +185,7 @@ items:
     - id: item
       type:
         id: System.Collections.Generic.KeyValuePair{System.Type,System.Web.Mvc.IModelBinder}
-        name: System.Collections.Generic.KeyValuePair{System.Type,System.Web.Mvc.IModelBinder}
+        name: KeyValuePair<Type, IModelBinder>
         isExternal: true
   id: System.Web.Mvc.ModelBinderDictionary.Add(System.Collections.Generic.KeyValuePair{System.Type,System.Web.Mvc.IModelBinder})
 - uid: System.Web.Mvc.ModelBinderDictionary.Add(System.Type,System.Web.Mvc.IModelBinder)
@@ -202,7 +204,7 @@ items:
     - id: key
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
     - id: value
       type:
@@ -240,10 +242,14 @@ items:
     - id: item
       type:
         id: System.Collections.Generic.KeyValuePair{System.Type,System.Web.Mvc.IModelBinder}
-        name: System.Collections.Generic.KeyValuePair{System.Type,System.Web.Mvc.IModelBinder}
+        name: KeyValuePair<Type, IModelBinder>
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Web.Mvc.ModelBinderDictionary.Contains(System.Collections.Generic.KeyValuePair{System.Type,System.Web.Mvc.IModelBinder})
 - uid: System.Web.Mvc.ModelBinderDictionary.ContainsKey(System.Type)
   href: System.Web.Mvc.ModelBinderDictionary.yml
@@ -261,10 +267,14 @@ items:
     - id: key
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Web.Mvc.ModelBinderDictionary.ContainsKey(System.Type)
 - uid: System.Web.Mvc.ModelBinderDictionary.CopyTo(System.Collections.Generic.KeyValuePair{System.Type,System.Web.Mvc.IModelBinder}[],System.Int32)
   href: System.Web.Mvc.ModelBinderDictionary.yml
@@ -282,12 +292,12 @@ items:
     - id: array
       type:
         id: System.Array
-        name: System.Array
+        name: KeyValuePair<Type, IModelBinder>[]
         isExternal: true
     - id: arrayIndex
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Web.Mvc.ModelBinderDictionary.CopyTo(System.Collections.Generic.KeyValuePair{System.Type,System.Web.Mvc.IModelBinder}[],System.Int32)
 - uid: System.Web.Mvc.ModelBinderDictionary.GetBinder(System.Type)
@@ -306,10 +316,14 @@ items:
     - id: modelType
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
     return:
       id: IModelBinder
+      type:
+        id: System.Web.Mvc.IModelBinder
+        name: IModelBinder
+        href: System.Web.Mvc.IModelBinder.yml
   id: System.Web.Mvc.ModelBinderDictionary.GetBinder(System.Type)
 - uid: System.Web.Mvc.ModelBinderDictionary.GetBinder(System.Type,System.Boolean)
   href: System.Web.Mvc.ModelBinderDictionary.yml
@@ -327,15 +341,19 @@ items:
     - id: modelType
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
     - id: fallbackToDefault
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     return:
       id: IModelBinder
+      type:
+        id: System.Web.Mvc.IModelBinder
+        name: IModelBinder
+        href: System.Web.Mvc.IModelBinder.yml
   id: System.Web.Mvc.ModelBinderDictionary.GetBinder(System.Type,System.Boolean)
 - uid: System.Web.Mvc.ModelBinderDictionary.GetEnumerator
   href: System.Web.Mvc.ModelBinderDictionary.yml
@@ -352,6 +370,10 @@ items:
     parameters: []
     return:
       id: IEnumerator
+      type:
+        id: System.Collections.Generic.IEnumerator{System.Collections.Generic.KeyValuePair{System.Type,System.Web.Mvc.IModelBinder}}
+        name: IEnumerator<KeyValuePair<Type, IModelBinder>>
+        isExternal: true
   id: System.Web.Mvc.ModelBinderDictionary.GetEnumerator
 - uid: System.Web.Mvc.ModelBinderDictionary.Remove(System.Collections.Generic.KeyValuePair{System.Type,System.Web.Mvc.IModelBinder})
   href: System.Web.Mvc.ModelBinderDictionary.yml
@@ -369,10 +391,14 @@ items:
     - id: item
       type:
         id: System.Collections.Generic.KeyValuePair{System.Type,System.Web.Mvc.IModelBinder}
-        name: System.Collections.Generic.KeyValuePair{System.Type,System.Web.Mvc.IModelBinder}
+        name: KeyValuePair<Type, IModelBinder>
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Web.Mvc.ModelBinderDictionary.Remove(System.Collections.Generic.KeyValuePair{System.Type,System.Web.Mvc.IModelBinder})
 - uid: System.Web.Mvc.ModelBinderDictionary.Remove(System.Type)
   href: System.Web.Mvc.ModelBinderDictionary.yml
@@ -390,10 +416,14 @@ items:
     - id: key
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Web.Mvc.ModelBinderDictionary.Remove(System.Type)
 - uid: System.Web.Mvc.ModelBinderDictionary.TryGetValue(System.Type,System.Web.Mvc.IModelBinder@)
   href: System.Web.Mvc.ModelBinderDictionary.yml
@@ -411,7 +441,7 @@ items:
     - id: key
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
     - id: value
       type:
@@ -420,4 +450,28 @@ items:
         href: System.Web.Mvc.IModelBinder.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Web.Mvc.ModelBinderDictionary.TryGetValue(System.Type,System.Web.Mvc.IModelBinder@)
+- uid: System.Web.Mvc.ModelBinderDictionary.System#Collections#IEnumerable#GetEnumerator
+  href: System.Web.Mvc.ModelBinderDictionary.yml
+  name: IEnumerable.GetEnumerator()
+  fullName: System.Web.Mvc.ModelBinderDictionary.System.Collections.IEnumerable.GetEnumerator()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ModelBinderDictionary.cs
+    startLine: 165
+  syntax:
+    content:
+      CSharp: IEnumerator IEnumerable.GetEnumerator()
+    parameters: []
+    return:
+      id: IEnumerator
+      type:
+        id: System.Collections.IEnumerator
+        name: IEnumerator
+        isExternal: true
+  id: System.Web.Mvc.ModelBinderDictionary.System#Collections#IEnumerable#GetEnumerator

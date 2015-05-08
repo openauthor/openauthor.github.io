@@ -6,9 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/ControllerContext.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/ControllerContext.cs
     startLine: 14
   syntax:
@@ -16,11 +17,12 @@ items:
       CSharp: public class ControllerContext
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.ControllerContext
   children:
   - System.Web.Mvc.ControllerContext.#ctor
+  - System.Web.Mvc.ControllerContext.#ctor(System.Web.Mvc.ControllerContext)
   - System.Web.Mvc.ControllerContext.#ctor(System.Web.HttpContextBase,System.Web.Routing.RouteData,System.Web.Mvc.ControllerBase)
   - System.Web.Mvc.ControllerContext.#ctor(System.Web.Routing.RequestContext,System.Web.Mvc.ControllerBase)
   - System.Web.Mvc.ControllerContext.Controller
@@ -44,6 +46,25 @@ items:
       CSharp: public ControllerContext()
     parameters: []
   id: System.Web.Mvc.ControllerContext.#ctor
+- uid: System.Web.Mvc.ControllerContext.#ctor(System.Web.Mvc.ControllerContext)
+  href: System.Web.Mvc.ControllerContext.yml
+  name: ControllerContext(ControllerContext)
+  fullName: System.Web.Mvc.ControllerContext.ControllerContext(System.Web.Mvc.ControllerContext)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ControllerContext.cs
+    startLine: 28
+  syntax:
+    content:
+      CSharp: '[SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors", Justification = "The virtual property setters are only to support mocking frameworks, in which case this constructor shouldn''t be called anyway.")] protected ControllerContext(ControllerContext controllerContext)'
+    parameters:
+    - id: controllerContext
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+  id: System.Web.Mvc.ControllerContext.#ctor(System.Web.Mvc.ControllerContext)
 - uid: System.Web.Mvc.ControllerContext.#ctor(System.Web.HttpContextBase,System.Web.Routing.RouteData,System.Web.Mvc.ControllerBase)
   href: System.Web.Mvc.ControllerContext.yml
   name: ControllerContext(HttpContextBase, RouteData, ControllerBase)
@@ -60,12 +81,12 @@ items:
     - id: httpContext
       type:
         id: System.Web.HttpContextBase
-        name: System.Web.HttpContextBase
+        name: HttpContextBase
         isExternal: true
     - id: routeData
       type:
         id: System.Web.Routing.RouteData
-        name: System.Web.Routing.RouteData
+        name: RouteData
         isExternal: true
     - id: controller
       type:
@@ -89,7 +110,7 @@ items:
     - id: requestContext
       type:
         id: System.Web.Routing.RequestContext
-        name: System.Web.Routing.RequestContext
+        name: RequestContext
         isExternal: true
     - id: controller
       type:
@@ -151,7 +172,7 @@ items:
     - id: HttpContext
       type:
         id: System.Web.HttpContextBase
-        name: System.Web.HttpContextBase
+        name: HttpContextBase
         isExternal: true
   id: System.Web.Mvc.ControllerContext.HttpContext
 - uid: System.Web.Mvc.ControllerContext.IsChildAction
@@ -170,7 +191,7 @@ items:
     - id: IsChildAction
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.ControllerContext.IsChildAction
 - uid: System.Web.Mvc.ControllerContext.ParentActionViewContext
@@ -208,7 +229,7 @@ items:
     - id: RequestContext
       type:
         id: System.Web.Routing.RequestContext
-        name: System.Web.Routing.RequestContext
+        name: RequestContext
         isExternal: true
   id: System.Web.Mvc.ControllerContext.RequestContext
 - uid: System.Web.Mvc.ControllerContext.RouteData
@@ -227,6 +248,6 @@ items:
     - id: RouteData
       type:
         id: System.Web.Routing.RouteData
-        name: System.Web.Routing.RouteData
+        name: RouteData
         isExternal: true
   id: System.Web.Mvc.ControllerContext.RouteData

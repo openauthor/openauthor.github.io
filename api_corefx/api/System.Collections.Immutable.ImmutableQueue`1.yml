@@ -6,28 +6,35 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableQueue`1.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableQueue`1.cs
     startLine: 17
   summary: An immutable queue.
   syntax:
     content:
-      CSharp: public sealed class ImmutableQueue<T>
+      CSharp: 'public sealed class ImmutableQueue<T> : IImmutableQueue<T>, IEnumerable<T>, IEnumerable'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Collections.Immutable.ImmutableQueue`1
   children:
   - System.Collections.Immutable.ImmutableQueue`1.Clear
   - System.Collections.Immutable.ImmutableQueue`1.IsEmpty
   - System.Collections.Immutable.ImmutableQueue`1.Empty
+  - System.Collections.Immutable.ImmutableQueue`1.System#Collections#Immutable#IImmutableQueue{T}#Clear
   - System.Collections.Immutable.ImmutableQueue`1.Peek
   - System.Collections.Immutable.ImmutableQueue`1.Enqueue(`0)
+  - System.Collections.Immutable.ImmutableQueue`1.System#Collections#Immutable#IImmutableQueue{T}#Enqueue(`0)
   - System.Collections.Immutable.ImmutableQueue`1.Dequeue
   - System.Collections.Immutable.ImmutableQueue`1.Dequeue(`0@)
+  - System.Collections.Immutable.ImmutableQueue`1.System#Collections#Immutable#IImmutableQueue{T}#Dequeue
   - System.Collections.Immutable.ImmutableQueue`1.GetEnumerator
+  - System.Collections.Immutable.ImmutableQueue`1.System#Collections#Generic#IEnumerable{T}#GetEnumerator
+  - System.Collections.Immutable.ImmutableQueue`1.System#Collections#IEnumerable#GetEnumerator
 - uid: System.Collections.Immutable.ImmutableQueue`1.Clear
   href: System.Collections.Immutable.ImmutableQueue`1.yml
   name: Clear()
@@ -44,6 +51,10 @@ items:
     parameters: []
     return:
       id: ImmutableQueue
+      type:
+        id: System.Collections.Immutable.ImmutableQueue`1
+        name: ImmutableQueue<T>
+        href: System.Collections.Immutable.ImmutableQueue`1.yml
   id: System.Collections.Immutable.ImmutableQueue`1.Clear
 - uid: System.Collections.Immutable.ImmutableQueue`1.IsEmpty
   href: System.Collections.Immutable.ImmutableQueue`1.yml
@@ -62,7 +73,7 @@ items:
     - id: IsEmpty
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Collections.Immutable.ImmutableQueue`1.IsEmpty
 - uid: System.Collections.Immutable.ImmutableQueue`1.Empty
@@ -82,9 +93,30 @@ items:
     - id: Empty
       type:
         id: System.Collections.Immutable.ImmutableQueue`1
-        name: ImmutableQueue
+        name: ImmutableQueue<T>
         href: System.Collections.Immutable.ImmutableQueue`1.yml
   id: System.Collections.Immutable.ImmutableQueue`1.Empty
+- uid: System.Collections.Immutable.ImmutableQueue`1.System#Collections#Immutable#IImmutableQueue{T}#Clear
+  href: System.Collections.Immutable.ImmutableQueue`1.yml
+  name: IImmutableQueue<T>.Clear()
+  fullName: System.Collections.Immutable.ImmutableQueue<T>.System.Collections.Immutable.IImmutableQueue<T>.Clear()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableQueue`1.cs
+    startLine: 99
+  summary: Gets an empty queue.
+  syntax:
+    content:
+      CSharp: IImmutableQueue<T> IImmutableQueue<T>.Clear()
+    parameters: []
+    return:
+      id: IImmutableQueue
+      type:
+        id: System.Collections.Immutable.IImmutableQueue{`0}
+        name: IImmutableQueue<T>
+        href: System.Collections.Immutable.IImmutableQueue{`0}
+  id: System.Collections.Immutable.ImmutableQueue`1.System#Collections#Immutable#IImmutableQueue{T}#Clear
 - uid: System.Collections.Immutable.ImmutableQueue`1.Peek
   href: System.Collections.Immutable.ImmutableQueue`1.yml
   name: Peek()
@@ -97,10 +129,14 @@ items:
   summary: Gets the element at the front of the queue.
   syntax:
     content:
-      CSharp: '[Pure] public T Peek()'
+      CSharp: public T Peek()
     parameters: []
     return:
       id: T
+      type:
+        id: T
+        name: T
+        href: T
   id: System.Collections.Immutable.ImmutableQueue`1.Peek
 - uid: System.Collections.Immutable.ImmutableQueue`1.Enqueue(`0)
   href: System.Collections.Immutable.ImmutableQueue`1.yml
@@ -114,7 +150,7 @@ items:
   summary: Adds an element to the back of the queue.
   syntax:
     content:
-      CSharp: '[Pure] public ImmutableQueue<T> Enqueue(T value)'
+      CSharp: public ImmutableQueue<T> Enqueue(T value)
     parameters:
     - id: value
       type:
@@ -124,8 +160,40 @@ items:
       description: The value.
     return:
       id: ImmutableQueue
+      type:
+        id: System.Collections.Immutable.ImmutableQueue`1
+        name: ImmutableQueue<T>
+        href: System.Collections.Immutable.ImmutableQueue`1.yml
       description: The new queue.
   id: System.Collections.Immutable.ImmutableQueue`1.Enqueue(`0)
+- uid: System.Collections.Immutable.ImmutableQueue`1.System#Collections#Immutable#IImmutableQueue{T}#Enqueue(`0)
+  href: System.Collections.Immutable.ImmutableQueue`1.yml
+  name: IImmutableQueue<T>.Enqueue(T)
+  fullName: System.Collections.Immutable.ImmutableQueue<T>.System.Collections.Immutable.IImmutableQueue<T>.Enqueue(T)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableQueue`1.cs
+    startLine: 170
+  summary: Adds an element to the back of the queue.
+  syntax:
+    content:
+      CSharp: IImmutableQueue<T> IImmutableQueue<T>.Enqueue(T value)
+    parameters:
+    - id: value
+      type:
+        id: T
+        name: T
+        href: T
+      description: The value.
+    return:
+      id: IImmutableQueue
+      type:
+        id: System.Collections.Immutable.IImmutableQueue{`0}
+        name: IImmutableQueue<T>
+        href: System.Collections.Immutable.IImmutableQueue{`0}
+      description: The new queue.
+  id: System.Collections.Immutable.ImmutableQueue`1.System#Collections#Immutable#IImmutableQueue{T}#Enqueue(`0)
 - uid: System.Collections.Immutable.ImmutableQueue`1.Dequeue
   href: System.Collections.Immutable.ImmutableQueue`1.yml
   name: Dequeue()
@@ -138,10 +206,14 @@ items:
   summary: Returns a queue that is missing the front element.
   syntax:
     content:
-      CSharp: '[Pure] public ImmutableQueue<T> Dequeue()'
+      CSharp: public ImmutableQueue<T> Dequeue()
     parameters: []
     return:
       id: ImmutableQueue
+      type:
+        id: System.Collections.Immutable.ImmutableQueue`1
+        name: ImmutableQueue<T>
+        href: System.Collections.Immutable.ImmutableQueue`1.yml
       description: A queue; never null.
   id: System.Collections.Immutable.ImmutableQueue`1.Dequeue
 - uid: System.Collections.Immutable.ImmutableQueue`1.Dequeue(`0@)
@@ -156,7 +228,7 @@ items:
   summary: Retrieves the item at the head of the queue, and returns a queue with the head element removed.
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Design", "CA1021:AvoidOutParameters", MessageId = "0#")] [Pure] public ImmutableQueue<T> Dequeue(out T value)'
+      CSharp: public ImmutableQueue<T> Dequeue(out T value)
     parameters:
     - id: value
       type:
@@ -166,8 +238,34 @@ items:
       description: Receives the value from the head of the queue.
     return:
       id: ImmutableQueue
+      type:
+        id: System.Collections.Immutable.ImmutableQueue`1
+        name: ImmutableQueue<T>
+        href: System.Collections.Immutable.ImmutableQueue`1.yml
       description: The new queue with the head element removed.
   id: System.Collections.Immutable.ImmutableQueue`1.Dequeue(`0@)
+- uid: System.Collections.Immutable.ImmutableQueue`1.System#Collections#Immutable#IImmutableQueue{T}#Dequeue
+  href: System.Collections.Immutable.ImmutableQueue`1.yml
+  name: IImmutableQueue<T>.Dequeue()
+  fullName: System.Collections.Immutable.ImmutableQueue<T>.System.Collections.Immutable.IImmutableQueue<T>.Dequeue()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableQueue`1.cs
+    startLine: 223
+  summary: Returns a queue that is missing the front element.
+  syntax:
+    content:
+      CSharp: IImmutableQueue<T> IImmutableQueue<T>.Dequeue()
+    parameters: []
+    return:
+      id: IImmutableQueue
+      type:
+        id: System.Collections.Immutable.IImmutableQueue{`0}
+        name: IImmutableQueue<T>
+        href: System.Collections.Immutable.IImmutableQueue{`0}
+      description: A queue; never null.
+  id: System.Collections.Immutable.ImmutableQueue`1.System#Collections#Immutable#IImmutableQueue{T}#Dequeue
 - uid: System.Collections.Immutable.ImmutableQueue`1.GetEnumerator
   href: System.Collections.Immutable.ImmutableQueue`1.yml
   name: GetEnumerator()
@@ -180,9 +278,57 @@ items:
   summary: Returns an enumerator that iterates through the collection.
   syntax:
     content:
-      CSharp: '[Pure] public Enumerator GetEnumerator()'
+      CSharp: public Enumerator GetEnumerator()
     parameters: []
     return:
       id: Enumerator
-      description: An [Enumerator](#) that can be used to iterate through the collection.
+      type:
+        id: System.Collections.Immutable.ImmutableQueue`1.Enumerator
+        name: Enumerator
+        href: System.Collections.Immutable.ImmutableQueue`1.Enumerator.yml
+      description: An [System.Collections.Immutable.ImmutableQueue`1.Enumerator](System.Collections.Immutable.ImmutableQueue`1.Enumerator.yml) that can be used to iterate through the collection.
   id: System.Collections.Immutable.ImmutableQueue`1.GetEnumerator
+- uid: System.Collections.Immutable.ImmutableQueue`1.System#Collections#Generic#IEnumerable{T}#GetEnumerator
+  href: System.Collections.Immutable.ImmutableQueue`1.yml
+  name: IEnumerable<T>.GetEnumerator()
+  fullName: System.Collections.Immutable.ImmutableQueue<T>.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableQueue`1.cs
+    startLine: 247
+  summary: Returns an enumerator that iterates through the collection.
+  syntax:
+    content:
+      CSharp: IEnumerator<T> IEnumerable<T>.GetEnumerator()
+    parameters: []
+    return:
+      id: IEnumerator
+      type:
+        id: System.Collections.Generic.IEnumerator{`0}
+        name: IEnumerator<T>
+        isExternal: true
+      description: A [System.Collections.Generic.IEnumerator`1]() that can be used to iterate through the collection.
+  id: System.Collections.Immutable.ImmutableQueue`1.System#Collections#Generic#IEnumerable{T}#GetEnumerator
+- uid: System.Collections.Immutable.ImmutableQueue`1.System#Collections#IEnumerable#GetEnumerator
+  href: System.Collections.Immutable.ImmutableQueue`1.yml
+  name: IEnumerable.GetEnumerator()
+  fullName: System.Collections.Immutable.ImmutableQueue<T>.System.Collections.IEnumerable.GetEnumerator()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableQueue`1.cs
+    startLine: 259
+  summary: Returns an enumerator that iterates through a collection.
+  syntax:
+    content:
+      CSharp: IEnumerator IEnumerable.GetEnumerator()
+    parameters: []
+    return:
+      id: IEnumerator
+      type:
+        id: System.Collections.IEnumerator
+        name: IEnumerator
+        isExternal: true
+      description: An [System.Collections.IEnumerator]() object that can be used to iterate through the collection.
+  id: System.Collections.Immutable.ImmutableQueue`1.System#Collections#IEnumerable#GetEnumerator

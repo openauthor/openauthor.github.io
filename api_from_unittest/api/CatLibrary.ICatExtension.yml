@@ -6,21 +6,22 @@ items:
   type: Class
   source:
     remote: &o0
-      branch: develop
-      repo: https://capservice.visualstudio.com/DefaultCollection/CAPS/_git/DocAsCode
-      description: f06ffe28
-    path: TestResults/Deploy_lianwei 2015-04-23 20_41_49/Out/Assets/TestClass1/CatLibrary/Class1.cs
-    startLine: 302
+      path: Class1.cs
+      branch: master
+      repo: https://github.com/vicancy/CatLibrary.git
+      key: 42596848
+    path: Class1.cs
+    startLine: 312
   summary: >-
     It's the class that contains ICat interface's extension method.
 
     This class must be public and static.Also it shouldn't be a geneic class
   syntax:
     content:
-      CSharp: public static class ICatExtension
+      CSharp: public class ICatExtension
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: CatLibrary.ICatExtension
   children:
@@ -33,12 +34,12 @@ items:
   type: Method
   source:
     remote: *o0
-    path: TestResults/Deploy_lianwei 2015-04-23 20_41_49/Out/Assets/TestClass1/CatLibrary/Class1.cs
-    startLine: 309
+    path: Class1.cs
+    startLine: 319
   summary: Extension method hint that how long the cat can sleep.
   syntax:
     content:
-      CSharp: public static void Sleep(this ICat icat, long hours)
+      CSharp: public static void Sleep(ICat icat, long hours)
     parameters:
     - id: icat
       type:
@@ -49,7 +50,7 @@ items:
     - id: hours
       type:
         id: System.Int64
-        name: System.Int64
+        name: long
         isExternal: true
       description: The length of sleep.
   id: CatLibrary.ICatExtension.Sleep(CatLibrary.ICat,System.Int64)
@@ -60,12 +61,12 @@ items:
   type: Method
   source:
     remote: *o0
-    path: TestResults/Deploy_lianwei 2015-04-23 20_41_49/Out/Assets/TestClass1/CatLibrary/Class1.cs
-    startLine: 316
+    path: Class1.cs
+    startLine: 326
   summary: Extension method to let cat play
   syntax:
     content:
-      CSharp: public static void Play(this ICat icat, string toy)
+      CSharp: public static void Play(ICat icat, string toy)
     parameters:
     - id: icat
       type:
@@ -76,7 +77,7 @@ items:
     - id: toy
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: Something to play
   id: CatLibrary.ICatExtension.Play(CatLibrary.ICat,System.String)

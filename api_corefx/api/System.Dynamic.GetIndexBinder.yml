@@ -1,0 +1,205 @@
+items:
+- uid: System.Dynamic.GetIndexBinder
+  href: System.Dynamic.GetIndexBinder.yml
+  name: GetIndexBinder
+  fullName: System.Dynamic.GetIndexBinder
+  type: Class
+  source:
+    remote: &o0
+      path: src/System.Dynamic.Runtime/src/System/Dynamic/GetIndexBinder.cs
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/GetIndexBinder.cs
+    startLine: 10
+  summary: Represents the dynamic get index operation at the call site, providing the binding semantic and the details about the operation.
+  syntax:
+    content:
+      CSharp: 'public abstract class GetIndexBinder : DynamicMetaObjectBinder'
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.Runtime.CompilerServices.CallSiteBinder
+    name: CallSiteBinder
+    href: System.Runtime.CompilerServices.CallSiteBinder.yml
+  - id: System.Dynamic.DynamicMetaObjectBinder
+    name: DynamicMetaObjectBinder
+    href: System.Dynamic.DynamicMetaObjectBinder.yml
+  id: System.Dynamic.GetIndexBinder
+  children:
+  - System.Dynamic.GetIndexBinder.#ctor(System.Dynamic.CallInfo)
+  - System.Dynamic.GetIndexBinder.ReturnType
+  - System.Dynamic.GetIndexBinder.CallInfo
+  - System.Dynamic.GetIndexBinder.Bind(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])
+  - System.Dynamic.GetIndexBinder.FallbackGetIndex(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])
+  - System.Dynamic.GetIndexBinder.FallbackGetIndex(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[],System.Dynamic.DynamicMetaObject)
+- uid: System.Dynamic.GetIndexBinder.#ctor(System.Dynamic.CallInfo)
+  href: System.Dynamic.GetIndexBinder.yml
+  name: GetIndexBinder(CallInfo)
+  fullName: System.Dynamic.GetIndexBinder.GetIndexBinder(System.Dynamic.CallInfo)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/GetIndexBinder.cs
+    startLine: 18
+  summary: Initializes a new instance of the [System.Dynamic.GetIndexBinder](System.Dynamic.GetIndexBinder.yml).
+  syntax:
+    content:
+      CSharp: protected GetIndexBinder(CallInfo callInfo)
+    parameters:
+    - id: callInfo
+      type:
+        id: System.Dynamic.CallInfo
+        name: CallInfo
+        href: System.Dynamic.CallInfo.yml
+      description: The signature of the arguments at the call site.
+  id: System.Dynamic.GetIndexBinder.#ctor(System.Dynamic.CallInfo)
+- uid: System.Dynamic.GetIndexBinder.ReturnType
+  href: System.Dynamic.GetIndexBinder.yml
+  name: ReturnType
+  fullName: System.Dynamic.GetIndexBinder.ReturnType
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/GetIndexBinder.cs
+    startLine: 27
+  summary: The result type of the operation.
+  syntax:
+    content:
+      CSharp: public override sealed Type ReturnType { get; }
+    parameters:
+    - id: ReturnType
+      type:
+        id: System.Type
+        name: Type
+        isExternal: true
+  id: System.Dynamic.GetIndexBinder.ReturnType
+- uid: System.Dynamic.GetIndexBinder.CallInfo
+  href: System.Dynamic.GetIndexBinder.yml
+  name: CallInfo
+  fullName: System.Dynamic.GetIndexBinder.CallInfo
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/GetIndexBinder.cs
+    startLine: 35
+  summary: Gets the signature of the arguments at the call site.
+  syntax:
+    content:
+      CSharp: public CallInfo CallInfo { get; }
+    parameters:
+    - id: CallInfo
+      type:
+        id: System.Dynamic.CallInfo
+        name: CallInfo
+        href: System.Dynamic.CallInfo.yml
+  id: System.Dynamic.GetIndexBinder.CallInfo
+- uid: System.Dynamic.GetIndexBinder.Bind(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])
+  href: System.Dynamic.GetIndexBinder.yml
+  name: Bind(DynamicMetaObject, DynamicMetaObject[])
+  fullName: System.Dynamic.GetIndexBinder.Bind(System.Dynamic.DynamicMetaObject, System.Dynamic.DynamicMetaObject[])
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/GetIndexBinder.cs
+    startLine: 46
+  summary: Performs the binding of the dynamic get index operation.
+  syntax:
+    content:
+      CSharp: public override sealed DynamicMetaObject Bind(DynamicMetaObject target, DynamicMetaObject[] args)
+    parameters:
+    - id: target
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The target of the dynamic get index operation.
+    - id: args
+      type:
+        id: System.Array
+        name: DynamicMetaObject[]
+        isExternal: true
+      description: An array of arguments of the dynamic get index operation.
+    return:
+      id: DynamicMetaObject
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The [System.Dynamic.DynamicMetaObject](System.Dynamic.DynamicMetaObject.yml) representing the result of the binding.
+  id: System.Dynamic.GetIndexBinder.Bind(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])
+- uid: System.Dynamic.GetIndexBinder.FallbackGetIndex(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])
+  href: System.Dynamic.GetIndexBinder.yml
+  name: FallbackGetIndex(DynamicMetaObject, DynamicMetaObject[])
+  fullName: System.Dynamic.GetIndexBinder.FallbackGetIndex(System.Dynamic.DynamicMetaObject, System.Dynamic.DynamicMetaObject[])
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/GetIndexBinder.cs
+    startLine: 69
+  summary: Performs the binding of the dynamic get index operation if the target dynamic object cannot bind.
+  syntax:
+    content:
+      CSharp: public DynamicMetaObject FallbackGetIndex(DynamicMetaObject target, DynamicMetaObject[] indexes)
+    parameters:
+    - id: target
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The target of the dynamic get index operation.
+    - id: indexes
+      type:
+        id: System.Array
+        name: DynamicMetaObject[]
+        isExternal: true
+      description: The arguments of the dynamic get index operation.
+    return:
+      id: DynamicMetaObject
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The [System.Dynamic.DynamicMetaObject](System.Dynamic.DynamicMetaObject.yml) representing the result of the binding.
+  id: System.Dynamic.GetIndexBinder.FallbackGetIndex(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])
+- uid: System.Dynamic.GetIndexBinder.FallbackGetIndex(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[],System.Dynamic.DynamicMetaObject)
+  href: System.Dynamic.GetIndexBinder.yml
+  name: FallbackGetIndex(DynamicMetaObject, DynamicMetaObject[], DynamicMetaObject)
+  fullName: System.Dynamic.GetIndexBinder.FallbackGetIndex(System.Dynamic.DynamicMetaObject, System.Dynamic.DynamicMetaObject[], System.Dynamic.DynamicMetaObject)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Dynamic.Runtime/src/System/Dynamic/GetIndexBinder.cs
+    startLine: 81
+  summary: When overridden in the derived class, performs the binding of the dynamic get index operation if the target dynamic object cannot bind.
+  syntax:
+    content:
+      CSharp: public abstract DynamicMetaObject FallbackGetIndex(DynamicMetaObject target, DynamicMetaObject[] indexes, DynamicMetaObject errorSuggestion)
+    parameters:
+    - id: target
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The target of the dynamic get index operation.
+    - id: indexes
+      type:
+        id: System.Array
+        name: DynamicMetaObject[]
+        isExternal: true
+      description: The arguments of the dynamic get index operation.
+    - id: errorSuggestion
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The binding result to use if binding fails, or null.
+    return:
+      id: DynamicMetaObject
+      type:
+        id: System.Dynamic.DynamicMetaObject
+        name: DynamicMetaObject
+        href: System.Dynamic.DynamicMetaObject.yml
+      description: The [System.Dynamic.DynamicMetaObject](System.Dynamic.DynamicMetaObject.yml) representing the result of the binding.
+  id: System.Dynamic.GetIndexBinder.FallbackGetIndex(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[],System.Dynamic.DynamicMetaObject)

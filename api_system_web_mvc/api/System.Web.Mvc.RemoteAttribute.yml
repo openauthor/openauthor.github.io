@@ -6,37 +6,57 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/RemoteAttribute.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/RemoteAttribute.cs
     startLine: 11
   syntax:
     content:
-      CSharp: public class RemoteAttribute
+      CSharp: 'public class RemoteAttribute : ValidationAttribute, _Attribute, IClientValidatable'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Attribute
-    name: System.Attribute
+    name: Attribute
     isExternal: true
   - id: System.ComponentModel.DataAnnotations.ValidationAttribute
-    name: System.ComponentModel.DataAnnotations.ValidationAttribute
+    name: ValidationAttribute
     isExternal: true
   id: System.Web.Mvc.RemoteAttribute
   children:
+  - System.Web.Mvc.RemoteAttribute.#ctor
   - System.Web.Mvc.RemoteAttribute.#ctor(System.String)
   - System.Web.Mvc.RemoteAttribute.#ctor(System.String,System.String)
   - System.Web.Mvc.RemoteAttribute.#ctor(System.String,System.String,System.String)
   - System.Web.Mvc.RemoteAttribute.#ctor(System.String,System.String,System.Web.Mvc.AreaReference)
   - System.Web.Mvc.RemoteAttribute.HttpMethod
   - System.Web.Mvc.RemoteAttribute.AdditionalFields
+  - System.Web.Mvc.RemoteAttribute.RouteData
+  - System.Web.Mvc.RemoteAttribute.RouteName
+  - System.Web.Mvc.RemoteAttribute.Routes
   - System.Web.Mvc.RemoteAttribute.FormatAdditionalFieldsForClientValidation(System.String)
   - System.Web.Mvc.RemoteAttribute.FormatPropertyForClientValidation(System.String)
+  - System.Web.Mvc.RemoteAttribute.GetUrl(System.Web.Mvc.ControllerContext)
   - System.Web.Mvc.RemoteAttribute.FormatErrorMessage(System.String)
   - System.Web.Mvc.RemoteAttribute.IsValid(System.Object)
   - System.Web.Mvc.RemoteAttribute.GetClientValidationRules(System.Web.Mvc.ModelMetadata,System.Web.Mvc.ControllerContext)
+- uid: System.Web.Mvc.RemoteAttribute.#ctor
+  href: System.Web.Mvc.RemoteAttribute.yml
+  name: RemoteAttribute()
+  fullName: System.Web.Mvc.RemoteAttribute.RemoteAttribute()
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/RemoteAttribute.cs
+    startLine: 19
+  syntax:
+    content:
+      CSharp: 'protected RemoteAttribute(): base (MvcResources.RemoteAttribute_RemoteValidationFailed)'
+    parameters: []
+  id: System.Web.Mvc.RemoteAttribute.#ctor
 - uid: System.Web.Mvc.RemoteAttribute.#ctor(System.String)
   href: System.Web.Mvc.RemoteAttribute.yml
   name: RemoteAttribute(string)
@@ -53,7 +73,7 @@ items:
     - id: routeName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.RemoteAttribute.#ctor(System.String)
 - uid: System.Web.Mvc.RemoteAttribute.#ctor(System.String,System.String)
@@ -72,12 +92,12 @@ items:
     - id: action
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: controller
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.RemoteAttribute.#ctor(System.String,System.String)
 - uid: System.Web.Mvc.RemoteAttribute.#ctor(System.String,System.String,System.String)
@@ -96,17 +116,17 @@ items:
     - id: action
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: controller
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: areaName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.RemoteAttribute.#ctor(System.String,System.String,System.String)
 - uid: System.Web.Mvc.RemoteAttribute.#ctor(System.String,System.String,System.Web.Mvc.AreaReference)
@@ -126,13 +146,13 @@ items:
     - id: action
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The route name.
     - id: controller
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The name of the controller.
     - id: areaReference
@@ -158,7 +178,7 @@ items:
     - id: HttpMethod
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.RemoteAttribute.HttpMethod
 - uid: System.Web.Mvc.RemoteAttribute.AdditionalFields
@@ -177,9 +197,66 @@ items:
     - id: AdditionalFields
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.RemoteAttribute.AdditionalFields
+- uid: System.Web.Mvc.RemoteAttribute.RouteData
+  href: System.Web.Mvc.RemoteAttribute.yml
+  name: RouteData
+  fullName: System.Web.Mvc.RemoteAttribute.RouteData
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/RemoteAttribute.cs
+    startLine: 92
+  syntax:
+    content:
+      CSharp: protected RouteValueDictionary RouteData { get; }
+    parameters:
+    - id: RouteData
+      type:
+        id: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
+        isExternal: true
+  id: System.Web.Mvc.RemoteAttribute.RouteData
+- uid: System.Web.Mvc.RemoteAttribute.RouteName
+  href: System.Web.Mvc.RemoteAttribute.yml
+  name: RouteName
+  fullName: System.Web.Mvc.RemoteAttribute.RouteName
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/RemoteAttribute.cs
+    startLine: 94
+  syntax:
+    content:
+      CSharp: protected string RouteName { get; set; }
+    parameters:
+    - id: RouteName
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Web.Mvc.RemoteAttribute.RouteName
+- uid: System.Web.Mvc.RemoteAttribute.Routes
+  href: System.Web.Mvc.RemoteAttribute.yml
+  name: Routes
+  fullName: System.Web.Mvc.RemoteAttribute.Routes
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/RemoteAttribute.cs
+    startLine: 96
+  syntax:
+    content:
+      CSharp: protected virtual RouteCollection Routes { get; }
+    parameters:
+    - id: Routes
+      type:
+        id: System.Web.Routing.RouteCollection
+        name: RouteCollection
+        isExternal: true
+  id: System.Web.Mvc.RemoteAttribute.Routes
 - uid: System.Web.Mvc.RemoteAttribute.FormatAdditionalFieldsForClientValidation(System.String)
   href: System.Web.Mvc.RemoteAttribute.yml
   name: FormatAdditionalFieldsForClientValidation(string)
@@ -196,10 +273,14 @@ items:
     - id: property
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.RemoteAttribute.FormatAdditionalFieldsForClientValidation(System.String)
 - uid: System.Web.Mvc.RemoteAttribute.FormatPropertyForClientValidation(System.String)
   href: System.Web.Mvc.RemoteAttribute.yml
@@ -217,11 +298,40 @@ items:
     - id: property
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.RemoteAttribute.FormatPropertyForClientValidation(System.String)
+- uid: System.Web.Mvc.RemoteAttribute.GetUrl(System.Web.Mvc.ControllerContext)
+  href: System.Web.Mvc.RemoteAttribute.yml
+  name: GetUrl(ControllerContext)
+  fullName: System.Web.Mvc.RemoteAttribute.GetUrl(System.Web.Mvc.ControllerContext)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/RemoteAttribute.cs
+    startLine: 127
+  syntax:
+    content:
+      CSharp: protected virtual string GetUrl(ControllerContext controllerContext)
+    parameters:
+    - id: controllerContext
+      type:
+        id: System.Web.Mvc.ControllerContext
+        name: ControllerContext
+        href: System.Web.Mvc.ControllerContext.yml
+    return:
+      id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Web.Mvc.RemoteAttribute.GetUrl(System.Web.Mvc.ControllerContext)
 - uid: System.Web.Mvc.RemoteAttribute.FormatErrorMessage(System.String)
   href: System.Web.Mvc.RemoteAttribute.yml
   name: FormatErrorMessage(string)
@@ -238,10 +348,14 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.RemoteAttribute.FormatErrorMessage(System.String)
 - uid: System.Web.Mvc.RemoteAttribute.IsValid(System.Object)
   href: System.Web.Mvc.RemoteAttribute.yml
@@ -259,10 +373,14 @@ items:
     - id: value
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Web.Mvc.RemoteAttribute.IsValid(System.Object)
 - uid: System.Web.Mvc.RemoteAttribute.GetClientValidationRules(System.Web.Mvc.ModelMetadata,System.Web.Mvc.ControllerContext)
   href: System.Web.Mvc.RemoteAttribute.yml
@@ -289,4 +407,8 @@ items:
         href: System.Web.Mvc.ControllerContext.yml
     return:
       id: IEnumerable
+      type:
+        id: System.Collections.Generic.IEnumerable{System.Web.Mvc.ModelClientValidationRule}
+        name: IEnumerable<ModelClientValidationRule>
+        isExternal: true
   id: System.Web.Mvc.RemoteAttribute.GetClientValidationRules(System.Web.Mvc.ModelMetadata,System.Web.Mvc.ControllerContext)

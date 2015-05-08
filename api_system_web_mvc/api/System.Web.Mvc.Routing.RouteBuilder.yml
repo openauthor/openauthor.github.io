@@ -6,9 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/Routing/RouteBuilder.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/Routing/RouteBuilder.cs
     startLine: 13
   summary: >-
@@ -20,7 +21,7 @@ items:
       CSharp: public class RouteBuilder
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.Routing.RouteBuilder
   children:
@@ -77,7 +78,7 @@ items:
     startLine: 40
   syntax:
     content:
-      CSharp: public IInlineConstraintResolver ConstraintResolver { get; private set; }
+      CSharp: public IInlineConstraintResolver ConstraintResolver { get; }
     parameters:
     - id: ConstraintResolver
       type:
@@ -94,7 +95,7 @@ items:
     remote: *o0
     path: src/System.Web.Mvc/Routing/RouteBuilder.cs
     startLine: 48
-  summary: Builds an [System.Web.Routing.Route](#) for a particular controller.
+  summary: Builds an [System.Web.Routing.Route]() for a particular controller.
   syntax:
     content:
       CSharp: public Route BuildDirectRoute(string routeTemplate, ControllerDescriptor controllerDescriptor)
@@ -102,7 +103,7 @@ items:
     - id: routeTemplate
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The tokenized route template for the route.
     - id: controllerDescriptor
@@ -113,7 +114,11 @@ items:
       description: The controller the route attribute has been applied on.
     return:
       id: Route
-      description: The generated [System.Web.Routing.Route](#).
+      type:
+        id: System.Web.Routing.Route
+        name: Route
+        isExternal: true
+      description: The generated [System.Web.Routing.Route]().
   id: System.Web.Mvc.Routing.RouteBuilder.BuildDirectRoute(System.String,System.Web.Mvc.ControllerDescriptor)
 - uid: System.Web.Mvc.Routing.RouteBuilder.BuildDirectRoute(System.String,System.Collections.Generic.IEnumerable{System.String},System.String,System.String,System.Reflection.MethodInfo,System.String)
   href: System.Web.Mvc.Routing.RouteBuilder.yml
@@ -124,7 +129,7 @@ items:
     remote: *o0
     path: src/System.Web.Mvc/Routing/RouteBuilder.cs
     startLine: 106
-  summary: Builds an [System.Web.Routing.Route](#) for a particular action.
+  summary: Builds an [System.Web.Routing.Route]() for a particular action.
   syntax:
     content:
       CSharp: public Route BuildDirectRoute(string routeTemplate, IEnumerable<string> allowedMethods, string controllerName, string actionName, MethodInfo targetMethod, string areaName)
@@ -132,41 +137,45 @@ items:
     - id: routeTemplate
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The tokenized route template for the route.
     - id: allowedMethods
       type:
         id: System.Collections.Generic.IEnumerable{System.String}
-        name: System.Collections.Generic.IEnumerable{System.String}
+        name: IEnumerable<string>
         isExternal: true
       description: The HTTP methods supported by the route. A null value specify that all possible methods are supported.
     - id: controllerName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The name of the associated controller.
     - id: actionName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The name of the associated action.
     - id: targetMethod
       type:
         id: System.Reflection.MethodInfo
-        name: System.Reflection.MethodInfo
+        name: MethodInfo
         isExternal: true
       description: The method that the route attribute has been applied on.
     - id: areaName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: Route
-      description: The generated [System.Web.Routing.Route](#).
+      type:
+        id: System.Web.Routing.Route
+        name: Route
+        isExternal: true
+      description: The generated [System.Web.Routing.Route]().
   id: System.Web.Mvc.Routing.RouteBuilder.BuildDirectRoute(System.String,System.Collections.Generic.IEnumerable{System.String},System.String,System.String,System.Reflection.MethodInfo,System.String)
 - uid: System.Web.Mvc.Routing.RouteBuilder.BuildDirectRoute(System.Web.Routing.RouteValueDictionary,System.Web.Routing.RouteValueDictionary,System.Web.Routing.RouteValueDictionary,System.String,System.Reflection.MethodInfo)
   href: System.Web.Mvc.Routing.RouteBuilder.yml
@@ -177,7 +186,7 @@ items:
     remote: *o0
     path: src/System.Web.Mvc/Routing/RouteBuilder.cs
     startLine: 166
-  summary: Builds an [System.Web.Routing.Route](#).
+  summary: Builds an [System.Web.Routing.Route]().
   syntax:
     content:
       CSharp: public virtual Route BuildDirectRoute(RouteValueDictionary defaults, RouteValueDictionary constraints, RouteValueDictionary dataTokens, string routeTemplate, MethodInfo targetMethod)
@@ -185,33 +194,37 @@ items:
     - id: defaults
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
       description: The route defaults.
     - id: constraints
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
       description: The route constraints.
     - id: dataTokens
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
     - id: routeTemplate
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The detokenized route template.
     - id: targetMethod
       type:
         id: System.Reflection.MethodInfo
-        name: System.Reflection.MethodInfo
+        name: MethodInfo
         isExternal: true
       description: The method that the route attribute has been applied on.
     return:
       id: Route
-      description: The generated [System.Web.Routing.Route](#).
+      type:
+        id: System.Web.Routing.Route
+        name: Route
+        isExternal: true
+      description: The generated [System.Web.Routing.Route]().
   id: System.Web.Mvc.Routing.RouteBuilder.BuildDirectRoute(System.Web.Routing.RouteValueDictionary,System.Web.Routing.RouteValueDictionary,System.Web.Routing.RouteValueDictionary,System.String,System.Reflection.MethodInfo)

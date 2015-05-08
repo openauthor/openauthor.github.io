@@ -6,25 +6,30 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlIncludeAttribute.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Xml.XmlSerializer/src/System/Xml/Serialization/XmlIncludeAttribute.cs
     startLine: 15
   syntax:
     content:
-      CSharp: public class XmlIncludeAttribute
+      CSharp: 'public class XmlIncludeAttribute : Attribute, _Attribute'
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.Attribute
-    name: System.Attribute
+    name: Attribute
     isExternal: true
   id: System.Xml.Serialization.XmlIncludeAttribute
   children:
-  - System.Xml.Serialization.XmlIncludeAttribute.#ctor(Type)
+  - System.Xml.Serialization.XmlIncludeAttribute.#ctor(System.Type)
   - System.Xml.Serialization.XmlIncludeAttribute.Type
-- uid: System.Xml.Serialization.XmlIncludeAttribute.#ctor(Type)
+- uid: System.Xml.Serialization.XmlIncludeAttribute.#ctor(System.Type)
   href: System.Xml.Serialization.XmlIncludeAttribute.yml
   name: XmlIncludeAttribute(Type)
-  fullName: System.Xml.Serialization.XmlIncludeAttribute.XmlIncludeAttribute(Type)
+  fullName: System.Xml.Serialization.XmlIncludeAttribute.XmlIncludeAttribute(System.Type)
   type: Constructor
   source:
     remote: *o0
@@ -36,10 +41,10 @@ items:
     parameters:
     - id: type
       type:
-        id: Type
+        id: System.Type
         name: Type
         isExternal: true
-  id: System.Xml.Serialization.XmlIncludeAttribute.#ctor(Type)
+  id: System.Xml.Serialization.XmlIncludeAttribute.#ctor(System.Type)
 - uid: System.Xml.Serialization.XmlIncludeAttribute.Type
   href: System.Xml.Serialization.XmlIncludeAttribute.yml
   name: Type
@@ -55,7 +60,7 @@ items:
     parameters:
     - id: Type
       type:
-        id: Type
+        id: System.Type
         name: Type
         isExternal: true
   id: System.Xml.Serialization.XmlIncludeAttribute.Type

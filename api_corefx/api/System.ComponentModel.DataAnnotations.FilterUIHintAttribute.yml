@@ -6,16 +6,21 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/FilterUIHintAttribute.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.ComponentModel.Annotations/src/System/ComponentModel/DataAnnotations/FilterUIHintAttribute.cs
     startLine: 10
   summary: An attribute used to specify the filtering behavior for a column.
   syntax:
     content:
-      CSharp: public sealed class FilterUIHintAttribute
+      CSharp: 'public sealed class FilterUIHintAttribute : Attribute, _Attribute'
   inheritance:
-  - id: Attribute
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.Attribute
     name: Attribute
     isExternal: true
   id: System.ComponentModel.DataAnnotations.FilterUIHintAttribute
@@ -48,7 +53,7 @@ items:
     - id: FilterUIHint
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.ComponentModel.DataAnnotations.FilterUIHintAttribute.FilterUIHint
 - uid: System.ComponentModel.DataAnnotations.FilterUIHintAttribute.PresentationLayer
@@ -71,7 +76,7 @@ items:
     - id: PresentationLayer
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.ComponentModel.DataAnnotations.FilterUIHintAttribute.PresentationLayer
 - uid: System.ComponentModel.DataAnnotations.FilterUIHintAttribute.ControlParameters
@@ -90,8 +95,8 @@ items:
     parameters:
     - id: ControlParameters
       type:
-        id: IDictionary{System.String,System.Object}
-        name: IDictionary{System.String,System.Object}
+        id: System.Collections.Generic.IDictionary{System.String,System.Object}
+        name: IDictionary<string, object>
         isExternal: true
   id: System.ComponentModel.DataAnnotations.FilterUIHintAttribute.ControlParameters
 - uid: System.ComponentModel.DataAnnotations.FilterUIHintAttribute.#ctor(System.String)
@@ -114,7 +119,7 @@ items:
     - id: filterUIHint
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The name of the UI control.
   id: System.ComponentModel.DataAnnotations.FilterUIHintAttribute.#ctor(System.String)
@@ -138,13 +143,13 @@ items:
     - id: filterUIHint
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The name of the control to use
     - id: presentationLayer
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: >-
         The name of the presentation layer that
@@ -171,19 +176,19 @@ items:
     - id: filterUIHint
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The name of the control
     - id: presentationLayer
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The presentation layer
     - id: controlParameters
       type:
         id: System.Array
-        name: System.Array
+        name: object[]
         isExternal: true
       description: The list of parameters for the control
   id: System.ComponentModel.DataAnnotations.FilterUIHintAttribute.#ctor(System.String,System.String,System.Object[])
@@ -203,6 +208,10 @@ items:
     parameters: []
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: A 32-bit signed integer hash code.
   id: System.ComponentModel.DataAnnotations.FilterUIHintAttribute.GetHashCode
 - uid: System.ComponentModel.DataAnnotations.FilterUIHintAttribute.Equals(System.Object)
@@ -225,11 +234,15 @@ items:
     - id: obj
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: An System.Object.
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
       description: >-
         true if obj is a FilterUIHintAttribute and its value is the same
 

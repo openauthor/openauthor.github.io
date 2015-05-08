@@ -6,18 +6,19 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Compilers/CSharp/Portable/CSharpParseOptions.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Compilers/CSharp/Portable/CSharpParseOptions.cs
     startLine: 13
   summary: This class stores several source parsing related options and offers access to their values.
   syntax:
     content:
-      CSharp: public sealed class CSharpParseOptions
+      CSharp: 'public sealed class CSharpParseOptions : ParseOptions, IEquatable<CSharpParseOptions>'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: Object
     isExternal: true
   - id: Microsoft.CodeAnalysis.ParseOptions
     name: ParseOptions
@@ -27,14 +28,17 @@ items:
   - Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.Default
   - Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.LanguageVersion
   - Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.PreprocessorSymbolNames
-  - Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.#ctor(Microsoft.CodeAnalysis.CSharp.LanguageVersion,Microsoft.CodeAnalysis.DocumentationMode,Microsoft.CodeAnalysis.SourceCodeKind,System.Collections.Generic.IEnumerable{System.String})
+  - Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.#ctor(Microsoft.CodeAnalysis.CSharp.LanguageVersion,Microsoft.CodeAnalysis.DocumentationMode,Microsoft.CodeAnalysis.SourceCodeKind,IEnumerable{System.String})
   - Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.WithKind(Microsoft.CodeAnalysis.SourceCodeKind)
   - Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.WithLanguageVersion(Microsoft.CodeAnalysis.CSharp.LanguageVersion)
-  - Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.WithPreprocessorSymbols(System.Collections.Generic.IEnumerable{System.String})
+  - Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.WithPreprocessorSymbols(IEnumerable{System.String})
   - Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.WithPreprocessorSymbols(System.String[])
-  - Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.WithPreprocessorSymbols(System.Collections.Immutable.ImmutableArray{System.String})
+  - Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.WithPreprocessorSymbols(ImmutableArray{System.String})
   - Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.WithDocumentationMode(Microsoft.CodeAnalysis.DocumentationMode)
-  - Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.WithFeatures(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}})
+  - Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.CommonWithKind(Microsoft.CodeAnalysis.SourceCodeKind)
+  - Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.CommonWithDocumentationMode(Microsoft.CodeAnalysis.DocumentationMode)
+  - Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.CommonWithFeatures(IEnumerable{Roslyn.Utilities.KeyValuePair{System.String,System.String}})
+  - Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.WithFeatures(IEnumerable{Roslyn.Utilities.KeyValuePair{System.String,System.String}})
   - Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.Features
   - Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.Equals(System.Object)
   - Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.Equals(Microsoft.CodeAnalysis.CSharp.CSharpParseOptions)
@@ -51,7 +55,7 @@ items:
   summary: The default parse options.
   syntax:
     content:
-      CSharp: Default
+      CSharp: public static readonly CSharpParseOptions Default;
   id: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.Default
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.LanguageVersion
   href: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.yml
@@ -65,7 +69,7 @@ items:
   summary: Gets the language version.
   syntax:
     content:
-      CSharp: public LanguageVersion LanguageVersion { get; private set; }
+      CSharp: public LanguageVersion LanguageVersion { get; }
     parameters:
     - id: LanguageVersion
       type:
@@ -89,14 +93,14 @@ items:
     parameters:
     - id: PreprocessorSymbolNames
       type:
-        id: System.Collections.Generic.IEnumerable{System.String}
-        name: System.Collections.Generic.IEnumerable{System.String}
+        id: IEnumerable{System.String}
+        name: IEnumerable<string>
         isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.PreprocessorSymbolNames
-- uid: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.#ctor(Microsoft.CodeAnalysis.CSharp.LanguageVersion,Microsoft.CodeAnalysis.DocumentationMode,Microsoft.CodeAnalysis.SourceCodeKind,System.Collections.Generic.IEnumerable{System.String})
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.#ctor(Microsoft.CodeAnalysis.CSharp.LanguageVersion,Microsoft.CodeAnalysis.DocumentationMode,Microsoft.CodeAnalysis.SourceCodeKind,IEnumerable{System.String})
   href: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.yml
   name: CSharpParseOptions(LanguageVersion, DocumentationMode, SourceCodeKind, IEnumerable<string>)
-  fullName: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.CSharpParseOptions(Microsoft.CodeAnalysis.CSharp.LanguageVersion, Microsoft.CodeAnalysis.DocumentationMode, Microsoft.CodeAnalysis.SourceCodeKind, System.Collections.Generic.IEnumerable<string>)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.CSharpParseOptions(Microsoft.CodeAnalysis.CSharp.LanguageVersion, Microsoft.CodeAnalysis.DocumentationMode, Microsoft.CodeAnalysis.SourceCodeKind, IEnumerable<string>)
   type: Constructor
   source:
     remote: *o0
@@ -123,10 +127,10 @@ items:
         href: Microsoft.CodeAnalysis.SourceCodeKind
     - id: preprocessorSymbols
       type:
-        id: System.Collections.Generic.IEnumerable{System.String}
-        name: System.Collections.Generic.IEnumerable{System.String}
+        id: IEnumerable{System.String}
+        name: IEnumerable<string>
         isExternal: true
-  id: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.#ctor(Microsoft.CodeAnalysis.CSharp.LanguageVersion,Microsoft.CodeAnalysis.DocumentationMode,Microsoft.CodeAnalysis.SourceCodeKind,System.Collections.Generic.IEnumerable{System.String})
+  id: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.#ctor(Microsoft.CodeAnalysis.CSharp.LanguageVersion,Microsoft.CodeAnalysis.DocumentationMode,Microsoft.CodeAnalysis.SourceCodeKind,IEnumerable{System.String})
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.WithKind(Microsoft.CodeAnalysis.SourceCodeKind)
   href: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.yml
   name: WithKind(SourceCodeKind)
@@ -138,7 +142,7 @@ items:
     startLine: 85
   syntax:
     content:
-      CSharp: public new CSharpParseOptions WithKind(SourceCodeKind kind)
+      CSharp: public CSharpParseOptions WithKind(SourceCodeKind kind)
     parameters:
     - id: kind
       type:
@@ -147,6 +151,10 @@ items:
         href: Microsoft.CodeAnalysis.SourceCodeKind
     return:
       id: CSharpParseOptions
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions
+        name: CSharpParseOptions
+        href: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.yml
   id: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.WithKind(Microsoft.CodeAnalysis.SourceCodeKind)
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.WithLanguageVersion(Microsoft.CodeAnalysis.CSharp.LanguageVersion)
   href: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.yml
@@ -168,11 +176,15 @@ items:
         href: Microsoft.CodeAnalysis.CSharp.LanguageVersion.yml
     return:
       id: CSharpParseOptions
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions
+        name: CSharpParseOptions
+        href: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.yml
   id: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.WithLanguageVersion(Microsoft.CodeAnalysis.CSharp.LanguageVersion)
-- uid: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.WithPreprocessorSymbols(System.Collections.Generic.IEnumerable{System.String})
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.WithPreprocessorSymbols(IEnumerable{System.String})
   href: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.yml
   name: WithPreprocessorSymbols(IEnumerable<string>)
-  fullName: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.WithPreprocessorSymbols(System.Collections.Generic.IEnumerable<string>)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.WithPreprocessorSymbols(IEnumerable<string>)
   type: Method
   source:
     remote: *o0
@@ -184,12 +196,16 @@ items:
     parameters:
     - id: preprocessorSymbols
       type:
-        id: System.Collections.Generic.IEnumerable{System.String}
-        name: System.Collections.Generic.IEnumerable{System.String}
+        id: IEnumerable{System.String}
+        name: IEnumerable<string>
         isExternal: true
     return:
       id: CSharpParseOptions
-  id: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.WithPreprocessorSymbols(System.Collections.Generic.IEnumerable{System.String})
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions
+        name: CSharpParseOptions
+        href: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.yml
+  id: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.WithPreprocessorSymbols(IEnumerable{System.String})
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.WithPreprocessorSymbols(System.String[])
   href: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.yml
   name: WithPreprocessorSymbols(params string[])
@@ -206,15 +222,19 @@ items:
     - id: preprocessorSymbols
       type:
         id: System.Array
-        name: System.Array
+        name: string[]
         isExternal: true
     return:
       id: CSharpParseOptions
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions
+        name: CSharpParseOptions
+        href: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.yml
   id: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.WithPreprocessorSymbols(System.String[])
-- uid: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.WithPreprocessorSymbols(System.Collections.Immutable.ImmutableArray{System.String})
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.WithPreprocessorSymbols(ImmutableArray{System.String})
   href: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.yml
   name: WithPreprocessorSymbols(ImmutableArray<string>)
-  fullName: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.WithPreprocessorSymbols(System.Collections.Immutable.ImmutableArray<string>)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.WithPreprocessorSymbols(ImmutableArray<string>)
   type: Method
   source:
     remote: *o0
@@ -226,12 +246,16 @@ items:
     parameters:
     - id: symbols
       type:
-        id: System.Collections.Immutable.ImmutableArray{System.String}
-        name: System.Collections.Immutable.ImmutableArray{System.String}
+        id: ImmutableArray{System.String}
+        name: ImmutableArray<string>
         isExternal: true
     return:
       id: CSharpParseOptions
-  id: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.WithPreprocessorSymbols(System.Collections.Immutable.ImmutableArray{System.String})
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions
+        name: CSharpParseOptions
+        href: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.yml
+  id: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.WithPreprocessorSymbols(ImmutableArray{System.String})
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.WithDocumentationMode(Microsoft.CodeAnalysis.DocumentationMode)
   href: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.yml
   name: WithDocumentationMode(DocumentationMode)
@@ -243,7 +267,7 @@ items:
     startLine: 140
   syntax:
     content:
-      CSharp: public new CSharpParseOptions WithDocumentationMode(DocumentationMode documentationMode)
+      CSharp: public CSharpParseOptions WithDocumentationMode(DocumentationMode documentationMode)
     parameters:
     - id: documentationMode
       type:
@@ -252,11 +276,90 @@ items:
         href: Microsoft.CodeAnalysis.DocumentationMode
     return:
       id: CSharpParseOptions
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions
+        name: CSharpParseOptions
+        href: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.yml
   id: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.WithDocumentationMode(Microsoft.CodeAnalysis.DocumentationMode)
-- uid: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.WithFeatures(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}})
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.CommonWithKind(Microsoft.CodeAnalysis.SourceCodeKind)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.yml
+  name: CommonWithKind(SourceCodeKind)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.CommonWithKind(Microsoft.CodeAnalysis.SourceCodeKind)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/CSharpParseOptions.cs
+    startLine: 155
+  syntax:
+    content:
+      CSharp: protected override ParseOptions CommonWithKind(SourceCodeKind kind)
+    parameters:
+    - id: kind
+      type:
+        id: Microsoft.CodeAnalysis.SourceCodeKind
+        name: SourceCodeKind
+        href: Microsoft.CodeAnalysis.SourceCodeKind
+    return:
+      id: ParseOptions
+      type:
+        id: Microsoft.CodeAnalysis.ParseOptions
+        name: ParseOptions
+        href: Microsoft.CodeAnalysis.ParseOptions
+  id: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.CommonWithKind(Microsoft.CodeAnalysis.SourceCodeKind)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.CommonWithDocumentationMode(Microsoft.CodeAnalysis.DocumentationMode)
+  href: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.yml
+  name: CommonWithDocumentationMode(DocumentationMode)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.CommonWithDocumentationMode(Microsoft.CodeAnalysis.DocumentationMode)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/CSharpParseOptions.cs
+    startLine: 160
+  syntax:
+    content:
+      CSharp: protected override ParseOptions CommonWithDocumentationMode(DocumentationMode documentationMode)
+    parameters:
+    - id: documentationMode
+      type:
+        id: Microsoft.CodeAnalysis.DocumentationMode
+        name: DocumentationMode
+        href: Microsoft.CodeAnalysis.DocumentationMode
+    return:
+      id: ParseOptions
+      type:
+        id: Microsoft.CodeAnalysis.ParseOptions
+        name: ParseOptions
+        href: Microsoft.CodeAnalysis.ParseOptions
+  id: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.CommonWithDocumentationMode(Microsoft.CodeAnalysis.DocumentationMode)
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.CommonWithFeatures(IEnumerable{Roslyn.Utilities.KeyValuePair{System.String,System.String}})
+  href: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.yml
+  name: CommonWithFeatures(IEnumerable<KeyValuePair<string, string>>)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.CommonWithFeatures(IEnumerable<Roslyn.Utilities.KeyValuePair<string, string>>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/Compilers/CSharp/Portable/CSharpParseOptions.cs
+    startLine: 165
+  syntax:
+    content:
+      CSharp: protected override ParseOptions CommonWithFeatures(IEnumerable<KeyValuePair<string, string>> features)
+    parameters:
+    - id: features
+      type:
+        id: IEnumerable{Roslyn.Utilities.KeyValuePair{System.String,System.String}}
+        name: IEnumerable<KeyValuePair<string, string>>
+        isExternal: true
+    return:
+      id: ParseOptions
+      type:
+        id: Microsoft.CodeAnalysis.ParseOptions
+        name: ParseOptions
+        href: Microsoft.CodeAnalysis.ParseOptions
+  id: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.CommonWithFeatures(IEnumerable{Roslyn.Utilities.KeyValuePair{System.String,System.String}})
+- uid: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.WithFeatures(IEnumerable{Roslyn.Utilities.KeyValuePair{System.String,System.String}})
   href: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.yml
   name: WithFeatures(IEnumerable<KeyValuePair<string, string>>)
-  fullName: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.WithFeatures(System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string, string>>)
+  fullName: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.WithFeatures(IEnumerable<Roslyn.Utilities.KeyValuePair<string, string>>)
   type: Method
   source:
     remote: *o0
@@ -265,16 +368,20 @@ items:
   summary: Enable some experimental language features for testing.
   syntax:
     content:
-      CSharp: public new CSharpParseOptions WithFeatures(IEnumerable<KeyValuePair<string, string>> features)
+      CSharp: public CSharpParseOptions WithFeatures(IEnumerable<KeyValuePair<string, string>> features)
     parameters:
     - id: features
       type:
-        id: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}}
-        name: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}}
+        id: IEnumerable{Roslyn.Utilities.KeyValuePair{System.String,System.String}}
+        name: IEnumerable<KeyValuePair<string, string>>
         isExternal: true
     return:
       id: CSharpParseOptions
-  id: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.WithFeatures(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}})
+      type:
+        id: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions
+        name: CSharpParseOptions
+        href: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.yml
+  id: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.WithFeatures(IEnumerable{Roslyn.Utilities.KeyValuePair{System.String,System.String}})
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.Features
   href: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.yml
   name: Features
@@ -290,8 +397,8 @@ items:
     parameters:
     - id: Features
       type:
-        id: System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}
-        name: System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}
+        id: IReadOnlyDictionary{System.String,System.String}
+        name: IReadOnlyDictionary<string, string>
         isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.Features
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.Equals(System.Object)
@@ -310,10 +417,14 @@ items:
     - id: obj
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.Equals(System.Object)
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.Equals(Microsoft.CodeAnalysis.CSharp.CSharpParseOptions)
   href: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.yml
@@ -335,6 +446,10 @@ items:
         href: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.Equals(Microsoft.CodeAnalysis.CSharp.CSharpParseOptions)
 - uid: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.GetHashCode
   href: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.yml
@@ -351,4 +466,8 @@ items:
     parameters: []
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: Microsoft.CodeAnalysis.CSharp.CSharpParseOptions.GetHashCode

@@ -6,9 +6,10 @@ items:
   type: Interface
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/FindSymbols/IFindReferencesProgress.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/FindSymbols/IFindReferencesProgress.cs
     startLine: 8
   summary: >-
@@ -38,7 +39,7 @@ items:
     startLine: 10
   syntax:
     content:
-      CSharp: void OnStarted();
+      CSharp: public void OnStarted()
     parameters: []
   id: Microsoft.CodeAnalysis.FindSymbols.IFindReferencesProgress.OnStarted
 - uid: Microsoft.CodeAnalysis.FindSymbols.IFindReferencesProgress.OnCompleted
@@ -52,7 +53,7 @@ items:
     startLine: 11
   syntax:
     content:
-      CSharp: void OnCompleted();
+      CSharp: public void OnCompleted()
     parameters: []
   id: Microsoft.CodeAnalysis.FindSymbols.IFindReferencesProgress.OnCompleted
 - uid: Microsoft.CodeAnalysis.FindSymbols.IFindReferencesProgress.OnFindInDocumentStarted(Microsoft.CodeAnalysis.Document)
@@ -66,7 +67,7 @@ items:
     startLine: 13
   syntax:
     content:
-      CSharp: void OnFindInDocumentStarted(Document document);
+      CSharp: public void OnFindInDocumentStarted(Document document)
     parameters:
     - id: document
       type:
@@ -85,7 +86,7 @@ items:
     startLine: 14
   syntax:
     content:
-      CSharp: void OnFindInDocumentCompleted(Document document);
+      CSharp: public void OnFindInDocumentCompleted(Document document)
     parameters:
     - id: document
       type:
@@ -104,7 +105,7 @@ items:
     startLine: 16
   syntax:
     content:
-      CSharp: void OnDefinitionFound(ISymbol symbol);
+      CSharp: public void OnDefinitionFound(ISymbol symbol)
     parameters:
     - id: symbol
       type:
@@ -123,7 +124,7 @@ items:
     startLine: 17
   syntax:
     content:
-      CSharp: void OnReferenceFound(ISymbol symbol, ReferenceLocation location);
+      CSharp: public void OnReferenceFound(ISymbol symbol, ReferenceLocation location)
     parameters:
     - id: symbol
       type:
@@ -147,16 +148,16 @@ items:
     startLine: 19
   syntax:
     content:
-      CSharp: void ReportProgress(int current, int maximum);
+      CSharp: public void ReportProgress(int current, int maximum)
     parameters:
     - id: current
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: maximum
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: Microsoft.CodeAnalysis.FindSymbols.IFindReferencesProgress.ReportProgress(System.Int32,System.Int32)

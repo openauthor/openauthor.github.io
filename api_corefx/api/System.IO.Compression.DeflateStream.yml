@@ -5,24 +5,32 @@ items:
   fullName: System.IO.Compression.DeflateStream
   type: Class
   source:
-    remote: &o0
+    remote:
+      path: src/System.IO.Compression/src/System/IO/Compression/DeflateStream.Windows.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
-    path: src/System.IO.Compression/src/System/IO/Compression/DeflateStream.cs
-    startLine: 10
+      key: 882a41e3
+    path: src/System.IO.Compression/src/System/IO/Compression/DeflateStream.Windows.cs
+    startLine: 5
   syntax:
     content:
-      CSharp: public class DeflateStream
+      CSharp: 'public class DeflateStream : Stream, IDisposable'
   inheritance:
-  - id: Stream
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.MarshalByRefObject
+    name: MarshalByRefObject
+    isExternal: true
+  - id: System.IO.Stream
     name: Stream
     isExternal: true
   id: System.IO.Compression.DeflateStream
   children:
-  - System.IO.Compression.DeflateStream.#ctor(Stream,System.IO.Compression.CompressionMode)
-  - System.IO.Compression.DeflateStream.#ctor(Stream,System.IO.Compression.CompressionMode,System.Boolean)
-  - System.IO.Compression.DeflateStream.#ctor(Stream,System.IO.Compression.CompressionLevel)
-  - System.IO.Compression.DeflateStream.#ctor(Stream,System.IO.Compression.CompressionLevel,System.Boolean)
+  - System.IO.Compression.DeflateStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionMode)
+  - System.IO.Compression.DeflateStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionMode,System.Boolean)
+  - System.IO.Compression.DeflateStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionLevel)
+  - System.IO.Compression.DeflateStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionLevel,System.Boolean)
   - System.IO.Compression.DeflateStream.BaseStream
   - System.IO.Compression.DeflateStream.CanRead
   - System.IO.Compression.DeflateStream.CanWrite
@@ -30,28 +38,34 @@ items:
   - System.IO.Compression.DeflateStream.Length
   - System.IO.Compression.DeflateStream.Position
   - System.IO.Compression.DeflateStream.Flush
-  - System.IO.Compression.DeflateStream.Seek(System.Int64,SeekOrigin)
+  - System.IO.Compression.DeflateStream.FlushAsync(System.Threading.CancellationToken)
+  - System.IO.Compression.DeflateStream.Seek(System.Int64,System.IO.SeekOrigin)
   - System.IO.Compression.DeflateStream.SetLength(System.Int64)
   - System.IO.Compression.DeflateStream.Read(System.Byte[],System.Int32,System.Int32)
-  - System.IO.Compression.DeflateStream.ReadAsync(Byte[],System.Int32,System.Int32,CancellationToken)
+  - System.IO.Compression.DeflateStream.ReadAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)
   - System.IO.Compression.DeflateStream.Write(System.Byte[],System.Int32,System.Int32)
-  - System.IO.Compression.DeflateStream.WriteAsync(Byte[],System.Int32,System.Int32,CancellationToken)
-- uid: System.IO.Compression.DeflateStream.#ctor(Stream,System.IO.Compression.CompressionMode)
+  - System.IO.Compression.DeflateStream.Dispose(System.Boolean)
+  - System.IO.Compression.DeflateStream.WriteAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)
+- uid: System.IO.Compression.DeflateStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionMode)
   href: System.IO.Compression.DeflateStream.yml
   name: DeflateStream(Stream, CompressionMode)
-  fullName: System.IO.Compression.DeflateStream.DeflateStream(Stream, System.IO.Compression.CompressionMode)
+  fullName: System.IO.Compression.DeflateStream.DeflateStream(System.IO.Stream, System.IO.Compression.CompressionMode)
   type: Constructor
   source:
-    remote: *o0
+    remote: &o0
+      path: src/System.IO.Compression/src/System/IO/Compression/DeflateStream.cs
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.IO.Compression/src/System/IO/Compression/DeflateStream.cs
-    startLine: 31
+    startLine: 30
   syntax:
     content:
       CSharp: 'public DeflateStream(Stream stream, CompressionMode mode): this (stream, mode, false)'
     parameters:
     - id: stream
       type:
-        id: Stream
+        id: System.IO.Stream
         name: Stream
         isExternal: true
     - id: mode
@@ -59,23 +73,23 @@ items:
         id: System.IO.Compression.CompressionMode
         name: CompressionMode
         href: System.IO.Compression.CompressionMode.yml
-  id: System.IO.Compression.DeflateStream.#ctor(Stream,System.IO.Compression.CompressionMode)
-- uid: System.IO.Compression.DeflateStream.#ctor(Stream,System.IO.Compression.CompressionMode,System.Boolean)
+  id: System.IO.Compression.DeflateStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionMode)
+- uid: System.IO.Compression.DeflateStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionMode,System.Boolean)
   href: System.IO.Compression.DeflateStream.yml
   name: DeflateStream(Stream, CompressionMode, bool)
-  fullName: System.IO.Compression.DeflateStream.DeflateStream(Stream, System.IO.Compression.CompressionMode, bool)
+  fullName: System.IO.Compression.DeflateStream.DeflateStream(System.IO.Stream, System.IO.Compression.CompressionMode, bool)
   type: Constructor
   source:
     remote: *o0
     path: src/System.IO.Compression/src/System/IO/Compression/DeflateStream.cs
-    startLine: 36
+    startLine: 35
   syntax:
     content:
       CSharp: public DeflateStream(Stream stream, CompressionMode mode, bool leaveOpen)
     parameters:
     - id: stream
       type:
-        id: Stream
+        id: System.IO.Stream
         name: Stream
         isExternal: true
     - id: mode
@@ -86,25 +100,25 @@ items:
     - id: leaveOpen
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
-  id: System.IO.Compression.DeflateStream.#ctor(Stream,System.IO.Compression.CompressionMode,System.Boolean)
-- uid: System.IO.Compression.DeflateStream.#ctor(Stream,System.IO.Compression.CompressionLevel)
+  id: System.IO.Compression.DeflateStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionMode,System.Boolean)
+- uid: System.IO.Compression.DeflateStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionLevel)
   href: System.IO.Compression.DeflateStream.yml
   name: DeflateStream(Stream, CompressionLevel)
-  fullName: System.IO.Compression.DeflateStream.DeflateStream(Stream, System.IO.Compression.CompressionLevel)
+  fullName: System.IO.Compression.DeflateStream.DeflateStream(System.IO.Stream, System.IO.Compression.CompressionLevel)
   type: Constructor
   source:
     remote: *o0
     path: src/System.IO.Compression/src/System/IO/Compression/DeflateStream.cs
-    startLine: 77
+    startLine: 76
   syntax:
     content:
       CSharp: 'public DeflateStream(Stream stream, CompressionLevel compressionLevel): this (stream, compressionLevel, false)'
     parameters:
     - id: stream
       type:
-        id: Stream
+        id: System.IO.Stream
         name: Stream
         isExternal: true
     - id: compressionLevel
@@ -112,23 +126,23 @@ items:
         id: System.IO.Compression.CompressionLevel
         name: CompressionLevel
         href: System.IO.Compression.CompressionLevel.yml
-  id: System.IO.Compression.DeflateStream.#ctor(Stream,System.IO.Compression.CompressionLevel)
-- uid: System.IO.Compression.DeflateStream.#ctor(Stream,System.IO.Compression.CompressionLevel,System.Boolean)
+  id: System.IO.Compression.DeflateStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionLevel)
+- uid: System.IO.Compression.DeflateStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionLevel,System.Boolean)
   href: System.IO.Compression.DeflateStream.yml
   name: DeflateStream(Stream, CompressionLevel, bool)
-  fullName: System.IO.Compression.DeflateStream.DeflateStream(Stream, System.IO.Compression.CompressionLevel, bool)
+  fullName: System.IO.Compression.DeflateStream.DeflateStream(System.IO.Stream, System.IO.Compression.CompressionLevel, bool)
   type: Constructor
   source:
     remote: *o0
     path: src/System.IO.Compression/src/System/IO/Compression/DeflateStream.cs
-    startLine: 84
+    startLine: 83
   syntax:
     content:
       CSharp: public DeflateStream(Stream stream, CompressionLevel compressionLevel, bool leaveOpen)
     parameters:
     - id: stream
       type:
-        id: Stream
+        id: System.IO.Stream
         name: Stream
         isExternal: true
     - id: compressionLevel
@@ -139,9 +153,9 @@ items:
     - id: leaveOpen
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
-  id: System.IO.Compression.DeflateStream.#ctor(Stream,System.IO.Compression.CompressionLevel,System.Boolean)
+  id: System.IO.Compression.DeflateStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionLevel,System.Boolean)
 - uid: System.IO.Compression.DeflateStream.BaseStream
   href: System.IO.Compression.DeflateStream.yml
   name: BaseStream
@@ -150,14 +164,14 @@ items:
   source:
     remote: *o0
     path: src/System.IO.Compression/src/System/IO/Compression/DeflateStream.cs
-    startLine: 157
+    startLine: 142
   syntax:
     content:
       CSharp: public Stream BaseStream { get; }
     parameters:
     - id: BaseStream
       type:
-        id: Stream
+        id: System.IO.Stream
         name: Stream
         isExternal: true
   id: System.IO.Compression.DeflateStream.BaseStream
@@ -169,7 +183,7 @@ items:
   source:
     remote: *o0
     path: src/System.IO.Compression/src/System/IO/Compression/DeflateStream.cs
-    startLine: 165
+    startLine: 150
   syntax:
     content:
       CSharp: public override bool CanRead { get; }
@@ -177,7 +191,7 @@ items:
     - id: CanRead
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.IO.Compression.DeflateStream.CanRead
 - uid: System.IO.Compression.DeflateStream.CanWrite
@@ -188,7 +202,7 @@ items:
   source:
     remote: *o0
     path: src/System.IO.Compression/src/System/IO/Compression/DeflateStream.cs
-    startLine: 178
+    startLine: 163
   syntax:
     content:
       CSharp: public override bool CanWrite { get; }
@@ -196,7 +210,7 @@ items:
     - id: CanWrite
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.IO.Compression.DeflateStream.CanWrite
 - uid: System.IO.Compression.DeflateStream.CanSeek
@@ -207,7 +221,7 @@ items:
   source:
     remote: *o0
     path: src/System.IO.Compression/src/System/IO/Compression/DeflateStream.cs
-    startLine: 191
+    startLine: 176
   syntax:
     content:
       CSharp: public override bool CanSeek { get; }
@@ -215,7 +229,7 @@ items:
     - id: CanSeek
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.IO.Compression.DeflateStream.CanSeek
 - uid: System.IO.Compression.DeflateStream.Length
@@ -226,7 +240,7 @@ items:
   source:
     remote: *o0
     path: src/System.IO.Compression/src/System/IO/Compression/DeflateStream.cs
-    startLine: 199
+    startLine: 184
   syntax:
     content:
       CSharp: public override long Length { get; }
@@ -234,7 +248,7 @@ items:
     - id: Length
       type:
         id: System.Int64
-        name: System.Int64
+        name: long
         isExternal: true
   id: System.IO.Compression.DeflateStream.Length
 - uid: System.IO.Compression.DeflateStream.Position
@@ -245,7 +259,7 @@ items:
   source:
     remote: *o0
     path: src/System.IO.Compression/src/System/IO/Compression/DeflateStream.cs
-    startLine: 207
+    startLine: 192
   syntax:
     content:
       CSharp: public override long Position { get; set; }
@@ -253,7 +267,7 @@ items:
     - id: Position
       type:
         id: System.Int64
-        name: System.Int64
+        name: long
         isExternal: true
   id: System.IO.Compression.DeflateStream.Position
 - uid: System.IO.Compression.DeflateStream.Flush
@@ -264,21 +278,46 @@ items:
   source:
     remote: *o0
     path: src/System.IO.Compression/src/System/IO/Compression/DeflateStream.cs
-    startLine: 220
+    startLine: 205
   syntax:
     content:
       CSharp: public override void Flush()
     parameters: []
   id: System.IO.Compression.DeflateStream.Flush
-- uid: System.IO.Compression.DeflateStream.Seek(System.Int64,SeekOrigin)
+- uid: System.IO.Compression.DeflateStream.FlushAsync(System.Threading.CancellationToken)
   href: System.IO.Compression.DeflateStream.yml
-  name: Seek(long, SeekOrigin)
-  fullName: System.IO.Compression.DeflateStream.Seek(long, SeekOrigin)
+  name: FlushAsync(CancellationToken)
+  fullName: System.IO.Compression.DeflateStream.FlushAsync(System.Threading.CancellationToken)
   type: Method
   source:
     remote: *o0
     path: src/System.IO.Compression/src/System/IO/Compression/DeflateStream.cs
-    startLine: 226
+    startLine: 211
+  syntax:
+    content:
+      CSharp: public override Task FlushAsync(CancellationToken cancellationToken)
+    parameters:
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: CancellationToken
+        isExternal: true
+    return:
+      id: Task
+      type:
+        id: System.Threading.Tasks.Task
+        name: Task
+        isExternal: true
+  id: System.IO.Compression.DeflateStream.FlushAsync(System.Threading.CancellationToken)
+- uid: System.IO.Compression.DeflateStream.Seek(System.Int64,System.IO.SeekOrigin)
+  href: System.IO.Compression.DeflateStream.yml
+  name: Seek(long, SeekOrigin)
+  fullName: System.IO.Compression.DeflateStream.Seek(long, System.IO.SeekOrigin)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.Compression/src/System/IO/Compression/DeflateStream.cs
+    startLine: 219
   syntax:
     content:
       CSharp: public override long Seek(long offset, SeekOrigin origin)
@@ -286,16 +325,20 @@ items:
     - id: offset
       type:
         id: System.Int64
-        name: System.Int64
+        name: long
         isExternal: true
     - id: origin
       type:
-        id: SeekOrigin
+        id: System.IO.SeekOrigin
         name: SeekOrigin
         isExternal: true
     return:
       id: Int64
-  id: System.IO.Compression.DeflateStream.Seek(System.Int64,SeekOrigin)
+      type:
+        id: System.Int64
+        name: long
+        isExternal: true
+  id: System.IO.Compression.DeflateStream.Seek(System.Int64,System.IO.SeekOrigin)
 - uid: System.IO.Compression.DeflateStream.SetLength(System.Int64)
   href: System.IO.Compression.DeflateStream.yml
   name: SetLength(long)
@@ -304,7 +347,7 @@ items:
   source:
     remote: *o0
     path: src/System.IO.Compression/src/System/IO/Compression/DeflateStream.cs
-    startLine: 231
+    startLine: 224
   syntax:
     content:
       CSharp: public override void SetLength(long value)
@@ -312,7 +355,7 @@ items:
     - id: value
       type:
         id: System.Int64
-        name: System.Int64
+        name: long
         isExternal: true
   id: System.IO.Compression.DeflateStream.SetLength(System.Int64)
 - uid: System.IO.Compression.DeflateStream.Read(System.Byte[],System.Int32,System.Int32)
@@ -323,7 +366,7 @@ items:
   source:
     remote: *o0
     path: src/System.IO.Compression/src/System/IO/Compression/DeflateStream.cs
-    startLine: 236
+    startLine: 229
   syntax:
     content:
       CSharp: public override int Read(byte[] array, int offset, int count)
@@ -331,57 +374,65 @@ items:
     - id: array
       type:
         id: System.Array
-        name: System.Array
+        name: byte[]
         isExternal: true
     - id: offset
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: System.IO.Compression.DeflateStream.Read(System.Byte[],System.Int32,System.Int32)
-- uid: System.IO.Compression.DeflateStream.ReadAsync(Byte[],System.Int32,System.Int32,CancellationToken)
+- uid: System.IO.Compression.DeflateStream.ReadAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)
   href: System.IO.Compression.DeflateStream.yml
-  name: ReadAsync(Byte[], int, int, CancellationToken)
-  fullName: System.IO.Compression.DeflateStream.ReadAsync(Byte[], int, int, CancellationToken)
+  name: ReadAsync(byte[], int, int, CancellationToken)
+  fullName: System.IO.Compression.DeflateStream.ReadAsync(byte[], int, int, System.Threading.CancellationToken)
   type: Method
   source:
     remote: *o0
     path: src/System.IO.Compression/src/System/IO/Compression/DeflateStream.cs
-    startLine: 311
+    startLine: 304
   syntax:
     content:
-      CSharp: public override Task<int> ReadAsync(Byte[] array, int offset, int count, CancellationToken cancellationToken)
+      CSharp: public override Task<int> ReadAsync(byte[] array, int offset, int count, CancellationToken cancellationToken)
     parameters:
     - id: array
       type:
         id: System.Array
-        name: System.Array
+        name: byte[]
         isExternal: true
     - id: offset
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: cancellationToken
       type:
-        id: CancellationToken
+        id: System.Threading.CancellationToken
         name: CancellationToken
         isExternal: true
     return:
       id: Task
-  id: System.IO.Compression.DeflateStream.ReadAsync(Byte[],System.Int32,System.Int32,CancellationToken)
+      type:
+        id: System.Threading.Tasks.Task{System.Int32}
+        name: Task<int>
+        isExternal: true
+  id: System.IO.Compression.DeflateStream.ReadAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)
 - uid: System.IO.Compression.DeflateStream.Write(System.Byte[],System.Int32,System.Int32)
   href: System.IO.Compression.DeflateStream.yml
   name: Write(byte[], int, int)
@@ -390,7 +441,7 @@ items:
   source:
     remote: *o0
     path: src/System.IO.Compression/src/System/IO/Compression/DeflateStream.cs
-    startLine: 449
+    startLine: 402
   syntax:
     content:
       CSharp: public override void Write(byte[] array, int offset, int count)
@@ -398,52 +449,75 @@ items:
     - id: array
       type:
         id: System.Array
-        name: System.Array
+        name: byte[]
         isExternal: true
     - id: offset
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.IO.Compression.DeflateStream.Write(System.Byte[],System.Int32,System.Int32)
-- uid: System.IO.Compression.DeflateStream.WriteAsync(Byte[],System.Int32,System.Int32,CancellationToken)
+- uid: System.IO.Compression.DeflateStream.Dispose(System.Boolean)
   href: System.IO.Compression.DeflateStream.yml
-  name: WriteAsync(Byte[], int, int, CancellationToken)
-  fullName: System.IO.Compression.DeflateStream.WriteAsync(Byte[], int, int, CancellationToken)
+  name: Dispose(bool)
+  fullName: System.IO.Compression.DeflateStream.Dispose(bool)
   type: Method
   source:
     remote: *o0
     path: src/System.IO.Compression/src/System/IO/Compression/DeflateStream.cs
-    startLine: 610
+    startLine: 529
   syntax:
     content:
-      CSharp: public override Task WriteAsync(Byte[] array, int offset, int count, CancellationToken cancellationToken)
+      CSharp: protected override void Dispose(bool disposing)
+    parameters:
+    - id: disposing
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.IO.Compression.DeflateStream.Dispose(System.Boolean)
+- uid: System.IO.Compression.DeflateStream.WriteAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)
+  href: System.IO.Compression.DeflateStream.yml
+  name: WriteAsync(byte[], int, int, CancellationToken)
+  fullName: System.IO.Compression.DeflateStream.WriteAsync(byte[], int, int, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.Compression/src/System/IO/Compression/DeflateStream.cs
+    startLine: 563
+  syntax:
+    content:
+      CSharp: public override Task WriteAsync(byte[] array, int offset, int count, CancellationToken cancellationToken)
     parameters:
     - id: array
       type:
         id: System.Array
-        name: System.Array
+        name: byte[]
         isExternal: true
     - id: offset
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
     - id: cancellationToken
       type:
-        id: CancellationToken
+        id: System.Threading.CancellationToken
         name: CancellationToken
         isExternal: true
     return:
       id: Task
-  id: System.IO.Compression.DeflateStream.WriteAsync(Byte[],System.Int32,System.Int32,CancellationToken)
+      type:
+        id: System.Threading.Tasks.Task
+        name: Task
+        isExternal: true
+  id: System.IO.Compression.DeflateStream.WriteAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)

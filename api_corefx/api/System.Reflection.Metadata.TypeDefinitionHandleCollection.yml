@@ -6,22 +6,29 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
     startLine: 1263
   summary: Represents a collection of [System.Reflection.Metadata.TypeDefinitionHandle](System.Reflection.Metadata.TypeDefinitionHandle.yml).
   syntax:
     content:
-      CSharp: public struct TypeDefinitionHandleCollection
+      CSharp: 'public struct TypeDefinitionHandleCollection : IReadOnlyCollection<TypeDefinitionHandle>, IEnumerable<TypeDefinitionHandle>, IEnumerable'
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Reflection.Metadata.TypeDefinitionHandleCollection
   children:
   - System.Reflection.Metadata.TypeDefinitionHandleCollection.Count
   - System.Reflection.Metadata.TypeDefinitionHandleCollection.GetEnumerator
+  - System.Reflection.Metadata.TypeDefinitionHandleCollection.System#Collections#Generic#IEnumerable{System#Reflection#Metadata#TypeDefinitionHandle}#GetEnumerator
+  - System.Reflection.Metadata.TypeDefinitionHandleCollection.System#Collections#IEnumerable#GetEnumerator
 - uid: System.Reflection.Metadata.TypeDefinitionHandleCollection.Count
   href: System.Reflection.Metadata.TypeDefinitionHandleCollection.yml
   name: Count
@@ -38,7 +45,7 @@ items:
     - id: Count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Reflection.Metadata.TypeDefinitionHandleCollection.Count
 - uid: System.Reflection.Metadata.TypeDefinitionHandleCollection.GetEnumerator
@@ -56,4 +63,48 @@ items:
     parameters: []
     return:
       id: Enumerator
+      type:
+        id: System.Reflection.Metadata.TypeDefinitionHandleCollection.Enumerator
+        name: Enumerator
+        href: System.Reflection.Metadata.TypeDefinitionHandleCollection.Enumerator.yml
   id: System.Reflection.Metadata.TypeDefinitionHandleCollection.GetEnumerator
+- uid: System.Reflection.Metadata.TypeDefinitionHandleCollection.System#Collections#Generic#IEnumerable{System#Reflection#Metadata#TypeDefinitionHandle}#GetEnumerator
+  href: System.Reflection.Metadata.TypeDefinitionHandleCollection.yml
+  name: IEnumerable<TypeDefinitionHandle>.GetEnumerator()
+  fullName: System.Reflection.Metadata.TypeDefinitionHandleCollection.System.Collections.Generic.IEnumerable<System.Reflection.Metadata.TypeDefinitionHandle>.GetEnumerator()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
+    startLine: 1283
+  syntax:
+    content:
+      CSharp: IEnumerator<TypeDefinitionHandle> IEnumerable<TypeDefinitionHandle>.GetEnumerator()
+    parameters: []
+    return:
+      id: IEnumerator
+      type:
+        id: System.Collections.Generic.IEnumerator{System.Reflection.Metadata.TypeDefinitionHandle}
+        name: IEnumerator<TypeDefinitionHandle>
+        isExternal: true
+  id: System.Reflection.Metadata.TypeDefinitionHandleCollection.System#Collections#Generic#IEnumerable{System#Reflection#Metadata#TypeDefinitionHandle}#GetEnumerator
+- uid: System.Reflection.Metadata.TypeDefinitionHandleCollection.System#Collections#IEnumerable#GetEnumerator
+  href: System.Reflection.Metadata.TypeDefinitionHandleCollection.yml
+  name: IEnumerable.GetEnumerator()
+  fullName: System.Reflection.Metadata.TypeDefinitionHandleCollection.System.Collections.IEnumerable.GetEnumerator()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
+    startLine: 1288
+  syntax:
+    content:
+      CSharp: IEnumerator IEnumerable.GetEnumerator()
+    parameters: []
+    return:
+      id: IEnumerator
+      type:
+        id: System.Collections.IEnumerator
+        name: IEnumerator
+        isExternal: true
+  id: System.Reflection.Metadata.TypeDefinitionHandleCollection.System#Collections#IEnumerable#GetEnumerator

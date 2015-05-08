@@ -6,14 +6,16 @@ items:
   type: Interface
   source:
     remote: &o0
+      path: src/System.Collections.Immutable/src/System/Collections/Immutable/IImmutableList.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Collections.Immutable/src/System/Collections/Immutable/IImmutableList.cs
     startLine: 17
   summary: A list of elements that can only be modified by creating a new instance of the list.
   syntax:
     content:
-      CSharp: public interface IImmutableList<T>
+      CSharp: 'public interface IImmutableList<T> : IReadOnlyList<T>, IReadOnlyCollection<T>, IEnumerable<T>, IEnumerable'
   id: System.Collections.Immutable.IImmutableList`1
   children:
   - System.Collections.Immutable.IImmutableList`1.Clear
@@ -42,10 +44,14 @@ items:
   summary: Gets an empty list that retains the same sort or unordered semantics that this instance has.
   syntax:
     content:
-      CSharp: '[Pure] IImmutableList<T> Clear();'
+      CSharp: public IImmutableList<T> Clear()
     parameters: []
     return:
       id: IImmutableList
+      type:
+        id: System.Collections.Immutable.IImmutableList`1
+        name: IImmutableList<T>
+        href: System.Collections.Immutable.IImmutableList`1.yml
   id: System.Collections.Immutable.IImmutableList`1.Clear
 - uid: System.Collections.Immutable.IImmutableList`1.IndexOf(`0,System.Int32,System.Int32,System.Collections.Generic.IEqualityComparer{`0})
   href: System.Collections.Immutable.IImmutableList`1.yml
@@ -59,12 +65,12 @@ items:
   summary: >-
     Searches for the specified object and returns the zero-based index of the
 
-    first occurrence within the range of elements in the ImmutableList<T>
+    first occurrence within the range of elements in the [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml)
 
     that starts at the specified index and contains the specified number of elements.
   syntax:
     content:
-      CSharp: '[Pure] int IndexOf(T item, int index, int count, IEqualityComparer<T> equalityComparer);'
+      CSharp: public int IndexOf(T item, int index, int count, IEqualityComparer<T> equalityComparer)
     parameters:
     - id: item
       type:
@@ -72,13 +78,13 @@ items:
         name: T
         href: T
       description: >-
-        The object to locate in the ImmutableList<T>. The value
+        The object to locate in the [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml). The value
 
         can be null for reference types.
     - id: index
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: >-
         The zero-based starting index of the search. 0 (zero) is valid in an empty
@@ -87,21 +93,25 @@ items:
     - id: count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The number of elements in the section to search.
     - id: equalityComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{`0}
-        name: System.Collections.Generic.IEqualityComparer{`0}
+        name: IEqualityComparer<T>
         isExternal: true
       description: The equality comparer to use in the search.
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: >-
         The zero-based index of the first occurrence of item within the range of
 
-        elements in the ImmutableList<T> that starts at index and
+        elements in the [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml) that starts at index and
 
         contains count number of elements, if found; otherwise, -1.
   id: System.Collections.Immutable.IImmutableList`1.IndexOf(`0,System.Int32,System.Int32,System.Collections.Generic.IEqualityComparer{`0})
@@ -117,14 +127,14 @@ items:
   summary: >-
     Searches for the specified object and returns the zero-based index of the
 
-    last occurrence within the range of elements in the ImmutableList<T>
+    last occurrence within the range of elements in the [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml)
 
     that contains the specified number of elements and ends at the specified
 
     index.
   syntax:
     content:
-      CSharp: '[Pure] int LastIndexOf(T item, int index, int count, IEqualityComparer<T> equalityComparer);'
+      CSharp: public int LastIndexOf(T item, int index, int count, IEqualityComparer<T> equalityComparer)
     parameters:
     - id: item
       type:
@@ -132,35 +142,39 @@ items:
         name: T
         href: T
       description: >-
-        The object to locate in the ImmutableList<T>. The value
+        The object to locate in the [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml). The value
 
         can be null for reference types.
     - id: index
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The starting position of the search. The search proceeds from  toward the beginning of this instance.
     - id: count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The number of elements in the section to search.
     - id: equalityComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{`0}
-        name: System.Collections.Generic.IEqualityComparer{`0}
+        name: IEqualityComparer<T>
         isExternal: true
       description: The equality comparer to use in the search.
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
       description: >-
-        The zero-based index of the last occurrence of item within the range of elements
+        The zero-based index of the last occurrence of  within the range of elements
 
-        in the ImmutableList<T> that contains count number of elements
+        in the [System.Collections.Immutable.ImmutableList`1](System.Collections.Immutable.ImmutableList`1.yml) that contains  number of elements
 
-        and ends at index, if found; otherwise, -1.
+        and ends at , if found; otherwise, -1.
   id: System.Collections.Immutable.IImmutableList`1.LastIndexOf(`0,System.Int32,System.Int32,System.Collections.Generic.IEqualityComparer{`0})
 - uid: System.Collections.Immutable.IImmutableList`1.Add(`0)
   href: System.Collections.Immutable.IImmutableList`1.yml
@@ -174,7 +188,7 @@ items:
   summary: Adds the specified value to this list.
   syntax:
     content:
-      CSharp: '[Pure] IImmutableList<T> Add(T value);'
+      CSharp: public IImmutableList<T> Add(T value)
     parameters:
     - id: value
       type:
@@ -184,6 +198,10 @@ items:
       description: The value to add.
     return:
       id: IImmutableList
+      type:
+        id: System.Collections.Immutable.IImmutableList`1
+        name: IImmutableList<T>
+        href: System.Collections.Immutable.IImmutableList`1.yml
       description: A new list with the element added, or this list if the element is already in this list.
   id: System.Collections.Immutable.IImmutableList`1.Add(`0)
 - uid: System.Collections.Immutable.IImmutableList`1.AddRange(System.Collections.Generic.IEnumerable{`0})
@@ -198,16 +216,20 @@ items:
   summary: Adds the specified values to this list.
   syntax:
     content:
-      CSharp: '[Pure] IImmutableList<T> AddRange(IEnumerable<T> items);'
+      CSharp: public IImmutableList<T> AddRange(IEnumerable<T> items)
     parameters:
     - id: items
       type:
         id: System.Collections.Generic.IEnumerable{`0}
-        name: System.Collections.Generic.IEnumerable{`0}
+        name: IEnumerable<T>
         isExternal: true
       description: The values to add.
     return:
       id: IImmutableList
+      type:
+        id: System.Collections.Immutable.IImmutableList`1
+        name: IImmutableList<T>
+        href: System.Collections.Immutable.IImmutableList`1.yml
       description: A new list with the elements added.
   id: System.Collections.Immutable.IImmutableList`1.AddRange(System.Collections.Generic.IEnumerable{`0})
 - uid: System.Collections.Immutable.IImmutableList`1.Insert(System.Int32,`0)
@@ -222,12 +244,12 @@ items:
   summary: Inserts the specified value at the specified index.
   syntax:
     content:
-      CSharp: '[Pure] IImmutableList<T> Insert(int index, T element);'
+      CSharp: public IImmutableList<T> Insert(int index, T element)
     parameters:
     - id: index
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The index at which to insert the value.
     - id: element
@@ -238,6 +260,10 @@ items:
       description: The element to insert.
     return:
       id: IImmutableList
+      type:
+        id: System.Collections.Immutable.IImmutableList`1
+        name: IImmutableList<T>
+        href: System.Collections.Immutable.IImmutableList`1.yml
       description: The new immutable list.
   id: System.Collections.Immutable.IImmutableList`1.Insert(System.Int32,`0)
 - uid: System.Collections.Immutable.IImmutableList`1.InsertRange(System.Int32,System.Collections.Generic.IEnumerable{`0})
@@ -252,22 +278,26 @@ items:
   summary: Inserts the specified values at the specified index.
   syntax:
     content:
-      CSharp: '[Pure] IImmutableList<T> InsertRange(int index, IEnumerable<T> items);'
+      CSharp: public IImmutableList<T> InsertRange(int index, IEnumerable<T> items)
     parameters:
     - id: index
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The index at which to insert the value.
     - id: items
       type:
         id: System.Collections.Generic.IEnumerable{`0}
-        name: System.Collections.Generic.IEnumerable{`0}
+        name: IEnumerable<T>
         isExternal: true
       description: The elements to insert.
     return:
       id: IImmutableList
+      type:
+        id: System.Collections.Immutable.IImmutableList`1
+        name: IImmutableList<T>
+        href: System.Collections.Immutable.IImmutableList`1.yml
       description: The new immutable list.
   id: System.Collections.Immutable.IImmutableList`1.InsertRange(System.Int32,System.Collections.Generic.IEnumerable{`0})
 - uid: System.Collections.Immutable.IImmutableList`1.Remove(`0,System.Collections.Generic.IEqualityComparer{`0})
@@ -282,7 +312,7 @@ items:
   summary: Removes the specified value from this list.
   syntax:
     content:
-      CSharp: '[Pure] IImmutableList<T> Remove(T value, IEqualityComparer<T> equalityComparer);'
+      CSharp: public IImmutableList<T> Remove(T value, IEqualityComparer<T> equalityComparer)
     parameters:
     - id: value
       type:
@@ -293,11 +323,15 @@ items:
     - id: equalityComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{`0}
-        name: System.Collections.Generic.IEqualityComparer{`0}
+        name: IEqualityComparer<T>
         isExternal: true
       description: The equality comparer to use in the search.
     return:
       id: IImmutableList
+      type:
+        id: System.Collections.Immutable.IImmutableList`1
+        name: IImmutableList<T>
+        href: System.Collections.Immutable.IImmutableList`1.yml
       description: A new list with the element removed, or this list if the element is not in this list.
   id: System.Collections.Immutable.IImmutableList`1.Remove(`0,System.Collections.Generic.IEqualityComparer{`0})
 - uid: System.Collections.Immutable.IImmutableList`1.RemoveAll(System.Predicate{`0})
@@ -315,19 +349,23 @@ items:
     predicate.
   syntax:
     content:
-      CSharp: '[Pure] IImmutableList<T> RemoveAll(Predicate<T> match);'
+      CSharp: public IImmutableList<T> RemoveAll(Predicate<T> match)
     parameters:
     - id: match
       type:
         id: System.Predicate{`0}
-        name: System.Predicate{`0}
+        name: Predicate<T>
         isExternal: true
       description: >-
-        The System.Predicate<T> delegate that defines the conditions of the elements
+        The [System.Predicate`1]() delegate that defines the conditions of the elements
 
         to remove.
     return:
       id: IImmutableList
+      type:
+        id: System.Collections.Immutable.IImmutableList`1
+        name: IImmutableList<T>
+        href: System.Collections.Immutable.IImmutableList`1.yml
       description: The new list.
   id: System.Collections.Immutable.IImmutableList`1.RemoveAll(System.Predicate{`0})
 - uid: System.Collections.Immutable.IImmutableList`1.RemoveRange(System.Collections.Generic.IEnumerable{`0},System.Collections.Generic.IEqualityComparer{`0})
@@ -342,22 +380,26 @@ items:
   summary: Removes the specified values from this list.
   syntax:
     content:
-      CSharp: '[Pure] IImmutableList<T> RemoveRange(IEnumerable<T> items, IEqualityComparer<T> equalityComparer);'
+      CSharp: public IImmutableList<T> RemoveRange(IEnumerable<T> items, IEqualityComparer<T> equalityComparer)
     parameters:
     - id: items
       type:
         id: System.Collections.Generic.IEnumerable{`0}
-        name: System.Collections.Generic.IEnumerable{`0}
+        name: IEnumerable<T>
         isExternal: true
       description: The items to remove if matches are found in this list.
     - id: equalityComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{`0}
-        name: System.Collections.Generic.IEqualityComparer{`0}
+        name: IEqualityComparer<T>
         isExternal: true
       description: The equality comparer to use in the search.
     return:
       id: IImmutableList
+      type:
+        id: System.Collections.Immutable.IImmutableList`1
+        name: IImmutableList<T>
+        href: System.Collections.Immutable.IImmutableList`1.yml
       description: A new list with the elements removed.
   id: System.Collections.Immutable.IImmutableList`1.RemoveRange(System.Collections.Generic.IEnumerable{`0},System.Collections.Generic.IEqualityComparer{`0})
 - uid: System.Collections.Immutable.IImmutableList`1.RemoveRange(System.Int32,System.Int32)
@@ -372,22 +414,26 @@ items:
   summary: Removes the specified values from this list.
   syntax:
     content:
-      CSharp: '[Pure] IImmutableList<T> RemoveRange(int index, int count);'
+      CSharp: public IImmutableList<T> RemoveRange(int index, int count)
     parameters:
     - id: index
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The starting index to begin removal.
     - id: count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The number of elements to remove.
     return:
       id: IImmutableList
+      type:
+        id: System.Collections.Immutable.IImmutableList`1
+        name: IImmutableList<T>
+        href: System.Collections.Immutable.IImmutableList`1.yml
       description: A new list with the elements removed.
   id: System.Collections.Immutable.IImmutableList`1.RemoveRange(System.Int32,System.Int32)
 - uid: System.Collections.Immutable.IImmutableList`1.RemoveAt(System.Int32)
@@ -402,16 +448,20 @@ items:
   summary: Removes the element at the specified index.
   syntax:
     content:
-      CSharp: '[Pure] IImmutableList<T> RemoveAt(int index);'
+      CSharp: public IImmutableList<T> RemoveAt(int index)
     parameters:
     - id: index
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The index.
     return:
       id: IImmutableList
+      type:
+        id: System.Collections.Immutable.IImmutableList`1
+        name: IImmutableList<T>
+        href: System.Collections.Immutable.IImmutableList`1.yml
       description: A new list with the elements removed.
   id: System.Collections.Immutable.IImmutableList`1.RemoveAt(System.Int32)
 - uid: System.Collections.Immutable.IImmutableList`1.SetItem(System.Int32,`0)
@@ -426,12 +476,12 @@ items:
   summary: Replaces an element in the list at a given position with the specified element.
   syntax:
     content:
-      CSharp: '[Pure] IImmutableList<T> SetItem(int index, T value);'
+      CSharp: public IImmutableList<T> SetItem(int index, T value)
     parameters:
     - id: index
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
       description: The position in the list of the element to replace.
     - id: value
@@ -442,6 +492,10 @@ items:
       description: The element to replace the old element with.
     return:
       id: IImmutableList
+      type:
+        id: System.Collections.Immutable.IImmutableList`1
+        name: IImmutableList<T>
+        href: System.Collections.Immutable.IImmutableList`1.yml
       description: The new list -- even if the value being replaced is equal to the new value for that position.
   id: System.Collections.Immutable.IImmutableList`1.SetItem(System.Int32,`0)
 - uid: System.Collections.Immutable.IImmutableList`1.Replace(`0,`0,System.Collections.Generic.IEqualityComparer{`0})
@@ -456,7 +510,7 @@ items:
   summary: Replaces the first equal element in the list with the specified element.
   syntax:
     content:
-      CSharp: '[Pure] IImmutableList<T> Replace(T oldValue, T newValue, IEqualityComparer<T> equalityComparer);'
+      CSharp: public IImmutableList<T> Replace(T oldValue, T newValue, IEqualityComparer<T> equalityComparer)
     parameters:
     - id: oldValue
       type:
@@ -473,10 +527,14 @@ items:
     - id: equalityComparer
       type:
         id: System.Collections.Generic.IEqualityComparer{`0}
-        name: System.Collections.Generic.IEqualityComparer{`0}
+        name: IEqualityComparer<T>
         isExternal: true
       description: The equality comparer to use in the search.
     return:
       id: IImmutableList
+      type:
+        id: System.Collections.Immutable.IImmutableList`1
+        name: IImmutableList<T>
+        href: System.Collections.Immutable.IImmutableList`1.yml
       description: The new list -- even if the value being replaced is equal to the new value for that position.
   id: System.Collections.Immutable.IImmutableList`1.Replace(`0,`0,System.Collections.Generic.IEqualityComparer{`0})

@@ -6,20 +6,21 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/ModelBinderAttribute.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/ModelBinderAttribute.cs
     startLine: 7
   syntax:
     content:
-      CSharp: public sealed class ModelBinderAttribute
+      CSharp: 'public sealed class ModelBinderAttribute : CustomModelBinderAttribute, _Attribute'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Attribute
-    name: System.Attribute
+    name: Attribute
     isExternal: true
   - id: System.Web.Mvc.CustomModelBinderAttribute
     name: CustomModelBinderAttribute
@@ -45,7 +46,7 @@ items:
     - id: binderType
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
   id: System.Web.Mvc.ModelBinderAttribute.#ctor(System.Type)
 - uid: System.Web.Mvc.ModelBinderAttribute.BinderType
@@ -59,12 +60,12 @@ items:
     startLine: 26
   syntax:
     content:
-      CSharp: public Type BinderType { get; private set; }
+      CSharp: public Type BinderType { get; }
     parameters:
     - id: BinderType
       type:
         id: System.Type
-        name: System.Type
+        name: Type
         isExternal: true
   id: System.Web.Mvc.ModelBinderAttribute.BinderType
 - uid: System.Web.Mvc.ModelBinderAttribute.GetBinder
@@ -82,4 +83,8 @@ items:
     parameters: []
     return:
       id: IModelBinder
+      type:
+        id: System.Web.Mvc.IModelBinder
+        name: IModelBinder
+        href: System.Web.Mvc.IModelBinder.yml
   id: System.Web.Mvc.ModelBinderAttribute.GetBinder

@@ -6,20 +6,21 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Classification/ClassifiedSpan.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Classification/ClassifiedSpan.cs
     startLine: 8
   syntax:
     content:
-      CSharp: public struct ClassifiedSpan
+      CSharp: 'public struct ClassifiedSpan : IEquatable<ClassifiedSpan>'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: Microsoft.CodeAnalysis.Classification.ClassifiedSpan
   children:
@@ -41,12 +42,12 @@ items:
     startLine: 10
   syntax:
     content:
-      CSharp: public string ClassificationType { get; private set; }
+      CSharp: public string ClassificationType { get; }
     parameters:
     - id: ClassificationType
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: Microsoft.CodeAnalysis.Classification.ClassifiedSpan.ClassificationType
 - uid: Microsoft.CodeAnalysis.Classification.ClassifiedSpan.TextSpan
@@ -60,7 +61,7 @@ items:
     startLine: 11
   syntax:
     content:
-      CSharp: public TextSpan TextSpan { get; private set; }
+      CSharp: public TextSpan TextSpan { get; }
     parameters:
     - id: TextSpan
       type:
@@ -84,7 +85,7 @@ items:
     - id: classificationType
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: textSpan
       type:
@@ -113,7 +114,7 @@ items:
     - id: classificationType
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: Microsoft.CodeAnalysis.Classification.ClassifiedSpan.#ctor(Microsoft.CodeAnalysis.Text.TextSpan,System.String)
 - uid: Microsoft.CodeAnalysis.Classification.ClassifiedSpan.GetHashCode
@@ -131,6 +132,10 @@ items:
     parameters: []
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: Microsoft.CodeAnalysis.Classification.ClassifiedSpan.GetHashCode
 - uid: Microsoft.CodeAnalysis.Classification.ClassifiedSpan.Equals(System.Object)
   href: Microsoft.CodeAnalysis.Classification.ClassifiedSpan.yml
@@ -148,10 +153,14 @@ items:
     - id: obj
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.Classification.ClassifiedSpan.Equals(System.Object)
 - uid: Microsoft.CodeAnalysis.Classification.ClassifiedSpan.Equals(Microsoft.CodeAnalysis.Classification.ClassifiedSpan)
   href: Microsoft.CodeAnalysis.Classification.ClassifiedSpan.yml
@@ -173,4 +182,8 @@ items:
         href: Microsoft.CodeAnalysis.Classification.ClassifiedSpan.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.CodeAnalysis.Classification.ClassifiedSpan.Equals(Microsoft.CodeAnalysis.Classification.ClassifiedSpan)

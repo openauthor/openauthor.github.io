@@ -1,0 +1,935 @@
+items:
+- uid: System.IO.FileStream
+  href: System.IO.FileStream.yml
+  name: FileStream
+  fullName: System.IO.FileStream
+  type: Class
+  source:
+    remote: &o1
+      path: src/System.IO.FileSystem/src/System/IO/FileStream.Win32.cs
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
+    path: src/System.IO.FileSystem/src/System/IO/FileStream.Win32.cs
+    startLine: 9
+  syntax:
+    content:
+      CSharp: 'public class FileStream : Stream, IDisposable'
+  inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.MarshalByRefObject
+    name: MarshalByRefObject
+    isExternal: true
+  - id: System.IO.Stream
+    name: Stream
+    isExternal: true
+  id: System.IO.FileStream
+  children:
+  - System.IO.FileStream.#ctor(Microsoft.Win32.SafeHandles.SafeFileHandle,System.IO.FileAccess)
+  - System.IO.FileStream.#ctor(System.String,System.IO.FileMode)
+  - System.IO.FileStream.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess)
+  - System.IO.FileStream.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)
+  - System.IO.FileStream.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,System.Int32)
+  - System.IO.FileStream.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,System.Int32,System.Boolean)
+  - System.IO.FileStream.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,System.Int32,System.IO.FileOptions)
+  - System.IO.FileStream.IsAsync
+  - System.IO.FileStream.Name
+  - System.IO.FileStream.SafeFileHandle
+  - System.IO.FileStream.Flush(System.Boolean)
+  - System.IO.FileStream.CanRead
+  - System.IO.FileStream.CanSeek
+  - System.IO.FileStream.CanWrite
+  - System.IO.FileStream.Length
+  - System.IO.FileStream.Position
+  - System.IO.FileStream.ReadTimeout
+  - System.IO.FileStream.CanTimeout
+  - System.IO.FileStream.WriteTimeout
+  - System.IO.FileStream.CopyToAsync(System.IO.Stream,System.Int32,System.Threading.CancellationToken)
+  - System.IO.FileStream.Dispose(System.Boolean)
+  - System.IO.FileStream.Flush
+  - System.IO.FileStream.FlushAsync(System.Threading.CancellationToken)
+  - System.IO.FileStream.Read(System.Byte[],System.Int32,System.Int32)
+  - System.IO.FileStream.ReadAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)
+  - System.IO.FileStream.ReadByte
+  - System.IO.FileStream.Seek(System.Int64,System.IO.SeekOrigin)
+  - System.IO.FileStream.SetLength(System.Int64)
+  - System.IO.FileStream.Write(System.Byte[],System.Int32,System.Int32)
+  - System.IO.FileStream.WriteAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)
+  - System.IO.FileStream.WriteByte(System.Byte)
+  - System.IO.FileStream.Finalize
+  - System.IO.FileStream.#ctor(Microsoft.Win32.SafeHandles.SafeFileHandle,System.IO.FileAccess,System.Int32)
+  - System.IO.FileStream.#ctor(Microsoft.Win32.SafeHandles.SafeFileHandle,System.IO.FileAccess,System.Int32,System.Boolean)
+- uid: System.IO.FileStream.#ctor(Microsoft.Win32.SafeHandles.SafeFileHandle,System.IO.FileAccess)
+  href: System.IO.FileStream.yml
+  name: FileStream(SafeFileHandle, FileAccess)
+  fullName: System.IO.FileStream.FileStream(Microsoft.Win32.SafeHandles.SafeFileHandle, System.IO.FileAccess)
+  type: Constructor
+  source:
+    remote: &o0
+      path: src/System.IO.FileSystem/src/System/IO/FileStream.cs
+      branch: master
+      repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
+    path: src/System.IO.FileSystem/src/System/IO/FileStream.cs
+    startLine: 28
+  syntax:
+    content:
+      CSharp: 'public FileStream(Microsoft.Win32.SafeHandles.SafeFileHandle handle, FileAccess access): this (handle, access, DefaultBufferSize)'
+    parameters:
+    - id: handle
+      type:
+        id: Microsoft.Win32.SafeHandles.SafeFileHandle
+        name: SafeFileHandle
+        href: Microsoft.Win32.SafeHandles.SafeFileHandle.yml
+    - id: access
+      type:
+        id: System.IO.FileAccess
+        name: FileAccess
+        isExternal: true
+  id: System.IO.FileStream.#ctor(Microsoft.Win32.SafeHandles.SafeFileHandle,System.IO.FileAccess)
+- uid: System.IO.FileStream.#ctor(System.String,System.IO.FileMode)
+  href: System.IO.FileStream.yml
+  name: FileStream(string, FileMode)
+  fullName: System.IO.FileStream.FileStream(string, System.IO.FileMode)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.IO.FileSystem/src/System/IO/FileStream.cs
+    startLine: 33
+  syntax:
+    content:
+      CSharp: 'public FileStream(string path, System.IO.FileMode mode): this (path, mode, (mode == FileMode.Append ? FileAccess.Write : FileAccess.ReadWrite), DefaultShare, DefaultBufferSize, DefaultUseAsync)'
+    parameters:
+    - id: path
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    - id: mode
+      type:
+        id: System.IO.FileMode
+        name: FileMode
+        isExternal: true
+  id: System.IO.FileStream.#ctor(System.String,System.IO.FileMode)
+- uid: System.IO.FileStream.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess)
+  href: System.IO.FileStream.yml
+  name: FileStream(string, FileMode, FileAccess)
+  fullName: System.IO.FileStream.FileStream(string, System.IO.FileMode, System.IO.FileAccess)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.IO.FileSystem/src/System/IO/FileStream.cs
+    startLine: 37
+  syntax:
+    content:
+      CSharp: 'public FileStream(string path, System.IO.FileMode mode, FileAccess access): this (path, mode, access, DefaultShare, DefaultBufferSize, DefaultUseAsync)'
+    parameters:
+    - id: path
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    - id: mode
+      type:
+        id: System.IO.FileMode
+        name: FileMode
+        isExternal: true
+    - id: access
+      type:
+        id: System.IO.FileAccess
+        name: FileAccess
+        isExternal: true
+  id: System.IO.FileStream.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess)
+- uid: System.IO.FileStream.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)
+  href: System.IO.FileStream.yml
+  name: FileStream(string, FileMode, FileAccess, FileShare)
+  fullName: System.IO.FileStream.FileStream(string, System.IO.FileMode, System.IO.FileAccess, System.IO.FileShare)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.IO.FileSystem/src/System/IO/FileStream.cs
+    startLine: 41
+  syntax:
+    content:
+      CSharp: 'public FileStream(string path, System.IO.FileMode mode, FileAccess access, FileShare share): this (path, mode, access, share, DefaultBufferSize, DefaultUseAsync)'
+    parameters:
+    - id: path
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    - id: mode
+      type:
+        id: System.IO.FileMode
+        name: FileMode
+        isExternal: true
+    - id: access
+      type:
+        id: System.IO.FileAccess
+        name: FileAccess
+        isExternal: true
+    - id: share
+      type:
+        id: System.IO.FileShare
+        name: FileShare
+        isExternal: true
+  id: System.IO.FileStream.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)
+- uid: System.IO.FileStream.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,System.Int32)
+  href: System.IO.FileStream.yml
+  name: FileStream(string, FileMode, FileAccess, FileShare, int)
+  fullName: System.IO.FileStream.FileStream(string, System.IO.FileMode, System.IO.FileAccess, System.IO.FileShare, int)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.IO.FileSystem/src/System/IO/FileStream.cs
+    startLine: 45
+  syntax:
+    content:
+      CSharp: 'public FileStream(string path, System.IO.FileMode mode, FileAccess access, FileShare share, int bufferSize): this (path, mode, access, share, bufferSize, DefaultUseAsync)'
+    parameters:
+    - id: path
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    - id: mode
+      type:
+        id: System.IO.FileMode
+        name: FileMode
+        isExternal: true
+    - id: access
+      type:
+        id: System.IO.FileAccess
+        name: FileAccess
+        isExternal: true
+    - id: share
+      type:
+        id: System.IO.FileShare
+        name: FileShare
+        isExternal: true
+    - id: bufferSize
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.IO.FileStream.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,System.Int32)
+- uid: System.IO.FileStream.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,System.Int32,System.Boolean)
+  href: System.IO.FileStream.yml
+  name: FileStream(string, FileMode, FileAccess, FileShare, int, bool)
+  fullName: System.IO.FileStream.FileStream(string, System.IO.FileMode, System.IO.FileAccess, System.IO.FileShare, int, bool)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.IO.FileSystem/src/System/IO/FileStream.cs
+    startLine: 49
+  syntax:
+    content:
+      CSharp: 'public FileStream(string path, System.IO.FileMode mode, FileAccess access, FileShare share, int bufferSize, bool useAsync): this (path, mode, access, share, bufferSize, useAsync ? FileOptions.Asynchronous : FileOptions.None)'
+    parameters:
+    - id: path
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    - id: mode
+      type:
+        id: System.IO.FileMode
+        name: FileMode
+        isExternal: true
+    - id: access
+      type:
+        id: System.IO.FileAccess
+        name: FileAccess
+        isExternal: true
+    - id: share
+      type:
+        id: System.IO.FileShare
+        name: FileShare
+        isExternal: true
+    - id: bufferSize
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: useAsync
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.IO.FileStream.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,System.Int32,System.Boolean)
+- uid: System.IO.FileStream.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,System.Int32,System.IO.FileOptions)
+  href: System.IO.FileStream.yml
+  name: FileStream(string, FileMode, FileAccess, FileShare, int, FileOptions)
+  fullName: System.IO.FileStream.FileStream(string, System.IO.FileMode, System.IO.FileAccess, System.IO.FileShare, int, System.IO.FileOptions)
+  type: Constructor
+  source:
+    remote: *o0
+    path: src/System.IO.FileSystem/src/System/IO/FileStream.cs
+    startLine: 53
+  syntax:
+    content:
+      CSharp: public FileStream(string path, System.IO.FileMode mode, FileAccess access, FileShare share, int bufferSize, FileOptions options)
+    parameters:
+    - id: path
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    - id: mode
+      type:
+        id: System.IO.FileMode
+        name: FileMode
+        isExternal: true
+    - id: access
+      type:
+        id: System.IO.FileAccess
+        name: FileAccess
+        isExternal: true
+    - id: share
+      type:
+        id: System.IO.FileShare
+        name: FileShare
+        isExternal: true
+    - id: bufferSize
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: options
+      type:
+        id: System.IO.FileOptions
+        name: FileOptions
+        href: System.IO.FileOptions.yml
+  id: System.IO.FileStream.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,System.Int32,System.IO.FileOptions)
+- uid: System.IO.FileStream.IsAsync
+  href: System.IO.FileStream.yml
+  name: IsAsync
+  fullName: System.IO.FileStream.IsAsync
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.IO.FileSystem/src/System/IO/FileStream.cs
+    startLine: 127
+  syntax:
+    content:
+      CSharp: public virtual bool IsAsync { get; }
+    parameters:
+    - id: IsAsync
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.IO.FileStream.IsAsync
+- uid: System.IO.FileStream.Name
+  href: System.IO.FileStream.yml
+  name: Name
+  fullName: System.IO.FileStream.Name
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.IO.FileSystem/src/System/IO/FileStream.cs
+    startLine: 128
+  syntax:
+    content:
+      CSharp: public string Name { get; }
+    parameters:
+    - id: Name
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.IO.FileStream.Name
+- uid: System.IO.FileStream.SafeFileHandle
+  href: System.IO.FileStream.yml
+  name: SafeFileHandle
+  fullName: System.IO.FileStream.SafeFileHandle
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.IO.FileSystem/src/System/IO/FileStream.cs
+    startLine: 129
+  syntax:
+    content:
+      CSharp: public virtual Microsoft.Win32.SafeHandles.SafeFileHandle SafeFileHandle { get; }
+    parameters:
+    - id: SafeFileHandle
+      type:
+        id: Microsoft.Win32.SafeHandles.SafeFileHandle
+        name: SafeFileHandle
+        href: Microsoft.Win32.SafeHandles.SafeFileHandle.yml
+  id: System.IO.FileStream.SafeFileHandle
+- uid: System.IO.FileStream.Flush(System.Boolean)
+  href: System.IO.FileStream.yml
+  name: Flush(bool)
+  fullName: System.IO.FileStream.Flush(bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.FileSystem/src/System/IO/FileStream.cs
+    startLine: 131
+  syntax:
+    content:
+      CSharp: public virtual void Flush(bool flushToDisk)
+    parameters:
+    - id: flushToDisk
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.IO.FileStream.Flush(System.Boolean)
+- uid: System.IO.FileStream.CanRead
+  href: System.IO.FileStream.yml
+  name: CanRead
+  fullName: System.IO.FileStream.CanRead
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.IO.FileSystem/src/System/IO/FileStream.cs
+    startLine: 140
+  syntax:
+    content:
+      CSharp: public override bool CanRead { get; }
+    parameters:
+    - id: CanRead
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.IO.FileStream.CanRead
+- uid: System.IO.FileStream.CanSeek
+  href: System.IO.FileStream.yml
+  name: CanSeek
+  fullName: System.IO.FileStream.CanSeek
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.IO.FileSystem/src/System/IO/FileStream.cs
+    startLine: 145
+  syntax:
+    content:
+      CSharp: public override bool CanSeek { get; }
+    parameters:
+    - id: CanSeek
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.IO.FileStream.CanSeek
+- uid: System.IO.FileStream.CanWrite
+  href: System.IO.FileStream.yml
+  name: CanWrite
+  fullName: System.IO.FileStream.CanWrite
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.IO.FileSystem/src/System/IO/FileStream.cs
+    startLine: 150
+  syntax:
+    content:
+      CSharp: public override bool CanWrite { get; }
+    parameters:
+    - id: CanWrite
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.IO.FileStream.CanWrite
+- uid: System.IO.FileStream.Length
+  href: System.IO.FileStream.yml
+  name: Length
+  fullName: System.IO.FileStream.Length
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.IO.FileSystem/src/System/IO/FileStream.cs
+    startLine: 155
+  syntax:
+    content:
+      CSharp: public override long Length { get; }
+    parameters:
+    - id: Length
+      type:
+        id: System.Int64
+        name: long
+        isExternal: true
+  id: System.IO.FileStream.Length
+- uid: System.IO.FileStream.Position
+  href: System.IO.FileStream.yml
+  name: Position
+  fullName: System.IO.FileStream.Position
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.IO.FileSystem/src/System/IO/FileStream.cs
+    startLine: 160
+  syntax:
+    content:
+      CSharp: public override long Position { get; set; }
+    parameters:
+    - id: Position
+      type:
+        id: System.Int64
+        name: long
+        isExternal: true
+  id: System.IO.FileStream.Position
+- uid: System.IO.FileStream.ReadTimeout
+  href: System.IO.FileStream.yml
+  name: ReadTimeout
+  fullName: System.IO.FileStream.ReadTimeout
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.IO.FileSystem/src/System/IO/FileStream.cs
+    startLine: 166
+  syntax:
+    content:
+      CSharp: public override int ReadTimeout { get; set; }
+    parameters:
+    - id: ReadTimeout
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.IO.FileStream.ReadTimeout
+- uid: System.IO.FileStream.CanTimeout
+  href: System.IO.FileStream.yml
+  name: CanTimeout
+  fullName: System.IO.FileStream.CanTimeout
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.IO.FileSystem/src/System/IO/FileStream.cs
+    startLine: 172
+  syntax:
+    content:
+      CSharp: public override bool CanTimeout { get; }
+    parameters:
+    - id: CanTimeout
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.IO.FileStream.CanTimeout
+- uid: System.IO.FileStream.WriteTimeout
+  href: System.IO.FileStream.yml
+  name: WriteTimeout
+  fullName: System.IO.FileStream.WriteTimeout
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.IO.FileSystem/src/System/IO/FileStream.cs
+    startLine: 177
+  syntax:
+    content:
+      CSharp: public override int WriteTimeout { get; set; }
+    parameters:
+    - id: WriteTimeout
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.IO.FileStream.WriteTimeout
+- uid: System.IO.FileStream.CopyToAsync(System.IO.Stream,System.Int32,System.Threading.CancellationToken)
+  href: System.IO.FileStream.yml
+  name: CopyToAsync(Stream, int, CancellationToken)
+  fullName: System.IO.FileStream.CopyToAsync(System.IO.Stream, int, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.FileSystem/src/System/IO/FileStream.cs
+    startLine: 186
+  syntax:
+    content:
+      CSharp: public override Task CopyToAsync(Stream destination, int bufferSize, CancellationToken cancellationToken)
+    parameters:
+    - id: destination
+      type:
+        id: System.IO.Stream
+        name: Stream
+        isExternal: true
+    - id: bufferSize
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: CancellationToken
+        isExternal: true
+    return:
+      id: Task
+      type:
+        id: System.Threading.Tasks.Task
+        name: Task
+        isExternal: true
+  id: System.IO.FileStream.CopyToAsync(System.IO.Stream,System.Int32,System.Threading.CancellationToken)
+- uid: System.IO.FileStream.Dispose(System.Boolean)
+  href: System.IO.FileStream.yml
+  name: Dispose(bool)
+  fullName: System.IO.FileStream.Dispose(bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.FileSystem/src/System/IO/FileStream.cs
+    startLine: 191
+  syntax:
+    content:
+      CSharp: protected override void Dispose(bool disposing)
+    parameters:
+    - id: disposing
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.IO.FileStream.Dispose(System.Boolean)
+- uid: System.IO.FileStream.Flush
+  href: System.IO.FileStream.yml
+  name: Flush()
+  fullName: System.IO.FileStream.Flush()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.FileSystem/src/System/IO/FileStream.cs
+    startLine: 201
+  syntax:
+    content:
+      CSharp: public override void Flush()
+    parameters: []
+  id: System.IO.FileStream.Flush
+- uid: System.IO.FileStream.FlushAsync(System.Threading.CancellationToken)
+  href: System.IO.FileStream.yml
+  name: FlushAsync(CancellationToken)
+  fullName: System.IO.FileStream.FlushAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.FileSystem/src/System/IO/FileStream.cs
+    startLine: 206
+  syntax:
+    content:
+      CSharp: public override Task FlushAsync(CancellationToken cancellationToken)
+    parameters:
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: CancellationToken
+        isExternal: true
+    return:
+      id: Task
+      type:
+        id: System.Threading.Tasks.Task
+        name: Task
+        isExternal: true
+  id: System.IO.FileStream.FlushAsync(System.Threading.CancellationToken)
+- uid: System.IO.FileStream.Read(System.Byte[],System.Int32,System.Int32)
+  href: System.IO.FileStream.yml
+  name: Read(byte[], int, int)
+  fullName: System.IO.FileStream.Read(byte[], int, int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.FileSystem/src/System/IO/FileStream.cs
+    startLine: 218
+  syntax:
+    content:
+      CSharp: public override int Read(byte[] buffer, int offset, int count)
+    parameters:
+    - id: buffer
+      type:
+        id: System.Array
+        name: byte[]
+        isExternal: true
+    - id: offset
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: count
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    return:
+      id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.IO.FileStream.Read(System.Byte[],System.Int32,System.Int32)
+- uid: System.IO.FileStream.ReadAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)
+  href: System.IO.FileStream.yml
+  name: ReadAsync(byte[], int, int, CancellationToken)
+  fullName: System.IO.FileStream.ReadAsync(byte[], int, int, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.FileSystem/src/System/IO/FileStream.cs
+    startLine: 223
+  syntax:
+    content:
+      CSharp: public override Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
+    parameters:
+    - id: buffer
+      type:
+        id: System.Array
+        name: byte[]
+        isExternal: true
+    - id: offset
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: count
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: CancellationToken
+        isExternal: true
+    return:
+      id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.Int32}
+        name: Task<int>
+        isExternal: true
+  id: System.IO.FileStream.ReadAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)
+- uid: System.IO.FileStream.ReadByte
+  href: System.IO.FileStream.yml
+  name: ReadByte()
+  fullName: System.IO.FileStream.ReadByte()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.FileSystem/src/System/IO/FileStream.cs
+    startLine: 245
+  syntax:
+    content:
+      CSharp: public override int ReadByte()
+    parameters: []
+    return:
+      id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.IO.FileStream.ReadByte
+- uid: System.IO.FileStream.Seek(System.Int64,System.IO.SeekOrigin)
+  href: System.IO.FileStream.yml
+  name: Seek(long, SeekOrigin)
+  fullName: System.IO.FileStream.Seek(long, System.IO.SeekOrigin)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.FileSystem/src/System/IO/FileStream.cs
+    startLine: 250
+  syntax:
+    content:
+      CSharp: public override long Seek(long offset, SeekOrigin origin)
+    parameters:
+    - id: offset
+      type:
+        id: System.Int64
+        name: long
+        isExternal: true
+    - id: origin
+      type:
+        id: System.IO.SeekOrigin
+        name: SeekOrigin
+        isExternal: true
+    return:
+      id: Int64
+      type:
+        id: System.Int64
+        name: long
+        isExternal: true
+  id: System.IO.FileStream.Seek(System.Int64,System.IO.SeekOrigin)
+- uid: System.IO.FileStream.SetLength(System.Int64)
+  href: System.IO.FileStream.yml
+  name: SetLength(long)
+  fullName: System.IO.FileStream.SetLength(long)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.FileSystem/src/System/IO/FileStream.cs
+    startLine: 255
+  syntax:
+    content:
+      CSharp: public override void SetLength(long value)
+    parameters:
+    - id: value
+      type:
+        id: System.Int64
+        name: long
+        isExternal: true
+  id: System.IO.FileStream.SetLength(System.Int64)
+- uid: System.IO.FileStream.Write(System.Byte[],System.Int32,System.Int32)
+  href: System.IO.FileStream.yml
+  name: Write(byte[], int, int)
+  fullName: System.IO.FileStream.Write(byte[], int, int)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.FileSystem/src/System/IO/FileStream.cs
+    startLine: 260
+  syntax:
+    content:
+      CSharp: public override void Write(byte[] buffer, int offset, int count)
+    parameters:
+    - id: buffer
+      type:
+        id: System.Array
+        name: byte[]
+        isExternal: true
+    - id: offset
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: count
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.IO.FileStream.Write(System.Byte[],System.Int32,System.Int32)
+- uid: System.IO.FileStream.WriteAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)
+  href: System.IO.FileStream.yml
+  name: WriteAsync(byte[], int, int, CancellationToken)
+  fullName: System.IO.FileStream.WriteAsync(byte[], int, int, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.FileSystem/src/System/IO/FileStream.cs
+    startLine: 265
+  syntax:
+    content:
+      CSharp: public override Task WriteAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
+    parameters:
+    - id: buffer
+      type:
+        id: System.Array
+        name: byte[]
+        isExternal: true
+    - id: offset
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: count
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: cancellationToken
+      type:
+        id: System.Threading.CancellationToken
+        name: CancellationToken
+        isExternal: true
+    return:
+      id: Task
+      type:
+        id: System.Threading.Tasks.Task
+        name: Task
+        isExternal: true
+  id: System.IO.FileStream.WriteAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)
+- uid: System.IO.FileStream.WriteByte(System.Byte)
+  href: System.IO.FileStream.yml
+  name: WriteByte(byte)
+  fullName: System.IO.FileStream.WriteByte(byte)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.FileSystem/src/System/IO/FileStream.cs
+    startLine: 287
+  syntax:
+    content:
+      CSharp: public override void WriteByte(byte value)
+    parameters:
+    - id: value
+      type:
+        id: System.Byte
+        name: byte
+        isExternal: true
+  id: System.IO.FileStream.WriteByte(System.Byte)
+- uid: System.IO.FileStream.Finalize
+  href: System.IO.FileStream.yml
+  name: ~FileStream()
+  fullName: System.IO.FileStream.~FileStream()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.IO.FileSystem/src/System/IO/FileStream.cs
+    startLine: 294
+  syntax:
+    content:
+      CSharp: protected void Finalize()
+    parameters: []
+  id: System.IO.FileStream.Finalize
+- uid: System.IO.FileStream.#ctor(Microsoft.Win32.SafeHandles.SafeFileHandle,System.IO.FileAccess,System.Int32)
+  href: System.IO.FileStream.yml
+  name: FileStream(SafeFileHandle, FileAccess, int)
+  fullName: System.IO.FileStream.FileStream(Microsoft.Win32.SafeHandles.SafeFileHandle, System.IO.FileAccess, int)
+  type: Constructor
+  source:
+    remote: *o1
+    path: src/System.IO.FileSystem/src/System/IO/FileStream.Win32.cs
+    startLine: 11
+  syntax:
+    content:
+      CSharp: public FileStream(Microsoft.Win32.SafeHandles.SafeFileHandle handle, FileAccess access, int bufferSize)
+    parameters:
+    - id: handle
+      type:
+        id: Microsoft.Win32.SafeHandles.SafeFileHandle
+        name: SafeFileHandle
+        href: Microsoft.Win32.SafeHandles.SafeFileHandle.yml
+    - id: access
+      type:
+        id: System.IO.FileAccess
+        name: FileAccess
+        isExternal: true
+    - id: bufferSize
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.IO.FileStream.#ctor(Microsoft.Win32.SafeHandles.SafeFileHandle,System.IO.FileAccess,System.Int32)
+- uid: System.IO.FileStream.#ctor(Microsoft.Win32.SafeHandles.SafeFileHandle,System.IO.FileAccess,System.Int32,System.Boolean)
+  href: System.IO.FileStream.yml
+  name: FileStream(SafeFileHandle, FileAccess, int, bool)
+  fullName: System.IO.FileStream.FileStream(Microsoft.Win32.SafeHandles.SafeFileHandle, System.IO.FileAccess, int, bool)
+  type: Constructor
+  source:
+    remote: *o1
+    path: src/System.IO.FileSystem/src/System/IO/FileStream.Win32.cs
+    startLine: 16
+  syntax:
+    content:
+      CSharp: public FileStream(Microsoft.Win32.SafeHandles.SafeFileHandle handle, FileAccess access, int bufferSize, bool isAsync)
+    parameters:
+    - id: handle
+      type:
+        id: Microsoft.Win32.SafeHandles.SafeFileHandle
+        name: SafeFileHandle
+        href: Microsoft.Win32.SafeHandles.SafeFileHandle.yml
+    - id: access
+      type:
+        id: System.IO.FileAccess
+        name: FileAccess
+        isExternal: true
+    - id: bufferSize
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+    - id: isAsync
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.IO.FileStream.#ctor(Microsoft.Win32.SafeHandles.SafeFileHandle,System.IO.FileAccess,System.Int32,System.Boolean)

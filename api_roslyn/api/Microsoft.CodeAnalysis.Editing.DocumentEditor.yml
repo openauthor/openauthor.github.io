@@ -6,18 +6,19 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Editing/DocumentEditor.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Editing/DocumentEditor.cs
     startLine: 14
   summary: An editor for making changes to a document's syntax tree.
   syntax:
     content:
-      CSharp: public class DocumentEditor
+      CSharp: 'public class DocumentEditor : SyntaxEditor'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: Microsoft.CodeAnalysis.Editing.SyntaxEditor
     name: SyntaxEditor
@@ -40,7 +41,7 @@ items:
   summary: Creates a new [Microsoft.CodeAnalysis.Editing.DocumentEditor](Microsoft.CodeAnalysis.Editing.DocumentEditor.yml) instance.
   syntax:
     content:
-      CSharp: public static async Task<DocumentEditor> CreateAsync(Document document, CancellationToken cancellationToken = default (CancellationToken))
+      CSharp: public static Task<DocumentEditor> CreateAsync(Document document, CancellationToken cancellationToken = null)
     parameters:
     - id: document
       type:
@@ -50,10 +51,14 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{Microsoft.CodeAnalysis.Editing.DocumentEditor}
+        name: Task<DocumentEditor>
+        isExternal: true
   id: Microsoft.CodeAnalysis.Editing.DocumentEditor.CreateAsync(Microsoft.CodeAnalysis.Document,System.Threading.CancellationToken)
 - uid: Microsoft.CodeAnalysis.Editing.DocumentEditor.OriginalDocument
   href: Microsoft.CodeAnalysis.Editing.DocumentEditor.yml
@@ -84,7 +89,7 @@ items:
     remote: *o0
     path: src/Workspaces/Core/Portable/Editing/DocumentEditor.cs
     startLine: 52
-  summary: The [Microsoft.CodeAnalysis.SemanticModel](#) of the original document.
+  summary: The [Microsoft.CodeAnalysis.SemanticModel]() of the original document.
   syntax:
     content:
       CSharp: public SemanticModel SemanticModel { get; }
@@ -111,4 +116,8 @@ items:
     parameters: []
     return:
       id: Document
+      type:
+        id: Microsoft.CodeAnalysis.Document
+        name: Document
+        href: Microsoft.CodeAnalysis.Document.yml
   id: Microsoft.CodeAnalysis.Editing.DocumentEditor.GetChangedDocument

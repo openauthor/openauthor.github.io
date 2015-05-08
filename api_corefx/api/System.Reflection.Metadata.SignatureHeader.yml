@@ -6,17 +6,22 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/SignatureHeader.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/SignatureHeader.cs
     startLine: 14
   summary: Represents the signature characteristics specified by the leading byte of signature blobs.
   syntax:
     content:
-      CSharp: public struct SignatureHeader
+      CSharp: 'public struct SignatureHeader : IEquatable<SignatureHeader>'
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Reflection.Metadata.SignatureHeader
   children:
@@ -46,7 +51,7 @@ items:
     startLine: 17
   syntax:
     content:
-      CSharp: CallingConventionOrKindMask
+      CSharp: public const byte CallingConventionOrKindMask;
   id: System.Reflection.Metadata.SignatureHeader.CallingConventionOrKindMask
 - uid: System.Reflection.Metadata.SignatureHeader.#ctor(System.Byte)
   href: System.Reflection.Metadata.SignatureHeader.yml
@@ -64,7 +69,7 @@ items:
     - id: rawValue
       type:
         id: System.Byte
-        name: System.Byte
+        name: byte
         isExternal: true
   id: System.Reflection.Metadata.SignatureHeader.#ctor(System.Byte)
 - uid: System.Reflection.Metadata.SignatureHeader.RawValue
@@ -83,7 +88,7 @@ items:
     - id: RawValue
       type:
         id: System.Byte
-        name: System.Byte
+        name: byte
         isExternal: true
   id: System.Reflection.Metadata.SignatureHeader.RawValue
 - uid: System.Reflection.Metadata.SignatureHeader.CallingConvention
@@ -159,7 +164,7 @@ items:
     - id: HasExplicitThis
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Reflection.Metadata.SignatureHeader.HasExplicitThis
 - uid: System.Reflection.Metadata.SignatureHeader.IsInstance
@@ -178,7 +183,7 @@ items:
     - id: IsInstance
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Reflection.Metadata.SignatureHeader.IsInstance
 - uid: System.Reflection.Metadata.SignatureHeader.IsGeneric
@@ -197,7 +202,7 @@ items:
     - id: IsGeneric
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Reflection.Metadata.SignatureHeader.IsGeneric
 - uid: System.Reflection.Metadata.SignatureHeader.Equals(System.Object)
@@ -216,10 +221,14 @@ items:
     - id: obj
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.SignatureHeader.Equals(System.Object)
 - uid: System.Reflection.Metadata.SignatureHeader.Equals(System.Reflection.Metadata.SignatureHeader)
   href: System.Reflection.Metadata.SignatureHeader.yml
@@ -241,6 +250,10 @@ items:
         href: System.Reflection.Metadata.SignatureHeader.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.SignatureHeader.Equals(System.Reflection.Metadata.SignatureHeader)
 - uid: System.Reflection.Metadata.SignatureHeader.GetHashCode
   href: System.Reflection.Metadata.SignatureHeader.yml
@@ -257,19 +270,23 @@ items:
     parameters: []
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: System.Reflection.Metadata.SignatureHeader.GetHashCode
 - uid: System.Reflection.Metadata.SignatureHeader.op_Equality(System.Reflection.Metadata.SignatureHeader,System.Reflection.Metadata.SignatureHeader)
   href: System.Reflection.Metadata.SignatureHeader.yml
   name: operator ==(SignatureHeader, SignatureHeader)
   fullName: System.Reflection.Metadata.SignatureHeader.operator ==(System.Reflection.Metadata.SignatureHeader, System.Reflection.Metadata.SignatureHeader)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/SignatureHeader.cs
     startLine: 95
   syntax:
     content:
-      CSharp: public static bool operator ==(SignatureHeader left, SignatureHeader right) { return left._rawValue == right._rawValue; }
+      CSharp: public static bool operator ==(SignatureHeader left, SignatureHeader right)
     parameters:
     - id: left
       type:
@@ -283,19 +300,23 @@ items:
         href: System.Reflection.Metadata.SignatureHeader.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.SignatureHeader.op_Equality(System.Reflection.Metadata.SignatureHeader,System.Reflection.Metadata.SignatureHeader)
 - uid: System.Reflection.Metadata.SignatureHeader.op_Inequality(System.Reflection.Metadata.SignatureHeader,System.Reflection.Metadata.SignatureHeader)
   href: System.Reflection.Metadata.SignatureHeader.yml
   name: operator !=(SignatureHeader, SignatureHeader)
   fullName: System.Reflection.Metadata.SignatureHeader.operator !=(System.Reflection.Metadata.SignatureHeader, System.Reflection.Metadata.SignatureHeader)
-  type: Method
+  type: Operator
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/SignatureHeader.cs
     startLine: 100
   syntax:
     content:
-      CSharp: public static bool operator !=(SignatureHeader left, SignatureHeader right) { return left._rawValue != right._rawValue; }
+      CSharp: public static bool operator !=(SignatureHeader left, SignatureHeader right)
     parameters:
     - id: left
       type:
@@ -309,6 +330,10 @@ items:
         href: System.Reflection.Metadata.SignatureHeader.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.SignatureHeader.op_Inequality(System.Reflection.Metadata.SignatureHeader,System.Reflection.Metadata.SignatureHeader)
 - uid: System.Reflection.Metadata.SignatureHeader.ToString
   href: System.Reflection.Metadata.SignatureHeader.yml
@@ -325,4 +350,8 @@ items:
     parameters: []
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Reflection.Metadata.SignatureHeader.ToString

@@ -6,17 +6,19 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Threading.Tasks.Dataflow/src/Blocks/TransformBlock.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Threading.Tasks.Dataflow/src/Blocks/TransformBlock.cs
     startLine: 23
-  summary: Provides a dataflow block that invokes a provided [System.Func`2](#) delegate for every data element received.
+  summary: Provides a dataflow block that invokes a provided [System.Func`2]() delegate for every data element received.
   syntax:
     content:
-      CSharp: public sealed class TransformBlock<TInput, TOutput>
+      CSharp: 'public sealed class TransformBlock<TInput, TOutput> : IPropagatorBlock<TInput, TOutput>, ITargetBlock<TInput>, IReceivableSourceBlock<TOutput>, ISourceBlock<TOutput>, IDataflowBlock, IDebuggerDisplay'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Threading.Tasks.Dataflow.TransformBlock`2
   children:
@@ -25,12 +27,17 @@ items:
   - System.Threading.Tasks.Dataflow.TransformBlock`2.#ctor(System.Func{`0,System.Threading.Tasks.Task{`1}})
   - System.Threading.Tasks.Dataflow.TransformBlock`2.#ctor(System.Func{`0,System.Threading.Tasks.Task{`1}},System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions)
   - System.Threading.Tasks.Dataflow.TransformBlock`2.Complete
+  - System.Threading.Tasks.Dataflow.TransformBlock`2.System#Threading#Tasks#Dataflow#IDataflowBlock#Fault(System.Exception)
   - System.Threading.Tasks.Dataflow.TransformBlock`2.LinkTo(System.Threading.Tasks.Dataflow.ITargetBlock{`1},System.Threading.Tasks.Dataflow.DataflowLinkOptions)
   - System.Threading.Tasks.Dataflow.TransformBlock`2.TryReceive(System.Predicate{`1},`1@)
   - System.Threading.Tasks.Dataflow.TransformBlock`2.TryReceiveAll(System.Collections.Generic.IList{`1}@)
   - System.Threading.Tasks.Dataflow.TransformBlock`2.Completion
   - System.Threading.Tasks.Dataflow.TransformBlock`2.InputCount
   - System.Threading.Tasks.Dataflow.TransformBlock`2.OutputCount
+  - System.Threading.Tasks.Dataflow.TransformBlock`2.System#Threading#Tasks#Dataflow#ITargetBlock{TInput}#OfferMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,`0,System.Threading.Tasks.Dataflow.ISourceBlock{`0},System.Boolean)
+  - System.Threading.Tasks.Dataflow.TransformBlock`2.System#Threading#Tasks#Dataflow#ISourceBlock{TOutput}#ConsumeMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{`1},System.Boolean@)
+  - System.Threading.Tasks.Dataflow.TransformBlock`2.System#Threading#Tasks#Dataflow#ISourceBlock{TOutput}#ReserveMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{`1})
+  - System.Threading.Tasks.Dataflow.TransformBlock`2.System#Threading#Tasks#Dataflow#ISourceBlock{TOutput}#ReleaseReservation(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{`1})
   - System.Threading.Tasks.Dataflow.TransformBlock`2.ToString
 - uid: System.Threading.Tasks.Dataflow.TransformBlock`2.#ctor(System.Func{`0,`1})
   href: System.Threading.Tasks.Dataflow.TransformBlock`2.yml
@@ -41,7 +48,7 @@ items:
     remote: *o0
     path: src/System.Threading.Tasks.Dataflow/src/Blocks/TransformBlock.cs
     startLine: 37
-  summary: Initializes the [System.Threading.Tasks.Dataflow.TransformBlock`2](System.Threading.Tasks.Dataflow.TransformBlock`2.yml) with the specified [System.Func`2](#).
+  summary: Initializes the [System.Threading.Tasks.Dataflow.TransformBlock`2](System.Threading.Tasks.Dataflow.TransformBlock`2.yml) with the specified [System.Func`2]().
   syntax:
     content:
       CSharp: 'public TransformBlock(Func<TInput, TOutput> transform): this (transform, null, ExecutionDataflowBlockOptions.Default)'
@@ -49,7 +56,7 @@ items:
     - id: transform
       type:
         id: System.Func{`0,`1}
-        name: System.Func{`0,`1}
+        name: Func<TInput, TOutput>
         isExternal: true
       description: The function to invoke with each data element received.
   id: System.Threading.Tasks.Dataflow.TransformBlock`2.#ctor(System.Func{`0,`1})
@@ -63,7 +70,7 @@ items:
     path: src/System.Threading.Tasks.Dataflow/src/Blocks/TransformBlock.cs
     startLine: 49
   summary: >-
-    Initializes the [System.Threading.Tasks.Dataflow.TransformBlock`2](System.Threading.Tasks.Dataflow.TransformBlock`2.yml) with the specified [System.Func`2](#) and
+    Initializes the [System.Threading.Tasks.Dataflow.TransformBlock`2](System.Threading.Tasks.Dataflow.TransformBlock`2.yml) with the specified [System.Func`2]() and
 
     [System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions](System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions.yml).
   syntax:
@@ -73,7 +80,7 @@ items:
     - id: transform
       type:
         id: System.Func{`0,`1}
-        name: System.Func{`0,`1}
+        name: Func<TInput, TOutput>
         isExternal: true
       description: The function to invoke with each data element received.
     - id: dataflowBlockOptions
@@ -92,7 +99,7 @@ items:
     remote: *o0
     path: src/System.Threading.Tasks.Dataflow/src/Blocks/TransformBlock.cs
     startLine: 56
-  summary: Initializes the [System.Threading.Tasks.Dataflow.TransformBlock`2](System.Threading.Tasks.Dataflow.TransformBlock`2.yml) with the specified [System.Func`2](#).
+  summary: Initializes the [System.Threading.Tasks.Dataflow.TransformBlock`2](System.Threading.Tasks.Dataflow.TransformBlock`2.yml) with the specified [System.Func`2]().
   syntax:
     content:
       CSharp: '[SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures")] public TransformBlock(Func<TInput, Task<TOutput>> transform): this (null, transform, ExecutionDataflowBlockOptions.Default)'
@@ -100,7 +107,7 @@ items:
     - id: transform
       type:
         id: System.Func{`0,System.Threading.Tasks.Task{`1}}
-        name: System.Func{`0,System.Threading.Tasks.Task{`1}}
+        name: Func<TInput, Task<TOutput>>
         isExternal: true
       description: The function to invoke with each data element received.
   id: System.Threading.Tasks.Dataflow.TransformBlock`2.#ctor(System.Func{`0,System.Threading.Tasks.Task{`1}})
@@ -114,7 +121,7 @@ items:
     path: src/System.Threading.Tasks.Dataflow/src/Blocks/TransformBlock.cs
     startLine: 69
   summary: >-
-    Initializes the [System.Threading.Tasks.Dataflow.TransformBlock`2](System.Threading.Tasks.Dataflow.TransformBlock`2.yml) with the specified [System.Func`2](#)
+    Initializes the [System.Threading.Tasks.Dataflow.TransformBlock`2](System.Threading.Tasks.Dataflow.TransformBlock`2.yml) with the specified [System.Func`2]()
 
     and [System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions](System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions.yml).
   syntax:
@@ -124,7 +131,7 @@ items:
     - id: transform
       type:
         id: System.Func{`0,System.Threading.Tasks.Task{`1}}
-        name: System.Func{`0,System.Threading.Tasks.Task{`1}}
+        name: Func<TInput, Task<TOutput>>
         isExternal: true
       description: The function to invoke with each data element received.
     - id: dataflowBlockOptions
@@ -148,6 +155,25 @@ items:
       CSharp: public void Complete()
     parameters: []
   id: System.Threading.Tasks.Dataflow.TransformBlock`2.Complete
+- uid: System.Threading.Tasks.Dataflow.TransformBlock`2.System#Threading#Tasks#Dataflow#IDataflowBlock#Fault(System.Exception)
+  href: System.Threading.Tasks.Dataflow.TransformBlock`2.yml
+  name: IDataflowBlock.Fault(Exception)
+  fullName: System.Threading.Tasks.Dataflow.TransformBlock<TInput, TOutput>.System.Threading.Tasks.Dataflow.IDataflowBlock.Fault(System.Exception)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/TransformBlock.cs
+    startLine: 300
+  syntax:
+    content:
+      CSharp: void IDataflowBlock.Fault(Exception exception)
+    parameters:
+    - id: exception
+      type:
+        id: System.Exception
+        name: Exception
+        isExternal: true
+  id: System.Threading.Tasks.Dataflow.TransformBlock`2.System#Threading#Tasks#Dataflow#IDataflowBlock#Fault(System.Exception)
 - uid: System.Threading.Tasks.Dataflow.TransformBlock`2.LinkTo(System.Threading.Tasks.Dataflow.ITargetBlock{`1},System.Threading.Tasks.Dataflow.DataflowLinkOptions)
   href: System.Threading.Tasks.Dataflow.TransformBlock`2.yml
   name: LinkTo(ITargetBlock<TOutput>, DataflowLinkOptions)
@@ -164,7 +190,7 @@ items:
     - id: target
       type:
         id: System.Threading.Tasks.Dataflow.ITargetBlock{`1}
-        name: ITargetBlock
+        name: ITargetBlock<TOutput>
         href: System.Threading.Tasks.Dataflow.ITargetBlock{`1}
     - id: linkOptions
       type:
@@ -173,6 +199,10 @@ items:
         href: System.Threading.Tasks.Dataflow.DataflowLinkOptions.yml
     return:
       id: IDisposable
+      type:
+        id: System.IDisposable
+        name: IDisposable
+        isExternal: true
   id: System.Threading.Tasks.Dataflow.TransformBlock`2.LinkTo(System.Threading.Tasks.Dataflow.ITargetBlock{`1},System.Threading.Tasks.Dataflow.DataflowLinkOptions)
 - uid: System.Threading.Tasks.Dataflow.TransformBlock`2.TryReceive(System.Predicate{`1},`1@)
   href: System.Threading.Tasks.Dataflow.TransformBlock`2.yml
@@ -185,12 +215,12 @@ items:
     startLine: 315
   syntax:
     content:
-      CSharp: public Boolean TryReceive(Predicate<TOutput> filter, out TOutput item)
+      CSharp: public bool TryReceive(Predicate<TOutput> filter, out TOutput item)
     parameters:
     - id: filter
       type:
         id: System.Predicate{`1}
-        name: System.Predicate{`1}
+        name: Predicate<TOutput>
         isExternal: true
     - id: item
       type:
@@ -199,6 +229,10 @@ items:
         href: TOutput
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Threading.Tasks.Dataflow.TransformBlock`2.TryReceive(System.Predicate{`1},`1@)
 - uid: System.Threading.Tasks.Dataflow.TransformBlock`2.TryReceiveAll(System.Collections.Generic.IList{`1}@)
   href: System.Threading.Tasks.Dataflow.TransformBlock`2.yml
@@ -216,10 +250,14 @@ items:
     - id: items
       type:
         id: System.Collections.Generic.IList{`1}
-        name: System.Collections.Generic.IList{`1}
+        name: IList<TOutput>
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Threading.Tasks.Dataflow.TransformBlock`2.TryReceiveAll(System.Collections.Generic.IList{`1}@)
 - uid: System.Threading.Tasks.Dataflow.TransformBlock`2.Completion
   href: System.Threading.Tasks.Dataflow.TransformBlock`2.yml
@@ -237,7 +275,7 @@ items:
     - id: Completion
       type:
         id: System.Threading.Tasks.Task
-        name: System.Threading.Tasks.Task
+        name: Task
         isExternal: true
   id: System.Threading.Tasks.Dataflow.TransformBlock`2.Completion
 - uid: System.Threading.Tasks.Dataflow.TransformBlock`2.InputCount
@@ -256,7 +294,7 @@ items:
     - id: InputCount
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Threading.Tasks.Dataflow.TransformBlock`2.InputCount
 - uid: System.Threading.Tasks.Dataflow.TransformBlock`2.OutputCount
@@ -275,9 +313,138 @@ items:
     - id: OutputCount
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Threading.Tasks.Dataflow.TransformBlock`2.OutputCount
+- uid: System.Threading.Tasks.Dataflow.TransformBlock`2.System#Threading#Tasks#Dataflow#ITargetBlock{TInput}#OfferMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,`0,System.Threading.Tasks.Dataflow.ISourceBlock{`0},System.Boolean)
+  href: System.Threading.Tasks.Dataflow.TransformBlock`2.yml
+  name: ITargetBlock<TInput>.OfferMessage(DataflowMessageHeader, TInput, ISourceBlock<TInput>, bool)
+  fullName: System.Threading.Tasks.Dataflow.TransformBlock<TInput, TOutput>.System.Threading.Tasks.Dataflow.ITargetBlock<TInput>.OfferMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader, TInput, System.Threading.Tasks.Dataflow.ISourceBlock<TInput>, bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/TransformBlock.cs
+    startLine: 333
+  syntax:
+    content:
+      CSharp: DataflowMessageStatus ITargetBlock<TInput>.OfferMessage(DataflowMessageHeader messageHeader, TInput messageValue, ISourceBlock<TInput> source, bool consumeToAccept)
+    parameters:
+    - id: messageHeader
+      type:
+        id: System.Threading.Tasks.Dataflow.DataflowMessageHeader
+        name: DataflowMessageHeader
+        href: System.Threading.Tasks.Dataflow.DataflowMessageHeader.yml
+    - id: messageValue
+      type:
+        id: TInput
+        name: TInput
+        href: TInput
+    - id: source
+      type:
+        id: System.Threading.Tasks.Dataflow.ISourceBlock{`0}
+        name: ISourceBlock<TInput>
+        href: System.Threading.Tasks.Dataflow.ISourceBlock{`0}
+    - id: consumeToAccept
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+    return:
+      id: DataflowMessageStatus
+      type:
+        id: System.Threading.Tasks.Dataflow.DataflowMessageStatus
+        name: DataflowMessageStatus
+        href: System.Threading.Tasks.Dataflow.DataflowMessageStatus.yml
+  id: System.Threading.Tasks.Dataflow.TransformBlock`2.System#Threading#Tasks#Dataflow#ITargetBlock{TInput}#OfferMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,`0,System.Threading.Tasks.Dataflow.ISourceBlock{`0},System.Boolean)
+- uid: System.Threading.Tasks.Dataflow.TransformBlock`2.System#Threading#Tasks#Dataflow#ISourceBlock{TOutput}#ConsumeMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{`1},System.Boolean@)
+  href: System.Threading.Tasks.Dataflow.TransformBlock`2.yml
+  name: ISourceBlock<TOutput>.ConsumeMessage(DataflowMessageHeader, ITargetBlock<TOutput>, out bool)
+  fullName: System.Threading.Tasks.Dataflow.TransformBlock<TInput, TOutput>.System.Threading.Tasks.Dataflow.ISourceBlock<TOutput>.ConsumeMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader, System.Threading.Tasks.Dataflow.ITargetBlock<TOutput>, out bool)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/TransformBlock.cs
+    startLine: 339
+  syntax:
+    content:
+      CSharp: TOutput ISourceBlock<TOutput>.ConsumeMessage(DataflowMessageHeader messageHeader, ITargetBlock<TOutput> target, out bool messageConsumed)
+    parameters:
+    - id: messageHeader
+      type:
+        id: System.Threading.Tasks.Dataflow.DataflowMessageHeader
+        name: DataflowMessageHeader
+        href: System.Threading.Tasks.Dataflow.DataflowMessageHeader.yml
+    - id: target
+      type:
+        id: System.Threading.Tasks.Dataflow.ITargetBlock{`1}
+        name: ITargetBlock<TOutput>
+        href: System.Threading.Tasks.Dataflow.ITargetBlock{`1}
+    - id: messageConsumed
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+    return:
+      id: TOutput
+      type:
+        id: TOutput
+        name: TOutput
+        href: TOutput
+  id: System.Threading.Tasks.Dataflow.TransformBlock`2.System#Threading#Tasks#Dataflow#ISourceBlock{TOutput}#ConsumeMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{`1},System.Boolean@)
+- uid: System.Threading.Tasks.Dataflow.TransformBlock`2.System#Threading#Tasks#Dataflow#ISourceBlock{TOutput}#ReserveMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{`1})
+  href: System.Threading.Tasks.Dataflow.TransformBlock`2.yml
+  name: ISourceBlock<TOutput>.ReserveMessage(DataflowMessageHeader, ITargetBlock<TOutput>)
+  fullName: System.Threading.Tasks.Dataflow.TransformBlock<TInput, TOutput>.System.Threading.Tasks.Dataflow.ISourceBlock<TOutput>.ReserveMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader, System.Threading.Tasks.Dataflow.ITargetBlock<TOutput>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/TransformBlock.cs
+    startLine: 345
+  syntax:
+    content:
+      CSharp: bool ISourceBlock<TOutput>.ReserveMessage(DataflowMessageHeader messageHeader, ITargetBlock<TOutput> target)
+    parameters:
+    - id: messageHeader
+      type:
+        id: System.Threading.Tasks.Dataflow.DataflowMessageHeader
+        name: DataflowMessageHeader
+        href: System.Threading.Tasks.Dataflow.DataflowMessageHeader.yml
+    - id: target
+      type:
+        id: System.Threading.Tasks.Dataflow.ITargetBlock{`1}
+        name: ITargetBlock<TOutput>
+        href: System.Threading.Tasks.Dataflow.ITargetBlock{`1}
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Threading.Tasks.Dataflow.TransformBlock`2.System#Threading#Tasks#Dataflow#ISourceBlock{TOutput}#ReserveMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{`1})
+- uid: System.Threading.Tasks.Dataflow.TransformBlock`2.System#Threading#Tasks#Dataflow#ISourceBlock{TOutput}#ReleaseReservation(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{`1})
+  href: System.Threading.Tasks.Dataflow.TransformBlock`2.yml
+  name: ISourceBlock<TOutput>.ReleaseReservation(DataflowMessageHeader, ITargetBlock<TOutput>)
+  fullName: System.Threading.Tasks.Dataflow.TransformBlock<TInput, TOutput>.System.Threading.Tasks.Dataflow.ISourceBlock<TOutput>.ReleaseReservation(System.Threading.Tasks.Dataflow.DataflowMessageHeader, System.Threading.Tasks.Dataflow.ITargetBlock<TOutput>)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Threading.Tasks.Dataflow/src/Blocks/TransformBlock.cs
+    startLine: 351
+  syntax:
+    content:
+      CSharp: void ISourceBlock<TOutput>.ReleaseReservation(DataflowMessageHeader messageHeader, ITargetBlock<TOutput> target)
+    parameters:
+    - id: messageHeader
+      type:
+        id: System.Threading.Tasks.Dataflow.DataflowMessageHeader
+        name: DataflowMessageHeader
+        href: System.Threading.Tasks.Dataflow.DataflowMessageHeader.yml
+    - id: target
+      type:
+        id: System.Threading.Tasks.Dataflow.ITargetBlock{`1}
+        name: ITargetBlock<TOutput>
+        href: System.Threading.Tasks.Dataflow.ITargetBlock{`1}
+  id: System.Threading.Tasks.Dataflow.TransformBlock`2.System#Threading#Tasks#Dataflow#ISourceBlock{TOutput}#ReleaseReservation(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{`1})
 - uid: System.Threading.Tasks.Dataflow.TransformBlock`2.ToString
   href: System.Threading.Tasks.Dataflow.TransformBlock`2.yml
   name: ToString()
@@ -293,4 +460,8 @@ items:
     parameters: []
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Threading.Tasks.Dataflow.TransformBlock`2.ToString

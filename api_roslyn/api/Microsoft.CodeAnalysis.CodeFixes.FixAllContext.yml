@@ -6,9 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/CodeFixes/FixAllOccurrences/FixAllContext.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/CodeFixes/FixAllOccurrences/FixAllContext.cs
     startLine: 16
   summary: Context for "Fix all occurrences" code fixes provided by an [Microsoft.CodeAnalysis.CodeFixes.FixAllProvider](Microsoft.CodeAnalysis.CodeFixes.FixAllProvider.yml).
@@ -17,7 +18,7 @@ items:
       CSharp: public class FixAllContext
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.CodeFixes.FixAllContext
   children:
@@ -65,7 +66,7 @@ items:
   summary: Project within which fix all occurrences was triggered.
   syntax:
     content:
-      CSharp: public Project Project { get; private set; }
+      CSharp: public Project Project { get; }
     parameters:
     - id: Project
       type:
@@ -85,7 +86,7 @@ items:
   summary: Document within which fix all occurrences was triggered.
   syntax:
     content:
-      CSharp: public Document Document { get; private set; }
+      CSharp: public Document Document { get; }
     parameters:
     - id: Document
       type:
@@ -105,7 +106,7 @@ items:
   summary: Underlying [Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider](Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider.yml) which triggered this fix all.
   syntax:
     content:
-      CSharp: public CodeFixProvider CodeFixProvider { get; private set; }
+      CSharp: public CodeFixProvider CodeFixProvider { get; }
     parameters:
     - id: CodeFixProvider
       type:
@@ -125,7 +126,7 @@ items:
   summary: FixAllScope to fix all occurrences.
   syntax:
     content:
-      CSharp: public FixAllScope Scope { get; private set; }
+      CSharp: public FixAllScope Scope { get; }
     parameters:
     - id: Scope
       type:
@@ -150,12 +151,12 @@ items:
     return only diagnostics whose IDs are contained in this set of Ids.
   syntax:
     content:
-      CSharp: public ImmutableHashSet<string> DiagnosticIds { get; private set; }
+      CSharp: public ImmutableHashSet<string> DiagnosticIds { get; }
     parameters:
     - id: DiagnosticIds
       type:
         id: System.Collections.Immutable.ImmutableHashSet{System.String}
-        name: System.Collections.Immutable.ImmutableHashSet{System.String}
+        name: ImmutableHashSet<string>
         isExternal: true
   id: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.DiagnosticIds
 - uid: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.CodeActionEquivalenceKey
@@ -170,12 +171,12 @@ items:
   summary: The [Microsoft.CodeAnalysis.CodeActions.CodeAction.EquivalenceKey](Microsoft.CodeAnalysis.CodeActions.CodeAction.yml) value expected of a [Microsoft.CodeAnalysis.CodeActions.CodeAction](Microsoft.CodeAnalysis.CodeActions.CodeAction.yml) participating in this fix all.
   syntax:
     content:
-      CSharp: public string CodeActionEquivalenceKey { get; private set; }
+      CSharp: public string CodeActionEquivalenceKey { get; }
     parameters:
     - id: CodeActionEquivalenceKey
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.CodeActionEquivalenceKey
 - uid: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.CancellationToken
@@ -190,12 +191,12 @@ items:
   summary: CancellationToken for fix all session.
   syntax:
     content:
-      CSharp: public CancellationToken CancellationToken { get; private set; }
+      CSharp: public CancellationToken CancellationToken { get; }
     parameters:
     - id: CancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
   id: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.CancellationToken
 - uid: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.GetDocumentDiagnosticsAsync(Microsoft.CodeAnalysis.Document)
@@ -210,7 +211,7 @@ items:
   summary: Gets all the diagnostics in the given document filtered by [Microsoft.CodeAnalysis.CodeFixes.FixAllContext.DiagnosticIds](Microsoft.CodeAnalysis.CodeFixes.FixAllContext.yml).
   syntax:
     content:
-      CSharp: public async Task<ImmutableArray<Diagnostic>> GetDocumentDiagnosticsAsync(Document document)
+      CSharp: public Task<ImmutableArray<Diagnostic>> GetDocumentDiagnosticsAsync(Document document)
     parameters:
     - id: document
       type:
@@ -219,6 +220,10 @@ items:
         href: Microsoft.CodeAnalysis.Document.yml
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.Diagnostic}}
+        name: Task<ImmutableArray<Diagnostic>>
+        isExternal: true
   id: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.GetDocumentDiagnosticsAsync(Microsoft.CodeAnalysis.Document)
 - uid: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.GetProjectDiagnosticsAsync(Microsoft.CodeAnalysis.Project)
   href: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.yml
@@ -232,7 +237,7 @@ items:
   summary: Gets all the project-level diagnostics, i.e. diagnostics with no source location, in the given project filtered by [Microsoft.CodeAnalysis.CodeFixes.FixAllContext.DiagnosticIds](Microsoft.CodeAnalysis.CodeFixes.FixAllContext.yml).
   syntax:
     content:
-      CSharp: public async Task<ImmutableArray<Diagnostic>> GetProjectDiagnosticsAsync(Project project)
+      CSharp: public Task<ImmutableArray<Diagnostic>> GetProjectDiagnosticsAsync(Project project)
     parameters:
     - id: project
       type:
@@ -241,6 +246,10 @@ items:
         href: Microsoft.CodeAnalysis.Project.yml
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.Diagnostic}}
+        name: Task<ImmutableArray<Diagnostic>>
+        isExternal: true
   id: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.GetProjectDiagnosticsAsync(Microsoft.CodeAnalysis.Project)
 - uid: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.GetAllDiagnosticsAsync(Microsoft.CodeAnalysis.Project)
   href: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.yml
@@ -257,7 +266,7 @@ items:
     This includes both document-level diagnostics for all documents in the given project and project-level diagnostics, i.e. diagnostics with no source location, in the given project.
   syntax:
     content:
-      CSharp: public async Task<ImmutableArray<Diagnostic>> GetAllDiagnosticsAsync(Project project)
+      CSharp: public Task<ImmutableArray<Diagnostic>> GetAllDiagnosticsAsync(Project project)
     parameters:
     - id: project
       type:
@@ -266,6 +275,10 @@ items:
         href: Microsoft.CodeAnalysis.Project.yml
     return:
       id: Task
+      type:
+        id: System.Threading.Tasks.Task{System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.Diagnostic}}
+        name: Task<ImmutableArray<Diagnostic>>
+        isExternal: true
   id: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.GetAllDiagnosticsAsync(Microsoft.CodeAnalysis.Project)
 - uid: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.WithCancellationToken(System.Threading.CancellationToken)
   href: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.yml
@@ -284,8 +297,12 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: FixAllContext
+      type:
+        id: Microsoft.CodeAnalysis.CodeFixes.FixAllContext
+        name: FixAllContext
+        href: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.yml
   id: Microsoft.CodeAnalysis.CodeFixes.FixAllContext.WithCancellationToken(System.Threading.CancellationToken)

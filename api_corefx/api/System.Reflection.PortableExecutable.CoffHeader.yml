@@ -6,8 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/CoffHeader.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/PortableExecutable/CoffHeader.cs
     startLine: 5
   syntax:
@@ -15,7 +17,7 @@ items:
       CSharp: public sealed class CoffHeader
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Reflection.PortableExecutable.CoffHeader
   children:
@@ -38,7 +40,7 @@ items:
   summary: The type of target machine.
   syntax:
     content:
-      CSharp: public Machine Machine { get; private set; }
+      CSharp: public Machine Machine { get; }
     parameters:
     - id: Machine
       type:
@@ -58,12 +60,12 @@ items:
   summary: The number of sections. This indicates the size of the section table, which immediately follows the headers.
   syntax:
     content:
-      CSharp: public short NumberOfSections { get; private set; }
+      CSharp: public short NumberOfSections { get; }
     parameters:
     - id: NumberOfSections
       type:
         id: System.Int16
-        name: System.Int16
+        name: short
         isExternal: true
   id: System.Reflection.PortableExecutable.CoffHeader.NumberOfSections
 - uid: System.Reflection.PortableExecutable.CoffHeader.TimeDateStamp
@@ -78,12 +80,12 @@ items:
   summary: The low 32 bits of the number of seconds since 00:00 January 1, 1970, that indicates when the file was created.
   syntax:
     content:
-      CSharp: public int TimeDateStamp { get; private set; }
+      CSharp: public int TimeDateStamp { get; }
     parameters:
     - id: TimeDateStamp
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Reflection.PortableExecutable.CoffHeader.TimeDateStamp
 - uid: System.Reflection.PortableExecutable.CoffHeader.PointerToSymbolTable
@@ -101,12 +103,12 @@ items:
     This value should be zero for a PE image.
   syntax:
     content:
-      CSharp: public int PointerToSymbolTable { get; private set; }
+      CSharp: public int PointerToSymbolTable { get; }
     parameters:
     - id: PointerToSymbolTable
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Reflection.PortableExecutable.CoffHeader.PointerToSymbolTable
 - uid: System.Reflection.PortableExecutable.CoffHeader.NumberOfSymbols
@@ -124,12 +126,12 @@ items:
     which immediately follows the symbol table. This value should be zero for a PE image.
   syntax:
     content:
-      CSharp: public int NumberOfSymbols { get; private set; }
+      CSharp: public int NumberOfSymbols { get; }
     parameters:
     - id: NumberOfSymbols
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Reflection.PortableExecutable.CoffHeader.NumberOfSymbols
 - uid: System.Reflection.PortableExecutable.CoffHeader.SizeOfOptionalHeader
@@ -147,12 +149,12 @@ items:
     This value should be zero for an object file.
   syntax:
     content:
-      CSharp: public short SizeOfOptionalHeader { get; private set; }
+      CSharp: public short SizeOfOptionalHeader { get; }
     parameters:
     - id: SizeOfOptionalHeader
       type:
         id: System.Int16
-        name: System.Int16
+        name: short
         isExternal: true
   id: System.Reflection.PortableExecutable.CoffHeader.SizeOfOptionalHeader
 - uid: System.Reflection.PortableExecutable.CoffHeader.Characteristics
@@ -167,7 +169,7 @@ items:
   summary: The flags that indicate the attributes of the file.
   syntax:
     content:
-      CSharp: public Characteristics Characteristics { get; private set; }
+      CSharp: public Characteristics Characteristics { get; }
     parameters:
     - id: Characteristics
       type:

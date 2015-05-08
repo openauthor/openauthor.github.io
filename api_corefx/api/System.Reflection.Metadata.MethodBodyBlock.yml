@@ -6,8 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MethodBodyBlock.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/MethodBodyBlock.cs
     startLine: 11
   syntax:
@@ -15,7 +17,7 @@ items:
       CSharp: public sealed class MethodBodyBlock
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Reflection.Metadata.MethodBodyBlock
   children:
@@ -45,7 +47,7 @@ items:
     - id: Size
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Reflection.Metadata.MethodBodyBlock.Size
 - uid: System.Reflection.Metadata.MethodBodyBlock.MaxStack
@@ -64,7 +66,7 @@ items:
     - id: MaxStack
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Reflection.Metadata.MethodBodyBlock.MaxStack
 - uid: System.Reflection.Metadata.MethodBodyBlock.LocalVariablesInitialized
@@ -83,7 +85,7 @@ items:
     - id: LocalVariablesInitialized
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Reflection.Metadata.MethodBodyBlock.LocalVariablesInitialized
 - uid: System.Reflection.Metadata.MethodBodyBlock.LocalSignature
@@ -121,7 +123,7 @@ items:
     - id: ExceptionRegions
       type:
         id: ImmutableArray{System.Reflection.Metadata.ExceptionRegion}
-        name: ImmutableArray{System.Reflection.Metadata.ExceptionRegion}
+        name: ImmutableArray<ExceptionRegion>
         isExternal: true
   id: System.Reflection.Metadata.MethodBodyBlock.ExceptionRegions
 - uid: System.Reflection.Metadata.MethodBodyBlock.GetILBytes
@@ -137,7 +139,11 @@ items:
     content:
       CSharp: public byte[] GetILBytes()
     parameters: []
-    return: {}
+    return:
+      type:
+        id: System.Array
+        name: byte[]
+        isExternal: true
   id: System.Reflection.Metadata.MethodBodyBlock.GetILBytes
 - uid: System.Reflection.Metadata.MethodBodyBlock.GetILContent
   href: System.Reflection.Metadata.MethodBodyBlock.yml
@@ -154,6 +160,10 @@ items:
     parameters: []
     return:
       id: ImmutableArray
+      type:
+        id: ImmutableArray{System.Byte}
+        name: ImmutableArray<byte>
+        isExternal: true
   id: System.Reflection.Metadata.MethodBodyBlock.GetILContent
 - uid: System.Reflection.Metadata.MethodBodyBlock.GetILReader
   href: System.Reflection.Metadata.MethodBodyBlock.yml
@@ -170,6 +180,10 @@ items:
     parameters: []
     return:
       id: BlobReader
+      type:
+        id: System.Reflection.Metadata.BlobReader
+        name: BlobReader
+        href: System.Reflection.Metadata.BlobReader.yml
   id: System.Reflection.Metadata.MethodBodyBlock.GetILReader
 - uid: System.Reflection.Metadata.MethodBodyBlock.Create(System.Reflection.Metadata.BlobReader)
   href: System.Reflection.Metadata.MethodBodyBlock.yml
@@ -191,4 +205,8 @@ items:
         href: System.Reflection.Metadata.BlobReader.yml
     return:
       id: MethodBodyBlock
+      type:
+        id: System.Reflection.Metadata.MethodBodyBlock
+        name: MethodBodyBlock
+        href: System.Reflection.Metadata.MethodBodyBlock.yml
   id: System.Reflection.Metadata.MethodBodyBlock.Create(System.Reflection.Metadata.BlobReader)

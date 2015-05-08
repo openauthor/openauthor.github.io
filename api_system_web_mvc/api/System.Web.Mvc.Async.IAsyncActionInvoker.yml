@@ -6,14 +6,15 @@ items:
   type: Interface
   source:
     remote: &o0
+      path: src/System.Web.Mvc/Async/IAsyncActionInvoker.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/Async/IAsyncActionInvoker.cs
     startLine: 4
   syntax:
     content:
-      CSharp: public interface IAsyncActionInvoker
+      CSharp: 'public interface IAsyncActionInvoker : IActionInvoker'
   id: System.Web.Mvc.Async.IAsyncActionInvoker
   children:
   - System.Web.Mvc.Async.IAsyncActionInvoker.BeginInvokeAction(System.Web.Mvc.ControllerContext,System.String,System.AsyncCallback,System.Object)
@@ -29,7 +30,7 @@ items:
     startLine: 6
   syntax:
     content:
-      CSharp: IAsyncResult BeginInvokeAction(ControllerContext controllerContext, string actionName, AsyncCallback callback, object state);
+      CSharp: public IAsyncResult BeginInvokeAction(ControllerContext controllerContext, string actionName, AsyncCallback callback, object state)
     parameters:
     - id: controllerContext
       type:
@@ -39,20 +40,24 @@ items:
     - id: actionName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: callback
       type:
         id: System.AsyncCallback
-        name: System.AsyncCallback
+        name: AsyncCallback
         isExternal: true
     - id: state
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: IAsyncResult
+      type:
+        id: System.IAsyncResult
+        name: IAsyncResult
+        isExternal: true
   id: System.Web.Mvc.Async.IAsyncActionInvoker.BeginInvokeAction(System.Web.Mvc.ControllerContext,System.String,System.AsyncCallback,System.Object)
 - uid: System.Web.Mvc.Async.IAsyncActionInvoker.EndInvokeAction(System.IAsyncResult)
   href: System.Web.Mvc.Async.IAsyncActionInvoker.yml
@@ -65,13 +70,17 @@ items:
     startLine: 7
   syntax:
     content:
-      CSharp: bool EndInvokeAction(IAsyncResult asyncResult);
+      CSharp: public bool EndInvokeAction(IAsyncResult asyncResult)
     parameters:
     - id: asyncResult
       type:
         id: System.IAsyncResult
-        name: System.IAsyncResult
+        name: IAsyncResult
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Web.Mvc.Async.IAsyncActionInvoker.EndInvokeAction(System.IAsyncResult)

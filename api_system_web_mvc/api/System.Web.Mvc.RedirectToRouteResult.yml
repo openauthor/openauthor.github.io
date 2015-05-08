@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/RedirectToRouteResult.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/RedirectToRouteResult.cs
     startLine: 8
   syntax:
     content:
-      CSharp: public class RedirectToRouteResult
+      CSharp: 'public class RedirectToRouteResult : ActionResult'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.Mvc.ActionResult
     name: ActionResult
@@ -46,7 +47,7 @@ items:
     - id: routeValues
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
   id: System.Web.Mvc.RedirectToRouteResult.#ctor(System.Web.Routing.RouteValueDictionary)
 - uid: System.Web.Mvc.RedirectToRouteResult.#ctor(System.String,System.Web.Routing.RouteValueDictionary)
@@ -65,12 +66,12 @@ items:
     - id: routeName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: routeValues
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
   id: System.Web.Mvc.RedirectToRouteResult.#ctor(System.String,System.Web.Routing.RouteValueDictionary)
 - uid: System.Web.Mvc.RedirectToRouteResult.#ctor(System.String,System.Web.Routing.RouteValueDictionary,System.Boolean)
@@ -89,17 +90,17 @@ items:
     - id: routeName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: routeValues
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
     - id: permanent
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.RedirectToRouteResult.#ctor(System.String,System.Web.Routing.RouteValueDictionary,System.Boolean)
 - uid: System.Web.Mvc.RedirectToRouteResult.Permanent
@@ -113,12 +114,12 @@ items:
     startLine: 30
   syntax:
     content:
-      CSharp: public bool Permanent { get; private set; }
+      CSharp: public bool Permanent { get; }
     parameters:
     - id: Permanent
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.RedirectToRouteResult.Permanent
 - uid: System.Web.Mvc.RedirectToRouteResult.RouteName
@@ -132,12 +133,12 @@ items:
     startLine: 32
   syntax:
     content:
-      CSharp: public string RouteName { get; private set; }
+      CSharp: public string RouteName { get; }
     parameters:
     - id: RouteName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.RedirectToRouteResult.RouteName
 - uid: System.Web.Mvc.RedirectToRouteResult.RouteValues
@@ -151,12 +152,12 @@ items:
     startLine: 34
   syntax:
     content:
-      CSharp: public RouteValueDictionary RouteValues { get; private set; }
+      CSharp: public RouteValueDictionary RouteValues { get; }
     parameters:
     - id: RouteValues
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
   id: System.Web.Mvc.RedirectToRouteResult.RouteValues
 - uid: System.Web.Mvc.RedirectToRouteResult.ExecuteResult(System.Web.Mvc.ControllerContext)

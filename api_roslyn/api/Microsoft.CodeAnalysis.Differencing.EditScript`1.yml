@@ -6,18 +6,19 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/Workspaces/Core/Portable/Differencing/EditScript.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/Workspaces/Core/Portable/Differencing/EditScript.cs
     startLine: 13
   summary: Represents a sequence of tree edits.
   syntax:
     content:
-      CSharp: public sealed partial class EditScript<TNode>
+      CSharp: public sealed class EditScript<TNode>
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: Microsoft.CodeAnalysis.Differencing.EditScript`1
   children:
@@ -39,7 +40,7 @@ items:
     - id: Edits
       type:
         id: System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.Differencing.Edit{`0}}
-        name: System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.Differencing.Edit{`0}}
+        name: ImmutableArray<Edit<TNode>>
         isExternal: true
   id: Microsoft.CodeAnalysis.Differencing.EditScript`1.Edits
 - uid: Microsoft.CodeAnalysis.Differencing.EditScript`1.Match
@@ -58,6 +59,6 @@ items:
     - id: Match
       type:
         id: Microsoft.CodeAnalysis.Differencing.Match{`0}
-        name: Match
+        name: Match<TNode>
         href: Microsoft.CodeAnalysis.Differencing.Match{`0}
   id: Microsoft.CodeAnalysis.Differencing.EditScript`1.Match

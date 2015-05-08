@@ -6,20 +6,21 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/MvcHtmlString.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/MvcHtmlString.cs
     startLine: 6
   syntax:
     content:
-      CSharp: public sealed class MvcHtmlString
+      CSharp: 'public sealed class MvcHtmlString : HtmlString, IHtmlString'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.HtmlString
-    name: System.Web.HtmlString
+    name: HtmlString
     isExternal: true
   id: System.Web.Mvc.MvcHtmlString
   children:
@@ -38,7 +39,7 @@ items:
     startLine: 9
   syntax:
     content:
-      CSharp: Empty
+      CSharp: '[SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = "MvcHtmlString is immutable")] public static readonly MvcHtmlString Empty;'
   id: System.Web.Mvc.MvcHtmlString.Empty
 - uid: System.Web.Mvc.MvcHtmlString.#ctor(System.String)
   href: System.Web.Mvc.MvcHtmlString.yml
@@ -56,7 +57,7 @@ items:
     - id: value
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.MvcHtmlString.#ctor(System.String)
 - uid: System.Web.Mvc.MvcHtmlString.Create(System.String)
@@ -75,10 +76,14 @@ items:
     - id: value
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
   id: System.Web.Mvc.MvcHtmlString.Create(System.String)
 - uid: System.Web.Mvc.MvcHtmlString.IsNullOrEmpty(System.Web.Mvc.MvcHtmlString)
   href: System.Web.Mvc.MvcHtmlString.yml
@@ -100,4 +105,8 @@ items:
         href: System.Web.Mvc.MvcHtmlString.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Web.Mvc.MvcHtmlString.IsNullOrEmpty(System.Web.Mvc.MvcHtmlString)

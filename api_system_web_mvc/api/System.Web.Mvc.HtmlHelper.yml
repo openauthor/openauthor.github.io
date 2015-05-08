@@ -6,9 +6,10 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/HtmlHelper.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/HtmlHelper.cs
     startLine: 18
   syntax:
@@ -16,7 +17,7 @@ items:
       CSharp: public class HtmlHelper
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   id: System.Web.Mvc.HtmlHelper
   children:
@@ -80,7 +81,7 @@ items:
     startLine: 20
   syntax:
     content:
-      CSharp: ValidationInputCssClassName
+      CSharp: public static readonly string ValidationInputCssClassName;
   id: System.Web.Mvc.HtmlHelper.ValidationInputCssClassName
 - uid: System.Web.Mvc.HtmlHelper.ValidationInputValidCssClassName
   href: System.Web.Mvc.HtmlHelper.yml
@@ -93,7 +94,7 @@ items:
     startLine: 21
   syntax:
     content:
-      CSharp: ValidationInputValidCssClassName
+      CSharp: public static readonly string ValidationInputValidCssClassName;
   id: System.Web.Mvc.HtmlHelper.ValidationInputValidCssClassName
 - uid: System.Web.Mvc.HtmlHelper.ValidationMessageCssClassName
   href: System.Web.Mvc.HtmlHelper.yml
@@ -106,7 +107,7 @@ items:
     startLine: 22
   syntax:
     content:
-      CSharp: ValidationMessageCssClassName
+      CSharp: public static readonly string ValidationMessageCssClassName;
   id: System.Web.Mvc.HtmlHelper.ValidationMessageCssClassName
 - uid: System.Web.Mvc.HtmlHelper.ValidationMessageValidCssClassName
   href: System.Web.Mvc.HtmlHelper.yml
@@ -119,7 +120,7 @@ items:
     startLine: 23
   syntax:
     content:
-      CSharp: ValidationMessageValidCssClassName
+      CSharp: public static readonly string ValidationMessageValidCssClassName;
   id: System.Web.Mvc.HtmlHelper.ValidationMessageValidCssClassName
 - uid: System.Web.Mvc.HtmlHelper.ValidationSummaryCssClassName
   href: System.Web.Mvc.HtmlHelper.yml
@@ -132,7 +133,7 @@ items:
     startLine: 24
   syntax:
     content:
-      CSharp: ValidationSummaryCssClassName
+      CSharp: public static readonly string ValidationSummaryCssClassName;
   id: System.Web.Mvc.HtmlHelper.ValidationSummaryCssClassName
 - uid: System.Web.Mvc.HtmlHelper.ValidationSummaryValidCssClassName
   href: System.Web.Mvc.HtmlHelper.yml
@@ -145,7 +146,7 @@ items:
     startLine: 25
   syntax:
     content:
-      CSharp: ValidationSummaryValidCssClassName
+      CSharp: public static readonly string ValidationSummaryValidCssClassName;
   id: System.Web.Mvc.HtmlHelper.ValidationSummaryValidCssClassName
 - uid: System.Web.Mvc.HtmlHelper.#ctor(System.Web.Mvc.ViewContext,System.Web.Mvc.IViewDataContainer)
   href: System.Web.Mvc.HtmlHelper.yml
@@ -197,7 +198,7 @@ items:
     - id: routeCollection
       type:
         id: System.Web.Routing.RouteCollection
-        name: System.Web.Routing.RouteCollection
+        name: RouteCollection
         isExternal: true
   id: System.Web.Mvc.HtmlHelper.#ctor(System.Web.Mvc.ViewContext,System.Web.Mvc.IViewDataContainer,System.Web.Routing.RouteCollection)
 - uid: System.Web.Mvc.HtmlHelper.ClientValidationEnabled
@@ -216,7 +217,7 @@ items:
     - id: ClientValidationEnabled
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.HtmlHelper.ClientValidationEnabled
 - uid: System.Web.Mvc.HtmlHelper.IdAttributeDotReplacement
@@ -235,7 +236,7 @@ items:
     - id: IdAttributeDotReplacement
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.HtmlHelper.IdAttributeDotReplacement
 - uid: System.Web.Mvc.HtmlHelper.RouteCollection
@@ -249,12 +250,12 @@ items:
     startLine: 71
   syntax:
     content:
-      CSharp: public RouteCollection RouteCollection { get; private set; }
+      CSharp: public RouteCollection RouteCollection { get; }
     parameters:
     - id: RouteCollection
       type:
         id: System.Web.Routing.RouteCollection
-        name: System.Web.Routing.RouteCollection
+        name: RouteCollection
         isExternal: true
   id: System.Web.Mvc.HtmlHelper.RouteCollection
 - uid: System.Web.Mvc.HtmlHelper.UnobtrusiveJavaScriptEnabled
@@ -273,7 +274,7 @@ items:
     - id: UnobtrusiveJavaScriptEnabled
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.HtmlHelper.UnobtrusiveJavaScriptEnabled
 - uid: System.Web.Mvc.HtmlHelper.ValidationSummaryMessageElement
@@ -296,7 +297,7 @@ items:
     - id: ValidationSummaryMessageElement
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.HtmlHelper.ValidationSummaryMessageElement
 - uid: System.Web.Mvc.HtmlHelper.ValidationMessageElement
@@ -319,7 +320,7 @@ items:
     - id: ValidationMessageElement
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.HtmlHelper.ValidationMessageElement
 - uid: System.Web.Mvc.HtmlHelper.ViewBag
@@ -337,6 +338,7 @@ items:
     parameters:
     - id: ViewBag
       type:
+        name: dynamic
         isExternal: true
   id: System.Web.Mvc.HtmlHelper.ViewBag
 - uid: System.Web.Mvc.HtmlHelper.ViewContext
@@ -350,7 +352,7 @@ items:
     startLine: 127
   syntax:
     content:
-      CSharp: public ViewContext ViewContext { get; private set; }
+      CSharp: public ViewContext ViewContext { get; }
     parameters:
     - id: ViewContext
       type:
@@ -388,7 +390,7 @@ items:
     startLine: 134
   syntax:
     content:
-      CSharp: public IViewDataContainer ViewDataContainer { get; internal set; }
+      CSharp: public IViewDataContainer ViewDataContainer { get; }
     parameters:
     - id: ViewDataContainer
       type:
@@ -416,11 +418,15 @@ items:
     - id: htmlAttributes
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: Anonymous object describing HTML attributes.
     return:
       id: RouteValueDictionary
+      type:
+        id: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
+        isExternal: true
       description: A dictionary that represents HTML attributes.
   id: System.Web.Mvc.HtmlHelper.AnonymousObjectToHtmlAttributes(System.Object)
 - uid: System.Web.Mvc.HtmlHelper.AntiForgeryToken
@@ -434,10 +440,14 @@ items:
     startLine: 151
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Justification = "For consistency, all helpers are instance methods.")] public MvcHtmlString AntiForgeryToken()'
+      CSharp: public MvcHtmlString AntiForgeryToken()
     parameters: []
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
   id: System.Web.Mvc.HtmlHelper.AntiForgeryToken
 - uid: System.Web.Mvc.HtmlHelper.Html5DateRenderingMode
   href: System.Web.Mvc.HtmlHelper.yml
@@ -473,15 +483,19 @@ items:
     startLine: 183
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "AdditionalDataProvider", Justification = "API name.")] [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "AntiForgeryConfig", Justification = "API name.")] [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "AntiForgeryToken", Justification = "API name.")] [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "httpCookies", Justification = "API name.")] [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Justification = "Method is obsolete.")] [Obsolete("This method is deprecated. Use the AntiForgeryToken() method instead. To specify custom data to be embedded within the token, use the static AntiForgeryConfig.AdditionalDataProvider property.", error: true)] [EditorBrowsable(EditorBrowsableState.Never)] public MvcHtmlString AntiForgeryToken(string salt)'
+      CSharp: public MvcHtmlString AntiForgeryToken(string salt)
     parameters:
     - id: salt
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
   id: System.Web.Mvc.HtmlHelper.AntiForgeryToken(System.String)
 - uid: System.Web.Mvc.HtmlHelper.AntiForgeryToken(System.String,System.String,System.String)
   href: System.Web.Mvc.HtmlHelper.yml
@@ -494,25 +508,29 @@ items:
     startLine: 200
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "AdditionalDataProvider", Justification = "API name.")] [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "AntiForgeryConfig", Justification = "API name.")] [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "AntiForgeryToken", Justification = "API name.")] [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "httpCookies", Justification = "API name.")] [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Justification = "Method is obsolete.")] [Obsolete("This method is deprecated. Use the AntiForgeryToken() method instead. To specify a custom domain for the generated cookie, use the <httpCookies> configuration element. To specify custom data to be embedded within the token, use the static AntiForgeryConfig.AdditionalDataProvider property.", error: true)] [EditorBrowsable(EditorBrowsableState.Never)] public MvcHtmlString AntiForgeryToken(string salt, string domain, string path)'
+      CSharp: public MvcHtmlString AntiForgeryToken(string salt, string domain, string path)
     parameters:
     - id: salt
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: domain
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: path
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
   id: System.Web.Mvc.HtmlHelper.AntiForgeryToken(System.String,System.String,System.String)
 - uid: System.Web.Mvc.HtmlHelper.AttributeEncode(System.String)
   href: System.Web.Mvc.HtmlHelper.yml
@@ -525,15 +543,19 @@ items:
     startLine: 217
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Justification = "For consistency, all helpers are instance methods.")] public string AttributeEncode(string value)'
+      CSharp: public string AttributeEncode(string value)
     parameters:
     - id: value
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.HtmlHelper.AttributeEncode(System.String)
 - uid: System.Web.Mvc.HtmlHelper.AttributeEncode(System.Object)
   href: System.Web.Mvc.HtmlHelper.yml
@@ -551,10 +573,14 @@ items:
     - id: value
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.HtmlHelper.AttributeEncode(System.Object)
 - uid: System.Web.Mvc.HtmlHelper.EnableClientValidation
   href: System.Web.Mvc.HtmlHelper.yml
@@ -586,7 +612,7 @@ items:
     - id: enabled
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.HtmlHelper.EnableClientValidation(System.Boolean)
 - uid: System.Web.Mvc.HtmlHelper.EnableUnobtrusiveJavaScript
@@ -619,7 +645,7 @@ items:
     - id: enabled
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
   id: System.Web.Mvc.HtmlHelper.EnableUnobtrusiveJavaScript(System.Boolean)
 - uid: System.Web.Mvc.HtmlHelper.Encode(System.String)
@@ -633,15 +659,19 @@ items:
     startLine: 248
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Justification = "For consistency, all helpers are instance methods.")] public string Encode(string value)'
+      CSharp: public string Encode(string value)
     parameters:
     - id: value
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.HtmlHelper.Encode(System.String)
 - uid: System.Web.Mvc.HtmlHelper.Encode(System.Object)
   href: System.Web.Mvc.HtmlHelper.yml
@@ -654,15 +684,19 @@ items:
     startLine: 254
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Justification = "For consistency, all helpers are instance methods.")] public string Encode(object value)'
+      CSharp: public string Encode(object value)
     parameters:
     - id: value
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.HtmlHelper.Encode(System.Object)
 - uid: System.Web.Mvc.HtmlHelper.FormatValue(System.Object,System.String)
   href: System.Web.Mvc.HtmlHelper.yml
@@ -675,20 +709,24 @@ items:
     startLine: 270
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Justification = "For consistency, all helpers are instance methods.")] public string FormatValue(object value, string format)'
+      CSharp: public string FormatValue(object value, string format)
     parameters:
     - id: value
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
     - id: format
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.HtmlHelper.FormatValue(System.Object,System.String)
 - uid: System.Web.Mvc.HtmlHelper.GenerateIdFromName(System.String)
   href: System.Web.Mvc.HtmlHelper.yml
@@ -706,10 +744,14 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.HtmlHelper.GenerateIdFromName(System.String)
 - uid: System.Web.Mvc.HtmlHelper.GenerateIdFromName(System.String,System.String)
   href: System.Web.Mvc.HtmlHelper.yml
@@ -727,15 +769,19 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: idAttributeDotReplacement
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.HtmlHelper.GenerateIdFromName(System.String,System.String)
 - uid: System.Web.Mvc.HtmlHelper.GenerateLink(System.Web.Routing.RequestContext,System.Web.Routing.RouteCollection,System.String,System.String,System.String,System.String,System.Web.Routing.RouteValueDictionary,System.Collections.Generic.IDictionary{System.String,System.Object})
   href: System.Web.Mvc.HtmlHelper.yml
@@ -753,45 +799,49 @@ items:
     - id: requestContext
       type:
         id: System.Web.Routing.RequestContext
-        name: System.Web.Routing.RequestContext
+        name: RequestContext
         isExternal: true
     - id: routeCollection
       type:
         id: System.Web.Routing.RouteCollection
-        name: System.Web.Routing.RouteCollection
+        name: RouteCollection
         isExternal: true
     - id: linkText
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: routeName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: actionName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: controllerName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: routeValues
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
     - id: htmlAttributes
       type:
         id: System.Collections.Generic.IDictionary{System.String,System.Object}
-        name: System.Collections.Generic.IDictionary{System.String,System.Object}
+        name: IDictionary<string, object>
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.HtmlHelper.GenerateLink(System.Web.Routing.RequestContext,System.Web.Routing.RouteCollection,System.String,System.String,System.String,System.String,System.Web.Routing.RouteValueDictionary,System.Collections.Generic.IDictionary{System.String,System.Object})
 - uid: System.Web.Mvc.HtmlHelper.GenerateLink(System.Web.Routing.RequestContext,System.Web.Routing.RouteCollection,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Web.Routing.RouteValueDictionary,System.Collections.Generic.IDictionary{System.String,System.Object})
   href: System.Web.Mvc.HtmlHelper.yml
@@ -809,60 +859,64 @@ items:
     - id: requestContext
       type:
         id: System.Web.Routing.RequestContext
-        name: System.Web.Routing.RequestContext
+        name: RequestContext
         isExternal: true
     - id: routeCollection
       type:
         id: System.Web.Routing.RouteCollection
-        name: System.Web.Routing.RouteCollection
+        name: RouteCollection
         isExternal: true
     - id: linkText
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: routeName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: actionName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: controllerName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: protocol
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: hostName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: fragment
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: routeValues
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
     - id: htmlAttributes
       type:
         id: System.Collections.Generic.IDictionary{System.String,System.Object}
-        name: System.Collections.Generic.IDictionary{System.String,System.Object}
+        name: IDictionary<string, object>
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.HtmlHelper.GenerateLink(System.Web.Routing.RequestContext,System.Web.Routing.RouteCollection,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Web.Routing.RouteValueDictionary,System.Collections.Generic.IDictionary{System.String,System.Object})
 - uid: System.Web.Mvc.HtmlHelper.GenerateRouteLink(System.Web.Routing.RequestContext,System.Web.Routing.RouteCollection,System.String,System.String,System.Web.Routing.RouteValueDictionary,System.Collections.Generic.IDictionary{System.String,System.Object})
   href: System.Web.Mvc.HtmlHelper.yml
@@ -880,35 +934,39 @@ items:
     - id: requestContext
       type:
         id: System.Web.Routing.RequestContext
-        name: System.Web.Routing.RequestContext
+        name: RequestContext
         isExternal: true
     - id: routeCollection
       type:
         id: System.Web.Routing.RouteCollection
-        name: System.Web.Routing.RouteCollection
+        name: RouteCollection
         isExternal: true
     - id: linkText
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: routeName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: routeValues
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
     - id: htmlAttributes
       type:
         id: System.Collections.Generic.IDictionary{System.String,System.Object}
-        name: System.Collections.Generic.IDictionary{System.String,System.Object}
+        name: IDictionary<string, object>
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.HtmlHelper.GenerateRouteLink(System.Web.Routing.RequestContext,System.Web.Routing.RouteCollection,System.String,System.String,System.Web.Routing.RouteValueDictionary,System.Collections.Generic.IDictionary{System.String,System.Object})
 - uid: System.Web.Mvc.HtmlHelper.GenerateRouteLink(System.Web.Routing.RequestContext,System.Web.Routing.RouteCollection,System.String,System.String,System.String,System.String,System.String,System.Web.Routing.RouteValueDictionary,System.Collections.Generic.IDictionary{System.String,System.Object})
   href: System.Web.Mvc.HtmlHelper.yml
@@ -926,50 +984,54 @@ items:
     - id: requestContext
       type:
         id: System.Web.Routing.RequestContext
-        name: System.Web.Routing.RequestContext
+        name: RequestContext
         isExternal: true
     - id: routeCollection
       type:
         id: System.Web.Routing.RouteCollection
-        name: System.Web.Routing.RouteCollection
+        name: RouteCollection
         isExternal: true
     - id: linkText
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: routeName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: protocol
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: hostName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: fragment
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: routeValues
       type:
         id: System.Web.Routing.RouteValueDictionary
-        name: System.Web.Routing.RouteValueDictionary
+        name: RouteValueDictionary
         isExternal: true
     - id: htmlAttributes
       type:
         id: System.Collections.Generic.IDictionary{System.String,System.Object}
-        name: System.Collections.Generic.IDictionary{System.String,System.Object}
+        name: IDictionary<string, object>
         isExternal: true
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.HtmlHelper.GenerateRouteLink(System.Web.Routing.RequestContext,System.Web.Routing.RouteCollection,System.String,System.String,System.String,System.String,System.String,System.Web.Routing.RouteValueDictionary,System.Collections.Generic.IDictionary{System.String,System.Object})
 - uid: System.Web.Mvc.HtmlHelper.GetFormMethodString(System.Web.Mvc.FormMethod)
   href: System.Web.Mvc.HtmlHelper.yml
@@ -991,6 +1053,10 @@ items:
         href: System.Web.Mvc.FormMethod.yml
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.HtmlHelper.GetFormMethodString(System.Web.Mvc.FormMethod)
 - uid: System.Web.Mvc.HtmlHelper.GetInputTypeString(System.Web.Mvc.InputType)
   href: System.Web.Mvc.HtmlHelper.yml
@@ -1012,6 +1078,10 @@ items:
         href: System.Web.Mvc.InputType.yml
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: System.Web.Mvc.HtmlHelper.GetInputTypeString(System.Web.Mvc.InputType)
 - uid: System.Web.Mvc.HtmlHelper.GetUnobtrusiveValidationAttributes(System.String)
   href: System.Web.Mvc.HtmlHelper.yml
@@ -1029,10 +1099,14 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: IDictionary
+      type:
+        id: System.Collections.Generic.IDictionary{System.String,System.Object}
+        name: IDictionary<string, object>
+        isExternal: true
   id: System.Web.Mvc.HtmlHelper.GetUnobtrusiveValidationAttributes(System.String)
 - uid: System.Web.Mvc.HtmlHelper.GetUnobtrusiveValidationAttributes(System.String,System.Web.Mvc.ModelMetadata)
   href: System.Web.Mvc.HtmlHelper.yml
@@ -1050,7 +1124,7 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: metadata
       type:
@@ -1059,6 +1133,10 @@ items:
         href: System.Web.Mvc.ModelMetadata.yml
     return:
       id: IDictionary
+      type:
+        id: System.Collections.Generic.IDictionary{System.String,System.Object}
+        name: IDictionary<string, object>
+        isExternal: true
   id: System.Web.Mvc.HtmlHelper.GetUnobtrusiveValidationAttributes(System.String,System.Web.Mvc.ModelMetadata)
 - uid: System.Web.Mvc.HtmlHelper.HttpMethodOverride(System.Web.Mvc.HttpVerbs)
   href: System.Web.Mvc.HtmlHelper.yml
@@ -1080,6 +1158,10 @@ items:
         href: System.Web.Mvc.HttpVerbs.yml
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
   id: System.Web.Mvc.HtmlHelper.HttpMethodOverride(System.Web.Mvc.HttpVerbs)
 - uid: System.Web.Mvc.HtmlHelper.HttpMethodOverride(System.String)
   href: System.Web.Mvc.HtmlHelper.yml
@@ -1092,15 +1174,19 @@ items:
     startLine: 468
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Justification = "For consistency, all helpers are instance methods.")] public MvcHtmlString HttpMethodOverride(string httpMethod)'
+      CSharp: public MvcHtmlString HttpMethodOverride(string httpMethod)
     parameters:
     - id: httpMethod
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: MvcHtmlString
+      type:
+        id: System.Web.Mvc.MvcHtmlString
+        name: MvcHtmlString
+        href: System.Web.Mvc.MvcHtmlString.yml
   id: System.Web.Mvc.HtmlHelper.HttpMethodOverride(System.String)
 - uid: System.Web.Mvc.HtmlHelper.Raw(System.String)
   href: System.Web.Mvc.HtmlHelper.yml
@@ -1117,16 +1203,20 @@ items:
     rendered to the output without getting HTML encoded.
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Justification = "For consistency, all helpers are instance methods.")] public IHtmlString Raw(string value)'
+      CSharp: public IHtmlString Raw(string value)
     parameters:
     - id: value
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: HTML markup string.
     return:
       id: IHtmlString
+      type:
+        id: System.Web.IHtmlString
+        name: IHtmlString
+        isExternal: true
       description: An IHtmlString that represents HTML markup.
   id: System.Web.Mvc.HtmlHelper.Raw(System.String)
 - uid: System.Web.Mvc.HtmlHelper.Raw(System.Object)
@@ -1144,16 +1234,20 @@ items:
     which will enable HTML markup to be rendered to the output without getting HTML encoded.
   syntax:
     content:
-      CSharp: '[SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Justification = "For consistency, all helpers are instance methods.")] public IHtmlString Raw(object value)'
+      CSharp: public IHtmlString Raw(object value)
     parameters:
     - id: value
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: object with string representation as HTML markup
     return:
       id: IHtmlString
+      type:
+        id: System.Web.IHtmlString
+        name: IHtmlString
+        isExternal: true
       description: An IHtmlString that represents HTML markup.
   id: System.Web.Mvc.HtmlHelper.Raw(System.Object)
 - uid: System.Web.Mvc.HtmlHelper.SetValidationSummaryMessageElement(System.String)
@@ -1176,7 +1270,7 @@ items:
     - id: elementName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.HtmlHelper.SetValidationSummaryMessageElement(System.String)
 - uid: System.Web.Mvc.HtmlHelper.SetValidationMessageElement(System.String)
@@ -1199,7 +1293,7 @@ items:
     - id: elementName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.Web.Mvc.HtmlHelper.SetValidationMessageElement(System.String)
 - uid: System.Web.Mvc.HtmlHelper.ObjectToDictionary(System.Object)
@@ -1224,10 +1318,14 @@ items:
     - id: value
       type:
         id: System.Object
-        name: System.Object
+        name: object
         isExternal: true
       description: The object to be converted.
     return:
       id: IDictionary
+      type:
+        id: System.Collections.Generic.IDictionary{System.String,System.Object}
+        name: IDictionary<string, object>
+        isExternal: true
       description: The created dictionary of property names and property values.
   id: System.Web.Mvc.HtmlHelper.ObjectToDictionary(System.Object)

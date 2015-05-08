@@ -6,14 +6,16 @@ items:
   type: Interface
   source:
     remote: &o0
+      path: src/System.Threading.Tasks.Dataflow/src/Base/ITargetBlock.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Threading.Tasks.Dataflow/src/Base/ITargetBlock.cs
     startLine: 16
   summary: Represents a dataflow block that is a target for data.
   syntax:
     content:
-      CSharp: public interface ITargetBlock<in TInput>
+      CSharp: 'public interface ITargetBlock<in TInput> : IDataflowBlock'
   id: System.Threading.Tasks.Dataflow.ITargetBlock`1
   children:
   - System.Threading.Tasks.Dataflow.ITargetBlock`1.OfferMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,`0,System.Threading.Tasks.Dataflow.ISourceBlock{`0},System.Boolean)
@@ -28,7 +30,7 @@ items:
     startLine: 21
   syntax:
     content:
-      CSharp: DataflowMessageStatus OfferMessage(DataflowMessageHeader messageHeader, TInput messageValue, ISourceBlock<TInput> source, Boolean consumeToAccept);
+      CSharp: public DataflowMessageStatus OfferMessage(DataflowMessageHeader messageHeader, TInput messageValue, ISourceBlock<TInput> source, bool consumeToAccept)
     parameters:
     - id: messageHeader
       type:
@@ -43,13 +45,17 @@ items:
     - id: source
       type:
         id: System.Threading.Tasks.Dataflow.ISourceBlock{`0}
-        name: ISourceBlock
+        name: ISourceBlock<TInput>
         href: System.Threading.Tasks.Dataflow.ISourceBlock{`0}
     - id: consumeToAccept
       type:
         id: System.Boolean
-        name: System.Boolean
+        name: bool
         isExternal: true
     return:
       id: DataflowMessageStatus
+      type:
+        id: System.Threading.Tasks.Dataflow.DataflowMessageStatus
+        name: DataflowMessageStatus
+        href: System.Threading.Tasks.Dataflow.DataflowMessageStatus.yml
   id: System.Threading.Tasks.Dataflow.ITargetBlock`1.OfferMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,`0,System.Threading.Tasks.Dataflow.ISourceBlock{`0},System.Boolean)

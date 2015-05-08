@@ -6,22 +6,29 @@ items:
   type: Struct
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
     startLine: 1771
   summary: Represents a collection of [System.Reflection.Metadata.ManifestResourceHandle](System.Reflection.Metadata.ManifestResourceHandle.yml).
   syntax:
     content:
-      CSharp: public struct ManifestResourceHandleCollection
+      CSharp: 'public struct ManifestResourceHandleCollection : IReadOnlyCollection<ManifestResourceHandle>, IEnumerable<ManifestResourceHandle>, IEnumerable'
   inheritance:
+  - id: System.Object
+    name: object
+    isExternal: true
   - id: System.ValueType
-    name: System.ValueType
+    name: ValueType
     isExternal: true
   id: System.Reflection.Metadata.ManifestResourceHandleCollection
   children:
   - System.Reflection.Metadata.ManifestResourceHandleCollection.Count
   - System.Reflection.Metadata.ManifestResourceHandleCollection.GetEnumerator
+  - System.Reflection.Metadata.ManifestResourceHandleCollection.System#Collections#Generic#IEnumerable{System#Reflection#Metadata#ManifestResourceHandle}#GetEnumerator
+  - System.Reflection.Metadata.ManifestResourceHandleCollection.System#Collections#IEnumerable#GetEnumerator
 - uid: System.Reflection.Metadata.ManifestResourceHandleCollection.Count
   href: System.Reflection.Metadata.ManifestResourceHandleCollection.yml
   name: Count
@@ -38,7 +45,7 @@ items:
     - id: Count
       type:
         id: System.Int32
-        name: System.Int32
+        name: int
         isExternal: true
   id: System.Reflection.Metadata.ManifestResourceHandleCollection.Count
 - uid: System.Reflection.Metadata.ManifestResourceHandleCollection.GetEnumerator
@@ -56,4 +63,48 @@ items:
     parameters: []
     return:
       id: Enumerator
+      type:
+        id: System.Reflection.Metadata.ManifestResourceHandleCollection.Enumerator
+        name: Enumerator
+        href: System.Reflection.Metadata.ManifestResourceHandleCollection.Enumerator.yml
   id: System.Reflection.Metadata.ManifestResourceHandleCollection.GetEnumerator
+- uid: System.Reflection.Metadata.ManifestResourceHandleCollection.System#Collections#Generic#IEnumerable{System#Reflection#Metadata#ManifestResourceHandle}#GetEnumerator
+  href: System.Reflection.Metadata.ManifestResourceHandleCollection.yml
+  name: IEnumerable<ManifestResourceHandle>.GetEnumerator()
+  fullName: System.Reflection.Metadata.ManifestResourceHandleCollection.System.Collections.Generic.IEnumerable<System.Reflection.Metadata.ManifestResourceHandle>.GetEnumerator()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
+    startLine: 1791
+  syntax:
+    content:
+      CSharp: IEnumerator<ManifestResourceHandle> IEnumerable<ManifestResourceHandle>.GetEnumerator()
+    parameters: []
+    return:
+      id: IEnumerator
+      type:
+        id: System.Collections.Generic.IEnumerator{System.Reflection.Metadata.ManifestResourceHandle}
+        name: IEnumerator<ManifestResourceHandle>
+        isExternal: true
+  id: System.Reflection.Metadata.ManifestResourceHandleCollection.System#Collections#Generic#IEnumerable{System#Reflection#Metadata#ManifestResourceHandle}#GetEnumerator
+- uid: System.Reflection.Metadata.ManifestResourceHandleCollection.System#Collections#IEnumerable#GetEnumerator
+  href: System.Reflection.Metadata.ManifestResourceHandleCollection.yml
+  name: IEnumerable.GetEnumerator()
+  fullName: System.Reflection.Metadata.ManifestResourceHandleCollection.System.Collections.IEnumerable.GetEnumerator()
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleCollections.cs
+    startLine: 1796
+  syntax:
+    content:
+      CSharp: IEnumerator IEnumerable.GetEnumerator()
+    parameters: []
+    return:
+      id: IEnumerator
+      type:
+        id: System.Collections.IEnumerator
+        name: IEnumerator
+        isExternal: true
+  id: System.Reflection.Metadata.ManifestResourceHandleCollection.System#Collections#IEnumerable#GetEnumerator

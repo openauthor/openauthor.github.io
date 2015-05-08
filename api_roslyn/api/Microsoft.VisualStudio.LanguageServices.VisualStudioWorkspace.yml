@@ -6,24 +6,28 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/VisualStudio/Core/Def/Implementation/ProjectSystem/VisualStudioWorkspace.cs
       branch: master
       repo: https://github.com/chenkennt/roslyn.git
-      description: ef085ea0
+      key: e7db1294
     path: src/VisualStudio/Core/Def/Implementation/ProjectSystem/VisualStudioWorkspace.cs
     startLine: 16
   summary: A Workspace specific to Visual Studio.
   syntax:
     content:
-      CSharp: public abstract class VisualStudioWorkspace
+      CSharp: 'public abstract class VisualStudioWorkspace : Workspace, IDisposable'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: Object
     isExternal: true
   - id: Microsoft.CodeAnalysis.Workspace
     name: Workspace
     href: Microsoft.CodeAnalysis.Workspace.yml
   id: Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace
   children:
+  - Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.PartialSemanticsEnabled
+  - Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.OnDocumentTextChanged(Microsoft.CodeAnalysis.Document)
+  - Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.OnDocumentClosing(Microsoft.CodeAnalysis.DocumentId)
   - Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.GetHierarchy(Microsoft.CodeAnalysis.ProjectId)
   - Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.GetFilePath(Microsoft.CodeAnalysis.DocumentId)
   - Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.GetFileCodeModel(Microsoft.CodeAnalysis.DocumentId)
@@ -31,6 +35,63 @@ items:
   - Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.TryFindAllReferences(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Project,System.Threading.CancellationToken)
   - Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.DisplayReferencedSymbols(Microsoft.CodeAnalysis.Solution,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.FindSymbols.ReferencedSymbol})
   - Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.CreatePortableExecutableReference(System.String,Microsoft.CodeAnalysis.MetadataReferenceProperties)
+- uid: Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.PartialSemanticsEnabled
+  href: Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.yml
+  name: PartialSemanticsEnabled
+  fullName: Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.PartialSemanticsEnabled
+  type: Property
+  source:
+    remote: *o0
+    path: src/VisualStudio/Core/Def/Implementation/ProjectSystem/VisualStudioWorkspace.cs
+    startLine: 36
+  syntax:
+    content:
+      CSharp: protected internal override bool PartialSemanticsEnabled { get; }
+    parameters:
+    - id: PartialSemanticsEnabled
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.PartialSemanticsEnabled
+- uid: Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.OnDocumentTextChanged(Microsoft.CodeAnalysis.Document)
+  href: Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.yml
+  name: OnDocumentTextChanged(Document)
+  fullName: Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.OnDocumentTextChanged(Microsoft.CodeAnalysis.Document)
+  type: Method
+  source:
+    remote: *o0
+    path: src/VisualStudio/Core/Def/Implementation/ProjectSystem/VisualStudioWorkspace.cs
+    startLine: 41
+  syntax:
+    content:
+      CSharp: protected override void OnDocumentTextChanged(Document document)
+    parameters:
+    - id: document
+      type:
+        id: Microsoft.CodeAnalysis.Document
+        name: Document
+        href: Microsoft.CodeAnalysis.Document.yml
+  id: Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.OnDocumentTextChanged(Microsoft.CodeAnalysis.Document)
+- uid: Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.OnDocumentClosing(Microsoft.CodeAnalysis.DocumentId)
+  href: Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.yml
+  name: OnDocumentClosing(DocumentId)
+  fullName: Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.OnDocumentClosing(Microsoft.CodeAnalysis.DocumentId)
+  type: Method
+  source:
+    remote: *o0
+    path: src/VisualStudio/Core/Def/Implementation/ProjectSystem/VisualStudioWorkspace.cs
+    startLine: 49
+  syntax:
+    content:
+      CSharp: protected override void OnDocumentClosing(DocumentId documentId)
+    parameters:
+    - id: documentId
+      type:
+        id: Microsoft.CodeAnalysis.DocumentId
+        name: DocumentId
+        href: Microsoft.CodeAnalysis.DocumentId.yml
+  id: Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.OnDocumentClosing(Microsoft.CodeAnalysis.DocumentId)
 - uid: Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.GetHierarchy(Microsoft.CodeAnalysis.ProjectId)
   href: Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.yml
   name: GetHierarchy(ProjectId)
@@ -42,7 +103,7 @@ items:
     startLine: 57
   syntax:
     content:
-      CSharp: public abstract IVsHierarchy GetHierarchy(ProjectId projectId);
+      CSharp: public abstract IVsHierarchy GetHierarchy(ProjectId projectId)
     parameters:
     - id: projectId
       type:
@@ -51,6 +112,10 @@ items:
         href: Microsoft.CodeAnalysis.ProjectId.yml
     return:
       id: IVsHierarchy
+      type:
+        id: Microsoft.VisualStudio.Shell.Interop.IVsHierarchy
+        name: IVsHierarchy
+        isExternal: true
   id: Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.GetHierarchy(Microsoft.CodeAnalysis.ProjectId)
 - uid: Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.GetFilePath(Microsoft.CodeAnalysis.DocumentId)
   href: Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.yml
@@ -63,7 +128,7 @@ items:
     startLine: 58
   syntax:
     content:
-      CSharp: public abstract string GetFilePath(DocumentId documentId);
+      CSharp: public abstract string GetFilePath(DocumentId documentId)
     parameters:
     - id: documentId
       type:
@@ -72,6 +137,10 @@ items:
         href: Microsoft.CodeAnalysis.DocumentId.yml
     return:
       id: String
+      type:
+        id: System.String
+        name: string
+        isExternal: true
   id: Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.GetFilePath(Microsoft.CodeAnalysis.DocumentId)
 - uid: Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.GetFileCodeModel(Microsoft.CodeAnalysis.DocumentId)
   href: Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.yml
@@ -82,10 +151,10 @@ items:
     remote: *o0
     path: src/VisualStudio/Core/Def/Implementation/ProjectSystem/VisualStudioWorkspace.cs
     startLine: 70
-  summary: Returns the [EnvDTE.FileCodeModel](#) for a given document.
+  summary: Returns the [EnvDTE.FileCodeModel]() for a given document.
   syntax:
     content:
-      CSharp: public abstract EnvDTE.FileCodeModel GetFileCodeModel(DocumentId documentId);
+      CSharp: public abstract FileCodeModel GetFileCodeModel(DocumentId documentId)
     parameters:
     - id: documentId
       type:
@@ -94,6 +163,10 @@ items:
         href: Microsoft.CodeAnalysis.DocumentId.yml
     return:
       id: FileCodeModel
+      type:
+        id: EnvDTE.FileCodeModel
+        name: FileCodeModel
+        isExternal: true
   id: Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.GetFileCodeModel(Microsoft.CodeAnalysis.DocumentId)
 - uid: Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.TryGoToDefinition(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Project,System.Threading.CancellationToken)
   href: Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.yml
@@ -106,7 +179,7 @@ items:
     startLine: 76
   syntax:
     content:
-      CSharp: public abstract bool TryGoToDefinition(ISymbol symbol, Project project, CancellationToken cancellationToken);
+      CSharp: public abstract bool TryGoToDefinition(ISymbol symbol, Project project, CancellationToken cancellationToken)
     parameters:
     - id: symbol
       type:
@@ -121,10 +194,14 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.TryGoToDefinition(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Project,System.Threading.CancellationToken)
 - uid: Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.TryFindAllReferences(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Project,System.Threading.CancellationToken)
   href: Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.yml
@@ -137,7 +214,7 @@ items:
     startLine: 77
   syntax:
     content:
-      CSharp: public abstract bool TryFindAllReferences(ISymbol symbol, Project project, CancellationToken cancellationToken);
+      CSharp: public abstract bool TryFindAllReferences(ISymbol symbol, Project project, CancellationToken cancellationToken)
     parameters:
     - id: symbol
       type:
@@ -152,10 +229,14 @@ items:
     - id: cancellationToken
       type:
         id: System.Threading.CancellationToken
-        name: System.Threading.CancellationToken
+        name: CancellationToken
         isExternal: true
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.TryFindAllReferences(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.Project,System.Threading.CancellationToken)
 - uid: Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.DisplayReferencedSymbols(Microsoft.CodeAnalysis.Solution,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.FindSymbols.ReferencedSymbol})
   href: Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.yml
@@ -168,7 +249,7 @@ items:
     startLine: 79
   syntax:
     content:
-      CSharp: public abstract void DisplayReferencedSymbols(Solution solution, IEnumerable<ReferencedSymbol> referencedSymbols);
+      CSharp: public abstract void DisplayReferencedSymbols(Solution solution, IEnumerable<ReferencedSymbol> referencedSymbols)
     parameters:
     - id: solution
       type:
@@ -178,7 +259,7 @@ items:
     - id: referencedSymbols
       type:
         id: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.FindSymbols.ReferencedSymbol}
-        name: System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.FindSymbols.ReferencedSymbol}
+        name: IEnumerable<ReferencedSymbol>
         isExternal: true
   id: Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.DisplayReferencedSymbols(Microsoft.CodeAnalysis.Solution,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.FindSymbols.ReferencedSymbol})
 - uid: Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.CreatePortableExecutableReference(System.String,Microsoft.CodeAnalysis.MetadataReferenceProperties)
@@ -191,7 +272,7 @@ items:
     path: src/VisualStudio/Core/Def/Implementation/ProjectSystem/VisualStudioWorkspace.cs
     startLine: 87
   summary: >-
-    Creates a [Microsoft.CodeAnalysis.PortableExecutableReference](#) that correctly retrieves the Visual Studio context,
+    Creates a [Microsoft.CodeAnalysis.PortableExecutableReference]() that correctly retrieves the Visual Studio context,
 
     such as documentation comments in the correct language.
   syntax:
@@ -201,7 +282,7 @@ items:
     - id: filePath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
       description: The file path of the assembly or module.
     - id: properties
@@ -212,4 +293,8 @@ items:
       description: The properties for the reference.
     return:
       id: PortableExecutableReference
+      type:
+        id: Microsoft.CodeAnalysis.PortableExecutableReference
+        name: PortableExecutableReference
+        href: Microsoft.CodeAnalysis.PortableExecutableReference
   id: Microsoft.VisualStudio.LanguageServices.VisualStudioWorkspace.CreatePortableExecutableReference(System.String,Microsoft.CodeAnalysis.MetadataReferenceProperties)

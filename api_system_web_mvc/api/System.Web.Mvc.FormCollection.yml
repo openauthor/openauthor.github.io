@@ -6,23 +6,24 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/FormCollection.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/FormCollection.cs
     startLine: 9
   syntax:
     content:
-      CSharp: public sealed class FormCollection
+      CSharp: 'public sealed class FormCollection : NameValueCollection, ICollection, IEnumerable, ISerializable, IDeserializationCallback, IValueProvider'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Collections.Specialized.NameObjectCollectionBase
-    name: System.Collections.Specialized.NameObjectCollectionBase
+    name: NameObjectCollectionBase
     isExternal: true
   - id: System.Collections.Specialized.NameValueCollection
-    name: System.Collections.Specialized.NameValueCollection
+    name: NameValueCollection
     isExternal: true
   id: System.Web.Mvc.FormCollection
   children:
@@ -30,6 +31,8 @@ items:
   - System.Web.Mvc.FormCollection.#ctor(System.Collections.Specialized.NameValueCollection)
   - System.Web.Mvc.FormCollection.GetValue(System.String)
   - System.Web.Mvc.FormCollection.ToValueProvider
+  - System.Web.Mvc.FormCollection.System#Web#Mvc#IValueProvider#ContainsPrefix(System.String)
+  - System.Web.Mvc.FormCollection.System#Web#Mvc#IValueProvider#GetValue(System.String)
 - uid: System.Web.Mvc.FormCollection.#ctor
   href: System.Web.Mvc.FormCollection.yml
   name: FormCollection()
@@ -60,7 +63,7 @@ items:
     - id: collection
       type:
         id: System.Collections.Specialized.NameValueCollection
-        name: System.Collections.Specialized.NameValueCollection
+        name: NameValueCollection
         isExternal: true
   id: System.Web.Mvc.FormCollection.#ctor(System.Collections.Specialized.NameValueCollection)
 - uid: System.Web.Mvc.FormCollection.GetValue(System.String)
@@ -79,10 +82,14 @@ items:
     - id: name
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: ValueProviderResult
+      type:
+        id: System.Web.Mvc.ValueProviderResult
+        name: ValueProviderResult
+        href: System.Web.Mvc.ValueProviderResult.yml
   id: System.Web.Mvc.FormCollection.GetValue(System.String)
 - uid: System.Web.Mvc.FormCollection.ToValueProvider
   href: System.Web.Mvc.FormCollection.yml
@@ -99,4 +106,58 @@ items:
     parameters: []
     return:
       id: IValueProvider
+      type:
+        id: System.Web.Mvc.IValueProvider
+        name: IValueProvider
+        href: System.Web.Mvc.IValueProvider.yml
   id: System.Web.Mvc.FormCollection.ToValueProvider
+- uid: System.Web.Mvc.FormCollection.System#Web#Mvc#IValueProvider#ContainsPrefix(System.String)
+  href: System.Web.Mvc.FormCollection.yml
+  name: IValueProvider.ContainsPrefix(string)
+  fullName: System.Web.Mvc.FormCollection.System.Web.Mvc.IValueProvider.ContainsPrefix(string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/FormCollection.cs
+    startLine: 57
+  syntax:
+    content:
+      CSharp: bool IValueProvider.ContainsPrefix(string prefix)
+    parameters:
+    - id: prefix
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Web.Mvc.FormCollection.System#Web#Mvc#IValueProvider#ContainsPrefix(System.String)
+- uid: System.Web.Mvc.FormCollection.System#Web#Mvc#IValueProvider#GetValue(System.String)
+  href: System.Web.Mvc.FormCollection.yml
+  name: IValueProvider.GetValue(string)
+  fullName: System.Web.Mvc.FormCollection.System.Web.Mvc.IValueProvider.GetValue(string)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/FormCollection.cs
+    startLine: 62
+  syntax:
+    content:
+      CSharp: ValueProviderResult IValueProvider.GetValue(string key)
+    parameters:
+    - id: key
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+    return:
+      id: ValueProviderResult
+      type:
+        id: System.Web.Mvc.ValueProviderResult
+        name: ValueProviderResult
+        href: System.Web.Mvc.ValueProviderResult.yml
+  id: System.Web.Mvc.FormCollection.System#Web#Mvc#IValueProvider#GetValue(System.String)

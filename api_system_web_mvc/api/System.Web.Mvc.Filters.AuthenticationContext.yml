@@ -6,18 +6,19 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/Filters/AuthenticationContext.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/Filters/AuthenticationContext.cs
     startLine: 7
   summary: Represents an authentication context containing information for performing authentication.
   syntax:
     content:
-      CSharp: public class AuthenticationContext
+      CSharp: 'public class AuthenticationContext : ControllerContext'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.Mvc.ControllerContext
     name: ControllerContext
@@ -73,7 +74,7 @@ items:
     - id: principal
       type:
         id: System.Security.Principal.IPrincipal
-        name: System.Security.Principal.IPrincipal
+        name: IPrincipal
         isExternal: true
       description: The current principal.
   id: System.Web.Mvc.Filters.AuthenticationContext.#ctor(System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionDescriptor,System.Security.Principal.IPrincipal)
@@ -114,7 +115,7 @@ items:
     - id: Principal
       type:
         id: System.Security.Principal.IPrincipal
-        name: System.Security.Principal.IPrincipal
+        name: IPrincipal
         isExternal: true
   id: System.Web.Mvc.Filters.AuthenticationContext.Principal
 - uid: System.Web.Mvc.Filters.AuthenticationContext.Result

@@ -6,17 +6,18 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Web.Mvc/MvcWebRazorHostFactory.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/MvcWebRazorHostFactory.cs
     startLine: 7
   syntax:
     content:
-      CSharp: public class MvcWebRazorHostFactory
+      CSharp: 'public class MvcWebRazorHostFactory : WebRazorHostFactory'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.WebPages.Razor.WebRazorHostFactory
     name: WebRazorHostFactory
@@ -40,13 +41,17 @@ items:
     - id: virtualPath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     - id: physicalPath
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
     return:
       id: WebPageRazorHost
+      type:
+        id: System.Web.WebPages.Razor.WebPageRazorHost
+        name: WebPageRazorHost
+        href: System.Web.WebPages.Razor.WebPageRazorHost
   id: System.Web.Mvc.MvcWebRazorHostFactory.CreateHost(System.String,System.String)

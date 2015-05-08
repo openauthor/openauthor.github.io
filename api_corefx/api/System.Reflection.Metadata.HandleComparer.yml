@@ -6,23 +6,28 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleComparer.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleComparer.cs
-    startLine: 8
+    startLine: 7
   syntax:
     content:
-      CSharp: public sealed class HandleComparer
+      CSharp: 'public sealed class HandleComparer : IEqualityComparer<Handle>, IComparer<Handle>, IEqualityComparer<EntityHandle>, IComparer<EntityHandle>'
   inheritance:
-  - id: IEqualityComparer{System.Reflection.Metadata.Handle}
-    name: IEqualityComparer{System.Reflection.Metadata.Handle}
+  - id: System.Object
+    name: object
     isExternal: true
   id: System.Reflection.Metadata.HandleComparer
   children:
   - System.Reflection.Metadata.HandleComparer.Default
   - System.Reflection.Metadata.HandleComparer.Equals(System.Reflection.Metadata.Handle,System.Reflection.Metadata.Handle)
+  - System.Reflection.Metadata.HandleComparer.Equals(System.Reflection.Metadata.EntityHandle,System.Reflection.Metadata.EntityHandle)
   - System.Reflection.Metadata.HandleComparer.GetHashCode(System.Reflection.Metadata.Handle)
+  - System.Reflection.Metadata.HandleComparer.GetHashCode(System.Reflection.Metadata.EntityHandle)
   - System.Reflection.Metadata.HandleComparer.Compare(System.Reflection.Metadata.Handle,System.Reflection.Metadata.Handle)
+  - System.Reflection.Metadata.HandleComparer.Compare(System.Reflection.Metadata.EntityHandle,System.Reflection.Metadata.EntityHandle)
 - uid: System.Reflection.Metadata.HandleComparer.Default
   href: System.Reflection.Metadata.HandleComparer.yml
   name: Default
@@ -31,7 +36,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleComparer.cs
-    startLine: 16
+    startLine: 15
   syntax:
     content:
       CSharp: public static HandleComparer Default { get; }
@@ -50,7 +55,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleComparer.cs
-    startLine: 21
+    startLine: 20
   syntax:
     content:
       CSharp: public bool Equals(Handle x, Handle y)
@@ -67,7 +72,41 @@ items:
         href: System.Reflection.Metadata.Handle.yml
     return:
       id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
   id: System.Reflection.Metadata.HandleComparer.Equals(System.Reflection.Metadata.Handle,System.Reflection.Metadata.Handle)
+- uid: System.Reflection.Metadata.HandleComparer.Equals(System.Reflection.Metadata.EntityHandle,System.Reflection.Metadata.EntityHandle)
+  href: System.Reflection.Metadata.HandleComparer.yml
+  name: Equals(EntityHandle, EntityHandle)
+  fullName: System.Reflection.Metadata.HandleComparer.Equals(System.Reflection.Metadata.EntityHandle, System.Reflection.Metadata.EntityHandle)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleComparer.cs
+    startLine: 25
+  syntax:
+    content:
+      CSharp: public bool Equals(EntityHandle x, EntityHandle y)
+    parameters:
+    - id: x
+      type:
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
+    - id: y
+      type:
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
+    return:
+      id: Boolean
+      type:
+        id: System.Boolean
+        name: bool
+        isExternal: true
+  id: System.Reflection.Metadata.HandleComparer.Equals(System.Reflection.Metadata.EntityHandle,System.Reflection.Metadata.EntityHandle)
 - uid: System.Reflection.Metadata.HandleComparer.GetHashCode(System.Reflection.Metadata.Handle)
   href: System.Reflection.Metadata.HandleComparer.yml
   name: GetHashCode(Handle)
@@ -76,7 +115,7 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleComparer.cs
-    startLine: 26
+    startLine: 30
   syntax:
     content:
       CSharp: public int GetHashCode(Handle obj)
@@ -88,7 +127,36 @@ items:
         href: System.Reflection.Metadata.Handle.yml
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: System.Reflection.Metadata.HandleComparer.GetHashCode(System.Reflection.Metadata.Handle)
+- uid: System.Reflection.Metadata.HandleComparer.GetHashCode(System.Reflection.Metadata.EntityHandle)
+  href: System.Reflection.Metadata.HandleComparer.yml
+  name: GetHashCode(EntityHandle)
+  fullName: System.Reflection.Metadata.HandleComparer.GetHashCode(System.Reflection.Metadata.EntityHandle)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleComparer.cs
+    startLine: 35
+  syntax:
+    content:
+      CSharp: public int GetHashCode(EntityHandle obj)
+    parameters:
+    - id: obj
+      type:
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
+    return:
+      id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.Reflection.Metadata.HandleComparer.GetHashCode(System.Reflection.Metadata.EntityHandle)
 - uid: System.Reflection.Metadata.HandleComparer.Compare(System.Reflection.Metadata.Handle,System.Reflection.Metadata.Handle)
   href: System.Reflection.Metadata.HandleComparer.yml
   name: Compare(Handle, Handle)
@@ -97,7 +165,8 @@ items:
   source:
     remote: *o0
     path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleComparer.cs
-    startLine: 31
+    startLine: 47
+  summary: Compares two handles.
   syntax:
     content:
       CSharp: public int Compare(Handle x, Handle y)
@@ -114,4 +183,39 @@ items:
         href: System.Reflection.Metadata.Handle.yml
     return:
       id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
   id: System.Reflection.Metadata.HandleComparer.Compare(System.Reflection.Metadata.Handle,System.Reflection.Metadata.Handle)
+- uid: System.Reflection.Metadata.HandleComparer.Compare(System.Reflection.Metadata.EntityHandle,System.Reflection.Metadata.EntityHandle)
+  href: System.Reflection.Metadata.HandleComparer.yml
+  name: Compare(EntityHandle, EntityHandle)
+  fullName: System.Reflection.Metadata.HandleComparer.Compare(System.Reflection.Metadata.EntityHandle, System.Reflection.Metadata.EntityHandle)
+  type: Method
+  source:
+    remote: *o0
+    path: src/System.Reflection.Metadata/src/System/Reflection/Metadata/HandleComparer.cs
+    startLine: 59
+  summary: Compares two entity handles.
+  syntax:
+    content:
+      CSharp: public int Compare(EntityHandle x, EntityHandle y)
+    parameters:
+    - id: x
+      type:
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
+    - id: y
+      type:
+        id: System.Reflection.Metadata.EntityHandle
+        name: EntityHandle
+        href: System.Reflection.Metadata.EntityHandle.yml
+    return:
+      id: Int32
+      type:
+        id: System.Int32
+        name: int
+        isExternal: true
+  id: System.Reflection.Metadata.HandleComparer.Compare(System.Reflection.Metadata.EntityHandle,System.Reflection.Metadata.EntityHandle)

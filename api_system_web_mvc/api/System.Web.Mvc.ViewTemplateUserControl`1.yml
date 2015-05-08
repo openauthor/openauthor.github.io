@@ -5,32 +5,54 @@ items:
   fullName: System.Web.Mvc.ViewTemplateUserControl<TModel>
   type: Class
   source:
-    remote:
+    remote: &o0
+      path: src/System.Web.Mvc/ViewTemplateUserControlOfTModel.cs
       branch: master
       repo: https://git01.codeplex.com/aspnetwebstack
-      description: 5fa60ca3
+      key: 5fa60ca3
     path: src/System.Web.Mvc/ViewTemplateUserControlOfTModel.cs
     startLine: 4
   syntax:
     content:
-      CSharp: public class ViewTemplateUserControl<TModel>
+      CSharp: 'public class ViewTemplateUserControl<TModel> : ViewUserControl<TModel>, IComponent, IDisposable, IParserAccessor, IUrlResolutionService, IDataBindingsAccessor, IControlBuilderAccessor, IControlDesignerAccessor, IExpressionsAccessor, IFilterResolutionService, IAttributeAccessor, INonBindingContainer, INamingContainer, IUserControlDesignerAccessor, IViewDataContainer'
   inheritance:
   - id: System.Object
-    name: System.Object
+    name: object
     isExternal: true
   - id: System.Web.UI.Control
-    name: System.Web.UI.Control
+    name: Control
     isExternal: true
   - id: System.Web.UI.TemplateControl
-    name: System.Web.UI.TemplateControl
+    name: TemplateControl
     isExternal: true
   - id: System.Web.UI.UserControl
-    name: System.Web.UI.UserControl
+    name: UserControl
     isExternal: true
   - id: System.Web.Mvc.ViewUserControl
     name: ViewUserControl
     href: System.Web.Mvc.ViewUserControl.yml
   - id: System.Web.Mvc.ViewUserControl{`0}
-    name: ViewUserControl
+    name: ViewUserControl<TModel>
     href: System.Web.Mvc.ViewUserControl{`0}
   id: System.Web.Mvc.ViewTemplateUserControl`1
+  children:
+  - System.Web.Mvc.ViewTemplateUserControl`1.FormattedModelValue
+- uid: System.Web.Mvc.ViewTemplateUserControl`1.FormattedModelValue
+  href: System.Web.Mvc.ViewTemplateUserControl`1.yml
+  name: FormattedModelValue
+  fullName: System.Web.Mvc.ViewTemplateUserControl<TModel>.FormattedModelValue
+  type: Property
+  source:
+    remote: *o0
+    path: src/System.Web.Mvc/ViewTemplateUserControlOfTModel.cs
+    startLine: 6
+  syntax:
+    content:
+      CSharp: protected string FormattedModelValue { get; }
+    parameters:
+    - id: FormattedModelValue
+      type:
+        id: System.String
+        name: string
+        isExternal: true
+  id: System.Web.Mvc.ViewTemplateUserControl`1.FormattedModelValue

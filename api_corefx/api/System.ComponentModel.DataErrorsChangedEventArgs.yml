@@ -6,15 +6,20 @@ items:
   type: Class
   source:
     remote: &o0
+      path: src/System.ObjectModel/src/System/ComponentModel/DataErrorsChangedEventArgs.cs
       branch: master
       repo: https://github.com/dotnet/corefx.git
+      key: 882a41e3
     path: src/System.ObjectModel/src/System/ComponentModel/DataErrorsChangedEventArgs.cs
     startLine: 12
   syntax:
     content:
-      CSharp: public class DataErrorsChangedEventArgs
+      CSharp: 'public class DataErrorsChangedEventArgs : EventArgs'
   inheritance:
-  - id: EventArgs
+  - id: System.Object
+    name: object
+    isExternal: true
+  - id: System.EventArgs
     name: EventArgs
     isExternal: true
   id: System.ComponentModel.DataErrorsChangedEventArgs
@@ -37,7 +42,7 @@ items:
     - id: propertyName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.ComponentModel.DataErrorsChangedEventArgs.#ctor(System.String)
 - uid: System.ComponentModel.DataErrorsChangedEventArgs.PropertyName
@@ -56,6 +61,6 @@ items:
     - id: PropertyName
       type:
         id: System.String
-        name: System.String
+        name: string
         isExternal: true
   id: System.ComponentModel.DataErrorsChangedEventArgs.PropertyName
